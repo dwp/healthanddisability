@@ -1,0 +1,80 @@
+.timeline {
+  border-left: 5px solid #005ea5;
+  overflow: visible;
+  position: relative;
+  max-width: 800px;
+}
+
+.timeline .line {
+  position: relative;
+  background-color: #005ea5;
+  width: 2%;
+  height: 5px;
+  display: block;
+  top: 11px;
+  clear: both;
+}
+
+@media (min-width: 641px) {
+  .timeline .line {
+    top: 15px;
+    width: 2%;
+  }
+}
+
+.timeline h2 {
+  background-color: #fff;
+  z-index: 9999;
+  position: absolute;
+  padding: 20px 5px;
+  position: relative;
+  left: -15px;
+  clear: both;
+  margin-top: 0;
+}
+
+.timeline h3,
+.timeline h4 {
+  margin-top: 0;
+}
+
+.timeline p {
+  margin-bottom: 0;
+}
+
+.timeline small {
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 14px;
+  line-height: 1.14286;
+  padding-top: 8px;
+  padding-bottom: 7px;
+}
+
+@media (min-width: 641px) {
+  .timeline small {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+@media (min-width: 641px) {
+  .timeline small {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
+.timeline .timeline-event {
+  float: right;
+  width: 94%;
+  overflow: hidden;
+}
+
+@media (min-width: 641px) {
+  .timeline .timeline-event {
+    margin-bottom: 30px;
+    width: 96%;
+  }
+}

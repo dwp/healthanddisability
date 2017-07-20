@@ -1,0 +1,51 @@
+.toggler {
+  position: relative;
+  display: block;
+  margin: 5px 0 30px;
+  border: 5px solid #bfc1c3;
+  height: 60px;
+  // width: 200px;
+  cursor: pointer;
+}
+
+.toggler .nub {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  transition: transform 0.2s ease;
+  padding: 5px;
+}
+
+.toggler .nub .nub_inner {
+  display: block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-top: 10px;
+  height: 100%;
+  transition: background-color 0.5s ease, border-radius 0.5s ease;
+}
+
+.toggler.toggler-off .nub {
+  transform: translate(100%, 0);
+}
+
+.toggler.toggler-off .nub .nub_inner {
+  background-color: #b10e1e;
+  // border-radius: 0 5px 5px 0;
+}
+
+.toggler.toggler-on .nub .nub_inner {
+  background-color: #85994b;
+  // border-radius: 5px 0 0 5px;
+}

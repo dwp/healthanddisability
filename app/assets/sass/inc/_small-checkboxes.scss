@@ -1,0 +1,43 @@
+.js-enabled .block-label.small-checkbox {
+
+  &.selection-button-checkbox::before {
+    content: "";
+    border: 2px solid;
+    background: transparent;
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  padding-left:30px;
+  padding-top:2px;
+  font-size:16px;
+  float:none;
+  margin-top:10px;
+
+  &.selection-button-checkbox::after {
+      content: "";
+      border: solid;
+      border-width: 0 0 4px 4px;
+      background: transparent;
+      width: 8px;
+      height: 4px;
+      position: absolute;
+      top: 5px;
+      left: 4px;
+      -moz-transform: rotate(-45deg); // Firefox 15 compatibility
+      -o-transform: rotate(-45deg); // Opera 12.0 compatibility
+      -webkit-transform: rotate(-45deg); // Safari 8 compatibility
+      -ms-transform: rotate(-45deg); // IE9 compatibility
+      transform: rotate(-45deg);
+      @include opacity(0);
+    }
+
+  &.selection-button-checkbox {
+      &.selected::after {
+        @include opacity(1);
+      }
+    }
+}
