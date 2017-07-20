@@ -1,58 +1,48 @@
-{% extends "layout.html" %}
+{% extends "front_layout.html" %}
 
 {% block content %}
 
-<main id="content" role="main">
-  <div class="grid-row">
-    <div class="column-two-thirds">
+<div class="index">
 
-      <h1 class="heading-xlarge">
-        The GOV.UK prototype kit
-        <span class="heading-secondary">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
-
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
-
-      <h2 class="heading-medium">About this page</h2>
-
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
-
-			<h2 class="heading-medium">Examples and documentation</h2>
-
-			<ul class="list list-bullet">
-				<li><a href="/docs/tutorials-and-examples">Example pages and documentation</a></li>
-				<li><a href="https://github.com/alphagov/govuk_prototype_kit">GitHub</a></li>
-			</ul>
-
-      <h2 class="heading-medium">Other resources</h2>
-
-			<ul class="list list-bullet">
-				<li>
-					<a href="https://govuk-elements.herokuapp.com/snippets/">
-						Guide to GOV.UK Elements
-					</a>
-				</li>
-				<li>
-					<a href="https://www.gov.uk/service-manual">
-						Service design manual
-					</a>
-				</li>
-				<li>
-					<a href="https://www.gov.uk/design-principles">
-						Government Digital Service Design Principles
-					</a>
-				</li>
-			</ul>
-
-    </div>
+<div class="index-page-banner">
+  <div class="index-heading-wrapper">
+    <h1 class="heading-xlarge index-heading-xlarge"> {{ serviceName }}</h1>
+    <h2 class="heading-large index-heading-large">Prototypes</h2>
   </div>
+</div>
+
+<main id="content" role="main">
+
+    {% include "includes/prototype_banner.html" %}
+
+    <div class="latest_version">
+      {% include "decide/inc/front.html" %}
+    </div>
+
+    <div class="grid-row">
+      <div class="column-full">
+
+        <h2 class="heading-medium">Older versions</h2>
+        <p>Older versions will appear here.</p>
+
+        {# <details>
+          <summary><span class="summary">View older prototypes</span></summary>
+          <div>
+
+            <!--- START OF VERSIONS --->
+            {% include "smits/v4/inc/index.html" %}
+            {% include "smits/v3/inc/index.html" %}
+            {% include "smits/v2/inc/index.html" %}
+            {% include "smits/v1/inc/index.html" %}
+
+            <!--- END OF VERSIONS --->
+          </div>
+        </details> #}
+
+      </div><!-- column -->
+    </div><!-- row -->
+
 </main>
 
+</><!-- .index -->
 {% endblock %}

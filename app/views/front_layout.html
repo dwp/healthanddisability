@@ -1,0 +1,21 @@
+{% extends "govuk_template.html" %}
+
+{% block page_title %} {{ serviceName }} {% endblock %}
+
+{% block head %}
+  <link href="/public/stylesheets/front.css" media="screen" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block headerClass %} with-proposition{% endblock %}
+
+{% block header_logo %}
+<div class="header-logo">
+  <a href="/" id="logo" class="content dwplogo">
+    DWP
+  </a>
+</div>
+{% endblock %}
+
+{% block body_end %}
+  {% block page_scripts %}{% endblock %}
+{% endblock %}

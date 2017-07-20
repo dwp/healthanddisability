@@ -1,0 +1,34 @@
+// Path to assets for use with the file-url function
+// in the govuk frontend toolkit's url-helpers partial
+$path: "/public/images/";
+
+// Import GOV.UK elements from /govuk-modules/, this will import the frontend toolkit and some base styles.
+// Take a look in /govuk-modules/_govuk-elements.scss to see which files are imported.
+@import 'govuk-elements';
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+@import "inc/index";
+@import "inc/margins";
+
+#global-header-bar { display:none; }
+#proposition-name {
+  font-family: 'NotoSans', arial, sans-serif !important;
+}
+
+.dwplogo {
+  margin-top: 4px !important;
+  font-size: 30px !important;
+  background: none !important;
+}
+
+details {
+  position:relative;
+  .quicklinks {
+    position:absolute;
+    background-color:white;
+    padding:0 $gutter/2 $gutter/2;
+    font-size:16px;
+    border:1px solid $grey-2;
+    border-top:none;
+  }
+}
