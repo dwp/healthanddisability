@@ -1,0 +1,154 @@
+{% extends path+"/inc/layout.html" %}
+
+{% block content %}
+
+<div class="nav-horizontal">
+  <div class="main-nav-wrapper">
+    <ul class="main-nav">
+      <li id="nav-home" class="selected">
+        <a href="search">Your cases</a>
+      </li>
+      <li id="nav-home">
+        <a href="search">Evidence</a>
+      </li>
+    </ul>
+  </div>
+  <div class="external-links-wrapper">
+    {# <ul class="external-links">
+      <li class="main-nav-link"><a href="upload">Upload data</a></li>
+      <span class="pipe">|</span>
+      <li class="main-nav-link"><a href="batch">Create a batch</a></li>
+    </ul> #}
+  </div>
+</div>
+
+<main id="content" role="main" class="main-content">
+
+      <div class="container">
+        <div class="grid-row">
+          <div class="column-full">
+              <table class="zebra">
+
+                <thead>
+                  <tr>
+                    <th style="padding-left:15px;">Name</th>
+                    <th>Team</th>
+                    <th>Condition</th>
+                    <th class="numeric">Initial contact</th>
+                    <th class="numeric">Adviser</th>
+                  </tr>
+                </thead>
+
+
+                <tr class="click_row" href="citizen">
+                  <td style="padding-left:15px;" class="">Adem Tosun</td>
+                  <td><span class="tag deaf">deaf</span></td>
+                  <td>Autism </td>
+                  <td class="nobr numeric">3rd June 2016</td>
+                  <td class="nobr numeric">Léonie Vidal</td>
+                </tr>
+
+                <tr class="click_row" href="citizen">
+                  <td style="padding-left:15px;" class="">Yeldon Finkelstein</td>
+                  <td><span class="tag "></span></td>
+                  <td>lower back pain and sciatica</td>
+                  <td class="nobr numeric">13th June 2016</td>
+                  <td class="nobr numeric"> </td>
+                </tr>
+
+                <tr class="click_row" href="citizen">
+                  <td style="padding-left:15px;" class="">Lucas Morgan</td>
+                  <td><span class="tag pan">pan</span></td>
+                  <td>Problems walking</td>
+                  <td class="nobr numeric">2nd June 2016</td>
+                  <td class="nobr numeric"> </td>
+                </tr>
+
+                <tr class="click_row" href="citizen">
+                  <td style="padding-left:15px;" class=""> Ana Isabel Cruz</td>
+                  <td><span class="tag deaf">deaf</span></td>
+                  <td>Epilepsy</td>
+                  <td class="nobr numeric">2nd June 2016</td>
+                  <td class="nobr numeric"> </td>
+                </tr>
+
+                <tr class="click_row" href="citizen">
+                  <td style="padding-left:15px;" class="">Berat Karagöz</td>
+                  <td><span class="tag self">self</span></td>
+                  <td>Poor hearing</td>
+                  <td class="nobr numeric">2nd June 2016</td>
+                  <td class="nobr numeric">Lamia Baron</td>
+                </tr>
+
+                <tr class="click_row" href="citizen">
+                  <td style="padding-left:15px;" class="">Taha Sağlam</td>
+                  <td><span class="tag hidden">hidden</span></td>
+                  <td>Severe lower back pain, leg pain and a prolapsed...</td>
+                  <td class="nobr numeric">1st June 2016</td>
+                  <td class="nobr numeric">Bruno Duval</td>
+                </tr>
+
+                <tr class="click_row" href="citizen">
+                  <td style="padding-left:15px;" class="">Mia Russell</td>
+                  <td><span class="tag large">large</span></td>
+                  <td>pseudoxanthoma elasticum </td>
+                  <td class="nobr numeric">1st June 2016</td>
+                  <td class="nobr numeric">Grégory Faure</td>
+                </tr>
+
+                <tr class="click_row" href="citizen">
+                  <td style="padding-left:15px;" class="">Aaron Murray</td>
+                  <td><span class="tag hidden">hidden</span></td>
+                  <td>Deaf British Sign Language user</td>
+                  <td class="nobr numeric">27th May 2016</td>
+                  <td class="nobr numeric">Katell Grondin</td>
+                </tr>
+
+                <tr class="click_row" href="citizen">
+                  <td style="padding-left:15px;" class="">Charlie Reid</td>
+                  <td><span class="tag hidden">hidden</span></td>
+                  <td>Sciatica</td>
+                  <td class="nobr numeric">25th May 2016</td>
+                  <td class="nobr numeric">Alexis Boulanger</td>
+                </tr>
+
+                <tr class="click_row" href="citizen">
+                  <td style="padding-left:15px;" class="">Laura Cooper</td>
+                  <td><span class="tag self">self</span></td>
+                  <td>Neck and wrist ache</td>
+                  <td class="nobr numeric">24th May 2016</td>
+                  <td class="nobr numeric">Julie Guichard</td>
+                </tr>
+
+                <tr class="click_row" href="citizen">
+                  <td style="padding-left:15px;" class="">Oliver Russell</td>
+                  <td><span class="tag large">large</span></td>
+                  <td>DYSLEXIA AND DYSCALCULIA</td>
+                  <td class="nobr numeric">16th March 2016</td>
+                  <td class="nobr numeric">Lamia Baron</td>
+                </tr>
+
+                <tr class="click_row" href="citizen">
+                  <td style="padding-left:15px;" class="">Víctor Castillo</td>
+                  <td><span class="tag hidden">hidden</span></td>
+                  <td>Dyslexia</td>
+                  <td class="nobr numeric">16th March 2016</td>
+                  <td class="nobr numeric">Julie Herve</td>
+                </tr>
+
+                <tr class="click_row" href="citizen">
+                  <td style="padding-left:15px;" class="">Tomás Moya</td>
+                  <td><span class="tag hidden">hidden</span></td>
+                  <td>Multiple Sclerosis</td>
+                  <td class="nobr numeric">25th February 2016</td>
+                  <td class="nobr numeric">Nolan Bailly</td>
+                </tr>
+
+              </table>
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

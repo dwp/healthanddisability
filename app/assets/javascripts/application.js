@@ -17,3 +17,13 @@ $(document).ready(function () {
   var showHideContent = new GOVUK.ShowHideContent()
   showHideContent.init()
 })
+
+$(document).on('ready',function()
+{
+  $('.click_row').on('click',function(e)
+  {
+    e.preventDefault();
+    var href = $(this).attr('href');
+    window.location.href = href;
+  });
+});
