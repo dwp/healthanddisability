@@ -1,0 +1,80 @@
+{% extends path+"/inc/layout.html" %}
+
+{% block left_col %}
+
+  <h1 class="heading-large">Patient conditions</h1>
+
+  <table class="table mb2">
+    <tr>
+      <th>Condition</th>
+      <th>Symptoms and signs</th>
+      <th>Managed</th>
+      <th>&nbsp;</th>
+    </tr>
+    <tr>
+      <td>Fybromyalgia</td>
+      <td>Pain all over the body</td>
+      <td>Diprozilene 5 times a day</td>
+      <td><a href="#">edit</a></td>
+    </tr>
+  </table>
+
+  <form class="form" method="post" action="patient_condition_3">
+
+    <h2 class="heading-large">Does your patient have any other conditions that could affect their work?</h2>
+
+    <div class="form-group">
+      <div class="multiple-choice" data-target="conditions_yes_extra">
+        <input id="conditions_yes" name="conditions" type="radio" value="Yes">
+        <label for="conditions_yes"> Yes </label>
+      </div>
+      <div class="multiple-choice">
+        <input id="conditions_no" name="conditions" type="radio" value="No, redirect(no_effect)">
+        <label for="conditions_no"> No </label>
+      </div>
+
+      <div class="panel js-hidden" id="conditions_yes_extra">
+        <div class="form-group">
+          <label class="form-label-bold" for="condition">Condition</label>
+          <input class="form-control" id="condition" type="text" name="condition">
+        </div><!-- form-group -->
+        <div class="form-group">
+          <label class="form-label-bold" for="symptoms">Symptoms and signs</label>
+          <textarea class="form-control" id="symptoms" name="symptoms" style="height:100px"></textarea>
+        </div><!-- form-group -->
+        <div class="form-group">
+          <label class="form-label-bold" for="managed">How the condition is managed including medication</label>
+          <textarea class="form-control" id="managed" name="managed" style="height:100px"></textarea>
+        </div><!-- form-group -->
+      </div><!-- panel -->
+
+    </div>
+
+    <div class="form-group mth">
+      <input type="submit" class="button" value="Continue" />
+    </div><!-- form-group -->
+
+  </form>
+
+{% endblock %}
+
+{% block footer_support_links %}
+    <ul>
+      <li> <a href="#" id="fill">Fill</a> </li>
+    </ul>
+{% endblock %}
+
+{% block page_scripts %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('#fill').on('click',function(e)
+    {
+      e.preventDefault();
+      $('#condition').val("Measles");
+      $('#symptoms').val("Itchy spots");
+      $('#managed').val("Camomile lotion");
+    });
+  });
+</script>
+{% endblock %}

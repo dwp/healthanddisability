@@ -1,0 +1,70 @@
+{% extends path+"/inc/layout.html" %}
+
+{% block left_col %}
+
+  <h1 class="heading-large">Patient details</h1>
+
+  <form class="form" method="post" action="patient_condition">
+
+    <div class="form-group">
+      <label class="form-label" for="full-name-f1">Full name</label>
+      <input class="form-control" id="full-name-f1" type="text" name="full-name-f1">
+    </div>
+
+    <div class="form-group">
+      <fieldset>
+        <legend class="form-label-bold" id="date-of-birth-legend">Date of birth</legend>
+        <div class="form-date">
+          <!-- <p class="form-hint">For example, 08 4 2014.</p> -->
+          <div class="form-group form-group-day">
+            <label for="dob-day">Day</label>
+            <input type="text" class="form-control" id="dob-day" name="you-dob-day" aria-required="true">
+          </div>
+          <div class="form-group form-group-month">
+            <label for="dob-month">Month</label>
+            <input type="text" class="form-control" id="dob-month" name="you-dob-month" aria-required="true">
+          </div>
+          <div class="form-group form-group-year">
+            <label for="dob-year">Year</label>
+            <input type="text" class="form-control" id="dob-year" name="you-dob-year" aria-required="true">
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="full-name-f1">National Insurance Number</label>
+      <input class="form-control" id="full-name-f1" type="text" name="full-name-f1">
+    </div>
+
+    <div class="form-group">
+      <fieldset>
+        <legend class="form-label-bold">Address</legend>
+        <div class="form-group two-tier">
+          <label class="form-label" for="address1">Building or Street</label>
+          <input type="text" id="address1" name="address1" value="" class="form-control">
+          <label class="form-label hidden" for="address2" style="position:absolute;left:-999px">Building or Street line 2</label>
+          <input type="text" id="address2" name="address2" value="" class="form-control second-level" style="margin-top:8px">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="address3">Town or City</label>
+          <input type="text" id="address3" name="address3" value="" class="form-control">
+        </div>
+
+        <div>
+          <label class="form-label" for="postCode">Postcode</label>
+          <input type="text" id="postCode" name="postCode" value="" class="form-control">
+        </div>
+      </fieldset>
+    </div>
+
+
+
+    <div class="form-group mth">
+      <input type="submit" class="button" value="Continue" />
+    </div><!-- form-group -->
+
+
+  </form>
+
+{% endblock %}
