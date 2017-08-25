@@ -1,0 +1,22 @@
+{% extends "govuk_template_unbranded.html" %}
+
+{% block head %}
+  <link href="/public/stylesheets/vouch_v1.css" media="screen" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+  <div class="phase-banner"><p>
+    <strong class="phase-tag">PROTOTYPE</strong>
+    <span>This is a test site - if you've arrived at this page by mistake, go to <a href="/feedback">GOV.UK</a></span>
+  </p></div>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      {% block left_col %}{% endblock %}
+    </div><!-- column -->
+    <div class="column-third">
+
+    </div><!-- column -->
+  </div><!-- row -->
+</main>
+{% endblock %}

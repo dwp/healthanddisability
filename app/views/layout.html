@@ -4,6 +4,8 @@
   {% include "includes/head.html" %}
 {% endblock %}
 
+{% block page_title %}{{ serviceName or '' }} - Health &amp; Disability - DWP{% endblock %}
+
 {% block cookie_message %}
   <p>{{cookieText | safe }}</p>
 {% endblock %}

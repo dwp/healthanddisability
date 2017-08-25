@@ -1,0 +1,132 @@
+{% extends path+"/inc/layout.html" %}
+
+{% set serviceName = "Apply for a health benefit" %}
+
+{% block left_col %}
+
+  <h1 class="heading-large">You wrote:</h1>
+
+  <p class="panel">"I had a stroke 2 years ago and lost the use of my left arm, I also have arthritis in my other wrist. This makes it hard for me to pick things up, especially small things like coins. Last week I tried to pour myself a drink from a carton that my husband had opened. I managed to pick it up but had a shooting pain in my wrist and dropped the carton on the floor. The juice went everywhere and I had to wait for my husband to come home to clean it up.
+
+  <h2 class="heading-medium">Who would be the best person for us to speak to about this?</h2>
+
+  <form class="form" method="post" action="question2">
+
+    <div class="form-group">
+      <label class="form-label" for="their_name">Their name</label>
+      <input class="form-control" id="their_name" type="text" name="their_name">
+    </div><!-- form-group -->
+
+    <div class="form-group">
+      <label class="form-label" for="their_job">Their job</label>
+      <input class="form-control" id="their_job" type="text" name="their_job">
+    </div><!-- form-group -->
+
+    <fieldset>
+      <legend class="heading-medium" style="margin-bottom:0;">How can they be contacted?</legend>
+      <p>Select as many as you like.</p>
+      <div class="form-group">
+
+        <!-- EMAIL -->
+        <div class="multiple-choice" data-target="them-email-ask">
+          <input id="email" name="contact" type="checkbox" value="email">
+          <label for="email">Email</label>
+        </div>
+        <fieldset class="js-hidden" id="them-email-ask">
+          <div class="form-group panel-indent panel">
+            <label class="form-label" for="email-address">Email address</label>
+            <input class="form-control" id="email-address" name="you-email-address" type="text" aria-required="true">
+          </div>
+        </fieldset>
+
+        <!-- PHONE -->
+        <div class="multiple-choice" data-target="them-phone-ask">
+          <input id="phone" name="contact" type="checkbox" value="email">
+          <label for="phone">Phone call</label>
+        </div>
+        <fieldset class="js-hidden" id="them-phone-ask">
+          <div class="form-group panel-indent panel">
+            <label class="form-label" for="telephone-number">Phone number</label>
+            <!-- <p class="form-hint">Enter a landline, mobile or textphone number.</p> -->
+            <input class="form-control" name="you-telephone-number" type="text" aria-required="true">
+          </div>
+        </fieldset>
+
+        <!-- TEXT MESSAGAE -->
+        <div class="multiple-choice" data-target="them-text-ask">
+          <input id="sms" name="contact" type="checkbox" value="email">
+          <label for="sms">Text message</label>
+        </div>
+        <fieldset class="js-hidden" id="them-text-ask">
+          <div class="form-group panel-indent panel">
+            <label class="form-label" for="telephone-number">Phone number</label>
+            <input class="form-control" name="you-telephone-number" type="text" aria-required="true">
+          </div>
+        </fieldset>
+
+        <!-- TEXT MESSAGAE -->
+        <div class="multiple-choice" data-target="them-letter-ask">
+          <input id="letter" name="contact" type="checkbox" value="email">
+          <label for="letter">Letter</label>
+        </div>
+        <fieldset class="js-hidden" id="them-letter-ask">
+          <div class="form-group panel-indent panel">
+            <div class="form-group">
+              <fieldset>
+                <legend class="form-label-bold">Address</legend>
+                <div class="form-group two-tier">
+                  <label class="form-label" for="address1">Building or Street</label>
+                  <input type="text" id="address1" name="address1" value="" class="form-control">
+                  <label class="form-label hidden" for="address2" style="position:absolute;left:-999px">Building or Street line 2</label>
+                  <input type="text" id="address2" name="address2" value="" class="form-control second-level" style="margin-top:8px">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="address3">Town or City</label>
+                  <input type="text" id="address3" name="address3" value="" class="form-control">
+                </div>
+                <div>
+                  <label class="form-label" for="postCode">Postcode</label>
+                  <input type="text" id="postCode" name="postCode" value="" class="form-control">
+                </div>
+              </fieldset>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="relationship">What's your relationship with this person?</label>
+        <input class="form-control" id="relationship" name="relationship" type="text">
+      </div>
+    </fieldset>
+
+    <div class="form-group mth">
+      <input type="submit" class="button" value="Continue" />
+    </div><!-- form-group -->
+
+  </form>
+
+{% endblock %}
+
+{% block footer_support_links %}
+    <ul>
+      <li> <a href="#" id="fill">Fill</a> </li>
+    </ul>
+{% endblock %}
+
+{% block page_scripts %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('#fill').on('click',function(e)
+    {
+      e.preventDefault();
+      $('#their_name').val("Marjorie Pimlico");
+      $('#their_job').val("Solicitor");
+      $('#email').prop("checked","checked");
+      $('#them-email-ask').removeClass("js-hidden");
+      $('#relationship').val("My social worker");
+    });
+  });
+</script>
+{% endblock %}

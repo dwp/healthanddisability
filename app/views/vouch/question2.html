@@ -1,0 +1,54 @@
+{% extends path+"/inc/layout.html" %}
+
+{% set serviceName = "Apply for a health benefit" %}
+
+{% block left_col %}
+
+  <h1 class="heading-large">Do you find it hard to pick up objects?</h1>
+
+  <form class="form" method="post" action="playback">
+
+    <div class="form-group">
+      <div class="multiple-choice" data-target="walkmove_yes_extra">
+        <input id="walkmove_yes" name="walkmove" type="radio" value="Yes">
+        <label for="walkmove_yes"> Yes, I find it hard pick up objects</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="walkmove_no" name="walkmove" type="radio" value="No, redirect(no_effect)">
+        <label for="walkmove_no"> No, I can pick up objects OK </label>
+      </div>
+    </div>
+
+    <div class="panel js-hidden" id="walkmove_yes_extra">
+      <label class="form-label" for="textarea">
+        Why do you have problems picking up objects?
+      </label>
+      <textarea class="form-control form-control-3-4" name="textarea" id="textarea" rows="5"></textarea>
+    </div>
+
+    <div class="form-group mth">
+      <input type="submit" class="button" value="Continue" />
+    </div><!-- form-group -->
+
+  </form>
+
+{% endblock %}
+
+{% block footer_support_links %}
+    <ul>
+      <li> <a href="#" id="fill">Fill</a> </li>
+    </ul>
+{% endblock %}
+
+{% block page_scripts %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('#fill').on('click',function(e)
+    {
+      e.preventDefault();
+      $('#textarea').val("I had a stroke 2 years ago and lost the use of my left arm, I also have arthritis in my other wrist. This makes it hard for me to pick things up, especially small things like coins. Last week I tried to pour myself a drink from a carton that my husband had opened. I managed to pick it up but had a shooting pain in my wrist and dropped the carton on the floor. The juice went everywhere and I had to wait for my husband to come home to clean it up.");
+    });
+  });
+</script>
+{% endblock %}
