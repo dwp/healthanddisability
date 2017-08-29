@@ -4,24 +4,24 @@
 
 {% block left_col %}
 
-  <h1 class="heading-large">Do you find it hard to pick up objects?</h1>
+  <h1 class="heading-large">Do you find it hard to reach for things?</h1>
 
-  <form class="form" method="post" action="playback">
+  <form class="form" method="post" action="playback2">
 
     <div class="form-group">
       <div class="multiple-choice" data-target="walkmove_yes_extra">
         <input id="walkmove_yes" name="walkmove" type="radio" value="Yes">
-        <label for="walkmove_yes"> Yes, I find it hard pick up objects</label>
+        <label for="walkmove_yes"> Yes, I find it hard to reach for things </label>
       </div>
       <div class="multiple-choice">
-        <input id="walkmove_no" name="walkmove" type="radio" value="No, redirect(no_effect)">
-        <label for="walkmove_no"> No, I can pick up objects OK </label>
+        <input id="walkmove_no" name="walkmove" type="radio" value="No">
+        <label for="walkmove_no"> No, I can reach for things fine </label>
       </div>
     </div>
 
     <div class="panel js-hidden" id="walkmove_yes_extra">
       <label class="form-label" for="textarea">
-        Why do you have problems picking up objects?
+        Why do you have problems reaching for things?
       </label>
       <textarea class="form-control form-control-3-4" name="textarea" id="textarea" rows="5"></textarea>
     </div>
@@ -34,20 +34,15 @@
 
 {% endblock %}
 
-{% block footer_support_links %}
-    <ul>
-      <li> <a href="#" id="fill">Fill</a> </li>
-    </ul>
-{% endblock %}
-
 {% block page_scripts %}
+{{ super() }}
 <script type="text/javascript">
   $(document).on('ready',function()
   {
     $('#fill').on('click',function(e)
     {
       e.preventDefault();
-      $('#textarea').val("I had a stroke 2 years ago and lost the use of my left arm, I also have arthritis in my other wrist. This makes it hard for me to pick things up, especially small things like coins. Last week I tried to pour myself a drink from a carton that my husband had opened. I managed to pick it up but had a shooting pain in my wrist and dropped the carton on the floor. The juice went everywhere and I had to wait for my husband to come home to clean it up.");
+      $('#textarea').val("I have limited movement in my shoulders and can't reach to take things out of the cupboards. My husband leaves me a sandwich on a plate on the work surface for my lunch. He also has to brush my hair for me every day. If I try to do it myself it's too painful. I've had my hair cut short so that it's easier for my husband to brush.");
     });
   });
 </script>

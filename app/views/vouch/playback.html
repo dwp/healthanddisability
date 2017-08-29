@@ -108,13 +108,8 @@
 
 {% endblock %}
 
-{% block footer_support_links %}
-    <ul>
-      <li> <a href="#" id="fill">Fill</a> </li>
-    </ul>
-{% endblock %}
-
 {% block page_scripts %}
+{{ super() }}
 <script type="text/javascript">
   $(document).on('ready',function()
   {
@@ -125,7 +120,8 @@
       $('#their_job').val("Solicitor");
       $('#email').prop("checked","checked");
       $('#them-email-ask').removeClass("js-hidden");
-      $('#relationship').val("My social worker");
+      $('#email-address').val("mjpimboyee@googlemail.com")
+      $('#relationship').val("My solicitor");
     });
   });
 </script>

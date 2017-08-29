@@ -39,3 +39,22 @@ $path: "/public/images/";
     color: #fff;
   }
 }
+.phonescreen {
+  box-sizing: border-box;
+  font-size:12px;
+  padding:10px;
+  font-family:monospace;
+  overflow:auto;
+  background-color:#AADDAA;
+}
+.verify-logo {
+  height: 50px;
+  float: left;
+  margin-right: 10px;
+}
+.box {
+  background-color:$grey-2;
+  padding:10px;
+  p {margin:0}
+  margin-bottom:$gutter;
+}

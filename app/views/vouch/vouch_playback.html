@@ -1,0 +1,50 @@
+{% extends path+"/inc/layout.html" %}
+
+{% set serviceName = "Apply for a health benefit" %}
+
+{% block left_col %}
+
+<form class="form" method="post" action="vouch_declaration">
+
+  <h1 class="heading-large">Joan Citizen wrote:</h1>
+
+  <p class="panel">"I had a stroke 2 years ago and lost the use of my left arm, I also have arthritis in my other wrist. This makes it hard for me to pick things up, especially small things like coins. Last week I tried to pour myself a drink from a carton that my husband had opened. I managed to pick it up but had a shooting pain in my wrist and dropped the carton on the floor. The juice went everywhere and I had to wait for my husband to come home to clean it up.
+
+  <h2 class="heading-medium">Is this right?</h2>
+
+  <div class="form-group">
+    <div class="multiple-choice">
+      <input id="walkmove_yes" name="walkmove" type="radio" value="Yes">
+      <label for="walkmove_yes"> Yes, I can confirm this reflects the truth about Joan</label>
+    </div>
+    <div class="multiple-choice" data-target="more_information">
+      <input id="walkmove_no" name="walkmove" type="radio" value="No, redirect(no_effect)">
+      <label for="walkmove_no"> No, this isn't entirely true</label>
+    </div>
+    <div class="multiple-choice" data-target="no_help">
+      <input id="walkmove_dontknow" name="walkmove" type="radio" value="No, redirect(no_effect)">
+      <label for="walkmove_dontknow"> I'm not able to confirm or refute this </label>
+    </div>
+  </div>
+
+  <div class="panel js-hidden" id="more_information">
+    <label class="form-label" for="textarea">
+      How is this not true? Can you explain what the truth really is?
+    </label>
+    <textarea class="form-control form-control-3-4" name="textarea" id="textarea" rows="5"></textarea>
+  </div>
+
+  <div class="panel js-hidden" id="no_help">
+    <label class="form-label" for="textarea">
+      Explain why you're unable to help with this at this time.
+    </label>
+    <textarea class="form-control form-control-3-4" name="textarea" id="textarea" rows="5"></textarea>
+  </div>
+
+  <div class="form-group mth">
+    <input type="submit" class="button" value="Continue" />
+  </div><!-- form-group -->
+
+</form>
+
+{% endblock %}

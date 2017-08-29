@@ -1,0 +1,34 @@
+{% extends path+"/inc/layout.html" %}
+
+{% block left_col %}
+
+<h1 class="form-title heading-large" id="declaration">Declaration</h1>
+
+<form method="post" class="form" action="vouch_finish" >
+
+  <input type="hidden" name="page_name" value="delcaration"/>
+
+  <fieldset>
+    <legend class="form-label-bold dec-legend" id="app">By sending this you agree that:</legend>
+
+    <div class="form-group">
+      <ul class="list-bullet" aria-labelledby="app">
+        <li>you are telling the truth about the people mentioned</li>
+        <li>you are telling the truth about your ability to judge these things</li>
+        <li>you are not being coerced, bribed or in any way induced to fill this in </li>
+      </ul>
+
+      <div class="help-notice mt1">
+        <p>It might be a criminal offence if you knowingly give false information or don't report anything that would affect these matters.</p>
+      </div>
+    </div>
+
+  </fieldset>
+
+  <fieldset class="primary-nav form-group">
+    <button class="button" name="agreed" value="true">I agree - send this report</button>
+  </fieldset>
+
+</form>
+
+{% endblock %}

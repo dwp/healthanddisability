@@ -1,0 +1,23 @@
+{% extends path+"/inc/layout.html" %}
+
+{% block left_col %}
+
+<h1 class="form-title heading-xlarge">Vouch for someone</h1>
+
+<p>This service allows you to help people you know to access support from government by confirming that the things they've told us are true.</p>
+
+<form method="post" class="form" action="post_app" >
+
+  <h2 class="heading-medium">First you need to confirm your identity</h2>
+  <p>You can <a href="/check-your-state-pension/signin/verify" data-journey-click="checkmystatepension:landing:verifylink">sign in using GOV.UK Verify</a>. If you have not used GOV.UK Verify before, it will take you about 15 minutes to get set up. You can access other government services securely wherever you see the GOV.UK Verify logo.</p>
+  <div class="verify-block mb1">
+      <img src='/public/images/verify_logo.png' class="verify-logo" alt='GOV.UK Verify' />
+      <strong>GOV.UK</strong>
+      <br/>
+      verify
+  </div>
+  <p><a href="vouch_intro" class="button">Continue</a></p>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends path+"/inc/layout.html" %}
+
+{% set serviceName = "Apply for a health benefit" %}
+
+{% block left_col %}
+
+<form class="form" method="post" action="vouch_playback">
+
+  <h1 class="heading-large">Vouch for Joan Citizen</h1>
+
+  <div class="box">
+    <p class="bold-medium mb0">Joan Citizen</p>
+    <p>
+      1 Forthwith Avenue<br />
+      Baines<br />
+      Randlehopkirk<br />
+      LD23 6HT<br />
+    </p>
+  </div>
+
+  <p class="">You will be shown statements which Joan wrote and you will be asked to verify whether the statements are truth or false.</p>
+  <p>You will be able to say if you feel you can't answer either way.</p>
+
+  <h2 class="heading-medium">Do you know about Joan and her situation?</h2>
+  <div class="form-group">
+    <div class="multiple-choice">
+      <input id="walkmove_yes" name="walkmove" type="radio" value="Yes">
+      <label for="walkmove_yes"> Yes, I'm happy to continue </label>
+    </div>
+    <div class="multiple-choice">
+      <input id="walkmove_no" name="walkmove" type="radio" value="No">
+      <label for="walkmove_no"> No, I don't know this person</label>
+    </div>
+  </div>
+
+  <div class="form-group mth" id="continue">
+    <input type="submit" class="button" value="Continue" />
+  </div><!-- form-group -->
+
+</form>
+
+{% endblock %}

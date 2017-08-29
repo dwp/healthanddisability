@@ -1,0 +1,24 @@
+{% extends path+"/inc/layout_blank.html" %}
+
+{% block left_col %}
+
+  <h1 class="heading-medium">Design Notes</h1>
+  <p>The people appointed by the user would then recieve a message.</p>
+
+  <div class="illustration mb1" style="background-image:url(/public/images/phonehand.jpg);width:460px;height:598px;position:relative">
+    <div class="phonescreen" style="position:absolute;top:93px;left:210px;width:177px;height:272px">
+      <p>Hi Marjorie Pimlico,</p>
+      <p>This is a message from DWP.</p>
+      <p>You have been put forward by Joan Citizen as someone who could confirm some details about Joan to enable us to process her application for support quicker.</p>
+      <p>If you can do this follow the link below.</p>
+      <p>Lots of love</p>
+      <p>DWP</p>
+      <p>ps. here's the link!</p>
+      <p style="overflow-wrap: break-word;word-wrap: break-word;"><a href="vouch_identify">http://www.dwp.gov.uk/vouchforsomeone/fg3h543ghf987fgsd/</a></p>
+    </div>
+  </div>
+
+
+  <p><a href="vouch_identify" class="">Continue</a></p>
+
+{% endblock %}

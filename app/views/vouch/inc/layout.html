@@ -22,3 +22,21 @@
   </div><!-- row -->
 </main>
 {% endblock %}
+
+{% block footer_support_links %}
+    <ul> <li> <a href="#" id="fill">Fill</a> </li> </ul>
+{% endblock %}
+
+{% block page_scripts %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $(document).on('keypress',function(e)
+    {
+      e.preventDefault()
+      console.log(e.keyCode)
+      if (e.keyCode == 402) $('#fill').trigger('click')
+    })
+  });
+</script>
+{% endblock %}

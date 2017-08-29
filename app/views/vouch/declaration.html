@@ -1,0 +1,34 @@
+{% extends path+"/inc/layout.html" %}
+
+{% block left_col %}
+
+<h1 class="form-title heading-large" id="declaration">Declaration</h1>
+
+
+      <form method="post" class="form" action="post_app" >
+
+        <input type="hidden" name="page_name" value="delcaration"/>
+
+        <fieldset>
+          <legend class="form-label-bold dec-legend" id="app">By sending this application you agree that:</legend>
+
+          <div class="form-group">
+            <ul class="list-bullet" aria-labelledby="app">
+              <li>the information in this application is correct as far as you know</li>
+              <li>you'll tell the Department for Work and Pensions about any changes to your condition or circumstances, eg if your place of work changes</li>
+            </ul>
+
+            <div class="help-notice mt1">
+              <p>It might be a criminal offence if you knowingly give false information or don't report anything that would affect your grant, eg if your condition improves or you change where you work.</p>
+            </div>
+          </div>
+
+        </fieldset>
+
+        <fieldset class="primary-nav form-group">
+          <button class="button" name="agreed" value="true">I agree - send this report</button>
+        </fieldset>
+
+      </form>
+
+{% endblock %}
