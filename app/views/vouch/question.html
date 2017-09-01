@@ -1,21 +1,21 @@
 {% extends path+"/inc/layout.html" %}
 
-{% set serviceName = "Apply for a health benefit" %}
+{% set serviceName = "Apply for support that you need because of your health" %}
 
 {% block left_col %}
 
-  <h1 class="heading-large">Do you find it hard to pick up objects?</h1>
+  <h1 class="heading-large">Do you find it difficult to pick up and move objects?</h1>
 
   <form class="form" method="post" action="playback">
 
     <div class="form-group">
       <div class="multiple-choice" data-target="walkmove_yes_extra">
         <input id="walkmove_yes" name="walkmove" type="radio" value="Yes">
-        <label for="walkmove_yes"> Yes, I find it hard pick up objects</label>
+        <label for="walkmove_yes"> Yes, I find it hard to pick up some things and move them</label>
       </div>
       <div class="multiple-choice">
         <input id="walkmove_no" name="walkmove" type="radio" value="No">
-        <label for="walkmove_no"> No, I can pick up objects OK </label>
+        <label for="walkmove_no"> No, I have no problems pciking up and moving things </label>
       </div>
     </div>
 
