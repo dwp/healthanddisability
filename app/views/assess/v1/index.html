@@ -1,28 +1,8 @@
-{% extends path+"/inc/layout.html" %}
+{% extends path+"/_layout.html" %}
 
-{% block content %}
+{% block assess_content %}
 
-<div class="nav-horizontal">
-  <div class="main-nav-wrapper">
-    <ul class="main-nav">
-      <li id="nav-home" class="selected">
-        <a href="search">Your cases</a>
-      </li>
-      <li id="nav-home">
-        <a href="search">Evidence</a>
-      </li>
-    </ul>
-  </div>
-  <div class="external-links-wrapper">
-    {# <ul class="external-links">
-      <li class="main-nav-link"><a href="upload">Upload data</a></li>
-      <span class="pipe">|</span>
-      <li class="main-nav-link"><a href="batch">Create a batch</a></li>
-    </ul> #}
-  </div>
-</div>
-
-<main id="content" role="main" class="main-content">
+<main id="content" role="main" class="main-content mt30">
 
       <div class="container">
         <div class="grid-row">
@@ -41,7 +21,7 @@
 
 
                 <tr class="click_row" href="citizen">
-                  <td style="padding-left:15px;" class="">Adem Tosun</td>
+                  <td style="padding-left:15px;" class="">Tony Hancock</td>
                   <td><span class="tag deaf">deaf</span></td>
                   <td>Autism </td>
                   <td class="nobr numeric">3rd June 2016</td>

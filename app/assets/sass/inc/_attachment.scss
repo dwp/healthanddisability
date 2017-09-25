@@ -1,0 +1,43 @@
+.attachment .attachment-thumb {
+  float: left;
+  margin-top: 5px;
+  margin-right: 30px;
+  padding-bottom: 15px;
+}
+
+.attachment .attachment-thumb img {
+  display: block;
+  width: 99px;
+  height: 140px;
+  background: white;
+  outline: 5px solid rgba(11, 12, 12, 0.1);
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+.attachment .attachment-details .title {
+  font-size: 27px;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.clearfix {
+  display: inline-block;
+}
+
+/* start commented backslash hack \*/
+* html .clearfix {
+  height: 1%;
+}
+
+.clearfix {
+  display: block;
+}

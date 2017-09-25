@@ -220,6 +220,7 @@ if (typeof (routes) !== 'function') {
   console.log('Warning: the use of bind in routes is deprecated - please check the prototype kit documentation for writing routes.')
   routes.bind(app)
 } else {
+  app.use('/assess/v1/', require('./app/views/assess/v1/_routes.js'))
   app.use('/', routes)
 }
 

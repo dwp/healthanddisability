@@ -1,0 +1,72 @@
+{% extends path+"/citizen/case/_layout.html" %}
+
+{% block case_nav_left %}{{ case_nav('onlineapp') }}{% endblock %}
+
+{% block case_content %}
+
+  <p class="form-hint mb0 mt30">12th July 2017</p>
+  <h2 class="heading-xlarge mt0" id="onlineapp">Application</h2>
+
+  <h3 class="heading-large">During Work</h3>
+  <table>
+    <tr>
+      <td class="bold nobr">How is your job harder?</td>
+      <td class="cust_info">I find it difficult to be able to get into work. Because of my condition I cannot be around people so getting to work on Public Transport is something I cannot do. I get anxiety and if this isn't addressed quickly I can become agitataed and sometimes violent.</td>
+    </tr>
+    <tr>
+      <td class="bold nobr">What do you do now?</td>
+      <td class="cust_info no-answer">{{ case.job_what_do_now | default("Not answered")}}</td>
+    </tr>
+    <tr>
+      <td class="bold nobr">What do you want?</td>
+      <td class="cust_info">To travel to work by Taxi so avoiding Public Transport and not being put in a position where I can be a harm to myslef and others</td>
+    </tr>
+  </table>
+
+  <h3 class="heading-large">Travel</h3>
+  <h3 class="heading-medium">The are currently using:</h3>
+  <table>
+    <tr>
+      <td class="nobr">
+        <span class="bold-small">Train or tube</span><br />
+        (3 times a week)
+      </td>
+      <td class="cust_info">Some text describing why the citizen can't continue to use this form of transport. Proin ac ipsum tincidunt, scelerisque nulla ut, tincidunt augue. Cras vel mollis lorem. Sed scelerisque accumsan euismod. Donec elit nisl, congue finibus varius at, dignissim in tortor. Suspendisse quis eros et arcu condimentum mattis quis eget nisi. Duis finibus, orci et sollicitudin vulputate, lorem sapien gravida tellus, a feugiat lacus ante sed mi. Proin posuere justo imperdiet mauris cursus maximus. </td>
+    </tr>
+    <tr>
+      <td class="nobr">
+        <span class="bold-small">Jet Pack</span><br />
+        (3 times a week)
+      </td>
+      <td class="cust_info">Some text describing why the citizen can't continue to use this form of transport. Proin ac ipsum tincidunt, scelerisque nulla ut, tincidunt augue. Cras vel mollis lorem. Sed scelerisque accumsan euismod. Donec elit nisl, congue finibus varius at, dignissim in tortor. Suspendisse quis eros et arcu condimentum mattis quis eget nisi. Duis finibus, orci et sollicitudin vulputate, lorem sapien gravida tellus, a feugiat lacus ante sed mi. Proin posuere justo imperdiet mauris cursus maximus. </td>
+    </tr>
+  </table>
+
+  <h3 class="heading-medium">They couldn't start using:</h3>
+  <table>
+    <tr>
+      <td class="nobr">
+        <span class="bold-small">Car, Lift or Taxi</span><br />
+        (3 times a week)
+      </td>
+      <td class="cust_info">Some text describing why the citizen can't continue to use this form of transport. Proin ac ipsum tincidunt, scelerisque nulla ut, tincidunt augue. Cras vel mollis lorem. Sed scelerisque accumsan euismod. Donec elit nisl, congue finibus varius at, dignissim in tortor. Suspendisse quis eros et arcu condimentum mattis quis eget nisi. Duis finibus, orci et sollicitudin vulputate, lorem sapien gravida tellus, a feugiat lacus ante sed mi. Proin posuere justo imperdiet mauris cursus maximus. </td>
+    </tr>
+    <tr>
+      <td class="nobr">
+        <span class="bold-small">Walking or cycling</span><br />
+        (3 times a week)
+      </td>
+      <td class="cust_info">Some text describing why the citizen can't continue to use this form of transport. Proin ac ipsum tincidunt, scelerisque nulla ut, tincidunt augue. Cras vel mollis lorem. Sed scelerisque accumsan euismod. Donec elit nisl, congue finibus varius at, dignissim in tortor. Suspendisse quis eros et arcu condimentum mattis quis eget nisi. Duis finibus, orci et sollicitudin vulputate, lorem sapien gravida tellus, a feugiat lacus ante sed mi. Proin posuere justo imperdiet mauris cursus maximus. </td>
+    </tr>
+  </table>
+
+  <h3 class="heading-medium mb0">They didn't say whether they can use:</h3>
+  <p class="heading-large mt5">Bus or Tram</p>
+
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{% include path+"/citizen/case/footer_links.html" %}
+{% endblock %}

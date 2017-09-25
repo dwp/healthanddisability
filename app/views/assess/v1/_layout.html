@@ -1,0 +1,72 @@
+{% extends "admin_layout.html" %}
+
+{% block page_title %} {{ serviceName }} {% endblock %}
+
+{% block head %}
+  <link href="/public/stylesheets/assess_v1.css" media="screen" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block inside_header %}
+  <div class="header-logo" style="position:relative;top:3px">
+    <a href="/" id="logo" class="content dwplogo"> DWP </a>
+  </div>
+{% endblock %}
+
+{% block proposition_header %}
+  <div class="header-proposition">
+    <div class="content">
+      <nav id="proposition-menu">
+        <a href="/" id="proposition-name">{{ serviceName }}</a>
+      </nav>
+    </div>
+  </div>
+{% endblock %}
+
+{% block header_class %} with-proposition{% endblock %}
+
+{% block body_end %}
+  <!-- Javascript -->
+  <script src="/public/javascripts/details.polyfill.js"></script>
+  <script src="/public/javascripts/jquery-1.11.3.js"></script>
+  <script src="/public/javascripts/govuk/selection-buttons.js"></script>
+  <script src="/public/javascripts/govuk/shim-links-with-button-role.js"></script>
+  <script src="/public/javascripts/govuk/show-hide-content.js"></script>
+  <script src="/public/javascripts/application.js"></script>
+  {% block page_scripts %}{% endblock %}
+{% endblock %}
+
+{% block content %}
+  {{ horizontal_nav('cases') }}
+  {% block assess_content %}{% endblock %}
+{% endblock %}
+
+{% macro horizontal_nav(selected) %}
+<div class="nav-horizontal">
+  <div class="main-nav-wrapper">
+    <ul class="main-nav">
+
+    {#
+      These are the different horizonal nav
+      tabs output by the following "for" loop.
+    #}
+    {% set navs = [
+      {url:"cases",label:"Your cases"},
+      {url:"team",label:"Your team"},
+      {url:"unallocated",label:"Unallocated"},
+      {url:"search",label:"Search"}
+      ] %}
+
+    {% for item in navs %}
+      <li id="nav-{{ item.url }}" {% if item.url == selected %} class="selected" {% endif %}><a href="/{{ path }}/{{ item.url }}">{{ item.label }}</a></li>
+    {% endfor %}
+
+    </ul>
+  </div>
+  <div class="external-links-wrapper">
+    <ul class="external-links">
+      <li class="main-nav-link" style="margin-right:20px"><a href="/{{ path }}/all-teams">All teams</a></li>
+      <li class="main-nav-link"><a href="/{{ path }}/all-advisers">All advisers</a></li>
+    </ul>
+  </div>
+</div>
+{% endmacro %}

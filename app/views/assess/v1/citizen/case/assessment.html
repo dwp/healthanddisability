@@ -1,0 +1,25 @@
+{% extends path+"/citizen/case/_layout.html" %}
+
+{% block case_nav_left %}{{ case_nav('assessment') }}{% endblock %}
+
+{% block case_content %}
+
+  <p class="mb0 mt30">5pm – 12th July 2017</p>
+  <h2 class="heading-large mt0" id="onlineapp">Assessment Report</h2>
+  <div class="attachment clearfix" style="margin-top:30px;">
+  <div class="attachment-thumb">
+      <a aria-hidden="true" class="thumbnail" href="/public/pdfs/assessment.pdf"><img alt="" src="/public/images/assessment.png"></a>
+  </div>
+  <div class="attachment-details">
+    <h2 class="title"><a  href="/public/pdfs/assessment.pdf">Oliver Reed - Workplace Assessment Report</a></h2>
+    <p class="metadata">
+        <span class="type"><abbr title="Portable Document Format">PDF</abbr></span>,
+        <span class="file-size">5.34MB</span>
+        (in DRS)
+    </p>
+    <p class="mb0">Provider: <a href="#">RBNLI</a></p>
+    <p>Assessor: <a href="#">Frith Sidebottom</a></p>
+  </div>
+  </div>
+
+{% endblock %}

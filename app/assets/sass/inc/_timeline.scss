@@ -66,15 +66,24 @@
   }
 }
 
-.timeline .timeline-event {
+.timeline .timeline__event {
   float: right;
   width: 94%;
   overflow: hidden;
 }
 
 @media (min-width: 641px) {
-  .timeline .timeline-event {
+  .timeline .timeline__event {
     margin-bottom: 30px;
     width: 96%;
   }
+}
+
+.timeline__heading {
+  @include bold-24;
+  margin-bottom:0;
+}
+.timeline_datetime {
+  color:$grey-1;
+  margin-top:2px;
 }
