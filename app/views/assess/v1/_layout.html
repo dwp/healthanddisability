@@ -50,10 +50,7 @@
       tabs output by the following "for" loop.
     #}
     {% set navs = [
-      {url:"cases",label:"Your cases"},
-      {url:"team",label:"Your team"},
-      {url:"unallocated",label:"Unallocated"},
-      {url:"search",label:"Search"}
+      {url:"cases",label:"Your cases"}
       ] %}
 
     {% for item in navs %}
@@ -64,8 +61,8 @@
   </div>
   <div class="external-links-wrapper">
     <ul class="external-links">
-      <li class="main-nav-link" style="margin-right:20px"><a href="/{{ path }}/all-teams">All teams</a></li>
-      <li class="main-nav-link"><a href="/{{ path }}/all-advisers">All advisers</a></li>
+      {# <li class="main-nav-link" style="margin-right:20px"><a href="/{{ path }}/all-teams">All teams</a></li>
+      <li class="main-nav-link"><a href="/{{ path }}/all-advisers">All advisers</a></li> #}
     </ul>
   </div>
 </div>

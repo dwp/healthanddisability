@@ -4,9 +4,28 @@
 
 {% block case_content %}
 
-      <p class="form-hint mb0 mt30">12th July 2017</p>
+      <p class="form-hint mb0">12th July 2017</p>
       <h2 class="heading-xlarge mt0" id="onlineapp">Application</h2>
-      <h3 class="heading-large">During Work</h3>
+
+      <h3 class="heading-large">Medical conditions</h3>
+
+      <ul class="list list-bullet">
+        <li>Fybromyalgia (since {{ "Do MMMM YYYY" | monthsAgo(12) }})</li>
+        <li>Measles</li>
+        <li>Mumps</li>
+      </ul>
+
+      <h3 class="heading-large">Medical conditions</h3>
+
+      <ul class="list list-bullet">
+        <li>Fybromyalgia</li>
+        <li>Measles</li>
+        <li>Mumps</li>
+      </ul>
+
+
+
+
       <table>
         <tr>
           <td class="bold nobr">How is your job harder?</td>

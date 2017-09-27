@@ -221,6 +221,7 @@ if (typeof (routes) !== 'function') {
   routes.bind(app)
 } else {
   app.use('/assess/v1/', require('./app/views/assess/v1/_routes.js'))
+  app.use('/vouch/', require('./app/views/vouch/_routes.js'))
   app.use('/', routes)
 }
 

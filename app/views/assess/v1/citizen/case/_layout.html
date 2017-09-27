@@ -33,7 +33,7 @@
 {% endblock %}
 
 {% macro case_nav(active,extra) %}
-  <p class="mt30 mb10">Evidence collected so far:</p>
+  <p class="mb10">Evidence collected so far:</p>
   <ul class="case_nav mt0">
     {# isActive() is a "Filter" found in app/filters.js #}
     {% if extra %}
@@ -49,7 +49,7 @@
       ] %}
 
     {% for item in navs %}
-      <li {% if item.url == active %} class="active"{% endif %}><a href="/{{ path }}/citizen/case/{{ item.url }}">{{ item.label }}</a></li>
+      <li {% if item.url == active %} class="active"{% endif %}><a href="/{{ path }}/citizen/case/{{ item.url }}">{{ item.label }}</a> </li>
     {% endfor %}
   </ul>
 {% endmacro %}
