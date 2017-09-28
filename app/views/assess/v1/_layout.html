@@ -36,7 +36,7 @@
 {% endblock %}
 
 {% block content %}
-  {{ horizontal_nav('cases') }}
+  {{ horizontal_nav('') }}
   {% block assess_content %}{% endblock %}
 {% endblock %}
 
@@ -50,7 +50,7 @@
       tabs output by the following "for" loop.
     #}
     {% set navs = [
-      {url:"cases",label:"Your cases"}
+      {url:"",label:"Your cases"}
       ] %}
 
     {% for item in navs %}

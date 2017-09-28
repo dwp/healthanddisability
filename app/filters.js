@@ -1,4 +1,5 @@
 var moment = require('moment')
+var loremIpsum = require('lorem-ipsum')
 
 module.exports = function (env) {
   /**
@@ -16,10 +17,29 @@ module.exports = function (env) {
   }
 
   filters.monthsAgo = function(format,num) {
-      var d = moment().subtract(num,"months").format(format);
-      if (d !== 'Invalid date') return d;
-      else return '';
+      console.log(num)
+      var d = moment().subtract(num,"months").format(format)
+      if (d !== 'Invalid date') return d
+      else return ''
   }
+
+  filters.daysAgo = function(format,num) {
+      console.log(num)
+      var d = moment().subtract(num,"days").format(format)
+      if (d !== 'Invalid date') return d
+      else return ''
+  }
+
+  filters.lorum = function(pars) {
+      var str = loremIpsum({
+        count: pars,
+        units: "paragraphs",
+        format: 'plain',
+        suffix: "<br />"
+      })
+      return lowerFirstLetter(str);
+  }
+
 
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
@@ -56,4 +76,8 @@ module.exports = function (env) {
     keep the following line to return your filters to the app
   ------------------------------------------------------------------ */
   return filters
+}
+
+function lowerFirstLetter(string) {
+  return string.charAt(0).toLowerCase() + string.slice(1);
 }

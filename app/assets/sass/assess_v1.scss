@@ -127,17 +127,39 @@ td,th {
 
 .staff__heading {
   background-color: #005ea5;
-  padding: 30px 40px 10px;
+  padding: 20px 40px 0;
   color: white;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .staff__heading .staff__centred {
 
 }
 
+.nav,
 .case_nav {
-  // li { border-bottom:1px solid red; }
+  margin-top:30px;
+  li {
+    a {
+      position:relative;
+      display:block;
+      background-color:$grey-3;
+      padding:7px 0 5px 10px;
+      margin-bottom:5px;
+    }
+    &.active a {
+      background-color:$govuk-blue;
+      color:white;
+      text-decoration:none;
+      &:after {
+        content:">";
+        position:absolute;
+        top:9px; right:10px;
+        color:white;
+        font-weight:bold;
+      }
+    }
+  }
   .date {
     // float:right;
     margin-left:10px;
@@ -145,4 +167,18 @@ td,th {
     margin-top:5px;
     color:$grey-1;
   }
+}
+
+.list .date {
+  // font-size:16px;
+  color:$grey-1;
+}
+.meds {
+  td {
+    vertical-align: top;
+  }
+}
+.quote {
+  padding:10px 30px;
+  text-indent:-0.4em;
 }

@@ -1,0 +1,16 @@
+{% extends path+"/citizen/app/_layout.html" %}
+
+{% block app_nav %}{{ app_nav('standing') }}{% endblock %}
+
+{% block case_content %}
+
+  <h3 class="heading-large mt10">Standing &amp; sitting</h3>
+
+  <p>
+    Tony is unable to move from one seat to another right next to it without help from someone else?
+  </p>
+
+  <p class="mb0"><span class="bold-small">Tony says:</span></p>
+  <p class="mt0 font-medium quote"> “I am not able to {{ 1 | lorum | safe }}” </p>
+
+{% endblock %}

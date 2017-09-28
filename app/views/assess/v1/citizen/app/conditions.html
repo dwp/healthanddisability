@@ -1,0 +1,20 @@
+{% extends path+"/citizen/app/_layout.html" %}
+
+{% block app_nav %}{{ app_nav('conditions') }}{% endblock %}
+
+{% block case_content %}
+
+      <h3 class="heading-large mt10">Medical conditions</h3>
+      <ul class="list list-bullet">
+        <li>Fybromyalgia <span class="date">(since {{ "MMMM YYYY" | monthsAgo(3) }})</span></li>
+        <li>Measles <span class="date">(since {{ "MMMM YYYY" | monthsAgo(24) }})</span></li>
+        <li>Mumps <span class="date">(since {{ "MMMM YYYY" | monthsAgo(56) }})</span></li>
+      </ul>
+
+      <h3 class="heading-large">Condition history</h3>
+      <p>My condition has been {{ 1 | lorum | safe }}</p>
+
+      <h3 class="heading-large">Social &amp; Occupational History</h3>
+      <p>Mainly I've always had to {{ 1 | lorum | safe }}</p>
+
+{% endblock %}

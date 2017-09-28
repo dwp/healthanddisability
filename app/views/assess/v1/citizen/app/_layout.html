@@ -1,0 +1,58 @@
+{% extends path+"/citizen/_layout.html" %}
+
+{% block citizen_content %}
+  <div class="container">
+    {{ case_tabs("app/conditions",1) }}
+    <div class="grid-row">
+      <div class="column-third">
+          {% block case_nav_left %}
+            <h2 class="heading-xlarge mt0 mb0" id="onlineapp">ESA50</h2>
+            <p class="form-hint mb0">Recieved: {{ "Do MMMM YYYY" | daysAgo(12) }}</p>
+            {% block app_nav %}{% endblock %}
+          {% endblock %}
+      </div><!-- column -->
+      <div class="column-two-thirds">
+          {% block case_content %}{% endblock %}
+      </div><!-- column-full -->
+    </div><!-- grid-row -->
+  </div><!-- container -->
+{% endblock %}
+
+{% macro app_nav(active,extra) %}
+  {% set navs = [
+    {url:"conditions",label:"Conditions & history"}
+   ,{url:"medications",label:"Medications & side effects"}
+   ,{url:"typicalday",label:"Typical day"}
+   ] %}
+  <ul class="nav mt30">
+    {% for item in navs %}
+      <li {% if item.url == active %} class="active"{% endif %}><a href="/{{ path }}/citizen/app/{{ item.url }}">{{ item.label }}</a> </li>
+    {% endfor %}
+  </ul>
+
+  <ul class="nav mt30">
+    {% set navs = [
+       {url:"mobility",label:"Mobility"}
+      ,{url:"standing",label:"Standing & sitting"}
+      ,{url:"reaching",label:"Reaching"}
+      ,{url:"pickingup",label:"Picking up & moving"}
+      ,{url:"dexterity",label:"Manual dexterity"}
+      ,{url:"speakwritetype",label:"Speaking, writing & typing "}
+      ,{url:"hearread",label:"Hearing & reading"}
+      ,{url:"gettingaround",label:"Getting around safely"}
+      ,{url:"continence",label:"Controlling bowels & bladder"}
+      ,{url:"conscious",label:"Staing conscious when awake"}
+      ,{url:"learning",label:"Learning how to do tasks"}
+      ,{url:"hazards",label:"Awareness of hazards"}
+      ,{url:"startfinish",label:"Starting and finishing tasks"}
+      ,{url:"changes",label:"Coping with changes"}
+      ,{url:"goingout",label:"Going out"}
+      ,{url:"social",label:"Coping with social situations"}
+      ,{url:"behaving",label:"Behaving appropriately"}
+      ,{url:"eatdrink",label:"Eating or drinking"}
+      ] %}
+    {% for item in navs %}
+      <li {% if item.url == active %} class="active"{% endif %}><a href="/{{ path }}/citizen/app/{{ item.url }}">{{ item.label }}</a> </li>
+    {% endfor %}
+  </ul>
+{% endmacro %}
