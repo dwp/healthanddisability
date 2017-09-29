@@ -37,11 +37,13 @@
 
 {% block content %}
   {{ horizontal_nav('') }}
+  <div nunj-block="assess_content">
   {% block assess_content %}{% endblock %}
+  </div>
 {% endblock %}
 
 {% macro horizontal_nav(selected) %}
-<div class="nav-horizontal">
+<div class="nav-horizontal" nunj-macro="horizontal_nav">
   <div class="main-nav-wrapper">
     <ul class="main-nav">
 
