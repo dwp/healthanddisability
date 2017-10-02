@@ -17,14 +17,12 @@ module.exports = function (env) {
   }
 
   filters.monthsAgo = function(format,num) {
-      console.log(num)
       var d = moment().subtract(num,"months").format(format)
       if (d !== 'Invalid date') return d
       else return ''
   }
 
   filters.daysAgo = function(format,num) {
-      console.log(num)
       var d = moment().subtract(num,"days").format(format)
       if (d !== 'Invalid date') return d
       else return ''
