@@ -4,7 +4,8 @@
 
 <div class="container">
 
-  {{ case_tabs("timeline",1) }} {# this is a macro: pass the name of the selected item and the number for the url. Code in inc/layout_case.html #}
+  {# macro #}
+  {{ nav.case_tabs("timeline",1,path) }}
 
   <div class="grid-row">
 

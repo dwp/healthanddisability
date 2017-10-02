@@ -2,56 +2,23 @@
 
 {% block assess_content %}
 
-  <div class="staff__heading">
-    <div class="staff__centred">
-      <h2 class="heading-xlarge" style="margin:0 0 10px">Tony Hancock</h2>
-      <div class="grid-row">
-        <div class="column-quarter">
-          <p><span class="font-xsmall">National Insurance Number</span><br /><span class="bold-medium">QQ 53 12 35 C </span></p>
-        </div>
-        <div class="column-quarter">
-          <p><span class="font-xsmall">Birthday</span><br /><span class="bold-medium">15th October 1994 </span></p>
-        </div>
-        <div class="column-quarter">
-          <p><span class="font-xsmall">Condition</span><br /><span class="bold-medium">Autism </span></p>
-        </div>
-        <div class="column-quarter">
-          <p><span class="font-xsmall">Special Requirements</span><br /><span class="bold-medium">None </span></p>
-        </div>
-      </div>
-    </div>
-  </div>
+  {#  This is the BIG BLUE BAR at the top - #jussayin #}
+  {% include path+"/citizen/_staff_heading.html" %}
 
   <main id="content" role="main" class="main-content">
 
-        <div class="container">
-          <div class="grid-row">
-            <div class="column-full">
+    <div class="container">
+      <div class="grid-row">
+        <div class="column-full">
 
-              <div nunj-block="citizen_content">
-                {% block citizen_content %}{% endblock %}
-              </div>
+          <div nunj-block="citizen_content">
+            {% block citizen_content %}{% endblock %}
+          </div>
 
-            </div><!-- column -->
-          </div><!-- row -->
-        </div><!-- container -->
+        </div><!-- column -->
+      </div><!-- row -->
+    </div><!-- container -->
 
   </main>
 
 {% endblock %}
-
-{% macro case_tabs(selected,num) %}
-  <div class="section-tabs js-tabs clearfix mb20">
-    <ul>
-      {% set navs = [
-        {url:"timeline",label:"Timeline"},
-        {url:"details",label:"Details"},
-        {url:"app/conditions",label:"Evidence"},
-        {url:"decision",label:"Decision"}
-        ] %}
-      {% for item in navs %}
-        <li {% if item.url == selected %} class="active"{% endif %}><a href="/{{ path }}/citizen/{{ item.url }}">{{ item.label }}</a></li>
-      {% endfor %}
-    </ul>
-  </div>
-{% endmacro %}

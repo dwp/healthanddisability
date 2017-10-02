@@ -4,12 +4,8 @@
 
 <div class="container">
 
-  {#
-    this is a macro: pass the name of the selected item
-    and the number for the url.
-    Code in inc/layout_case.html
-  #}
-  {{ case_tabs("details",1) }}
+  {# macro #}
+  {{ nav.case_tabs("details",1,path) }}
 
   <div class="grid-row mt30">
 
