@@ -167,6 +167,17 @@ td,th {
     margin-top:5px;
     color:$grey-1;
   }
+  &.disabled li a {
+    background-color:$grey-2;
+    color:white;
+    text-decoration:none;
+    &:hover {
+      background-color:$grey-1;
+    }
+  }
+  &.disabled li.active a {
+    background-color:$grey-1;
+  }
 }
 
 .list .date {

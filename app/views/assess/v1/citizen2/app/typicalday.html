@@ -1,0 +1,12 @@
+{% extends path+"/citizen2/app/_layout.html" %}
+
+{% block app_nav %}{{ nav.app_nav('typicalday',path) }}{% endblock %}
+
+{% block case_content %}
+
+  <h3 class="heading-large mt10">Typical day</h3>
+  <p>For me, a typical day would consiste of {{ 4 | lorum | safe }}</p>
+
+{% endblock %}
+
+{% block app_score %}{% endblock %}

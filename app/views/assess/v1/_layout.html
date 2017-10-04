@@ -1,5 +1,4 @@
 {% extends "admin_layout.html" %}
-{% import path+"/_macros_nav.html" as nav %}
 
 {% block page_title %} {{ serviceName }} {% endblock %}
 
@@ -37,8 +36,36 @@
 {% endblock %}
 
 {% block content %}
-  {{ nav.horizontal_nav('',path) }}
+  {{ horizontal_nav('',path) }}
   <div nunj-block="assess_content">
   {% block assess_content %}{% endblock %}
   </div>
 {% endblock %}
+
+{% macro horizontal_nav(selected,path) %}
+  <div class="nav-horizontal" nunj-macro="horizontal_nav">
+    <div class="main-nav-wrapper">
+      <ul class="main-nav">
+
+      {#
+        These are the different horizonal nav
+        tabs output by the following "for" loop.
+      #}
+      {% set navs = [
+        {url:"",label:"Your cases"}
+        ] %}
+
+      {% for item in navs %}
+        <li id="nav-{{ item.url }}" {% if item.url == selected %} class="selected" {% endif %}><a href="/{{ path }}/{{ item.url }}">{{ item.label }}</a></li>
+      {% endfor %}
+
+      </ul>
+    </div>
+    <div class="external-links-wrapper">
+      <ul class="external-links">
+        {# <li class="main-nav-link" style="margin-right:20px"><a href="/{{ path }}/all-teams">All teams</a></li>
+        <li class="main-nav-link"><a href="/{{ path }}/all-advisers">All advisers</a></li> #}
+      </ul>
+    </div>
+  </div>
+{% endmacro %}

@@ -1,0 +1,28 @@
+{% macro case_tabs(selected,num,path) %}
+  <div class="section-tabs js-tabs clearfix mb20">
+    <ul>
+      {% set navs = [
+        {url:"timeline",label:"Timeline"},
+        {url:"details",label:"Details"},
+        {url:"app/conditions",label:"Evidence"},
+        {url:"decision",label:"Decision"}
+        ] %}
+      {% for item in navs %}
+        <li {% if item.url == selected %} class="active"{% endif %}><a href="/{{ path }}/citizen3/{{ item.url }}">{{ item.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endmacro %}
+
+{% macro app_nav(active,path) %}
+
+  {% set navs = [
+    {url:"conditions",label:"Conditions & history"}
+   ] %}
+  <ul class="nav mt30">
+    {% for item in navs %}
+      <li {% if item.url == active %} class="active"{% endif %}><a href="/{{ path }}/citizen3/app/{{ item.url }}">{{ item.label }}</a> </li>
+    {% endfor %}
+  </ul>
+
+{% endmacro %}
