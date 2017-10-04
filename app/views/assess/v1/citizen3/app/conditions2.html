@@ -9,11 +9,15 @@
         <li>Cancer</li>
       </ul>
 
-      <div class="form-group mt30" style="font-family:monospace">
-        <p class="mb10">Malignant tumur of breast</p>
-        <p class="mb10">(disorder)</p>
-        <p class="mb10">254837009</p>
-        <p class="mb10">diagnosed: {{ "MMMM YYYY" | monthsAgo(3) }}</p>
+      <div class="form-group mt30 medical_evidence">
+        <div id="loading" class="loading">Fetching medical data:<br /><img src="/public/images/loading.svg" /></div>
+        <div id="medical_data" class="js-hidden">
+          <h2 class="heading-medium mt10">Medical data</h2>
+          <p class="mb10">Malignant tumur of breast</p>
+          <p class="mb10">(disorder)</p>
+          <p class="mb10">254837009</p>
+          <p class="mb10">diagnosed: {{ "MMMM YYYY" | monthsAgo(3) }}</p>
+        </div>
       </div><!-- form-group -->
 
 
@@ -23,3 +27,16 @@
 {% endblock %}
 
 {% block app_score %}{% endblock %}
+
+{% block page_scripts %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    setTimeout(function()
+    {
+      $('#medical_data').removeClass("js-hidden");
+      $('#loading').hide();
+    },3000);
+  });
+</script>
+{% endblock %}

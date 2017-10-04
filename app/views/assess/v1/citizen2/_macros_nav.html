@@ -17,16 +17,14 @@
 {% macro app_nav(active,path) %}
   {% set navs = [
     {url:"conditions",label:"Conditions & history"}
-   ,{url:"medications",label:"Medications & side effects"}
-   ,{url:"typicalday",label:"Typical day"}
    ] %}
-  <ul class="nav mt30">
+  <ul class="nav">
     {% for item in navs %}
       <li {% if item.url == active %} class="active"{% endif %}><a href="/{{ path }}/citizen2/app/{{ item.url }}">{{ item.label }}</a> </li>
     {% endfor %}
   </ul>
 
-  <ul class="nav mt30">
+  <ul class="nav">
     {% set navs = [
        {url:"mobility",label:"Mobility"}
       ,{url:"standing",label:"Standing & sitting"}
@@ -40,7 +38,7 @@
     {% endfor %}
   </ul>
 
-  <ul class="nav mt30 disabled">
+  <ul class="nav disabled">
     {% set navs = [
        {url:"reaching",label:"Reaching"}
       ,{url:"pickingup",label:"Picking up & moving"}
