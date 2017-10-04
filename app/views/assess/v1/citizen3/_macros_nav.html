@@ -21,7 +21,7 @@
    ] %}
   <ul class="nav mt30">
     {% for item in navs %}
-      <li {% if item.url == active %} class="active"{% endif %}><a href="/{{ path }}/citizen3/app/{{ item.url }}">{{ item.label }}</a> </li>
+      <li {% if item.url == active %} class=""{% endif %}><a href="/{{ path }}/citizen3/app/{{ item.url }}">{{ item.label }}</a> </li>
     {% endfor %}
   </ul>
 

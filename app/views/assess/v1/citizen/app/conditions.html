@@ -1,4 +1,4 @@
-{% extends path+"/citizen/app/_layout.html" %}
+{% extends path+"/citizen/app/_layout_disabled.html" %}
 
 {% block app_nav %}{{ nav.app_nav('conditions',path) }}{% endblock %}
 
@@ -11,11 +11,30 @@
         <li>Mumps <span class="date">(since {{ "MMMM YYYY" | monthsAgo(56) }})</span></li>
       </ul>
 
-      <h3 class="heading-large">Condition history</h3>
-      <p>My condition has been {{ 1 | lorum | safe }}</p>
-
-      <h3 class="heading-large">Social and occupational history</h3>
-      <p>Mainly I've always had to {{ 1 | lorum | safe }}</p>
+      <h3 class="heading-large">Medication &amp; side effects</h3>
+      <table class="meds">
+        <tr>
+          <td>
+            <p class="bold-small">Acetaminophen</p>
+            <p class="font-xsmall">350mg<br /> 3 times a day</p>
+          </td>
+          <td>{{ 1 | lorum | safe }}</td>
+        </tr>
+        <tr>
+          <td>
+            <p class="bold-small">Amoxicillin</p>
+            <p class="font-xsmall">750mg<br /> 5 times a day</p>
+          </td>
+          <td>{{ 1 | lorum | safe }}</td>
+        </tr>
+        <tr>
+          <td>
+            <p class="bold-small">Azithromycin</p>
+            <p class="font-xsmall">1mg<br /> 1 time a year</p>
+          </td>
+          <td>{{ 1 | lorum | safe }}</td>
+        </tr>
+      </table>
 
 {% endblock %}
 

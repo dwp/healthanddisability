@@ -1,0 +1,24 @@
+{% extends path+"/citizen/_layout.html" %}
+{% import path+"/_macros_nav.html" as nav %}
+
+{% block citizen_content %}
+
+  <div class="container">
+
+    {# macro #}
+    {{ nav.case_tabs("app/conditions",1,path) }}
+
+    <div class="grid-row">
+      <div class="column-third">
+          {% block case_nav_left %}
+            <h2 class="heading-xlarge mt0 mb0" id="onlineapp">Application</h2>
+            <p class="form-hint mb0">Recieved: {{ "Do MMMM YYYY" | daysAgo(12) }}</p>
+            {% block app_nav %}{% endblock %}
+          {% endblock %}
+      </div><!-- column -->
+      <div class="column-two-thirds">
+          {% block case_content %}{% endblock %}
+      </div><!-- column-full -->
+    </div><!-- grid-row -->
+  </div><!-- container -->
+{% endblock %}
