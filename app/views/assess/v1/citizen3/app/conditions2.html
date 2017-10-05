@@ -10,13 +10,29 @@
       </ul>
 
       <div class="form-group mt30 medical_evidence">
-        <div id="loading" class="loading">Fetching medical data:<br /><img src="/public/images/loading.svg" /></div>
+        <div id="loading" class="loading"><span>Connecting to GP system...</span><br /><img src="/public/images/loading.svg" /></div>
         <div id="medical_data" class="js-hidden">
-          <h2 class="heading-medium mt10">Medical data</h2>
-          <p class="mb10">Malignant tumur of breast</p>
-          <p class="mb10">(disorder)</p>
-          <p class="mb10">254837009</p>
-          <p class="mb10">diagnosed: {{ "MMMM YYYY" | monthsAgo(3) }}</p>
+          <div class="grid-row">
+            <div class="column-half">
+              <h2 class="heading-medium mt10">Medical data</h2>
+              <p class="mb10">Malignant tumur of breast</p>
+              <p class="mb10">(disorder)</p>
+              <p class="mb10">254837009</p>
+              <p class="mb10">diagnosed: {{ "MMMM YYYY" | monthsAgo(3) }}</p>
+            </div><!-- column -->
+            <div class="column-half">
+              <p>From:</p>
+              <p style="font-weight:700" class="mb5">Dr. Terry Beecherman</p>
+              <p>
+                <span>Cottage Road Surgery</span><br />
+                <span>Wendleborough</span><br />
+                <span>East Fishbourne</span><br />
+                <span>EF2 7YT</span><br />
+              </p>
+            </div><!-- column -->
+          </div><!-- row -->
+
+
         </div>
       </div><!-- form-group -->
 
@@ -34,9 +50,19 @@
   {
     setTimeout(function()
     {
+      $('#loading span').text("Requesting medical data...");
+    },2000);
+
+    setTimeout(function()
+    {
+      $('#loading span').text("Downloading report...");
+    },4000);
+
+    setTimeout(function()
+    {
       $('#medical_data').removeClass("js-hidden");
       $('#loading').hide();
-    },3000);
+    },6000);
   });
 </script>
 {% endblock %}

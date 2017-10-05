@@ -11,14 +11,15 @@
     <div class="grid-row">
       <div class="column-third">
           {% block case_nav_left %}
+            <p class="small_label">LAST UPDATE:</p>
             <h2 class="heading-xlarge mt0 mb0" id="onlineapp">Claimant statement</h2>
-            <p class="form-hint mb0">Recieved: {{ "Do MMMM YYYY" | daysAgo(12) }}</p>
+            <p class="mb0 font-xsmall">({{ "Do MMMM YYYY" | daysAgo(12) }})</p>
             {% block app_nav %}{% endblock %}
           {% endblock %}
       </div><!-- column -->
       <div class="column-two-thirds">
           {% block case_content %}{% endblock %}
-          {% include path + "/citizen/app/_form_ask.html" %}
+          {% block case_form %} {% include path + "/citizen/app/_form_ask.html" %} {% endblock %}
       </div><!-- column-full -->
     </div><!-- grid-row -->
   </div><!-- container -->
