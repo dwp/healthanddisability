@@ -3,7 +3,7 @@
     <ul>
       {% set navs = [
         {url:"timeline",label:"Timeline"},
-        {url:"details",label:"Details"},
+        {url:"details",label:"Contacts"},
         {url:"app/conditions",label:"Evidence"},
         {url:"decision",label:"Decision"}
         ] %}
@@ -44,8 +44,8 @@
 
 {% macro app_nav(active,path) %}
   {% set navs = [
-    {url:"conditions",label:"Conditions & medication"}
-   ,{url:"medications",label:"Medications & side effects"}
+    {url:"conditions",label:"Illnesses and disabilities"}
+   ,{url:"medications",label:"Medications and their side effects"}
    ,{url:"typicalday",label:"Typical day"}
    ] %}
   <ul class="nav mt30">
@@ -56,24 +56,24 @@
 
   <ul class="nav mt30">
     {% set navs = [
-       {url:"mobility",label:"Mobility"}
-      ,{url:"standing",label:"Standing & sitting"}
-      ,{url:"reaching",label:"Reaching"}
-      ,{url:"pickingup",label:"Picking up & moving"}
-      ,{url:"dexterity",label:"Manual dexterity"}
-      ,{url:"speakwritetype",label:"Speaking, writing & typing "}
-      ,{url:"hearread",label:"Hearing & reading"}
+       {url:"mobility",label:"Moving around and using steps"}
+      ,{url:"standing",label:"Standing and sitting"}
+      ,{url:"reaching",label:"Reaching for things"}
+      ,{url:"pickingup",label:"Picking up and moving things"}
+      ,{url:"dexterity",label:"Using your hands"}
+      ,{url:"speakwritetype",label:"Speaking, writing and typing"}
+      ,{url:"hearread",label:"Hearing and reading"}
       ,{url:"gettingaround",label:"Getting around safely"}
-      ,{url:"continence",label:"Controlling bowels & bladder"}
-      ,{url:"conscious",label:"Staing conscious when awake"}
-      ,{url:"learning",label:"Learning how to do tasks"}
-      ,{url:"hazards",label:"Awareness of hazards"}
-      ,{url:"startfinish",label:"Starting and finishing tasks"}
-      ,{url:"changes",label:"Coping with changes"}
+      ,{url:"continence",label:"Going to the toilet"}
+      ,{url:"conscious",label:"Losing consciousness"}
+      ,{url:"learning",label:"Learning and remembering how to do things"}
+      ,{url:"hazards",label:"Being aware of risks and dangers"}
+      ,{url:"startfinish",label:"Planning and completing things"}
+      ,{url:"changes",label:"How you cope when things change"}
       ,{url:"goingout",label:"Going out"}
-      ,{url:"social",label:"Coping with social situations"}
-      ,{url:"behaving",label:"Behaving appropriately"}
-      ,{url:"eatdrink",label:"Eating or drinking"}
+      ,{url:"social",label:"Meeting and speaking to people"}
+      ,{url:"behaving",label:"How your behaviour affects other people"}
+      ,{url:"eatdrink",label:"Eating and drinking"}
       ] %}
     {% for item in navs %}
       <li {% if item.url == active %} class="active"{% endif %}><a href="/{{ path }}/citizen/app/{{ item.url }}">{{ item.label }}</a> </li>
