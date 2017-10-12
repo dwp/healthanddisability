@@ -16,7 +16,9 @@
 
 {% macro app_nav(active,path) %}
   {% set navs = [
-    {url:"conditions",label:"Conditions and medication"}
+    {url:"conditions",label:"Conditions & medication"},
+    {url:"typicalday",label:"Typical Day"},
+    {url:"sococc_history",label:"Social & Occupational History"}
    ] %}
   <ul class="nav mt30">
     {% for item in navs %}

@@ -42,6 +42,13 @@
 
 {% endblock %}
 
+{% block case_nav_left %}
+  <p class="small_label">LAST UPDATE:</p>
+  <h2 class="heading-xlarge mt0 mb0" id="onlineapp">Medical evidence received</h2>
+  <p class="form-hint mb0 font-xsmall">({{ "Do MMMM YYYY" | daysAgo(12) }})</p>
+  {# {% block app_nav %}{% endblock %} #}
+{% endblock %}
+
 {% block app_score %}{% endblock %}
 
 {% block page_scripts %}
