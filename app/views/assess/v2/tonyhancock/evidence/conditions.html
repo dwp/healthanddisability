@@ -19,6 +19,10 @@
           </td>
           <td>{{ 1 | lorum | safe }}</td>
         </tr>
+      </table>
+      {% include path2+"/_descriptors.html" %}
+
+      <table class="meds">
         <tr>
           <td>
             <p class="bold-small">Amoxicillin</p>
@@ -26,6 +30,10 @@
           </td>
           <td>{{ 1 | lorum | safe }}</td>
         </tr>
+      </table>
+      {% include path2+"/_descriptors.html" %}
+
+      <table class="meds">
         <tr>
           <td>
             <p class="bold-small">Azithromycin</p>
@@ -34,10 +42,12 @@
           <td>{{ 1 | lorum | safe }}</td>
         </tr>
       </table>
+      {% include path2+"/_descriptors.html" %}
 
 {% endblock %}
 
 {% block page_scripts %}
+{{ super() }}
 <script type="text/javascript">
   $(document).on('ready',function()
   {

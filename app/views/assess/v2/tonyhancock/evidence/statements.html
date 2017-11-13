@@ -9,12 +9,16 @@
       <h3 class="heading-small mt5 mb0">Moving around and using steps</h3>
       <p class="mt0 quote">“I have arthritis in my right knee and hip, and also in both wrists. On a good day I can walk 100m slowly - I'd have to rest a couple of times though, as I'd be in pain. I can't use a stick or crutches or a wheelchair because the arthritis in my wrists means I can't grip and don't have much strength. On a bad day, I can just about get around my flat but would usually stay in bed so I don't have to move much.”</p>
       <h3 class="heading-small mt5 mb0">Going up or down 2 steps</h3>
-      <p class="mt0 quote mb0"> “I am not able to {{ 1 | lorum | safe }}” </p>
-      <p><span class="tag">mobility</span></p>
+      <p class="mt0 quote mb20"> “I am not able to {{ 1 | lorum | safe }}” </p>
+      <div class="given_descriptors">
+        <span class="tag">mobility</span>
+        <a data-fancybox data-src="#descriptor_choice" href="javascript:;">change</a>
+      </div>
 
 {% endblock %}
 
 {% block page_scripts %}
+{{ super() }}
 <script type="text/javascript">
   $(document).on('ready',function()
   {

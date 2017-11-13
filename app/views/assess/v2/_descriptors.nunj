@@ -18,10 +18,3 @@
   ,{url:"social",label:"Coping with social situations"}
   ,{url:"behaving",label:"Behaving appropriately"}
 ] %}
-
-{% macro list(length) %}
-  {% set descriptors = descriptors | randArray %}
-  {% for i in range(0,length) %}
-    <li>{{ descriptors[i].label}}</li>
-  {% endfor %}
-{% endmacro %}

@@ -65,6 +65,7 @@ td,th {
 .meds {
   td {
     vertical-align: top;
+    border:none;
   }
 }
 
@@ -103,11 +104,18 @@ td,th {
     left:100%; top:50%; transform:translate(0,-50%);
     background-color:$black;
   }
-  &:hover {
+  &.clicked {
     border-radius:5px 0px 0px 5px;
     .descriptors {
       display:block;
     }
   }
   li { white-space: nowrap; }
+}
+
+
+.given_descriptors {
+  margin-bottom:30px;
+  padding-bottom:30px;
+  border-bottom: 1px solid $grey-3;
 }

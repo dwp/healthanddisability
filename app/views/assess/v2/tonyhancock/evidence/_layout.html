@@ -62,3 +62,30 @@
   </div>
   {{ super() }}
 {% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.tag').on('click',function(e)
+    {
+      e.preventDefault();
+      $(this).toggleClass('clicked');
+    });
+
+    $('.tag').on('mouseleave',function(e)
+    {
+      e.preventDefault();
+      $(this).removeClass('clicked');
+    });
+
+    $.fancybox.defaults.beforeShow = function(){
+        $("html").css({'overflow-y':'hidden'});
+    };
+    $.fancybox.defaults.afterClose = function(){
+        $("html").css({'overflow-y':'visible'});
+    };
+  });
+</script>
+{% endblock %}
