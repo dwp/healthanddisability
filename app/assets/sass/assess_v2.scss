@@ -19,6 +19,9 @@ $path: "/public/images/";
 @import "inc/tabs";
 @import "inc/clearfix";
 @import "inc/attachment";
+@import "inc/click-row";
+@import "inc/help_handle";
+@import "inc/evidence";
 
 #global-header.with-proposition .header-wrapper .header-global {
   width: 17%;
@@ -28,30 +31,8 @@ $path: "/public/images/";
   width: 48%;
 }
 
-.left-aside {
-  padding-top:30px;
-  background-color:$grey-4;
-  padding:5px 10px;
-  @media (min-width: 641px) {
-    padding:30px;
-  }
-  // border-left:1px solid $grey-2;
-  // padding-left:1em;
-}
-.pipe {
-  position:relative;
-  display:inline-block;
-  color:$grey-1;
-  top:2px;
-  margin:0 5px;
-}
-.button--blue {
-  background-color:$govuk-blue;
-  box-shadow:0 2px 0 darken($govuk-blue,20);
-  &:hover {
-    background-color:darken($govuk-blue,6);
-  }
-}
+.nobr { white-space: nowrap; }
+
 td,th {
   &.first {
     padding-left:10px;
@@ -68,63 +49,6 @@ td,th {
   }
 }
 
-.button-add:link, .button-add:visited {
-  font-size: 18px;
-  background-color: #005ea5;
-  padding: 7px 10px 5px;
-  box-shadow: #00243f 0px 2px 0px 0px;
-}
-.cond {
-  width:62%;
-}
-
-.grey-box {
-  padding:15px 30px 20px;
-  margin-bottom:30px;
-  background-color:$grey-3;
-  input {
-    background-color:white;
-  }
-  .block-label.selection-button-checkbox::before {
-    background-color:white;
-  }
-  .panel {
-    // padding:5px 10px;
-    margin-bottom:10px;
-  }
-}
-
-.fright {
-  padding-top:45px;
-  float:right;
-}
-
-.done-highlight {
-  display:block;
-  margin:30px 0;
-  padding:8px 10px 5px;
-  color:$black;
-  background-color:$yellow;
-  p {margin:0}
-  .close-x {float:right}
-  &:hover {
-    cursor:pointer;
-    color:$black;
-    .close-x {color:white}
-  }
-}
-
-.click_row {
-  cursor: pointer;
-  transition: background-color 0.5s ease;
-}
-
-.click_row:hover {
-  background-color: #d8eeff !important;
-  outline: 2px solid #005ea5;
-}
-
-
 .staff__heading {
   background-color: #005ea5;
   padding: 20px 40px 0;
@@ -132,12 +56,7 @@ td,th {
   margin-bottom: 20px;
 }
 
-.staff__heading .staff__centred {
-
-}
-
-.nav,
-.case_nav {
+.nav {
   margin-bottom:30px;
   li {
     a {
@@ -185,59 +104,22 @@ td,th {
   // font-size:16px;
   color:$grey-1;
 }
+
 .meds {
   td {
     vertical-align: top;
   }
 }
+
 .quote {
   padding:10px 10px;
   text-indent:-0.4em;
 }
-.help__handle {
-  position:relative;
-  display:inline-block;
-  .help__content {
-    position:absolute;
-    left:100%; top:0;
-    width:250px; height:auto;
-    transform: translate(25px,-50%);
-    background:$grey-2;
-    padding:20px 20px 10px;
-    opacity:0;
-    transition: opacity 0.5s ease-out;
-    pointer-events: none;
-    border-radius:10px;
-    &:after {
-      content:'';
-      position:absolute;
-      top:50%;
-      right:100%;
-      width: 0;
-      height: 0;
-      $s:10px;
-      border-top: $s solid transparent;
-      border-right: $s*2 solid $grey-2;
-      border-bottom: $s solid transparent;
-    }
-  }
-  &:hover {
-    .help__content {
-      opacity:1;
-    }
-  }
 
+
+.form-control:focus { &::placeholder { color:white; }
 }
-.form-control:focus {
-  &::placeholder {
-    color:white;
-  }
-}
-.medical_evidence {
-  font-family:monospace;
-  background-color:$grey-3;
-  padding:10px 20px;
-}
+
 .loading {
   position:relative;
   color:$govuk-blue;
@@ -245,27 +127,6 @@ td,th {
   img {
 
   }
-}
-.small_label {
-  color:$grey-1;
-  margin:0 0 4px;
-}
-
-.evidence__item {
-  display:block;
-  text-decoration:none;
-  background-color:$grey-3;
-  padding:10px 50px 10px 20px;
-  border-bottom:2px solid $grey-2;
-  &.active {
-    background-color:$govuk-blue;
-    color:white !important;
-    p { color:white; }
-    background-image: url(/public/images/big_chevron.png);
-    background-repeat: no-repeat;
-    background-position: right 10px top 50%;
-  }
-  h3 { line-height:1; }
 }
 
 .nav li a {
@@ -291,24 +152,3 @@ td,th {
   padding-top: 6px;
   margin:0 10px 3px 0;
 }
-
-.evidence__box {
-  margin-bottom:20px;
-  .evidence__content {
-    position:relative;
-    padding:10px 20px;
-   }
-  .evidence__label {
-    color:white;
-    font-weight:700;
-    padding:10px 5px 5px 10px;
-  }
-}
-.evidence__box.citizen .evidence__content { background-color:mix(white, $light-blue, 90%); }
-.evidence__box.citizen .evidence__label { background-color:$light-blue; }
-
-.evidence__box.med_records .evidence__content { background-color:mix(white, $grass-green, 90%); }
-.evidence__box.med_records .evidence__label { background-color:$grass-green; }
-
-.evidence__box.gp_report .evidence__content { background-color:mix(white, $mellow-red, 90%); }
-.evidence__box.gp_report .evidence__label { background-color:$mellow-red; }

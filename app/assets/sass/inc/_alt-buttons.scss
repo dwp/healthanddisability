@@ -1,0 +1,14 @@
+.button--blue {
+  background-color:$govuk-blue;
+  box-shadow:0 2px 0 darken($govuk-blue,20);
+  &:hover {
+    background-color:darken($govuk-blue,6);
+  }
+}
+
+.button-add:link, .button-add:visited {
+  font-size: 18px;
+  background-color: #005ea5;
+  padding: 7px 10px 5px;
+  box-shadow: #00243f 0px 2px 0px 0px;
+}
