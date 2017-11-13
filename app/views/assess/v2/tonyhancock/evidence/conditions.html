@@ -1,13 +1,14 @@
-{% extends path+"/tonyhancock/evidence/_layout.html" %}
+{% extends path2+"/_layout.html" %}
 
 {% block case_content %}
 
       <h3 class="heading-large mt10">Illnesses and disabilities</h3>
-      <ul class="list list-bullet">
 
+      <ul class="list list-bullet">
         <li>Anxiety and depression <span class="date">(since {{ "MMMM YYYY" | monthsAgo(24) }})</span></li>
         <li>Autism diagnosis <span class="date">(since {{ "MMMM YYYY" | monthsAgo(124) }})</span></li>
       </ul>
+      {% include path2+"/_descriptors.html" %}
 
       <h3 class="heading-large">Medication &amp; side effects</h3>
       <table class="meds">
@@ -33,6 +34,7 @@
           <td>{{ 1 | lorum | safe }}</td>
         </tr>
       </table>
+
 {% endblock %}
 
 {% block page_scripts %}

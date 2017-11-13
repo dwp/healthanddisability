@@ -22,6 +22,7 @@ $path: "/public/images/";
 @import "inc/click-row";
 @import "inc/help_handle";
 @import "inc/evidence";
+@import "inc/nav";
 
 #global-header.with-proposition .header-wrapper .header-global {
   width: 17%;
@@ -56,50 +57,6 @@ td,th {
   margin-bottom: 20px;
 }
 
-.nav {
-  margin-bottom:30px;
-  li {
-    a {
-      // position:relative;
-      // display:block;
-      background-color:$grey-3;
-      padding:7px 0 5px 10px;
-      margin-bottom:5px;
-    }
-    &.active a {
-      background-color:$govuk-blue;
-      color:white;
-      text-decoration:none;
-      &:after {
-        content:">";
-        position:absolute;
-        top:9px; right:10px;
-        color:white;
-        font-weight:bold;
-      }
-    }
-  }
-  .date {
-    // float:right;
-    margin-left:10px;
-    font-size:12px;
-    margin-top:5px;
-    color:$grey-1;
-  }
-  &.disabled li a {
-    background-color:$grey-2;
-    color:white;
-    text-decoration:none;
-    &:hover {
-      background-color:$grey-1;
-    }
-  }
-  &.disabled li.active a {
-    background-color:$grey-1;
-    pointer-events: none;
-  }
-}
-
 .list .date {
   // font-size:16px;
   color:$grey-1;
@@ -129,26 +86,28 @@ td,th {
   }
 }
 
-.nav li a {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  text-decoration:none;
-  color:$black;
-  span { align-self: center; }
-}
-
-.nav li a .score {
-  box-sizing: border-box;
-  background-color: white;
-  width: 30px;
-  height: 30px;
-  margin-left: 1em;
-  text-align: center;
-  border-radius: 50%;
-  font-size: 16px;
-  font-weight: 700;
-  padding-top: 6px;
-  margin:0 10px 3px 0;
+.tag {
+  display:inline-block;
+  cursor: pointer;
+  position:relative;
+  background-color:$black;
+  color:white;
+  text-decoration: none;
+  padding:7px 10px 5px;
+  border-radius:5px;
+  margin-right:0.5em;
+  .descriptors {
+    display:none;
+    position:absolute;
+    padding:10px 20px 10px 10px;
+    left:100%; top:50%; transform:translate(0,-50%);
+    background-color:$black;
+  }
+  &:hover {
+    border-radius:5px 0px 0px 5px;
+    .descriptors {
+      display:block;
+    }
+  }
+  li { white-space: nowrap; }
 }

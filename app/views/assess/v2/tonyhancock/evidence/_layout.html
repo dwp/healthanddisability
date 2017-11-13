@@ -1,4 +1,4 @@
-{% extends path+"/tonyhancock/_layout.html" %}
+{% extends path1+"/_layout.html" %}
 
 {% block citizen_content %}
 
@@ -54,4 +54,11 @@
       </div><!-- column-full -->
     </div><!-- grid-row -->
   </div><!-- container -->
+{% endblock %}
+
+{% block body_end %}
+  <div id="descriptor_choice" style="display:none; max-height:76%">
+    {% include path2+"/_addremove.html" %}
+  </div>
+  {{ super() }}
 {% endblock %}

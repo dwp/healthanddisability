@@ -9,4 +9,11 @@ router.get('*', function (req, res, next) {
   next();
 })
 
+router.get('*', function (req, res, next) {  
+  var bits = req.params[0].substr(1).split('/');
+  res.locals.path1 = res.locals.path + "/" + bits[0]
+  res.locals.path2 = res.locals.path + "/" + bits[0] + "/" + bits[1]
+  next();
+})
+
 module.exports = router

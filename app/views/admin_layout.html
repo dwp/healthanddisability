@@ -31,7 +31,6 @@
 
   <body class="{% block body_classes %}{% endblock %}">
     {{ debug | log }}
-    {{ path | log }}
     <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
     {% block body_start %}{% endblock %}
