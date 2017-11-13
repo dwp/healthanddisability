@@ -28,10 +28,44 @@ module.exports = function (env) {
       else return ''
   }
 
+  filters.randMonthsAgo = function(format,num) {
+      var num = Math.ceil(Math.random()*num);
+      var d = moment().subtract(num,"months").format(format)
+      if (d !== 'Invalid date') return d
+      else return ''
+  }
+
+  filters.randDaysAgo = function(format,num) {
+      var num = Math.ceil(Math.random()*num);
+      var d = moment().subtract(num,"days").format(format)
+      if (d !== 'Invalid date') return d
+      else return ''
+  }
+
   filters.lorum = function(pars) {
       var str = loremIpsum({
         count: pars,
         units: "paragraphs",
+        format: 'plain',
+        suffix: "<br />"
+      })
+      return lowerFirstLetter(str);
+  }
+
+  filters.lorumsent = function(pars) {
+      var str = loremIpsum({
+        count: pars,
+        units: "sentences",
+        format: 'plain',
+        suffix: "<br />"
+      })
+      return lowerFirstLetter(str);
+  }
+
+  filters.lorumwords = function(pars) {
+      var str = loremIpsum({
+        count: pars,
+        units: "words",
         format: 'plain',
         suffix: "<br />"
       })

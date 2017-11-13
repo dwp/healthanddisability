@@ -1,0 +1,66 @@
+{% extends path+"/tonyhancock/decision/_layout.html" %}
+
+
+
+{% block decision_content %}
+
+  <h3 class="heading-large mt10">Mobility</h3>
+
+  <div class="evidence__box citizen">
+    <div class="evidence__label">From: ESA50</div>
+    <div class="evidence__content">
+      <p>Tony says he can move safely and repeatedly on level ground without needing to stop for:
+        <span class="bold-small">100 metres</span>
+      </p>
+      <h3 class="heading-small mt5 mb0">Moving around and using steps</h3>
+      {# <p class="mb0"><span class="bold-small">Tony says:</span></p> #}
+      <p class="mt0 quote">“I have arthritis in my right knee and hip, and also in both wrists. On a good day I can walk 100m slowly - I'd have to rest a couple of times though, as I'd be in pain. I can't use a stick or crutches or a wheelchair because the arthritis in my wrists means I can't grip and don't have much strength. On a bad day, I can just about get around my flat but would usually stay in bed so I don't have to move much.”</p>
+      <h3 class="heading-small mt5 mb0">Going up or down 2 steps</h3>
+      {# <p class="mb0"><span class="bold-small">Tony says:</span></p> #}
+      <p class="mt0 quote mb0"> “I am not able to {{ 1 | lorum | safe }}” </p>
+    </div>
+  </div>
+
+  <div class="evidence__box med_records">
+    <div class="evidence__label">From: Medical Records</div>
+    <div class="evidence__content">
+      Automated records check confirmed that Tony has: <span class="bold-small">Arthritis</span>, <span class="bold-small">Fybromyaliga</span> and <span class="bold-small">Dementia</span>.
+    </div>
+  </div>
+
+  <div class="evidence__box gp_report">
+    <div class="evidence__label">From: GP Report</div>
+    <div class="evidence__content">
+      <h4 class="heading-small mt5">Dr. Hilda Makeyouwell</h4>
+      <p>Suronge Surgery, Wimbledon, Hertfordshire</p>
+      <p class="mt0 quote mb0"> “I can confirm that the level and progression of Tony's arthritis is such that he cannot {{ 10 | lorumwords | safe }}” </p>
+    </div>
+  </div>
+
+  <div id="scored">
+    <hr />
+    <h2 class="heading-large">Mobility has been scored: 9</h2>
+    <p class="form-hint">You can change this is if you need to.</p>
+    <button class="button" id="change_score">Change score</button>
+  </div>
+
+  <div class="js-hidden" id="rescore">
+  {% block case_form %} {% include path + "/tonyhancock/evidence/_form_ask.html" %} {% endblock %}
+  </div>
+
+{% endblock %}
+
+{% block page_scripts %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('#change_score').on('click',function(e)
+    {
+      alert('fish');
+      e.preventDefault();
+      $('#scored').addClass('js-hidden');
+      $('#rescore').removeClass('js-hidden');
+    });
+  });
+</script>
+{% endblock %}

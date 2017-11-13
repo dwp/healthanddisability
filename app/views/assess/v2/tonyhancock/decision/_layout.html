@@ -1,0 +1,20 @@
+{% extends path+"/tonyhancock/_layout.html" %}
+
+{% block citizen_content %}
+
+  <div class="container">
+
+    {{ nav.case_tabs("decision",1,path) }} {# macro #}
+
+    <div class="grid-row">
+      <div class="column-third">
+          {% block decision_left %}
+            {% include path+"/tonyhancock/decision/_leftcol.html" %}
+          {% endblock %}
+      </div><!-- column -->
+      <div class="column-two-thirds">
+          {% block decision_content %}{% endblock %}
+      </div><!-- column-full -->
+    </div><!-- grid-row -->
+  </div><!-- container -->
+{% endblock %}
