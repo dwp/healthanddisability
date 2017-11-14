@@ -4,14 +4,20 @@
   background-color:$grey-3;
   padding:10px 50px 10px 20px;
   border-bottom:2px solid $grey-2;
+  &:hover { background-color:lighten($grey-3,5); }
+
   &.active {
     background-color:$govuk-blue;
-    color:white !important;
+    color:white;
     p { color:white; }
     background-image: url(/public/images/big_chevron.png);
     background-repeat: no-repeat;
     background-position: right 10px top 50%;
+    &:hover {
+      background-color:lighten($govuk-blue,5);
+    }
   }
+
   h3 { line-height:1; }
 }
 

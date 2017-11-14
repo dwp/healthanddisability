@@ -22,7 +22,7 @@
   <div class="evidence__box med_records">
     <div class="evidence__label">From: Medical Records</div>
     <div class="evidence__content">
-      Automated records check confirmed that Tony has: <span class="bold-small">Arthritis</span>, <span class="bold-small">Fybromyaliga</span> and <span class="bold-small">Dementia</span>.
+      Automated records check confirmed that Tony has: <span class="bold-small">Anxiety and depression</span>, <span class="bold-small">Autism</span> and <span class="bold-small">Fibromyalgia</span>.
     </div>
   </div>
 
@@ -58,6 +58,8 @@
       $('#scored').addClass('js-hidden');
       $('#rescore').removeClass('js-hidden');
     });
+    console.log($(".nav"))
+    $($(".nav")[0]).children(":nth-child(1)").addClass('active')
   });
 </script>
 {% endblock %}

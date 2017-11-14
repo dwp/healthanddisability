@@ -15,6 +15,28 @@
         <a data-fancybox data-src="#descriptor_choice" href="javascript:;">change</a>
       </div>
 
+      <h3 class="heading-large mt10">Standing and sitting</h3>
+      <p> Tony is <span class="bold-small">unable</span> to move from one seat to another right next to it without help from someone else? </p>
+      <p class="mt0 quote"> “I am not able to {{ 1 | lorum | safe }}” </p>
+      <div class="given_descriptors">
+        <span class="tag">standing and sitting</span>
+        <a data-fancybox data-src="#descriptor_choice" href="javascript:;">change</a>
+      </div>
+
+      <h3 class="heading-large mt10">Speaking, writing and typing</h3>
+      <p class="quote">“I am not able to {{ 1 | lorum | safe }}”</p>
+      <div class="given_descriptors">
+        <span class="tag">speaking, writing and typing</span>
+        <a data-fancybox data-src="#descriptor_choice" href="javascript:;">change</a>
+      </div>
+
+      <h3 class="heading-large mt10">Hearing and reading</h3>
+      <p>I am not able to {{ 1 | lorum | safe }}</p>
+      <div class="given_descriptors">
+        <span class="tag">Hearing and reading</span>
+        <a data-fancybox data-src="#descriptor_choice" href="javascript:;">change</a>
+      </div>
+
 {% endblock %}
 
 {% block page_scripts %}
@@ -23,7 +45,7 @@
   $(document).on('ready',function()
   {
     $('.evidence__leftnav')
-      .children(":nth-child(2)")
+      .children(":nth-child(5)")
       .addClass('active')
   });
 </script>

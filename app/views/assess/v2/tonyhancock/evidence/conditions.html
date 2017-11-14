@@ -6,7 +6,8 @@
 
       <ul class="list list-bullet">
         <li>Anxiety and depression <span class="date">(since {{ "MMMM YYYY" | monthsAgo(24) }})</span></li>
-        <li>Autism diagnosis <span class="date">(since {{ "MMMM YYYY" | monthsAgo(124) }})</span></li>
+        <li>Autism <span class="date">(since {{ "MMMM YYYY" | monthsAgo(124) }})</span></li>
+        <li>Fibromyalgia <span class="date">(since {{ "MMMM YYYY" | monthsAgo(124) }})</span></li>
       </ul>
       {% include path2+"/_descriptors.html" %}
 
@@ -52,7 +53,7 @@
   $(document).on('ready',function()
   {
     $('.evidence__leftnav')
-      .children(":nth-child(1)")
+      .children(":nth-child(6)")
       .addClass('active')
   });
 </script>
