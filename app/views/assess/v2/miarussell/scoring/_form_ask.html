@@ -1,6 +1,6 @@
 <hr />
 <h3 class="heading-large">Can you give a score now?</h3>
-<form class="form" action="">
+<form class="form" action="/{{ path2 }}" method="get">
   <div class="form-group">
 
     <div class="multiple-choice" data-target="scorenow">
@@ -38,11 +38,11 @@
 
     <div class="multiple-choice" data-target="">
       <input id="face2face" name="whatcando" type="radio" value="No, redirect({{ path1 }}/support/rejected)">
-      <label for="face2face"> No, I want Tony to come in</label>
+      <label for="face2face"> No, I want {{ firstname }} to come in</label>
     </div>
 
   </div><!-- form-group -->
   <div class="form-group">
-    <button class="button" type="button">Continue</button>
+    <button class="button" type="button" id="decide_submit">Continue</button>
   </div><!-- form-group -->
 </form>

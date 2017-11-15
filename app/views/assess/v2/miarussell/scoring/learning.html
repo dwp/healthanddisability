@@ -4,7 +4,32 @@
 
 {% block scoring_content %}
 
-  <h3 class="heading-large mt10">Learning and remembering how to do things</h3>
-  <p>I am not able to {{ 1 | lorum | safe }}</p>
+  <h3 class="heading-large mt10" id="descriptor_title">Learning and remembering how to do things</h3>
+
+  <div class="evidence__box citizen">
+    <div class="evidence__label">From: ESA50</div>
+    <div class="evidence__content">
+      <p class="mt0 quote mb0"> “I am not able to {{ 1 | lorum | safe }}” </p>
+    </div>
+  </div>
+
+  {% if stage < 4 %}
+    {% block case_form %} {% include path2+"/_form_ask.html" %} {% endblock %}
+  {% endif %}
+
+  {% if stage > 3 %}
+  <div class="evidence__box citizen">
+    <div class="evidence__label">From: Health Care Professional - <a href="" style="color:white">Marjorie Clemment</a></div>
+    <div class="evidence__content">
+      <p class="mt0 quote mb0"> “I would need to see Mia in person to be able to judge {{ 2 | lorumsent | safe }}” </p>
+    </div>
+  </div>
+  <div>
+    <hr />
+    <h2 class="heading-large">Referred to a face to face assessment</h2>
+    <p class="form-hint">You can change this is if you need to.</p>
+    <button class="button" id="change_score">Change</button>
+  </div>
+  {% endif %}
 
 {% endblock %}

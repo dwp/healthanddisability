@@ -26,18 +26,20 @@
   .evidence__content {
     position:relative;
     padding:10px 20px;
+    background-color:mix(white, $black, 95%);
    }
   .evidence__label {
     color:white;
     font-weight:700;
     padding:10px 5px 5px 10px;
+    background-color:$grey-1;
   }
 }
-.evidence__box.citizen .evidence__content { background-color:mix(white, $light-blue, 90%); }
-.evidence__box.citizen .evidence__label { background-color:$light-blue; }
-
-.evidence__box.med_records .evidence__content { background-color:mix(white, $grass-green, 90%); }
-.evidence__box.med_records .evidence__label { background-color:$grass-green; }
-
-.evidence__box.gp_report .evidence__content { background-color:mix(white, $mellow-red, 90%); }
-.evidence__box.gp_report .evidence__label { background-color:$mellow-red; }
+// .evidence__box.citizen .evidence__content { background-color:mix(white, $light-blue, 90%); }
+// .evidence__box.citizen .evidence__label { background-color:$light-blue; }
+//
+// .evidence__box.med_records .evidence__content { background-color:mix(white, $grass-green, 90%); }
+// .evidence__box.med_records .evidence__label { background-color:$grass-green; }
+//
+// .evidence__box.gp_report .evidence__content { background-color:mix(white, $mellow-red, 90%); }
+// .evidence__box.gp_report .evidence__label { background-color:$mellow-red; }

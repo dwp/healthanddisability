@@ -23,3 +23,28 @@
   </main>
 
 {% endblock %}
+
+{% block footer_top %}
+<p>stage = {{ stage }}</p>
+<select class="form-control" id="stage_select" name="select-box" style="width:auto">
+  {% for item in range(0,10) %}
+  <option value="{{ item }}">{{ item }}</option>
+  {% endfor %}
+</select>
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('#stage_select').on('change',function(e)
+    {
+      var newen = $(this).val();
+      e.preventDefault();
+      Cookies.set('stage',newen);
+      location.reload();
+    });
+  });
+</script>
+{% endblock %}

@@ -10,23 +10,22 @@
   <p class="mt5">{{ "Do MMM YYYY" | daysAgo(5) }}</p>
   <hr />
 
-
   <h3 class="heading-medium">Hearing and reading</h3>
-  <p>Tony is {{ 2 | lorum | safe }}</p>
+  <p>{{ firstname }} is {{ 2 | lorum | safe }}</p>
   <div class="given_descriptors">
     <span class="tag">hearing and reading</span>
     <a data-fancybox data-src="#descriptor_choice" href="javascript:;">change</a>
   </div>
 
   <h3 class="heading-medium">Getting around safely</h3>
-  <p>Tony is {{ 2 | lorum | safe }}</p>
+  <p>{{ firstname }} is {{ 2 | lorum | safe }}</p>
   <div class="given_descriptors">
     <span class="tag">Getting around safely</span>
     <a data-fancybox data-src="#descriptor_choice" href="javascript:;">change</a>
   </div>
 
   <h3 class="heading-medium">Eating and drinking</h3>
-  <p>Tony is {{ 2 | lorum | safe }}</p>
+  <p>{{ firstname }} is {{ 2 | lorum | safe }}</p>
   <div class="given_descriptors">
     <span class="tag">Eating and drinking</span>
     <a data-fancybox data-src="#descriptor_choice" href="javascript:;">change</a>
@@ -39,9 +38,7 @@
 <script type="text/javascript">
   $(document).on('ready',function()
   {
-    $('.evidence__leftnav')
-      .children(":nth-child(3)")
-      .addClass('active')
+    $(".evidence__leftnav a h3:contains('GP report')").parent().addClass('active');
   });
 </script>
 {% endblock %}

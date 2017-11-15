@@ -9,7 +9,9 @@
         <li>Autism <span class="date">(since {{ "MMMM YYYY" | monthsAgo(124) }})</span></li>
         <li>Fibromyalgia <span class="date">(since {{ "MMMM YYYY" | monthsAgo(124) }})</span></li>
       </ul>
-      {% include path2+"/_descriptors.html" %}
+      {% if stage > 2 %}
+        {% include path2+"/_descriptors.html" %}
+      {% endif %}
 
       <h3 class="heading-large">Medication &amp; side effects</h3>
       <table class="meds">
@@ -18,10 +20,12 @@
             <p class="bold-small">Acetaminophen</p>
             <p class="font-xsmall">350mg<br /> 3 times a day</p>
           </td>
-          <td>{{ 1 | lorum | safe }}</td>
+          <td>Side effects of this include {{ 1 | lorum | safe }}</td>
         </tr>
       </table>
-      {% include path2+"/_descriptors.html" %}
+      {% if stage > 2 %}
+        {% include path2+"/_descriptors.html" %}
+      {% endif %}
 
       <table class="meds">
         <tr>
@@ -29,10 +33,12 @@
             <p class="bold-small">Amoxicillin</p>
             <p class="font-xsmall">750mg<br /> 5 times a day</p>
           </td>
-          <td>{{ 1 | lorum | safe }}</td>
+          <td>Side effects of this include {{ 1 | lorum | safe }}</td>
         </tr>
       </table>
-      {% include path2+"/_descriptors.html" %}
+      {% if stage > 2 %}
+        {% include path2+"/_descriptors.html" %}
+      {% endif %}
 
       <table class="meds">
         <tr>
@@ -40,10 +46,12 @@
             <p class="bold-small">Azithromycin</p>
             <p class="font-xsmall">1mg<br /> 1 time a year</p>
           </td>
-          <td>{{ 1 | lorum | safe }}</td>
+          <td>Side effects of this include {{ 1 | lorum | safe }}</td>
         </tr>
       </table>
-      {% include path2+"/_descriptors.html" %}
+      {% if stage > 2 %}
+        {% include path2+"/_descriptors.html" %}
+      {% endif %}
 
 {% endblock %}
 
@@ -52,9 +60,7 @@
 <script type="text/javascript">
   $(document).on('ready',function()
   {
-    $('.evidence__leftnav')
-      .children(":nth-child(6)")
-      .addClass('active')
+    $(".evidence__leftnav a h3:contains('medication')").parent().addClass('active');
   });
 </script>
 {% endblock %}

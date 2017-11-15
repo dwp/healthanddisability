@@ -23,6 +23,7 @@ $path: "/public/images/";
 @import "inc/help_handle";
 @import "inc/evidence";
 @import "inc/nav";
+@import "inc/alt-buttons";
 
 #global-header.with-proposition .header-wrapper .header-global {
   width: 17%;
@@ -101,7 +102,7 @@ td,th {
   .descriptors {
     display:none;
     position:absolute;
-    padding:10px 20px 10px 10px;
+    padding:10px 30px 10px 20px;
     left:100%; top:50%; transform:translate(0,-50%);
     background-color:$black;
   }

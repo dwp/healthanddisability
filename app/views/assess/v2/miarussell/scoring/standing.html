@@ -4,13 +4,34 @@
 
 {% block scoring_content %}
 
-  <h3 class="heading-large mt10">Standing and sitting</h3>
+  <h3 class="heading-large mt10" id="descriptor_title">Standing and sitting</h3>
 
-  <p>
-    Tony can't move from one seat to another right next to it without help from someone else?
-  </p>
+  <div class="evidence__box citizen">
+    <div class="evidence__label">From: ESA50</div>
+    <div class="evidence__content">
+      <p>{{ firstname }} <span class="bold-small">can't</span> move from one seat to another right next to it without help from someone else.</p>
+      <p class="mt0 quote mb0"> “I am not able to {{ 1 | lorum | safe }}” </p>
+    </div>
+  </div>
 
-  <p class="mb0"><span class="bold-small">Tony says:</span></p>
-  <p class="mt0 font-medium quote"> “I am not able to {{ 1 | lorum | safe }}” </p>
+  {% if stage < 3 %}
+    {% block case_form %} {% include path2+"/_form_ask.html" %} {% endblock %}
+  {% endif %}
+
+  {% if stage > 2 %}
+    <div class="evidence__box citizen">
+      <div class="evidence__label">From: Health Care Professional - <a href="" style="color:white">Marjorie Clemment</a></div>
+      <div class="evidence__content">
+        <p class="mt0 quote mb0"> “It's clear from Mia's answer that she is suffering with {{ 2 | lorumsent | safe }}” </p>
+      </div>
+    </div>
+    <div id="scored">
+      <hr />
+      <h2 class="heading-large">Scored: 9</h2>
+      <p class="form-hint">You can change this is if you need to.</p>
+      <button class="button" id="change_score">Change score</button>
+    </div>
+  {% endif %}
+
 
 {% endblock %}

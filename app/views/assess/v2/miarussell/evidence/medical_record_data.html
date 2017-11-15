@@ -11,7 +11,11 @@
     <li>Autism <span class="date">(since {{ "MMMM YYYY" | monthsAgo(124) }})</span></li>
     <li>Fibromyalgia <span class="date">(since {{ "MMMM YYYY" | monthsAgo(203) }})</span></li>
   </ul>
-  {% include path2+"/_descriptors.html" %}
+  {% if stage > 5 %}
+    {% include path2+"/_descriptors.html" %}
+  {% else %}
+    <a data-fancybox class="button" data-src="#descriptor_choice" href="javascript:;">Assign descriptors</a>
+  {% endif %}
 
   <h3 class="heading-medium">Sick notes:</h3>
   <ul class="list list-bullet">
@@ -19,7 +23,11 @@
     <li><a href="">{{ "Do MMMM YYYY" | daysAgo(114) }} - {{ "Do MMMM YYYY" | daysAgo(165) }}</a></li>
     <li><a href="">{{ "Do MMMM YYYY" | daysAgo(179) }} - {{ "Do MMMM YYYY" | daysAgo(100) }}</a></li>
   </ul>
-  {% include path2+"/_descriptors.html" %}
+  {% if stage > 6 %}
+    {% include path2+"/_descriptors.html" %}
+  {% else %}
+    <a data-fancybox class="button" data-src="#descriptor_choice" href="javascript:;">Assign descriptors</a>
+  {% endif %}
 
 {% endblock %}
 
@@ -28,9 +36,14 @@
 <script type="text/javascript">
   $(document).on('ready',function()
   {
-    $('.evidence__leftnav')
-      .children(":nth-child(4)")
-      .addClass('active')
+    $(".evidence__leftnav a h3:contains('Medical record data')").parent().addClass('active');
+
+    $('#addDescriptors').on('click',function(e)
+    {
+      e.preventDefault();
+      Cookies.set('stage',6)
+      window.location.reload();
+    });
   });
 </script>
 {% endblock %}

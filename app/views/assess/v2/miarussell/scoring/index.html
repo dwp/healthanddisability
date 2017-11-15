@@ -13,8 +13,14 @@
   </div><!-- column -->
   <div class="column-third">
     <div class="data">
-      <span class="data-item bold-xxlarge">3</span>
-      <span class="data-item bold-xsmall">descriptors scored</span>
+      <span class="data-item bold-xlarge" id="total_done">0</span>
+      <span class="data-item bold-xsmall">scored</span>
+    </div>
+  </div><!-- column -->
+  <div class="column-third">
+    <div class="data">
+      <span class="data-item bold-xlarge" id="total_todo">0</span>
+      <span class="data-item bold-xsmall">todo</span>
     </div>
   </div><!-- column -->
 </div><!-- row -->
@@ -24,20 +30,20 @@
 <div class="grid-row">
   <div class="column-third">
     <div class="data">
-      <span class="data-item bold-xxlarge">3</span>
+      <span class="data-item bold-xxlarge" id="total_gprp">0</span>
       <span class="data-item bold-xsmall mb10">need more medical evidence</span>
       <button class="button">Request GP Report</button>
     </div>
   </div><!-- column -->
   <div class="column-third">
     <div class="data">
-      <span class="data-item bold-xxlarge">5</span>
+      <span class="data-item bold-xxlarge" id="total_face">0</span>
       <span class="data-item bold-xsmall mb10">need face to face assessment</span>
       <button class="button">Book appointment</button>
     </div>
   </div><!-- column -->
   <div class="column-third">
-    <span class="data-item bold-xxlarge">7</span>
+    <span class="data-item bold-xlarge" id="total_noev">0</span>
     <span class="data-item bold-xsmall mb10">have no evidence</span>
   </div><!-- column -->
 </div><!-- row -->
@@ -57,7 +63,13 @@
         var n = parseInt($(e).text());
         total += n;
       });
+      $('#total_done').text($('#scored li').length);
       $('#total_score').text(total);
+      $('#total_todo').text($('#todo li').length);
+      $('#total_noev').text($('#noev li').length);
+      $('#total_face').text($('#face li').length);
+      $('#total_gprp').text($('#gprp li').length);
     });
+
   </script>
 {% endblock %}
