@@ -10,7 +10,6 @@ router.get('*', function (req, res, next) {
   var bits = req.params[0].substr(1).split('/')
   res.locals.path1 = res.locals.path + "/" + bits[0]
   res.locals.path2 = res.locals.path + "/" + bits[0] + "/" + bits[1]
-
   res.locals.stage = req.cookies.stage || 1;
   next()
 })
