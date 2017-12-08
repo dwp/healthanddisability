@@ -11,6 +11,13 @@
         {% block app_nav %}
           <div class="evidence__leftnav">
 
+            {% if data.nuggets.length %}
+              <a href="medical_assessment" class="evidence__item mb10">
+                <h3 class="heading-small mt10 mb5">Medical Assessment</h3>
+                <p class="font-xsmall mb5">{{ "Do MMMM YYYY" | daysAgo(1) }}</p>
+              </a>
+            {% endif %}
+
             <a href="com_psych_report" class="evidence__item mb10">
               <h3 class="heading-small mt10 mb5">Community Psychiatric Nurse Report</h3>
               <p class="font-xsmall mb5">{{ "Do MMMM YYYY" | daysAgo(7) }}</p>
@@ -80,7 +87,31 @@
     };
     $.fancybox.defaults.afterClose = function(){
         $("html").css({'overflow-y':'visible'});
+        $('.des_trigger').blur();
     };
+
+    $('.function_link').on('click',function(e)
+    {
+      e.preventDefault();
+      var href = $(this).attr('href');
+      console.log(href)
+      $.ajax({
+        url: href,
+        method: "GET",
+        complete:  function(data,status,xhr) {
+          console.log(data)
+          document.location.reload(true);
+        }
+      });
+    });
   });
 </script>
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+<p>
+  <a href="/{{ path }}/clearSession" id="clear_data" class="function_link">clear data</a>
+  | <a href="/{{ path }}/prefillAssessment" id="prefill" class="function_link">prefill</a>
+</p>
 {% endblock %}

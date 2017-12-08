@@ -44,6 +44,16 @@ router.get('/clearSession',function(req, res, next) {
   res.send("success");
 })
 
+router.post('/updateEvidence',function(req, res, next) {
+  var id = req.body.id;
+  var nug = _.find(req.session.data.nuggets, {"id":parseInt(id)})
+  console.log(req.session.data.nuggets)
+  console.log({"id":parseInt(id)})
+  console.log(nug)
+  nug.descriptors = req.body.descriptors;
+  res.send(tog(req.session.data.nuggets));
+})
+
 router.get('/prefillAssessment',function(req, res, next) {
   req.session.data.nuggets = [];
   var bits = [
@@ -71,17 +81,15 @@ router.get('/prefillAssessment',function(req, res, next) {
     // console.log(time)
     var newNugget = {
       "text":bits[i],
-      "id":nug_id++,
+      "id":i,
       "time": moment(time),
     }
     // console.log(newNugget)
     req.session.data.nuggets.push(newNugget);
     time.subtract(3,'minutes');
   }
-  console.log(req.session.data.nuggets)
+  nug_id = bits.length;
   res.send("success");
 })
-
-
 
 module.exports = router

@@ -24,6 +24,7 @@ $path: "/public/images/";
 @import "inc/evidence";
 @import "inc/nav";
 @import "inc/alt-buttons";
+@import "inc/combobox";
 
 #global-header.with-proposition .header-wrapper .header-global {
   width: 17%;
@@ -96,7 +97,9 @@ td,th {
   background-color:$black;
   color:white;
   text-decoration: none;
-  padding:7px 10px 5px;
+  // padding:7px 10px 5px;
+  padding:5px 8px 3px;
+  margin-bottom:5px;
   border-radius:5px;
   margin-right:0.5em;
   .descriptors {
@@ -120,19 +123,19 @@ td,th {
   border-bottom: 1px solid $grey-3;
 }
 
-.ev_box {
+.flex_outer {
   display:flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content:flex-start;
-  // border-bottom:1px solid $grey-3;
-  // background-color:$grey-3;
+}
+
+.ev_box {
   p::first-letter { text-transform: uppercase; }
   .ev_date {
     font-size:14px;
     padding:10px;
     text-align:right;
-    flex: 0 0 60px;
   }
   .ev_content {
     flex-grow:1;
@@ -151,4 +154,62 @@ td,th {
   &.blue { background-color:$light-blue}
   &.teal { background-color:$turquoise}
   &.purple { background-color:$fuschia}
+}
+
+.form-select {
+  width:100%;
+  padding-bottom:0;
+}
+
+.dropdown-toggle {
+  border-left:2px solid $black;
+}
+
+.combobox-container .input-group {
+  position:relative;
+  z-index:5;
+
+  .dropdown-menu {
+    position:absolute;
+    top:0;left:0;
+    width:98%;
+    margin-left:4px;
+    background:$grey-4;
+    font-size:18px;
+    border:1px solid black;
+
+    li {
+      padding:4px 20px 3px;
+      a {text-decoration:none;color:white}
+      &.active {
+        background:$govuk-blue;
+        a {color:white}
+      }
+    }
+  }
+}
+
+span.dropdown-toggle {
+  position:absolute;
+  top:2px;right:2px;
+  height:30px;
+  width:30px;
+  background: #FFF url(/public/images/toggle-sprite-grey.png) no-repeat 0 -51px;
+  cursor:pointer;
+}
+@media (min-width: 641px) {
+  select.form-select {
+    font-size: 19px;
+    line-height: 1.3157894737;
+  }
+}
+
+@media (min-width: 641px) {
+  select.form-select {
+    width: auto;
+  }
+}
+
+select.form-select:hover {
+  cursor: pointer;
 }
