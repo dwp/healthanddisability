@@ -1,0 +1,126 @@
+// Path to assets for use with the file-url function
+// in the govuk frontend toolkit's url-helpers partial
+$path: "/public/images/";
+
+// Import GOV.UK elements from /govuk-modules/, this will import the frontend toolkit and some base styles.
+// Take a look in /govuk-modules/_govuk-elements.scss to see which files are imported.
+@import 'govuk-elements';
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+@import "admin";
+@import "inc/timeline";
+@import "inc/small-checkboxes";
+@import "inc/margins";
+@import "inc/toggler";
+@import "inc/form-select";
+@import "inc/back-link";
+@import "inc/file-upload";
+@import "inc/timeline";
+@import "inc/tabs";
+@import "inc/clearfix";
+@import "inc/attachment";
+@import "inc/click-row";
+@import "inc/help_handle";
+@import "inc/evidence";
+@import "inc/nav";
+@import "inc/alt-buttons";
+
+#global-header.with-proposition .header-wrapper .header-global {
+  width: 17%;
+}
+
+#global-header.with-proposition .header-wrapper .header-proposition {
+  width: 48%;
+}
+
+.nobr { white-space: nowrap; }
+
+td,th {
+  &.first {
+    padding-left:10px;
+  }
+}
+
+/*  Override timeline stuff */
+.timeline .timeline-event {
+  &:first-of-type .heading-small {
+    position:relative;
+    top:-6px;
+    font-size:36px;
+    margin-bottom:0
+  }
+}
+
+.staff__heading {
+  background-color: #005ea5;
+  padding: 20px 40px 0;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.list .date {
+  // font-size:16px;
+  color:$grey-1;
+}
+
+.meds {
+  td {
+    vertical-align: top;
+    border:none;
+  }
+}
+
+.quote {
+  padding:10px 10px;
+  text-indent:-0.4em;
+}
+
+
+.form-control:focus { &::placeholder { color:white; }
+}
+
+.loading {
+  position:relative;
+  color:$govuk-blue;
+  font-weight:700;
+  img {
+
+  }
+}
+
+.tag {
+  display:inline-block;
+  text-transform: lowercase;
+  cursor: pointer;
+  position:relative;
+  background-color:$black;
+  color:white;
+  text-decoration: none;
+  padding:7px 10px 5px;
+  border-radius:5px;
+  margin-right:0.5em;
+  .descriptors {
+    display:none;
+    position:absolute;
+    padding:10px 30px 10px 20px;
+    left:100%; top:50%; transform:translate(0,-50%);
+    background-color:$black;
+  }
+  &.clicked {
+    border-radius:5px 0px 0px 5px;
+    .descriptors {
+      display:block;
+    }
+  }
+  li { white-space: nowrap; }
+}
+
+
+.given_descriptors {
+  border-bottom: 1px solid $grey-3;
+}
+
+.ev_box {
+  background-color:$grey-3;
+  p::first-letter { text-transform: uppercase; }
+}

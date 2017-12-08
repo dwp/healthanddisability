@@ -1,0 +1,46 @@
+<div class="evidence__leftnav">
+
+  {% if stage > 8 %}
+  <a href="facetoface" class="evidence__item mb10">
+    <h3 class="heading-small mt10 mb5">Health assessment</h3>
+    <p class="font-xsmall mb5">{{ "Do MMMM YYYY" | daysAgo(4) }}</p>
+  </a>
+  {% endif %}
+
+  {% if stage > 8 %}
+  <a href="com_psych_report" class="evidence__item mb10">
+    <h3 class="heading-small mt10 mb5">Community Psychiatric Nurse Report</h3>
+    <p class="font-xsmall mb5">{{ "Do MMMM YYYY" | daysAgo(7) }}</p>
+  </a>
+  {% endif %}
+
+  {% if stage > 6 %}
+  <a href="gp_report" class="evidence__item mb10">
+    <h3 class="heading-small mt10 mb5">GP report (ESA113)</h3>
+    <p class="font-xsmall mb5">{{ "Do MMMM YYYY" | daysAgo(12) }}</p>
+  </a>
+  {% endif %}
+
+  {% if stage > 4 %}
+  <a href="medical_record_data" class="evidence__item mb10">
+    <h3 class="heading-small mt10 mb5">Medical record data</h3>
+    <p class="font-xsmall mb5">{{ "Do MMMM YYYY" | daysAgo(15) }}</p>
+  </a>
+  {% endif %}
+
+  <a href="statements" class="evidence__item mb10">
+    <h3 class="heading-small mt10 mb5">Claimant statement (ESA50)</h3>
+    <p class="font-xsmall mb5">{{ "Do MMMM YYYY" | daysAgo(20) }}</p>
+  </a>
+
+  <a href="conditions" class="evidence__item mb10">
+    <h3 class="heading-small mt10 mb5">Illness, disabilities and medication</h3>
+    <p class="font-xsmall mb5">{{ "Do MMMM YYYY" | daysAgo(20) }}</p>
+  </a>
+
+  <div class="form-group">
+    <hr />
+    <button class="button">Add evidence</button>
+  </div>
+
+</div>

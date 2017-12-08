@@ -1,0 +1,50 @@
+{% extends path2+"/_layout.html" %}
+
+{% block case_content %}
+
+      <h3 class="heading-large mt10">Moving around and using steps</h3>
+      <p>{{ firstname }} says he can: move safely and repeatedly on level ground without needing to stop for:
+        <span class="bold-small">100 metres</span>
+      </p>
+      <h3 class="heading-small mt5 mb0">Moving around and using steps</h3>
+      <p class="mt0 quote">“I have arthritis in my right knee and hip, and also in both wrists. On a good day I can walk 100m slowly - I'd have to rest a couple of times though, as I'd be in pain. I can't use a stick or crutches or a wheelchair because the arthritis in my wrists means I can't grip and don't have much strength. On a bad day, I can just about get around my flat but would usually stay in bed so I don't have to move much.”</p>
+      <h3 class="heading-small mt5 mb0">Going up or down 2 steps</h3>
+      <p class="mt0 quote mb20"> “I am not able to {{ 1 | lorum | safe }}” </p>
+      <div class="given_descriptors">
+        <span class="tag">mobility</span>
+        <a data-fancybox data-src="#descriptor_choice" href="javascript:;">change</a>
+      </div>
+
+      <h3 class="heading-large mt10">Standing and sitting</h3>
+      <p> {{ firstname }} is <span class="bold-small">unable</span> to move from one seat to another right next to it without help from someone else? </p>
+      <p class="mt0 quote"> “I am not able to {{ 1 | lorum | safe }}” </p>
+      <div class="given_descriptors">
+        <span class="tag">standing and sitting</span>
+        <a data-fancybox data-src="#descriptor_choice" href="javascript:;">change</a>
+      </div>
+
+      <h3 class="heading-large mt10">Speaking, writing and typing</h3>
+      <p class="quote">“I am not able to {{ 1 | lorum | safe }}”</p>
+      <div class="given_descriptors">
+        <span class="tag">speaking, writing and typing</span>
+        <a data-fancybox data-src="#descriptor_choice" href="javascript:;">change</a>
+      </div>
+
+      <h3 class="heading-large mt10">Hearing and reading</h3>
+      <p>I am not able to {{ 1 | lorum | safe }}</p>
+      <div class="given_descriptors">
+        <span class="tag">Hearing and reading</span>
+        <a data-fancybox data-src="#descriptor_choice" href="javascript:;">change</a>
+      </div>
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $(".evidence__leftnav a h3:contains('Citizen')").parent().addClass('active');
+  });
+</script>
+{% endblock %}

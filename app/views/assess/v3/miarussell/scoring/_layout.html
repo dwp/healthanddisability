@@ -1,0 +1,54 @@
+{% extends path1+"/_layout.html" %}
+
+{% block citizen_content %}
+
+  <div class="container">
+
+    {{ nav.case_tabs("scoring",1,path1) }} {# macro #}
+
+    <div class="grid-row">
+      <div class="column-third">
+          {% block scoring_left %}
+            {% include path2+"/_leftcol.html" %}
+          {% endblock %}
+      </div><!-- column -->
+      <div class="column-two-thirds">
+          {% block scoring_content %}{% endblock %}
+      </div><!-- column-full -->
+    </div><!-- grid-row -->
+  </div><!-- container -->
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('#decide_submit').on('click',function(e)
+    {
+      e.preventDefault()
+      stage = Cookies.get('stage')
+      stage++
+      Cookies.set('stage',stage)
+      window.location = "/{{ path2 }}"
+    });
+
+    /*
+      Highlight the relevant left nav item
+      based on checking it against the heading
+      on this page.
+    */
+    var dt = $('#descriptor_title').text();
+    $('.nav li').each(function(i,e)
+    {
+      /*
+        Take the start of each as a comparison
+        in case the score is appended at the end.
+      */
+      var a = $(e).text().trim().substr(0,10)
+      var b = dt.substr(0,10)
+      if (a == b) $(e).addClass('active');
+    })
+  });
+</script>
+{% endblock %}

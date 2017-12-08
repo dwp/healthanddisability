@@ -1,0 +1,69 @@
+{% extends path2+"/_layout.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+{{ nav.case_tabs("evidence",1,path1) }}{# macro #}
+
+<h2 class="heading-large mt30">Add evidence</h2>
+
+<div class="grid-row">
+  <div class="column-third">
+    <form class="form" id="add_ev">
+      <div class="form-group">
+          <textarea id="nugget" class="form-control" name="nugget" style="width:100%;height:200px"></textarea>
+      </div><!-- form-group -->
+      <div class="form-group">
+        <input class="button" type="submit" value="Continue" id="submitButton"/>
+      </div><!-- form-group -->
+    </form>
+  </div><!-- column -->
+  <div class="column-two-thirds">
+    
+    {% for item in data.nuggets %}
+      <div class="ev_box p20 mb30">
+        <p>{{ item.text }}</p>
+        <p>{{ item.id }}</p>
+        {% include path2+"/_descriptors.html" %}
+      </div>
+    {% endfor %}
+  </div><!-- column -->
+</div><!-- row -->
+
+{% endblock %}
+
+{% block page_scripts %}
+<script type="text/javascript">
+$(document).on('ready',function()
+{
+  $('#submitButton').on('click',function(e)
+  {
+    e.preventDefault();
+    // get values from the form you're submitting.
+    var nugget = $('#nugget').val();
+    console.log(nugget)
+
+    // gather values into a data object.
+    var formdata = JSON.stringify({"nugget":nugget});
+    console.log(formdata)
+    console.log({url: '/{{ path }}/saveText'})
+
+    // send data object off to node route for saving.
+    $.ajax({
+      url: '/{{ path }}/saveText',
+      method: "POST",
+      contentType: 'application/json',
+      data: formdata,
+      dataType: 'json',
+      complete:  function(data,status,xhr) {
+        // sort out the page after data is successfully saved.
+        // $('#status_form').hide();
+        // $('#status_button').show();
+        document.location.reload(true);
+      }
+    });
+  });
+});
+</script>
+{% endblock %}

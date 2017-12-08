@@ -1,0 +1,51 @@
+{% extends path+"/_layout.html" %}
+{% import path1+"/_macros_nav.html" as nav %}
+
+{% block assess_content %}
+
+  {#  This is the BIG BLUE BAR at the top - #jussayin #}
+  {% include path1+"/_staff_heading.html" %}
+
+  <main id="content" role="main" class="main-content">
+
+    <div class="container">
+      <div class="grid-row">
+        <div class="column-full">
+
+          <div nunj-block="citizen_content">
+            {% block citizen_content %}{% endblock %}
+          </div>
+
+        </div><!-- column -->
+      </div><!-- row -->
+    </div><!-- container -->
+
+  </main>
+
+{% endblock %}
+
+{% block footer_top %}
+<p>stage = {{ stage }}</p>
+<select class="form-control" id="stage_select" name="select-box" style="width:auto">
+  {% for item in range(0,10) %}
+  <option value="{{ item }}">{{ item }}</option>
+  {% endfor %}
+</select>
+{{ super() }}
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('#stage_select').on('change',function(e)
+    {
+      var newen = $(this).val();
+      e.preventDefault();
+      Cookies.set('stage',newen);
+      location.reload();
+    });
+  });
+</script>
+{% endblock %}
