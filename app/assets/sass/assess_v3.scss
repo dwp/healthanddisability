@@ -121,6 +121,34 @@ td,th {
 }
 
 .ev_box {
-  background-color:$grey-3;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content:flex-start;
+  // border-bottom:1px solid $grey-3;
+  // background-color:$grey-3;
   p::first-letter { text-transform: uppercase; }
+  .ev_date {
+    font-size:14px;
+    padding:10px;
+    text-align:right;
+    flex: 0 0 60px;
+  }
+  .ev_content {
+    flex-grow:1;
+    padding:10px;
+    background-color:$grey-3;
+  }
+}
+
+.circle {
+  border-radius:50%;
+  width:1em;height:1em;
+  background-color:$black;
+  display:inline-block;
+  margin-right:1em;
+  &.red { background-color:$mellow-red}
+  &.blue { background-color:$light-blue}
+  &.teal { background-color:$turquoise}
+  &.purple { background-color:$fuschia}
 }

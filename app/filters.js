@@ -1,5 +1,6 @@
 var moment = require('moment')
 var loremIpsum = require('lorem-ipsum')
+var _ = require('lodash')
 
 module.exports = function (env) {
   /**
@@ -9,6 +10,15 @@ module.exports = function (env) {
    * @type {Object}
    */
   var filters = {}
+
+  /*
+    ascdes is to say whether it's
+  */
+  filters.sortBy = function(collection,type,des) {
+      var newArray = _.sortBy(collection,type);
+      if (!des) return newArray
+      else return _.reverse(newArray)
+  }
 
   filters.formatDate = function(str,format) {
       var d = moment(str).format(format);
