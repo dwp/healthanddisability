@@ -11,6 +11,14 @@ module.exports = function (env) {
    */
   var filters = {}
 
+  filters.pickDescriptor = function(nuggets, descriptor)
+  {
+    return _.filter(nuggets, function(o)
+    {
+      return _.includes(o.descriptors,descriptor);
+    })
+  }
+
   /*
     ascdes is to say whether it's
   */

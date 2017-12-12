@@ -35,7 +35,19 @@
     </div>
   </div>
 
-  <div id="scored">
+  <div class="evidence__box assessment">
+    <div class="evidence__label">From: Medical assessment</div>
+    <div class="evidence__content">
+      <h4 class="heading-small mt5">Mandy Potemkin</h4>
+      <p>Preston Assessment Centre</p>
+      {% set nuggets = data.nuggets | pickDescriptor('Moving around and using steps') %}
+      <p>{% for item in nuggets | sortBy("time",false) %}
+        {{ item.text }}.&nbsp;
+      {% endfor %}</p>
+    </div>
+  </div>
+
+  <div id="been_scored">
     <hr />
     <h2 class="heading-large">Moving around and using steps score: 9</h2>
     <p class="form-hint">You can change this is if you need to.</p>
@@ -49,15 +61,19 @@
 {% endblock %}
 
 {% block page_scripts %}
+{{ super() }}
 <script type="text/javascript">
   $(document).on('ready',function()
   {
     $('#change_score').on('click',function(e)
     {
       e.preventDefault();
-      $('#scored').addClass('js-hidden');
+      console.log('got here')
+      $('#been_scored').addClass('js-hidden');
       $('#rescore').removeClass('js-hidden');
     });
+
+    // highlight the right left nav link.
     $($(".nav")[0]).children(":nth-child(1)").addClass('active')
   });
 </script>

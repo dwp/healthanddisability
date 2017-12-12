@@ -89,29 +89,6 @@
         $("html").css({'overflow-y':'visible'});
         $('.des_trigger').blur();
     };
-
-    $('.function_link').on('click',function(e)
-    {
-      e.preventDefault();
-      var href = $(this).attr('href');
-      console.log(href)
-      $.ajax({
-        url: href,
-        method: "GET",
-        complete:  function(data,status,xhr) {
-          console.log(data)
-          document.location.reload(true);
-        }
-      });
-    });
   });
 </script>
-{% endblock %}
-
-{% block footer_top %}
-{{ super() }}
-<p>
-  <a href="/{{ path }}/clearSession" id="clear_data" class="function_link">clear data</a>
-  | <a href="/{{ path }}/prefillAssessment" id="prefill" class="function_link">prefill</a>
-</p>
 {% endblock %}
