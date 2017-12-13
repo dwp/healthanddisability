@@ -32,6 +32,9 @@ router.get('/cookies/', function (req, res, next) {
 
 var nug_id = 0;
 
+/*
+  Used to save indiviudal "nuggets" of evidence from the add evidence screen
+*/
 router.post('/saveText/', function (req, res, next) {
   var newNugget = {
     "text":req.body.nugget,
@@ -43,6 +46,9 @@ router.post('/saveText/', function (req, res, next) {
   res.send(tog(req.session.data));
 })
 
+/*
+  Clears session (triggered by little link at bottom of pages)
+*/
 router.get('/clearSession',function(req, res, next) {
   req.session.data.nuggets = [];
   req.session.data.withdesc = false;

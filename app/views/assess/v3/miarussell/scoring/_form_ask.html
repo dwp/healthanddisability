@@ -1,28 +1,21 @@
 <hr />
-<h3 class="heading-large">Can you give a score now?</h3>
+<h3 class="heading-large">Can you give make a recommendation now?</h3>
 <form class="form" action="/{{ path2 }}" method="get">
   <div class="form-group">
 
     <div class="multiple-choice" data-target="scorenow">
       <input id="decide_now" name="whatcando" type="radio" value="Yes">
-      <label for="decide_now"> Yes, I have enough evidence to give a score </label>
+      <label for="decide_now"> Yes, I have enough evidence recommend the support group </label>
     </div>
 
     <div class="js-hidden panel panel-indent mt20" id="scorenow">
       <div class="form-group">
-        <label class="form-label">Score</label>
-        <input type="text" class="form-control" name="score" placeholder="1-15" style="width:10em"/>
-        &nbsp;
-        <span class="font-xsmall help__handle">
-          <a href="#">help</a>
-          <div class="help__content">
-            <p>Has uncontrollable episodes of aggressive or disinhibited behaviour that would be unreasonable in any workplace</p>
-            <p>15 points - On a daily basis</p>
-            <p>15 points - Frequently</p>
-            <p>9 points - Occasionally</p>
-            <p>0 points - Doesn't have these episodes</p>
-          </div>
-        </span>
+
+        <div class="multiple-choice">
+          <input id="confirm" name="whatcando" type="checkbox" value="Yes">
+          <label for="confirm"> {{ firstname }} can't go further than 50 metres</label>
+        </div>
+
       </div><!-- form-group -->
       <div class="form-group">
         <label class="form-label">Notes</label>
