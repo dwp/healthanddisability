@@ -11,10 +11,33 @@
       <span class="data-item bold-xsmall">total score</span>
     </div>
   </div><!-- column -->
-  <div class="column-third">
+  <div class="column-two-thirds">
+    <div class="grid-row">
+      <div class="column-third">
+        <div class="data">
+          <span class="data-item bold-xlarge" id="total_done">0</span>
+          <span class="data-item bold-xsmall">scored</span>
+        </div>
+      </div><!-- column -->
+      <div class="column-third">
+        <div class="data">
+          <span class="data-item bold-xlarge" id="total_todo">0</span>
+          <span class="data-item bold-xsmall">to do</span>
+        </div><!-- .data -->
+      </div><!-- column -->
+      <div class="column-third">
+        <div class="data">
+          <span class="data-item bold-xlarge" id="total_noans">0</span>
+          <span class="data-item bold-xsmall">with no answer</span>
+        </div><!-- .data -->
+      </div><!-- column -->
+    </div><!-- row -->
+
     <div class="data">
-      <span class="data-item bold-xxlarge">3</span>
-      <span class="data-item bold-xsmall">descriptors scored</span>
+      <div style="float:left;margin-right:30px;">
+
+      </div>
+
     </div>
   </div><!-- column -->
 </div><!-- row -->
@@ -24,21 +47,25 @@
 <div class="grid-row">
   <div class="column-third">
     <div class="data">
-      <span class="data-item bold-xxlarge">3</span>
+      <span class="data-item bold-xxlarge" id="total_gprp">0</span>
       <span class="data-item bold-xsmall mb10">need more medical evidence</span>
+      {% if stage > 2 %}
       <button class="button">Request GP Report</button>
+      {% endif %}
     </div>
   </div><!-- column -->
   <div class="column-third">
     <div class="data">
-      <span class="data-item bold-xxlarge">5</span>
-      <span class="data-item bold-xsmall mb10">need a health assessment</span>
+      <span class="data-item bold-xxlarge" id="total_face">0</span>
+      <span class="data-item bold-xsmall mb10">need a medical assessment</span>
+      {% if stage > 2 %}
       <button class="button">Book appointment</button>
+      {% endif %}
     </div>
   </div><!-- column -->
   <div class="column-third">
-    <span class="data-item bold-xxlarge">7</span>
-    <span class="data-item bold-xsmall mb10">have no evidence</span>
+    <span class="data-item bold-xlarge" id="total_noev">0</span>
+    <span class="data-item bold-xsmall mb10">Citizen has no problem with</span>
   </div><!-- column -->
 </div><!-- row -->
 
@@ -57,7 +84,14 @@
         var n = parseInt($(e).text());
         total += n;
       });
+      $('#total_done').text($('#scored li').length);
       $('#total_score').text(total);
+      $('#total_todo').text($('#todo li').length);
+      $('#total_noev').text($('#noev li').length);
+      $('#total_face').text($('#face li').length);
+      $('#total_gprp').text($('#gprp li').length);
+      $('#total_noans').text($('#noans li').length);
     });
+
   </script>
 {% endblock %}

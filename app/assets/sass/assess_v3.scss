@@ -67,7 +67,6 @@ td,th {
 .meds {
   td {
     vertical-align: top;
-    border:none;
   }
 }
 
@@ -102,6 +101,7 @@ td,th {
   margin-bottom:5px;
   border-radius:5px;
   margin-right:0.5em;
+  font-size:16px;
   .descriptors {
     display:none;
     position:absolute;
@@ -116,11 +116,6 @@ td,th {
     }
   }
   li { white-space: nowrap; }
-}
-
-
-.given_descriptors {
-  border-bottom: 1px solid $grey-3;
 }
 
 .flex_outer {

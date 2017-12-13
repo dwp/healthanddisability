@@ -2,7 +2,7 @@
 
 {% block case_content %}
 
-  <h2 class="heading-large mt10">Medical Record</h2>
+  <h2 class="heading-large mt10">Medical record data</h2>
   <p class="form-hint">Automated data fetch: {{ 'Do MMMM YYYY' | randDaysAgo(20)}}</p>
 
   <h3 class="heading-medium">Data confirms patient has following conditions:</h3>
@@ -21,16 +21,4 @@
   </ul>
   <div class="given_descriptors pb30">{% include path2+"/_descriptors.html" %}</div>
 
-{% endblock %}
-
-{% block page_scripts %}
-{{ super() }}
-<script type="text/javascript">
-  $(document).on('ready',function()
-  {
-    $('.evidence__leftnav')
-      .children(":nth-child(4)")
-      .addClass('active')
-  });
-</script>
 {% endblock %}

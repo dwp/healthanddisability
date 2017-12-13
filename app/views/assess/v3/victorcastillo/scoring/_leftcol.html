@@ -1,34 +1,19 @@
-<h3 class="heading-medium mt0 mb0">Scored</h3>
-<ul class="nav" id="scored">
-    <li>
-      <a href="/{{ path2 }}/mobility">
-      <span>Moving around and using steps</span>
-      <span class="score">9</span>
-      </a>
-    </li>
-    <li>
-      <a href="/{{ path2 }}/standing">
-        <span>Standing and sitting</span>
-        <span class="score">3</span>
-      </a>
-    </li>
-    <li>
-      <a href="/{{ path2 }}/speakwritetype">
-        <span>Speaking, writing and typing</span>
-        <span class="score">15</span>
-      </a>
-    </li>
+<h3 class="heading-medium mt0 mb0">Needs medical assessment</h3>
+<ul class="nav" id="face">
+  <li> <a href="/{{ path2 }}/mobility">Moving around and using steps</a> </li>
+  <li> <a href="/{{ path2 }}/standing">Standing and sitting</a> </li>
 </ul>
 
 <h3 class="heading-medium mt0 mb0">Need more evidence</h3>
-<ul class="nav">
+<ul class="nav" id="gprp">
+  <li> <a href="/{{ path2 }}/speakwritetype">Speaking, writing and typing</a> </li>
   <li> <a href="/{{ path2 }}/hearread"> Hearing and reading </a> </li>
   <li> <a href="/{{ path2 }}/gettingaround"> Getting around safely </a> </li>
   <li> <a href="/{{ path2 }}/eatdrink"> Eating and drinking </a> </li>
 </ul>
 
-<h3 class="heading-medium mt0 mb0">Not yet assessed</h3>
-<ul class="nav">
+<h3 class="heading-medium mt0 mb0">No answer</h3>
+<ul class="nav" id="noans">
   <li><a href="/{{ path2 }}/reaching">Reaching for things</a> </li>
   <li><a href="/{{ path2 }}/pickingup">Picking up and moving things</a> </li>
   <li><a href="/{{ path2 }}/dexterity">Using your hands</a> </li>
@@ -36,8 +21,8 @@
   <li><a href="/{{ path2 }}/conscious">Staying conscious</a> </li>
 </ul>
 
-<h3 class="heading-medium mt0 mb0">No evidence</h3>
-<ul class="nav disabled">
+<h3 class="heading-medium mt0 mb0">No problem</h3>
+<ul class="nav" id="noev">
     <li><a href="/{{ path2 }}/learning">Learning and remembering how to do things</a> </li>
     <li><a href="/{{ path2 }}/hazards">Being aware of risks and dangers</a> </li>
     <li><a href="/{{ path2 }}/startfinish">Planning and completing things</a> </li>

@@ -5,7 +5,7 @@
   <h3 class="heading-large mt10">Moving around and using steps</h3>
 
   <div class="evidence__box citizen">
-    <div class="evidence__label">From: ESA50</div>
+    <div class="evidence__label">Citizen statements (ESA50)</div>
     <div class="evidence__content">
       <p>Tony says he can move safely and repeatedly on level ground without needing to stop for:
         <span class="bold-small">100 metres</span>
@@ -20,43 +20,57 @@
   </div>
 
   <div class="evidence__box med_records">
-    <div class="evidence__label">From: Medical Records</div>
+    <div class="evidence__label">Medical Records</div>
     <div class="evidence__content">
-      Automated records check confirmed that Tony has: <span class="bold-small">Anxiety and depression</span>, <span class="bold-small">Autism</span> and <span class="bold-small">Fibromyalgia</span>.
+      Automated records check confirmed that {{ firstname }} has: <span class="bold-small">Anxiety and depression</span>, <span class="bold-small">Autism</span> and <span class="bold-small">Fibromyalgia</span>.
     </div>
   </div>
 
   <div class="evidence__box gp_report">
-    <div class="evidence__label">From: GP Report</div>
+    <div class="evidence__label">GP Report</div>
     <div class="evidence__content">
       <h4 class="heading-small mt5">Dr. Sheila Makeyouwell</h4>
       <p>Suronge Surgery, Wimbledon, Hertfordshire</p>
-      <p class="mt0 quote mb0"> “I can confirm that the level and progression of Tony's arthritis is such that he cannot {{ 10 | lorumwords | safe }}” </p>
+      <p class="mt0 quote mb0"> “I can confirm that the level and progression of {{ firstname }}'s arthritis is such that he cannot {{ 10 | lorumwords | safe }}” </p>
     </div>
   </div>
 
+  {{ data | log }}
+
+  {% if data.withdesc %}
   <div class="evidence__box assessment">
-    <div class="evidence__label">From: Medical assessment</div>
+    <div class="evidence__label">Medical assessment</div>
     <div class="evidence__content">
-      <h4 class="heading-small mt5">Mandy Potemkin</h4>
-      <p>Preston Assessment Centre</p>
+      <h4 class="heading-small mt5 mb20">Mandy Potemkin (Preston Assessment Centre)</h4>
       {% set nuggets = data.nuggets | pickDescriptor('Moving around and using steps') %}
       <p>{% for item in nuggets | sortBy("time",false) %}
         {{ item.text }}.&nbsp;
       {% endfor %}</p>
     </div>
   </div>
+  {% endif %}
 
-  <div id="been_scored">
+  {# <div id="been_scored">
     <hr />
     <h2 class="heading-large">Moving around and using steps score: 9</h2>
     <p class="form-hint">You can change this is if you need to.</p>
     <button class="button" id="change_score">Change score</button>
+  </div> #}
+
+  <div class="" id="rescore">
+    <hr />
+    <h3 class="heading-large">Can you give a score now?</h3>
+    <form class="form" action="">
+      {% block case_form %} {% include path2+"/_form_ask.html" %} {% endblock %}
+      <div class="js-hidden panel panel-indent mt20" id="scorenow">
+        {% include path2 + "/_mobility_score.html" %}
+      </div><!-- #scorenow -->
+      <div class="form-group">
+        <button class="button" type="button">Continue</button>
+      </div><!-- form-group -->
+    </form>
   </div>
 
-  <div class="js-hidden" id="rescore">
-  {% block case_form %} {% include path2+"/_form_ask.html" %} {% endblock %}
-  </div>
 
 {% endblock %}
 

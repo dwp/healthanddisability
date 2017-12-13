@@ -89,6 +89,11 @@
         $("html").css({'overflow-y':'visible'});
         $('.des_trigger').blur();
     };
+    // highlight the approrpaiet left nav
+    $('.evidence__leftnav a h3').each(function(i,e)
+    {
+      if ($(e).text() == $('h2.heading-large').text()) $(e).parent().addClass('active');
+    })
   });
 </script>
 {% endblock %}

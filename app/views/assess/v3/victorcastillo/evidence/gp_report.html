@@ -2,7 +2,7 @@
 
 {% block case_content %}
 
-  <h2 class="heading-large mt10 mb30">GP Report (ESA113)</h2>
+  <h2 class="heading-large mt10 mb30">GP report (ESA113)</h2>
 
   <p class="form-hint bold-xsmall mb0">Submitted by:</p>
   <p class="heading-small mt5">Dr. Sheila Makeyouwell</p>
@@ -32,16 +32,4 @@
     <a data-fancybox data-src="#descriptor_choice" href="javascript:;">change</a>
   </div>
 
-{% endblock %}
-
-{% block page_scripts %}
-{{ super() }}
-<script type="text/javascript">
-  $(document).on('ready',function()
-  {
-    $('.evidence__leftnav')
-      .children(":nth-child(3)")
-      .addClass('active')
-  });
-</script>
 {% endblock %}

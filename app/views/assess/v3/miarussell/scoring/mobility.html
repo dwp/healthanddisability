@@ -47,15 +47,15 @@
   </div> #}
 
   <div id="referred">
-  {% if stage == 1 %}
-    {% block case_form %} {% include path2+"/_form_ask.html" %} {% endblock %}
-  {% endif %}
-  {% if stage > 1 %}
-    <hr />
-    <h2 class="heading-medium">This descriptor has been referred for more medical evidence</h2>
-    <p class="form-hint">You can change this, if you need to.</p>
-    <button class="button" id="change_score">Change this</button>
-  {% endif %}
+    {% if stage == 1 %}
+      {% block case_form %} {% include path2+"/_form_ask.html" %} {% endblock %}
+    {% endif %}
+    {% if stage > 1 %}
+      <hr />
+      <h2 class="heading-medium">This descriptor has been referred for more medical evidence</h2>
+      <p class="form-hint">You can change this, if you need to.</p>
+      <button class="button" id="change_score">Change this</button>
+    {% endif %}
   </div>
 
   <div id="rescore" class="js-hidden">

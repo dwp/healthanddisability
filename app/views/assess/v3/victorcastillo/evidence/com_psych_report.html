@@ -27,9 +27,10 @@
 <script type="text/javascript">
   $(document).on('ready',function()
   {
-    $('.evidence__leftnav')
-      .children(":nth-child(2)")
-      .addClass('active')
+    $('.evidence__leftnav a h3').each(function(i,e)
+    {
+      if ($(e).text() == $('h2.heading-large').text()) $(e).parent().addClass('active');
+    })
   });
 </script>
 {% endblock %}

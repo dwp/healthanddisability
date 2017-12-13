@@ -12,6 +12,7 @@
     <div class="column-two-thirds">
       <div class="timeline">
 
+        {% if stage > 2 %}
         <span class="line"></span>
         <div class="timeline__event">
           <h3 class="timeline__heading">Prescription list received</h3>
@@ -50,6 +51,7 @@
           <p class="timeline_datetime">10:00am - 5th June 2017</p>
           <p class="bold-xsmall"><a href="#">John Goldsmith</a></p>
         </div>
+        {% endif %}
 
         <span class="line"></span>
         <div class="timeline__event">

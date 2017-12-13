@@ -13,45 +13,47 @@
         {% include path2+"/_descriptors.html" %}
       {% endif %}
 
-      <h3 class="heading-large">Medication and their side effects</h3>
-      <table class="meds">
+      <h3 class="heading-large">Medication &amp; side effects</h3>
+      <table class="meds table">
+        <tbody>
         <tr>
           <td>
             <p class="bold-small">Acetaminophen</p>
-            <p class="font-xsmall">350mg<br /> 3 times a day</p>
+            <p class="font-xsmall mb0">350mg<br /> 3 times a day</p>
           </td>
-          <td>The painkillers give Mia stomach pains, and sometimes nausea. This sometimes affects whether Mia can eat. </td>
+          <td>
+            <p>The painkillers give Mia stomach pains, and sometimes nausea. This sometimes affects whether Mia can eat.</p>
+            {% if stage > 2 %}
+              <div class="given_descriptors">{% include path2+"/_descriptors.html" %}</div>
+            {% endif %}
+          </td>
         </tr>
-      </table>
-      {% if stage > 2 %}
-        {% include path2+"/_descriptors.html" %}
-      {% endif %}
-
-      <table class="meds">
         <tr>
           <td>
             <p class="bold-small">Amoxicillin</p>
-            <p class="font-xsmall">750mg<br /> 5 times a day</p>
+            <p class="font-xsmall mb0">750mg<br /> 5 times a day</p>
           </td>
-          <td></td>
+          <td>
+            <p class="form-hint mt5">No side effects</p>
+            {% if stage > 2 %}
+              <div class="given_descriptors">{% include path2+"/_descriptors.html" %}</div>
+            {% endif %}
+          </td>
         </tr>
-      </table>
-      {% if stage > 2 %}
-        {% include path2+"/_descriptors.html" %}
-      {% endif %}
-
-      <table class="meds">
         <tr>
           <td>
             <p class="bold-small">Azithromycin</p>
-            <p class="font-xsmall">1mg<br /> 1 time a year</p>
+            <p class="font-xsmall mb0">1mg<br /> 1 time a year</p>
           </td>
-          <td></td>
+          <td>
+            <p class="form-hint mt5">No side effects</p>
+            {% if stage > 2 %}
+              <div class="given_descriptors mb0">{% include path2+"/_descriptors.html" %}</div>
+            {% endif %}
+          </td>
         </tr>
+        </tbody>
       </table>
-      {% if stage > 2 %}
-        {% include path2+"/_descriptors.html" %}
-      {% endif %}
 
 {% endblock %}
 

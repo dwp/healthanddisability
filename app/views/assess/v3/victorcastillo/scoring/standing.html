@@ -6,11 +6,26 @@
 
   <h3 class="heading-large mt10">Standing and sitting</h3>
 
-  <p>
-    Tony can't move from one seat to another right next to it without help from someone else?
-  </p>
+  <div class="evidence__box citizen">
+    <div class="evidence__label">From: ESA50</div>
+    <div class="evidence__content">
+      <p>Tony can't move from one seat to another right next to it without help from someone else?</p>
+      <p class="mt0 quote mb0"> “I am not able to {{ 1 | lorum | safe }}” </p>
+    </div>
+  </div>
 
-  <p class="mb0"><span class="bold-small">Tony says:</span></p>
-  <p class="mt0 font-medium quote"> “I am not able to {{ 1 | lorum | safe }}” </p>
+  <div class="" id="rescore">
+    <hr />
+    <h3 class="heading-large">Can you give a score now?</h3>
+    <form class="form" action="">
+      {% block case_form %} {% include path2+"/_form_ask.html" %} {% endblock %}
+      <div class="js-hidden panel panel-indent mt20" id="scorenow">
+        {% include path2 + "/_standing_score.html" %}
+      </div><!-- #scorenow -->
+      <div class="form-group">
+        <button class="button" type="button">Continue</button>
+      </div><!-- form-group -->
+    </form>
+  </div>
 
 {% endblock %}
