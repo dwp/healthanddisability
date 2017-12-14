@@ -57,9 +57,10 @@
     <button class="button" id="change_score">Change score</button>
   </div> #}
 
-  <div class="" id="rescore">
-    <hr />
-    <h3 class="heading-large">Can you give a recommendation now?</h3>
+  {% include path2 + "/_mobility_score.html" %}
+
+  {# <div class="" id="rescore">
+    <h3 class="heading-large">Can you make a recommendation now?</h3>
     <form class="form" action="/{{path2}}/" method="get">
       {% block case_form %} {% include path2+"/_form_ask.html" %} {% endblock %}
       <div class="js-hidden panel panel-indent mt20" id="scorenow">
@@ -69,7 +70,7 @@
         <input class="button" type="submit" value="Continue" />
       </div><!-- form-group -->
     </form>
-  </div>
+  </div> #}
 
 
 {% endblock %}

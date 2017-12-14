@@ -14,9 +14,11 @@
     </div>
   </div>
 
-  <div class="" id="rescore">
+  {% include path2 + "/_standing_score.html" %}
+
+  {# <div class="" id="rescore">
     <hr />
-    <h3 class="heading-large">Can you give a recommendation now?</h3>
+    <h3 class="heading-large">Can you make a recommendation now?</h3>
     <form class="form" action="">
       {% block case_form %} {% include path2+"/_form_ask.html" %} {% endblock %}
       <div class="js-hidden panel panel-indent mt20" id="scorenow">
@@ -26,6 +28,6 @@
         <button class="button" type="button">Continue</button>
       </div><!-- form-group -->
     </form>
-  </div>
+  </div> #}
 
 {% endblock %}
