@@ -24,16 +24,6 @@
 
 {% endblock %}
 
-{% block footer_top %}
-<p>stage = {{ stage }}</p>
-<select class="form-control" id="stage_select" name="select-box" style="width:auto">
-  {% for item in range(0,10) %}
-  <option value="{{ item }}">{{ item }}</option>
-  {% endfor %}
-</select>
-{{ super() }}
-{% endblock %}
-
 {% block page_scripts %}
 {{ super() }}
 <script type="text/javascript">
