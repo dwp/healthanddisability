@@ -1,0 +1,260 @@
+{% extends path1+"/_layout.html" %}
+
+{% block citizen_content %}
+
+  <div class="container">
+
+    {{ nav.case_tabs("scoring",1,path1) }} {# macro #}
+
+    <div class="grid-row">
+    
+    
+    <div class="column-third">
+    <h3 class="heading-medium mt0 mb0">To assess</h3>
+
+	   	 	<ul class="nav">
+	   	 		<li><a href="/{{ path2 }}/mobility">Moving around and using steps</a> </li>
+
+	   	 	</ul>
+	   	 	
+	   	 	
+		   	 	
+	    <!-- <h3 class="heading-small mt30 mb0">Skill required</h3>
+
+	   	 	<ul>
+	   	 		<li><span class="info-display">Complex neuro</span></li>
+	   	 	</ul>
+	   	 	
+	   	 <h3 class="heading-small mt30 mb0">Preferred appointment day(s)</h3>
+
+	   	 	<ul>
+	   	 		<li><span class="info-display">Monday</span></li>
+	   	 		<li><span class="info-display">Wednesday</span></li>
+	   	 		<li><span class="info-display">Friday</span></li>
+	   	 	</ul>
+	   	 	
+	   	 	
+	   	 	 <h3 class="heading-small mt30 mb0">Preferred appointment time</h3>
+
+	   	 	<ul>
+	   	 		<li><span class="info-display">Morning</span></li>
+
+	   	 	</ul>
+	   	 	
+	   	 	<h3 class="heading-small mt30 mb0">Special requirements</h3>
+
+	   	 	<ul>
+	   	 		<li><span class="info-display">Doctor</span></li>
+	   	 		<li><span class="info-display">Ground floor access</span></li>
+	   	 		<li><span class="info-display">Security</span></li>
+
+	   	 	</ul>	-->	 	
+	   	 	
+	   	 	
+
+	    </div>
+
+      
+      <div class="column-two-thirds">
+      
+      <h1 class="heading-large mt5">Appointment details</h1>
+      
+      
+      
+      {% block scrutiny_referral %}
+<form class="form" action="#" method="get">
+  <div class="form-group">
+	  <label class="form-label" for="reason">
+	  	Reason for face to face appointment
+	  </label>
+	  <textarea class="form-control" name="reason" style="height:200px"></textarea>
+  </div>
+
+		  
+		  
+		  
+		  
+		     <div class="form-group">
+			    <fieldset>
+			
+			      <legend class="heading-medium">Skill required</legend>
+			
+			      <div class="multiple-choice">
+			        <input id="radio-neuro1" type="radio" name="radio-neuro" value="neuro">
+			        <label for="radio-neuro1">Standard</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-neuro2" type="radio" name="radio-neuro" value="neuro">
+			        <label for="radio-neuro2">Neuro</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-neuro3" type="radio" name="radio-neuro" value="complex">
+			        <label for="radio-neuro3">Complex neuro</label>
+			      </div>
+			
+			    </fieldset>
+		  </div>
+		  
+  
+  
+ <!--  <div class="form-group">
+
+			    <fieldset class="filter-form">
+			
+			      <legend class="heading-medium">Preferred appointment day(s)</legend>
+			
+			      <div class="multiple-choice"> 
+			        <input id="radio-1a" type="checkbox" name="radio-group2" value="Mon">
+			        <label for="radio-1a">Monday</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-2a" type="checkbox" name="radio-group2" value="Tue">
+			        <label for="radio-2a">Tuesday</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-3a" type="checkbox" name="radio-group2" value="Wed">
+			        <label for="radio-3a">Wednesday</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-4a" type="checkbox" name="radio-group2" value="Thu">
+			        <label for="radio-4a">Thursday</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-5a" type="checkbox" name="radio-group2" value="Fri">
+			        <label for="radio-5a">Friday</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-6a" type="checkbox" name="radio-group2" value="Sat">
+			        <label for="radio-6a">Saturday</label>
+			      </div>
+			
+			    </fieldset>
+		  </div> -->
+    	
+    	
+
+		<!--  <div class="form-group">
+			    <fieldset>
+			
+			      <legend class="heading-medium">Preferred appointment time</legend>
+			
+			      <div class="multiple-choice">
+			        <input id="radio-1" type="checkbox" name="radio-group" value="Northern Ireland" class="time-slot1">
+			        <label for="radio-1">Morning</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-2" type="checkbox" name="radio-group" value="Isle of Man or the Channel Islands" class="time-slot2">
+			        <label for="radio-2">Afternoon</label>
+			      </div>
+			
+			    </fieldset>
+		  </div> -->
+		  
+		  
+		<!--   <div class="form-group">
+			    <fieldset class="inline">
+			
+			      <legend class="heading-medium">Are there any dates the claimant cannot attend an assessment?</legend>
+			
+			      <div class="multiple-choice" data-target="dates-attend">
+			        <input id="radio-dates1" type="radio" name="radio-dates" value="Yes">
+			        <label for="radio-dates1">Yes</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-dates2" type="radio" name="radio-dates" value="No">
+			        <label for="radio-dates2">No</label>
+			      </div>
+			      <br>
+			      <div class="js-hidden panel" id="dates-attend">
+			        	<label for="date-required" class="form-label">Notes</label>
+			        	<textarea class="form-control" name="date-required" style="height:200px"></textarea>
+			        </div>
+			
+			    </fieldset>
+		  </div> -->
+		  
+		  
+		<!-- <div class="form-group">
+			    <fieldset>
+			
+			      <legend class="heading-medium">Special requirements</legend>
+			      
+			      
+			      
+			      <div class="multiple-choice" data-target="gender-required">
+			        <input id="radio-2G" type="checkbox" name="radio-group3" value="Other">
+			        <label for="radio-2G">Same gender HCP</label>		        
+			      </div>
+			      <div class="js-hidden panel" id="gender-required">
+			        	<div class="multiple-choice">
+					        <input id="male" type="checkbox" name="radio-groupG" value="male">
+					        <label for="male">Male</label>		        
+					      </div>
+					      <div class="multiple-choice">
+					        <input id="female" type="checkbox" name="radio-groupG" value="female">
+					        <label for="female">Female</label>		        
+					      </div>
+			        </div>
+			        
+			
+			      <div class="multiple-choice">
+			        <input id="radio-1b" type="checkbox" name="radio-group3" value="1st">
+			        <label for="radio-1b">Ground floor access</label>
+			      </div>			    
+
+			      
+			       <div class="multiple-choice" data-target="language-required">
+			        <input id="radio-2b" type="checkbox" name="radio-group3" value="Other" data-target="language-required">
+			        <label for="radio-2b">Interpreter</label>		        
+			      </div>
+			      <div class="js-hidden panel" id="language-required">
+			        	<label for="l-required" class="form-label">Language</label>
+			        	<input type="text" id="l-required" class="form-control form-control-1-4">
+			        </div>
+			        
+			        
+			        <div class="multiple-choice" data-target="other-req">
+			      	 	 <input id="radio-2ba" type="checkbox" name="radio-group3" value="Other" data-target="other-req">
+				  	  	<label for="radio-2ba">Other</label>		        
+			      </div>
+		
+			         <div class="js-hidden panel" id="other-req">
+			        	<label for="other-required" class="form-label">Notes</label>
+			        	<textarea class="form-control" name="other-required" style="height:200px"></textarea>
+			        </div>
+			       
+			        
+			        
+			
+			    </fieldset>
+		  </div> -->
+  
+  
+  
+  <div class="form-group">
+    <a href="scrutinyConfirm" class="button">Continue</a>
+  </div><!-- form-group -->
+</form>
+
+{% endblock %}
+      
+      
+      
+      
+      </div><!-- column-third -->
+
+
+      
+      
+    </div><!-- grid-row -->
+    
+    
+    
+    
+  </div><!-- container -->
+{% endblock %}
+
+
+
+
+

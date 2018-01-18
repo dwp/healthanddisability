@@ -1,0 +1,55 @@
+<form class="form" action="index.html" method="post">
+  <div class="form-group">
+    <h2 class="heading-medium">How far can {{ firstname }} walk or move on level ground without help from someone, and without stopping due to severe pain or tiredness?</h2>
+    <p class="mb5">Moving includes:</p>
+    <ul class="list list-bullet">
+      <li>walking with a stick</li>
+      <li>using crutches</li>
+      <li>using a manual wheelchair by themself</li>
+    </ul>
+    <div class="multiple-choice">
+      <input id="nomore_50" type="radio" name="mobility" value="nomore_50">
+      <label for="nomore_50">No more than 50 metres</label>
+    </div>
+    <div class="multiple-choice" data-target="the_rest">
+      <input id="nomore_100" type="radio" name="mobility" value="nomore_100">
+      <label for="nomore_100">No more than 100 metres</label>
+    </div>
+    <div class="multiple-choice" data-target="the_rest">
+      <input id="nomore_200" type="radio" name="mobility" value="nomore_200">
+      <label for="nomore_200">No more than 200 metres</label>
+    </div>
+    <div class="multiple-choice" data-target="the_rest">
+      <input id="morethan_200" type="radio" name="mobility" value="morethan_200">
+      <label for="morethan_200">More than 200 metres</label>
+    </div>
+  </div><!-- form-group -->
+  <div class="panel js-hidden" id="the_rest">
+    <div class="form-group">
+      <h2 class="heading-medium">Could {{ firstname }} move that far again?</h2>
+      <ol class="list list-number">
+        <li>Within a reasonable time</li>
+        <li>Without stopping due to severe pain or tiredness</li>
+      </ol>
+      <div class="multiple-choice">
+        <input id="again_yes" type="radio" name="move_again" value="yes">
+        <label for="again_yes">Yes</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="again_no" type="radio" name="move_again" value="no">
+        <label for="again_no">No</label>
+      </div>
+    </div><!-- form-group -->
+    <div class="form-group">
+      <h2 class="heading-medium">Can {{ firstname }} go up or down 2 steps without help, if they use a handrail?</h2>
+      <div class="multiple-choice">
+        <input id="steps_yes" type="radio" name="steps" value="yes">
+        <label for="steps_yes">Yes</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="steps_no" type="radio" name="steps" value="no">
+        <label for="steps_no">No</label>
+      </div>
+    </div><!-- form-group -->
+  </div><!-- #the_rest -->
+</form>

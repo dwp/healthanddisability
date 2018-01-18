@@ -1,0 +1,50 @@
+{% extends path2+"/_layout.html" %}
+
+{% block case_content %}
+
+      <h2 class="heading-large mt10">Illness, disabilities and medication</h2>
+
+      <ul class="list list-bullet">
+        <li>Anxiety and depression <span class="date">(since {{ "MMMM YYYY" | monthsAgo(24) }})</span></li>
+        <li>Autism <span class="date">(since {{ "MMMM YYYY" | monthsAgo(124) }})</span></li>
+        <li>Fibromyalgia <span class="date">(since {{ "MMMM YYYY" | monthsAgo(124) }})</span></li>
+      </ul>
+      <div class="pb30 given_descriptors">{% include path2+"/_descriptors.html" %}</div>
+
+      <h3 class="heading-large">Medication &amp; side effects</h3>
+      <table class="meds table">
+        <tbody>
+        <tr>
+          <td>
+            <p class="bold-small">Acetaminophen</p>
+            <p class="font-xsmall mb0">350mg<br /> 3 times a day</p>
+          </td>
+          <td>
+            <p>The painkillers give {{firstname}} stomach pains, and sometimes nausea. This sometimes affects whether {{firstname}} can eat.</p>
+            <div class="given_descriptors">{% include path2+"/_descriptors.html" %}</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="bold-small">Amoxicillin</p>
+            <p class="font-xsmall mb0">750mg<br /> 5 times a day</p>
+          </td>
+          <td>
+            <p class="form-hint mt5">No side effects</p>
+            <div class="given_descriptors">{% include path2+"/_descriptors.html" %}</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="bold-small">Azithromycin</p>
+            <p class="font-xsmall mb0">1mg<br /> 1 time a year</p>
+          </td>
+          <td>
+            <p class="form-hint mt5">No side effects</p>
+            <div class="given_descriptors mb0">{% include path2+"/_descriptors.html" %}</div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+{% endblock %}

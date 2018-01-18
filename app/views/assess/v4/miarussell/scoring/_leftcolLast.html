@@ -1,0 +1,104 @@
+{# {% if stage < 5 %}
+<h3 class="heading-medium mt0 mb0">To do</h3>
+<ul class="nav" id="todo">
+  {% if stage < 2 %}
+    <li><a href="/{{ path2 }}/mobility">Moving around and using steps</a> </li>
+  {% endif %}
+  {% if stage < 3 %}
+    <li><a href="/{{ path2 }}/standing">Standing and sitting</a> </li>
+  {% endif %}
+  {% if stage < 4 %}
+    <li><a href="/{{ path2 }}/learning">Learning and remembering how to do things</a> </li>
+  {% endif %}
+  <li><a href="/{{ path2 }}/speakwritetype">Speaking, writing and typing</a> </li>
+  <li><a href="/{{ path2 }}/dexterity">Using your hands</a> </li>
+  <li><a href="/{{ path2 }}/social">Meeting and speaking to people</a> </li>
+  <li><a href="/{{ path2 }}/gettingaround"> Getting around safely </a> </li>
+</ul>
+{% endif %}
+
+{% if stage > 2 %}
+<h3 class="heading-medium mt0 mb0">Scored</h3>
+<ul class="nav" id="scored">
+  <li>
+    <a href="/{{ path2 }}/standing">
+    <span>Standing and sitting</span>
+    <span class="score">9</span>
+    </a>
+  </li>
+  {% if stage > 4 %}
+    <li>
+      <a href="/{{ path2 }}/dexterity">
+        <span>Using your hands</span>
+        <span class="score">3</span>
+      </a>
+    </li>
+  {% endif %}
+  {% if stage > 7 %}
+    <li>
+      <a href="/{{ path2 }}/mobility">
+        <span>Moving around and using steps</span>
+        <span class="score">15</span>
+      </a>
+    </li>
+  {% endif %}
+</ul>
+{% endif %}
+
+{% if stage > 1 %}
+<h3 class="heading-medium mt0 mb0">Needs medical evidence</h3>
+<ul class="nav" id="gprp">
+  {% if stage < 8 %}
+    <li><a href="/{{ path2 }}/mobility">Moving around and using steps</a> </li>
+  {% endif %}
+  {% if stage > 4 %}
+    <li><a href="/{{ path2 }}/speakwritetype">Speaking, writing and typing</a> </li>
+    <li><a href="/{{ path2 }}/social">Meeting and speaking to people</a> </li>
+  {% endif %}
+</ul>
+{% endif %}
+
+{% if stage > 3 %}
+<h3 class="heading-medium mt0 mb0">Needs a health assessment</h3>
+<ul class="nav" id="face">
+  <li><a href="/{{ path2 }}/learning">Learning and remembering how to do things</a> </li>
+  {% if stage > 4 %}
+    <li><a href="/{{ path2 }}/gettingaround"> Getting around safely </a> </li>
+  {% endif %}
+</ul>
+{% endif %} #}
+
+<h3 class="heading-medium mt0 mb0">To do</h3>
+<ul class="nav" id="todo">
+
+  <li><a href="/{{ path2 }}/standing">Standing and sitting</a> </li>
+  <li><a href="/{{ path2 }}/learning">Learning and remembering how to do things</a> </li>
+  <li><a href="/{{ path2 }}/speakwritetype">Speaking, writing and typing</a> </li>
+  <li><a href="/{{ path2 }}/dexterity">Using your hands</a> </li>
+</ul>
+
+<h3 class="heading-medium mt0 mb0">Needs health assessment</h3>
+<ul class="nav" id="face">
+  <li><a href="/{{ path2 }}/mobility">Moving around and using steps</a> </li>
+</ul>
+
+
+
+
+<!-- <h3 class="heading-medium mt0 mb0">No difficulties recorded</h3>
+<ul class="nav" id="noev">
+  
+  <li><a href="/{{ path2 }}/social">Meeting and speaking to people</a> </li>
+  <li><a href="/{{ path2 }}/gettingaround"> Getting around safely </a> </li>
+  <li><a href="/{{ path2 }}/pickingup">Picking up and moving things</a> </li>
+  <li><a href="/{{ path2 }}/continence">Using the toilet</a> </li>
+  <li><a href="/{{ path2 }}/reaching">Reaching for things</a> </li>
+  <li><a href="/{{ path2 }}/conscious">Staying conscious</a> </li>
+  <li><a href="/{{ path2 }}/hazards">Being aware of risks and dangers</a> </li>
+  <li><a href="/{{ path2 }}/hearread"> Hearing and reading </a> </li>
+  <li><a href="/{{ path2 }}/startfinish">Planning and completing things</a> </li>
+  <li><a href="/{{ path2 }}/changes">How you cope when things change</a> </li>
+  <li><a href="/{{ path2 }}/eatdrink">Eating and drinking</a> </li>
+  <li><a href="/{{ path2 }}/goingout">Going out</a> </li>
+  <li><a href="/{{ path2 }}/behaving">How your behaviour affects other people</a> </li>
+</ul> -->

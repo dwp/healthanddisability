@@ -1,0 +1,45 @@
+{% extends path+"/_layout.html" %}
+
+{% block assess_content %}
+
+<main id="content" role="main" class="main-content mt30">
+
+      <div class="container">
+        <div class="grid-row">
+          <div class="column-full">
+              <table class="zebra">
+
+                <thead>
+                  <tr>
+                    <th style="padding-left:15px;">name</th>
+                    <th>status</th>
+                    <th class="numeric">last updated</th>
+                  </tr>
+                </thead>
+                
+                
+                
+                <tr class="click_row" href="miarussell/timeline">
+                  <td style="padding-left:15px;" class="">Mia Russell</td>
+                  <td>Ready for scrutiny</td>
+                  <td class="nobr numeric">4th January 2018</td>
+                </tr>
+
+
+                <tr class="click_row" href="tonyjohnson/timeline">
+                  <td style="padding-left:15px;" class="">Tony Johnson</td>
+                  <td>Ready for medical assessment</td>
+                  <td class="nobr numeric">12th January 2018</td>
+                </tr>
+
+                
+
+               
+              </table>
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

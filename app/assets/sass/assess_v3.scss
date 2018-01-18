@@ -209,4 +209,54 @@ select.form-select:hover {
   cursor: pointer;
 }
 
-//Testing
+.active_detail {
+    background-color:$govuk-blue;
+    color:white!important;
+    p { color:white; }
+	background-image: url(/public/images/big_chevron.png);
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 4%;
+    &:hover {
+      background-color:lighten($govuk-blue,5);
+    }
+  }
+
+
+.address-stack {
+	span {
+		display: block;
+	}
+}
+
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7); 
+	z-index: 9999;
+	.inner-modal {
+		max-width: 440px;
+		margin: 10% auto 0 auto;
+		background: #fff;
+		padding: 40px 40px 20px 40px;
+		h3 {
+			margin: 0;
+			padding: 0;
+		}
+	}
+}
+
+.info-display {
+		display: inline-block;
+		padding: 5px 10px 4px 10px;
+		background: #000;
+		border-radius: 5px;
+		color: #fff;
+		font-weight: 700;
+		font-size: 16px;
+		margin-top: .5em;
+	}
