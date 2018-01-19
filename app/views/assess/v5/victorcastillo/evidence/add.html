@@ -24,8 +24,14 @@
       <li>Moving around and using steps</li>
       <li>Standing and sitting</li>
     </ul>
+    <p>Once this is complete do a <a href="/{{path2}}/phys_consent" class="">physical examination</a>.</p>
   </div><!-- column -->
+
   <div class="column-two-thirds">
+
+    {% if data.nuggets.length %}
+    <p style="float:right" class="mt30"></p>
+    {% endif %}
 
     {% if data.nuggets.length %}
       {% set last_one = data.nuggets | sortBy("time",true) | last  %}
@@ -42,9 +48,6 @@
       </div>
     {% endfor %}
 
-    {% if data.nuggets.length %}
-    <p style="float:right" class="mt30"><a href="/{{path2}}/" class="button">Finish assessment</a></p>
-    {% endif %}
   </div><!-- column -->
 </div><!-- row -->
 
