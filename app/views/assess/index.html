@@ -1,0 +1,31 @@
+{% extends "front_layout.html" %}
+
+{% block content %}
+
+<div class="index">
+
+<div class="index-page-banner">
+  <div class="index-heading-wrapper">
+    <h1 class="heading-xlarge index-heading-xlarge"> Assessment Tool </h1>
+    <h2 class="heading-large index-heading-large">Prototypes</h2>
+  </div>
+</div>
+
+<main id="content" role="main">
+
+    {% include "includes/prototype_banner.html" %}
+
+    <p class="form-hint mt10" style="text-align:right">Edit these files on <a href="https://github.com/dwpdigitaltech/healthanddisability">GitHub</a>.</p>
+
+    <div class="latest_version">
+   	  {% include "assess/v5/_front.html" %}
+   	  {% include "assess/v4/_front.html" %}
+      {% include "assess/v3/_front.html" %}
+      {% include "assess/v2/_front.html" %}
+      {% include "assess/v1/_front.html" %}
+    </div>
+
+</main>
+
+</><!-- .index -->
+{% endblock %}
