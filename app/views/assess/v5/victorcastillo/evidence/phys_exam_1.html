@@ -16,7 +16,7 @@
     <!-- LOWER LIMB -->
     <div class="form-group">
 
-      {{ physGroup("Lower limbs",0) }}
+      {{ physGroup("Lower limbs",1) }}
       <!-- FINDINGS -->
       <div class="form-group panel panel-indent js-hidden mt0 mb20" id="group_{{"Lower limbs"|slug}}_yes">
         {{ physObs("Lower back",0) }}
@@ -150,16 +150,11 @@
     <label for="phys_{{s}}">{{name}}</label>
   </div>
   <div class="form-group panel panel-indent js-hidden mt0 mb20" id="phys_{{s}}_yes">
-    <p>
-      <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
-      <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
-    </p>
+    <p><label class="form-label" for="phys_{{s}}_obs">Observation</label>
+    <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="2"></textarea></p>
+    <p><label class="form-label" for="phys_{{s}}_palp">Palpation</label>
+    <textarea class="form-control form-control-3-4" name="phys_{{s}}_palp" id="phys_{{s}}_palp" rows="2"></textarea></p>
+    <p><label class="form-label" for="phys_{{s}}_mov">Movement</label>
+    <textarea class="form-control form-control-3-4" name="phys_{{s}}_mov" id="phys_{{s}}_mov" rows="2"></textarea></p>
   </div>
 {% endmacro %}
-
-{% block footer_top %}
-{{ super() }}
-<p class="font-xsmall">
-  <a href="/{{ path2 }}/phys_exam_1">exam v1</a>
-</p>
-{% endblock %}

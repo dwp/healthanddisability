@@ -30,6 +30,13 @@ router.get('/cookies/', function (req, res, next) {
   res.send(tog(req.cookies));
 })
 
+router.get('*/record_phys_exam', function (req, res, next) {
+  req.session.data.physexam = true;
+  // res.send(tog(req.session.data));
+  // res.send(tog(req.params[0]));
+  res.redirect('/'+res.locals.path+'/'+req.params[0]+'/')
+})
+
 var nug_id = 0;
 
 /*
@@ -52,6 +59,7 @@ router.post('/saveText/', function (req, res, next) {
 router.get('/clearSession',function(req, res, next) {
   req.session.data.nuggets = [];
   req.session.data.withdesc = false;
+  req.session.data.physexam = false;
   nug_id = 0;
   res.send("success");
 })

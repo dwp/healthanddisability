@@ -18,6 +18,13 @@
               </a>
             {% endif %}
 
+            {% if data.physexam %}
+              <a href="physical_exam" class="evidence__item mb10">
+                <h3 class="heading-small mt10 mb5">Physical examination</h3>
+                <p class="font-xsmall mb5">{{ "Do MMMM YYYY" | daysAgo(1) }}</p>
+              </a>
+            {% endif %}
+
             <a href="com_psych_report" class="evidence__item mb10">
               <h3 class="heading-small mt10 mb5">Community Psychiatric Nurse Report</h3>
               <p class="font-xsmall mb5">{{ "Do MMMM YYYY" | daysAgo(7) }}</p>
