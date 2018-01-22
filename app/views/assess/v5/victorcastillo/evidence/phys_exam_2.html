@@ -16,7 +16,7 @@
     <!-- LOWER LIMB -->
     <div class="form-group">
 
-      {{ physGroup("Lower limbs",1) }}
+      {{ physGroup("Lower limbs",0) }}
       <!-- FINDINGS -->
       <div class="form-group panel panel-indent js-hidden mt0 mb20" id="group_{{"Lower limbs"|slug}}_yes">
         {{ physObs("Lower back",0) }}
@@ -160,6 +160,7 @@
 {% block footer_top %}
 {{ super() }}
 <p class="font-xsmall">
-  <a href="/{{ path2 }}/phys_exam_1">exam v1</a>
+  <a href="/{{ path2 }}/phys_exam_1">exam v1</a> |
+  <a href="/{{ path2 }}/phys_exam_2">exam v2</a>
 </p>
 {% endblock %}
