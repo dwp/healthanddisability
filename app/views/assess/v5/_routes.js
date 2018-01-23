@@ -98,6 +98,7 @@ router.get('/prefillAssessment',function(req, res, next) {
     time.subtract(3,'minutes');
   }
   nug_id = bits.length;
+  req.session.data.physexam = true;
   res.send("success");
 })
 
