@@ -1,0 +1,45 @@
+{% extends path2+"/_layoutForm.html" %}
+
+{% block case_content %}
+
+<a href="index" class="link-back">Back to evidence</a>
+
+<h3 class="heading-large mt20">Can you make a recommendation now?</h3>
+<form class="form" action="/{{ path2 }}" method="get">
+  <div class="form-group">
+
+    <div class="multiple-choice" data-target="scorenow">
+      <input id="decide_now" name="whatcando" type="radio" value="Yes">
+      <label for="decide_now"> Yes, I have enough evidence recommend the support group</label>
+    </div>
+
+  
+
+   <!-- <div class="multiple-choice" data-target="">
+      <input id="support_no" name="whatcando" type="radio" value="No, redirect({{ path1 }}/support/rejected)">
+      <label for="support_no"> No, I need more evidence </label>
+    </div> -->
+
+    <div class="multiple-choice" data-target="">
+      <input id="face2face" name="whatcando" type="radio" value="No, redirect({{ path1 }}/support/rejected)">
+      <label for="face2face"> No, I want Tomas to come in</label>
+    </div>
+
+  </div><!-- form-group -->
+  <div class="form-group">
+    <a href="booking" class="button">Continue</a>
+  </div><!-- form-group -->
+</form>
+      
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $(".evidence__leftnav a h3:contains('Tomas')").parent().addClass('active');
+  });
+</script>
+{% endblock %}

@@ -2,41 +2,73 @@
 
 {% block case_content %}
 
+
+
+<div class="grid-row">
+      <div class="column-two-thirds">
+
+
+
+
+
   <h2 class="heading-large mt10 mb30">GP Report (ESA113)</h2>
 
   <p class="form-hint bold-xsmall mb0">Submitted by:</p>
-  <p class="heading-small mt5">Dr. Sheila Makeyouwell</p>
+  <p class="heading-small mt5">Dr. Sheila Turner</p>
   <p>Suronge Surgery, 10 Drew Lane, Wimbledon, Hertfordshire</p>
-  <p class="mt5">{{ "Do MMM YYYY" | daysAgo(5) }}</p>
+  <p class="mt5">14th January 2018</p>
   <hr />
 
   <h3 class="heading-medium">Moving around and using steps</h3>
-  <p>“I have been seeing Mia to treat her anxiety and depression, fibromyalgia and autism. Her fibromyalgia causes her a lot of pain and I have prescribed painkillers at a dose of 350mg a day. She is uncomfortable when she sits and stands. I am unable to say how far she can walk or how many stairs she can take as I only see her in the surgery, not at home.”</p>
+  <p>“I don’t know how far Tomas can walk. He uses crutches, but has problems with them because his wrists were broken in the accident. I imagine it’s not very far. He gets a taxi to the surgery and has help to get in. He tried a wheelchair but found this is harder on his wrists than the crutches.”</p>
   <div class="given_descriptors">
     <span class="tag">Moving around and using steps</span>
     <a data-fancybox data-src="#descriptor_choice" href="javascript:;">change</a>
   </div>
-
-  <h3 class="heading-medium">Hearing and reading</h3>
-  <p>{{ firstname }} is {{ 2 | lorum | safe }}</p>
+  <hr>
+  <h3 class="heading-medium">Standing and sitting</h3>
+  <p>"Tomas won’t be able to stand for long as he needs crutches to move and to balance, and his wrist injuries make this difficult. He sits for his appointments, usually about 10 minutes. I have prescribed an increasing dosage of opioids as Tomas is in a lot of pain."</p>
   <div class="given_descriptors">
-    <span class="tag">hearing and reading</span>
+    <span class="tag">Standing and sitting</span>
     <a data-fancybox data-src="#descriptor_choice" href="javascript:;">change</a>
   </div>
-
-  <h3 class="heading-medium">Getting around safely</h3>
-  <p>{{ firstname }} is {{ 2 | lorum | safe }}</p>
+<hr>
+  <h3 class="heading-medium">Speaking, writing and typing</h3>
+  <p>"The wrist injuries might make writing and typing difficult. I haven’t witnessed him needing to do this."</p>
   <div class="given_descriptors">
-    <span class="tag">Getting around safely</span>
+    <span class="tag">Speaking, writing and typing</span>
     <a data-fancybox data-src="#descriptor_choice" href="javascript:;">change</a>
   </div>
+  
+  
+   </div>
 
-  <h3 class="heading-medium">Eating and drinking</h3>
-  <p>{{ firstname }} is {{ 2 | lorum | safe }}</p>
-  <div class="given_descriptors">
-    <span class="tag">Eating and drinking</span>
-    <a data-fancybox data-src="#descriptor_choice" href="javascript:;">change</a>
-  </div>
+
+
+<div class="column-third">
+
+<div class="case-status">
+		 
+
+		  <p class="mt10 mb0 bold-small"><span class="circle purple"></span>Ready for review</p>
+		  <p class="mt10">Assigned to Nina Patel</p>
+		  <p><a href="rec" class="button">Make a recommendation</a></p>
+		  <hr>
+		  <ul class="mt30">
+		    <li><a href="#">Record new evidence</a></li>
+		    <li class="mt10"><a href="#">Request evidence</a></li>
+	    </ul>
+		<hr>
+	  </div>
+
+
+
+
+      
+      </div>
+
+</div>
+
 
 {% endblock %}
 

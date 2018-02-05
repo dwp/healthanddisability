@@ -1,0 +1,119 @@
+{% extends path2+"/_layoutForm.html" %}
+
+{% block case_content %}
+
+<a href="index" class="link-back">Back to evidence</a>
+
+<h3 class="heading-large mt20">Appointment referral</h3>
+<form class="form" action="/{{ path2 }}" method="get">
+  
+  <div class="form-group">
+	  <label class="form-label" for="reason">
+	  	Reason for face to face appointment
+	  </label>
+	  <textarea class="form-control" name="reason" style="height:200px"></textarea>
+	  
+	  
+	  
+         {% if item.descriptors.length %}
+          <p class="mb0">
+          {% for d in item.descriptors %}
+            <span class="tag">{{ d }}</span>
+          {% endfor %}
+            <a data-fancybox data-src="#descriptor_choice" href="javascript:;" data-id="{{ item.id }}" class="des_trigger">change</a>
+          </p>
+        {% else %}
+          <p class="mt20 mb0"><a data-fancybox class="des_trigger" data-src="#descriptor_choice" href="javascript:;" data-id="{{ item.id }}">Assign descriptors</a></p>
+        {% endif %}		  
+  </div> 
+		  
+
+		  
+		  
+		     <div class="form-group">
+			    <fieldset>
+			
+			      <legend class="heading-medium">Skill required</legend>
+			
+			      <div class="multiple-choice">
+			        <input id="radio-neuro1" type="radio" name="radio-neuro" value="neuro">
+			        <label for="radio-neuro1">Standard</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-neuro2" type="radio" name="radio-neuro" value="neuro">
+			        <label for="radio-neuro2">Neuro</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-neuro3" type="radio" name="radio-neuro" value="complex">
+			        <label for="radio-neuro3">Complex neuro</label>
+			      </div>
+			
+			    </fieldset>
+		  </div>
+  
+  
+    <div class="form-group">
+    <a href="booking-confirm" class="button">Continue</a>
+  </div><!-- form-group -->
+</form>
+      
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $(".evidence__leftnav a h3:contains('Tomas')").parent().addClass('active');
+  });
+</script>
+
+
+<script type="text/javascript">
+  $(document).on('ready',function()
+
+
+$('#des_submit').on('click',function(e)
+    {
+      e.preventDefault();
+      var t = $('#des_form').serializeArray();
+      var des = [], id;
+      $.each(t,function(i,e)
+      {
+        if (e.name == "des_id") id = e.value;
+        if (e.name == "descriptors") des.push(e.value);
+      });
+      var data = {
+        id: id,
+        descriptors: des,
+      }
+      console.log('got here1 ')
+      $.ajax({
+        url: '/{{ path }}/updateEvidence',
+        method: "POST",
+        contentType: 'application/json',
+        data: JSON.stringify(data),
+        dataType: 'json',
+        complete:  function(data,status,xhr) {
+          console.log('got here')
+          document.location.reload(true);
+        }
+      })
+    })
+
+    $('.des_trigger').on('click',function(e)
+    {
+      var id = $(this).data('id');
+      console.log(id)
+      $('#des_id').val(id);
+    });
+  });
+</script>
+
+{% endblock %}
+
+
+
+
+

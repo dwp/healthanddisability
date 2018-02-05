@@ -2,23 +2,83 @@
 
 {% block scoring_content %}
 
+
+<div class="grid-row">
+
+<div class="column-two-thirds">
+
+
+
 <h2 class="heading-large mt5 mb30">Overview</h2>
 
 
 
 <div class="grid-row">
-  <div class="column-third">
-      </div><!-- column -->
-  <div class="column-third">
 
-  </div><!-- column -->
- <div class="column-third">
+
+ <div class="column-full">
     <span class="data-item bold-xxlarge">2</span>
-    <span class="data-item bold-xsmall mb10">to review</span>
-  </div>
+    <span class="data-item bold-xsmall mb10">under review</span>
+  </div><!-- column -->
+  
+
+
+  
 </div><!-- row -->
 
-<hr />
+<hr>
+
+<div class="grid-row">
+
+<div class="column-half">
+    <div class="data">
+      <span class="data-item bold-xxlarge" id="total_gprp">0</span>
+      <span class="data-item bold-xsmall mb10">need more medical evidence</span>
+     
+      <!-- <a href="#" class="button">Request GP Report</a> -->
+   
+    </div>
+  </div><!-- column -->
+
+
+ <div class="column-half">
+    <span class="data-item bold-xxlarge">0</span>
+    <span class="data-item bold-xsmall mb10">need a health assessment</span>
+   <!-- <a href="#" class="button">Refer for appointment</a> -->
+  </div><!-- column -->
+  
+  
+</div><!-- row -->
+
+
+</div><!-- column -->
+
+
+
+<div class="column-third">
+
+<div class="case-status">
+		 
+
+		  <p class="mt10 mb0 bold-small"><span class="circle teal"></span>Referred to support group</p>
+		  <p class="mt10">Referred by Nina Patel</p>
+		  <p><a href="rec" class="button">Confirm decision</a></p>
+		  <hr>
+		  <ul class="mt30">
+		    <li><a href="#">Record new evidence</a></li>
+		    <li class="mt10"><a href="#">Request evidence</a></li>
+	    </ul>
+		<hr>
+	  </div>
+
+</div><!-- column -->
+
+</div><!-- row -->
+
+
+
+
+
 
 {% endblock %}
 

@@ -2,50 +2,78 @@
 
 {% block scoring_content %}
 
+
+<div class="grid-row">
+
+<div class="column-two-thirds">
+
+
+
 <h2 class="heading-large mt5 mb30">Overview</h2>
 
 
 
-<div class="grid-row mb30">
+<div class="grid-row">
 
-<div class="column-third">
+
+ <div class="column-full">
     <span class="data-item bold-xxlarge">1</span>
-    <span class="data-item bold-xsmall mb10">to review</span>
-  </div>
+    <span class="data-item bold-xsmall mb10">under review</span>
+  </div><!-- column -->
   
-      <div class="column-third">
 
-      </div><!-- column -->
-      
-      <div class="column-third">
-       
-      </div><!-- column -->
-      
-      </div><!-- row -->
 
-<hr />
+  
+</div><!-- row -->
+
+<hr>
 
 <div class="grid-row">
-  <div class="column-third">
+
+<div class="column-half">
     <div class="data">
       <span class="data-item bold-xxlarge" id="total_gprp">0</span>
       <span class="data-item bold-xsmall mb10">need more medical evidence</span>
-      {% if stage > 2 %}
-      <button class="button">Request GP Report</button>
-      {% endif %}
+     
+      <!-- <a href="#" class="button">Request GP Report</a> -->
+   
     </div>
   </div><!-- column -->
-  <div class="column-third">
-    <div class="data">
-      <span class="data-item bold-xxlarge">1</span>
-      <span class="data-item bold-xsmall mb10">need a health assessment</span>
-      
-    </div>
+
+
+ <div class="column-half">
+    <span class="data-item bold-xxlarge">1</span>
+    <span class="data-item bold-xsmall mb10">need a health assessment</span>
+   <a href="#" class="button">Refer for appointment</a>
   </div><!-- column -->
- <div class="column-third">
-      </div>
+  
+  
 </div><!-- row -->
-<hr />
+
+
+</div><!-- column -->
+
+
+
+<div class="column-third">
+
+<div class="case-status">
+		  <h4 class="heading-medium">UNDER REVIEW</h4>
+		  <p class="mt20 bold-xsmall">Assigned to Nina Patel</p>
+		  <ul class="mt20">
+		  	<li><a href="scrutiny">Refer for appointment</a></li>
+		  	<li><a href="#">Recommend support group</a></li>
+		  </ul>
+	  </div>
+
+</div><!-- column -->
+
+</div><!-- row -->
+
+
+
+
+
 
 {% endblock %}
 
