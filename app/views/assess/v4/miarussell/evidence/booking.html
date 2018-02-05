@@ -14,17 +14,7 @@
 	  <textarea class="form-control" name="reason" style="height:200px"></textarea>
 	  
 	  
-	  
-         {% if item.descriptors.length %}
-          <p class="mb0">
-          {% for d in item.descriptors %}
-            <span class="tag">{{ d }}</span>
-          {% endfor %}
-            <a data-fancybox data-src="#descriptor_choice" href="javascript:;" data-id="{{ item.id }}" class="des_trigger">change</a>
-          </p>
-        {% else %}
-          <p class="mt20 mb0"><a data-fancybox class="des_trigger" data-src="#descriptor_choice" href="javascript:;" data-id="{{ item.id }}">Assign descriptors</a></p>
-        {% endif %}		  
+	   
   </div> 
 		  
 
