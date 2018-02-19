@@ -358,6 +358,12 @@ select.form-select:hover {
 				span {
 					background: $purple;
 					color: #fff;
+					&.red {
+						background: $mellow-red;
+					}
+					&.turquoise {
+						background: $turquoise;
+					}
 				}
 			}
 		}
@@ -365,3 +371,10 @@ select.form-select:hover {
 
 }
 
+.stacked {
+	.multiple-choice {
+		clear: both;
+		margin-bottom: 10px;
+		margin-right: 0;
+	}
+}

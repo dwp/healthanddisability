@@ -6,16 +6,110 @@
 
 {{ nav.case_tabs("evidence",1,path1) }}{# macro #}
 
+<a href="javascript: history.go(-1)" class="link-back">Back</a>
 
-<h2 class="heading-large mt30 mb0">Physical Examination</h2>
+
+<h2 class="heading-large mt10 mb0">Lower limbs</h2>
 
 <div class="grid-row">
   <div class="column-two-thirds">
-
-	  
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  
+  <div class="form-group mt30">
+	  <fieldset class="inline">
 	
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		  <legend class="heading-medium mb10">Have you examined the lower limbs?</legend>
+		  <p class="form-hint">This includes lower back, left leg, and right leg</p>
+		
+			  <div class="form-group">
+			
+				    <div class="multiple-choice" data-target="exam-yes">
+				      <input id="decide_now" name="whatcando" type="radio" value="Yes">
+				      <label for="decide_now"> Yes</label>
+				    </div>
+				
+				    <div class="multiple-choice" data-target="">
+				      <input id="face2face" name="whatcando" type="radio" value="No, redirect({{ path1 }}/support/rejected)">
+				      <label for="face2face"> No</label>
+				    </div>
+				    
+				    
+				    
+				    <div class="form-group panel panel-indent js-hidden mt10" id="exam-yes">
+				    
+					    	<fieldset class="inline">
+		
+								  <legend class="heading-medium mb10">Are there any abnormal findings?</legend>
+								
+									  <div class="form-group">
+									
+										    <div class="multiple-choice" data-target="findings-yes">
+										      <input id="findyes" name="findings" type="radio" value="Yes">
+										      <label for="findyes"> Yes</label>
+										    </div>
+										
+										    <div class="multiple-choice">
+										      <input id="findno" name="findings" type="radio" value="No">
+										      <label for="findno"> No</label>
+										    </div>
+										    
+										     <div class="form-group panel panel-indent js-hidden mt10" id="findings-yes">
+										     	
+										     	<fieldset class="stacked">
+		
+													  <legend class="mb10">Select all of the affected areas:</legend>
+													
+														  <div class="form-group">
+														
+															    <div class="multiple-choice" data-target="lowerback-checked">
+															      <input id="lowerback" name="lowerlimbs" type="checkbox" value="Lower">
+															      <label for="lowerback"> Lower back</label>
+															    </div>
+															    
+															    <div class="form-group panel panel-indent js-hidden mt0 mb20" id="lowerback-checked">
+																      <label class="form-label" for="phys_lowerback_obs">Observation, Palpation, Movement</label>
+																      <textarea class="form-control form-control-3-4" name="phys_lowerback_obs" id="phys_lowerback_obs" rows="4"></textarea>
+															    </div>
+															
+															    <div class="multiple-choice" data-target="leftleg-checked">
+															      <input id="leftleg" name="lowerlimbs" type="checkbox" value="Left">
+															      <label for="leftleg"> Left leg</label>
+															    </div>
+															    
+															    <div class="form-group panel panel-indent js-hidden mt0 mb20" id="leftleg-checked">
+																      <label class="form-label" for="left_lowerback_obs">Observation, Palpation, Movement</label>
+																      <textarea class="form-control form-control-3-4" name="left_lowerback_obs" id="left_lowerback_obs" rows="4"></textarea>
+															    </div>
+															    
+															    
+															    <div class="multiple-choice" data-target="rightleg-checked">
+															      <input id="rightleg" name="lowerlimbs" type="checkbox" value="Right">
+															      <label for="rightleg"> Right leg</label>
+															    </div>
+															    
+															    <div class="form-group panel panel-indent js-hidden mt0 mb20" id="rightleg-checked">
+																      <label class="form-label" for="right_lowerback_obs">Observation, Palpation, Movement</label>
+																      <textarea class="form-control form-control-3-4" name="right_lowerback_obs" id="right_lowerback_obs" rows="4"></textarea>
+															    </div>
+															    
+															    
+															    
+														  </div><!-- form-group -->
+												  
+												  </fieldset>
+										     	
+										     </div>
+										    
+									  </div><!-- form-group -->
+							  
+							  </fieldset>
+				    	
+				    </div>
+			
+			  </div><!-- form-group -->
+	  
+	  </fieldset>
+  </div>
+
 
 
 
