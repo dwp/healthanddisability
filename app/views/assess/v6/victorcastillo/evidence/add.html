@@ -7,17 +7,25 @@
 {{ nav.case_tabs("evidence",1,path1) }}{# macro #}
 
 
-<h1 class="heading-large mt30">Medical assessment</h1>
+<h1 class="heading-large mt30">Work capability assessment</h1>
 
 
-      <p class="bold-medium">Assessment started: {{ last_one.time | formatDate("H:mma Do MMMM YYYY") }}
+      <p class="bold-medium">Assessment start time: {{ last_one.time | formatDate("H:mma Do MMMM YYYY") }}
 
 
 <div class="grid-row">
   <div class="column-third">
     <form class="form" id="add_ev">
       
-      <p>Remember to ask about Tomas's typical day, his occupational history as well as about the following descriptors.</p>
+      <p>Ask about:</p>
+	    
+	     <ul class="list list-bullet">
+      <li>the history of Tomas's illness or disabilities </li> 
+      <li>social and work history</li>
+      <li>typical day</li>
+        </ul>
+
+<p>Make sure you cover these descriptors:</p>	     
     <ul class="list list-bullet">
       <li>Moving around and using steps</li>
       <li>Standing and sitting</li>
@@ -28,12 +36,12 @@
       </div><!-- form-group -->
       
 
-       <p><input class="button secondary" type="submit" value="Add comment" id="submitButton"/></p>
+       <p><input class="button secondary" type="submit" value="Add a note" id="submitButton"/></p>
        
        <hr>
        
        <p class="mt30"><a href="/assess/v6/victorcastillo/evidence/finish" class="button">Finish assessment</a></p>
-       <p>Or continue to <a href="/{{path2}}/physical">physical examination</a></p>
+       <p>Or continue to the <a href="/{{path2}}/physical">physical examination</a></p>
 
       
     </form>
