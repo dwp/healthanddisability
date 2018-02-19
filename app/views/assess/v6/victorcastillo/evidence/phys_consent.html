@@ -7,14 +7,14 @@
 {{ nav.case_tabs("evidence",1,path1) }}{# macro #}
 
 
-<h2 class="heading-large mt30 mb0">Physical Examination</h2>
+<h2 class="heading-large mt30 mb0">Physical examination</h2>
 
 <div class="grid-row">
   <div class="column-two-thirds">
-    <h3 class="heading-medium">Has the citizen given consent for this physical examination</h3>
+    <h3 class="heading-medium">Has Tomas given his consent for this physical examination?</h3>
 
     <div class="form-group inline">
-      <div class="multiple-choice">
+      <div class="multiple-choice" data-target="yes-consent">
         <input id="consent_yes" type="radio" name="mobility" value="consent_yes">
         <label for="consent_yes">Yes</label>
       </div>
@@ -23,13 +23,15 @@
         <label for="consent_no">No</label>
       </div>
     </div><!-- .form-group -->
-    <div class="form-group panel panle-indent js-hidden" id="whynoconsent">
-      <p><label class="form-label" for="justificaiton">What reason was given for no giving consent?</label>
+    <div class="form-group panel panle-indent js-hidden mt0" id="whynoconsent">
+      <p class="mt0"><label class="form-label" for="justificaiton">What reason was given for not giving consent?</label>
       <textarea class="form-control form-control-3-4" name="justificaiton" id="justificaiton" rows="5"></textarea></p>
+      
+      <p class="mt30"><a href="finish" class="button">Finish assessment</a></p>
     </div><!-- .form-group -->
 
-    <div class="form-group">
-      <a href="phys_exam" class="button">Continue</a>
+    <div class="form-group js-hidden" id="yes-consent">
+      <a href="physical" class="button">Continue</a>
     </div><!-- .form-group -->
 
   </div><!-- column -->
