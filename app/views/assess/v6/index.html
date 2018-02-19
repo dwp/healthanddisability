@@ -1,0 +1,121 @@
+{% extends path+"/_layout.html" %}
+
+{% block assess_content %}
+
+<main id="content" role="main" class="main-content mt30">
+
+      <div class="container">
+        <div class="grid-row">
+          <div class="column-full">
+              <table class="zebra">
+
+                <thead>
+                  <tr>
+                    <th style="padding-left:15px;">name</th>
+                    <th>status</th>
+                    <th class="numeric">last updated</th>
+                    <th class="numeric">assigned to</th>
+                  </tr>
+                </thead>
+
+
+                <tr class="click_row" href="tonyjohnson/timeline">
+                  <td style="padding-left:15px;" class="">Tony Johnson</td>
+                  <td><span class="circle teal"></span> New application</td>
+                  <td class="nobr numeric">{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+                  <td class="nobr numeric">Léonie Vidal</td>
+                </tr>
+
+                <tr class="click_row" href="miarussell/timeline">
+                  <td style="padding-left:15px;" class="">Mia Russell</td>
+                  <td><span class="circle purple"></span> Ready for review</td>
+                  <td class="nobr numeric">{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+                  <td class="nobr numeric">Grégory Faure</td>
+                </tr>
+
+                <tr class="click_row" href="victorcastillo/timeline">
+                  <td style="padding-left:15px;" class="">Tomas Fernandez</td>
+                  <td><span class="circle red"></span> Ready for medical assessment</td>
+                  <td class="nobr numeric">{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+                  <td class="nobr numeric">Julie Herve</td>
+                </tr>
+
+                <tr class="click_row" href="yeldonfinkelstein/timeline">
+                  <td style="padding-left:15px;" class="">Yeldon Finkelstein</td>
+                  <td><span class="circle purple"></span> Ready for review</td>
+                  <td class="nobr numeric">{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+                  <td class="nobr numeric"> </td>
+                </tr>
+
+                <tr class="click_row" href="anaisabelcruz/timeline">
+                  <td style="padding-left:15px;" class=""> Ana Isabel Cruz </td>
+                  <td><span class="circle blue"></span> Awaiting medical evidence</td>
+                  <td class="nobr numeric">{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+                  <td class="nobr numeric"> </td>
+                </tr>
+
+                <tr class="click_row" href="lucasmoran/timeline">
+                  <td style="padding-left:15px;" class="">Lucas Moran</td>
+                  <td><span class="circle teal"></span> New application</td>
+                  <td class="nobr numeric">{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+                  <td class="nobr numeric"> </td>
+                </tr>
+
+                <tr class="click_row" href="citizen/timeline">
+                  <td style="padding-left:15px;" class="">Berat Karagöz</td>
+                  <td><span class="circle purple"></span> Ready for review</td>
+                  <td class="nobr numeric">{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+                  <td class="nobr numeric">Lamia Baron</td>
+                </tr>
+
+                <tr class="click_row" href="citizen/timeline">
+                  <td style="padding-left:15px;" class="">Taha Sağlam</td>
+                  <td><span class="circle blue"></span> Awaiting medical evidence</td>
+                  <td class="nobr numeric">{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+                  <td class="nobr numeric">Bruno Duval</td>
+                </tr>
+
+
+                <tr class="click_row" href="citizen/timeline">
+                  <td style="padding-left:15px;" class="">Aaron Murray</td>
+                  <td><span class="circle purple"></span> Ready for review</td>
+                  <td class="nobr numeric">{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+                  <td class="nobr numeric">Katell Grondin</td>
+                </tr>
+
+                <tr class="click_row" href="citizen/timeline">
+                  <td style="padding-left:15px;" class="">Charlie Reid</td>
+                  <td><span class="circle purple"></span> Ready for review</td>
+                  <td class="nobr numeric">{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+                  <td class="nobr numeric">Alexis Boulanger</td>
+                </tr>
+
+                <tr class="click_row" href="citizen/timeline">
+                  <td style="padding-left:15px;" class="">Laura Cooper</td>
+                  <td><span class="circle blue"></span> Awaiting medical evidence</td>
+                  <td class="nobr numeric">{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+                  <td class="nobr numeric">Julie Guichard</td>
+                </tr>
+
+                <tr class="click_row" href="citizen/timeline">
+                  <td style="padding-left:15px;" class="">Oliver Russell</td>
+                  <td><span class="circle purple"></span> Ready for review</td>
+                  <td class="nobr numeric">{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+                  <td class="nobr numeric">Lamia Baron</td>
+                </tr>
+
+                <tr class="click_row" href="citizen/timeline">
+                  <td style="padding-left:15px;" class="">Tomás Moya</td>
+                  <td><span class="circle purple"></span> Ready for review</td>
+                  <td class="nobr numeric">{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+                  <td class="nobr numeric">Nolan Bailly</td>
+                </tr>
+
+              </table>
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

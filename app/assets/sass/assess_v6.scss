@@ -1,0 +1,367 @@
+// Path to assets for use with the file-url function
+// in the govuk frontend toolkit's url-helpers partial
+$path: "/public/images/";
+
+// Import GOV.UK elements from /govuk-modules/, this will import the frontend toolkit and some base styles.
+// Take a look in /govuk-modules/_govuk-elements.scss to see which files are imported.
+@import 'govuk-elements';
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+@import "admin";
+@import "inc/timeline";
+@import "inc/small-checkboxes";
+@import "inc/margins";
+@import "inc/toggler";
+@import "inc/form-select";
+@import "inc/back-link";
+@import "inc/file-upload";
+@import "inc/timeline";
+@import "inc/tabs";
+@import "inc/clearfix";
+@import "inc/attachment";
+@import "inc/click-row";
+@import "inc/help_handle";
+@import "inc/evidence";
+@import "inc/nav";
+@import "inc/alt-buttons";
+@import "inc/combobox";
+
+body {
+   height:100%;
+}
+
+#global-header.with-proposition .header-wrapper .header-global {
+  width: 17%;
+}
+
+#global-header.with-proposition .header-wrapper .header-proposition {
+  width: 48%;
+}
+
+.nobr { white-space: nowrap; }
+
+td,th {
+  &.first {
+    padding-left:10px;
+  }
+}
+
+/*  Override timeline stuff */
+.timeline .timeline-event {
+  &:first-of-type .heading-small {
+    position:relative;
+    top:-6px;
+    font-size:36px;
+    margin-bottom:0
+  }
+}
+
+.staff__heading {
+  background-color: #005ea5;
+  padding: 20px 40px 0;
+  color: white;
+}
+
+.list .date {
+  // font-size:16px;
+  color:$grey-1;
+}
+
+.meds {
+  td {
+    vertical-align: top;
+  }
+}
+
+.quote {
+  padding:10px 10px;
+  text-indent:-0.4em;
+}
+
+
+.form-control:focus { &::placeholder { color:white; }
+}
+
+.loading {
+  position:relative;
+  color:$govuk-blue;
+  font-weight:700;
+  img {
+
+  }
+}
+
+.tag {
+  display:inline-block;
+  text-transform: lowercase;
+  cursor: pointer;
+  position:relative;
+  background-color:$black;
+  color:white;
+  text-decoration: none;
+  // padding:7px 10px 5px;
+  padding:5px 8px 3px;
+  margin-bottom:5px;
+  border-radius:5px;
+  margin-right:0.5em;
+  font-size:16px;
+  .descriptors {
+    display:none;
+    position:absolute;
+    padding:10px 30px 10px 20px;
+    left:100%; top:50%; transform:translate(0,-50%);
+    background-color:$black;
+  }
+  &.clicked {
+    border-radius:5px 0px 0px 5px;
+    .descriptors {
+      display:block;
+    }
+  }
+  li { white-space: nowrap; }
+}
+
+.flex_outer {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content:flex-start;
+}
+
+.ev_box {
+  p::first-letter { text-transform: uppercase; }
+  .ev_date {
+    font-size:14px;
+    padding:10px;
+    text-align:right;
+  }
+  .ev_content {
+    flex-grow:1;
+    padding:10px;
+    background-color:$grey-3;
+  }
+}
+
+.circle {
+  border-radius:50%;
+  width:1em;height:1em;
+  background-color:$black;
+  display:inline-block;
+  margin-right:1em;
+  &.red { background-color:$mellow-red}
+  &.blue { background-color:$light-blue}
+  &.teal { background-color:$turquoise}
+  &.purple { background-color:$fuschia}
+}
+
+.form-select {
+  width:100%;
+  padding-bottom:0;
+}
+
+.dropdown-toggle {
+  border-left:2px solid $black;
+}
+
+.combobox-container .input-group {
+  position:relative;
+  z-index:5;
+
+  .dropdown-menu {
+    position:absolute;
+    top:0;left:0;
+    width:98%;
+    margin-left:4px;
+    background:$grey-4;
+    font-size:18px;
+    border:1px solid black;
+
+    li {
+      padding:4px 20px 3px;
+      a {text-decoration:none;color:white}
+      &.active {
+        background:$govuk-blue;
+        a {color:white}
+      }
+    }
+  }
+}
+
+span.dropdown-toggle {
+  position:absolute;
+  top:2px;right:2px;
+  height:30px;
+  width:30px;
+  background: #FFF url(/public/images/toggle-sprite-grey.png) no-repeat 0 -51px;
+  cursor:pointer;
+}
+@media (min-width: 641px) {
+  select.form-select {
+    font-size: 19px;
+    line-height: 1.3157894737;
+  }
+}
+
+@media (min-width: 641px) {
+  select.form-select {
+    width: auto;
+  }
+}
+
+select.form-select:hover {
+  cursor: pointer;
+}
+
+.active_detail {
+    background-color:$govuk-blue;
+    color:white!important;
+    p { color:white; }
+	background-image: url(/public/images/big_chevron.png);
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 4%;
+    &:hover {
+      background-color:lighten($govuk-blue,5);
+    }
+  }
+
+
+.address-stack {
+	span {
+		display: block;
+	}
+}
+
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 9999;
+	.inner-modal {
+		max-width: 440px;
+		margin: 10% auto 0 auto;
+		background: #fff;
+		padding: 40px 40px 20px 40px;
+		h3 {
+			margin: 0;
+			padding: 0;
+		}
+	}
+}
+
+.info-display {
+		display: inline-block;
+		padding: 5px 10px 4px 10px;
+		background: #000;
+		border-radius: 5px;
+		color: #fff;
+		font-weight: 700;
+		font-size: 16px;
+		margin-top: .5em;
+	}
+
+  .greytext { color: $grey-1; }
+
+  .left-area {
+
+  }
+  
+  .left-panel {
+	  padding: 16px 24px 0 36px;
+  }
+  
+  .main-content {
+	  padding-top: 20px;
+  }
+  
+  .main-content-inner {
+	  padding-left: 0;
+	  margin-left: 0;
+	  padding-bottom: 0!important;
+	  margin-bottom: 0!important;
+	  overflow: hidden;
+  }
+
+  .main-area {
+	  margin-top: 0;
+	  padding-top: 20px!important;
+	  padding-bottom: 50px!important;
+	  border-left: 1px solid $grey-2;
+	  background: #fff;
+  }
+
+
+.column-three-quarters {
+	width: 71%;
+	float: left;
+	padding: 0 0 0 25px;
+	position: relative;
+	&:after {
+		position: absolute;
+		content: "/";
+		height: 3500px;
+		width: 25px;
+		background: #fff;
+		top: 0;
+		right: -25px;
+		color: #fff;
+	}
+}
+
+
+.main-row {
+	background: $grey-3;
+}
+
+
+.secondary {
+  background: $grey-3;
+  color: #000;
+  box-shadow: 0 2px 0 $grey-2;
+  &:hover {
+	  background: $grey-3;
+	  color: #000;
+  }
+}	
+
+
+
+.exam-content {
+	caption {
+		visibility: hidden;
+	}
+	th {
+		padding-left: 1em;
+	}
+	tr {
+		td {
+			text-align: right;
+			
+			span {
+				display: inline-block;
+				background: $grey-3;
+				font-size: 14px;
+				padding: 4px 6px 2px 6px;
+				border-radius: 2px;
+				margin-top: -2px;
+				text-transform: uppercase;
+				font-weight: bold;
+			}
+		}
+		&.complete {
+			// background: $grey-4;
+			td {
+				span {
+					background: $purple;
+					color: #fff;
+				}
+			}
+		}
+	}
+
+}
+
