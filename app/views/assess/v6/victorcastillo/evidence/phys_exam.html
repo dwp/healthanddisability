@@ -7,17 +7,17 @@
 {{ nav.case_tabs("evidence",1,path1) }}{# macro #}
 
 
-<h2 class="heading-large mt30 mb0">Physical Examination</h2>
+<h2 class="heading-large mt30 mb0">Physical examinations</h2>
 
 <div class="grid-row">
   <div class="column-two-thirds">
 
-    <h3 class="heading-medium">Indicate any abnormal findings</h3>
+    <h3 class="heading-medium">Indicate where Tomas has difficulties</h3>
 
     <!-- LOWER LIMB -->
     <div class="form-group">
 
-      {{ physGroup("Lower limbs",0) }}
+      {{ physGroup("Lower back and legs",0) }}
       <!-- FINDINGS -->
       <div class="form-group panel panel-indent js-hidden mt0 mb20" id="group_{{"Lower limbs"|slug}}_yes">
         {{ physObs("Lower back",0) }}
@@ -25,7 +25,7 @@
         {{ physObs("Right leg",0) }}
       </div><!-- .form-group -->
 
-      {{ physGroup("Upper limbs") }}
+      {{ physGroup("Neck and arms") }}
       <!-- FINDINGS -->
       <div class="form-group panel panel-indent js-hidden mt0 mb20" id="group_{{"Upper limbs"|slug}}_yes">
         {{ physObs("Neck",0) }}
