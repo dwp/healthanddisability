@@ -14,16 +14,16 @@
 
 
 <div class="grid-row">
-  <div class="column-third">
+  <div class="column-half">
     <form class="form" id="add_ev">
       
-      <p>Ask about:</p>
+      <p class="mb10">Ask about:</p>
 	    
-	     <ul class="list list-bullet">
+	<ul class="list list-bullet">
       <li>the history of Tomas's illness or disabilities </li> 
       <li>social and work history</li>
       <li>typical day</li>
-        </ul>
+    </ul>
 
 <!-- <p>Make sure you cover these descriptors:</p>	     
     <ul class="list list-bullet">
@@ -31,14 +31,14 @@
       <li>Standing and sitting</li>
     </ul> -->
 	 
-      <div class="form-group">
-          <textarea type="text" id="nugget" class="form-control" name="nugget" style="width:100%; height: 200px;"></textarea>
+      <div class="form-group mb20">
+          <textarea type="text" id="nugget" class="form-control" name="nugget" style="width:98%; height: 200px;"></textarea>
       </div><!-- form-group -->
       
 
        <p><input class="button secondary" type="submit" value="Add a note" id="submitButton"/></p>
        
-       <hr>
+     
        
        <p class="mt30"><a href="/{{path2}}/phys_consent" class="button">Save and continue</a></p>
 
@@ -48,18 +48,19 @@
    
   </div><!-- column -->
 
-  <div class="column-two-thirds">
+  <div class="column-half">
 
     {% if data.nuggets.length %}
     <p style="float:right" class="mt30"></p>
     {% endif %}
 
     {% for item in data.nuggets | sortBy("time",true) %}
-      <div class="ev_box mb10 flex_outer">
-        <p class="ev_date" style="flex: 0 0 60px;"><span>{{ item.time | formatDate("H:mma") }}</span></p>
-        <p class="ev_content mb0">{{ item.text }}</p>
+      <div class="note-list">
+      <span>{{ item.time | formatDate("H:mma") }}</span>
+        <p class="statement">{{ item.text }}</p>
         {# {% include path2+"/_descriptors.html" %} #}
       </div>
+      <hr>
     {% endfor %}
 
   </div><!-- column -->
