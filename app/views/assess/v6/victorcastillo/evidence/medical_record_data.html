@@ -2,14 +2,14 @@
 
 {% block case_content %}
 
-  <h2 class="heading-large mt10">Medical record data</h2>
-  <p class="form-hint">Automated data fetch: {{ 'Do MMMM YYYY' | randDaysAgo(20)}}</p>
+  <h2 class="heading-large mt10">MED3 (sick note) information</h2>
+  
 
-  <h3 class="heading-medium">Data confirms patient has following conditions:</h3>
+  <h3 class="heading-medium">MED3 (sick notes) confirm patient has following conditions:</h3>
   <ul class="list list-bullet">
-    <li>Emergency fasciotomy <span class="date">(since {{ "MMMM YYYY" | monthsAgo(24) }})</span></li>
-    <li>Acute compartment syndrome <span class="date">(since {{ "MMMM YYYY" | monthsAgo(124) }})</span></li>
-    <li>Compound fracture - shinbone <span class="date">(since {{ "MMMM YYYY" | monthsAgo(203) }})</span></li>
+    <li>Emergency fasciotomy <span class="date">(August 2017)</span></li>
+    <li>Acute compartment syndrome <span class="date">(August 2017)</span></li>
+    <li>Compound fracture - shinbone <span class="date">(July 2017)</span></li>
   </ul>
   <div class="given_descriptors pb30">{% include path2+"/_descriptors.html" %}</div>
 
