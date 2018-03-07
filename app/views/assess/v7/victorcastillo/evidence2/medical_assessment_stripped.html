@@ -27,7 +27,7 @@
     {% for item in data.nuggets | sortBy("time",true) %}
       <div class="mb10 ev_box">
         <div class="mb10 ev_content p20">
-          <h3 class="heading-small mt0 mb10">{{ item.id }}</h3>
+          <!-- <h3 class="heading-small mt0 mb10">{{ item.id }}</h3> -->
           <p class="mb0">{{ item.text }} <a href="#">Edit</a><br /><!-- <span class="font-xsmall">(<span>{{ item.time | formatDate("H:mma") }}</span>)</span> --></p>
         {% if item.descriptors.length %}
           <p class="mt20 mb5">

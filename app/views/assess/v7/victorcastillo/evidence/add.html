@@ -12,6 +12,7 @@
 
       <p>Assessment started: {{ last_one.time | formatDate("H:mma D MMMM YYYY") }}</p>
       
+      
 
 
 <div class="grid-row">
@@ -35,6 +36,10 @@
 </div><!-- row -->
 
 {% endblock %}
+
+
+
+
 
 {% block page_scripts %}
 {{ super() }}
@@ -70,8 +75,17 @@ $(document).on('ready',function()
       }
     });
   });
+
   
 });
+
+
+
+
 </script>
+
+
+
+
 
 {% endblock %}
