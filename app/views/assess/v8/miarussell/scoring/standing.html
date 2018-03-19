@@ -1,0 +1,37 @@
+{% extends path2+"/_layout.html" %}
+
+
+
+{% block scoring_content %}
+
+  <h3 class="heading-large mt10" id="descriptor_title">Standing and sitting</h3>
+
+  <div class="evidence__box citizen">
+    <div class="evidence__label">From: Claimant statement</div>
+    <div class="evidence__content">
+      <p>{{ firstname }} <span class="bold-small">can't sit or stand for more than 30 minutes without being uncomfortable and having to move.</p>
+      <p class="mt0 quote mb0"> “I can't stand in the same place, or sit in the same place for long, I have to move as my back and legs hurt so much. On a good day I might be able to stay in the same seat for about 15 minutes - if I'm watching TV I would have to get up and move every advert break. ” </p>
+    </div>
+  </div>
+
+  {% if stage < 3 %}
+    {% block case_form %} {% include path2+"/_form_ask.html" %} {% endblock %}
+  {% endif %}
+
+  {% if stage > 2 %}
+    <div class="evidence__box citizen">
+      <div class="evidence__label">From: Assessor - <a href="" style="color:white">Marjorie Clemment</a></div>
+      <div class="evidence__content">
+        <p class="mt0 quote mb0"> “It's clear that Mia can't stay in the same standing or seated position for more than 30 minutes. She is on a high dosage of painkillers and has to move around every 15 minutes due to pain. ” </p>
+      </div>
+    </div>
+    <div id="scored">
+      <hr />
+      <h2 class="heading-large">Scored: 9</h2>
+      <p class="form-hint">You can change this is if you need to.</p>
+      <button class="button" id="change_score">Change score</button>
+    </div>
+  {% endif %}
+
+
+{% endblock %}
