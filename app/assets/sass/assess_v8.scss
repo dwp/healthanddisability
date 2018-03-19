@@ -569,3 +569,12 @@ hr {
 	}
 }
 
+
+
+.hide-desc {
+	display: none;
+	margin-top: 20px;
+	&.show-desc {
+		display: block;
+	}
+}

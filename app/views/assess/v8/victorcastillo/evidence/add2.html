@@ -24,6 +24,8 @@
           <textarea type="text" id="nugget" class="form-control" name="nugget" style="width: 80%; height: 300px;"></textarea>
       </div><!-- form-group -->
       
+      <div class="hide-desc"><span class="tag">Moving around and moving steps</span> <span class="tag">Standing and sitting</span></div>
+      
  <p class="mb5 mt20"><a data-fancybox class="button secondary des_trigger" data-src="#descriptor_choice" href="javascript:;" data-id="{{ item.id }}">Assign descriptors</a></p>
       
       
@@ -83,6 +85,12 @@ $(document).on('ready',function()
     });
   });
   
+});
+</script>
+
+<script>
+  $(".desc-button").click(function(){
+  $(".hide-desc").addClass("show-desc");
 });
 </script>
 
