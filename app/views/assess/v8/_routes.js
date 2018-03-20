@@ -53,6 +53,11 @@ router.post('/saveText/', function (req, res, next) {
   res.send(tog(req.session.data));
 })
 
+
+
+
+
+
 /*
   Clears session (triggered by little link at bottom of pages)
 */
