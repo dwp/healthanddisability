@@ -14,28 +14,28 @@
 <div class="grid-row">
   <div class="column-two-thirds">
 
-	<div class="exam-content">
+	<div class="wca-content-flow">
 	
 		<table>
 			
 			<caption>Physical exam process</caption>
 			
 			
-			<tr class="complete">
+			<tr class="condition-history-complete">
 				<th><a href="add">Condition history</a></th>
-				<td><span class="red">Done</span></td>
+				<td><span></span></td>
 			</tr>
-			<tr>
+			<tr class="social-work-complete">
 				<th><a href="add2">Social and work history</a></th>
-				<td><span>Not started</span></td>
+				<td><span></span></td>
 			</tr>
-			<tr>
+			<tr class="typical-day-complete">
 				<th><a href="add3">Typical day</a></th>
-				<td><span>Not started</span></td>
+				<td><span></span></td>
 			</tr>
-			<tr>
+			<tr class="medication-complete">
 				<th><a href="add4">Medication and side effects</a></th>
-				<td><span>Not started</span></td>
+				<td><span></span></td>
 			</tr>
 
 			
@@ -59,20 +59,48 @@
 
 {% block page_scripts %}
 {{ super() }}
+
 <script type="text/javascript">
-
-
-
 $(document).ready(function() {
-
-       if (document.referrer === 'http://localhost:3000/assess/v8/victorcastillo/evidence/add') {
-  $("td").addClass("content-show");
-} else {
-  // do foo
-}
-
+	 if (document.referrer === 'http://localhost:3000/assess/v8/victorcastillo/evidence/add') {
+	  $("tr.condition-history-complete").addClass("done");
+	} else {
+	  $("tr.condition-history-complete").addClass("not-done");
+	}
 });
-
 </script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	 if (document.referrer === 'http://localhost:3000/assess/v8/victorcastillo/evidence/add2') {
+	  $("tr.social-work-complete").addClass("done");
+	} else {
+	 $("tr.social-work-complete").addClass("not-done");
+	}
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	 if (document.referrer === 'http://localhost:3000/assess/v8/victorcastillo/evidence/add3') {
+	  $("tr.typical-day-complete").addClass("done");
+	} else {
+	 $("tr.typical-day-complete").addClass("not-done");
+	}
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	 if (document.referrer === 'http://localhost:3000/assess/v8/victorcastillo/evidence/add4') {
+	  $("tr.medication-complete").addClass("done");
+	} else {
+	  $("tr.medication-complete").addClass("not-done");
+	}
+});
+</script>
+
+
+
 
 {% endblock %}

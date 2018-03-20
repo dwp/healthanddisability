@@ -493,12 +493,12 @@ hr {
 	position: absolute;
 	width: 76%;
 	padding: 0;
-	top: 0;
+	top: 170px;
 	right: 0;
 	
 	.panel-switch {
 		position: absolute;
-		top: 265px;
+		top: 200px;
 		right: 0;
 		width: 140px;
 		padding: 10px 0;
@@ -539,6 +539,11 @@ hr {
 	&.panel-open {
 		.inner-panel-content {
 			display: block;
+			.evidence__content {
+				p {
+					font-size: 18px;
+				}
+			}
 		}
 		.panel-switch {
 			right: auto;
@@ -580,7 +585,7 @@ hr {
 		font-size: 19px;
 	}
 	td {
-		font-size: 17px;
+		font-size: 18px;
 		vertical-align: top;
 		em {
 			display: block;
@@ -671,4 +676,81 @@ hr {
 	border-top: 1px solid $grey-2;
 	margin: 0;
 	padding: 20px 0;
+	font-size: 18px;
 }
+
+
+
+
+.wca-content-flow {
+	caption {
+		visibility: hidden;
+	}
+	th {
+		padding-left: 0;
+	}
+	tr {
+		td {
+			text-align: right;
+			padding-right: 0;
+			
+			span {
+				display: inline-block;
+				background: $grey-3;
+				font-size: 16px;
+				padding: 5px 7px 3px 7px;
+				border-radius: 2px;
+				margin-top: -2px;
+				font-weight: 600;
+
+			}
+		}
+		&.complete {
+			// background: $grey-4;
+			td {
+				span {
+					background: $purple;
+					color: #fff;
+					&.red {
+						background: $mellow-red;
+					}
+					&.turquoise {
+						background: $turquoise;
+					}
+				}
+			}
+		}
+		&.total-score {
+			td {
+				font-size:28px;
+				font-weight: bold;
+			}
+		}
+	}
+	
+	
+	.done {
+		td {
+			span {
+				background: $mellow-red;
+				&:after {
+					content: 'Saved';
+					color: #fff;
+				}
+			}
+		}
+	}
+	
+	.not-done {
+		td {
+			span {
+				background: $grey-3;
+				&:after {
+					content: 'Not started';
+				}
+			}
+		}
+	}
+
+}
+
