@@ -60,10 +60,50 @@
 {% block page_scripts %}
 {{ super() }}
 
+<!-- ##################################### Live examples ###################################### 
+
+<script type="text/javascript">
+$(document).ready(function() {
+	 if (document.referrer === 'http://localhost:3000/assess/v8/victorcastillo/evidence/add') {
+	  $("tr.condition-history-complete").addClass("done");
+	} else {
+	  $("tr.condition-history-complete").addClass("not-done");
+	}
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	 if (document.referrer === 'http://localhost:3000/assess/v8/victorcastillo/evidence/add2') {
+	  $("tr.social-work-complete").addClass("done");
+	} else {
+	 $("tr.social-work-complete").addClass("not-done");
+	}
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	 if (document.referrer === 'http://localhost:3000/assess/v8/victorcastillo/evidence/add3') {
+	  $("tr.typical-day-complete").addClass("done");
+	} else {
+	 $("tr.typical-day-complete").addClass("not-done");
+	}
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	 if (document.referrer === 'http://localhost:3000/assess/v8/victorcastillo/evidence/add4') {
+	  $("tr.medication-complete").addClass("done");
+	} else {
+	  $("tr.medication-complete").addClass("not-done");
+	}
+});
+</script>
+-->
 
 
-
-<!-- ##################################### Live examples ###################################### -->
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -104,7 +144,6 @@ $(document).ready(function() {
 	}
 });
 </script>
-
 
 
 
