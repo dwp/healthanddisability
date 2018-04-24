@@ -1,0 +1,169 @@
+{% extends path1+"/_layout-info.html" %}
+
+{% block citizen_content %}
+
+
+  {{ data.nuggets | log }}
+
+  
+  
+  
+  
+  <a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+
+
+<h1 class="heading-large mt30">Work capability assessment</h1>
+
+
+     
+     
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <form class="form">
+	 
+      <div class="form-group mb20">
+      	  <label class="heading-medium label-wca" for="nugget">Condition history</label>
+      	  
+          <textarea type="text" id="nugget" class="form-control" name="nugget" style="width: 80%; height: 300px;"></textarea>
+      </div><!-- form-group -->
+      
+
+ <div id="descriptor_choice" style="display:none; max-height:76%">
+ 
+    {% include path2+"/_addremove.html" %}
+    
+  </div>
+  
+  
+  
+  <div class="hide-desc"><span class="tag">Moving around and using steps</span> <span class="tag">Standing and sitting</span></div>
+  
+  
+  <p class="mb5 mt20"><a data-fancybox class="button secondary des_trigger" data-src="#descriptor_choice" href="javascript:;" data-id="{{ item.id }}">tag to the relevant descriptors</a> </p>
+  
+ 
+
+
+ <p class="mt30"><input class="button" type="submit" value="Save" id="submitButton"/></p>
+      
+
+    </form>
+    
+   
+  </div><!-- column -->
+
+ 
+</div><!-- row -->
+  
+
+
+{% endblock %}
+
+
+
+
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+$(document).on('ready',function()
+{
+
+
+  $('#submitButton').on('click',function(e)
+  {
+    e.preventDefault();
+    // get values from the form you're submitting.
+    var nugget = $('#nugget').val();
+    console.log(nugget)
+
+    // gather values into a data object.
+    var formdata = JSON.stringify({"nugget":nugget});
+    console.log(formdata)
+    console.log({url: '/{{ path }}/saveText'})
+
+    // send data object off to node route for saving.
+    $.ajax({
+      url: '/{{ path }}/saveText',
+      method: "POST",
+      contentType: 'application/json',
+      data: formdata,
+      dataType: 'json',
+      complete:  function(data,status,xhr) {
+        // sort out the page after data is successfully saved.
+        // $('#status_form').hide();
+        // $('#status_button').show();
+        window.location.href = '/{{path2}}/wca-index-updated';
+      }
+    });
+  });
+
+  
+});
+
+
+
+
+</script>
+
+
+
+
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.evidence__leftnav')
+      .children(":nth-child(1)")
+      .addClass('active')
+
+    $('#des_submit').on('click',function(e)
+    {
+      e.preventDefault();
+      var t = $('#des_form').serializeArray();
+      var des = [], id;
+      $.each(t,function(i,e)
+      {
+        if (e.name == "des_id") id = e.value;
+        if (e.name == "descriptors") des.push(e.value);
+      });
+      var data = {
+        id: id,
+        descriptors: des,
+      }
+      console.log('got here1 ')
+      $.ajax({
+        url: '/{{ path }}/updateEvidence',
+        method: "POST",
+        contentType: 'application/json',
+        data: JSON.stringify(data),
+        dataType: 'json',
+        complete:  function(data,status,xhr) {
+          console.log('got here')
+          document.location.reload(true);
+        }
+      })
+    })
+
+    $('.des_trigger').on('click',function(e)
+    {
+      var id = $(this).data('id');
+      console.log(id)
+      $('#des_id').val(id);
+    });
+  });
+</script>
+
+<script>
+  $(".desc-button").click(function(){
+  $(".hide-desc").addClass("show-desc");
+});
+</script>
+
+{% endblock %}
+
+
+
+

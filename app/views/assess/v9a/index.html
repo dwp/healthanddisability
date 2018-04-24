@@ -1,0 +1,41 @@
+{% extends path+"/_layout.html" %}
+
+{% block assess_content %}
+
+<main id="content" role="main" class="main-content mt30">
+
+      <div class="container">
+        <div class="grid-row">
+          <div class="column-full">
+          
+          <h1 class="heading-large mt0">New referrals</h1>
+          
+          <div class="new-button"><a href="tomasfernandez/evidence/case-creation" class="button">Create new referral</a></div>
+          
+              <table class="scrutiny-view">
+ 
+                <thead>
+                  <tr>
+                    <th style="padding-left:15px;">Name</th>
+                    <th>Status</th>
+                    <th class="numeric">Date</th>
+                  </tr>
+                </thead>
+
+				
+				<tr>
+                  <td style="padding-left:15px;"><a href="tomasfernandez/timeline">Tomas Fernandez</a></td>
+                  <td><span class="circle purple"></span> ESA50 received</td>
+                  <td class="nobr numeric">6 April</td>
+                </tr>
+
+               
+
+              </table>
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

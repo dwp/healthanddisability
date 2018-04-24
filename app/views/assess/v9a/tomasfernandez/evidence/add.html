@@ -1,0 +1,128 @@
+{% extends path1+"/_layout-info.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+<h1 class="heading-large mt30 mb30">Moving around and using steps</h1>
+
+      
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+  
+  
+    <form class="form">
+
+    
+    <fieldset class="inline mb0 mt10">
+	
+		  <legend class="heading-medium mb10">Does Tomas have difficulty moving around and using steps?</legend>
+		  
+		
+			  <div class="form-group">
+			
+				    <div class="multiple-choice" data-target="box-yes">
+				      <input id="decide_now" name="whatcando" type="radio" value="Yes">
+				      <label for="decide_now"> Yes</label>
+				    </div>
+				
+				    <div class="multiple-choice" data-target="box-yes">
+				      <input id="face2face" name="whatcando" type="radio" value="No">
+				      <label for="face2face"> No</label>
+				    </div>
+				    
+				    
+				    
+				    <div class="form-group panel panel-indent js-hidden mt10 mb0" id="box-yes">
+				    
+					    	<fieldset class="inline">
+		
+								  <legend class="form-label mb10">Has Tomas provided any further information?</legend>
+								
+									  <div class="form-group">
+									
+										    <div class="multiple-choice" data-target="findings-yes">
+										      <input id="findyes" name="findings" type="radio" value="Yes">
+										      <label for="findyes"> Yes</label>
+										    </div>
+										
+										    <div class="multiple-choice">
+										      <input id="findno" name="findings" type="radio" value="No">
+										      <label for="findno"> No</label>
+										    </div>
+										    
+										     <div class="form-group panel panel-indent js-hidden mt10" id="findings-yes">
+										     	
+										     	
+										     	<div class="form-group">
+										     	
+										     	<fieldset class="stacked">
+		
+													  <legend class="form-label mb10">How far can Tomas move safely and repeatedly on level ground without needing to stop?</legend>
+													
+														  <div class="form-group">
+														
+															    <div class="multiple-choice">
+															      <input id="50m" name="metres" type="checkbox" value="50">
+															      <label for="50m">50 metres</label>
+															    </div>
+															
+															    <div class="multiple-choice">
+															      <input id="100m" name="metres" type="checkbox" value="100">
+															      <label for="100m">100 metres</label>
+															    </div>
+
+															    <div class="multiple-choice">
+															      <input id="200m" name="metres" type="checkbox" value="200">
+															      <label for="200m">200 metres or more</label>
+															    </div>
+															    
+															    <div class="multiple-choice">
+															      <input id="varies" name="metres" type="checkbox" value="varies">
+															      <label for="varies">It varies</label>
+															    </div>
+															    
+															    
+														  </div><!-- form-group -->
+												  
+												  </fieldset>
+												  
+										     	</div>
+										     	
+										      <div class="form-group">
+										      	  <label class="form-label" for="nugget">Additional comments</label>
+										      	  <p class="form-hint mt5 mb0">What Tomas wrote in the box</p>
+										          <textarea type="text" id="nugget" class="form-control" name="nugget" style="width: 80%; height: 200px;"></textarea>
+										      </div><!-- form-group -->
+										     	
+										     </div>
+										    
+									  </div><!-- form-group -->
+							  
+							  </fieldset>
+							  
+				    </div>
+				    
+			  </div>
+			  
+    </fieldset>
+    
+    
+    <p><a href="wca-index2" class="button">Save</a></p>
+
+    </form>
+    
+   
+  </div><!-- column -->
+
+ 
+</div><!-- row -->
+
+{% endblock %}
+
+

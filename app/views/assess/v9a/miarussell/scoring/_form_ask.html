@@ -1,0 +1,40 @@
+<hr />
+<h3 class="heading-large">Can you make a recommendation now?</h3>
+<form class="form" action="/{{ path2 }}" method="get">
+  <div class="form-group">
+
+    <div class="multiple-choice" data-target="scorenow">
+      <input id="decide_now" name="whatcando" type="radio" value="Yes">
+      <label for="decide_now"> Yes, I have enough evidence recommend the support group </label>
+    </div>
+
+    <div class="js-hidden panel panel-indent mt20" id="scorenow">
+      <div class="form-group">
+
+        <div class="multiple-choice">
+          <input id="confirm" name="whatcando" type="checkbox" value="Yes">
+          <label for="confirm"> {{ firstname }} can't go further than 50 metres</label>
+        </div>
+
+      </div><!-- form-group -->
+      <div class="form-group">
+        <label class="form-label">Notes</label>
+        <textarea class="form-control" name="justify" style="height:200px"></textarea>
+      </div>
+    </div><!-- js-hidden -->
+
+    <div class="multiple-choice" data-target="">
+      <input id="support_no" name="whatcando" type="radio" value="No, redirect({{ path1 }}/support/rejected)">
+      <label for="support_no"> No, I need more evidence </label>
+    </div>
+
+    <div class="multiple-choice" data-target="">
+      <input id="face2face" name="whatcando" type="radio" value="No, redirect({{ path1 }}/support/rejected)">
+      <label for="face2face"> No, I want {{ firstname }} to come in</label>
+    </div>
+
+  </div><!-- form-group -->
+  <div class="form-group">
+    <button class="button" type="button" id="decide_submit">Continue</button>
+  </div><!-- form-group -->
+</form>

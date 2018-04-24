@@ -1,0 +1,166 @@
+{% extends path1+"/_layout-stripped.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+<h1 class="heading-large mt30 mb20">New referral</h1>
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	<form>
+		<div class="form-group">
+		
+		<fieldset class="item-compound">
+                 
+            
+            <legend class="heading-medium">Personal  details</legend>
+
+
+		
+		      	<div class="form-group">
+		        
+					<label class="form-label form-label-large" for="firstname">First name</label>
+					 <input type="text" class="form-control" id="firstname">
+					 
+				 </div>
+				 
+				 
+				 <div class="form-group">
+		        
+					<label class="form-label form-label-large" for="lastname">Last name</label>
+					 <input type="text" class="form-control" id="lastname">
+					 
+				 </div>
+				 
+				 <div class="form-group">
+					  <label class="form-label" for="ni-number">
+					    National Insurance number
+					    <span class="form-hint">
+					      For example, ‘QQ 12 34 56 C’.
+					    </span>
+					  </label>
+					  <input class="form-control" id="ni-number" type="text" name="ni-number">
+					</div>
+				 
+				 
+				 <div class="form-group">
+				    <fieldset>
+				      <legend>
+				        <span class="form-label-bold">
+				          Date of birth
+				        </span>
+				        <span class="form-hint">For example, 31 3 1980</span>
+				      </legend>
+				      <div class="form-date">
+				        <div class="form-group form-group-day">
+				          <label class="form-label" for="dob-day">Day</label>
+				          <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
+				        </div>
+				        <div class="form-group form-group-month">
+				          <label class="form-label" for="dob-month">Month</label>
+				          <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
+				        </div>
+				        <div class="form-group form-group-year">
+				          <label class="form-label" for="dob-year">Year</label>
+				          <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
+				        </div>
+				      </div>
+				    </fieldset>
+				  </div>
+				 
+		</fieldset>
+		
+		</div>
+		
+		<hr>
+		
+		<div class="form-group">
+		
+		<fieldset class="item-compound">
+                 
+            
+            <legend class="heading-medium">Illness or disability details</legend>
+
+
+		
+		      	<div class="form-group">
+		        
+					<label class="form-label form-label-large" for="illnessname">Name of illness or disability</label>
+					 <input type="text" class="form-control" id="illnessname">
+					 
+				 </div>
+
+      
+				 
+				 <div class="form-group">
+				 
+				 	<fieldset>
+				      <legend class="form-label">
+				          Date of diagnosis
+				      </legend>
+				       <span class="form-hint" id="dob-hint">For example, 31 3 1980</span>
+				      <div class="form-date">
+				        <div class="form-group form-group-day">
+				          <label class="form-label" for="dob-day">Day</label>
+				          <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+				        </div>
+				        <div class="form-group form-group-month">
+				          <label class="form-label" for="dob-month">Month</label>
+				          <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+				        </div>
+				        <div class="form-group form-group-year">
+				          <label class="form-label" for="dob-year">Year</label>
+				          <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016">
+				        </div>
+				      </div>
+				    </fieldset>
+				    
+				 </div>
+				 
+			
+
+            
+            
+          </fieldset>
+		</div>
+		
+		<p style="clear: both;" class="mt30"><a href="/assess/v9a/index2" class="button">Create referral</a></p>
+
+	
+		
+		
+	</form>
+	
+    
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+{% macro physGroup(name,sel) %}
+  {% set s = name | slug %}
+  <!-- GROUP -->
+  <div class="multiple-choice" data-target="group_{{s}}_yes">
+    <input id="group_{{s}}" type="checkbox" name="group_{{s}}" sue="group_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="group_{{s}}">{{name}}</label>
+  </div>
+{% endmacro %}
+
+{% macro physObs(name,sel) %}
+  {% set s = name | slug %}
+  <div class="multiple-choice" data-target="phys_{{s}}_yes">
+    <input id="phys_{{s}}" type="checkbox" name="mobility" value="phys_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="phys_{{s}}">{{name}}</label>
+  </div>
+  <div class="form-group panel panel-indent js-hidden mt0 mb20" id="phys_{{s}}_yes">
+    <p>
+      <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
+      <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
+    </p>
+  </div>
+{% endmacro %}
+

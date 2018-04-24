@@ -232,9 +232,9 @@ if (typeof (routes) !== 'function') {
   app.use('/assess/v7/', require('./app/views/assess/v7/_routes.js'))  
   app.use('/assess/v7a/', require('./app/views/assess/v7a/_routes.js'))  
   app.use('/assess/v8/', require('./app/views/assess/v8/_routes.js')) 
-  app.use('/assess/v8a/', require('./app/views/assess/v8a/_routes.js'))    
-  app.use('/vouch/', require('./app/views/vouch/_routes.js'))
-  app.use('/esa113/', require('./app/views/esa113/_routes.js'))
+  app.use('/assess/v8a/', require('./app/views/assess/v8a/_routes.js'))  
+  app.use('/assess/v9/', require('./app/views/assess/v9/_routes.js'))   
+  app.use('/assess/v9a/', require('./app/views/assess/v9a/_routes.js')) 
   app.use('/', routes)
 }
 
