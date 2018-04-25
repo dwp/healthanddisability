@@ -1,19 +1,16 @@
-{% extends path1+"/_layout-info.html" %}
+{% extends path1+"/_layout-stripped.html" %}
 
 {% block citizen_content %}
 
 {{ data.nuggets | log }}
-
 <a href="javascript: history.go(-1)" class="link-back">Back</a>
 
 
-<h1 class="heading-large mt20 mb30"><span class="heading-secondary">Step 2 of 3</span>Illness and disabilities</h1>
+<h1 class="heading-large mt30 mb20"><span class="heading-secondary">Step 4 of 4</span>Illness and disabilities</h1>
 
 
 <div class="grid-row">
   <div class="column-two-thirds">
-
-
 
 	<form class="form">
 	
@@ -85,15 +82,13 @@
       
     </div>
     <!-- pattern end -->
+    
+    <p class="mt30"><a href="/assess/v9a/index2" class="button">Finish</a></p>
 	
 	</form>
 	
 	
-
-
-
-
-    <p class="save-continue"><a href="wca-medication" class="button">Continue to medication and side effects</a></p>
+	    
 
   </div><!-- column -->
 </div><!-- row -->
@@ -201,5 +196,5 @@ $(document).on('click', '.button-add-another-vertical', function (e) {
     
 </script>
 
-{% endblock %}    
+{% endblock %}  
 

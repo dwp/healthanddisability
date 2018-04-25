@@ -1,0 +1,113 @@
+{% extends path1+"/_layout-stripped.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+
+<h1 class="heading-large mt30 mb20"><span class="heading-secondary">Step 2 of 4</span>Home address</h1>
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	<form>
+
+				 
+		 	<fieldset class="address-stack">
+			      <legend class="visually-hidden">
+			         Address details
+			      </legend>
+			       
+			       <div class="form-group street">
+			       		<label for="address1" class="form-label">Building or street</label>
+			       		<input class="form-control" id="address1" type="text">
+			       </div>
+			       <div class="form-group">
+			       		<label for="address2" class="visually-hidden">Building or street 2</label>
+			       		<input class="form-control" id="address2" type="text">
+			       </div>
+			       <div class="form-group">
+			       		<label for="address3" class="form-label">Town or city</label>
+			       		<input class="form-control" id="address3" type="text">
+			       </div>
+			       <div class="form-group">
+			       		<label for="address4" class="form-label">County (optional)</label>
+			       		<input class="form-control" id="address4" type="text">
+			       </div>
+			       <div class="form-group postcode">
+			       		<label for="postcode" class="form-label">Postcode</label>
+			       		<input class="form-control form-control-1-4" id="postcode" type="text">
+			       </div>
+			       
+			      <div class="form-group">
+			       	<fieldset class="inline">
+		    
+				    	<legend class="heading-medium mb10">Is this address used for correspondence?</legend>
+		
+					    <div class="multiple-choice">
+					      <input id="decide_now" name="whatcando" type="radio" value="Yes">
+					      <label for="decide_now"> Yes</label>
+					    </div>
+		  
+					    <div class="multiple-choice" data-target="extra-address">
+					      <input id="face2face" name="whatcando" type="radio" value="No">
+					      <label for="face2face"> No</label>
+					    </div>
+					    
+				    </fieldset>
+			       </div>
+		      
+		    </fieldset>
+		    
+		    
+		    
+
+		    
+		    
+		    
+		    <p class="mt30"><a href="case-creation3" class="button">Continue to contact details</a></p>
+				    
+		
+		
+		<!-- ********************************* Page end ********************************* -->
+		
+		
+			
+
+	
+		
+		
+	</form>
+	
+    
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+{% macro physGroup(name,sel) %}
+  {% set s = name | slug %}
+  <!-- GROUP -->
+  <div class="multiple-choice" data-target="group_{{s}}_yes">
+    <input id="group_{{s}}" type="checkbox" name="group_{{s}}" sue="group_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="group_{{s}}">{{name}}</label>
+  </div>
+{% endmacro %}
+
+{% macro physObs(name,sel) %}
+  {% set s = name | slug %}
+  <div class="multiple-choice" data-target="phys_{{s}}_yes">
+    <input id="phys_{{s}}" type="checkbox" name="mobility" value="phys_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="phys_{{s}}">{{name}}</label>
+  </div>
+  <div class="form-group panel panel-indent js-hidden mt0 mb20" id="phys_{{s}}_yes">
+    <p>
+      <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
+      <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
+    </p>
+  </div>
+{% endmacro %}
+
