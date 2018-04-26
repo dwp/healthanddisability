@@ -27,7 +27,7 @@
 
 		  <hr>
 		  <ul class="mt30">
-		    <li class="mt10"><a href="#">Record new evidence</a></li>
+		    <!-- <li class="mt10"><a href="#">Record new evidence</a></li> -->
 		   <!--  <li class="mt10"><a href="#">Request evidence</a></li>  -->
 	    </ul>
 	  </div>
@@ -137,7 +137,7 @@
 	                
 	                <tr class="med3-show">
 	                  <td><span>MED3 (fit note) information</span></td>
-	                  <td>ESA50</td>
+	                  <td>UC50</td>
 	                  <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
 	                </tr>
 	                
@@ -156,9 +156,9 @@
 	                </tr>
 	                <!-- // panel -->
 	                
-	                <tr class="esa50-show">
+	                <tr class="UC50-show">
 	                  <td><span>Tomas's statements</span></td>
-	                  <td>ESA50</td>
+	                  <td>UC50</td>
 	                  <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
 	                </tr>
 	                
@@ -183,7 +183,7 @@
 
 	                <tr class="side-show">
 	                  <td><span>Medication and side effects</span></td>
-	                  <td>ESA50</td>
+	                  <td>UC50</td>
 	                  <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
 	                </tr>
 	                
@@ -297,9 +297,9 @@
 </script>
 
 <script>
-  $(".esa50-show td span").click(function(){
+  $(".UC50-show td span").click(function(){
   $(".content-hide3").toggleClass("content-show3");
-  $(".esa50-show").toggleClass("active-show");
+  $(".UC50-show").toggleClass("active-show");
 });
 </script>
 
