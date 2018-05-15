@@ -1,0 +1,206 @@
+{% extends path1+"/_layout-info.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<p><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+  <h1 class="heading-large mt0 mb30"><span class="heading-secondary">Step 2 of 3</span>Illness and disabilities</h1>
+  
+  
+  
+  <div class="summary">
+
+        
+    <table>
+    
+    	<caption class="heading-medium mt10 mb10">What we already know:</caption>
+    	
+    	<thead>
+    		<tr>
+    			<th>Name</th>
+    			<th>Date</th>
+    			<th class="numeric">Status</th>
+    		</tr>
+    	</thead>
+    	
+    	<tbody>
+    		<tr>
+    			<td>Emergency fasciotomy</td>
+    			<td>August 2017</td>
+    			<td class="numeric">Verified</td>
+    		</tr>
+    		<tr>
+    			<td>Acute compartment syndrome</td>
+    			<td>August 2017</td>
+    			<td class="numeric">Verified</td>
+    		</tr>
+    		<tr>
+    			<td>Compound fracture - shinbone</td>
+    			<td>July 2017</td>
+    			<td class="numeric">Verified</td>
+    		</tr>
+    	</tbody>
+    	
+    </table>
+        
+        
+	    
+	</div>    
+
+
+
+
+	<form class="form" style="margin-top: 50px;">
+	
+	
+	
+	
+	<div class="list-item-wrapper-vertical">
+      <div class="list-row">
+      
+  
+
+          
+
+          
+        </div> 
+
+
+      
+
+      <div class="list-row">
+          <div class="form-group">
+            <button id="add-button" class="button secondary button-add-another-vertical">Add another</button>
+          </div>
+      </div>
+
+      
+    </div>
+    <!-- pattern end -->
+	
+	</form>
+	
+	
+
+
+
+
+    <p class="save-continue"><a href="wca-medication" class="button">Continue to medication and side effects</a></p>
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+
+
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+
+$(document).on('click', '.button-add-another-vertical', function (e) {
+      e.preventDefault();
+      var beforeThis = $(this).parents('.list-item-wrapper-vertical').find('.list-row').last();
+      $(beforeThis).before(
+        '<div class="list-row">' +
+            '<fieldset class="item-group-compound">' +
+              '<legend class="visuallyhidden">Director details</legend>' +  
+              '<div class="form-group">' +
+                '<label class="form-label" for="field-2">' +
+                  'Name of illness or disability' +
+                '</label>' +
+                '<input type="text" class="form-control" id="field-2" name="field-2" autofocus="autofocus">' +
+              '</div>' +
+              '<div>' +
+	                '<fieldset>' +
+		                '<legend class="form-label">' +
+		                'Date of diagnosis' +
+		                '</legend>' +
+		                '<span class="form-hint">For example, 31 3 1980</span>' +
+			                '<div class="form-date">' +
+				                '<div class="form-group form-group-day">' +
+					                '<label class="form-label" for="field-5">' +
+					                'Day' +
+					                '</label>' +
+					                '<input class="form-control" id="field-5" name="field-5" type="number" pattern="[0-9]*" min="0" max="31">' +
+				                '</div>' +               
+				                '<div class="form-group form-group-month">' +
+					                '<label class="form-label" for="field-6">' +
+					                'Month' +
+					                '</label>' +
+					                '<input class="form-control" id="field-6" name="field-6" type="number" pattern="[0-9]*" min="0" max="12">' +
+				                '</div>' +             
+				                '<div class="form-group form-group-year">' +
+					                '<label class="form-label" for="field-7">' +
+					                'Year' +
+					                '</label>' +
+					                '<input class="form-control" id="field-7" name="field-7" type="number" pattern="[0-9]*" min="0" max="2016">' +
+				                '</div>' +
+			                '</div>' +
+	                '</fieldset>' +
+                '</div>' +
+                '</fieldset>' +
+				'<hr />' +
+				'</div>'
+
+				                  
+      );
+      sortFieldsVertical();
+    });
+
+    function sortFieldsVertical() {
+      var listCounter = 1;
+      var inputCounter = 1;
+
+      $(document).find('.list-item-wrapper-vertical .list-row').each(function () {
+
+
+        if ($(this).find('.remove-list-item-vertical').length === 0) {
+          $(this).find('.item-group-compound:last').append('<a id="remove-item-vertical-' + listCounter + '" class="remove-list-item-vertical" href="#">Remove</a>');
+        } else {
+          $(this).find('.remove-list-item-vertical').attr('id', 'remove-item-vertical-' + listCounter);
+        }
+
+        $(this).find('label').each(function () {
+          $(this).attr('for', 'field-' + inputCounter);
+          inputCounter++;
+        });
+
+        $(this).find('input').each(function () {
+          var labelNo = $(this).parent().find('label').attr('for').split('-').pop();
+          $(this).attr('id', 'field-' + labelNo);
+          $(this).attr('name', 'field-' + labelNo);
+        });
+
+        listCounter++;
+      });
+
+      if ($(document).find('.list-item-wrapper-vertical .list-row').length === 2) {
+        $('.remove-list-item-vertical').remove();
+      }
+    }
+
+    $(document).on('click', '.remove-list-item-vertical', function (e) {
+      e.preventDefault();
+      $(this).parents('.list-row').prev('hr').remove();
+      $(this).parents('.list-row').remove();
+      sortFieldsVertical();
+    });
+    
+    
+
+    
+    
+</script>
+
+{% endblock %}    
+

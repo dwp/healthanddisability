@@ -1,0 +1,110 @@
+{% extends path2+"/_layout.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<div class="grid-row">
+
+
+
+  <div class="column-half">
+  <h2 class="heading-large mt0"><span class="heading-secondary">Step 1 of 3</span>Work capability assessment</h2>
+    <form class="form" id="add_ev">
+      <p style="clear:both">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      
+      <ul class="mb30 list-bullet">
+      	<li>Condition history</li>
+      	<li>Social and work history</li>
+      	<li>Typical day</li>
+      	<li>Medication and side effects</li>
+      </ul>
+
+      <div class="form-group">
+          <textarea id="nugget" class="form-control" name="nugget" style="width:100%;height:200px"></textarea>
+      </div><!-- form-group -->
+      <div class="form-group">
+        <input class="button secondary" type="submit" value="Add comment" id="submitButton" style="position:absolute; left: -9999px;"/>
+      </div><!-- form-group -->
+      
+      
+      <p class="mt30"><a href="#" class="button">Continue to physical assessment</a></p>
+    </form>
+   
+  </div><!-- column -->
+  <div class="column-half">
+  
+  
+  <p class="bold-medium">Assessment started: {{ last_one.time | formatDate("H:mma Do MMMM YYYY") }}</p>
+  
+  <div class="chat-layout">
+
+
+
+    {% for item in data.nuggets | sortBy("time",true) %}
+  
+      <div class="tag-box">
+        <div class="tag-text">{{ item.text }}</div>
+
+        {# {% include path2+"/_descriptors.html" %} #}
+      </div>
+      
+        
+    {% endfor %}
+    
+    
+      </p>
+
+    
+  </div><!-- column -->
+</div><!-- row -->
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+$(document).on('ready',function()
+{
+  $('#nugget').focus();
+
+  $("#nugget").keydown(function (event) {
+    if ((event.keyCode == 13))
+    {
+      $('#submitButton').trigger('click');
+    }
+  });
+
+  $('#submitButton').on('click',function(e)
+  {
+    e.preventDefault();
+    // get values from the form you're submitting.
+    var nugget = $('#nugget').val();
+    console.log(nugget)
+
+    // gather values into a data object.
+    var formdata = JSON.stringify({"nugget":nugget});
+    console.log(formdata)
+    console.log({url: '/{{ path }}/saveText'})
+
+    // send data object off to node route for saving.
+    $.ajax({
+      url: '/{{ path }}/saveText',
+      method: "POST",
+      contentType: 'application/json',
+      data: formdata,
+      dataType: 'json',
+      complete:  function(data,status,xhr) {
+        // sort out the page after data is successfully saved.
+        // $('#status_form').hide();
+        // $('#status_button').show();
+        document.location.reload(true);
+      }
+    });
+  });
+});
+</script>
+{% endblock %}

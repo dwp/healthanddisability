@@ -1,0 +1,148 @@
+{% extends path1+"/_layout-info.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+  <h1 class="heading-large mt30 mb30"><span class="heading-secondary">Step 1 of 3</span>How Tomas's conditions affect him</h1>
+  
+  
+  
+  <form>
+  
+  	<fieldset>
+					
+	    <legend class="heading-medium mb10">
+	       Choose the descriptors that Tomas has difficulties with:
+	    </legend>
+	    
+	    <p class="form-hint">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+	    
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="des" value="">
+	      <label for="des1">Moving around and using steps</label>
+	    </div>
+
+		<div class="multiple-choice">
+	      <input id="des2" type="checkbox" name="des" value="">
+	      <label for="des2">Standing and sitting</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des3" type="checkbox" name="des" value="">
+	      <label for="des3">Speaking, writing and typing</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des4" type="checkbox" name="des" value="">
+	      <label for="des4">Hearing and reading</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des5" type="checkbox" name="des" value="">
+	      <label for="des5">Getting around safely</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des6" type="checkbox" name="des" value="">
+	      <label for="des6">Eating and drinking</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des7" type="checkbox" name="des" value="">
+	      <label for="des7">Reaching for things</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des8" type="checkbox" name="des" value="">
+	      <label for="des8">Picking up and moving things</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des9" type="checkbox" name="des" value="">
+	      <label for="des9">Using your hands</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des10" type="checkbox" name="des" value="">
+	      <label for="des10">Going to the toilet</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des11" type="checkbox" name="des" value="">
+	      <label for="des11">Losing consciousness</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des12" type="checkbox" name="des" value="">
+	      <label for="des12">Learning and remembering how to do things</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des13" type="checkbox" name="des" value="">
+	      <label for="des13">Being aware of risks and dangers</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des14" type="checkbox" name="des" value="">
+	      <label for="des14">Planning and completing things</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des15" type="checkbox" name="des" value="">
+	      <label for="des15">Going out</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des16" type="checkbox" name="des" value="">
+	      <label for="des16">Meeting and speaking to people</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des17" type="checkbox" name="des" value="">
+	      <label for="des17">How your behaviour affects other people</label>
+	    </div>
+
+
+  </fieldset>
+  
+  </form>
+
+	
+	
+    <p class="save-continue"><a href="wca-index" class="button">Next</a></p>
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+{% macro physGroup(name,sel) %}
+  {% set s = name | slug %}
+  <!-- GROUP -->
+  <div class="multiple-choice" data-target="group_{{s}}_yes">
+    <input id="group_{{s}}" type="checkbox" name="group_{{s}}" sue="group_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="group_{{s}}">{{name}}</label>
+  </div>
+{% endmacro %}
+
+{% macro physObs(name,sel) %}
+  {% set s = name | slug %}
+  <div class="multiple-choice" data-target="phys_{{s}}_yes">
+    <input id="phys_{{s}}" type="checkbox" name="mobility" value="phys_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="phys_{{s}}">{{name}}</label>
+  </div>
+  <div class="form-group panel panel-indent js-hidden mt0 mb20" id="phys_{{s}}_yes">
+    <p>
+      <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
+      <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
+    </p>
+  </div>
+{% endmacro %}
+

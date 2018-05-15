@@ -1,0 +1,280 @@
+{% extends path1+"/_layout-stripped.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+
+    
+    
+ <h1 class="heading-large mt30 mb20"><span class="heading-secondary">Step 1 of 4</span>Personal details</h1>
+  
+  
+  
+
+	<form>
+
+
+		
+		<fieldset>
+                 
+            
+            <legend class="visually-hidden">Personal details</legend>
+
+
+		
+		      	<div class="form-group">
+		        
+					<label class="form-label" for="firstname">First name</label>
+					 <input type="text" class="form-control" id="firstname">
+					 
+				 </div>
+				 
+				 
+				 <div class="form-group">
+		        
+					<label class="form-label" for="lastname">Last name</label>
+					 <input type="text" class="form-control" id="lastname">
+					 
+				 </div>
+				 
+			<!--	 <div class="form-group">
+					  <label class="form-label" for="ni-number">
+					    National Insurance number
+					    <span class="form-hint">
+					      For example, ‘QQ 12 34 56 C’.
+					    </span>
+					  </label>
+					  <input class="form-control" id="ni-number" type="text" name="ni-number">
+					</div>  -->
+					
+					
+					
+					
+					<div class="form-group">
+
+				      <label for="example-ni-number" id="error-ni-number">
+				
+				        National Insurance number
+				        <span class="form-hint">
+				          For example, ‘QQ 12 34 56 C’.
+				        </span>
+				
+				      </label>
+				
+				      <input class="form-control" id="example-ni-number" type="text" name="niNo" value="">
+				
+				    </div>
+					
+					
+					
+					
+				 
+				 
+				 <div class="form-group">
+				    <fieldset>
+				      <legend>
+				          Date of birth
+				        <span class="form-hint">For example, 31 3 1980</span>
+				      </legend>
+				      <div class="form-date">
+				        <div class="form-group form-group-day">
+				          <label class="form-label" for="dob-day">Day</label>
+				          <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
+				        </div>
+				        <div class="form-group form-group-month">
+				          <label class="form-label" for="dob-month">Month</label>
+				          <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
+				        </div>
+				        <div class="form-group form-group-year">
+				          <label class="form-label" for="dob-year">Year</label>
+				          <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
+				        </div>
+				      </div>
+				    </fieldset>
+				  </div>
+				  
+				  
+				 <div class="form-group">
+					<fieldset class="address-stack">
+					      <legend class="heading-medium mb10">
+					         Address   
+					      </legend>
+					       
+					       <div class="form-group street">
+					       		<div>
+						       		<label for="address1" class="visually-hidden">Line 1</label>
+						       		<input class="form-control" id="address1" type="text">
+					       		</div>
+					       		<div>
+						       		<label for="address2" class="visually-hidden">Line 2</label>
+						       		<input class="form-control" id="address2" type="text">
+					       		</div>
+					       		
+					       		<div>
+						       		<label for="address3" class="visually-hidden">Line 3</label>
+						       		<input class="form-control" id="address3" type="text">
+					       		</div>
+					       </div>
+					       
+					      
+					       <div class="form-group">
+					       		<label for="postcode" class="form-label">Postcode
+
+					       		</label>
+					       		<input class="form-control form-control-1-4" id="postcode" type="text">
+					       </div>
+				    </fieldset>
+				    
+				    
+				    <fieldset class="inline">
+		    
+				    	<legend class="form-label">Is this address used for correspondence?</legend>
+		
+					    <div class="multiple-choice">
+					      <input id="decide_now" name="whatcando" type="radio" value="Yes">
+					      <label for="decide_now"> Yes</label>
+					    </div>
+		  
+					    <div class="multiple-choice" data-target="extra-address">
+					      <input id="face2face" name="whatcando" type="radio" value="No">
+					      <label for="face2face"> No</label>
+					    </div>
+					    
+					    
+					    <div class="panel panel-border-narrow js-hidden" id="extra-address">
+					    	<fieldset class="address-stack">
+							      <legend class="form-label">
+							         Correspondence address  
+							      </legend>
+							       
+							       <div class="form-group street">
+							       		<div>
+								       		<label for="address1" class="visually-hidden">Line 1</label>
+								       		<input class="form-control" id="address1" type="text">
+							       		</div>
+							       		<div>
+								       		<label for="address2" class="visually-hidden">Line 2</label>
+								       		<input class="form-control" id="address2" type="text">
+							       		</div>
+							       		
+							       		<div>
+								       		<label for="address3" class="visually-hidden">Line 3</label>
+								       		<input class="form-control" id="address3" type="text">
+							       		</div>
+							       </div>
+							       
+							      
+							       <div class="form-group">
+							       		<label for="postcode" class="form-label">Postcode
+		
+							       		</label>
+							       		<input class="form-control form-control-1-4" id="postcode" type="text">
+							       </div>
+						    </fieldset>
+					    </div>
+					    
+				    </fieldset>
+				    
+				    
+				</div>	
+				
+				
+				
+				
+				  
+				  
+				  <div>
+				  
+				  		<fieldset>
+					
+						    <legend class="heading-medium mb10">
+						       Contact details
+						    </legend>
+						    
+						    <div class="multiple-choice" data-target="contact-by-phone">
+						      <input id="example-contact-by-phone" type="checkbox" name="radio-contact-group" value="No">
+						      <label for="example-contact-by-phone">Phone</label>
+						    </div>
+						    <div class="panel panel-border-narrow js-hidden" id="contact-by-phone">
+						      <div class="form-group">
+						     	 <label class="form-label" for="contact-phone">Home</label>
+							 	 <input class="form-control" name="contact-phone" type="text" id="contact-phone">
+						      </div>
+						      <div class="form-group">
+						     	 <label class="form-label" for="contact-phone">Mobile</label>
+							 	 <input class="form-control" name="contact-phone" type="text" id="contact-phone">
+						      </div>
+						    </div>
+						
+						    <div class="multiple-choice" data-target="contact-by-email">
+						      <input id="example-contact-by-email" type="checkbox" name="radio-contact-group" value="Yes">
+						      <label for="example-contact-by-email">Email</label>
+						    </div>
+						    <div class="panel panel-border-narrow js-hidden" id="contact-by-email">
+						      <label class="form-label" for="contact-email">Email address</label>
+						      <input class="form-control" name="contact-email" type="text" id="contact-email">
+						    </div>
+					
+					
+					  </fieldset>
+					  
+				  </div>
+		  
+				 
+		</fieldset>
+		
+		<p class="mt30"><a href="case-creation4" class="button">Continue to GP details</a></p>
+
+
+		<!-- ********************************* Page end ********************************* -->
+
+
+		
+				 
+		 	
+
+	
+		
+		
+	</form>
+	
+    
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+{% macro physGroup(name,sel) %}
+  {% set s = name | slug %}
+  <!-- GROUP -->
+  <div class="multiple-choice" data-target="group_{{s}}_yes">
+    <input id="group_{{s}}" type="checkbox" name="group_{{s}}" sue="group_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="group_{{s}}">{{name}}</label>
+  </div>
+{% endmacro %}
+
+{% macro physObs(name,sel) %}
+  {% set s = name | slug %}
+  <div class="multiple-choice" data-target="phys_{{s}}_yes">
+    <input id="phys_{{s}}" type="checkbox" name="mobility" value="phys_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="phys_{{s}}">{{name}}</label>
+  </div>
+  <div class="form-group panel panel-indent js-hidden mt0 mb20" id="phys_{{s}}_yes">
+    <p>
+      <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
+      <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
+    </p>
+  </div>
+{% endmacro %}
+

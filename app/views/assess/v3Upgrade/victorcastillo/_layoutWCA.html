@@ -1,0 +1,56 @@
+{% extends path+"/_layout.html" %}
+{% import path1+"/_macros_nav.html" as nav %}
+
+{% block assess_content %}
+
+  {#  This is the BIG BLUE BAR at the top - #jussayin #}
+  {% include path1+"/_staff_heading.html" %}
+
+  <main id="content" role="main" class="main-content">
+
+    <div class="container">
+      <div class="grid-row">
+        <div class="column-full">
+
+          <div nunj-block="citizen_content">
+            {% block citizen_content %}{% endblock %}
+          </div>
+
+        </div><!-- column -->
+      </div><!-- row -->
+    </div><!-- container -->
+
+  </main>
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.function_link').on('click',function(e)
+    {
+      e.preventDefault();
+      var href = $(this).attr('href');
+      console.log(href)
+      $.ajax({
+        url: href,
+        method: "GET",
+        complete:  function(data,status,xhr) {
+          console.log(data)
+          document.location.reload(true);
+        }
+      });
+    });
+  });
+</script>
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+<p class="font-xsmall">
+  <a href="/{{ path }}/clearSession" id="clear_data" class="function_link">clear data</a>
+  | <a href="/{{ path }}/prefillAssessment" id="prefill" class="function_link">prefill</a>
+</p>
+{% endblock %}

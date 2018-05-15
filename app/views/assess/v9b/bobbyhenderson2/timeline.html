@@ -1,0 +1,71 @@
+{% extends path1+"/_layout.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.case_tabs("timeline",1,path1) }}
+    
+    
+    
+     
+    
+      <div class="timeline">
+
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">UC50 overdue</h3>
+          <p class="timeline_datetime">30 May 2018</p>
+        </div>
+        
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">UC50 posted</h3>
+          <p class="timeline_datetime">20 April 2018</p>
+        </div>
+        
+        
+          <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">New referral created</h3>
+          <p class="timeline_datetime">19 April 2018</p>
+        </div>
+
+
+        <div style="clear:both"></div>
+
+      </div><!-- timeline -->
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

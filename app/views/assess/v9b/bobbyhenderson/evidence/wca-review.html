@@ -1,0 +1,83 @@
+{% extends path1+"/_layout-info.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+
+<h1 class="heading-large mt30 mb0">Review</h1>
+
+
+<div class="grid-row">
+  <div class="column-full">
+  
+ 
+  <div class="review-item">
+  	<h3 class="heading-medium">Moving around and using steps</h3>
+  	<p>Tomas says they can move safely and repeatedly on level ground without needing to stop for: <b>100 metres</b></p>
+  	<p>“I had an accident in July - I was run over and it damaged my left leg. On a good day I can walk 100m slowly with crutches on the flat - I'd have to rest a couple of times though, as I'd be in pain. On a bad day, I can just about get around my flat but would usually stay in bed so I don't have to move much.”</p>
+  </div>
+  <hr>
+  <div class="review-item">
+  	<h3 class="heading-medium mt10">Standing and sitting</h3>
+  	<p>Tomas says they can move from one seat to another right next to it without help from someone else.</p>
+  	<p>Tomas says they stay in one place pain free without help for less than 30 minutes.</p>
+  	<p>"I can stand with crutches, but not without them. On a good day I might be able to stand for about 10 minutes but on a bad day it’s hard for me to use crutches at all, so I couldn’t really stand because I can’t put weight on my leg."</p>
+  	<p>"I can sit down but I have to elevate my leg and move it every so often. It gets uncomfortable because of the pain so I end up having to reposition myself."</p>
+  </div>
+  <hr>
+  <div class="review-item">
+  	<h3 class="heading-medium mt10">Illness and disabilities</h3>
+  	<h4 class="heading-small">Emergency fasciotomy</h4>
+  	<p>22 August 2017</p>
+  	<h4 class="heading-small">Acute compartment syndrome</h4>
+  	<p>12 August 2017</p>
+  	<h4 class="heading-small">Compound fracture - shinbone</h4>
+  	<p>4 July 2017</p>
+  </div>
+  <hr>
+  <div class="review-item">
+  	<h3 class="heading-medium mt10">Medication and side effects</h3>
+  	<h4 class="heading-small">Zoomorph</h4>
+  	<p>4mg daily</p>
+  	<h4 class="heading-small">Last prescribed:</h4>
+  	<p>12 August 2017</p>
+  	<h4 class="heading-small">Side effects</h4>
+  	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  </div>
+ <hr> 
+  	
+
+	
+	
+    <p class="save-continue"><a href="#" class="button">Finish</a></p>
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+{% macro physGroup(name,sel) %}
+  {% set s = name | slug %}
+  <!-- GROUP -->
+  <div class="multiple-choice" data-target="group_{{s}}_yes">
+    <input id="group_{{s}}" type="checkbox" name="group_{{s}}" sue="group_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="group_{{s}}">{{name}}</label>
+  </div>
+{% endmacro %}
+
+{% macro physObs(name,sel) %}
+  {% set s = name | slug %}
+  <div class="multiple-choice" data-target="phys_{{s}}_yes">
+    <input id="phys_{{s}}" type="checkbox" name="mobility" value="phys_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="phys_{{s}}">{{name}}</label>
+  </div>
+  <div class="form-group panel panel-indent js-hidden mt0 mb20" id="phys_{{s}}_yes">
+    <p>
+      <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
+      <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
+    </p>
+  </div>
+{% endmacro %}
+

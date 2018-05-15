@@ -1,0 +1,92 @@
+{% extends path+"/_layout.html" %}
+{% import path1+"/_macros_nav.html" as nav %}
+
+{% block assess_content %}
+
+  {#  This is the BIG BLUE BAR at the top - #jussayin #}
+  {% include path1+"/_staff_heading.html" %}
+
+  <main id="content" role="main" class="main-content-inner">
+
+    <div class="container">
+    
+      <div class="grid-row main-row">
+      
+      <div class="column-one-quarter left-area">
+      
+      	<div class="left-panel">
+      
+      	
+      	
+      	
+      	 <div class="case-status">
+		 
+ <p class="mt10 mb0 bold-small"><span class="circle teal"></span> UC50 posted</p>
+ 
+
+		<div class="form-group mt20">
+		  
+		  <select class="form-control" id="select-box" name="select-box" style="width: 80%;">
+		  <option>Select case status</option>
+		    <option>UC50 received</option>
+		    <option>Close case</option>
+		  </select>
+		</div>
+		
+		<p class=""><a href="/assess/v9b/tomasfernandez/timeline" class="button">Confirm</a></p>
+		
+		
+
+		  </div>
+      	
+      	
+      	</div>
+      
+      </div>
+      
+        <div class="column-three-quarters main-area">
+
+          <div nunj-block="citizen_content">
+            {% block citizen_content %}{% endblock %}
+          </div>
+
+        </div><!-- column -->
+        
+        
+      </div><!-- row -->
+    </div><!-- container -->
+
+  </main>
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.function_link').on('click',function(e)
+    {
+      e.preventDefault();
+      var href = $(this).attr('href');
+      console.log(href)
+      $.ajax({
+        url: href,
+        method: "GET",
+        complete:  function(data,status,xhr) {
+          console.log(data)
+          document.location.reload(true);
+        }
+      });
+    });
+  });
+</script>
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+<p class="font-xsmall">
+  <a href="/{{ path }}/clearSession" id="clear_data" class="function_link">clear data</a>
+  | <a href="/{{ path }}/prefillAssessment" id="prefill" class="function_link">prefill</a>
+</p>
+{% endblock %}
