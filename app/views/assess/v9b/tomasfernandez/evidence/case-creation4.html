@@ -12,7 +12,7 @@
   
   
   
-   <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+   <!-- <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
 
       <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
         Message to alert the user to a problem goes here
@@ -26,7 +26,7 @@
         <li><a href="#">Descriptive link to address error</a></li>
       </ul>
 
-    </div>
+    </div> -->
     
     
     <h1 class="heading-large mt30 mb20"><span class="heading-secondary">Step 2 of 4</span>GP details</h1>
@@ -50,6 +50,13 @@
 					 
 				 </div>
 				 
+				 <div class="form-group">
+		        
+					<label class="form-label" for="middlename">Middle name(s)</label>
+					 <input type="text" class="form-control" id="middlename">
+					 
+				 </div>
+				 
 				 
 				 <div class="form-group">
 		        
@@ -59,29 +66,39 @@
 				 </div>
 				 
 		
-				<div class="form-group form-group-error">
+				<div class="form-group">
 					<fieldset class="address-stack">
-					      <legend class="heading-medium mb5">
-					         Address 
+					      <legend class="heading-medium mb10">
+					         Surgery 
 					         
-					         <span class="error-message">
-				          You must enter a line of your address
-				        </span>
+						    <!-- <span class="error-message">
+					          You must enter a line of your address
+					        </span> -->
 					      </legend>
-					       
+					      
+					       <div class="form-group">
+					      	<label for="name-surgery" class="form-label">Name of surgery</label>
+					      	<input class="form-control" id="name-surgery" type="text">
+					      </div>
+	 
 					       <div class="form-group street">
 					       		<div>
-						       		<label for="address1" class="visually-hidden">Line 1</label>
+						       		<label for="address1" class="form-label">Address</label>
 						       		<input class="form-control" id="address1" type="text">
 					       		</div>
 					       		<div>
-						       		<label for="address2" class="visually-hidden">Line 2</label>
+						       		<label for="address2" class="visually-hidden">Address Line 2</label>
 						       		<input class="form-control" id="address2" type="text">
 					       		</div>
 					       		
 					       		<div>
-						       		<label for="address3" class="visually-hidden">Line 3</label>
+						       		<label for="address3" class="visually-hidden">Address Line 3</label>
 						       		<input class="form-control" id="address3" type="text">
+					       		</div>
+					       		
+					       		<div>
+						       		<label for="address4" class="visually-hidden">Address Line 4</label>
+						       		<input class="form-control" id="address4" type="text">
 					       		</div>
 					       </div>
 					       
@@ -102,7 +119,7 @@
 					<fieldset>
 					
 					    <legend class="heading-medium mb10">
-					        Contact details
+					        Contact
 					    </legend>
 					    
 					    <div class="multiple-choice" data-target="contact-by-phone">
