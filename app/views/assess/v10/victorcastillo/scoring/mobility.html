@@ -1,0 +1,114 @@
+{% extends path2+"/_layout-panel.html" %}
+
+{% block scoring_content %}
+
+{{ nav.case_tabs("scoring",1,path1) }}{# macro #}
+
+<a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+
+  <h2 class="heading-large mt20">Moving around and using steps</h2>
+  
+  
+  <div class="grid-row">
+  
+  
+    <div class="column-two-thirds">
+
+  {# <div id="been_scored">
+    <hr />
+    <h2 class="heading-large">Moving around and using steps score: 9</h2>
+    <p class="form-hint">You can change this is if you need to.</p>
+    <button class="button" id="change_score">Change score</button>
+  </div> #}
+
+  {% include path2 + "/_mobility_score.html" %}
+  <div class="form-group">
+    <p><label class="form-label" for="justificaiton">Justification</label>
+    <textarea class="form-control form-control-3-4" name="justificaiton" id="justificaiton" rows="5"></textarea></p>
+  </div><!-- .form-group -->
+  <div class="form-group">
+    <a href="index-scored" class="button">Save</a>
+  </div><!-- form-group -->
+
+  {# <div class="" id="rescore">
+    <h3 class="heading-large">Can you make a recommendation now?</h3>
+    <form class="form" action="/{{path2}}/" method="get">
+      {% block case_form %} {% include path2+"/_form_ask.html" %} {% endblock %}
+      <div class="js-hidden panel panel-indent mt20" id="scorenow">
+        {% include path2 + "/_mobility_score.html" %}
+      </div><!-- #scorenow -->
+      <div class="form-group">
+        <a href="index" class="button">Save</a>
+      </div><!-- form-group -->
+    </form>
+  </div> #}
+
+
+  </div>
+  
+  
+  <div class="column-half">
+  
+
+  
+
+      
+   
+
+
+      
+      
+      
+      
+    </div>
+  </div>
+
+  
+  
+  </div>
+  
+
+
+  </div>
+
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('#change_score').on('click',function(e)
+    {
+      e.preventDefault();
+      console.log('got here')
+      $('#been_scored').addClass('js-hidden');
+      $('#rescore').removeClass('js-hidden');
+    });
+
+    // highlight the right left nav link.
+    $($(".nav")[0]).children(":nth-child(1)").addClass('active')
+  });
+</script>
+
+<script>
+  $(".gp-report-show td span").click(function(){
+  $(".content-hide").toggleClass("content-show");
+  $(".gp-report-show").toggleClass("active-show");
+});
+</script>
+<script>
+  $(".esa50-show td span").click(function(){
+  $(".content-hide3").toggleClass("content-show3");
+  $(".esa50-show").toggleClass("active-show");
+});
+</script>
+<script>
+  $(".med3-show td span").click(function(){
+  $(".content-hide2").toggleClass("content-show2");
+  $(".med3-show").toggleClass("active-show");
+});
+</script>
+{% endblock %}

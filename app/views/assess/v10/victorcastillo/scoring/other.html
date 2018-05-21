@@ -1,0 +1,98 @@
+{% extends path2+"/_layout.html" %}
+
+{% block scoring_content %}
+
+{{ nav.case_tabs("scoring",1,path1) }}{# macro #}
+
+  <a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+
+<h1 class="heading-large mt30 mb30">Other</h1>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+  
+  <form>
+
+
+		
+		<fieldset>
+                 
+            
+            <legend class="visually-hidden">Personal details</legend>
+
+
+				  
+				 <div class="form-group">
+
+				    
+				    
+				    <fieldset class="inline">
+		    
+				    	<legend class="heading-medium mb10">Should Tomas receive LCW and LCWRA?</legend>
+		
+					    <div class="multiple-choice" data-target="extra-address">
+					      <input id="decide_now" name="whatcando" type="radio" value="Yes">
+					      <label for="decide_now"> Yes</label>
+					    </div>
+		  
+					    <div class="multiple-choice">
+					      <input id="face2face" name="whatcando" type="radio" value="No">
+					      <label for="face2face"> No</label>
+					    </div>
+					    
+					    
+					    <div class="panel panel-border-narrow js-hidden" id="extra-address">
+					    	<fieldset>
+							      <legend class="form-label">
+							         Which area applies? 
+							      </legend>
+							       
+							       
+							       <div class="multiple-choice">
+								      <input id="decide_now" name="whatcando" type="radio" value="Yes">
+								      <label for="decide_now"> dlekdlekdlekldekd </label>
+								    </div>
+					  
+								    <div class="multiple-choice">
+								      <input id="face2face" name="whatcando" type="radio" value="No">
+								      <label for="face2face"> No</label>
+								    </div>
+							       
+							       
+							       
+						    </fieldset>
+					    </div>
+					    
+				    </fieldset>
+				    
+				    
+				</div>	
+				
+				
+				
+				
+				  
+								 
+		</fieldset>
+
+
+
+  <p class="mt30"><a href="prognosis" class="button">Continue to prognosis</a></p>
+
+		<!-- ********************************* form end ********************************* -->
+
+		
+	</form>
+  
+
+
+
+
+
+
+
+
+{% endblock %}
+

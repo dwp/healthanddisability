@@ -1,0 +1,70 @@
+{% extends path1+"/_layout.html" %}
+
+{% block citizen_content %}
+
+<div class="container">
+
+  {# macro #}
+  {{ nav.case_tabs("details",1,path1) }}
+
+  <div class="grid-row mt30">
+
+    <div class="column-third">
+
+      <h3 class="heading-medium mt0">Contact details</h3>
+      <p>Tony can be contacted by phone but his mother, Alice, will speak on his behalf.</p>
+      <p>
+        <span class="label">Phone calls</span><br />
+        <span class="font-medium">09870 654 321</span>
+      </p>
+      <p>
+        <span class="label">Text messages</span><br />
+        <span class="font-medium">09870 654 321</span>
+      </p>
+      <p>
+        <span class="label">Emails</span><br />
+        <span class="font-medium"><a href="">giveblood@hotmail.com</a></span>
+      </p>
+      <p>
+        <span class="label">Letters</span><br />
+        <span class="font-medium">23 Railway Cuttings</span><br />
+        <span class="font-medium">East Cheam</span><br />
+        <span class="font-medium">London</span><br />
+        <span class="font-medium">SM2 7YT</span><br />
+      </p>
+      <p><a href="edit-citizen-details" class="button button-secondary">Edit contact details</a></p>
+
+    </div><!-- column -->
+
+    <div class="column-third">
+
+      <h3 class="heading-medium mt0">General Practitioner</h3>
+      <p class="font-medium">Dr. Victoria Wood</p>
+      <p>
+        <span class="label">Letters</span><br />
+        <span class="font-medium">Cottage Road Surgery</span><br />
+        <span class="font-medium">Wendleborough</span><br />
+        <span class="font-medium">East Fishbourne</span><br />
+        <span class="font-medium">EF2 7YT</span><br />
+      </p>
+      <p>
+        <span class="label">Telephone calls</span><br />
+        <span class="font-medium">09870 654 321</span>
+      </p>
+      <p><a href="edit-contact-details" class="button button-secondary">Edit GP details</a></p>
+
+    </div><!-- column -->
+    <div class="column-third">
+
+      {# {% include path1+"/details/employer_contact.html" %} #}
+
+    </div><!-- column -->
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}
