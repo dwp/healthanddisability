@@ -6,7 +6,6 @@
 
 
 
-
 <h2 class="heading-large mt30 mb0">Physical assessments</h2>
 
 <div class="grid-row">
@@ -19,17 +18,17 @@
 			<caption>Physical exam process</caption>
 			
 			
-			<tr>
+			<tr class="complete">
 				<th><a href="lower-limbs">Lower back and legs</a></th>
-				<td><span>Not assessed</span></td>
+				<td><span class="red">Assessed - has difficulties</span></td>
 			</tr>
 			<tr>
 				<th><a href="#">Neck and arms</a></th>
-				<td><span>Not assessed</span></td>
+				<td><span><!-- No examination needed-->Not assessed</span></td>
 			</tr>
 			<tr>
 				<th><a href="#">Cardiac</a></th>
-				<td><span>Not assessed</span></td>
+				<td><span><!--Examined - no difficulties-->Not assessed</span></td>
 			</tr>
 			<tr>
 				<th><a href="#">Respiratory</a></th>
@@ -51,9 +50,9 @@
 				<th><a href="#">Continence</a></th>
 				<td><span>Not assessed</span></td>
 			</tr>
-			<tr>
+			<tr class="complete">
 				<th><a href="mentalHealthAssessment">Mental health</a></th>
-				<td><span>Not assessed</span></td>
+				<td><span class="red">Assessed - has difficulties</span></td>
 			</tr>
 			
 		</table>
@@ -61,13 +60,8 @@
 	</div>
 	
 
+<p class="mt30"><a href="medical_assessment_stripped" class="button">Finish assessment</a></p>
 
-
-
-
-
-
-    <p class="mt30"><a href="mentalHealthConsent" class="button">Continue</a></p>
 
   </div><!-- column -->
 </div><!-- row -->
@@ -90,7 +84,7 @@
   </div>
   <div class="form-group panel panel-indent js-hidden mt0 mb20" id="phys_{{s}}_yes">
     <p>
-      <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
+      <label class="form-label" for="phys_{{s}}_obs">Observation, palpation, movement</label>
       <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
     </p>
   </div>
