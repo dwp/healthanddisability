@@ -9,45 +9,45 @@
 
 <div class="grid-row">
 
+ 
 
 
   <div class="column-half">
-  <h2 class="heading-large mt0"><span class="heading-secondary">Step 1 of 3</span>Work capability assessment</h2>
+  
+  
+  
+  <h1 class="heading-large mt0"><span class="heading-secondary">Step 2 of 4</span>Typical day</h1>
     <form class="form" id="add_ev">
-      <p style="clear:both">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      
-      <ul class="mb30 list-bullet">
-      	<li>Condition history</li>
-      	<li>Social and work history</li>
-      	<li>Typical day</li>
-      	<li>Medication and side effects</li>
-      </ul>
+      <p style="clear:both form-hint">Comments will be captured each time </p>
 
-      <div class="form-group">
-          <textarea id="nugget" class="form-control" name="nugget" style="width:100%;height:200px"></textarea>
+
+      <div>
+          <textarea id="nugget" class="form-control" name="nugget" style="width:90%;height:250px"></textarea>
       </div><!-- form-group -->
-      <div class="form-group">
-        <input class="button secondary" type="submit" value="Add comment" id="submitButton" style="position:absolute; left: -9999px;"/>
+      <div class="form-group mt20">
+        <input class="button secondary" type="submit" value="Add comment" id="submitButton" style=""/>
       </div><!-- form-group -->
       
       
-      <p class="mt30"><a href="#" class="button">Continue to physical assessment</a></p>
+      
     </form>
    
   </div><!-- column -->
   <div class="column-half">
   
   
-  <p class="bold-medium">Assessment started: {{ last_one.time | formatDate("H:mma Do MMMM YYYY") }}</p>
+ <!-- <p class="bold-medium">Assessment started: {{ last_one.time | formatDate("H:mma Do MMMM YYYY") }}</p> -->
+  
   
   <div class="chat-layout">
-
 
 
     {% for item in data.nuggets | sortBy("time",true) %}
   
       <div class="tag-box">
-        <div class="tag-text">{{ item.text }}</div>
+        <div class="tag-text">
+        
+        {{ item.text }}</div>
 
         {# {% include path2+"/_descriptors.html" %} #}
       </div>
@@ -61,6 +61,8 @@
     
   </div><!-- column -->
 </div><!-- row -->
+<p class="mt50" style="text-align: right; margin-right: 20px;"><a href="#" class="button">Finish and continue</a></p>
+
 
 {% endblock %}
 

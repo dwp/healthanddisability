@@ -294,12 +294,18 @@ select.form-select:hover {
 
 .chat-layout {
 	background: $grey-4;
-	padding: .2em 1em;
+	padding: .5em 1.4em;
+	margin-top: 30px;
+	height: 500px;
+	overflow: scroll;
+	position: relative;
 	
 	.tag-box {
 		background: $grey-3;
 		margin-top: 20px;
-
+		&:nth-child(1) {
+			border: 5px solid $grey-2;
+		}
 	}
 	
 	.tag-text {
@@ -322,6 +328,32 @@ select.form-select:hover {
 }
 
 
+
+
+.secondary {
+  background: $grey-3;
+  color: #000!important;
+  box-shadow: 0 2px 0 $grey-2;
+  &:visited {
+	  background: $grey-3;
+	  box-shadow: 0 2px 0 $grey-2;
+	  color: #000;
+  }
+  &:hover {
+	  background: $grey-2;
+	  box-shadow: 0 2px 0 $grey-1;
+	  color: #000;
+  }
+  &:focus {
+	  background: $grey-2;
+  }
+}	
+
+
+.mt50 {
+	padding-top: 30px;
+	clear: both;
+}
 
 	
 	
