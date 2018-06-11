@@ -296,15 +296,14 @@ select.form-select:hover {
 	background: $grey-4;
 	padding: .5em 1.4em;
 	margin-top: 30px;
-	height: 500px;
-	overflow: scroll;
+
 	position: relative;
 	
 	.tag-box {
 		background: $grey-3;
 		margin-top: 20px;
 		&:nth-child(1) {
-			border: 5px solid $grey-2;
+		//	border: 5px solid $grey-2;
 		}
 	}
 	
