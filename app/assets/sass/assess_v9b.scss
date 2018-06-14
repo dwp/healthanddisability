@@ -867,3 +867,12 @@ fieldset, legend {
 	position: relative;
 	top: -5px;
 }
+
+.secondary-actions {
+	li {
+		margin-top: 5px;
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+}
