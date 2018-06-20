@@ -434,3 +434,29 @@ hr {
 .edit-this {
 	margin-left: 5px;
 }
+
+.secondary {
+  background: $grey-3;
+  color: #000!important;
+  box-shadow: 0 2px 0 $grey-2;
+  &:visited {
+	  background: $grey-3;
+	  box-shadow: 0 2px 0 $grey-2;
+	  color: #000;
+  }
+  &:hover {
+	  background: $grey-2;
+	  box-shadow: 0 2px 0 $grey-1;
+	  color: #000;
+  }
+  &:focus {
+	  background: $grey-2;
+  }
+}	
+
+
+
+.edit-this {
+	display: inline-block;
+	padding-left: 10px;
+}
