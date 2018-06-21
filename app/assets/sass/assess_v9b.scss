@@ -432,6 +432,14 @@ select.form-select:hover {
 
 }
 
+.review-view {
+	table {
+		th {
+			font-weight: 300;
+		}
+	}
+}
+
 
 .esa50-input {
 	caption {
@@ -496,6 +504,13 @@ hr {
 
 .edit-this {
 	margin-left: 5px;
+}
+
+h3 {
+	.edit-this {
+		font-weight: normal;
+		font-size: 17px;
+	}
 }
 
 
@@ -801,10 +816,14 @@ hr {
 
 
 .review-item {
+	margin-top: 40px;
 	p {
 		b {
 			font-weight: bold;
 		}
+	}
+	&:first-child {
+		margin-top: 0;
 	}
 }
 
@@ -875,4 +894,16 @@ fieldset, legend {
 			margin-top: 0;
 		}
 	}
+}
+
+
+
+.review-view {
+	b {
+		font-weight: bold;
+	}
+}
+
+td {
+	vertical-align: top;
 }
