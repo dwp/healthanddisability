@@ -1,0 +1,85 @@
+{% extends path1+"/_layout.html" %}
+
+{% block citizen_content %}
+
+<div class="container">
+
+  {# macro #}
+  {{ nav.case_tabs("timeline",1,path1) }}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+      <div class="timeline">
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Prescription list received</h3>
+          <p class="timeline_datetime">03:37pm - 6th June 2017</p>
+          <p class="bold-xsmall"><a href="#">John Goldsmith</a></p>
+          <p class="font-xsmall">Copy of most recent prescription list received</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Community Psychiactric Nurse report received</h3>
+          <p class="timeline_datetime">09:36am - 6th June 2017</p>
+          <p class="bold-xsmall"><a href="#">John Goldsmith</a></p>
+          <p class="font-xsmall">report was sent in by claimant's daughter with cover note</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Call attempted to GP</h3>
+          <p class="timeline_datetime">05:00pm - 5th June 2017</p>
+          <p class="bold-xsmall"><a href="#">John Goldsmith</a></p>
+          <p class="font-xsmall">GP unwilling to give info on the phone - asked for an official evidence request</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">claimant statement submitted</h3>
+          <p class="timeline_datetime">02:00pm - 5th June 2017</p>
+          <p class="bold-xsmall"><a href="#">John Goldsmith</a></p>
+          <p class="font-xsmall"></p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Entitlement email sent</h3>
+          <p class="timeline_datetime">10:00am - 5th June 2017</p>
+          <p class="bold-xsmall"><a href="#">John Goldsmith</a></p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Application submitted</h3>
+          <p class="timeline_datetime">09:12am - 5th June 2017</p>
+        </div>
+
+        <div style="clear:both"></div>
+
+      </div><!-- timeline -->
+
+    </div><!-- column -->
+
+    <div class="column-one-third">
+      {# {% include path+"/inc/edit/status.html" %}
+      {% include path+"/inc/edit/adviser.html" %}
+      {% include path+"/inc/edit/team.html" %} #}
+    </div><!-- column -->
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

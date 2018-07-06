@@ -1,0 +1,163 @@
+{% extends path2+"/_layout-review.html" %}
+
+{% block case_content %}
+
+  {{ data.nuggets | log }}
+
+  <h2 class="heading-large mt10">Work capability assessment review</h2>
+
+  {% if data.nuggets.length %}
+
+    {% set last_one = data.nuggets | sortBy("time",true) | last  %}
+    {% set first_one = data.nuggets | sortBy("time",true) | first  %}
+
+    <table>
+    <caption class="visually-hidden">Assessment details</caption>
+
+    <tbody>
+    	<tr>
+    		<th>Date</th>
+    		<td>{{ "Do MMM YYYY" | daysAgo }}</td>
+    	</tr>
+    	<tr>
+    		<th>Time</th>
+    		<td>{{ last_one.time | formatDate("H:mma") }} - {{ first_one.time | formatDate("H:mma") }}</td>
+    	</tr>
+    	<tr>
+    		<th>Assessor</th>
+    		<td>Heather Harrison</td>
+    	</tr>
+    	<tr>
+    		<th>Assessment centre</th>
+    		<td>Tresco house</td>
+    	</tr>
+    </tbody>
+    </table>
+
+
+
+
+  {% endif %}
+  
+  
+  <div class="assessDashboard">
+    	
+    	<div class="row">
+	    	<section class="illnessEffects">
+	    		<h2 class="heading-small">
+	    			Illnesses and conditions
+	    		</h2>
+	    		<p>Added:
+	    		<span class="number">
+	    			2
+	    		</span>
+	    		</p>
+	    		<p><a href="#">Review</a></p>
+	    	</section>
+	    	
+	    	<section class="illnessEffects">
+	    		<h2 class="heading-small">
+	    			Social and work history
+	    		</h2>
+	    		<p class="comments">Statements:
+	    		<span class="number">
+	    			9
+	    		</span>
+	    		</p>
+	    		<p><a href="socialWorkHistoryEdit">Review</a></p>
+	    	</section>
+	    		
+	    	<section class="illnessEffects">
+	    		<h2 class="heading-small">
+	    			Typical day
+	    		</h2>
+	    		<p class="comments">Statements:
+	    		<span class="number">
+	    			14
+	    		</span>
+	    		</p>
+	    		<p><a href="#">Review </a></p>
+	    	</section>
+    	</div>
+    	
+    	<div class="row">
+	    	
+	    	<section class="illnessEffects">
+	    		<h2 class="heading-small">
+	    			Physical assessment
+	    		</h2>
+	    		<p class="comments">Areas covered:
+	    		<span class="number">
+	    			6
+	    		</span>
+	    		</p>
+	    		<p><a href="#">Review</a></p>
+	    	</section>
+	    		
+	    	<section class="illnessEffects">
+	    		<h2 class="heading-small">
+	    			Mental health
+	    		</h2>
+	    		<p class="comments">Areas covered:
+	    		<span class="number">
+	    			3
+	    		</span>
+	    		</p>
+	    		<p><a href="#">Review </a></p>
+	    	</section>
+    	</div>
+    	
+    	
+    </div>
+
+{% endblock %}
+
+
+
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.evidence__leftnav')
+      .children(":nth-child(1)")
+      .addClass('active')
+
+    $('#des_submit').on('click',function(e)
+    {
+      e.preventDefault();
+      var t = $('#des_form').serializeArray();
+      var des = [], id;
+      $.each(t,function(i,e)
+      {
+        if (e.name == "des_id") id = e.value;
+        if (e.name == "descriptors") des.push(e.value);
+      });
+      var data = {
+        id: id,
+        descriptors: des,
+      }
+      console.log('got here1 ')
+      $.ajax({
+        url: '/{{ path }}/updateEvidence',
+        method: "POST",
+        contentType: 'application/json',
+        data: JSON.stringify(data),
+        dataType: 'json',
+        complete:  function(data,status,xhr) {
+          console.log('got here')
+          document.location.reload(true);
+        }
+      })
+    })
+
+    $('.des_trigger').on('click',function(e)
+    {
+      var id = $(this).data('id');
+      console.log(id)
+      $('#des_id').val(id);
+    });
+  });
+</script>
+{% endblock %}

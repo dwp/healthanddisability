@@ -1,0 +1,90 @@
+{% extends path2+"/_layout.html" %}
+
+{% block scoring_content %}
+
+
+
+  <a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+
+<h1 class="heading-large mt30 mb20">Time until Tomas's case needs reviewing</h1>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+  
+  <form>
+  
+  	<div class="form-group">
+
+					    	<fieldset>
+							      <legend class="heading-small">
+							        How long would you recommend that Tomas needs before their case is reviewed? 
+							      </legend>
+							       
+							       
+							       <div class="multiple-choice">
+								      <input id="terminally" name="reasons" type="radio" value="terminally ill">
+								      <label for="terminally"> 3 months </label>
+								    </div>
+					  
+								    <div class="multiple-choice">
+								      <input id="preg" name="reasons" type="radio" value="Pregnancy">
+								      <label for="preg">6 months</label>
+								    </div>
+								    
+								    <div class="multiple-choice">
+								      <input id="disease" name="reasons" type="radio" value="Disease">
+								      <label for="disease">12 months </label>
+								    </div>
+					  
+								    <div class="multiple-choice">
+								      <input id="substantial" name="reasons" type="radio" value="Substantial">
+								      <label for="substantial">18 months</label>
+								    </div>	       
+						    </fieldset>
+						    
+  	</div>
+  	<p>Or</p>
+  	<div class="form-group">
+						    
+						    <fieldset>
+							      <legend class="heading-small">
+							        Tomas's situation is unlikely to improve: 
+							      </legend>
+								    
+								    <div class="multiple-choice">
+								      <input id="chemotherapy" name="reasons" type="radio" value="chemotherapy">
+								      <label for="chemotherapy"> within 2 years </label>
+								    </div>
+					  
+								    <div class="multiple-choice">
+								      <input id="disabled" name="reasons" type="radio" value="Disabled">
+								      <label for="disabled">in the longer term </label>
+								    </div>
+								    
+						    </fieldset>
+						    
+						    
+  	</div>
+  	
+  	
+  	<div class="form-group">
+	  <label class="form-label" for="reason">
+	  	Give reasons
+	  </label>
+	  <textarea class="form-control" name="reason" style="height:200px; width: 98%;"></textarea> 
+  </div> 
+
+
+  <p class="mt30"><a href="report-view" class="button">Generate report</a></p>
+
+
+					    
+  </form>
+  
+
+
+
+{% endblock %}
+
