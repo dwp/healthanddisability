@@ -4,14 +4,14 @@
 
   {{ data.nuggets | log }}
 
-  <h2 class="heading-large mt10">Work capability assessment review</h2>
+  <h2 class="heading-large mt10">Assessment review</h2>
 
   {% if data.nuggets.length %}
 
     {% set last_one = data.nuggets | sortBy("time",true) | last  %}
     {% set first_one = data.nuggets | sortBy("time",true) | first  %}
 
-    <table>
+    <table class="dashboard-table">
     <caption class="visually-hidden">Assessment details</caption>
 
     <tbody>
@@ -47,15 +47,15 @@
 	    		<h2 class="heading-small">
 	    			Illnesses and conditions
 	    		</h2>
-	    		<p>Added:
+	    		<p class="comments">Added:
 	    		<span class="number">
 	    			2
 	    		</span>
 	    		</p>
-	    		<p><a href="#">Review</a></p>
+	    		<p class="review"><a href="#">Review</a></p>
 	    	</section>
 	    	
-	    	<section class="illnessEffects">
+	    	<section class="socialWorkHistory">
 	    		<h2 class="heading-small">
 	    			Social and work history
 	    		</h2>
@@ -64,10 +64,11 @@
 	    			9
 	    		</span>
 	    		</p>
-	    		<p><a href="socialWorkHistoryEdit">Review</a></p>
+	    		<p class="review"><a href="socialWorkHistoryEdit">Review </a></p>
+	    	<!--	<p><a href="socialWorkHistoryEdit">Review</a></p> -->
 	    	</section>
 	    		
-	    	<section class="illnessEffects">
+	    	<section class="typicalDay">
 	    		<h2 class="heading-small">
 	    			Typical day
 	    		</h2>
@@ -76,34 +77,34 @@
 	    			14
 	    		</span>
 	    		</p>
-	    		<p><a href="#">Review </a></p>
+	    		<p class="review"><a href="typicalDayEdit">Review </a></p>
 	    	</section>
     	</div>
     	
     	<div class="row">
 	    	
-	    	<section class="illnessEffects">
+	    	<section class="physicalAssessment">
 	    		<h2 class="heading-small">
 	    			Physical assessment
 	    		</h2>
-	    		<p class="comments">Areas covered:
+	    		<p class="comments">Assessed:
 	    		<span class="number">
 	    			6
 	    		</span>
 	    		</p>
-	    		<p><a href="#">Review</a></p>
+	    		<p class="review"><a href="#">Review</a></p>
 	    	</section>
 	    		
-	    	<section class="illnessEffects">
+	    	<section class="mentalHealth">
 	    		<h2 class="heading-small">
 	    			Mental health
 	    		</h2>
-	    		<p class="comments">Areas covered:
+	    		<p class="comments">Assessed:
 	    		<span class="number">
-	    			3
+	    			4
 	    		</span>
 	    		</p>
-	    		<p><a href="#">Review </a></p>
+	    		<p class="review"><a href="mentalHealthEdit">Review </a></p>
 	    	</section>
     	</div>
     	

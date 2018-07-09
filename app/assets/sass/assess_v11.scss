@@ -877,6 +877,19 @@ caption {
 					font-weight: bold;
 				}
 			}
+			.comments {
+				margin-bottom: 0;
+			}
+			.review {
+				margin: .8em 0 .8em 0;
+			}
+			.reviewed {
+				display: inline-block;
+				background: #fff;
+				font-weight: bold;
+				margin: .5em 0 .8em 0;
+				padding: .2em .5em .1em .5em;
+			}
 
 			
 			&:first-child {
@@ -884,3 +897,28 @@ caption {
 			}
 	}
 	}
+	
+	
+	.returnRef {
+		padding-top: 10px;
+		a {
+			font-weight: bold;
+		}
+	}
+
+
+
+table {
+	th, td {
+		&:last-child {
+			text-align: right;
+		}
+		&.evidence-show {
+			text-align: left;
+		}
+	}
+}
+
+.dashboard-table {
+	width: 50%;
+}

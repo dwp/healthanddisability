@@ -465,3 +465,13 @@ hr {
 .mt20 {
 	margin-top: 20px;
 }
+
+
+.table-layout {
+
+	th, td {
+		&:last-child {
+			text-align: right;
+		}
+	}
+}

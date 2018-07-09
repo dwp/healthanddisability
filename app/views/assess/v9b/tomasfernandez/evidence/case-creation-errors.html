@@ -160,13 +160,17 @@
 				</div>	
 				  
 				  
-				  <div class="form-group">
+				  <div class="form-group form-group-error">
 				  
 				  		<fieldset>
 					
 						    <legend class="heading-medium mb10">
 						        How can we contact Tomas?
 						    </legend>
+						    
+						    <span class="error-message">
+				          You must enter a method of contact
+				        </span>
 						    
 						    <div class="multiple-choice" data-target="contact-by-phone">
 						      <input id="example-contact-by-phone" type="checkbox" name="radio-contact-group" value="No">
@@ -188,6 +192,47 @@
 						      <label for="example-contact-by-email">Email</label>
 						    </div>
 						    <div class="panel panel-border-narrow js-hidden" id="contact-by-email">
+						      <label class="form-label" for="contact-email">Email address</label>
+						      <input class="form-control" name="contact-email" type="text" id="contact-email">
+						    </div>
+					
+					
+					  </fieldset>
+					  
+				  </div>
+				  
+				   <div class="form-group">
+				  
+				  		<fieldset>
+					
+						    <legend class="heading-medium mb10">
+						        How can we contact Tomas?
+						    </legend>
+
+						    
+						    <div class="multiple-choice" data-target="contact-by-phone2">
+						      <input id="example-contact-by-phone" type="checkbox" name="radio-contact-group2" value="No" checked="checked">
+						      <label for="example-contact-by-phone">Phone</label>
+						    </div>
+						    <div class="panel panel-border-narrow js-hidden form-group-error" id="contact-by-phone2">
+						    <span class="error-message">
+				          You must enter a contact number
+				        </span>
+						      <div class="form-group">
+						     	 <label class="form-label" for="contact-phone">Home</label>
+							 	 <input class="form-control" name="contact-phone" type="text" id="contact-phone">
+						      </div>
+						      <div class="form-group">
+						     	 <label class="form-label" for="contact-phone">Mobile</label>
+							 	 <input class="form-control" name="contact-phone" type="text" id="contact-phone">
+						      </div>
+						    </div>
+						
+						    <div class="multiple-choice" data-target="contact-by-email2">
+						      <input id="example-contact-by-email" type="checkbox" name="radio-contact-group" value="Yes">
+						      <label for="example-contact-by-email">Email</label>
+						    </div>
+						    <div class="panel panel-border-narrow js-hidden" id="contact-by-email2">
 						      <label class="form-label" for="contact-email">Email address</label>
 						      <input class="form-control" name="contact-email" type="text" id="contact-email">
 						    </div>
