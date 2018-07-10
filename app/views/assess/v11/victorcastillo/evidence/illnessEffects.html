@@ -154,18 +154,31 @@ $(document).on('click', '.button-add-another-vertical', function (e) {
                 '</div>' +
                 '<div class="form-group">' +
                 '<label class="form-label" for="field-8">' +
-                  'History' +
+                  'Condition history' +
                 '</label>' +
-                '<textarea class="form-control" id="field-8" style="height:150px; width: 90%;"></textarea>' +
+                '<textarea class="form-control" id="field-8" style="height:150px;"></textarea>' +
               '</div>' +
               '<div class="form-group">' +
-                '<label class="form-label" for="field-9">' +
-                  'Medication and side effects' +
-                '</label>' +
-                '<textarea class="form-control" id="field-9" style="height:150px; width: 90%;"></textarea>' +
-              '</div>' +
+                '<label class="form-label form-label-large" for="field-9">Name of medication</label>' +
+                  '<input type="text" class="form-control" id="field-9">' +
+                '</div>' +  
+                '<div class="form-group">' +
+	                '<label class="form-label form-label-large" for="field-10">Dose</label>' +
+	                  '<input type="text" class="form-control form-control-1-4" id="field-10">' +
+                '</div>' + 
+                '<div class="form-group">' +
+	                '<label class="form-label" for="field-11">Side effects</label>' +
+	                  '<textarea type="text" id="field-11" class="form-control" name="side" style="height: 150px;"></textarea>' +
+                '</div>' +
                 '</fieldset>' +
 				'</div>'
+
+
+
+
+
+
+
 
 				                  
       );

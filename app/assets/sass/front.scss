@@ -32,3 +32,39 @@ details {
     border-top:none;
   }
 }
+
+.launch-panel {
+	background: $grey-3;
+	padding: 1em;
+	h2 {
+		margin: 0 0 1em 0;
+	}
+}
+
+.link-back {
+	margin: 0;
+}
+
+.latest_version {
+	background: $grey-3;
+	padding: 1em 1.5em;
+	margin-bottom: 30px;
+	clear: both;
+	.version {
+		border: 0;
+		padding: 0;
+	}
+}
+
+.version {
+	padding: 0 1.5em;
+	&:nth-child(2) {
+		border-top: 1px solid #bfc1c3;
+	}
+}
+
+.front-version {
+	.version {
+		padding: 0;
+	}
+}

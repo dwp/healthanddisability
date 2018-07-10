@@ -1,0 +1,59 @@
+{% extends "front_layout.html" %}
+
+{% block content %}
+
+<div class="index">
+
+<div class="index-page-banner" style="background-color:#2B8CC4">
+  <div class="index-heading-wrapper">
+    <h1 class="heading-xlarge index-heading-xlarge">Future health assessment</h1>
+    <h2 class="heading-large index-heading-large">Prototypes</h2>
+  </div>
+</div>
+
+<main id="content" role="main">
+
+    {% include "includes/prototype_banner.html" %}
+
+    <p class="form-hint mt10" style="text-align:right">Edit these files on <a href="https://github.com/dwpdigitaltech/healthanddisability">GitHub</a>.</p>
+    
+    <p><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+    <h1 class="heading-large"><span class="heading-secondary">Referral</span>Future health assessment</h1>
+    
+  <div class="grid-row">
+  
+  
+  	
+
+    <div class="column-full">
+    
+	    <div class="latest_version">
+      {% include "assess/v9b/_front.html" %}
+      
+
+    </div>
+    {% include "assess/v9a/_front.html" %}
+      {% include "assess/v8a/_front.html" %}
+    
+    </div>
+
+
+
+
+  </div><!-- .row -->
+
+
+
+
+</main>
+
+</><!-- .index -->
+{% endblock %}
+
+
+
+
+
+    
+
