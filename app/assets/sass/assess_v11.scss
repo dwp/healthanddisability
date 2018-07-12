@@ -219,18 +219,7 @@ select.form-select:hover {
   cursor: pointer;
 }
 
-.active_detail {
-    background-color:$govuk-blue;
-    color:white!important;
-    p { color:white; }
-	background-image: url(/public/images/big_chevron.png);
-    background-repeat: no-repeat;
-    background-position: right 10px top 50%;
-    background-size: 4%;
-    &:hover {
-      background-color:lighten($govuk-blue,5);
-    }
-  }
+
 
 
 .address-stack {
@@ -921,4 +910,58 @@ table {
 
 .dashboard-table {
 	width: 50%;
+}
+
+.table-layout {
+	td {
+		vertical-align: top;
+		span {
+			color: $grey-1;
+			display: block;
+		}
+	}
+}
+
+
+.details-nav {
+	position: relative;
+	margin: 0;
+	ul {
+		li {
+			border-bottom: 1px solid $grey-3;
+			background: $grey-4;
+			&:hover {
+				background: #fff;
+			}
+			&:first-child {
+				border-top: 1px solid $grey-3;
+			}
+			a {
+				display: block;
+				padding: 1em .8em .8em 1em;
+				text-decoration: none;
+
+
+				span {
+					font-size: 90%;
+					color: $grey-1;
+					display: block;
+					font-weight: normal;
+					margin-top: 5px;
+				}
+			}
+		}
+		.active_detail {
+		    background-color: #fff;
+
+		    &:hover {
+			    background-color: #fff;
+			    }
+		    a {
+				border-left: .3em solid #000;
+				padding-left: .7em;
+				color: #000;
+		    }
+		  }
+	}
 }
