@@ -341,20 +341,22 @@ select.form-select:hover {
 	}
 	th {
 		padding-left: 0;
+		padding-right: 0;
 	}
 	tr {
-		td {
+		td:last-child {
 			text-align: right;
 			padding-right: 0;
 			
 			span {
 				display: inline-block;
-				background: $grey-3;
+				background: $govuk-blue;
 				font-size: 16px;
 				padding: 5px 7px 3px 7px;
 				border-radius: 2px;
 				margin-top: -2px;
 				font-weight: 600;
+				color: #fff;
 
 			}
 		}
@@ -362,7 +364,7 @@ select.form-select:hover {
 			// background: $grey-4;
 			td {
 				span {
-					background: $purple;
+					background: $govuk-blue;
 					color: #fff;
 					&.red {
 						background: $mellow-red;
