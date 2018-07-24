@@ -1,0 +1,97 @@
+{% extends path1+"/_layout.html" %}
+
+{% block left_content %}
+ <p class="mt10 mb0 bold-small"><span class="circle purple"></span>Booked</p>
+
+ <div class="available-slot">
+      <div class="column-half" style="padding: 0;">
+          <h4 class="heading-small">Thursday 4 January</h4>
+          <p>14:00pm</p>
+      </div>
+      <div class="column-half" style="padding: 0; text-align: right;">
+          <a href="" class="button">Edit</a>
+      </div>
+  </div>
+<hr>
+{% endblock %}
+{% block left_content_secondary %}
+<ul>
+<li><a href="cancel-appointment">Cancel appointment</a></li>
+<li><a href="appointment-status">Change appointment status</a></li>
+</ul>
+{% endblock %}
+{% block citizen_content %}
+ {# macro #}
+  {{ nav2.case_tabs("bobby",1,path1) }}
+
+<div class="container">
+    <div class="grid-row mt30">
+        <div class="column-third">
+            <h3 class="heading-medium mt0">Contact details</h3>
+            <h4 class="heading-small">Phone</h4>
+            <p>0151 924 2080</p>
+            <h4 class="heading-small">Text</h4>
+            <p>07979 000000</p>
+            <h4 class="heading-small">Email</h4>
+            <p>the.victor.castillo@madeup.com</p>
+            <h4 class="heading-small">Postal address</h4>
+            <p class="address-stack">
+                <span>27 Redhill Lane</span>
+                <span>Ainsdale</span>
+                <span>London</span>
+                <span>Merseyside</span>
+                <span>PR8 9UE</span>
+            </p>
+        </div>
+        <!-- column -->
+        <div class="column-third">
+            <h1 class="heading-medium mt0">Appointment details</h1>
+            <h2 class="heading-small">Assessment Centre</h2>
+            <p>Tresco House</p>
+            <h2 class="heading-small">Date</h2>
+            <p>{{appointments.nextAvailable.day}} {{appointments.nextAvailable.date}}</p>
+            <h2 class="heading-small">Time</h2>
+            <p>
+                {{appointments.nextAvailable.time}}
+            </p>
+
+        </div>
+        <div class="column-third">
+            <form action="bobby-status-changed">
+                <fieldset class="form-group">
+                    <legend>
+                        <h1 class="heading-medium mt0">Change appointment status</h1>
+                    </legend>
+                    <div class="multiple-choice">
+                        <input id="status-1" type="radio" name="status" value="Customer arrived">
+                        <label for="status-1">Customer arrived</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="status-2" type="radio" name="status" value="Failed to attend">
+                        <label for="status-2">Failed to attend</label>
+                    </div>
+                    <!-- <div class="multiple-choice">
+                        <input id="status-3" type="radio" name="status" value="Unable to attend">
+                        <label for="status-3">Unable to attend</label>
+                    </div> -->
+                </fieldset>
+                <input type="hidden" name="tab" value="Details">
+                <button class="button">Save</button>
+            </form>
+            <ul class="mt20">
+                <li><a href="timepicker">Edit appointment</a></li>
+                <li><a href="cancel-appointment">Cancel appointment</a></li>
+                <li><a href="timeline_sms?tab=Timeline">Log SMS sent</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

@@ -1,0 +1,62 @@
+
+{% extends path1+"/_manage-centre-layout.html" %} 
+
+
+{% block header %}
+
+  {% include path2+"/_staff_heading.html" %}
+
+{% endblock %}
+
+
+{% block citizen_content %}
+
+<div class="container">
+    <p><a href="/{{path2}}/{{centre.id}}/manage-staff/staff-profile/{{person.id}}?tab=leave" class="link-back">Back</a></p>
+    <h1 class="heading-large mt0">Select hours</h1>
+    
+    <p>Confirm the hours that this change applies to:</p>
+
+    <div class="form-group">
+        <fieldset>
+            <legend class="form-label-bold">Select times for Monday 16 April 2018</legend>
+            <div class="form-group">
+                <label for="from-1" class="form-label">From</label>
+                <input name="from-1" type="time" class="form-control time-input" value="09:00">
+            </div>
+            <div class="form-group">
+                <label for="to-1" class="form-label">To</label>
+                <input name="to-1" type="time" class="form-control time-input" value="17:00">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend class="form-label-bold">Select times for Tuesday 17 April 2018</legend>
+            <div class="form-group">
+                <label for="from-2" class="form-label">From</label>
+                <input name="from-2" type="time" class="form-control time-input" value="09:00">
+            </div>
+            <div class="form-group">
+                <label for="to-2" class="form-label">To</label>
+                <input name="to-2" type="time" class="form-control time-input" value="17:00">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend class="form-label-bold">Select times for Wednesday 18 April 2018</legend>
+            <div class="form-group">
+                <label for="from-3" class="form-label">From</label>
+                <input name="from-3" type="time" class="form-control time-input" value="09:00">
+            </div>
+            <div class="form-group">
+                <label for="to-3" class="form-label">To</label>
+                <input name="to-3" type="time" class="form-control time-input" value="17:00">
+            </div>
+        </fieldset>
+    </div>
+
+    <p><a href="staff-profile-2?tab=leave" class="button">Next</a></p>
+
+    
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

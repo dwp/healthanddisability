@@ -1,0 +1,20 @@
+{% extends path1+"/_manage-centre-layout.html" %} 
+
+
+
+{% block citizen_content %}
+
+
+{% if selectedTab === 'details' %}
+    {% include path2+"/_details.html" %}
+{% elseif selectedTab === 'rooms' %}
+    {% include path2+"/_rooms.html" %}
+{% elseif selectedTab === 'slots' %}
+    {% include path2+"/_slots.html" %}
+{% endif %}
+
+  
+
+
+
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

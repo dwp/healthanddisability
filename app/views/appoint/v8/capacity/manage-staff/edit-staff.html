@@ -1,0 +1,21 @@
+
+{% extends path1+"/_addlayout.html" %} 
+
+
+{% block citizen_content %}
+<div class="container">
+    <p><a href="/{{path2}}/{{centre.id}}/manage-staff/staff-profile/{{person.id}}?tab=details" class="link-back">Back</a></p>
+
+    
+    <h3 class="heading-medium mt0">Edit {{person.name}}</h3>
+			
+    {% include path1+ "/manage-staff/_staff-personal-details.html" %}	
+		
+
+     
+    <!-- row -->
+
+<!-- container -->
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}
+
+

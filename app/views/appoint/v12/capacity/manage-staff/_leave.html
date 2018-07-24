@@ -1,0 +1,206 @@
+
+
+<div class="column-half" {{ 'hidden' if not (query.tab==='leave' ) }}>
+    <table 
+        class=
+        "calendar">
+        <caption>April 2018</caption>
+        <thead>
+            <tr>
+                <th>MON</th>
+                <th>TUE</th>
+                <th>WED</th>
+                <th>THU</th>
+                <th>FRI</th>
+                <th>SAT</th>
+                <th>SUN</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td tabindex="0" 
+                    class="calendar__day
+                        calendar__day--past 
+                        {{ 'calendar__day--scrutiny' if person.days.monday.scrutiny }}
+                        {{ 'calendar__day--appointments' if not person.days.monday.scrutiny }}">26</td>
+                <td tabindex="0" 
+                    class="calendar__day
+                     calendar__day--past 
+                     {{ 'calendar__day--scrutiny' if person.days.tuesday.scrutiny }}
+                     {{ 'calendar__day--appointments' if not person.days.tuesday.scrutiny }}">27</td>
+                <td tabindex="0" 
+                    class="calendar__day
+                     calendar__day--past 
+                     {{ 'calendar__day--scrutiny' if person.days.wednesday.scrutiny }}
+                     {{ 'calendar__day--appointments' if not person.days.wednesday.scrutiny }}">28</td>
+                <td tabindex="0" 
+                    class="calendar__day
+                     calendar__day--past 
+                     {{ 'calendar__day--scrutiny' if person.days.thursday.scrutiny }}
+                     {{ 'calendar__day--appointments' if not person.days.thursday.scrutiny }}">29</td>
+                <td tabindex="0" 
+                    class="calendar__day
+                     calendar__day--past 
+                     {{ 'calendar__day--scrutiny' if person.days.friday.scrutiny }}
+                     {{ 'calendar__day--appointments' if not person.days.friday.scrutiny }}">30</td>
+                <td tabindex="0" 
+                    class="calendar__day
+                     calendar__day--closed">31</td>
+                <td tabindex="0" 
+                    class="calendar__day
+                     calendar__day--closed">1</td>
+            </tr>
+            <tr>
+                <td tabindex="0" 
+                    class="calendar__day 
+                        calendar__day--past 
+                        {{ 'calendar__day--scrutiny' if person.days.monday.scrutiny }}
+                        {{ 'calendar__day--appointments' if not person.days.monday.scrutiny }}">2</td>
+                <td tabindex="0" 
+                    class="calendar__day 
+                     calendar__day--past 
+                     {{ 'calendar__day--scrutiny' if person.days.tuesday.scrutiny }}
+                     {{ 'calendar__day--appointments' if not person.days.tuesday.scrutiny }}">3</td>
+                <td tabindex="0" 
+                    class="calendar__day
+                     calendar__day--today
+                     {{ 'calendar__day--scrutiny' if person.days.wednesday.scrutiny }}
+                     {{ 'calendar__day--appointments' if not person.days.wednesday.scrutiny }}">4</td>
+                <td tabindex="0" 
+                    class="calendar__day 
+                     {{ 'calendar__day--scrutiny' if person.days.thursday.scrutiny }}
+                     {{ 'calendar__day--appointments' if not person.days.thursday.scrutiny }}">5</td>
+                <td tabindex="0" 
+                    class="calendar__day 
+                     {{ 'calendar__day--scrutiny' if person.days.friday.scrutiny }}
+                     {{ 'calendar__day--appointments' if not person.days.friday.scrutiny }}">6</td>
+                <td tabindex="0" 
+                    class="calendar__day
+                     calendar__day--closed">7</td>
+                <td tabindex="0" 
+                    class="calendar__day
+                     calendar__day--closed">8</td>
+            </tr>
+            <tr>
+                <td tabindex="0" 
+                    class="calendar__day 
+                        {{ 'calendar__day--scrutiny' if person.days.monday.scrutiny }}
+                        {{ 'calendar__day--appointments' if not person.days.monday.scrutiny }}">9</td>
+                <td tabindex="0" 
+                    class="calendar__day 
+                     {{ 'calendar__day--scrutiny' if person.days.tuesday.scrutiny }}
+                     {{ 'calendar__day--appointments' if not person.days.tuesday.scrutiny }}">10</td>
+                <td tabindex="0" 
+                    class="calendar__day
+                     {{ 'calendar__day--scrutiny' if person.days.wednesday.scrutiny }}
+                     {{ 'calendar__day--appointments' if not person.days.wednesday.scrutiny }}">11</td>
+                <td tabindex="0" 
+                    class="calendar__day 
+                     {{ 'calendar__day--scrutiny' if person.days.thursday.scrutiny }}
+                     {{ 'calendar__day--appointments' if not person.days.thursday.scrutiny }}">12</td>
+                <td tabindex="0" 
+                    class="calendar__day 
+                     {{ 'calendar__day--scrutiny' if person.days.friday.scrutiny }}
+                     {{ 'calendar__day--appointments' if not person.days.friday.scrutiny }}">13</td>
+                <td tabindex="0" 
+                    class="calendar__day
+                     calendar__day--closed">14</td>
+                <td tabindex="0" 
+                    class="calendar__day
+                     calendar__day--closed">15</td>
+            </tr>
+            <tr>
+                <td tabindex="0" 
+                    class="calendar__day 
+                        {{ 'calendar__day--scrutiny' if person.days.monday.scrutiny }}
+                        {{ 'calendar__day--appointments' if not person.days.monday.scrutiny }}">16</td>
+                <td tabindex="0" 
+                    class="calendar__day 
+                     {{ 'calendar__day--scrutiny' if person.days.tuesday.scrutiny }}
+                     {{ 'calendar__day--appointments' if not person.days.tuesday.scrutiny }}">17</td>
+                <td tabindex="0" 
+                    class="calendar__day
+                     {{ 'calendar__day--scrutiny' if person.days.wednesday.scrutiny }}
+                     {{ 'calendar__day--appointments' if not person.days.wednesday.scrutiny }}">18</td>
+                <td tabindex="0" 
+                    class="calendar__day 
+                     {{ 'calendar__day--scrutiny' if person.days.thursday.scrutiny }}
+                     {{ 'calendar__day--appointments' if not person.days.thursday.scrutiny }}">19</td>
+                <td tabindex="0" 
+                    class="calendar__day 
+                     {{ 'calendar__day--scrutiny' if person.days.friday.scrutiny }}
+                     {{ 'calendar__day--appointments' if not person.days.friday.scrutiny }}">20</td>
+                <td tabindex="0" 
+                    class="calendar__day
+                     calendar__day--closed">21</td>
+                <td tabindex="0" 
+                    class="calendar__day
+                     calendar__day--closed">22</td>
+            </tr>
+            <tr>
+                <td tabindex="0" 
+                    class="calendar__day 
+                        {{ 'calendar__day--scrutiny' if person.days.monday.scrutiny }}
+                        {{ 'calendar__day--appointments' if not person.days.monday.scrutiny }}">23</td>
+                <td tabindex="0" 
+                    class="calendar__day 
+                     {{ 'calendar__day--scrutiny' if person.days.tuesday.scrutiny }}
+                     {{ 'calendar__day--appointments' if not person.days.tuesday.scrutiny }}">24</td>
+                <td tabindex="0" 
+                    class="calendar__day
+                     {{ 'calendar__day--scrutiny' if person.days.wednesday.scrutiny }}
+                     {{ 'calendar__day--appointments' if not person.days.wednesday.scrutiny }}">25</td>
+                <td tabindex="0" 
+                    class="calendar__day 
+                     {{ 'calendar__day--scrutiny' if person.days.thursday.scrutiny }}
+                     {{ 'calendar__day--appointments' if not person.days.thursday.scrutiny }}">26</td>
+                <td tabindex="0" 
+                    class="calendar__day 
+                     {{ 'calendar__day--scrutiny' if person.days.friday.scrutiny }}
+                     {{ 'calendar__day--appointments' if not person.days.friday.scrutiny }}">27</td>
+                <td tabindex="0" 
+                    class="calendar__day
+                     calendar__day--closed">28</td>
+                <td tabindex="0" 
+                    class="calendar__day
+                     calendar__day--closed">29</td>
+            </tr>
+            <tr>
+                <td tabindex="0" 
+                    class="calendar__day 
+                        {{ 'calendar__day--scrutiny' if person.days.monday.scrutiny }}
+                        {{ 'calendar__day--appointments' if not person.days.monday.scrutiny }}">30</td>
+                <td tabindex="0" 
+                    class="calendar__day 
+                     {{ 'calendar__day--scrutiny' if person.days.tuesday.scrutiny }}
+                     {{ 'calendar__day--appointments' if not person.days.tuesday.scrutiny }}">1</td>
+                <td tabindex="0" 
+                    class="calendar__day
+                     {{ 'calendar__day--scrutiny' if person.days.wednesday.scrutiny }}
+                     {{ 'calendar__day--appointments' if not person.days.wednesday.scrutiny }}">2</td>
+                <td tabindex="0" 
+                    class="calendar__day 
+                     {{ 'calendar__day--scrutiny' if person.days.thursday.scrutiny }}
+                     {{ 'calendar__day--appointments' if not person.days.thursday.scrutiny }}">3</td>
+                <td tabindex="0" 
+                    class="calendar__day 
+                     {{ 'calendar__day--scrutiny' if person.days.friday.scrutiny }}
+                     {{ 'calendar__day--appointments' if not person.days.friday.scrutiny }}">4</td>
+                <td tabindex="0" 
+                    class="calendar__day
+                     calendar__day--closed">5</td>
+                <td tabindex="0" 
+                    class="calendar__day
+                     calendar__day--closed">6</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- <div class="column-one-quarter" {{ 'hidden' if not (query.tab === 'leave') }}>
+	<div class="info-panel">
+        <p><a href="/{{path1}}/manage-staff/staff-holiday?personId={{person.id}}" class="mt10">Book time off</a></p>
+		<p><a href="/{{path1}}/manage-staff/staff-availability?personId={{person.id}}" class="mt10">Change availability</a></p>
+	</div>
+
+</div> -->

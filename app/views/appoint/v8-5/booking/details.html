@@ -1,0 +1,27 @@
+{% extends path1+"/_layout.html" %} {% block citizen_content %}
+<div class="container">
+    {# macro #} {{ nav.case_tabs("details",1,path1) }}
+    <div class="grid-row mt30">
+        <div class="column-third">
+            <h3 class="heading-medium mt0">Contact details</h3>
+            <h4 class="heading-small">Phone</h4>
+            <p>0151 924 2080</p>
+            <h4 class="heading-small">Mobile</h4>
+            <p>07979 000000</p>
+            <h4 class="heading-small">Email</h4>
+            <p>the.victor.castillo@madeup.com</p>
+            <h4 class="heading-small">Address</h4>
+            <p class="address-stack">
+                <span>27 Redhill Lane</span>
+                <span>Ainsdale</span>
+                <span>London</span>
+                <span>Merseyside</span>
+                <span>PR8 9UE</span>
+            </p>
+        </div>
+        <!-- column -->
+       
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

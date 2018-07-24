@@ -1,0 +1,190 @@
+{% extends path+"/_layout.html" %}
+{% import path1+"/_macros_nav.html" as nav %}
+
+{% block assess_content %}
+
+  {#  This is the BIG BLUE BAR at the top - #jussayin #}
+
+  {% block header %}
+  {% include path1+"/_add_heading.html" %}
+  {% endblock %}
+
+  <main id="content" role="main" class="main-content">
+
+    <div class="container">
+      <div class="grid-row">
+        <div class="column-full">
+
+          <div nunj-block="citizen_content">
+            {% block citizen_content %}{% endblock %}
+          </div>
+
+        </div><!-- column -->
+      </div><!-- row -->
+    </div><!-- container -->
+
+  </main>
+
+{% endblock %}
+
+
+
+{%
+set centres = [
+  {
+    "name": "Fiveways House",
+    "phone": "0121 626 3704",
+    "email": "fiveways@fakemail.go.uk",
+    "address": "1st Floor Short Spur <br /> Fiveways House <br /> Islington Row <br /> Birmingham <br /> B15 1SL",
+    "rooms": [
+      {
+        "_id": "5ab8ec00d585d148a4f81d71",
+        "index": 0,
+        "name": "Room 1",
+        "groundFloor": true,
+        "telephone": true,
+        "lastUpdated": "21 May 2017"
+      },
+      {
+        "_id": "5ab8ec00a98a3216e053fdcd",
+        "index": 1,
+        "name": "Room 2",
+        "groundFloor": false,
+        "telephone": false,
+        "lastUpdated": "22 Nov 2017"
+      },
+      {
+        "_id": "5ab8ec008b9c97b95abbfe66",
+        "index": 2,
+        "name": "Room 3",
+        "groundFloor": true,
+        "telephone": false,
+        "lastUpdated": "26 Jun 2017"
+      },
+      {
+        "_id": "5ab8ec00c487140e1b639b7a",
+        "index": 3,
+        "name": "Room 4",
+        "groundFloor": false,
+        "telephone": true,
+        "lastUpdated": "05 Sep 2017"
+      },
+      {
+        "_id": "5ab8ec004e688784918734a6",
+        "index": 4,
+        "name": "Room 5",
+        "groundFloor": false,
+        "telephone": true,
+        "lastUpdated": "02 Dec 2017"
+      },
+      {
+        "_id": "5ab8ec00e998d98114b99104",
+        "index": 5,
+        "name": "Room 6",
+        "groundFloor": true,
+        "telephone": false,
+        "lastUpdated": "26 Sep 2017"
+      },
+      {
+        "_id": "5ab8ec002ab0a77b11c86941",
+        "index": 6,
+        "name": "Room 7",
+        "groundFloor": false,
+        "telephone": false,
+        "lastUpdated": "13 Apr 2017"
+      },
+      {
+        "_id": "5ab8ec0008364dfd8a49f230",
+        "index": 7,
+        "name": "Room 8",
+        "groundFloor": true,
+        "telephone": true,
+        "lastUpdated": "29 May 2017"
+      },
+      {
+        "_id": "5ab8ec0072ef0050260fa500",
+        "index": 8,
+        "name": "Room 9",
+        "groundFloor": true,
+        "telephone": true,
+        "lastUpdated": "10 Feb 2018"
+      },
+      {
+        "_id": "5ab8ec0008b98ca202db82a2",
+        "index": 9,
+        "name": "Room 10",
+        "groundFloor": false,
+        "telephone": false,
+        "lastUpdated": "28 Apr 2017"
+      },
+      {
+        "_id": "5ab8ec008cbd246c9e994f1f",
+        "index": 10,
+        "name": "Room 11",
+        "groundFloor": false,
+        "telephone": true,
+        "lastUpdated": "13 Jun 2017"
+      },
+      {
+        "_id": "5ab8ec006c3a8cceab000079",
+        "index": 11,
+        "name": "Room 12",
+        "groundFloor": true,
+        "telephone": true,
+        "lastUpdated": "04 Feb 2018"
+      }
+    ],
+    "openingTimes": [
+      {
+        "day": "Monday",
+        "open": "09:00am - 17:00pm"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00am - 17:00pm"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00am - 17:00pm"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00am - 17:00pm"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00am - 17:00pm"
+      },
+      {
+        "day": "Saturday",
+        "open": "Closed"
+      },
+      {
+        "day": "Sunday",
+        "open": "Closed"
+      }
+    ]
+  }
+]
+%}
+
+
+
+{% set groundFloorTotal = 0 %}
+{% set telephoneTotal = 0 %}
+{% set roomsTotal = 0 %}
+
+{% for centre in centres %}
+{% for room in centre.rooms %}
+{% set roomsTotal = roomsTotal + 1 %}
+{% if room.groundFloor %}
+    {% set groundFloorTotal = groundFloorTotal + 1 %}
+{% endif %}
+{% if room.telephone %}
+    {% set telephoneTotal = telephoneTotal + 1 %}
+{% endif %}
+{% endfor %}
+{% endfor %}
+
+
+

@@ -1,0 +1,37 @@
+{% extends path1+"/_layout.html" %} 
+
+
+
+{% block citizen_content %}
+
+<div class="grid-row">
+    <div class="column-full">
+        <h1 class="heading-medium">Search results</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Date of Birth</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="customer-found">Tomas Fernandez</a></td>
+              <td>27 Redhill Lane, Ainsdale, London, Merseyside, PR8 9UE</td>
+              <td>15 October 1994</td>
+            </tr>
+            <tr>
+              <td><a href="">Jose Fernandez</a></td>
+              <td>27 Redhill Lane, Ainsdale, London, Merseyside, PR8 9UE</td>
+              <td>15 October 1994</td>
+            </tr>
+          </tbody>
+        </table>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

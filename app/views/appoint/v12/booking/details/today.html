@@ -1,0 +1,71 @@
+{% extends path+"/booking/details/_layout2.html" %}
+{% block left_content %}
+
+<p class="mt10 mb0 bold-small"><span class="circle purple"></span>Appointment today at {{customer.appointmentTime}}</p>
+<form action="timeline-arrived" method="post">
+<p class="mt20"><button class="button">Confirm arrival</button></p>
+</form>
+
+<hr>
+
+
+<ul>
+  <li><a href="timepicker?day=tuesday&date=10%20April&time=11:00am">Rearrange appointment</a></li>
+</ul>
+
+{% endblock %} 
+
+
+{% block case_content %}
+
+
+<h3 class="heading-medium mt0">Contact details</h3>
+<h4 class="heading-small">Phone</h4>
+<p>{{customer.phone}}</p>
+<h4 class="heading-small">Mobile</h4>
+<p>{{customer.mobile}}</p>
+<h4 class="heading-small">Email</h4>
+<p>{{customer.email}}</p>
+<h4 class="heading-small">Address</h4>
+<p class="address-stack">
+    <span>{{customer.address.street}}</span>
+    <span>{{customer.address.city}}</span>
+    <span>{{customer.address.postcode}}</span>
+
+</p>
+{% if customer.correspondenceAddress %}
+<h4 class="heading-small">Correspondence Address</h4>
+<p class="address-stack">
+    <span>{{customer.correspondenceAddress.street}}</span>
+    <span>{{customer.correspondenceAddress.city}}</span>
+    <span>{{customer.correspondenceAddress.postcode}}</span>
+
+</p>
+{%endif%}
+      
+      
+      
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.evidence__leftnav')
+      .children(":nth-child(1)")
+      .addClass('active_detail')
+  });
+</script>
+{% endblock %}
+      
+      
+           
+{% endblock %}
+
+
+
+
+
+
+
+
+

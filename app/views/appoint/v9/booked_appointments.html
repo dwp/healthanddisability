@@ -1,0 +1,128 @@
+{% extends path+"/_layout.html" %}
+
+
+
+{% block assess_content %}
+
+  <div class="nav-horizontal">
+  <div class="main-nav-wrapper">
+    <ul class="main-nav">
+ 
+        <li class="selected"><a href="appointments">Appointments</a></li>
+        <li><a href="assessment-centres">Manage my centre</a></li>
+		<li><a href="#">Daily schedule</a></li>
+
+    </ul>
+  </div>
+</div>
+
+<main id="content" role="main" class="main-content mt30">
+
+      <div class="container">
+      
+   <h1 class="heading-large">Appointments</h1>
+   
+   
+   <div class="section-tabs clearfix">
+    <ul>
+
+        <li><a href="appointments">Referrals</a></li>
+      
+        <li class="active"><a href="#">Booked</a></li>
+      
+    </ul>
+  </div>
+      
+      
+        <div class="grid-row">
+          <div class="column-full">
+              <table class="appointments-view booked_dates">
+
+                <thead>
+                  <tr class="header-view">
+                    <th style="padding-left:15px;">Name</th>
+                    <th>Assessment Centre</th>
+                    <th>Appointment Date</th>
+                    <th>Appointment Time</th>
+                    <th class="numeric">Status</th>
+                  </tr>
+                </thead>
+                
+
+               
+                
+                <tr class="new">
+                  <td style="padding-left:15px;" class=""><a href="booking/bobby_timeline">Thomas Fernandez</td>
+                  <td>Tresco House</td>
+                  <td>5th April 2018</td>
+                  <td>14:00</td>
+                  <td class="numeric"><span class="status orange">BOOKED</span></td>
+                </tr> 
+                
+                <tr>
+                  <td style="padding-left:15px;" class="">Lucas Sturridge</td>
+                  <td>Tresco House</td>
+                  <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+                  <td>11:00</td>
+                  <td class="numeric"><span class="status orange">BOOKED</span></td>
+                </tr>
+                
+                <tr>
+                  <td style="padding-left:15px;" class="">Ashton Firmino</td>
+                  <td>Tresco House</td>
+                  <td>4th June 2017</td>
+                  <td>14:00</td>
+                  <td class="numeric"><span class="status orange">BOOKED</span></td>
+                </tr> 
+                
+                <tr>
+                  <td style="padding-left:15px;" class="">Shelley Johnson</td>
+                  <td>Tresco House</td>
+                  <td>4th June 2017</td>
+                  <td>14:00</td>
+                  <td class="numeric"><span class="status orange">BOOKED</span></td>
+                </tr> 
+                
+                <tr>
+                  <td style="padding-left:15px;" class="">Levi Wijnaldum</td>
+                  <td>Tresco House</td>
+                  <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+                  <td>14:00</td>
+                  <td class="numeric"><span class="status orange">BOOKED</span></td>
+
+                </tr>
+                
+                <tr>
+                  <td style="padding-left:15px;" class="">Roger Aubameyang</td>
+                  <td>Tresco House</td>
+                  <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+                  <td>14:00</td>
+                  <td class="numeric"><span class="status orange">BOOKED</span></td>
+                </tr>
+                
+                <tr>
+                  <td style="padding-left:15px;" class="">Sam Lallana</td>
+                  <td>Tresco House</td>
+                  <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+                  <td>14:00</td>
+                  <td class="numeric"><span class="status orange">BOOKED</span></td>
+                </tr>
+                
+                <tr>
+                  <td style="padding-left:15px;" class="">Alberto Lewis</td>
+                  <td>Tresco House</td>
+                  <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+                  <td>14:00</td>
+                  <td class="numeric"><span class="status orange">BOOKED</span></td>
+
+                </tr>
+
+               
+              </table>
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

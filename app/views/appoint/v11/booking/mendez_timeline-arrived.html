@@ -1,0 +1,119 @@
+{% extends path1+"/_layout.html" %}
+
+{% block heading %}
+
+
+
+
+<div class="staff__heading">
+  <div class="staff__centred">
+    <div class="grid-row">
+      <div class="column-half">
+    <h2 class="heading-xlarge" style="margin:0 0 10px">Mendez Dalton</h2>
+    </div>
+      <div class="column-quarter">
+        <p><span class="font-xsmall">National Insurance Number</span><br /><span class="bold-medium">QQ 53 12 49 C </span></p>
+      </div>
+      <div class="column-quarter">
+        <p><span class="font-xsmall">Date of birth</span><br /><span class="bold-medium">10 June 1980 </span></p>
+      </div>
+      
+
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block left_content %}
+
+<p class="mt10 mb0 bold-small"><span class="circle purple"></span>Appointment today at 2:00pm</p>
+<p>Arrived at 1:55pm</p>
+<p class="mt20"><a href="cancel-appointment" class="button">Cancel Appointment</a></p>
+<hr>
+{% endblock %}
+
+
+{% block citizen_content %}
+ {# macro #}
+  {{ nav_mendez.case_tabs("mendez_timeline",1,path1) }}
+
+<div class="container">
+
+<div class="timeline">
+
+		<span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Mendez arrived at Assessment Centre</h3>
+          <p class="timeline_datetime">{{ 'D MMMM YYYY' | randDaysAgo(0)}}</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Appointment booked</h3>
+          <p class="timeline_datetime">04 February 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Referred for appointment</h3>
+          <p class="timeline_datetime">30 January 2018</p>
+        </div>
+
+         <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">GP statement received (ESA113)</h3>
+          <p class="timeline_datetime">29 January 2018</p>
+        </div>
+        
+          <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Request for GP statement sent (ESA113)</h3>
+          <p class="timeline_datetime">19 January 2018</p>
+        </div>
+        
+          <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA50 form received at CHDA</h3>
+          <p class="timeline_datetime">4 January 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA50 form sent out to Tomas</h3>
+          <p class="timeline_datetime">12 December 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">FIT note (MED3) received </h3>
+          <p class="timeline_datetime">19 November 2017</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Entitlement letter sent to Tomas</h3>
+          <p class="timeline_datetime">5 November 2017</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA application completed on the phone</h3>
+          <p class="timeline_datetime">1 November 2017</p>
+        </div>
+
+        <div style="clear:both"></div>
+
+      </div><!-- timeline -->
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}
+_

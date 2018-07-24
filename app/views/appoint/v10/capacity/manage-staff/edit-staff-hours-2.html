@@ -1,0 +1,96 @@
+
+{% extends path1+"/_addlayout.html" %} 
+
+
+{% block citizen_content %}
+<div class="container">
+    <p><a href="/{{path2}}/{{centre.id}}/manage-staff/staff-profile/{{person.id}}?tab=details" class="link-back">Back</a></p>
+    <div class="container">
+        <div class="grid-row mt30">
+            <div class="column-half">
+                <h2 class="heading-medium mt0">Select a date the rota will change</h2>
+                <table class="calendar-picker mt0">
+                    <caption>April 2018</caption>
+                    <thead>
+                        <tr>
+                            <th>MON</th>
+                            <th>TUE</th>
+                            <th>WED</th>
+                            <th>THU</th>
+                            <th>FRI</th>
+                            <th>SAT</th>
+                            <th>SUN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="calendar-picker__day calendar-picker__day--closed">26</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">27</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">28</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">29</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">30</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">31</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">1</td>
+                        </tr>
+                        <tr>
+                            <td class="calendar-picker__day calendar-picker__day--closed">2</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">3</td>
+                            <td class="calendar-picker__day calendar-picker__day--today"><a class="calendar-picker__link" href="?day=wednesday&date=4 April">4 <a class="calendar-picker__link" href="?day=tuesday&date=10 April"><span class="visually-hidden">Today</span></td>
+                        <td class="calendar-picker__day"><a class="calendar-picker__link" href="?day=thursday&date=5 April">5</a></td>
+                            <td class="calendar-picker__day"><a class="calendar-picker__link" href="?day=friday&date=6 April">6</a></td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">7</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">8</td>
+                        </tr>
+                        <tr>
+                            <td class="calendar-picker__day"><a class="calendar-picker__link" href="?day=monday&date=9 April">9</a></td>
+                            <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '10 April' }}"><a class="calendar-picker__link" href="?day=tuesday&date=10 April">10</a></td>
+                            <td class="calendar-picker__day"><a class="calendar-picker__link" href="?day=wednesday&date=11 April">11</a></td>
+                            <td class="calendar-picker__day"><a class="calendar-picker__link" href="?day=thursday&date=12 April">12</a></td>
+                            <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '13 April' }}"><a class="calendar-picker__link" href="?day=friday&date=13 April">13</a></td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">14</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">15</td>
+                        </tr>
+                        <tr>
+                            <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '16 April' }}"><a class="calendar-picker__link" href="?day=monday&date=16 April">16</a></td>
+                            <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '17 April' }}"><a class="calendar-picker__link" href="?day=tuesday&date=17 April">17</a></td>
+                            <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '18 April' }}"><a class="calendar-picker__link" href="?day=wednesday&date=18 April">18</a></td>
+                            <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '19 April' }}"><a class="calendar-picker__link" href="?day=thursday&date=19 April">19</a></td>
+                            <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '20 April' }}"><a class="calendar-picker__link" href="?day=friday&date=20 April">20</a></td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">21</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">22</td>
+                        </tr>
+                        <tr>
+                            <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '23 April' }}"><a class="calendar-picker__link" href="?day=monday&date=23 April">23</a></td>
+                            <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '24 April' }}"><a class="calendar-picker__link" href="?day=monday&date=24 April">24</a></td>
+                            <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '25 April' }}"><a class="calendar-picker__link" href="?day=monday&date=25 April">25</a></td>
+                            <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '26 April' }}"><a class="calendar-picker__link" href="?day=monday&date=26 April">26</a></td>
+                            <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '27 April' }}"><a class="calendar-picker__link" href="?day=monday&date=27 April">27</a></td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">28</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">29</td>
+                        </tr>
+                        <tr>
+                            <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '30 April' }}"><a class="calendar-picker__link" href="?day=monday&date=30 April">30</a></td>
+                            <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '1 May' }}"><a class="calendar-picker__link" href="?day=monday&date=1 May">1</a></td>
+                            <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '2 May' }}"><a class="calendar-picker__link" href="?day=monday&date=2 May">2</a></td>
+                            <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '3 May' }}"><a class="calendar-picker__link" href="?day=monday&date=3 May">3</a></td>
+                            <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '4 May' }}"><a class="calendar-picker__link" href="?day=monday&date=4 May">4</a></td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">5</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">6</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><a href="/{{path2}}/{{centre.id}}/manage-staff/staff-profile/{{person.id}}/staff-profile-updated?tab=hours" class="button mt30">Confirm</a></p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+     
+    <!-- row -->
+
+<!-- container -->
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}
+
+

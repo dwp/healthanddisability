@@ -1,0 +1,174 @@
+{% extends path+"/_layout.html" %}
+
+
+
+{% block assess_content %}
+
+  <div class="nav-horizontal">
+  <div class="main-nav-wrapper">
+    <ul class="main-nav">
+ 
+        <li><a href="appointments">Appointments</a></li>
+        <li class="selected"><a href="#">Assessment Centres</a></li> 
+        <li><a href="#">Health Care Professionals</a></li>
+
+    </ul>
+  </div>
+</div>
+
+<main id="content" role="main" class="main-content mt30">
+
+      <div class="container">
+      
+   <h1 class="heading-large">Create assessment centre</h1>
+   
+   
+ <!--  <div class="section-tabs clearfix">
+    <ul>
+
+        <li class="active"><a href="#">Referrals</a></li>
+      
+        <li><a href="booked_appointments">Scheduled</a></li>
+      
+    </ul>
+  </div> -->
+  
+  
+      
+      
+        <div class="grid-row mt40">
+        
+        <form>
+        
+        
+        
+          <div class="column-third">
+          
+          
+          <fieldset>
+          	<legend class="visually-hidden">Address</legend>
+          	
+          	<div class="form-group">
+          		<label for="centrename" class="form-label-bold">
+          			Centre name
+          		</label>
+          		<input type="text" id="centrename" class="form-control form-control-3-4">
+          	</div>
+          	
+          	
+          	
+          	<div class="form-group">
+          		<label for="centrename" class="form-label-bold">
+          			Address
+          		</label>
+          		<input type="text" id="centrename" class="form-control form-control-3-4">
+          		<input type="text" id="centrename" class="form-control form-control-3-4">
+          		<input type="text" id="centrename" class="form-control form-control-3-4">
+          		<input type="text" id="centrename" class="form-control form-control-3-4">
+          	</div>
+          	
+          	<div class="form-group">
+          	<label for="centrename" class="form-label-bold">
+          			Postcode
+          		</label>
+          		<input type="text" id="centrename" class="form-control form-control-2-4">
+          	</div>
+          	
+          	<div class="form-group">
+          	<label for="centrename" class="form-label-bold">
+          			Contact number
+          		</label>
+          		<input type="text" id="centrename" class="form-control form-control-3-4">
+          	</div>
+          	
+          	<div class="form-group">
+          	<label for="centrename" class="form-label-bold">
+          			Email address
+          		</label>
+          		<input type="text" id="centrename" class="form-control form-control-3-4">
+          	</div>
+          	
+          </fieldset>
+          
+          
+          
+          </div><!-- column -->
+          
+          
+           <div class="column-third">
+           
+           
+             
+          <fieldset>
+          	<legend><h3 class="heading-medium">Opening hours</h3></legend>
+          	
+          	
+          	<div class="form-group">
+          		<fieldset class="inline hours">
+          			<legend><h4 class="heading-small">Monday</h4></legend>
+          			<div class="form-group clearfix">
+          				<label for="centrename" class="visually-hidden">Opening</label>
+		  				<input type="text" id="centrename" class="form-control">
+		  				<p>To</p>
+		  				<label for="centrename" class="visually-hidden">Closing</label>
+		  				<input type="text" id="centrename" class="form-control">
+          			</div>
+          		</fieldset>
+          	</div>
+          	
+          	
+           </fieldset>
+          
+          
+          
+          </div><!-- column -->
+          
+          
+           <div class="column-third">
+          
+			     
+           <fieldset>
+           	<legend class="visually-hidden">Facilities</legend>
+           	
+           	<div class="form-group">
+           		<fieldset>
+
+				    <legend>
+				      <h3 class="heading-medium">What facilities are available?</h3>
+				      <span class="body-text">Select all that apply</span>
+				    </legend>
+				
+				    <div class="multiple-choice mt20">
+				      <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">
+				      <label for="waste-type-1">Ground floor access</label>
+				    </div>
+				    <div class="multiple-choice">
+				      <input id="waste-type-2" name="waste-types" type="checkbox" value="waste-mines">
+				      <label for="waste-type-2">Lift access</label>
+				    </div>
+				    <div class="multiple-choice">
+				      <input id="waste-type-3" name="waste-types" type="checkbox" value="waste-farm-agricultural">
+				      <label for="waste-type-3">Security on-site</label>
+				    </div>
+				
+			   </fieldset>
+           	</div>
+           	
+           	<div class="form-group">
+           		<p><a href="#" class="button">Create</a></p>
+           		<p><a href="#">Cancel</a></p>
+           	</div>
+          
+          
+          </div><!-- column -->
+          
+          
+          
+        </form>
+          
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

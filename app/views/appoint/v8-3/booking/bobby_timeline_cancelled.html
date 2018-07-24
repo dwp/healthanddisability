@@ -1,0 +1,150 @@
+{% extends path1+"/_layout.html" %}
+
+
+
+{% block citizen_content %}
+
+<div class="section-tabs js-tabs clearfix mb20">
+    <ul>
+      {% set navs = [
+        {label:"Details"},
+        {label:"Timeline"}
+        ] %}
+      {% for item in navs %}
+        <li {% if query.tab == item.label %} class="active"{% endif %}><a href="?tab={{item.label}}&status={{query.status}}">{{ item.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+<div class="container">
+{% if query.tab == "Timeline" %}
+<div class="timeline">
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Appointment cancelled</h3>
+          <p class="timeline_datetime">{{ 'D MMMM YYYY' | randDaysAgo(0) }}</p>
+        </div>
+
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Appointment booked</h3>
+          <p class="timeline_datetime">{{appointments.booked}}</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Referred for appointment</h3>
+          <p class="timeline_datetime">{{appointments.referred}}</p>
+        </div>
+
+         <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">GP statement received (ESA113)</h3>
+          <p class="timeline_datetime">29 April 2018</p>
+        </div>
+        
+          <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Request for GP statement sent (ESA113)</h3>
+          <p class="timeline_datetime">19 April 2018</p>
+        </div>
+        
+          <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA50 form received at CHDA</h3>
+          <p class="timeline_datetime">4 April 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA50 form sent out to Tomas</h3>
+          <p class="timeline_datetime">12 March 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">FIT note (MED3) received </h3>
+          <p class="timeline_datetime">5 March 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Entitlement letter sent to Tomas</h3>
+          <p class="timeline_datetime">20 February 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA application completed on the phone</h3>
+          <p class="timeline_datetime">20 February 2018</p>
+        </div>
+
+        <div style="clear:both"></div>
+
+      </div><!-- timeline -->
+
+  </div><!-- row -->
+  {% endif %}
+
+{% if query.tab == "Details" %}
+  <div class="grid-row mt30">
+        <div class="column-third">
+            <h3 class="heading-medium mt0">Contact details</h3>
+            <h4 class="heading-small">Phone</h4>
+            <p>0151 924 2080</p>
+            <h4 class="heading-small">Mobile</h4>
+            <p>07979 000000</p>
+            <h4 class="heading-small">Email</h4>
+            <p>the.victor.castillo@madeup.com</p>
+            <h4 class="heading-small">Address</h4>
+            <p class="address-stack">
+                <span>27 Redhill Lane</span>
+                <span>Ainsdale</span>
+                <span>London</span>
+                <span>Merseyside</span>
+                <span>PR8 9UE</span>
+            </p>
+        </div>
+        <!-- column -->
+        <div class="column-third">
+            <h3 class="heading-medium mt0">Appointment history</h3>
+           <!--  <h4 class="heading-small">12th July 2016</h4>
+            <p class="appt-time">14:00</p>
+            <p><span class="status red">CSHU - 15:30</span></p>
+            <h4 class="heading-small">9th May 2015</h4>
+            <p class="appt-time">14:00</p>
+            <p><span class="status red">DNA</span></p>
+            <h4 class="heading-small">1st December 2014</h4>
+            <p class="appt-time">14:00</p>
+            <p><span class="status green">ARRIVED - 13:50</span></p>
+            <h4 class="heading-small">11th November 2014</h4>
+            <p class="appt-time">14:00</p>
+            <p><span class="status grey">Cancelled</span></p> -->
+        </div>
+        <div class="column-third">
+        <h3 class="heading-medium mt0">Next available appointment</h3>
+        <div class="info-panel available-slot">
+                <div class="column-half" style="padding: 0;">
+                    <h4 class="heading-small">{{appointments.nextAvailable.day}} {{appointments.nextAvailable.date}}</h4>
+                    <p>{{appointments.nextAvailable.time}}</p>
+                </div>
+                <div class="column-half" style="padding: 0; text-align: right;">
+                    <a href="../booked_appointments" class="button">Book</a>
+                </div>
+            
+        </div>
+        <!-- column -->
+        
+        <!-- column -->
+    </div>
+    {% endif %}
+</div><!-- container -->
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}
+_

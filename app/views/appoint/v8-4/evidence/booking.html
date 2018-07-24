@@ -1,0 +1,50 @@
+{% extends path2+"/_layoutStripped.html" %}
+
+{% block case_content %}
+
+  <a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+<h3 class="heading-large mt20">Appointment referral</h3>
+<form class="form" action="/{{ path2 }}" method="get">
+  
+  <div class="form-group">
+	  <label class="form-label" for="reason">
+	  	Why Tomas needs a face to face appointment
+	  </label>
+	  <textarea class="form-control" name="reason" style="height:200px"></textarea>
+	  
+	  
+	   
+  </div> 
+		  
+
+		  
+		  
+		     <div class="form-group">
+			    <fieldset>
+			
+			      <legend class="heading-medium">Type of appointment</legend>
+			
+			      <div class="multiple-choice">
+			        <input id="radio-neuro1" type="radio" name="radio-neuro" value="neuro">
+			        <label for="radio-neuro1">Standard</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-neuro2" type="radio" name="radio-neuro" value="neuro">
+			        <label for="radio-neuro2">Neuro</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-neuro3" type="radio" name="radio-neuro" value="complex">
+			        <label for="radio-neuro3">Complex neuro</label>
+			      </div>
+			
+			    </fieldset>
+		  </div>
+  
+  
+    <div class="form-group">
+    <a href="booking-confirm" class="button">Continue</a>
+  </div><!-- form-group -->
+</form>
+
+{% endblock %}

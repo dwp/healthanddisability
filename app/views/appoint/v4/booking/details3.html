@@ -1,0 +1,124 @@
+{% extends path1+"/_layout-booked.html" %}
+
+{% block citizen_content %}
+
+<div class="container">
+
+  {# macro #}
+  {{ nav.case_tabs("details3",1,path1) }}
+
+  <div class="grid-row mt30">
+  
+  
+  <div class="column-third">
+  
+     
+    <h3 class="heading-medium mt0">Contact details</h3>
+    <h4 class="heading-small">Phone</h4>
+    <p>0151 924 2080</p>
+    
+    <h4 class="heading-small">Text</h4>
+    <p>07979 000000</p>
+    
+    <h4 class="heading-small">Email</h4>
+    <p>the.victor.castillo@madeup.com</p>
+    
+    <h4 class="heading-small">Postal address</h4>
+    <p class="address-stack">
+    	<span>27 Redhill Lane</span>
+    	<span>Ainsdale</span>
+    	<span>London</span>
+    	<span>Merseyside</span>
+    	<span>PR8 9UE</span>
+    </p>
+
+       
+    
+    </div><!-- column -->
+    
+    <div class="column-third">
+    
+ 
+  
+     
+    <h3 class="heading-medium mt0">Appointment history</h3>
+    <h4 class="heading-small">12th July 2016</h4>
+    <p class="appt-time">14:00pm</p>
+    <p><span class="status red">SENT HOME UNSEEN - 15:30pm</span></p>
+    
+    <h4 class="heading-small">9th May 2015</h4>
+    <p class="appt-time">14:00pm</p>
+    <p><span class="status red">DID NOT ATTEND</span></p>
+    
+    <h4 class="heading-small">1st December 2014</h4>
+    <p class="appt-time">14:00pm</p>
+    <p><span class="status purple">ARRIVED - 13:50pm</span></p>
+    
+    <h4 class="heading-small">11th November 2014</h4>
+    <p class="appt-time">14:00pm</p>
+    <p><span class="status grey">CANCELLED</span></p>
+    
+    
+    
+    
+    
+    </div><!-- column -->
+
+    
+  
+    
+   <div class="column-one-third">
+     
+ 	 	   <div class="case-status">	 
+			  <p class="mt10 mb0 bold-small"><span class="circle purple"></span>Booked</p>
+			  <p class="mt10">Assigned to Donald Robinson</p>
+			 <!-- <p><a href="#" class="button">Customer has arrived</a></p> -->
+		  </div> 
+	  
+	  
+	  
+	  <hr>
+	  
+	  
+	   <h3 class="heading-medium mt0">Appointment details</h3>
+	    
+	    <h4 class="heading-small">Date</h4>
+	    <p>4th January 2018</p>
+	    
+	    <h4 class="heading-small">Time</h4>
+	    <p>14:00</p>
+
+	    
+	    <p class="mt30"><a href="#" class="secondary">Cancel appointment</a></p>
+	    <p><a href="#">Edit appointent</a></p>
+    
+
+	  
+	  <hr>
+	  
+	  
+     
+     
+    </div><!-- column -->    
+    
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends path1+"/_layout.html" %}
+
+{% block heading %}
+
+
+
+
+<div class="staff__heading">
+  <div class="staff__centred">
+    <div class="grid-row">
+      <div class="column-half">
+    <h2 class="heading-xlarge" style="margin:0 0 10px">Mendez Dalton</h2>
+    </div>
+      <div class="column-quarter">
+        <p><span class="font-xsmall">National Insurance Number</span><br /><span class="bold-medium">QQ 53 12 49 C </span></p>
+      </div>
+      <div class="column-quarter">
+        <p><span class="font-xsmall">Date of birth</span><br /><span class="bold-medium">10 June 1980 </span></p>
+      </div>
+      
+
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block left_content %}
+{% include path1+"/_mendez_left_content.html" %}
+{% endblock %}
+
+{% block citizen_content %}
+ {# macro #}
+  {{ nav_mendez.case_tabs("mendez",1,path1) }}
+
+<div class="container">
+
+
+  <div class="grid-row mt30">
+  
+  
+  <div class="column-third">
+  
+     
+    <h3 class="heading-medium mt0">Contact details</h3>
+    <h4 class="heading-small">Phone</h4>
+    <p>0151 924 2080</p>
+    
+    <h4 class="heading-small">Text</h4>
+    <p>07979 000000</p>
+    
+    <h4 class="heading-small">Email</h4>
+    <p>the.victor.castillo@madeup.com</p>
+    
+    <h4 class="heading-small">Postal address</h4>
+    <p class="address-stack">
+    	<span>27 Redhill Lane</span>
+    	<span>Ainsdale</span>
+    	<span>London</span>
+    	<span>Merseyside</span>
+    	<span>PR8 9UE</span>
+    </p>
+
+       
+    
+    </div><!-- column -->
+
+    
+    
+    
+    
+    
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

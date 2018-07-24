@@ -1,0 +1,63 @@
+{% extends path1+"/_addlayout.html" %} 
+
+
+
+{% block citizen_content %}
+<div class="container">
+    <p><a href="/{{path2}}" class="link-back">Back</a></p>
+    <h3 class="heading-medium mt0">Add a new Healthcare Professional</h3>
+    {%
+	set staff= [
+	  {
+	    "id": "5aba51cc27a4bb0f7f5d8850",
+	    "index": 0,
+	    "guid": "3ff9f654-e828-4e63-a9a6-2e4905c9dbd1",
+	    "surname": "Malone",
+	    "firstname": "Bolton",
+	    "phone": "0193 954131",
+	    "mobile": "07939 499368",
+	    "name": "Bolton Malone",
+	    "email": "bolton.malone@fakemail.gov.uk",
+	    "gender": "male",
+	    "type": "Doctor",
+	    "skill": "Complex Neuro",
+	    "scrutinyPaperwork": false,
+	    "days": {
+	      "Monday": {
+	        "available": false,
+	        "start": "09:00",
+	        "end": "17:00"
+	      },
+	      "Tuesday": {
+	        "available": false,
+	        "start": "09:00",
+	        "end": "17:00"
+	      },
+	      "Wednesday": {
+	        "available": false,
+	        "start": "09:00",
+	        "end": "17:00"
+	      },
+	      "Thursday": {
+	        "available": false,
+	        "start": "09:00",
+	        "end": "17:00"
+	      },
+	      "Friday": {
+	        "available": false,
+	        "start": "09:00",
+	        "end": "17:00"
+	      }
+	    }
+	  }
+	]
+
+	%}
+    {% for person in staff %}
+    {% include path2+ "/_staff-hours.html" %}
+    {% endfor %}
+    <!-- row -->
+</div>
+
+<!-- container -->
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

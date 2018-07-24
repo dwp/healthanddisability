@@ -1,0 +1,46 @@
+{% extends path1+"/_manage-centre-layout.html" %} 
+
+
+
+
+{% block manage_centre_nav %}
+<p><a href="/{{path2}}/{{centre.id}}/details" class="link-back">Back</a></p>
+
+{% endblock %}
+  
+
+
+{% block citizen_content %}
+<div class="container">
+    <div class="grid-row">
+        <div class="column-half">
+            <fieldset>
+                <legend>
+                    <h3 class="heading-medium mt0">{{centre.name}} opening times</h3>
+                </legend>
+                {% for dayName, day in centre.openingTimesForm %}
+                <div class="multiple-choice">
+                    <input id="available-days-{{loop.index}}" name="available-days" type="checkbox"
+                    data-toggle-content="times-for-{{dayName}}"
+                    {% if day.open %} checked {% endif%} >
+                    <label for="available-days-{{loop.index}} ">{{ dayName }}</label>
+                </div>
+
+                <div 
+                    class="panel panel-border-narrow {% if not day.open %}hidden{% endif %}" 
+                    id="times-for-{{dayName}}"
+                     >
+                        <label class="form-label " for="from-time-{{dayName}} ">What time will {{centre.name}} be open<span class="visually-hidden "> on {{dayName}}</span>?</label>
+                        <input class="form-control time-input " name="from-time-{{dayName}} " type="time " value="{{ day.start }} ">
+
+                        <label class="form-label mt30 " for="to-time=-{{dayName}} ">What time will {{centre.name}} close<span class="visually-hidden "> on {{dayName}}</span>?</label>
+                        <input class="form-control time-input " name="to-time=-{{dayName}} " type="time " value="{{ day.end }} ">
+                    </div>
+                {%endfor%}
+            </fieldset>
+            <p><a href="edit-centre-3" class="button ">Save and continue</a></p>
+        </div>
+    </div>
+</div>
+
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

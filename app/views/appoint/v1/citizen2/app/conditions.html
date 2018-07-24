@@ -1,0 +1,41 @@
+{% extends path+"/citizen2/app/_layout_noaction.html" %}
+
+{% block app_nav %}{{ nav.app_nav('conditions',path) }}{% endblock %}
+
+{% block case_content %}
+
+      <h3 class="heading-large mt10">Medical conditions</h3>
+      <ul class="list list-bullet">
+        <li>Myocardial infarction <span class="date">({{ "MMMM YYYY" | monthsAgo(3) }})</span></li>
+        <li>Hypertension <span class="date">({{ "MMMM YYYY" | monthsAgo(24) }})</span></li>
+        <li>Spondylolisthesis <span class="date">( {{ "MMMM YYYY" | monthsAgo(56) }})</span></li>
+      </ul>
+
+      <h3 class="heading-large">Medication and side effects</h3>
+      <table class="meds">
+        <tr>
+          <td>
+            <p class="bold-small">Asprin</p>
+            <p class="font-xsmall">75mg<br /> 1 a day</p>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <p class="bold-small">Bisoprolol</p>
+            <p class="font-xsmall">10mg<br /> 1 a day</p>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <p class="bold-small">Gabapentin</p>
+            <p class="font-xsmall">600mg<br /> 3 times a day</p>
+          </td>
+          <td>dizziness and lack of coordination</td>
+        </tr>
+      </table>
+
+{% endblock %}
+
+{% block app_score %}{% endblock %}

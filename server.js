@@ -15,6 +15,8 @@ var browserSync = require('browser-sync')
 var config = require('./app/config.js')
 var utils = require('./lib/utils.js')
 var packageJson = require('./package.json')
+var moment = require('moment')
+
 
 // Grab environment variables specified in Procfile or as Heroku config vars
 var releaseVersion = packageJson.version
@@ -60,6 +62,8 @@ if (env === 'production' && useAuth === 'true') {
 
 // Set up App
 var appViews = [path.join(__dirname, '/app/views/'), path.join(__dirname, '/lib/')]
+
+
 
 var nunjucksAppEnv = nunjucks.configure(appViews, {
   autoescape: true,
@@ -223,6 +227,10 @@ if (typeof (routes) !== 'function') {
   console.log('Warning: the use of bind in routes is deprecated - please check the prototype kit documentation for writing routes.')
   routes.bind(app)
 } else {
+    // Handle 404
+  
+
+  //routes
   app.use('/assess/v1/', require('./app/views/assess/v1/_routes.js'))
   app.use('/assess/v2/', require('./app/views/assess/v2/_routes.js'))
   app.use('/assess/v3/', require('./app/views/assess/v3/_routes.js'))
@@ -241,7 +249,31 @@ if (typeof (routes) !== 'function') {
   app.use('/assess/v10/', require('./app/views/assess/v10/_routes.js')) 
   app.use('/assess/v10a/', require('./app/views/assess/v10a/_routes.js'))
   app.use('/assess/v11/', require('./app/views/assess/v11/_routes.js')) 
+
+  app.use('/appoint/v1/', require('./app/views/appoint/v1/_routes.js'))
+  app.use('/appoint/v2/', require('./app/views/appoint/v2/_routes.js'))
+  app.use('/appoint/v3/', require('./app/views/appoint/v3/_routes.js')) 
+  app.use('/appoint/v3-1/', require('./app/views/appoint/v3-1/_routes.js'))
+  app.use('/appoint/v4/', require('./app/views/appoint/v4/_routes.js')) 
+  app.use('/appoint/v5/', require('./app/views/appoint/v5/_routes.js'))    
+  app.use('/appoint/v6/', require('./app/views/appoint/v6/_routes.js'))    
+  app.use('/appoint/v7/', require('./app/views/appoint/v7/_routes.js'))    
+  app.use('/appoint/v8/', require('./app/views/appoint/v8/_routes.js'))   
+  app.use('/appoint/v8-1/', require('./app/views/appoint/v8-1/_routes.js'))   
+  app.use('/appoint/v8-2/', require('./app/views/appoint/v8-2/_routes.js'))   
+  app.use('/appoint/v8-3/', require('./app/views/appoint/v8-3/_routes.js'))   
+  app.use('/appoint/v8-4/', require('./app/views/appoint/v8-4/_routes.js'))   
+  app.use('/appoint/v8-5/', require('./app/views/appoint/v8-5/_routes.js'))   
+  app.use('/appoint/v9/', require('./app/views/appoint/v9/_routes.js'))   
+  app.use('/appoint/v10/', require('./app/views/appoint/v10/_routes.js'))   
+  app.use('/appoint/v11/', require('./app/views/appoint/v11/_routes.js'))   
+  app.use('/appoint/v12/', require('./app/views/appoint/v12/_routes.js')) 
+
+
+
   app.use('/', routes)
+
+  
 }
 
 // Returns a url to the zip of the latest release on github

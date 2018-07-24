@@ -1,0 +1,26 @@
+{% extends path2+"/_addlayout.html" %} 
+
+
+
+{% block citizen_content %}
+
+{% for centre in centres %}
+<div class="container">
+    <nav class="top-nav">
+        <a href="/{{path}}/assessment-centres" class="link-back">Back</a>
+        <a href="/{{path}}/capacity/manage-centre/capacity?day=monday" class="link-back link-back--noicon">Manage Capacity</a>
+    </nav>
+
+    <div class="grid-row mt30">
+        {% include path2+"/_nav.html" %}
+        {% include path2+"/_details.html" %}
+        {% include path2+"/_rooms.html" %}
+        {% include path2+"/_slots.html" %}
+  
+    </div>
+    <!-- row -->
+</div>
+<!-- container -->
+
+{% endfor %}
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

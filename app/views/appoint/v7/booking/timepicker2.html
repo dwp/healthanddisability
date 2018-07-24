@@ -1,0 +1,72 @@
+{% extends path1+"/_layout.html" %}
+
+{% block citizen_content %}
+
+<div class="container">
+
+  {# macro #}
+  {{ nav.case_tabs("timepicker2",1,path1) }}
+
+  <div class="grid-row mt30">
+
+    <div class="column-third">
+	
+
+		          <h3 class="heading-small">Requirements</h3>
+			          <ul class="filter-list">
+			          	  <li><span>Complex neuro</span></li>
+				          <li><span>Wednesday</span></li>
+				          <li><span>Thursday</span></li>
+						  <li><span>Afternoon</span></li>
+						  <li><span>Ground floor access</span></li>
+			          </ul>
+			          
+			          <p><a href="booking">Edit</a></p>
+
+    </div><!-- column -->
+    
+
+    
+    
+    
+   
+    
+    
+    
+   <div class="column-third">
+   <h3 class="heading-medium mt0">Next available appointment</h3>
+    
+    
+   <div class="info-panel available-slot">
+   	<h4 class="heading-small">Thursday 4th January</h4>
+   	<p>14:00pm</p>
+   	<a href="#" class="button">Book</a>
+   </div>
+
+    
+    
+    
+    </div>
+    
+    
+    
+    
+     <div class="column-third">
+    		
+    	
+    	
+    </div>
+    
+    
+    
+    
+   
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

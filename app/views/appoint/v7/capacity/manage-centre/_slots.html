@@ -1,0 +1,43 @@
+<section id="Default hours" class="column-three-quarters {{ 'hidden' if not (query.tab === 'slots') }}">
+{%
+set days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday"
+]
+%}
+
+{%
+set slots = [
+	"9.00am",
+	"10:00am",
+	"11:00am",
+	"1:00pm",
+	"2:00pm",
+	"3:00pm",
+	"4:00pm"    
+	]
+%}
+
+<h3 class="heading-medium mt0">Default weekly slots</h3>
+<div class="grid-row">
+        {% for day in days %}
+    
+
+        <div class="column-one-third">
+            <div class="grey-list">
+                <h3 class="heading-small mt0">{{ day }} </h3>
+                <ul>
+                    {% for slot in slots %}
+                    <li><div>{{ slot }} </div><a href="#?deleteSlot={{day}}{{loop.index}}">remove</a></li>
+                    {% endfor %}
+
+                </ul>
+                <a class="button">Add</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>

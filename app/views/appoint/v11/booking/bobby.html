@@ -1,0 +1,130 @@
+{% extends path1+"/_layout.html" %}
+
+{% block left_content %}
+ <p class="mt10 mb0 bold-small"><span class="circle purple"></span>Booked</p>
+
+ <div class="available-slot">
+      <div class="column-half" style="padding: 0;">
+          <h4 class="heading-small">Tuesday 10 May</h4>
+          <p>14:00pm</p>
+      </div>
+      <div class="column-half" style="padding: 0; text-align: right;">
+          <a href="timepicker?day=tuesday&date=10%20April&time=11:00am" class="button">Edit</a>
+      </div>
+  </div>
+ <hr>
+{% endblock %}
+
+{% block citizen_content %}
+ {# macro #}
+  {{ nav2.case_tabs("bobby",1,path1) }}
+
+<div class="container">
+
+
+  <div class="grid-row mt30">
+  
+  
+  <div class="column-third">
+  
+     
+    <h3 class="heading-medium mt0">Contact details</h3>
+    <h4 class="heading-small">Phone</h4>
+    <p>0151 924 2080</p>
+    
+    <h4 class="heading-small">Text</h4>
+    <p>07979 000000</p>
+    
+    <h4 class="heading-small">Email</h4>
+    <p>the.victor.castillo@madeup.com</p>
+    
+    <h4 class="heading-small">Postal address</h4>
+    <p class="address-stack">
+    	<span>27 Redhill Lane</span>
+    	<span>Ainsdale</span>
+    	<span>London</span>
+    	<span>Merseyside</span>
+    	<span>PR8 9UE</span>
+    </p>
+
+       
+    
+    </div><!-- column -->
+
+    <div class="column-third">
+            <h3 class="heading-medium mt0">Appointment history</h3>
+
+            <h4 class="heading-small">12th July 2016</h4>
+            <p class="appt-time">14:00</p>
+            <p><span class="status red">CSHU - 15:30</span></p>
+            <h4 class="heading-small">9th May 2015</h4>
+            <p class="appt-time">14:00</p>
+            <p><span class="status red">DNA</span></p>
+            <h4 class="heading-small">1st December 2014</h4>
+            <p class="appt-time">14:00</p>
+            <p><span class="status green">ARRIVED - 13:50</span></p>
+            <h4 class="heading-small">11th November 2014</h4>
+            <p class="appt-time">14:00</p>
+            <p><span class="status grey">Cancelled</span></p>
+        </div>
+
+    
+    <div class="column-third">
+  
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    </div><!-- column -->
+
+    
+  
+    <div class="column-third">
+    
+     
+    <h3 class="heading-medium mt0">Appointment details</h3>
+    <h4 class="heading-small">Assessment Centre</h4>
+    <p>Tresco House</p>
+    
+    <h3 class="heading-small mt0">Requirements</h3>
+                    <ul class="filter-list">
+                        <li>Ground floor access</li>
+                        <li>Male health assessor preferred</li>
+                    </ul>
+
+ <form>
+
+    
+    
+    
+    
+    
+    </div><!-- column -->
+    
+    
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

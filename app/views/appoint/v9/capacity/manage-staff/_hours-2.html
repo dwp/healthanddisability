@@ -1,0 +1,58 @@
+<section class="column-half {{ 'hidden' if not (query.tab === 'hours') }}">
+    <table>
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Times</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for day, dayDetails in person.days %}
+            <tr>
+                <td><span class="capitalise">{{day}}</span></td>
+                <td>{{dayDetails.start}} to {{dayDetails.end}}</td>
+                <td class="numeric">
+                    {% if dayDetails.scrutiny and person.scrutinyPaperwork %}
+                        <span class="marker marker--scrutiny">Scrutiny filework</span>
+                    {% else %}
+                        <span class="marker marker--appointments">Appointments</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2 class="heading-medium">From 16 April 2018</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Times</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for day, dayDetails in person.days %}
+            <tr class="{{ 'hidden' if day == 'tuesday' }}">
+                <td><span class="capitalise">{{day}}</span></td>
+                <td>{{dayDetails.start}} to {{dayDetails.end}}</td>
+                <td class="numeric">
+                    {% if dayDetails.scrutiny and person.scrutinyPaperwork %}
+                        <span class="marker marker--scrutiny">Scrutiny filework</span>
+                    {% else %}
+                        <span class="marker marker--appointments">Appointments</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</section>
+<div class="column-one-quarter {{ 'hidden' if not (query.tab === 'hours') }}">
+    <div class="info-panel">
+        <p class="mt20"><a href="{{person.id}}/edit-staff-hours" class="button mt0">Edit rota</a></p>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+{% extends path+"/_layout.html" %}
+{% import path1+"/_macros_nav.html" as nav %}
+
+{% block assess_content %}
+
+  {#  This is the BIG BLUE BAR at the top - #jussayin #}
+
+  {% block header %}
+  {% include path1+"/_add_heading.html" %}
+  {% endblock %}
+
+  <main id="content" role="main" class="main-content">
+
+    <div class="container">
+      <div class="grid-row">
+        <div class="column-full">
+          <nav class="section-tabs clearfix mb20">
+            <ul>
+                <li class="{{ 'active 'if (query.tab === 'details') }}"s><a href="/{{path1}}/manage-centre/{{centre.id}}?tab=details">Details</a></li>
+                <li class="{{ 'active 'if (query.tab === 'staff') }}"s><a href="/{{path1}}/manage-staff/{{centre.id}}?tab=staff">Staff</a></li>
+                <li class="{{ 'active 'if (query.tab === 'slots') }}"s><a href="/{{path1}}/manage-centre/{{centre.id}}?tab=slots">Slots</a></li>
+                <li class="{{ 'active 'if (query.tab === 'rooms') }}"s><a href="/{{path1}}/manage-centre/{{centre.id}}?tab=rooms">Rooms</a></li>
+                <li class="{{ 'active 'if (query.tab === 'rooms') }}"s><a href="/{{path1}}/manage-centre/{{centre.id}}?tab=capacity">Manage Capacity</a></li>
+            </ul>
+          </nav>
+
+
+
+          <div nunj-block="citizen_content">
+            {% block citizen_content %}{% endblock %}
+          </div>
+
+        </div><!-- column -->
+      </div><!-- row -->
+    </div><!-- container -->
+
+  </main>
+
+{% endblock %}
+
+
+
+

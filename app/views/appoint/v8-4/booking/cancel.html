@@ -1,0 +1,41 @@
+{% extends path1+"/_layout.html" %}
+
+{% extends path1+"/_layout.html" %}
+
+{% block left_content %}
+ <p class="mt10 mb0 bold-small"><span class="circle purple"></span>Booked</p>
+
+ <div class="available-slot">
+      <div class="column-full" style="padding: 0;">
+          <h4 class="heading-small">{{appointments.nextAvailable | formatDate("dddd D MMMM YYYY")}}</h4>
+                            <p>{{appointments.nextAvailable | formatDate("hh:mma")}}</p>
+      </div>
+      
+  </div>
+ <hr>
+{% endblock %}
+{% block citizen_content %}
+<h1 class="heading-medium mt20">Cancel appointment</h1>
+
+<div class="panel panel-border-wide">
+    <p>
+      This will cancel the appointment and place the customer back into the referrals queue.
+    </p>
+</div>
+
+<form action="bobby_timeline_cancelled">
+    <p>
+        <button class="button">Confirm</button>
+    </p>
+    <p><a href="timepicker">Cancel</a></p>
+<input type="hidden" name="tab" value="Details">
+    
+</form>
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}
+_

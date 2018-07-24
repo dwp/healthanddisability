@@ -1,0 +1,42 @@
+{% extends path+"/_layout.html" %}
+{% import path1+"/_macros_nav.html" as nav %}
+{% import path1+"/_macros_nav2.html" as nav2 %}
+{% block assess_content %}
+
+  {#  This is the BIG BLUE BAR at the top - #jussayin #}
+  {% include path1+"/_staff_heading.html" %}
+<main id="content" role="main" class="main-content-inner">
+    <div class="container">
+        <div class="grid-row main-row">
+            <div class="column-one-quarter left-area">
+                <div class="left-panel">
+                  {% block left_content %}
+                    <h3 class="heading-medium mt20">Next available appointment</h3>
+                    <div class="available-slot">
+                        <div class="column-half" style="padding: 0;">
+                            <h4 class="heading-small">Thursday 4th January</h4>
+                            <p>14:00pm</p>
+                        </div>
+                        <div class="column-half" style="padding: 0; text-align: right;">
+                            <a href="../booked_appointments" class="button">Book</a>
+                        </div>
+                    </div>
+                    <hr>
+                    
+                    {% endblock %}
+                </div>
+            </div>
+            <div class="column-three-quarters main-area">
+                <div nunj-block="citizen_content">
+                    {% block citizen_content %}{% endblock %}
+                </div>
+            </div>
+            <!-- column -->
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+</main>
+          
+
+{% endblock %}

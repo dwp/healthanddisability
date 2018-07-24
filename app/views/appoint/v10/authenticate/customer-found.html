@@ -1,0 +1,85 @@
+{% extends path1+"/_layout.html" %} 
+
+
+
+{% block citizen_content %}
+
+<div class="grid-row">
+    <div class="column-full">
+        <h1 class="heading-medium">Security check</h1>
+            
+            <form action="/{{path}}/booking/bobby_timeline", method="post">
+                
+            <p class="form-hint">The caller must confirm the following details first.</p>
+            <dl class="govuk-check-your-answers cya-questions-short">
+                <div>
+                    <dt class="cya-question">National Insurance number</dt>
+                    <dd class="cya-answer">QQ 53 12 35 C </dd>
+                </div>
+                <div>
+                    <dt class="cya-question">Name</dt>
+                    <dd class="cya-answer">Tomas Fernandez </dd>
+                </div>
+                <div>
+                    <dt class="cya-question">Date of birth</dt>
+                    <dd class="cya-answer">1 January 1970</dd>
+                </div>
+                <div>
+                    <dt class="cya-question">Address</dt>
+                    <dd class="cya-answer">27 Redhill Lane
+                        <br> Ainsdale
+                        <br> London
+                        <br> Merseyside
+                        <br> PR8 9UE</dd>
+                </div>
+            </dl>
+            <div class="form-group mt30">
+                <fieldset>
+                    <legend>
+                        <span class="form-label-bold">
+                            Who is calling?
+                          </span>
+                    </legend>
+                    <div class="multiple-choice">
+                        <input id="caller-customer" type="radio" name="caller" value="customer" >
+                        <label for="caller-customer">Customer</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="caller-appointee" type="radio" name="caller" value="appointee" >
+                        <label for="caller-appointee">Appointee</label>
+                    </div>
+                    <!-- <div class="multiple-choice" data-target="caller-other">
+                        <input id="caller-other" type="radio" name="caller" value="other" >
+                        <label for="caller-other">Other</label>
+                    </div>
+                    <div class="panel panel-border-narrow" id="caller-other-content">
+                        <label class="form-label" for="other-caller-details">Caller details</label>
+                        <input class="form-control" name="other-caller-details" type="text" id="other-caller-details">
+                    </div> -->
+
+                </fieldset>
+            </div>
+            <div class="form-group inline">
+                <fieldset>
+                    <legend>
+                        <span class="form-label-bold">
+                            Where the details confirmed?
+                          </span>
+                    </legend>
+                    <div class="multiple-choice">
+                        <input id="confirmed-yes" type="radio" name="confirmed" value="true" >
+                        <label for="confirmed-yes">Yes</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="confirmed-no" type="radio" name="confirmed" value="false" >
+                        <label for="confirmed-no">No</label>
+                    </div>
+                </fieldset>
+            </div>
+            <p><button class="button">Next</button></p>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

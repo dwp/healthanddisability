@@ -1,0 +1,32 @@
+<div class="column-one-quarter {{ 'hidden' if not (query.tab === 'details') }}">
+    <h3 class="heading-medium mt0">Contact details</h3>
+    <dl>
+        <dt class="heading-small">Phone</dt>
+        <dd>{{centre.phone}}</dd>
+        <dt class="heading-small">Email</dt>
+        <dd>{{centre.email}}</dd>
+        <dt class="heading-small">Address</dt>
+        <dd>{{ centre.address | safe }}</dd>
+    </dl>
+    <h3 class="heading-medium">Facilities</h3>
+    <ul>
+        <li>4 rooms</li>
+        <li>Ground floor access</li>
+        <li>Lift access</li>
+        <li>Wheelchair access</li>
+    </ul>
+</div>
+<div class="column-one-quarter {{ 'hidden' if not (query.tab === 'details') }}">
+    <h3 class="heading-medium mt0">Opening Times</h3>
+    <dl>
+        {% for day in centre.openingTimes %}
+        <dt class="heading-small">{{ day.day }}</dt>
+        <dd>{{ day.open }}</dd>
+        {% endfor %}
+    </dl>
+</div>
+<div class="column-one-quarter {{ 'hidden' if not (query.tab === 'details') }}">
+    <div   class="info-panel">
+        <p class="mt30"><a class="button" href="#">Edit details</a></p>
+    </div>
+</div>

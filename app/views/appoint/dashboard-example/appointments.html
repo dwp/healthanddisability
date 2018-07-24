@@ -1,0 +1,78 @@
+{% extends path+"/_layout.html" %}
+
+
+
+{% block assess_content %}
+
+  <div class="nav-horizontal">
+  <div class="main-nav-wrapper">
+    <ul class="main-nav">
+ 
+        <li class="selected"><a href="dashboard-appointments">Appointments</a></li>
+        <li><a href="#">Manage centre</a></li>
+        <li><a href="#">Daily schedule</a></li>
+    </ul>
+  </div>
+</div>
+
+<main id="content" role="main" class="main-content mt30">
+
+      <div class="container">
+      
+      <p><a href="dashboard-appointments" class="link-back">Back to dashboard</a></p>
+      
+   <h1 class="heading-large">Referrals</h1>
+
+      
+        <div class="grid-row">
+          <div class="column-full">
+              <table class="appointments-view">
+
+                <thead>
+                  <tr class="header-view">
+                    <th style="padding-left:15px;">Name</th>
+                    <th>NI Number</th>
+                    <th>Benefit</th>
+                    <th>Requirement</th>
+                    <th>Received</th>
+                    <th class="numeric">Status</th>
+                  </tr>
+                </thead>
+
+
+                <tr>
+                  <td style="padding-left:15px;" class=""><a href="booking/timeline">Bobby Henderson</a></td>
+                  <td>QQ531235C</td>
+                  <td>ESA</td>
+                  <td>Complex Nuero </td>
+                  <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+                  <td class="numeric">New claim</td>
+                </tr>
+
+                <tr>
+                  <td style="padding-left:15px;" class=""><a href="#">Dexter Coutinho</a></td>
+                  <td>JW000060A</td>
+                  <td>IBR</td>
+                  <td>Complex Nuero </td>
+                  <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+                  <td class="numeric">Re-assessment</td>
+                </tr>
+                
+                <tr>
+                  <td style="padding-left:15px;" class=""><a href="#">Isaac Carragher</a></td>
+                  <td>JW000060A</td>
+                  <td>UC</td>
+                  <td>Complex Nuero</td>
+                  <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+                  <td class="numeric">Re-referall</td>
+                </tr>
+
+               
+              </table>
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

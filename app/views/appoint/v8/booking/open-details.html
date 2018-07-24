@@ -1,0 +1,121 @@
+{% extends path1+"/_layout.html" %}
+
+{% block citizen_content %}
+
+<div class="container">
+
+  {# macro #}
+  {{ nav.case_tabs("open-details",1,path1) }}
+
+  <div class="grid-row mt30">
+  
+  
+  <div class="column-third">
+  
+     
+    <h3 class="heading-medium mt0">Contact details</h3>
+    <h4 class="heading-small">Phone</h4>
+    <p>0151 924 2080</p>
+    
+    <h4 class="heading-small">Text</h4>
+    <p>07979 000000</p>
+    
+    <h4 class="heading-small">Email</h4>
+    <p>the.victor.castillo@madeup.com</p>
+    
+    <h4 class="heading-small">Postal address</h4>
+    <p class="address-stack">
+    	<span>27 Redhill Lane</span>
+    	<span>Ainsdale</span>
+    	<span>London</span>
+    	<span>Merseyside</span>
+    	<span>PR8 9UE</span>
+    </p>
+
+       
+    
+    </div><!-- column -->
+    
+    <div class="column-third">
+    
+ 
+  
+     
+    <h3 class="heading-medium mt0">Appointment history</h3>
+    <h4 class="heading-small">12th July 2016</h4>
+    <p class="appt-time">14:00pm</p>
+    <p><span class="status red">SENT HOME UNSEEN - 15:30pm</span></p>
+    
+    <h4 class="heading-small">9th May 2015</h4>
+    <p class="appt-time">14:00pm</p>
+    <p><span class="status red">DID NOT ATTEND</span></p>
+    
+    <h4 class="heading-small">1st December 2014</h4>
+    <p class="appt-time">14:00pm</p>
+    <p><span class="status green">ARRIVED - 13:50pm</span></p>
+    
+    <h4 class="heading-small">11th November 2014</h4>
+    <p class="appt-time">14:00pm</p>
+    <p><span class="status grey">CANCELLED</span></p>
+    
+    
+    
+    
+    
+    </div><!-- column -->
+
+    
+  
+    
+    <div class="column-third">
+    
+     <div class="case-status">
+		 
+
+		  <p class="mt10 mb0 bold-small"><span class="circle orange"></span>Pending</p>
+		  <p class="mt10">Not assigned</p>
+		  <p><a href="details" class="button">Own this referral</a></p>
+		  <hr>
+		  <h3 class="heading-medium mt0">Requirements</h3>
+		  <ul class="filter-list">
+	     	<li>Ground floor access</li>
+	     	<li>Male health assessor preferred</li>
+	     </ul>
+		<hr>
+	  </div> 
+    
+    <!-- <h3 class="heading-medium mt30">Next available appointment</h3>
+
+  
+  <div class="info-panel available-slot">
+   	<h4 class="heading-small">Thursday 4th January</h4>
+   	<p>14:00pm</p>
+   	<a href="#" class="button">Book</a>
+   </div>
+   <p><a href="#">Change</a></p> -->
+
+    
+    </div><!-- column -->
+    
+    
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

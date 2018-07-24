@@ -1,0 +1,221 @@
+{% extends path1+"/_addlayout.html" %} 
+
+
+
+{% block citizen_content %}
+
+<div class="container">
+    <p><a href="/{{path2}}/{{centre.id}}/manage-staff/staff-profile/{{person.id}}?tab=leave" class="link-back">Back</a></p>
+    <h3 class="heading-large mt0">Change availablity</h3>
+    <h2 class="form-label">
+                    First, choose some dates:
+                </h2>
+    <div class="grid-row">
+        <div class="column-half">
+           
+                
+                <table class="calendar-picker mt30">
+                    <caption>April 2018</caption>
+                    <thead>
+                        <tr>
+                            <th>MON</th>
+                            <th>TUE</th>
+                            <th>WED</th>
+                            <th>THU</th>
+                            <th>FRI</th>
+                            <th>SAT</th>
+                            <th>SUN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="calendar-picker__day calendar-picker__day--closed">26</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">27</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">28</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">29</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">30</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">31</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">1</td>
+                        </tr>
+                        <tr>
+                            <td class="calendar-picker__day calendar-picker__day--closed">2</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">3</td>
+                            <td class="calendar-picker__day 
+                            calendar-picker__day--selectable
+                             calendar-picker__day--today
+                             {{ 'calendar__day--scrutiny' if person.days.wednesday.scrutiny }}
+                            {{ 'calendar__day--appointments' if not person.days.wednesday.scrutiny }}" data-date="4 April 2018">4 <span class="visually-hidden">Today</span></td>
+                            <td class="calendar-picker__day 
+                            calendar-picker__day--selectable
+                            {{ 'calendar__day--scrutiny' if person.days.thursday.scrutiny }}
+                            {{ 'calendar__day--appointments' if not person.days.thursday.scrutiny }}
+                            " 
+                            data-date="5 April 2018">5</td>
+                            <td class="calendar-picker__day 
+                            calendar-picker__day--selectable
+                            {{ 'calendar__day--scrutiny' if person.days.friday.scrutiny }}
+                            {{ 'calendar__day--appointments' if not person.days.friday.scrutiny }}
+                            " 
+                            data-date="6 April 2018">6</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">7</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">8</td>
+                        </tr>
+                        <tr>
+                            <td class="calendar-picker__day 
+                            calendar-picker__day--selectable
+                            {{ 'calendar__day--scrutiny' if person.days.monday.scrutiny }}
+                            {{ 'calendar__day--appointments' if not person.days.monday.scrutiny }}
+                            " 
+                            data-date="9 April 2018">9</td>
+                            <td class="calendar-picker__day 
+                            calendar-picker__day--selectable
+                            {{ 'calendar__day--scrutiny' if person.days.tuesday.scrutiny }}
+                            {{ 'calendar__day--appointments' if not person.days.tuesday.scrutiny }}" 
+                            data-date="10 April 2018">10</td>
+                            <td class="calendar-picker__day 
+                            calendar-picker__day--selectable
+                            {{ 'calendar__day--scrutiny' if person.days.wednesday.scrutiny }}
+                            {{ 'calendar__day--appointments' if not person.days.wednesday.scrutiny }}" 
+                            data-date="11 April 2018">11</td>
+                            <td class="calendar-picker__day 
+                            calendar-picker__day--selectable
+                            {{ 'calendar__day--scrutiny' if person.days.thursday.scrutiny }}
+                            {{ 'calendar__day--appointments' if not person.days.thursday.scrutiny }}" 
+                            data-date="12 April 2018">12</td>
+                            <td class="calendar-picker__day 
+                            calendar-picker__day--selectable
+                            {{ 'calendar__day--scrutiny' if person.days.friday.scrutiny }}
+                            {{ 'calendar__day--appointments' if not person.days.friday.scrutiny }}" 
+                            data-date="13 April 2018">13</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">14</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">15</td>
+                        </tr>
+                        <tr>
+                            <td class="calendar-picker__day 
+                            calendar-picker__day--selectable
+                            {{ 'calendar__day--scrutiny' if person.days.monday.scrutiny }}
+                            {{ 'calendar__day--appointments' if not person.days.monday.scrutiny }}" 
+                            data-date="16 April 2018">16</td>
+                            <td class="calendar-picker__day 
+                            calendar-picker__day--selectable
+                            {{ 'calendar__day--scrutiny' if person.days.tuesday.scrutiny }}
+                            {{ 'calendar__day--appointments' if not person.days.tuesday.scrutiny }}" 
+                            data-date="17 April 2018">17</td>
+                            <td class="calendar-picker__day 
+                            calendar-picker__day--selectable
+                            {{ 'calendar__day--scrutiny' if person.days.wednesday.scrutiny }}
+                            {{ 'calendar__day--appointments' if not person.days.wednesday.scrutiny }}" 
+                            data-date="18 April 2018">18</td>
+                            <td class="calendar-picker__day 
+                            calendar-picker__day--selectable
+                            {{ 'calendar__day--scrutiny' if person.days.thursday.scrutiny }}
+                            {{ 'calendar__day--appointments' if not person.days.thursday.scrutiny }}" 
+                            data-date="19 April 2018">19</td>
+                            <td class="calendar-picker__day 
+                            calendar-picker__day--selectable
+                            {{ 'calendar__day--scrutiny' if person.days.friday.scrutiny }}
+                            {{ 'calendar__day--appointments' if not person.days.friday.scrutiny }}" 
+                            data-date="20 April 2018">20</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">21</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">22</td>
+                        </tr>
+                        <tr>
+                            <td class="calendar-picker__day 
+                            calendar-picker__day--selectable
+                            {{ 'calendar__day--scrutiny' if person.days.monday.scrutiny }}
+                            {{ 'calendar__day--appointments' if not person.days.monday.scrutiny }}" 
+                            data-date="23 April 2018">23</td>
+                            <td class="calendar-picker__day 
+                            calendar-picker__day--selectable
+                            {{ 'calendar__day--scrutiny' if person.days.tuesday.scrutiny }}
+                            {{ 'calendar__day--appointments' if not person.days.tuesday.scrutiny }}" 
+                            data-date="24 April 2018">24</td>
+                            <td class="calendar-picker__day 
+                            calendar-picker__day--selectable
+                            {{ 'calendar__day--scrutiny' if person.days.wednesday.scrutiny }}
+                            {{ 'calendar__day--appointments' if not person.days.wednesday.scrutiny }}" 
+                            data-date="25 April 2018">25</td>
+                            <td class="calendar-picker__day 
+                            calendar-picker__day--selectable
+                            {{ 'calendar__day--scrutiny' if person.days.thursday.scrutiny }}
+                            {{ 'calendar__day--appointments' if not person.days.thursday.scrutiny }}" 
+                            data-date="26 April 2018">26</td>
+                            <td class="calendar-picker__day 
+                            calendar-picker__day--selectable
+                            {{ 'calendar__day--scrutiny' if person.days.friday.scrutiny }}
+                            {{ 'calendar__day--appointments' if not person.days.friday.scrutiny }}" 
+                            data-date="27 April 2018">27</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">28</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">29</td>
+                        </tr>
+                        <tr>
+                            <td class="calendar-picker__day 
+                            calendar-picker__day--selectable
+                            {{ 'calendar__day--scrutiny' if person.days.monday.scrutiny }}
+                            {{ 'calendar__day--appointments' if not person.days.monday.scrutiny }}" 
+                            data-date="30 April 2018">30</td>
+                            <td class="calendar-picker__day 
+                            calendar-picker__day--selectable
+                            {{ 'calendar__day--scrutiny' if person.days.tuesday.scrutiny }}
+                            {{ 'calendar__day--appointments' if not person.days.tuesday.scrutiny }}
+                            " 
+                            data-date="1 May 2018">1</td>
+                            <td class="calendar-picker__day 
+                            calendar-picker__day--selectable
+                            {{ 'calendar__day--scrutiny' if person.days.wednesday.scrutiny }}
+                            {{ 'calendar__day--appointments' if not person.days.wednesday.scrutiny }}
+                            " 
+                            data-date="2 May 2018">2</td>
+                            <td class="calendar-picker__day 
+                            calendar-picker__day--selectable
+                            {{ 'calendar__day--scrutiny' if person.days.thursday.scrutiny }}
+                            {{ 'calendar__day--appointments' if not person.days.thursday.scrutiny }}
+                            " 
+                            data-date="3 May 2018">3</td>
+                            <td class="calendar-picker__day 
+                            calendar-picker__day--selectable
+                            {{ 'calendar__day--scrutiny' if person.days.friday.scrutiny }}
+                            {{ 'calendar__day--appointments' if not person.days.friday.scrutiny }}
+                            " 
+                            data-date="4 May 2018">4</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">5</td>
+                            <td class="calendar-picker__day calendar-picker__day--closed">6</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+        </div>
+        <div class="column-half mt30 hidden" id="availability-form" >
+
+            <div class="form-group">
+	            <fieldset>
+	            	<legend class="form-label">What type of work will they be doing?</legend>
+	            	<div class="multiple-choice">
+	                    <input id="type-of-work-appointments" type="radio" name="type-of-work" value="appointments" >
+	                    <label for="type-of-work-appointments">Appointments</label>
+	                </div>
+	                <div class="multiple-choice">
+	                    <input id="type-of-work-scrutiy" type="radio" name="type-of-work" value="scrutiy">
+	                    <label for="type-of-work-scrutiy">Scrutiny filework</label>
+	                </div>
+                    <div class="multiple-choice">
+                        <input id="type-of-work-training" type="radio" name="type-of-work" value="training">
+                        <label for="type-of-work-training">Training</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="type-of-work-unavailable" type="radio" name="type-of-work" value="unavailable">
+                        <label for="type-of-work-unavailable">Unavailable</label>
+                    </div>
+	            </fieldset>	
+	        </div>
+            
+            <h3 class="heading-small">Selected dates:</h3>
+            <ul id="dateList" class="list-bullet"></ul>
+            <p><a href="staff-profile-2?tab=leave" class="button">Save</a></p>
+
+        </div>
+    </div>
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

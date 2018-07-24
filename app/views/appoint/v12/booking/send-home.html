@@ -1,0 +1,129 @@
+{% extends path1+"/_layout-booking.html" %}
+
+{% block main_nav %}
+  <div class="nav-horizontal">
+  <div class="main-nav-wrapper">
+    <ul class="main-nav">
+        
+        
+        <li class="selected"><a href="{{root}}/booked_appointments?arrived=true">Appointments</a></li>
+        <li><a href="{{root}}/assessment-centres">Manage my centre</a></li>
+
+    </ul>
+  </div>
+</div>
+
+{% endblock %}
+
+
+{% block left_content %}
+
+<div class="status-circle">
+<i class="status-circle__circle circle {{ 'green' if customer.waitTime < 30 }}{{ 'red' if customer.waitTime > 29 }}"></i> <p><span class="bold-small">
+{% if customer.waitTime > 0 %}
+Waiting {{customer.waitTime}} minutes</span> <br>Arrived at {{customer.timeArrived}}
+{% else %}
+Just arrived
+{% endif %}
+</p>
+</div>
+<p>Appointment today at {{customer.appointmentTime}}</p>
+
+<hr>
+
+<ul>
+  <li><a href="timepicker?day=tuesday&date=10%20April&time=11:00am">Rearrange appointment</a></li>
+</ul>
+{% endblock %} 
+
+
+{% block citizen_content %}
+{# macro #}
+
+
+<div class="container">
+    <!-- timeline -->
+    <h1 class="heading-medium">Customer sent home unseen</h1>
+
+    <div class="panel panel-border-wide">
+    <ul class="list-bullet">
+      <li>{{customer.name.first}} has been waiting {{ 'less' if customer.waitTime < 30}} {{ 'more' if customer.waitTime > 29}} than 30 minutes</li>
+      <li>{{customer.name.first}} arrived {{ 'on time' if customer.arrivedTime < 10}}{{'late' if customer.arrivedTime > 10}}</li>
+      <li>Longest wait time is currently over 30 mins</li>
+    </ul>
+  </div>
+    <form action="send-home-2" method="post">
+        <fieldset class="form-group">
+            <legend>
+                <span class="form-label">
+            Why does {{customer.name.first}} need to be sent home?
+          </span>
+            </legend>
+            {% if customer.waitTime > 29 %}
+              <div class="multiple-choice">
+                <input id="reason-wait-over-30" type="radio" name="reason" value="dwp">
+                <label for="reason-wait-over-30">Does not want to any longer</label>
+              </div>
+            {% endif %}
+
+            {% if customer.waitTime < 30 %}
+            <div class="multiple-choice">
+                <input id="reason-wait" type="radio" name="reason" value="dwp">
+                <label for="reason-wait">Does not want to wait over 30 mins</label>
+            </div>
+            {% endif %}
+            {% if customer.arrivedTime > 10 %}
+              <div class="multiple-choice">
+                <input id="reason-late" type="radio" name="reason" value="customer">
+                <label for="reason-late">Customer arrived late</label>
+              </div>
+            {% endif %}
+
+            <div class="multiple-choice" data-target="dwp-other">
+                <input id="reason-cancel" type="radio" name="reason" value="dwp">
+                <label for="reason-cancel">We have had not been able to carry out the appointment </label>
+            </div>
+            <div class="panel js-hidden" id="dwp-other">
+              <fieldset class="form-group">
+                  <legend>Select a reason</legend>
+                  <div class="multiple-choice">
+                    <input id="reason-dwp-1" type="radio" name="dwp" value="dwp">
+                    <label for="reason-dwp-1">Health care professional not available</label>
+                  </div>
+                  <div class="multiple-choice">
+                    <input id="reason-dwp-2" type="radio" name="dwp" value="dwp">
+                    <label for="reason-dwp-2">Interpreter not provided</label>
+                  </div>
+              </fieldset>
+            </div>
+            <div class="multiple-choice" data-target="other">
+                <input id="reason-customer" type="radio" name="reason" value="customer">
+                <label for="reason-customer">Other  </label>
+            </div>
+            <div class="panel js-hidden" id="other">
+              <fieldset class="form-group">
+                  <legend>Select a reason</legend>
+                  <div class="multiple-choice">
+                    <input id="reason-other-1" type="radio" name="other" value="hcp">
+                    <label for="reason-other-1">Claimant unfit to be examined</label>
+                  </div>
+                  <div class="multiple-choice">
+                    <input id="reason-other-2" type="radio" name="other" value="interpreter">
+                    <label for="reason-other-2">Inappropriate for health care professional to see claimant</label>
+                  </div>
+              </fieldset>
+            </div>
+            
+        </fieldset>
+        
+        <button class="button">Next</button>
+    </form>
+</div>
+<!-- container -->
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}
+_

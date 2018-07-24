@@ -1,0 +1,223 @@
+{% extends path1+"/_layout.html" %}
+
+{% block citizen_content %}
+
+<div class="container">
+
+  {# macro #}
+  {{ nav.case_tabs("booking",1,path1) }}
+
+  <div class="grid-row mt30">
+
+    <div class="column-third">
+    
+
+			  
+			  <div class="info-panel">
+		          <h3 class="heading-small">Assessment centre</h3>
+		          <p><span class="info-display">Tresco house</span></p>
+			  </div>
+
+			  <div class="info-panel">
+	          	<h3 class="heading-small">Skill required</h3>
+			  	<p><span class="info-display">Complex neuro</span></p>
+			  </div>
+	
+	    
+			  <div class="info-panel">
+		          <h3 class="heading-small">Requirements</h3>
+		          <p id="no-filter">None selected</p>
+		          <ul class="filter-list">
+			          <li class="filter" id="monday-filter"><span>Monday</span></li>
+			          <li class="filter" id="tuesday-filter"><span>Tuesday</span></li>
+			          <li class="filter" id="wednesday-filter"><span>Wednesday</span></li>
+			          <li class="filter" id="thursday-filter"><span>Thursday</span></li>
+			          <li class="filter" id="friday-filter"><span>Friday</span></li>
+			          <li class="filter" id="saturday-filter"><span>Saturday</span></li>
+					  <li class="filter" id="time1-filter"><span>Morning</span></li>
+					  <li class="filter" id="time2-filter"><span>Afternoon</span></li>
+					  <li class="filter" id="special-access"><span>Ground floor access</span></li>
+					  <li class="filter" id="special-gender"><span>Same gender HCP</span></li>
+					  <li class="filter" id="special-security"><span>Security required</span></li>
+					  <li class="filter" id="special-doctor"><span>Doctor required</span></li>
+					  <li class="filter" id="special-interpreter"><span>Interpreter required</span></li>
+		          </ul>
+			  </div>
+
+	    
+	  
+
+    </div><!-- column -->
+    
+    
+    
+    <div class="column-third">
+    
+    
+    
+    
+        
+    <form>
+    <fieldset>
+    
+    	<legend class="visually-hidden">Booking information</legend>
+    	
+    	
+    	
+    	<div class="form-group">
+
+			    <fieldset class="filter-form">
+			
+			      <legend class="heading-medium">Preferred appointment day</legend>
+			
+			      <div class="multiple-choice"> 
+			        <input id="radio-1a" type="checkbox" name="radio-group2" value="Mon" class="mon-fil">
+			        <label for="radio-1a">Monday</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-2a" type="checkbox" name="radio-group2" value="Tue" class="tue-fil">
+			        <label for="radio-2a">Tuesday</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-3a" type="checkbox" name="radio-group2" value="Wed" class="wed-fil">
+			        <label for="radio-3a">Wednesday</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-4a" type="checkbox" name="radio-group2" value="Thu" class="thu-fil">
+			        <label for="radio-4a">Thursday</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-5a" type="checkbox" name="radio-group2" value="Fri" class="fri-fil">
+			        <label for="radio-5a">Friday</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-6a" type="checkbox" name="radio-group2" value="Sat" class="sat-fil">
+			        <label for="radio-6a">Saturday</label>
+			      </div>
+			
+			    </fieldset>
+		  </div>
+    	
+
+    	
+    	
+    	
+    	
+    	
+
+    	
+
+		  <div class="form-group">
+			    <fieldset>
+			
+			      <legend class="heading-medium">Preferred appointment time</legend>
+			
+			      <div class="multiple-choice">
+			        <input id="radio-1" type="checkbox" name="radio-group" value="Northern Ireland" class="time-slot1">
+			        <label for="radio-1">Morning</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-2" type="checkbox" name="radio-group" value="Isle of Man or the Channel Islands" class="time-slot2">
+			        <label for="radio-2">Afternoon</label>
+			      </div>
+			
+			    </fieldset>
+		  </div>
+		  
+		  
+		<div class="form-group">
+			    <fieldset>
+			
+			      <legend class="heading-medium">Special requirements</legend>
+			
+			      <div class="multiple-choice">
+			        <input id="radio-1b" type="checkbox" name="radio-group3" value="1st" class="access-floor">
+			        <label for="radio-1b">Ground floor access</label>
+			      </div>
+			     
+			      
+			      <div class="multiple-choice">
+			        <input id="gender" type="checkbox" name="radio-group3" value="Same gender" class="same-gender">
+			        <label for="gender">Same gender HCP</label>
+			      </div>
+			      
+			      <div class="multiple-choice">
+			        <input id="security" type="checkbox" name="radio-group3" value="Security" class="security-req">
+			        <label for="security">Security required</label>
+			      </div>
+			      
+			     <div class="multiple-choice">
+			        <input id="doctor" type="checkbox" name="radio-group3" value="Doctor" class="doctor-req">
+			        <label for="doctor">Doctor required</label>
+			      </div> 
+			      
+			       <div class="multiple-choice" data-target="language-required">
+			        <input id="radio-2b" type="checkbox" name="radio-group3" value="Other" class="interpreter" data-target="language-required">
+			        <label for="radio-2b">Interpreter required</label>		        
+			      </div>
+			      <div class="js-hidden panel" id="language-required">
+			        	<label for="l-required" class="form-label">Language</label>
+			        	<input type="text" id="l-required" class="form-control form-control-3-4">
+							</div>
+							
+						<div class="multiple-choice">
+							<input id="audio" type="checkbox" name="radio-group3" value="audio" class="audio-req"/>
+							<label for="audio">Audio recording required</label>
+						</div>
+						
+						<div class="multiple-choice">
+							<input id="bsl" type="checkbox" name="radio-group3" value="bsl" class="bsl-req"/>
+							<label for="bsl">BSL interpreter required</label>
+						</div>
+
+						<div class="multiple-choice">
+							<input id="complexHCP" type="checkbox" name="radio-group3" value="complexHCP" class="complexHCP-req"/>
+							<label for="complexHCP">Complex HCP required</label>
+						</div>
+			
+			    </fieldset>
+		  </div>
+		  
+		  
+		  <div class="form-group mt20">
+		  	<a href="datepicker" class="button">View available dates</a>
+		  </div>
+		  
+		    	
+    	
+    	
+	
+    </fieldset>
+    
+    
+    </form>
+    
+    </div>
+    
+    
+    <div class="column-third">
+ 
+    <div class="evidence__box citizen">
+    <div class="evidence__label">From: ESA50</div>
+    <div class="evidence__content">
+      <p>Only available to attend appointments on Wednesday or Thursday between the hours of 1pm - 4pm.</p>
+  	  <p>Currently uses a wheelchair so will require an accessible entry point to the building. </p>
+  	  <p>Unavailable from 1st January 2018 to 2nd March 2018 due to a family holiday.</p>
+    </div>
+  </div>
+
+    
+    </div><!-- column -->    
+    
+    
+    
+   
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

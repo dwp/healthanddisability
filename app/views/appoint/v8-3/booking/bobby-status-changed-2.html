@@ -1,0 +1,165 @@
+{% extends path1+"/_layout.html" %}
+
+{% block left_content %}
+
+<p class="mt10 mb0 bold-small"><span class="circle red"></span>{{query.status}}</p>
+<h3 class="heading-medium mt20">Next available appointment</h3>
+<div class="available-slot">
+    <div class="column-half" style="padding: 0;">
+        <h4 class="heading-small">Thursday 4th January</h4>
+        <p>14:00pm</p>
+    </div>
+    <div class="column-half" style="padding: 0; text-align: right;">
+        <a href="../booked_appointments" class="button">Book</a>
+    </div>
+</div>
+                    <hr>
+{% endblock %}
+{% block left_content_secondary %}
+
+{% endblock %}
+
+{% block citizen_content %}
+ {# macro #}
+<div class="section-tabs js-tabs clearfix mb20">
+    <ul>
+      {% set navs = [
+        {label:"Details"},
+        {label:"Timeline"}
+        ] %}
+      {% for item in navs %}
+        <li {% if query.tab == item.label %} class="active"{% endif %}><a href="?tab={{item.label}}&status={{query.status}}">{{ item.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+
+{% if query.tab == "Timeline" %}
+<div class="container">
+
+<div class="timeline">
+        <span class="line"></span>
+
+        <div class="timeline__event">
+          <h3 class="timeline__heading">{{query.status}} at 3:30pm</h3>
+          <p class="timeline_datetime">04 February 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Appointment booked</h3>
+          <p class="timeline_datetime">{{appointments.booked}}</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Referred for appointment</h3>
+          <p class="timeline_datetime">{{appointments.referred}}</p>
+        </div>
+
+         <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">GP statement received (ESA113)</h3>
+          <p class="timeline_datetime">29 April 2018</p>
+        </div>
+        
+          <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Request for GP statement sent (ESA113)</h3>
+          <p class="timeline_datetime">19 April 2018</p>
+        </div>
+        
+          <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA50 form received at CHDA</h3>
+          <p class="timeline_datetime">4 April 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA50 form sent out to Tomas</h3>
+          <p class="timeline_datetime">12 March 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">FIT note (MED3) received </h3>
+          <p class="timeline_datetime">5 March 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Entitlement letter sent to Tomas</h3>
+          <p class="timeline_datetime">20 February 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA application completed on the phone</h3>
+          <p class="timeline_datetime">20 February 2018</p>
+        </div>
+
+        <div style="clear:both"></div>
+
+      </div><!-- timeline -->
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endif %}
+
+
+{% if query.tab == "Details" %}
+<div class="container">
+    <div class="grid-row mt30">
+        <div class="column-third">
+            <h3 class="heading-medium mt0">Contact details</h3>
+            <h4 class="heading-small">Phone</h4>
+            <p>0151 924 2080</p>
+            <h4 class="heading-small">Text</h4>
+            <p>07979 000000</p>
+            <h4 class="heading-small">Email</h4>
+            <p>the.victor.castillo@madeup.com</p>
+            <h4 class="heading-small">Postal address</h4>
+            <p class="address-stack">
+                <span>27 Redhill Lane</span>
+                <span>Ainsdale</span>
+                <span>London</span>
+                <span>Merseyside</span>
+                <span>PR8 9UE</span>
+            </p>
+        </div>
+        <!-- column -->
+        <div class="column-third">
+            <h1 class="heading-medium mt0">Appointment details</h1>
+          <p class="mt10 mb0 bold-small"><span class="circle red"></span>{{query.status if query.status else "Customer sent home unseen"}}</p>
+            
+            <h2 class="heading-small">Assessment Centre</h2>
+            <p>Tresco house</p>
+            <h2 class="heading-small">Date</h2>
+            <p>25 May 2018</p>
+            <h2 class="heading-small">Time</h2>
+            <p>
+                10:00
+            </p>
+            <h2 class="heading-small">Special Requirements</h2>
+            <ul class="list-bullet">
+            </ul>
+        </div>
+        <div class="column-third">
+
+            
+        </div>
+        <!-- column -->
+
+    <!-- row -->
+</div>
+
+{% endif %}
+{% endblock %}
+
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

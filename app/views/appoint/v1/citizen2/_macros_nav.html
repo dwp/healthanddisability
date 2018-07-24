@@ -1,0 +1,60 @@
+{% macro case_tabs(selected,num,path) %}
+  <div class="section-tabs js-tabs clearfix mb20">
+    <ul>
+      {% set navs = [
+        {url:"timeline",label:"Timeline"},
+        {url:"details",label:"Details"},
+        {url:"app/conditions",label:"Evidence"},
+        {url:"decision",label:"Decision"}
+        ] %}
+      {% for item in navs %}
+        <li {% if item.url == selected %} class="active"{% endif %}><a href="/{{ path }}/citizen2/{{ item.url }}">{{ item.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endmacro %}
+
+{% macro app_nav(active,path) %}
+  {% set navs = [
+    {url:"conditions",label:"Illness, disabilities and medication"}
+   ] %}
+  <ul class="nav">
+    {% for item in navs %}
+      <li {% if item.url == active %} class="active"{% endif %}><a href="/{{ path }}/citizen2/app/{{ item.url }}">{{ item.label }}</a> </li>
+    {% endfor %}
+  </ul>
+
+  <ul class="nav">
+    {% set navs = [
+       {url:"Mobility",label:"Moving around and using steps"}
+      ,{url:"standing",label:"Standing and sitting"}
+      ,{url:"speakwritetype",label:"Speaking, writing and typing "}
+      ,{url:"hearread",label:"Hearing and reading"}
+      ,{url:"gettingaround",label:"Getting around safely"}
+      ,{url:"eatdrink",label:"Eating and drinking"}
+      ] %}
+    {% for item in navs %}
+      <li {% if item.url == active %} class="active"{% endif %}><a href="/{{ path }}/citizen2/app/{{ item.url }}">{{ item.label }}</a> </li>
+    {% endfor %}
+  </ul>
+
+  <ul class="nav disabled">
+    {% set navs = [
+       {url:"reaching",label:"Reaching for things"}
+      ,{url:"pickingup",label:"Picking up and moving things"}
+      ,{url:"dexterity",label:"Using your hands"}
+      ,{url:"continence",label:"Going to the toilet"}
+      ,{url:"conscious",label:"Losing consciousness"}
+      ,{url:"learning",label:"Learning and remembering how to do things"}
+      ,{url:"hazards",label:"Being aware of risks and dangers"}
+      ,{url:"startfinish",label:"Planning and completing things"}
+      ,{url:"changes",label:"How you cope when things change"}
+      ,{url:"goingout",label:"Going out"}
+      ,{url:"social",label:"How you cope when things change"}
+      ,{url:"behaving",label:"How your behaviour affects other people"}
+      ] %}
+    {% for item in navs %}
+      <li {% if item.url == active %} class="active"{% endif %}><a href="/{{ path }}/citizen2/app/{{ item.url }}">{{ item.label }}</a> </li>
+    {% endfor %}
+  </ul>
+{% endmacro %}

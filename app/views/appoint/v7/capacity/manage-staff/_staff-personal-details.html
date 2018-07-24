@@ -1,0 +1,51 @@
+<div class="grid-row mt30">
+    <div class="column-two-thirds">
+        <div class="form-group">
+            <label class="form-label" for="first-name">First name(s)</label>
+            <input class="form-control" id="first-name" type="text" name="first-name" value="{{person.firstname}}">
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="last-name">Last name</label>
+            <input class="form-control" id="last-name" type="text" name="last-name" value="{{person.surname}}">
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="phone">Phone</label>
+            <input class="form-control" id="phone" type="text" name="phone" value="{{person.phone}}">
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="mobile">Mobile</label>
+            <input class="form-control" id="mobile" type="text" name="mobile" value="{{person.mobile}}">
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-control" id="email" type="email" name="email" value="{{person.email}}">
+        </div>
+        <div class="form-group">
+            <fieldset>
+                <legend>
+                    <span class="form-label">
+                    What is their gender?
+                  </span>
+                </legend>
+                <div class="multiple-choice">
+                    <input id="gender-female" type="radio" name="gender" value="female" {{ "checked" if person.gender == "female" }} >
+                    <label for="gender-female">Female</label>
+                </div>
+                <div class="multiple-choice">
+                    <input id="gender-male" type="radio" name="gender" value="male"  {{ "checked" if person.gender == "male" }}>
+                    <label for="gender-male">Male</label>
+                </div>
+                <div class="multiple-choice">
+                    <input id="gender-unspecified" type="radio" name="gender" value="unspecified" >
+                    <label for="wheelchair-unspecified">Unspecified</label>
+                </div>
+            </fieldset>
+        </div>
+        {% if person.id %}
+        <p><a href="/{{path2}}/edit-staff-skill?personId={{person.id}}" class="button">Next</a></p>
+        {% else %}
+        <p><a href="/{{path2}}/new-staff-skill" class="button">Next</a></p>
+        {% endif %}
+    </div>
+    <!-- column -->
+</div>

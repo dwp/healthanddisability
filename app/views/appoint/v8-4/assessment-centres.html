@@ -1,0 +1,71 @@
+{% extends path+"/_layout.html" %}
+
+
+
+{% block assess_content %}
+
+  <div class="nav-horizontal">
+  <div class="main-nav-wrapper">
+    <ul class="main-nav">
+
+    
+    
+    <li><a href="appointments">Appointments</a></li>
+        <li class="selected"><a href="assessment-centres">Manage my centre</a></li>
+
+    </ul>
+  </div>
+</div>
+
+<main id="content" role="main" class="main-content mt30">
+
+      <div class="container">
+      
+   <h1 class="heading-large">Assessment Centres</h1>
+   
+   
+ <!--  <div class="section-tabs clearfix">
+    <ul>
+
+        <li class="active"><a href="#">Referrals</a></li>
+      
+        <li><a href="booked_appointments">Scheduled</a></li>
+      
+    </ul>
+  </div> -->
+
+      
+      
+        <div class="grid-row">
+          <div class="column-full">
+          
+          
+              <table class="appointments-view">
+
+                <thead>
+                  <tr class="header-view">
+                    <th>Name</th>
+                    <th>Location</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for centreKey, centre in centres %}
+                <tr>
+                  <td><a href="capacity/manage-centre/{{centreKey}}/details">{{centre.name}}</a></td>
+                  <td>{{centre.location}}</td>
+                </tr>
+                {% endfor %}
+                </tbody>           
+              </table>
+          </div><!-- column -->
+          
+          
+          
+                
+          
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

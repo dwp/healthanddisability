@@ -1,0 +1,20 @@
+{% import path1+"/_macros_nav.html" as nav %}
+{% block citizen_content %}
+
+  <div class="container">
+
+    {{ nav.case_tabs("details",1,path1, customer._id) }}{# macro #}
+
+    <div class="grid-row">
+      <div class="column-third">
+        {% include path+"/booking/details/_nav.html" %}
+      </div><!-- column -->
+      <div class="column-two-thirds">
+          {% block case_content %}{% endblock %}
+      </div><!-- column-full -->
+    </div><!-- grid-row -->
+  </div><!-- container -->
+{% endblock %}
+
+
+

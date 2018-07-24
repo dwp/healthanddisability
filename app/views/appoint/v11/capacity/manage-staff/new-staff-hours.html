@@ -1,0 +1,23 @@
+
+{% extends path1+"/_manage-centre-layout.html" %} 
+
+
+{% block header %}
+
+
+{% endblock %}
+
+{% block manage_centre_nav %}
+{% endblock %}
+
+{% block citizen_content %}
+<div class="container">
+    <p><a href="/{{path2}}" class="link-back">Back</a></p>
+    <h3 class="heading-medium mt0">Add a new Healthcare Professional</h3>
+   
+    {% include path1+ "/manage-staff/_staff-hours.html" %}
+    <!-- row -->
+</div>
+
+<!-- container -->
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

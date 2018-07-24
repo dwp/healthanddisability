@@ -1,0 +1,17 @@
+{% import path + "/_descriptors.nunj"  as data %}
+
+<div class="given_descriptors">
+  <div href="#" class="tag">
+    {% set num = [2,3,4,5,6,7,8,9] | random %}
+    {{ num }} descriptors
+    <div class="descriptors">
+      <ul class="list list-bullet mb0">
+        {% set descriptors = data.descriptors | randArray %}
+        {% for i in range(0,num) %}
+          <li>{{ descriptors[i].label}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <a data-fancybox data-src="#descriptor_choice" href="javascript:;">change</a>
+</div>

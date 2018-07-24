@@ -1,0 +1,186 @@
+{% extends path1+"/_layout.html" %}
+
+{% block left_content %}
+ <p class="mt10 mb0 bold-small"><span class="circle purple"></span>Ready for assessment</p>
+
+ <div class="available-slot">
+          <h4 class="heading-small">Arrived at 1:55pm </h4>
+</div>
+
+<hr>
+{% endblock %}
+{% block left_content_secondary %}
+<ul>
+<li><a href="appointment-status-2">Change appointment status</a></li>
+</ul>
+{% endblock %}
+{% block citizen_content %}
+ {# macro #}
+<div class="section-tabs js-tabs clearfix mb20">
+    <ul>
+      {% set navs = [
+        {url:"details",label:"Details"},
+        {url:"bobby-status-changed",label:"Timeline"}
+        ] %}
+      {% for item in navs %}
+        <li {% if query.tab == item.label %} class="active"{% endif %}><a href="?tab={{item.label}}">{{ item.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+
+{% if query.tab == "Timeline" %}
+<div class="container">
+
+<div class="timeline">
+        <span class="line"></span>
+
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Customer arrived at 1:55pm</h3>
+          <p class="timeline_datetime">{{ 'Do MMMM YYYY' | randDaysAgo(0)}}</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Appointment booked</h3>
+          <p class="timeline_datetime">04 February 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Referred for appointment</h3>
+          <p class="timeline_datetime">30 January 2018</p>
+        </div>
+
+         <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">GP statement received (ESA113)</h3>
+          <p class="timeline_datetime">29 January 2018</p>
+        </div>
+        
+          <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Request for GP statement sent (ESA113)</h3>
+          <p class="timeline_datetime">19 January 2018</p>
+        </div>
+        
+          <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA50 form received at CHDA</h3>
+          <p class="timeline_datetime">4 January 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA50 form sent out to Tomas</h3>
+          <p class="timeline_datetime">12 December 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">FIT note (MED3) received </h3>
+          <p class="timeline_datetime">19 November 2017</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Entitlement letter sent to Tomas</h3>
+          <p class="timeline_datetime">5 November 2017</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA application completed on the phone</h3>
+          <p class="timeline_datetime">1 November 2017</p>
+        </div>
+
+        <div style="clear:both"></div>
+
+      </div><!-- timeline -->
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endif %}
+
+
+{% if query.tab == "Details" %}
+<div class="container">
+    <div class="grid-row mt30">
+        <div class="column-third">
+            <h3 class="heading-medium mt0">Contact details</h3>
+            <h4 class="heading-small">Phone</h4>
+            <p>0151 924 2080</p>
+            <h4 class="heading-small">Text</h4>
+            <p>07979 000000</p>
+            <h4 class="heading-small">Email</h4>
+            <p>the.victor.castillo@madeup.com</p>
+            <h4 class="heading-small">Postal address</h4>
+            <p class="address-stack">
+                <span>27 Redhill Lane</span>
+                <span>Ainsdale</span>
+                <span>London</span>
+                <span>Merseyside</span>
+                <span>PR8 9UE</span>
+            </p>
+        </div>
+        <!-- column -->
+        <div class="column-third">
+            <h1 class="heading-medium mt0">Appointment details</h1>
+            <p class="mt10 mb0 bold-small"><span class="circle green"></span>Customer arrived at 1:55pm</p>
+            <h2 class="heading-small">Assessment Centre</h2>
+            <p>Tresco House</p>
+            <h2 class="heading-small">Date</h2>
+            <p>25 May 2018</p>
+            <h2 class="heading-small">Time</h2>
+            <p>
+                10:00
+            </p>
+            <h2 class="heading-small">Special Requirements</h2>
+            <ul class="list-bullet">
+            </ul>
+        </div>
+        <div class="column-third">
+
+          <form action="bobby-status-changed-2">
+ <fieldset class="form-group">
+
+      <legend>
+        <h1 class="heading-medium mt0">Change appointment status</h1>
+      </legend>
+
+      <div class="multiple-choice">
+        <input id="status-1" type="radio" name="status" value="Customer sent home unseen">
+        <label for="status-1">Customer sent home unseen</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="status-2" type="radio" name="status" value="Failed to attend">
+        <label for="status-2">Failed to attend</label>
+      </div>
+</fieldset>
+<input type="hidden" name="tab" value="Details">
+    <button class="button">Save</button>
+
+</form>
+        </div>
+        <!-- column -->
+        <div class="column-third">
+
+        </div>
+        <!-- column -->
+    </div>
+    <!-- row -->
+</div>
+
+{% endif %}
+{% endblock %}
+
+{% block footer_top %}
+<ul>
+<li><a href="https://healthanddisability.herokuapp.com/assess/v10/victorcastillo/timeline" title="">Go to assessment</a></li>
+<li><a href="https://healthanddisability.herokuapp.com/assess/v10/" title="">Assessment case list</a></li>
+</ul>
+
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

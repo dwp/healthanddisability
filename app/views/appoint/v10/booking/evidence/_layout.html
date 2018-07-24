@@ -1,0 +1,91 @@
+{% extends path1+"/_layout.html" %}
+
+{% block citizen_content %}
+
+  <div class="container">
+
+    {{ nav.case_tabs("evidence",1,path1) }}{# macro #}
+
+    <div class="grid-row">
+      <div class="column-third">
+        {% block app_nav %}
+          <div class="evidence__leftnav">
+
+            <a href="facetoface" class="evidence__item mb10">
+              <h3 class="heading-small mt10 mb5">Medical assessment</h3>
+              <p class="font-xsmall mb5">{{ "Do MMMM YYYY" | daysAgo(4) }}</p>
+            </a>
+
+            <a href="com_psych_report" class="evidence__item mb10">
+              <h3 class="heading-small mt10 mb5">Community Psychiatric Nurse Report</h3>
+              <p class="font-xsmall mb5">{{ "Do MMMM YYYY" | daysAgo(7) }}</p>
+            </a>
+
+            <a href="gp_report" class="evidence__item mb10">
+              <h3 class="heading-small mt10 mb5">GP report (ESA113)</h3>
+              <p class="font-xsmall mb5">{{ "Do MMMM YYYY" | daysAgo(12) }}</p>
+            </a>
+
+            <a href="medical_record_data" class="evidence__item mb10">
+              <h3 class="heading-small mt10 mb5">Medical record data</h3>
+              <p class="font-xsmall mb5">{{ "Do MMMM YYYY" | daysAgo(15) }}</p>
+            </a>
+
+            <a href="statements" class="evidence__item mb10">
+              <h3 class="heading-small mt10 mb5">Citizen's statements (ESA50)</h3>
+              <p class="font-xsmall mb5">{{ "Do MMMM YYYY" | daysAgo(20) }}</p>
+            </a>
+
+            <a href="conditions" class="evidence__item mb10">
+              <h3 class="heading-small mt10 mb5">Illness, disabilities and medication</h3>
+              <p class="font-xsmall mb5">{{ "Do MMMM YYYY" | daysAgo(20) }}</p>
+            </a>
+
+            <div class="form-group">
+              <hr />
+              <button class="button">Add evidence</button>
+            </div>
+
+          </div>
+        {% endblock %}
+      </div><!-- column -->
+      <div class="column-two-thirds">
+          {% block case_content %}{% endblock %}
+      </div><!-- column-full -->
+    </div><!-- grid-row -->
+  </div><!-- container -->
+{% endblock %}
+
+{% block body_end %}
+  <div id="descriptor_choice" style="display:none; max-height:76%">
+    {% include path2+"/_addremove.html" %}
+  </div>
+  {{ super() }}
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.tag').on('click',function(e)
+    {
+      e.preventDefault();
+      $(this).toggleClass('clicked');
+    });
+
+    $('.tag').on('mouseleave',function(e)
+    {
+      e.preventDefault();
+      $(this).removeClass('clicked');
+    });
+
+    $.fancybox.defaults.beforeShow = function(){
+        $("html").css({'overflow-y':'hidden'});
+    };
+    $.fancybox.defaults.afterClose = function(){
+        $("html").css({'overflow-y':'visible'});
+    };
+  });
+</script>
+{% endblock %}

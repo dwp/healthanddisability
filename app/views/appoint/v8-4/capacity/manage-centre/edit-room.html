@@ -1,0 +1,29 @@
+
+
+{% extends path2+"/_addlayout.html" %} 
+
+{% block citizen_content %}
+
+
+
+{% for centre in centres %}
+
+  {% for room in centre.rooms %}
+
+    {% if room.index == query.room %}
+      <p><a href="/{{path2}}/?tab=rooms" class="link-back">Back</a></p>
+
+      <h2 class="heading-medium mt0">Edit {{room.name}} at {{centre.name}}</h2>
+
+      {% include path2+"/_room-form.html" %}
+    {% endif %}
+  {% endfor %}
+
+{% endfor %}
+    
+  
+{% endblock %} 
+{% block footer_top %} 
+{{ super() }} 
+{# {% include path1+"/footer_links.html" %} #} 
+{% endblock %}

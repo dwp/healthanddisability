@@ -1,0 +1,133 @@
+{% extends path+"/_layout.html" %}
+{% import path1+"/_macros_nav.html" as nav %}
+
+{% block assess_content %}
+
+  {#  This is the BIG BLUE BAR at the top - #jussayin #}
+  {% include path1+"/_add_heading.html" %}
+
+  <main id="content" role="main" class="main-content">
+
+    <div class="container">
+      <div class="grid-row">
+        <div class="column-full">
+
+          <div nunj-block="citizen_content">
+            {% block citizen_content %}{% endblock %}
+          </div>
+
+        </div><!-- column -->
+      </div><!-- row -->
+    </div><!-- container -->
+
+  </main>
+
+{% endblock %}
+
+
+
+{%
+set staff = [
+  {
+    "id": "5aa7dcc37b7c36968d762580",
+    "index": 0,
+    "guid": "533684dd-ec4c-4dca-9acb-ce295615d376",
+    "surname": "Dillon",
+    "firstname": "Salazar",
+    "name": "Salazar Dillon",
+    "gender": "male",
+    "type": "Doctor",
+    "href": "salazar",
+    "edithref": "?Salazar",
+    "skill": "Complex neuro",
+    "days": [
+        "Monday 9am - 5pm",
+        "Tuesday 9am - 5pm",
+        "Wednesday 9am - 5pm",
+        "Thursday 9am - 5pm",
+        "Friday 9am - 5pm"
+    ]
+  },
+  {
+    "id": "5aa7dcc3bd27113de52f81ce",
+    "index": 1,
+    "guid": "c3d4891b-05fb-4d22-906d-4bea4a151731",
+    "surname": "Hopper",
+    "firstname": "Mejia",
+    "name": "Mejia Hopper",
+    "gender": "male",
+    "type": "Nurse",
+    "skill": "Neuro",
+    "href": "?Mejia",
+    "edithref": "?Mejia",
+    "days": [
+        "Monday 9am - 5pm",
+        "Tuesday 9am - 5pm",
+        "Wednesday 9am - 5pm",
+        "Thursday 9am - 5pm",
+        "Friday 9am - 5pm"
+    ]
+  },
+  {
+    "id": "5aa7dcc372f876d8e62b11c0",
+    "index": 2,
+    "guid": "347dd142-5730-4572-8db9-90267fe6a0e1",
+    "surname": "Cortez",
+    "firstname": "Page",
+    "name": "Page Cortez",
+    "gender": "male",
+    "type": "Nurse",
+    "href": "?page",
+    "edithref": "?page",
+    "skill": "Standard",
+    "days": [
+        "Monday 9am - 5pm",
+        "Tuesday 9am - 5pm",
+        "Wednesday 9am - 5pm",
+        "Thursday 9am - 5pm",
+        "Friday 9am - 5pm"
+    ]
+  },
+  {
+    "id": "5aa7dcc37f573f62efae7262",
+    "index": 3,
+    "guid": "b381bbb0-afa3-451a-a16b-472c5a292502",
+    "surname": "Carter",
+    "firstname": "Cynthia",
+    "name": "Cynthia Carter",
+    "gender": "female",
+    "type": "Nurse",
+    "skill": "Standard",
+    "href": "cynthia",
+    "edithref": "cynthia",
+    "days": [
+        "Monday 9am - 5pm",
+        "Tuesday 9am - 5pm",
+        "Wednesday 9am - 5pm",
+        "Thursday 9am - 5pm",
+        "Friday 9am - 5pm"
+    ]
+  },
+  {
+    "id": "5aa7dcc38b1b8f87e0393c5e",
+    "index": 5,
+    "guid": "f3309b4f-8fbb-45c5-8427-684b7eb84f29",
+    "surname": "Woodward",
+    "firstname": "Hendrix",
+    "name": "Hendrix Woodward",
+    "gender": "male",
+    "type": "Nurse",
+    "skill": "Standard",
+    "href": "?hendrix",
+    "edithref": "hendrix",
+    "days": [
+        "Monday 9am - 5pm",
+        "Tuesday 9am - 5pm",
+        "Wednesday 9am - 5pm",
+        "Thursday 9am - 5pm",
+        "Friday 9am - 5pm"
+    ]
+  }
+]
+%}
+

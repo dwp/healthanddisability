@@ -1,0 +1,43 @@
+{% block head %}
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.1/jquery.fancybox.min.css" rel="stylesheet" />
+  <link href="/public/stylesheets/appoint_v10a.css" media="screen" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% extends path+"/_layout.html" %}
+
+
+{% block assess_content %}
+
+
+<!-- <div class="nav-horizontal">
+  <div class="main-nav-wrapper">
+    <ul class="main-nav">
+        <li><a href="{{root}}/appointments">Appointments</a></li>
+        <li><a href="{{root}}/assessment-centres">Manage my centre</a></li>
+        <li class="selected"><a href="{{root}}/authenticate">Find Customer</a></li>
+    </ul>
+  </div>
+</div> -->
+
+
+
+  <main id="content" role="main" class="main-content">
+  
+      {% block citizen_content %}{% endblock %}
+
+
+
+
+          
+
+        </div><!-- column -->
+      </div><!-- row -->
+    </div><!-- container -->
+
+  </main>
+
+{% endblock %}
+
+
+
+

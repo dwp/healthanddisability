@@ -1,0 +1,52 @@
+{% extends path1+"/_layout.html" %}
+
+{% block left_content %}
+ <p class="mt10 mb0 bold-small"><span class="circle purple"></span>Booked</p>
+<h4 class="heading-small">{{customer.appointmentDate | formatDate("dddd D MMMM YYYY")}}</h4>
+<p>{{customer.appointmentTime}}</p>
+
+ <hr>
+{% endblock %}
+
+
+{% block citizen_content %}
+
+<div class="container">
+        <h3 class="heading-medium mt20">Rearrange appointment</h3>
+
+    <form action="bobby_timeline_rebooked">
+
+        <fieldset class="form-group">
+            <legend class="form-label-bold">Choose an appointment time</legend>
+
+            {% for appointment in availableAppointments | sort(attribute='appointmentDate') | limit(query.number) %}
+            <div class="multiple-choice">
+                <input type="radio" name="appointment" id="available-appointments-{{loop.index}}" value="{{appointment.appointmentDate}}">
+                <label for="available-appointments-{{loop.index}}">{{appointment.appointmentDate | formatDate("dddd D MMMM YYYY h:mma")}}</label>
+            </div>
+
+            {% endfor %}
+           
+        </fieldset>
+
+        {% if newNumber < availableAppointments.length %}
+        <p><a href="timepicker?number={{newNumber}}" class="button-secondary">View more appointments</a></p>
+        {% else %}
+        <p>There are no more appointments available to view</p>
+        
+        {% endif %}
+        
+        <p><button type="submit" class="button">Next</button></p>
+
+<input type="hidden" name="tab" value="Details">
+        
+    </form>
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

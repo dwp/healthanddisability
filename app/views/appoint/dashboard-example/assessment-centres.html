@@ -1,0 +1,83 @@
+{% extends path+"/_layout.html" %}
+
+
+
+{% block assess_content %}
+
+  <div class="nav-horizontal">
+  <div class="main-nav-wrapper">
+    <ul class="main-nav">
+ 
+        <li><a href="appointments">Appointments</a></li>
+        <li class="selected"><a href="#">Assessment Centres</a></li> 
+        <li><a href="#">Health Care Professionals</a></li>
+
+    </ul>
+  </div>
+</div>
+
+<main id="content" role="main" class="main-content mt30">
+
+      <div class="container">
+      
+   <h1 class="heading-large">Assessment Centres</h1>
+   
+   
+ <!--  <div class="section-tabs clearfix">
+    <ul>
+
+        <li class="active"><a href="#">Referrals</a></li>
+      
+        <li><a href="booked_appointments">Scheduled</a></li>
+      
+    </ul>
+  </div> -->
+  
+  
+  <p style="text-align: right;"><a href="#" class="button">Create new Assessment Centre</a></p>
+  
+  
+      
+      
+        <div class="grid-row">
+          <div class="column-full">
+          
+          
+          
+              <table class="appointments-view">
+
+                <thead>
+                  <tr class="header-view">
+                    <th style="padding-left:15px;">Name</th>
+                    <th>Location</th>
+                    <th class="numeric"><span class="visually-hidden">Actions</span></th>
+                  </tr>
+                </thead>
+
+
+                <tr>
+                  <td style="padding-left:15px;"><a href="booking/fiveways">Five Ways House</a></td>
+                  <td>Birmingham, B1 1UH</td>
+                  <td class="numeric"><a href="#" class="secondary">Edit</a><a href="#" class="secondary">Remove</a></td>
+                </tr>
+                
+                <tr>
+                  <td style="padding-left:15px;"><a href="#">Tresco House</a></td>
+                  <td>London, SW1 5EB</td>
+                  <td class="numeric"><a href="#" class="secondary">Edit</a><a href="#" class="secondary">Remove</a></td>
+                </tr>
+
+                               
+              </table>
+          </div><!-- column -->
+          
+          
+          
+                
+          
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

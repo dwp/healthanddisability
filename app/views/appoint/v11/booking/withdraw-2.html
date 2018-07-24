@@ -1,0 +1,111 @@
+{% extends path1+"/_layout.html" %}
+
+{% block left_content %}
+ <p class="mt10 mb0 bold-small"><span class="circle purple"></span>
+ {% if query.withdrawalReason == "work" %}
+  Claim withdrawn on {{ 'D MMMM YYYY' | randDaysAgo(0)}}
+  {% elseif query.withdrawalReason == "ex-parrot" %}
+  Awaiting Death certificate
+  {% endif %}
+</p>
+{% if query.withdrawalReason == "ex-parrot" %}
+<h4 class="heading-small">On hold since {{ 'D MMMM YYYY' | randDaysAgo(0)}}</h4>
+{% elseif query.withdrawalReason == "work" %}
+  <p>Customer has returned to work</p>
+  {% endif %}
+ 
+ <hr>
+{% endblock %}
+
+
+
+{% block left_nav_links %}{% endblock %}
+
+
+{% block citizen_content %}
+ {# macro #}
+  {{ nav2.case_tabs("bobby_timeline",1,path1) }}
+
+<div class="container">
+
+<div class="timeline">
+        <span class="line"></span>
+        <div class="timeline__event">
+          {% if query.withdrawalReason == "work" %}
+            <h3 class="timeline__heading">Claim withdrawn</h3>
+            <p>Customer has returned to work</p>
+            {% elseif query.withdrawalReason == "ex-parrot" %}
+            <h3 class="timeline__heading">Claim On hold (customer deceased)</h3>
+            {% endif %}
+        
+          <p class="timeline_datetime">{{ 'D MMMM YYYY' | randDaysAgo(0)}}</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Appointment booked</h3>
+          <p class="timeline_datetime">04 February 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Referred for appointment</h3>
+          <p class="timeline_datetime">30 January 2018</p>
+        </div>
+
+         <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">GP statement received (ESA113)</h3>
+          <p class="timeline_datetime">29 January 2018</p>
+        </div>
+        
+          <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Request for GP statement sent (ESA113)</h3>
+          <p class="timeline_datetime">19 January 2018</p>
+        </div>
+        
+          <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA50 form received at CHDA</h3>
+          <p class="timeline_datetime">4 January 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA50 form sent out to Tomas</h3>
+          <p class="timeline_datetime">12 December 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">FIT note (MED3) received </h3>
+          <p class="timeline_datetime">19 November 2017</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Entitlement letter sent to Tomas</h3>
+          <p class="timeline_datetime">5 November 2017</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA application completed on the phone</h3>
+          <p class="timeline_datetime">1 November 2017</p>
+        </div>
+
+        <div style="clear:both"></div>
+
+      </div><!-- timeline -->
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}
+_

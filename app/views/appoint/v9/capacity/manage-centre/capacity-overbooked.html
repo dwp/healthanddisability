@@ -1,0 +1,174 @@
+
+
+{% extends path1+"/_manage-centre-layout.html" %} 
+
+
+{% block citizen_content %}
+
+
+ <div class="container">
+ 	<div class="grid-row">
+ 		<div class="column-half">
+	 		<table class="calendar-picker mt0">
+	        <caption>April 2018</caption>
+	        <thead>
+	            <tr>
+	                <th>MON</th>
+	                <th>TUE</th>
+	                <th>WED</th>
+	                <th>THU</th>
+	                <th>FRI</th>
+	                <th>SAT</th>
+	                <th>SUN</th>
+	            </tr>
+	        </thead>
+	        <tbody>
+	            <tr>
+	                <td class="calendar-picker__day calendar-picker__day--closed">26</td>
+	                <td class="calendar-picker__day calendar-picker__day--closed">27</td>
+	                <td class="calendar-picker__day calendar-picker__day--closed">28</td>
+	                <td class="calendar-picker__day calendar-picker__day--closed">29</td>
+	                <td class="calendar-picker__day calendar-picker__day--closed">30</td>
+	                <td class="calendar-picker__day calendar-picker__day--closed">31</td>
+	                <td class="calendar-picker__day calendar-picker__day--closed">1</td>
+	            </tr>
+	            <tr>
+	                <td class="calendar-picker__day calendar-picker__day--closed">2</td>
+	                <td class="calendar-picker__day calendar-picker__day--closed">3</td>
+	                <td class="calendar-picker__day calendar-picker__day--today calendar-picker__day--full"><a class="calendar-picker__link" href="#">4</a> <span class="visually-hidden">Today</span></td>
+	                <td class="calendar-picker__day calendar-picker__day--full"><a class="calendar-picker__link" href="#">5</a></td>
+	                <td class="calendar-picker__day calendar-picker__day--full"><a class="calendar-picker__link" href="#">6</a></td>
+	                <td class="calendar-picker__day calendar-picker__day--closed">7</td>
+	                <td class="calendar-picker__day calendar-picker__day--closed">8</td>
+	            </tr>
+	            <tr>
+	                <td class="calendar-picker__day calendar-picker__day--full"><a class="calendar-picker__link" href="#">9</a></td>
+	                <td class="calendar-picker__day"><a class="calendar-picker__link" href="#">10</a></td>
+	                <td class="calendar-picker__day calendar-picker__day--full"><a class="calendar-picker__link" href="#">11</a></td>
+	                <td class="calendar-picker__day calendar-picker__day--full"><a class="calendar-picker__link" href="#">12</a></td>
+	                <td class="calendar-picker__day"><a class="calendar-picker__link" href="#">13</a></td>
+	                <td class="calendar-picker__day calendar-picker__day--closed">14</td>
+	                <td class="calendar-picker__day calendar-picker__day--closed">15</td>
+	            </tr>
+	            <tr>
+	                <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.day == 'monday' }}"><a class="calendar-picker__link" href="?day=monday">16</a></td>
+	                <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.day == 'tuesday' }}"><a class="calendar-picker__link" href="?day=tuesday">17</a></td>
+	                <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.day == 'wednesday' }}"><a class="calendar-picker__link" href="?day=wednesday">18</a></td>
+	                <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.day == 'thursday' }}"><a class="calendar-picker__link" href="?day=thursday">19</a></td>
+	                <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.day == 'friday' }}"><a class="calendar-picker__link" href="?day=friday">20</a></td>
+	                
+	                <td class="calendar-picker__day calendar-picker__day--closed">21</td>
+	                <td class="calendar-picker__day calendar-picker__day--closed">22</td>
+	            </tr>
+	            <tr>
+	                <td class="calendar-picker__day"><a class="calendar-picker__link" href="#">23</a></td>
+	                <td class="calendar-picker__day"><a class="calendar-picker__link" href="#">24</a></td>
+	                <td class="calendar-picker__day"><a class="calendar-picker__link" href="#">25</a></td>
+	                <td class="calendar-picker__day"><a class="calendar-picker__link" href="#">26</a></td>
+	                <td class="calendar-picker__day"><a class="calendar-picker__link" href="#">27</a></td>
+	                <td class="calendar-picker__day calendar-picker__day--closed">28</td>
+	                <td class="calendar-picker__day calendar-picker__day--closed">29</td>
+	            </tr>
+	            <tr>
+	                <td class="calendar-picker__day"><a class="calendar-picker__link" href="#">30</a></td>
+	                <td class="calendar-picker__day"><a class="calendar-picker__link" href="#">1</a></td>
+	                <td class="calendar-picker__day"><a class="calendar-picker__link" href="#">2</a></td>
+	                <td class="calendar-picker__day"><a class="calendar-picker__link" href="#">3</a></td>
+	                <td class="calendar-picker__day"><a class="calendar-picker__link" href="#">4</a></td>
+	                <td class="calendar-picker__day calendar-picker__day--closed">5</td>
+	                <td class="calendar-picker__day calendar-picker__day--closed">6</td>
+	            </tr>
+	        </tbody>
+	    </table>
+ 		</div>
+ 		<div class="column-half">
+ 			<h4 class="heading-small mt0">Monday 16 April</h4>
+ 			<div class="grid-row">
+		        <div class="data column-one-quarter">
+				  <span class="data-item bold-xxlarge">{{ totalAvailableAppointments }}</span>
+				  <span class="data-item bold-xsmall">Avaialble Appointments</span>
+				</div>
+				<div class="data column-one-quarter">
+				  <span class="data-item bold-xxlarge"> {{totalAppointments}} </span>
+				  <span class="data-item bold-xsmall">Booked appointments</span>
+				</div>
+				<div class="data column-one-quarter">
+				  <span class="data-item bold-xxlarge">{{ (totalAppointments / (staffTotals.available * slots.length) * 100) | round }}%</span>
+				  <span class="data-item bold-xsmall">Used capacity</span>
+				</div>
+				<div class="data column-one-quarter">
+				  <span class="data-item bold-xxlarge">{{ staffTotals.available }}</span>
+				  <span class="data-item bold-xsmall">Available Staff</span>
+				</div>
+			</div>
+		    <div class="grey-list">
+		        
+	    		<h3 class="heading-medium mt0">Appointment slots</h3>
+		        <ul class="time-slots time-slots-available">
+		            {% for slot in slots %}
+		            <li class="time-slot__list
+				            {% if staffTotals.available - slot.usedSlots < 1  %}
+				                time-slot__list--full
+				            {% else %}
+				                time-slot__list--available
+				            {% endif %}
+				            ">
+		                <h4 class="time-slot__heading">{{ slot.time }}</h4>
+		                <h4 class="time-slot__heading">
+		                	{% if staffTotals.available - slot.usedSlots < 0 %}
+		                	Overbooked
+				            
+				            {% endif %}</h4>
+		                <span>{{ staffTotals.available }} total slots</span>
+		            </li>
+		            {% endfor %}
+		            </li>
+		        </ul>
+		    </div>
+
+		    <h2 class="heading-medium">Today's staff</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Skill</th>
+						<th>Available times</th>
+						<th class="numeric">Assigned to</th>
+						</tr>
+				</thead>
+				<tbody>
+					{% for person in staff %}
+						{% if person.days[query.day].available %}
+						<tr>
+							<td><a href="/{{path1}}/manage-staff/staff-profile/?personId={{ person.id }}&tab=leave">{{person.name}}</a></td>
+							<td>{{person.skill}}</td>
+							<td>{{person.days[query.day].start}} - {{person.days[query.day].end}}</td>
+							<td class="numeric">
+			                    {% if person.days[query.day].scrutiny and person.scrutinyPaperwork %}
+			                        <span class="marker marker--scrutiny">Scrutiny filework</span>
+			                    {% else %}
+			                        <span class="marker marker--appointments">Appointments</span>
+			                    {% endif %}
+			                </td>
+						</tr>
+						{% endif %}
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+
+
+	</div>
+	<div class="grid-row">
+		<div class="column-half">
+
+		</div>
+	</div>
+</div>
+    
+  
+{% endblock %} 
+{% block footer_top %} 
+{{ super() }} 
+{# {% include path1+"/footer_links.html" %} #} 
+{% endblock %}
