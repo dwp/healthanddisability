@@ -1,0 +1,33 @@
+<section class="grid-row">
+    <div class="column-full">
+        
+    </div>
+    <div class="column-one-third">
+        <h3 class="heading-medium mt30">Contact details</h3>
+        <dl>
+            <dt class="heading-small">Phone</dt>
+            <dd>{{centre.phone}}</dd>
+            <dt class="heading-small">Email</dt>
+            <dd>{{centre.email}}</dd>
+            <dt class="heading-small">Address</dt>
+            <dd>{{ centre.address | safe }}</dd>
+        </dl>
+    </div>
+    <div class="column-one-third">
+        <h3 class="heading-medium mt30">Opening Times</h3>
+        <dl>
+            {% for day in centre.openingTimes %}
+            <dt class="heading-small">{{ day.day }}</dt>
+            <dd>{{ day.open }}</dd>
+            {% endfor %}
+        </dl>
+    </div>
+    <div class="column-one-third">
+        <h3 class="heading-medium mt30">Facilities</h3>
+        <ul class="list-bullet">
+            {% for text in centre.details %}
+            <li>{{text}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>  

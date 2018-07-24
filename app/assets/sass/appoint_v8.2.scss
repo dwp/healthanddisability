@@ -1,0 +1,1000 @@
+// Path to assets for use with the file-url function
+// in the govuk frontend toolkit's url-helpers partial
+$path: "/public/images/";
+
+// Import GOV.UK elements from /govuk-modules/, this will import the frontend toolkit and some base styles.
+// Take a look in /govuk-modules/_govuk-elements.scss to see which files are imported.
+@import 'govuk-elements';
+$site-width: 1920px;
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+@import "admin";
+@import "inc/timeline";
+@import "inc/small-checkboxes";
+@import "inc/margins";
+@import "inc/toggler";
+@import "inc/form-select";
+@import "inc/back-link";
+@import "inc/file-upload";
+@import "inc/timeline";
+@import "inc/tabs";
+@import "inc/clearfix";
+@import "inc/attachment";
+@import "inc/click-row";
+@import "inc/help_handle";
+@import "inc/evidence";
+@import "inc/nav";
+@import "inc/alt-buttons";
+@import "inc/grey-list";
+@import "inc/left-nav";
+@import "inc/calendar";
+
+
+
+
+#global-header.with-proposition .header-wrapper .header-global {
+  width: 17%;
+}
+
+#global-header.with-proposition .header-wrapper .header-proposition {
+  width: 48%;
+}
+
+.nobr { white-space: nowrap; }
+
+td,th {
+  &.first {
+    padding-left:10px;
+  }
+}
+
+/*  Override timeline stuff */
+.timeline .timeline-event {
+  &:first-of-type .heading-small {
+    position:relative;
+    top:-6px;
+    font-size:36px;
+    margin-bottom:0
+  }
+}
+
+.staff__heading {
+  background-color: #005ea5;
+  padding: 20px 40px 0;
+  color: white;
+}
+
+.staff__centred {
+	max-width: $site-width;
+	margin: 0 auto;
+}
+
+.list .date {
+  // font-size:16px;
+  color:$grey-1;
+}
+
+.meds {
+  td {
+    vertical-align: top;
+    border:none;
+  }
+}
+
+.quote {
+  padding:10px 10px;
+  text-indent:-0.4em;
+}
+
+
+.form-control:focus { &::placeholder { color:white; }
+}
+
+.loading {
+  position:relative;
+  color:$govuk-blue;
+  font-weight:700;
+  img {
+
+  }
+}
+
+.tag {
+  display:inline-block;
+  text-transform: lowercase;
+  cursor: pointer;
+  position:relative;
+  background-color:$black;
+  color:white;
+  text-decoration: none;
+  padding:7px 10px 5px;
+  border-radius:5px;
+  margin-right:0.5em;
+  .descriptors {
+    display:none;
+    position:absolute;
+    padding:10px 30px 10px 20px;
+    left:100%; top:50%; transform:translate(0,-50%);
+    background-color:$black;
+  }
+  &.clicked {
+    border-radius:5px 0px 0px 5px;
+    .descriptors {
+      display:block;
+    }
+  }
+  li { white-space: nowrap; }
+}
+
+
+.given_descriptors {
+  margin-bottom:30px;
+  padding-bottom:30px;
+  border-bottom: 1px solid $grey-3;
+}
+
+
+
+/**** Booking ****/
+
+.app-info {
+	padding: 1em;
+	background: $grey-3;
+	border-bottom: 2px solid $grey-2;
+	margin-bottom: 10px;
+	h3 {
+		margin: 0;
+		padding: 0;
+	}
+	p {
+		margin: .5em 0 0 0;
+	}
+	ul {
+		margin: 1em 0 1.5em 0;
+		li {
+			margin-top: .3em;
+			span {
+				display: inline-block;
+				padding: 3px 8px;
+				background: #000;
+				border-radius: 5px;
+				color: #fff;
+				font-weight: 700;
+				font-size: 16px;
+			}
+		}
+	}
+}
+
+.calendar-book {
+	table {
+		background: #fff;
+		
+		caption {
+			background: #000;
+			padding: 1em 0 .8em 0;
+			font-weight: 700;
+			position: relative;
+			color: #fff;
+			&:before {
+				content: "\2039";
+				width: 40px;
+				height: 40px;
+				position: absolute;
+				top: 10px; 
+				left: 14px;
+				font-size: 30px;
+				color: #fff;
+			}
+			&:after {
+				content: "\203A";
+				width: 40px;
+				height: 40px;
+				position: absolute;
+				top: 10px; 
+				right: 14px;
+				font-size: 30px;
+				color: #fff;
+			}
+		}
+		th {
+			padding: .8em 0;
+		}
+
+		th, td {
+			text-align: center;
+			width: calc(100% / 7);
+		}
+		td {
+			background: $grey-3;
+			border-left: 1px solid #bfc1c3;
+			border-right: 1px solid #bfc1c3;
+			padding: 1em 0;
+			color: $grey-1;
+			&.available {
+				padding: 0;
+				a {
+					display: block;
+					padding: 1em 0;
+					background: #fff;
+					color: #000;
+					text-decoration: none;
+					font-weight: 700;
+					&:hover {
+						background: $govuk-blue;
+						color: #fff;
+					}
+					&.selected {
+						background: $govuk-blue;
+						color: #fff;
+					}
+				}
+			}
+
+		}
+	}
+}
+
+
+.available--full {
+	position: relative;
+
+	&:after {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		content: "";
+		display: block;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 0 15px 15px;
+		border-color: transparent transparent $red transparent;
+
+	}
+}
+
+.key {
+	margin-top: 25px;
+	li {
+		margin-right: 15px;
+		display: inline-block;
+		font-size: 17px;
+		span {
+			display: inline-block; 
+			text-indent: -9999px;
+			border: 1px solid #bfc1c3;
+			width: 30px;
+			height: 30px;
+			margin-right: 10px;
+			background: #eee; 
+			position: relative;
+			top: -5px;
+			&.available {
+				background: #fff;
+			}
+		}
+	}
+}
+
+.mt40 {
+	margin-top: 40px;
+}
+
+
+.time-select {
+	background: $grey-3;
+	padding: 1em;
+	h4 {
+		margin-top: 0;
+	}
+	li {
+		float: left;
+		width: 30%;
+		margin-left: 4%;
+		margin-top: .5em;
+		&:first-child {
+			margin-left: 0;
+		}
+		a {
+			display: block;
+			background: #fff;
+			padding: .5em;
+			font-weight: 700;
+			text-decoration: none;
+			color: #000;
+			border: solid #fff 5px;
+			text-align: center;
+			span {
+				display: block;
+				font-weight: 300;
+			}
+			&:hover {
+				border: solid $govuk-blue 5px;
+			}
+			&.selected {
+				border: solid $govuk-blue 5px;
+				background: $govuk-blue;
+				color: #fff;
+			}
+			&.unavailable {
+				border: solid $grey-2 5px;
+				background: $grey-2;
+				color: #000;
+				&:hover {
+					border: solid $govuk-blue 5px;
+				}
+				span {
+					display: block;
+					font-size: 16px;
+					margin-left: 0;
+				}
+			}
+		}
+		&.add-slot {
+			a {
+				position: relative;
+				background: $grey-1;
+				span {
+					text-indent: -9999px;
+					display: none;
+				}
+				&:before {
+					content: "\002b";
+					color: #fff;
+					font-weight: 100;
+					font-size: 40px;
+				}
+			}
+		}
+	}
+}
+
+.time-slots-available {
+	li {
+		float: none;
+		width: auto;
+		margin-left: 0;
+		margin-top: .5em;
+		ol {
+			li {
+				font-weight: 300;
+				font-size: 16px;
+				margin: 0;
+				padding: .1em 0;
+			}
+		}
+		.updated {
+			background: #fff;
+			display: inline-block;
+			text-transform: uppercase;
+			padding: 4px 8px 2px 8px; 
+			border: 1px solid $green;
+			font-weight: 700;
+			font-size: 16px;
+			position: relative;
+			top: -1px;
+			color: #fff;
+			border-color: $green;
+			background: $green;
+		}
+	}
+}
+
+.time-slot{
+
+	padding: 1rem;
+	background: $grey-3;
+	margin-right: 1rem;
+
+	&__heading{
+		font-weight: 700;
+	}
+
+
+
+	&__list {
+		background: white;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		padding: 0;
+
+		&--link {
+			padding: 0;
+		}
+		
+
+		&--full {
+			border-left:5px solid $red;
+		}
+
+		&--available {
+			border-left: 5px solid $green;
+		}
+
+		&--overbooked {
+			border-left: 5px solid $orange;
+		}
+
+		&--selected {
+			background: $govuk-blue;
+			color: white;
+
+			a:link {
+				color: white; 
+			}
+
+			a:visited {
+				color: white;
+			}
+		}
+
+		span, h4 {
+			flex-grow: 1;
+			flex-basis: 0;
+			padding: 5px;
+		}
+
+		span:last-child {
+			text-align: right;
+		}
+	}
+
+	&__link {
+		width: 100%;
+		text-decoration: none;
+		display: flex;
+		justify-content: space-between;
+		padding: 5px;
+
+		&:hover {
+			outline: 5px solid $govuk-blue;
+		}
+	}
+}
+
+.address-stack {
+	span {
+		display: block;
+	}
+}
+
+.visits {
+	li {
+		margin-top: 10px;
+	}
+	span {
+		display: block;
+		padding-bottom: 5px;
+		margin-bottom: 5px;
+	}
+}
+
+.secondary {
+  margin-right: 10px;
+  background-color: #dee0e2;
+  display: inline-block;
+  padding: .526315em .789473em .263157em;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -webkit-box-shadow: 0 2px 0 #c3c7ca;
+  -moz-box-shadow: 0 2px 0 #c3c7ca;
+  box-shadow: 0 2px 0 #c3c7ca;
+  font-size: 1em;
+  line-height: 1.25;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+  color: #0b0c0c;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  vertical-align: top;
+}	
+
+.booked_dates_1 {
+	tr {
+		&:hover {
+			background: #eee;
+		}
+	}
+}
+
+span.status {
+	background: #fff;
+	display: inline-block;
+	padding: 4px 8px 2px 8px; 
+	border: 1px solid $govuk-blue;
+	color: $govuk-blue;
+	font-weight: 700;
+	font-size: 15px;
+	position: relative;
+	top: -1px;
+	&.red {
+		color: #fff;
+		background: $mellow-red;
+		border-color: $mellow-red;
+	}
+	&.orange {
+		color: #fff;
+		background: $orange;
+		border-color: $orange;
+	}
+	&.green {
+		color: #fff;
+		background: $green;
+		border-color: $green;
+	}
+	&.grey {
+		color: #fff;
+		border-color: $grey-1;
+		background: $grey-1;
+	}
+	&.purple {
+		color: #fff;
+		border-color: #912b88;
+		background: #912b88;
+	}
+}
+
+
+
+.filter {
+	display: none;
+}
+
+
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7); 
+	z-index: 9999;
+	.inner-modal {
+		max-width: 440px;
+		margin: 10% auto 0 auto;
+		background: #fff;
+		padding: 40px 40px 20px 40px;
+		h3 {
+			margin: 0;
+			padding: 0;
+		}
+	}
+}
+
+.info-display {
+		display: inline-block;
+		padding: 5px 10px 4px 10px;
+		background: #000;
+		border-radius: 5px;
+		color: #fff;
+		font-weight: 700;
+		font-size: 16px;
+		margin-top: .5em;
+	}
+	
+	
+	.filter-list {
+		margin: 1em 0 1.5em 0;
+		li {
+			margin-top: .3em;
+			span {
+				display: inline-block;
+				padding: 5px 10px 4px 10px;
+				background: #000;
+				border-radius: 5px;
+				color: #fff;
+				font-weight: 700;
+				font-size: 16px;
+			}
+		}
+	}
+
+
+.info-panel {
+	background: $grey-3;
+	padding: 1em;
+	margin-bottom: .6em;
+	border-bottom: 1px solid $grey-3;
+	#no-filter {
+		margin-top: .6em;
+	}
+}
+
+.timeline {
+	margin-top: .8em;
+}
+
+.evidence__content {
+	background-color: $grey-4!important;
+	padding: 1em!important;
+}
+
+.evidence__label {
+	background-color: #000!important;
+	padding: .6em 1em .4em 1em!important;
+}
+
+.click_row {
+	zoom: 1;
+}
+
+.appt-time {
+	margin-bottom: .4em;
+}
+
+
+
+.appointments-view {
+	tr {
+		background: #fff;
+		&:hover {
+			background: $grey-4;
+		}
+		&.header-view {
+			background: #fff;
+			&:hover {
+				background: #fff;
+			}
+		}
+		&.new {
+			background: $grey-4;
+		}
+		.button, .secondary {
+			top: -2px;
+			position: relative;
+		}
+		&.done {
+		background-color: $grey-4;
+			td {
+				padding: 22px 0px;
+position: relative;
+border-left: 6px solid #28a197;
+padding-left: 20px;
+font-size: 18px;
+a {
+	position: absolute;
+	top:  22px;
+	right: 34px;
+	color: #005ea5;
+}
+			}
+		}
+	}
+	
+	td, th {
+		vertical-align: top;
+		font-size: 18px;
+	
+	}
+	
+	.customer-detail {
+		b {
+			font-weight: 700;
+			color: $red;
+			font-size: 16px;
+			padding-left: 3px;
+		}
+		// b { font-weight: 700; color: #fff; font-size: 14px; padding: 4px 6px 2px 6px; display: inline-block; background: $red; border-radius: 2px; margin: 0 0 0 4px; }
+		
+		span {
+			display: block;
+			font-size: 17px;
+			color: $grey-1;
+			padding-top: 3px;
+		}
+		a {
+			color: #005ea5;
+			font-weight: 700;
+		}
+	}
+	.date {
+		font-weight: 700;
+	}
+	.req {
+
+		font-weight: 700;
+	}
+	.status {
+		span {
+		display: inline-block;
+		background: $orange;
+		color: #fff;
+		font-size: 14px;
+		font-weight: 700;
+		padding: 4px 6px 2px 6px;
+		border-radius: 2px;
+		margin-top: -2px;
+		position: relative;
+		margin-bottom: 6px;
+		&.purple {
+			background: $fuschia;
+			
+		}
+		&.grey {
+			background: $grey-1;
+			
+		}
+		}
+		b {
+			display: block;
+			font-weight: 700;
+			font-size: 14px;
+			
+		}
+		p {
+			font-size: 17px;
+			color: $grey-1;
+			padding: 5px 0px 0px 0px;
+			margin: 0;
+		}
+	}
+}
+
+
+.time-slots {
+	li {
+		a {
+			text-align: left;
+			span {
+				display: inline-block;
+				font-weight: 300;
+				margin-left: 10px;
+			}
+		}
+	}
+}
+
+.mb0 {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+
+.hours {
+	label {
+		position: absolute;
+		left: -9999px;
+	}
+	input {
+		float: left;
+		width: 30%;
+	}
+	p {
+		margin: 0 10px;
+		float: left;
+		width: auto;
+		padding-top: 10px;
+		font-size: 17px;
+	}
+	
+}
+
+
+
+
+.dashboard-col {
+		margin: 20px 0;
+
+		h2 {
+			margin: 0;
+
+		}
+		p {
+			margin: 14px 0;
+			font-size: 86px;
+			font-weight: 600;
+			line-height: 1em;
+
+		}
+	
+}
+
+ 
+ .table-filter-list {
+ padding: 30px 0 20px 15px;
+ position: relative;
+
+	 li {
+		 display: inline;
+		 margin-right: 14px;
+		 color: $grey-1;
+		 font-size: 18px;
+		 &.active {
+			 font-weight: 700;
+			 color: #000;
+		 }
+		 a {
+			 color: #005ea5;
+		 }
+	 }
+
+ }
+
+.filter-search {
+	float: right;
+	padding-right: 15px;
+	margin-top: -35px;
+	input {
+		width: 320px;
+	}
+}
+
+
+.available-slot {
+	position: relative;
+	overflow:hidden;
+	a {
+		margin-top: 1em;
+	}
+}
+
+
+.case-status {
+	
+	h4 {
+		color: $grey-1;
+		border-top: 10px solid $grey-1;
+		padding-top: 14px;
+		margin: 8px 0 0 0;
+		font-weight: bold;
+	}
+	li {
+		margin-top: 5px;
+		a {
+			color: #005ea5;
+		}
+	}
+}	
+
+.circle {
+  border-radius:50%;
+  width:1em;height:1em;
+  background-color:$black;
+  display:inline-block;
+  margin-right:1em;
+  &.red { background-color:$mellow-red}
+  &.blue { background-color:$light-blue}
+  &.teal { background-color:$turquoise}
+  &.purple { background-color:$fuschia}
+  &.orange { background-color:$orange}
+}
+
+.time-input {
+	width: 5em;
+}
+
+
+.hidden {
+	display: none;
+}
+
+.marker {
+	color: white;
+	font-weight: bold;
+	font-size: 1.5rem;
+	padding: 5px;
+	border-radius: 2px;
+	&--appointments {
+		background-color: $turquoise;
+	}
+
+	&--scrutiny {
+		background-color: $pink;
+	}
+
+	&--new {
+		background-color: $grass-green;
+	}
+
+	&--inline {
+		padding: 0 0.5em;
+		margin: 0 0.5em 0 0;
+	}
+}
+
+a:visited {
+	color: $govuk-blue;
+}
+
+.column-three-quarters {
+	@include grid-column( 3/4 );
+
+}
+
+.capitalise {
+	text-transform: capitalize;
+}
+
+
+.top-nav {
+	a {
+		margin-right: 1em;
+	}
+}
+
+.link-back--noicon {
+	&.link-back {
+		padding-left: 0;
+	}
+	&:before {
+		display: none;
+	}
+}
+
+
+
+.button-secondary  {
+  @include button ($grey-3);
+  @include box-sizing (border-box);
+  vertical-align: top;
+
+  @include media (mobile) {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+  .left-panel {
+	  padding: 16px 24px 0 36px;
+  }
+  
+  .main-content {
+	  padding-top: 20px;
+  }
+  
+  .main-content-inner {
+	  padding-left: 0;
+	  margin-left: 0;
+	  padding-bottom: 0!important;
+	  margin-bottom: 0!important;
+	  overflow: hidden;
+  }
+
+  .main-area {
+	  margin-top: 0;
+	  padding-top: 20px!important;
+	  padding-bottom: 100px!important;
+	  background: #fff;
+  }
+
+
+.column-three-quarters {
+	width: 75%;
+	float: left;
+	padding: 0 15px;
+	position: relative;
+	&:after {
+		position: absolute;
+		content: "/";
+		height: 3500px;
+		width: 25px;
+		background: #fff;
+		top: 0;
+		right: -25px;
+		color: #fff;
+	}
+}
+
+
+.main-row {
+	background: $grey-3;
+
+}
+
+.time-list {
+	display: flex;
+	justify-content: start;
+
+	&__day{
+		flex: 0 0 120px;
+	}
+}

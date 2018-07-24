@@ -1,0 +1,41 @@
+{% extends path1+"/_manage-centre-layout.html" %} 
+
+
+
+
+{% block manage_centre_nav %}
+<p><a href="/{{path2}}/{{centre.id}}/details" class="link-back">Back</a></p>
+
+{% endblock %}
+  
+
+
+{% block citizen_content %}
+<div class="container">
+    <div class="grid-row">
+        <div class="column-full">
+            <h2 class="heading-medium mt0">Other details for {{centre.name}}</h2>
+
+            <ul class="list-bullet" id="details-list">
+                {% for detail in centre.details %}
+                    <li>{{detail}} (<a href="#" data-click-to-remove>remove</a>)</li>
+                {% endfor %}
+            </ul>
+
+
+            <div class="form-group mt30">
+                <label for="centre-new-detail" class="form-label">Add a new detail about {{centre.name}}</label>
+                <span class="form-hint">Add as many as you need</span>
+                <textarea type="text" name="centre-new-detail" id="centre-new-detail-input" class="form-control" value=""></textarea>
+                <button class="button-secondary mt10" data-click-add-more>Add to list</button>
+            </div>
+
+
+            </fieldset>
+            
+            <p><a href="details" class="button">Save and finish</a></p>
+        </div>
+    </div>
+</div>
+
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

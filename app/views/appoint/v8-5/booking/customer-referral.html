@@ -1,0 +1,18 @@
+{% extends path1+"/_layout.html" %}
+
+{% block heading %}
+{% include path1+"/_heading.html" %}
+{% endblock %}
+
+
+
+{% block citizen_content %}
+
+{% include path1+"/_details.html" %}
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

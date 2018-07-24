@@ -1,0 +1,26 @@
+
+{% extends path2+"/_addlayout.html" %} 
+
+
+{% block citizen_content %}
+<div class="container">
+    <p><a href="/{{path2}}/" class="link-back">Back</a></p>
+
+    {% for person in staff %}
+		{% if person.id == query.personId %}
+        <h3 class="heading-medium mt0">Edit {{person.name}}</h3>
+			
+            {% include path2+"/_staff-skill.html" %}
+   
+    
+         {% endif %}
+    {% endfor %}
+
+</div>
+     
+    <!-- row -->
+
+<!-- container -->
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}
+
+

@@ -1,0 +1,22 @@
+{% extends path+"/citizen3/app/_layout.html" %}
+
+{% block app_nav %}{{ nav.app_nav('conditions',path) }}{% endblock %}
+
+{% block case_content %}
+
+      <h3 class="heading-large mt10">Medical conditions</h3>
+      <ul class="list list-bullet">
+        <li>Cancer</li>
+      </ul>
+
+      <div class="form-group mt30">
+          <a class="button" href="conditions2">Request medical evidence</a>
+      </div><!-- form-group -->
+
+
+      {# <h3 class="heading-large">Condition history</h3>
+      <p><b class="bold-small">{{ citizen_name }}</b> was diagnosed with cancer {{ 1 | lorum | safe }}</p> #}
+
+{% endblock %}
+
+{% block app_score %}{% endblock %}

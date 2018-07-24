@@ -1,0 +1,75 @@
+{% extends path1+"/_layout.html" %}
+
+{% block left_content %}
+ <p class="mt10 mb0 bold-small"><span class="circle purple"></span>Booked</p>
+
+ <div class="available-slot">
+      <div class="column-half" style="padding: 0;">
+          <h4 class="heading-small">Tuesday 10 May</h4>
+          <p>14:00pm</p>
+      </div>
+      <div class="column-half" style="padding: 0; text-align: right;">
+          <a href="timepicker?day=tuesday&date=10%20April&time=11:00am" class="button">Edit</a>
+      </div>
+  </div>
+ <hr>
+{% endblock %}
+
+
+
+{% block citizen_content %}
+ {# macro #}
+
+<div class="container">
+
+
+  
+<h1 class="heading-medium mt20">Withdraw benefit claim for Tomas Fernandez </h1>
+<div class="notice mt30 mb30">
+    <i class="icon icon-important">
+      <span class="visually-hidden">Warning</span>
+    </i>
+    <strong class="bold-small">
+      Completing this form will cancel any scheduled appointments and stop the benefit payments.
+    </strong>
+</div>
+    
+    
+    <form action="withdraw-2">
+      <fieldset class="form-group">
+          <legend class="form-label-bold">
+              What is the reason for withdrawing the benefit claim?
+          </legend>
+          <div class="multiple-choice">
+              <input type="radio" name="withdrawalReason" id="withdrawal-reason-work" value="work">
+              <label for="withdrawal-reason-work">Returned to work</label>
+          </div>
+          
+          <div class="multiple-choice"  data-target="withdrawal-reason-ex-parrot-content">
+              <input type="radio" name="withdrawalReason" id="withdrawal-reason-ex-parrot" value="ex-parrot">
+              <label for="withdrawal-reason-ex-parrot">Customer has died</label>
+          </div>
+          <div class="panel panel-border-narrow js-hidden" id="withdrawal-reason-ex-parrot-content">
+              <p>A copy of the death certificate will need to be sent to:</p>
+              <p>1st Floor Short Spur <br>
+                Fiveways House <br>
+                Islington Row <br>
+                Birmingham <br>
+                B15 1SL</p>
+          </div>
+      </fieldset>
+      <button class="button">Finish</button>
+    </form>
+    
+    
+    
+    
+    
+</div><!-- container -->
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

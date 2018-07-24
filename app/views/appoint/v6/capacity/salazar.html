@@ -1,0 +1,121 @@
+{% extends path1+"/_addlayout.html" %} 
+
+{%
+set staff = [
+  {
+    "id": "5aa7dcc37b7c36968d762580",
+    "index": 0,
+    "guid": "533684dd-ec4c-4dca-9acb-ce295615d376",
+    "surname": "Dillon",
+    "firstname": "Salazar",
+    "name": "Salazar Dillon",
+    "gender": "male",
+    "type": "Doctor",
+    "href": "salazar"
+  }
+]
+%}
+
+{%
+set days = [{
+    "day": "Monday",
+    "checked": true,
+    "startTime": "09:00",
+    "finishTime": "17:00"
+    },{
+    "day": "Tuesday",
+    "checked": true,
+    "startTime": "09:00",
+    "finishTime": "17:00"
+    },{
+    "day": "Wednesday",
+    "checked": "",
+    "startTime": "",
+    "finishTime": ""
+    },{
+    "day": "Thursday",
+    "checked": true,
+    "startTime": "09:00",
+    "finishTime": "17:00"
+    },{
+    "day": "Friday",
+    "checked": true,
+    "startTime": "09:00",
+    "finishTime": "17:00"
+    },{
+    "day": "Saturday",
+    "checked": true,
+    "startTime": "09:00",
+    "finishTime": "13:00"
+}]
+
+%}
+
+{% block citizen_content %}
+<div class="container">
+    <p><a href="fiveways" class="link-back">Back</a></p>
+    {% for person in staff %}
+    <h3 class="heading-medium mt0">{{ person.name }}</h3>
+    <div class="grid-row mt30">
+        <div class="column-two-thirds">
+            <h4 class="heading-small"></h4>
+            <fieldset>
+
+            <legend>
+              <h3 class="heading-small mt0">Select the days {{person.name }} is normally available:</h3>
+            </legend>
+            {% for day in days %}
+            <div class="multiple-choice">
+                <input 
+                    id="available-days-{{loop.index}}" 
+                    name="available-days" 
+                    type="checkbox" 
+                    value="{{loop.index}}"" 
+                    data-toggle-content="times-for-{{day.day}}"
+                    {% if day.checked %} checked {% endif%} >
+                <label for="available-days-{{loop.index}}">{{ day.day }}</label>
+            </div>
+            
+            <div 
+                class="panel panel-border-narrow {% if not day.checked %}hidden{% endif %}" 
+                id="times-for-{{day.day}}"
+                 >
+                <label class="form-label" for="from-time">From:</label>
+                <input class="form-control time-input" name="from-time" type="time" value="{{ day.startTime }}">
+                <label class="form-label" for="to-time">to:</label>
+                <input class="form-control time-input" name="to-time" type="time" value="{{ day.finishTime }}">
+                
+            </div>
+            {% endfor %}
+
+
+
+          </fieldset>
+        </div>
+        <div class="column-one-third">
+            <div class="info-panel">
+                <h3 class="heading-small">Type</h3>
+                <p>{{ person.type }}</p>
+                <h3 class="heading-small">Skill</h3>
+                <p>Complex Neuro</p>
+                <h3 class="heading-small mt0">Gender</h3>
+                <p>{{ person.gender }}</p>
+                <h3 class="heading-small mt0">Email</h3>
+                <p>salazar.dillon@fakemail.gov.uk</p>
+                <h3 class="heading-small mt0">Phone</h3>
+                <p>0121 123 456</p>
+                <h3 class="heading-small mt0">Mobile</h3>
+                <p>0712345678</p>
+            </div>
+        </div>
+        <!-- column -->
+    </div>
+
+    {% endfor %}
+
+    <p class="mt30"><a href="manage-staff" class="button">Save</a></p>
+    <!-- row -->
+</div>
+
+<!-- container -->
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

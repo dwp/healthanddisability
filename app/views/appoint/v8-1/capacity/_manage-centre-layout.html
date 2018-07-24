@@ -1,0 +1,54 @@
+{% extends path+"/_layout.html" %}
+{% import path1+"/_macros_nav.html" as nav %}
+
+
+{% block assess_content %}
+
+<div class="nav-horizontal">
+  <div class="main-nav-wrapper">
+    <ul class="main-nav">
+        <li><a href="{{root}}/appointments">Appointments</a></li>
+        <li class="selected"><a href="{{root}}/assessment-centres">Manage my centre</a></li>
+        <li><a href="#">Daily schedule</a></li>
+    </ul>
+  </div>
+</div>
+
+  {#  This is the BIG BLUE BAR at the top - #jussayin #}
+
+  {% block header %}
+  {% include path1+"/manage-centre/_centre-heading.html" %}
+  {% endblock %}
+
+  <main id="content" role="main" class="main-content">
+  {% block manage_centre_nav %}
+
+    <div class="">
+      <nav class="section-tabs clearfix mb20">
+        <ul>
+            <li class="{{ 'active' if (selectedTab === 'details') }}"s><a href="/{{path1}}/manage-centre/{{centre.id}}/details">Details</a></li>
+            <li class="{{ 'active' if (selectedTab === 'manage-staff') }}"s><a href="/{{path1}}/manage-centre/{{centre.id}}/manage-staff">Staff</a></li>
+            <li class="{{ 'active' if (selectedTab === 'slots') }}"s><a href="/{{path1}}/manage-centre/{{centre.id}}/slots">Appointment times</a></li>
+            <!--<li class="{{ 'active' if (selectedTab === 'rooms') }}"s><a href="/{{path1}}/manage-centre/{{centre.id}}/rooms">Rooms</a></li>
+            <li class="{{ 'active' if (selectedTab === 'capacity') }}"s><a href="/{{path1}}/manage-centre/{{centre.id}}/capacity?day=monday">Capacity Planner</a></li>-->
+        </ul>
+      </nav>
+  {% endblock %}
+      {% block citizen_content %}{% endblock %}
+
+
+
+
+          
+
+        </div><!-- column -->
+      </div><!-- row -->
+    </div><!-- container -->
+
+  </main>
+
+{% endblock %}
+
+
+
+

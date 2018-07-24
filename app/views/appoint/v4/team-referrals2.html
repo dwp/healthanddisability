@@ -1,0 +1,127 @@
+{% extends path+"/_layout.html" %}
+
+
+
+{% block assess_content %}
+
+  <div class="nav-horizontal">
+  <div class="main-nav-wrapper">
+    <ul class="main-nav">
+ 
+        <li class="selected"><a href="appointments">Referrals</a></li>
+        <li><a href="assessment-centres">Manage my centre</a></li>
+		<li><a href="#">Daily schedule</a></li>
+    </ul>
+    
+    
+  </div>
+</div>
+
+<main id="content" role="main" class="main-content mt30">
+
+      <div class="container">
+      
+   <h1 class="heading-large">Referrals</h1>
+   
+   
+   <div class="section-tabs clearfix">
+    <ul>
+
+        <li><a href="appointments">Available referrals (<span id="available-refs-total">19</span>)</a></li>
+        <li class="active"><a href="#">Team referrals (<span id="team-refs-total">5</span>)</a></li>
+		<li><a href="myreferrals">My referrals (<span id="my-refs-total">1</span>)</a></li>
+
+      
+    </ul>
+    
+  </div>
+      
+      
+        <div class="grid-row">
+          <div class="column-full">
+          
+          <div class="table-filter-list">
+          	<ul>
+          		<li>Showing</li>
+          		<li class="active">All</li>
+          		<li><a href="#">UCB</a></li>
+          		<li><a href="#">Requirements</a></li>
+          		<li><a href="#">Booked</a></li>
+          		<li><a href="#">Pending</a></li>
+          	</ul>
+          <!-- 	<div class="filter-search">
+          		<label for="filterme" class="visually-hidden">Search</label>
+		    	<input type="text" id="filterme" class="form-control form-control-1-4" placeholder="Type to filter">
+		    </div>  -->
+          </div>
+          
+          
+              <table class="appointments-view">
+
+                <thead>
+                  <tr class="header-view">
+                  	<th style="padding-left:15px;">Received</th>
+                    <th>Customer</th>
+                    <th>Benefit</th>
+                    <th>Claim type</th>
+                    <th>Status</th>
+                    <th class="numeric">Assigned to</th>
+                  </tr>
+                </thead>
+				
+				<tr role="row">
+                  <td style="padding-left:15px;" class="date">6 Feb</td>
+                  <td class="customer-detail"><a href="booking/timeline3" class="col-heading">Tomas Fernandez</a> <span>QQ 53 12 35C</span></td>
+                  <td>IB</td>
+                  <td>New</td>
+                  <td class="status"><span class="purple">BOOKED</span></td>
+                  <td class="numeric">Donald Robinson</td>
+                </tr>
+                
+                <tr role="row">
+                  <td style="padding-left:15px;" class="date">4 Feb</td>
+                  <td class="customer-detail"><a href="#" class="col-heading">Jacob Shelby</a> <span>QQ 53 12 35C</span></td>
+                  <td>ESA</td>
+                  <td>New</td>
+                  <td class="status"><span>PENDING</span><b>INTERPRETER NEEDED</b></td>
+                  <td class="numeric">Nina Patel</td>
+                </tr>
+                
+                <tr role="row">
+                  <td style="padding-left:15px;" class="date">1 Feb</td>
+                  <td class="customer-detail"><a href="#" class="col-heading">Peter Jackson</a> <span>QQ 53 12 35C</span></td>
+                  <td>IB</td>
+                  <td>New</td>
+                  <td class="status"><span class="purple">BOOKED</span></td>
+                  <td class="numeric">James Abraham</td>
+                </tr>
+                
+                <tr role="row">
+                  <td style="padding-left:15px;" class="date">1 Feb</td>
+                  <td class="customer-detail"><a href="#" class="col-heading">Gill Rivers</a> <span>QQ 53 12 35C</span></td>
+                  <td>UC</td>
+                  <td>New</td>
+                  <td class="status"><span class="grey">CANCELLED</span></td>
+                  <td class="numeric">James Abraham</td>
+                </tr>
+                
+                <tr role="row">
+                  <td style="padding-left:15px;" class="date">29 Jan</td>
+                  <td class="customer-detail"><a href="#" class="col-heading">Justin Postlethwaite</a> <span>QQ 53 12 35C</span></td>
+                  <td>ESA</td>
+                  <td>Rerefferal</td>
+                  <td class="status"><span class="purple">BOOKED</span></td>
+                  <td class="numeric">Nina Patel</td>
+                </tr>
+
+               
+
+               
+              </table>
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

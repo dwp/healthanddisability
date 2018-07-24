@@ -1,0 +1,86 @@
+
+{% extends "admin_layout.html" %}
+
+{% block page_title %} {{ serviceName }} {% endblock %}
+
+{% block head %}
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.1/jquery.fancybox.min.css" rel="stylesheet" />
+  <link href="/public/stylesheets/appoint_v9.css" media="screen" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block inside_header %}
+  <div class="header-logo" style="position:relative;top:3px">
+    <a href="/" id="logo" class="content dwplogo"> DWP </a>
+  </div>
+{% endblock %}
+
+{% block proposition_header %}
+  <div class="header-proposition">
+    <div class="content">
+      <nav id="proposition-menu">
+        <a href="/" id="proposition-name">{{ serviceName }}</a>
+      </nav>
+    </div>
+  </div>
+  
+ 
+
+  
+  
+{% endblock %}
+
+
+
+
+{% block header_class %} with-proposition{% endblock %}
+
+{% block body_end %}
+  <!-- Javascript -->
+  <script src="/public/javascripts/details.polyfill.js"></script>
+  <script src="/public/javascripts/jquery-1.11.3.js"></script>
+  <script src="/public/javascripts/govuk/selection-buttons.js"></script>
+  <script src="/public/javascripts/govuk/shim-links-with-button-role.js"></script>
+  <script src="/public/javascripts/govuk/show-hide-content.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.1/jquery.fancybox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <script src="/public/javascripts/application.js"></script>
+  {% block page_scripts %}{% endblock %}
+  {{ ("path: "+path) | log }}
+  {{ ("path1: "+path1) | log }}
+  {{ ("path2: "+path2) | log }}
+{% endblock %}
+
+{% block content %}
+  {# {{ horizontal_nav('',path) }} #}
+  <div nunj-block="assess_content">
+  {% block assess_content %}{% endblock %}
+  </div>
+{% endblock %}
+
+{% macro horizontal_nav(selected,path) %}
+  <div class="nav-horizontal" nunj-macro="horizontal_nav">
+    <div class="main-nav-wrapper">
+      <ul class="main-nav">
+
+      {#
+        These are the different horizonal nav
+        tabs output by the following "for" loop.
+      #}
+      {% set navs = [
+        {url:"",label:"Your cases"}
+        ] %}
+
+      {% for item in navs %}
+        <li id="nav-{{ item.url }}" {% if item.url == selected %} class="selected" {% endif %}><a href="/{{ path }}/{{ item.url }}">{{ item.label }}</a></li>
+      {% endfor %}
+
+      </ul>
+    </div>
+    <div class="external-links-wrapper">
+      <ul class="external-links">
+        {# <li class="main-nav-link" style="margin-right:20px"><a href="/{{ path }}/all-teams">All teams</a></li>
+        <li class="main-nav-link"><a href="/{{ path }}/all-advisers">All advisers</a></li> #}
+      </ul>
+    </div>
+  </div>
+{% endmacro %}

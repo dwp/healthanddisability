@@ -1,0 +1,168 @@
+{% extends path1+"/_layout.html" %}
+
+{% block citizen_content %}
+
+<div class="section-tabs js-tabs clearfix mb20">
+    <ul>
+      {% set navs = [
+        {label:"Timeline"},
+        {label:"Details"}
+        ] %}
+      {% for item in navs %}
+        <li {% if query.tab == item.label %} class="active"{% endif %}><a href="?tab={{item.label}}&status={{query.status}}">{{ item.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+<div class="container">
+{% if query.tab == "Timeline" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+      <div class="timeline">
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">SMS text message sent to customer</h3>
+          <p class="timeline_datetime">{{ 'D MMMM YYYY' | randDaysAgo(0)}}</p>
+        </div>
+
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Referred for appointment</h3>
+          <p class="timeline_datetime">{{appointments.referred}}</p>
+        </div>
+
+         <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">GP statement received (ESA113)</h3>
+          <p class="timeline_datetime">29 April 2018</p>
+        </div>
+        
+          <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Request for GP statement sent (ESA113)</h3>
+          <p class="timeline_datetime">19 April 2018</p>
+        </div>
+        
+          <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA50 form received at CHDA</h3>
+          <p class="timeline_datetime">4 April 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA50 form sent out to Tomas</h3>
+          <p class="timeline_datetime">12 March 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">FIT note (MED3) received </h3>
+          <p class="timeline_datetime">5 March 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Entitlement letter sent to Tomas</h3>
+          <p class="timeline_datetime">20 February 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA application completed on the phone</h3>
+          <p class="timeline_datetime">20 February 2018</p>
+        </div>
+
+
+        <div style="clear:both"></div>
+
+      </div><!-- timeline -->
+
+
+    </div><!-- column -->
+
+    
+
+  </div><!-- row -->
+  {% endif %}
+  {% if query.tab == "Details" %}
+  <div class="grid-row mt30">
+        <div class="column-third">
+            <h3 class="heading-medium mt0">Contact details</h3>
+            <h4 class="heading-small">Phone</h4>
+            <p>0151 924 2080</p>
+            <h4 class="heading-small">Text</h4>
+            <p>07979 000000</p>
+            <h4 class="heading-small">Email</h4>
+            <p>the.victor.castillo@madeup.com</p>
+            <h4 class="heading-small">Postal address</h4>
+            <p class="address-stack">
+                <span>27 Redhill Lane</span>
+                <span>Ainsdale</span>
+                <span>London</span>
+                <span>Merseyside</span>
+                <span>PR8 9UE</span>
+            </p>
+        </div>
+        <!-- column -->
+        <div class="column-third">
+            <h1 class="heading-medium mt0">Appointment details</h1>
+            <h2 class="heading-small">Assessment Centre</h2>
+            <p>Tresco House</p>
+            <h2 class="heading-small">Date</h2>
+            <p>{{appointments.nextAvailable.day}} {{appointments.nextAvailable.date}}</p>
+            <h2 class="heading-small">Time</h2>
+            <p>
+                {{appointments.nextAvailable.time}}
+            </p>
+
+        </div>
+        <div class="column-third">
+            <form action="bobby-status-changed">
+                <fieldset class="form-group">
+                    <legend>
+                        <h1 class="heading-medium mt0">Change appointment status</h1>
+                    </legend>
+                    <div class="multiple-choice">
+                        <input id="status-1" type="radio" name="status" value="Customer arrived">
+                        <label for="status-1">Customer arrived</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="status-2" type="radio" name="status" value="Failed to attend">
+                        <label for="status-2">Failed to attend</label>
+                    </div>
+                    <!-- <div class="multiple-choice">
+                        <input id="status-3" type="radio" name="status" value="Unable to attend">
+                        <label for="status-3">Unable to attend</label>
+                    </div> -->
+                </fieldset>
+                <input type="hidden" name="tab" value="Details">
+                <button class="button">Save</button>
+            </form>
+            <ul class="mt20">
+                <li><a href="timepicker">Edit appointment</a></li>
+                <li><a href="cancel-appointment">Cancel appointment</a></li>
+                <li><a href="timeline_sms?tab=Timeline">Log SMS sent</a></li>
+            </ul>
+        </div>
+
+    </div>
+    
+    {% endif %}
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

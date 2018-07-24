@@ -1,0 +1,141 @@
+{% extends path1+"/_layout-owned.html" %}
+
+{% block citizen_content %}
+
+<div class="container">
+
+  {# macro #}
+  {{ nav.case_tabs("timeline",1,path1) }}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+      <div class="timeline">
+
+		  
+		 <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Referred for appointment booking</h3>
+          <p class="timeline_datetime">18th June 2017</p>
+        </div> 
+
+       
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA50 received at CHDA</h3>
+          <p class="timeline_datetime">16th June 2017</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA50 sent out to Tomas</h3>
+          <p class="timeline_datetime">5th June 2017</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Sick note received </h3>
+          <p class="timeline_datetime">20th May 2017</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Entitlement letter sent to Tomas</h3>
+          <p class="timeline_datetime">8th May 2017</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA application completed on the phone</h3>
+          <p class="timeline_datetime">1st May 2017</p>
+        </div>
+
+
+        <div style="clear:both"></div>
+
+      </div><!-- timeline -->
+
+    </div><!-- column -->
+
+    <div class="column-one-third">
+     
+ 	 	   <div class="case-status">
+		 
+
+		  <p class="mt10 mb0 bold-small"><span class="circle orange"></span>Pending</p>
+		 <!--  <p class="mt10">Assigned to Donald Robinson</p> -->
+		  <hr>
+		 
+	  </div> 
+	  
+	  <h3 class="heading-medium mt30">Next available appointment</h3>
+ 
+  
+ <div class="info-panel available-slot">
+  	<div class="column-half" style="padding: 0;">
+	   	<h4 class="heading-small">Thursday 4th January</h4>
+	   	<p>14:00pm</p>
+  	</div>
+   	<div class="column-half" style="padding: 0; text-align: right;">
+   		<a href="timeline2" class="button">Book</a>
+   	</div>
+  </div>
+	  
+	  <hr>
+	  
+	  
+	  
+	  
+	  <h3 class="heading-medium mt0">Requirements</h3>
+		  <ul class="filter-list">
+	     	<li>Ground floor access</li>
+	     	<li>Male health assessor preferred</li>
+	     	<li>Interpreter required</li>
+	     </ul>
+     
+     
+    </div><!-- column -->
+
+  </div><!-- row -->
+  
+  
+  
+<div class="modal">
+	
+	<div class="inner-modal">
+	<h3 class="heading-medium">Tomas Fernandez</h3>
+
+	<ul class="mt20">
+		<li>Tresco House</li>
+		<li>Thursday, 4th January 2018</li>
+		<li>14:00pm</li>
+	</ul>
+
+	<p class="mt30"><a href="../team-referrals2" class="button">Book appointment</a></p>
+	<p><a href="timeline">Cancel</a></p>
+	</div>
+</div>
+	
+	
+	
+	
+	
+</div><!-- container -->
+
+
+
+
+
+
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

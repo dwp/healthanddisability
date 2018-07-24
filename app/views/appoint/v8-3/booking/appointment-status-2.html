@@ -1,0 +1,52 @@
+{% extends path1+"/_layout.html" %}
+
+{% block left_content %}
+ <p class="mt10 mb0 bold-small"><span class="circle purple"></span>Ready for assessment</p>
+
+ <div class="available-slot">
+          <h4 class="heading-small">Arrived at 1:55pm </h4>
+</div>
+
+<hr>
+{% endblock %}
+
+
+{% block citizen_content %}
+ {# macro #}
+
+<div class="container">
+<!-- timeline -->
+
+<form action="bobby-status-changed-2">
+ <fieldset class="form-group">
+
+      <legend>
+        <h1 class="heading-medium mt20">Change appointment status</h1>
+      </legend>
+
+      <div class="multiple-choice">
+        <input id="status-1" type="radio" name="status" value="Customer sent home unseen">
+        <label for="status-1">Customer sent home unseen</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="status-2" type="radio" name="status" value="Failed to attend">
+        <label for="status-2">Failed to attend</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="status-3" type="radio" name="status" value="Unable to attend">
+        <label for="status-3">Unable to attend</label>
+      </div>
+
+</fieldset>
+    <button class="button">Save</button>
+
+</form>
+</div><!-- container -->
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}
+_

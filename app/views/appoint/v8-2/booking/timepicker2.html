@@ -1,0 +1,158 @@
+{% extends path1+"/_layout.html" %}
+
+{% block citizen_content %}
+
+<div class="container">
+
+  {# macro #}
+  {{ nav.case_tabs("booking",1,path1) }}
+
+  <div class="grid-row mt30">
+
+    <div class="column-third">
+    
+
+		<div class="info-panel">
+		          <h3 class="heading-small">Assessment centre</h3>
+		          <p><span class="info-display">Tresco house</span></p>
+			  </div>
+
+			  <div class="info-panel">
+	          	<h3 class="heading-small">Skill required</h3>
+			  	<p><span class="info-display">Complex neuro</span></p>
+			  </div>
+	
+	    
+			  <div class="info-panel">
+		          <h3 class="heading-small">Requirements</h3>
+			          <ul class="filter-list">
+				          <li><span>Wednesday</span></li>
+				          <li><span>Thursday</span></li>
+						  <li><span>Afternoon</span></li>
+						  <li><span>Ground floor access</span></li>
+			          </ul>
+			          
+			          <p><a href="booking">Edit</a></p>
+			  </div>
+
+
+    </div><!-- column -->
+    
+
+    
+    
+    
+    <div class="column-third">
+    	<h3 class="heading-medium mt0">Choose a date</h3>
+    	
+    	<div class="calendar-book">
+    	<table>
+    	<caption>January 2018</caption>
+    	<thead>
+    		<tr>
+    			<th>MON</th>
+    			<th>TUE</th>
+    			<th>WED</th>
+    			<th>THU</th>
+    			<th>FRI</th>
+    			<th>SAT</th>
+    			<th>SUN</th>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		<tr>
+    			<td>1</td>
+    			<td>2</td>
+    			<td>3</td>
+    			<td class="available"><a href="timepicker" class="selected">4</a></td>
+    			<td>5</td>
+    			<td>6</td>
+    			<td>7</td>
+    		</tr>
+    		<tr>
+    			<td>8</td>
+    			<td>9</td>
+    			<td class="available"><a href="timepicker">10</a></td>
+    			<td>11</td>
+    			<td>12</td>
+    			<td>13</td>
+    			<td>14</td>
+    		</tr>
+    		<tr>
+    			<td>15</td>
+    			<td>16</td>
+    			<td class="available"><a href="timepicker">17</a></td>
+    			<td class="available"><a href="timepicker">18</a></td>
+    			<td>19</td>
+    			<td>20</td>
+    			<td>21</td>
+    		</tr>
+    		<tr>
+    			<td>22</td>
+    			<td>23</td>
+    			<td>24</td>
+    			<td>25</td>
+    			<td>26</td>
+    			<td>27</td>
+    			<td>28</td>
+    		</tr>
+    		<tr>
+    			<td>29</td>
+    			<td>30</td>
+    			<td class="available"><a href="timepicker">31</a></td>
+    			<td>1</td>
+    			<td>2</td>
+    			<td>3</td>
+    			<td>4</td>
+    		</tr>
+    	</tbody>
+    	</table>
+    	
+    	
+    	<ul class="key">
+    		<li><span class="available">Available date</span>Available</li>
+    		<li><span>Unavailable date</span>Unavailable</li>
+    	</ul>
+    	
+    	<p class="mt40"><a href="booking">Cancel</a></p>
+    	
+    	
+    	</div>	
+    	
+    	
+    </div>
+    
+    
+    
+   <div class="column-third">
+   <h3 class="heading-medium mt0">Choose a time</h3>
+    
+    
+   <div class="time-select clearfix">
+   	<h4 class="heading-small">{{appointments.rearranged.day}} 4th January</h4>
+   	<ul>
+   		<li><a href="#" class="selected">2pm<span>1 hour</span></a></li>
+   		<li><a href="#">3pm<span>1 hour</span></a></li>
+   		<li><a href="#">5pm<span>1 hour</span></a></li>
+   	</ul>
+   </div>
+
+   <p><a href="confirm" class="button mt40">Confirm booking</a></p>
+    
+    
+    
+    </div>
+    
+    
+    
+    
+   
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

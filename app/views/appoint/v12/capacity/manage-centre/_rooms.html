@@ -1,0 +1,44 @@
+<div class="column-half ">
+    <h2 class="heading-medium mt0">Manage Rooms</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Facilities</th>
+                <th>Last updated</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for room in centre.rooms %}
+            <tr>
+                <td><a href="/{{path2}}/edit-room?room={{room.index}}">{{ room.name }}</a></td>
+                <td>{{ "Ground floor" if room.groundFloor }}{{ ", " if room.groundFloor and room.telephone }}{{ "Telephone" if room.telephone }}
+                </td>
+                <td>{{ room.lastUpdated }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<!-- column -->
+<div class="column-one-quarter ">
+    <div class="info-panel ">
+        <div class="grid-row">
+            <div class="data column-one-third">
+                <span class="data-item bold-xlarge">{{ roomsTotal }}</span>
+                <span class="data-item bold-xsmall">Rooms</span>
+            </div>
+            <div class="data column-one-third">
+                <span class="data-item bold-xlarge">{{ groundFloorTotal }}</span>
+                <span class="data-item bold-xsmall">Ground Floor</span>
+            </div>
+            <div class="data column-one-third">
+                <span class="data-item bold-xlarge">{{ telephoneTotal }}</span>
+                <span class="data-item bold-xsmall">Telephone available</span>
+            </div>
+        </div>
+        <p><a href="/{{path2}}/new-room" class="button">Add Room</a></p>
+    </div>
+</div>
+
+<!-- column -->

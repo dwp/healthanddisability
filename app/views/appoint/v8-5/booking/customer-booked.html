@@ -1,0 +1,44 @@
+{% extends path1+"/_layout.html" %}
+
+{% block heading %}
+{% include path1+"/_heading.html" %}
+{% endblock %}
+{% block main_nav %}
+  <div class="nav-horizontal">
+  <div class="main-nav-wrapper">
+    <ul class="main-nav">
+        
+        
+        <li class="selected"><a href="{{root}}/appointments?booked=true">Appointments</a></li>
+        <li><a href="{{root}}/assessment-centres">Manage my centre</a></li>
+
+    </ul>
+  </div>
+</div>
+
+{% endblock %}
+
+
+{% block left_content %}
+ <p class="mt10 mb0 bold-small"><span class="circle purple"></span>Booked</p>
+
+          <h4 class="heading-small">{{customer.appointmentDate | formatDate("dddd D MMMM YYYY")}}</h4>
+          <p>{{customer.appointmentTime}}</p>
+
+          <a href="/{{path1}}/timepicker?day=tuesday&date=10%20April&time=11:00am" class="button">Rearrange appointment</a>
+<hr>
+
+<ul>
+</ul>
+{% endblock %}
+
+{% block citizen_content %}
+
+{% include path1+"/_details.html" %}
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

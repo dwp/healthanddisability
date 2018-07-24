@@ -1,0 +1,93 @@
+{% extends path1+"/_layout.html" %}
+
+{% block citizen_content %}
+
+<div class="container">
+
+  {# macro #}
+  {{ nav.case_tabs("open-timeline",1,path1) }}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+      <div class="timeline">
+
+		  
+		 <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Referred for appointment booking</h3>
+          <p class="timeline_datetime">18th June 2017</p>
+        </div> 
+
+       
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA50 received at CHDA</h3>
+          <p class="timeline_datetime">16th June 2017</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA50 sent out to Tomas</h3>
+          <p class="timeline_datetime">5th June 2017</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Sick note received </h3>
+          <p class="timeline_datetime">20th May 2017</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Entitlement letter sent to Tomas</h3>
+          <p class="timeline_datetime">8th May 2017</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA application completed on the phone</h3>
+          <p class="timeline_datetime">1st May 2017</p>
+        </div>
+
+
+        <div style="clear:both"></div>
+
+      </div><!-- timeline -->
+
+    </div><!-- column -->
+
+    <div class="column-one-third">
+     
+ 	 	<div class="case-status">
+		 
+
+		  <p class="mt10 mb0 bold-small"><span class="circle orange"></span>Pending</p>
+		  <p class="mt10">Not assigned</p>
+		  <p><a href="timeline" class="button">Own this referral</a></p>
+		  <hr>
+		  <h3 class="heading-medium mt0">Requirements</h3>
+		  <ul class="filter-list">
+	     	<li>Ground floor access</li>
+	     	<li>Male health assessor preferred</li>
+	     </ul>
+		<hr>
+	  </div>   
+     
+     
+    </div><!-- column -->
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

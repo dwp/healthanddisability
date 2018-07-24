@@ -1,0 +1,84 @@
+{% extends path1+"/_layout-booking.html" %}
+
+{% block main_nav %}
+  <div class="nav-horizontal">
+  <div class="main-nav-wrapper">
+    <ul class="main-nav">
+        
+        
+        <li class="selected"><a href="{{root}}/booked_appointments?arrived=true">Appointments</a></li>
+        <li><a href="{{root}}/assessment-centres">Manage my centre</a></li>
+
+    </ul>
+  </div>
+</div>
+
+{% endblock %}
+
+
+{% block left_content %}
+
+<div class="status-circle">
+<i class="status-circle__circle circle {{ 'green' if customer.waitTime < 30 }}{{ 'red' if customer.waitTime > 29 }}"></i> <p><span class="bold-small">
+{% if customer.waitTime > 0 %}
+Waiting {{customer.waitTime}} minutes</span> <br>Arrived at {{customer.timeArrived}}
+{% else %}
+Just arrived
+{% endif %}
+</p>
+</div>
+<p>Appointment today at {{customer.appointmentTime}}</p>
+
+<hr>
+
+<ul>
+  <li><a href="timepicker?day=tuesday&date=10%20April&time=11:00am">Rearrange appointment</a></li>
+</ul>
+{% endblock %} 
+
+
+{% block citizen_content %}
+{# macro #}
+
+
+<div class="container">
+    <!-- timeline -->
+    <h1 class="heading-medium">Customer sent home unseen</h1>
+
+    <div class="panel panel-border-wide">
+    {% if postData.reason == "dwp" %}
+      <p>We can offer an appointment now as {{customer.name.first}} was waiting over 30 mins.</p>
+    {% else %}
+      <p>We are unable to re-arrange an appointment until a decision maker has done something.</p>
+    {% endif %}
+    </div>
+    <form action="" method="post">
+      {% if postData.reason == "dwp" %}
+        <fieldset class="form-group inline">
+            <legend>
+                <span class="form-label">
+            Does {{customer.name.first}} want to re-arrange the appointment now?
+          </span>
+            </legend>
+            <div class="multiple-choice">
+                <input id="change_now-yes" type="radio" name="change_now" value="true">
+                <label for="change_now-yes">Yes</label>
+            </div>
+            <div class="multiple-choice">
+                <input id="change_now-no" type="radio" name="change_now" value="false">
+                <label for="change_now-no">No</label>
+            </div>
+        </fieldset>        
+        {% endif %}
+        <button class="button">Confirm send home unseen</button>
+    </form>
+    
+</div>
+<!-- container -->
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}
+_

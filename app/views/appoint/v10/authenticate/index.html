@@ -1,0 +1,23 @@
+{% extends path1+"/_layout.html" %} 
+
+
+
+{% block citizen_content %}
+
+<div class="grid-row">
+    <div class="column-full">
+        <h1 class="heading-medium">Find a customer</h1>
+        <form>
+            <div class="form-group">
+                <label class="form-label" for="national-insurance-number">National Insurance number</label>
+                <input type="text" name="national-insurance-number" class="form-control">
+            </div>
+            <p><a href="authenticate/customer-found" class="button">Search</a></p>
+            <p><a href="authenticate/advanced-search">Search using name and address</a></p>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

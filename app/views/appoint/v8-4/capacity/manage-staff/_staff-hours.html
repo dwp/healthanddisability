@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="grid-row mt30">
+        <div class="column-two-thirds">
+            <form 
+            method="post"
+            {% if staff.id %}
+            action="/{{path2}}/{{centre.id}}/manage-staff/staff-profile/{{person.id}}?tab=hours"
+            {% else %}
+            action="/{{path2}}/{{centre.id}}/manage-staff?tab=hours"
+            {% endif %}>
+            <fieldset>
+
+            <legend>
+              <h3 class="heading-small mt0">Select the days {{person.name}} will normally available:</h3>
+            </legend>
+            {% for dayName, day in person.days %}
+            <div class="multiple-choice">
+                <input 
+                    id="available-days-{{loop.index}}" 
+                    name="available-days" 
+                    type="checkbox" 
+                    value="{{loop.index}}"
+                    data-toggle-content="times-for-{{dayName}}"
+                    {% if day.available %} checked {% endif%} >
+                <label for="available-days-{{loop.index}}">{{ dayName }}</label>
+            </div>
+            
+            <div 
+                class="panel panel-border-narrow {% if not day.available %}hidden{% endif %}" 
+                id="times-for-{{dayName}}"
+                 >
+                <label class="form-label" for="from-time">What time will {{person.name}} be available from <span class="visually-hidden"> on {{dayName}}</span>?</label>
+                <input class="form-control time-input" name="from-time" type="time" value="{{ day.start }}">
+                <label class="form-label mt30" for="to-time">What time will {{person.name}} be available to <span class="visually-hidden"> on {{dayName}}</span>?</label>
+                <input class="form-control time-input" name="to-time" type="time" value="{{ day.end }}">
+                <fieldset class="mt30 inline {{"hidden" if not person.scrutinyPaperwork }}">
+                    <legend>What type of work will {{person.name}} be doing on {{dayName}} <span class="visually-hidden">  on {{dayName}}</span>?</legend>
+                    <div class="multiple-choice">
+                    <input id="type-of-work-appointments-{{dayname}}" type="radio" name="type-of-work-{{dayName}}" value="appointments" {{ "checked" if not day.scrutiny  }} >
+                    <label for="type-of-work-appointments-{{dayname}}">Appointments</label>
+                </div>
+                <div class="multiple-choice">
+                    <input id="type-of-work-scrutiny-{{dayName}}" type="radio" name="type-of-work-{{dayName}}" value="scrutiny"  {{ "checked" if day.scrutiny }}>
+                    <label for="type-of-work-scrutiny-{{dayName}}">scrutiny</label>
+                </div>
+                </fieldset>
+            </div>
+            {% endfor %}
+
+
+
+          </fieldset>
+            <button type="submit" class="button">Finish</button>
+
+        </div>
+        <div class="column-one-third">
+            <div class="info-panel">
+                <h3 class="heading-small">Skill</h3>
+                <p>{{person.skill}}</p>
+                <h3 class="heading-small mt0">Email</h3>
+                <p>{{person.email}}</p>
+                <h3 class="heading-small mt0">Phone</h3>
+                <p>{{person.phone}}</p>
+                <h3 class="heading-small mt0">Mobile</h3>
+                <p>{{person.mobile}}</p>
+            </div>
+        </div>
+        <!-- column -->
+
+    </div>
+
+
+    <!-- row -->
+</div>

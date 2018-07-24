@@ -1,0 +1,87 @@
+{% extends path+"/_layout.html" %}
+
+
+
+{% block assess_content %}
+
+  <div class="nav-horizontal">
+  <div class="main-nav-wrapper">
+    <ul class="main-nav">
+ 
+        <li class="selected"><a href="#">Appointments</a></li>
+        <li><a href="assessment-centres">Manage my centre</a></li>
+		<li><a href="#">Daily schedule</a></li>
+    </ul>
+  </div>
+</div>
+
+<main id="content" role="main" class="main-content mt30">
+
+      <div class="container">
+      
+   <h1 class="heading-large">Appointments</h1>
+   
+   
+   <div class="section-tabs clearfix">
+    <ul>
+
+        <li class="active"><a href="#">Referrals</a></li>
+      
+        <li><a href="booked_appointments">Booked</a></li>
+      
+    </ul>
+  </div>
+      
+      
+        <div class="grid-row">
+          <div class="column-full">
+              <table class="appointments-view">
+
+                <thead>
+                  <tr class="header-view">
+                    <th style="padding-left:15px;">Name</th>
+                    <th>NI Number</th>
+                    <th>Benefit</th>
+                    <th>HCP skill</th>
+                    <th>Received</th>
+                    <th class="numeric">Status</th>
+                  </tr>
+                </thead>
+
+
+                <tr>
+                  <td style="padding-left:15px;" class=""><a href="booking/timeline">Tomas Fernandez</a></td>
+                  <td>QQ531235C</td>
+                  <td>UC</td>
+                  <td>Complex Neuro </td>
+                  <td>5th April 2018</td>
+                  <td class="numeric">New claim</td>
+                </tr>
+
+                <tr>
+                  <td style="padding-left:15px;" class=""><a href="#">Bobby Henderson</a></td>
+                  <td>JW000060A</td>
+                  <td>IBR</td>
+                  <td>Complex Neuro </td>
+                  <td>20th March 2018</td>
+                  <td class="numeric">Reassessment</td>
+                </tr>
+                
+                <tr>
+                  <td style="padding-left:15px;" class=""><a href="#">Isaac Carragher</a></td>
+                  <td>JW000060A</td>
+                  <td>UC</td>
+                  <td>Complex Neuro</td>
+                  <td>1st March 2018</td>
+                  <td class="numeric">Rereferall</td>
+                </tr>
+
+               
+              </table>
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

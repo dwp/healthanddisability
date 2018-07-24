@@ -1,0 +1,63 @@
+{% extends path2+"/_addlayout.html" %} 
+
+
+
+{% block citizen_content %}
+<div class="container">
+    <nav class="top-nav"> 
+        <a href="/{{path}}/assessment-centres" class="link-back">Back</a>
+        <a href="/{{path}}/capacity/manage-centre/capacity?day=monday" class="link-back link-back--noicon">Manage Capacity</a>
+    </nav>
+    <div class="grid-row mt30">
+        {% include path1+"/manage-centre/_nav.html" %}
+        <div class="column-half">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Skills</th>
+                        <th>Available Times</th>
+                    </tr>
+                </thead>
+                {% for person in staff %}
+                <tr>
+                    <td><a href="staff-profile?personId={{ person.id }}&tab=details">{{ person.name }}</a></td>
+                    <td>{{ person.skill }} {{ ", Scrutiny" if person.scrutinyPaperwork}}</td>
+                    <td>
+                        {% for day, dayDetails in person.days %}
+                            {% if dayDetails.available %}
+                            <span class="capitalise">{{day}}</span> -  {{dayDetails.start}} to {{dayDetails.end}}{% if not loop.last %}, <br> {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <!-- column -->
+        <div class="column-one-quarter">
+            <div class="info-panel">
+                <div class="grid-row mt10">
+                    <div class="data column-one-third">
+                      <span class="data-item bold-xlarge">
+                          {{complexTotal}}
+                      </span>
+                      <span class="data-item bold-xsmall">Complex Neuro</span>
+                    </div>
+                    <div class="data column-one-third">
+                      <span class="data-item bold-xlarge">{{neuroTotal}}</span>
+                      <span class="data-item bold-xsmall">Neuro</span>
+                    </div>
+                    <div class="data column-one-third">
+                      <span class="data-item bold-xlarge">{{standardTotal}}</span>
+                      <span class="data-item bold-xsmall">Standard</span>
+                    </div>
+                </div>
+                <p><a href="/{{path2}}/new-staff" class="button">Add staff</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

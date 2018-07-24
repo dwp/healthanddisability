@@ -1,0 +1,55 @@
+
+{% extends path1+"/_manage-centre-layout.html" %} 
+
+
+{% block header %}
+
+  {% include path2+"/_staff_heading.html" %}
+
+{% endblock %}
+
+{% block manage_centre_nav %}
+
+    <div class="">
+      <nav class="section-tabs clearfix mb20">
+        <ul>
+            <li class="{{ 'active' if (selectedTab === 'details') }}"s><a href="/{{path1}}/manage-centre/{{centre.id}}/details">Details</a></li>
+            <li class="{{ 'active' if (selectedTab === 'manage-staff') }}"s><a href="/{{path1}}/manage-centre/{{centre.id}}/manage-staff">Staff</a></li>
+            <li class="{{ 'active' if (selectedTab === 'slots') }}"s><a href="/{{path1}}/manage-centre/{{centre.id}}/slots">Appointment times</a></li>
+            <!--<li class="{{ 'active' if (selectedTab === 'rooms') }}"s><a href="/{{path1}}/manage-centre/{{centre.id}}/rooms">Rooms</a></li>-->
+            <li class="{{ 'active' if (selectedTab === 'capacity') }}"s><a href="/{{path1}}/manage-centre/{{centre.id}}/capacity-overbooked?day=monday">Capacity Planner</a></li>
+        </ul>
+      </nav>
+  {% endblock %}
+
+{% block citizen_content %}
+
+
+<div class="container">
+    <div class="grid-row mt30">
+        <div class="column-one-quarter">
+            <nav class="left-nav">
+                <a href="?tab=details" class="left-nav__link {{ 'left-nav__link--selected 'if (query.tab === 'details') }}">Details</a>
+                <a href="?tab=hours" class="left-nav__link {{ 'left-nav__link--selected 'if (query.tab === 'hours') }}">Rota</a>
+                <a href="?tab=leave" class="left-nav__link {{ 'left-nav__link--selected 'if (query.tab === 'leave') }}">Availability</a>
+                
+            </nav>
+        </div>
+
+
+        {% include path1+"/manage-staff/_details.html" %}
+        {% include path1+"/manage-staff/_hours-2.html" %}
+        {% include path1+"/manage-staff/_leave-updated-2.html" %}
+
+
+            
+           
+         
+        <!-- column -->
+       
+    </div>
+    <!-- row -->
+</div>
+
+<!-- container -->
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

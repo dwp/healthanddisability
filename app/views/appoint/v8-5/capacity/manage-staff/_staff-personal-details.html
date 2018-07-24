@@ -1,0 +1,31 @@
+<div class="grid-row mt30">
+    <div class="column-two-thirds">
+        <form method="post"
+        {% if person.id %} 
+        action="edit-staff-skill"
+        {% else %}
+        action="new-staff-skill"
+        {% endif %}>
+        
+        <div class="form-group">
+            <label class="form-label" for="first-name">Full name</label>
+            <input class="form-control" id="first-name" type="text" name="first-name" value="{{person.firstname}}">
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="phone">Phone (optional)</label>
+            <input class="form-control" id="phone" type="text" name="phone" value="{{person.phone}}">
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="mobile">Mobile (optional)</label>
+            <input class="form-control" id="mobile" type="text" name="mobile" value="{{person.mobile}}">
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="email">Email (optional)</label>
+            <input class="form-control" id="email" type="email" name="email" value="{{person.email}}">
+        </div>
+
+        <button type="submit" class="button">Save and Continue</button>
+    </form>
+    </div>
+    <!-- column -->
+</div>

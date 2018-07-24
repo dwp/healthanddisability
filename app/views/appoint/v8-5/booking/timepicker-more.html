@@ -1,0 +1,73 @@
+{% extends path1+"/_layout.html" %}
+
+{% block left_content %}
+ <p class="mt10 mb0 bold-small"><span class="circle purple"></span>Booked</p>
+
+<h4 class="heading-small">Wednesday 11 July 2018</h4>
+ <p>11:00am</p>
+ <hr>
+{% endblock %}
+
+
+{% block citizen_content %}
+
+<div class="container">
+        <h3 class="heading-medium mt20">Rearrange appointment</h3>
+
+    <form action="bobby_timeline_rebooked">
+       
+        <fieldset class="form-group">
+            <legend class="form-label-bold">Choose an appointment time</legend>
+
+            
+            <div class="multiple-choice">
+                <input type="radio" name="appointment" id="available-appointments-3" value="Monday, 11 June 2018 at 11:00am">
+                <label for="available-appointments-3">Monday, 11 June 2018 at 11:00am</label>
+            </div>
+            <div class="multiple-choice">
+                <input type="radio" name="appointment" id="available-appointments-4" value="Monday, 11 June 2018 at 2:00pm">
+                <label for="available-appointments-4">Monday, 11 June 2018 at 2:00pm</label>
+            </div>
+            <div class="multiple-choice">
+                <input type="radio" name="appointment" id="available-appointments-1" value="Tuesday, 12 June 2018 at 11:00am">
+                <label for="available-appointments-1">Tuesday, 12 June 2018 at 11:00am</label>
+            </div>
+            <div class="multiple-choice">
+                <input type="radio" name="appointment" id="available-appointments-2" value="Tuesday, 12 June 2018 at 2:00pm">
+                <label for="available-appointments-2">Tuesday, 12 June 2018 at 2:00pm</label>
+            </div>
+
+            <div class="multiple-choice">
+                <input type="radio" name="appointment" id="available-appointments-5" value="Friday, 15 June 2018 at 11:am">
+                <label for="available-appointments-5">Friday, 15 June 2018 at 11:am</label>
+            </div>
+            <div class="multiple-choice">
+                <input type="radio" name="appointment" id="available-appointments-6" value="Monday, 18 June 2018 at 2:00pm">
+                <label for="available-appointments-6">Monday, 18 June 2018 at 2:00pm</label>
+            </div>
+            <div class="multiple-choice">
+                <input type="radio" name="appointment" id="available-appointments-7" value="Tuesday, 19 June 2018 at 11:00am">
+                <label for="available-appointments-7">Tuesday, 19 June 2018 at 11:00am</label>
+            </div>
+            <div class="multiple-choice">
+                <input type="radio" name="appointment" id="available-appointments-8" value="Tuesday, 19 June 2018 at 2:00pm">
+                <label for="available-appointments-8">Tuesday, 19 June 2018 at 2:00pm</label>
+            </div>
+        </fieldset>
+        <p><a href="timepicker-non-available" class="button-secondary">View more appointments</a></p>
+
+        <input type="hidden" name="tab" value="Details">
+        
+        <p><button type="submit" class="button">Next</button></p>
+
+
+    </form>
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

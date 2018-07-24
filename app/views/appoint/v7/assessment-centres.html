@@ -1,0 +1,78 @@
+{% extends path+"/_layout.html" %}
+
+
+
+{% block assess_content %}
+
+  <div class="nav-horizontal">
+  <div class="main-nav-wrapper">
+    <ul class="main-nav">
+
+		
+		
+		<li><a href="appointments">Appointments</a></li>
+        <li class="selected"><a href="assessment-centres">Manage my centre</a></li>
+		<li><a href="#">Daily schedule</a></li>
+
+    </ul>
+  </div>
+</div>
+
+<main id="content" role="main" class="main-content mt30">
+
+      <div class="container">
+      
+   <h1 class="heading-large">Assessment Centres</h1>
+   
+   
+ <!--  <div class="section-tabs clearfix">
+    <ul>
+
+        <li class="active"><a href="#">Referrals</a></li>
+      
+        <li><a href="booked_appointments">Scheduled</a></li>
+      
+    </ul>
+  </div> -->
+
+      
+      
+        <div class="grid-row">
+          <div class="column-full">
+          
+          
+          
+              <table class="appointments-view">
+
+                <thead>
+                  <tr class="header-view">
+                    <th style="padding-left:15px;">Name</th>
+                    <th>Location</th>
+                  </tr>
+                </thead>
+
+
+                <tr>
+                  <td style="padding-left:15px;"><a href="capacity/manage-centre?tab=details">Five Ways House</a></td>
+                  <td>Birmingham, B1 1UH</td>
+                </tr>
+                
+                <tr>
+                  <td style="padding-left:15px;"><a href="#">Tresco House</a></td>
+                  <td>London, SW1 5EB</td>
+                </tr>
+
+                               
+              </table>
+          </div><!-- column -->
+          
+          
+          
+                
+          
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

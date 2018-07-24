@@ -1,0 +1,92 @@
+{% extends path1+"/_layout.html" %}
+
+{% block left_content %}
+ <p class="mt10 mb0 bold-small"><span class="circle purple"></span>Booked</p>
+
+ <div class="available-slot">
+      <div class="column-half" style="padding: 0;">
+          <h4 class="heading-small">Tuesday 10 May</h4>
+          <p>14:00pm</p>
+      </div>
+      <div class="column-half" style="padding: 0; text-align: right;">
+          <a href="timepicker?day=tuesday&date=10%20April&time=11:00am" class="button">Edit</a>
+      </div>
+  </div>
+ <hr>
+{% endblock %}
+
+{% block citizen_content %}
+ {# macro #}
+  {{ nav2.case_tabs("bobby_timeline",1,path1) }}
+
+<div class="container">
+
+<div class="timeline">
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Appointment booked</h3>
+          <p class="timeline_datetime">04 February 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Referred for appointment</h3>
+          <p class="timeline_datetime">30 January 2018</p>
+        </div>
+
+         <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">GP statement received (ESA113)</h3>
+          <p class="timeline_datetime">29 January 2018</p>
+        </div>
+        
+          <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Request for GP statement sent (ESA113)</h3>
+          <p class="timeline_datetime">19 January 2018</p>
+        </div>
+        
+          <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA50 form received at CHDA</h3>
+          <p class="timeline_datetime">4 January 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA50 form sent out to Tomas</h3>
+          <p class="timeline_datetime">12 December 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">FIT note (MED3) received </h3>
+          <p class="timeline_datetime">19 November 2017</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Entitlement letter sent to Tomas</h3>
+          <p class="timeline_datetime">5 November 2017</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">ESA application completed on the phone</h3>
+          <p class="timeline_datetime">1 November 2017</p>
+        </div>
+
+        <div style="clear:both"></div>
+
+      </div><!-- timeline -->
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}
+_

@@ -1,0 +1,63 @@
+{% extends path1+"/_layout.html" %}
+
+{% block citizen_content %}
+
+<div class="container">
+
+  {# macro #}
+  {{ nav.case_tabs("timeline",1,path1) }}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+      <div class="timeline">
+
+
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">referral to appointment booking</h3>
+          <p class="timeline_datetime">14:37pm - 8th June 2017</p>
+          <p class="bold-small"><a href="#">Dejan Swann</a></p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">questionnaire received</h3>
+          <p class="timeline_datetime">10:00am - 5th June 2017</p>
+          <p class="bold-small"><a href="#">Emre Edward</a></p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Application submitted</h3>
+          <p class="timeline_datetime">09:12am - 1st June 2017</p>
+          <p class="bold-small"><a href="#">Chris Gerrard</a></p>
+        </div>
+
+        <div style="clear:both"></div>
+
+      </div><!-- timeline -->
+
+    </div><!-- column -->
+
+    <div class="column-one-third">
+      {# {% include path+"/inc/edit/status.html" %}
+      {% include path+"/inc/edit/adviser.html" %}
+      {% include path+"/inc/edit/team.html" %} #}
+    </div><!-- column -->
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

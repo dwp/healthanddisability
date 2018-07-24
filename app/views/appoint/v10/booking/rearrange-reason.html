@@ -1,0 +1,42 @@
+{% extends path1+"/_layout_full.html" %}
+
+
+
+{% block citizen_content %}
+
+<div class="container">
+    <div class="grid-row mt30">
+        <div class="column-half">
+            <h1 class="heading-medium mt30">Confirm appointment change</h1>
+             <form action="bobby_timeline_rebooked">
+                
+                <div class="form-group">
+                    <label class="form-label-bold">Why does the customer want to change the appointment? </label>
+                    <textarea name="reason" class="form-control span-width" ></textarea>  
+                </div>
+
+                <p>Appointment will be changed to:</p>    
+                 <p><span class="capitalise">{{query.day}}</span> {{query.date}} at {{query.time}}</p>
+
+
+                 <input type="hidden" name="day" value="{{query.day}}">
+                 <input type="hidden" name="date" value="{{query.date}}">
+                 <input type="hidden" name="time" value="{{query.time}}">
+                 
+                 <p><button class="button">Confirm</button> </p>
+                 <p><a href="timepicker">Cancel</a></p>
+             </form>
+
+             
+
+        </div>
+    </div>
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

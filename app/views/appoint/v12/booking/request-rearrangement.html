@@ -1,0 +1,53 @@
+{% extends path1+"/_layout.html" %}
+
+{% block left_content %}
+ <p class="mt10 mb0 bold-small"><span class="circle purple"></span>Booked</p>
+
+
+ <hr>
+{% endblock %}
+
+
+{% block citizen_content %}
+
+<div class="container">
+    <div class="grid-row mt30">
+        <div class="column-half">
+            <h1 class="heading-medium mt0">Request appointment rearrangement</h1>
+            
+            <form action="timeline_pending">
+                <fieldset class="form-group">
+                    <legend class="form-label-bold">
+                        Is the appointment being changed by the customer?
+                    </legend>
+                    <div class="multiple-choice" data-target="customer-rearranged">
+                        <input type="radio" name="changedByCustomer" id="changedByCustomer-yes" value="yes">
+                        <label for="changedByCustomer-yes">Yes</label>
+                    </div>
+                    <div class="panel panel-border-wide js-hidden" id="customer-rearranged">
+                        <p>We are unable to rearrange the appointment until a deceision maker has reviewed the reasons for rearrangment.</p>
+                    </div>
+                    <div class="multiple-choice">
+                        <input type="radio" name="changedByCustomer" id="changedByCustomer-no" value="no">
+                        <label for="changedByCustomer-no">No - DWP have had to change the appointment</label>
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                    <label class="form-label-bold">Why does the appointment need to be rearranged? </label>
+                    <textarea name="reason" class="form-control span-width"></textarea>
+                </div>
+                <p>
+                    <button class="button">Confirm</button>
+                </p>
+            </form>
+        </div>
+    </div>
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

@@ -1,0 +1,45 @@
+<hr />
+<h3 class="heading-large">What can you do?</h3>
+<form class="form" action="">
+  <div class="form-group">
+
+    <div class="multiple-choice" data-target="scorenow">
+      <input id="decide_now" name="whatcando" type="radio" value="Yes">
+      <label for="decide_now"> I can score this thing now </label>
+    </div>
+
+    <div class="js-hidden panel panel-indent mt20" id="scorenow">
+      <div class="form-group">
+        <label class="form-label">Score</label>
+        <input type="text" class="form-control" name="score" placeholder="1-15" style="width:10em"/>
+        &nbsp;
+        <span class="font-xsmall help__handle">
+          <a href="#">help</a>
+          <div class="help__content">
+            <p>1 - 5 point - Cannot mobilise more than 50m on a level ground</p>
+            <p>5 - 10 points - Cannot mount to descend two steps</p>
+            <p>10 -15 points - Cannot mobilise over 100m</p>
+          </div>
+        </span>
+      </div><!-- form-group -->
+      <div class="form-group">
+        <label class="form-label">Notes</label>
+        <textarea class="form-control" name="justify" style="height:200px"></textarea>
+      </div>
+    </div><!-- js-hidden -->
+
+    <div class="multiple-choice" data-target="">
+      <input id="support_no" name="whatcando" type="radio" value="No, redirect(/staff/v3/citizen3/support/rejected)">
+      <label for="support_no"> I need more medical evidence </label>
+    </div>
+
+    <div class="multiple-choice" data-target="">
+      <input id="face2face" name="whatcando" type="radio" value="No, redirect(/staff/v3/citizen3/support/rejected)">
+      <label for="face2face"> I would need to see this person face to face</label>
+    </div>
+
+  </div><!-- form-group -->
+  <div class="form-group">
+    <button class="button" type="button">Continue</button>
+  </div><!-- form-group -->
+</form>

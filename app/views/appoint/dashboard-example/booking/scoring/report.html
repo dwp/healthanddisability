@@ -1,0 +1,92 @@
+{% extends path1+"/_layout.html" %}
+
+{% block citizen_content %}
+
+<div class="container">
+
+  {# macro #}
+  {{ nav.case_tabs("scoring",1,path1) }}
+
+  <div class="grid-row mt30">
+
+    <div class="column-third">
+      &nbsp;
+    </div><!-- column -->
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">Medical Opinion - Physical</h1>
+      <p>I have considered the possible ESA activity outcomes and my advice is that the following apply:</p>
+
+      <h2 class="heading-medium">Lower Limb - Activity Outcomes</h2>
+      Mobilising unaided by another person with or without a walking stick, manual wheelchair or
+      other aid if such aid is normally, or could reasonably be, worn or used
+
+      <h3 class="heading-small">Activity 1</h3>
+      <p>We None of the above apply</p>
+
+      <h3 class="heading-small">Standing and sitting Activity 2</h3>
+      <p>Sd None of the above apply</p>
+
+      <h2 class="heading-medium">Lower Limb - Supporting Medical Evidence</h2>
+      <h3 class="heading-small">Prominent Features of Functional Ability Relevant to Daily Living 5</h3>
+      <p>
+        Is stated that:<br />
+        He is able to get in and out of bed by himself<br />
+        He is able to get down the stairs<br />
+        He will catch a bus to the supermarket<br />
+        He will spend 15 minutes walking around shopping<br />
+        He states that he could walk for about 20 to 30 minutes at a steady pace<br />
+        If he sits for too long his knee will seize up<br />
+        It does vary however and is random<br />
+        It does not happen all the time
+      </p>
+
+      Behaviour Observed During Assessment 6
+      Client was able to sit on a chair with a back for 23 minutes.
+      The client rose once from sitting in an upright chair (no chair arms) without physical assistance from another person.
+      The client walked 10 metres normally to the examination room.
+
+      Relevant Features of Clinical Examination 7
+      Abnormal Findings:
+
+      Lower Back
+      Can bend forward to reach knees
+      Relevant Normal Findings:
+
+      Left Leg
+      Left hip bends fully
+      Left knee bends fully
+
+      Relevant Features of Clinical Examination 7
+      Able to fully straighten left knee
+      Left outward hip rotation is normal
+      Power in the left leg was normal
+      Downwards movement of left ankle was normal
+      Ability to lift straight left leg when lying down is
+      normal
+
+      Right Leg
+      Right hip bends fully
+      Right knee bends fully
+      Able to fully straighten right knee
+      Right outward hip rotation is normal
+      Power in the right leg was normal
+      Downwards movement of right ankle was normal
+      Upwards movement of right ankle was normal
+      Ability to lift straight right leg when lying down is
+      normal
+      Other Findings:
+      Although the client is able to do the movements, he reported to pain in his knees, particularly the in his
+      left knee.
+
+    </div><!-- column -->
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends path+"/_layout.html" %}
+{% import path1+"/_macros_nav.html" as nav %}
+
+{% block assess_content %}
+
+  {#  This is the BIG BLUE BAR at the top - #jussayin #}
+
+  {% block header %}
+  {% include path1+"/_add_heading.html" %}
+  {% endblock %}
+
+  <main id="content" role="main" class="main-content">
+
+    <div class="container">
+      <div class="grid-row">
+        <div class="column-full">
+
+          <div nunj-block="citizen_content">
+            {% block citizen_content %}{% endblock %}
+          </div>
+
+        </div><!-- column -->
+      </div><!-- row -->
+    </div><!-- container -->
+
+  </main>
+
+{% endblock %}
+
+
+
+
+
+
+{% set complexTotal = 0 %}
+{% set neuroTotal = 0 %}
+{% set standardTotal = 0 %}
+
+{% for person in staff %}
+{% if person.skill == "Complex Neuro" %}
+    {% set complexTotal = complexTotal + 1 %}
+{% endif %}
+{% if person.skill == "Neuro" %}
+    {% set neuroTotal = neuroTotal + 1 %}
+{% endif %}
+{% if person.skill == "Standard" %}
+    {% set standardTotal = standardTotal + 1 %}
+{% endif %}
+{% endfor %}
+

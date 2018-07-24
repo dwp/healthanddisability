@@ -1,0 +1,20 @@
+{% extends path1+"/_layout.html" %}
+
+{% block citizen_content %}
+
+  <div class="container">
+
+    {{ nav.case_tabs("scoring",1,path1) }} {# macro #}
+
+    <div class="grid-row">
+      <div class="column-third">
+          {% block scoring_left %}
+            {% include path2+"/_leftcol.html" %}
+          {% endblock %}
+      </div><!-- column -->
+      <div class="column-two-thirds">
+          {% block scoring_content %}{% endblock %}
+      </div><!-- column-full -->
+    </div><!-- grid-row -->
+  </div><!-- container -->
+{% endblock %}

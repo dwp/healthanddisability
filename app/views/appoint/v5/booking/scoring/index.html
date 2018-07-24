@@ -1,0 +1,63 @@
+{% extends path2+"/_layout.html" %}
+
+{% block scoring_content %}
+
+<h2 class="heading-large mt5 mb30">Overview</h2>
+
+<div class="grid-row mb30">
+  <div class="column-third">
+    <div class="data">
+      <span class="data-item bold-xxlarge" id="total_score"></span>
+      <span class="data-item bold-xsmall">total score</span>
+    </div>
+  </div><!-- column -->
+  <div class="column-third">
+    <div class="data">
+      <span class="data-item bold-xxlarge">3</span>
+      <span class="data-item bold-xsmall">descriptors scored</span>
+    </div>
+  </div><!-- column -->
+</div><!-- row -->
+
+<hr />
+
+<div class="grid-row">
+  <div class="column-third">
+    <div class="data">
+      <span class="data-item bold-xxlarge">3</span>
+      <span class="data-item bold-xsmall mb10">need more medical evidence</span>
+      <button class="button">Request GP Report</button>
+    </div>
+  </div><!-- column -->
+  <div class="column-third">
+    <div class="data">
+      <span class="data-item bold-xxlarge">5</span>
+      <span class="data-item bold-xsmall mb10">need face to face assessment</span>
+      <button class="button">Book appointment</button>
+    </div>
+  </div><!-- column -->
+  <div class="column-third">
+    <span class="data-item bold-xxlarge">7</span>
+    <span class="data-item bold-xsmall mb10">have no evidence</span>
+  </div><!-- column -->
+</div><!-- row -->
+
+<hr />
+
+{% endblock %}
+
+{% block page_scripts %}
+  {{ super() }}
+  <script type="text/javascript">
+    $(document).on('ready',function()
+    {
+      var total = 0;
+      $('#scored .score').each(function(i,e)
+      {
+        var n = parseInt($(e).text());
+        total += n;
+      });
+      $('#total_score').text(total);
+    });
+  </script>
+{% endblock %}

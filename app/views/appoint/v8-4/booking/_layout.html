@@ -1,0 +1,54 @@
+{% extends path+"/_layout.html" %}
+{% import path1+"/_macros_nav.html" as nav %}
+{% import path1+"/_macros_nav2.html" as nav2 %}
+{% import path1+"/_macros_nav-mendez.html" as nav_mendez %}
+
+{% block assess_content %}
+
+  {#  This is the BIG BLUE BAR at the top - #jussayin #}
+  {% block main_nav %}
+  <div class="nav-horizontal">
+  <div class="main-nav-wrapper">
+    <ul class="main-nav">
+        
+        
+        <li class="selected"><a href="{{root}}/appointments">Appointments</a></li>
+        <li><a href="{{root}}/assessment-centres">Manage my centre</a></li>
+
+    </ul>
+  </div>
+</div>
+{% endblock %}
+  {% block heading %}
+  {% include path1+"/_heading.html" %}
+  {% endblock %}
+<main id="content" role="main" class="main-content-inner">
+    <div class="container">
+        <div class="grid-row main-row">
+            <div class="column-one-quarter left-area">
+                <div class="left-panel">
+                  {% block left_content %}
+                    <h3 class="heading-medium mt20">Next available appointment</h3>
+                            <h4 class="heading-small">{{appointments.nextAvailable | formatDate("dddd D MMMM YYYY")}}</h4>
+                            <p>{{appointments.nextAvailable | formatDate("hh:mma")}}</p>
+                            <a href="/{{path}}/appointments?booked={{customer._id}}" class="button">Book this appointment</a>
+                       
+                    <hr>
+                    
+                    {% endblock %}
+                </div>
+            </div>
+            <div class="column-three-quarters main-area">
+                <div nunj-block="citizen_content">
+                    {% block citizen_content %}{% endblock %}
+                </div>
+            </div>
+            <!-- column -->
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+</main>
+          
+
+{% endblock %}

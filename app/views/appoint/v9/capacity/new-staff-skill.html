@@ -1,0 +1,114 @@
+{% extends path1+"/_addlayout.html" %} 
+
+{%
+set staff = [
+  {
+    "id": "5aab9a325f69be985198ddcf",
+    "index": 3,
+    "guid": "7428be7d-f235-431b-b953-44febe4aa493",
+    "surname": "Mcleod",
+    "firstname": "Liliana",
+    "name": "Liliana Mcleod",
+    "gender": "female",
+    "type": "Doctor",
+    "href": "#"
+  }
+]
+%}
+
+{%
+set days = [{
+    "day": "Monday",
+    "checked": false,
+    "startTime": "09:00",
+    "finishTime": "17:00"
+    },{
+    "day": "Tuesday",
+    "checked": false,
+    "startTime": "09:00",
+    "finishTime": "17:00"
+    },{
+    "day": "Wednesday",
+    "checked": false,
+    "startTime": "",
+    "finishTime": "",
+    "startTime": "09:00",
+    "finishTime": "17:00"
+    },{
+    "day": "Thursday",
+    "checked": false,
+    "startTime": "09:00",
+    "finishTime": "17:00"
+    },{
+    "day": "Friday",
+    "checked": false,
+    "startTime": "09:00",
+    "finishTime": "17:00"
+    },{
+    "day": "Saturday",
+    "checked": false,
+    "startTime": "09:00",
+    "finishTime": "13:00"
+}]
+
+%}
+
+{% block citizen_content %}
+<div class="container">
+    <p><a href="fiveways" class="link-back">Back</a></p>
+    {% for person in staff %}
+    <h3 class="heading-medium mt0">{{ person.name }}</h3>
+    <div class="grid-row mt30">
+        <div class="column-two-thirds">
+            <h4 class="heading-small"></h4>
+
+            <div class="form-group">
+                <fieldset class="inline">
+                    <legend>
+                      <span class="form-label-bold">
+                        What type of Health Care Professional are they?
+                      </span>
+                    </legend>
+                    <div class="multiple-choice">
+                      <input id="type-doctor" type="radio" name="HcpType" value="doctor">
+                      <label for="type-doctor">Doctor</label>
+                    </div>
+                    <div class="multiple-choice">
+                      <input id="type-other" type="radio" name="HcpType" value="other">
+                      <label for="type-other">Other</label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="form-group inline" id="HcpSkillLevel">
+                <fieldset>
+                    <legend>
+                      <span class="form-label-bold">
+                        What skill level are they?
+                      </span>
+                    </legend>
+                    <div class="multiple-choice">
+                      <input id="skill-standard" type="radio" name="skill" value="standard">
+                      <label for="skill-standard">Standard</label>
+                    </div>
+                    <div class="multiple-choice">
+                      <input id="skill-neuro" type="radio" name="skill" value="neuro">
+                      <label for="skill-neuro">Neuro</label>
+                    </div>
+                </fieldset>
+            </div>
+          </div>
+
+          </div>
+        </div>
+        <!-- column -->
+    </div>
+
+    {% endfor %}
+
+    <p class="mt30"><a href="new-staff-hours" class="button">Save</a></p>
+    <!-- row -->
+</div>
+
+<!-- container -->
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

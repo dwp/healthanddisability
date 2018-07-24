@@ -1,0 +1,15 @@
+{% extends path1+"/_addlayout.html" %} 
+
+
+{% block citizen_content %}
+<div class="container">
+    <p><a href="/{{path2}}" class="link-back">Back</a></p>
+    <h3 class="heading-medium mt0">Add a new Healthcare Professional</h3>
+
+    {% include path2+ "/_staff-personal-details.html" %}
+     
+    <!-- row -->
+</div>
+
+<!-- container -->
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

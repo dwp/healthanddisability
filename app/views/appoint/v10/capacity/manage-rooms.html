@@ -1,0 +1,115 @@
+
+{% extends path1+"/_addlayout.html" %} 
+{%
+    set rooms = [{
+        name: "Room 1",
+        facilities: [
+            "Ground Floor",
+            "Wheelchair Accessible"
+        ],
+        lastUpdated: "12 February 2017",
+        href: "edit-room-1"
+    },{
+        name: "Room 2",
+        facilities: [
+            "Ground Floor",
+            "Wheelchair Accessible"
+        ],
+        lastUpdated: "12 February 2017",
+        href: "#"
+    },{
+        name: "Room 3",
+        facilities: [
+            "Ground Floor"
+        ],
+        lastUpdated: "12 February 2017",
+        href: "#"
+    },{
+        name: "Room 4",
+        lastUpdated: "12 February 2017",
+        groundFloor: false,
+        href: "#"
+    },{
+        name: "Room 5",
+        groundFloor: false,
+        lastUpdated: "12 February 2017",
+        href: "#"
+    }]
+%}
+
+{%
+    set slots = [
+        "9.00am",
+        "10:00am",
+        "11:00am",
+        "1:00pm",
+        "2:00pm",
+        "3:00pm",
+        "4:00pm"    
+        ]
+%}
+{% block citizen_content %}
+
+
+<div class="container">
+    
+    <p><a href="fiveways" class="link-back">Back</a></p>
+    <div class="mt30 grid-row">
+        <div class="column-two-thirds">
+        <h2 class="heading-medium mt0">Manage Rooms</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Facilities</th>
+                    <th>Last updated</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for room in rooms %}
+                    <tr>
+                        <td>{{ room.name }}</td>
+                        <td>
+                        {% for facility in room.facilities%}
+                            {{facility}}{% if not loop.last %}, {% endif %}
+                        {% endfor %}    
+                        </td>
+                        <td>{{ room.lastUpdated }}</td>
+                        <td class="numeric"><a href="{{room.href}}">Edit</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <p><a href="new-room" class="button mt30">New Room</a></p>
+    </div>
+        <!-- column -->
+        <div class="column-one-third">
+            <div class="info-panel ">
+                <div class="grid-row">
+                    <div class="data column-one-third">
+                      <span class="data-item bold-xlarge">5</span>
+                      <span class="data-item bold-xsmall">Rooms</span>
+                    </div>
+                    <div class="data column-one-third">
+                      <span class="data-item bold-xlarge">3</span>
+                      <span class="data-item bold-xsmall">Ground Floor</span>
+                    </div>
+                    <div class="data column-one-third">
+                      <span class="data-item bold-xlarge">2</span>
+                      <span class="data-item bold-xsmall">Wheelchair Accessible</span>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %} 
+{% block footer_top %} 
+{{ super() }} 
+{# {% include path1+"/footer_links.html" %} #} 
+{% endblock %}

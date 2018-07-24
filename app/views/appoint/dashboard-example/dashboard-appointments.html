@@ -1,0 +1,113 @@
+{% extends path+"/_layout.html" %}
+
+
+
+{% block assess_content %}
+
+  <div class="nav-horizontal">
+  <div class="main-nav-wrapper">
+    <ul class="main-nav">
+ 
+        <li class="selected"><a href="#">Appointments</a></li>
+        <li><a href="#">Manage centre</a></li>
+        <li><a href="#">Daily schedule</a></li>
+    </ul>
+  </div>
+</div>
+
+<main id="content" role="main" class="main-content mt30">
+
+      <div class="container">
+      
+   <h1 class="heading-large">Appointments</h1>
+   
+   
+      
+        <div class="grid-row">
+          <div class="column-third">
+             
+          <article class="dashboard-col">   
+          		<h2 class="heading-small">Referrals</h2>
+		  		<p>821</p>   
+          	<a href="appointments" class="button">View referrals</a>
+          </article>
+             
+             
+           </div><!-- column -->
+           
+           <div class="column-third">
+             
+             
+          <article class="dashboard-col">   
+          		<h2 class="heading-small">Scheduled</h2>
+		  		<p>452</p>   
+		  		<a href="booked_appointments" class="button">View scheduled</a>
+          </article>   
+             
+             
+           </div><!-- column -->
+           
+           <div class="column-third">
+             
+             
+          <article class="dashboard-col">   
+          		<h2 class="heading-small">Examined</h2>
+		  		<p>41</p>   
+		  		<a href="#" class="button">View examined</a>
+          </article>   
+             
+             
+           </div><!-- column -->
+           
+           
+        </div><!-- row -->
+        
+        
+        
+         <div class="grid-row mt30"><hr>
+         
+         
+         <div class="column-third">
+             
+             
+          <article class="dashboard-col">   
+          		<h2 class="heading-small">DNA</h2>
+		  		<p>21</p>   
+		  		<a href="#" class="button">View DNA</a>
+          </article>   
+             
+             
+           </div><!-- column -->
+         	
+          <div class="column-third">
+             
+             
+          <article class="dashboard-col">   
+          		<h2 class="heading-small">CSHU</h2>
+		  		<p>9</p>   
+		  		<a href="#" class="button">View CSHU</a>
+          </article>   
+             
+             
+           </div><!-- column -->
+           
+           <div class="column-third">
+             
+             
+          <article class="dashboard-col">   
+          		<h2 class="heading-small">Cancellations</h2>
+		  		<p>7</p>   
+		  		<a href="#" class="button">View Cancellations</a>
+          </article>   
+             
+             
+           </div><!-- column -->
+           
+           
+        </div><!-- row -->
+        
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

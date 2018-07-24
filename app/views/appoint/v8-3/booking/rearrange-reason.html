@@ -1,0 +1,62 @@
+{% extends path1+"/_layout.html" %}
+
+{% block left_content %}
+ <p class="mt10 mb0 bold-small"><span class="circle purple"></span>Booked</p>
+
+ <div class="available-slot">
+      <div class="column-full" style="padding: 0;">
+          <h4 class="heading-small">Thursday, 4 January</h4>
+          <p>14:00pm</p>
+      </div>
+      
+  </div>
+ <hr>
+{% endblock %}
+
+
+
+
+{% block citizen_content %}
+
+<div class="container">
+            <h1 class="heading-medium mt20">Confirm appointment change</h1>
+
+
+            <form action="bobby_timeline_rebooked">
+                <fieldset class="form-group">
+                    <legend class="form-label-bold">
+                        Is the appointment being changed by the customer?
+                    </legend>
+                    <div class="multiple-choice">
+                        <input type="radio" name="changed-by-customer" id="changed-by-customer-yes" value="yes">
+                        <label for="changed-by-customer-yes">Yes</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input type="radio" name="changed-by-customer" id="changed-by-customer-no" value="no">
+                        <label for="changed-by-customer-no">No - DWP have had to change the appointment</label>
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                    <label class="form-label-bold">Why is the appointment being changed? </label>
+                    <textarea name="reason" class="form-control span-width"></textarea>
+                </div>
+                <p>Appointment will be changed to:</p>
+                <p>{{query.appointment}}</p>
+                <input type="hidden" name="day" value="{{query.day}}">
+                <input type="hidden" name="date" value="{{query.date}}">
+                <input type="hidden" name="time" value="{{query.time}}">
+                <p>
+                    <button class="button">Confirm</button>
+                </p>
+                <p><a href="timepicker">Cancel</a></p>
+            </form>
+
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}
