@@ -37,7 +37,7 @@ function getCentreDetails(req, res){
   }
 };
 
-router.get('/appointment-centres', function(req, res, next){
+router.get('/assessment-centres', function(req, res, next){
   res.locals.centres = require('../../../../app/views/appoint/v9/data/centres.js')
   next()
 })
