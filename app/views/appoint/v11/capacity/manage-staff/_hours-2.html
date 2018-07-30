@@ -1,4 +1,6 @@
 <section class="column-half {{ 'hidden' if not (query.tab === 'hours') }}">
+    <p class="mt0"><a href="{{person.id}}/edit-staff-hours" class="button mt0">Edit rota</a></p>
+
     <table>
         <thead>
             <tr>
@@ -51,8 +53,3 @@
     </table>
 
 </section>
-<div class="column-one-quarter {{ 'hidden' if not (query.tab === 'hours') }}">
-    <div class="info-panel">
-        <p class="mt20"><a href="{{person.id}}/edit-staff-hours" class="button mt0">Edit rota</a></p>
-    </div>
-</div>

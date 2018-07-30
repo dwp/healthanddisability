@@ -15,3 +15,9 @@ gulp.task('watch-assets', function () {
   return gulp.watch([config.paths.assets + 'images/**',
     config.paths.assets + 'javascripts/**'], {cwd: './'}, ['copy-assets'])
 })
+
+
+gulp.task('watch-js', function () {
+  return gulp.watch(
+  	[config.paths.assets + 'javascripts/**'], {cwd: './'}, ['javascripts'])
+})

@@ -20,6 +20,7 @@ gulp.task('generate-assets', function (done) {
                 'sass',
                 'sass-documentation',
                 'copy-assets',
+                'javascripts',
                 'copy-documentation-assets', done)
 })
 
@@ -32,7 +33,8 @@ gulp.task('copy-govuk-modules', [
 
 gulp.task('watch', function (done) {
   runSequence('watch-sass',
-               'watch-assets', done)
+               'watch-assets',
+               'watch-js', done)
 })
 
 gulp.task('test', function () {
