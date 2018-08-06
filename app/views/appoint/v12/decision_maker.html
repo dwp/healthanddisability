@@ -27,9 +27,9 @@
 
         <li><a href="appointments">Referrals</a></li>
       
-        <li class="active"><a href="#">Booked</a></li>
+        <li><a href="#">Booked</a></li>
         <li><a href="todays_appointments">Today's appointments</a></li>
-        <li><a href="decision_maker">With decision maker</a></li>
+        <li class="active"><a href="decision_maker">With decision maker</a></li>
       
     </ul>
   </div>
@@ -43,8 +43,7 @@
                   <tr class="header-view">
                     <th style="padding-left:15px;">Name</th>
                     <th>Assessment Centre</th>
-                    <th>Appointment Date</th>
-                    <th>Appointment Time</th>
+                    <th>Date referred to decision maker</th>
                     <th class="numeric">Status</th>
                   </tr>
                 </thead>
@@ -60,31 +59,13 @@
                   <td class="numeric"><span class="status booked">Booked</span></td>
                 </tr> 
  -->
-                 
-
+                
+                {% for customer in customers | sort(false, false, 'referredDate') | rejectattr("waitTime") %}
                 <tr>
-                  <td style="padding-left:15px;" class="">
-                    <a href="{% if query.arrived %}
-                  booking/booked/mendez/mendez_timeline-arrived
-                  {% else %}
-                  booking/booked/mendez/details
-                  {% endif %}">Mendez Dalton</td>
-                  <td>Tresco House</td>
-                  <td>{{appointments.today | formatDate("D MMMM YYYY")}}</td>
-                  <td>{{appointments.today | formatDate("h:mma")}}</td>
-                  {% if query.arrived %}
-                  <td class="numeric"><span class="status green">Arrived - {{arrivedTime}}</span></td>
-                  {% else %}
-                  <td class="numeric"><span class="status booked">Booked</span></td>
-                  {% endif %}
-                </tr>
-                {% for customer in customers | sort(false, false, 'appointmentDate') | rejectattr("waitTime") %}
-                <tr>
-                  <td style="padding-left:15px;" class=""><a href="booking/booked/{{customer._id}}/details">{{customer.name.fullName}}</a></td>
+                  <td style="padding-left:15px;" class=""><a href="booking/decision/{{customer._id}}/details">{{customer.name.fullName}}</a></td>
                   <td>{{customer.address.assessmentCentre}}</td>
-                  <td>{{customer.appointmentDate | formatDate("D MMMM YYYY")}}</td>
-                  <td>{{customer.appointmentTime}}</td>
-                  <td class="numeric"><span class="status booked">Booked</span></td>
+                  <td>{{customer.referredDate | formatDate("D MMMM YYYY")}}</td>
+                  <td class="numeric">{{customer.decisionType}}</td>
                 </tr>
                 {% endfor %}               
               </table>

@@ -113,6 +113,10 @@ module.exports = function (env) {
       .replace(/-+$/, '');            // Trim - from end of text
   }
 
+  filters.limit = function(arr, limit) {
+    return arr.slice(0, limit);
+  }
+
 
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:

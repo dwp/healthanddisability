@@ -116,6 +116,18 @@ router.get('/booked_appointments', function(req, res, next){
   next()
 })
 
+router.get('/decision_maker', function(req, res, next){
+  var customers = require('../../../../app/views/appoint/v12/data/decisionMaker.js');
+  res.locals.customers = customers.map(customer => {
+
+    var arrivedTime = moment(customer.appointmentTime, "h:mma");
+    customer.timeArrived = arrivedTime.add(customer.arrivedTime, "minutes").format("h:mma");
+
+    return customer;
+  })
+  next()
+})
+
 router.get('/todays_appointments', function(req, res, next){
   var customers = require('../../../../app/views/appoint/v12/data/todaysAppointments.js');
   res.locals.customers = customers.map(customer => {
@@ -153,6 +165,8 @@ router.get('/booking/booked/:customerId*', function(req, res, next){
   next()
 })
 
+
+
 router.post('/booking/booked/:customerId*', function(req, res, next){
   var customers = require('../../../../app/views/appoint/v12/data/booked.js');
 
@@ -167,9 +181,54 @@ router.get('/booking/booked/:customerId', function(req, res, next){
   res.render("appoint/v12/booking/customer-booked");
 })
 
-router.get('/booking/referrals/:customerId/illness', function(req, res, next){
+router.get('/booking/decision/:customerId*', function(req, res, next){
+  var customers = require('../../../../app/views/appoint/v12/data/decisionMaker.js');
+
+  res.locals.section = "decision";
+  res.locals.templatePath = res.locals.path+"/booking/_layout-decision.html";
+
+  res.locals.customer = customers.filter(customer => customer._id === req.params.customerId)[0];
+  next()
+})
+
+router.get('/booking/decision/:customerId', function(req, res, next){
+  res.render("appoint/v12/booking/customer-booked");
+})
+
+router.get('/booking/decision/:customerId/details', function(req, res, next){
+  res.render("appoint/v12/booking/details/contact");
+})
+
+router.get('/booking/decision/:customerId/illness', function(req, res, next){
   res.render("appoint/v12/booking/details/illness");
 })
+
+router.get('/booking/decision/:customerId/gp', function(req, res, next){
+  res.render("appoint/v12/booking/details/gp");
+})
+
+router.get('/booking/decision/:customerId/details', function(req, res, next){
+  res.render("appoint/v12/booking/details/contact");
+})
+
+router.get('/booking/decision/:customerId/timeline', function(req, res, next){
+  res.render("appoint/v12/booking/timeline");
+})
+
+router.get('/booking/decision/:customerId/evidence', function(req, res, next){
+  res.render("appoint/v12/booking/evidence/index");
+})
+
+
+router.get('/booking/decision/:customerId/evidence/:page', function(req, res, next){
+  res.render("appoint/v12/booking/evidence/" + req.params.page);
+})
+
+
+
+
+
+
 
 router.get('/booking/referrals/:customerId/gp', function(req, res, next){
   res.render("appoint/v12/booking/details/gp");
@@ -221,6 +280,7 @@ router.get('/booking/booked/:customerId/send-home', function(req, res, next){
 
 router.post('/booking/booked/:customerId/send-home-2', function(req, res, next){
   res.locals.postData = req.body;
+
   res.render("appoint/v12/booking/send-home-2");
 })
 
@@ -274,6 +334,18 @@ router.get('*/timepicker', function(req, res, next){
   res.locals.newNumber = parseInt(res.locals.query.number) + 4;
   next()
 })
+
+router.get('*/send-home-2', function(req, res, next){
+  var availableAppointments = require('../../../../app/views/appoint/v12/data/availableAppointments.js');
+  
+  if(!res.locals.query.number){
+    res.locals.query.number = 4;
+  }
+  res.locals.availableAppointments = availableAppointments.filter(appointment => moment(appointment.appointmentDate).day() > 0 && moment(appointment.appointmentDate).day() < 6);
+  res.locals.newNumber = parseInt(res.locals.query.number) + 4;
+  next()
+})
+
 
 router.get('/booking/booked/:customerId/evidence', function(req, res, next){
   res.render("appoint/v12/booking/evidence/index");
