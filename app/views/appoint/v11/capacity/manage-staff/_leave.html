@@ -3,7 +3,45 @@
 <div class="column-half" {{ 'hidden' if not (query.tab==='leave' ) }}>
         <p><a href="{{person.id}}/staff-availability" class="button mt10">Change availability</a></p>
 
-    <table 
+   
+
+
+<table 
+        class=
+        "calendar">
+        <caption>August 2018</caption>
+        <thead>
+            <tr>
+                <th>MON</th>
+                <th>TUE</th>
+                <th>WED</th>
+                <th>THU</th>
+                <th>FRI</th>
+                <th>SAT</th>
+                <th>SUN</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for week in calendar %} 
+            <tr>
+                {% for day in week %} 
+
+                <td tabindex="0" 
+                    class="calendar__day
+
+                        {{ day | formatRole() }} 
+                        {{ day | formatInPast() }} 
+                        {{ day | formatClosed() }} ">
+                    {{ day | formatDate("D") }} </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+<h3 class="heading-medium">Old table:</h3>
+        <table 
         class=
         "calendar">
         <caption>April 2018</caption>
@@ -196,7 +234,7 @@
                      calendar__day--closed">6</td>
             </tr>
         </tbody>
-    </table>
+    </table> 
 </div>
 
 

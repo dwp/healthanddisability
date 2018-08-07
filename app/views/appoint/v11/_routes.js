@@ -9,6 +9,7 @@ var slotsData = require('../../../../app/views/appoint/v11/slots-data.js')
 var slotsData2 = require('../../../../app/views/appoint/v11/slots-data-2.js')
 var moment = require('moment')
 var commentsData = require('../../../../app/views/appoint/v11/data/comments.js');
+var calendar = require('node-calendar');
 
 console.log(path)
 
@@ -151,6 +152,9 @@ router.get('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffI
   var staff = require('../../../../app/views/appoint/v11/data/staff.js');
 
   res.locals.person = staff.filter(person => person.id === req.params.staffId)[0];
+
+  res.locals.calendar  = new calendar.Calendar(0).monthdatescalendar(2018,8);
+  res.locals.today = moment(new Date()).format();
   next()
 })
 
