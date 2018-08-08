@@ -1,6 +1,8 @@
 
 
 <div class="column-half" {{ 'hidden' if not (query.tab==='leave' ) }}>
+    <p><a href="{{person.id}}/staff-availability" class="button mt10">Change availability</a></p>
+
     <table 
         class=
         "calendar">
@@ -196,11 +198,5 @@
     </table>
 </div>
 
-<div class="column-one-quarter" {{ 'hidden' if not (query.tab === 'leave') }}>
-	<div class="info-panel">
-        <p><a href="staff-holiday?personId={{person.id}}" class="mt10">Book time off</a></p>
-		<p><a href="staff-availability?personId={{person.id}}" class="mt10">Change availability</a></p>
-	</div>
 
-</div>
 
