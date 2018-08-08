@@ -11,6 +11,8 @@
 
 {% block citizen_content %}
 
+
+
 <div class="container">
     <p><a href="/{{path2}}/{{centre.id}}/manage-staff/staff-profile/{{person.id}}?tab=leave" class="link-back">Back</a></p>
     <h3 class="heading-large mt0">Change availablity</h3>
@@ -19,7 +21,47 @@
                 </h2>
     <div class="grid-row">
         <div class="column-half">
-           
+           <table 
+        class=
+        "calendar">
+        <caption>August 2018</caption>
+        <thead>
+            <tr>
+                <th>MON</th>
+                <th>TUE</th>
+                <th>WED</th>
+                <th>THU</th>
+                <th>FRI</th>
+                <th>SAT</th>
+                <th>SUN</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for week in calendar %} 
+            <tr>
+                {% for day in week %} 
+
+                <td tabindex="0" 
+                    class="calendar-picker__day
+
+                        {{ day | formatRole() }} 
+                        {{ day | formatInPast() }} 
+                        {{ day | formatSelectable() }} 
+                        " data-date="{{day}}">
+                    {{ day | formatDate("D") }} </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+<br>
+<br>
+<br>
+
+
+
                 
                 <table class="calendar-picker mt30">
                     <caption>April 2018</caption>
