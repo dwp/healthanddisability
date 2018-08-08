@@ -85,14 +85,14 @@ module.exports = function (env) {
   filters.formatSelectable = function(date){
     var today = moment().hours(0).minutes(0).seconds(0).milliseconds(0);
     var testDate = moment(date).hours(0).minutes(0).seconds(0).milliseconds(0);
-    
-    if(date.getDay==3){
-      console.log('today: ' + today);
-      console.log('testDate: ' + testDate);
-    }
+
     if(date.getDay() === 0 || date.getDay() === 6){
       return 'calendar-picker__day--closed';
-    } else if(today.toString() > testDate.toString()) {
+    } else if(today.toString() === testDate.toString()) {
+      return 'calendar-picker__day--selectable'
+    } else if(testDate.isBefore(today)){
+      return 'calendar-picker__day--closed';
+    } else if(testDate.isAfter(today)) {
       return 'calendar-picker__day--selectable'
     } 
   }

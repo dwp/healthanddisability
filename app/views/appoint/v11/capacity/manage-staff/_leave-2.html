@@ -1,7 +1,46 @@
 
 
 <div class="column-half" {{ 'hidden' if not (query.tab==='leave' ) }}>
-    <table 
+        <p><a href="staff-availability" class="button mt10">Change availability</a></p>
+
+   
+
+
+<table 
+        class=
+        "calendar">
+        <caption>August 2018</caption>
+        <thead>
+            <tr>
+                <th>MON</th>
+                <th>TUE</th>
+                <th>WED</th>
+                <th>THU</th>
+                <th>FRI</th>
+                <th>SAT</th>
+                <th>SUN</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for week in calendar %} 
+            <tr>
+                {% for day in week %} 
+
+                <td tabindex="0" 
+                    class="calendar__day
+                        {{ day | formatRole() }} 
+                        {{ day | formatInPast() }} 
+                        {{ day | formatClosed() }} ">
+                    {{ day | formatDate("D") }} </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+<!-- 
+<h3 class="heading-medium">Old table:</h3>
+        <table 
         class=
         "calendar">
         <caption>April 2018</caption>
@@ -112,7 +151,8 @@
             <tr>
                 <td tabindex="0" 
                     class="calendar__day 
-                    calendar__day--appointments">16</td>
+                        {{ 'calendar__day--scrutiny' if person.days.monday.scrutiny }}
+                        {{ 'calendar__day--appointments' if not person.days.monday.scrutiny }}">16</td>
                 <td tabindex="0" 
                     class="calendar__day 
                      {{ 'calendar__day--scrutiny' if person.days.tuesday.scrutiny }}
@@ -193,14 +233,9 @@
                      calendar__day--closed">6</td>
             </tr>
         </tbody>
-    </table>
-</div>
+    </table> 
+ --></div>
 
-<div class="column-one-quarter" {{ 'hidden' if not (query.tab === 'leave') }}>
-	<div class="info-panel">
-        <p><a href="staff-holiday?personId={{person.id}}" class="mt10">Book time off</a></p>
-		<p><a href="staff-availability?personId={{person.id}}" class="mt10">Change availability</a></p>
-	</div>
+
 
 </div>
-
