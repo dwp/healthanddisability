@@ -8,8 +8,10 @@
 
 {% endblock %}
 
-
+{% block manage_centre_nav %}{% endblock %}
 {% block citizen_content %}
+
+
 
 <div class="container">
     <p><a href="/{{path2}}/{{centre.id}}/manage-staff/staff-profile/{{person.id}}?tab=leave" class="link-back">Back</a></p>
@@ -19,9 +21,43 @@
                 </h2>
     <div class="grid-row">
         <div class="column-half">
-           
+           <table 
+        class=
+        "calendar">
+        <caption>August 2018</caption>
+        <thead>
+            <tr>
+                <th>MON</th>
+                <th>TUE</th>
+                <th>WED</th>
+                <th>THU</th>
+                <th>FRI</th>
+                <th>SAT</th>
+                <th>SUN</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for week in calendar %} 
+            <tr>
+                {% for day in week %} 
+
+                <td tabindex="0" 
+                    class="calendar-picker__day
+
+                        {{ day | formatRole() }} 
+                        {{ day | formatInPast() }} 
+                        {{ day | formatSelectable() }} 
+                        " data-date="{{day}}">
+                    {{ day | formatDate("D") }} </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
                 
-                <table class="calendar-picker mt30">
+                <!-- <table class="calendar-picker mt30">
                     <caption>April 2018</caption>
                     <thead>
                         <tr>
@@ -189,37 +225,42 @@
                             <td class="calendar-picker__day calendar-picker__day--closed">6</td>
                         </tr>
                     </tbody>
-                </table>
+                </table> -->
 
         </div>
         <div class="column-half mt30 hidden" id="availability-form" >
+            <form action="staff-availability-2" method="post" id="dates-form">
 
             <div class="form-group">
 	            <fieldset>
 	            	<legend class="form-label">What type of work will they be doing?</legend>
 	            	<div class="multiple-choice">
-	                    <input id="type-of-work-appointments" type="radio" name="type-of-work" value="appointments" >
-	                    <label for="type-of-work-appointments">Appointments</label>
+	                    <input id="typeOfWork-appointments" type="radio" name="typeOfWork" value="appointments" >
+	                    <label for="typeOfWork-appointments">Appointments</label>
 	                </div>
 	                <div class="multiple-choice">
-	                    <input id="type-of-work-scrutiy" type="radio" name="type-of-work" value="scrutiy">
-	                    <label for="type-of-work-scrutiy">Scrutiny filework</label>
+	                    <input id="typeOfWork-scrutiy" type="radio" name="typeOfWork" value="scrutiy">
+	                    <label for="typeOfWork-scrutiy">Scrutiny filework</label>
 	                </div>
                     <div class="multiple-choice">
-                        <input id="type-of-work-training" type="radio" name="type-of-work" value="training">
-                        <label for="type-of-work-training">Training</label>
+                        <input id="typeOfWork-training" type="radio" name="typeOfWork" value="training">
+                        <label for="typeOfWork-training">Training</label>
                     </div>
                     <div class="multiple-choice">
-                        <input id="type-of-work-unavailable" type="radio" name="type-of-work" value="unavailable">
-                        <label for="type-of-work-unavailable">Unavailable</label>
+                        <input id="typeOfWork-unavailable" type="radio" name="typeOfWork" value="unavailable">
+                        <label for="typeOfWork-unavailable">Unavailable</label>
                     </div>
 	            </fieldset>	
 	        </div>
-            
             <h3 class="heading-small">Selected dates:</h3>
             <ul id="dateList" class="list-bullet"></ul>
-            <p><a href="staff-availability-2" class="button">Next</a></p>
+            <div id="input-list">
+                
+            </div>
+            <p><button class="button">Next</button></p>
 
+            </form>
+            
         </div>
     </div>
     <!-- row -->

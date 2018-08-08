@@ -60,6 +60,47 @@ module.exports = function (env) {
       else return ''
   }
 
+  filters.formatInPast = function(date){
+    var today = moment().hours(0).minutes(0).seconds(0).milliseconds(0);
+    var testDate = moment(date).hours(0).minutes(0).seconds(0).milliseconds(0);
+    console.log('today: ' + today);
+    console.log('testDate: ' + testDate);
+    if(date.getDay() === 0 || date.getDay() === 6){
+      return 'calendar__day--closed';
+    } else if (today > testDate){
+      return 'calendar__day--past';
+    } else if(today.toString() == testDate.toString() ){
+      return 'calendar__day--today';
+    } 
+  }
+
+  filters.formatRole = function(date){
+    if(date.getDay() === 1){
+      return 'calendar__day--scrutiny'
+    } else if(date.getDay() !== 0 && date.getDay() !== 6){
+      return 'calendar__day--appointments'
+    }
+  }
+
+  filters.formatSelectable = function(date){
+    var today = moment().hours(0).minutes(0).seconds(0).milliseconds(0);
+    var testDate = moment(date).hours(0).minutes(0).seconds(0).milliseconds(0);
+
+    if(date.getDay() === 0 || date.getDay() === 6){
+      return 'calendar-picker__day--closed';
+    } else if(today.toString() === testDate.toString()) {
+      return 'calendar-picker__day--selectable'
+    } else if(testDate.isBefore(today)){
+      return 'calendar-picker__day--closed';
+    } else if(testDate.isAfter(today)) {
+      return 'calendar-picker__day--selectable'
+    } 
+  }
+
+  filters.formatClosed = function(date){
+    return '';
+  }
+
   filters.lorum = function(pars) {
       var str = loremIpsum({
         count: pars,

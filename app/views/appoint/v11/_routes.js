@@ -9,6 +9,7 @@ var slotsData = require('../../../../app/views/appoint/v11/slots-data.js')
 var slotsData2 = require('../../../../app/views/appoint/v11/slots-data-2.js')
 var moment = require('moment')
 var commentsData = require('../../../../app/views/appoint/v11/data/comments.js');
+var calendar = require('node-calendar');
 
 console.log(path)
 
@@ -151,8 +152,37 @@ router.get('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffI
   var staff = require('../../../../app/views/appoint/v11/data/staff.js');
 
   res.locals.person = staff.filter(person => person.id === req.params.staffId)[0];
+  var today = moment(new Date());
+  var year = today.year();
+  var month = today.month() + 1;
+  res.locals.calendar  = new calendar.Calendar(0).monthdatescalendar(year, month);
+  res.locals.today = moment(new Date()).format();
   next()
 })
+
+router.post('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffId*', function(req, res, next){
+  var staff = require('../../../../app/views/appoint/v11/data/staff.js');
+
+  res.locals.person = staff.filter(person => person.id === req.params.staffId)[0];
+  var today = moment(new Date());
+  var year = today.year();
+  var month = today.month() + 1;
+  res.locals.calendar  = new calendar.Calendar(0).monthdatescalendar(year, month);
+  res.locals.today = moment(new Date()).format();
+  next()
+})
+
+router.post('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffId/staff-availability-2', function(req, res, next){
+  res.locals.formData = req.body;
+  res.render("appoint/v11/capacity/manage-staff/staff-availability-2");
+  })
+
+router.post('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffId/staff-profile-2', function(req, res, next){
+  
+  res.locals.formData = req.body;
+  
+  res.render("appoint/v11/capacity/manage-staff/staff-profile-2");
+  })
 
 
 router.get('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffId', function(req, res, next){
