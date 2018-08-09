@@ -104,7 +104,24 @@
 				line-height: 1.1;
 				padding-top: 0.2em;
 				color: white;
-				background: $turquoise;
+				background: $green;
+				font-size: 0.75em;
+				font-weight: bold;
+			}
+		}
+
+		&--training {
+			&:after {
+				content: "training";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				text-align: centre;
+				line-height: 1.1;
+				padding-top: 0.2em;
+				color: white;
+				background: $fuschia;
 				font-size: 0.75em;
 				font-weight: bold;
 			}
