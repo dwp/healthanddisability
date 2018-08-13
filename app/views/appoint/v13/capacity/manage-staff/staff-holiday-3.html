@@ -1,20 +1,8 @@
-{% extends path2+"/_addlayout.html" %} 
-
-
-{% block header %}
-{% for person in staff %}
-{% if person.id == query.personId %}
-  {% include path2+"/_staff_heading.html" %}
-{% endif %}
-{% endfor %}
-{% endblock %}
+{% extends path1+"/_addlayout.html" %} 
 
 {% block citizen_content %}
-{% for person in staff %}
-{% if person.id == query.personId %}
 <div class="container">
-    <p><a href="/{{path2}}/staff-profile?tab=leave&personId={{person.id}}" class="link-back">Back</a></p>
-    
+    <p><a href="/{{path2}}/{{centre.id}}/manage-staff/staff-profile/{{person.id}}?tab=leave" class="link-back">Back</a></p>
     <h3 class="heading-large mt0">Add unavailable time</h3>
     <p class="form-label">Now choose an end date:</p>
 
@@ -98,14 +86,13 @@
                 <p>16 April 2018</p>
                 <h3 class="heading-small">End date:</h3>
                 <p>20 April 2018</p>
-                <p><a href="/{{path2}}/staff-profile?personId={{person.id}}&updated=true&tab=leave" class="button">Save</a></p>
+                <p><a href="/{{path2}}/{{centre.id}}/manage-staff/staff-profile/{{person.id}}?updated=true&tab=leave" class="button">Save</a></p>
             </div>
         </div>
     </div>
     <!-- row -->
 </div>
-{% endif %}
-{% endfor %}
+
 <!-- container -->
 {% endblock %} 
 {% block footer_top %} 

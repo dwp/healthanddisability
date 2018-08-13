@@ -10,14 +10,13 @@
 
 {% block manage_centre_nav %}
 {% endblock %}
-
 {% block citizen_content %}
 <div class="container">
     <p><a href="/{{path2}}/{{centre.id}}/manage-staff/staff-profile/{{person.id}}?tab=details" class="link-back">Back</a></p>
 
-        <h1 class="heading-medium mt0">Edit {{person.name}}</h1>
+        <h3 class="heading-medium mt0">Edit {{person.name}}</h3>
 			
-         {% include path1+ "/manage-staff/_staff-hours.html" %}
+         {% include path1+ "/manage-staff/_staff-hours-edit.html" %}
 
 
 </div>
