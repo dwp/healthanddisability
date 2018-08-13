@@ -18,23 +18,11 @@
 
 {% block left_content %}
 
-
-<div class="status-circle">
-<i class="status-circle__circle circle {{ 'green' if customer.waitTime < 30 }}{{ 'red' if customer.waitTime > 29 }}"></i> <p><span class="bold-small">
-{% if customer.waitTime > 0 %}
-Waiting {{customer.waitTime}} minutes</span> <br>Arrived at {{customer.timeArrived}}
-{% else %}
-Just arrived
-{% endif %}
+<div class="status-circle"> <p class="bold-small">
+Arrived at assessment center
 </p>
 </div>
-<p>Appointment today at {{customer.appointmentTime}}</p>
-
 <hr>
-
-<ul>
-  <li><a href="timepicker?day=tuesday&date=10%20April&time=11:00am">Rearrange appointment</a></li>
-</ul>
 {% endblock %} 
 
 

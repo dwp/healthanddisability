@@ -1,18 +1,16 @@
-{% extends path1+"/_layout.html" %}
+e{% extends path1+"/_layout.html" %}
 
 {% block left_content %}
  <p class="mt10 mb0 bold-small"><span class="circle purple"></span>Booked</p>
 
- <div class="available-slot">
-      <div class="column-half" style="padding: 0;">
-          <h4 class="heading-small">Tuesday 10 May</h4>
-          <p>14:00pm</p>
-      </div>
-      <div class="column-half" style="padding: 0; text-align: right;">
-          <a href="timepicker?day=tuesday&date=10%20April&time=11:00am" class="button">Edit</a>
-      </div>
-  </div>
- <hr>
+          <h4 class="heading-small">{{customer.appointmentDate | formatDate("dddd D MMMM YYYY")}}</h4>
+          <p>{{customer.appointmentTime}}</p>
+
+          <a href="/{{path1}}/timepicker?day=tuesday&date=10%20April&time=11:00am" class="button">Rearrange appointment</a>
+<hr>
+
+<ul>
+</ul>
 {% endblock %}
 
 {% block citizen_content %}

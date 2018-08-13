@@ -16,6 +16,8 @@ var config = require('./app/config.js')
 var utils = require('./lib/utils.js')
 var packageJson = require('./package.json')
 var moment = require('moment')
+var calendar = require('node-calendar');
+
 
 
 // Grab environment variables specified in Procfile or as Heroku config vars
