@@ -1,0 +1,26 @@
+<div class="column-one-quarter {{ 'hidden' if not (query.tab === 'details') }}">
+    <dl>
+        <dt class="heading-small mt0">Name</dt>
+        <dd>{{person.name}}</dd>
+        <dt class="heading-small">Phone</dt>
+        <dd>{{person.phone}}</dd>
+        <dt class="heading-small">Mobile</dt>
+        <dd>{{person.mobile}}</dd>
+        <dt class="heading-small">Email</dt>
+        <dd>{{person.email}}</dd>
+    </dl>
+</div>
+<div class="column-one-quarter {{ 'hidden' if not (query.tab === 'details') }}">
+    <dl>
+        <dt class="heading-small mt0">Skill level</dt>
+        <dd>{{person.skill}}</dd>
+        <dt class="heading-small">Gender</dt>
+        <dd>{{person.gender}}</dd>
+    </dl>
+</div>
+<div class="column-one-quarter {{ 'hidden' if not (query.tab === 'details') }}">
+    <div class="info-panel">
+        <p><a href="{{person.id}}/edit-staff">Edit details</a></p>
+        <p><a href="delete">Remove {{person.name}}</a></p>
+    </div>
+</div>

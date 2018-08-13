@@ -273,6 +273,7 @@ if (typeof (routes) !== 'function') {
   app.use('/appoint/v10/', require('./app/views/appoint/v10/_routes.js'))   
   app.use('/appoint/v11/', require('./app/views/appoint/v11/_routes.js'))   
   app.use('/appoint/v12/', require('./app/views/appoint/v12/_routes.js')) 
+  app.use('/appoint/v13/', require('./app/views/appoint/v13/_routes.js')) 
 
 
 
