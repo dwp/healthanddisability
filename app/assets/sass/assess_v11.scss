@@ -57,9 +57,8 @@ td,th {
 }
 
 .staff__heading {
-  background-color: #005ea5;
-  padding: 20px 40px 0;
-  color: white;
+  padding: 14px 0;
+
 }
 
 .list .date {
@@ -286,7 +285,7 @@ select.form-select:hover {
 	  margin-top: 0;
 	  padding-top: 20px!important;
 	  padding-bottom: 100px!important;
-	  border-left: 1px solid $grey-2;
+	  //border-left: 1px solid $grey-2;
 	  background: #fff;
   }
 
@@ -461,19 +460,19 @@ hr {
 	
 	.panel-switch {
 		position: absolute;
-		top: 318px;
+		top: 224px;
 		right: 0;
 		width: 140px;
 		padding: 10px 0;
 		text-align: center;
 		cursor: pointer;
-		background: $govuk-blue;
+		background: #000;
 
 
 		a {
 			padding: 0;
 			margin: 0;
-			color: #fff;
+			color: #fff ;
 			text-decoration: none;
 			&:after {
 				content: 'Review evidence';
@@ -495,7 +494,7 @@ hr {
 		background: #fff;
 		padding: 3% 5% 10% 5%;
 		border: 1px solid $grey-2;
-		border-left: 4px solid $govuk-blue;
+		border-left: 8px solid #000;
 		min-height: 1200px;
 		display: none;
 	}
@@ -512,9 +511,11 @@ hr {
 		.panel-switch {
 			right: auto;
 			left: -140px;
+			background: #000;
 			a {
+			color: #fff;
 			&:after {
-				content: 'Close';
+				content: 'Return to assessment';
 			}
 		}
 		}
@@ -845,7 +846,7 @@ caption {
 
 
 .assessDashboard {
-		margin-top: 50px;
+		margin-top: 30px;
 		.row {
 			overflow: hidden;
 			margin-bottom: 2%;
@@ -961,7 +962,7 @@ table {
 			    background-color: #fff;
 			    }
 		    a {
-				border-left: .3em solid #000;
+				border-left: .3em solid $govuk-blue;
 				padding-left: .7em;
 				color: #000;
 		    }
@@ -972,4 +973,19 @@ table {
 .section-tabs ul a {
 	background: $grey-3;
 	font-size: 18px;
+}
+
+.no-kdBar {
+	border-top: 1px solid #bfc1c3;
+	margin-top: 0;
+	padding-top: 30px;
+}
+
+.secondary-actions {
+	li {
+		margin-top: 5px;
+		&:first-child {
+			margin-top: 0;
+		}
+	}
 }
