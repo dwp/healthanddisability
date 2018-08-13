@@ -24,7 +24,7 @@
    <div class="section-tabs clearfix">
     <ul>
 
-        <li class="active"><a href="#">Scheduling</a></li>
+        <li class="active"><a href="#">Ready to book</a></li>
       
         <li><a href="booked_appointments">Booked</a></li>
         <li><a href="todays_appointments">Today's appointments</a></li>
@@ -41,11 +41,10 @@
                   <tr class="header-view">
                     <th style="padding-left:15px;">Name</th>
                     <!-- <th>Assessment Centre</th> -->
-                    <th>NI Number</th>
-                    <th>Benefit</th>
-                    <th>HCP skill</th>
-                    <th>Received</th>
-                    <th class="numeric">Status</th>
+                    <th>National Insurance Number</th>
+                    <th>Assessment Centre</th>
+                    <th>Received from scrutiny</th>
+                    <th class="numeric">Claim type</th>
                   </tr>
                 </thead>
 
@@ -63,10 +62,8 @@
                 {% for customer in customers | sort(false, false, 'receivedDate') %}
                 <tr>
                   <td style="padding-left:15px;" class=""><a href="booking/referrals/{{customer._id}}/details">{{customer.name.fullName}}</a></td>
-                  <!-- <td>{{customer.address.assessmentCentre}}</td> -->
                   <td>{{customer.NINO}}</td>
-                  <td>UC</td>
-                  <td>Complex Neuro</td>
+                  <td>{{customer.address.assessmentCentre}}</td>
                   <td>{{customer.receivedDate | formatDate("D MMMM YYYY")}}</td>
                   <td class="numeric">New claim</td>
                 </tr>
