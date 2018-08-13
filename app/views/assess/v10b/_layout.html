@@ -77,5 +77,8 @@
 {% endmacro %}
 
 {% block footer_top %}
-<p class="font-xsmall"><a href="/{{ path }}/">back to index page</a></p>
+	<ul class="footer-links">
+		<li><a href="/{{ path }}/">back to index page</a></li>
+		<li><a href="/{{ path }}/clearSession" id="clear_data" class="function_link">clear data</a></li>
+	</ul>
 {% endblock %}
