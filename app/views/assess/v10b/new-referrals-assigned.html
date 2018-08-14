@@ -1,0 +1,68 @@
+{% extends path+"/_layout.html" %}
+
+{% block assess_content %}
+
+<main id="content" role="main" class="main-content">
+
+      <div class="container">
+          {% include path+"/caselist/_nav.html" %}
+        <div class="grid-row">
+          <div class="column-one-quarter">
+              {% include path+"/caselist/_search-box.html" %}
+
+            <div class="details-nav v2">
+           <ul>
+              <li>
+                  <a href="index">All cases</a>
+                </li>
+             <li class="active_detail">
+             <a href="referrals">Referral's (49)</a>
+             <ul>
+               <li><a href="new-referrals" class="active_child">New referrals (32)</a></li>
+               <li><a href="uc50-posted" >UC50 Posted (9)</a></li>
+               <li><a href="uc50-recieved">UC50 recieved (8)</a></li>
+             </ul>
+           </li>
+           <li>
+              <a href="review">Review's (10)</a>
+            </li>
+              <li>
+                  <a href="appointments.html">Appointments (10)</a>
+                </li>
+                <li>
+                    <a href="assessment.html">Todays assessments (24)</a>
+                  </li>
+          </ul>
+          
+        </div>
+          </div>
+          <div class="column-three-quarters">
+
+            <h2 class="heading-medium mt0"><span class="heading-xlarge">32</span><br/>New referrals / <a href="assign-to-available-agents">Assign to available agents</a></h2>
+              <table class="zebra">
+
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>National insurance number</th>
+                    <th>Assigned to</th>
+                  </tr>
+                </thead>
+                
+                {% include path+"/caselist/_table_data_assigned.html" %}
+                {% include path+"/caselist/_table_data_assigned.html" %}
+                {% include path+"/caselist/_table_data_assigned.html" %}
+
+              </table>
+        
+    
+          </div>
+          </div>
+          
+          <!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

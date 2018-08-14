@@ -13,41 +13,40 @@
               <div class="details-nav v2">
              <ul>
                 <li>
-                    <a href="caselist.html">All cases</a>
+                    <a href="index">All cases</a>
                   </li>
-             <li>
-             <a href="referrals">Referral's (28)</a>
+             <li class="active_detail">
+             <a href="referrals">Referral's (49)</a>
+             <ul>
+               <li><a href="new-referrals">New referrals (32)</a></li>
+               <li><a href="uc50-posted" class="active_child" >UC50 Posted (9)</a></li>
+               <li><a href="uc50-recieved">UC50 recieved (8)</a></li>
+             </ul>
            </li>
-           <li class="active_detail">
+           <li>
               <a href="review">Review's (10)</a>
-              <ul>
-                  <li><a href="ready-for-review.html">Ready for review (6)</a></li>
-                   <li><a href="requested-medical-evidence.html">Requested medical evidence (4)</a></li>
-                 
-                </ul>
             </li>
               <li>
-                  <a href="appointments">Appointments (10)</a>
+                  <a href="appointments.html">Appointments (10)</a>
                 </li>
                 <li>
-                    <a href="assessment">Todays assessments (24)</a>
+                    <a href="assessment.html">Todays assessments (24)</a>
                   </li>
           </ul>
         </div>
           </div>
           <div class="column-three-quarters">
-            <h2 class="heading-medium mt0"><span class="heading-xlarge">10</span><br/>Reviews</h2>
+            <h2 class="heading-medium mt0"><span class="heading-xlarge">9</span><br/> UC50 posted /  <a href="assign-to-available-agents">Assign to available agents</a></h2>
               <table class="zebra">
 
                 <thead>
                   <tr>
                     <th>Name</th>
-                    <th>Status</th>
-                   
+                    <th>National insurance number</th>
                   </tr>
                 </thead>
                 
-                {% include path+"/caselist/_table_data_status.html" %}
+                {% include path+"/caselist/_table_data.html" %}
 
               </table>
           </div><!-- column -->

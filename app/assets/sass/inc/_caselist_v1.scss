@@ -1,0 +1,148 @@
+
+// extended  details secondary nav
+.details-nav.v2 {
+	position: relative;
+	margin: 0;
+
+	a{
+		display:block;
+		padding: 0 0 .6em 0;
+	}
+	ul {
+		li {
+			border-bottom: 1px solid $grey-3;
+			background: $grey-4;
+			&:hover {
+				background: #fff;
+			}
+			&:first-child {
+				border-top: 1px solid $grey-3;
+			}
+			a {
+		
+				padding: 1em .8em .8em 1em;
+				text-decoration: none;
+
+
+				span {
+					font-size: 90%;
+					color: $grey-1;
+					display: block;
+					font-weight: normal;
+					margin-top: 5px;
+				}
+			}
+
+		
+		}
+		.active_detail {
+			background-color: #fff;
+			border-left: .3em solid $govuk-blue;
+
+		    &:hover {
+				background-color: #fff;
+				
+			    }
+		    a {
+				border-left:none;
+				padding-left: .7em;
+				color: #000;
+				padding: .8em .8em .6em 1em;
+				
+			}
+			
+			ul{
+				margin:0 15px 10px 15px;
+
+				a {
+					border-left:none;
+					color:$link-colour;
+					background:#fff;
+
+					&:hover{
+					  background:$grey-4;
+					  color:$link-hover-colour
+					}
+
+					&.active_child{
+						color:$text-colour;
+						background:$grey-4;
+						cursor:default;
+					}
+
+
+				}
+
+				li:last-of-type{
+					border-bottom: none;
+				}
+
+			}
+		  }
+	}
+}
+
+table.zebra {
+	th, td {
+		&:last-child {
+			text-align: left;
+		}
+
+	}
+}
+
+.text-secondary{
+	color:$secondary-text-colour;
+}
+
+
+
+
+
+.column-three-quarters {
+	@include grid-column( 3/4 );
+   
+   };
+
+
+
+
+.button-secondary{
+ @include button($grey-3);
+}
+
+/// Global agent / center  details  ----------------------------------------------------  ///
+
+.user_detail{
+	text-align:right;
+	color:$white;
+	font-size:19px;
+	font-weight:bold;
+	line-height:2em;
+
+	li{
+		display:inline-block;
+		
+		&:after{
+			content:"|";
+			margin:0 10px;
+		}
+
+	   &:last-of-type:after{
+		   content:"";
+		   margin:none;
+	   }
+	}
+
+	a{
+		color:$white;
+	}
+}
+
+
+
+
+
+
+
+ 
