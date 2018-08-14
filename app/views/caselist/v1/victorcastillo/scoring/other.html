@@ -1,0 +1,200 @@
+{% extends path2+"/_layout.html" %}
+
+{% block scoring_content %}
+
+
+
+  <a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+  <h1 class="heading-large mt30 mb30">Exceptional circumstances </h1>
+  
+  
+  <form>
+
+
+		
+		<fieldset>
+                 
+            
+            <legend class="visually-hidden">Personal details</legend>
+
+
+				  
+				 <div class="form-group">
+
+				    
+				    
+				    <fieldset class="inline">
+		    
+				    	<legend class="heading-medium mb10">Is there a reason that Tomas cannot work, and also cannot do work related activity? </legend>
+		
+					    <div class="multiple-choice" data-target="reasons1">
+					      <input id="decide_now" name="whatcando" type="radio" value="Yes">
+					      <label for="decide_now"> Yes</label>
+					    </div>
+		  
+					    <div class="multiple-choice">
+					      <input id="face2face" name="whatcando" type="radio" value="No">
+					      <label for="face2face"> No</label>
+					    </div>	
+					    
+				    </fieldset>
+				    
+				    
+				    <div class="panel panel-border-narrow js-hidden" id="reasons1">
+					    	<fieldset>
+							      <legend class="heading-small mb10">
+							        Reason: 
+							      </legend>
+							       
+							       
+							       <div class="multiple-choice">
+								      <input id="terminally" name="reasons" type="checkbox" value="terminally ill">
+								      <label for="terminally"> Terminally ill </label>
+								    </div>
+					  
+								    <div class="multiple-choice">
+								      <input id="preg" name="reasons" type="checkbox" value="Pregnancy">
+								      <label for="preg"> Pregnancy risk</label>
+								    </div>
+								    
+								
+					  
+								    <div class="multiple-choice">
+								      <input id="substantial" name="reasons" type="checkbox" value="Substantial">
+								      <label for="substantial"> Substantial risk to mental or physical health</label>
+								    </div>
+								    
+								    <div class="multiple-choice">
+								      <input id="chemotherapy" name="reasons" type="checkbox" value="chemotherapy">
+								      <label for="chemotherapy"> Chemotherapy or radiotherapy </label>
+								    </div>
+					  
+								    <div class="multiple-choice">
+								      <input id="disabled" name="reasons" type="checkbox" value="Disabled">
+								      <label for="disabled"> Disabled and over the age for state pension credit (and gets attendance allowance, highest rate care in DLA, or enhanced living for PIP)</label>
+								    </div>
+							       
+							       
+							       <div class="form-group mt20">
+								      <label class="form-label" for="tests">Give reasons</label>
+								      <textarea class="form-control form-control-3-4" name="tests" id="tests" rows="4"></textarea>
+								  </div>
+							       
+							       
+						    </fieldset>
+					    </div>
+				    
+				    
+				</div>
+				
+				
+				
+				
+				
+				<div class="form-group">
+
+				    
+				    
+				    <fieldset class="inline">
+		    
+				    	<legend class="heading-medium mb10">Is there a reason that Tomas cannot work, but could do work related activity?</legend>
+		
+					    <div class="multiple-choice" data-target="reasons2">
+					      <input id="decide_now2" name="whatcando2" type="radio" value="Yes">
+					      <label for="decide_now2"> Yes</label>
+					    </div>
+		  
+					    <div class="multiple-choice">
+					      <input id="face2face2" name="whatcando2" type="radio" value="No">
+					      <label for="face2face2"> No</label>
+					    </div>	
+					    
+				    </fieldset>
+				    
+				    
+				    <div class="panel panel-border-narrow js-hidden" id="reasons2">
+					    	<fieldset>
+							      <legend class="heading-small mb10">
+							        Reason: 
+							      </legend>
+							       
+							       
+							       <div class="multiple-choice">
+								      <input id="terminally2" name="reasons2" type="checkbox" value="terminally ill">
+								      <label for="terminally2">Regular treatment or receiving certain treatments</label>
+								    </div>
+					  
+								    <div class="multiple-choice">
+								      <input id="preg2" name="reasons2" type="checkbox" value="Pregnancy">
+								      <label for="preg2">Hospital inpatient</label>
+								    </div>
+								    
+								    <div class="multiple-choice">
+								      <input id="disease2" name="reasons2" type="checkbox" value="Disease">
+								      <label for="disease2"> Cannot work by law because of an infectious disease or contamination </label>
+								    </div>
+					  
+								    <div class="multiple-choice">
+								      <input id="substantial2" name="reasons2" type="checkbox" value="Substantial">
+								      <label for="substantial2">They're a risk to themselves or others</label>
+								    </div>
+								    
+								    <div class="multiple-choice">
+								      <input id="chemotherapy2" name="reasons2" type="checkbox" value="chemotherapy">
+								      <label for="chemotherapy2">Life threatening disease</label>
+								    </div>
+					  
+								    <div class="multiple-choice">
+								      <input id="disabled2" name="reasons2" type="checkbox" value="Disabled">
+								      <label for="disabled2">Disabled and over the age for state pension credit (and gets DLA or PIP) </label>
+								    </div>
+								    
+								  
+								    
+								 
+								    
+								    <div class="form-group mt20">
+								      <label class="form-label" for="tests">Give reasons</label>
+								      <textarea class="form-control form-control-3-4" name="tests" id="tests" rows="4"></textarea>
+								  </div>
+							       
+							       
+							       
+						    </fieldset>
+					    </div>
+				    
+				    
+				</div>	
+				
+				
+				
+				
+				  
+								 
+		</fieldset>
+
+
+
+  <p class="mt30"><a href="prognosis" class="button">Continue</a></p>
+
+		<!-- ********************************* form end ********************************* -->
+
+		
+	</form>
+  
+
+
+
+
+
+
+
+
+{% endblock %}
+

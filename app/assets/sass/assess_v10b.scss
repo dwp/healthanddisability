@@ -26,6 +26,13 @@ $path: "/public/images/";
 @import "inc/alt-buttons";
 @import "inc/combobox";
 
+// case list styles
+@import "inc/card";
+@import "inc/tags";
+@import "inc/secondary-nav";
+@import "inc/caselist_v1";
+
+
 body {
    height:100%;
 }
@@ -289,31 +296,19 @@ select.form-select:hover {
   .main-area {
 	  margin-top: 0;
 	  padding-top: 20px!important;
-	  padding-bottom: 200px!important;
+		padding-bottom: 200px!important;
+		padding:30px;
 	  background: #fff;
   }
 
 
-.column-three-quarters {
-	width: 71%;
-	float: left;
-	padding: 0 0 0 25px;
-	position: relative;
-	&:after {
-		position: absolute;
-		content: "/";
-		height: 3500px;
-		width: 25px;
-		background: #fff;
-		top: 0;
-		right: -25px;
-		color: #fff;
-	}
-}
+
 
 
 .main-row {
 	background: $grey-3;
+	padding:0 30px 0 0;
+	margin-right:-30px;
 }
 
 
@@ -562,6 +557,8 @@ html {
 	background-color: #000;
 }
 
+
+
 .footer-links {
 	margin: 0;
 	padding: 0;
@@ -571,6 +568,7 @@ html {
 		margin-right: 10px;
 	}
 }
+
 
 .evidence-requests {
 	h2 {
@@ -587,4 +585,23 @@ html {
 	.request {
 		margin-top: 50px;
 	}
+}
+
+#global-header.with-proposition .header-wrapper .header-global{
+	width:auto;
+	
+	.header-logo .content{
+		margin:0px 0px 0px -2px;
+	}
+}
+
+
+.block
+{
+	display:block;
+}
+
+
+td{
+	vertical-align: top;
 }

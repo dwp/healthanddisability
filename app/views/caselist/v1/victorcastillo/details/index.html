@@ -1,0 +1,63 @@
+{% extends path2+"/_layout.html" %}
+
+
+{% block case_content %}
+
+      <h1 class="heading-large mt10">Illnesses and disabilities</h1>
+
+		
+		<div class="table-layout">
+		<table>
+			<caption class="visually-hidden">List of illnesses and disabilities</caption>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Source</th>
+					<th>Since</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Emergency fasciotomy </td>
+					<td>Claimant</td>
+					<td>August 2017</td>
+				</tr>
+				<tr>
+					<td>Acute compartment syndrome </td>
+					<td>Claimant</td>
+					<td>August 2017</td>
+				</tr>
+				<tr>
+					<td>Compound fracture - shinbone </td>
+					<td>Claimant</td>
+					<td>July 2017</td>
+				</tr>
+				
+			</tbody>
+		</table>
+		</div>
+					
+		
+		
+		
+		
+		
+		
+		
+		
+
+      
+           
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.details-nav ul')
+      .children(":nth-child(1)")
+      .addClass('active_detail')
+  });
+</script>
+{% endblock %}

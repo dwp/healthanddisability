@@ -1,0 +1,103 @@
+{% extends path+"/_layout.html" %}
+
+{% block assess_content %}
+
+<div class="staff__heading v2">
+    <div class="staff__centred">
+      <div class="grid-row">
+        <div class="column-half">
+          <h2 class="heading-xlarge mt20 mb20">
+              Tomas Fernandez
+                <span class="heading-secondary">QQ 53 12 35 C </span>
+               
+              </h2>
+        </div><!-- column -->
+      </div>
+    </div>
+  </div>
+
+<main id="content" role="main" class="main-content-inner">
+
+      <div class="container">
+        <div class="grid-row main-row">
+          <div class="column-one-quarter left-area">
+            <div class="left-panel">
+              <div class="case-status">
+		 
+                  <p class="mt10 mb0 bold-small"><span class="circle purple"></span>Ready for review</p>
+                       <p class="mt10">Assigned to Heather Harrison</p>
+                       </div>
+                   </div>    
+          </div>
+          <div class="column-three-quarters main-area">
+
+
+              <div class="column-full">
+          
+
+                  <a href="javascript: history.go(-1)" class="link-back">Back</a>
+                
+                  <div class="form-group">
+                      <fieldset>
+                    
+                        <legend>
+                          <h2 class="heading-large mt20">Which types of evidence have requested?</h2>
+                          <span class="body-text">Select all that apply</span>
+                        </legend>
+                    
+                        <div class="multiple-choice" data-target="evidence-contact">
+                          <input id="" name="" type="checkbox" value="">
+                          <label for="">ESA 113</label>
+                        </div>
+                        <div class="panel panel-border-narrow js-hidden" id="evidence-contact">
+                            {% include path+"/caselist/_evidence-contact-form.html" %}
+                          </div>
+                        <div class="multiple-choice" data-target="evidence-contact-2">
+                          <input id="waste-type-2" name="waste-types" type="checkbox" value="waste-mines">
+                          <label for="waste-type-2">FRR 2</label>
+                        </div>
+                        <div class="panel panel-border-narrow js-hidden" id="evidence-contact-2">
+                            {% include path+"/caselist/_evidence-contact-form.html" %}
+                          </div>
+                        <div class="multiple-choice">
+                          <input id="waste-type-3" name="waste-types" type="checkbox" value="waste-farm-agricultural">
+                          <label for="waste-type-3">FRR 3</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="waste-type-3" name="waste-types" type="checkbox" value="waste-farm-agricultural">
+                            <label for="waste-type-3">FRR 4</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="waste-type-3" name="waste-types" type="checkbox" value="waste-farm-agricultural">
+                            <label for="waste-type-3">CPN</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="waste-type-3" name="waste-types" type="checkbox" value="waste-farm-agricultural">
+                            <label for="waste-type-3">Consultants report</label>
+                        </div>
+
+                    
+                      </fieldset>
+                    </div>
+                  <div class="form-group">
+                    <a href="booking" class="button">Confirm</a>
+                  </div><!-- form-group -->
+                </form>
+
+                
+                
+                      </div>
+
+
+
+   
+
+
+             
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}
