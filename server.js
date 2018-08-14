@@ -233,6 +233,7 @@ if (typeof (routes) !== 'function') {
   
 
   //routes
+  app.use('/assess/mvp/', require('./app/views/assess/mvp/_routes.js'))
   app.use('/assess/v1/', require('./app/views/assess/v1/_routes.js'))
   app.use('/assess/v2/', require('./app/views/assess/v2/_routes.js'))
   app.use('/assess/v3/', require('./app/views/assess/v3/_routes.js'))
@@ -248,7 +249,7 @@ if (typeof (routes) !== 'function') {
   app.use('/assess/v9a/', require('./app/views/assess/v9a/_routes.js')) 
   app.use('/assess/v9b/', require('./app/views/assess/v9b/_routes.js')) 
   app.use('/assess/v9d/', require('./app/views/assess/v9d/_routes.js'))
-  app.use('/assess/v10/', require('./app/views/assess/v10/_routes.js')) 
+  app.use('/assess/v10/', require('./app/views/assess/v10/_routes.js'))  
   app.use('/assess/v10a/', require('./app/views/assess/v10a/_routes.js'))
   app.use('/assess/v10b/', require('./app/views/assess/v10b/_routes.js'))
   app.use('/assess/v11/', require('./app/views/assess/v11/_routes.js')) 
