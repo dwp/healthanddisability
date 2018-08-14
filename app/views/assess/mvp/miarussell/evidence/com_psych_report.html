@@ -1,0 +1,35 @@
+{% extends path2+"/_layout.html" %}
+
+{% block case_content %}
+
+  <h2 class="heading-large mt10">Community Psychiatric Nurse Report</h2>
+  <div class="attachment clearfix mt30 mb10">
+    <div class="attachment-thumb">
+      <a aria-hidden="true" class="thumbnail" href="/public/pdfs/assessment.pdf"><img alt="" src="/public/images/assessment.png"></a>
+    </div>
+    <div class="attachment-details">
+      <h2 class="title"><a  href="/public/pdfs/assessment.pdf">CPN Report</a></h2>
+      <p class="metadata">
+        <span class="type"><abbr title="Portable Document Format">PDF</abbr></span>,
+        <span class="file-size">5.34MB</span>
+        (in DRS)
+      </p>
+      <p class="mb0">Provider: <a href="#">Mary Flamingo CPN, GNVQ (and bar)</a></p>
+      <p>Local Authority: <a href="#">Ceredigion County Council</a></p>
+    </div>
+  </div>
+  {% include path2+"/_descriptors.html" %}
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.evidence__leftnav')
+      .children(":nth-child(2)")
+      .addClass('active')
+  });
+</script>
+{% endblock %}

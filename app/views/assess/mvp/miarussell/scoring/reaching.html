@@ -1,0 +1,16 @@
+{% extends path2+"/_layout.html" %}
+
+
+
+{% block scoring_content %}
+
+  <h3 class="heading-large mt10">Reaching for things</h3>
+
+  <p>{{ firstname }} <span class="bold-small">can</span> lift at least one of their arms high enough to put something in the top pocket of a coat or jacket while you are wearing it.</p>
+
+  <p>{{ firstname }} <span class="bold-small">can't</span> lift one of his arms above his head.</p>
+
+  <p class="mb0"><span class="bold-small">{{ firstname }} says:</span></p>
+  <p class="mt0 font-medium quote"> “I am not able to {{ 1 | lorum | safe }}” </p>
+
+{% endblock %}
