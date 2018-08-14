@@ -1,0 +1,80 @@
+{% extends path2+"/_layout.html" %}
+
+{% block scoring_content %}
+
+  <h3 class="heading-large mt10" id="descriptor_title">Moving around and using steps</h3>
+
+  <div class="evidence__box citizen">
+    <div class="evidence__label">From: Claimant statement</div>
+    <div class="evidence__content">
+      <p>{{ firstname }} says he can move safely and repeatedly on level ground without needing to stop for:
+        <span class="bold-small">100 metres</span>
+      </p>
+      <h3 class="heading-small mt5 mb0">Moving around</h3>
+      {# <p class="mb0"><span class="bold-small">{{ firstname }} says:</span></p> #}
+      <p class="mt0 quote">“I have pain in my back and legs. On a good day I can walk 100m slowly - I'd have to rest a couple of times though, as I'd be in pain. On a bad day, I can just about get around my flat but would usually stay in bed so I don't have to move much.”</p>
+      <h3 class="heading-small mt5 mb0">Going up or down 2 steps</h3>
+      {# <p class="mb0"><span class="bold-small">{{ firstname }} says:</span></p> #}
+      <p class="mt0 quote mb0"> “I'd struggle going up or down a full set of stairs. I get the lift up to my flat.” </p>
+    </div>
+  </div>
+
+  {% if stage > 5 %}
+  <div class="evidence__box med_records">
+    <div class="evidence__label">From: Medical Records</div>
+    <div class="evidence__content">
+      Automated records check confirmed that {{ firstname }} has: <span class="bold-small">Anxiety and depression</span>, <span class="bold-small">Autism</span> and <span class="bold-small">Fibromyalgia</span>.
+    </div>
+  </div>
+  {% endif %}
+
+  {% if stage > 6 %}
+  <div class="evidence__box gp_report">
+    <div class="evidence__label">From: GP Report</div>
+    <div class="evidence__content">
+      <h4 class="heading-small mt5">Dr. Sheila Makeyouwell</h4>
+      <p>Suronge Surgery, Wimbledon, Hertfordshire</p>
+      <p class="mt0 quote mb0"> “I have been seeing Mia to treat her anxiety and depression, fibromyalgia and autism. Her fibromyalgia causes her a lot of pain and I have prescribed painkillers at a dose of 350mg a day. She is uncomfortable when she sits and stands. I am unable to say how far she can walk or how many stairs she can take as I only see her in the surgery, not at home.  ” </p>
+    </div>
+  </div>
+  {% endif %}
+
+  {# <div id="scored">
+    <hr />
+    <h2 class="heading-large">Moving around and using steps score: 9</h2>
+    <p class="form-hint">You can change this is if you need to.</p>
+    <button class="button" id="change_score">Change score</button>
+  </div> #}
+
+  <div id="referred">
+    {% if stage == 1 %}
+      {% block case_form %} {% include path2+"/_form_ask.html" %} {% endblock %}
+    {% endif %}
+    {% if stage > 1 %}
+      <hr />
+      <h2 class="heading-medium">This descriptor has been referred for more medical evidence</h2>
+      <p class="form-hint">You can change this, if you need to.</p>
+      <button class="button" id="change_score">Change this</button>
+    {% endif %}
+  </div>
+
+  <div id="rescore" class="js-hidden">
+    {% include path2+"/_form_ask.html" %}
+  </div>
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('#change_score').on('click',function(e)
+    {
+      e.preventDefault()
+      $('#referred').addClass('js-hidden')
+      $('#rescore').removeClass('js-hidden')
+    })
+  })
+</script>
+{% endblock %}

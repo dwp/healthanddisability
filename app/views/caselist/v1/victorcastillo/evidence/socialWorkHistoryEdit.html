@@ -1,0 +1,105 @@
+{% extends path2+"/_layout-review2.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+
+
+<div class="grid-row">
+
+ 
+
+
+  <div class="column-full">
+  
+  
+<p><a href="medical_assessment_dashboard" class="link-back">Back</a></p>
+  
+  
+  
+  <h1 class="heading-large mt20"><span class="heading-secondary">Review</span>Social and work history</h1>
+    <form class="form" id="add_ev">
+
+
+
+        <div class="chat-layout">
+
+
+    {% for item in data.nuggets | sortBy("time",true) %}
+  
+      <div class="tag-box">
+      
+        <div class="tag-text">{{ item.text }}</div>
+        
+        <div class="edit-item">
+       	<ul>
+       		<li><a href="contentEdit">Edit</a></li>
+       		<li><a href="#">Remove</a></li>
+       	</ul>
+       </div>
+       
+      </div>
+        
+    {% endfor %}
+    
+  </div>
+    </form>
+    
+    
+    <p class="mt30"><a href="medical_assessment_dashboard" class="button">Finish reviewing</a></p>
+   
+  </div><!-- column -->
+
+</div><!-- row -->
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+$(document).on('ready',function()
+{
+  $('#nugget').focus();
+
+  $("#nugget").keydown(function (event) {
+    if ((event.keyCode == 13))
+    {
+      $('#submitButton').trigger('click');
+    }
+  });
+
+  $('#submitButton').on('click',function(e)
+  {
+    e.preventDefault();
+    // get values from the form you're submitting.
+    var nugget = $('#nugget').val();
+    console.log(nugget)
+
+    // gather values into a data object.
+    var formdata = JSON.stringify({"nugget":nugget});
+    console.log(formdata)
+    console.log({url: '/{{ path }}/saveText'})
+
+    // send data object off to node route for saving.
+    $.ajax({
+      url: '/{{ path }}/saveText',
+      method: "POST",
+      contentType: 'application/json',
+      data: formdata,
+      dataType: 'json',
+      complete:  function(data,status,xhr) {
+        // sort out the page after data is successfully saved.
+        // $('#status_form').hide();
+        // $('#status_button').show();
+        document.location.reload(true);
+      }
+    });
+  });
+});
+</script>
+
+{% endblock %}
