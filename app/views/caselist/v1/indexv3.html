@@ -1,0 +1,178 @@
+{% extends path+"/_layout.html" %}
+
+{% block assess_content %}
+
+<main id="content" role="main" class="main-content">
+
+    <div class="grid-row">
+        <div class="column-full">
+        
+          <nav class="navigation-secondary">
+            <ul>
+              <li>
+                <a href="#" class="active" aria-current="section">Case list</a>
+              </li>
+              <li>
+                <a href="#">Manage centre</a>
+              </li>
+            </ul>
+          </nav>
+    
+        </div>
+      </div>
+
+      <div class="container">
+          <div class="grid-row">
+              <div class="column-one-quarter">
+             
+                  <div class="form-group" style="float:none">
+                      <label class="form-label" for="full-name-f1">Find a customer
+
+                      </label>
+                    
+                      <input class="form-control" id="full-name-f1" type="text" name="full-name-f1">
+                      <button class="button">Search</button>
+                  </div>
+                   
+                              <div class="details-nav v2">
+                                 <ul>
+                                   <li class="active_detail">
+                                   <a href="referrals">All cases</a>
+                                 </li>
+                                 <li>
+                                    <a href="review">My cases</a>
+                                  </li>
+                                </ul>
+                              </div>
+              </div>
+              <div class="column-three-quarters">
+                 
+                    <div class="grid-row">
+                      <div class="column-full">
+                        <h1 class="heading-xlarge mt0 mb20">
+                          450 cases
+                            </h1>
+                          </div>
+                          </div>
+                          <div class="grid-row">   
+                      <div class="card-container">
+                        <div class="card reviewed">
+                          <a href="referrals.html">
+                        
+                            <h2 class="bold-small">
+                                <span class="heading-xlarge">2</span>
+                               Illnesses and conditions
+                              
+                            
+                              <span class="secondary-text">Added for review</span>
+                              <span class="badge">Reviewed</span>
+                              </h2>
+                        
+                          </a>
+                       <!--<ul>
+                          <li><a href="new-referrals.html">New referrals (35)</a></li>
+                          <li><a href="uc50-posted.html">UC50 posted (78)</a></li>
+                          <li><a href="uc50-recieved.html">UC50 recieved (20)</a></li>
+                         </ul> -->
+                        </div>
+    
+                        <div class="card">
+                            <a href="reviews.html">
+                          
+                                <h2 class="bold-small">
+                                    <span class="heading-xlarge">9</span>
+                                   Social and work history
+                                  
+                                
+                                  <span class="secondary-text" >Statements for review</span>
+                                  </h2>
+                          
+                            </a>
+                          <!-- <ul>
+                             <li><a href="">Ready for review (14)</a></li>
+                            <li><a href="">Requested medical evidence (15)</a></li>
+                            <li><a href="">Recieved medical evidence (20)</a></li>
+                          </ul> -->
+                        </div>
+    
+                          <div class="card alt">
+                         
+                            
+                                <h2 class="bold-small">
+                                  <span class="heading-xlarge">0</span>
+                                 Appointments</h2>
+                            
+                             
+                             <!-- <ul>
+                                  <li><a href="">Ready to book (35)</a></li>
+                                 <li><a href="">Assessments booked (178)</a></li>
+                               </ul> -->
+                            
+                              </div>
+                            <div class="card v2">
+                                <a href="assessment.html">
+                              
+                                  <h2 class="bold-small">
+                                    <span class="heading-xlarge">24</span>
+                                    Assessments today</h2>
+                              
+                                </a>
+                              <!--  <ul>
+                                  <li><a href="">9:00am (4)</a></li>
+                                  <li><a href="">10:00am (4)</a></li>
+                                  <li><a href="">11:00am (4)</a></li>
+                                  <li><a href="">12:00pm (4)</a></li>
+                                  
+                                 </ul> -->
+                              
+                                </div>
+
+
+                        <div class="card v2">
+                            <a href="reviews.html">
+                          
+                                <h2 class="bold-small">
+                                    <span class="heading-xlarge">9</span>
+                                   Social and work history
+                                  
+                                
+                                  <span class="secondary-text" >Statements for review</span>
+                                  </h2>
+                          
+                            </a>
+                          <!-- <ul>
+                             <li><a href="">Ready for review (14)</a></li>
+                            <li><a href="">Requested medical evidence (15)</a></li>
+                            <li><a href="">Recieved medical evidence (20)</a></li>
+                          </ul> -->
+                        </div>
+
+                        <div class="card v2">
+                            <a href="reviews.html">
+                          
+                                <h2 class="bold-small">
+                                    <span class="heading-xlarge">9</span>
+                                   Social and work history<br>
+                                  
+                                
+                                  <span class="heading-x-small" style="font-weight:100; font-size:16px; margin:-4px 0 7px; display:block">Statements for review</span>
+                                  </h2>
+                          
+                            </a>
+                          <!-- <ul>
+                             <li><a href="">Ready for review (14)</a></li>
+                            <li><a href="">Requested medical evidence (15)</a></li>
+                            <li><a href="">Recieved medical evidence (20)</a></li>
+                          </ul> -->
+                        </div>
+                        </div>
+                    </div>
+              </div><!-- column -->
+            </div>
+     
+        <!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}
