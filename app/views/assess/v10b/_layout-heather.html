@@ -4,28 +4,22 @@
 
 {% block head %}
   <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.1/jquery.fancybox.min.css" rel="stylesheet" />
-  <link href="/public/stylesheets/caselist_v1.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/assess_v10b.css" media="screen" rel="stylesheet" type="text/css" />
 {% endblock %}
 
 {% block inside_header %}
   <div class="header-logo" style="position:relative;top:3px">
-    <a href="/" id="logo" class="content dwplogo"> DWP </a>
+    <a href="/" id="logo" class="content dwplogo">Future health assessment </a>
   </div>
 {% endblock %}
 
 {% block proposition_header %}
-  <div class="header-proposition">
-    <div class="content">
-      <nav id="proposition-menu">
-        <a href="/" id="proposition-name">Futurers health assessment</a>
-      </nav>
-    </div>
-  </div>
+
   <ul class="user_detail">
-    <li>Birmingham fiveways</li>
-    <li>Paul Smith</li>
-    <li><a href=""> Sign out</a></li>
-  </ul>
+      <li>Birmingham fiveways</li>
+      <li>Heather Harrison</li>
+      <li><a href=""> Sign out</a></li>
+    </ul>
 {% endblock %}
 
 {% block header_class %} with-proposition{% endblock %}
@@ -49,7 +43,7 @@
 
 {% block content %}
   {# {{ horizontal_nav('',path) }} #}
-  <div nunj-block="assess_content" class="wrapper-contain">
+  <div nunj-block="assess_content">
   {% block assess_content %}{% endblock %}
   </div>
 {% endblock %}
@@ -82,5 +76,8 @@
 {% endmacro %}
 
 {% block footer_top %}
-<p class="font-xsmall"><a href="/{{ path }}/">back to index page</a></p>
+	<ul class="footer-links">
+		<li><a href="/{{ path }}/">back to index page</a></li>
+		<li><a href="/{{ path }}/clearSession" id="clear_data" class="function_link">clear data</a></li>
+	</ul>
 {% endblock %}
