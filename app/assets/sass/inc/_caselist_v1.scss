@@ -122,21 +122,31 @@ table.zebra {
 
 	li{
 		display:inline-block;
+		margin-right: 10px;
+		font-size: 18px;
+		&:last-child {
+			margin-right: 0;
+		}
 		
 		&:after{
 			content:"|";
-			margin:0 10px;
+			padding-left: 10px;
 		}
 
-	   &:last-of-type:after{
+	    &:last-of-type:after{
 		   content:"";
-		   margin:none;
-	   }
+		   padding: 0;
+	    }
+	    
+	    a{
+			color:$white;
+			&:hover {
+				color: $light-blue;
+			}
+		}
 	}
 
-	a{
-		color:$white;
-	}
+	
 }
 
 

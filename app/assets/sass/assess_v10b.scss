@@ -575,6 +575,9 @@ html {
 		.heading-medium {
 			margin-bottom: 5px;
 		}
+		.heading-small {
+			margin-bottom: 5px;
+		}
 		.secondary-heading {
 			color: $grey-1;
 			font-weight: normal;
@@ -584,6 +587,11 @@ html {
 	}
 	.request {
 		margin-top: 50px;
+	}
+	.panel-border-narrow {
+		p {
+			padding-bottom: 10px;
+		}
 	}
 }
 
@@ -604,4 +612,9 @@ html {
 
 td{
 	vertical-align: top;
+}
+
+.search-customer {
+	margin-bottom: 30px;
+
 }
