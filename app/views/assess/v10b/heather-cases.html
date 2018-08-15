@@ -1,4 +1,4 @@
-{% extends path+"/_layout.html" %}
+{% extends path+"/_layout-heather.html" %}
 
 {% block assess_content %}
 
@@ -19,10 +19,10 @@
                               <div class="details-nav v2">
                                  <ul>
                                    <li>
-                                   <a href="index">All cases</a>
+                                   <a href="caselist.html">All cases</a>
                                  </li>
                                  <li class="active_detail">
-                                    <a href="assessment">Heather's Cases</a>
+                                    <a href="assessment">My cases</a>
                                     <ul>
                                        <li><a href="#">New referalls(8) </a></li>
                                        <li><a href="#">UC50 posted(5)</a></li>
@@ -38,7 +38,7 @@
                       <div class="column-full">
                             <h2 class="heading-medium mt0"><span class="heading-xlarge">
                                 <span class="heading-secondary">Heather Harrison </span>
-                              15</span><br /> Cases / <a href="assign-to-available-agents">Re-assign to agents</a></h2>
+                              15</span><br /> Cases </h2>
 
                           </div>
                           </div>
@@ -49,13 +49,16 @@
                                   <thead>
                                     <tr>
                                       <th >Name</th>
-                                      <th>National insurance number</th>
+                                      <th>Status</th>
                                       <th></th>
                                     </tr>
                                   </thead>
-                                  
+
                                   {% include path+"/caselist/_table_data_heather.html" %}
+                                  
                               </table>
+
+
                     </div>
                   </div>  
               </div><!-- column -->
