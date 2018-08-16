@@ -1,0 +1,112 @@
+{% extends path2+"/_layout-review.html" %}
+
+{% block case_content %}
+
+
+
+  <h1 class="heading-large mt10">Work capability assessment review</h1>
+
+
+
+    <table class="mb30">
+      <tr>
+        <td>
+          <span class="bold-small">Date:</span> {{ "Do MMM YYYY" | daysAgo }}<br />
+          <span class="bold-small">Time:</span> {{ last_one.time | formatDate("H:mma") }} - {{ first_one.time | formatDate("H:mma") }}
+        </td>
+        <td>
+          <span class="bold-small">Assessor:</span> <a href="mandy_profile/">Heather Harrison</a><br />
+          <span class="bold-small">Assessment Centre:</span> <a href="#">Preston</a>
+        </td>
+      </tr>
+    </table>
+    
+    
+    
+<div class="review-item">
+	<h2 class="heading-medium">Condition history</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<span><a href="#">Edit</a></span>
+</div>
+
+<div class="review-item">
+	<h2 class="heading-medium">Social and work history</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<span><a href="#">Edit</a></span>
+</div>
+
+<div class="review-item">
+	<h2 class="heading-medium">Typical day</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<span><a href="#">Edit</a></span>
+</div>  
+
+<div class="review-item">
+	<h2 class="heading-medium">Medication and side effects</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<span><a href="#">Edit</a></span>
+</div>
+
+<div class="review-item">
+	<h2 class="heading-medium">Physical assessments</h2>
+	
+	<div class="review-inner">	
+		<h3 class="heading-small">Lower limbs</h3>
+		
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		
+		<span><a href="#">Edit</a></span>
+	</div>
+	
+	<div class="review-inner">	
+		<h3 class="heading-small">Upper body</h3>
+		
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		
+		<span><a href="#">Edit</a></span>
+	</div>
+	
+</div>  
+ 
+ <div class="review-item">
+	<h2 class="heading-medium">Mental health</h2>
+	
+	<div class="review-inner">	
+		<h3 class="heading-small">Appearance</h3>
+		
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		
+		<span><a href="#">Edit</a></span>
+	</div>
+	
+	<div class="review-inner">	
+		<h3 class="heading-small">Speech</h3>
+		
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		
+		<span><a href="#">Edit</a></span>
+	</div>
+	
+</div>  
+  
+  
+  
+ 
+  
+  
+  
+  
+  
+  
+  
+ <!-- <p class="mt30"><a href="#" class="button">Next</a></p> -->
+
+{% endblock %}
+
+
+
+
+{% block page_scripts %}
+{{ super() }}
+
+{% endblock %}
