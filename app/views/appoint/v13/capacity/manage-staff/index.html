@@ -10,20 +10,12 @@
                     <tr>
                         <th>Name</th>
                         <th>Skills</th>
-                        <th>Available Times</th>
                     </tr>
                 </thead>
                 {% for person in staff %}
                 <tr>
                     <td><a href="manage-staff/staff-profile/{{ person.id }}?tab=details">{{ person.name }}</a></td>
                     <td>{{ person.skill }} {{ ", Scrutiny" if person.scrutinyPaperwork}}</td>
-                    <td>
-                        {% for day, dayDetails in person.days %}
-                            {% if dayDetails.available %}
-                            <span class="capitalise">{{day}}</span> -  {{dayDetails.start}} to {{dayDetails.end}}{% if not loop.last %}, <br> {% endif %}
-                            {% endif %}
-                        {% endfor %}
-                    </td>
                 </tr>
                 {% endfor %}
             </table>

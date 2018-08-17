@@ -1024,3 +1024,25 @@ a:visited {
 	justify-content: space-between;
 	width: 100%;
 }
+
+.time-list {
+	display: flex;
+	justify-content: start;
+
+	&__day{
+		flex: 0 0 120px;
+	}
+}
+
+.active_detail {
+    background-color:$govuk-blue;
+    color:white!important;
+    p { color:white; }
+	background-image: url(/public/images/big_chevron.png);
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 4%;
+    &:hover {
+      background-color:lighten($govuk-blue,5);
+    }
+  }
