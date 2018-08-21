@@ -777,15 +777,24 @@ hr {
 }
 
 .review-item {
-	background: $grey-3;
-	padding: 1em;
 	margin-bottom: 2em;
-	h2, h3 {
-		margin-top: 0;
+	padding: 2em 0 0 0;
+	border-top: 1px solid $grey-3;
+	h2 {
+		margin: 0 0 .8em 0;
+	}
+	h3 {
+		margin: 0 0 .8em 0;
+	}
+	p {
+		&:last-child {
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
 	}
 	.review-inner {
 		background: $grey-4;
-		padding: 1em;
+		padding: 1em 1.4em 1.2em 1.4em;
 		margin-top: 1em;
 		border-left: 5px solid $grey-1;
 		&:first-child {
@@ -794,3 +803,32 @@ hr {
 	}
 }
 
+.review-wrapper {
+	width: 70%;
+	margin-top: 50px;
+}
+
+
+	.assessment-overview {
+		overflow: hidden;
+		dt {
+			float: left;
+			width: 30%;
+			font-weight: 700;
+			padding-top: 5px;
+		}
+		dd {
+			float: left;
+			width:  70%;
+			padding-top: 5px;
+		}
+	}
+
+.edited {
+	background: $govuk-blue;
+	color: #fff;
+	font-size: 16px;
+	padding: 5px 7px 3px 7px;
+	border-radius: 2px;
+	margin-left: 5px;
+}	
