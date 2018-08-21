@@ -1,0 +1,65 @@
+{% extends path+"/booking/details/_layout2.html" %}
+
+
+{% block citizen_content %}
+
+<div class="container">
+
+  {# macro #}
+  {{ nav.case_tabs("appointment-history",1,path1) }}
+
+  <div class="grid-row">
+
+    <div class="column-three-quarters">
+      <div class="timeline">
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <div class="column-half">
+            <h3 class="timeline__heading"><a href="#" data-toggle-content="timeline-event-1">Appointment Rearranged</a></h3>
+            <p class="timeline_datetime">30 January 2018</p>
+          </div>
+          <div class="column-half hidden" id="timeline-event-1">
+            <h4>Appointment time: Monday 12 June 2018 at 10:00am</h4>
+            <p>Reason: Appointment classes with doctors appointment</p>
+          </div>
+        </div>
+        
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading"><a href="#">Appointment booked</a></h3>
+          <h4>Monday 12 June 2018 at 10:00am</h4>
+          <p class="timeline_datetime">30 January 2018</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading"><a href="#">Referred for appointment</a></h3>
+          <p class="timeline_datetime">30 January 2018</p>
+        </div>
+
+         
+
+        <div style="clear:both"></div>
+
+      </div><!-- timeline -->
+
+
+    </div><!-- column -->
+
+    
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

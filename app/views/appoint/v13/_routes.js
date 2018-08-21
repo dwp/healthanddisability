@@ -108,7 +108,7 @@ router.get('/appointments', function(req, res, next){
 })
 
 router.get('/booked_appointments', function(req, res, next){
-  var customers = require('../../../../app/views/appoint/v12/data/booked.js');
+  var customers = require('../../../../app/views/appoint/v13/data/booked.js');
   res.locals.customers = customers.map(customer => {
 
     var arrivedTime = moment(customer.appointmentTime, "h:mma");
@@ -464,7 +464,7 @@ router.post('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staff
 
   res.locals.person = staff.filter(person => person.id === req.params.staffId)[0];
   var today = moment(new Date());
-  var year = today.year();
+  var year = today.year()
   var month = today.month() + 1;
   res.locals.calendar  = new calendar.Calendar(0).monthdatescalendar(year, month);
   res.locals.today = moment(new Date()).format();
