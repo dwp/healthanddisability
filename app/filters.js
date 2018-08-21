@@ -61,7 +61,7 @@ module.exports = function (env) {
   }
 
   filters.formatInPast = function(date){
-    var today = moment().hours(0).minutes(0).seconds(0).milliseconds(0);
+    var today = moment(new Date(2018,7,9)).hours(0).minutes(0).seconds(0).milliseconds(0);
     var testDate = moment(date).hours(0).minutes(0).seconds(0).milliseconds(0);
     console.log('today: ' + today);
     console.log('testDate: ' + testDate);
@@ -83,7 +83,7 @@ module.exports = function (env) {
   }
 
   filters.formatSelectable = function(date){
-    var today = moment().hours(0).minutes(0).seconds(0).milliseconds(0);
+    var today = moment(new Date(2018,7,9)).hours(0).minutes(0).seconds(0).milliseconds(0);
     var testDate = moment(date).hours(0).minutes(0).seconds(0).milliseconds(0);
 
     if(date.getDay() === 0 || date.getDay() === 6){
