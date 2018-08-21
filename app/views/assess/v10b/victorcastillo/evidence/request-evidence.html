@@ -26,42 +26,37 @@
 				
 			<form>
 			<fieldset>
-				<legend><h1 class="heading-large mt0">Request evidence</h1></legend>
+				<legend><h1 class="heading-large mt0"><span class="heading-secondary">Step 1 of 2</span>Request evidence</h1></legend>
+				
+				<p class="form-hint mb5 mt10">Select the evidence you would like to request.</p>
 				
 				
-
-				
-				
-				<div class="form-group mt30">
-
-					    	<fieldset>
-							      <legend class="heading-small">
-							        Evidence type: 
-							      </legend>
-							       
+				<div class="form-group">
 							       
 							       <div class="multiple-choice" data-target="113-view">
 								      <input id="113" name="type" type="checkbox" value="113">
-								      <label for="113">ESA113</label>
-								    </div>
+								      <label for="113">113</label>
+								    </div>	
 								    
 								    <div class="panel panel-border-narrow js-hidden" id="113-view">
-										<p><a href="#" class="button secondary">Print ESA113</a></p>
-								    </div>
-								    
-							
+										<label for="113-reason">
+											Reason for requesting a 113:
+										</label>
+										<textarea class="form-control form-control-2-4" name="113Request" id="113-reason" rows="4"></textarea>
+								    </div>							    
+
 					  
 								    <div class="multiple-choice" data-target="frr-view">
 								      <input id="frr" name="type" type="checkbox" value="FRR">
 								      <label for="frr">FRR</label>
 								    </div>	
 								    
-								    
 								    <div class="panel panel-border-narrow js-hidden" id="frr-view">
-										<p><a href="#" class="button secondary">Print FRR</a></p>
-								    </div>
-								    	
-						    </fieldset>
+										<label for="frr-reason">
+											Reason for requesting an FRR:
+										</label>
+										<textarea class="form-control form-control-2-4" name="frrRequest" id="frr-reason" rows="4"></textarea>
+								    </div>	
 						    
 					</div>
 
@@ -74,7 +69,7 @@
 		
 					
 				
-				<p class="request"><a href="../timelineRequest" class="button">Confirm - evidence has been requested</a></p>
+				<p class="request"><a href="request-evidence2" class="button">Continue</a></p>
 				
 				
 				</form>
