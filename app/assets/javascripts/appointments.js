@@ -251,7 +251,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-    $("[data-click-add-more]").click(function(event){
+   $("[data-click-add-more]").click(function(event){
       var input = document.getElementById('centre-new-detail-input');
       var template = '<li>' +
           input.value + 
@@ -261,6 +261,12 @@ $(document).ready(function(){
       var list = document.getElementById('details-list');
       
       $(list).append(template);
+      
+      var hiddenInput = document.createElement('input');
+      hiddenInput.type="hidden";
+      hiddenInput.value = input.value;
+      hiddenInput.name = "details[]";
+      document.getElementById("details-form").append(hiddenInput);
       input.value = "";
 
     });
