@@ -666,9 +666,30 @@ router.get('/capacity/manage-centre/:centreId/manage-staff/:section', function(r
   res.render("appoint/v13/capacity/manage-staff/" + req.params.section)
 });
 
+router.post('/capacity/manage-centre/:centreId/edit-centre-3', function(req, res, next){
+  if(req.body["available-days-Saturday"] === "on"){
+    res.locals.saturday = true;
+  } else {
+    res.locals.saturday = false;
+  }
+  res.render("appoint/v13/capacity/manage-centre/edit-centre-3");
+})
 
-
-
+router.post('/capacity/manage-centre/:centreId/details', function(req, res, next){
+  res.locals.centre.details = req.body.details;
+  if(req.body.saturday == "true"){
+    res.locals.centre.openingTimes[5] = {
+        "day": "Saturday",
+        "open": "10:00am - 3:00pm"
+      }
+  } else {
+    res.locals.centre.openingTimes[5] = {
+        "day": "Saturday",
+        "open": "Closed"
+      }
+  }
+  res.render("appoint/v13/capacity/manage-centre/index");
+})
 
 
 

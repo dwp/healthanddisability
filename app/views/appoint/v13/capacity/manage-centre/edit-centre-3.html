@@ -14,6 +14,7 @@
 <div class="container">
     <div class="grid-row">
         <div class="column-full">
+            <form action="details" method="post" id="details-form">
             <h2 class="heading-medium mt0">Other details for {{centre.name}}</h2>
 
             <ul class="list-bullet" id="details-list">
@@ -27,13 +28,18 @@
                 <label for="centre-new-detail" class="form-label">Add a new detail about {{centre.name}}</label>
                 <span class="form-hint">Add as many as you need</span>
                 <textarea type="text" name="centre-new-detail" id="centre-new-detail-input" class="form-control" value=""></textarea>
-                <button class="button-secondary mt10" data-click-add-more>Add to list</button>
+                <button class="button-secondary mt10" type="button" data-click-add-more>Add to list</button>
             </div>
 
 
             </fieldset>
             
-            <p><a href="details" class="button">Save and finish</a></p>
+            <p><button type="submit" class="button">Save and finish</button></p>
+                <input type="hidden" name="saturday" value="{{saturday}}">
+            {% for detail in centre.details %}
+                    <input type="hidden" value="{{detail}}" name="details[]">
+                {% endfor %}
+        </form>
         </div>
     </div>
 </div>

@@ -14,13 +14,14 @@
 <div class="container">
     <div class="grid-row">
         <div class="column-half">
+            <form action="edit-centre-3" method="post">
             <fieldset>
                 <legend>
                     <h3 class="heading-medium mt0">{{centre.name}} opening times</h3>
                 </legend>
                 {% for dayName, day in centre.openingTimesForm %}
                 <div class="multiple-choice">
-                    <input id="available-days-{{loop.index}}" name="available-days" type="checkbox"
+                    <input id="available-days-{{loop.index}}" name="available-days-{{dayName}}" type="checkbox"
                     data-toggle-content="times-for-{{dayName}}"
                     {% if day.open %} checked {% endif%} >
                     <label for="available-days-{{loop.index}} ">{{ dayName }}</label>
@@ -38,7 +39,8 @@
                     </div>
                 {%endfor%}
             </fieldset>
-            <p><a href="edit-centre-3" class="button ">Save and continue</a></p>
+            <p><button class="button ">Save and continue</button></p>
+        </form>
         </div>
     </div>
 </div>
