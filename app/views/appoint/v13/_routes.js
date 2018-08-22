@@ -677,7 +677,6 @@ router.post('/capacity/manage-centre/:centreId/edit-centre-3', function(req, res
 
 router.post('/capacity/manage-centre/:centreId/details', function(req, res, next){
   res.locals.centre.details = req.body.details;
-  console.log(req.body.details)
   if(req.body.saturday == "true"){
     res.locals.centre.openingTimes[5] = {
         "day": "Saturday",
