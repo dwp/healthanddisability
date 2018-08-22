@@ -33,8 +33,8 @@
                         <label class="form-label " for="from-time-{{dayName}} ">What time will {{centre.name}} be open<span class="visually-hidden "> on {{dayName}}</span>?</label>
                         <input class="form-control time-input " name="from-time-{{dayName}} " type="time " value="{{ day.start }} ">
 
-                        <label class="form-label mt30 " for="to-time=-{{dayName}} ">What time will {{centre.name}} close<span class="visually-hidden "> on {{dayName}}</span>?</label>
-                        <input class="form-control time-input " name="to-time=-{{dayName}} " type="time " value="{{ day.end }} ">
+                        <label class="form-label mt30 " for="to-time-{{dayName}} ">What time will {{centre.name}} close<span class="visually-hidden "> on {{dayName}}</span>?</label>
+                        <input class="form-control time-input " name="to-time-{{dayName}} " type="time " value="{{ day.end }} ">
                     </div>
                 {%endfor%}
             </fieldset>

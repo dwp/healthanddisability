@@ -69,8 +69,7 @@ module.exports = {
     },
     "details": [
       "Ground floor access",
-      "Wheelchair access",
-      "Parking on site",
+      "Wheelchair access"
     ]
 },
  

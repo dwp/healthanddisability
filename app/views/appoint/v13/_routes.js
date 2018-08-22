@@ -640,13 +640,13 @@ router.post('/capacity/new-centre-3', function(req, res, next){
 
 
 router.post('/capacity/manage-centre/:centreId/manage-staff/', function(req, res, next){
-
+  var scrutiny = req.body.scrutiny === "true";
   res.locals.person = {
     name: req.body.name,
     phone: req.body.phone,
     mobile: req.body.mobile,
     email: req.body.email,
-    scrutinyPaperwork: Boolean(req.body.scrutiny),
+    scrutinyPaperwork: scrutiny,
     skill: req.body.skill 
   }; 
   res.locals.staff.push(res.locals.person)
