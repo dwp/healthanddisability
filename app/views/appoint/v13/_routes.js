@@ -422,6 +422,11 @@ router.get('/capacity/manage-centre/:centreId*', function(req, res, next){
   next()
 })
 
+router.post('/capacity/manage-centre/:centreId*', function(req, res, next){
+  getCentreDetails(req, res)
+  res.locals.staff = require('../../../../app/views/appoint/v13/data/staff.js')
+  next()
+})
 
 
 router.get('/capacity/manage-centre/:centreId', function(req, res, next){
@@ -429,6 +434,11 @@ router.get('/capacity/manage-centre/:centreId', function(req, res, next){
 })
 
 router.get('/capacity/manage-centre/:centreId/:section*', function(req, res, next){
+  res.locals.selectedTab = req.params.section;
+  next()
+})
+
+router.post('/capacity/manage-centre/:centreId/:section*', function(req, res, next){
   res.locals.selectedTab = req.params.section;
   next()
 })
@@ -578,9 +588,78 @@ router.get('/capacity/manage-centre/:centreId/:section', function(req, res, next
   res.render("appoint/v13/capacity/manage-centre/" + req.params.section)
 })
 
-router.get('/capacity/manage-centre/:centreId/manage-staff/new-staff-hours', function(req, res, next){
-  res.locals.person = require('../../../../app/views/appoint/v13/data/new-staff.js');
-  next()
+router.post('/capacity/manage-centre/:centreId/manage-staff/new-staff-skill', function(req, res, next){
+  res.locals.person = {
+    name: req.body.name,
+    phone: req.body.phone,
+    mobile: req.body.mobile,
+    email: req.body.email
+  }
+  res.render("appoint/v13/capacity/manage-staff/new-staff-skill");
+});
+
+router.post('/capacity/manage-centre/:centreId/manage-staff/new-staff-hours', function(req, res, next){
+  res.locals.person = {
+    name: req.body.name,
+    phone: req.body.phone,
+    mobile: req.body.mobile,
+    email: req.body.email,
+    scrutiny: req.body.scrutiny,
+    skill: req.body.skill 
+  } ; 
+  res.render("appoint/v13/capacity/manage-staff/new-staff-hours");
+});
+
+router.post('/assessment-centres', function(req, res, next){
+  res.locals.centres = require('../../../../app/views/appoint/v13/data/centres.js')
+  var centre = {
+    name: req.body.name,
+    location: req.body.location
+  };
+  res.locals.centres[centre.name] = centre; 
+  res.render("appoint/v13/assessment-centres");
+});
+
+router.post('/capacity/new-centre-2', function(req, res, next){
+  res.locals.centre = {
+    name: req.body.name,
+    location: req.body.location
+  } ; 
+  res.render("appoint/v13/capacity/new-centre-2");
+});
+
+router.post('/capacity/new-centre-3', function(req, res, next){
+  res.locals.centre = {
+    name: req.body.name,
+    location: req.body.location
+  } ; 
+  res.render("appoint/v13/capacity/new-centre-3");
+});
+
+
+
+
+router.post('/capacity/manage-centre/:centreId/manage-staff/', function(req, res, next){
+
+  res.locals.person = {
+    name: req.body.name,
+    phone: req.body.phone,
+    mobile: req.body.mobile,
+    email: req.body.email,
+    scrutinyPaperwork: Boolean(req.body.scrutiny),
+    skill: req.body.skill 
+  }; 
+  res.locals.staff.push(res.locals.person)
+  res.locals.query.tab = "staff";
+
+  res.locals.staffTotals = {};
+    res.locals.staffTotals.complex = res.locals.staff.filter(staff => staff.skill === "Complex Neuro").length;
+    res.locals.staffTotals.neuro = res.locals.staff.filter(staff => staff.skill === "Neuro").length;;
+    res.locals.staffTotals.standard = res.locals.staff.filter(staff => staff.skill === "Standard").length;
+    res.locals.staffTotals.scrutiny = res.locals.staff.filter(staff => staff.scrutinyPaperwork).length;
+    res.locals.staffTotals.total = res.locals.staff.length;
+
+  res.render("appoint/v13/capacity/manage-staff/index");
 });
 
 router.get('/capacity/manage-centre/:centreId/manage-staff/:section', function(req, res, next){

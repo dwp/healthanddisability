@@ -1,8 +1,9 @@
 <div class="grid-row mt30">
     <div class="column-two-thirds">
+        <form action="new-staff-skill" method="post" >
         <div class="form-group">
-            <label class="form-label" for="first-name">Full name</label>
-            <input class="form-control" id="first-name" type="text" name="first-name" value="{{person.firstname}}">
+            <label class="form-label" for="name">Full name</label>
+            <input class="form-control" id="name" type="text" name="name" value="{{person.firstname}}">
         </div>
         <div class="form-group">
             <label class="form-label" for="phone">Phone (optional)</label>
@@ -20,8 +21,9 @@
         {% if person.id %}
         <p><a href="edit-staff-skill" class="button">Save and continue</a></p>
         {% else %}
-        <p><a href="new-staff-skill" class="button">Save and continue</a></p>
+        <p><button class="button">Save and continue</button></p>
         {% endif %}
+        </form>
     </div>
     <!-- column -->
 </div>

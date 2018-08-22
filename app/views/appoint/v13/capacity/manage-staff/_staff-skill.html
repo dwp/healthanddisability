@@ -19,6 +19,7 @@
             </fieldset>
         </div> -->
         <div class="form-group" id="">
+            <form method="post" action="new-staff-hours">
             <fieldset>
                 <legend>
                     <span class="form-label-bold">
@@ -30,11 +31,11 @@
                     <label for="skill-standard">Non neuro</label>
                 </div>
                 <div class="multiple-choice">
-                    <input id="skill-neuro" type="radio" name="skill" value="neuro" {{ checked if person.skill=="Neuro" }}>
+                    <input id="skill-neuro" type="radio" name="skill" value="Neuro" {{ checked if person.skill=="Neuro" }}>
                     <label for="skill-neuro">Neuro</label>
                 </div>
                 <div class="multiple-choice">
-                    <input id="skill-neuro" type="radio" name="skill" value="neuro" {{ checked if person.skill=="Complex Neuro" }}>
+                    <input id="skill-neuro" type="radio" name="skill" value="Complex Neuro" {{ checked if person.skill=="Complex Neuro" }}>
                     <label for="skill-neuro">Complex Neuro</label>
                 </div>
             </fieldset>
@@ -47,20 +48,25 @@
                       </span>
                 </legend>
                 <div class="multiple-choice">
-                    <input id="scrutiny-yes" type="radio" name="scrutiny" value="yes" {{ checked if person.scrutinyPaperwork and person.id }}>
+                    <input id="scrutiny-yes" type="radio" name="scrutiny" value="true" {{ checked if person.scrutinyPaperwork and person.id }}>
                     <label for="scrutiny-yes">Yes</label>
                 </div>
                 <div class="multiple-choice">
-                    <input id="scrutiny-no" type="radio" name="scrutiny" value="no" {{ checked if not person.scrutinyPaperwork and person.id }}>
+                    <input id="scrutiny-no" type="radio" name="scrutiny" value="false" {{ checked if not person.scrutinyPaperwork and person.id }}>
                     <label for="scrutiny-no">No</label>
                 </div>
             </fieldset>
         </div>
+    <input type="hidden" name="name" value="{{person.name}}">
+    <input type="hidden" name="phone" value="{{person.phone}}">
+    <input type="hidden" name="mobile" value="{{person.mobile}}">
+    <input type="hidden" name="email" value="{{person.email}}">
         {% if person.id %}
         <p class="mt30"><a href="/{{path2}}/{{centre.id}}/manage-staff/staff-profile/{{person.id}}?tab=details" class="button">Finish</a></p>
         {% else %}
-        <p class="mt30"><a href="new-staff-hours" class="button">Save and continue</a></p>
+        <p class="mt30"><button class="button">Save and continue</button></p>
         {% endif %}
+    </form>
     </div>
 </div>
 <!-- column -->
