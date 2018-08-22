@@ -550,7 +550,7 @@ router.get('/capacity/manage-centre/:centreId/capacity-overbooked', function(req
   next();
 })  
 
-router.get('/capacity/manage-centre/:centreId/capacity', function(req, res, next){
+router.get('/capacity/manage-centre/:centreId/capacity*', function(req, res, next){
   res.locals.selectedTab = "capacity";
 
   res.locals.staffTotals = {}
