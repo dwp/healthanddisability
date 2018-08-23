@@ -26,6 +26,11 @@ $path: "/public/images/";
 @import "inc/alt-buttons";
 @import "inc/combobox";
 
+// case list styles
+@import "inc/card";
+@import "inc/tags";
+@import "inc/secondary-nav";
+
 body {
    height:100%;
 }
@@ -383,6 +388,10 @@ select.form-select:hover {
 				font-size:28px;
 				font-weight: bold;
 			}
+			th, td {
+				border-bottom: 0;
+				padding-bottom: 0;
+			}
 		}
 	}
 
@@ -467,13 +476,15 @@ hr {
 		padding: 10px 0;
 		text-align: center;
 		cursor: pointer;
-		background: #000;
+		background: #fff;
+		border: 2px solid #000;
+		border-right: 0;
 
 
 		a {
 			padding: 0;
 			margin: 0;
-			color: #fff ;
+			color: #000 ;
 			text-decoration: none;
 			&:after {
 				content: 'Review evidence';
@@ -495,7 +506,7 @@ hr {
 		background: #fff;
 		padding: 3% 5% 10% 5%;
 		border: 1px solid $grey-2;
-		border-left: 8px solid #000;
+		border-left: 2px solid #000;
 		min-height: 1200px;
 		display: none;
 	}
@@ -512,9 +523,7 @@ hr {
 		.panel-switch {
 			right: auto;
 			left: -140px;
-			background: #000;
 			a {
-			color: #fff;
 			&:after {
 				content: 'Return to assessment';
 			}
@@ -1077,3 +1086,85 @@ table {
 	border-radius: 2px;
 	margin-left: 5px;
 }	
+
+#footer {
+	border-top: 0;
+	.footer-wrapper {
+		background-color: #000;
+		padding: 20px 40px;
+		a {
+			color: #fff;
+			&:hover {
+				color: $govuk-blue;
+			}
+		}
+		.footer-meta {
+			padding: 0;
+		}
+	}
+}
+
+html {
+	background-color: #000;
+}
+
+
+
+.footer-links {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	li {
+		display: inline;
+		margin-right: 10px;
+	}
+}
+
+.user_detail{
+	text-align:right;
+	color:$white;
+	font-size:19px;
+	font-weight:bold;
+	line-height:2em;
+
+	li{
+		display:inline-block;
+		margin-right: 10px;
+		font-size: 18px;
+		&:last-child {
+			margin-right: 0;
+		}
+		
+		&:after{
+			content:"|";
+			padding-left: 10px;
+		}
+
+	    &:last-of-type:after{
+		   content:"";
+		   padding: 0;
+	    }
+	    
+	    a{
+			color:$white;
+			&:hover {
+				color: $light-blue;
+			}
+		}
+	}
+
+	
+}
+
+.header-global {
+	width: 30%!important;
+	.content {
+		margin-left: 0!important;
+	}
+}
+
+.global-header {
+	.header-wrapper {
+		padding-left: 1em;
+	}
+}
