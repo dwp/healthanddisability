@@ -251,7 +251,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-    $("[data-click-add-more]").click(function(event){
+   $("[data-click-add-more]").click(function(event){
       var input = document.getElementById('centre-new-detail-input');
       var template = '<li>' +
           input.value + 
@@ -259,8 +259,14 @@ $(document).ready(function(){
           '</li>';
 
       var list = document.getElementById('details-list');
-      
+      var x;
       $(list).append(template);
+      
+      var hiddenInput = document.createElement('input');
+      hiddenInput.type="hidden";
+      hiddenInput.value = input.value;
+      hiddenInput.name = "details[]";
+      document.getElementById("details-form").append(hiddenInput);
       input.value = "";
 
     });
@@ -317,8 +323,21 @@ $(document).ready(function(){
 
   var generateDateList = function(dates){
     var output = "";
-    dates.map(date => output = output + "<li>" + date + "</li>");
+    dates.map(date => output = output + "<li>" + moment(date).format('ddd D MMMM YYYY') + "</li>");
     return  output;
+  }
+
+  var generateInputs = function(dates){
+    var div = document.getElementById("generatedDateInputs")
+    div.innerHTML = "";
+
+    dates.map(function(date){
+      var input = document.createElement("input");
+      input.value = date;
+      input.type = "hidden";
+      input.name = "dates[]";
+      div.append(input);
+    })
   }
 
   $(".calendar-picker__day--selectable").click(function(){
@@ -330,15 +349,17 @@ $(document).ready(function(){
     } else {
       selectedDates = selectedDates.filter( date => date !== thisDate);
     }
-    console.log(selectedDates);
+    selectedDates.sort(function(a,b){
+      return moment(a) - moment(b);
+    });
 
     $(this).toggleClass("calendar-picker__day--selected");
 
     $("#availability-form").removeClass("hidden");
     document.getElementById("dateList").innerHTML = generateDateList(selectedDates);
+    generateInputs(selectedDates);
 
   });
-
 
 });
 

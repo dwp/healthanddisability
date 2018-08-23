@@ -1,0 +1,137 @@
+{% 
+set reasonsSupplier = [
+  {code: "1C", label: "Number of claimants attended exceeds medical capacity"},
+  {code: "1F", label: "Customer called for assessment in error"},
+  {code: "2F", label: "HCP unavailable"},
+  {code: "3A", label: "File not available"},
+  {code: "3F", label: "HCP did not attend session"},
+  {code: "5E", label: "Unable to continue with exam"},
+  {code: "5F", label: "System performance problems"},
+  {code: "6E", label: "Inappropriate for HCP to see client"},
+  {code: "7E", label: "Health and safety issues"}
+]
+ %}
+
+ {% set reasonsOther = [
+  {code: "3E", label: "Customer unfit to be examined"},
+  {code: "8E", label: "Special need not notified in advance"}
+]
+%}
+
+{% extends path1+"/_layout-booking.html" %}
+
+{% block main_nav %}
+  <div class="nav-horizontal">
+  <div class="main-nav-wrapper">
+    <ul class="main-nav">
+        
+        
+        <li class="selected"><a href="{{root}}/booked_appointments?arrived=true">Appointments</a></li>
+        <li><a href="{{root}}/assessment-centres">Manage my centre</a></li>
+
+    </ul>
+  </div>
+</div>
+
+{% endblock %}
+
+
+{% block left_content %}
+
+<div class="status-circle">
+<p><span class="bold-small">
+Arrived at assessment center
+</p>
+</div>
+<hr>
+
+
+{% endblock %} 
+
+
+{% block citizen_content %}
+{# macro #}
+
+
+<div class="container">
+    <!-- timeline -->
+    <h1 class="heading-medium">Customer sent home unseen</h1>
+
+    <div class="panel panel-border-wide">
+    <ul class="list-bullet">
+      <li>{{customer.name.first}} has been waiting {{ 'less' if customer.waitTime < 30}} {{ 'more' if customer.waitTime > 29}} than 30 minutes</li>
+      <li>{{customer.name.first}} arrived {{ 'on time' if customer.arrivedTime < 10}}{{'late' if customer.arrivedTime > 10}}</li>
+      <li>Longest wait time is currently over 30 mins</li>
+    </ul>
+  </div>
+    <form action="send-home-2">
+        <fieldset class="form-group">
+            <legend>
+                <span class="form-label">
+            Why does {{customer.name.first}} need to be sent home?
+          </span>
+            </legend>
+            {% if customer.waitTime > 29 %}
+              <div class="multiple-choice">
+                <input id="reason-1C" type="radio" name="reason" value="dwp">
+                <label for="reason-1C">Does not want to wait any longer</label>
+              </div>
+            {% endif %}
+
+            {% if customer.waitTime < 30 %}
+              <div class="multiple-choice">
+                <input id="reason-9E" type="radio" name="reason" value="wait">
+                <label for="reason-9E">Does not want to wait any longer</label>
+              </div>
+            {% endif %}
+            {% if customer.arrivedTime > 10 %}
+              <div class="multiple-choice">
+                <input id="reason-2E" type="radio" name="reason" value="2E">
+                <label for="reason-2E">Customer arrived late</label>
+              </div>
+            {% endif %}
+
+            <div class="multiple-choice" data-target="dwp-other">
+                <input id="reason-cancel" type="radio" name="reason" value="dwp">
+                <label for="reason-cancel">We have had not been able to carry out the appointment </label>
+            </div>
+            <div class="panel js-hidden" id="dwp-other">
+              <fieldset class="form-group">
+                  <legend>Select a reason</legend>
+                  {% for reason in reasonsSupplier %}
+                  <div class="multiple-choice">
+                    <input id="reason-dwp-{{reason.code}}" type="radio" name="dwp" value="dwp-{{reason.code}}">
+                    <label for="reason-dwp-{{reason.code}}">{{reason.label}}</label>
+                  </div>
+                  {% endfor %}
+              </fieldset>
+            </div>
+            <div class="multiple-choice" data-target="other">
+                <input id="reason-customer" type="radio" name="reason" value="customer">
+                <label for="reason-customer">Other  </label>
+            </div>
+            <div class="panel js-hidden" id="other">
+              <fieldset class="form-group">
+                  <legend>Select a reason</legend>
+                  {% for reason in reasonsOther %}
+                  <div class="multiple-choice">
+                    <input id="reason-dwp-{{reason.code}}" type="radio" name="dwp" value="dwp-{{reason.code}}">
+                    <label for="reason-dwp-{{reason.code}}">{{reason.label}}</label>
+                  </div>
+                  {% endfor %}
+              </fieldset>
+            </div>
+            
+        </fieldset>
+        
+        <button class="button">Next</button>
+    </form>
+</div>
+<!-- container -->
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}
+_

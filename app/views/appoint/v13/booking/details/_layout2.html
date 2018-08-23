@@ -1,0 +1,55 @@
+
+{% extends templatePath %}
+
+
+
+{% block citizen_content %}
+
+  <div class="container">
+
+    {{ nav.case_tabs("details",1,path1 + "/" + section, customer._id) }}{# macro #}
+
+    <div class="grid-row">
+      <div class="column-third">
+        {% block app_nav %}
+          {% include path+"/booking/details/_nav.html" %}
+        {% endblock %}
+      </div><!-- column -->
+      <div class="column-two-thirds">
+          {% block case_content %}{% endblock %}
+      </div><!-- column-full -->
+    </div><!-- grid-row -->
+  </div><!-- container -->
+{% endblock %}
+
+{% block body_end %}
+
+  {{ super() }}
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.tag').on('click',function(e)
+    {
+      e.preventDefault();
+      $(this).toggleClass('clicked');
+    });
+
+    $('.tag').on('mouseleave',function(e)
+    {
+      e.preventDefault();
+      $(this).removeClass('clicked');
+    });
+
+    $.fancybox.defaults.beforeShow = function(){
+        $("html").css({'overflow-y':'hidden'});
+    };
+    $.fancybox.defaults.afterClose = function(){
+        $("html").css({'overflow-y':'visible'});
+    };
+  });
+</script>
+{% endblock %}

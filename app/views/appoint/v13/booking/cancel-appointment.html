@@ -1,0 +1,86 @@
+{% extends path1+"/_layout.html" %}
+
+{% block heading %}
+
+
+
+
+<div class="staff__heading">
+  <div class="staff__centred">
+    <div class="grid-row">
+      <div class="column-half">
+    <h2 class="heading-xlarge" style="margin:0 0 10px">Mendez Dalton</h2>
+    </div>
+      <div class="column-quarter">
+        <p><span class="font-xsmall">National Insurance Number</span><br /><span class="bold-medium">QQ 53 12 49 C </span></p>
+      </div>
+      <div class="column-quarter">
+        <p><span class="font-xsmall">Date of birth</span><br /><span class="bold-medium">10 June 1980 </span></p>
+      </div>
+      
+
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block left_content %}
+
+<p class="mt10 mb0 bold-small"><span class="circle purple"></span>Appointment today at 2:00pm</p>
+<p>Arrived at 1:55pm</p>
+<hr>
+{% endblock %}
+
+
+{% block citizen_content %}
+ {# macro #}
+
+<div class="container">
+<!-- timeline -->
+<h1 class="heading-medium">Cancel Appointment</h1>
+<form action="" method="post">
+ <fieldset class="form-group">
+    <legend>
+        <span class="form-label-bold">
+            Why has the appointment been cancelled?
+          </span>
+    </legend>
+    <div class="multiple-choice">
+        <input id="reason-cshu" type="radio" name="reason" value="cshu">
+        <label for="reason-cshu">Customer had to be sent home</label>
+    </div>
+    <div class="multiple-choice">
+        <input id="reason-uta" type="radio" name="reason" value="uta">
+        <label for="reason-uta">Customer re-arranged</label>
+    </div>
+</fieldset>
+
+<fieldset class="form-group inline">
+    <legend>
+        <span class="form-label-bold">
+            Can the appointment be re-arranged now?
+          </span>
+    </legend>
+    <div class="multiple-choice">
+        <input id="change_now-yes" type="radio" name="change_now" value="true">
+        <label for="change_now-yes">Yes</label>
+    </div>
+    <div class="multiple-choice">
+        <input id="change_now-no" type="radio" name="change_now" value="false">
+        <label for="change_now-no">No</label>
+    </div>
+</fieldset>
+    <button class="button">Save</button>
+
+</form>
+</div><!-- container -->
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}
+_

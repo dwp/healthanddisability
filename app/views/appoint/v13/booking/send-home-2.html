@@ -1,0 +1,92 @@
+{% extends path1+"/_layout-booking.html" %}
+
+{% block main_nav %}
+  <div class="nav-horizontal">
+  <div class="main-nav-wrapper">
+    <ul class="main-nav">
+        
+        
+        <li class="selected"><a href="{{root}}/booked_appointments?arrived=true">Appointments</a></li>
+        <li><a href="{{root}}/assessment-centres">Manage my centre</a></li>
+
+    </ul>
+  </div>
+</div>
+
+{% endblock %}
+
+
+{% block left_content %}
+
+<div class="status-circle"> <p class="bold-small">
+Arrived at assessment center
+</p>
+</div>
+<hr>
+{% endblock %} 
+
+
+{% block citizen_content %}
+{# macro #}
+
+
+ {% if query.reason == "dwp" %}
+<div class="container">
+    <h3 class="heading-medium mt20">Rearrange appointment</h3>
+    <form action="timeline_sent-home">
+        <fieldset class="form-group">
+            <legend class="form-label-bold">Choose an appointment time</legend>
+            {% for appointment in availableAppointments | sort(attribute='appointmentDate') | limit(query.number) %}
+            <div class="multiple-choice">
+                <input type="radio" name="appointment" id="available-appointments-{{loop.index}}" value="{{appointment.appointmentDate}}">
+                <label for="available-appointments-{{loop.index}}">{{appointment.appointmentDate | formatDate("dddd D MMMM YYYY h:mma")}}</label>
+            </div>
+            {% endfor %}
+        </fieldset>
+        {% if newNumber
+        < availableAppointments.length %} <p><a href="send-home-2?number={{newNumber}}" class="button-secondary">View more appointments</a></p>
+            {% else %}
+            <p>There are no more appointments available to view</p>
+            {% endif %}
+            <p>
+                <button type="submit" class="button">Next</button>
+            </p>
+            <input type="hidden" name="tab" value="Details">
+    </form>
+    <!-- row -->
+</div>
+{% endif %} {% if query.reason != "dwp" %}
+<div class="container">
+    <!-- timeline -->
+    <h1 class="heading-medium">Customer sent home unseen</h1>
+    <form action="" name="form">
+        <div class="panel panel-border-wide">
+            A deceision maker will need to review the case before the appointment can be re-arranged.
+        </div>
+        <a href="timeline_sent-home-2" class="button" id="submitButton">Confirm send home unseen</a>
+    </form>
+</div>
+{% endif %}
+<!-- container -->
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}
+
+
+{% block page_scripts %}
+<script>
+$(document).ready(function(){
+  var submitButton = document.getElementById('submitButton');
+  $('[name=change_now]').change(function(){
+    if(this.value === "true"){
+      submitButton.href = 'timepicker';
+    } else {
+      submitButton.href = 'timeline_sent-home';
+    }
+  })
+});
+</script>
+{% endblock %}

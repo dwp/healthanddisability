@@ -1,0 +1,217 @@
+{% extends path+"/_layout.html" %}
+
+
+
+{% block assess_content %}
+
+  <div class="nav-horizontal">
+  <div class="main-nav-wrapper">
+    <ul class="main-nav">
+ 
+        <li><a href="appointments">Appointments</a></li>
+        <li><a href="assessment-centres">Assessment Centres</a></li> 
+        <li><a href="#">Health Care Professionals</a></li>
+
+    </ul>
+  </div>
+</div>
+
+<main id="content" role="main" class="main-content mt30">
+
+      <div class="container">
+      
+   <h1 class="heading-large">Scheduler</h1>
+
+      
+      
+        <div class="grid-row">
+          
+          
+          <div class="column-third">
+    	<h3 class="heading-medium mt0">Choose a date</h3>
+    	
+    	<div class="calendar-book">
+    	<table>
+    	<caption>December 2017</caption>
+    	<thead>
+    		<tr>
+    			<th>MON</th>
+    			<th>TUE</th>
+    			<th>WED</th>
+    			<th>THU</th>
+    			<th>FRI</th>
+    			<th>SAT</th>
+    			<th>SUN</th>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		<tr>
+    			<td class="available"><a href="#">1</a></td>
+    			<td class="available"><a href="#">2</a></td>
+    			<td class="available"><a href="#">3</a></td>
+    			<td class="available"><a href="#" class="selected">4</a></td>
+    			<td class="available"><a href="#">5</a></td>
+    			<td class="available"><a href="#">6</a></td>
+    			<td class="available"><a href="#">7</a></td>
+    		</tr>
+    		<tr>
+    			<td class="available"><a href="#">8</a></td>
+    			<td class="available"><a href="#">9</a></td>
+    			<td class="available"><a href="#">10</a></td>
+    			<td class="available"><a href="#">11</a></td>
+    			<td class="available"><a href="#">12</a></td>
+    			<td class="available"><a href="#">13</a></td>
+    			<td class="available"><a href="#">14</a></td>
+    		</tr>
+    		<tr>
+    			<td class="available"><a href="#">15</a></td>
+    			<td class="available"><a href="#">16</a></td>
+    			<td class="available"><a href="#">17</a></td>
+    			<td class="available"><a href="#">18</a></td>
+    			<td class="available"><a href="#">19</a></td>
+    			<td class="available"><a href="#">20</a></td>
+    			<td class="available"><a href="#">21</a></td>
+    		</tr>
+    		<tr>
+    			<td class="available"><a href="#">22</a></td>
+    			<td class="available"><a href="#">23</a></td>
+    			<td class="available"><a href="#">24</a></td>
+    			<td class="available"><a href="#">25</a></td>
+    			<td class="available"><a href="#">26</a></td>
+    			<td class="available"><a href="#">27</a></td>
+    			<td class="available"><a href="#">28</a></td>
+    		</tr>
+    		<tr>
+    			<td class="available"><a href="#">29</a></td>
+    			<td class="available"><a href="#">30</a></td>
+    			<td class="available"><a href="#">31</a></td>
+    			<td class="available">1</td>
+    			<td class="available">2</td>
+    			<td class="available">3</td>
+    			<td class="available">4</td>
+    		</tr>
+    	</tbody>
+    	</table>
+    	
+
+    	
+    	
+    	
+    	</div>	
+    	
+    	
+    </div><!-- column -->
+    
+    
+    
+
+    
+    
+    
+    <div class="column-third">
+   <h3 class="heading-medium mt0">Available appointments</h3>
+    
+    
+   <div class="time-select clearfix">
+   	<h4 class="heading-small">Thursday 4th June</h4>
+   	<ul class="time-slots">
+   		<li><a href="#">09:00am<span>1 hour</span></a></li>
+   		<li><a href="#" class="selected">10:00am<span>1 hour</span></a></li>
+   		<li><a href="#">11:00am<span>1 hour</span></a></li>
+   		<li><a href="#">12:00pm<span>1 hour</span></a></li>
+   		<li><a href="#">14:00pm<span>1 hour</span></a></li>
+   		<li><a href="#">15:00pm<span>1 hour</span></a></li>
+   		<li><a href="#">16:00pm<span>1 hour</span></a></li>
+   	</ul>
+   </div>
+   
+
+    
+    
+    </div>
+    
+    
+  
+  
+  
+    <div class="column-third">
+  
+     
+    <h3 class="heading-medium mt0">Status</h3>
+
+ <form>
+  <div class="form-group">
+    <fieldset>
+
+      <legend class="visually-hidden">
+        <h1 class="heading-medium">Actions</h1>
+      </legend>
+
+      <div class="multiple-choice">
+        <input id="radio-1" type="radio" name="action-group" value="remove">
+        <label for="radio-1">Remove appointment</label>
+      </div>
+      <div class="multiple-choice" data-target="add-req">
+        <input id="radio-2" type="radio" name="action-group" value="add">
+        <label for="radio-2">Add requirement</label>
+      </div>
+      <div class="js-hidden panel" id="add-req">
+      
+    		<fieldset>
+			
+			      <legend class="visually-hidden">Special requirements</legend>
+			
+			      <div class="multiple-choice">
+			        <input id="radio-1b" type="checkbox" name="radio-group3" value="1st" class="access-floor">
+			        <label for="radio-1b">Ground floor access</label>
+			      </div>
+			     
+			      
+			      <div class="multiple-choice">
+			        <input id="gender" type="checkbox" name="radio-group3" value="Same gender" class="same-gender">
+			        <label for="gender">Same gender HCP</label>
+			      </div>
+			      
+			      <div class="multiple-choice">
+			        <input id="security" type="checkbox" name="radio-group3" value="Security" class="security-req">
+			        <label for="security">Security required</label>
+			      </div>
+			      
+			     <div class="multiple-choice">
+			        <input id="doctor" type="checkbox" name="radio-group3" value="Doctor" class="doctor-req">
+			        <label for="doctor">Doctor required</label>
+			      </div> 
+			      
+			       <div class="multiple-choice" data-target="language-required">
+			        <input id="radio-2b" type="checkbox" name="radio-group3" value="Other" class="interpreter" data-target="language-required">
+			        <label for="radio-2b">Interpreter required</label>		        
+			      </div>
+			
+			    </fieldset>
+    	
+    </div>
+
+
+    </fieldset>
+  </div>
+  <div class="form-group">
+  	<p><a href="confirm-app" class="button">Confirm</a></p>
+  </div>
+</form>
+    
+    
+    
+    
+    
+    
+    </div><!-- column -->
+  
+  
+          
+          
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}
