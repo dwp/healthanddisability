@@ -259,7 +259,7 @@ $(document).ready(function(){
           '</li>';
 
       var list = document.getElementById('details-list');
-      
+      var x;
       $(list).append(template);
       
       var hiddenInput = document.createElement('input');
