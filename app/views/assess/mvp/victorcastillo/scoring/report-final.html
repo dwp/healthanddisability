@@ -1,0 +1,232 @@
+{% extends path2+"/_layoutPrint.html" %}
+
+{% block scoring_content %}
+
+<p><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<div class="assessment-report-view">
+  
+<h1 class="heading-large mt10">Assessment report</h1>
+  
+  
+  <dl class="assessment-overview">
+  	
+  	<dt>Date of assessment</dt>
+  	<dd>{{ "Do MMM YYYY" | daysAgo }}</dd>
+  	
+  	<dt>Assessment centre</dt>
+  	<dd>Fiveways, Birmingham</dd>
+  	
+  	<dt>Assessor</dt>
+  	<dd>Heather Harrison</dd>
+  	
+  	<dt>Assessment start</dt>
+  	<dd>{{ last_one.time | formatDate("H:mma") }}</dd>
+  	
+  	<dt>Assessment finish</dt>
+  	<dd>{{ first_one.time | formatDate("H:mma") }}</dd>
+  
+
+  </dl>
+
+   
+ <div class="review-wrapper">
+ 
+ 
+    
+    
+    
+<div class="review-item">
+	<h2 class="heading-medium">Condition history</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	
+</div>
+
+<div class="review-item">
+	<h2 class="heading-medium">Social and work history</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	
+</div>
+
+<div class="review-item">
+	<h2 class="heading-medium">Typical day</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	
+</div>  
+
+<div class="review-item">
+	<h2 class="heading-medium">Medication and side effects</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	
+</div>
+
+<div class="review-item">
+	<h2 class="heading-medium">Physical assessments</h2>
+	
+	<p>Consent was given by Tomas to start the physical assessment.</p>
+	
+	<div class="review-inner">	
+		<h3 class="heading-medium">Lower back and legs</h3>
+		
+		<h4 class="heading-small">Lower back</h4>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		
+		<h4 class="heading-small">Left leg</h4>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		
+		<h4 class="heading-small">Right leg</h4>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	
+		
+	</div>
+	
+	<div class="review-inner">	
+		<h3 class="heading-medium">Upper body</h3>
+		
+		<h4 class="heading-small">Torso</h4>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		
+		<h4 class="heading-small">Left arm</h4>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		
+		<h4 class="heading-small">Right arm</h4>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		
+
+	</div>
+	
+</div>  
+ 
+ <div class="review-item">
+	<h2 class="heading-medium">Mental health</h2>
+	
+	<div class="review-inner">	
+		<h3 class="heading-medium">Appearance</h3>
+		
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		
+	</div>
+	
+	<div class="review-inner">	
+		<h3 class="heading-medium">Speech</h3>
+		
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		
+	</div>
+	
+</div>  
+
+ <div class="review-item">
+	<h2 class="heading-medium">Recommendation</h2>
+	
+	<div class="review-inner">	
+		<h3 class="heading-medium">Moving around and climbing steps without someone's help</h3>
+				
+		<h4 class="heading-small">How far can Tomas walk or move on level ground without help from someone, and without stopping due to severe pain or tiredness?</h4>
+		
+		<p>More than 200 metres</p>
+		
+		<h4 class="heading-small">Can Tomas go up or down 2 steps without help, if they use a handrail?</h4>
+		
+		<p>No</p>
+		
+		<h4 class="heading-small">Justification:</h4>
+		
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		
+		<p><a href="#" class="button secondary">Edit moving around and using steps</a></p>
+	</div>
+	
+	<div class="review-inner">	
+		<h3 class="heading-medium">Standing, sitting and moving between the two</h3>
+				
+		<h4 class="heading-small">How far can Tomas walk or move on level ground without help from someone, and without stopping due to severe pain or tiredness?</h4>
+		
+		<p>More than 200 metres</p>
+		
+		<h4 class="heading-small">Can Tomas go up or down 2 steps without help, if they use a handrail?</h4>
+		
+		<p>No</p>
+		
+		<h4 class="heading-small">Justification:</h4>
+		
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+	</div>
+
+	
+</div>  
+
+
+<div class="review-item">
+ <h2 class="heading-medium">Outcome</h2>
+ 
+ <div class="exam-content">
+		<table>
+			
+			<caption>Descriptors to review</caption>
+			
+			
+			<tr>
+				<th>Moving around and climbing steps without someone's help</th>
+				<td>9</td>
+			</tr>
+			<tr>
+				<th>Standing, sitting and moving between the two</th>
+				<td>4</td>
+			</tr>
+
+			
+			<tr class="total-score">
+				<th>Total score: </th>
+				<td>9</td>
+			</tr>
+			
+		</table>	
+	</div>
+	
+ </div>
+
+
+<div class="review-item">
+	<h2 class="heading-medium">Exceptional circumstances</h2>
+
+		<h3 class="heading-small">Circumstances why Tomas should be treated as LCW and LCWRA:</h3>
+		<p>None</p>
+
+		<h3 class="heading-small">Circumstances why Tomas should be treated as LCW:</h3>
+		<p>Regular treatment or receiving certain treatments</p>
+		
+		<h3 class="heading-small">Reason:</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+</div>  
+
+<div class="review-item">
+	<h2 class="heading-medium">Prognosis</h2>
+
+		<h3 class="heading-small">Time until Tomas's case needs reviewing:</h3>
+		<p>12 months</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>		
+</div> 
+
+<div class="review-item">
+	<h2 class="heading-medium">Personal summary statement</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+</div> 
+
+
+
+  
+  
+   </div>
+ <!-- / wrapper -->
+
+
+</div>
+<!-- / assessment report view -->
+
+
+{% endblock %}
+

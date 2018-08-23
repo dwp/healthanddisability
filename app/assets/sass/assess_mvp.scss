@@ -897,3 +897,9 @@ hr {
 			font-size: 18px;
 		}
 	}
+	
+@media print {
+   	.left-panel {
+		display: none;
+   	}
+}
