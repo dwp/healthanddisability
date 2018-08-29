@@ -30,6 +30,7 @@ $path: "/public/images/";
 @import "inc/card";
 @import "inc/tags";
 @import "inc/secondary-nav";
+@import "inc/caselist_v1";
 
 body {
    height:100%;
@@ -285,32 +286,22 @@ select.form-select:hover {
 	  margin-bottom: 0!important;
 	  overflow: hidden;
   }
+  
+  .column-three-quarters {
+	width: 75%;
+	float: left;
+	position: relative;
+	box-sizing: border-box;
+	}
 
   .main-area {
 	  margin-top: 0;
-	  padding-top: 20px!important;
-	  padding-bottom: 100px!important;
-	  //border-left: 1px solid $grey-2;
+	  padding: 20px 30px 100px 30px;
 	  background: #fff;
   }
 
 
-.column-three-quarters {
-	width: 71%;
-	float: left;
-	padding: 0 0 0 25px;
-	position: relative;
-	&:after {
-		position: absolute;
-		content: "/";
-		height: 3500px;
-		width: 25px;
-		background: #fff;
-		top: 0;
-		right: -25px;
-		color: #fff;
-	}
-}
+
 
 
 .main-row {
@@ -472,7 +463,7 @@ hr {
 		position: absolute;
 		top: 224px;
 		right: 0;
-		width: 140px;
+		width: 130px;
 		padding: 10px 0;
 		text-align: center;
 		cursor: pointer;
@@ -484,17 +475,15 @@ hr {
 		a {
 			padding: 0;
 			margin: 0;
-			color: #000 ;
-			text-decoration: none;
+
 			&:after {
 				content: 'Review evidence';
 			}
 		}
 		
-		h4.support {
+		.support {
 			padding: 0;
 			margin: 0;
-			color: #fff;
 			&:after {
 				content: 'Supporting evidence';
 			}
@@ -522,10 +511,10 @@ hr {
 		}
 		.panel-switch {
 			right: auto;
-			left: -140px;
+			left: -130px;
 			a {
 			&:after {
-				content: 'Return to assessment';
+				content: 'Close evidence';
 			}
 		}
 		}
@@ -760,7 +749,7 @@ hr {
 
 .chat-layout {
 
-	margin-top: 30px;
+	margin-top: 108px;
 
 	position: relative;
 	
@@ -1167,4 +1156,8 @@ html {
 	.header-wrapper {
 		padding-left: 1em;
 	}
+}
+
+.block {
+	display: block;
 }
