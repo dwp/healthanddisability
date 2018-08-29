@@ -1,9 +1,10 @@
 {% extends path+"/_layout.html" %}
-
+{% import path1+"/_macros_nav.html" as nav %}
 
 {% block assess_content %}
 
- 
+  {#  This is the BIG BLUE BAR at the top - #jussayin #}
+  {% include path1+"/_staff_heading.html" %}
 
   <main id="content" role="main" class="main-content-inner">
 
@@ -14,21 +15,22 @@
       <div class="column-one-quarter left-area">
       
       	<div class="left-panel">
-      
+      <p class="returnRef"><a href="/assess/mvp/">Return to case list</a></p>
       	
       	
-      	
+      	<hr>
       	 <div class="case-status">
 		 
- <p class="mt10 mb0 bold-small">Assessment complete</p>
+ <p class="mt10 mb0 bold-small"><span class="circle teal"></span>Assessment complete</p>
 		  <p class="mt10">Assigned to Heather Harrison</p>
-		<!-- <p><a href="/assess/v8/victorcastillo/scoring/" class="button">Make your recommendation</a></p> -->
+
 		  <hr>
 		  <ul class="mt30">
-		  <!--  <li class="mt10"><a href="#">Record new evidence</a></li> -->
+		  	<!-- <li><a href="/assess/v6/victorcastillo/evidence/rec">Make a recommendation</a></li> -->
+		    <!-- <li class="mt10"><a href="#">Record new evidence</a></li> -->
 		   <!--  <li class="mt10"><a href="#">Request evidence</a></li>  -->
 	    </ul>
-	  </div>
+		  </div>
       	
       	
       	</div>
@@ -36,9 +38,6 @@
       </div>
       
         <div class="column-three-quarters main-area">
-        
-         {#  This is the BIG BLUE BAR at the top - #jussayin #}
-  {% include path1+"/_staff_heading.html" %}
 
           <div nunj-block="citizen_content">
             {% block citizen_content %}{% endblock %}
@@ -75,14 +74,12 @@
     });
   });
 </script>
-
-
 {% endblock %}
 
 {% block footer_top %}
 {{ super() }}
 <p class="font-xsmall">
   <a href="/{{ path }}/clearSession" id="clear_data" class="function_link">clear data</a>
-  <a href="/{{ path }}/prefillAssessment" id="prefill" class="function_link">prefill</a>
+  | <a href="/{{ path }}/prefillAssessment" id="prefill" class="function_link">prefill</a>
 </p>
 {% endblock %}
