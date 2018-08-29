@@ -23,15 +23,29 @@
 			
 			<tr>
 				<th><a href="illnessEffects">Illnesses and their effects</a></th>
-				<td><span class="visually-hidden">Not started</span></td>
+        <td><span class="visually-hidden">Not started</span>
+          {% if data['illnessEffects'] %}     
+          <span class="blue">Saved</span>
+        {% endif %}
+       
+        
+        </td>
 			</tr>
 			<tr>
 				<th><a href="socialWorkHistory">Social and work history</a></th>
-				<td><span class="visually-hidden">Not started</span></td>
+        <td><span class="visually-hidden">Not started</span>
+          {% if data['socialWorkHistory'] %}     
+          <span class="blue">Saved</span>
+        {% endif %}
+        </td>
 			</tr>
 			<tr>
 				<th><a href="typicalDay">Typical day</a></th>
-				<td><span class="visually-hidden">Not started</span></td>
+        <td><span class="visually-hidden">Not started</span>
+          {% if data['typicalDay'] %}     
+          <span class="blue">Saved</span>
+        {% endif %}
+        </td>
 			</tr>
 
 		</table>
