@@ -11,8 +11,8 @@
 
 {% block citizen_content %}
  {# macro #}
-  {{ nav2.case_tabs("bobby_timeline",1,path1) }}
-
+ {{ nav.case_tabs("timeline",1,path1 + "/" + section, customer._id) }}{# macro #}
+  
 <div class="container">
 
 <div class="timeline">

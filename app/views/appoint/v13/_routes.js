@@ -208,6 +208,13 @@ router.get('/booking/referrals/:customerId*', function(req, res, next){
   next()
 })
 
+router.get('/booking/booked/:customerId/appointment-history', function(req, res, next){
+  var history = require('../../../../app/views/appoint/v13/data/appointmentHistory.js');
+
+  res.locals.history = history.filter(entry => entry._id == req.params.customerId)[0];
+  next()
+})
+
 router.get('/booking/referrals/:customerId', function(req, res, next){
   res.render("appoint/v13/booking/customer-referral");
 })
@@ -222,6 +229,20 @@ router.get('/booking/booked/:customerId*', function(req, res, next){
   next()
 })
 
+router.get('/booking/booked/:customerId/appointment-history', function(req, res, next){
+  var history = require('../../../../app/views/appoint/v13/data/appointmentHistory.js');
+
+  res.locals.history = history.filter(entry => entry._id === req.params.customerId);
+  next()
+})
+
+
+router.get('/booking/booked/:customerId/timeline_rebooked', function(req, res, next){
+    if(res.locals.query.changedByCustomer == 'yes'){
+      res.locals.customer.ableToRearrange = false;
+    }
+    next();
+  })
 
 
 router.post('/booking/booked/:customerId*', function(req, res, next){
@@ -370,6 +391,9 @@ router.post('/booking/booked/:customerId/timeline-arrived', function(req, res, n
 
     res.render("appoint/v13/booking/timeline-arrived");
   })
+
+
+
 
 router.get('/booking/booked/mendez/*', function(req, res, next){
 

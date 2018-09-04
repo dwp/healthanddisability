@@ -13,7 +13,11 @@
 <div class="container">
         <h3 class="heading-medium mt20">Rearrange appointment</h3>
 
-    <form action="rearrange-reason">
+        {% if query.rearrange == 'true' %}
+        <form action="timeline_rebooked">
+        {% else %}
+        <form action="rearrange-reason">
+        {% endif %}
 
         <fieldset class="form-group">
             <legend class="form-label-bold">Choose an appointment time</legend>

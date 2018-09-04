@@ -1,23 +1,11 @@
-{% extends path1+"/_layout.html" %}
+{% extends path1+"/_layout-booking.html" %}
 
-{% block left_content %}
- <p class="mt10 mb0 bold-small"><span class="circle purple"></span>Booked</p>
 
- <div class="available-slot">
-      <div class="column-half" style="padding: 0;">
-          <h4 class="heading-small capitalise">{{query.day}} {{query.date}}</h4>
-          <p>{{query.time}}</p>
-      </div>
-      <div class="column-half" style="padding: 0; text-align: right;">
-          <a href="timepicker?day=tuesday&date=10%20April&time=11:00am" class="button">Edit</a>
-      </div>
-  </div>
- <hr>
-{% endblock %}
 
 {% block citizen_content %}
  {# macro #}
-  {{ nav2.case_tabs("bobby_timeline",1,path1) }}
+    {{ nav.case_tabs("timeline",1,path1 + "/" + section, customer._id) }}{# macro #}
+  
 
 <div class="container">
 
@@ -26,7 +14,6 @@
         <div class="timeline__event">
           <h3 class="timeline__heading">Appointment changed</h3>
           <p class="timeline_datetime">{{ 'D MMMM YYYY' | randDaysAgo(0)}}</p>
-          <p><a href="#">view details</a></p>
         </div>
 
 
