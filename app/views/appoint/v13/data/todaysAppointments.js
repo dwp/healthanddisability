@@ -14,7 +14,7 @@ module.exports = [
     "status": "Unable to attend",
     "phone": "0121 811 455",
     "appointmentDate": "2018-06-27T21:38:37+00:00",
-    "appointmentTime": "11:00am",
+    "appointmentTime": "2:00pm",
     "address": {
       "assessmentCentre": "Tresco House",
       "street": "521 Harrison Avenue",
@@ -41,7 +41,7 @@ module.exports = [
     "status": "Unable to attend",
     "phone": "0121 840 559",
     "appointmentDate": "2018-07-01T20:00:41+00:00",
-    "appointmentTime": "2:00pm",
+    "appointmentTime": "1:30pm",
     "address": {
       "assessmentCentre": "Tresco House",
       "street": "639 Newkirk Avenue",
@@ -97,7 +97,7 @@ module.exports = [
     "appointmentDate": "2018-06-28T23:28:35+00:00",
     "appointmentTime": "2:00pm",
     "address": {
-      "assessmentCentre": "Fiveways",
+      "assessmentCentre": "Tresco House",
       "street": "585 Grand Street",
       "city": "Birmingham",
       "postcodePrefix": "B",
@@ -151,7 +151,7 @@ module.exports = [
     "appointmentDate": "2018-06-27T11:35:56+00:00",
     "appointmentTime": "2:00pm",
     "address": {
-      "assessmentCentre": "Fiveways",
+      "assessmentCentre": "Tresco House",
       "street": "978 Eastern Parkway",
       "city": "Birmingham",
       "postcodePrefix": "B",
@@ -232,7 +232,7 @@ module.exports = [
     "appointmentDate": "2018-07-03T04:41:28+00:00",
     "appointmentTime": "2:00pm",
     "address": {
-      "assessmentCentre": "Fiveways",
+      "assessmentCentre": "Tresco House",
       "street": "228 Doughty Street",
       "city": "Birmingham",
       "postcodePrefix": "B",
@@ -259,7 +259,7 @@ module.exports = [
     "appointmentDate": "2018-07-01T01:51:06+00:00",
     "appointmentTime": "2:00pm",
     "address": {
-      "assessmentCentre": "Fiveways",
+      "assessmentCentre": "Tresco House",
       "street": "141 Nassau Street",
       "city": "Birmingham",
       "postcodePrefix": "B",
@@ -286,7 +286,7 @@ module.exports = [
     "appointmentDate": "2018-07-04T03:41:47+00:00",
     "appointmentTime": "2:00pm",
     "address": {
-      "assessmentCentre": "Fiveways",
+      "assessmentCentre": "Tresco House",
       "street": "120 Remsen Street",
       "city": "Birmingham",
       "postcodePrefix": "B",

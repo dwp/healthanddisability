@@ -1,13 +1,11 @@
-{% extends templatePath %}
+{% extends path1+"/_layout.html" %}
 
 {% block citizen_content %}
 
   <div class="container">
 
-    {{ nav.case_tabs("evidence",1, path1 + "/" + section, customer._id) }}{# macro #}
 
-    <div class="grid-row">
-
+      </div><!-- column -->
       <div class="column-full">
           {% block case_content %}{% endblock %}
       </div><!-- column-full -->
@@ -15,12 +13,6 @@
   </div><!-- container -->
 {% endblock %}
 
-{% block body_end %}
-  <div id="descriptor_choice" style="display:none; max-height:76%">
-    {% extends path+"/booking/evidence/_addremove.html" %}
-  </div>
-  {{ super() }}
-{% endblock %}
 
 {% block page_scripts %}
 {{ super() }}

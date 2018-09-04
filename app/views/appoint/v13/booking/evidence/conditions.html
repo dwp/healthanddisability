@@ -1,60 +1,27 @@
-{% extends path2+"/_layout.html" %}
+{% extends path+"/booking/evidence/_layout.html" %}
+
 
 {% block case_content %}
 
-      <h3 class="heading-large mt10">Illnesses and disabilities</h3>
+<a href="javascript: history.go(-1)" class="link-back">Back</a>
 
-      <ul class="list list-bullet">
-        <li>Anxiety and depression <span class="date">(since {{ "MMMM YYYY" | monthsAgo(24) }})</span></li>
-        <li>Autism <span class="date">(since {{ "MMMM YYYY" | monthsAgo(124) }})</span></li>
-        <li>Fibromyalgia <span class="date">(since {{ "MMMM YYYY" | monthsAgo(124) }})</span></li>
-      </ul>
-      {% include path2+"/_descriptors.html" %}
 
-      <h3 class="heading-large">Medication &amp; side effects</h3>
-      <table class="meds">
-        <tr>
-          <td>
-            <p class="bold-small">Acetaminophen</p>
-            <p class="font-xsmall">350mg<br /> 3 times a day</p>
-          </td>
-          <td>{{ 1 | lorum | safe }}</td>
-        </tr>
-      </table>
-      {% include path2+"/_descriptors.html" %}
+       <h2 class="heading-large mt20 mb30">Medication and side effects</h2>
 
-      <table class="meds">
-        <tr>
-          <td>
-            <p class="bold-small">Amoxicillin</p>
-            <p class="font-xsmall">750mg<br /> 5 times a day</p>
-          </td>
-          <td>{{ 1 | lorum | safe }}</td>
-        </tr>
-      </table>
-      {% include path2+"/_descriptors.html" %}
 
-      <table class="meds">
-        <tr>
-          <td>
-            <p class="bold-small">Azithromycin</p>
-            <p class="font-xsmall">1mg<br /> 1 time a year</p>
-          </td>
-          <td>{{ 1 | lorum | safe }}</td>
-        </tr>
-      </table>
-      {% include path2+"/_descriptors.html" %}
 
-{% endblock %}
+	        <h3 class="heading-medium mt30 mb0">Zomorph</h3>
+	        <p class="mt10 mb0"><span class="bold-small">Dose:</span> 60mg twice a day</p>
+			<p class="mt10 mb0"><span class="bold-small">Last prescribed:</span> 21/1/2018</p>
 
-{% block page_scripts %}
-{{ super() }}
-<script type="text/javascript">
-  $(document).on('ready',function()
-  {
-    $('.evidence__leftnav')
-      .children(":nth-child(6)")
-      .addClass('active')
-  });
-</script>
+		   <p class="mt10 mb0"><span class="bold-small">Side effects:</span> Nausea and occasional vomiting. </p>
+		   
+		   <div class="given_descriptors mt20">
+		        <ul>
+		        	<li><span class="tag">Moving around and using steps</span> <span class="tag">Standing and sitting</span></li>
+					<li class="mt10"><a data-fancybox data-src="#descriptor_choice" href="javascript:;">change</a></li>
+		        </ul>
+		      </div>
+
+			  <hr>
 {% endblock %}

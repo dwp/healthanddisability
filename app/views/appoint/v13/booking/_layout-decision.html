@@ -2,20 +2,17 @@
 
 
 {% block left_content %}
-{% if customer._id == "mendez" %}
+{% if customer.decisionMade == 'accepted' %}
+<p class="mt10 mb0 bold-small">Ready to book</p>
 
-{% include path1+"/_mendez_left_content.html" %}
-
+{% elseif customer.decisionMade == 'declined' %}
+<p class="mt10 mb0 bold-small">Appointment booked</p>
 {% else %}
- <p class="mt10 mb0 bold-small"><span class="circle purple"></span>{{customer.decisionType}}</p>
 
-          
-
-          <p class="mt20"><a href="/{{path2}}/{{customer._id}}/timepicker" class="button">Make Decision</a></p>
+<p class="mt10 mb0 bold-small">{{customer.decisionType}}</p>
+<p class="mt20"><a href="/{{path2}}/{{customer._id}}/decision" class="button">Make Decision</a></p>
+{% endif %}
 
 <hr>
 
-<ul>
-</ul>
-{% endif %}
 {% endblock %}

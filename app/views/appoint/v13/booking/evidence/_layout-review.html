@@ -1,10 +1,10 @@
-{% extends templatePath %}
+{% extends path1+"/_layout-completed.html" %}
 
 {% block citizen_content %}
 
   <div class="container">
 
-    {{ nav.case_tabs("evidence",1, path1 + "/" + section, customer._id) }}{# macro #}
+    {{ nav.case_tabs("evidence",1,path1) }}{# macro #}
 
     <div class="grid-row">
 
@@ -17,7 +17,7 @@
 
 {% block body_end %}
   <div id="descriptor_choice" style="display:none; max-height:76%">
-    {% extends path+"/booking/evidence/_addremove.html" %}
+    {% include path2+"/_addremove.html" %}
   </div>
   {{ super() }}
 {% endblock %}

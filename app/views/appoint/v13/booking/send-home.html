@@ -1,5 +1,7 @@
 {% 
 set reasonsSupplier = [
+  {code: "3E", label: "Customer unfit to be examined"},
+  {code: "8E", label: "Special need not notified in advance"},
   {code: "1C", label: "Number of claimants attended exceeds medical capacity"},
   {code: "1F", label: "Customer called for assessment in error"},
   {code: "2F", label: "HCP unavailable"},
@@ -12,11 +14,6 @@ set reasonsSupplier = [
 ]
  %}
 
- {% set reasonsOther = [
-  {code: "3E", label: "Customer unfit to be examined"},
-  {code: "8E", label: "Special need not notified in advance"}
-]
-%}
 
 {% extends path1+"/_layout-booking.html" %}
 
@@ -64,7 +61,7 @@ Arrived at assessment center
       <li>Longest wait time is currently over 30 mins</li>
     </ul>
   </div>
-    <form action="send-home-2">
+    <form action="send-home-post" method="post">
         <fieldset class="form-group">
             <legend>
                 <span class="form-label">
@@ -73,49 +70,34 @@ Arrived at assessment center
             </legend>
             {% if customer.waitTime > 29 %}
               <div class="multiple-choice">
-                <input id="reason-1C" type="radio" name="reason" value="dwp">
+                <input id="reason-1C" type="radio" name="reason" value="Does not want to wait any longer - more than 30 minutes">
                 <label for="reason-1C">Does not want to wait any longer</label>
               </div>
             {% endif %}
 
             {% if customer.waitTime < 30 %}
               <div class="multiple-choice">
-                <input id="reason-9E" type="radio" name="reason" value="wait">
+                <input id="reason-9E" type="radio" name="reason" value="Does not want to wait any longer - less than 30 minutes">
                 <label for="reason-9E">Does not want to wait any longer</label>
               </div>
             {% endif %}
             {% if customer.arrivedTime > 10 %}
               <div class="multiple-choice">
-                <input id="reason-2E" type="radio" name="reason" value="2E">
+                <input id="reason-2E" type="radio" name="reason" value="Customer arrived late">
                 <label for="reason-2E">Customer arrived late</label>
               </div>
             {% endif %}
 
             <div class="multiple-choice" data-target="dwp-other">
                 <input id="reason-cancel" type="radio" name="reason" value="dwp">
-                <label for="reason-cancel">We have had not been able to carry out the appointment </label>
+                <label for="reason-cancel">Unable to carry out or complete the assessment</label>
             </div>
             <div class="panel js-hidden" id="dwp-other">
               <fieldset class="form-group">
                   <legend>Select a reason</legend>
                   {% for reason in reasonsSupplier %}
                   <div class="multiple-choice">
-                    <input id="reason-dwp-{{reason.code}}" type="radio" name="dwp" value="dwp-{{reason.code}}">
-                    <label for="reason-dwp-{{reason.code}}">{{reason.label}}</label>
-                  </div>
-                  {% endfor %}
-              </fieldset>
-            </div>
-            <div class="multiple-choice" data-target="other">
-                <input id="reason-customer" type="radio" name="reason" value="customer">
-                <label for="reason-customer">Other  </label>
-            </div>
-            <div class="panel js-hidden" id="other">
-              <fieldset class="form-group">
-                  <legend>Select a reason</legend>
-                  {% for reason in reasonsOther %}
-                  <div class="multiple-choice">
-                    <input id="reason-dwp-{{reason.code}}" type="radio" name="dwp" value="dwp-{{reason.code}}">
+                    <input id="reason-dwp-{{reason.code}}" type="radio" name="otherReason" value="{{reason.label}}">
                     <label for="reason-dwp-{{reason.code}}">{{reason.label}}</label>
                   </div>
                   {% endfor %}

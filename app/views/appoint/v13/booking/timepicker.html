@@ -13,11 +13,7 @@
 <div class="container">
         <h3 class="heading-medium mt20">Rearrange appointment</h3>
 
-        {% if query.rearrange == 'true' %}
-        <form action="timeline_rebooked">
-        {% else %}
-        <form action="rearrange-reason">
-        {% endif %}
+        <form action="timepicker-post" method="post">
 
         <fieldset class="form-group">
             <legend class="form-label-bold">Choose an appointment time</legend>
@@ -39,9 +35,9 @@
         
         {% endif %}
         
+        <input type="hidden" name="reasonNeeded" value="{{query.reasonNeeded}}">
         <p><button type="submit" class="button">Next</button></p>
 
-<input type="hidden" name="tab" value="Details">
         
     </form>
     <!-- row -->

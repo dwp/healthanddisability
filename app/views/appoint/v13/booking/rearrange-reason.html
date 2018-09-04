@@ -12,9 +12,9 @@
 
 <div class="container">
     <div class="grid-row mt30">
-        <div class="column-half">
+        <div class="column-full">
             <h1 class="heading-medium mt30">Confirm appointment change</h1>
-            <form action="timeline_rebooked">
+            <form action="rearrange-reason-post" method="post">
                 <fieldset class="form-group">
                     <legend class="form-label-bold">
                         Is the appointment being changed by the customer?
@@ -30,7 +30,7 @@
                 </fieldset>
                 <div class="form-group">
                     <label class="form-label-bold">Why does the customer want to change the appointment? </label>
-                    <textarea name="reason" class="form-control span-width"></textarea>
+                    <textarea name="comments" class="form-control span-width"></textarea>
                 </div>
                 {% if query.appointment %}
                 <p>Appointment will be changed to:</p>

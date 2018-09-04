@@ -1,47 +1,34 @@
-{% extends path2+"/_layout.html" %}
+{% extends path+"/booking/evidence/_layout.html" %}
+
 
 {% block case_content %}
 
-  <h2 class="heading-large mt10 mb30">GP Report (ESA113)</h2>
+<a href="javascript: history.go(-1)" class="link-back">Back</a>
 
+  <h2 class="heading-large mt20 mb30">GP report (ESA113)</h2>
+
+ 
   <p class="form-hint bold-xsmall mb0">Submitted by:</p>
-  <p class="heading-small mt5">Dr. Sheila Makeyouwell</p>
-  <p>Suronge Surgery, 10 Drew Lane, Wimbledon, Hertfordshire</p>
-  <p class="mt5">{{ "Do MMM YYYY" | daysAgo(5) }}</p>
+  <p class="heading-small mt5">Dr. Sheila Turner</p>
+  <p>Brixton Medical Centre, 0 Brixton Lane, Brixton, London</p>
+  <p class="mt5">29 January 2018</p>
   <hr />
 
-
-  <h3 class="heading-medium">Hearing and reading</h3>
-  <p>Tony is {{ 2 | lorum | safe }}</p>
+  <h3 class="heading-medium">Moving around and using steps</h3>
+  <p>“I don’t know how far Tomas can walk. He uses crutches. ”</p>
   <div class="given_descriptors">
-    <span class="tag">hearing and reading</span>
+    <span class="tag">Moving around and using steps</span>
     <a data-fancybox data-src="#descriptor_choice" href="javascript:;">change</a>
   </div>
-
-  <h3 class="heading-medium">Getting around safely</h3>
-  <p>Tony is {{ 2 | lorum | safe }}</p>
+  <hr>
+  <h3 class="heading-medium">Standing and sitting</h3>
+  <p>"Tomas won’t be able to stand for long as he needs crutches to move and to balance. He sits for his appointments, usually about 10 minutes. I have prescribed an increasing dosage of opioids as Tomas is in a lot of pain."</p>
   <div class="given_descriptors">
-    <span class="tag">Getting around safely</span>
+    <span class="tag">Standing and sitting</span>
     <a data-fancybox data-src="#descriptor_choice" href="javascript:;">change</a>
   </div>
+<hr>
+  
 
-  <h3 class="heading-medium">Eating and drinking</h3>
-  <p>Tony is {{ 2 | lorum | safe }}</p>
-  <div class="given_descriptors">
-    <span class="tag">Eating and drinking</span>
-    <a data-fancybox data-src="#descriptor_choice" href="javascript:;">change</a>
-  </div>
 
-{% endblock %}
-
-{% block page_scripts %}
-{{ super() }}
-<script type="text/javascript">
-  $(document).on('ready',function()
-  {
-    $('.evidence__leftnav')
-      .children(":nth-child(3)")
-      .addClass('active')
-  });
-</script>
 {% endblock %}

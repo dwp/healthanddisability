@@ -34,6 +34,12 @@ module.exports = function (env) {
       else return '';
   }
 
+  filters.formatDateAdd2Days = function(str,format) {
+      var d = moment(str).add(2, 'days').format(format);
+      if (d !== 'Invalid date') return d;
+      else return '';
+  }
+
   filters.monthsAgo = function(format,num) {
       var d = moment().subtract(num,"months").format(format)
       if (d !== 'Invalid date') return d
@@ -63,8 +69,6 @@ module.exports = function (env) {
   filters.formatInPast = function(date){
     var today = moment(new Date(2018,7,9)).hours(0).minutes(0).seconds(0).milliseconds(0);
     var testDate = moment(date).hours(0).minutes(0).seconds(0).milliseconds(0);
-    console.log('today: ' + today);
-    console.log('testDate: ' + testDate);
     if(date.getDay() === 0 || date.getDay() === 6){
       return 'calendar__day--closed';
     } else if (today > testDate){
