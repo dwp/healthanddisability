@@ -1,0 +1,188 @@
+{% extends path1+"/_layout-info.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<h1 class="heading-large no-kdBar">Mental health assessment</h1>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+		<div class="form-group">
+				<fieldset>
+			  
+				  <legend>
+					<h2 class="heading-medium">
+					  What do you want to assess?
+					</h2>
+					<span class="body-text mb20" style="display:block">Select all options that are relevant.</span>
+				  </legend>
+				  <div class="multiple-choice" data-target="appearance">
+					<input id="" name="" type="checkbox" value="">
+					<label for="">Appearance</label>
+				  </div>
+				  <div class="panel panel-border-narrow js-hidden" id="appearance">
+						<div class="form-group">
+								<label class="form-label" for="Appearance">Add details here</label>
+								<textarea class="form-control form-control-3-4" name="Appearance" id="Appearance" rows="4"></textarea>
+							</div>
+				  </div>
+				  <div class="multiple-choice" data-target="Behaviour">
+						<input id="" name="" type="checkbox" value="">
+						<label for="">Behaviour</label>
+					  </div>
+					  <div class="panel panel-border-narrow js-hidden" id="Behaviour">
+							<div class="form-group">
+									<label class="form-label" for="Appearance">Add details here</label>
+									<textarea class="form-control form-control-3-4" name="Appearance" id="Appearance" rows="4"></textarea>
+								</div>
+					  </div>
+
+					  <div class="multiple-choice" data-target="Speech">
+							<input id="" name="" type="checkbox" value="">
+							<label for="">Speech</label>
+						  </div>
+						  <div class="panel panel-border-narrow js-hidden" id="Speech">
+								<div class="form-group">
+										<label class="form-label" for="Appearance">Add details here</label>
+										<textarea class="form-control form-control-3-4" name="Appearance" id="Appearance" rows="4"></textarea>
+									</div>
+						  </div>
+
+						  <div class="multiple-choice" data-target="Mood">
+								<input id="" name="" type="checkbox" value="">
+								<label for="">Mood</label>
+							  </div>
+							  <div class="panel panel-border-narrow js-hidden" id="Mood">
+									<div class="form-group">
+											<label class="form-label" for="Appearance">Add details here</label>
+											<textarea class="form-control form-control-3-4" name="Appearance" id="Appearance" rows="4"></textarea>
+										</div>
+							  </div>
+
+							  <div class="multiple-choice" data-target="Cognition">
+									<input id="" name="" type="checkbox" value="">
+									<label for="">Cognition</label>
+								  </div>
+								  <div class="panel panel-border-narrow js-hidden" id="Cognition">
+										<div class="form-group">
+												<label class="form-label" for="Appearance">Cognition</label>
+												<textarea class="form-control form-control-3-4" name="Appearance" id="Appearance" rows="4"></textarea>
+											</div>
+								  </div><div class="multiple-choice" data-target="General">
+										<input id="" name="" type="checkbox" value="">
+										<label for="">General</label>
+									  </div>
+									  <div class="panel panel-border-narrow js-hidden" id="General">
+											<div class="form-group">
+													<label class="form-label" for="Appearance">Add details here</label>
+													<textarea class="form-control form-control-3-4" name="Appearance" id="Appearance" rows="4"></textarea>
+												</div>
+									  </div>
+
+									  <div class="multiple-choice" data-target="Insight">
+											<input id="" name="" type="checkbox" value="">
+											<label for="">Insight</label>
+										  </div>
+										  <div class="panel panel-border-narrow js-hidden" id="Insight">
+												<div class="form-group">
+														<label class="form-label" for="Appearance">Add details here</label>
+														<textarea class="form-control form-control-3-4" name="Appearance" id="Appearance" rows="4"></textarea>
+													</div>
+										  </div>
+
+										  <div class="multiple-choice" data-target="Thoughts">
+												<input id="" name="" type="checkbox" value="">
+												<label for="">Thoughts</label>
+											  </div>
+											  <div class="panel panel-border-narrow js-hidden" id="Thoughts">
+													<div class="form-group">
+															<label class="form-label" for="Appearance">Add details here</label>
+															<textarea class="form-control form-control-3-4" name="Appearance" id="Appearance" rows="4"></textarea>
+														</div>
+											  </div>
+
+											  <div class="multiple-choice" data-target="Perceptions">
+													<input id="" name="" type="checkbox" value="">
+													<label for="">Perceptions</label>
+												  </div>
+												  <div class="panel panel-border-narrow js-hidden" id="Perceptions">
+														<div class="form-group">
+																<label class="form-label" for="Appearance">Add details here</label>
+																<textarea class="form-control form-control-3-4" name="Appearance" id="Appearance" rows="4"></textarea>
+															</div>
+												  </div>
+
+												  <div class="multiple-choice" data-target="involentry">
+														<input id="" name="" type="checkbox" value="">
+														<label for="">Involentry Movements</label>
+													  </div>
+													  <div class="panel panel-border-narrow js-hidden" id="involentry">
+															<div class="form-group">
+																	<label class="form-label" for="Appearance">Add details here</label>
+																	<textarea class="form-control form-control-3-4" name="Appearance" id="Appearance" rows="4"></textarea>
+																</div>
+													  </div>
+
+
+												  <div class="multiple-choice" data-target="Cognitive-tests">
+														<input id="" name="" type="checkbox" value="">
+														<label for="">Cognitive Tests</label>
+													  </div>
+													  <div class="panel panel-border-narrow js-hidden" id="Cognitive-tests">
+															<div class="form-group">
+																	<label class="form-label" for="Appearance">Add details here</label>
+																	<textarea class="form-control form-control-3-4" name="Appearance" id="Appearance" rows="4"></textarea>
+																</div>
+													  </div>
+			  
+				</fieldset>
+			  </div>
+  
+ 
+  
+
+
+
+
+
+<p class="mt30"><a href="physical-updated2" class="button">Save and continue</a></p>
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+{% macro physGroup(name,sel) %}
+  {% set s = name | slug %}
+  <!-- GROUP -->
+  <div class="multiple-choice" data-target="group_{{s}}_yes">
+    <input id="group_{{s}}" type="checkbox" name="group_{{s}}" sue="group_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="group_{{s}}">{{name}}</label>
+  </div>
+{% endmacro %}
+
+{% macro physObs(name,sel) %}
+  {% set s = name | slug %}
+  <div class="multiple-choice" data-target="phys_{{s}}_yes">
+    <input id="phys_{{s}}" type="checkbox" name="mobility" value="phys_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="phys_{{s}}">{{name}}</label>
+  </div>
+  <div class="form-group panel panel-indent js-hidden mt0 mb20" id="phys_{{s}}_yes">
+    <p>
+      <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
+      <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
+    </p>
+  </div>
+{% endmacro %}
+
+{% block footer_top %}
+{{ super() }}
+<p class="font-xsmall">
+  <a href="/{{ path2 }}/phys_exam_1">exam v1</a> |
+  <a href="/{{ path2 }}/phys_exam_2">exam v2</a>
+</p>
+{% endblock %}
