@@ -1170,7 +1170,7 @@ html {
 }
 
 
-.evidence-panel {
+.evidence-panel, .panel.alt {
 	display: block;
 	margin-top: 20px;
 	background: $grey-4;
@@ -1178,4 +1178,20 @@ html {
 	h2 {
 		margin-top: 0;
 	}
+}
+
+.panel.alt {
+border:none;
+}
+
+
+.multiple-choice.alt{
+	background: $grey-4;
+	padding:20px;
+	margin-bottom:20px;
+
+}
+
+.p20{
+	padding:20px;
 }
