@@ -1,0 +1,58 @@
+{% extends path1+"/_layout-underway.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<p><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+ <h2 class="heading-large mt20 mb30">Mental health assessment</h2>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+
+   
+   
+   <div class="form-group">
+		    
+				    <fieldset class="inline">
+		    
+				    	<legend class="heading-medium mb10">Does Tomas require a mental health assessment?</legend>
+		
+					    <div class="multiple-choice" data-target="reasons1">
+					      <input id="decide_now" name="whatcando" type="radio" value="Yes">
+					      <label for="decide_now"> Yes</label>
+					    </div>
+		  
+					    <div class="multiple-choice" data-target="reasons2">
+					      <input id="face2face" name="whatcando" type="radio" value="No">
+					      <label for="face2face"> No</label>
+					    </div>	
+					    
+					    
+					      <div class="panel panel-border-narrow js-hidden" id="reasons1">
+					      	<p class="mt0 mb10"><a href="mentalHealthAssess" class="button">Continue to mental health assessment</a></p>
+					      </div>
+					      
+					      <div class="panel panel-border-narrow js-hidden" id="reasons2">
+							  <p class="mt0 mb10"><a href="medical_assessment_stripped" class="button">Finish assessment</a></p>
+					      </div>
+					    
+				    </fieldset>
+				    
+				</div>
+   
+   
+   
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+
+
+
+
+
+		

@@ -28,6 +28,14 @@ $(document).on('ready',function()
   });
 });
 
+if ($('.tag-box').length) {
+$('.comments-window').remove();
+} 
+
+$("a.remove-link").click(function(event) {
+  event.preventDefault();
+  $(this).parents('.tag-box').remove();
+});
 
 
 
