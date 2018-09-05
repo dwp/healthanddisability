@@ -1,0 +1,73 @@
+{% extends path2+"/_layout.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+{{ nav.case_tabs("evidence",1,path1) }}{# macro #}
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h2 class="heading-large">What kind of evidence do you need to record?</h2>
+    <form class="form" action="" method="get">
+      <div class="form-group">
+        <div class="multiple-choice">
+          <input id="f2f" type="radio" name="evidence_type" value="Yes">
+          <label for="f2f">A medical assessment</label>
+        </div>
+        <div class="multiple-choice">
+          <input id="f2f" type="radio" name="evidence_type" value="Yes">
+          <label for="f2f">Professional testimony</label>
+        </div>
+        <div class="multiple-choice">
+          <input id="f2f" type="radio" name="evidence_type" value="Yes">
+          <label for="f2f">Claimant statements</label>
+        </div>
+        <div class="multiple-choice">
+          <input id="f2f" type="radio" name="evidence_type" value="Yes">
+          <label for="f2f">Other (general)</label>
+        </div>
+      </div><!-- form-group -->
+      <div class="form-group">
+        <a href="/{{ path2 }}/add/" class="button">Continue</a>
+      </div><!-- form-group -->
+    </form>
+  </div><!-- column -->
+</div><!-- row -->
+
+{% endblock %}
+
+{% block page_scripts %}
+<script type="text/javascript">
+$(document).on('ready',function()
+{
+  $('#submitButton').on('click',function(e)
+  {
+    e.preventDefault();
+    // get values from the form you're submitting.
+    var nugget = $('#nugget').val();
+    console.log(nugget)
+
+    // gather values into a data object.
+    var formdata = JSON.stringify({"nugget":nugget});
+    console.log(formdata)
+    console.log({url: '/{{ path }}/saveText'})
+
+    // send data object off to node route for saving.
+    $.ajax({
+      url: '/{{ path }}/saveText',
+      method: "POST",
+      contentType: 'application/json',
+      data: formdata,
+      dataType: 'json',
+      complete:  function(data,status,xhr) {
+        // sort out the page after data is successfully saved.
+        // $('#status_form').hide();
+        // $('#status_button').show();
+        document.location.reload(true);
+      }
+    });
+  });
+});
+</script>
+{% endblock %}
