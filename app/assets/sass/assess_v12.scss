@@ -762,8 +762,8 @@ hr {
 	}
 	
 	.chat-window {
-	min-height: 600px;
-	max-height: 600px;
+	min-height: 560px;
+	max-height: 560px;
 	overflow: scroll;
 	background: $grey-2;
 	padding: 1em 1.5em 2em 1.5em;
@@ -1187,6 +1187,14 @@ html {
 	display: block;
 }
 
+.meds-block {
+	span {
+		display: block;
+		color: $grey-1;
+	}
+}
+
+
 .evidence-panel-wrapper {
 	width: 67%;
 	margin: 50px 0;
@@ -1213,3 +1221,4 @@ html {
 		font-size: 18px;
 	}
 }
+

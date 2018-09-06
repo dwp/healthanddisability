@@ -53,7 +53,7 @@
 	 <div class="chat-window">
 	 <p class="comments-window">You haven't added any comments yet</p>
 
-    {% for item in data.nuggets | sortBy("time",true) %}
+    {% for item in data.nuggets | sortBy("time",false) %}
   
       <div class="tag-box">
       
@@ -138,6 +138,7 @@ $(document).on('ready',function()
     });
   });
 });
+
 
 
 </script>

@@ -12,66 +12,82 @@
  
 
 
-  <div class="column-half">
+  <div class="column-one-third">
+  <p class="mt0"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+  <h1 class="heading-large mt0">Typical day</h1>
   
-  
-<p><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
-  
-  
-  
-  <h1 class="heading-large mt20">Typical day</h1>
-    <form class="form" id="add_ev">
-      <p style="clear:both form-hint">Your notes are captured when you press the enter key</p>
+	  <h2 class="heading-medium mt0">Common phrases</h2>
+	  <p class="form-hint">Choose common phrases and edit them to suit the claimants needs.</p>
+	  <details class="mt20">
+	  	<summary>Start by choosing a descriptor</summary>
+	 <div class="prompts panel">
+	  	<a href="#">Moving around and using steps without help</a>
+	  	<a href="#">Standing and sitting</a>
+	  	<a href="#">Eating and drinking</a>
+	  	<a href="#">Moving around and using steps without help</a>
+	  	<a href="#">Moving around and using steps without help</a>
+	  	<a href="#">Moving around and using steps without help</a>
+	  	<a href="#">Moving around and using steps without help</a>
+	  	<a href="#">Moving around and using steps without help</a>
+	  	<a href="#">Moving around and using steps without help</a>
+	  	<a href="#">Moving around and using steps without help</a>
+	  	<a href="#">Moving around and using steps without help</a>
+	  	<a href="#">Moving around and using steps without help</a>
+	  	<a href="#">Moving around and using steps without help</a>
+	  	<a href="#">Moving around and using steps without help</a>
+	  	<a href="#">Moving around and using steps without help</a>
+	  	<a href="#">Moving around and using steps without help</a>
+	  </div> 
+	  </details>
 
 
-      <div>
-          <textarea id="nugget" class="form-control" name="nugget" style="width:90%;height:150px"></textarea>
-      </div><!-- form-group -->
-      <div class="form-group mt20">
-        <input class="button secondary" type="submit" value="Add comment" id="submitButton">
-      </div><!-- form-group -->
-      
-      
-     <!-- <p class="mt0"><a href="wca-index4" class="button">Save</a></p> -->
-    </form>
-
-    <form action="wca-index" method="POST" class="form">
-        <input type="submit" class="button" value="Save">
-  
-        <div class="multiple-choice" style="display:none">
-            <input id="radio-inline-4" type="radio" name="typicalDay" value="typicalDay" checked>
-              
-            <label for="radio-4">hidden radio one</label>
-          </div>
-      </form>
    
   </div><!-- column -->
-  <div class="column-half">
+  <div class="column-two-thirds">
   
-  
- <!-- <p class="bold-medium">Assessment started: {{ last_one.time | formatDate("H:mma Do MMMM YYYY") }}</p> -->
-  
+
   
   <div class="chat-layout">
 
 
-    {% for item in data.nuggets | sortBy("time",true) %}
+	 <div class="chat-window">
+	 <p class="comments-window">You haven't added any comments yet</p>
+
+    {% for item in data.nuggets | sortBy("time",false) %}
   
       <div class="tag-box">
       
         <div class="tag-text">{{ item.text }}</div>
+        
+        <div class="edit-item">
+       		<a href="#" class="remove-link">Remove</a>
+       </div>
        
       </div>
-      
-       <div class="edit-item">
-       	<ul>
-       		<li><a href="#">Edit</a></li>
-       		<li><a href="#">Remove</a></li>
-       	</ul>
-       </div>
-      
-        
+
     {% endfor %}
+	 </div>
+    
+    <form class="form" id="add_ev">
+
+      <div class="form-group chat-capture">
+          <textarea id="nugget" class="form-control" name="nugget"></textarea>
+          <input class="button secondary mt20" type="submit" value="Add" id="submitButton">
+      </div><!-- form-group -->
+
+      
+    </form>
+
+
+  <form action="wca-index" method="POST" class="form">
+      <input type="submit" class="button" value="Save progress">
+
+      <div class="multiple-choice" style="display:none">
+          <input id="radio-inline-4" type="radio" name="typicalDay" value="typicalDay" checked>
+            
+          <label for="radio-4">hidden radio one</label>
+        </div>
+    </form>
     
     
   </div><!-- column -->
@@ -83,6 +99,7 @@
 {{ super() }}
 <script type="text/javascript">
 $(document).on('ready',function()
+
 {
   $('#nugget').focus();
 
@@ -121,5 +138,12 @@ $(document).on('ready',function()
     });
   });
 });
+
+
+
 </script>
+
+
+
+
 {% endblock %}
