@@ -53,7 +53,9 @@
 			</tr>
 			<tr>
 				<th><a href="mentalHealthAssessment">Mental health</a></th>
-				<td></td>
+				<td>{% if data['mental-health'] %}     
+						<span class="blue">Assessed</span>
+					{% endif %}</td>
 			</tr>
 			
 		</table>

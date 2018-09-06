@@ -5,84 +5,114 @@
 {{ data.nuggets | log }}
 
 
-
-
-<h2 class="heading-large mt30 mb30">Mental health assessment</h2>
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+<h1 class="heading-large">Mental health assessments</h1>
 
 <div class="grid-row">
   <div class="column-two-thirds">
-  
-  <form>
-  <fieldset>
-  <legend class="visually-hidden">Mental health catergories</legend>
-	  <div class="form-group">
-	      <label class="form-label" for="Appearance">Appearance</label>
-	      <textarea class="form-control form-control-3-4" name="Appearance" id="Appearance" rows="4"></textarea>
-	  </div>
-	  
-	  <div class="form-group">
-	      <label class="form-label" for="Behaviour">Behaviour</label>
-	      <textarea class="form-control form-control-3-4" name="Behaviour" id="Behaviour" rows="4"></textarea>
-	  </div>
-	  
-	  <div class="form-group">
-	      <label class="form-label" for="Speech">Speech</label>
-	      <textarea class="form-control form-control-3-4" name="Speech" id="Speech" rows="4"></textarea>
-	  </div>
-	  
-	  <div class="form-group">
-	      <label class="form-label" for="Mood">Mood</label>
-	      <textarea class="form-control form-control-3-4" name="Mood" id="Mood" rows="4"></textarea>
-	  </div>
-	  
-	  <div class="form-group">
-	      <label class="form-label" for="Cognition">Cognition</label>
-	      <textarea class="form-control form-control-3-4" name="Cognition" id="Cognition" rows="4"></textarea>
-	  </div>
-	  
-	  <div class="form-group">
-	      <label class="form-label" for="General">General</label>
-	      <textarea class="form-control form-control-3-4" name="General" id="General" rows="4"></textarea>
-	  </div>
-	  
-	  <div class="form-group">
-	      <label class="form-label" for="Insight">Insight</label>
-	      <textarea class="form-control form-control-3-4" name="Insight" id="Insight" rows="4"></textarea>
-	  </div>
-	  
-	  <div class="form-group">
-	      <label class="form-label" for="Thoughts">Thoughts</label>
-	      <textarea class="form-control form-control-3-4" name="Thoughts" id="Thoughts" rows="4"></textarea>
-	  </div>
-	  
-	  <div class="form-group">
-	      <label class="form-label" for="Perceptions">Perceptions</label>
-	      <textarea class="form-control form-control-3-4" name="Perceptions" id="Perceptions" rows="4"></textarea>
-	  </div>
-	  
-	  <div class="form-group">
-	      <label class="form-label" for="Addictions">Addictions</label>
-	      <textarea class="form-control form-control-3-4" name="Addictions" id="Addictions" rows="4"></textarea>
-	  </div>
-	  
-	  <div class="form-group">
-	      <label class="form-label" for="Involuntary">Involuntary Movements</label>
-	      <textarea class="form-control form-control-3-4" name="Involuntary" id="Involuntary" rows="4"></textarea>
-	  </div>
-	  
-	  <div class="form-group">
-	      <label class="form-label" for="tests">Cognitive Tests</label>
-	      <textarea class="form-control form-control-3-4" name="tests" id="tests" rows="4"></textarea>
-	  </div>
 
-  </form>
-  
+	<div class="exam-content">
+	
+		<table>
+			
+			<caption>Physical exam process</caption>
+			
+			
+			<tr class="complete">
+				<th><a href="mh-appearance.html">Appearance</a></th>
+				<td>
+						{% if data['Appearance'] %}     
+						<span class="blue">Assessed</span>
+					{% endif %}
+				</td>
+			</tr>
+
+			<tr>
+				<th><a href="mh-behaviour.html">Behaviour</a></th>
+				<td>		{% if data['Behaviour'] %}     
+						<span class="blue">Assessed</span>
+					{% endif %}</td>
+			</tr>
+			<tr>
+				<th><a href="mh-speech.html">Speech</a></th>
+				<td>{% if data['Speech'] %}     
+						<span class="blue">Assessed</span>
+					{% endif %}</td>
+			</tr>
+			<tr>
+				<th><a href="mh-mood.html">Mood</a></th>
+				<td>{% if data['Mood'] %}     
+						<span class="blue">Assessed</span>
+					{% endif %}</td>
+			</tr>
+			<tr>
+				<th><a href="mh-cognition.html">Cognition</a></th>
+				<td>{% if data['Cognition'] %}     
+						<span class="blue">Assessed</span>
+					{% endif %}</td>
+			</tr>
+			<tr>
+				<th><a href="mh-general.html">General</a></th>
+				<td>{% if data['General'] %}     
+						<span class="blue">Assessed</span>
+					{% endif %}</td>
+			</tr>
+			<tr>
+				<th><a href="mh-insight.html">Insite</a></th>
+				<td>{% if data['Insight'] %}     
+						<span class="blue">Assessed</span>
+					{% endif %}</td>
+			</tr>
+			<tr>
+				<th><a href="mh-thoughts.html">Thoughts</a></th>
+				<td>{% if data['Thoughts'] %}     
+						<span class="blue">Assessed</span>
+					{% endif %}</td>
+			</tr>
+			<tr>
+					<th><a href="mh-perceptions.html">Perceptions</a></th>
+					<td>{% if data['Perceptions'] %}     
+							<span class="blue">Assessed</span>
+						{% endif %}</td>
+				</tr>
+				<tr>
+					<th><a href="mh-addictions">Addictions</a></th>
+					<td>{% if data['Addictions'] %}     
+							<span class="blue">Assessed</span>
+						{% endif %}</td>
+				</tr>
+				<tr>
+					<th><a href="mh-involentry-movements.html">Involentry Movements</a></th>
+					<td>{% if data['Involentry-movements'] %}     
+							<span class="blue">Assessed</span>
+						{% endif %}</td>
+				</tr>	<tr>
+							<th><a href="mh-cognative-tests.html">Cognative Tests</a></th>
+							<td>{% if data['Cognative-test'] %}     
+									<span class="blue">Assessed</span>
+								{% endif %}</td>
+						</tr>
+		</table>
+		
+	</div>
+	
+
+
+		<form action="physical-updated" method="POST" class="form">
+				<input type="submit" class="button mt30" value="Save and continue">
+								
+				<div class="multiple-choice" style="display:none">
+						<input id="radio-inline-4" type="radio" name="mental-health" value="mental-health" checked>
+				
+						<label for="radio-4">hidden radio one</label>
+					</div>
+						
+				</form>
+				
 
 
 
 
-
-<p class="mt30"><a href="physical-updated2" class="button">Save and continue</a></p>
 
   </div><!-- column -->
 </div><!-- row -->
@@ -105,7 +135,7 @@
   </div>
   <div class="form-group panel panel-indent js-hidden mt0 mb20" id="phys_{{s}}_yes">
     <p>
-      <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
+      <label class="form-label" for="phys_{{s}}_obs">Observation, palpation, movement</label>
       <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
     </p>
   </div>
