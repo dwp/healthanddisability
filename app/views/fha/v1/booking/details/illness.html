@@ -1,0 +1,65 @@
+{% extends path+"/booking/details/_layout2.html" %}
+
+
+{% block case_content %}
+
+      <h3 class="heading-large mt10">Illnesses and disabilities</h3>
+      
+
+	    
+		
+		<div class="grid-row mt50">
+        <div class="column-two-thirds">
+        <h3 class="heading-medium mt0">Emergency fasciotomy</h3>
+        <p class="mb0"> August 2017 <span class="bold-small">- Verified</span></p>
+	      
+	     </div>
+        <div class="column-third">
+	     <!-- <p class="mt0">{{ 1 | lorum | safe }}</p> -->
+	    
+        </div>
+		</div>
+		
+	   <hr>
+	   
+	   <div class="grid-row">
+        <div class="column-two-thirds">
+        <h3 class="heading-medium mt0">Acute compartment syndrome</h3>
+        <p class="mb0"> August 2017 <span class="bold-small">- Verified</span></p>
+	      
+	     </div>
+        <div class="column-third">
+	     <!-- <p class="mt0">{{ 1 | lorum | safe }}</p> -->
+	    
+        </div>
+		</div>
+	      
+	      <hr>
+	   
+	   <div class="grid-row">
+        <div class="column-two-thirds">
+        <h3 class="heading-medium mt0">Compound fracture - shinbone</h3>
+        <p class="mb0"> July 2017 <span class="bold-small">- Verified</span></p>
+	      
+	     </div>
+        <div class="column-third">
+	    <!--  <p class="mt0">{{ 1 | lorum | safe }}</p> -->
+	    
+        </div>
+		</div>
+
+      
+           
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.evidence__leftnav')
+      .children(":nth-child(2)")
+      .addClass('active_detail')
+  });
+</script>
+{% endblock %}

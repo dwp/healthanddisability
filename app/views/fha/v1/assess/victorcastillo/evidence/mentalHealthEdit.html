@@ -1,0 +1,101 @@
+{% extends path2+"/_layout-review2.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+
+
+<div class="grid-row">
+
+ 
+
+
+  <div class="column-full">
+  
+  
+<p><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+  
+  
+  
+  <h1 class="heading-large mt20 mb30"><span class="heading-secondary">Review</span>Mental health assessment</h1>
+        <form>
+  <fieldset>
+  <legend class="visually-hidden">Mental health categories</legend>
+	  <div class="form-group">
+	      <label class="form-label-bold" for="Appearance">Appearance</label>
+	      <textarea class="form-control form-control-3-4" name="Appearance" id="Appearance" rows="4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</textarea>
+	  </div>
+	  
+	  <div class="form-group">
+	      <label class="form-label-bold" for="Behaviour">Behaviour</label>
+	      <textarea class="form-control form-control-3-4" name="Behaviour" id="Behaviour" rows="4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</textarea>
+	  </div>
+	  
+	  <div class="form-group">
+	      <label class="form-label-bold" for="Speech">Speech</label>
+	      <textarea class="form-control form-control-3-4" name="Speech" id="Speech" rows="4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</textarea>
+	  </div>
+	  
+	  <div class="form-group">
+	      <label class="form-label-bold" for="Mood">Mood</label>
+	      <textarea class="form-control form-control-3-4" name="Mood" id="Mood" rows="4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</textarea>
+	  </div>
+	  
+	   </form>
+  
+  <p class="mt30"><a href="medical_assessment_dashboard" class="button">Save</a></p>
+    
+       
+  </div><!-- column -->
+
+</div><!-- row -->
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+$(document).on('ready',function()
+{
+  $('#nugget').focus();
+
+  $("#nugget").keydown(function (event) {
+    if ((event.keyCode == 13))
+
+  });
+
+  $('#submitButton').on('click',function(e)
+  {
+    e.preventDefault();
+    // get values from the form you're submitting.
+    var nugget = $('#nugget').val();
+    console.log(nugget)
+
+    // gather values into a data object.
+    var formdata = JSON.stringify({"nugget":nugget});
+    console.log(formdata)
+    console.log({url: '/{{ path }}/saveText'})
+
+    // send data object off to node route for saving.
+    $.ajax({
+      url: '/{{ path }}/saveText',
+      method: "POST",
+      contentType: 'application/json',
+      data: formdata,
+      dataType: 'json',
+      complete:  function(data,status,xhr) {
+        // sort out the page after data is successfully saved.
+        // $('#status_form').hide();
+        // $('#status_button').show();
+        document.location.reload(true);
+      }
+    });
+  });
+});
+</script>
+
+{% endblock %}

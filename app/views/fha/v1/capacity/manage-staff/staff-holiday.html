@@ -1,0 +1,96 @@
+{% extends path1+"/_addlayout.html" %} 
+
+
+
+{% block citizen_content %}
+
+<div class="container">
+    <p><a href="/{{path2}}/{{centre.id}}/manage-staff/staff-profile/{{person.id}}?tab=leave" class="link-back">Back</a></p>
+
+    <h3 class="heading-large mt0">Change availablity</h3>
+
+ 	<div class="grid-row">
+    <div class="column-half">
+
+    	<fieldset>
+    		<legend class="form-label">
+    			First, Choose a start date:
+    		</legend>
+    	<table class="calendar-picker mt30">
+        <caption>April 2018</caption>
+        <thead>
+            <tr>
+                <th>MON</th>
+                <th>TUE</th>
+                <th>WED</th>
+                <th>THU</th>
+                <th>FRI</th>
+                <th>SAT</th>
+                <th>SUN</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="calendar-picker__day calendar-picker__day--closed">26</td>
+                <td class="calendar-picker__day calendar-picker__day--closed">27</td>
+                <td class="calendar-picker__day calendar-picker__day--closed">28</td>
+                <td class="calendar-picker__day calendar-picker__day--closed">29</td>
+                <td class="calendar-picker__day calendar-picker__day--closed">30</td>
+                <td class="calendar-picker__day calendar-picker__day--closed">31</td>
+                <td class="calendar-picker__day calendar-picker__day--closed">1</td>
+            </tr>
+            <tr>
+                <td class="calendar-picker__day calendar-picker__day--closed">2</td>
+                <td class="calendar-picker__day calendar-picker__day--closed">3</td>
+                <td class="calendar-picker__day calendar-picker__day--today"><a class="calendar-picker__link" href="staff-holiday-2">4</a> <span class="visually-hidden">Today</span></td>
+                <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-holiday-2">5</a></td>
+                <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-holiday-2">6</a></td>
+                <td class="calendar-picker__day calendar-picker__day--closed">7</td>
+                <td class="calendar-picker__day calendar-picker__day--closed">8</td>
+            </tr>
+            <tr>
+                <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-holiday-2">9</a></td>
+                <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-holiday-2">10</a></td>
+                <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-holiday-2">11</a></td>
+                <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-holiday-2">12</a></td>
+                <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-holiday-2">13</a></td>
+                <td class="calendar-picker__day calendar-picker__day--closed">14</td>
+                <td class="calendar-picker__day calendar-picker__day--closed">15</td>
+            </tr>
+            <tr>
+                <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-holiday-2">16</a></td>
+                <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-holiday-2">17</a></td>
+                <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-holiday-2">18</a></td>
+                <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-holiday-2">19</a></td>
+                <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-holiday-2">20</a></td>
+                <td class="calendar-picker__day calendar-picker__day--closed">21</td>
+                <td class="calendar-picker__day calendar-picker__day--closed">22</td>
+            </tr>
+            <tr>
+                <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-holiday-2">23</a></td>
+                <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-holiday-2">24</a></td>
+                <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-holiday-2">25</a></td>
+                <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-holiday-2">26</a></td>
+                <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-holiday-2">27</a></td>
+                <td class="calendar-picker__day calendar-picker__day--closed">28</td>
+                <td class="calendar-picker__day calendar-picker__day--closed">29</td>
+            </tr>
+            <tr>
+                <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-holiday-2">30</a></td>
+                <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-holiday-2">1</a></td>
+                <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-holiday-2">2</a></td>
+                <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-holiday-2">3</a></td>
+                <td class="calendar-picker__day"><a class="calendar-picker__link" href="staff-holiday-2">4</a></td>
+                <td class="calendar-picker__day calendar-picker__day--closed">5</td>
+                <td class="calendar-picker__day calendar-picker__day--closed">6</td>
+            </tr>
+        </tbody>
+    </table>
+    </fieldset>
+    </div>
+     </div>
+    <!-- row -->
+</div>
+
+<!-- container -->
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

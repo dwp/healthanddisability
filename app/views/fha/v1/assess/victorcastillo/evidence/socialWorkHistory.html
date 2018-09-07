@@ -1,0 +1,130 @@
+{% extends path1+"/_layoutChat.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+
+
+<div class="grid-row no-kdBar">
+
+ 
+
+
+  <div class="column-half">
+  
+  
+<p><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+  
+  
+  
+  <h1 class="heading-large mt20">Social and work history</h1>
+    <form class="form" id="add_ev">
+      <p style="clear:both form-hint">Your notes are captured when you press the enter key</p>
+
+
+      <div>
+          <textarea id="nugget" class="form-control" name="nugget" style="width:90%;height:150px"></textarea>
+      </div><!-- form-group -->
+      <div class="form-group">
+        <input class="button secondary mt20" type="submit" value="Add comment" id="submitButton">
+      </div><!-- form-group -->
+      
+      
+    </form>
+
+
+  <form action="wca-index" method="POST" class="form">
+      <input type="submit" class="button" value="Save">
+
+      <div class="multiple-choice" style="display:none">
+          <input id="radio-inline-4" type="radio" name="socialWorkHistory" value="socialWorkHistory" checked>
+            
+          <label for="radio-4">hidden radio one</label>
+        </div>
+    </form>
+   
+  </div><!-- column -->
+  <div class="column-half">
+  
+  
+ <!-- <p class="bold-medium">Assessment started: {{ last_one.time | formatDate("H:mma Do MMMM YYYY") }}</p> -->
+  
+  
+  <div class="chat-layout">
+
+
+    {% for item in data.nuggets | sortBy("time",true) %}
+  
+      <div class="tag-box">
+      
+        <div class="tag-text">{{ item.text }}</div>
+        
+        <div class="edit-item">
+       	<ul>
+       		<li><a href="#">Edit</a></li>
+       		<li><a href="#">Remove</a></li>
+       	</ul>
+       </div>
+       
+      </div>
+      
+
+      
+        
+    {% endfor %}
+    
+    
+  </div><!-- column -->
+</div><!-- row -->
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+$(document).on('ready',function()
+{
+  $('#nugget').focus();
+
+  $("#nugget").keydown(function (event) {
+    if ((event.keyCode == 13))
+    {
+      $('#submitButton').trigger('click');
+    }
+  });
+
+  $('#submitButton').on('click',function(e)
+  {
+    e.preventDefault();
+    // get values from the form you're submitting.
+    var nugget = $('#nugget').val();
+    console.log(nugget)
+
+    // gather values into a data object.
+    var formdata = JSON.stringify({"nugget":nugget});
+    console.log(formdata)
+    console.log({url: '/{{ path }}/saveText'})
+
+    // send data object off to node route for saving.
+    $.ajax({
+      url: '/{{ path }}/saveText',
+      method: "POST",
+      contentType: 'application/json',
+      data: formdata,
+      dataType: 'json',
+      complete:  function(data,status,xhr) {
+        // sort out the page after data is successfully saved.
+        // $('#status_form').hide();
+        // $('#status_button').show();
+        document.location.reload(true);
+      }
+    });
+  });
+});
+</script>
+
+{% endblock %}

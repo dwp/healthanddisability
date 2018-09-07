@@ -1,0 +1,218 @@
+{% extends path1+"/_layoutRecording.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+		
+		
+		<div class="evidence-requests">
+				
+				
+			<form action="request-evidence2" method="POST" class="form">
+			<fieldset>
+				<legend><h1 class="heading-large mt0"><span class="heading-secondary">Step 1 of 2</span>Request evidence</h1></legend>
+				
+				<p class="form-hint mb5 mt10">Select the evidence you would like to request.</p>
+				
+				
+				<div class="form-group">
+							       
+							      <div class="multiple-choice" data-target="113-view">
+								      <input id="113" name="type" type="checkbox" value="113">
+								      <label for="113">113</label>
+								    </div>	
+								    
+								    <div class="panel panel-border-narrow js-hidden" id="113-view">
+										<label for="113-reason">
+											Reason for requesting a 113:
+										</label>
+										<textarea class="form-control form-control-2-4" name="113Request" id="113-reason" rows="4"></textarea>
+								    </div>							    
+
+					  
+								    <div class="multiple-choice" data-target="frr-view">
+								      <input id="frr" name="type" type="checkbox" value="FRR">
+								      <label for="frr">FRR</label>
+								    </div>	
+								    
+								    <div class="panel panel-border-narrow js-hidden" id="frr-view">
+										<div class="form-group">
+												<label for="FRR-reason">
+														Reason for requesting a FRR:
+													</label>
+													<textarea class="form-control form-control-2-4" name="FRRRequest" id="FRR-reason" rows="4"></textarea>
+										</div>
+									  <div class="form-group">	
+										<label for="frr-reason">
+										What evidence do you require?
+										</label>
+										<textarea class="form-control form-control-2-4" name="frrRequest" id="frr-reason" rows="10"></textarea>
+										 </div>	
+										 
+										 <div class="form-group">
+												<fieldset>
+
+														<legend>
+															
+																Who are you requesting this evidence off?
+															
+														</legend>
+												
+														<div class="multiple-choice">
+															<input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
+															<label for="example-contact-by-email">GP</label>
+														</div>
+										
+														<div class="multiple-choice" data-target="consultant">
+																<input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
+																<label for="example-contact-by-email">Consultant</label>
+															</div>
+															<div class="panel panel-border-narrow js-hidden" id="consultant">
+																<h2 class="heading-small">Contact details</h2>
+																<div class="form-group">
+																<label class="form-label" for="contact-email">name</label>
+																<input class="form-control" name="contact-email" type="text" id="contact-email">
+															</div>
+															<div class="form-group">
+																	<div class="mb10">
+																		<label for="address1" class="form-label">Address</label>
+																		<input class="form-control" id="address1" type="text">
+																	</div>
+																	<div class="mb10">
+																		<label for="address2" class="visually-hidden">Address Line 2</label>
+																		<input class="form-control" id="address2" type="text">
+																	</div>
+																	
+																	<div class="mb10">
+																		<label for="address3" class="visually-hidden">Address Line 3</label>
+																		<input class="form-control" id="address3" type="text">
+																	</div>
+																	
+																	<div>
+																		<label for="address4" class="visually-hidden">Address Line 4</label>
+																		<input class="form-control" id="address4" type="text">
+																	</div>
+															</div>
+															<div class="form-group">
+																	<label for="postcode" class="form-label">Postcode
+																	</label>
+																	<input class="form-control form-control-1-4" id="postcode" type="text">
+															</div>
+
+															<div class="form-group">
+																	<label class="form-label" for="contact-email">Phone</label>
+																	<input class="form-control" name="contact-email" type="text" id="contact-email">
+																</div>	<div class="form-group">
+																		<label class="form-label" for="contact-email">Email</label>
+																		<input class="form-control" name="contact-email" type="text" id="contact-email">
+																	</div>
+
+														</div>
+
+														<div class="multiple-choice" data-target="other">
+																<input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
+																<label for="example-contact-by-email">Other</label>
+															</div>
+															<div class="panel panel-border-narrow js-hidden" id="other">
+																<h2 class="heading-small">Contact details</h2>
+																<div class="form-group">
+																<label class="form-label" for="contact-email">name</label>
+																<input class="form-control" name="contact-email" type="text" id="contact-email">
+															</div>
+															<div class="form-group">
+																	<div class="mb10">
+																		<label for="address1" class="form-label">Address</label>
+																		<input class="form-control" id="address1" type="text">
+																	</div>
+																	<div class="mb10">
+																		<label for="address2" class="visually-hidden">Address Line 2</label>
+																		<input class="form-control" id="address2" type="text">
+																	</div>
+																	
+																	<div class="mb10">
+																		<label for="address3" class="visually-hidden">Address Line 3</label>
+																		<input class="form-control" id="address3" type="text">
+																	</div>
+																	
+																	<div>
+																		<label for="address4" class="visually-hidden">Address Line 4</label>
+																		<input class="form-control" id="address4" type="text">
+																	</div>
+															</div>
+															<div class="form-group">
+																	<label for="postcode" class="form-label">Postcode
+																	</label>
+																	<input class="form-control form-control-1-4" id="postcode" type="text">
+															</div>
+
+															<div class="form-group">
+																	<label class="form-label" for="contact-email">Phone</label>
+																	<input class="form-control" name="contact-email" type="text" id="contact-email">
+																</div>	<div class="form-group">
+																		<label class="form-label" for="contact-email">Email</label>
+																		<input class="form-control" name="contact-email" type="text" id="contact-email">
+																	</div>
+
+														</div>
+													
+												
+													</fieldset>
+
+										 </div>
+								    </div>	
+						    
+					</div>
+
+				
+				
+			</fieldset>
+				
+
+				
+		
+					
+				
+				<p class="request"><input type="submit" class="button" value="button"></p>
+				        <!-- hidden radio's for prototype scenarios -->
+
+<div class="multiple-choice" style="display:none">
+    <input id="radio-inline-4" type="radio" name="edit5678" value="editHand" checked>
+      
+    <label for="radio-4">hidden radio one</label>
+	</div>
+
+				
+				</form>
+		</div>
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
