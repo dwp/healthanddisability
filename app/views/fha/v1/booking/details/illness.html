@@ -1,6 +1,10 @@
 {% extends path+"/booking/details/_layout2.html" %}
 
+ {% block app_nav %}
+          
+          {{ secondaryNav.case_secondary("illness",1,path1 + "/" + section, customer._id, customer.name.first) }}{# macro #}
 
+        {% endblock %}
 {% block case_content %}
 
       <h3 class="heading-large mt10">Illnesses and disabilities</h3>

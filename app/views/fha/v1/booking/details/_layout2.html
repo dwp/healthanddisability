@@ -1,3 +1,4 @@
+{% import path+"/booking/details/_macros_nav.html" as secondaryNav %}
 
 {% extends templatePath %}
 
@@ -12,7 +13,9 @@
     <div class="grid-row">
       <div class="column-third">
         {% block app_nav %}
-          {% include path+"/booking/details/_nav.html" %}
+          
+          {{ secondaryNav.case_secondary("details",1,path1 + "/" + section, customer._id, customer.name.first) }}{# macro #}
+
         {% endblock %}
       </div><!-- column -->
       <div class="column-two-thirds">
