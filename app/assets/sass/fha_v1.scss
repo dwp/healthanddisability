@@ -328,23 +328,26 @@ select.form-select:hover {
 .exam-content {
 	caption {
 		visibility: hidden;
+		font-size: 0;
 	}
 	th {
 		padding-left: 0;
+		padding-right: 0;
 	}
 	tr {
-		td {
+		td:last-child {
 			text-align: right;
 			padding-right: 0;
 			
 			span {
 				display: inline-block;
-				background: $grey-3;
+				background: $govuk-blue;
 				font-size: 16px;
 				padding: 5px 7px 3px 7px;
 				border-radius: 2px;
 				margin-top: -2px;
 				font-weight: 600;
+				color: #fff;
 
 			}
 		}
@@ -352,13 +355,16 @@ select.form-select:hover {
 			// background: $grey-4;
 			td {
 				span {
-					background: $purple;
+					background: $govuk-blue;
 					color: #fff;
 					&.red {
 						background: $mellow-red;
 					}
 					&.turquoise {
 						background: $turquoise;
+					}
+					&.orange {
+						background: $orange;
 					}
 				}
 			}
@@ -367,7 +373,10 @@ select.form-select:hover {
 			td {
 				font-size:28px;
 				font-weight: bold;
-			
+			}
+			th, td {
+				border-bottom: 0;
+				padding-bottom: 0;
 			}
 		}
 	}
@@ -821,3 +830,4 @@ caption {
 	border-radius: 2px;
 	margin-left: 5px;
 }
+
