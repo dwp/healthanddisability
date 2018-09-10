@@ -25,7 +25,7 @@
 
                   <ul>
                       <li><a href="ready-to-book" class="active_child">Ready to book ({{customersTotal}})</a></li>
-                     <li><a href="booked-appointments">Booked appointments (7)</a></li>
+                     <li><a href="#">Booked appointments (7)</a></li>
                     </ul>
                 </li>
                 <li>
@@ -41,16 +41,18 @@
                 <thead>
                   <tr>
                     <th>Details</th>
-                    <th>Received from scrutiny</th>
+                    <th>Appointment details</th>
                   </tr>
                 </thead>
                 {% for customer in customers | sort(false, false, 'receivedDate') %}
 
                 <tr>
-                  <td ><a href="booking/referrals/{{customer._id}}/details"><span class="visually-hidden">Name</span>{{customer.name.fullName}}</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span></td>
-                  <td>{{customer.receivedDate | formatDate("D MMMM YYYY")}}</td>
+                  <td ><a href="booking/booked/{{customer._id}}/details"><span class="visually-hidden">Name</span>{{customer.name.fullName}}</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span></td>
+                  <td>{{customer.appointmentDate | formatDate("D MMMM YYYY")}} at {{customer.appointmentTime}}</td>
                 </tr>
                 {% endfor %}
+
+                </tbody>
 
               </table>
           </div><!-- column -->
@@ -60,3 +62,8 @@
 </main>
 
 {% endblock %}
+
+
+
+
+

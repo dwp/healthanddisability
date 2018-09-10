@@ -1,7 +1,7 @@
 {% extends path1+"/_layout.html" %}
 
 {% block left_content %}
- <p class="mt10 mb0 bold-small"><span class="circle purple"></span>
+ <p class="mt10 mb0 bold-small">
  {% if query.withdrawalReason == "work" %}
   Claim withdrawn on {{ 'D MMMM YYYY' | randDaysAgo(0)}}
   {% elseif query.withdrawalReason == "ex-parrot" %}

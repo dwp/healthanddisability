@@ -7,6 +7,15 @@ var request = require('request')
 var calendar = require('node-calendar');
 var moment = require('moment')
 
+var staffDataHoliday = require('../../../../app/views/fha/v1/data/staff-data-holiday.js')
+var staffData2 = require('../../../../app/views/fha/v1/data/staff-data-2.js')
+var slotsData = require('../../../../app/views/fha/v1/data/slots-data.js')
+var slotsData2 = require('../../../../app/views/fha/v1/data/slots-data-2.js')
+var commentsData = require('../../../../app/views/fha/v1/data/comments.js');
+var appointmentHistoy = require('../../../../app/views/fha/v1/data/appointmentHistory.js');
+
+
+
 
 router.get('*', function (req, res, next) {
   // path is only available with the proper value within this sub-module/router.
@@ -201,7 +210,7 @@ router.get('/ready-to-book', function(req, res, next){
   next()
 })
 
-router.get('/booked_appointments', function(req, res, next){
+router.get('/booked-appointments', function(req, res, next){
   var customers = require('../../../../app/views/fha/v1/data/booked.js');
   res.locals.customers = customers.map(customer => {
 
