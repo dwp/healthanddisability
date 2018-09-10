@@ -1,0 +1,99 @@
+{% extends path+"/_layout.html" %}
+
+{% block assess_content %}
+
+<main id="content" role="main" class="main-content">
+
+      <div class="container">
+          {% include path+"/caselist/_nav.html" %}
+          <div class="grid-row">
+            <div class="column-one-quarter">
+                {% include path+"/caselist/_search-box.html" %}
+  
+              <div class="details-nav v2">
+             <ul>
+                <li>
+                    <a href="caselist.html">All cases</a>
+                  </li>
+             <li>
+             <a href="referrals">Referral's (28)</a>
+           </li>
+           <li>
+              <a href="review">Review's (10)</a>
+            </li>
+              <li>
+                  <a href="appointments">Appointments (10)</a>
+
+                 
+                </li>
+                <li class="active_detail">
+                    <a href="assessment">Todays assessments (24)</a>
+                    <ul>
+                       <li><a href="#">9:00am (4)</a></li>
+                       <li><a href="#">10:00am (4)</a></li>
+                       <li><a href="#">11:00am (4)</a></li>
+                       <li><a href="#">1:00pm (4)</a></li>
+                       <li><a href="#" class="active_child">2:00pm (2)</a></li>
+                       <li><a href="#">3:00pm (2)</a></li>
+                       <li><a href="#">4:00pm (2)</a></li>
+                       <li><a href="#">4:00pm (2)</a></li>
+                      </ul>
+                  </li>
+          </ul>
+        </div>
+          </div>
+          <div class="column-three-quarters">
+            <h2 class="heading-medium mt0"><span class="heading-xlarge">24</span><br/>Assessments today</h2>
+              <table class="zebra">
+
+                <thead>
+                  <tr>
+                    <th >Details</th>
+                    <th class="numeric">Status</th>
+                  </tr>
+                </thead>
+                
+                
+
+        {% for customer in customers | sort(true, false, 'waitTime') | selectattr("arrived") %}
+                <tr>
+
+                  <td ><a href="/{{path}}/booking/arrived/{{customer._id}}/details"><span class="visually-hidden">Name</span>{{customer.name.fullName}} </a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span></td>
+
+                  
+                  <td class="numeric">
+                    {% if customer.arrived %}
+                    <span class="status {{ 'blue' if customer.waitTime < 30 }}{{ 'red' if customer.waitTime > 29 }}">Waiting {{customer.waitTime}} minutes</span>
+                    <span class="status {{ 'blue' if customer.arrivedTime < 11 }}{{ 'red' if customer.arrivedTime > 10 }}">Arrived at {{customer.timeArrived}}</span>
+                    {% endif %}
+                  </td>
+                </tr>
+                {% endfor %}
+
+                {% for customer in customers | sort(false, false, 'appointmentDate') | rejectattr("arrived") %}
+                <tr>
+
+                  <td ><a href="/{{path}}/booking/booked/{{customer._id}}/details"><span class="visually-hidden">Name</span>{{customer.name.fullName}} </a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span></td>
+                  <td class="numeric">
+                    not arrived yet
+                  </td>
+                </tr>
+                {% endfor %}
+
+    
+
+
+              </table>
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}
+
+
+
+
+
+

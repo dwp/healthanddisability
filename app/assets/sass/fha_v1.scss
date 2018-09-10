@@ -831,3 +831,44 @@ caption {
 	margin-left: 5px;
 }
 
+span.status {
+	background: #fff;
+	display: inline-block;
+	padding: 4px 8px 2px 8px; 
+	border: 1px solid $govuk-blue;
+	color: $govuk-blue;
+	font-weight: 700;
+	font-size: 15px;
+	position: relative;
+	top: -1px;
+	&.red {
+		color: #fff;
+		background: $mellow-red;
+		border-color: $mellow-red;
+	}
+	&.blue {
+		color: #fff;
+		background: $govuk-blue;
+		border-color: $govuk-blue;
+	}
+	&.orange {
+		color: #fff;
+		background: $orange;
+		border-color: $orange;
+	}
+	&.green {
+		color: #fff;
+		background: $green;
+		border-color: $green;
+	}
+	&.grey {
+		color: #fff;
+		border-color: $grey-1;
+		background: $grey-1;
+	}
+	&.purple {
+		color: #fff;
+		border-color: #912b88;
+		background: #912b88;
+	}
+}

@@ -17,29 +17,16 @@ set reasonsSupplier = [
 
 {% extends path1+"/_layout-booking.html" %}
 
-{% block main_nav %}
-  <div class="nav-horizontal">
-  <div class="main-nav-wrapper">
-    <ul class="main-nav">
-        
-        
-        <li class="selected"><a href="{{root}}/booked_appointments?arrived=true">Appointments</a></li>
-        <li><a href="{{root}}/assessment-centres">Manage my centre</a></li>
 
-    </ul>
-  </div>
-</div>
-
-{% endblock %}
 
 
 {% block left_content %}
 
-<div class="status-circle">
+
 <p><span class="bold-small">
 Arrived at assessment center
 </p>
-</div>
+
 <hr>
 
 
@@ -49,10 +36,9 @@ Arrived at assessment center
 {% block citizen_content %}
 {# macro #}
 
-
 <div class="container">
     <!-- timeline -->
-    <h1 class="heading-medium">Customer sent home unseen</h1>
+    <h1 class="heading-large no-kdBar">Customer sent home unseen</h1>
 
     <div class="panel panel-border-wide">
     <ul class="list-bullet">

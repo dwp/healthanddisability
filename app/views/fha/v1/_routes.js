@@ -288,7 +288,7 @@ router.get('/decision_maker', function(req, res, next){
   next()
 })
 
-router.get('/todays_appointments', function(req, res, next){
+router.get('/todays-appointments-*', function(req, res, next){
   var customers = require('../../../../app/views/fha/v1/data/todaysAppointments.js');
   res.locals.customers = customers.map(customer => {
 
@@ -344,6 +344,8 @@ router.get('/booking/decision/:customerId/appointment-history', function(req, re
   res.locals.history = appointmentHistoy.filter(entry => entry._id === req.params.customerId);
   next()
 })
+
+
 
 
 
@@ -420,6 +422,88 @@ router.get('/booking/decision/:customerId/evidence/:page', function(req, res, ne
 
 
 
+router.get('*/timepicker', function(req, res, next){
+  var availableAppointments = require('../../../../app/views/fha/v1/data/availableAppointments.js');
+  
+  if(!res.locals.query.number){
+    res.locals.query.number = 4;
+  }
+  res.locals.availableAppointments = availableAppointments.filter(appointment => moment(appointment.appointmentDate).day() > 0 && moment(appointment.appointmentDate).day() < 6);
+  res.locals.newNumber = parseInt(res.locals.query.number) + 4;
+  next()
+})
+
+router.get('*/send-home-2', function(req, res, next){
+  var availableAppointments = require('../../../../app/views/fha/v1/data/availableAppointments.js');
+  
+  if(!res.locals.query.number){
+    res.locals.query.number = 4;
+  }
+  res.locals.availableAppointments = availableAppointments.filter(appointment => moment(appointment.appointmentDate).day() > 0 && moment(appointment.appointmentDate).day() < 6);
+  res.locals.newNumber = parseInt(res.locals.query.number) + 4;
+  next()
+})
+
+
+router.get('/booking/arrived/:customerId*', function(req, res, next){
+  var customers = require('../../../../app/views/fha/v1/data/todaysAppointments.js');
+  
+  res.locals.section = "arrived";
+  res.locals.templatePath = res.locals.path+"/booking/_layout-arrived.html";
+  res.locals.customer = customers.filter(customer => customer._id === req.params.customerId)[0];
+
+  var appointmentTime = moment(res.locals.customer.appointmentTime, "h:mma");
+  res.locals.customer.timeArrived = appointmentTime.add(res.locals.customer.arrivedTime, "minutes").format("h:mma");
+
+  next()
+})
+
+
+router.get('/booking/arrived/:customerId', function(req, res, next){
+  res.render("fha/v1/booking/customer-booked");
+})
+
+router.get('/booking/arrived/:customerId/appointment-history', function(req, res, next){
+
+  res.locals.history = appointmentHistoy.filter(entry => entry._id === req.params.customerId);
+  res.render("fha/v1/booking/appointment-history");
+  
+})
+
+router.get('/booking/arrived/:customerId/details', function(req, res, next){
+  res.render("fha/v1/booking/details/contact");
+})
+
+router.get('/booking/arrived/:customerId/illness', function(req, res, next){
+  res.render("fha/v1/booking/details/illness");
+})
+
+router.get('/booking/arrived/:customerId/gp', function(req, res, next){
+  res.render("fha/v1/booking/details/gp");
+})
+
+router.get('/booking/arrived/:customerId/details', function(req, res, next){
+  res.render("fha/v1/booking/details/contact");
+})
+
+router.get('/booking/arrived/:customerId/timeline', function(req, res, next){
+  res.render("fha/v1/booking/timeline");
+})
+
+router.get('/booking/arrived/:customerId/evidence', function(req, res, next){
+  res.render("fha/v1/booking/evidence/index");
+})
+
+
+router.get('/booking/arrived/:customerId/evidence/:page', function(req, res, next){
+  res.render("fha/v1/booking/evidence/" + req.params.page);
+})
+
+router.get('/booking/arrived/:customerId/:pageName', function(req, res, next){
+  res.render("fha/v1/booking/" + req.params.pageName);
+})
+
+
 
 
 router.get('/booking/decision/:customerId/:page', function(req, res, next){
@@ -491,7 +575,7 @@ router.post('/booking/decision/:customerId/decision-post', function(req, res, ne
 });
 
 
-router.post('/booking/booked/:customerId/send-home-post', function(req, res, next){
+router.post('/booking/arrived/:customerId/send-home-post', function(req, res, next){
   var comments = req.body.otherReason || req.body.reason;
   appointmentHistoy.push({
       _id: req.params.customerId,
@@ -505,7 +589,7 @@ router.post('/booking/booked/:customerId/send-home-post', function(req, res, nex
 
 });
 
-router.post('/booking/booked/:customerId/timepicker-post', function(req, res, next){
+router.post('*/:customerId/timepicker-post', function(req, res, next){
     var changedByCustomer = req.body.changedByCustomer === 'yes' || false;
 
     if(req.body.reasonNeeded == 'false'){
@@ -518,7 +602,7 @@ router.post('/booking/booked/:customerId/timepicker-post', function(req, res, ne
         appointmentDate: moment(req.body.appointment).format(),
         changedByCustomer: changedByCustomer
       });
-      res.redirect(302, 'appointment-history');
+      res.redirect(302, '/' + res.locals.path + '/booking/booked/' + req.params.customerId + '/appointment-history');
     } 
     else {
       req.session.appointmentDate = req.body.appointment,
@@ -573,15 +657,11 @@ router.get('/booking/booked/:customerId/gp', function(req, res, next){
   res.render("fha/v1/booking/details/gp");
 })
 
-router.get('/booking/booked/:customerId/arrived', function(req, res, next){
-  var appointmentTime = moment(res.locals.customer.appointmentTime, "h:mma");
-  res.locals.customer.timeArrived = appointmentTime.add(res.locals.customer.arrivedTime, "minutes").format("h:mma");
-  res.render("fha/v1/booking/details/arrived");
-})
+
 router.get('/booking/booked/:customerId/today', function(req, res, next){
   res.render("fha/v1/booking/details/today");
 })
-router.get('/booking/booked/:customerId/send-home', function(req, res, next){
+router.get('/booking/arrived/:customerId/send-home', function(req, res, next){
   var appointmentTime = moment(res.locals.customer.appointmentTime, "h:mma");
   res.locals.customer.timeArrived = appointmentTime.add(res.locals.customer.arrivedTime, "minutes").format("h:mma");
   next()
@@ -632,30 +712,10 @@ router.get('/booking/booked/mendez/*', function(req, res, next){
     next()
   })
 
-router.get('*/timepicker', function(req, res, next){
-  var availableAppointments = require('../../../../app/views/fha/v1/data/availableAppointments.js');
-  
-  if(!res.locals.query.number){
-    res.locals.query.number = 4;
-  }
-  res.locals.availableAppointments = availableAppointments.filter(appointment => moment(appointment.appointmentDate).day() > 0 && moment(appointment.appointmentDate).day() < 6);
-  res.locals.newNumber = parseInt(res.locals.query.number) + 4;
-  next()
-})
-
-router.get('*/send-home-2', function(req, res, next){
-  var availableAppointments = require('../../../../app/views/fha/v1/data/availableAppointments.js');
-  
-  if(!res.locals.query.number){
-    res.locals.query.number = 4;
-  }
-  res.locals.availableAppointments = availableAppointments.filter(appointment => moment(appointment.appointmentDate).day() > 0 && moment(appointment.appointmentDate).day() < 6);
-  res.locals.newNumber = parseInt(res.locals.query.number) + 4;
-  next()
-})
 
 
-router.post('/booking/booked/:customerId/send-home-2', function(req, res, next){
+
+router.post('/booking/arrived/:customerId/send-home-2', function(req, res, next){
   res.locals.postData = req.body;
   var reason = req.body.otherReason || req.body.reason;
   appointmentHistoy.push({

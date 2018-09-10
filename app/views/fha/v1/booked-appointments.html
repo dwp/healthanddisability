@@ -24,8 +24,8 @@
                   <a href="appointments">Appointments (10)</a>
 
                   <ul>
-                      <li><a href="ready-to-book" class="active_child">Ready to book ({{customersTotal}})</a></li>
-                     <li><a href="#">Booked appointments (7)</a></li>
+                      <li><a href="ready-to-book">Ready to book ({{customers.length}})</a></li>
+                     <li><a href="#" class="active_child">Booked appointments (7)</a></li>
                     </ul>
                 </li>
                 <li>
@@ -35,7 +35,7 @@
         </div>
           </div>
           <div class="column-three-quarters">
-            <h2 class="heading-medium mt0"><span class="heading-xlarge">{{customersTotal}}</span><br/>Ready to book</h2>
+            <h2 class="heading-medium mt0"><span class="heading-xlarge">{{customers.length}}</span><br/>Ready to book</h2>
               <table class="zebra">
 
                 <thead>
@@ -44,7 +44,7 @@
                     <th>Appointment details</th>
                   </tr>
                 </thead>
-                {% for customer in customers | sort(false, false, 'receivedDate') %}
+                {% for customer in customers | sort(false, false, 'appointmentDate') %}
 
                 <tr>
                   <td ><a href="booking/booked/{{customer._id}}/details"><span class="visually-hidden">Name</span>{{customer.name.fullName}}</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span></td>
