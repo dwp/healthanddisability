@@ -1,0 +1,72 @@
+
+.inner-panel {
+	background: $grey-4;
+	position: absolute;
+	width: 76%;
+	padding: 0;
+	top: 0;
+	right: 0;
+	
+	.panel-switch {
+		position: absolute;
+		top: 224px;
+		right: 0;
+		width: 130px;
+		padding: 10px 0;
+		text-align: center;
+		cursor: pointer;
+		background: #fff;
+		border: 2px solid #000;
+		border-right: 0;
+
+
+		a {
+			padding: 0;
+			margin: 0;
+
+			&:after {
+				content: 'Review evidence';
+			}
+		}
+		
+		.support {
+			padding: 0;
+			margin: 0;
+			&:after {
+				content: 'Supporting evidence';
+			}
+		}
+	}
+	
+	.inner-panel-content {
+		overflow-y: scroll!important;
+		background: #fff;
+		padding: 3% 5% 10% 5%;
+		border: 1px solid $grey-2;
+		border-left: 2px solid #000;
+		min-height: 1200px;
+		display: none;
+	}
+
+	&.panel-open {
+		.inner-panel-content {
+			display: block;
+			.evidence__content {
+				p {
+					font-size: 18px;
+				}
+			}
+		}
+		.panel-switch {
+			right: auto;
+			left: -130px;
+			a {
+			&:after {
+				content: 'Close evidence';
+			}
+		}
+		}
+	}
+
+	
+}

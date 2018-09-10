@@ -191,12 +191,13 @@ router.get('/assessment-centres', function(req, res, next){
   next()
 })
 
-router.get('/appointments', function(req, res, next){
+router.get('/ready-to-book', function(req, res, next){
   var customers = require('../../../../app/views/fha/v1/data/referrals.js')
   if(req.query.booked){
     customers = customers.filter(customer => customer._id !== req.query.booked);
   }
   res.locals.customers = customers;
+  res.locals.customersTotal = customers.length;
   next()
 })
 

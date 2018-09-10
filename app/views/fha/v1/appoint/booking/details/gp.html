@@ -1,0 +1,79 @@
+{% extends path+"/booking/details/_layout2.html" %}
+
+
+{% block case_content %}
+
+      <h3 class="heading-large mt10">General Practitioner</h3>
+       <div class="grid-row mt30">
+  
+  
+  <div class="column-half">
+  
+
+     <h3 class="heading-medium mt0">Dr. Sheila Turner</h3>
+    
+    <h4 class="heading-small">Phone</h4>
+    <p>0207 000 0000</p>
+    
+    <h4 class="heading-small">Fax</h4>
+    <p>0207 000 0000</p>
+    
+    <h4 class="heading-small">Text</h4>
+    <p>07979 000000</p>
+
+    
+    <h4 class="heading-small">Address</h4>
+    <p class="address-stack">
+    	<span>0 Brixton Lane</span>
+    	<span>Brixton</span>
+    	<span>London</span>
+    	<span>SW2 000</span>
+    </p>
+    
+    <p><a href="#" class="button mt10">Edit details</a></p>
+
+       
+    
+    </div><!-- column -->
+    
+    <div class="column-half">
+  
+     
+    
+    </div><!-- column -->
+
+    
+  
+
+
+    
+    </div><!-- column -->
+    
+    
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div><!-- row -->
+           
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.evidence__leftnav')
+      .children(":nth-child(3)")
+      .addClass('active_detail')
+  });
+</script>
+{% endblock %}

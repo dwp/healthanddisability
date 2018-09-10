@@ -1,0 +1,60 @@
+{% extends path2+"/_layout.html" %}
+
+
+{% block case_content %}
+
+<table class="evidence-list">
+
+                <thead>
+	                  <tr>
+	                    <th>Evidence type</th>
+	                    <th>Source</th>
+	                    <th>Recieved</th>
+	                    <th class="numeric"></th>
+	                  </tr>
+	                </thead>
+	                
+	                {% if data.nuggets.length %}
+		              <tr>
+		                  <td><a href="evidence/medical_assessment">Work capability assessment</a> <em>NEW</em></td>
+		                  <td>Heather Harrison <span>Healthcare Professional</span></td>
+		                  <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+		                  <td class="nobr numeric"></td>
+	                </tr>
+		            {% endif %}
+
+	          	
+	                <tr>
+	                  <td><a href="evidence/gp_report">GP Report (ESA113)</a></td>
+	                  <td>Shiela Turner <span>Brixton medical centre</span></td>
+	                  <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+	                  <td class="nobr numeric"></td>
+	                </tr>
+	                
+	                <tr>
+	                  <td><a href="evidence/medical_record_data">Fit note (MED3) information</a></td>
+	                  <td>UC50</td>
+	                  <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+	                  <td class="nobr numeric"></td>
+	                </tr>
+	                
+	                <tr>
+	                  <td><a href="evidence/statements">Tomas's statements</a></td>
+	                  <td>UC50</td>
+	                  <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+	                  <td class="nobr numeric"></td>
+	                </tr>
+	                
+	                <tr>
+	                  <td><a href="evidence/conditions">Medication and side effects</a></td>
+	                  <td>UC50</td>
+	                  <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+	                  <td class="nobr numeric"></td>
+	                </tr>
+	                
+	                
+	
+
+              </table>
+
+{% endblock %}
