@@ -1,0 +1,48 @@
+{% extends path1+"/_layout.html" %}
+
+{% block citizen_content %}
+
+  <div class="container">
+
+
+      </div><!-- column -->
+      <div class="column-full">
+          {% block case_content %}{% endblock %}
+      </div><!-- column-full -->
+    </div><!-- grid-row -->
+  </div><!-- container -->
+{% endblock %}
+
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.tag').on('click',function(e)
+    {
+      e.preventDefault();
+      $(this).toggleClass('clicked');
+    });
+
+    $('.tag').on('mouseleave',function(e)
+    {
+      e.preventDefault();
+      $(this).removeClass('clicked');
+    });
+
+    $.fancybox.defaults.beforeShow = function(){
+        $("html").css({'overflow-y':'hidden'});
+    };
+    $.fancybox.defaults.afterClose = function(){
+        $("html").css({'overflow-y':'visible'});
+        $('.des_trigger').blur();
+    };
+    // highlight the approrpaiet left nav
+    $('.evidence__leftnav a h3').each(function(i,e)
+    {
+      if ($(e).text() == $('h2.heading-large').text()) $(e).parent().addClass('active');
+    })
+  });
+</script>
+{% endblock %}

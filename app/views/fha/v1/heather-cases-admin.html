@@ -1,0 +1,70 @@
+{% extends path+"/_layout.html" %}
+
+{% block assess_content %}
+
+<main id="content" role="main" class="main-content">
+      <div class="container">
+          {% include path+"/caselist/_nav.html" %}
+          <div class="grid-row">
+              <div class="column-one-quarter">
+             
+                  <div class="form-group" style="float:none">
+                      <label class="form-label" for="full-name-f1">Find a customer
+
+                      </label>
+                    
+                      <input class="form-control" id="full-name-f1" type="text" name="full-name-f1">
+                      <button class="button">Search</button>
+                  </div>
+                   
+                              <div class="details-nav v2">
+                                 <ul>
+                                   <li>
+                                   <a href="caselist.html">All cases</a>
+                                 </li>
+                                 <li class="active_detail">
+                                    <a href="assessment">Heather's Cases</a>
+                                    <ul>
+                                       <li><a href="#">New referalls (8) </a></li>
+                                       <li><a href="#">UC50 posted (5)</a></li>
+                                       <li><a href="#">UC50 recieved (2)</a></li>
+                                      </ul>
+                                  </li>
+                                </ul>
+                              </div>
+              </div>
+              <div class="column-three-quarters">
+                 
+                    <div class="grid-row">
+                      <div class="column-full">
+                            <h2 class="heading-medium mt0"><span class="heading-xlarge">
+                                <span class="heading-secondary">Heather Harrison </span>
+                              15</span><br /> Cases / <a href="assign-to-available-agents">Re-assign to agents</a></h2>
+
+                          </div>
+                          </div>
+                          <div class="grid-row"> 
+                            <div class="column-full">
+                              <table class="">
+
+                                  <thead>
+                                    <tr>
+                                      <th >Details</th>
+                                 
+                                      <th></th>
+                                    </tr>
+                                  </thead>
+                                  
+                                  {% include path+"/caselist/_table_data_heather_admin.html" %}
+                              </table>
+                    </div>
+                  </div>  
+              </div><!-- column -->
+            </div>
+     
+        <!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

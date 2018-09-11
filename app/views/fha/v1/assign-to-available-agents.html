@@ -1,0 +1,65 @@
+{% extends path+"/_layout.html" %}
+
+{% block assess_content %}
+
+<main id="content" role="main" class="main-content">
+
+      <div class="container">
+          {% include path+"/caselist/_nav.html" %}
+        <div class="grid-row">
+          <div class="column-three-quarters">
+              <a href="javascript: history.go(-1)" class="link-back">Back</a>
+              <h1 class="heading-medium mt0"><span class="heading-xlarge">32</span><br/>New referrals</h1>
+        
+
+              <div class="form-group">
+                  <fieldset>
+                    <legend>
+                      <h2 class="heading-large mt0">Select agents to distribute to</h2>
+                    </legend>
+                
+                    <div class="multiple-choice">
+                      <input id="agent-1" name="waste-types" type="checkbox" value="1">
+                      <label for="agent-1">Heather Harrison</label>
+                    </div>
+                    <div class="multiple-choice">
+                      <input id="agent-2" name="waste-types" type="checkbox" value="">
+                      <label for="agent-2">Léonie Vidal</label>
+                    </div>
+                    <div class="multiple-choice">
+                      <input id="agent-3" name="waste-types" type="checkbox" value="">
+                      <label for="agent-3">Grégory Faure</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="agent-4" name="waste-types" type="checkbox" value="">
+                        <label for="agent-4">Lamia Baron</label>
+                      </div>
+                      <div class="multiple-choice">
+                          <input id="agent-5" name="waste-types" type="checkbox" value="">
+                          <label for="agent-5">Bruno Duval</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="agent-6" name="waste-types" type="checkbox" value="">
+                            <label for="agent-6">Katel Grondin</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="agent-5" name="waste-types" type="checkbox" value="">
+                            <label for="agent-5">Lamia Baron</label>
+                        </div>
+
+                
+                  </fieldset>
+          
+                </div>
+                <div class="form-group">
+                   <a href="new-referrals-assigned.html" class="button">Confirm agents</a>
+                </div>
+                </div>
+          
+          <!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

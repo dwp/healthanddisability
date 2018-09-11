@@ -30,10 +30,9 @@ Arrived at assessment center
 {# macro #}
 
 
- {% if query.reason == "dwp" %}
 <div class="container">
     <h3 class="heading-medium mt20">Rearrange appointment</h3>
-    <form action="timeline_sent-home">
+    <form action="appointment-history" method="post">
         <fieldset class="form-group">
             <legend class="form-label-bold">Choose an appointment time</legend>
             {% for appointment in availableAppointments | sort(attribute='appointmentDate') | limit(query.number) %}
@@ -52,21 +51,11 @@ Arrived at assessment center
                 <button type="submit" class="button">Next</button>
             </p>
             <input type="hidden" name="tab" value="Details">
+            <input type="hidden" name="title" value="Appointment re-arranged">
     </form>
     <!-- row -->
 </div>
-{% endif %} {% if query.reason != "dwp" %}
-<div class="container">
-    <!-- timeline -->
-    <h1 class="heading-medium">Customer sent home unseen</h1>
-    <form action="" name="form">
-        <div class="panel panel-border-wide">
-            A deceision maker will need to review the case before the appointment can be re-arranged.
-        </div>
-        <a href="timeline_sent-home-2" class="button" id="submitButton">Confirm send home unseen</a>
-    </form>
-</div>
-{% endif %}
+
 <!-- container -->
 {% endblock %}
 

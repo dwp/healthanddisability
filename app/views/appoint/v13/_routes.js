@@ -10,7 +10,8 @@ var slotsData2 = require('../../../../app/views/appoint/v13/slots-data-2.js')
 var moment = require('moment')
 var commentsData = require('../../../../app/views/appoint/v13/data/comments.js');
 var calendar = require('node-calendar');
-console.log(path)
+var appointmentHistoy = require('../../../../app/views/appoint/v13/data/appointmentHistory.js');
+
 
 
 var arrivedTime = "";
@@ -208,10 +209,11 @@ router.get('/booking/referrals/:customerId*', function(req, res, next){
   next()
 })
 
-router.get('/booking/booked/:customerId/appointment-history', function(req, res, next){
-  var history = require('../../../../app/views/appoint/v13/data/appointmentHistory.js');
 
-  res.locals.history = history.filter(entry => entry._id == req.params.customerId)[0];
+
+router.get('/booking/booked/:customerId/appointment-history', function(req, res, next){
+
+  res.locals.history = appointmentHistoy.filter(entry => entry._id == req.params.customerId)[0];
   next()
 })
 
@@ -230,23 +232,25 @@ router.get('/booking/booked/:customerId*', function(req, res, next){
 })
 
 router.get('/booking/booked/:customerId/appointment-history', function(req, res, next){
-  var history = require('../../../../app/views/appoint/v13/data/appointmentHistory.js');
 
-  res.locals.history = history.filter(entry => entry._id === req.params.customerId);
+  res.locals.history = appointmentHistoy.filter(entry => entry._id === req.params.customerId);
+  next()
+})
+
+router.get('/booking/decision/:customerId/appointment-history', function(req, res, next){
+
+  res.locals.history = appointmentHistoy.filter(entry => entry._id === req.params.customerId);
   next()
 })
 
 
-router.get('/booking/booked/:customerId/timeline_rebooked', function(req, res, next){
-    if(res.locals.query.changedByCustomer == 'yes'){
-      res.locals.customer.ableToRearrange = false;
-    }
-    next();
-  })
+
 
 
 router.post('/booking/booked/:customerId*', function(req, res, next){
   var customers = require('../../../../app/views/appoint/v13/data/booked.js');
+  var todaysCustomers = require('../../../../app/views/appoint/v13/data/todaysAppointments.js');
+  customers.concat(todaysCustomers);
 
   res.locals.section = "booked";
   res.locals.templatePath = res.locals.path+"/booking/_layout-booking.html";
@@ -254,17 +258,27 @@ router.post('/booking/booked/:customerId*', function(req, res, next){
   res.locals.customer = customers.filter(customer => customer._id === req.params.customerId)[0];
   next()
 })
-
 router.get('/booking/booked/:customerId', function(req, res, next){
   res.render("appoint/v13/booking/customer-booked");
 })
+
+
+
 
 router.get('/booking/decision/:customerId*', function(req, res, next){
   var customers = require('../../../../app/views/appoint/v13/data/decisionMaker.js');
 
   res.locals.section = "decision";
   res.locals.templatePath = res.locals.path+"/booking/_layout-decision.html";
+  res.locals.customer = customers.filter(customer => customer._id === req.params.customerId)[0];
+  next()
+})
 
+router.post('/booking/decision/:customerId*', function(req, res, next){
+  var customers = require('../../../../app/views/appoint/v13/data/decisionMaker.js');
+
+  res.locals.section = "decision";
+  res.locals.templatePath = res.locals.path+"/booking/_layout-decision.html";
   res.locals.customer = customers.filter(customer => customer._id === req.params.customerId)[0];
   next()
 })
@@ -306,10 +320,119 @@ router.get('/booking/decision/:customerId/evidence/:page', function(req, res, ne
 
 
 
+router.get('/booking/decision/:customerId/:page', function(req, res, next){
+
+  res.render("appoint/v13/booking/" + req.params.page);
+})
+
+router.post('/booking/booked/:customerId/request-rearrangement-post', function(req, res, next){  
+  
+  var changedByCustomer = req.body.changedByCustomer === 'yes' || false;
+
+  if(req.body.changedByCustomer === 'no'){
+    appointmentHistoy.push({
+      _id: req.params.customerId,
+      title: "Appointment re-arranged",
+      entryDate: moment(new Date()).format(),
+      comments: req.body.comments,
+      appointmentDate: req.body.appointment,
+      changedByCustomer: changedByCustomer
+    });
+    res.redirect(301, 'timepicker?reasonNeeded=false');
+  } else {
+    appointmentHistoy.push({
+      _id: req.params.customerId,
+      title: "Re-arrangment requested",
+      entryDate: moment(new Date()).format(),
+      comments: req.body.comments,
+      appointmentDate: req.body.appointment,
+      changedByCustomer: changedByCustomer
+    });
+    res.redirect(307, 'appointment-history');
+  }
+});
+
+router.post('/booking/booked/:customerId/rearrange-reason-post', function(req, res, next){
+  var changedByCustomer = req.body.changedByCustomer === 'yes' || false;
+
+  if(changedByCustomer){
+    res.locals.customer.ableToRearrange = false;
+  }
+
+  appointmentHistoy.push({
+      _id: req.params.customerId,
+      title: "Appointment re-arranged",
+      entryDate: moment(new Date()).format(),
+      comments: req.body.comments,
+      appointmentDate: req.body.appointment,
+      changedByCustomer: changedByCustomer
+    });
+
+
+  res.redirect(301, 'appointment-history');
+
+});
+
+
+router.post('/booking/decision/:customerId/decision-post', function(req, res, next){
+  var title = `${res.locals.customer.decisionType} ${req.body.decision}`;
+  console.log(title);
+  appointmentHistoy.push({
+      _id: req.params.customerId,
+      title: title,
+      entryDate: moment(new Date()).format(),
+    });
+
+  res.locals.customer.decisionMade = req.body.decision;
+  res.redirect(307, 'appointment-history');
+
+});
+
+
+router.post('/booking/booked/:customerId/send-home-post', function(req, res, next){
+  var comments = req.body.otherReason || req.body.reason;
+  appointmentHistoy.push({
+      _id: req.params.customerId,
+      title: "Sent home unseen",
+      entryDate: moment(new Date()).format(),
+      comments: comments
+    });
+
+
+  res.redirect(301, 'timepicker?reasonNeeded=false');
+
+});
+
+router.post('/booking/booked/:customerId/timepicker-post', function(req, res, next){
+    var changedByCustomer = req.body.changedByCustomer === 'yes' || false;
+
+    if(req.body.reasonNeeded == 'false'){
+
+      appointmentHistoy.push({
+        _id: req.params.customerId,
+        title: "Appointment booked",
+        entryDate: moment(new Date()).format(),
+        comments: req.body.comments,
+        appointmentDate: moment(req.body.appointment).format(),
+        changedByCustomer: changedByCustomer
+      });
+      res.redirect(302, 'appointment-history');
+    } 
+    else {
+      req.session.appointmentDate = req.body.appointment,
+
+      res.redirect(302, 'rearrange-reason?appointment=' + moment(req.body.appointment).format('YYYY MM DD hh:mm'));
+    }
+  })
+
 
 
 router.get('/booking/referrals/:customerId/gp', function(req, res, next){
   res.render("appoint/v13/booking/details/gp");
+})
+
+router.get('/booking/referrals/:customerId/illness', function(req, res, next){
+  res.render("appoint/v13/booking/details/illness");
 })
 
 router.get('/booking/referrals/:customerId/details', function(req, res, next){
@@ -318,6 +441,10 @@ router.get('/booking/referrals/:customerId/details', function(req, res, next){
 
 router.get('/booking/referrals/:customerId/timeline', function(req, res, next){
   res.render("appoint/v13/booking/timeline");
+})
+
+router.get('/booking/referrals/:customerId/appointment-history', function(req, res, next){
+  res.render("appoint/v13/booking/appointment-history");
 })
 
 router.get('/booking/referrals/:customerId/evidence', function(req, res, next){
@@ -358,11 +485,7 @@ router.get('/booking/booked/:customerId/send-home', function(req, res, next){
   next()
 })
 
-router.post('/booking/booked/:customerId/send-home-2', function(req, res, next){
-  res.locals.postData = req.body;
 
-  res.render("appoint/v13/booking/send-home-2");
-})
 
 router.get('/booking/booked/:customerId/details', function(req, res, next){
   res.render("appoint/v13/booking/details/contact");
@@ -429,6 +552,21 @@ router.get('*/send-home-2', function(req, res, next){
   next()
 })
 
+
+router.post('/booking/booked/:customerId/send-home-2', function(req, res, next){
+  res.locals.postData = req.body;
+  var reason = req.body.otherReason || req.body.reason;
+  appointmentHistoy.push({
+    _id: req.params.customerId,
+    title: "Sent home unseen",
+    comments: reason,
+    entryDate: moment(new Date()).format(),
+    appointmentDate: null,
+    changedByCustomer: false
+  });
+
+  next()
+})
 
 router.get('/booking/booked/:customerId/evidence', function(req, res, next){
   res.render("appoint/v13/booking/evidence/index");

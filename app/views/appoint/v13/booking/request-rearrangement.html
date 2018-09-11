@@ -15,7 +15,7 @@
         <div class="column-full">
             <h1 class="heading-medium mt0">Request appointment rearrangement</h1>
             
-            <form action="timeline_pending">
+            <form action="request-rearrangement-post" method="post">
                 <fieldset class="form-group">
                     <legend class="form-label-bold">
                         Is the appointment being changed by the customer?
@@ -37,8 +37,7 @@
                     <textarea name="reason" class="form-control span-width"></textarea>
                 </div>
                 <p>
-                    <button class="button" id="confirmButton">Confirm</button>
-                    <a href="timepicker?rearrange=true" class="button" id="nextLink" >Next</a>
+                    <button class="button">Confirm</button>
                 </p>
             </form>
         </div>

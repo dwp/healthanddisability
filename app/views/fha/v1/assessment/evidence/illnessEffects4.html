@@ -1,0 +1,106 @@
+{% extends path1+"/_layout-info.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<h1 class="heading-large mt0"><span class="heading-secondary">Illnesses and conditions - step 4 of 4</span>Compound fracture - shinbone</h1>
+
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+  
+   <div class="whatweknow">
+
+        
+    <table>
+    
+    	<caption class="heading-medium mt10 mb10">What we already know:</caption>
+    	
+    	<thead>
+					<tr>
+						<th>Name</th>
+						<th>Since</th>
+						<th>Source</th>
+					</tr>
+				</thead>
+				<tbody>
+
+				<tr>
+						<td>Compound fracture - shinbone</td>
+						<td>July 2017</td>
+						<td>Claimant</td>
+					</tr>
+				</tbody>
+    	
+    </table>
+        
+        
+	    
+	</div> 
+	
+	<form>
+		<fieldset>
+			<legend class="visually-hidden">Condition details</legend>
+			
+			<div class="form-group">
+				<label class="heading-small" for="field-8">Condition history</label>
+				<p class="form-hint mb5 mt5">This should be specific to Compound fracture - shinbone.</p>
+				<textarea class="form-control form-control-3-4" id="field-8" style="height:250px;"></textarea>
+			</div>
+			
+			
+			<div class="form-group medication-stored">
+				<fieldset>
+					<legend class="heading-small">Medication taken:</legend>
+					
+			
+					
+					<div class="multiple-choice">
+				      <input id="meds1" name="type" type="checkbox" value="meds1">
+				      <label for="meds1">
+				      	Sertraline
+					  	<div class="meds-block">
+					      	<span>Dose: 100mg a day</span>
+					  	</div>
+				      </label>
+				    </div>
+				    
+				    <div class="multiple-choice">
+				      <input id="meds2" name="type" type="checkbox" value="meds2">
+				      <label for="meds2">
+				      	Zomorph
+					  	<div class="meds-block">
+					      	<span>Dose: 60mg twice a day</span>
+					  	</div>
+				      </label>
+				    </div>		    			
+	  
+				    <div class="multiple-choice" data-target="other-meds">
+				      <input id="otherMeds" name="type" type="checkbox" value="otherMeds">
+				      <label for="otherMeds">Other</label>
+				    </div>
+				</fieldset>
+			</div>
+			
+		</fieldset>
+	</form>
+	
+	<p><a href="illnessEffectsFinish" class="button">Continue</a></p>
+  
+
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+
