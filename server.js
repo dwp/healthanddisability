@@ -277,7 +277,7 @@ if (typeof (routes) !== 'function') {
   app.use('/appoint/v13/', require('./app/views/appoint/v13/_routes.js')) 
 
   app.use('/fha/v1', require('./app/views/fha/v1/_routes.js')) 
-
+  app.use('/vouch/', require('./app/views/vouch/_routes.js'))
 
 
   app.use('/', routes)
