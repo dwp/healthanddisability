@@ -278,6 +278,7 @@ if (typeof (routes) !== 'function') {
 
   app.use('/fha/v1', require('./app/views/fha/v1/_routes.js')) 
   app.use('/vouch/', require('./app/views/vouch/_routes.js'))
+  app.use('/esa113/', require('./app/views/esa113/_routes.js'))
 
 
   app.use('/', routes)
