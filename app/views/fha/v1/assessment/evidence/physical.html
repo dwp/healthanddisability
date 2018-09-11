@@ -6,6 +6,7 @@
 
 
 
+
 <h1 class="heading-large no-kdBar">Physical assessments</h1>
 
 <div class="grid-row">
@@ -18,11 +19,10 @@
 			<caption>Physical exam process</caption>
 			
 			
-			<tr class="complete">
+			<tr>
 				<th><a href="lower-limbs">Lower back and legs</a></th>
-				<td><span>Assessed</span></td>
+				<td></td>
 			</tr>
-
 			<tr>
 				<th><a href="#">Neck and arms</a></th>
 				<td></td>
@@ -53,7 +53,9 @@
 			</tr>
 			<tr>
 				<th><a href="mentalHealthAssessment">Mental health</a></th>
-				<td></td>
+				<td>{% if data['mental-health'] %}     
+						<span class="blue">Assessed</span>
+					{% endif %}</td>
 			</tr>
 			
 		</table>
@@ -61,9 +63,13 @@
 	</div>
 	
 
-<p class="mt30"><a href="medical_assessment_review" class="button">Finish assessment</a></p>
 
 
+
+
+
+
+  <!-- <p class="mt30"><a href="medical_assessment_stripped" class="button">Finish assessment</a></p> -->
   </div><!-- column -->
 </div><!-- row -->
 {% endblock %}
@@ -85,7 +91,7 @@
   </div>
   <div class="form-group panel panel-indent js-hidden mt0 mb20" id="phys_{{s}}_yes">
     <p>
-      <label class="form-label" for="phys_{{s}}_obs">Observation, palpation, movement</label>
+      <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
       <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
     </p>
   </div>
