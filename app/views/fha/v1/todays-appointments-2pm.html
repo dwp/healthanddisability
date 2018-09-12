@@ -1,48 +1,13 @@
-{% extends path+"/_layout.html" %}
+{% extends path+"/_layout-caselist.html" %}
 
-{% block assess_content %}
+{% block horizontal_secondary_nav %}
+              
+{{ secondaryNav.nav("assessment", "todays-appointments-2pm" ) }}
 
-<main id="content" role="main" class="main-content">
 
-      <div class="container">
-          {% include path+"/caselist/_nav.html" %}
-          <div class="grid-row">
-            <div class="column-one-quarter">
-                {% include path+"/caselist/_search-box.html" %}
-  
-              <div class="details-nav v2">
-             <ul>
-                <li>
-                    <a href="caselist.html">All cases</a>
-                  </li>
-             <li>
-             <a href="referrals">Referral's (28)</a>
-           </li>
-           <li>
-              <a href="review">Review's (10)</a>
-            </li>
-              <li>
-                  <a href="appointments">Appointments (10)</a>
+{% endblock %}  
 
-                 
-                </li>
-                <li class="active_detail">
-                    <a href="assessment">Todays assessments (24)</a>
-                    <ul>
-                       <li><a href="#">9:00am (4)</a></li>
-                       <li><a href="#">10:00am (4)</a></li>
-                       <li><a href="#">11:00am (4)</a></li>
-                       <li><a href="#">1:00pm (4)</a></li>
-                       <li><a href="#" class="active_child">2:00pm (2)</a></li>
-                       <li><a href="#">3:00pm (2)</a></li>
-                       <li><a href="#">4:00pm (2)</a></li>
-                       <li><a href="#">4:00pm (2)</a></li>
-                      </ul>
-                  </li>
-          </ul>
-        </div>
-          </div>
-          <div class="column-three-quarters">
+{% block caselist_content %}
             <h2 class="heading-medium mt0"><span class="heading-xlarge">24</span><br/>Assessments today</h2>
               <table class="zebra">
 
@@ -84,11 +49,6 @@
 
 
               </table>
-          </div><!-- column -->
-        </div><!-- row -->
-      </div><!-- container -->
-
-</main>
 
 {% endblock %}
 

@@ -9,7 +9,9 @@
 		padding: 0 0 .6em 0;
 	}
 	ul {
+
 		li {
+			list-style: none;
 			border-bottom: 1px solid $grey-3;
 			background: $grey-4;
 			&:hover {
@@ -23,7 +25,9 @@
 				padding: 1em .8em .8em 1em;
 				text-decoration: none;
 
-
+				&:visited {
+					color: $link-colour;
+				}
 				span {
 					font-size: 90%;
 					color: $grey-1;
