@@ -1,0 +1,25 @@
+{% extends path+"/_layout-caselist.html" %}
+
+{% block horizontal_secondary_nav %}
+              
+{{ secondaryNav.nav("referrals", "uc50-received") }}
+
+
+{% endblock %}  
+
+{% block caselist_content %}
+
+  <h2 class="heading-medium mt0"><span class="heading-xlarge">8</span><br/>UC50 recieved /  <a href="assign-to-available-agents">Assign to available agents</a></h2>
+  <table class="zebra">
+
+    <thead>
+      <tr>
+        <th>Details</th>
+      
+      </tr>
+    </thead>
+    
+    {% include path+"/caselist/_table_data.html" %}
+
+  </table>
+{% endblock %}
