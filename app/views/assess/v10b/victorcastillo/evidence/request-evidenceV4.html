@@ -28,36 +28,22 @@
 			<fieldset>
 				<legend><h1 class="heading-large mt0"><span class="heading-secondary">Step 1 of 2</span>Request evidence</h1></legend>
 				
-				<p class="form-hint mb5 mt10">Select the evidence you would like to request.</p>
+			
 				
 				
 				<div class="form-group">
-							       
-							      <div class="multiple-choice" data-target="113-view">
+						<p class="form-label-bold">Select the evidence you would like to request</p>
+							      <div class="multiple-choice">
 								      <input id="113" name="type" type="checkbox" value="113">
-								      <label for="113">113</label>
+								      <label for="113">GP Report</label>
 								    </div>	
-								    
-								    <div class="panel panel-border-narrow js-hidden" id="113-view">
-										<label for="113-reason">
-											Reason for requesting a 113:
-										</label>
-										<textarea class="form-control form-control-2-4" name="113Request" id="113-reason" rows="4"></textarea>
-								    </div>							    
-
 					  
 								    <div class="multiple-choice" data-target="frr-view">
 								      <input id="frr" name="type" type="checkbox" value="FRR">
-								      <label for="frr">FRR</label>
+								      <label for="frr">Further evidence request</label>
 								    </div>	
 								    
 								    <div class="panel panel-border-narrow js-hidden" id="frr-view">
-										<div class="form-group">
-												<label for="FRR-reason">
-														Reason for requesting a FRR:
-													</label>
-													<textarea class="form-control form-control-2-4" name="FRRRequest" id="FRR-reason" rows="4"></textarea>
-										</div>
 									  <div class="form-group">	
 										<label for="frr-reason">
 										What evidence do you require?
@@ -179,7 +165,33 @@
 						    
 					</div>
 
-				
+					<div class="form-group">
+							<fieldset>
+						  
+							  <legend>
+								<label class="form-label-bold block mb10">
+										Reason for requesting this evidence
+								</label>
+							  </legend>
+						  
+							  <div class="multiple-choice">
+								<input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
+								<label for="example-contact-by-email">Insufficient evidence to support claimants statements</label>
+							  </div>
+
+							
+						  
+							  <div class="multiple-choice" data-target="contact-by-text">
+								<input id="example-contact-by-text" type="radio" name="radio-contact-group" value="No">
+								<label for="example-contact-by-text">Other</label>
+							  </div>
+							  <div class="panel panel-border-narrow js-hidden" id="contact-by-text">
+								<label class="form-label" for="contact-text-message">Add details</label>
+								<textarea class="form-control form-control-2-4" name="113Request" id="113-reason" rows="4"></textarea>
+							  </div>
+						  
+							</fieldset>
+						  </div>
 				
 			</fieldset>
 				
