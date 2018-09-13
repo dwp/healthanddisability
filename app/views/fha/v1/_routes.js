@@ -13,6 +13,8 @@ var slotsData = require('../../../../app/views/fha/v1/data/slots-data.js')
 var slotsData2 = require('../../../../app/views/fha/v1/data/slots-data-2.js')
 var commentsData = require('../../../../app/views/fha/v1/data/comments.js');
 var appointmentHistoy = require('../../../../app/views/fha/v1/data/appointmentHistory.js');
+var observations = [];
+
 
 
 
@@ -1116,7 +1118,27 @@ router.get('/capacity/manage-centre/capacity-2', function(req, res, next){
 });
 
 
+router.get('/victorcastillo/general-observations', function(req, res, next){
+  res.locals.comments = observations
+  next()
+})
 
+router.post('/victorcastillo/general-observations', function(req, res, next){
+  var time = new Date();
+  res.locals.comments = observations
+
+
+    res.locals.comments.push({
+      comment: req.body.comment,
+      timestamp: time.getTime(),
+      dateFormatted: moment(time).format("dddd DD MMM YYYY hh:mm a"),
+      name: "Shelia Hopper",
+      hasComment: true,
+      isCustomer: true
+      })
+    res.render("fha/v1/victorcastillo/general-observations");
+
+})
 
 
 

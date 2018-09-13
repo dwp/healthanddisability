@@ -1,0 +1,68 @@
+{% extends path1+"/_layoutRecording.html" %}
+
+{% block citizen_content %}
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>	
+<h1 class="heading-large mt0">General observations</h1>
+
+<form class="m-t-xl" method="post">
+
+	<div class="form-group">
+		<label class="form-label m-b-xs" for="add-comment">Your comment</label>
+		<textarea class="form-control span-width" name="comment" id="add-comment" rows="5"></textarea>
+	</div>
+
+	<p><button type="submit" class="button">Save comment</button></p>
+
+</form>
+</div>
+<div class="column-two-thirds">
+<h2 class="heading-medium">Observations</h2>
+<div class="panel">
+			{% for comment in comments|sort(attribute='timestamp', reverse=true) %}
+			
+			<div class="panel alt" >
+				<h3  class="heading-small mt0">{{comment.name}}</h3>
+				{% if not comment.hasComment %}
+				<h4>
+					{{ 'Customer' if comment.isCustomer }} {{ 'Appointee' if not comment.isCustomer }} passed security</h4>
+				{% endif %}
+			
+			<p class="form-hint">{{comment.dateFormatted}}</p>
+			{% if comment.hasComment %}
+			<p>{{comment.comment}}</p>
+			{% endif %}
+		</div>
+		{% endfor %}
+
+
+  </div>
+	</div>
+	</div>
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
