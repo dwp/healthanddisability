@@ -1,42 +1,14 @@
-{% extends path+"/_layout.html" %}
+{% extends path+"/_layout-caselist.html" %}
 
-{% block assess_content %}
+{% block horizontal_secondary_nav %}
+              
+{{ secondaryNav.nav("review", "requested-medical-evidence" ) }}
 
-<main id="content" role="main" class="main-content">
 
-      <div class="container">
-          {% include path+"/caselist/_nav.html" %}
-          <div class="grid-row">
-            <div class="column-one-quarter">
-                {% include path+"/caselist/_search-box.html" %}
-  
-              <div class="details-nav v2">
-             <ul>
-                <li>
-                    <a href="caselist.html">All cases</a>
-                  </li>
-             <li>
-             <a href="referrals">Referral's (28)</a>
-           </li>
-           <li class="active_detail">
-              <a href="review">Review's (10)</a>
-              <ul>
-                  <li><a href="ready-for-review.html">Ready for review (6)</a></li>
-                   <li><a href="requested-medical-evidence.html">Requested medical evidence (4)</a></li>
-                 
-                </ul>
-            </li>
-              <li>
-                  <a href="appointments">Appointments (10)</a>
-                </li>
-                <li>
-                    <a href="assessment">Todays assessments (24)</a>
-                  </li>
-          </ul>
-        </div>
-          </div>
-          <div class="column-three-quarters">
-            <h2 class="heading-medium mt0"><span class="heading-xlarge">4</span><br/>Requests for medical evidence</h2>
+{% endblock %}  
+
+{% block caselist_content %}
+<h2 class="heading-medium mt0"><span class="heading-xlarge">4</span><br/>Requests for medical evidence</h2>
               <table>
 
                 <thead>
@@ -82,10 +54,4 @@
   
 
               </table>
-          </div><!-- column -->
-        </div><!-- row -->
-      </div><!-- container -->
-
-</main>
-
 {% endblock %}

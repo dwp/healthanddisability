@@ -1,44 +1,15 @@
-{% extends path+"/_layout.html" %}
+{% extends path+"/_layout-caselist.html" %}
 
-{% block assess_content %}
+{% block horizontal_secondary_nav %}
+              
+{{ secondaryNav.nav("referrals") }}
 
-<main id="content" role="main" class="main-content">
 
-      <div class="container">
-          {% include path+"/caselist/_nav.html" %}
-        <div class="grid-row">
-          <div class="column-one-quarter">
-              {% include path+"/caselist/_search-box.html" %}
+{% endblock %}  
 
-            <div class="details-nav v2">
-           <ul>
-              <li>
-                  <a href="caselist.html">All cases</a>
-                </li>
-    
-             <li class="active_detail">
-             <a href="referrals">Referral's (49)</a>
-             <ul>
-               <li><a href="new-referrals">New referrals (32)</a></li>
-               <li><a href="uc50-posted" >UC50 Posted (9)</a></li>
-               <li><a href="uc50-recieved">UC50 recieved (8)</a></li>
-             </ul>
-           </li>
-           <li>
-              <a href="review">Review's (10)</a>
-            </li>
+{% block caselist_content %}
 
-              <li>
-                  <a href="appointments.html">Appointments (10)</a>
-                </li>
-                <li>
-                    <a href="assessment.html">Todays assessments (24)</a>
-                  </li>
-          </ul>
-        </div>
-          </div>
-          <div class="column-three-quarters">
-            <h2 class="heading-medium mt0"><span class="heading-xlarge">49</span><br/>Referrals /  <a href="assign-to-available-agents">Assign to available agents</a></h2>
+  <h2 class="heading-medium mt0"><span class="heading-xlarge">49</span><br/>Referrals /  <a href="assign-to-available-agents">Assign to available agents</a></h2>
             
             
             
@@ -52,19 +23,61 @@
                   </tr>
                 </thead>
 
-                
-                
-                {% include path+"/caselist/_table_data.html" %}
-                {% include path+"/caselist/_table_data.html" %}
-                {% include path+"/caselist/_table_data.html" %}
-                {% include path+"/caselist/_table_data.html" %}
+    
+    <tr>
+      <td ><a href="review/timeline"><span class="visually-hidden">Name</span>Tomas Fernandez </a><span class="text-secondary block"><span class="visually-hidden">Nino</span>AA 12 34 56 B</span></td>
+  
+    </tr>
+
+
+    <tr>
+      <td ><a href="#"><span class="visually-hidden">Name</span>Tony Johnson</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>BB 12 34 56 C</span></td>
+     
+    </tr>
+
+    <tr>
+      <td ><a href="#"><span class="visually-hidden">Name</span>Mia Russell</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>CC 12 34 56 D</span></td>
+     
+    </tr>
+
+    <tr>
+      <td ><a href="#"><span class="visually-hidden">Name</span>Yeldon Finkelstein</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>BB 12 34 56 C</span></td>
+     
+    </tr>
+
+    <tr>
+      <td ><a href="#"><span class="visually-hidden">Name</span>Ana Isabel Cruz</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>BB 12 34 56 C</span></td>
+      
+    </tr>
+
+    <tr>
+      <td ><a href="#"><span class="visually-hidden">Name</span>Lucas Moran</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>GG 12 34 56 F</span></td>
+     
+    </tr>
+
+    <tr>
+      <td ><a href="#"><span class="visually-hidden">Name</span>Berat Karagöz</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>HH 12 34 56 J</span></td>
+    </tr>
+
+    <tr>
+      <td ><a href="#"><span class="visually-hidden">Name</span>Taha Sağlam</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>JJ 12 34 56 K</span></td>
+
+    </tr>
+
+
+    <tr>
+      <td ><a href="#"><span class="visually-hidden">Name</span>Aaron Murray</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>KK 12 34 56 L</span></td>
+  
+    </tr>
+
+    <tr>
+      <td ><a href="#"><span class="visually-hidden">Name</span>Charlie Reid</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>LL 12 34 56 M</span></td>
+     
+    </tr>
+
+    
+
                 
 
               </table> 
-          </div><!-- column -->
-        </div><!-- row -->
-      </div><!-- container -->
-
-</main>
-
 {% endblock %}
