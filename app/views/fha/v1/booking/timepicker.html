@@ -11,17 +11,22 @@
 {% block citizen_content %}
 
 <div class="container">
-        <h3 class="heading-large no-kdBar">Rearrange appointment</h3>
+        <h1 class="heading-large no-kdBar">Rearrange appointment</h3>
+        {% if query.changedBy == "customer" and customer.ableToRearrange == false %}
+        <div class="panel panel-border-wide" id="customer-rearranged">
+            <p>{{customer.name.first}} has previously re-arranged their appointment. A new appointment can only be booked for before their current appointment date.</p>
+        </div>
 
+        {% endif %}
         <form action="timepicker-post" method="post">
 
         <fieldset class="form-group">
             <legend class="form-label-bold">Choose an appointment time</legend>
 
-            {% for appointment in availableAppointments | sort(attribute='appointmentDate') | limit(query.number) %}
+            {% for appointment in availableAppointments | sort | limit(query.number) %}
             <div class="multiple-choice">
-                <input type="radio" name="appointment" id="available-appointments-{{loop.index}}" value="{{appointment.appointmentDate}}">
-                <label for="available-appointments-{{loop.index}}">{{appointment.appointmentDate | formatDate("dddd D MMMM YYYY h:mma")}}</label>
+                <input type="radio" name="appointment" id="available-appointments-{{loop.index}}" value="{{appointment}}">
+                <label for="available-appointments-{{loop.index}}">{{appointment | formatDate("dddd D MMMM YYYY h:mma")}}</label>
             </div>
 
             {% endfor %}

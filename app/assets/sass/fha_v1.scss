@@ -841,6 +841,10 @@ span.status {
 	font-size: 15px;
 	position: relative;
 	top: -1px;
+	&.large {
+		font-size: 19px;
+		padding-top: 7px;
+	}
 	&.red {
 		color: #fff;
 		background: $mellow-red;
