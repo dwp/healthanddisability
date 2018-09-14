@@ -446,7 +446,9 @@ router.post('/booking/arrived/:customerId*', function(req, res, next){
 router.get('*/timepicker', function(req, res, next){
   var getAppointemnts = require('../../../../app/views/fha/v1/data/availableAppointments.js');
   var showAppointmentsAfter = 15;
-  var showAppointmentsBefore = -5;
+
+
+  var showAppointmentsBefore = 0- moment(res.locals.customer.appointmentDate).diff(moment(), "days");
   if(res.locals.query.changedBy == 'customer' && !res.locals.customer.ableToRearrange ){
     showAppointmentsAfter = 0;
   }
