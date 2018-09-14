@@ -74,6 +74,7 @@ router.get('/clearSession',function(req, res, next) {
   req.session.data.nuggets = [];
   req.session.data.withdesc = false;
   req.session.data.physexam = false;
+  observations = [];
   nug_id = 0;
   res.send("success");
 })
@@ -458,7 +459,6 @@ router.get('*/timepicker', function(req, res, next){
 
   if(res.locals.query.cshu == 'true') {
     date = moment().format();
-    0  
   }
 
   var availableAppointments = getAppointemnts.generateAppointmentDates(date, showAppointmentsBefore, showAppointmentsAfter);
@@ -1137,7 +1137,7 @@ router.get('/victorcastillo/general-observations', function(req, res, next){
   next()
 })
 
-router.post('/victorcastillo/general-observations', function(req, res, next){
+router.post('/victorcastillo/general-observations-post', function(req, res, next){
   var time = new Date();
   res.locals.comments = observations
 
@@ -1150,7 +1150,7 @@ router.post('/victorcastillo/general-observations', function(req, res, next){
       hasComment: true,
       isCustomer: true
       })
-    res.render("fha/v1/victorcastillo/general-observations");
+    res.redirect(301, "/fha/v1/victorcastillo/general-observations");
 
 })
 
