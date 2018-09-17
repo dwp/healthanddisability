@@ -9,7 +9,7 @@
 
 {% block caselist_content %}
 
-            <h2 class="heading-medium mt0"><span class="heading-xlarge">{{customers.length}}</span><br/>Ready to book</h2>
+            <h2 class="heading-medium mt0"><span class="heading-xlarge">{{customers.length}}</span><br/>Booked appointments</h2>
               <table class="zebra">
 
                 <thead>
@@ -22,7 +22,10 @@
 
                 <tr>
                   <td ><a href="booking/booked/{{customer._id}}/details"><span class="visually-hidden">Name</span>{{customer.name.fullName}}</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span></td>
-                  <td>{{customer.appointmentDate | formatDate("D MMMM YYYY")}} at {{customer.appointmentTime}}</td>
+                  <td>
+                  {{customer.appointmentDate | formatDate("D MMMM YYYY")}} <br>
+                  {{customer.appointmentDate | formatDate("h:mma")}}
+                  </td>
                 </tr>
                 {% endfor %}
 

@@ -15,11 +15,9 @@
       <div class="evidence-panel">
         <h4 class="heading-small">Appointment booked</h4> 
         
-        {% if customer.newAppointmentDate %}
-          <p class="lede">{{customer.newAppointmentDate |formatDate('dddd D MMMM YYYY')}} at {{customer.newAppointmentDate |formatDate('h:mma')}}</p>
-        {% else %}
-          <p class="lede">{{customer.appointmentDate |formatDate('dddd D MMMM YYYY')}} at {{customer.appointmentTime}}</p>
-        {% endif %}
+        
+          <p class="lede">{{customer.appointmentDate |formatDate('dddd D MMMM YYYY')}} <br> {{customer.appointmentDate |formatDate('h:mma')}}</p>
+        
       {% endif %}
     </div>
 
@@ -56,12 +54,13 @@
         </div> 
         {% endif %}
 
-        {% if customer.appointmentDate %}
+        {% if customer.originalAppointmentDate %}
         <span class="line"></span>
         <div class="timeline__event">
           
             <h3 class="heading-small">Appointment booked</h3>
-            <p class="mt20">Appointment details: {{customer.appointmentDate | formatDate("D MMMM YYYY")}} at {{customer.appointmentTime}}</p>
+            <p class="mt20">Appointment details: 
+            {{customer.originalAppointmentDate | formatDate("D MMMM YYYY")}} at {{customer.originalAppointmentDate | formatDate("hh:mma")}}</p>
             <p class="timeline_datetime">{{customer.receivedDate | formatDateAdd2Days("D MMMM YYYY")}}</p>
         </div> 
         {% endif %}

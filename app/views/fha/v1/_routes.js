@@ -12,11 +12,8 @@ var staffData2 = require('../../../../app/views/fha/v1/data/staff-data-2.js')
 var slotsData = require('../../../../app/views/fha/v1/data/slots-data.js')
 var slotsData2 = require('../../../../app/views/fha/v1/data/slots-data-2.js')
 var commentsData = require('../../../../app/views/fha/v1/data/comments.js');
-var appointmentHistoy = require('../../../../app/views/fha/v1/data/appointmentHistory.js');
+var appointmentHistory = require('../../../../app/views/fha/v1/data/appointmentHistory.js');
 var observations = [];
-
-
-
 
 
 router.get('*', function (req, res, next) {
@@ -450,8 +447,7 @@ router.get('*/timepicker', function(req, res, next){
   var getAppointemnts = require('../../../../app/views/fha/v1/data/availableAppointments.js');
   var showAppointmentsAfter = 15;
 
-
-  var showAppointmentsBefore = 0- moment(res.locals.customer.appointmentDate).diff(moment(), "days");
+  var showAppointmentsBefore = 0 - moment(res.locals.customer.appointmentDate).diff(moment(), "days");
   if(res.locals.query.changedBy == 'customer' && !res.locals.customer.ableToRearrange ){
     showAppointmentsAfter = 0;
   }
@@ -459,7 +455,13 @@ router.get('*/timepicker', function(req, res, next){
 
   if(res.locals.query.cshu == 'true') {
     date = moment().format();
+    showAppointmentsBefore = 1;
   }
+  console.log(res.locals.customer.ableToRearrange)
+  console.log("diff: " + moment(res.locals.customer.appointmentDate).diff(moment(), "days"))
+  console.log('showAppointmentsBefore: ' + showAppointmentsBefore)
+  console.log('showAppointmentsAfter: ' + showAppointmentsAfter)
+  console.log(date)
 
   var availableAppointments = getAppointemnts.generateAppointmentDates(date, showAppointmentsBefore, showAppointmentsAfter);
   
@@ -542,7 +544,6 @@ router.get('/booking/decision/:customerId/:page', function(req, res, next){
 router.post('/booking/booked/:customerId/request-rearrangement-post', function(req, res, next){  
   
   var changedByCustomer = req.body.changedByCustomer === 'yes' || false;
-  console.log(appointmentHistory);
   req.session.apointmentHistory = {
       _id: req.params.customerId,
       entryDate: moment(new Date()).format(),
@@ -613,7 +614,7 @@ router.post('*/:customerId/timepicker-post', function(req, res, next){
       appointmentDate: req.body.appointment
     })
 
-    res.locals.customer.newAppointmentDate = req.body.appointment;
+    res.locals.customer.appointmentDate = req.body.appointment;
     delete req.session.apointmentHistory;
 
     var customers = require('../../../../app/views/fha/v1/data/booked.js');
