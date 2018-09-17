@@ -2,23 +2,8 @@
 
 
 {% block left_content %}
-{% if customer._id == "mendez" %}
-
-{% include path1+"/_mendez_left_content.html" %}
-
-{% else %}
  <p class="mt10 mb0 bold-small">Booked</p>
-
-          
-{% if customer.ableToRearrange %}
-<p class="mt20"><a href="/{{path2}}/{{customer._id}}/timepicker" class="button">Rearrange appointment</a></p>
-{% else %}
-<p class="mt20"><a href="/{{path2}}/{{customer._id}}/request-rearrangement" class="button">Request re-arrangement</a></p>
-{% endif %}
+<p class="mt20"><a href="/{{path2}}/{{customer._id}}/request-rearrangement" class="button">Rearrange appointment</a></p>
 
 <hr>
-
-<ul>
-</ul>
-{% endif %}
 {% endblock %}

@@ -1,4 +1,21 @@
-module.exports = [
+var moment = require('moment');
+
+module.exports = {
+  generateAppointmentDates: function(appointmentDate, beforeAppDate, afterAppDate){
+    var dates = [];
+
+
+    for(var i = beforeAppDate; i < afterAppDate; i++){
+      var date = moment(appointmentDate).add(i, 'days').hours(14).minutes(0);
+      if(date.day() > 0 && date.day() < 6){
+        dates.push(date);
+      }
+    }
+
+    return dates;
+  },
+
+  appointmentDates: [
   {
     "daysInFuture": 19,
     "appointentTime": 9,
@@ -150,3 +167,4 @@ module.exports = [
     "appointmentDate": "2018-07-07T14:00:13+00:00"
   }
 ]
+}

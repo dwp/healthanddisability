@@ -1,10 +1,11 @@
 {% extends path+"/_layout.html" %}
-{% import path1+"/_macros_nav.html" as nav %}
+
 
 {% block assess_content %}
 
+ 
 
-  <main id="content" role="main" class="main-content-inner">
+  <main id="content" role="main" class="main-content-inner review-panel">
 
     <div class="container">
     
@@ -20,11 +21,14 @@
       	 <div class="case-status">
 		 
  <p class="mt10 mb0 bold-small">Assessment started</p>
- 		
+
 		  <p class="mt10">Assigned to Heather Harrison</p>
-		  <!-- <p><a href="/assess/v8/victorcastillo/evidence/finish" class="button">Finish assessment</a></p> -->
+
 		  <hr>
-		  
+		 <!-- <ul class="secondary-actions">
+			  	  <li><a href="/{{path}}/victorcastillo/general-observations">General observations</a></li>
+			  	  <li><a href="/{{path}}/assessment/evidence/stopAssess">Stop assessment</a></li>
+		      </ul> -->
 	  </div>
       	
       	
@@ -34,8 +38,7 @@
       
         <div class="column-three-quarters main-area">
         
-        
-  {#  This is the BIG BLUE BAR at the top - #jussayin #}
+        {#  This is the BIG BLUE BAR at the top - #jussayin #}
   {% include path1+"/_staff_heading.html" %}
 
           <div nunj-block="citizen_content">
@@ -47,8 +50,17 @@
         
       </div><!-- row -->
     </div><!-- container -->
+    
+   
 
   </main>
+  
+  
+  
+   
+  
+
+
 
 {% endblock %}
 
@@ -73,12 +85,19 @@
     });
   });
 </script>
+
+
+
 {% endblock %}
 
 {% block footer_top %}
 {{ super() }}
 <p class="font-xsmall">
+  <a href="wca-index">start again</a>&nbsp;&nbsp;
   <a href="/{{ path }}/clearSession" id="clear_data" class="function_link">clear data</a>
-  | <a href="/{{ path }}/prefillAssessment" id="prefill" class="function_link">prefill</a>
 </p>
 {% endblock %}
+
+
+
+

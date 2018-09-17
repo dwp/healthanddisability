@@ -19,11 +19,21 @@
                     <th>Received from scrutiny</th>
                   </tr>
                 </thead>
-                {% for customer in customers | sort(false, false, 'receivedDate') %}
+                {% for customer in customers | sort(false, false, 'receivedDate') | selectattr('cshu') %}
 
                 <tr>
                   <td ><a href="booking/referrals/{{customer._id}}/details"><span class="visually-hidden">Name</span>{{customer.name.fullName}}</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span></td>
-                  <td>{{customer.receivedDate | formatDate("D MMMM YYYY")}}</td>
+                  <td>{{customer.receivedDate | formatDate("D MMMM YYYY")}}
+                   <br> <span class="status orange">Sent home unseen</span>
+                </td>
+                </tr>
+                {% endfor %}
+                {% for customer in customers | sort(false, false, 'receivedDate') | rejectattr('cshu') %}
+
+                <tr>
+                  <td ><a href="booking/referrals/{{customer._id}}/details"><span class="visually-hidden">Name</span>{{customer.name.fullName}}</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span></td>
+                  <td>{{customer.receivedDate | formatDate("D MMMM YYYY")}}
+                </td>
                 </tr>
                 {% endfor %}
 

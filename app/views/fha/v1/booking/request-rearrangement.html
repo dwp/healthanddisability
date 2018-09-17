@@ -13,7 +13,7 @@
 <div class="container">
     <div class="grid-row mt30">
         <div class="column-full">
-            <h1 class="heading-medium mt0">Request appointment rearrangement</h1>
+            <h1 class="heading-large no-kdBar">Rearrange appointment</h1>
             
             <form action="request-rearrangement-post" method="post">
                 <fieldset class="form-group">
@@ -24,9 +24,11 @@
                         <input type="radio" name="changedByCustomer" id="changedByCustomer-yes" value="yes">
                         <label for="changedByCustomer-yes">Yes</label>
                     </div>
+                    {% if customer.ableToRearrange == false %}
                     <div class="panel panel-border-wide js-hidden" id="customer-rearranged">
-                        <p>We are unable to rearrange the appointment until a decision maker has reviewed the reasons for rearrangment.</p>
+                        <p>{{customer.name.first}} has previously re-arranged their appointment. A new appointment can only be booked for before their current appointment date.</p>
                     </div>
+                    {% endif %}
                     <div class="multiple-choice">
                         <input type="radio" name="changedByCustomer" id="changedByCustomer-no" value="no">
                         <label for="changedByCustomer-no">No - We have had to change the appointment</label>
@@ -34,7 +36,7 @@
                 </fieldset>
                 <div class="form-group">
                     <label class="form-label-bold">Why does the appointment need to be rearranged? </label>
-                    <textarea name="reason" class="form-control span-width"></textarea>
+                    <textarea name="comments" class="form-control span-width"></textarea>
                 </div>
                 <p>
                     <button class="button">Confirm</button>
