@@ -313,7 +313,7 @@ router.get('/booking/referrals/:customerId*', function(req, res, next){
 
 
 
-router.get('/booking/booked/:customerId/appointment-details', function(req, res, next){
+router.get('*/:customerId/appointment-details', function(req, res, next){
   res.locals.history = appointmentHistory.filter(entry => entry._id == req.params.customerId);
   console.log(res.locals.history);
   next()
@@ -604,6 +604,11 @@ router.post('*/:customerId/timepicker-post', function(req, res, next){
       res.locals.customer.cshu = true;
       referrals.push(res.locals.customer);
       appointmentHistory.push(req.session.apointmentHistory);
+      
+      console.log(req.session.apointmentHistory);
+      delete req.session.apointmentHistory;
+
+      res.locals.customer.appointmentDate = undefined;
 
       res.redirect(302, '/' + res.locals.path + '/booking/referrals/' + req.params.customerId + '/appointment-details');
 
@@ -618,6 +623,7 @@ router.post('*/:customerId/timepicker-post', function(req, res, next){
 
     appointmentHistory.push(req.session.apointmentHistory);
 
+    
     appointmentHistory.push({
       _id: req.params.customerId,
       title: "Appointment Booked",

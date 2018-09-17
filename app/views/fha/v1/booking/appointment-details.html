@@ -13,11 +13,13 @@
     {% if customer.appointmentDate %}
     <div class="column-half">
       <div class="evidence-panel">
-        <h4 class="heading-small">Appointment booked</h4> 
+        <h4 class="heading-small">Appointment Booked</h4> 
         
         
           <p class="lede">{{customer.appointmentDate |formatDate('dddd D MMMM YYYY')}} <br> {{customer.appointmentDate |formatDate('h:mma')}}</p>
-        
+          {% if customer.timeArrived %}
+          <p>Arrived at {{customer.timeArrived }}</p>
+          {%endif%}
       {% endif %}
     </div>
 
@@ -44,15 +46,6 @@
         </div>
         {% endfor %}
 
-        {% if customer.decisionType %}
-        <span class="line"></span>
-        <div class="timeline__event">
-          
-            <h3 class="timeline__heading">{{customer.decisionType}}</h3>
-            <p>{{customer.referredReason}}</p>
-            <p class="timeline_datetime">{{customer.referredDate | formatDate("D MMMM YYYY")}}</p>
-        </div> 
-        {% endif %}
 
         {% if customer.originalAppointmentDate %}
         <span class="line"></span>
