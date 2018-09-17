@@ -424,6 +424,9 @@ router.get('/booking/arrived/:customerId*', function(req, res, next){
   res.locals.templatePath = res.locals.path+"/booking/_layout-arrived.html";
   res.locals.customer = customers.filter(customer => customer._id === req.params.customerId)[0];
   console.log(res.locals.customer);
+  res.locals.customer.appointmentDate = moment().hours(14).minutes(0).format();
+  res.locals.customer.originalAppointmentDate = res.locals.customer.appointmentDate;
+  res.locals.customer.receivedDate = moment(res.locals.customer.originalAppointmentDate).subtract(14, "days");
   var appointmentTime = moment(res.locals.customer.appointmentTime, "h:mma");
   res.locals.customer.timeArrived = appointmentTime.add(res.locals.customer.arrivedTime, "minutes").format("h:mma");
 
