@@ -22,7 +22,14 @@
 
         <fieldset class="form-group">
             <legend class="form-label-bold">Choose an appointment time</legend>
+            {% if query.cshu == 'true' %}
 
+            <div class="multiple-choice">
+                <input type="radio" name="appointment" id="available-appointments-unable" value="unableToBook">
+                <label for="available-appointments-unable">Do not book an appointment now</label>
+            </div>
+            <p class="form-block">or</p>
+            {% endif %}
             {% for appointment in availableAppointments | sort | limit(query.number) %}
             <div class="multiple-choice">
                 <input type="radio" name="appointment" id="available-appointments-{{loop.index}}" value="{{appointment}}">

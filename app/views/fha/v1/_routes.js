@@ -596,7 +596,15 @@ router.post('/booking/arrived/:customerId/send-home-post', function(req, res, ne
 });
 
 router.post('*/:customerId/timepicker-post', function(req, res, next){
+    if(req.body.appointment === "unableToBook"){
+      var referrals = require('../../../../app/views/fha/v1/data/referrals.js');
+      res.locals.customer.cshu = true;
+      referrals.push(res.locals.customer);
+      appointmentHistory.push(req.session.apointmentHistory);
 
+      res.redirect(302, '/' + res.locals.path + '/booking/referrals/' + req.params.customerId + '/appointment-details');
+
+    } else {
 
     if(req.session.apointmentHistory.code === "UTA"){
       res.locals.customer.ableToRearrange = false;
@@ -625,7 +633,7 @@ router.post('*/:customerId/timepicker-post', function(req, res, next){
       customers.push(res.locals.customer);
     }
     res.redirect(302, '/' + res.locals.path + '/booking/booked/' + req.params.customerId + '/appointment-details');
-  
+    }
   })
 
 
