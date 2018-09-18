@@ -19,12 +19,8 @@
                             <h4 class="heading-small">{{appointments.nextAvailable | formatDate("dddd D MMMM YYYY")}}</h4>
                             <p>{{appointments.nextAvailable | formatDate("hh:mma")}}</p>
                             <a href="/{{path}}/booking/booked/{{customer._id}}/timeline" class="button">Book this appointment</a>
-                       
                     <hr>
-                    
                     {% endblock %}
-
-
                 </div>
             </div>
             <div class="column-three-quarters main-area">

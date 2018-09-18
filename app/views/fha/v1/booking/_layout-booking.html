@@ -2,8 +2,16 @@
 
 
 {% block left_content %}
- <p class="mt10 mb0 bold-small">Booked</p>
+{% if not customer.appointmentToday %}
+<p class="mt10 mb0 bold-small">Booked</p>
 <p class="mt20"><a href="/{{path2}}/{{customer._id}}/request-rearrangement" class="button">Rearrange appointment</a></p>
+{% else %}
+<p class="mt10 mb0 bold-small">Appointment today</p>
+<form action="arrived-post" method="post">
+<p><button class="button">Log arrival</button></p>
+{% endif %}
+</form>
 
 <hr>
+<p class="mt20"><a href="/{{path2}}/{{customer._id}}/request-rearrangement">Rearrange appointment</a></p>
 {% endblock %}

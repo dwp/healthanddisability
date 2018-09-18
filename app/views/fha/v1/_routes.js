@@ -350,12 +350,12 @@ router.get('/booking/decision/:customerId/appointment-details', function(req, re
 router.post('/booking/booked/:customerId*', function(req, res, next){
   var customers = require('../../../../app/views/fha/v1/data/booked.js');
   var todaysCustomers = require('../../../../app/views/fha/v1/data/todaysAppointments.js');
-  customers.concat(todaysCustomers);
+  var allCustomers = customers.concat(todaysCustomers);
 
   res.locals.section = "booked";
   res.locals.templatePath = res.locals.path+"/booking/_layout-booking.html";
 
-  res.locals.customer = customers.filter(customer => customer._id === req.params.customerId)[0];
+  res.locals.customer = allCustomers.filter(customer => customer._id === req.params.customerId)[0];
   next()
 })
 
@@ -595,6 +595,26 @@ router.post('/booking/arrived/:customerId/send-home-post', function(req, res, ne
     }
 
   res.redirect(301, 'timepicker?reasonNeeded=false&cshu=true');
+
+});
+
+router.post('/booking/booked/:customerId/arrived-post', function(req, res, next){
+  var comments = req.body.otherReason || req.body.reason;
+  
+  res.locals.arrivedTimeMoment = moment(new Date());
+  arrivedTime = res.locals.arrivedTimeMoment.format("h:mm a");
+  res.locals.customer.timeArrived = arrivedTime;
+  res.locals.customer.arrivedTime = 1;
+  res.locals.customer.waitTime = 1;
+  res.locals.customer.arrived = true;
+
+  appointmentHistory.push({
+      _id: req.params.customerId,
+      title: "Arrived at assessment centre at " + arrivedTime,
+      entryDate: res.locals.arrivedTimeMoment.format(),
+    })
+
+  res.redirect(301, '/' + res.locals.path + '/booking/arrived/' + req.params.customerId + '/appointment-details');
 
 });
 
