@@ -29,27 +29,31 @@
 
 </form>
 </div>
-<div class="column-two-thirds">
+<div class="column-full">
 <h2 class="heading-medium">Observations</h2>
-<div class="panel">
+<ul class="comments">
 			{% for comment in comments|sort(attribute='timestamp', reverse=true) %}
 			
-			<div class="panel alt" >
-				<h3  class="heading-small mt0">{{comment.name}}</h3>
-				{% if not comment.hasComment %}
-				<h4>
-					{{ 'Customer' if comment.isCustomer }} {{ 'Appointee' if not comment.isCustomer }} passed security</h4>
-				{% endif %}
-			
-			<p class="form-hint">{{comment.dateFormatted}}</p>
-			{% if comment.hasComment %}
-			<p>{{comment.comment}}</p>
+			<li class="comments-item" >
+					<div class="column-two-thirds">
+							<p>{{comment.comment}}</p>
+			</div>
+				<div class="column-one-third">			<h3  class="heading-small mt0">{{comment.name}}</h3>
+					{% if not comment.hasComment %}
+					<h4>
+						{{ 'Customer' if comment.isCustomer }} {{ 'Appointee' if not comment.isCustomer }} passed security</h4>
+					{% endif %}
+				
+				<p class="form-hint">{{comment.dateFormatted}}</p>
+				{% if comment.hasComment %}</div>
+		
 			{% endif %}
-		</div>
+
+					</li>
 		{% endfor %}
 
 
-  </div>
+				</ul>
 	</div>
 	</div>
   </div><!-- row -->

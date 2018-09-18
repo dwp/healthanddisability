@@ -24,19 +24,9 @@
     	
     	
     	  	
-	{% if data['edit1234'] %}
-                   
-	test1
 
 
-{% endif %}
 
-{% if data['edit5678'] %}
-                   
-test2
-
-
-{% endif %}
     	
     	
     	<div class="notice">
@@ -51,21 +41,39 @@ test2
 
 
 		<div class="evidence-panel-wrapper">
-		
+				{% if checked('type','113') %}
 				<div class="evidence-panel">
-						<h2 class="heading-medium">113 form</h2>
+						<h2 class="heading-medium">GP report (113 form)</h2>
+					
 						<h3 class="heading-small">Reason for request:</h3>
-						<p class="reason">Insufficient evidence to support claimants statements regarding lower limb issues.</p>
+						{% if data['scenario']==='insufficient-113' %}
+						<p class="reason">Insufficient evidence to support claimants statements</p>
+						{% else %}
+					  <p>{{ data['reason-113'] }}</p>
+						{% endif %}
 						<p><a href="#" class="print">Print 113</a></p>
 				</div>
+				{% endif %}
 
+{% if checked('type','FRR') %}
 				<div class="evidence-panel">
-						<h2 class="heading-medium">FRR form</h2>
+						<h2 class="heading-medium">Further medical evidence (FRR form)</h2>
 						<h3 class="heading-small">Reason for request:</h3>
-						<p class="reason">Insufficient evidence to support claimants statements regarding lower limb issues.</p>
+						{% if data['scenario']==='insufficient-frr' %}
+						<p class="reason">Insufficient evidence to support claimants statements</p>
+						{% else %}
+					  <p>{{ data['reason-frr'] }}</p>
+						{% endif %}
+						<h3 class="heading-small">You are requesting this evidence off</h3>
+						{% if checked('hcp-type','gp') %}
+					
+						<p>Dr. Sheila Turner</p>
+						{% elif checked('hcp-type','consultant')%}
+						<p>Dr. Nicholas Kent</p>
+						{% endif %}
 						<p><a href="#" class="print">Print FRR</a></p>
 				</div>
-				
+{% endif %}
 		</div>
 
 		
