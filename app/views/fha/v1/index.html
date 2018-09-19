@@ -29,6 +29,12 @@
                     <div class="grid-row">
                       <div class="column-full">
                         <h1 class="heading-xlarge mt0 mb20">
+                            {% if checked('Choose-centre','Tresco') %}
+                            <span class="heading-secondary">Tresco House</span>
+      {% elif checked('Choose-centre','Fiveways') %}
+      <span class="heading-secondary">Birmingham Fiveways</span>
+      {% endif%}
+                         
                           450 cases
                             </h1>
                           </div>

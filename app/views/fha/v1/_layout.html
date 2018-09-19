@@ -17,9 +17,15 @@
 {% block proposition_header %}
 
   <ul class="user_detail">
-      <li>Tresco House</li>
-      <li><!--Paul Smith -->Heather Harrison</li>
-      <li><a href=""> Sign out</a></li>
+      {% if checked('Choose-centre','Tresco') %}
+      <li><a href="/{{path}}/choose-centre.html">Change centre</a> : Tresco House</li>
+      {% elif checked('Choose-centre','Fiveways') %}
+      <li><a href="/{{path}}/choose-centre.html">Change centre</a> : Birmingham Fiveways</li>
+      {% else %}
+      <li><a href="/{{path}}/choose-centre.html">Choose centre</a></li>
+      {% endif%}
+     <!-- <li>Heather Harrison</li>
+      <li><a href=""> Sign out</a></li> -->
     </ul>
 {% endblock %}
 
