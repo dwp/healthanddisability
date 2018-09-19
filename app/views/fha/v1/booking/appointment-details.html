@@ -17,7 +17,7 @@
         
         
           <p class="lede">{{customer.appointmentDate |formatDate('dddd D MMMM YYYY')}} <br> {{customer.appointmentDate |formatDate('h:mma')}}</p>
-          {% if customer.timeArrived %}
+          {% if customer.arrived %}
           <p>Arrived at {{customer.timeArrived }}</p>
           {%endif%}
       {% endif %}
