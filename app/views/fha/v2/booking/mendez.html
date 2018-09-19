@@ -1,0 +1,179 @@
+{% extends path1+"/_layout.html" %}
+
+{% block heading %}
+
+
+
+
+<div class="staff__heading">
+  <div class="staff__centred">
+    <div class="grid-row">
+      <div class="column-half">
+    <h2 class="heading-xlarge" style="margin:0 0 10px">Mendez Dalton</h2>
+    </div>
+      <div class="column-quarter">
+        <p><span class="font-xsmall">National Insurance Number</span><br /><span class="bold-medium">QQ 53 12 49 C </span></p>
+      </div>
+      <div class="column-quarter">
+        <p><span class="font-xsmall">Date of birth</span><br /><span class="bold-medium">10 June 1980 </span></p>
+      </div>
+      
+
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block left_content %}
+{% include path1+"/_mendez_left_content.html" %}
+{% endblock %}
+
+{% block citizen_content %}
+ {# macro #}
+  {{ nav_mendez.case_tabs("mendez",1,path1) }}
+
+<div class="container">
+
+
+  <div class="grid-row mt30">
+  
+  
+  <div class="column-third">
+  
+     
+    <h3 class="heading-medium mt0">Contact details</h3>
+    <h4 class="heading-small">Phone</h4>
+    <p>0151 924 2080</p>
+    
+    <h4 class="heading-small">Text</h4>
+    <p>07979 000000</p>
+    
+    <h4 class="heading-small">Email</h4>
+    <p>the.victor.castillo@madeup.com</p>
+    
+    <h4 class="heading-small">Postal address</h4>
+    <p class="address-stack">
+    	<span>27 Redhill Lane</span>
+    	<span>Ainsdale</span>
+    	<span>London</span>
+    	<span>Merseyside</span>
+    	<span>PR8 9UE</span>
+    </p>
+
+       
+    
+    </div><!-- column -->
+
+    <div class="column-third">
+            <h3 class="heading-medium mt0">Appointment history</h3>
+
+            <h4 class="heading-small">12th July 2016</h4>
+            <p class="appt-time">14:00</p>
+            <p><span class="status red">CSHU - 15:30</span></p>
+            <h4 class="heading-small">9th May 2015</h4>
+            <p class="appt-time">14:00</p>
+            <p><span class="status red">DNA</span></p>
+            <h4 class="heading-small">1st December 2014</h4>
+            <p class="appt-time">14:00</p>
+            <p><span class="status green">ARRIVED - 13:50</span></p>
+            <h4 class="heading-small">11th November 2014</h4>
+            <p class="appt-time">14:00</p>
+            <p><span class="status grey">Cancelled</span></p>
+        </div>
+
+    
+    <div class="column-third">
+  
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    </div><!-- column -->
+
+    
+  
+    <div class="column-third">
+    <!-- <div class="form-group">
+
+    <fieldset>
+
+      <legend class="visually-hidden">
+        <h1 class="heading-medium">Appointment status</h1>
+      </legend>
+
+      <div class="multiple-choice">
+        <input id="radio-1" type="radio" name="status-group" value="Customer assessed">
+        <label for="radio-1">Customer arrived</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="radio-2" type="radio" name="status-group" value="Customer sent home unseen">
+        <label for="radio-2">Customer sent home unseen</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="radio-3" type="radio" name="status-group" value="Unable to attend">
+        <label for="radio-3">Unable to attend</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="radio-4" type="radio" name="status-group" value="Did not attend">
+        <label for="radio-4">Did not attend</label>
+      </div>
+
+
+    </fieldset>
+
+    <div class="form-group">
+      <p><a href="confirm-app" class="button">Confirm</a></p>
+    </div>
+  </div> -->
+     
+    <h3 class="heading-medium mt0">Appointment details</h3>
+    <h4 class="heading-small">Assessment Centre</h4>
+    <p>Tresco House</p>
+    
+    <h3 class="heading-small mt0">Requirements</h3>
+                    <ul class="filter-list">
+                        <li>Ground floor access</li>
+                        <li>Male health assessor preferred</li>
+                    </ul>
+
+ <form>
+  
+  
+</form>
+    
+    
+    
+    
+    
+    
+    </div><!-- column -->
+    
+    
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

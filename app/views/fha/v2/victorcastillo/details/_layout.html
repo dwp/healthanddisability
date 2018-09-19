@@ -1,0 +1,62 @@
+{% extends path1+"/_layout.html" %}
+
+{% block citizen_content %}
+
+  <div class="container">
+
+    {{ nav.case_tabs("details",1,path1) }}{# macro #}
+
+    <div class="grid-row">
+      <div class="column-third">
+        {% block app_nav %}
+          <div class="details-nav">
+
+			  <ul>
+				<li><a href="index">Illnesses and disabilities </a></li>
+				<li><a href="contact">Tomas's details </a></li>
+				<li><a href="gp">Health care professionals</a></li>
+            </ul>
+            
+          </div>
+        {% endblock %}
+      </div><!-- column -->
+      <div class="column-two-thirds">
+          {% block case_content %}{% endblock %}
+      </div><!-- column-full -->
+    </div><!-- grid-row -->
+  </div><!-- container -->
+{% endblock %}
+
+{% block body_end %}
+  <div id="descriptor_choice" style="display:none; max-height:76%">
+    {% include path2+"/_addremove.html" %}
+  </div>
+  {{ super() }}
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.tag').on('click',function(e)
+    {
+      e.preventDefault();
+      $(this).toggleClass('clicked');
+    });
+
+    $('.tag').on('mouseleave',function(e)
+    {
+      e.preventDefault();
+      $(this).removeClass('clicked');
+    });
+
+    $.fancybox.defaults.beforeShow = function(){
+        $("html").css({'overflow-y':'hidden'});
+    };
+    $.fancybox.defaults.afterClose = function(){
+        $("html").css({'overflow-y':'visible'});
+    };
+  });
+</script>
+{% endblock %}

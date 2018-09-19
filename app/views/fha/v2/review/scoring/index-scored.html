@@ -1,0 +1,79 @@
+{% extends path2+"/_layout.html" %}
+
+{% block scoring_content %}
+
+{{ nav.case_tabs("scoring",1,path1) }}{# macro #}
+
+
+<h2 class="heading-large mt30 mb0">To review</h2>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	<div class="exam-content">
+	
+		<table>
+			
+			<caption>Descriptors to review</caption>
+			
+			
+			<tr class="complete">
+				<th><a href="mobility">Moving around and using steps</a></th>
+				<td><span class="red">10</span></td>
+			</tr>
+			<tr>
+				<th><a href="#">Standing and sitting</a></th>
+				<td><span>Not scored</span></td>
+			</tr>
+
+			
+			<tr class="total-score">
+				<th>Total score: </th>
+				<td>10</td>
+			</tr>
+		<!--	<tr>
+				<th><a href="#">Cardiac</a></th>
+				<td><span>Not scored</span></td>
+			</tr>
+			<tr>
+				<th><a href="#">Respiratory</a></th>
+				<td><span>Not scored</span></td>
+			</tr>
+			<tr>
+				<th><a href="#">Peripheral vascular</a></th>
+				<td><span>Not scored</span></td>
+			</tr>
+			<tr>
+				<th><a href="#">Vision, speech and hearing</a></th>
+				<td><span>Not scored</span></td>
+			</tr>
+			<tr>
+				<th><a href="#">Consciousness</a></th>
+				<td><span>Not scored</span></td>
+			</tr>
+			<tr>
+				<th><a href="#">Continence</a></th>
+				<td><span>Not scored</span></td>
+			</tr>
+			<tr>
+				<th><a href="#">Mental health</a></th>
+				<td><span>Not scored</span></td>
+			</tr> -->
+			
+		</table>
+		
+	</div>
+	
+
+
+
+
+
+
+
+  <!--  <p class="mt30"><a href="/{{path2}}/record_phys_exam" class="button">Finish assessment</a></p> -->
+
+
+
+{% endblock %}
+

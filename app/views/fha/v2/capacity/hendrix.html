@@ -1,0 +1,95 @@
+{% extends path1+"/_addlayout.html" %} 
+
+{%
+set staff = [
+  {
+    "id": "5aa7dcc38b1b8f87e0393c5e",
+    "index": 5,
+    "guid": "f3309b4f-8fbb-45c5-8427-684b7eb84f29",
+    "surname": "Woodward",
+    "firstname": "Hendrix",
+    "name": "Hendrix Woodward",
+    "gender": "male",
+    "type": "Nurse",
+    "skill": "Neuro",
+    "href": "#",
+    "days": [
+        "Monday 9am - 5pm",
+        "Tuesday 9am - 5pm",
+        "Wedensday 9am - 5pm",
+        "Thursday 9am - 5pm",
+        "Friday 9am - 5pm"
+    ]
+  }
+]
+%}
+
+
+{% block citizen_content %}
+<div class="container">
+    <p><a href="fiveways" class="link-back">Back</a></p>
+    {% for person in staff %}
+    <h3 class="heading-medium mt0">Edit Healthcare Professional</h3>
+    <div class="grid-row mt30">
+        <div class="column-two-thirds">
+            
+            <div class="form-group">
+                <label class="form-label" for="first-name">First name(s)</label>
+                <input class="form-control" id="first-name" type="text" name="first-name" value={{person.firstname}}>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="last-name">Last name</label>
+                <input class="form-control" id="last-name" type="text" name="last-name" value="{{person.surname}}">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="phone">Phone</label>
+                <input class="form-control" id="phone" type="number" name="phone" value={{person.phone}}>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="mobile">Mobile</label>
+                <input class="form-control" id="mobile" type="number" name="mobile" value="{{person.mobile}}">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-control" id="email" type="email" name="email" value="{{person.email}}">
+            </div>
+
+            <div class="form-group">
+            <fieldset>
+                <legend>
+                  <span class="form-label">
+                    What is their gender?
+                  </span>
+                </legend>
+                <div class="multiple-choice">
+                  <input id="gender-female" type="radio" name="gender" value="female" checked>
+                  <label for="gender-female">Female</label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="gender-male" type="radio" name="gender" value="male">
+                  <label for="gender-male">Male</label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="gender-unspecified" type="radio" name="gender" value="unspecified">
+                  <label for="wheelchair-unspecified">Unspecified</label>
+                </div>
+              </fieldset>
+            </div>
+
+            <p><a href="hendrix-skill" class="button">Next</a></p>
+        </div>
+        
+        <!-- column -->
+    </div>
+
+    {% endfor %}
+
+    <!-- row -->
+</div>
+
+<!-- container -->
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

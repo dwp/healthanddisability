@@ -7,12 +7,17 @@ var request = require('request')
 var calendar = require('node-calendar');
 var moment = require('moment')
 
-var staffDataHoliday = require('../../../../app/views/fha/v1/data/staff-data-holiday.js')
-var staffData2 = require('../../../../app/views/fha/v1/data/staff-data-2.js')
-var slotsData = require('../../../../app/views/fha/v1/data/slots-data.js')
-var slotsData2 = require('../../../../app/views/fha/v1/data/slots-data-2.js')
-var commentsData = require('../../../../app/views/fha/v1/data/comments.js');
-var appointmentHistory = require('../../../../app/views/fha/v1/data/appointmentHistory.js');
+var versionNumber = 1;
+var filePath = '../../../../app/views/fha/v' + versionNumber;
+var viewPath = 'fha/v' + versionNumber;
+
+
+var staffDataHoliday = require(filePath +'/data/staff-data-holiday.js')
+var staffData2 = require(filePath +'/data/staff-data-2.js')
+var slotsData = require(filePath +'/data/slots-data.js')
+var slotsData2 = require(filePath +'/data/slots-data-2.js')
+var commentsData = require(filePath +'/data/comments.js');
+var appointmentHistory = require(filePath +'/data/appointmentHistory.js');
 var observations = [];
 
 
@@ -24,6 +29,10 @@ router.get('*', function (req, res, next) {
   res.locals.path1 = res.locals.path + "/" + bits[0]
   res.locals.path2 = res.locals.path + "/" + bits[0] + "/" + bits[1]
   res.locals.stage = 1;
+
+  res.locals.cssPath = '/public/stylesheets/fha_v' + versionNumber +'.css';
+  res.locals.javascriptPath = "/public/javascripts/application_v" + versionNumber + ".js"
+  res.locals.versionNumber = versionNumber;
   next()
 })
 
@@ -132,8 +141,8 @@ router.get('*', function (req, res, next) {
   res.locals.path = req.baseUrl.substr(1)
   // create some other useful path variables.
   var bits = req.params[0].substr(1).split('/')
-  res.locals.root = "/fha/v1"
-  res.locals.manageStaffPath = "fha/v1/capacity/manage-staff"
+  res.locals.root = '/fha/v' + versionNumber
+  res.locals.manageStaffPath = viewPath +'/capacity/manage-staff'
   res.locals.path1 = res.locals.path + "/" + bits[0]
   res.locals.path2 = res.locals.path + "/" + bits[0] + "/" + bits[1]
   res.locals.stage = req.cookies.stage || 1;
@@ -152,8 +161,8 @@ router.post('*', function (req, res, next) {
   res.locals.path = req.baseUrl.substr(1)
   // create some other useful path variables.
   var bits = req.params[0].substr(1).split('/')
-  res.locals.root = "/fha/v1"
-  res.locals.manageStaffPath = "fha/v1/capacity/manage-staff"
+  res.locals.root = '/fha/v' + versionNumber
+  res.locals.manageStaffPath = viewPath + '/capacity/manage-staff'
   res.locals.path1 = res.locals.path + "/" + bits[0]
   res.locals.path2 = res.locals.path + "/" + bits[0] + "/" + bits[1]
   res.locals.stage = req.cookies.stage || 1;
@@ -175,14 +184,14 @@ router.post('/booking/cancel-appointment', function(req, res, next){
     if(req.body.change_now === "true"){
       res.redirect('timepicker')
     } else {
-      res.redirect('/fha/v1/appointments-changed?reason=' + req.body.reason)
+      res.redirect('/fha/v' + versionNumber +'/appointments-changed?reason=' + req.body.reason)
     }
 
   })
 
 
 function getCentreDetails(req, res){
-  var centres = require('../../../../app/views/fha/v1/data/centres.js'),
+  var centres = require(filePath +'/data/centres.js'),
         centreId = req.params.centreId;
 
   if(centreId){
@@ -196,12 +205,12 @@ function getCentreDetails(req, res){
 };
 
 router.get('/assessment-centres', function(req, res, next){
-  res.locals.centres = require('../../../../app/views/fha/v1/data/centres.js')
+  res.locals.centres = require(filePath +'/data/centres.js')
   next()
 })
 
 router.get('/ready-to-book', function(req, res, next){
-  var customers = require('../../../../app/views/fha/v1/data/referrals.js')
+  var customers = require(filePath +'/data/referrals.js')
   if(req.query.booked){
     customers = customers.filter(customer => customer._id !== req.query.booked);
   }
@@ -211,7 +220,7 @@ router.get('/ready-to-book', function(req, res, next){
 })
 
 router.get('/booked-appointments', function(req, res, next){
-  var customers = require('../../../../app/views/fha/v1/data/booked.js');
+  var customers = require(filePath +'/data/booked.js');
   res.locals.customers = customers.map(customer => {
 
     var arrivedTime = moment(customer.appointmentTime, "h:mma");
@@ -240,14 +249,14 @@ router.post('/booking/history', function(req, res, next){
         hasComment: true,
         isCustomer: true
         })
-      res.render("fha/v1/booking/history");
+      res.render(viewPath +'/booking/history');
 
   })
 router.post('/booking/cancel-appointment', function(req, res, next){
     if(req.body.change_now === "true"){
       res.redirect('timepicker')
     } else {
-      res.redirect('/fha/v1/appointments-changed?reason=' + req.body.reason)
+      res.redirect('/fha/v' + versionNumber +'/appointments-changed?reason=' + req.body.reason)
     }
 
   })
@@ -264,12 +273,12 @@ router.post('/booking/bobby_timeline', function(req, res, next){
         isCustomer: req.body.caller === "customer",
         authenticated: req.body.confirmed
         })
-      res.render("fha/v1/booking/bobby_timeline");
+      res.render(viewPath +'/booking/bobby_timeline');
 
   })
 
 router.get('/assessment-centres', function(req, res, next){
-  res.locals.centres = require('../../../../app/views/fha/v1/data/centres.js')
+  res.locals.centres = require(filePath +'/data/centres.js')
   next()
 })
 
@@ -277,7 +286,7 @@ router.get('/assessment-centres', function(req, res, next){
 
 
 router.get('/decision_maker', function(req, res, next){
-  var customers = require('../../../../app/views/fha/v1/data/decisionMaker.js');
+  var customers = require(filePath +'/data/decisionMaker.js');
   res.locals.customers = customers.map(customer => {
 
     var arrivedTime = moment(customer.appointmentTime, "h:mma");
@@ -289,7 +298,7 @@ router.get('/decision_maker', function(req, res, next){
 })
 
 router.get('/todays-appointments-*', function(req, res, next){
-  var customers = require('../../../../app/views/fha/v1/data/todaysAppointments.js');
+  var customers = require(filePath +'/data/todaysAppointments.js');
   res.locals.customers = customers.map(customer => {
 
     var arrivedTime = moment(customer.appointmentTime, "h:mma");
@@ -303,7 +312,7 @@ router.get('/todays-appointments-*', function(req, res, next){
 })
 
 router.get('/booking/referrals/:customerId*', function(req, res, next){
-  var customers = require('../../../../app/views/fha/v1/data/referrals.js');
+  var customers = require(filePath +'/data/referrals.js');
 
   res.locals.section = "referrals";
   res.locals.templatePath = res.locals.path+"/booking/_layout.html";
@@ -320,11 +329,11 @@ router.get('*/:customerId/appointment-details', function(req, res, next){
 })
 
 router.get('/booking/referrals/:customerId', function(req, res, next){
-  res.render("fha/v1/booking/customer-referral");
+  res.render(viewPath +'/booking/customer-referral');
 })
 
 router.get('/booking/booked/:customerId*', function(req, res, next){
-  var customers = require('../../../../app/views/fha/v1/data/booked.js').concat(require('../../../../app/views/fha/v1/data/todaysAppointments.js'));
+  var customers = require(filePath +'/data/booked.js').concat(require(filePath +'/data/todaysAppointments.js'));
 
   res.locals.section = "booked";
   res.locals.templatePath = res.locals.path+"/booking/_layout-booking.html";
@@ -348,26 +357,26 @@ router.get('/booking/decision/:customerId/appointment-details', function(req, re
 
 
 router.post('/booking/booked/:customerId*', function(req, res, next){
-  var customers = require('../../../../app/views/fha/v1/data/booked.js');
-  var todaysCustomers = require('../../../../app/views/fha/v1/data/todaysAppointments.js');
-  customers.concat(todaysCustomers);
+  var customers = require(filePath +'/data/booked.js');
+  var todaysCustomers = require(filePath +'/data/todaysAppointments.js');
+  var allCustomers = customers.concat(todaysCustomers);
 
   res.locals.section = "booked";
   res.locals.templatePath = res.locals.path+"/booking/_layout-booking.html";
 
-  res.locals.customer = customers.filter(customer => customer._id === req.params.customerId)[0];
+  res.locals.customer = allCustomers.filter(customer => customer._id === req.params.customerId)[0];
   next()
 })
 
 router.get('/booking/booked/:customerId', function(req, res, next){
-  res.render("fha/v1/booking/customer-booked");
+  res.render(viewPath +'/booking/customer-booked');
 })
 
 
 
 
 router.get('/booking/decision/:customerId*', function(req, res, next){
-  var customers = require('../../../../app/views/fha/v1/data/decisionMaker.js');
+  var customers = require(filePath +'/data/decisionMaker.js');
 
   res.locals.section = "decision";
   res.locals.templatePath = res.locals.path+"/booking/_layout-decision.html";
@@ -376,7 +385,7 @@ router.get('/booking/decision/:customerId*', function(req, res, next){
 })
 
 router.post('/booking/decision/:customerId*', function(req, res, next){
-  var customers = require('../../../../app/views/fha/v1/data/decisionMaker.js');
+  var customers = require(filePath +'/data/decisionMaker.js');
 
   res.locals.section = "decision";
   res.locals.templatePath = res.locals.path+"/booking/_layout-decision.html";
@@ -385,40 +394,40 @@ router.post('/booking/decision/:customerId*', function(req, res, next){
 })
 
 router.get('/booking/decision/:customerId', function(req, res, next){
-  res.render("fha/v1/booking/customer-booked");
+  res.render(viewPath +'/booking/customer-booked');
 })
 
 router.get('/booking/decision/:customerId/details', function(req, res, next){
-  res.render("fha/v1/booking/details/contact");
+  res.render(viewPath +'/booking/details/contact');
 })
 
 router.get('/booking/decision/:customerId/illness', function(req, res, next){
-  res.render("fha/v1/booking/details/illness");
+  res.render(viewPath +'/booking/details/illness');
 })
 
 router.get('/booking/decision/:customerId/gp', function(req, res, next){
-  res.render("fha/v1/booking/details/gp");
+  res.render(viewPath +'/booking/details/gp');
 })
 
 router.get('/booking/decision/:customerId/details', function(req, res, next){
-  res.render("fha/v1/booking/details/contact");
+  res.render(viewPath +'/booking/details/contact');
 })
 
 router.get('/booking/decision/:customerId/timeline', function(req, res, next){
-  res.render("fha/v1/booking/timeline");
+  res.render(viewPath +'/booking/timeline');
 })
 
 router.get('/booking/decision/:customerId/evidence', function(req, res, next){
-  res.render("fha/v1/booking/evidence/index");
+  res.render(viewPath +'/booking/evidence/index');
 })
 
 
 router.get('/booking/decision/:customerId/evidence/:page', function(req, res, next){
-  res.render("fha/v1/booking/evidence/" + req.params.page);
+  res.render(viewPath +'/booking/evidence/' + req.params.page);
 })
 
 router.get('/booking/arrived/:customerId*', function(req, res, next){
-  var customers = require('../../../../app/views/fha/v1/data/todaysAppointments.js');
+  var customers = require(filePath +'/data/todaysAppointments.js');
   
   res.locals.section = "arrived";
   res.locals.templatePath = res.locals.path+"/booking/_layout-arrived.html";
@@ -434,7 +443,7 @@ router.get('/booking/arrived/:customerId*', function(req, res, next){
 })
 
 router.post('/booking/arrived/:customerId*', function(req, res, next){
-  var customers = require('../../../../app/views/fha/v1/data/todaysAppointments.js');
+  var customers = require(filePath +'/data/todaysAppointments.js');
   
   res.locals.section = "arrived";
   res.locals.templatePath = res.locals.path+"/booking/_layout-arrived.html";
@@ -447,7 +456,7 @@ router.post('/booking/arrived/:customerId*', function(req, res, next){
 })
 
 router.get('*/timepicker', function(req, res, next){
-  var getAppointemnts = require('../../../../app/views/fha/v1/data/availableAppointments.js');
+  var getAppointemnts = require(filePath +'/data/availableAppointments.js');
   var showAppointmentsAfter = 15;
 
   var showAppointmentsBefore = 0 - moment(res.locals.customer.appointmentDate).diff(moment(), "days");
@@ -477,7 +486,7 @@ router.get('*/timepicker', function(req, res, next){
 })
 
 router.get('*/send-home-2', function(req, res, next){
-  var availableAppointments = require('../../../../app/views/fha/v1/data/availableAppointments.js');
+  var availableAppointments = require(filePath +'/data/availableAppointments.js');
   
   if(!res.locals.query.number){
     res.locals.query.number = 4;
@@ -492,48 +501,48 @@ router.get('*/send-home-2', function(req, res, next){
 
 
 router.get('/booking/arrived/:customerId', function(req, res, next){
-  res.render("fha/v1/booking/customer-booked");
+  res.render(viewPath +'/booking/customer-booked');
 })
 
 router.get('/booking/arrived/:customerId/appointment-details', function(req, res, next){
 
   res.locals.history = appointmentHistory.filter(entry => entry._id === req.params.customerId);
 
-  res.render("fha/v1/booking/appointment-details");
+  res.render(viewPath +'/booking/appointment-details');
   
 })
 
 router.get('/booking/arrived/:customerId/details', function(req, res, next){
-  res.render("fha/v1/booking/details/contact");
+  res.render(viewPath +'/booking/details/contact');
 })
 
 router.get('/booking/arrived/:customerId/illness', function(req, res, next){
-  res.render("fha/v1/booking/details/illness");
+  res.render(viewPath +'/booking/details/illness');
 })
 
 router.get('/booking/arrived/:customerId/gp', function(req, res, next){
-  res.render("fha/v1/booking/details/gp");
+  res.render(viewPath +'/booking/details/gp');
 })
 
 router.get('/booking/arrived/:customerId/details', function(req, res, next){
-  res.render("fha/v1/booking/details/contact");
+  res.render(viewPath +'/booking/details/contact');
 })
 
 router.get('/booking/arrived/:customerId/timeline', function(req, res, next){
-  res.render("fha/v1/booking/timeline");
+  res.render(viewPath +'/booking/timeline');
 })
 
 router.get('/booking/arrived/:customerId/evidence', function(req, res, next){
-  res.render("fha/v1/booking/evidence/index");
+  res.render(viewPath +'/booking/evidence/index');
 })
 
 
 router.get('/booking/arrived/:customerId/evidence/:page', function(req, res, next){
-  res.render("fha/v1/booking/evidence/" + req.params.page);
+  res.render(viewPath +'/booking/evidence/' + req.params.page);
 })
 
 router.get('/booking/arrived/:customerId/:pageName', function(req, res, next){
-  res.render("fha/v1/booking/" + req.params.pageName);
+  res.render(viewPath +'/booking/' + req.params.pageName);
 })
 
 
@@ -541,7 +550,7 @@ router.get('/booking/arrived/:customerId/:pageName', function(req, res, next){
 
 router.get('/booking/decision/:customerId/:page', function(req, res, next){
 
-  res.render("fha/v1/booking/" + req.params.page);
+  res.render(viewPath +'/booking/' + req.params.page);
 })
 
 router.post('/booking/booked/:customerId/request-rearrangement-post', function(req, res, next){  
@@ -598,9 +607,29 @@ router.post('/booking/arrived/:customerId/send-home-post', function(req, res, ne
 
 });
 
+router.post('/booking/booked/:customerId/arrived-post', function(req, res, next){
+  var comments = req.body.otherReason || req.body.reason;
+  
+  res.locals.arrivedTimeMoment = moment(new Date());
+  arrivedTime = res.locals.arrivedTimeMoment.format("h:mm a");
+  res.locals.customer.timeArrived = arrivedTime;
+  res.locals.customer.arrivedTime = 1;
+  res.locals.customer.waitTime = 1;
+  res.locals.customer.arrived = true;
+
+  appointmentHistory.push({
+      _id: req.params.customerId,
+      title: "Arrived at assessment centre at " + arrivedTime,
+      entryDate: res.locals.arrivedTimeMoment.format(),
+    })
+
+  res.redirect(301, '/' + res.locals.path + '/booking/arrived/' + req.params.customerId + '/appointment-details');
+
+});
+
 router.post('*/:customerId/timepicker-post', function(req, res, next){
     if(req.body.appointment === "unableToBook"){
-      var referrals = require('../../../../app/views/fha/v1/data/referrals.js');
+      var referrals = require(filePath +'/data/referrals.js');
       res.locals.customer.cshu = true;
       referrals.push(res.locals.customer);
       appointmentHistory.push(req.session.apointmentHistory);
@@ -634,7 +663,7 @@ router.post('*/:customerId/timepicker-post', function(req, res, next){
     res.locals.customer.appointmentDate = req.body.appointment;
     delete req.session.apointmentHistory;
 
-    var customers = require('../../../../app/views/fha/v1/data/booked.js');
+    var customers = require(filePath +'/data/booked.js');
 
     var inBooked = customers.filter(customer => customer._id === req.params.customerId).length > 0;
     console.log("in booked: " + inBooked)
@@ -648,52 +677,52 @@ router.post('*/:customerId/timepicker-post', function(req, res, next){
 
 
 router.get('/booking/referrals/:customerId/gp', function(req, res, next){
-  res.render("fha/v1/booking/details/gp");
+  res.render(viewPath +'/booking/details/gp');
 })
 
 router.get('/booking/referrals/:customerId/illness', function(req, res, next){
-  res.render("fha/v1/booking/details/illness");
+  res.render(viewPath +'/booking/details/illness');
 })
 
 router.get('/booking/referrals/:customerId/details', function(req, res, next){
-  res.render("fha/v1/booking/details/contact");
+  res.render(viewPath +'/booking/details/contact');
 })
 
 router.get('/booking/referrals/:customerId/timeline', function(req, res, next){
-  res.render("fha/v1/booking/timeline");
+  res.render(viewPath +'/booking/timeline');
 })
 
 router.get('/booking/referrals/:customerId/appointment-details', function(req, res, next){
-  res.render("fha/v1/booking/appointment-details");
+  res.render(viewPath +'/booking/appointment-details');
 })
 
 router.get('/booking/referrals/:customerId/evidence', function(req, res, next){
-  res.render("fha/v1/booking/evidence/index");
+  res.render(viewPath +'/booking/evidence/index');
 })
 
 
 router.get('/booking/referrals/:customerId/evidence/:page', function(req, res, next){
-  res.render("fha/v1/booking/evidence/" + req.params.page);
+  res.render(viewPath +'/booking/evidence/' + req.params.page);
 })
 
 
 router.get('/booking/booked/:customerId/evidence/:page', function(req, res, next){
-  res.render("fha/v1/booking/evidence/" + req.params.page);
+  res.render(viewPath +'/booking/evidence/' + req.params.page);
 })
 
 router.get('/booking/booked/:customerId/illness', function(req, res, next){
-  res.render("fha/v1/booking/details/illness");
+  res.render(viewPath +'/booking/details/illness');
 })
 
 
 
 router.get('/booking/booked/:customerId/gp', function(req, res, next){
-  res.render("fha/v1/booking/details/gp");
+  res.render(viewPath +'/booking/details/gp');
 })
 
 
 router.get('/booking/booked/:customerId/today', function(req, res, next){
-  res.render("fha/v1/booking/details/today");
+  res.render(viewPath +'/booking/details/today');
 })
 router.get('/booking/arrived/:customerId/send-home', function(req, res, next){
   var appointmentTime = moment(res.locals.customer.appointmentTime, "h:mma");
@@ -704,11 +733,11 @@ router.get('/booking/arrived/:customerId/send-home', function(req, res, next){
 
 
 router.get('/booking/booked/:customerId/details', function(req, res, next){
-  res.render("fha/v1/booking/details/contact");
+  res.render(viewPath +'/booking/details/contact');
 })
 
 router.get('/booking/booked/:customerId/timeline', function(req, res, next){
-  res.render("fha/v1/booking/timeline_booked");
+  res.render(viewPath +'/booking/timeline_booked');
 })
 
 router.post('/booking/booked/mendez/mendez_timeline-arrived', function(req, res, next){
@@ -717,18 +746,18 @@ router.post('/booking/booked/mendez/mendez_timeline-arrived', function(req, res,
     arrivedTime = res.locals.arrivedTimeMoment.format("h:mm a");
     res.locals.arrivedTime = arrivedTime;
 
-    res.render("fha/v1/booking/mendez_timeline-arrived");
+    res.render(viewPath +'/booking/mendez_timeline-arrived');
   })
 
 router.post('/booking/booked/:customerId/timeline-arrived', function(req, res, next){
-    var customers = require('../../../../app/views/fha/v1/data/booked.js');
+    var customers = require(filePath +'/data/booked.js');
     res.locals.customer = customers.filter(customer => customer._id === req.params.customerId)[0];
   
     var arrivedTimeMoment = moment(new Date());;
     res.locals.customer.timeArrived = arrivedTimeMoment.format("h:mm a");
 
 
-    res.render("fha/v1/booking/timeline-arrived");
+    res.render(viewPath +'/booking/timeline-arrived');
   })
 
 
@@ -765,30 +794,30 @@ router.post('/booking/arrived/:customerId/send-home-2', function(req, res, next)
 })
 
 router.get('/booking/booked/:customerId/evidence', function(req, res, next){
-  res.render("fha/v1/booking/evidence/index");
+  res.render(viewPath +'/booking/evidence/index');
 })
 
 
 router.get('/booking/booked/:customerId/:pageName', function(req, res, next){
-  res.render("fha/v1/booking/" + req.params.pageName);
+  res.render(viewPath +'/booking/' + req.params.pageName);
 })
 
 
 router.get('/capacity/manage-centre/:centreId*', function(req, res, next){
   getCentreDetails(req, res)
-  res.locals.staff = require('../../../../app/views/fha/v1/data/staff.js')
+  res.locals.staff = require(filePath +'/data/staff.js')
   next()
 })
 
 router.post('/capacity/manage-centre/:centreId*', function(req, res, next){
   getCentreDetails(req, res)
-  res.locals.staff = require('../../../../app/views/fha/v1/data/staff.js')
+  res.locals.staff = require(filePath +'/data/staff.js')
   next()
 })
 
 
 router.get('/capacity/manage-centre/:centreId', function(req, res, next){
-  res.render("fha/v1/capacity/manage-centre/index")
+  res.render(viewPath +'/capacity/manage-centre/index')
 })
 
 router.get('/capacity/manage-centre/:centreId/:section*', function(req, res, next){
@@ -810,13 +839,13 @@ router.get('/capacity/manage-centre/:centreId/manage-staff', function(req, res, 
     res.locals.staffTotals.total = res.locals.staff.length;
 
   //
-  res.render("fha/v1/capacity/manage-staff/index");
+  res.render(viewPath +'/capacity/manage-staff/index');
 })
 
 
 
 router.get('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffId*', function(req, res, next){
-  var staff = require('../../../../app/views/fha/v1/data/staff.js');
+  var staff = require(filePath +'/data/staff.js');
 
   res.locals.person = staff.filter(person => person.id === req.params.staffId)[0];
   var today = moment(new Date(2018,8,9));
@@ -828,7 +857,7 @@ router.get('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffI
 })
 
 router.post('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffId*', function(req, res, next){
-  var staff = require('../../../../app/views/fha/v1/data/staff.js');
+  var staff = require(filePath +'/data/staff.js');
 
   res.locals.person = staff.filter(person => person.id === req.params.staffId)[0];
   var today = moment(new Date(2018,8,9));
@@ -841,20 +870,20 @@ router.post('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staff
 
 router.post('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffId/staff-availability-2', function(req, res, next){
   res.locals.formData = req.body;
-  res.render("fha/v1/capacity/manage-staff/staff-availability-2");
+  res.render(viewPath +'/capacity/manage-staff/staff-availability-2');
   })
 
 router.post('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffId/staff-profile-2', function(req, res, next){
   
   res.locals.formData = req.body;
   
-  res.render("fha/v1/capacity/manage-staff/staff-profile-2");
+  res.render(viewPath +'/capacity/manage-staff/staff-profile-2');
   })
 
 
 router.get('/capacity/manage-centre/:centreId/capacity-overbooked', function(req, res, next){
 
-  res.locals.staff = require('../../../../app/views/fha/v1/data/staff-overbooked.js');
+  res.locals.staff = require(filePath +'/data/staff-overbooked.js');
 
   next();
 }) 
@@ -862,7 +891,7 @@ router.get('/capacity/manage-centre/:centreId/capacity-overbooked', function(req
 
 
 router.get('/capacity/manage-centre/:centreId', function(req, res, next){
-  res.render("fha/v1/capacity/manage-centre/index")
+  res.render(viewPath +'/capacity/manage-centre/index')
 })
 
 router.get('/capacity/manage-centre/:centreId/:section*', function(req, res, next){
@@ -879,14 +908,14 @@ router.get('/capacity/manage-centre/:centreId/manage-staff', function(req, res, 
     res.locals.staffTotals.total = res.locals.staff.length;
 
   //
-  res.render("fha/v1/capacity/manage-staff/index");
+  res.render(viewPath +'/capacity/manage-staff/inde');
 })
 
 
 
 
 router.get('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffId*', function(req, res, next){
-  var staff = require('../../../../app/views/fha/v1/data/staff.js');
+  var staff = require(filePath +'/data/staff.js');
 
   res.locals.person = staff.filter(person => person.id === req.params.staffId)[0];
   next()
@@ -894,16 +923,16 @@ router.get('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffI
 
 
 router.get('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffId', function(req, res, next){
-  res.render("fha/v1/capacity/manage-staff/staff-profile");
+  res.render(viewPath +'/capacity/manage-staff/staff-profile');
 })
 
 router.get('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffId/:section', function(req, res, next){
-  res.render("fha/v1/capacity/manage-staff/" + req.params.section);
+  res.render(viewPath +'/capacity/manage-staff/' + req.params.section);
 })
 
 router.get('/capacity/manage-centre/:centreId/capacity-overbooked', function(req, res, next){
 
-  res.locals.staff = require('../../../../app/views/fha/v1/data/staff-overbooked.js');
+  res.locals.staff = require(filePath +'/data/staff-overbooked.js');
 
   next();
 })  
@@ -928,22 +957,22 @@ router.get('/capacity/manage-centre/:centreId/capacity*', function(req, res, nex
   res.locals.totalSlots = slotsData[req.query.day].length;
 
   res.locals.totalAvailableAppointments = res.locals.staffTotals.available * res.locals.totalSlots;
-  res.render("fha/v1/capacity/manage-centre/capacity");
+  res.render("fha/v' + versionNumber +'/capacity/manage-centre/capacity");
 })
 
 router.get('/capacity/manage-centre/:centreId/details', function(req, res, next){
-  res.render("fha/v1/capacity/manage-centre/index")
+  res.render(viewPath +'/capacity/manage-centre/index')
 })
 
 router.get('/capacity/manage-centre/:centreId/slots', function(req, res, next){
-  res.render("fha/v1/capacity/manage-centre/index")
+  res.render(viewPath +'/capacity/manage-centre/index')
 })
 router.get('/capacity/manage-centre/:centreId/rooms', function(req, res, next){
-  res.render("fha/v1/capacity/manage-centre/index")
+  res.render(viewPath +'/capacity/manage-centre/index')
 })
 
 router.get('/capacity/manage-centre/:centreId/:section', function(req, res, next){
-  res.render("fha/v1/capacity/manage-centre/" + req.params.section)
+  res.render(viewPath +'/capacity/manage-centre/' + req.params.section)
 })
 
 router.post('/capacity/manage-centre/:centreId/manage-staff/new-staff-skill', function(req, res, next){
@@ -953,7 +982,7 @@ router.post('/capacity/manage-centre/:centreId/manage-staff/new-staff-skill', fu
     mobile: req.body.mobile,
     email: req.body.email
   }
-  res.render("fha/v1/capacity/manage-staff/new-staff-skill");
+  res.render(viewPath +'/capacity/manage-staff/new-staff-skill');
 });
 
 router.post('/capacity/manage-centre/:centreId/manage-staff/new-staff-hours', function(req, res, next){
@@ -965,17 +994,17 @@ router.post('/capacity/manage-centre/:centreId/manage-staff/new-staff-hours', fu
     scrutiny: req.body.scrutiny,
     skill: req.body.skill 
   } ; 
-  res.render("fha/v1/capacity/manage-staff/new-staff-hours");
+  res.render(viewPath +'/capacity/manage-staff/new-staff-hours');
 });
 
 router.post('/assessment-centres', function(req, res, next){
-  res.locals.centres = require('../../../../app/views/fha/v1/data/centres.js')
+  res.locals.centres = require(filePath +'/data/centres.js')
   var centre = {
     name: req.body.name,
     location: req.body.location
   };
   res.locals.centres[centre.name] = centre; 
-  res.render("fha/v1/assessment-centres");
+  res.render(viewPath +'/assessment-centres');
 });
 
 router.post('/capacity/new-centre-2', function(req, res, next){
@@ -983,7 +1012,7 @@ router.post('/capacity/new-centre-2', function(req, res, next){
     name: req.body.name,
     location: req.body.location
   } ; 
-  res.render("fha/v1/capacity/new-centre-2");
+  res.render(viewPath +'/capacity/new-centre-2');
 });
 
 router.post('/capacity/new-centre-3', function(req, res, next){
@@ -991,7 +1020,7 @@ router.post('/capacity/new-centre-3', function(req, res, next){
     name: req.body.name,
     location: req.body.location
   } ; 
-  res.render("fha/v1/capacity/new-centre-3");
+  res.render(viewPath +'/capacity/new-centre-3');
 });
 
 
@@ -1017,11 +1046,11 @@ router.post('/capacity/manage-centre/:centreId/manage-staff/', function(req, res
     res.locals.staffTotals.scrutiny = res.locals.staff.filter(staff => staff.scrutinyPaperwork).length;
     res.locals.staffTotals.total = res.locals.staff.length;
 
-  res.render("fha/v1/capacity/manage-staff/index");
+  res.render(viewPath +'/capacity/manage-staff/index');
 });
 
 router.get('/capacity/manage-centre/:centreId/manage-staff/:section', function(req, res, next){
-  res.render("fha/v1/capacity/manage-staff/" + req.params.section)
+  res.render(viewPath +'/capacity/manage-staff/' + req.params.section)
 });
 
 router.post('/capacity/manage-centre/:centreId/edit-centre-3', function(req, res, next){
@@ -1030,7 +1059,7 @@ router.post('/capacity/manage-centre/:centreId/edit-centre-3', function(req, res
   } else {
     res.locals.saturday = false;
   }
-  res.render("fha/v1/capacity/manage-centre/edit-centre-3");
+  res.render(viewPath +'/capacity/manage-centre/edit-centre-3');
 })
 
 router.post('/capacity/manage-centre/:centreId/details', function(req, res, next){
@@ -1046,7 +1075,7 @@ router.post('/capacity/manage-centre/:centreId/details', function(req, res, next
         "open": "Closed"
       }
   }
-  res.render("fha/v1/capacity/manage-centre/index");
+  res.render(viewPath +'/capacity/manage-centre/index');
 })
 
 
@@ -1168,7 +1197,7 @@ router.post('/victorcastillo/general-observations-post', function(req, res, next
       hasComment: true,
       isCustomer: true
       })
-    res.redirect(301, "/fha/v1/victorcastillo/general-observations");
+    res.redirect(301, '/fha/v' + versionNumber +'/victorcastillo/general-observations');
 
 })
 

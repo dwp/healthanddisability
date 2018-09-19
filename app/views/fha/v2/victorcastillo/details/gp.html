@@ -1,0 +1,100 @@
+{% extends path2+"/_layout.html" %}
+
+{% block case_content %}
+
+      <h1 class="heading-large mt10">Health care professionals</h1>
+       <div class="grid-row mt30">
+  
+  
+  <div class="column-two-thirds">
+  <h2 class="heading-medium mt0">General Practioner</h2>
+
+     
+     <h4 class="heading-small mt0">Name</h4>
+    <p>Dr. Sheila Turner</p>
+     
+    
+    <h4 class="heading-small">Surgery phone number</h4>
+    <p>0207 000 0000</p>
+
+
+    
+    <h4 class="heading-small">Address</h4>
+    <p class="address-stack">
+    	<span>0 Brixton Lane</span>
+    	<span>Brixton</span>
+    	<span>London</span>
+    	<span>SW2 000</span>
+    </p>
+
+    <hr />
+
+    <h2 class="heading-medium mt0">Consultant</h2>
+
+     
+     <h4 class="heading-small mt0">Name</h4>
+    <p>Dr. Nicholas Kent</p>
+     
+    
+    <h4 class="heading-small">Phone number</h4>
+    <p>0207 555 4565</p>
+
+
+    
+    <h4 class="heading-small">Address</h4>
+    <p class="address-stack">
+    	<span>10 shevington Lane</span>
+    	<span>Chelsea</span>
+    	<span>London</span>
+    	<span>SW5 000</span>
+    </p>
+
+    <hr />
+    
+     <p><a href="#" class="button secondary">Add or edit health care professionals details</a></p>
+
+       
+    
+    </div><!-- column -->
+    
+    <div class="column-half">
+  
+     
+    
+    </div><!-- column -->
+
+    
+  
+
+
+    
+    </div><!-- column -->
+    
+    
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div><!-- row -->
+           
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.details-nav ul')
+      .children(":nth-child(3)")
+      .addClass('active_detail')
+  });
+</script>
+{% endblock %}

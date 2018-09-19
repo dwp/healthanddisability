@@ -27,12 +27,15 @@
   	
 
     <div class="column-full">
-    
-	    <div class="latest_version">
-      {% include "fha/v1/_front.html" %}
-      
 
-    </div>
+{% set versions = [2,1] %}
+
+{% for version in versions %}
+  <div {% if loop.index == 1 %} class="latest_version" {% endif %}>
+    {% include "fha/v" + version + "/_front.html" %}
+  </div>
+{% endfor %}
+	    
    
     </div>
 

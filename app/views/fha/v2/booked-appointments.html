@@ -1,0 +1,42 @@
+{% extends path+"/_layout-caselist.html" %}
+
+{% block horizontal_secondary_nav %}
+              
+{{ secondaryNav.nav("appointments", "booked-appointments" ) }}
+
+
+{% endblock %}  
+
+{% block caselist_content %}
+
+            <h2 class="heading-medium mt0"><span class="heading-xlarge">{{customers.length}}</span><br/>Booked appointments</h2>
+              <table class="zebra">
+
+                <thead>
+                  <tr>
+                    <th>Details</th>
+                    <th>Appointment details</th>
+                  </tr>
+                </thead>
+                {% for customer in customers | sort(false, false, 'appointmentDate') %}
+
+                <tr>
+                  <td ><a href="booking/booked/{{customer._id}}/details"><span class="visually-hidden">Name</span>{{customer.name.fullName}}</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span></td>
+                  <td>
+                  {{customer.appointmentDate | formatDate("D MMMM YYYY")}} <br>
+                  {{customer.appointmentDate | formatDate("h:mma")}}
+                  </td>
+                </tr>
+                {% endfor %}
+
+                </tbody>
+
+              </table>
+          
+
+{% endblock %}
+
+
+
+
+
