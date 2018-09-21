@@ -1,0 +1,53 @@
+
+{% extends path1+"/_manage-centre-layout.html" %} 
+
+
+{% block header %}
+
+  {% include path2+"/_staff_heading.html" %}
+
+{% endblock %}
+  {% block manage_centre_nav %}{% endblock %}
+
+{% block citizen_content %}
+
+
+<div class="container">
+    <form action="staff-profile-2?tab=leave" method="post" accept-charset="utf-8">
+    
+    <p><a href="/{{path2}}/{{centre.id}}/manage-staff/staff-profile/{{person.id}}?tab=leave" class="link-back">Back</a></p>
+    <h1 class="heading-large mt0">Select hours</h1>
+    
+    <p>Confirm the hours that this change applies to:</p>
+
+    <div class="form-group">
+        {% for date in formData.dates %}
+        <fieldset>
+            <legend class="form-label-bold">Select times for {{ date | formatDate('dddd DD MMMM YYYY') }}</legend>
+            <div class="form-group">
+                <label for="from-{{loop.index}}" class="form-label">From</label>
+                <input name="from-{{loop.index}}" type="time" class="form-control time-input" value="09:00">
+            </div>
+            <div class="form-group">
+                <label for="to-{{loop.index}}" class="form-label">To</label>
+                <input name="to-{{loop.index}}" type="time" class="form-control time-input" value="17:00">
+            </div>
+        </fieldset>
+        <input type="hidden" name="dates" value="{{date}}">
+        {% endfor %}
+        <input type="hidden" name="typeOfWork" value="{{formData.typeOfWork}}">
+    </div>
+    {% if formData.typeOfWork == 'unavailable' %}
+    <p><a href="staff-profile-2?tab=leave" class="button">Save and complete</a></p>
+    {% elif formData.typeOfWork == 'training' %}
+    <p><a href="staff-profile-3?tab=leave" class="button">Save and complete</a></p>
+    {% elif formData.typeOfWork == 'appointments' %}
+    <p><a href="staff-profile-4?tab=leave" class="button">Save and complete</a></p>
+    {% else %}
+    <p><a href="staff-profile?tab=leave" class="button">Save and complete</a></p>
+    {% endif %}
+    </form>
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

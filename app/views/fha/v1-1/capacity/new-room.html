@@ -1,0 +1,57 @@
+
+
+{% extends path1+"/_addlayout.html" %} 
+
+{% block citizen_content %}
+
+
+<div class="container">
+  <p><a href="fiveways" class="link-back">Back</a></p>
+    <h2 class="heading-medium">Create a new room at Five Ways House</h2>
+    <div></div>
+    <form>
+    	<div class="form-group">
+    		<label class="form-label" for="room-name">Room Name</label>
+			<input class="form-control" id="room-name" type="text" name="room-name">
+    	</div>
+    	<fieldset class="inline">
+        <legend>
+          <span class="form-label">
+            Is the room on the ground floor?
+          </span>
+        </legend>
+        <div class="multiple-choice">
+          <input id="ground-floor-yes" type="radio" name="ground-floor" value="Yes">
+          <label for="ground-floor-yes">Yes</label>
+        </div>
+        <div class="multiple-choice">
+          <input id="ground-floor-no" type="radio" name="ground-floor" value="No">
+          <label for="ground-floor-no">No</label>
+        </div>
+      </fieldset>
+      <fieldset class="inline mt30">
+        <legend>
+          <span class="form-label">
+            Is the room accessible by wheelchair?
+          </span>
+        </legend>
+        <div class="multiple-choice">
+          <input id="wheelchair-yes" type="radio" name="wheelchair" value="Yes">
+          <label for="wheelchair-yes">Yes</label>
+        </div>
+        <div class="multiple-choice">
+          <input id="wheelchair-no" type="radio" name="wheelchair" value="No">
+          <label for="wheelchair-no">No</label>
+        </div>
+      </fieldset>
+      <p class="mt30"><a href="manage-rooms-saved" class="button">Save</a></p>
+    </form>
+
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %} 
+{% block footer_top %} 
+{{ super() }} 
+{# {% include path1+"/footer_links.html" %} #} 
+{% endblock %}

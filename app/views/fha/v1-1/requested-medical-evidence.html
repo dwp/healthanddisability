@@ -1,0 +1,57 @@
+{% extends path+"/_layout-caselist.html" %}
+
+{% block horizontal_secondary_nav %}
+              
+{{ secondaryNav.nav("review", "requested-medical-evidence" ) }}
+
+
+{% endblock %}  
+
+{% block caselist_content %}
+<h2 class="heading-medium mt0"><span class="heading-xlarge">4</span><br/>Requests for medical evidence</h2>
+              <table>
+
+                <thead>
+                  <tr>
+                    <th>Details</th>
+                    <th>Type of evidence</th>
+                    <th>Date requested</th>
+                   
+                  </tr>
+                </thead>
+                
+               
+                <tr>
+                    <td ><a href=""><span class="visually-hidden">Name</span>Tony Johnson</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>BB 12 34 56 C</span></td>
+                    <td>FRR</td>
+                    <td><span class="block">29 July 2018</span><span class="badge warning">Overdue</span></td>
+                  </tr>
+              
+                  <tr>
+                    <td ><a href="#">Mia Russell</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>CC 12 34 56 D</span></td>
+                    <td>113</td>
+                    <td>2 August 2018</td>
+                  </tr>
+              
+                
+              
+                  <tr>
+                    <td ><a href="#">Ana Isabel Cruz</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>FF 12 34 56 G</span></td>
+                    <td>113</td>
+                    <td>5 August 2018</td>
+                  </tr>
+              
+               
+              
+                  <tr>
+                    <td ><a href="#">Berat Karagöz</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>HH 12 34 56 J</span></td>
+                    <td>FRR</td>
+                    <td>14 August 2018</td>
+                  </tr>
+ 
+  
+      
+  
+
+              </table>
+{% endblock %}

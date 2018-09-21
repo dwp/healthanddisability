@@ -1,0 +1,115 @@
+{% extends path1+"/_layout-info.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<h1 class="heading-large mt0">Illnesses and conditions</h1>
+
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+  
+   <div class="whatweknow">
+
+        
+     <table>
+    
+    	<caption class="heading-medium mt10 mb10">Conditions covered:</caption>
+    	
+    	<thead>
+					<tr>
+						<th>Name</th>
+						<th>Since</th>
+						<th>Source</th>
+					</tr>
+				</thead>
+				<tbody>
+
+				<tr>
+						<td>Depression</td>
+						<td>February 2018</td>
+						<td>Claimant</td>
+					</tr>
+					<tr>
+						<td>Emergency fasciotomy</td>
+						<td>August 2017</td>
+						<td>Claimant</td>
+					</tr>
+					<tr>
+						<td>Acute compartment syndrome</td>
+						<td>August 2017</td>
+						<td>Claimant</td>
+					</tr>
+					<tr>
+						<td>Compound fracture - shinbone</td>
+						<td>July 2017</td>
+						<td>Claimant</td>
+					</tr>
+				</tbody>
+    	
+    </table>
+        
+        
+	    
+	</div> 
+	
+
+		<fieldset>
+			<legend class="visually-hidden">Condition details</legend>
+
+			
+			<div class="form-group medication-stored">
+				<fieldset class="inline">
+					<legend class="heading-medium mb5">Are there any other illnesses or conditions to add?</legend>
+					
+			
+					
+					<div class="multiple-choice">
+				      <input id="meds1" name="type" type="radio" value="meds1">
+				      <label for="meds1">Yes</label>
+				    </div>
+				    
+				    <div class="multiple-choice" data-target="finishHistory">
+				      <input id="meds2" name="type" type="radio" value="meds2">
+				      <label for="meds2">No</label>
+				    </div>	
+				    
+				    <div class="js-hidden panel panel-indent form-group" id="finishHistory">
+						  <form action="wca-index" method="POST" class="form">
+						
+						    <p class="save-continue mb0"><input type="submit" class="button mt10" value="Save and continue"></p>
+						
+						    <div class="multiple-choice" style="display:none">
+						        <input id="radio-inline-4" type="radio" name="illnessEffects" value="illnessEffects" checked>
+						          
+						        <label for="radio-4">hidden radio one</label>
+						      </div>
+						        
+						  </form>
+					</div>	    			
+	 
+				</fieldset>
+			</div>
+			
+		</fieldset>
+
+
+	
+
+	
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+

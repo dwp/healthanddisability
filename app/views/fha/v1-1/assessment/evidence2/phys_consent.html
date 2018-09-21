@@ -1,0 +1,39 @@
+{% extends path1+"/_layout-underway.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+{{ nav.case_tabs("evidence",1,path1) }}{# macro #}
+
+
+<h2 class="heading-large mt30 mb0">Physical assessment</h2>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h3 class="heading-medium">Has Tomas given his consent for this physical assessment?</h3>
+
+    <div class="form-group inline">
+      <div class="multiple-choice" data-target="yes-consent">
+        <input id="consent_yes" type="radio" name="mobility" value="consent_yes">
+        <label for="consent_yes">Yes</label>
+      </div>
+      <div class="multiple-choice" data-target="whynoconsent">
+        <input id="consent_no" type="radio" name="mobility" value="consent_no">
+        <label for="consent_no">No</label>
+      </div>
+    </div><!-- .form-group -->
+    <div class="form-group panel panle-indent js-hidden mt0" id="whynoconsent">
+      <p class="mt0"><label class="form-label" for="justificaiton">Why doesn't Tomas consent?</label>
+      <textarea class="form-control form-control-3-4" name="justificaiton" id="justificaiton" rows="5"></textarea></p>
+      
+      <p class="mt30"><a href="medical_assessment_stripped" class="button">Finish assessment</a></p>
+    </div><!-- .form-group -->
+
+    <div class="form-group js-hidden" id="yes-consent">
+      <a href="physical" class="button">Continue</a>
+    </div><!-- .form-group -->
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}

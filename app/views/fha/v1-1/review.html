@@ -1,0 +1,30 @@
+{% extends path+"/_layout-caselist.html" %}
+
+{% block horizontal_secondary_nav %}
+              
+{{ secondaryNav.nav("review" ) }}
+
+
+{% endblock %}  
+
+{% block caselist_content %}
+
+<h2 class="heading-medium mt0"><span class="heading-xlarge">10</span><br/>Reviews</h2>
+              <table class="zebra">
+
+                <thead>
+                  <tr>
+                    <th>Details</th>
+                    <th>Status</th>
+                   
+                  </tr>
+                </thead>
+                
+                {% include path+"/caselist/_table_data_status.html" %}
+
+              </table>
+{% endblock %}
+
+
+
+

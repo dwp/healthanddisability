@@ -1,0 +1,38 @@
+{% extends path2+"/_layout-finish.html" %}
+
+{% block case_content %}
+
+{{ data.nuggets | log }}
+
+<h2 class="heading-large mt10">Physical examination</h2>
+
+    <h3 class="heading-medium">Lower Back</h3>
+    <p>
+      Forward flexion to mid shin.
+      Squat and rise reduced to less than half way by pain.
+      He also had reducrion in squatting due to his external fixator causing restriction
+      this also meant he was unable to get on the couch independantly.
+    </p>
+    <p class="mb0"><a data-fancybox class="button des_trigger button-small" data-src="#descriptor_choice" href="javascript:;" data-id="{{ item.id }}">Assign descriptors</a></p>
+
+    <p class="mt60 form-hint">
+      No other aspects of the physical examination resulted in any abnormal findings
+      and the claimant can be assumed to have been found "normal" in all other regards
+    </p>
+    <details>
+      <summary><span class="summary">More details about what this means</span></summary>
+      <div class="panel panle-indent">
+
+        <h3 class="heading-medium mt10 mb0">Appearance</h3>
+        <p> Normal appearance means that unless mentioned above you can assume they were not tired, were well kempt and neatly dressed, they appeared well and were not tremulous or sweating and had a normal complexion.</p>
+
+        <h3 class="heading-medium mt10 mb0">Behaviour</h3>
+        <p> Normal behaviour means that unless mentioned above you can assume they were not rocking, showed a normal facial expression, were normally active and coped with the assessment, they were not overly aroused and exhibited an adequate rapport and eye contact with the assessor.</p>
+
+        <h3 class="heading-medium mt10 mb0">Speech</h3>
+        <p> Normal speech means that unless mentioned above you can assume the spoke a normal amount and at a normal speed and volume, and that the content of their speech was understandable and coherent</p>
+
+      </div>
+    </details>
+
+{% endblock %}

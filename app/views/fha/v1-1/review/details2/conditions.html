@@ -1,0 +1,53 @@
+{% extends path2+"/_layout.html" %}
+
+{% block case_content %}
+
+     
+
+      <h3 class="heading-large mt10">Medication &amp; side effects</h3>
+      <table class="meds">
+        <tr>
+          <td>
+            <p class="bold-small">Acetaminophen</p>
+            <p class="font-xsmall">350mg<br /> 3 times a day</p>
+          </td>
+          <td>{{ 1 | lorum | safe }}</td>
+        </tr>
+      </table>
+      {% include path2+"/_descriptors.html" %}
+
+      <table class="meds">
+        <tr>
+          <td>
+            <p class="bold-small">Amoxicillin</p>
+            <p class="font-xsmall">750mg<br /> 5 times a day</p>
+          </td>
+          <td>{{ 1 | lorum | safe }}</td>
+        </tr>
+      </table>
+      {% include path2+"/_descriptors.html" %}
+
+      <table class="meds">
+        <tr>
+          <td>
+            <p class="bold-small">Azithromycin</p>
+            <p class="font-xsmall">1mg<br /> 1 time a year</p>
+          </td>
+          <td>{{ 1 | lorum | safe }}</td>
+        </tr>
+      </table>
+      {% include path2+"/_descriptors.html" %}
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.evidence__leftnav')
+      .children(":nth-child(6)")
+      .addClass('active')
+  });
+</script>
+{% endblock %}

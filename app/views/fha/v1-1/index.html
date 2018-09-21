@@ -1,0 +1,124 @@
+{% extends path+"/_layout.html" %}
+
+{% block assess_content %}
+
+<main id="content" role="main" class="main-content">
+ 
+    {% include path+"/caselist/_nav.html" %}
+
+      <div class="container">
+          <div class="grid-row">
+              <div class="column-one-quarter">
+             
+                  {% include path+"/caselist/_search-box.html" %}
+
+                   
+                              <div class="details-nav v2">
+                                 <ul>
+                                   <li class="active_detail">
+                                   <a href="/{{path}}/">All cases</a>
+                                 </li>
+                                 <li>
+                                    <a href="/{{path}}/myCases.html">My cases</a>
+                                  </li>
+                                </ul>
+                              </div>
+              </div>
+              <div class="column-three-quarters">
+                 
+                    <div class="grid-row">
+                      <div class="column-full">
+                        <h1 class="heading-xlarge mt0 mb20">
+                            {% if checked('Choose-centre','Tresco') %}
+                            <span class="heading-secondary">Tresco House</span>
+      {% elif checked('Choose-centre','Fiveways') %}
+      <span class="heading-secondary">Birmingham Fiveways</span>
+      {% endif%}
+                         
+                          450 cases
+                            </h1>
+                          </div>
+                          </div>
+                          <div class="grid-row">   
+                      <div class="card-container">
+
+                        <div class="card">
+                          <a href="/{{path}}/referrals.html">
+                        
+
+                              <h2 class="heading-xlarge">
+                                 49
+                                <span class="heading-small">Referral's</span>
+                               </h2>
+                        
+                          </a>
+                          <ul>
+                          <li><a href="/{{path}}/new-referrals.html">New referrals (35)</a></li>
+                          <li><a href="/{{path}}/uc50-posted.html">UC50 posted (78)</a></li>
+                          <li><a href="/{{path}}/uc50-recieved.html">UC50 recieved (20)</a></li>
+                         </ul>
+                        </div>
+    
+                        <div class="card">
+                            <a href="/{{path}}/review.html">
+                          
+                          
+
+                                <h2 class="heading-xlarge">
+                                   10
+                                  <span class="heading-small">Reviews</span>
+                                 </h2>
+                          
+                            </a>
+                           <ul>
+                             <li><a href="/{{path}}/ready-for-review.html">Ready for review (6)</a></li>
+                            <li><a href="/{{path}}/requested-medical-evidence.html">Requested medical evidence (4)</a></li>
+                      
+                          </ul> 
+                        </div>
+    
+                          <div class="card">
+                              <a href="/{{path}}/appointments.html">
+                            
+                             
+                            
+                                  <h2 class="heading-xlarge">
+                                     223
+                                    <span class="heading-small">Appointments</span>
+                                   </h2>
+                              </a>
+                              <ul>
+                                  <li><a href="/{{path}}/ready-to-book">Ready to book (35)</a></li>
+                                 <li><a href="/{{path}}/booked-appointments">Booked appointments (178)</a></li>
+                               </ul> 
+                            
+                              </div>
+                            <div class="card">
+                                <a href="/{{path}}/assessment.html">
+                              
+                                  <h2 class="heading-xlarge">
+                                      24
+                                    <span class="heading-small">Assessments today</span>
+                                   </h2>
+                              
+                                </a>
+                                <ul>
+                                  <li><a href="/{{path}}/">9:00am (4)</a></li>
+                                  <li><a href="/{{path}}/">10:00am (4)</a></li>
+                                  <li><a href="/{{path}}/">11:00am (4)</a></li>
+                                  <li><a href="/{{path}}/">12:00pm (4)</a></li>
+                                  
+                                 </ul>
+                              
+                                </div>
+                        </div>
+                    </div>
+              </div><!-- column -->
+            </div>
+     
+        <!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends path1+"/_layout-underway.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+{{ nav.case_tabs("evidence",1,path1) }}{# macro #}
+
+<h2 class="heading-large mt30 mb0">Physical Examination</h2>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+    <h1 class="form-title heading-medium" id="declaration">Declaration</h1>
+
+    <legend class="form-label-bold dec-legend" id="app">By completing this examination you agree that:</legend>
+    <div class="form-group">
+      <ul class="list-bullet" aria-labelledby="app">
+        <li>you have completed a full and thorough examination of the claimant</li>
+        <li>all areas where you have not recorded findings were normal</li>
+      </ul>
+    </div>
+
+    <a href="/{{path2}}/record_phys_exam" class="button">I agree - complete examination</a>
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
