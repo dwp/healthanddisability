@@ -995,4 +995,51 @@ width:100%;
 
 }
 
+.assessDashboard {
+		margin-top: 40px;
+		.row {
+			overflow: hidden;
+			margin-bottom: 2%;
+		}
+		section {
+			float: left;
+			width: 28%;
+			padding: 2% 2% 1% 2%;
+			background: $grey-4;
+			margin-left: 2%;
+			h2 {
+				margin: 0;
+				padding: 0;
+			}
+			p {
+				margin: 20px 0;
+				.number {
+					display: block;
+					font-size: 48px;
+					font-weight: bold;
+				}
+			}
+			.comments {
+				margin-bottom: 0;
+				border-left: 0;
+				padding: 0 0 .4em 0;
+			}
+			.review {
+				margin: .8em 0 .8em 0;
+			}
+			.reviewed {
+				display: inline-block;
+				background: #fff;
+				font-weight: bold;
+				margin: .5em 0 .8em 0;
+				padding: .2em .5em .1em .5em;
+			}
+
+			
+			&:first-child {
+				margin-left: 0;
+			}
+	}
+}
+
 
