@@ -949,25 +949,43 @@ width:100%;
 }
 
 .panel.alt{
-	padding:25px;
-	background: $govuk-blue;
+	padding:25px 25px 25px 0;
+	//background: $grey-4;
 	border:none;
+	border-bottom:1px solid $border-colour;
+}
 
-	h2{
-		color:$white;
-	}
 
-	.button-secondary{
-		background:$white;
+.search-customer{
+
+	position:relative;
+
+	input{
+		width:100%;
+		padding-right:50px;
 	}
 }
 
-.panel.alt2{
-	border:1px solid $border-colour;
-	padding:30px;
-	float:right;
-	
+.gem-c-search__submit {
+	position:absolute;
+	bottom:0px;
+	right:0px;
+	background: $govuk-blue url(/public/images/search-icon.svg) no-repeat 9px 9px ;
+	background-size:50%;
+    border:none;
+	width:38px;
+	height:38px;
+	text-indent:-5000px;
+	border-bottom:2px solid darken($govuk-blue,15%);
+
+	&:hover{
+	  cursor: pointer;
+	  background-color:darken($govuk-blue,15%);
+	  
+	}
 
 }
+
+
 
 
