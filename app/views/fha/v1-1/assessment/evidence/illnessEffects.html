@@ -48,14 +48,14 @@
 	    
 	</div> 
 	
-	<form>
+	<form method="post" action="illnessEffects2">
 		<fieldset>
 			<legend class="visually-hidden">Condition details</legend>
 			
 			<div class="form-group">
 				<label class="heading-small" for="field-8">Condition history</label>
 				<p class="form-hint mb5 mt5">This should be specific to depression.</p>
-				<textarea class="form-control form-control-3-4" id="field-8" style="height:250px;"></textarea>
+				<textarea class="form-control form-control-3-4" id="field-8" name="conditionHistory1" style="height:250px;">{{conditionHistory1}}</textarea>
 			</div>
 			
 			
@@ -65,7 +65,7 @@
 
 					
 					<div class="multiple-choice">
-				      <input id="meds1" name="type" type="checkbox" value="meds1">
+				      <input id="meds1" name="illnessMedication1[]" type="checkbox" value="Sertraline">
 				      <label for="meds1">
 				      	Sertraline
 					  	<div class="meds-block">
@@ -75,7 +75,7 @@
 				    </div>
 				    
 				    <div class="multiple-choice">
-				      <input id="meds2" name="type" type="checkbox" value="meds2">
+				      <input id="meds2" name="illnessMedication1[]" type="checkbox" value="Zomorph">
 				      <label for="meds2">
 				      	Zomorph
 					  	<div class="meds-block">
@@ -85,18 +85,18 @@
 				    </div>		    			
 	  
 				    <div class="multiple-choice" data-target="other-meds">
-				      <input id="otherMeds" name="type" type="checkbox" value="otherMeds">
+				      <input id="otherMeds" name="illnessMedication1[]" type="checkbox" value="otherMeds">
 				      <label for="otherMeds">Other</label>
 				    </div>
 				</fieldset>
 			</div>
 			
 		</fieldset>
-	</form>
-  
-	<p><a href="illnessEffects2" class="button">Continue</a></p>
-
 	
+  
+	<p><button class="button">Continue</a></button>
+
+	</form>
 
 
   </div><!-- column -->

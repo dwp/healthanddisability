@@ -152,7 +152,12 @@ router.get('*', function (req, res, next) {
   //res.locals.staff = staffData;
   res.locals.appointments = getAppointmentDates();
 
+for(property in req.session.data){
+    res.locals[property] = req.session.data[property];
+  }
+  console.log(req.session)
 
+  console.log(res.locals)
   next()
 })
 
@@ -168,6 +173,8 @@ router.post('*', function (req, res, next) {
   res.locals.stage = req.cookies.stage || 1;
   res.locals.query = req.query;
   res.locals.arrivedTime = arrivedTime;
+
+  
   //res.locals.staff = staffData;
   next()
 })
