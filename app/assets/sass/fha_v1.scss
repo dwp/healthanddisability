@@ -650,45 +650,70 @@ td{
 }
 
 .chat-layout {
-
-	margin-top: 108px;
-
 	position: relative;
+	width: 88%;
 	
-	.tag-box {
-		background: $grey-3;
-		margin-top: 20px;
+	.comments-window {
+		width: 100%;
+		text-align: center;
+		font-weight: bold;
+		position: absolute;
+		top: 36%;
+		left: 0;
+	}
+	
+	.chat-window {
+	min-height: 560px;
+	max-height: 560px;
+	overflow: scroll;
+	background: $grey-2;
+	padding: 1em 1.5em 2em 1.5em;
+	border-top: 2px solid $grey-2;
+	border-bottom: 2px solid $grey-2;
+	}
 
+	.chat-capture {
+		background: $grey-3;
+		padding: 1.5em;
+		textarea {
+			width: 86%;
+			height: 70px;
+			float: left;
+		}
+		input {
+			float: right;
+			width: 10%;
+			background: #fff;
+		}
+	}
+	.tag-box {
+		background: #fff;
+		margin-top: 20px;
+		border-radius: 5px 5px 5px;
+		border: 1px solid $grey-1;
+		overflow: hidden;
 	}
 	
 	.tag-text {
 		padding: 1em;
+		float: left;
+		width: 76%;
 	}
-	
-	.tagging {
 
-		padding: .5em;
-		li {
-			display: inline-block;
-			margin-left: .5em;
-		}
+	
+	.edit-item {
+		float: right;
+		width: 10%;
+		text-align: right;
+		padding: 1em 1em 1em 0;
 	}
 	
 	hr {
 		margin-top: 20px;
 		margin-bottom: 20px;
 	}
-	
-	
-	.edit-item {
-		padding: 10px 20px;
-		background: $grey-4;
-		li {
-			display: inline;
-			margin-right: 10px;
-		}
-	}
 }
+
 
 caption {
 	text-align: left;

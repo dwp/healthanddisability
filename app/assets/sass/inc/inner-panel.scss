@@ -9,32 +9,30 @@
 	
 	.panel-switch {
 		position: absolute;
-		top: 224px;
+		top: 230px;
+		width: 50px;
 		right: 0;
-		width: 130px;
-		padding: 10px 0;
+		padding: 20px 0;
 		text-align: center;
 		cursor: pointer;
-		background: #fff;
-		border: 2px solid #000;
+		background: $govuk-blue;
+		border: 2px solid $govuk-blue;
 		border-right: 0;
 
 
 		a {
 			padding: 0;
 			margin: 0;
-
-			&:after {
-				content: 'Review evidence';
-			}
+			writing-mode: vertical-lr;
+			text-orientation: vertical;
+			text-decoration: none;
+			color: #fff;
 		}
 		
 		.support {
 			padding: 0;
 			margin: 0;
-			&:after {
-				content: 'Supporting evidence';
-			}
+
 		}
 	}
 	
@@ -43,7 +41,7 @@
 		background: #fff;
 		padding: 3% 5% 10% 5%;
 		border: 1px solid $grey-2;
-		border-left: 2px solid #000;
+		border-left: 4px solid $govuk-blue;
 		min-height: 1200px;
 		display: none;
 	}
@@ -59,12 +57,7 @@
 		}
 		.panel-switch {
 			right: auto;
-			left: -130px;
-			a {
-			&:after {
-				content: 'Close evidence';
-			}
-		}
+			left: -50px;
 		}
 	}
 
