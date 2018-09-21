@@ -18,7 +18,7 @@
   
 	  <h2 class="heading-medium mt0">Common phrases</h2>
 	  <p class="form-hint">Choose common phrases and edit them to suit the claimants needs.</p>
-	  <details class="mt20">
+	  <details class="mt20 ">
 	  	<summary>Start by choosing a descriptor</summary>
 	 <div class="prompts panel">
 	  	<a href="#">Moving around and using steps without help</a>
@@ -51,16 +51,21 @@
 
 
 	 <div class="chat-window">
+    {% if comments.length < 1 %}
 	 <p class="comments-window">You haven't added any comments yet</p>
-
-    {% for item in data.nuggets | sortBy("time",false) %}
+    {% endif %}
+    {% for item in comments | sortBy("time",false) %}
   
       <div class="tag-box">
       
-        <div class="tag-text">{{ item.text }}</div>
+        <div class="tag-text">{{ item.comment }}</div>
         
         <div class="edit-item">
-       		<a href="#" class="remove-link">Remove</a>
+          <form action="socialWorkHistory" method="post">
+            <input type="hidden" name="id" value="{{item.id}}">
+            <input type="hidden" name="delete" value="true">
+         		<button class="remove-link" >remove</button>
+          </form>
        </div>
        
       </div>
@@ -68,10 +73,12 @@
     {% endfor %}
 	 </div>
     
-    <form class="form" id="add_ev">
+    <form class="form" id="add_ev"
+      action="socialWorkHistory"
+      method="post">
 
       <div class="form-group chat-capture">
-          <textarea id="nugget" class="form-control" name="nugget"></textarea>
+          <textarea id="nugget" class="form-control" name="comments"></textarea>
           <input class="button secondary mt20" type="submit" value="Add" id="submitButton">
       </div><!-- form-group -->
 
@@ -103,40 +110,7 @@ $(document).on('ready',function()
 {
   $('#nugget').focus();
 
-  $("#nugget").keydown(function (event) {
-    if ((event.keyCode == 13))
-    {
-      $('#submitButton').trigger('click');
-    }
-  });
 
-  $('#submitButton').on('click',function(e)
-  {
-    e.preventDefault();
-    // get values from the form you're submitting.
-    var nugget = $('#nugget').val();
-    console.log(nugget)
-
-    // gather values into a data object.
-    var formdata = JSON.stringify({"nugget":nugget});
-    console.log(formdata)
-    console.log({url: '/{{ path }}/saveText'})
-
-    // send data object off to node route for saving.
-    $.ajax({
-      url: '/{{ path }}/saveText',
-      method: "POST",
-      contentType: 'application/json',
-      data: formdata,
-      dataType: 'json',
-      complete:  function(data,status,xhr) {
-        // sort out the page after data is successfully saved.
-        // $('#status_form').hide();
-        // $('#status_button').show();
-        document.location.reload(true);
-      }
-    });
-  });
 });
 
 

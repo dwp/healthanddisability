@@ -6,6 +6,7 @@ var tog = require('../../../../lib/tog.js')
 var request = require('request')
 var calendar = require('node-calendar');
 var moment = require('moment')
+const crypto = require("crypto");
 
 var versionNumber = "1-1";
 var filePath = '../../../../app/views/fha/v' + versionNumber;
@@ -19,6 +20,7 @@ var slotsData2 = require(filePath +'/data/slots-data-2.js')
 var commentsData = require(filePath +'/data/comments.js');
 var appointmentHistory = require(filePath +'/data/appointmentHistory.js');
 var observations = [];
+var socialWorkComments = [];
 
 
 router.get('*', function (req, res, next) {
@@ -80,6 +82,7 @@ router.get('/clearSession',function(req, res, next) {
   req.session.data.nuggets = [];
   req.session.data.withdesc = false;
   req.session.data.physexam = false;
+  req.session.data = {};
   observations = [];
   nug_id = 0;
   res.send("success");
@@ -155,9 +158,7 @@ router.get('*', function (req, res, next) {
 for(property in req.session.data){
     res.locals[property] = req.session.data[property];
   }
-  console.log(req.session)
 
-  console.log(res.locals)
   next()
 })
 
@@ -560,6 +561,39 @@ router.get('/booking/decision/:customerId/:page', function(req, res, next){
   res.render(viewPath +'/booking/' + req.params.page);
 })
 
+router.post('/assessment/evidence/socialWorkHistory', function(req, res, next){  
+  if(req.body.delete == "true"){
+     socialWorkComments = socialWorkComments.filter(item => item.id != req.body.id);
+
+  } else {
+
+    socialWorkComments.push({
+      id: crypto.randomBytes(16).toString("hex"),
+      comment: req.body.comments,
+      time: moment().format()
+    });
+
+    res.locals.comments = socialWorkComments;
+  }
+  console.log(socialWorkComments);
+  next()
+
+});
+
+
+
+router.get('/assessment/evidence/socialWorkHistory', function(req, res, next){  
+  res.locals.comments = socialWorkComments;
+  next()
+});
+
+router.get('/assessment/evidence/wca-index', function(req, res, next){  
+  req.session.data.socialWorkComments = socialWorkComments;
+  next()
+});
+
+
+
 router.post('/booking/booked/:customerId/request-rearrangement-post', function(req, res, next){  
   
   var changedByCustomer = req.body.changedByCustomer === 'yes' || false;
@@ -585,7 +619,6 @@ router.post('/booking/booked/:customerId/request-rearrangement-post', function(r
 
 router.post('/booking/decision/:customerId/decision-post', function(req, res, next){
   var title = `${res.locals.customer.decisionType} ${req.body.decision}`;
-  console.log(title);
   appointmentHistory.push({
       _id: req.params.customerId,
       title: title,
@@ -641,7 +674,6 @@ router.post('*/:customerId/timepicker-post', function(req, res, next){
       referrals.push(res.locals.customer);
       appointmentHistory.push(req.session.apointmentHistory);
       
-      console.log(req.session.apointmentHistory);
       delete req.session.apointmentHistory;
 
       res.locals.customer.appointmentDate = undefined;

@@ -29,11 +29,11 @@
         <div class="chat-layout">
 
 
-    {% for item in data.nuggets | sortBy("time",true) %}
+    {% for item in socialWorkComments | sortBy("time",true) %}
   
       <div class="tag-box">
       
-        <div class="tag-text">{{ item.text }}</div>
+        <div class="tag-text">{{ item.comment }}</div>
         
         <div class="edit-item">
        		<a href="contentEdit" class="button secondary">Edit</a>

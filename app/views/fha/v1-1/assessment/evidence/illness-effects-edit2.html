@@ -1,4 +1,4 @@
-{% extends path1+"/_layout-info.html" %}
+{% extends path2+"/_layout-review.html" %}
 
 {% block citizen_content %}
 
@@ -7,7 +7,7 @@
 
 
 
-<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+<p class="no-kdBar"><a href="medical_assessment_dashboard" class="link-back">Back</a></p>
 
 <h1 class="heading-large mt0"><span class="heading-secondary">Illnesses and conditions - step 2 of 4</span>Emergency fasciotomy</h1>
 
@@ -48,7 +48,7 @@
 	    
 	</div> 
 	
-	<form method="post" action="illnessEffects3">
+	<form>
 		<fieldset>
 			<legend class="visually-hidden">Condition details</legend>
 			
@@ -68,7 +68,8 @@
 			
 					
 					<div class="multiple-choice">
-				      <input id="meds1" name="illnessMedication2[]" type="checkbox" value="Sertraline">
+				      <input id="meds1" name="illnessMedication2[]" type="checkbox" value="Sertraline"
+				      {{checked('illnessMedication2','Sertraline')}}>
 				      <label for="meds1">
 				      	Sertraline
 					  	<div class="meds-block">
@@ -78,7 +79,8 @@
 				    </div>
 				    
 				    <div class="multiple-choice">
-				      <input id="meds2" name="illnessMedication2[]" type="checkbox" value="Zomorph">
+				      <input id="meds2" name="illnessMedication2[]" type="checkbox" value="Zomorph"
+				      {{checked('illnessMedication2','Zomorph')}}>
 				      <label for="meds2">
 				      	Zomorph
 					  	<div class="meds-block">
@@ -88,16 +90,17 @@
 				    </div>		    			
 	  
 				    <div class="multiple-choice" data-target="other-meds">
-				      <input id="otherMeds" name="illnessMedication2[]" type="checkbox" value="Other">
+				      <input id="otherMeds" name="illnessMedication2[]" type="checkbox" value="Other"
+				      {{checked('illnessMedication2','Other')}}>
 				      <label for="otherMeds">Other</label>
 				    </div>
 				</fieldset>
 			</div>
 			
 		</fieldset>
-	
-	<p><button class="button">Continue</a></button>
 	</form>
+	
+	<p><button class="button">Continue</button></p>
   
 
 

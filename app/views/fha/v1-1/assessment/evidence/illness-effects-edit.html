@@ -1,4 +1,4 @@
-{% extends path1+"/_layout-info.html" %}
+{% extends path2+"/_layout-review.html" %}
 
 {% block citizen_content %}
 
@@ -7,9 +7,9 @@
 
 
 
-<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+<p class="no-kdBar"><a href="medical_assessment_dashboard" class="link-back">Back</a></p>
 
-<h1 class="heading-large mt0"><span class="heading-secondary">Illnesses and conditions - step 2 of 4</span>Emergency fasciotomy</h1>
+<h1 class="heading-large mt0"><span class="heading-secondary">Step 1 of 4</span><span class="heading-secondary">Illnesses and conditions</span>Depression</h1>
 
 
 
@@ -27,20 +27,20 @@
     	<caption class="heading-medium mt10 mb10">What we already know:</caption>
     	
     	<thead>
-			<tr>
-				<th>Name</th>
-				<th>Since</th>
-				<th>Source</th>
-			</tr>
-		</thead>
-		<tbody>
+					<tr>
+						<th>Name</th>
+						<th>Since</th>
+						<th>Source</th>
+					</tr>
+				</thead>
+				<tbody>
 
-		<tr>
-				<td>Emergency fasciotomy</td>
-				<td>August 2017</td>
-				<td>Claimant</td>
-			</tr>
-		</tbody>
+				<tr>
+						<td>Depression</td>
+						<td>February 2018</td>
+						<td>Claimant</td>
+					</tr>
+				</tbody>
     	
     </table>
         
@@ -48,27 +48,24 @@
 	    
 	</div> 
 	
-	<form method="post" action="illnessEffects3">
+	<form method="post" action="illness-effects-edit2">
 		<fieldset>
 			<legend class="visually-hidden">Condition details</legend>
 			
 			<div class="form-group">
 				<label class="heading-small" for="field-8">Condition history</label>
-				<p class="form-hint mb5 mt5">This should be specific to Emergency fasciotomy.</p>
-				<textarea class="form-control form-control-3-4" id="field-8" 
-				name="conditionHistory2"
-				style="height:250px;">{{conditionHistory2}}</textarea>
+				<p class="form-hint mb5 mt5">This should be specific to depression.</p>
+				<textarea class="form-control form-control-3-4" id="field-8" name="conditionHistory1" style="height:250px;">{{conditionHistory1}}</textarea>
 			</div>
 			
 			
 			<div class="form-group medication-stored">
 				<fieldset>
 					<legend class="heading-small">Medication taken:</legend>
-					
-			
+
 					
 					<div class="multiple-choice">
-				      <input id="meds1" name="illnessMedication2[]" type="checkbox" value="Sertraline">
+				      <input id="meds1" name="illnessMedication1[]" type="checkbox" value="Sertraline" {{checked('illnessMedication1','Sertraline')}}>
 				      <label for="meds1">
 				      	Sertraline
 					  	<div class="meds-block">
@@ -78,7 +75,8 @@
 				    </div>
 				    
 				    <div class="multiple-choice">
-				      <input id="meds2" name="illnessMedication2[]" type="checkbox" value="Zomorph">
+				      <input id="meds2" name="illnessMedication1[]" type="checkbox" value="Zomorph"
+				      {{checked('illnessMedication1','Zomorph')}}>
 				      <label for="meds2">
 				      	Zomorph
 					  	<div class="meds-block">
@@ -88,7 +86,8 @@
 				    </div>		    			
 	  
 				    <div class="multiple-choice" data-target="other-meds">
-				      <input id="otherMeds" name="illnessMedication2[]" type="checkbox" value="Other">
+				      <input id="otherMeds" name="illnessMedication1[]" type="checkbox" value="otherMeds"
+				      {{checked('illnessMedication1','otherMeds')}}>
 				      <label for="otherMeds">Other</label>
 				    </div>
 				</fieldset>
@@ -96,10 +95,10 @@
 			
 		</fieldset>
 	
-	<p><button class="button">Continue</a></button>
-	</form>
   
+	<p><button class="button">Continue</a></button>
 
+	</form>
 
 
   </div><!-- column -->
