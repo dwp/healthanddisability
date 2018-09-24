@@ -51,16 +51,21 @@
 		</table>
 		
 	</div>
-	
+  
 
 
 
 
 
 
+<form action="phys_consent" method="POST" class="form">
 
-    <p class="mt30"><a href="phys_consent" class="button">Continue</a></p>
-
+    <p class="mt30"><button class="button">Continue</a></button>
+    <div class="multiple-choice" style="display:none">
+        <input id="radio-inline-4" type="radio" name="wca" value="continue" checked>
+        <label for="radio-4">hidden radio one</label>
+      </div>
+</form>
   </div><!-- column -->
 </div><!-- row -->
 {% endblock %}

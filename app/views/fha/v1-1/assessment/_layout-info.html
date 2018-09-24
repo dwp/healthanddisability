@@ -26,7 +26,7 @@
 
 		  <hr>
 		  <ul class="secondary-actions">
-			  	  <li><a href="/{{path}}/victorcastillo/general-observations">General observations</a></li>
+					  <li><a href="/{{path}}/assessment/general-observations">General observations {% if data['general-observations-post']==='posted' %}({{ observations.length }}){% endif%}</a></li>
 			  	  <li><a href="/{{path}}/assessment/evidence/stopAssess">Stop assessment</a></li>
 		      </ul>
 	  </div>
