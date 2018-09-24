@@ -88,17 +88,86 @@
 				    </div>		    			
 	  
 				    <div class="multiple-choice" data-target="other-meds">
-				      <input id="otherMeds" name="illnessMedication2[]" type="checkbox" value="Other">
+				      <input id="otherMeds" name="illnessMedication1[]" type="checkbox" value="otherMeds">
 				      <label for="otherMeds">Other</label>
 				    </div>
+				    
+				    <div class="panel panel-border-narrow js-hidden form-group" id="other-meds">
+				   		
+				   		
+				   		<fieldset class="item-compound">
+                 
+            
+				            <legend class="visuallyhidden">Medication and side effects details</legend>
+				
+				
+						
+						      	<div class="form-group">
+						        
+									<label class="form-label form-label-large" for="illnessname">Name of medication</label>
+									 <input type="text" class="form-control" id="illnessname">
+									 
+								 </div>
+								 
+								 
+								 <div class="form-group">
+						        
+									<label class="form-label form-label-large" for="dose">Dose</label>
+									 <input type="text" class="form-control form-control-1-4" id="dose">
+									 
+								 </div>
+				              
+						
+								 
+								 
+								 <div class="form-group">
+								 
+								 	<fieldset>
+								      <legend class="form-label">
+								          Last prescribed date
+								      </legend>
+								       <span class="form-hint" id="dob-hint">For example, 31 3 1980</span>
+								      <div class="form-date">
+								        <div class="form-group form-group-day">
+								          <label class="form-label" for="dob-day">Day</label>
+								          <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+								        </div>
+								        <div class="form-group form-group-month">
+								          <label class="form-label" for="dob-month">Month</label>
+								          <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+								        </div>
+								        <div class="form-group form-group-year">
+								          <label class="form-label" for="dob-year">Year</label>
+								          <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016">
+								        </div>
+								      </div>
+								    </fieldset>
+								    
+								 </div>
+								 
+								 
+								<div>
+									 <label class="form-label" for="side">Side effects</label>
+									 <textarea type="text" id="side" class="form-control" name="side" style="height: 100px;"></textarea>
+								</div>
+				
+				            
+				            
+				          </fieldset>
+				   		
+				   		
+				   		
+				   </div>
+				    
 				</fieldset>
 			</div>
 			
 		</fieldset>
 	
-	<p><button class="button">Continue</a></button>
-	</form>
   
+	<p><button class="button">Continue</button></p>
+
+	</form>
 
 
 

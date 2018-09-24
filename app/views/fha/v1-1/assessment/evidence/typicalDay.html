@@ -90,11 +90,12 @@
       <input type="submit" class="button" value="Save progress">
 
       <div class="multiple-choice" style="display:none">
-          <input id="radio-inline-4" type="radio" name="socialWorkHistory" value="socialWorkHistory" checked>
+          <input id="radio-inline-4" type="radio" name="typicalDay" value="typicalDay" checked>
             
           <label for="radio-4">hidden radio one</label>
         </div>
     </form>
+
     
     
   </div><!-- column -->
@@ -102,13 +103,22 @@
 
 {% endblock %}
 
-<<<<<<< HEAD
-=======
 {% block page_scripts %}
 {{ super() }}
 <script type="text/javascript">
-$(document).on('ready',function(){
+$(document).on('ready',function()
+
+{
+  $('#nugget').focus();
   
+  $("#nugget").keydown(function (event) {
+    if ((event.keyCode == 13))
+    {
+      $('#submitButton').trigger('click');
+    }
+  });
+
+
 });
 
 
@@ -119,4 +129,3 @@ $(document).on('ready',function(){
 
 
 {% endblock %}
->>>>>>> added typical day comments
