@@ -21,6 +21,7 @@ var commentsData = require(filePath +'/data/comments.js');
 var appointmentHistory = require(filePath +'/data/appointmentHistory.js');
 var observations = [];
 var socialWorkComments = [];
+var typicalDayComments = [];
 
 
 router.get('*', function (req, res, next) {
@@ -575,7 +576,24 @@ router.post('/assessment/evidence/socialWorkHistory', function(req, res, next){
 
     res.locals.comments = socialWorkComments;
   }
-  console.log(socialWorkComments);
+  next()
+
+});
+
+router.post('/assessment/evidence/typicalDay', function(req, res, next){  
+  if(req.body.delete == "true"){
+     typicalDayComments = typicalDayComments.filter(item => item.id != req.body.id);
+
+  } else {
+
+    typicalDayComments.push({
+      id: crypto.randomBytes(16).toString("hex"),
+      comment: req.body.comments,
+      time: moment().format()
+    });
+
+    res.locals.comments = typicalDayComments;
+  }
   next()
 
 });
@@ -587,8 +605,14 @@ router.get('/assessment/evidence/socialWorkHistory', function(req, res, next){
   next()
 });
 
+router.get('/assessment/evidence/typicalDay', function(req, res, next){  
+  res.locals.comments = typicalDayComments;
+  next()
+});
+
 router.get('/assessment/evidence/wca-index', function(req, res, next){  
   req.session.data.socialWorkComments = socialWorkComments;
+  req.session.data.typicalDayComments = typicalDayComments;
   next()
 });
 

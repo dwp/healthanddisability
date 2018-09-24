@@ -13,7 +13,7 @@
 
 
   <div class="column-one-third">
-  <p class="mt0"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+  <p class="mt0"><a href="wca-index" class="link-back">Back</a></p>
   <h1 class="heading-large mt0">Typical day</h1>
   
 	  <h2 class="heading-medium mt0">Common phrases</h2>
@@ -51,27 +51,34 @@
 
 
 	 <div class="chat-window">
-	 <p class="comments-window">You haven't added any comments yet</p>
-
-    {% for item in data.nuggets | sortBy("time",false) %}
+    {% if comments.length < 1 %}
+   <p class="comments-window">You haven't added any comments yet</p>
+    {% endif %}
+    {% for item in comments | sortBy("time",false) %}
   
       <div class="tag-box">
       
-        <div class="tag-text">{{ item.text }}</div>
+        <div class="tag-text">{{ item.comment }}</div>
         
         <div class="edit-item">
-       		<a href="#" class="remove-link">Remove</a>
+          <form action="" method="post">
+            <input type="hidden" name="id" value="{{item.id}}">
+            <input type="hidden" name="delete" value="true">
+            <button class="remove-link" >remove</button>
+          </form>
        </div>
        
       </div>
 
     {% endfor %}
-	 </div>
+   </div>
     
-    <form class="form" id="add_ev">
+    <form class="form" id="add_ev"
+      action="typicalDay"
+      method="post">
 
       <div class="form-group chat-capture">
-          <textarea id="nugget" class="form-control" name="nugget"></textarea>
+          <textarea id="nugget" class="form-control" name="comments"></textarea>
           <input class="button secondary mt20" type="submit" value="Add" id="submitButton">
       </div><!-- form-group -->
 
@@ -83,7 +90,7 @@
       <input type="submit" class="button" value="Save progress">
 
       <div class="multiple-choice" style="display:none">
-          <input id="radio-inline-4" type="radio" name="typicalDay" value="typicalDay" checked>
+          <input id="radio-inline-4" type="radio" name="socialWorkHistory" value="socialWorkHistory" checked>
             
           <label for="radio-4">hidden radio one</label>
         </div>
@@ -95,3 +102,21 @@
 
 {% endblock %}
 
+<<<<<<< HEAD
+=======
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+$(document).on('ready',function(){
+  
+});
+
+
+
+</script>
+
+
+
+
+{% endblock %}
+>>>>>>> added typical day comments
