@@ -4,7 +4,7 @@
 
 {{ data.nuggets | log }}
 
-
+<form action="physical-updated" method="POST" class="form">
 <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
 
 
@@ -82,8 +82,8 @@
 																				
 																				</details>
 
-																      <label class="form-label" for="phys_lowerback_obs">Observation, palpation, movement</label>
-																      <textarea class="form-control form-control-3-4" name="phys_lowerback_obs" id="phys_lowerback_obs" rows="4"></textarea>
+																      <label class="form-label" for="phys_lowerback_obs">Observation, palpation, movement vvv</label>
+																      <textarea class="form-control form-control-3-4" name="physLowerbackObs" id="phys_lowerback_obs" rows="4">{{physLowerbackObs}}</textarea>
 															    </div>
 															
 															    
@@ -117,7 +117,7 @@
 																				
 																				</details>
 																      <label class="form-label" for="right_lowerback_obs">Observation, palpation, movement</label>
-																      <textarea class="form-control form-control-3-4" name="right_lowerback_obs" id="nugget" rows="4"></textarea>
+																      <textarea class="form-control form-control-3-4" name="leftLowerbackObs" id="nugget" rows="4">{{leftLowerbackObs}}</textarea>
 															    </div>
 															    
 															    
@@ -147,8 +147,8 @@
 																				
 																				
 																				</details>
-																      <label class="form-label" for="left_lowerback_obs">Observation, palpation, movement</label>
-																      <textarea class="form-control form-control-3-4" name="left_lowerback_obs" id="left_lowerback_obs" rows="4"></textarea>
+																      <label class="form-label" for="left_lowerback_obs">Observation, palpation, movement </label>
+																      <textarea class="form-control form-control-3-4" name="rightLowerbackObs" id="left_lowerback_obs" rows="4">{{rightLowerbackObs}}</textarea>
 															    </div>
 															    
 															    
@@ -166,10 +166,10 @@
 				    </div>
 			
 			  </div><!-- form-group -->
-			  <p class="mt0"><input class="button" type="submit" value="Save" id="submitButton"/></p>
+			  <p class="mt0"><button class="button">Save</button></p>
 	  </fieldset>
   </div>
-
+</form>
 
 
 
