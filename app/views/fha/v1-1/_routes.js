@@ -562,6 +562,31 @@ router.get('/booking/decision/:customerId/:page', function(req, res, next){
   res.render(viewPath +'/booking/' + req.params.page);
 })
 
+
+
+router.get('/assessment/evidence/socialWorkHistory*/:commentId', function(req, res, next){  
+  res.locals.comment = socialWorkComments.filter(item => item.id === req.params.commentId)[0];
+
+
+  res.render(viewPath +'/assessment/evidence/contentEdit');
+  
+});
+
+
+
+router.post('/assessment/evidence/socialWorkHistoryEdit', function(req, res, next){  
+  
+  socialWorkComments = socialWorkComments.map(function(item){
+    if(item.id === req.body.id){
+      item.comment = req.body.comment;
+    }
+  })
+  req.session.data.socialWorkComments = socialWorkComments;
+  
+  next()
+  
+});
+
 router.post('/assessment/evidence/socialWorkHistory', function(req, res, next){  
   if(req.body.delete == "true"){
      socialWorkComments = socialWorkComments.filter(item => item.id != req.body.id);
@@ -600,7 +625,7 @@ router.post('/assessment/evidence/typicalDay', function(req, res, next){
 
 
 
-router.get('/assessment/evidence/socialWorkHistory', function(req, res, next){  
+router.get('/assessment/evidence/socialWorkHistory*', function(req, res, next){  
   res.locals.comments = socialWorkComments;
   next()
 });
