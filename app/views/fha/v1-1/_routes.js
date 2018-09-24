@@ -32,7 +32,7 @@ router.get('*', function (req, res, next) {
   res.locals.path1 = res.locals.path + "/" + bits[0]
   res.locals.path2 = res.locals.path + "/" + bits[0] + "/" + bits[1]
   res.locals.stage = 1;
-
+  res.locals.observations=observations;
   res.locals.cssPath = '/public/stylesheets/fha_v' + versionNumber +'.css';
   res.locals.javascriptPath = "/public/javascripts/application_v" + versionNumber + ".js"
   res.locals.versionNumber = versionNumber;
@@ -1242,12 +1242,12 @@ router.get('/capacity/manage-centre/capacity-2', function(req, res, next){
 });
 
 
-router.get('/victorcastillo/general-observations', function(req, res, next){
+router.get('/assessment/general-observations', function(req, res, next){
   res.locals.comments = observations
   next()
 })
 
-router.post('/victorcastillo/general-observations-post', function(req, res, next){
+router.post('/assessment/general-observations-post', function(req, res, next){
   var time = new Date();
   res.locals.comments = observations
 
@@ -1260,7 +1260,7 @@ router.post('/victorcastillo/general-observations-post', function(req, res, next
       hasComment: true,
       isCustomer: true
       })
-    res.redirect(301, '/fha/v' + versionNumber +'/victorcastillo/general-observations');
+    res.redirect(301, '/fha/v' + versionNumber +'/assessment/general-observations');
 
 })
 

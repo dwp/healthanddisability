@@ -29,7 +29,7 @@ router.get('*', function (req, res, next) {
   res.locals.path1 = res.locals.path + "/" + bits[0]
   res.locals.path2 = res.locals.path + "/" + bits[0] + "/" + bits[1]
   res.locals.stage = 1;
-
+  res.locals.observations=observations;
   res.locals.cssPath = '/public/stylesheets/fha_v' + versionNumber +'.css';
   res.locals.javascriptPath = "/public/javascripts/application_v" + versionNumber + ".js"
   res.locals.versionNumber = versionNumber;
