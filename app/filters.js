@@ -162,6 +162,10 @@ module.exports = function (env) {
     return arr.slice(0, limit);
   }
 
+  filters.nl2br = function(str) {
+    return str.replace(/\r|\n|\r\n/g, '<br>')
+  }
+
 
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
