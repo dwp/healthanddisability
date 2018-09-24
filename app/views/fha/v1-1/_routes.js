@@ -85,6 +85,8 @@ router.get('/clearSession',function(req, res, next) {
   req.session.data.physexam = false;
   req.session.data = {};
   observations = [];
+  socialWorkComments = [];
+  typicalDayComments = [];
   nug_id = 0;
   res.send("success");
 })
@@ -563,8 +565,32 @@ router.get('/booking/decision/:customerId/:page', function(req, res, next){
 })
 
 
+router.get('/assessment/evidence/typicalDay/:commentId', function(req, res, next){  
+  res.locals.comment = typicalDayComments.filter(item => item.id === req.params.commentId)[0];
 
-router.get('/assessment/evidence/socialWorkHistory*/:commentId', function(req, res, next){  
+
+  res.render(viewPath +'/assessment/evidence/contentEditDay');
+  
+});
+
+
+
+router.post('/assessment/evidence/typicalDayEdit', function(req, res, next){  
+  
+  typicalDayComments.map(function(item){
+    if(item.id === req.body.id){
+      item.comment = req.body.comment;
+    }
+  })
+  console.log(typicalDayComments);
+  req.session.data.typicalDayComments = typicalDayComments;
+  
+  next()
+  
+});
+
+
+router.get('/assessment/evidence/socialWorkHistoryEdit/:commentId', function(req, res, next){  
   res.locals.comment = socialWorkComments.filter(item => item.id === req.params.commentId)[0];
 
 
@@ -576,11 +602,12 @@ router.get('/assessment/evidence/socialWorkHistory*/:commentId', function(req, r
 
 router.post('/assessment/evidence/socialWorkHistoryEdit', function(req, res, next){  
   
-  socialWorkComments = socialWorkComments.map(function(item){
+  socialWorkComments.map(function(item){
     if(item.id === req.body.id){
       item.comment = req.body.comment;
     }
   })
+  console.log(socialWorkComments);
   req.session.data.socialWorkComments = socialWorkComments;
   
   next()
