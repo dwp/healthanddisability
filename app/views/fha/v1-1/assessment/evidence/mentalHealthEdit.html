@@ -20,34 +20,87 @@
 <p><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
   
   
-  
+<form action="medical_assessment_dashboard" method="POST" class="form">
   <h1 class="heading-large mt20 mb30"><span class="heading-secondary">Review</span>Mental health assessment</h1>
         <form>
   <fieldset>
   <legend class="visually-hidden">Mental health categories</legend>
-	  <div class="form-group">
-	      <label class="form-label-bold" for="Appearance">Appearance</label>
-	      <textarea class="form-control form-control-3-4" name="Appearance" id="Appearance" rows="4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</textarea>
-	  </div>
-	  
-	  <div class="form-group">
-	      <label class="form-label-bold" for="Behaviour">Behaviour</label>
-	      <textarea class="form-control form-control-3-4" name="Behaviour" id="Behaviour" rows="4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</textarea>
-	  </div>
-	  
-	  <div class="form-group">
-	      <label class="form-label-bold" for="Speech">Speech</label>
-	      <textarea class="form-control form-control-3-4" name="Speech" id="Speech" rows="4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</textarea>
-	  </div>
-	  
-	  <div class="form-group">
-	      <label class="form-label-bold" for="Mood">Mood</label>
-	      <textarea class="form-control form-control-3-4" name="Mood" id="Mood" rows="4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</textarea>
-	  </div>
+  {% if data['Appearance'] %}  
+  <div class="form-group">
+    <label class="form-label-bold" for="mh-appearance-id">Appearance</label>
+    <textarea class="form-control form-control-3-4" name="mhappearance" id="mh-appearance-id" rows="4">{{mhappearance}}</textarea>
+</div>
+{% endif %}  
+{% if data['Behaviour'] %}  
+<div class="form-group">
+  <label class="form-label-bold" for="mh-behaviour">Behaviour</label>
+  <textarea class="form-control form-control-3-4" name="mhbehaviour" id="mh-behaviour" rows="4">{{mhbehaviour}}</textarea>
+</div>
+{% endif %} 
+{% if data['Speech'] %}  	  
+<div class="form-group">
+  <label class="form-label-bold" for="mh-speech">Speech</label>
+  <textarea class="form-control form-control-3-4" name="mhspeech" id="mh-speech" rows="4">{{mhspeech}}</textarea>
+</div>
+{% endif %} 
+{% if data['Mood'] %}  	  
+<div class="form-group">
+  <label class="form-label-bold" for="mh-mood">Mood</label>
+  <textarea class="form-control form-control-3-4" name="mhmood" id="mh-mood" rows="4">{{mhmood}}</textarea>
+</div>
+{% endif %} 
+{% if data['Cognition'] %}  
+<div class="form-group">
+  <label class="form-label-bold" for="mh-cognition">Cognition</label>
+  <textarea class="form-control form-control-3-4" name="mhcognition" id="mh-cognition" rows="4">{{mhcognition}}</textarea>
+</div>
+{% endif %} 
+{% if data['General'] %}  
+<div class="form-group">
+  <label class="form-label-bold" for="mh-general">General</label>
+  <textarea class="form-control form-control-3-4" name="mhgeneral" id="mh-general" rows="4">{{mhgeneral}}</textarea>
+</div>
+{% endif %} 
+{% if data['Insight'] %}  
+<div class="form-group">
+  <label class="form-label-bold" for="mh-general">Insight</label>
+  <textarea class="form-control form-control-3-4" name="mhgeneral" id="mh-general" rows="4">{{mhgeneral}}</textarea>
+</div>
+{% endif %} 
+{% if data['Thoughts'] %}  
+<div class="form-group">
+  <label class="form-label-bold" for="mh-thoughts">Thoughts</label>
+  <textarea class="form-control form-control-3-4" name="mhthoughts" id="mh-thoughts" rows="4">{{mhthoughts}}</textarea>
+</div>
+{% endif %} 
+{% if data['Perceptions'] %}  
+<div class="form-group">
+  <label class="form-label-bold" for="mh-perceptions">Perceptions</label>
+  <textarea class="form-control form-control-3-4" name="mhperceptions" id="mh-perceptions" rows="4">{{mhperceptions}}</textarea>
+</div>
+{% endif %} 
+{% if data['Addiction'] %}  
+<div class="form-group">
+  <label class="form-label-bold" for="mh-addiction">Addictions</label>
+  <textarea class="form-control form-control-3-4" name="mhaddiction" id="mh-addiction" rows="4">{{mhaddiction}}</textarea>
+</div>
+{% endif %} 
+{% if data['Involentry-movements'] %}  
+<div class="form-group">
+  <label class="form-label-bold" for="mh-involentry-movements">Involuntary movements</label>
+  <textarea class="form-control form-control-3-4" name="mhinvolentry" id="mh-involentry-movements" rows="4">{{mhinvolentry}}</textarea>
+</div>
+{% endif %} 
+{% if data['Cognative-test'] %}  
+<div class="form-group">
+  <label class="form-label-bold" for="mh-cognative-tests">Cognative informal tests</label>
+  <textarea class="form-control form-control-3-4" name="mhcognativetests" id="mh-cognative-tests" rows="4">{{mhcognativetests}}</textarea>
+</div>
+{% endif %} 
 	  
 	   </form>
   
-  <p class="mt30"><a href="medical_assessment_dashboard" class="button">Save</a></p>
+  <p class="mt30"><button href="medical_assessment_dashboard" class="button">Save</button></p>
     
        
   </div><!-- column -->
