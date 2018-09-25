@@ -614,6 +614,8 @@ router.post('/assessment/evidence/socialWorkHistoryEdit', function(req, res, nex
   
 });
 
+
+
 router.post('/assessment/evidence/socialWorkHistory', function(req, res, next){  
   if(req.body.delete == "true"){
      socialWorkComments = socialWorkComments.filter(item => item.id != req.body.id);
@@ -1317,7 +1319,30 @@ router.post('/assessment/general-observations-post', function(req, res, next){
 })
 
 
-
+router.post('/assessment/evidence/mentalHealthAssessment', function(req, res, next){
+  var mentalHealthFields = [
+      "Appearance",
+      "Behaviour",
+      "Speech",
+      "Mood",
+      "Cognition",
+      "General",
+      "Insight",
+      "Thoughts",
+      "Perceptions",
+      "Addiction",
+      "Involentry-movements",
+      "Cognative-test"];
+  var count = 0;
+  mentalHealthFields.forEach( function(element, index) {
+    if(req.session.data[element]){
+      count ++;
+    }
+  req.session.data.mentalHealthCount = count;
+  console.log('Mental Health count: ' + count)
+  next()
+  });
+});
 
 
 module.exports = router
