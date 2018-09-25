@@ -28,8 +28,8 @@
         <form action="mentalHealthAssessment" method="POST" class="form">
 
 				<div class="form-group">
-						<label class="form-label-bold" for="mh-speech">Observation</label>
-						<textarea class="form-control form-control-3-4" name="mh-speech" id="mh-speech" rows="8"></textarea>
+						<label class="form-label-bold" for="mh-general">Observation</label>
+						<textarea class="form-control form-control-3-4" name="mhgeneral" id="mh-general" rows="8">{{mhgeneral}}</textarea>
 				</div>
 		
 		
@@ -37,7 +37,7 @@
 						<input type="submit" class="button" value="Save">
 				
 						<div class="multiple-choice" style="display:none">
-								<input id="radio-inline-4" type="radio" name="Speech" value="Speech" checked>
+								<input id="radio-inline-4" type="radio" name="General" value="General" checked>
 
 								<label for="radio-4">hidden radio one</label>
 							</div>
