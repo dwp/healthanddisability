@@ -1,9 +1,6 @@
 {% macro nav(section, subSection) %}
 
 {% set sections = [{
-		url:"caselist",
-		label:"All cases"
-	},{
 		url:"referrals",
 		label:"Referrals (49)", 
 		subItems: [{
@@ -38,32 +35,7 @@
 		}]
 	},{
 		url:"assessment",
-		label:"Todays assessments", 
-		subItems: [{
-			label: "9:00am (4)",
-			url: "#"
-		},{
-			label: "10:00am (4)",
-			url: "#"
-		},{
-			label: "11:00am (4)",
-			url: "#"
-		},{
-			label: "1:00pm (4)",
-			url: "#"
-		},{
-			label: "2:00pm (11)",
-			url: "todays-appointments-2pm"
-		},{
-			label: "3:00pm (2)",
-			url: "#"
-		},{
-			label: "4:00pm (2)",
-			url: "#"
-		},{
-			label: "4:00pm (2)",
-			url: "#"
-		}]
+		label:"Todays assessments"
 	}] 
 %}
 
