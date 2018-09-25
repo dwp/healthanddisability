@@ -651,7 +651,7 @@ td{
 
 .chat-layout {
 	position: relative;
-	width: 88%;
+	width: 98%;
 	
 	.comments-window {
 		width: 100%;
@@ -663,8 +663,8 @@ td{
 	}
 	
 	.chat-window {
-	min-height: 560px;
-	max-height: 560px;
+	min-height: 480px;
+	max-height: 480px;
 	overflow: scroll;
 	background: $grey-2;
 	padding: 1em 1.5em 2em 1.5em;
@@ -718,7 +718,7 @@ td{
 	.remove-link {
 		background: transparent;
 		border: 0;
-		border-bottom: 1px solid $govuk-blue;
+		border-bottom: $govuk-blue 1px solid;
 		font-size: 17px;
 		color: $govuk-blue;
 		cursor: pointer;
@@ -727,6 +727,7 @@ td{
 		&:hover {
 			color: #318dc2;
 			border-color: #318dc2;
+			text-decoration: none;
 		}
 	}
 }
