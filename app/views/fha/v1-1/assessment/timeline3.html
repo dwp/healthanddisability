@@ -31,9 +31,34 @@
           <h3 class="timeline__heading">Assessment stopped</h3>
           <p class="timeline_datetime">30 August 2018</p>
         </div>
-      
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Appointment booked</h3>
+          <p class="timeline_datetime">27 August 2018</p>
+        </div>
       
       <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Referred for appointment</h3>
+          <p class="timeline_datetime">27 August 2018</p>
+        </div>
+
+                 <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">
+              {% if checked('type','FRR') %}
+           
+            Further medical evidence received (FRR)
+              {% else %}
+              GP statement received (UC113)
+              {% endif %}
+          </h3>
+          <p class="timeline_datetime">26 August 2018</p>
+        </div>
+      
+      
+   <!--   <span class="line"></span>
         <div class="timeline__event">
           <h3 class="timeline__heading">Appointment booked</h3>
           <p class="timeline_datetime">25 August 2018</p>
@@ -87,7 +112,67 @@
         <div class="timeline__event">
           <h3 class="timeline__heading">UC application completed on the phone</h3>
           <p class="timeline_datetime">15 July 2018</p>
+        </div> -->
+
+        {% if checked('type','FRR') %}
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Medical evidence requested (Further medical evidence FRR)</h3>
+          <p class="timeline_datetime">25 August 2018</p>
         </div>
+        {% endif %}   
+        {% if checked('type','113') %}	  
+            <span class="line"></span>
+              <div class="timeline__event">
+                <h3 class="timeline__heading">Medical evidence requested (GP Report 113)</h3>
+                <p class="timeline_datetime">25 August 2018</p>
+              </div>
+              {% endif %} 
+      
+      
+            <!--           <span class="line"></span>
+              <div class="timeline__event">
+                <h3 class="timeline__heading">GP statement received (UC113)</h3>
+                <p class="timeline_datetime">26 August 2018</p>
+              </div>
+              
+                <span class="line"></span>
+              <div class="timeline__event">
+                <h3 class="timeline__heading">Request for GP statement sent (UC113)</h3>
+                <p class="timeline_datetime">17 August 2018</p>
+              </div> -->
+              
+                <span class="line"></span>
+              <div class="timeline__event">
+                <h3 class="timeline__heading">Fit note (MED3) received </h3>
+                <p class="timeline_datetime">14 August 2018</p>
+              </div>
+              
+              <span class="line"></span>
+              <div class="timeline__event">
+                <h3 class="timeline__heading">UC50 form received at CHDA</h3>
+                <p class="timeline_datetime">10 August 2018</p>
+              </div>
+      
+              <span class="line"></span>
+              <div class="timeline__event">
+                <h3 class="timeline__heading">UC50 form sent out to Tomas</h3>
+                <p class="timeline_datetime"> 1 August 2018</p>
+              </div>
+      
+         
+      
+              <span class="line"></span>
+              <div class="timeline__event">
+                <h3 class="timeline__heading">Entitlement letter sent to Tomas</h3>
+                <p class="timeline_datetime">17 July 2018</p>
+              </div>
+      
+              <span class="line"></span>
+              <div class="timeline__event">
+                <h3 class="timeline__heading">UC application completed on the phone</h3>
+                <p class="timeline_datetime">15 July 2018</p>
+              </div>
 
         <div style="clear:both"></div>
 
