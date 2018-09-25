@@ -114,13 +114,13 @@
 		<h3 class="heading-medium">Lower back and legs</h3>
 		
 		<h4 class="heading-small">Lower back</h4>
-		<p>{{phys_lowerback_obs}}</p>
+		<p>{{physLowerbackObs}}</p>
 		
 		<h4 class="heading-small">Left leg</h4>
-		<p>{{right_lowerback_obs}}</p>
+		<p>{{leftLowerbackObs}}</p>
 		
 		<h4 class="heading-small">Right leg</h4>
-		<p>{{left_lowerback_obs}}</p>
+		<p>{{rightLowerbackObs}}</p>
 	
 		
 		<p><a href="#" class="button secondary">Edit lower back and legs</a></p>
@@ -145,22 +145,161 @@
  
  <div class="review-item">
 	<h2 class="heading-medium">Mental health</h2>
+{% if data['Appearance'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Appearance <!-- <span class="edited">Edited</span> --></h3>
 	
-	<div class="review-inner">	
-		<h3 class="heading-medium">Appearance <!-- <span class="edited">Edited</span> --></h3>
-		
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		
-		<p><a href="#" class="button secondary">Edit appearance</a></p>
-	</div>
+	<p>{{mhappearance}}</p>
 	
-	<div class="review-inner">	
-		<h3 class="heading-medium">Speech</h3>
-		
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		
-		<p><a href="#" class="button secondary">Edit speech</a></p>
-	</div>
+	<p><a href="#" class="button secondary">Edit appearance</a></p>
+</div>
+{% endif %}
+
+{% if data['Behaviour'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Behaviour <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhbehaviour}}</p>
+	
+	<p><a href="#" class="button secondary">Edit Behaviour</a></p>
+</div>
+{% endif %}
+
+{% if data['Speech'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Speech <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhspeech}}</p>
+	
+	<p><a href="#" class="button secondary">Edit Speech</a></p>
+</div>
+{% endif %}
+
+{% if data['Mood'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Mood <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhmood}}</p>
+	
+	<p><a href="#" class="button secondary">Edit Mood</a></p>
+</div>
+{% endif %}
+
+{% if data['Cognition'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Cognition <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhcognition}}</p>
+	
+	<p><a href="#" class="button secondary">Edit Cognition</a></p>
+</div>
+{% endif %}
+
+{% if data['General'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">General <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhgeneral}}</p>
+	
+	<p><a href="#" class="button secondary">Edit General</a></p>
+</div>
+{% endif %}
+
+{% if data['Appearance'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Appearance <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhappearance}}</p>
+	
+	<p><a href="#" class="button secondary">Edit appearance</a></p>
+</div>
+{% endif %}
+
+{% if data['Insight'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Insight <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhinsight}}</p>
+	
+	<p><a href="#" class="button secondary">Edit Insight</a></p>
+</div>
+{% endif %}
+
+{% if data['Thoughts'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Thoughts <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhthoughts}}</p>
+	
+	<p><a href="#" class="button secondary">Edit Thoughts</a></p>
+</div>
+{% endif %}
+
+{% if data['Appearance'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Appearance <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhappearance}}</p>
+	
+	<p><a href="#" class="button secondary">Edit appearance</a></p>
+</div>
+{% endif %}
+
+{% if data['Perceptions'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Perceptions <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhperceptions}}</p>
+	
+	<p><a href="#" class="button secondary">Edit Perceptions</a></p>
+</div>
+{% endif %}
+
+{% if data['Addiction'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Addiction <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhaddiction}}</p>
+	
+	<p><a href="#" class="button secondary">Edit Addiction</a></p>
+</div>
+{% endif %}
+
+{% if data['Involentry-movements'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Involuntary movements <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhinvolentry}}</p>
+	
+	<p><a href="#" class="button secondary">Edit Involuntary movements</a></p>
+</div>
+{% endif %}
+
+
+{% if data['Cognative-test'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Cognative tests <!-- <span class="edited">Edited</span> --></h3>
+	<h4 class="heading-small">Serial sevens</h4>
+<p>{{serialSeven}}</p>
+<h4 class="heading-small">Calculating change</h4>
+<p>{{Calculating}}</p>
+<h4 class="heading-small">Follow commands</h4>
+<p>{{follow}}</p>
+<h4 class="heading-small">Attention</h4>
+<p>{{attention}}</p>
+<h4 class="heading-small">Registration</h4>
+<p>{{registration}}</p>
+<h4 class="heading-small">Recall</h4>
+<p>{{recall}}</p>
+<h4 class="heading-small">Informal tests</h4>
+<p>{{mhcognativetests}}</p>
+	
+	<p><a href="#" class="button secondary">Edit appearance</a></p>
+</div>
+{% endif %}
+
+	
+
 	
 </div>  
 
