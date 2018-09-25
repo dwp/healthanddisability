@@ -14,7 +14,7 @@
 	  <div class="column-two-thirds">
 	 
 
-   <form>
+   <form action="mobility" method="post">
   
   	<fieldset>
 					
@@ -24,24 +24,24 @@
 
 	    {% for comment in socialWorkComments %}
 	    <div class="multiple-choice">
-	      <input id="des1" type="checkbox" name="movingDescriptors[]" value="{{comment.id}}">
+	      <input id="des1" type="checkbox" name="movingDescriptors[]" value="{{comment.comment}}">
 	      <label for="des1">{{comment.comment}}</label>
 	    </div>
 	    {% endfor %}
 		{% for comment in typicalDayComments %}
 	    <div class="multiple-choice">
-	      <input id="des1" type="checkbox" name="movingDescriptors[]" value="{{comment.id}}">
+	      <input id="des1" type="checkbox" name="movingDescriptors[]" value="{{comment.comment}}">
 	      <label for="des1">{{comment.comment}}</label>
 	    </div>
 	    {% endfor %}
 	   
   </fieldset>
   
+  
+  
+  
+  <p class="mt30"><button class="button">Next</button></p>
   </form>
-  
-  
-  <p class="mt30"><a href="mobility" class="button">Next</a></p>
-  
   
   </div>
 

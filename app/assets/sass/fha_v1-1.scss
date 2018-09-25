@@ -54,6 +54,10 @@ td,th {
   }
 }
 
+a:visited {
+	color: $link-colour;
+}
+
 /*  Override timeline stuff */
 .timeline .timeline-event {
   &:first-of-type .heading-small {

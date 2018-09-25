@@ -48,7 +48,7 @@
 		<h4 class="heading-small">Source:</h4>
 		<p>Claimant</p>
 		<h4 class="heading-small">Condition history</h4>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p>{{conditionHistory1}}</p>
 	</div>
 	
 	<div class="review-inner">
@@ -58,7 +58,7 @@
 		<h4 class="heading-small">Source:</h4>
 		<p>Claimant</p>
 		<h4 class="heading-small">Condition history</h4>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p>{{conditionHistory2}}</p>
 	</div>
 	
 	<div class="review-inner">
@@ -68,7 +68,7 @@
 		<h4 class="heading-small">Source:</h4>
 		<p>Claimant</p>
 		<h4 class="heading-small">Condition history</h4>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p>{{conditionHistory3}}</p>
 	</div>
 	
 	<div class="review-inner">
@@ -78,7 +78,7 @@
 		<h4 class="heading-small">Source:</h4>
 		<p>Claimant</p>
 		<h4 class="heading-small">Condition history</h4>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p>{{conditionHistory4}}</p>
 	</div>
  
 	</div> 
@@ -279,9 +279,10 @@
 	
 		<h2 class="heading-medium">Moving around and climbing steps without someone's help</h2>
 		<ul class="list-bullet">
-			<li>Comment which was added during the face to face which falls under moving around....</li>
-			<li>Comment which was added during the face to face which falls under moving around....</li>
-			<li>Comment which was added during the face to face which falls under moving around....</li>
+			{% for descriptor in movingDescriptors %}
+
+				<li>{{descriptor}}</li>
+			{% endfor %}
 		</ul>
 
 				
