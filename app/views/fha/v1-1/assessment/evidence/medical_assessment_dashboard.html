@@ -6,10 +6,6 @@
 
   <h2 class="heading-large no-kdBar">Assessment review</h2>
 
-  {% if data.nuggets.length %}
-
-    {% set last_one = data.nuggets | sortBy("time",true) | last  %}
-    {% set first_one = data.nuggets | sortBy("time",true) | first  %}
 
     <table class="dashboard-table">
     <caption class="visually-hidden">Assessment details</caption>
@@ -21,7 +17,8 @@
     	</tr>
     	<tr>
     		<th>Time</th>
-    		<td>{{ last_one.time | formatDate("H:mma") }} - {{ first_one.time | formatDate("H:mma") }}</td>
+    		<td>{{ assessmentStartTime | formatDate("H:mma") }} to 
+            {{ assessmentEndTime | formatDate("H:mma") }}</td>
     	</tr>
     	<tr>
     		<th>Assessor</th>
@@ -35,10 +32,6 @@
     </table>
 
 
-
-
-  {% endif %}
-  
   
   <div class="assessDashboard">
     	

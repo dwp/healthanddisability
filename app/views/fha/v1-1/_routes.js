@@ -670,7 +670,15 @@ router.get('/assessment/evidence/wca-index', function(req, res, next){
   next()
 });
 
+router.post('/assessment/evidence/wca-index', function(req, res, next){  
+  req.session.data.assessmentStartTime = moment().format();
+  next()
+});
 
+router.post('/assessment/evidence/medical_assessment_dashboard', function(req, res, next){  
+  req.session.data.assessmentEndTime = moment().format();
+  next()
+});
 
 router.post('/booking/booked/:customerId/request-rearrangement-post', function(req, res, next){  
   
