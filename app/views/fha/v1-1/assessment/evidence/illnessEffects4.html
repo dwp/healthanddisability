@@ -48,6 +48,9 @@
 	    
 	</div> 
 	
+	
+
+
 	<form method="post" action="illnessEffectsFinish">
 		<fieldset>
 			<legend class="visually-hidden">Condition details</legend>
@@ -55,7 +58,7 @@
 			<div class="form-group">
 				<label class="heading-small" for="field-8">Condition history</label>
 				<p class="form-hint mb5 mt5">This should be specific to Compound fracture - shinbone.</p>
-				<textarea class="form-control form-control-3-4" id="field-8" style="height:250px;"></textarea>
+				<textarea class="form-control form-control-3-4" name="conditionHistory4" id="field-8" style="height:250px;">{{conditionHistory4}}</textarea>
 			</div>
 			
 			
@@ -66,7 +69,7 @@
 			
 					
 					<div class="multiple-choice">
-				      <input id="meds1" name="type" type="checkbox" value="meds1">
+				      <input id="meds1" type="checkbox" name="illnessMedication4[]" value="Sertraline" {{checked('illnessMedication4', 'Sertraline') }}>
 				      <label for="meds1">
 				      	Sertraline
 					  	<div class="meds-block">
@@ -76,7 +79,7 @@
 				    </div>
 				    
 				    <div class="multiple-choice">
-				      <input id="meds2" name="type" type="checkbox" value="meds2">
+				      <input id="meds2" type="checkbox" name="illnessMedication4[]" value="Zomorph" {{checked('illnessMedication4', 'Zomorph') }}>
 				      <label for="meds2">
 				      	Zomorph
 					  	<div class="meds-block">
@@ -85,8 +88,8 @@
 				      </label>
 				    </div>		    			
 	  
-				     <div class="multiple-choice" data-target="other-meds">
-				      <input id="otherMeds" name="illnessMedication1[]" type="checkbox" value="otherMeds">
+				   <div class="multiple-choice" data-target="other-meds">
+				      <input id="otherMeds"  type="checkbox" name="illnessMedication4[]" value="Other" {{checked('illnessMedication4', 'Other') }}>
 				      <label for="otherMeds">Other</label>
 				    </div>
 				    
@@ -103,7 +106,7 @@
 						      	<div class="form-group">
 						        
 									<label class="form-label form-label-large" for="illnessname">Name of medication</label>
-									 <input type="text" class="form-control" id="illnessname">
+									 <input type="text" name="otherMedName4" value="{{otherMedName4}}" class="form-control" id="illnessname">
 									 
 								 </div>
 								 
@@ -111,7 +114,7 @@
 								 <div class="form-group">
 						        
 									<label class="form-label form-label-large" for="dose">Dose</label>
-									 <input type="text" class="form-control form-control-1-4" id="dose">
+									 <input type="text" name="otherMedDose4" value="{{otherMedDose4}}" class="form-control form-control-1-4" id="dose">
 									 
 								 </div>
 				              
@@ -124,19 +127,19 @@
 								      <legend class="form-label">
 								          Last prescribed date
 								      </legend>
-								       <span class="form-hint" id="dob-hint">For example, 31 3 1980</span>
+								       <span class="form-hint" id="otherMed_hint4">For example, 31 3 2018</span>
 								      <div class="form-date">
 								        <div class="form-group form-group-day">
-								          <label class="form-label" for="dob-day">Day</label>
-								          <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+								          <label class="form-label" for="otherMed_day4">Day</label>
+								          <input class="form-control" id="otherMed_day4" name="otherMed_day4" value="{{otherMed_day4}}" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="otherMed_hint4">
 								        </div>
 								        <div class="form-group form-group-month">
-								          <label class="form-label" for="dob-month">Month</label>
-								          <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+								          <label class="form-label" for="otherMed_month4">Month</label>
+								          <input class="form-control" id="otherMed_month4" name="otherMed_month4" value="{{otherMed_month4}}" type="number" pattern="[0-9]*" min="0" max="12">
 								        </div>
 								        <div class="form-group form-group-year">
-								          <label class="form-label" for="dob-year">Year</label>
-								          <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016">
+								          <label class="form-label" for="otherMed_year4">Year</label>
+								          <input class="form-control" id="otherMed_year4" name="otherMed_year4" value="{{otherMed_year4}}" type="number" pattern="[0-9]*" min="0" max="2018">
 								        </div>
 								      </div>
 								    </fieldset>
@@ -146,7 +149,7 @@
 								 
 								<div>
 									 <label class="form-label" for="side">Side effects</label>
-									 <textarea type="text" id="side" class="form-control" name="side" style="height: 100px;"></textarea>
+									 <textarea type="text" id="side" class="form-control" name="otherMedSideEffects4" style="height: 100px;">{{otherMedSideEffects4}}</textarea>
 								</div>
 				
 				            

@@ -61,7 +61,9 @@
 	    		</h2>
 	    		<p class="comments">Statements:
 	    		<span class="number">
+            {{ '0' if not socialWorkComments }}
 	    			{{socialWorkComments.length}}
+            
 	    		</span>
 	    		</p>
 	    		<p class="review"><a href="socialWorkHistoryEdit">Review </a></p>
@@ -75,6 +77,7 @@
 	    		<p class="comments">Statements:
 	    		<span class="number">
             {{typicalDayComments.length}}
+            {{ '0' if not typicalDayComments }}
 	    			
 	    		</span>
 	    		</p>
