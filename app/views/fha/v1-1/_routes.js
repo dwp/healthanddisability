@@ -565,7 +565,7 @@ router.get('/booking/decision/:customerId/:page', function(req, res, next){
 })
 
 
-router.get('/assessment/evidence/typicalDay/:commentId', function(req, res, next){  
+router.get('/assessment/evidence/typicalDayEdit/:commentId', function(req, res, next){  
   res.locals.comment = typicalDayComments.filter(item => item.id === req.params.commentId)[0];
 
 
