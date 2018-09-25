@@ -18,12 +18,14 @@
 			  <div class="form-group">
 			
 				    <div class="multiple-choice" data-target="exam-yes">
-				      <input id="decide_now" name="whatcando" type="radio" value="Yes">
+				      <input id="decide_now" name="whatcando" type="radio" value="Yes"
+				      {{ checked('whatcando', 'Yes') }}>
 				      <label for="decide_now"> Yes</label>
 				    </div>
 				
 				    <div class="multiple-choice" data-target="">
-				      <input id="face2face" name="whatcando" type="radio" value="No, redirect({{ path1 }}/support/rejected)">
+				      <input id="face2face" name="whatcando" type="radio" value="No, redirect({{ path1 }}/support/rejected)"
+				      {{ checked('whatcando', 'No') }}>
 				      <label for="face2face"> No</label>
 				    </div>
 				    
