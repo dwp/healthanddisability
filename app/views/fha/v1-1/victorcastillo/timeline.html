@@ -27,8 +27,23 @@
     
       <div class="timeline">
 
+          {% if checked('type','FRR') %}
+  <span class="line"></span>
+  <div class="timeline__event">
+    <h3 class="timeline__heading">Medical evidence requested (Further medical evidence FRR)</h3>
+    <p class="timeline_datetime">25 August 2018</p>
+  </div>
+  {% endif %}   
+  {% if checked('type','113') %}	  
+		  <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Medical evidence requested (GP Report 113)</h3>
+          <p class="timeline_datetime">25 August 2018</p>
+        </div>
+        {% endif %} 
 
-                 <span class="line"></span>
+
+      <!--           <span class="line"></span>
         <div class="timeline__event">
           <h3 class="timeline__heading">GP statement received (UC113)</h3>
           <p class="timeline_datetime">26 August 2018</p>
@@ -38,7 +53,7 @@
         <div class="timeline__event">
           <h3 class="timeline__heading">Request for GP statement sent (UC113)</h3>
           <p class="timeline_datetime">17 August 2018</p>
-        </div>
+        </div> -->
         
           <span class="line"></span>
         <div class="timeline__event">
