@@ -667,7 +667,6 @@ td{
 	}
 	
 	.chat-window {
-	min-height: 480px;
 	max-height: 480px;
 	overflow: scroll;
 	background: $grey-2;
@@ -702,7 +701,6 @@ td{
 		padding: 1em;
 		float: left;
 		width: 76%;
-		white-space: pre;
 
 
 	}
@@ -1083,4 +1081,8 @@ width:100%;
 	 }
 
 	 @extend a;
+}
+
+.pre-wrap{
+	white-space: pre;
 }
