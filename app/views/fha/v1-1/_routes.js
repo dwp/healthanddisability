@@ -19,9 +19,6 @@ var slotsData = require(filePath +'/data/slots-data.js')
 var slotsData2 = require(filePath +'/data/slots-data-2.js')
 var commentsData = require(filePath +'/data/comments.js');
 var appointmentHistory = require(filePath +'/data/appointmentHistory.js');
-var observations = [];
-var socialWorkComments = [];
-var typicalDayComments = [];
 
 
 router.get('*', function (req, res, next) {
@@ -32,10 +29,23 @@ router.get('*', function (req, res, next) {
   res.locals.path1 = res.locals.path + "/" + bits[0]
   res.locals.path2 = res.locals.path + "/" + bits[0] + "/" + bits[1]
   res.locals.stage = 1;
-  res.locals.observations=observations;
+
   res.locals.cssPath = '/public/stylesheets/fha_v' + versionNumber +'.css';
   res.locals.javascriptPath = "/public/javascripts/application_v" + versionNumber + ".js"
   res.locals.versionNumber = versionNumber;
+
+  if(!req.session.data.socialWorkComments){
+    req.session.data.socialWorkComments = [];
+  }
+
+  if(!req.session.data.typicalDayComments){
+    req.session.data.typicalDayComments = [];
+  }
+
+  if(!req.session.data.observations){
+    req.session.data.observations = [];
+  }
+
   next()
 })
 
@@ -85,8 +95,8 @@ router.get('/clearSession',function(req, res, next) {
   req.session.data.physexam = false;
   req.session.data = {};
   observations = [];
-  socialWorkComments = [];
-  typicalDayComments = [];
+  req.session.data.socialWorkComments = [];
+  req.session.data.typicalDayComments = [];
   nug_id = 0;
   res.send("success");
 })
@@ -566,7 +576,7 @@ router.get('/booking/decision/:customerId/:page', function(req, res, next){
 
 
 router.get('/assessment/evidence/typicalDayEdit/:commentId', function(req, res, next){  
-  res.locals.comment = typicalDayComments.filter(item => item.id === req.params.commentId)[0];
+  res.locals.comment = req.session.data.typicalDayComments.filter(item => item.id === req.params.commentId)[0];
 
 
   res.render(viewPath +'/assessment/evidence/contentEditDay');
@@ -577,13 +587,12 @@ router.get('/assessment/evidence/typicalDayEdit/:commentId', function(req, res, 
 
 router.post('/assessment/evidence/typicalDayEdit', function(req, res, next){  
   
-  typicalDayComments.map(function(item){
+  req.session.data.typicalDayComments.map(function(item){
     if(item.id === req.body.id){
       item.comment = req.body.comment;
     }
   })
-  console.log(typicalDayComments);
-  req.session.data.typicalDayComments = typicalDayComments;
+  console.log(req.session.data.typicalDayComments);
   
   next()
   
@@ -591,7 +600,7 @@ router.post('/assessment/evidence/typicalDayEdit', function(req, res, next){
 
 
 router.get('/assessment/evidence/socialWorkHistoryEdit/:commentId', function(req, res, next){  
-  res.locals.comment = socialWorkComments.filter(item => item.id === req.params.commentId)[0];
+  res.locals.comment = req.session.data.socialWorkComments.filter(item => item.id === req.params.commentId)[0];
 
 
   res.render(viewPath +'/assessment/evidence/contentEdit');
@@ -602,13 +611,13 @@ router.get('/assessment/evidence/socialWorkHistoryEdit/:commentId', function(req
 
 router.post('/assessment/evidence/socialWorkHistoryEdit', function(req, res, next){  
   
-  socialWorkComments.map(function(item){
+  req.session.data.socialWorkComments.map(function(item){
     if(item.id === req.body.id){
       item.comment = req.body.comment;
     }
   })
-  console.log(socialWorkComments);
-  req.session.data.socialWorkComments = socialWorkComments;
+  console.log(req.session.data.socialWorkComments);
+  
   
   next()
   
@@ -618,17 +627,17 @@ router.post('/assessment/evidence/socialWorkHistoryEdit', function(req, res, nex
 
 router.post('/assessment/evidence/socialWorkHistory', function(req, res, next){  
   if(req.body.delete == "true"){
-     socialWorkComments = socialWorkComments.filter(item => item.id != req.body.id);
+     req.session.data.socialWorkComments = req.session.data.socialWorkComments.filter(item => item.id != req.body.id);
 
   } else {
 
-    socialWorkComments.push({
+    req.session.data.socialWorkComments.push({
       id: crypto.randomBytes(16).toString("hex"),
       comment: req.body.comments,
       time: moment().format()
     });
 
-    res.locals.comments = socialWorkComments;
+    res.locals.comments = req.session.data.socialWorkComments;
   }
   next()
 
@@ -636,17 +645,17 @@ router.post('/assessment/evidence/socialWorkHistory', function(req, res, next){
 
 router.post('/assessment/evidence/typicalDay', function(req, res, next){  
   if(req.body.delete == "true"){
-     typicalDayComments = typicalDayComments.filter(item => item.id != req.body.id);
+     req.session.data.typicalDayComments = req.session.data.typicalDayComments.filter(item => item.id != req.body.id);
 
   } else {
 
-    typicalDayComments.push({
+    req.session.data.typicalDayComments.push({
       id: crypto.randomBytes(16).toString("hex"),
       comment: req.body.comments,
       time: moment().format()
     });
 
-    res.locals.comments = typicalDayComments;
+    res.locals.comments = req.session.data.typicalDayComments;
   }
   next()
 
@@ -655,18 +664,17 @@ router.post('/assessment/evidence/typicalDay', function(req, res, next){
 
 
 router.get('/assessment/evidence/socialWorkHistory*', function(req, res, next){  
-  res.locals.comments = socialWorkComments;
+  res.locals.comments = req.session.data.socialWorkComments;
   next()
 });
 
 router.get('/assessment/evidence/typicalDay', function(req, res, next){  
-  res.locals.comments = typicalDayComments;
+  res.locals.comments = req.session.data.typicalDayComments;
   next()
 });
 
 router.get('/assessment/evidence/wca-index', function(req, res, next){  
-  req.session.data.socialWorkComments = socialWorkComments;
-  req.session.data.typicalDayComments = typicalDayComments;
+  
   next()
 });
 
@@ -1305,13 +1313,13 @@ router.get('/capacity/manage-centre/capacity-2', function(req, res, next){
 
 
 router.get('/assessment/general-observations', function(req, res, next){
-  res.locals.comments = observations
+  res.locals.comments = req.session.data.observations
   next()
 })
 
 router.post('/assessment/general-observations-post', function(req, res, next){
   var time = new Date();
-  res.locals.comments = observations
+  res.locals.comments = req.session.data.observations
 
 
     res.locals.comments.push({
