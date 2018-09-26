@@ -20,7 +20,7 @@
   <div class="chat-layout">
 
 
-	 <div class="chat-window">
+	 <div class="chat-window" id="chat-window">
     {% if comments.length < 1 %}
    <p class="comments-window">You haven't added any comments yet</p>
     {% endif %}
@@ -87,6 +87,10 @@ $(document).on('ready',function()
       $('#submitButton').trigger('click');
     }
   });
+
+var chatWindow = document.getElementById("chat-window");
+
+chatWindow.scrollTop = chatWindow.scrollHeight;
 
 
 });
