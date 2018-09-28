@@ -1,16 +1,24 @@
-<div class="grid-row">
-        <div class="column-full">
+
+
+
+
+{% macro nav(selected, path) %}
+
+{% set navs = [
+        {url:"",label:"Case list",id:"case"},
+        {url:"/capacity/manage-centre",label:"Manage my centre", id:"centre"},
+        {url:"/capacity",label:"Resource planning", id:"capacity"}
+        ] %}
         
-          <nav class="navigation-secondary">
-            <ul>
-              <li>
-                <a href="#" class="active" aria-current="section">Case list</a>
-              </li>
-              <li>
-                <a href="#">Manage centre</a>
-              </li>
-            </ul>
-          </nav>
-    
-        </div>
-      </div>
+    <nav class="navigation-secondary">
+      <ul>
+        {% for item in navs %}
+        <li>
+          <a href="/{{path}}{{item.url}}" class="{{ 'active' if item.id == selected }}" 
+          >{{item.label}}</a>
+        </li>
+        {% endfor %}
+
+      </ul>
+    </nav>
+{% endmacro %}
