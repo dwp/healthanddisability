@@ -1,0 +1,67 @@
+{% macro nav(section, subSection) %}
+
+{% set sections = [{
+		url:"referrals",
+		label:"Referrals (49)", 
+		subItems: [{
+			url: "new-referrals",
+			label: "New referrals (32)"
+		},{
+			url: "uc50-posted",
+			label: "UC50 posted (9)"
+		},{
+			url: "uc50-received",
+			label: "UC50 received (8)"
+		}]
+	},{
+		url:"review",
+		label:"Reviews (10)", 
+		subItems: [{
+			url: "ready-for-review",
+			label: "Ready for review (6)"
+		},{
+			url: "requested-medical-evidence",
+			label: "Requested medical evidence (4)"
+		}]
+	},{
+		url:"appointments",
+		label:"Appointments (46)", 
+		subItems: [{
+			url: "ready-to-book",
+			label: "Ready to book (21)"
+		},{
+			url: "booked-appointments",
+			label: "Booked appointments (26)"
+		}]
+	},{
+		url:"assessment",
+		label:"Todays assessments"
+	}] 
+%}
+
+<nav class="details-nav v2">
+	<ul>
+	  
+	  {% for item in sections %}
+	    <li {% if item.url == section %} 
+	    	class="active_detail"{% endif %}>
+	    	<a href="{{item.url}}">{{ item.label }}</a>
+	    {% if item.url == section %}
+	    	<ul>
+	    	{% for subItem in item.subItems %}
+	    		<li>
+	    			<a href="{{subItem.url}}" 
+	    			{% if subItem.url == subSection %}
+	    				class="active_child"
+	    			{% endif %}>{{subItem.label}}</a>
+	    		</li>
+
+	    	{% endfor %}
+	    	</ul>
+	    {% endif %}
+
+	    </li>
+	  {% endfor %}
+	</ul>
+</nav>
+{% endmacro %}

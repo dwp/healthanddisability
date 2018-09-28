@@ -1,0 +1,16 @@
+
+
+{% extends path2+"/_addlayout.html" %} 
+
+{% block citizen_content %}
+    <p><a href="/{{path2}}?tab=rooms" class="link-back">Back</a></p>
+    
+    <h2 class="heading-medium mt0">Create a new room </h2>
+      
+      {% include path2+"/_room-form.html" %}
+
+{% endblock %} 
+{% block footer_top %} 
+{{ super() }} 
+{# {% include path1+"/footer_links.html" %} #} 
+{% endblock %}
