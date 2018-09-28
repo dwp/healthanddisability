@@ -1,0 +1,47 @@
+{% extends path1+"/_layout.html" %}
+
+{% block left_content %}
+
+<p class="mt10 mb0 bold-small">{{customer.decisionType}}</p>
+
+          
+{% endblock %}
+
+
+{% block citizen_content %}
+
+<div class="container">
+        <h1 class="heading-large">Make a decision</h1>
+        <div class="panel">
+            
+        <p>{{customer.name.fullName}} would like to re-arrange their appointment on {{customer.appointmentDate |formatDate('D MMMM YYYY') }}.</p>
+        <h2 class="heading-small">Reason provided</h2>
+        <p>{{customer.referredReason}}</p>
+        </div>
+        <form action="decision-post" method="post">
+        
+        <fieldset class="form-group">
+            <legend class="form-label-bold">What is your decision?</legend>
+
+            <div class="multiple-choice">
+                <input type="radio" name="decision" id="decision-1" value="accepted">
+                <label for="decision-1">Accept </label>
+            </div>
+            <div class="multiple-choice">
+                <input type="radio" name="decision" id="decision-2" value="declined">
+                <label for="decision-2">Decline</label>
+            </div>
+        </fieldset>
+        <button type="submit" class="button">Confirm</button>
+
+        
+    </form>
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

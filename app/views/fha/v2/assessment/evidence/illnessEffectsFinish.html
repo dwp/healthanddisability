@@ -1,0 +1,173 @@
+{% extends path1+"/_layout-info.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<h1 class="heading-large mt0">Illnesses and conditions</h1>
+
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+  
+   <div class="whatweknow">
+
+        
+     <table>
+    
+    	<caption class="heading-medium mt10 mb10">Conditions covered:</caption>
+    	
+    	<thead>
+					<tr>
+						<th>Name</th>
+						<th>Since</th>
+						<th>Source</th>
+					</tr>
+				</thead>
+				<tbody>
+
+				<tr>
+						<td>Depression</td>
+						<td>February 2018</td>
+						<td>Claimant</td>
+					</tr>
+					<tr>
+						<td>Emergency fasciotomy</td>
+						<td>August 2017</td>
+						<td>Claimant</td>
+					</tr>
+					<tr>
+						<td>Acute compartment syndrome</td>
+						<td>August 2017</td>
+						<td>Claimant</td>
+					</tr>
+					<tr>
+						<td>Compound fracture - shinbone</td>
+						<td>July 2017</td>
+						<td>Claimant</td>
+					</tr>
+				</tbody>
+    	
+    </table>
+        
+        
+	    
+	</div> 
+	
+		 <form action="wca-index" method="POST" class="form">
+		<fieldset>
+			<legend class="visually-hidden">Condition details</legend>
+
+			
+			<div class="form-group medication-stored">
+				<fieldset class="inline">
+					<legend class="heading-medium mb5">Are there any other illnesses or conditions to add?</legend>
+					
+			
+					
+					<div class="multiple-choice" data-target="finishAdd">
+				      <input id="meds1" name="type" type="radio" value="meds1">
+				      <label for="meds1">Yes</label>
+				      
+				    </div>
+
+				    <div class="multiple-choice" data-target="finishHistory">
+				      <input id="meds2" name="type" type="radio" value="meds2">
+				      <label for="meds2">No</label>
+				    </div>	
+				    
+				    
+				     <div class="panel panel-border-narrow js-hidden form-group" id="finishAdd">
+				   		
+				   		
+				   		<fieldset class="item-compound">
+                 
+            
+				            <legend class="visuallyhidden">Add condition</legend>
+							
+							<div class="form-group">
+				                <label class="form-label" for="field-2">
+				                  Name of illness or disability 
+				                </label>
+				                <input type="text" class="form-control" id="field-2" name="field-2" autofocus="autofocus">
+				              </div>
+				              <div class="form-group">
+					                <fieldset>
+						                <legend class="form-label">
+						                Date of diagnosis 
+						                </legend>
+						                <span class="form-hint">For example, 31 3 1980</span>
+							                <div class="form-date">
+								                <div class="form-group form-group-day">
+									                <label class="form-label" for="field-5">
+									                Day 
+									                </label>
+									                <input class="form-control" id="field-5" name="field-5" type="number" pattern="[0-9]*" min="0" max="31">
+								                </div>               
+								                <div class="form-group form-group-month">
+									                <label class="form-label" for="field-6">
+									                Month 
+									                </label>
+									                <input class="form-control" id="field-6" name="field-6" type="number" pattern="[0-9]*" min="0" max="12">
+								                </div>             
+								                <div class="form-group form-group-year">
+									                <label class="form-label" for="field-7">
+									                Year 
+									                </label>
+									                <input class="form-control" id="field-7" name="field-7" type="number" pattern="[0-9]*" min="0" max="2016">
+								                </div>
+							                </div>
+					                </fieldset>
+				                </div>
+				
+						
+						      	<div class="form-group">
+									<label class="form-label" for="field-8">Condition history</label>
+									<textarea class="form-control form-control-3-4" id="field-8" name="conditionHistory1" style="height:250px;">{{conditionHistory1}}</textarea>
+								</div>
+								
+								<p class="save-continue mb0"><input type="submit" class="button mt10" value="Save and continue"></p>
+				            
+				            
+				          </fieldset>
+				   		
+				   		
+				   		
+				   </div>
+				    
+				    <div class="js-hidden panel panel-indent form-group" id="finishHistory">
+						
+						    <p class="save-continue mb0"><input type="submit" class="button mt10" value="Save and continue"></p>
+
+					</div>	    			
+	 
+				</fieldset>
+			</div>
+			
+		</fieldset>
+		
+		<div class="multiple-choice" style="display:none">
+						        <input id="radio-inline-4" type="radio" name="illnessEffects" value="illnessEffects" checked>
+						          
+						        <label for="radio-4">hidden radio one</label>
+						      </div>
+
+
+		 </form>
+
+	
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+

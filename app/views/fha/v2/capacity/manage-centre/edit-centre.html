@@ -1,0 +1,60 @@
+{% extends path1+"/_manage-centre-layout.html" %} 
+
+
+
+
+{% block manage_centre_nav %}
+<p><a href="/{{path2}}/{{centre.id}}/details" class="link-back">Back</a></p>
+<h1 class="heading-medium">{{centre.name}} details</h1>
+
+{% endblock %}
+  
+
+
+{% block citizen_content %}
+<div class="container">
+    <div class="grid-row">
+        <div class="column-half">
+            <div class="form-group">
+                <label for="centre-name" class="form-label">Name</label>
+                <input type="text" name="centre-name" class="form-control" value="{{centre.name}}">
+            </div>
+            <div class="form-group">
+                <label for="centre-phone" class="form-label">Phone</label>
+                <input type="text" name="centre-phone" class="form-control" value="{{centre.phone}}">
+            </div>
+           	<div class="form-group">
+                <label for="centre-email" class="form-label">Email</label>
+                <input type="text" name="centre-email" class="form-control" value="{{centre.email}}">
+            </div>
+
+            <fieldset>
+            	<legend class="heading-medium"><span class="visually-hidden">Asessment centre </span>Address</legend>
+            	<div class="form-group">
+	                <label for="centre-address-line-1" class="form-label">Building and street</label>
+	                <input type="text" name="centre-address-line-1" class="form-control" value="{{centre.addressSplit.line1}}">
+	            </div>
+	            <div class="form-group">
+	                <label for="centre-address-line-2" class="form-label visually-hidden">Building and street line 2</label>
+	                <input type="text" name="centre-address-line-2" class="form-control" value="{{centre.addressSplit.line2}}">
+	            </div>
+	            <div class="form-group">
+	                <label for="centre-address-line-3" class="form-label visually-hidden">Building and street line 3</label>
+	                <input type="text" name="centre-address-line-3" class="form-control" value="{{centre.addressSplit.line3}}">
+	            </div>
+	            <div class="form-group">
+	                <label for="centre-address-town" class="form-label">Town or City</label>
+	                <input type="text" name="centre-address-town" class="form-control" value="{{centre.addressSplit.town}}">
+	            </div>
+	            <div class="form-group">
+	                <label for="centre-address-postcode" class="form-label">Postcode</label>
+	                <input type="text" name="centre-address-postcode" class="form-control" value="{{centre.addressSplit.postcode}}">
+	            </div>
+            </fieldset>
+            
+            <p><a href="edit-centre-2" class="button">Save and continue</a></p>
+        </div>
+    </div>
+</div>
+
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

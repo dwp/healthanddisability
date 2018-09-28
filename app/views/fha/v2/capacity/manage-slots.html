@@ -1,0 +1,68 @@
+
+{% extends path1+"/_addlayout.html" %} 
+{%
+    set days = [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+    ]
+%}
+
+{%
+    set slots = [
+        "9.00am",
+        "10:00am",
+        "11:00am",
+        "1:00pm",
+        "2:00pm",
+        "3:00pm",
+        "4:00pm"    
+        ]
+%}
+{% block citizen_content %}
+
+
+<div class="container">
+    <p><a href="fiveways" class="link-back">Back</a></p>
+    <div class="mt30 grid-row">
+        <div class="column-full">
+            <h3 class="heading-medium mt0">Default weekly slots</h3>
+        </div>
+        {% for day in days %}
+        <div class="column-one-third">
+            <div class="grey-list">
+                <h3 class="heading-small mt0">{{ day }} </h3>
+                <ul>
+                    {% for slot in slots %}
+                    <li><div>{{ slot }} </div><a href="#?deleteSlot={{day}}{{loop.index}}">remove</a></li>
+                    {% endfor %}
+
+                </ul>
+                <a class="button">Add</a>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="column-one-third">
+            <div class="grey-list">
+                <h3 class="heading-small mt0">Saturday</h3>
+                <ul>
+                    <li><div>9.00am</div><a href="#">remove</a></li>
+                    <li><div>10.00am</div><a href="#">remove</a></li>
+                    <li><div>11.00am</div><a href="#">remove</a></li>
+                    <li><div>12.00pm</div><a href="#">remove</a></li>
+                </ul>
+                <a class="button">Add</a>
+            </div>
+        </div>
+        <!-- column -->
+    </div>
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %} 
+{% block footer_top %} 
+{{ super() }} 
+{# {% include path1+"/footer_links.html" %} #} 
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends path2+"/_layoutStripped.html" %}
+
+{% block case_content %}
+
+  <a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+<h2 class="heading-large mt20">Can you make a recommendation now?</h2>
+<form class="form" action="/{{ path2 }}" method="get">
+  <div class="form-group">
+
+    <div class="multiple-choice" data-target="scorenow">
+      <input id="decide_now" name="whatcando" type="radio" value="Yes">
+      <label for="decide_now"> Yes, I have enough evidence recommend the support group</label>
+    </div>
+
+  
+
+   <!-- <div class="multiple-choice" data-target="">
+      <input id="support_no" name="whatcando" type="radio" value="No, redirect({{ path1 }}/support/rejected)">
+      <label for="support_no"> No, I need more evidence </label>
+    </div> -->
+
+    <div class="multiple-choice" data-target="">
+      <input id="face2face" name="whatcando" type="radio" value="No, redirect({{ path1 }}/support/rejected)">
+      <label for="face2face"> No, I want Tomas to come in</label>
+    </div>
+
+  </div><!-- form-group -->
+  <div class="form-group">
+    <a href="booking" class="button">Continue</a>
+  </div><!-- form-group -->
+</form>
+
+{% endblock %}
