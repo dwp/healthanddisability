@@ -2,9 +2,10 @@
 {% import path1+"/_macros_nav.html" as nav %}
 
 {% block assess_content %}
-
-  {#  This is the BIG BLUE BAR at the top - #jussayin #}
-  {% include path1+"/_staff_heading.html" %}
+{% block mainNav %}
+{{ mainNav.nav("case", path) }}
+  
+{% endblock %}
 
   <main id="content" role="main" class="main-content">
 
