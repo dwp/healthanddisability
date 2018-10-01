@@ -1,21 +1,13 @@
 {% extends path+"/_layout.html" %}
 
 
-
+{% block mainNav %}
+{{ mainNav.nav("centre", path) }}
+  
+{% endblock %}
 {% block assess_content %}
 
-  <div class="nav-horizontal">
-  <div class="main-nav-wrapper">
-    <ul class="main-nav">
 
-    
-    
-    <li><a href="appointments">Appointments</a></li>
-        <li class="selected"><a href="assessment-centres">Manage my centre</a></li>
-
-    </ul>
-  </div>
-</div>
 
 <main id="content" role="main" class="main-content mt30">
 
