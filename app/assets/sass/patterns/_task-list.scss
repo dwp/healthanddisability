@@ -66,7 +66,7 @@ $task-list-indent: 35px;
 
 .task-completed {
   @include phase-tag;
-
+  text-transform: none;
   float: right;
   margin-right: 0;
   padding-top: 3px;
