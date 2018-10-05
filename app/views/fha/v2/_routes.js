@@ -1013,7 +1013,7 @@ router.get('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffI
   res.locals.displayMonth = today.format('MMMM YYYY');
   var year = today.year();
   var month = today.month() + 1;
-  res.locals.calendar  = new calendar.Calendar(0).monthdatescalendar(year, month)[1];
+  res.locals.calendar  = new calendar.Calendar(0).monthdatescalendar(year, month);
   console.log(res.locals.calendar[0])
   res.locals.today = today.format();
   next()
@@ -1390,25 +1390,94 @@ router.post('/assessment/evidence/mentalHealthAssessment', function(req, res, ne
   });
 });
 
+router.get('/planning/*', function(req, res, next){
+
+  next();
+});
+
+var planningCentres = require(filePath +'/data/capacity/monday.js');
+var planningStaff = require(filePath + '/data/capacity/allocatedStaff.js');
+
+var resetCentres = function(){
+    planningCentres.forEach(function(centre){
+      centre.morning = {
+      assessments:[],
+      complex: 0,
+      neuro: [],
+      review: []
+      };
+
+    centre.afternoon = {
+      assessments:[],
+      complex: 0,
+      neuro: [],
+      review: []
+      };
+
+    centre.allocatedStaff = [];
+    
+    centre.complex = 0;
+    planningStaff.forEach(function(staff){
+      if(staff.allocatedCentre == centre.name){
+        centre.allocatedStaff.push(staff);
+        if(staff.morning != 'unnavailable'){
+          centre.morning[staff.morning].push(staff);
+          if(staff.complexNeuro){
+            centre.morning.complex ++;
+          }
+        }
+        if(staff.afternoon != 'unnavailable'){
+          centre.afternoon[staff.afternoon].push(staff)
+          if(staff.complexNeuro){
+            centre.afternoon.complex ++;
+          }
+        }
+      }
+    })
+  })
+
+}
+
 router.get('/planning/day/:day', function(req, res, next){
-  res.locals.centres = require(filePath +'/data/capacity/' + req.params.day + '.js');
+  resetCentres(req, res)
+
+  res.locals.centres = planningCentres;
   
   res.render(viewPath +'/planning/area-day');
 })
 
 router.get('/planning/centre/:centre', function(req, res, next){
-  res.locals.staff = require(filePath +'/data/capacity/' + req.params.centre + '.js');
+  resetCentres(req, res)
+
+  res.locals.centre = planningCentres.filter(centre => centre.name == req.params.centre)[0];
+
+  res.locals.staff = res.locals.centre.allocatedStaff;
   res.locals.centreName = req.params.centre;
   res.render(viewPath +'/planning/assigned-staff');
   
 })
 
 router.get('/planning/reassign/:centre/:staffId', function(req,res,next){
-  res.locals.staff = require(filePath +'/data/capacity/' + req.params.centre + '.js')
-                      .filter(staff => staff._id === req.params.staffId)[0];
+  res.locals.centre = planningCentres.filter(centre => centre.name == req.params.centre)[0];
+
+  res.locals.staff = planningStaff.filter(staff => staff.id === req.params.staffId)[0];
   
   res.render(viewPath +'/planning/reassign');
 
+})
+
+router.post('/planning/centre/:centre', function(req, res, next){
+
+  planningStaff.map(staff => {
+    if(req.body.staffId === staff.id){
+      staff.morning = req.body.morning || staff.morning;
+      staff.afternoon = req.body.afternoon || staff.afternoon;
+      staff.allocatedCentre = req.body.location;
+    } 
+  });
+
+  next()
+  
 })
 
 

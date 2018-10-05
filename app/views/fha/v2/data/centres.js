@@ -149,84 +149,6 @@ module.exports = {
     ]
     },
  
-  "blackpool": {
-    "name": "Blackpool",
-    "location": "Blackpool",
-    "fullAddress": "Warbreck House<br> Warbreck Hill Road<br> Blackpool<br> FY2 0UZ",
-    "phone": "0121 626 3704",
-    "rooms": 7,
-    "email": "blackpool@fakemail.gov.uk",
-    "openingTimes": [
-      {
-        "day": "Monday",
-        "open": "09:00am - 17:00pm"
-      },
-      {
-        "day": "Tuesday",
-        "open": "09:00am - 17:00pm"
-      },
-      {
-        "day": "Wednesday",
-        "open": "09:00am - 17:00pm"
-      },
-      {
-        "day": "Thursday",
-        "open": "09:00am - 17:00pm"
-      },
-      {
-        "day": "Friday",
-        "open": "09:00am - 17:00pm"
-      },
-      {
-        "day": "Saturday",
-        "open": "Closed"
-      },
-      {
-        "day": "Sunday",
-        "open": "Closed"
-      }
-      ],
-    "openingTimesForm": {
-      "Monday": {
-        "open": true,
-        "start": "09:00",
-        "end": "17:00"
-      },
-      "Tuesday": {
-        "open": true,
-        "start": "09:00",
-        "end": "17:00"
-      },
-      "Wednesday": {
-        "open": true,
-        "start": "09:00",
-        "end": "17:00"
-      },
-      "Thursday": {
-        "open": true,
-        "start": "09:00",
-        "end": "17:00"
-      },
-      "Friday": {
-        "open": true,
-        "start": "09:00",
-        "end": "17:00"
-      },
-      "Saturday": {
-        "open": false
-      },
-      "Sunday": {
-        "open": false
-      }
-    },
-    "details": [
-      "Ground floor access",
-      "Wheelchair access",
-      "Parking on site",
-
-    ]
-    },
- 
   "wigan": {
     "name": "Wigan",
     "location": "Wigan",
@@ -383,8 +305,8 @@ module.exports = {
     }
     ,
     "stockport": {
-    "name": "Manchester",
-    "location": "Manchester",
+    "name": "Stockport",
+    "location": "Stockport",
     "fullAddress": "18 Deanery Way<br> Stockport<br> SK1 1NA",
     "phone": "0121 626 3704",
     "rooms": 10,
