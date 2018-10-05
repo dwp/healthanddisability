@@ -1,5 +1,9 @@
 {% extends path+"/_layout.html" %}
 {% import path+"/caselist/_nav.html" as mainNav %}
+{% block mainNav %}
+{{ mainNav.nav("case", path) }}
+  
+{% endblock %}
 {% block assess_content %}
 
 <main id="content" role="main" class="main-content">

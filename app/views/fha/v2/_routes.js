@@ -49,6 +49,34 @@ router.get('*', function (req, res, next) {
   next()
 })
 
+router.post('*', function (req, res, next) {
+  // path is only available with the proper value within this sub-module/router.
+  res.locals.path = req.baseUrl.substr(1)
+  // create some other useful path variables.
+  var bits = req.params[0].substr(1).split('/')
+  res.locals.path1 = res.locals.path + "/" + bits[0]
+  res.locals.path2 = res.locals.path + "/" + bits[0] + "/" + bits[1]
+  res.locals.stage = 1;
+
+  res.locals.cssPath = '/public/stylesheets/fha_v' + versionNumber +'.css';
+  res.locals.javascriptPath = "/public/javascripts/application_v" + versionNumber + ".js"
+  res.locals.versionNumber = versionNumber;
+
+  if(!req.session.data.socialWorkComments){
+    req.session.data.socialWorkComments = [];
+  }
+
+  if(!req.session.data.typicalDayComments){
+    req.session.data.typicalDayComments = [];
+  }
+
+  if(!req.session.data.observations){
+    req.session.data.observations = [];
+  }
+
+  next()
+})
+
 router.get('/miarussell/*', function (req, res, next) {
   res.locals.firstname = "Mia"
   next()
@@ -981,10 +1009,12 @@ router.get('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffI
   var staff = require(filePath +'/data/staff.js');
 
   res.locals.person = staff.filter(person => person.id === req.params.staffId)[0];
-  var today = moment(new Date(2018,8,9));
+  var today = moment(new Date());
+  res.locals.displayMonth = today.format('MMMM YYYY');
   var year = today.year();
   var month = today.month() + 1;
-  res.locals.calendar  = new calendar.Calendar(0).monthdatescalendar(2018, 8);
+  res.locals.calendar  = new calendar.Calendar(0).monthdatescalendar(year, month)[1];
+  console.log(res.locals.calendar[0])
   res.locals.today = today.format();
   next()
 })
@@ -1359,6 +1389,27 @@ router.post('/assessment/evidence/mentalHealthAssessment', function(req, res, ne
   next()
   });
 });
+
+router.get('/planning/day/:day', function(req, res, next){
+  res.locals.centres = require(filePath +'/data/capacity/' + req.params.day + '.js');
+  
+  res.render(viewPath +'/planning/area-day');
+})
+
+router.get('/planning/centre/:centre', function(req, res, next){
+  res.locals.staff = require(filePath +'/data/capacity/' + req.params.centre + '.js');
+  res.locals.centreName = req.params.centre;
+  res.render(viewPath +'/planning/assigned-staff');
+  
+})
+
+router.get('/planning/reassign/:centre/:staffId', function(req,res,next){
+  res.locals.staff = require(filePath +'/data/capacity/' + req.params.centre + '.js')
+                      .filter(staff => staff._id === req.params.staffId)[0];
+  
+  res.render(viewPath +'/planning/reassign');
+
+})
 
 
 module.exports = router
