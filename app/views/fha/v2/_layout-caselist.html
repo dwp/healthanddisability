@@ -1,4 +1,8 @@
 {% extends path+"/_layout.html" %} 
+{% block mainNav %}
+{{ mainNav.nav("case", path) }}
+  
+{% endblock %}
 {% import path+"/_macro_horizonalSecondaryNav.html" as secondaryNav %} 
 
 {% block assess_content %}

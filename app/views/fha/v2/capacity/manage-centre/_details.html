@@ -1,10 +1,5 @@
-<section class="grid-row">
-    <div class="column-full">
-        <p><a href="edit-centre">Edit {{centre.name}} details</a></p>
-        
-    </div>
-    <div class="column-one-quarter">
-        <h3 class="heading-medium mt0">Contact details</h3>
+
+        <h3 class="heading-medium">Contact details</h3>
         <dl>
             <dt class="heading-small">Phone</dt>
             <dd>{{centre.phone}}</dd>
@@ -13,22 +8,12 @@
             <dt class="heading-small">Address</dt>
             <dd>{{ centre.fullAddress | safe }}</dd>
         </dl>
-    </div>
-    <div class="column-one-quarter">
-        <h3 class="heading-medium mt0">Opening Times</h3>
+
+        <h3 class="heading-medium ">Opening Times</h3>
         <dl>
             {% for day in centre.openingTimes %}
             <dt class="heading-small">{{ day.day }}</dt>
             <dd>{{ day.open }}</dd>
             {% endfor %}
         </dl>
-    </div>
-    <div class="column-one-quarter">
-        <h3 class="heading-medium mt0">Facilities</h3>
-        <ul class="list-bullet">
-            {% for text in centre.details %}
-            <li>{{text}}</li>
-            {% endfor %}
-        </ul>
-    </div>
-</section>  
+        <p><a href="edit-centre" class="button-secondary">Edit {{centre.name}} details</a></p>

@@ -1,3 +1,5 @@
+{% import path+"/caselist/_nav.html" as mainNav %}
+
 {% extends "admin_layout.html" %}
 
 {% block page_title %} {{ serviceName }} {% endblock %}
@@ -10,7 +12,7 @@
 
 {% block inside_header %}
   <div class="header-logo" style="position:relative;top:3px">
-    <a href="/{{path}}/review" id="logo" class="content dwplogo">Future Health Assessment </a>
+    <a href="/{{path}}" id="logo" class="content dwplogo">Future Health Assessment </a>
   </div>
 {% endblock %}
 
@@ -48,7 +50,12 @@
   {{ ("path2: "+path2) | log }}
 {% endblock %}
 
+
 {% block content %}
+  
+{% block mainNav %}
+{% endblock %}
+  
   {# {{ horizontal_nav('',path) }} #}
   <div nunj-block="assess_content">
   {% block assess_content %}{% endblock %}

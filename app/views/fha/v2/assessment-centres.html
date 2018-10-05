@@ -1,21 +1,13 @@
 {% extends path+"/_layout.html" %}
 
 
-
+{% block mainNav %}
+{{ mainNav.nav("centre", path) }}
+  
+{% endblock %}
 {% block assess_content %}
 
-  <div class="nav-horizontal">
-  <div class="main-nav-wrapper">
-    <ul class="main-nav">
 
-    
-    
-    <li><a href="appointments">Appointments</a></li>
-        <li class="selected"><a href="assessment-centres">Manage my centre</a></li>
-
-    </ul>
-  </div>
-</div>
 
 <main id="content" role="main" class="main-content mt30">
 
@@ -39,7 +31,6 @@
         <div class="grid-row">
           <div class="column-full">
           
-              <p> <a href="capacity/new-centre" class="button">Create assessment centre</a> </p>
               <table class="appointments-view">
 
                 <thead>
@@ -57,6 +48,9 @@
                 {% endfor %}
                 </tbody>           
               </table>
+
+              <p class="mt30"> <a href="capacity/new-centre" class="button-secondary">Create assessment centre</a> </p>
+
           </div><!-- column -->
           
           
