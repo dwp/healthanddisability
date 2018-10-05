@@ -16,6 +16,7 @@
             <nav class="section-tabs js-tabs clearfix mb20">
                 <ul>
                 <li class="{{ 'active 'if (query.tab === 'details') }}"><a href="?tab=details" class="left-nav__link">Details</a></li>
+                <li class="{{ 'active 'if (query.tab === 'location') }}"><a href="?tab=location" class="left-nav__link">Locations & skills</a></li>
                 <li class="{{ 'active 'if (query.tab === 'hours') }}"><a href="?tab=hours" class="left-nav__link">Working pattern</a></li>
                 <li class="{{ 'active 'if (query.tab === 'leave') }}"><a href="?tab=leave" class="left-nav__link">Rota</a></li>
                 </ul>
@@ -23,6 +24,7 @@
 
         {% include path1+"/manage-staff/_details.html" %}
         {% include path1+"/manage-staff/_hours.html" %}
+        {% include path1+"/manage-staff/_location.html" %}
 
         {% if query.updated %}
             {% include path1+"/manage-staff/_leave-updated.html" %}

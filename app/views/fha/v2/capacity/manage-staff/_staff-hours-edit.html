@@ -27,17 +27,7 @@
                 <input class="form-control time-input" name="from-time" type="time" value="{{ day.start }}">
                 <label class="form-label mt30" for="to-time">What time will {{person.name}} be available to <span class="visually-hidden"> on {{dayName}}</span>?</label>
                 <input class="form-control time-input" name="to-time" type="time" value="{{ day.end }}">
-                <fieldset class="mt30 inline {{"hidden" if not person.scrutinyPaperwork }}">
-                    <legend>What type of work will {{person.name}} be doing on {{dayName}} <span class="visually-hidden">  on {{dayName}}</span>?</legend>
-                    <div class="multiple-choice">
-                    <input id="type-of-work-appointments-{{dayname}}" type="radio" name="type-of-work-{{dayName}}" value="appointments" {{ "checked" if not day.scrutiny  }} >
-                    <label for="type-of-work-appointments-{{dayname}}">Appointments</label>
-                </div>
-                <div class="multiple-choice">
-                    <input id="type-of-work-scrutiny-{{dayName}}" type="radio" name="type-of-work-{{dayName}}" value="scrutiny"  {{ "checked" if day.scrutiny }}>
-                    <label for="type-of-work-scrutiny-{{dayName}}">scrutiny</label>
-                </div>
-                </fieldset>
+                
             </div>
             {% endfor %}
 
