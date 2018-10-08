@@ -4,14 +4,15 @@
 
 
 {% block manage_centre_nav %}
-<p><a href="/{{path2}}/{{centre.id}}/details" class="link-back">Back</a></p>
-<h1 class="heading-medium">{{centre.name}} details</h1>
+
 
 {% endblock %}
   
 
 
 {% block citizen_content %}
+<p><a href="/{{path2}}/{{centre.id}}/details" class="link-back">Back</a></p>
+<h1 class="heading-medium">{{centre.name}} details</h1>
 <div class="container">
     <div class="grid-row">
         <div class="column-half">
@@ -26,6 +27,11 @@
            	<div class="form-group">
                 <label for="centre-email" class="form-label">Email</label>
                 <input type="text" name="centre-email" class="form-control" value="{{centre.email}}">
+            </div>
+
+            <div class="form-group">
+                <label for="centre-email" class="form-label">Number of rooms</label>
+                <input type="number" step="1" name="centre-rooms" class="form-control" value="{{centre.rooms}}">
             </div>
 
             <fieldset>

@@ -10,10 +10,10 @@
                         <th>Skills</th>
                     </tr>
                 </thead>
-                {% for person in staff %}
+                {% for person in staff |sort(attribute='name') %}
                 <tr>
                     <td><a href="manage-staff/staff-profile/{{ person.id }}?tab=details">{{ person.name }}</a></td>
-                    <td>{{ person.skill }} {{ ", Scrutiny" if person.scrutinyPaperwork}}</td>
+                    <td>{{ person.skill }}{{ ", Reviews" if person.reviews}}</td>
                 </tr>
                 {% endfor %}
             </table>

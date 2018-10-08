@@ -1,6 +1,6 @@
 <div class="grid-row mt30">
     <div class="column-two-thirds">
-        <form action="new-staff-skill" method="post" >
+        <form action="/{{path}}/capacity/manage-centre/{{centre.id}}/manage-staff/staff-profile/{{person.id}}" method="post" >
         <div class="form-group">
             <label class="form-label" for="name">Full name</label>
             <input class="form-control" id="name" type="text" name="name" value="{{person.firstname}}">
@@ -19,7 +19,8 @@
         </div>
 
         {% if person.id %}
-        <p><a href="edit-staff-skill" class="button">Save and continue</a></p>
+        <p><a  href="/{{path}}/capacity/manage-centre/{{centre.id}}/manage-staff/staff-profile/{{person.id}}?tab=details" class="button">Save</a></p>
+
         {% else %}
         <p><button class="button">Save and continue</button></p>
         {% endif %}
