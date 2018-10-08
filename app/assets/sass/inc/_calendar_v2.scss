@@ -1,0 +1,330 @@
+.calendar  {
+	background: #fff;
+	
+	caption {
+		background: #000;
+		padding: 1em 0 .8em 0;
+		font-weight: 700;
+		position: relative;
+		text-align: center;
+		color: #fff;
+		&:before {
+			content: "\2039";
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top: 10px; 
+			left: 14px;
+			font-size: 30px;
+			color: #fff;
+		}
+		&:after {
+			content: "\203A";
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top: 10px; 
+			right: 14px;
+			font-size: 30px;
+			color: #fff;
+		}
+	}
+	th {
+		padding: .8em 0;
+	}
+
+	th, td {
+		text-align: center;
+		width: calc(100% / 7);
+	}
+
+	&__day {
+		position: relative;
+		position: relative;
+		border-left: 1px solid #bfc1c3;
+		border-right: 1px solid #bfc1c3;
+		background: #fff;
+		padding: 0;
+		padding-top: 0.5em;
+		line-height: 3;
+		color: #000;
+		box-sizing: border-box;
+
+
+		&--today {
+			&:before {
+				content: "today";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				text-align: centre;
+				line-height: 1.1;
+				padding-top: 0.2em;
+				color: white;
+				background: $grey-1;
+				font-size: 0.75em;
+				font-weight: bold;
+			}
+		}
+
+		&--closed {
+			background: $grey-4;
+			color: $grey-4;
+		}
+
+
+
+		&--unavailable {
+			background: $grey-3;
+			&:after {
+				content: "unavailable";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				text-align: centre;
+				line-height: 1.1;
+				padding-top: 0.2em;
+				color: white;
+				background: black;
+				font-size: 0.75em;
+				font-weight: bold;
+			}
+		}
+
+		&--appointments {
+			&:after {
+				content: "available";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				text-align: centre;
+				line-height: 1.1;
+				padding-top: 0.2em;
+				color: white;
+				background: $green;
+				font-size: 0.75em;
+				font-weight: bold;
+			}
+		}
+
+		&--training {
+			&:after {
+				content: "training";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				text-align: centre;
+				line-height: 1.1;
+				padding-top: 0.2em;
+				color: white;
+				background: $fuschia;
+				font-size: 0.75em;
+				font-weight: bold;
+			}
+		}
+
+		&--scrutiny {
+			&:after {
+				content: "scrutiny";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				text-align: centre;
+				line-height: 1.1;
+				padding-top: 0.2em;
+				color: white;
+				background: $pink;
+				font-size: 0.75em;
+				font-weight: bold;
+			}
+		}
+
+		&--past{
+			&:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				z-index: 1;
+				background: rgba(white, 0.7)
+			}
+		}
+	}
+}
+
+
+.calendar-picker  {
+	background: #fff;
+	
+	caption {
+		background: #000;
+		padding: 1em 0 .8em 0;
+		font-weight: 700;
+		position: relative;
+		color: #fff;
+		&:before {
+			content: "\2039";
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top: 10px; 
+			left: 14px;
+			font-size: 30px;
+			color: #fff;
+		}
+		&:after {
+			content: "\203A";
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top: 10px; 
+			right: 14px;
+			font-size: 30px;
+			color: #fff;
+		}
+	}
+	th {
+		padding: .8em 0;
+	}
+
+	th, td {
+		text-align: center;
+		width: calc(100% / 7);
+	}
+	td {
+		
+	}
+
+	&__day {
+		position: relative;
+		border-left: 1px solid #bfc1c3;
+		border-right: 1px solid #bfc1c3;
+		background: #fff;
+		padding: 0;
+		line-height: 3.5;
+		color: #000;
+
+		&--today {
+			&:before {
+				content: "today";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				text-align: centre;
+				line-height: 1.1;
+				padding-top: 0.2em;
+				color: white;
+				background: $grey-1;
+				font-size: 0.75em;
+				font-weight: bold;
+			}
+		}
+
+		&--full {
+			&:after {
+				content: "full";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				text-align: centre;
+				line-height: 1.1;
+				padding-top: 0.2em;
+				color: white;
+				background: $red;
+				font-size: 0.75em;
+				font-weight: bold;
+			}
+		}
+
+		&--closed {
+			background: $grey-4;
+			color: $grey-3;
+
+			div {
+				display: none !important;
+			}
+		}
+
+		&--working {
+			background: lighten($turquoise, 50%)
+		}
+
+
+		&--unavailable {
+			background: $grey-3;
+		}
+
+		&--selected {
+			background: $purple;
+			color: white !important;
+			font-weight: bold;
+
+			a.calendar-picker__link {
+				color: white;
+			}
+		}
+
+		&--selectable {
+			cursor: pointer;
+			color: $govuk-blue;
+			font-weight: bold;
+			
+			&:hover {
+				background: $govuk-blue;
+				color: white;
+			}
+		}
+
+
+	}
+
+	&__link {
+		display: block;		
+		font-weight: bold;
+		text-decoration: none;
+
+		&:visited {
+			color: $govuk-blue;
+		}
+
+		&:hover {
+			background: $govuk-blue;
+			color: white;
+		}
+
+
+	}
+
+
+
+
+}
+
+
+.hours-list {
+	display: grid;
+	grid-template-columns:  1fr 2fr;
+}
+
+.grid-item {
+
+
+	&--col-9 {
+		grid-row: 1/10;
+		grid-column: 2
+	}
+
+	&--available {
+		background-color: $grass-green;
+		color: white;
+	}
+}
