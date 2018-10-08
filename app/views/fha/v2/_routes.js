@@ -1401,6 +1401,7 @@ var planningStaff = require(filePath + '/data/capacity/allocatedStaff.js');
 var resetCentres = function(){
     planningCentres.forEach(function(centre){
       centre.morning = {
+      reviews:[],
       assessments:[],
       complex: 0,
       neuro: [],
@@ -1409,6 +1410,7 @@ var resetCentres = function(){
 
     centre.afternoon = {
       assessments:[],
+      reviews:[],
       complex: 0,
       neuro: [],
       review: []
@@ -1470,9 +1472,12 @@ router.post('/planning/centre/:centre', function(req, res, next){
 
   planningStaff.map(staff => {
     if(req.body.staffId === staff.id){
+      console.log(staff)
       staff.morning = req.body.morning || staff.morning;
       staff.afternoon = req.body.afternoon || staff.afternoon;
       staff.allocatedCentre = req.body.location;
+
+      console.log(staff)
     } 
   });
 
