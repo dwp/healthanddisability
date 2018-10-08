@@ -1,11 +1,21 @@
 <section class="{{ 'hidden' if not (query.tab === 'location') }}">
-    <h2 class="heading-small">Available Locations</h2>
+    <h3 class="heading-small">Other available locations</h3>
     <ul>
-        <li>Birkenhead</li>
-        <li>Mann Island</li>
+    	{% for centreKey, centre in person.otherCentres %}
+            {% if centreKey !== person.homeCentre and centre.available %}
+            <li>{{centreKey}}</li>
+            {% endif %}
+        {% endfor %}
     </ul>
 
-    <h2 class="heading-small">Skill level</h2>
-    <p>{{person.skill}}</p>
-    <p><a href="#" class="button-secondary">Edit location and skills</a></p>
+    <h3 class="heading-small">Skills</h3>
+    <ul>
+    <li>{{person.skill}}</li>
+    {% if person.reviews %}
+    	<li>Reviews</li>
+    {% endif %}
+	</ul>
+    
+
+    <p class="mt30"><a href="{{person.id}}/edit-staff-skill" class="button-secondary">Edit location and skills</a></p>
 </section>

@@ -1,5 +1,5 @@
-
-        <h3 class="heading-medium">Contact details</h3>
+<div class="grid-row">
+    <div class="column-half">
         <dl>
             <dt class="heading-small">Phone</dt>
             <dd>{{centre.phone}}</dd>
@@ -8,12 +8,22 @@
             <dt class="heading-small">Address</dt>
             <dd>{{ centre.fullAddress | safe }}</dd>
         </dl>
+        <h3 class="heading-small">Number of rooms</h3>
+        <p>
+        {{ centre.rooms }}
+        </p>
 
-        <h3 class="heading-medium ">Opening Times</h3>
+    </div>
+    <div class="column-half">
+
+        <h3 class="heading-medium mt20">Opening Times</h3>
         <dl>
             {% for day in centre.openingTimes %}
             <dt class="heading-small">{{ day.day }}</dt>
             <dd>{{ day.open }}</dd>
             {% endfor %}
         </dl>
-        <p><a href="edit-centre" class="button-secondary">Edit {{centre.name}} details</a></p>
+    </div>
+        
+</div>
+<p class="mt30"><a href="edit-centre" class="button-secondary">Edit {{centre.name}} details</a></p>

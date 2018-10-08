@@ -9,18 +9,51 @@ module.exports = [
     "name": "Jean Vazquez",
     "email": "jean.vazquez@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Neuro",
     "reviews": false,
     "homeCentre": "Manchester",
     "allocatedCentre": "Manchester",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6d83d88759ba7c858",
@@ -32,18 +65,51 @@ module.exports = [
     "name": "Carroll Fuller",
     "email": "carroll.fuller@fakemail.gov.uk",
     "complexNeuro": true,
+    "skill": "Complex Neuro",
     "reviews": false,
     "homeCentre": "Stockport",
     "allocatedCentre": "Stockport",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f66e315ba09062128a",
@@ -55,18 +121,51 @@ module.exports = [
     "name": "Smith Sweet",
     "email": "smith.sweet@fakemail.gov.uk",
     "complexNeuro": true,
+    "skill": "Complex Neuro",
     "reviews": false,
     "homeCentre": "Wigan",
     "allocatedCentre": "Wigan",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f62f07b0235067a926",
@@ -78,18 +177,51 @@ module.exports = [
     "name": "Hayden Mckay",
     "email": "hayden.mckay@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Bolton",
     "allocatedCentre": "Bolton",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f66d7a9ec3b53cc443",
@@ -101,18 +233,51 @@ module.exports = [
     "name": "Joyce Fox",
     "email": "joyce.fox@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Neuro",
     "reviews": false,
     "homeCentre": "Burnley",
     "allocatedCentre": "Burnley",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6c60bbb82e6f0ccc3",
@@ -124,18 +289,51 @@ module.exports = [
     "name": "Stone Meyers",
     "email": "stone.meyers@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Neuro",
     "reviews": true,
     "homeCentre": "Wigan",
     "allocatedCentre": "Wigan",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f68a4ca75c54a6dec6",
@@ -147,18 +345,51 @@ module.exports = [
     "name": "Malinda Wheeler",
     "email": "malinda.wheeler@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Neuro",
     "reviews": false,
     "homeCentre": "Manchester",
     "allocatedCentre": "Manchester",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6f4144edf029e5f10",
@@ -170,18 +401,51 @@ module.exports = [
     "name": "Willie Hammond",
     "email": "willie.hammond@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Neuro",
     "reviews": false,
     "homeCentre": "Stockport",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f60b02b68d4c84b276",
@@ -193,18 +457,51 @@ module.exports = [
     "name": "Melinda Rodriguez",
     "email": "melinda.rodriguez@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Neuro",
     "reviews": false,
     "homeCentre": "Stockport",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f654184c41d53e211f",
@@ -216,18 +513,51 @@ module.exports = [
     "name": "Bertha Patrick",
     "email": "bertha.patrick@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Neuro",
     "reviews": true,
     "homeCentre": "Bolton",
     "allocatedCentre": "Bolton",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f60c0ad138453b5915",
@@ -239,18 +569,51 @@ module.exports = [
     "name": "Whitley Aguilar",
     "email": "whitley.aguilar@fakemail.gov.uk",
     "complexNeuro": true,
+    "skill": "Complex Neuro",
     "reviews": false,
     "homeCentre": "Wigan",
     "allocatedCentre": "Wigan",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f67e116db8e7ea36da",
@@ -262,18 +625,51 @@ module.exports = [
     "name": "Eve Langley",
     "email": "eve.langley@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Neuro",
     "reviews": false,
     "homeCentre": "Burnley",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6225bdc84911dd133",
@@ -285,18 +681,51 @@ module.exports = [
     "name": "Elizabeth Dickerson",
     "email": "elizabeth.dickerson@fakemail.gov.uk",
     "complexNeuro": true,
+    "skill": "Complex Neuro",
     "reviews": false,
     "homeCentre": "Stockport",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6f465a1829b445605",
@@ -308,18 +737,51 @@ module.exports = [
     "name": "Leona Donaldson",
     "email": "leona.donaldson@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Neuro",
     "reviews": false,
     "homeCentre": "Manchester",
     "allocatedCentre": "Manchester",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6b70490a2643b3cd2",
@@ -331,18 +793,51 @@ module.exports = [
     "name": "Jennings Small",
     "email": "jennings.small@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Neuro",
     "reviews": false,
     "homeCentre": "Manchester",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6cfac7b5a8ccad6cf",
@@ -354,18 +849,51 @@ module.exports = [
     "name": "Denise Estes",
     "email": "denise.estes@fakemail.gov.uk",
     "complexNeuro": true,
+    "skill": "Complex Neuro",
     "reviews": false,
     "homeCentre": "Manchester",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6c6a3be6f55c18d4e",
@@ -377,18 +905,51 @@ module.exports = [
     "name": "Acevedo Kennedy",
     "email": "acevedo.kennedy@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Neuro",
     "reviews": false,
     "homeCentre": "Wigan",
     "allocatedCentre": "Wigan",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f666daf322333aecd5",
@@ -400,18 +961,51 @@ module.exports = [
     "name": "Orr Serrano",
     "email": "orr.serrano@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Neuro",
     "reviews": false,
     "homeCentre": "Burnley",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6ed5bda5feafe1e5b",
@@ -423,18 +1017,51 @@ module.exports = [
     "name": "Ward Hoover",
     "email": "ward.hoover@fakemail.gov.uk",
     "complexNeuro": true,
+    "skill": "Complex Neuro",
     "reviews": false,
     "homeCentre": "Stockport",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f684505c931b1438a6",
@@ -446,18 +1073,51 @@ module.exports = [
     "name": "Moore Frazier",
     "email": "moore.frazier@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Neuro",
     "reviews": false,
     "homeCentre": "Burnley",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6a99f00f5cca5e600",
@@ -469,18 +1129,51 @@ module.exports = [
     "name": "Francine Vega",
     "email": "francine.vega@fakemail.gov.uk",
     "complexNeuro": true,
+    "skill": "Complex Neuro",
     "reviews": false,
     "homeCentre": "Stockport",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6ea482e3af3e0fa1b",
@@ -492,18 +1185,51 @@ module.exports = [
     "name": "Garrett Everett",
     "email": "garrett.everett@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Neuro",
     "reviews": false,
     "homeCentre": "Wigan",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f63da8b9be68a04610",
@@ -515,18 +1241,51 @@ module.exports = [
     "name": "Oconnor Watkins",
     "email": "oconnor.watkins@fakemail.gov.uk",
     "complexNeuro": true,
+    "skill": "Complex Neuro",
     "reviews": false,
     "homeCentre": "Bolton",
     "allocatedCentre": "Bolton",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6628a78a8761ade1f",
@@ -538,18 +1297,51 @@ module.exports = [
     "name": "Soto Shaffer",
     "email": "soto.shaffer@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Neuro",
     "reviews": false,
     "homeCentre": "Manchester",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f65741ed7d1c5fd521",
@@ -561,18 +1353,51 @@ module.exports = [
     "name": "Barbara Clay",
     "email": "barbara.clay@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Neuro",
     "reviews": true,
     "homeCentre": "Wigan",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f696b22f3a43969f0e",
@@ -584,18 +1409,51 @@ module.exports = [
     "name": "Miranda Riggs",
     "email": "miranda.riggs@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Neuro",
     "reviews": false,
     "homeCentre": "Manchester",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6bce35537518dfb28",
@@ -607,18 +1465,51 @@ module.exports = [
     "name": "Cochran Bonner",
     "email": "cochran.bonner@fakemail.gov.uk",
     "complexNeuro": true,
+    "skill": "Complex Neuro",
     "reviews": false,
     "homeCentre": "Burnley",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f66cd520dc46da0387",
@@ -630,18 +1521,51 @@ module.exports = [
     "name": "Esperanza Thompson",
     "email": "esperanza.thompson@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Neuro",
     "reviews": false,
     "homeCentre": "Stockport",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6e9ff424702ac478d",
@@ -653,18 +1577,51 @@ module.exports = [
     "name": "Suzette Massey",
     "email": "suzette.massey@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Neuro",
     "reviews": false,
     "homeCentre": "Bolton",
     "allocatedCentre": "Bolton",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6b250e1eab10e294b",
@@ -676,18 +1633,51 @@ module.exports = [
     "name": "Beatriz Wong",
     "email": "beatriz.wong@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Neuro",
     "reviews": true,
     "homeCentre": "Manchester",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f64761750c6c439205",
@@ -699,18 +1689,51 @@ module.exports = [
     "name": "Letitia Bullock",
     "email": "letitia.bullock@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Stockport",
     "allocatedCentre": "Stockport",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f696b34c8c552168c0",
@@ -722,18 +1745,51 @@ module.exports = [
     "name": "Tyson Figueroa",
     "email": "tyson.figueroa@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Manchester",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6b6a99f023e71503f",
@@ -745,18 +1801,51 @@ module.exports = [
     "name": "Adeline Doyle",
     "email": "adeline.doyle@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Stockport",
     "allocatedCentre": "Stockport",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6a602b885c8274ea8",
@@ -768,18 +1857,51 @@ module.exports = [
     "name": "Imelda Burke",
     "email": "imelda.burke@fakemail.gov.uk",
     "complexNeuro": true,
+    "skill": "Complex Neuro",
     "reviews": false,
     "homeCentre": "Bolton",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f604a815d2170c6900",
@@ -791,18 +1913,51 @@ module.exports = [
     "name": "Finch Stephens",
     "email": "finch.stephens@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Manchester",
     "allocatedCentre": "Manchester",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6d8bb61b79e1b0205",
@@ -814,18 +1969,51 @@ module.exports = [
     "name": "Mona Roberson",
     "email": "mona.roberson@fakemail.gov.uk",
     "complexNeuro": true,
+    "skill": "Complex Neuro",
     "reviews": true,
     "homeCentre": "Burnley",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f69f6e456a58193f91",
@@ -837,18 +2025,51 @@ module.exports = [
     "name": "Wheeler Tate",
     "email": "wheeler.tate@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Bolton",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f62774fed6bdbed4bd",
@@ -860,18 +2081,51 @@ module.exports = [
     "name": "Bernadette Robles",
     "email": "bernadette.robles@fakemail.gov.uk",
     "complexNeuro": true,
+    "skill": "Complex Neuro",
     "reviews": false,
     "homeCentre": "Manchester",
     "allocatedCentre": "Manchester",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6f1b1257b89a933fb",
@@ -883,18 +2137,51 @@ module.exports = [
     "name": "Paula Atkinson",
     "email": "paula.atkinson@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Wigan",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f63ce7f2583526ea60",
@@ -906,18 +2193,51 @@ module.exports = [
     "name": "Lorena Morrow",
     "email": "lorena.morrow@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Burnley",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f675c129b584675c84",
@@ -929,18 +2249,51 @@ module.exports = [
     "name": "Michelle Hebert",
     "email": "michelle.hebert@fakemail.gov.uk",
     "complexNeuro": true,
+    "skill": "Complex Neuro",
     "reviews": false,
     "homeCentre": "Wigan",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f67e0420064658ceca",
@@ -952,18 +2305,51 @@ module.exports = [
     "name": "Douglas Moore",
     "email": "douglas.moore@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Wigan",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6723ebfb32f45fa7c",
@@ -975,18 +2361,51 @@ module.exports = [
     "name": "Vaughn Wall",
     "email": "vaughn.wall@fakemail.gov.uk",
     "complexNeuro": true,
+    "skill": "Complex Neuro",
     "reviews": false,
     "homeCentre": "Manchester",
     "allocatedCentre": "Manchester",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "unnavailable"
+    "afternoon": "unnavailable",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f63117bf2e4e1b4a28",
@@ -998,18 +2417,51 @@ module.exports = [
     "name": "Lacy Neal",
     "email": "lacy.neal@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Burnley",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f64ea8e21b474d2b13",
@@ -1021,18 +2473,51 @@ module.exports = [
     "name": "Lynne Ballard",
     "email": "lynne.ballard@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Wigan",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f63bca0af63a8fcf63",
@@ -1044,18 +2529,51 @@ module.exports = [
     "name": "Glenda Hart",
     "email": "glenda.hart@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": true,
     "homeCentre": "Burnley",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6ba8c13e54bb93a8b",
@@ -1067,18 +2585,51 @@ module.exports = [
     "name": "Rivera Emerson",
     "email": "rivera.emerson@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": true,
     "homeCentre": "Burnley",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f61669a7917ca884c0",
@@ -1090,18 +2641,51 @@ module.exports = [
     "name": "Rodriquez Tyson",
     "email": "rodriquez.tyson@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Bolton",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f625f964ecfb9565b2",
@@ -1113,18 +2697,51 @@ module.exports = [
     "name": "Lindsey Mejia",
     "email": "lindsey.mejia@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Burnley",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6845e630b5ec5d7f9",
@@ -1136,18 +2753,51 @@ module.exports = [
     "name": "Genevieve Richards",
     "email": "genevieve.richards@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Bolton",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f67cebc134a46fc6ca",
@@ -1159,18 +2809,51 @@ module.exports = [
     "name": "Ramona Guthrie",
     "email": "ramona.guthrie@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Manchester",
     "allocatedCentre": "Manchester",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "unnavailable"
+    "afternoon": "unnavailable",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f68ce921cc74e90b25",
@@ -1182,18 +2865,51 @@ module.exports = [
     "name": "Julia Douglas",
     "email": "julia.douglas@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Stockport",
     "allocatedCentre": "Stockport",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f66e872172b4424fa3",
@@ -1205,18 +2921,51 @@ module.exports = [
     "name": "Rene Chavez",
     "email": "rene.chavez@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Neuro",
     "reviews": false,
     "homeCentre": "Stockport",
     "allocatedCentre": "Stockport",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6706e37cc710d59c0",
@@ -1228,18 +2977,51 @@ module.exports = [
     "name": "Daugherty Cannon",
     "email": "daugherty.cannon@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Burnley",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f667ec4f25af42f9ef",
@@ -1251,18 +3033,51 @@ module.exports = [
     "name": "Tracie Lynch",
     "email": "tracie.lynch@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Bolton",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f632427050b1d8f320",
@@ -1274,18 +3089,51 @@ module.exports = [
     "name": "Fields Solomon",
     "email": "fields.solomon@fakemail.gov.uk",
     "complexNeuro": true,
+    "skill": "Complex Neuro",
     "reviews": false,
     "homeCentre": "Wigan",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f686272761536e12db",
@@ -1297,18 +3145,51 @@ module.exports = [
     "name": "Katharine Dunn",
     "email": "katharine.dunn@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Manchester",
     "allocatedCentre": "Manchester",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "unnavailable"
+    "afternoon": "unnavailable",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f65987768ab622036e",
@@ -1320,18 +3201,51 @@ module.exports = [
     "name": "Roberta Bass",
     "email": "roberta.bass@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Wigan",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f673fb849eaa5a2e03",
@@ -1343,18 +3257,51 @@ module.exports = [
     "name": "Shepherd Smith",
     "email": "shepherd.smith@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Manchester",
     "allocatedCentre": "Manchester",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "unnavailable"
+    "afternoon": "unnavailable",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6f58cf53e82491174",
@@ -1366,18 +3313,51 @@ module.exports = [
     "name": "Knapp Gilmore",
     "email": "knapp.gilmore@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Manchester",
     "allocatedCentre": "Manchester",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f66ab1bd1143a964c7",
@@ -1389,18 +3369,51 @@ module.exports = [
     "name": "Casandra Mueller",
     "email": "casandra.mueller@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Stockport",
     "allocatedCentre": "Stockport",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "unnavailable",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f69f13dfcb45f17b94",
@@ -1412,18 +3425,51 @@ module.exports = [
     "name": "Oliver Fleming",
     "email": "oliver.fleming@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Wigan",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6890d91763fe98d21",
@@ -1435,18 +3481,51 @@ module.exports = [
     "name": "Klein Acevedo",
     "email": "klein.acevedo@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Burnley",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6b85769c572bfcf5a",
@@ -1458,18 +3537,51 @@ module.exports = [
     "name": "Stacy Adkins",
     "email": "stacy.adkins@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Bolton",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6de3a688dbc7b2e12",
@@ -1481,18 +3593,51 @@ module.exports = [
     "name": "Roberson Riley",
     "email": "roberson.riley@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Manchester",
     "allocatedCentre": "Manchester",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6e71b7398bdf68115",
@@ -1504,18 +3649,51 @@ module.exports = [
     "name": "Mccullough Sawyer",
     "email": "mccullough.sawyer@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Manchester",
     "allocatedCentre": "Manchester",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f686c04ac28f55ceca",
@@ -1527,18 +3705,51 @@ module.exports = [
     "name": "Mccoy Zamora",
     "email": "mccoy.zamora@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Stockport",
     "allocatedCentre": "Stockport",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "unnavailable",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f62ac64992dee6c277",
@@ -1550,18 +3761,51 @@ module.exports = [
     "name": "Muriel Lancaster",
     "email": "muriel.lancaster@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Manchester",
     "allocatedCentre": "Manchester",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6de80b647103e94a0",
@@ -1573,18 +3817,51 @@ module.exports = [
     "name": "Duran Potts",
     "email": "duran.potts@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Neuro",
     "reviews": false,
     "homeCentre": "Burnley",
     "allocatedCentre": "Burnley",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:false},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f652feb5c712183018",
@@ -1596,18 +3873,51 @@ module.exports = [
     "name": "Juliet Harmon",
     "email": "juliet.harmon@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Manchester",
     "allocatedCentre": "Manchester",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f69d0f81aea6b542a6",
@@ -1619,18 +3929,51 @@ module.exports = [
     "name": "Callahan Travis",
     "email": "callahan.travis@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Neuro",
     "reviews": false,
     "homeCentre": "Stockport",
     "allocatedCentre": "Stockport",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6629ca21f171146c5",
@@ -1642,18 +3985,51 @@ module.exports = [
     "name": "Flowers Wagner",
     "email": "flowers.wagner@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Burnley",
     "allocatedCentre": "Burnley",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f655bc2c0a6769cbe3",
@@ -1665,18 +4041,51 @@ module.exports = [
     "name": "Barnett Bowers",
     "email": "barnett.bowers@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Manchester",
     "allocatedCentre": "Manchester",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6ccf7c1754de6c554",
@@ -1688,18 +4097,51 @@ module.exports = [
     "name": "Roxanne Stone",
     "email": "roxanne.stone@fakemail.gov.uk",
     "complexNeuro": true,
+    "skill": "Complex Neuro",
     "reviews": false,
     "homeCentre": "Stockport",
     "allocatedCentre": "Stockport",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6241f2420e9f4fc2c",
@@ -1711,18 +4153,51 @@ module.exports = [
     "name": "Wolfe Ruiz",
     "email": "wolfe.ruiz@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Wigan",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6e444052c9d411e43",
@@ -1734,18 +4209,51 @@ module.exports = [
     "name": "Vazquez Curtis",
     "email": "vazquez.curtis@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Bolton",
     "allocatedCentre": "",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f67bafaeb120a89197",
@@ -1757,18 +4265,51 @@ module.exports = [
     "name": "Guerra Brennan",
     "email": "guerra.brennan@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": true,
     "homeCentre": "Stockport",
     "allocatedCentre": "Stockport",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f60b54e8d2ec0d5f0d",
@@ -1780,18 +4321,51 @@ module.exports = [
     "name": "Maynard Rosales",
     "email": "maynard.rosales@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Manchester",
     "allocatedCentre": "Manchester",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6da799a1309b14b01",
@@ -1803,18 +4377,51 @@ module.exports = [
     "name": "Mariana Whitehead",
     "email": "mariana.whitehead@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Stockport",
     "allocatedCentre": "Stockport",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   },
   {
     "id": "5bb745f6d9c53e8584b44956",
@@ -1826,17 +4433,50 @@ module.exports = [
     "name": "Tate Floyd",
     "email": "tate.floyd@fakemail.gov.uk",
     "complexNeuro": false,
+    "skill": "Standard",
     "reviews": false,
     "homeCentre": "Wigan",
     "allocatedCentre": "Wigan",
-    "otherCentres": [
-      "Burnley",
-      "Bolton",
-      "Stockport",
-      "Wigan",
-      "Manchester"
-    ],
+    "otherCentres": {
+      "Burnley": {available:true},
+      "Bolton":{available:true},
+      "Stockport":{available:true},
+      "Wigan":{available:true},
+      "Manchester":{available:true}
+    },
     "morning": "assessments",
-    "afternoon": "assessments"
+    "afternoon": "assessments",
+    "days": {
+      "monday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": true
+      },
+      "tuesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "wednesday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "thursday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      },
+      "friday": {
+        "available": true,
+        "start": "9:00am",
+        "end": "5:00pm",
+        "scrutiny": false
+      }
+    }
   }
 ]

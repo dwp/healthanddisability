@@ -27,8 +27,7 @@
         <tr>
             <td><a href="/{{path}}/planning/reassign/{{centreName}}/{{person.id}}">{{person.name}}</td>
             <td>
-                {{ 'Complex Neuro' if person.complexNeuro }}{{ ', ' if person.complexNeuro and person.reviews }}
-                {{ 'Reviews' if person.reviews }}</td>
+                {{person.skill}}</td>
             <td>{{person.morning}}</td>
             <td>{{person.afternoon}}</td>
             <td>{{person.homeCentre}}</td>

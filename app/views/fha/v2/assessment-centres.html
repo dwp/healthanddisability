@@ -13,7 +13,7 @@
 
       <div class="container">
       
-   <h1 class="heading-large">Assessment Centres</h1>
+   <h1 class="heading-large">Manchester area assessment centres</h1>
    
    
  <!--  <div class="section-tabs clearfix">
@@ -36,14 +36,12 @@
                 <thead>
                   <tr class="header-view">
                     <th>Name</th>
-                    <th>Location</th>
                   </tr>
                 </thead>
                 <tbody>
                 {% for centreKey, centre in centres %}
                 <tr>
                   <td><a href="capacity/manage-centre/{{centreKey}}/details">{{centre.name}}</a></td>
-                  <td>{{centre.location}}</td>
                 </tr>
                 {% endfor %}
                 </tbody>           

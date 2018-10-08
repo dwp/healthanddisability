@@ -966,13 +966,13 @@ router.get('/booking/booked/:customerId/:pageName', function(req, res, next){
 
 router.get('/capacity/manage-centre/:centreId*', function(req, res, next){
   getCentreDetails(req, res)
-  res.locals.staff = require(filePath +'/data/staff.js')
+  res.locals.staff = planningStaff.filter(staff => staff.homeCentre.toLowerCase() === req.params.centreId)
   next()
 })
 
 router.post('/capacity/manage-centre/:centreId*', function(req, res, next){
   getCentreDetails(req, res)
-  res.locals.staff = require(filePath +'/data/staff.js')
+  res.locals.staff = planningStaff.filter(staff => staff.homeCentre === req.params.centreId)
   next()
 })
 
@@ -1006,7 +1006,11 @@ router.get('/capacity/manage-centre/:centreId/manage-staff', function(req, res, 
 
 
 router.get('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffId*', function(req, res, next){
-  var staff = require(filePath +'/data/staff.js');
+  var staff = planningStaff;
+
+  res.locals.centres = require(filePath +'/data/centres.js')
+console.log(res.locals.centres);
+
 
   res.locals.person = staff.filter(person => person.id === req.params.staffId)[0];
   var today = moment(new Date());
@@ -1021,6 +1025,7 @@ router.get('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffI
 
 router.post('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffId*', function(req, res, next){
   var staff = require(filePath +'/data/staff.js');
+  res.locals.centres = require(filePath +'/data/centres.js')
 
   res.locals.person = staff.filter(person => person.id === req.params.staffId)[0];
   var today = moment(new Date(2018,8,9));
@@ -1077,12 +1082,7 @@ router.get('/capacity/manage-centre/:centreId/manage-staff', function(req, res, 
 
 
 
-router.get('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffId*', function(req, res, next){
-  var staff = require(filePath +'/data/staff.js');
 
-  res.locals.person = staff.filter(person => person.id === req.params.staffId)[0];
-  next()
-})
 
 
 router.get('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffId', function(req, res, next){
@@ -1396,7 +1396,7 @@ router.get('/planning/*', function(req, res, next){
 });
 
 var planningCentres = require(filePath +'/data/capacity/monday.js');
-var planningStaff = require(filePath + '/data/capacity/allocatedStaff.js');
+var planningStaff = require(filePath + '/data/capacity/allocatedStaff.js').filter(staff => staff.allocatedCentre !== "");
 
 var resetCentres = function(){
     planningCentres.forEach(function(centre){
