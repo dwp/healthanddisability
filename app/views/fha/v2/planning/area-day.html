@@ -1,0 +1,66 @@
+{% extends path1+"/_layout.html" %} 
+{% block mainNav %}
+{% endblock %}
+{% block leftNav %}
+
+{% endblock %}
+
+{% block main_content %}
+<a href="/{{path}}/planning" class="link-back">Back</a>
+
+<h1 class="heading-large mt0">Manchester area ({{centres.length}} centres)</h1>
+<h2>Staff assigned on <span class="lede">Monday 5 November 2018</span></h2>
+
+<div class="grid-3-col">
+
+    {% for centre in centres | sort(attribute="name") %}
+    <div>
+        <h3 class="heading-medium mt0 mb0">{{centre.name}}</h3>
+        <h4>{{centre.rooms}} assessment rooms</h4>
+        <div class="grid-2-col panel assess-centre">
+            <div>
+                <h4 class="heading-small mt0">Morning</h4>
+                <div class="data-grid">
+                	<span class="data-centre bold-xlarge">{{centre.morning.assessments.length}}</span>
+                    <span class="xsmall">Assessments</span>
+                    <span class="data-centre bold-large">{{centre.morning.complex}}</span>
+                    <span class="data-description">Complex neuro</span>
+                    
+                </div>
+                <hr class="assess-centre__divider">
+                <div class="data-grid">
+                    <span class="data-centre bold-large">{{centre.morning.review.length}}</span>
+                    <span class="xsmall">Reviews</span>
+                </div>
+            </div>
+            <div>
+                <h4 class="heading-small">Afternoon</h4>
+                <div class="data-grid">
+                    <span class="data-centre bold-xlarge">{{centre.afternoon.assessments.length}}</span>
+                    <span class="xsmall">Assessments</span>
+                    <span class="data-centre bold-large">{{centre.afternoon.complex}}</span>
+                    <span class="data-description">Complex neuro</span>
+                    
+                </div>
+                <hr class="assess-centre__divider">
+                <div class="data-grid">
+                    <span class="data-centre bold-large">{{centre.afternoon.review.length}}</span>
+                    <span class="xsmall">Reviews</span>
+                </div>
+            </div>
+            <hr class="assess-centre__divider">
+
+        	<div class="assess-centre__link"><a class="button-secondary" href="/{{path}}/planning/centre/{{centre.name}}">Reassign practitioners</a></div>
+
+        </div>
+    </div>
+
+    {% endfor %}
+    
+</div>
+
+<form action="/{{path}}/planning" method="post" accept-charset="utf-8">
+    <input type="hidden" value="true" name="mondayComplete">
+    <button class="button">Complete day</button>
+</form>
+{% endblock %}

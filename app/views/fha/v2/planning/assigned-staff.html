@@ -1,0 +1,40 @@
+{% extends path1+"/_layout.html" %} 
+{% block mainNav %}
+{% endblock %}
+{% block leftNav %}
+
+{% endblock %}
+
+{% block main_content %}
+<a href="/{{path}}/planning/day/monday" class="link-back">Back</a>
+
+<h1 class="heading-large mt0">{{centre.name}}</h1>
+<h2 class="heading-small">Staff assigned on <span class="lede">Monday 5 November 2018</span></h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Skill Level</th>
+            <th>Morning</th>
+            <th>Afternoon</th>
+            <th>Home centre</th>
+            <th>Other centres</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for person in staff |sort(attribute='name') %}
+        <tr>
+            <td><a href="/{{path}}/planning/reassign/{{centreName}}/{{person.id}}">{{person.name}}</td>
+            <td>
+                {{ 'Complex Neuro' if person.complexNeuro }}{{ ', ' if person.complexNeuro and person.reviews }}
+                {{ 'Reviews' if person.reviews }}</td>
+            <td>{{person.morning}}</td>
+            <td>{{person.afternoon}}</td>
+            <td>{{person.homeCentre}}</td>
+            <td>{{person.otherCentres}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>                    
+{% endblock %}
