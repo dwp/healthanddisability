@@ -11,20 +11,22 @@
 <h1 class="heading-large mt0">Reassign {{staff.name}}</h1>
 <h2 class="heading-small"><span class="lede">Monday 5 November 2018</span></h2>
 
-<form action="/{{path}}/planning/centre/{{centre.name}}" method="post">
+<form class="mt30" action="/{{path}}/planning/centre/{{centre.name}}" method="post">
     <fieldset class="form-group">
         <legend>
           <span class="form-label-bold">
             Location
           </span>
         </legend>
-        {% for location in staff.otherCentres %}
-        <div class="multiple-choice">
-          <input id="location-{{loop.index}}" type="radio" name="location" value="{{location}}"
-          {{'checked' if location == staff.allocatedCentre }}>
-          <label for="location-{{loop.index}}">{{location}}</label>
-        </div>
+
+        {% for centreKey, centre in staff.otherCentres %}
+            <div class="multiple-choice">
+              <input id="location-{{loop.index}}" type="radio" name="location" value="{{centreKey}}"
+              {{'checked' if centreKey == staff.allocatedCentre }}>
+              <label for="location-{{loop.index}}">{{centreKey}}</label>
+            </div>
         {% endfor %}
+
     </fieldset>
 
     {% if staff.reviews %}
@@ -36,11 +38,13 @@
         </legend>
         
         <div class="multiple-choice">
-          <input id="morning-assessments" type="radio" name="morning" value="assessments">
+          <input id="morning-assessments" type="radio" name="morning" value="assessments"
+          {{'checked' if staff.morning == 'assessments'}} >
           <label for="morning-assessments">Assessments</label>
         </div>
         <div class="multiple-choice">
-          <input id="morning-reviews" type="radio" name="morning" value="reviews">
+          <input id="morning-reviews" type="radio" name="morning" value="reviews"
+          {{'checked' if staff.morning == 'reviews'}}>
           <label for="morning-reviews">reviews</label>
         </div>
         
@@ -54,11 +58,13 @@
           </span>
         </legend>
         <div class="multiple-choice">
-          <input id="afternoon-assessments" type="radio" name="afternoon" value="assessments">
+          <input id="afternoon-assessments" type="radio" name="afternoon" value="assessments"
+          {{'checked' if staff.afternoon == 'assessments'}}>
           <label for="afternoon-assessments">Assessments</label>
         </div>
         <div class="multiple-choice">
-          <input id="afternoon-reviews" type="radio" name="afternoon" value="reviews">
+          <input id="afternoon-reviews" type="radio" name="afternoon" value="reviews"
+          {{'checked' if staff.afternoon == 'reviews'}}>
           <label for="afternoon-reviews">reviews</label>
         </div>
 
