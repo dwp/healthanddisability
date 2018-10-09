@@ -27,11 +27,15 @@
         <tr>
             <td><a href="/{{path}}/planning/reassign/{{centreName}}/{{person.id}}">{{person.name}}</td>
             <td>
-                {{person.skill}}</td>
+                {{person.skill}}{{', Reviews' if person.reviews}}</td>
             <td>{{person.morning}}</td>
             <td>{{person.afternoon}}</td>
             <td>{{person.homeCentre}}</td>
-            <td>{{person.otherCentres}}</td>
+            <td>{% for centreKey, centre in person.otherCentres %}
+                {% if centreKey !== person.homeCentre %}
+                    {{centreKey}}{{ ',' if not loop.last }}
+                {% endif %}
+                {% endfor %}</td>
         </tr>
         {% endfor %}
     </tbody>
