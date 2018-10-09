@@ -21,15 +21,124 @@
     	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
 		
 		
-			
-		
-		<form>
-			<fieldset>
-				<legend><h1 class="heading-large mt0">Record new evidence</h1></legend>
+			<div class="form-group">
+					<fieldset>
 				
-				
+						<legend>
+							<h1 class="heading-large mt0">
+								Record evidence
+							</h1>
+							<p class="form-hint mb5 mt10">Select the evidence you would like to record.</p>
+						</legend>
+				    {% if checked('type','113') %}
+						<div class="multiple-choice">
+							<input id="gp" name="evidenceType" type="checkbox" value="Gp">
+							<label for="gp" class="form-label-bold">GP report (113 form)</label>
+						</div>
+						{% endif %}
+						{% if checked('type','FRR') %}
+						<div class="multiple-choice">
+							<input id="factualreport" name="evidenceType" type="checkbox" value="factualreport">
+							<label for="factualreport" class="form-label-bold">Factual report (FRR)</label>
+						</div>
+						{% endif %}
+						<div class="multiple-choice" data-target="evidence">
+							<input id="nationalities-other" name="evidenceType" type="checkbox" value="evidence">
+							<label for="nationalities-other" class="form-label-bold">Record new evidence</label>
+						</div>
+						<div class="panel panel-border-narrow js-hidden" id="evidence">
+								<div class="form-group">
+										<label for="type" class="form-label">
+											Evidence type
+										</label>
+										<input type="text" id="type" class="form-control form-control-1-3">
+									</div>
+									
+									<div class="form-group">
+										<label for="source" class="form-label">
+											Source
+										</label>
+										<input type="text" id="source" class="form-control form-control-1-3">
+									</div>
+						</div>
+						<div class="multiple-choice" data-target="telephone">
+								<input id="nationalities-other" name="evidenceType" type="checkbox" value="evidence">
+								<label for="nationalities-other" class="form-label-bold">	Telephone contact report (FRR4)</label>
+							</div>
+							<div class="panel panel-border-narrow js-hidden" id="telephone">
+									<div class="form-group">	
+											<label for="telephoneReport" class="bold">
+											Information sought
 
+											</label>
+											<textarea class="form-control form-control-2-4" name="telephoneReport" id="telephoneReport" rows="5"></textarea>
+											 </div>	
+											 <div class="form-group">
+													<fieldset>
+	
+															<legend class="bold">
+																
+																	Source of information
+																
+															</legend>
+
+															<div class="multiple-choice" data-target="client">
+																	<input id="example-contact-by-email" type="radio" name="hcp-type" value="gp">
+																	<label for="example-contact-by-email">Client: Tomas Fernandez</label>
+																</div>
+																<div class="panel panel-border-narrow js-hidden" id="client">
+																	  <fieldset class="inline">
+
+																				<legend>
+																					<h2 class="form-label-bold">
+																					Does Tomas agree to answer questions?
+																					</h2>
+																				</legend>
+																		
+																				<div class="multiple-choice">
+																					<input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+																					<label for="radio-inline-1">Yes</label>
+																				</div>
+																				<div class="multiple-choice">
+																					<input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+																					<label for="radio-inline-2">No</label>
+																				</div>
+																		
+																			</fieldset>
+																		</div>
+
+														
+													
+															<div class="multiple-choice">
+																<input id="example-contact-by-email" type="radio" name="hcp-type" value="gp">
+																<label for="example-contact-by-email">GP: Dr. Sheila Turner</label>
+															</div>
+											
+															<div class="multiple-choice" >
+																	<input id="example-contact-by-email" type="radio" name="hcp-type" value="consultant">
+																	<label for="example-contact-by-email">Consultant: Dr. Nicholas Kent</label>
+																</div>
+													
+	
+										
+														
+													
+														</fieldset>
+	
+											 </div>
+											 <div class="form-group">	
+													<label for="telephoneReport" class="bold">
+													Information gathered
+													</label>
+													<textarea class="form-control form-control-2-4" name="telephoneReportGathered" id="telephoneReport" rows="15"></textarea>
+													 </div>	
+							</div>
 				
+					</fieldset>
+				</div>
+		
+		
+	
 				
 				<!--<div class="form-group mt30">
 
@@ -67,52 +176,7 @@
 						    
 					</div>-->
 					
-					<div class="form-group mt30">
-						<label for="type" class="form-label">
-							Evidence type
-						</label>
-						<input type="text" id="type" class="form-control form-control-1-3">
-					</div>
-					
-					<div class="form-group">
-						<label for="source" class="form-label">
-							Source
-						</label>
-						<input type="text" id="source" class="form-control form-control-1-3">
-					</div>
-					
-					<div class="form-group">
-				    <fieldset>
-				      <legend>
-				          Date received
-				        <span class="form-hint">For example, 31 3 1980</span>
-				      </legend>
-				      <div class="form-date">
-				        <div class="form-group form-group-day">
-				          <label class="form-label" for="dob-day">Day</label>
-				          <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
-				        </div>
-				        <div class="form-group form-group-month">
-				          <label class="form-label" for="dob-month">Month</label>
-				          <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
-				        </div>
-				        <div class="form-group form-group-year">
-				          <label class="form-label" for="dob-year">Year</label>
-				          <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
-				        </div>
-				      </div>
-				    </fieldset>
-				  </div>
-
-				
-				
-				
-			</fieldset>
-			
-			
-			<p><a href="index" class="button mt20">Save and continue</a></p>
-			
-		</form>
+	
 		
     
     
@@ -129,11 +193,5 @@
 {% endblock %}
 
 {# {% block page_script %}
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $('#status_status').combobox();
-      $('#app_adviser').combobox();
-      $('#app_team').combobox();
-    });
-  </script>
+
 {% endblock %} #}

@@ -1,0 +1,64 @@
+{% extends path+"/_layout.html" %} 
+{% import path+"/_macro_horizonalSecondaryNav.html" as secondaryNav %} 
+
+{% block assess_content %}
+<main id="content" role="main" class="main-content">
+    <div class="container">
+       
+        <div class="grid-row">
+             
+            <div class="column-one-quarter">
+      
+                    <nav class="details-nav v2">
+                            <ul>
+                              
+                              
+                                <li class="active_detail">
+                                    <a href="referrals">Referrals (49)</a>
+                                
+                                    <ul>
+                                    
+                                        <li>
+                                            <a href="new-referrals">New referrals (32)</a>
+                                        </li>
+                        
+                                    
+                                        <li>
+                                            <a href="uc50-posted">In progress (9)</a>
+                                        </li>
+                        
+                              
+                                    
+                                    </ul>
+                                
+                        
+                                </li>
+                              
+                                <li>
+                                    <a href="review">Reviews (10)</a>
+                                
+                        
+                                </li>
+                              
+                                <li>
+                                    <a href="appointments">Appointments (46)</a>
+                                
+                        
+                                </li>
+                           
+                              
+                            </ul>
+                        </nav>
+            </div>
+            <div class="column-three-quarters">
+                {% block caselist_content %}
+
+                {% endblock %}
+            </div>
+            <!-- column -->
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+</main>
+{% endblock %}
