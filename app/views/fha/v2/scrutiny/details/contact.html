@@ -1,4 +1,4 @@
-{% extends path2+"/_layout.html" %}
+{% extends path1+"/details/_layout.html" %}
 
 {% block case_content %}
 
@@ -13,20 +13,19 @@
 
     
     <h4 class="heading-small mt0">Phone</h4>
-    <p>0207 000 0000</p>
+    <p>{{customer.phone}}</p>
     
     <h4 class="heading-small">Text</h4>
-    <p>07979 000000</p>
+    <p>{{customer.mobile}}</p>
     
     <h4 class="heading-small">Email</h4>
-    <p>the.tomas.fernandez@madeup.com</p>
+    <p>{{customer.email}}</p>
     
     <h4 class="heading-small">Address</h4>
     <p class="address-stack">
-    	<span>0 Coldharbour Street</span>
-    	<span>Brixton</span>
-    	<span>London</span>
-    	<span>SW2 000</span>
+    	<span>{{customer.address.street}}</span>
+    	<span>{{customer.address.city}}</span>
+    	<span>{{customer.address.postcode}}</span>
     </p>
     
     <h4 class="heading-small">Has Tomas given consent to request further medical evidence?</h4>

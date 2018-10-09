@@ -10,59 +10,20 @@
 {% block caselist_content %}
 
 <h2 class="heading-medium mt0"><span class="heading-xlarge">6</span><br/>Ready for review</h2>
-              <table class="zebra">
+<table class="zebra">
+    <thead>
+        <tr>
+            <th>Details</th>
+        </tr>
+    </thead>
+    {% for customer in customers %}
+    <tr>
+        <td><a href="scrutiny/{{customer._id}}/timeline"><span class="visually-hidden">Name</span>{{customer.name.fullName}} </a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span>
+        </td>
+    </tr>
 
-                <thead>
-                  <tr>
-                    <th>Details</th>
-
-                   
-                  </tr>
-                </thead>
-                
-               
-   
-    
-                <tr>
-                    <td ><a href="victorcastillo/timeline"><span class="visually-hidden">Name</span>Tomas Fernandez </a><span class="text-secondary block"><span class="visually-hidden">Nino</span>AA 12 34 56 B</span></td>
-                
-                  </tr>
-              
-              
-                
-              
-                  <tr>
-                    <td ><a href="#"><span class="visually-hidden">Name</span>Yeldon Finkelstein</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>BB 12 34 56 C</span></td>
-                
-                  </tr>
-              
-               
-              
-                  <tr>
-                    <td ><a href="#"><span class="visually-hidden">Name</span>Lucas Moran</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>GG 12 34 56 F</span></td>
-              
-                  </tr>
-              
-                  <tr>
-                    <td ><a href="#"><span class="visually-hidden">Name</span>Taha Sağlam</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>JJ 12 34 56 K</span></td>
-                  </tr>
-              
-              
-                  <tr>
-                    <td ><a href="#"><span class="visually-hidden">Name</span>Aaron Murray</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>KK 12 34 56 L</span></td>
-                
-                  </tr>
-              
-                  <tr>
-                    <td ><a href="#"><span class="visually-hidden">Name</span>Charlie Reid</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>LL 12 34 56 M</span></td>
-                 
-                  </tr>
-              
-                  
-              
-  
-
-              </table>
+    {% endfor %}
+</table>
 {% endblock %}
 
 

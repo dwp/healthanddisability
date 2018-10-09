@@ -4,7 +4,7 @@
 
   <div class="container">
 
-    {{ nav.case_tabs("details",1,path1) }}{# macro #}
+    {{ nav.case_tabs("details",1,path1, customer._id) }}{# macro #}
 
     <div class="grid-row">
       <div class="column-third">
@@ -30,7 +30,7 @@
 
 {% block body_end %}
   <div id="descriptor_choice" style="display:none; max-height:76%">
-    {% include path2+"/_addremove.html" %}
+    {% include path1+"/details/_addremove.html" %}
   </div>
   {{ super() }}
 {% endblock %}

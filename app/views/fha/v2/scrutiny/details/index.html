@@ -1,4 +1,4 @@
-{% extends path2+"/_layout.html" %}
+{% extends path1+"/details/_layout.html" %}
 
 
 {% block case_content %}
@@ -18,30 +18,14 @@
 				</tr>
 			</thead>
 			<tbody>
+				{% for illness in customer.illnesses %}
 				<tr>
-					<td>Depression</td>
-					<td>Claimant</td>
-					<td>April 2018</td>
+					<td>{{illness.name}}</td>
+					<td>{{illness.source}}</td>
+					<td>{{illness.date |formatDate('MMMM YYYY')}}</td>
 				
 				</tr>
-				<tr>
-					<td>Emergency fasciotomy </td>
-					<td>Claimant</td>
-					<td>August 2017</td>
-				
-				</tr>
-				<tr>
-					<td>Acute compartment syndrome </td>
-					<td>Claimant</td>
-					<td>August 2017</td>
-					
-				</tr>
-				<tr>
-					<td>Compound fracture - shinbone </td>
-					<td>Claimant</td>
-					<td>July 2017</td>
-				
-				</tr>
+				{% endfor %}
 				
 			</tbody>
 		</table>

@@ -1486,4 +1486,48 @@ router.post('/planning/centre/:centre', function(req, res, next){
 })
 
 
+router.get('/ready-for-review', function(req, res, next){
+  res.locals.customers = require(filePath +'/data/reviews/readyForReview.js')
+  next()
+})
+
+router.get('/scrutiny/:customerId/*', function(req, res, next){
+  res.locals.customer = require(filePath +'/data/reviews/readyForReview.js')
+                          .filter(customer => customer._id === req.params.customerId)[0];
+    
+  next()
+
+})
+
+
+router.get('/scrutiny/:customerId/details', function(req, res, next){
+  
+    res.render(viewPath +'/scrutiny/details/index');
+  
+
+})
+
+router.get('/scrutiny/:customerId/details/:pageName', function(req, res, next){
+  
+    res.render(viewPath +'/scrutiny/details/' + req.params.pageName);
+  
+
+})
+
+router.get('/scrutiny/:customerId/evidence/:pageName', function(req, res, next){
+  
+    res.render(viewPath +'/scrutiny/evidence/' + req.params.pageName);
+  
+
+})
+
+
+router.get('/scrutiny/:customerId/:pageName', function(req, res, next){
+  
+      res.render(viewPath +'/scrutiny/' + req.params.pageName);
+  
+
+})
+
+
 module.exports = router
