@@ -42,7 +42,7 @@ body{
 
 .factual-report{
     width:60%;
-    max-width:1100px;
+    max-width:880px;
     background:#fff;
     margin:60px auto;
     padding:20px 40px;
@@ -81,12 +81,20 @@ body{
    </div>
         <div class="grid-row">
             <div class="column-half">
+                    {% if checked('hcp-type','gp') %}
                     <h2 class="heading-small">GP details</h2>
             
-                   
+                  
                          <p>Dr. Sheila Turner<br />
                        
-                 
+                    {% else %}
+
+                    <h2 class="heading-small">Consultant details</h2>
+            
+                  
+                         <p> MR Nicholas Kent<br />
+                       
+                    {% endif %}
                  
                          
                  
@@ -122,10 +130,14 @@ body{
             <div class="column-full"> 
                     <br /><br />
                     <p>27th October 2018</p>
-    
+                    {% if checked('hcp-type','gp') %}
                     <p>Your patient has made a claim for benefit and you may have already given us information about his/her history.  
                             However, so that we can consider the claim, we need some additional details.  Your patient has given consent to 
                             allow us to approach you for this information. </p>
+                           
+                            <p>The above named person has made a claim for benefit and has indicated that you are involved with their treatmentor care. 
+                                    To enable us to futher consider the claim, we need some additional details.  The claiment has given consent to 
+                                    allow us to approach you for this information. </p>
                 
                     <h2 class="heading-small">What we need you to do </h2>
                     <p>Please supply a factual report answering the questions listed on the enclosed form.  You should base your replies 
@@ -160,7 +172,55 @@ body{
                                             <p>Yours sincerely, </p>
 
                                             <p>For the Medical Officer 
-                                                    FRR2 10/10 </p>
+                                             </p>
+
+                                             <p>FFR2</p>
+                                             {% else %}
+
+                                             <p>The above named person has made a claim for benefit and has indicated that you are involved with their treatmentor care. 
+                                                    To enable us to futher consider the claim, we need some additional details.  The claiment has given consent to 
+                                                    allow us to approach you for this information. </p>
+                                                   
+                                                    <p>The above named person has made a claim for benefit and has indicated that you are involved with their treatmentor care. 
+                                                            To enable us to futher consider the claim, we need some additional details.  The claiment has given consent to 
+                                                            allow us to approach you for this information. </p>
+                                        
+                                            <h2 class="heading-small">What we need you to do </h2>
+                                            <p>Please supply a factual report answering the questions listed on the enclosed form.  You should base your replies 
+                                                    on your knowledge of the patient and on his/her records.
+                                                     </p>
+                                            <p>
+                                                    Please include in your report any relevant information contained in letters or reports from hospitals or consultants. 
+                                                    If you think it is essential to send us originals or copies of any letters from consultants, please obtain the authorâ€™s 
+                                                   consent beforehand.  You should also confirm in a covering note that they have agreed to the correspondence 
+                                                   being used in connection with this claim. 
+                                            </p>
+                        
+                                            <p>Please let us know immediately if this patient is no longer under your care.</p>
+                                        
+                        
+                                            <p>Any informatiom you are able to provide would be much appreciated but unfortunately we are unable to pay you for it.
+                                                Please note that a full and prompt reply may prevent the claimant from being required to undergo a medical examination.
+                                            </p>
+                        
+                                                    <h2 class="heading-small">Harmful information </h2> 
+                                                    <p>We may need to send a copy of the report to the patient. We can withhold information from the patient that would 
+                                                            be harmful to his/her health.  Please put any such information on a separate sheet and mark it accordingly.  
+                                                            Please note we cannot withhold information on any other grounds. </p>      
+                                                   
+                                                            <h2 class="heading-small">What to do next  </h2> 
+                                                            <p>We would appreciate a reply to the address shown on the enclosed form within seven days.  We have enclosed a 
+                                                                    pre-paid envelope for the return of the report. </p>
+                        
+                                                                    <p>Yours sincerely, </p>
+                        
+                                                                    <p>For the Medical Officer 
+                                                                     </p>
+                        
+                                                                     <p>FFR3</p>
+                                           
+                 
+                                             {% endif %}
 
                                                     <hr/>
 
@@ -178,10 +238,20 @@ body{
                 <h2 class="heading-large">Factual Report</h2>
             </div>
             <div class="column-half">
+                    {% if checked('type','113') %}
                     <h2 class="heading-small">GP details</h2>
             
-                   
+                  
                          <p>Dr. Sheila Turner<br />
+                       
+                    {% else %}
+
+                    <h2 class="heading-small">Consultant details</h2>
+            
+                  
+                         <p> MR Nicholas Kent<br />
+                       
+                    {% endif %}
                        
                  
                  
