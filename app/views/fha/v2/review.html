@@ -9,7 +9,7 @@
 
 {% block caselist_content %}
 
-<h2 class="heading-medium mt0"><span class="heading-xlarge">10</span><br/>Reviews</h2>
+<h2 class="heading-medium mt0"><span class="heading-xlarge">{{customers.length}}</span><br/>Reviews</h2>
               <table class="zebra">
 
                 <thead>
@@ -20,7 +20,21 @@
                   </tr>
                 </thead>
                 
-                {% include path+"/caselist/_table_data_status.html" %}
+                {% for customer in customers %}
+    <tr>
+  
+	      <td>
+	      		<a href="scrutiny/{{customer._id}}/timeline"><span class="visually-hidden">Name</span>{{customer.name.fullName}}</a>
+	      		<span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span>
+	      	</td>
+	      <td>
+	      	<span class="block">
+	      	{{ 'Requested medical evidence'  if customer.status == 'fme'}}
+	      	{{ 'Ready for review' if customer.status == 'review'}}</span> </td>
+	    </tr>
+    </tr>
+
+    {% endfor %}
 
               </table>
 {% endblock %}

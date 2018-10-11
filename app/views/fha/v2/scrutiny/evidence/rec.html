@@ -1,11 +1,12 @@
-{% extends path2+"/_layoutAction.html" %}
+{% extends path1+"/evidence/_layoutAction.html" %}
+
 
 {% block case_content %}
 
  <p class="no-kdBar"> <a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+<form class="form" action="booking" method="post">
 
 <h2 class="heading-large mt20">Can you make a recommendation now?</h2>
-<form class="form" action="/{{ path2 }}" method="get">
   <div class="form-group">
 
     <div class="multiple-choice" data-target="scorenow">
@@ -21,13 +22,13 @@
     </div> -->
 
     <div class="multiple-choice" data-target="">
-      <input id="face2face" name="whatcando" type="radio" value="No, redirect({{ path1 }}/support/rejected)">
+      <input id="face2face" name="whatcando" type="radio" value="No">
       <label for="face2face"> No, I want Tomas to come in</label>
     </div>
 
   </div><!-- form-group -->
   <div class="form-group">
-    <a href="booking" class="button">Continue</a>
+    <button class="button">Continue</button>
   </div><!-- form-group -->
 </form>
 

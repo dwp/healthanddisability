@@ -73,7 +73,7 @@ router.post('*', function (req, res, next) {
   if(!req.session.data.observations){
     req.session.data.observations = [];
   }
-
+  
   next()
 })
 
@@ -853,6 +853,11 @@ router.get('/booking/referrals/:customerId/timeline', function(req, res, next){
   res.render(viewPath +'/booking/timeline');
 })
 
+router.get('/booking/referrals/:customerId/timeline-scrutiny', function(req, res, next){
+  res.render(viewPath +'/booking/timeline-scrutiny');
+})
+
+
 router.get('/booking/referrals/:customerId/appointment-details', function(req, res, next){
   res.render(viewPath +'/booking/appointment-details');
 })
@@ -1485,20 +1490,41 @@ router.post('/planning/centre/:centre', function(req, res, next){
   
 })
 
+var reviewCustomers = require(filePath +'/data/reviews/readyForReview.js');
+
+router.get('/review', function(req, res, next){
+  res.locals.customers = reviewCustomers;
+  next()
+})
+
 
 router.get('/ready-for-review', function(req, res, next){
-  res.locals.customers = require(filePath +'/data/reviews/readyForReview.js')
+  res.locals.customers = reviewCustomers
+                            .filter(customer => customer.status === "review");
+  next()
+})
+
+router.get('/requested-medical-evidence', function(req, res, next){
+  res.locals.customers = reviewCustomers
+                            .filter(customer => customer.status === "fme");
   next()
 })
 
 router.get('/scrutiny/:customerId/*', function(req, res, next){
-  res.locals.customer = require(filePath +'/data/reviews/readyForReview.js')
+  res.locals.customer = reviewCustomers
                           .filter(customer => customer._id === req.params.customerId)[0];
     
   next()
 
 })
 
+router.post('/scrutiny/:customerId/*', function(req, res, next){
+  res.locals.customer = reviewCustomers
+                          .filter(customer => customer._id === req.params.customerId)[0];
+    
+  next()
+
+})
 
 router.get('/scrutiny/:customerId/details', function(req, res, next){
   
@@ -1528,6 +1554,39 @@ router.get('/scrutiny/:customerId/:pageName', function(req, res, next){
   
 
 })
+
+
+router.post("/scrutiny/:customerId/fme-confirm", function(req, res, next){
+  reviewCustomers.map(customer => {
+    if(customer._id === req.params.customerId){
+
+      customer.fmeRequestedDate = moment().format();
+      customer.fmeType = req.session.data.type;
+      customer.status = "fme";
+
+      delete req.session.data.type;
+
+      console.log(customer);
+    }
+  })
+
+  res.redirect(301, '/fha/v' + versionNumber +'/scrutiny/' + req.params.customerId + '/timeline');
+
+});
+
+
+router.post("/scrutiny/:customerId/booking-post", function(req, res, next){
+
+  var bookingCustomers = require(filePath +'/data/referrals.js');
+
+  res.locals.customer.receivedDate = moment().format();
+  bookingCustomers.push(res.locals.customer);
+
+  reviewCustomers = reviewCustomers.filter(customer => customer._id !== req.params.customerId);
+
+  res.redirect(301, '/fha/v' + versionNumber +'/booking/referrals/' + req.params.customerId + '/timeline-scrutiny');
+
+});
 
 
 module.exports = router

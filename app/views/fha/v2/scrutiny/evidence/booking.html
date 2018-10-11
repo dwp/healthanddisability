@@ -1,11 +1,12 @@
-{% extends path2+"/_layoutAction.html" %}
+{% extends path1+"/evidence/_layoutAction.html" %}
+
 
 {% block case_content %}
 
    <p class="no-kdBar"> <a href="javascript: history.go(-1)" class="link-back">Back</a></p>
 
 <h1 class="heading-large mt20">Appointment referral</h1>
-<form class="form" action="/{{ path2 }}" method="get">
+<form class="form" action="/{{ path }}/scrutiny/{{customer._id}}/booking-post" method="post">
   
   <div class="form-group">
 	  <label class="form-label" for="reason">
@@ -26,7 +27,7 @@
 			      <legend class="heading-medium">Type of appointment</legend>
 			
 			      <div class="multiple-choice">
-			        <input id="radio-neuro1" type="radio" name="radio-neuro" value="neuro">
+			        <input id="radio-neuro1" type="radio" name="radio-standard" value="standard">
 			        <label for="radio-neuro1">Standard</label>
 			      </div>
 			      <div class="multiple-choice">
@@ -43,7 +44,7 @@
   
   
     <div class="form-group">
-    <a href="/{{path}}/assessment" class="button">Confirm appointment referral</a>
+    <button class="button">Confirm appointment referral</button>
     <p class="mt20"> <a href="../timeline">Cancel</a></p>
   </div><!-- form-group -->
 </form>

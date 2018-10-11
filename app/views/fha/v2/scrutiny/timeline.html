@@ -26,21 +26,25 @@
      
     
       <div class="timeline">
+{% if customer.status == "fme" %}
 
-          {% if checked('type','FRR') %}
-  <span class="line"></span>
+{% if customer.fmeType.indexOf("113") > -1 %}
+<span class="line"></span>
+  <div class="timeline__event">
+    <h3 class="timeline__heading">Medical evidence requested (GP Report 113)</h3>
+    <p class="timeline_datetime">{{customer.fmeRequestedDate | formatDate("D MMMM YYYY") }}</p>
+  </div>
+{% endif %}
+{% if customer.fmeType.indexOf("FRR") > -1 %}
+<span class="line"></span>
   <div class="timeline__event">
     <h3 class="timeline__heading">Medical evidence requested (Further medical evidence FRR)</h3>
-    <p class="timeline_datetime">25 August 2018</p>
+    <p class="timeline_datetime">{{customer.fmeRequestedDate | formatDate("D MMMM YYYY") }}</p>
   </div>
-  {% endif %}   
-  {% if checked('type','113') %}	  
-		  <span class="line"></span>
-        <div class="timeline__event">
-          <h3 class="timeline__heading">Medical evidence requested (GP Report 113)</h3>
-          <p class="timeline_datetime">25 August 2018</p>
-        </div>
-        {% endif %} 
+{% endif %}
+{% endif %}
+
+
 
 
       <!--           <span class="line"></span>

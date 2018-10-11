@@ -1,64 +1,83 @@
-{% macro nav(section, subSection) %}
+{% macro nav(section, subSection, sections) %}
 
 {% set sections = [{
 		url:"referrals",
-		label:"Referrals (49)", 
+		label:"Referrals", 
+		quantity: 49,
 		subItems: [{
 			url: "new-referrals",
-			label: "New referrals (32)"
+			label: "New referrals",
+			quantity: 32
 		},{
 			url: "uc50-posted",
-			label: "UC50 posted (9)"
+			label: "UC50 posted",
+			quantity: 9
 		},{
 			url: "uc50-received",
-			label: "UC50 received (8)"
+			label: "UC50 received",
+			quantity: 8
 		}]
 	},{
 		url:"review",
-		label:"Reviews (10)", 
+		label:"Reviews", 
+		quantity: 10,
 		subItems: [{
 			url: "ready-for-review",
-			label: "Ready for review (6)"
+			label: "Ready for review",
+			quantity: 6
 		},{
 			url: "requested-medical-evidence",
-			label: "Requested medical evidence (4)"
+			label: "Requested medical evidence",
+			quantity: 4
 		}]
 	},{
 		url:"appointments",
-		label:"Appointments (46)", 
+		label:"Appointments", 
+		quantity: 46,
 		subItems: [{
 			url: "ready-to-book",
-			label: "Ready to book (21)"
+			label: "Ready to book",
+			quantity: 21
 		},{
 			url: "booked-appointments",
-			label: "Booked appointments (26)"
+			label: "Booked appointments",
+			quantity: 26
 		}]
 	},{
 		url:"assessment",
 		label:"Todays assessments", 
+		quantity: 10,
 		subItems: [{
-			label: "9:00am (4)",
+			label: "9:00am",
+			quantity: 4,
 			url: "#"
 		},{
-			label: "10:00am (4)",
+			label: "10:00am",
+			quantity: 4,
 			url: "#"
 		},{
-			label: "11:00am (4)",
+			label: "11:00am",
+			quantity: 4,
 			url: "#"
 		},{
-			label: "1:00pm (4)",
+			label: "1:00pm",
+			quantity: 4,
 			url: "#"
 		},{
-			label: "2:00pm (11)",
+			label: "2:00pm",
+			quantity: 11,
 			url: "todays-appointments-2pm"
 		},{
-			label: "3:00pm (2)",
+			label: "3:00pm",
+			quantity: 2,
 			url: "#"
 		},{
-			label: "4:00pm (2)",
+			label: "4:00pm",
+			quantity: 2,
 			url: "#"
 		},{
-			label: "4:00pm (2)",
+			label: "4:00pm",
+			quantity: 2,
 			url: "#"
 		}]
 	}]
@@ -70,7 +89,7 @@
 	  {% for item in sections %}
 	    <li {% if item.url == section %} 
 	    	class="active_detail"{% endif %}>
-	    	<a href="{{item.url}}">{{ item.label }}</a>
+	    	<a href="{{item.url}}">{{ item.label }} ({{ item.quantity }})</a>
 	    {% if item.url == section %}
 	    	<ul>
 	    	{% for subItem in item.subItems %}
@@ -78,7 +97,7 @@
 	    			<a href="{{subItem.url}}" 
 	    			{% if subItem.url == subSection %}
 	    				class="active_child"
-	    			{% endif %}>{{subItem.label}}</a>
+	    			{% endif %}>{{subItem.label}} ({{subItem.quantity}})</a>
 	    		</li>
 
 	    	{% endfor %}
