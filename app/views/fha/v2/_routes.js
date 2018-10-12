@@ -1542,6 +1542,13 @@ router.get('/scrutiny/:customerId/details/:pageName', function(req, res, next){
 
 })
 
+router.get('/scrutiny/:customerId/evidence', function(req, res, next){
+  
+  res.render(viewPath +'/scrutiny/evidence/index');
+
+
+})
+
 router.get('/scrutiny/:customerId/evidence/:pageName', function(req, res, next){
   
     res.render(viewPath +'/scrutiny/evidence/' + req.params.pageName);
