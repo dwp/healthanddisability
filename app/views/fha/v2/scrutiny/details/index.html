@@ -35,7 +35,7 @@
 	
 							
 		<h2 class="heading-medium">Medication and side effects</h2>
-		<div class="">
+			{% if customer.medication.length > 0 %}
 				<table>
 					<caption class="visually-hidden">List of medication and side effects</caption>
 					<thead>
@@ -47,22 +47,20 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>Sertraline</td>
-							<td>100mg a day</td>
-							<td>drowsiness, tiredness, feeling anxious</td>
+
+						{% for medication in customer.medication %}
+							<tr>
+								<td>{{medication.name}}</td>
+								<td>{{medication.dose}}</td>
+								<td>{{medication.sideEffects}}</td>
+							
+							</tr>
+						{% endfor %}
 						
-						</tr>
-						<tr>
-							<td>Zomorph</td>
-							<td>60mg twice a day</td>
-							<td>Headaches, confusion, dizziness and vertigo </td>
-						
-						</tr>
 						
 					</tbody>
 				</table>
-				</div>
+				{% endif %}
 				<p class="mt30"><a href="indexEdit" class="button secondary">Add or edit medication or side effects</a></p>
 		
 		
