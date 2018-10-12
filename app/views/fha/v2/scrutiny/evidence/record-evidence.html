@@ -20,7 +20,7 @@
     
     	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
 		
-		<form action="request-evidence2" method="POST" class="form">
+		<form action="evi" method="POST" class="form">
 			<div class="form-group">
 					<fieldset>
 				
@@ -30,13 +30,13 @@
 							</h1>
 							<p class="form-hint mb5 mt10">Select the evidence you would like to record.</p>
 						</legend>
-				    {% if checked('type','113') %}
+				    {% if  customer.fmeType.indexOf("113") > -1 %}
 						<div class="multiple-choice">
 							<input id="gp" name="evidenceType" type="checkbox" value="Gp">
 							<label for="gp" class="form-label-bold">GP report (113 form)</label>
 						</div>
 						{% endif %}
-						{% if checked('type','FRR') %}
+						{% if  customer.fmeType.indexOf("FRR") > -1 %}
 						<div class="multiple-choice">
 							<input id="factualreport" name="evidenceType" type="checkbox" value="factualreport">
 							<label for="factualreport" class="form-label-bold">Factual report (FRR)</label>
@@ -84,14 +84,14 @@
 
 															<div class="multiple-choice" data-target="client">
 																	<input id="example-contact-by-email" type="radio" name="hcp-type" value="gp">
-																	<label for="example-contact-by-email">Client: Tomas Fernandez</label>
+																	<label for="example-contact-by-email">Client: {{customer.name.fullName}}</label>
 																</div>
 																<div class="panel panel-border-narrow js-hidden" id="client">
 																	  <fieldset class="inline">
 
 																				<legend>
 																					<h2 class="form-label-bold">
-																					Does Tomas agree to answer questions?
+																					Does {{customer.name.first}} agree to answer questions?
 																					</h2>
 																				</legend>
 																		
@@ -111,14 +111,14 @@
 													
 															<div class="multiple-choice">
 																<input id="example-contact-by-email" type="radio" name="hcp-type" value="gp">
-																<label for="example-contact-by-email">GP: Dr. Sheila Turner</label>
+																<label for="example-contact-by-email">GP: {{customer.address.gpName.fullName}}</label>
 															</div>
-											
+															{% if  customer.otherHcp.hasOtherHcp %}
 															<div class="multiple-choice" >
 																	<input id="example-contact-by-email" type="radio" name="hcp-type" value="consultant">
-																	<label for="example-contact-by-email">Consultant: Dr. Nicholas Kent</label>
+																	<label for="example-contact-by-email">Consultant: Dr. {{customer.otherHcp.name.fullName}}</label>
 																</div>
-													
+													         {% endif %}
 	
 										
 														

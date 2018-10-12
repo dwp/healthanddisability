@@ -85,7 +85,7 @@
 										</label>
 										<textarea class="form-control form-control-2-4" name="frrinformation" id="frr-info" rows="10"></textarea>
 										 </div>	
-										 
+										 {% if  customer.otherHcp.hasOtherHcp %}
 										 <div class="form-group">
 												<fieldset>
 
@@ -97,12 +97,12 @@
 												
 														<div class="multiple-choice">
 															<input id="example-contact-by-email" type="radio" name="hcp-type" value="gp">
-															<label for="example-contact-by-email">GP: Dr. Sheila Turner</label>
+															<label for="example-contact-by-email">GP: Dr.{{customer.address.gpName.fullName}}</label>
 														</div>
 										
 														<div class="multiple-choice" >
 																<input id="example-contact-by-email" type="radio" name="hcp-type" value="consultant">
-																<label for="example-contact-by-email">Consultant: Mr. Nicholas Kent</label>
+																<label for="example-contact-by-email">Consultant: Dr.{{customer.otherHcp.name.fullName}}</label>
 															</div>
 												
 
@@ -112,6 +112,7 @@
 													</fieldset>
 
 										 </div>
+										 {% endif %}
 										 <div class="form-group">
 											<fieldset>
 						  

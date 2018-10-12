@@ -62,9 +62,9 @@
 						<h3 class="heading-small">You are requesting this evidence off</h3>
 						{% if checked('hcp-type','gp') %}
 					
-						<p>Dr. Sheila Turner</p>
+						<p>GP: Dr.{{customer.address.gpName.fullName}}</p>
 						{% elif checked('hcp-type','consultant')%}
-						<p>Mr. Nicholas Kent</p>
+						<p>Consultant: Dr. {{customer.otherHcp.name.fullName}}</p>
 						{% endif %}
 						<p><a href="letter" target="_blank" class="button secondary">Print factual report (FFR)</a></p>
 						<hr />
