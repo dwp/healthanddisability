@@ -12,7 +12,7 @@ module.exports = [
     ],
     "illnesses": [
       {
-        "name": "",
+        "name": "incontinence",
         "source": "",
         "date": ""
       }
