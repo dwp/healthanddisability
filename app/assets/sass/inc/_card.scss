@@ -69,13 +69,19 @@
 	span{
 		display:block;
 		margin:0;
+
+		.badge{
+			display:inline-block;
+		}
 	}
 
 	   
     h2{
         margin:0px;
         padding:20px;
-    }
+	}
+	
+
 
 
  a{
@@ -110,6 +116,13 @@
 			   text-decoration: none;
 		   }
 		}
+	}
+
+	.button{
+		display: inline-block;
+		background:$white;
+		margin:0 20px 20px 20px;
+		border:1px solid #003618;
 	}
 
 	.secondary-text{

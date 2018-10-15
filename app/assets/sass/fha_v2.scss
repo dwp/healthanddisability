@@ -633,29 +633,58 @@ td{
 
 
 .evidence-panel-wrapper {
-	width: 67%;
-	margin: 50px 0;
-	border-top: 1px solid $grey-3;
+	width: 100%;
+
+	@media screen and (min-width:1200px) {
+		width: 67%;
+	}
+
+	//margin: 50px 0;
+	//border-top: 1px solid $grey-3;
 	
 }
 
 
 .evidence-panel {
+
+	&.alt{
+
+		background:$grey-3;
+		border:none;
+
+		.button{
+			display: inline-block;
+			background:$white;
+			border:1px solid $grey-2;
+
+			&:hover{
+				background: $grey-4;
+			}
+		}
+
+	}
 	display: block;
-	margin-top: 20px;
-	background: $grey-4;
-	padding: 1em;
+	margin-bottom: 30px;
+	border:1px solid $border-colour;
+	padding: 1em 1em 1.4em 1em;
 	h2 {
 		margin-top: 0;
 	}
-}
 
+	.notice{
+		//background:$grey-3;
+		padding:15px 0 30px 0;
+		margin-bottom:30px;
+		border-bottom:1px solid $border-colour;
 
-.case-list-view {
-	table {
+        .icon{
+			margin-top:-25px;
+		}
 		
 	}
 }
+
+
 
 .chat-layout {
 	position: relative;
@@ -1014,14 +1043,34 @@ width:100%;
 	}
 }
 
-.panel.alt2{
-	border:1px solid $border-colour;
-	padding:30px;
-	float:right;
-	
+.search-customer{
 
+	position:relative;
+
+	input{
+		width:100%;
+		padding-right:50px;
+	}
 }
 
+.gem-c-search__submit {
+	position:absolute;
+	bottom:0px;
+	right:0px;
+	background: $govuk-blue url(/public/images/search-icon.svg) no-repeat 9px 9px ;
+	background-size:50%;
+    border:none;
+	width:38px;
+	height:38px;
+	text-indent:-5000px;
+	border-bottom:2px solid darken($govuk-blue,15%);
+
+	&:hover{
+	  cursor: pointer;
+	  background-color:darken($govuk-blue,15%);
+	  
+}
+}
 
 
 .assessDashboard {
@@ -1088,3 +1137,12 @@ width:100%;
 
 	 @extend a;
 }
+
+
+.pre-wrap{
+	white-space: pre-wrap;
+}
+
+
+
+

@@ -46,6 +46,8 @@ router.get('*', function (req, res, next) {
     req.session.data.observations = [];
   }
 
+  res.locals.menuItems = require(filePath +'/caselist/_navItems.js')(versionNumber, reviewCustomers);
+
   next()
 })
 
@@ -73,7 +75,7 @@ router.post('*', function (req, res, next) {
   if(!req.session.data.observations){
     req.session.data.observations = [];
   }
-
+  
   next()
 })
 
@@ -853,6 +855,11 @@ router.get('/booking/referrals/:customerId/timeline', function(req, res, next){
   res.render(viewPath +'/booking/timeline');
 })
 
+router.get('/booking/referrals/:customerId/timeline-scrutiny', function(req, res, next){
+  res.render(viewPath +'/booking/timeline-scrutiny');
+})
+
+
 router.get('/booking/referrals/:customerId/appointment-details', function(req, res, next){
   res.render(viewPath +'/booking/appointment-details');
 })
@@ -1388,6 +1395,206 @@ router.post('/assessment/evidence/mentalHealthAssessment', function(req, res, ne
   console.log('Mental Health count: ' + count)
   next()
   });
+});
+
+router.get('/planning/*', function(req, res, next){
+
+  next();
+});
+
+var planningCentres = require(filePath +'/data/capacity/monday.js');
+var planningStaff = require(filePath + '/data/capacity/allocatedStaff.js').filter(staff => staff.allocatedCentre !== "");
+
+var resetCentres = function(){
+    planningCentres.forEach(function(centre){
+      centre.morning = {
+      reviews:[],
+      assessments:[],
+      complex: 0,
+      neuro: [],
+      review: []
+      };
+
+    centre.afternoon = {
+      assessments:[],
+      reviews:[],
+      complex: 0,
+      neuro: [],
+      review: []
+      };
+
+    centre.allocatedStaff = [];
+    
+    centre.complex = 0;
+    planningStaff.forEach(function(staff){
+      if(staff.allocatedCentre == centre.name){
+        centre.allocatedStaff.push(staff);
+        if(staff.morning != 'unnavailable'){
+          centre.morning[staff.morning].push(staff);
+          if(staff.complexNeuro){
+            centre.morning.complex ++;
+          }
+        }
+        if(staff.afternoon != 'unnavailable'){
+          centre.afternoon[staff.afternoon].push(staff)
+          if(staff.complexNeuro){
+            centre.afternoon.complex ++;
+          }
+        }
+      }
+    })
+  })
+
+}
+
+router.get('/planning/day/:day', function(req, res, next){
+  resetCentres(req, res)
+
+  res.locals.centres = planningCentres;
+  
+  res.render(viewPath +'/planning/area-day');
+})
+
+router.get('/planning/centre/:centre', function(req, res, next){
+  resetCentres(req, res)
+
+  res.locals.centre = planningCentres.filter(centre => centre.name == req.params.centre)[0];
+
+  res.locals.staff = res.locals.centre.allocatedStaff;
+  res.locals.centreName = req.params.centre;
+  res.render(viewPath +'/planning/assigned-staff');
+  
+})
+
+router.get('/planning/reassign/:centre/:staffId', function(req,res,next){
+  res.locals.centre = planningCentres.filter(centre => centre.name == req.params.centre)[0];
+
+  res.locals.staff = planningStaff.filter(staff => staff.id === req.params.staffId)[0];
+  
+  res.render(viewPath +'/planning/reassign');
+
+})
+
+router.post('/planning/centre/:centre', function(req, res, next){
+
+  planningStaff.map(staff => {
+    if(req.body.staffId === staff.id){
+      console.log(staff)
+      staff.morning = req.body.morning || staff.morning;
+      staff.afternoon = req.body.afternoon || staff.afternoon;
+      staff.allocatedCentre = req.body.location;
+
+      console.log(staff)
+    } 
+  });
+
+  next()
+  
+})
+
+var reviewCustomers = require(filePath +'/data/reviews/readyForReview.js');
+
+router.get('/review', function(req, res, next){
+  res.locals.customers = reviewCustomers;
+  next()
+})
+
+
+router.get('/ready-for-review', function(req, res, next){
+  res.locals.customers = reviewCustomers
+                            .filter(customer => customer.status === "review");
+  next()
+})
+
+router.get('/requested-medical-evidence', function(req, res, next){
+  res.locals.customers = reviewCustomers
+                            .filter(customer => customer.status === "fme");
+  next()
+})
+
+router.get('/scrutiny/:customerId/*', function(req, res, next){
+  res.locals.customer = reviewCustomers
+                          .filter(customer => customer._id === req.params.customerId)[0];
+    
+  next()
+
+})
+
+router.post('/scrutiny/:customerId/*', function(req, res, next){
+  res.locals.customer = reviewCustomers
+                          .filter(customer => customer._id === req.params.customerId)[0];
+    
+  next()
+
+})
+
+router.get('/scrutiny/:customerId/details', function(req, res, next){
+  
+    res.render(viewPath +'/scrutiny/details/index');
+  
+
+})
+
+router.get('/scrutiny/:customerId/details/:pageName', function(req, res, next){
+  
+    res.render(viewPath +'/scrutiny/details/' + req.params.pageName);
+  
+
+})
+
+router.get('/scrutiny/:customerId/evidence', function(req, res, next){
+  
+  res.render(viewPath +'/scrutiny/evidence/index');
+
+
+})
+
+router.get('/scrutiny/:customerId/evidence/:pageName', function(req, res, next){
+  
+    res.render(viewPath +'/scrutiny/evidence/' + req.params.pageName);
+  
+
+})
+
+
+router.get('/scrutiny/:customerId/:pageName', function(req, res, next){
+  
+      res.render(viewPath +'/scrutiny/' + req.params.pageName);
+  
+
+})
+
+
+router.post("/scrutiny/:customerId/fme-confirm", function(req, res, next){
+  reviewCustomers.map(customer => {
+    if(customer._id === req.params.customerId){
+
+      customer.fmeRequestedDate = moment().format();
+      customer.fmeType = req.session.data.type;
+      customer.status = "fme";
+
+      delete req.session.data.type;
+
+      console.log(customer);
+    }
+  })
+
+  res.redirect(301, '/fha/v' + versionNumber +'/scrutiny/' + req.params.customerId + '/timeline');
+
+});
+
+
+router.post("/scrutiny/:customerId/booking-post", function(req, res, next){
+
+  var bookingCustomers = require(filePath +'/data/referrals.js');
+
+  res.locals.customer.receivedDate = moment().format();
+  bookingCustomers.push(res.locals.customer);
+
+  reviewCustomers = reviewCustomers.filter(customer => customer._id !== req.params.customerId);
+
+  res.redirect(301, '/fha/v' + versionNumber +'/booking/referrals/' + req.params.customerId + '/timeline-scrutiny');
+
 });
 
 router.get('/planning/*', function(req, res, next){

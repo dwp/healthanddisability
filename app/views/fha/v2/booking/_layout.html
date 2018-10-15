@@ -11,7 +11,9 @@
         <div class="grid-row main-row">
             <div class="column-one-quarter left-area">
                 <div class="left-panel">
+                    {% block caselist_link %}
                     <p class="returnRef"><a href="/{{path}}/ready-to-book">Return to case list</a></p>
+                    {% endblock %}
                     <hr>
 
                     {% block left_content %}

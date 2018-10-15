@@ -1,0 +1,49 @@
+{% extends path+"/_layout-caselist2.html" %}
+
+{% block horizontal_secondary_nav %}
+              
+{{ secondaryNav.nav("referrals", false , menuItems) }}
+
+
+{% endblock %}  
+
+{% block caselist_content %}
+
+
+
+
+<a href="#" class="button mt30">Create new referal</a> 
+<hr/>
+
+  <h2 class="heading-medium mt30" ><span class="heading-xlarge">49</span><br/>Referrals </h2>
+
+            
+            
+            
+ <table>
+
+                <thead>
+                  <tr>
+                    <th>Details</th>
+                    <th>Status</th>
+                    <th style="text-align: right">Assessment centre</th>
+                  </tr>
+                </thead>
+
+    
+    <tr>
+      <td ><a href="review/timeline"><span class="visually-hidden">Name</span>Paul Smith </a></td>
+      <td>New referral</td>
+      <td style="text-align: right">Tresco House</td>
+    </tr>
+    <tr>
+        <td ><a href="review/timeline"><span class="visually-hidden">Name</span>Claudine Davies</a></td>
+        <td>In progress</td>
+        <td style="text-align: right">Birmingham fiveways</td>
+      </tr>
+    
+
+                
+
+              </table> 
+{% endblock %}
