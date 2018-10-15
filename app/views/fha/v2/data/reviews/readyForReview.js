@@ -8,20 +8,25 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-05T13:00:55+00:00",
     "fmeType": [
-      113
+      "GP Report"
     ],
     "illnesses": [
       {
-        "name": "incontinence",
-        "source": "",
-        "date": ""
+        "name": "Arthritis",
+        "source": "Claimant",
+        "date": "July 2016"
+      },
+      {
+        "name": "Prolapsed uterus",
+        "source": "Claimant",
+        "date": "August 2018"
       }
     ],
     "medication": [
       {
-        "name": "",
-        "dose": "",
-        "sideEffects": ""
+        "name": "Betmiga",
+        "dose": "50mg",
+        "sideEffects": "not recorded"
       }
     ],
     "status": "review",
@@ -75,19 +80,59 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-06T13:00:50+00:00",
     "fmeType": [
-      113
+      "GP Report"
     ],
     "illnesses": [
       {
-        "name": "",
-        "source": "",
-        "date": ""
+        "name": "Depression",
+        "source": "Claimant",
+        "date": "January 2018"
+      },
+
+      {
+        "name": "Psychosis",
+        "source": "Claimant",
+        "date": "January 2018"
+      },
+      {
+        "name": "Severe back pain",
+        "source": "Claimant",
+        "date": "June 2018"
       }
     ],
     "medication": [
       {
-        "name": "",
-        "dose": "",
+        "name": "Aripprazole",
+        "dose": "15mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Colecalciferol",
+        "dose": "2000 unit",
+        "sideEffects": ""
+      },  {
+        "name": "Kemadrin",
+        "dose": "5mg",
+        "sideEffects": ""
+      },  {
+        "name": "Lamsoprozol",
+        "dose": "30mg",
+        "sideEffects": ""
+      },  {
+        "name": "Mirtazapine",
+        "dose": "30mg",
+        "sideEffects": ""
+      },   {
+        "name": "Senna",
+        "dose": "7.5mg",
+        "sideEffects": ""
+      },  {
+        "name": "Vensir XL",
+        "dose": "150 capsule",
+        "sideEffects": ""
+      },{
+        "name": "Avamys nasal spray",
+        "dose": "15mg",
         "sideEffects": ""
       }
     ],
@@ -142,7 +187,7 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-06T13:00:08+00:00",
     "fmeType": [
-      "FRR"
+      "Factual report"
     ],
     "illnesses": [
       {
@@ -209,7 +254,7 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-11T13:00:02+00:00",
     "fmeType": [
-      113
+      "GP Report"
     ],
     "illnesses": [
       {
@@ -276,21 +321,36 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-08T13:00:30+00:00",
     "fmeType": [
-      "FRR"
+      "Factual report"
     ],
     "illnesses": [
       {
-        "name": "",
-        "source": "",
-        "date": ""
+        "name": "Speech impediment",
+        "source": "Claimant",
+        "date": "1997"
+      },
+      {
+        "name": "Social anxiety",
+        "source": "Claimant",
+        "date": "2011"
+      },  {
+        "name": "Depression",
+        "source": "Claimant",
+        "date": "2018"
       }
     ],
     "medication": [
       {
-        "name": "",
+        "name": "Ventoline inhaler",
+        "dose": "",
+        "sideEffects": ""
+      },
+      {
+        "name": "Beclometasone inhaler ",
         "dose": "",
         "sideEffects": ""
       }
+
     ],
     "status": "review",
     "dateOfBirth": "1956-02-13T23:13:32+00:00",
@@ -343,7 +403,7 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-15T13:00:07+00:00",
     "fmeType": [
-      113
+      "GP Report"
     ],
     "illnesses": [
       {
@@ -410,19 +470,19 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-01T13:00:05+00:00",
     "fmeType": [
-      113
+      "GP Report"
     ],
     "illnesses": [
       {
-        "name": "",
-        "source": "",
-        "date": ""
+        "name": "Anxiety",
+        "source": "claimant",
+        "date": "2011"
       }
     ],
     "medication": [
       {
-        "name": "",
-        "dose": "",
+        "name": "Fiuoxetine",
+        "dose": "40mg",
         "sideEffects": ""
       }
     ],
@@ -477,18 +537,43 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-13T13:00:47+00:00",
     "fmeType": [
-      "FRR"
+      "Factual report"
     ],
     "illnesses": [
       {
-        "name": "",
-        "source": "",
-        "date": ""
+        "name": "Poland Syndrome",
+        "source": "Claimant",
+        "date": "1986"
+      },
+      {
+        "name": "Depression",
+        "source": "Claimant",
+        "date": "2017"
+      },
+      {
+        "name": "Asthma",
+        "source": "Claimant",
+        "date": "2012"
       }
     ],
     "medication": [
       {
-        "name": "",
+        "name": "Gabapentin",
+        "dose": "",
+        "sideEffects": ""
+      },
+      {
+        "name": "Ventolin / Fostair inhalers",
+        "dose": "",
+        "sideEffects": ""
+      },
+      {
+        "name": "Mirtazapin",
+        "dose": "",
+        "sideEffects": ""
+      },
+      {
+        "name": "Duloxatine",
         "dose": "",
         "sideEffects": ""
       }
@@ -544,7 +629,7 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-04T13:00:40+00:00",
     "fmeType": [
-      113
+      "GP Report"
     ],
     "illnesses": [
       {
@@ -611,7 +696,7 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-13T13:00:33+00:00",
     "fmeType": [
-      113
+      "GP Report"
     ],
     "illnesses": [
       {
@@ -678,18 +763,52 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-15T13:00:52+00:00",
     "fmeType": [
-      113
+      "GP Report"
     ],
     "illnesses": [
       {
-        "name": "",
-        "source": "",
-        "date": ""
+        "name": "Depression",
+        "source": "Claimant",
+        "date": "82"
+      },
+      {
+        "name": "Anxiety",
+        "source": "Claimant",
+        "date": "82"
+      },
+      {
+        "name": "Gallstones",
+        "source": "Claimant",
+        "date": "2009"
+      },
+      {
+        "name": "Tinnitus",
+        "source": "Claimant",
+        "date": "2013"
+      },
+      {
+        "name": "Arthritus",
+        "source": "Claimant",
+        "date": "03"
       }
     ],
     "medication": [
       {
-        "name": "",
+        "name": "Mirtazapine",
+        "dose": "30mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Venlafaxine MR",
+        "dose": "150mg",
+        "sideEffects": ""
+      },   {
+        "name": "Paracetmol",
+        "dose": "",
+        "sideEffects": ""
+      },
+      {
+        "name": "Nurofiwe",
         "dose": "",
         "sideEffects": ""
       }
@@ -745,7 +864,7 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-16T13:00:41+00:00",
     "fmeType": [
-      113
+      "GP Report"
     ],
     "illnesses": [
       {
@@ -812,19 +931,34 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-06T13:00:38+00:00",
     "fmeType": [
-      113
+      "GP Report"
     ],
     "illnesses": [
       {
-        "name": "",
-        "source": "",
-        "date": ""
+        "name": "Stroke",
+        "source": "Claimant",
+        "date": "July 2017"
       }
     ],
     "medication": [
       {
-        "name": "",
-        "dose": "",
+        "name": "Atorvastatin",
+        "dose": "80mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Clopidogrel",
+        "dose": "75mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Senna",
+        "dose": "7.5mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Docusate",
+        "dose": "75mg",
         "sideEffects": ""
       }
     ],
@@ -879,19 +1013,44 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-06T13:00:30+00:00",
     "fmeType": [
-      113
+      "GP Report"
     ],
     "illnesses": [
       {
-        "name": "",
-        "source": "",
-        "date": ""
+        "name": "Depression",
+        "source": "Claimant",
+        "date": "2003"
+      },
+      {
+        "name": "Anxiety",
+        "source": "Claimant",
+        "date": "2015"
       }
     ],
     "medication": [
       {
-        "name": "",
-        "dose": "",
+        "name": "Naproxen",
+        "dose": "500mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Venlafaxine",
+        "dose": "150mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Mirtazine",
+        "dose": "15mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Diazepam",
+        "dose": "10mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Co-codamol",
+        "dose": "30/500 mg",
         "sideEffects": ""
       }
     ],
@@ -946,7 +1105,7 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-14T13:00:19+00:00",
     "fmeType": [
-      "FRR"
+      "Factual report"
     ],
     "illnesses": [
       {
@@ -1013,7 +1172,7 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-15T13:00:30+00:00",
     "fmeType": [
-      113
+      "GP Report"
     ],
     "illnesses": [
       {
@@ -1080,7 +1239,7 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-10T13:00:53+00:00",
     "fmeType": [
-      "FRR"
+      "Factual report"
     ],
     "illnesses": [
       {
@@ -1147,18 +1306,35 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-06T13:00:32+00:00",
     "fmeType": [
-      113
+      "GP Report"
     ],
     "illnesses": [
       {
-        "name": "",
-        "source": "",
+        "name": "Diabeties",
+        "source": "Claimant",
+        "date": ""
+      },
+      {
+        "name": "Athritis",
+        "source": "Claimant",
+        "date": ""
+      },
+      {
+        "name": "Liver disease",
+        "source": "Claimant",
+        "date": ""
+      },
+      {
+        "name": "Urine problems",
+        "source": "Claimant",
         "date": ""
       }
+
+
     ],
     "medication": [
       {
-        "name": "",
+        "name": "no medication information",
         "dose": "",
         "sideEffects": ""
       }
@@ -1214,7 +1390,7 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-05T13:00:44+00:00",
     "fmeType": [
-      "FRR"
+      "Factual report"
     ],
     "illnesses": [
       {
@@ -1281,19 +1457,29 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-05T13:00:07+00:00",
     "fmeType": [
-      "FRR"
+      "Factual report"
     ],
     "illnesses": [
       {
-        "name": "",
-        "source": "",
-        "date": ""
+        "name": "Depression",
+        "source": "Claimant",
+        "date": "2014"
+      },
+      {
+        "name": "Back spasms",
+        "source": "Claimant",
+        "date": "2014"
       }
     ],
     "medication": [
       {
-        "name": "",
-        "dose": "",
+        "name": "Cithalopram",
+        "dose": "40mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Muscle rub",
+        "dose": "Three times a day",
         "sideEffects": ""
       }
     ],
@@ -1348,7 +1534,7 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-06T13:00:26+00:00",
     "fmeType": [
-      "FRR"
+      "Factual report"
     ],
     "illnesses": [
       {
@@ -1415,7 +1601,7 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-10T13:00:41+00:00",
     "fmeType": [
-      113
+      "GP Report"
     ],
     "illnesses": [
       {
@@ -1482,7 +1668,7 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-14T13:00:48+00:00",
     "fmeType": [
-      113
+      "GP Report"
     ],
     "illnesses": [
       {
@@ -1549,19 +1735,25 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-06T13:00:13+00:00",
     "fmeType": [
-      113
+      "GP Report"
     ],
     "illnesses": [
       {
-        "name": "",
-        "source": "",
-        "date": ""
+        "name": "Depression",
+        "source": "Claimant",
+        "date": "January 2018"
+      },
+      {
+        "name": "Anxiety",
+        "source": "Claimant",
+        "date": "January 2018"
       }
+    
     ],
     "medication": [
       {
-        "name": "",
-        "dose": "",
+        "name": "Sertraline",
+        "dose": "50mg",
         "sideEffects": ""
       }
     ],
@@ -1610,25 +1802,50 @@ module.exports = [
   {
     "_id": "5bbf32d5aef2a1c3977145fa",
     "name": {
-      "first": "Tonya",
-      "last": "English",
-      "fullName": "Tonya English"
+      "first": "Makan",
+      "last": "Abbasi",
+      "fullName": "Makan Abbasi"
     },
     "fmeRequestedDate": "2018-10-15T13:00:53+00:00",
     "fmeType": [
-      113
+      "GP Report"
     ],
     "illnesses": [
       {
-        "name": "",
-        "source": "",
-        "date": ""
+        "name": "Leg back and hand injury",
+        "source": "Claimant",
+        "date": "2003"
+      },
+      {
+        "name": "Leg surgery",
+        "source": "Claimant",
+        "date": "August 2017"
       }
     ],
     "medication": [
       {
-        "name": "",
-        "dose": "",
+        "name": "Paracetamol",
+        "dose": "500mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Tramadol",
+        "dose": "50mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Omeprazole",
+        "dose": "20mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Maproxen",
+        "dose": "500mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Neurontin",
+        "dose": "100mg",
         "sideEffects": ""
       }
     ],
@@ -1683,7 +1900,7 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-14T13:00:35+00:00",
     "fmeType": [
-      "FRR"
+      "Factual report"
     ],
     "illnesses": [
       {
@@ -1750,21 +1967,47 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-02T13:00:04+00:00",
     "fmeType": [
-      "FRR"
+      "Factual report"
     ],
     "illnesses": [
       {
-        "name": "",
-        "source": "",
-        "date": ""
+        "name": "Functional vomiting",
+        "source": "Claimant",
+        "date": "2008"
       }
     ],
     "medication": [
       {
-        "name": "",
-        "dose": "",
+        "name": "Cyclizine",
+        "dose": "50mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Pro D3 1000",
+        "dose": "10",
+        "sideEffects": ""
+      },
+      {
+        "name": "Metoclopramide hydrochloride",
+        "dose": "10mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Folic acid",
+        "dose": "5mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Omeprazole",
+        "dose": "40mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Mebeverine",
+        "dose": "135mg",
         "sideEffects": ""
       }
+
     ],
     "status": "review",
     "dateOfBirth": "1958-04-17T08:31:54+00:00",
@@ -1817,22 +2060,43 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-06T13:00:19+00:00",
     "fmeType": [
-      "FRR"
+      "Factual report"
     ],
-    "illnesses": [
-      {
-        "name": "",
-        "source": "",
-        "date": ""
-      }
-    ],
-    "medication": [
-      {
-        "name": "",
-        "dose": "",
-        "sideEffects": ""
-      }
-    ],
+    
+"illnesses": [
+  {
+    "name": "Constipation",
+    "source": "Claimant",
+    "date": ""
+  },
+  {
+    "name": "Sphincter repair",
+    "source": "Claimant",
+    "date": "2006"
+  }
+],
+"medication": [
+  {
+    "name": "Glyeerin suppositories",
+    "dose": "4g",
+    "sideEffects": ""
+  },
+  {
+    "name": "Ducosate sodium",
+    "dose": "100mg",
+    "sideEffects": ""
+  },
+  {
+    "name": "Bisacodyl tablets",
+    "dose": "5mg",
+    "sideEffects": ""
+  },
+  {
+    "name": "Prucalopride",
+    "dose": "2mg",
+    "sideEffects": ""
+  }
+ ],
     "status": "review",
     "dateOfBirth": "1993-01-07T17:44:06+00:00",
     "mobile": "07974 575 300",
@@ -1884,7 +2148,7 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-08T13:00:55+00:00",
     "fmeType": [
-      "FRR"
+      "Factual report"
     ],
     "illnesses": [
       {
@@ -1945,28 +2209,63 @@ module.exports = [
   {
     "_id": "5bbf32d5981c1219f8a8efdc",
     "name": {
-      "first": "Kate",
+      "first": "Mahmoud",
       "last": "Duncan",
-      "fullName": "Kate Duncan"
+      "fullName": "Mahmoud Duncan"
     },
     "fmeRequestedDate": "2018-10-01T13:00:31+00:00",
     "fmeType": [
-      113
+      "GP Report"
     ],
     "illnesses": [
       {
-        "name": "",
-        "source": "",
+        "name": "Depression",
+        "source": "Claimant",
+        "date": ""
+      },
+      {
+        "name": "Anxiety",
+        "source": "Claimant",
+        "date": ""
+      },
+      {
+        "name": "Post traumatic stress",
+        "source": "Claimant",
+        "date": ""
+      },
+      {
+        "name": "Dislocated shoulder",
+        "source": "Claimant",
+        "date": ""
+      },
+      {
+        "name": "Sciatica",
+        "source": "Claimant",
+        "date": ""
+      },
+      {
+        "name": "Partial blindness - right eye",
+        "source": "Claimant",
+        "date": ""
+      },
+      {
+        "name": "Insomnia",
+        "source": "Claimant",
         "date": ""
       }
     ],
     "medication": [
       {
-        "name": "",
+        "name": "Phenergen",
+        "dose": "",
+        "sideEffects": ""
+      },
+      {
+        "name": "Citalapram",
         "dose": "",
         "sideEffects": ""
       }
-    ],
+     ],
     "status": "review",
     "dateOfBirth": "1960-01-08T10:23:49+00:00",
     "mobile": "07975 501 328",
@@ -2018,7 +2317,7 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-07T13:00:55+00:00",
     "fmeType": [
-      "FRR"
+      "Factual report"
     ],
     "illnesses": [
       {
@@ -2085,7 +2384,7 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-15T13:00:28+00:00",
     "fmeType": [
-      "FRR"
+      "Factual report"
     ],
     "illnesses": [
       {
@@ -2152,22 +2451,42 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-01T13:00:12+00:00",
     "fmeType": [
-      113
+      "GP Report"
     ],
     "illnesses": [
       {
-        "name": "",
-        "source": "",
+        "name": "Depression",
+        "source": "Claimant",
+        "date": ""
+      },
+      {
+        "name": "Meniscal tear - left knee",
+        "source": "Claimant",
         "date": ""
       }
     ],
     "medication": [
       {
-        "name": "",
-        "dose": "",
+        "name": "Co-codamol",
+        "dose": "500mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Codine",
+        "dose": "30mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Naproxin",
+        "dose": "500mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Sebreline",
+        "dose": "50mg",
         "sideEffects": ""
       }
-    ],
+     ],
     "status": "review",
     "dateOfBirth": "1973-05-31T08:42:38+00:00",
     "mobile": "07956 543 365",
@@ -2219,7 +2538,7 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-03T13:00:43+00:00",
     "fmeType": [
-      "FRR"
+      "Factual report"
     ],
     "illnesses": [
       {
@@ -2286,7 +2605,7 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-10T13:00:03+00:00",
     "fmeType": [
-      "FRR"
+      "Factual report"
     ],
     "illnesses": [
       {
@@ -2353,7 +2672,7 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-07T13:00:03+00:00",
     "fmeType": [
-      113
+      "GP Report"
     ],
     "illnesses": [
       {
@@ -2420,22 +2739,37 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-11T13:00:42+00:00",
     "fmeType": [
-      "FRR"
+      "Factual report"
     ],
     "illnesses": [
       {
-        "name": "",
-        "source": "",
+        "name": "Multiple sclerosis",
+        "source": "Claimant",
         "date": ""
       }
     ],
     "medication": [
       {
-        "name": "",
+        "name": "Amitriptyline",
+        "dose": "10mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Ibuprofen",
+        "dose": "400mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Paracetamol",
+        "dose": "500mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Voltarol ointment",
         "dose": "",
         "sideEffects": ""
       }
-    ],
+     ],
     "status": "review",
     "dateOfBirth": "1950-02-25T11:09:11+00:00",
     "mobile": "07903 557 354",
@@ -2487,22 +2821,52 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-11T13:00:17+00:00",
     "fmeType": [
-      "FRR"
+      "Factual report"
     ],
     "illnesses": [
       {
-        "name": "",
-        "source": "",
+        "name": "Stargardt macular dystrophy",
+        "source": "Claimant",
+        "date": "1989"
+      },
+      {
+        "name": "Keratoconus",
+        "source": "Claimant",
+        "date": "April 2014"
+      },
+      {
+        "name": "Migraines",
+        "source": "Claimant",
+        "date": "2014"
+      },
+      {
+        "name": "Anxiety",
+        "source": "Claimant",
         "date": ""
       }
     ],
     "medication": [
       {
-        "name": "",
+        "name": "Sumatripton",
+        "dose": "100mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Hypromellose eye drops",
         "dose": "",
         "sideEffects": ""
+      },
+      {
+        "name": "Ibuprofen",
+        "dose": "200mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Paracetamol",
+        "dose": "500mg",
+        "sideEffects": ""
       }
-    ],
+     ],
     "status": "review",
     "dateOfBirth": "1965-02-04T04:40:03+00:00",
     "mobile": "07813 474 219",
@@ -2554,7 +2918,7 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-04T13:00:34+00:00",
     "fmeType": [
-      113
+      "GP Report"
     ],
     "illnesses": [
       {
@@ -2621,22 +2985,63 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-02T13:00:33+00:00",
     "fmeType": [
-      "FRR"
+      "Factual report"
     ],
-    "illnesses": [
-      {
-        "name": "",
-        "source": "",
-        "date": ""
-      }
-    ],
-    "medication": [
-      {
-        "name": "",
-        "dose": "",
-        "sideEffects": ""
-      }
-    ],
+   
+"illnesses": [
+  {
+    "name": "Rheumatoid arthritis",
+    "source": "Claimant",
+    "date": "2009"
+  },
+  {
+    "name": "High blood pressure",
+    "source": "Claimant",
+    "date": ""
+  }
+],
+"medication": [
+  {
+    "name": "Amiodipine",
+    "dose": "",
+    "sideEffects": ""
+  },
+  {
+    "name": "Atorvastatin",
+    "dose": "",
+    "sideEffects": ""
+  },
+  {
+    "name": "Ferrous fumarate",
+    "dose": "200mg",
+    "sideEffects": ""
+  },
+  {
+    "name": "Hydroxychiordquine",
+    "dose": "500mg",
+    "sideEffects": ""
+  },
+  {
+    "name": "Perindopril erbumine",
+    "dose": "",
+    "sideEffects": ""
+  },
+  {
+    "name": "Suifasalazine",
+    "dose": "",
+    "sideEffects": ""
+  },
+  {
+    "name": "Thiamine",
+    "dose": "",
+    "sideEffects": ""
+  },
+  {
+    "name": "Vitamin B",
+    "dose": "",
+    "sideEffects": ""
+  }
+ ],
     "status": "review",
     "dateOfBirth": "1963-03-05T07:03:53+00:00",
     "mobile": "07988 535 301",
@@ -2688,7 +3093,7 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-02T13:00:48+00:00",
     "fmeType": [
-      "FRR"
+      "Factual report"
     ],
     "illnesses": [
       {
@@ -2755,7 +3160,7 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-08T13:00:03+00:00",
     "fmeType": [
-      "FRR"
+      "Factual report"
     ],
     "illnesses": [
       {
@@ -2822,22 +3227,28 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-04T13:00:47+00:00",
     "fmeType": [
-      113
+      "GP Report"
     ],
+
     "illnesses": [
       {
-        "name": "",
-        "source": "",
-        "date": ""
+        "name": "Depression",
+        "source": "Claimant",
+        "date": "2010"
+      },
+      {
+        "name": "Anxiety",
+        "source": "Claimant",
+        "date": "2010"
       }
     ],
     "medication": [
       {
-        "name": "",
+        "name": "no medication information",
         "dose": "",
         "sideEffects": ""
       }
-    ],
+     ],
     "status": "review",
     "dateOfBirth": "1955-12-06T08:25:07+00:00",
     "mobile": "07918 403 313",
@@ -2880,341 +3291,10 @@ module.exports = [
       }
     }
   },
-  {
-    "_id": "5bbf32d5a3cc69efb70be0bd",
-    "name": {
-      "first": "Pace",
-      "last": "Kramer",
-      "fullName": "Pace Kramer"
-    },
-    "fmeRequestedDate": "2018-10-06T13:00:34+00:00",
-    "fmeType": [
-      "FRR"
-    ],
-    "illnesses": [
-      {
-        "name": "",
-        "source": "",
-        "date": ""
-      }
-    ],
-    "medication": [
-      {
-        "name": "",
-        "dose": "",
-        "sideEffects": ""
-      }
-    ],
-    "status": "review",
-    "dateOfBirth": "1974-01-20T23:03:07+00:00",
-    "mobile": "07828 435 294",
-    "NINO": "QQ 54 51 64 C",
-    "email": "pace.kramer@fakemail.com",
-    "phone": "0121 892 599",
-    "referredDate": "2018-10-27T13:00:21+00:00",
-    "address": {
-      "assessmentCentre": "Fiveways",
-      "street": "856 Bulwer Place",
-      "city": "Birmingham",
-      "postcodePrefix": "B",
-      "postcodeSuffix": "10 9MI",
-      "gpName": {
-        "first": "Frazier",
-        "last": "Murray",
-        "fullName": "Frazier Murray"
-      },
-      "gpStreet": "256 Campus Road",
-      "gpCity": "Birmingham",
-      "gpPostcodePrefix": "B",
-      "gpPostcodeSuffix": "20 6EU",
-      "gpPostcode": "B20 6EU",
-      "postcode": "B10 9MI"
-    },
-    "otherHcp": {
-      "hasOtherHcp": false,
-      "type": "Physiotherapist",
-      "phone": "0121 929 401",
-      "name": {
-        "first": "Hendrix",
-        "last": "Dale",
-        "fullName": "Hendrix Dale"
-      },
-      "email": "hendrix.dale@fakemail.com",
-      "address": {
-        "street": "401 Cook Street",
-        "city": "Birmingham",
-        "postcode": "B4 4VE"
-      }
-    }
-  },
-  {
-    "_id": "5bbf32d5732dd00be2650190",
-    "name": {
-      "first": "Castillo",
-      "last": "Buckner",
-      "fullName": "Castillo Buckner"
-    },
-    "fmeRequestedDate": "2018-10-08T13:00:06+00:00",
-    "fmeType": [
-      113
-    ],
-    "illnesses": [
-      {
-        "name": "",
-        "source": "",
-        "date": ""
-      }
-    ],
-    "medication": [
-      {
-        "name": "",
-        "dose": "",
-        "sideEffects": ""
-      }
-    ],
-    "status": "review",
-    "dateOfBirth": "1966-09-07T20:01:10+00:00",
-    "mobile": "07816 564 258",
-    "NINO": "QQ 77 48 80 C",
-    "email": "castillo.buckner@fakemail.com",
-    "phone": "0121 926 488",
-    "referredDate": "2018-10-17T13:00:23+00:00",
-    "address": {
-      "assessmentCentre": "Fiveways",
-      "street": "184 McKibben Street",
-      "city": "Birmingham",
-      "postcodePrefix": "B",
-      "postcodeSuffix": "2 2EL",
-      "gpName": {
-        "first": "Wilkinson",
-        "last": "Dean",
-        "fullName": "Wilkinson Dean"
-      },
-      "gpStreet": "721 Hunterfly Place",
-      "gpCity": "Birmingham",
-      "gpPostcodePrefix": "B",
-      "gpPostcodeSuffix": "20 7LO",
-      "gpPostcode": "B20 7LO",
-      "postcode": "B2 2EL"
-    },
-    "otherHcp": {
-      "hasOtherHcp": true,
-      "type": "Physiotherapist",
-      "phone": "0121 824 457",
-      "name": {
-        "first": "Slater",
-        "last": "Rodgers",
-        "fullName": "Slater Rodgers"
-      },
-      "email": "slater.rodgers@fakemail.com",
-      "address": {
-        "street": "913 Hinsdale Street",
-        "city": "Birmingham",
-        "postcode": "B2 4QU"
-      }
-    }
-  },
-  {
-    "_id": "5bbf32d5aa34bc4b3ba6bc3f",
-    "name": {
-      "first": "Mccarthy",
-      "last": "Hodge",
-      "fullName": "Mccarthy Hodge"
-    },
-    "fmeRequestedDate": "2018-10-10T13:00:48+00:00",
-    "fmeType": [
-      113
-    ],
-    "illnesses": [
-      {
-        "name": "",
-        "source": "",
-        "date": ""
-      }
-    ],
-    "medication": [
-      {
-        "name": "",
-        "dose": "",
-        "sideEffects": ""
-      }
-    ],
-    "status": "review",
-    "dateOfBirth": "1977-11-05T19:01:50+00:00",
-    "mobile": "07935 532 273",
-    "NINO": "QQ 53 45 26 C",
-    "email": "mccarthy.hodge@fakemail.com",
-    "phone": "0121 808 555",
-    "referredDate": "2018-10-13T13:00:49+00:00",
-    "address": {
-      "assessmentCentre": "Fiveways",
-      "street": "295 Dakota Place",
-      "city": "Birmingham",
-      "postcodePrefix": "B",
-      "postcodeSuffix": "18 6VE",
-      "gpName": {
-        "first": "Glass",
-        "last": "Bray",
-        "fullName": "Glass Bray"
-      },
-      "gpStreet": "682 Melba Court",
-      "gpCity": "Birmingham",
-      "gpPostcodePrefix": "B",
-      "gpPostcodeSuffix": "3 1NU",
-      "gpPostcode": "B3 1NU",
-      "postcode": "B18 6VE"
-    },
-    "otherHcp": {
-      "hasOtherHcp": true,
-      "type": "Consultant",
-      "phone": "0121 957 504",
-      "name": {
-        "first": "Lydia",
-        "last": "Winters",
-        "fullName": "Lydia Winters"
-      },
-      "email": "lydia.winters@fakemail.com",
-      "address": {
-        "street": "203 Moultrie Street",
-        "city": "Birmingham",
-        "postcode": "B18 1EU"
-      }
-    }
-  },
-  {
-    "_id": "5bbf32d501e51fc9a85b2309",
-    "name": {
-      "first": "Carpenter",
-      "last": "Foreman",
-      "fullName": "Carpenter Foreman"
-    },
-    "fmeRequestedDate": "2018-10-04T13:00:45+00:00",
-    "fmeType": [
-      "FRR"
-    ],
-    "illnesses": [
-      {
-        "name": "",
-        "source": "",
-        "date": ""
-      }
-    ],
-    "medication": [
-      {
-        "name": "",
-        "dose": "",
-        "sideEffects": ""
-      }
-    ],
-    "status": "review",
-    "dateOfBirth": "1970-03-28T03:57:50+00:00",
-    "mobile": "07987 534 314",
-    "NINO": "QQ 70 12 66 C",
-    "email": "carpenter.foreman@fakemail.com",
-    "phone": "0121 880 416",
-    "referredDate": "2018-10-24T13:00:22+00:00",
-    "address": {
-      "assessmentCentre": "Fiveways",
-      "street": "248 Lyme Avenue",
-      "city": "Birmingham",
-      "postcodePrefix": "B",
-      "postcodeSuffix": "10 6RE",
-      "gpName": {
-        "first": "Natasha",
-        "last": "Floyd",
-        "fullName": "Natasha Floyd"
-      },
-      "gpStreet": "730 Adler Place",
-      "gpCity": "Birmingham",
-      "gpPostcodePrefix": "B",
-      "gpPostcodeSuffix": "11 9CU",
-      "gpPostcode": "B11 9CU",
-      "postcode": "B10 6RE"
-    },
-    "otherHcp": {
-      "hasOtherHcp": false,
-      "type": "Consultant",
-      "phone": "0121 816 512",
-      "name": {
-        "first": "Shaw",
-        "last": "Mcdonald",
-        "fullName": "Shaw Mcdonald"
-      },
-      "email": "shaw.mcdonald@fakemail.com",
-      "address": {
-        "street": "755 Willmohr Street",
-        "city": "Birmingham",
-        "postcode": "B16 7LA"
-      }
-    }
-  },
-  {
-    "_id": "5bbf32d5849ca01bde648945",
-    "name": {
-      "first": "Fox",
-      "last": "Keith",
-      "fullName": "Fox Keith"
-    },
-    "fmeRequestedDate": "2018-10-11T13:00:31+00:00",
-    "fmeType": [
-      113
-    ],
-    "illnesses": [
-      {
-        "name": "",
-        "source": "",
-        "date": ""
-      }
-    ],
-    "medication": [
-      {
-        "name": "",
-        "dose": "",
-        "sideEffects": ""
-      }
-    ],
-    "status": "review",
-    "dateOfBirth": "1957-07-08T17:54:20+00:00",
-    "mobile": "07941 481 203",
-    "NINO": "QQ 58 56 10 C",
-    "email": "fox.keith@fakemail.com",
-    "phone": "0121 853 519",
-    "referredDate": "2018-10-30T13:00:17+00:00",
-    "address": {
-      "assessmentCentre": "Fiveways",
-      "street": "848 Oakland Place",
-      "city": "Birmingham",
-      "postcodePrefix": "B",
-      "postcodeSuffix": "10 2CO",
-      "gpName": {
-        "first": "Lily",
-        "last": "Sutton",
-        "fullName": "Lily Sutton"
-      },
-      "gpStreet": "886 Schermerhorn Street",
-      "gpCity": "Birmingham",
-      "gpPostcodePrefix": "B",
-      "gpPostcodeSuffix": "1 4DO",
-      "gpPostcode": "B1 4DO",
-      "postcode": "B10 2CO"
-    },
-    "otherHcp": {
-      "hasOtherHcp": true,
-      "type": "Consultant",
-      "phone": "0121 959 526",
-      "name": {
-        "first": "Joseph",
-        "last": "Foster",
-        "fullName": "Joseph Foster"
-      },
-      "email": "joseph.foster@fakemail.com",
-      "address": {
-        "street": "858 Sedgwick Street",
-        "city": "Birmingham",
-        "postcode": "B1 8IN"
-      }
-    }
-  },
+
+  
+  
+  
   {
     "_id": "5bbf32d56d1fd03832b94c6c",
     "name": {
@@ -3224,7 +3304,7 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-12T13:00:39+00:00",
     "fmeType": [
-      113
+      "GP Report"
     ],
     "illnesses": [
       {
@@ -3281,72 +3361,6 @@ module.exports = [
         "postcode": "B8 1MI"
       }
     }
-  },
-  {
-    "_id": "5bbf32d5c103c835aeed808f",
-    "name": {
-      "first": "Sheryl",
-      "last": "Banks",
-      "fullName": "Sheryl Banks"
-    },
-    "fmeRequestedDate": "2018-10-10T13:00:47+00:00",
-    "fmeType": [
-      "FRR"
-    ],
-    "illnesses": [
-      {
-        "name": "",
-        "source": "",
-        "date": ""
-      }
-    ],
-    "medication": [
-      {
-        "name": "",
-        "dose": "",
-        "sideEffects": ""
-      }
-    ],
-    "status": "review",
-    "dateOfBirth": "1997-06-24T18:51:16+00:00",
-    "mobile": "07995 597 204",
-    "NINO": "QQ 17 63 54 C",
-    "email": "sheryl.banks@fakemail.com",
-    "phone": "0121 970 560",
-    "referredDate": "2018-10-26T13:00:36+00:00",
-    "address": {
-      "assessmentCentre": "Fiveways",
-      "street": "693 Himrod Street",
-      "city": "Birmingham",
-      "postcodePrefix": "B",
-      "postcodeSuffix": "11 7PR",
-      "gpName": {
-        "first": "Hubbard",
-        "last": "Ramsey",
-        "fullName": "Hubbard Ramsey"
-      },
-      "gpStreet": "532 Interborough Parkway",
-      "gpCity": "Birmingham",
-      "gpPostcodePrefix": "B",
-      "gpPostcodeSuffix": "1 7ET",
-      "gpPostcode": "B1 7ET",
-      "postcode": "B11 7PR"
-    },
-    "otherHcp": {
-      "hasOtherHcp": true,
-      "type": "Consultant",
-      "phone": "0121 859 459",
-      "name": {
-        "first": "Pat",
-        "last": "Best",
-        "fullName": "Pat Best"
-      },
-      "email": "pat.best@fakemail.com",
-      "address": {
-        "street": "508 Hinckley Place",
-        "city": "Birmingham",
-        "postcode": "B5 7CO"
-      }
-    }
   }
+  
 ]
