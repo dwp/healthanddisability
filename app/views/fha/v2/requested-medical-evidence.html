@@ -24,7 +24,15 @@
                 <tr>
                     <td><a href="scrutiny/{{customer._id}}/timeline"><span class="visually-hidden">Name</span>{{customer.name.fullName}} </a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span>
                     </td>
-                    <td>{{customer.fmeType}}</td>
+                    <td>
+                        {% if customer.fmeType.indexOf("113") > -1 %}
+                         GP report
+                        {% elif customer.fmeType.indexOf("FRR") > -1 %}
+                        Factual report
+                        {% else %}
+                        {{customer.fmeType}}
+                        {% endif %}
+                    </td>
                     <td>{{customer.fmeRequestedDate | formatDate('D MMMM YYYY')}}</td>
 
                 </tr>

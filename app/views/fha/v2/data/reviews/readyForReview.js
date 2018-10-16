@@ -8,7 +8,7 @@ module.exports = [
     },
     "fmeRequestedDate": "2018-10-05T13:00:55+00:00",
     "fmeType": [
-      "GP Report"
+      "Factual Report"
     ],
     "illnesses": [
       {

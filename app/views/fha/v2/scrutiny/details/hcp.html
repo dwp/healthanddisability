@@ -31,10 +31,10 @@
        <span>{{customer.otherHcp.address.postcode}}</span>
      </p>
    
-     <p><a href="#" class="button secondary">Add or edit healthcare professionals</a></p>
+     <p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Add or edit healthcare professionals</a></p>
 {% else %}
 
-     <p><a href="#" class="button secondary">Add healthcare professionals</a></p>
+     <p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Add healthcare professionals</a></p>
 
 
 {% endif %}

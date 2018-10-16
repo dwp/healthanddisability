@@ -50,9 +50,12 @@
 		    a {
 				border-left:none;
 				padding-left: .7em;
-				color: #000;
+				
 				padding: .8em .8em .6em 1em;
 				
+				&.active_parent{
+					color:#0b0b0b;
+				}
 			}
 			
 			ul{
@@ -70,7 +73,7 @@
 
 					&.active_child{
 						color:$text-colour;
-						background:$grey-4;
+						//background:$grey-4;
 						cursor:default;
 					}
 

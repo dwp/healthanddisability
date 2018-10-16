@@ -112,6 +112,11 @@
 													</fieldset>
 
 										 </div>
+										 {% else %}
+										 <div class="multiple-choice visually-hidden">
+												<input id="example-contact-by-email" type="radio" name="hcp-type" value="gp" checked>
+												<label for="example-contact-by-email">GP: Dr.{{customer.address.gpName.fullName}}</label>
+											</div>
 										 {% endif %}
 										 <div class="form-group">
 											<fieldset>
