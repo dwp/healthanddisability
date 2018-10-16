@@ -30,6 +30,14 @@
             </div>
             <p class="form-block">or</p>
             {% endif %}
+            {% if query.changedBy == 'customer' %}
+
+            <div class="multiple-choice">
+                <input type="radio" name="appointment" id="available-appointments-unable" value="noAppointmentAvailable">
+                <label for="available-appointments-unable">Do not book an appointment now</label>
+            </div>
+            <p class="form-block">or</p>
+            {% endif %}
             {% for appointment in availableAppointments | sort | limit(query.number) %}
             <div class="multiple-choice">
                 <input type="radio" name="appointment" id="available-appointments-{{loop.index}}" value="{{appointment}}">
@@ -41,17 +49,18 @@
         </fieldset>
 
         {% if newNumber < availableAppointments.length %}
-        <p><a href="timepicker?number={{newNumber}}" class="button-secondary">View more appointments</a></p>
+        <p><a href="timepicker?number={{newNumber}}" >View more appointments</a></p>
         {% else %}
         <p>There are no more appointments available to view</p>
         
         {% endif %}
         
         <input type="hidden" name="reasonNeeded" value="{{query.reasonNeeded}}">
-        <p><button type="submit" class="button">Next</button></p>
+        <p><button type="submit" class="button">Confirm</button></p>
 
         
     </form>
+
     <!-- row -->
 </div>
 <!-- container -->

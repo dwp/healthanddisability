@@ -804,6 +804,13 @@ router.post('*/:customerId/timepicker-post', function(req, res, next){
 
       res.redirect(302, '/' + res.locals.path + '/booking/referrals/' + req.params.customerId + '/appointment-details');
 
+    } else if(req.body.appointment === "noAppointmentAvailable"){
+      req.session.apointmentHistory.title = "Requested rearrangement";
+        appointmentHistory.push(req.session.apointmentHistory);
+        
+        res.redirect(302, '/' + res.locals.path + '/booking/booked/' + req.params.customerId + '/appointment-details');
+  
+
     } else {
 
     if(req.session.apointmentHistory.code === "UTA"){
@@ -836,6 +843,12 @@ router.post('*/:customerId/timepicker-post', function(req, res, next){
     res.redirect(302, '/' + res.locals.path + '/booking/booked/' + req.params.customerId + '/appointment-details');
     }
   })
+
+
+router.post('*/:customerId/timepicker-cancel', function(req, res, next){
+  
+
+})
 
 
 

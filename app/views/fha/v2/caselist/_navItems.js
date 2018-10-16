@@ -1,5 +1,5 @@
 
-module.exports = function(versionNumber, reviewCustomers){
+module.exports = function(versionNumber, reviewCustomers, appointmentCustomers){
 
 
 	return [{
