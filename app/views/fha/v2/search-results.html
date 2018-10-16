@@ -9,30 +9,33 @@
 
 {% block caselist_content %}
 {% if customers.length > 0 %}
-<h2 class="heading-medium mt0"><span class="heading-xlarge">{{customers.length}}</span><br/>Search results</h2>
+<h1 class="heading-medium mt0"><span class="heading-xlarge">{{customers.length}}</span><br/>Search result</h1>
 <table class="zebra">
     <thead>
         <tr>
             <th>Details</th>
+            <th>Status</th>
         </tr>
     </thead>
     {% for customer in customers %}
     <tr>
         <td><a href="scrutiny/{{customer._id}}/timeline"><span class="visually-hidden">Name</span>{{customer.name.fullName}} </a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span>
         </td>
+        <td>	<span class="block">
+                {{ 'Requested medical evidence'  if customer.status == 'fme'}}
+                {{ 'Ready for review' if customer.status == 'review'}}</span></span>
+        </td>
     </tr>
 
     {% endfor %}
 {% else %}
-<h2 class="heading-medium mt0">Search results </h2>
-<div class="notice">
-  <i class="icon icon-important">
-    <span class="visually-hidden">Warning</span>
-  </i>
-  <strong class="">
-    No results found for "{{searchField}}". Please try again.
-  </strong>
-</div>
+
+<h2 class="heading-medium mt0"><span class="heading-xlarge">0</span><br/>Search results</h2>
+<hr class="mt0"/>
+    <p class="lede"> No results found for "{{searchField}}". Please try again.</p>
+
+
+
 
 {% endif %}
 </table>
