@@ -1,8 +1,10 @@
 <div class="search-customer">
-        <label class="form-label" for="full-name-f1">Find a customer
+	<form action="/{{path}}/search-results" method="post">
+        <label class="form-label" for="search">Enter an NI number
 
         </label>
       
-        <input class="form-control form-control-2-3" id="full-name-f1" type="text" name="full-name-f1">
+        <input class="form-control form-control-2-3" id="search" type="text" name="search">
         <button class="gem-c-search__submit">Search</button>
+    </form>
     </div>

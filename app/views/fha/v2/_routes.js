@@ -75,6 +75,7 @@ router.post('*', function (req, res, next) {
   if(!req.session.data.observations){
     req.session.data.observations = [];
   }
+  res.locals.menuItems = require(filePath +'/caselist/_navItems.js')(versionNumber, reviewCustomers);
   
   next()
 })
@@ -805,7 +806,7 @@ router.post('*/:customerId/timepicker-post', function(req, res, next){
       res.redirect(302, '/' + res.locals.path + '/booking/referrals/' + req.params.customerId + '/appointment-details');
 
     } else if(req.body.appointment === "noAppointmentAvailable"){
-      req.session.apointmentHistory.title = "Requested rearrangement";
+        req.session.apointmentHistory.title = "Requested rearrangement";
         appointmentHistory.push(req.session.apointmentHistory);
         
         res.redirect(302, '/' + res.locals.path + '/booking/booked/' + req.params.customerId + '/appointment-details');
@@ -1702,6 +1703,19 @@ router.post('/planning/centre/:centre', function(req, res, next){
   });
 
   next()
+  
+})
+
+router.post('/search-results', function(req, res, next){
+
+  var sanitizeField = function(string){
+    return string.replace(/\s/g,'').toUpperCase();
+  }
+  var NINO = req.body.search.trim('')
+  res.locals.customers = reviewCustomers
+          .filter(customer => sanitizeField(customer.NINO) === sanitizeField(req.body.search));
+
+  res.render(viewPath +'/search-results');
   
 })
 
