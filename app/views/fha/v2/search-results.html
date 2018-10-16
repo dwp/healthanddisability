@@ -8,7 +8,7 @@
 {% endblock %}  
 
 {% block caselist_content %}
-
+{% if customers.length > 0 %}
 <h2 class="heading-medium mt0"><span class="heading-xlarge">{{customers.length}}</span><br/>Search results</h2>
 <table class="zebra">
     <thead>
@@ -23,6 +23,18 @@
     </tr>
 
     {% endfor %}
+{% else %}
+<h2 class="heading-medium mt0">Search results </h2>
+<div class="notice">
+  <i class="icon icon-important">
+    <span class="visually-hidden">Warning</span>
+  </i>
+  <strong class="">
+    No results found for "{{searchField}}". Please try again.
+  </strong>
+</div>
+
+{% endif %}
 </table>
 {% endblock %}
 

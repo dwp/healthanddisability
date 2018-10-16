@@ -1715,6 +1715,7 @@ router.post('/search-results', function(req, res, next){
   res.locals.customers = reviewCustomers
           .filter(customer => sanitizeField(customer.NINO) === sanitizeField(req.body.search));
 
+  res.locals.searchField = req.body.search;
   res.render(viewPath +'/search-results');
   
 })
