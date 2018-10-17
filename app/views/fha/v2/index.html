@@ -70,14 +70,14 @@
                           
 
                                 <h2 class="heading-xlarge">
-                                   10
+                                   {{reviewNumbers.total}}
                                   <span class="heading-small">Reviews</span>
                                  </h2>
                           
                             </a>
                            <ul>
-                             <li><a href="/{{path}}/ready-for-review.html">Ready for review (6)</a></li>
-                            <li><a href="/{{path}}/requested-medical-evidence.html">Requested medical evidence (4)</a></li>
+                             <li><a href="/{{path}}/ready-for-review.html">Ready for review ({{reviewNumbers.readyForReview}})</a></li>
+                            <li><a href="/{{path}}/requested-medical-evidence.html">Requested medical evidence ({{reviewNumbers.fme}})</a></li>
                       
                           </ul> 
                         </div>

@@ -51,6 +51,16 @@ router.get('*', function (req, res, next) {
   next()
 })
 
+router.get('/', function (req, res, next) {
+  
+  res.locals.reviewNumbers = {
+    total: reviewCustomers.length,
+    readyForReview: reviewCustomers.filter(customer => customer.status === "review").length,
+    fme: reviewCustomers.filter(customer => customer.status === "fme").length
+  }
+  next()
+})
+
 router.post('*', function (req, res, next) {
   // path is only available with the proper value within this sub-module/router.
   res.locals.path = req.baseUrl.substr(1)
