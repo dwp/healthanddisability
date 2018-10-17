@@ -29,6 +29,9 @@ $site-width: 1920px;
 @import "inc/left-nav";
 @import "inc/calendar";
 
+
+
+
 @import "patterns/check-your-answers";
 
 
@@ -1045,3 +1048,48 @@ a:visited {
       background-color:lighten($govuk-blue,5);
     }
   }
+
+
+ .details-nav {
+	position: relative;
+	margin: 0;
+	ul {
+		li {
+			border-bottom: 1px solid $grey-3;
+			background: $grey-4;
+			list-style: none;
+			&:hover {
+				background: #fff;
+			}
+			&:first-child {
+				border-top: 1px solid $grey-3;
+			}
+			a {
+				display: block;
+				padding: 1em .8em .8em 1em;
+				text-decoration: none;
+
+
+				span {
+					font-size: 90%;
+					color: $grey-1;
+					display: block;
+					font-weight: normal;
+					margin-top: 5px;
+				}
+			}
+		}
+		.active_detail {
+		    background-color: #fff;
+
+		    &:hover {
+			    background-color: #fff;
+			    }
+		    a {
+				border-left: .3em solid $govuk-blue;
+				padding-left: .7em;
+				color: #000;
+		    }
+		  }
+	}
+}

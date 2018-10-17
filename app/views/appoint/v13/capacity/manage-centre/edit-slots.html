@@ -1,0 +1,142 @@
+{% extends path1+"/_manage-centre-layout.html" %} 
+
+
+
+
+{% block citizen_content %}
+
+<section id="Default hours" class="">
+    <div class="grid-row">
+        <div class="column-one-quarter">
+            <nav class="details-nav v2">
+                <ul>
+                    
+                    <li class="active_detail">
+                        <a href="#">Monday</a>
+                    </li>
+                    <li>
+                        <a href="#">Tuesday</a>
+                    </li>
+                    <li>
+                        <a href="#">Wednesday</a>
+                    </li>
+                    <li>
+                        <a href="#">Thursday</a>
+                    </li>
+                    <li>
+                        <a href="#">Friday</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="column-half">
+            <p><a href="/{{path2}}/{{centre.id}}/slots" class="link-back">Back</a></p>
+            <h1 class="heading-large mt0">Edit Monday Appointment times</h1>
+            <div class="form-group">
+                <hr>
+                <label class="form-label" for="time-1">What is the slot time?</label>
+                <input name="time-1" type="time" class="form-control span-width"
+                    value="09:00">
+            </div>
+            <div class="form-group inline">
+                <fieldset>
+                    <legend>
+                        <span class="form-label">
+                            Is this slot available for book next?
+                        </span>
+                    </legend>
+                    <div class="multiple-choice">
+                        <input id="time-1-yes" type="radio" name="time-1" value="true" checked>
+                        <label for="time-1-yes">Yes</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="time-1-no" type="radio" name="time-1" value="false">
+                        <label for="time-1-no">No</label>
+                    </div>
+                </fieldset>
+            </div>
+
+
+            <div class="form-group">
+                <hr>
+                <label class="form-label" for="time-2">What is the slot time?</label>
+                <input name="time-2" type="time" class="form-control span-width"
+                    value="10:00">
+            </div>
+            <div class="form-group inline">
+                <fieldset>
+                    <legend>
+                        <span class="form-label">
+                            Is this slot available for book next?
+                        </span>
+                    </legend>
+                    <div class="multiple-choice">
+                        <input id="time-2-yes" type="radio" name="time-2" value="true" checked>
+                        <label for="time-2-yes">Yes</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="time-2-no" type="radio" name="time-2" value="false">
+                        <label for="time-2-no">No</label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="form-group">
+                <hr>
+                <label class="form-label" for="time-3">What is the slot time?</label>
+                <input name="time-3" type="time" class="form-control span-width"
+                    value="13:00">
+            </div>
+            <div class="form-group inline">
+                <fieldset>
+                    <legend>
+                        <span class="form-label">
+                            Is this slot available for book next?
+                        </span>
+                    </legend>
+                    <div class="multiple-choice">
+                        <input id="time-3-yes" type="radio" name="time-3" value="true" checked>
+                        <label for="time-3-yes">Yes</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="time-3-no" type="radio" name="time-3" value="false">
+                        <label for="time-3-no">No</label>
+                    </div>
+                </fieldset>
+            </div>
+
+
+            <div class="form-group">
+                <hr>
+                <label class="form-label" for="time-4">What is the slot time?</label>
+                <input name="time-4" type="time" class="form-control span-width"
+                    value="14:00">
+            </div>
+            <div class="form-group inline">
+                <fieldset>
+                    <legend>
+                        <span class="form-label">
+                            Is this slot available for book next?
+                        </span>
+                    </legend>
+                    <div class="multiple-choice">
+                        <input id="time-4-yes" type="radio" name="time-4" value="true" checked>
+                        <label for="time-4-yes">Yes</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="time-4-no" type="radio" name="time-4" value="false">
+                        <label for="time-4-no">No</label>
+                    </div>
+                </fieldset>
+            </div>
+            <p class="mt0"><a class="button-secondary" href="#">Add another</a></p>
+            <p><a class="button" href="/{{path2}}/{{centre.id}}/slots">Save</a></p>
+        </div>
+    </div>
+</section>
+{% endblock %}
+  
+
+
+
+ {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}
