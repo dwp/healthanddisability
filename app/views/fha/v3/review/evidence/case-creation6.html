@@ -1,0 +1,97 @@
+{% extends path1+"/_layout-stripped.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+
+    
+    <h1 class="heading-large mt30 mb20"><span class="heading-secondary">Step 4 of 4</span>Consent</h1>
+  
+  
+  
+
+	<form>
+									    
+				    <fieldset class="inline">
+		    
+				    	<legend class="heading-medium mb10">Has Tomas given consent to request further medical evidence?</legend>
+		
+					    <div class="multiple-choice">
+					      <input id="decide_now" name="whatcando" type="radio" value="Yes">
+					      <label for="decide_now"> Yes</label>
+					    </div>
+		  
+					    <div class="multiple-choice" data-target="hell-no">
+					      <input id="face2face" name="whatcando" type="radio" value="No">
+					      <label for="face2face"> No</label>
+					    </div>
+					    
+					     <div class="form-group panel panel-border-narrow js-hidden" id="hell-no">
+					    	
+					    	<label class="form-label" for="justificaiton">Why doesn't Tomas consent?</label>
+							<textarea class="form-control form-control-3-4" name="justificaiton" id="justificaiton" rows="5"></textarea>
+					    	
+					    </div>
+					    
+				    </fieldset>
+				    
+				    
+
+		    
+		    
+
+		    
+		    
+		    
+		  <p class="mt30"><a href="/assess/v9b/index2" class="button">Finish</a></p>
+				    
+		
+		
+		<!-- ********************************* Page end ********************************* -->
+		
+		
+			
+
+	
+		
+		
+	</form>
+	
+    
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+{% macro physGroup(name,sel) %}
+  {% set s = name | slug %}
+  <!-- GROUP -->
+  <div class="multiple-choice" data-target="group_{{s}}_yes">
+    <input id="group_{{s}}" type="checkbox" name="group_{{s}}" sue="group_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="group_{{s}}">{{name}}</label>
+  </div>
+{% endmacro %}
+
+{% macro physObs(name,sel) %}
+  {% set s = name | slug %}
+  <div class="multiple-choice" data-target="phys_{{s}}_yes">
+    <input id="phys_{{s}}" type="checkbox" name="mobility" value="phys_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="phys_{{s}}">{{name}}</label>
+  </div>
+  <div class="form-group panel panel-indent js-hidden mt0 mb20" id="phys_{{s}}_yes">
+    <p>
+      <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
+      <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
+    </p>
+  </div>
+{% endmacro %}
+

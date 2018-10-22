@@ -1,0 +1,92 @@
+{% extends path1+"/_layout-info.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<table class="evidence-list">
+
+                <thead>
+	                  <tr>
+	                    <th>Evidence type</th>
+	                    <th>Source</th>
+	                    <th class="numeric">Received</th>
+	                  </tr>
+	                </thead>
+	                
+	                {% if data.nuggets.length %}
+		              <tr>
+		                  <td><a href="medical_assessment">Work capability assessment</a> <em>NEW</em></td>
+		                  <td>Heather Harrison <span>Healthcare Professional</span></td>
+		                  <td class="numeric">{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+	                </tr>
+		            {% endif %}
+		            
+		      <!--      <tr>
+	                  <td><a href="reviewOutcome">Pre-assessment report</a></td>
+	                  <td>Heather Harrison <span>Tresco House</span></td>
+	                  <td class="numeric">{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+	                </tr> -->
+	                
+	         
+
+	          	
+	                <tr>
+	                  <td><a href="gp_report">GP Report (ESA113)</a></td>
+	                  <td>Shiela Turner <span>Brixton medical centre</span></td>
+	                  <td class="numeric">26 August 2018</td>
+	                </tr>
+	                
+	                <tr>
+	                  <td><a href="medical_record_data">Fit note (MED3) information</a></td>
+	                  <td>Shiela Turner <span>Brixton medical centre</span></td>
+	                  <td class="numeric">14 August 2018</td>
+	                </tr>
+	                
+	                 <tr>
+	                  <td><a href="statements">Tomas's statements</a></td>
+	                  <td>UC50</td>
+	                  <td class="numeric">10 August 2018</td>
+	                </tr>
+	              
+	                
+	                <tr>
+	                  <td><a href="conditions">Medication and side effects</a></td>
+	                  <td>UC50</td>
+	                  <td class="numeric">10 August 2018</td>
+	                </tr>
+	                
+	                
+	                
+	            
+
+              </table>
+
+{% endblock %}
+
+{% macro physGroup(name,sel) %}
+  {% set s = name | slug %}
+  <!-- GROUP -->
+  <div class="multiple-choice" data-target="group_{{s}}_yes">
+    <input id="group_{{s}}" type="checkbox" name="group_{{s}}" sue="group_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="group_{{s}}">{{name}}</label>
+  </div>
+{% endmacro %}
+
+{% macro physObs(name,sel) %}
+  {% set s = name | slug %}
+  <div class="multiple-choice" data-target="phys_{{s}}_yes">
+    <input id="phys_{{s}}" type="checkbox" name="mobility" value="phys_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="phys_{{s}}">{{name}}</label>
+  </div>
+  <div class="form-group panel panel-indent js-hidden mt0 mb20" id="phys_{{s}}_yes">
+    <p>
+      <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
+      <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
+    </p>
+  </div>
+{% endmacro %}
+

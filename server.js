@@ -283,6 +283,9 @@ if (typeof (routes) !== 'function') {
   app.use('/fha/v1-1', require('./app/views/fha/v1-1/_routes.js')) 
   app.use('/fha/v2', require('./app/views/fha/v2/_routes.js')) 
 
+
+  app.use('/fha/v3', require('./app/views/fha/v3/_routes.js')) 
+
   app.use('/', routes)
 
   

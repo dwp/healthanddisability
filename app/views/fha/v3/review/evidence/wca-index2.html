@@ -1,0 +1,74 @@
+{% extends path1+"/_layout-info.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<p><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+  <h1 class="heading-large mt0 mb0"><span class="heading-secondary">Step 3 of 5</span>How Tomas's conditions affect him</h1>
+
+	<div class="exam-content esa50-input">
+	
+		<table>
+			
+			<caption class="heading-medium mb0">To do:</caption>
+			
+			
+			<tr class="complete">
+				<th><a href="add">Moving around and using steps</a></th>
+				<td><span class="orange">Complete</span></td>
+			</tr>
+			<tr>
+				<th><a href="#">Standing and sitting</a></th>
+				<td><span>Not started</span></td>
+			</tr>
+			<tr>
+				<th><a href="#">Speaking, writing and typing</a></th>
+				<td><span>Not started</span></td>
+			</tr>
+			<tr>
+				<th><a href="#">Hearing and reading</a></th>
+				<td><span>Not started</span></td>
+			</tr>
+			
+						
+		</table>
+		
+		</div>
+	
+    <p class="save-continue"><a href="wca-illness" class="button">Continue to illness and disabilities</a></p>
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+{% macro physGroup(name,sel) %}
+  {% set s = name | slug %}
+  <!-- GROUP -->
+  <div class="multiple-choice" data-target="group_{{s}}_yes">
+    <input id="group_{{s}}" type="checkbox" name="group_{{s}}" sue="group_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="group_{{s}}">{{name}}</label>
+  </div>
+{% endmacro %}
+
+{% macro physObs(name,sel) %}
+  {% set s = name | slug %}
+  <div class="multiple-choice" data-target="phys_{{s}}_yes">
+    <input id="phys_{{s}}" type="checkbox" name="mobility" value="phys_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="phys_{{s}}">{{name}}</label>
+  </div>
+  <div class="form-group panel panel-indent js-hidden mt0 mb20" id="phys_{{s}}_yes">
+    <p>
+      <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
+      <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
+    </p>
+  </div>
+{% endmacro %}
+
