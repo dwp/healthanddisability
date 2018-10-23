@@ -1729,16 +1729,17 @@ router.post('/search-results', function(req, res, next){
   } else if(req.body.NINO) {
     res.locals.customers = customers
             .filter(customer => sanitizeField(customer.NINO) === sanitizeField(req.body.NINO));
-    res.locals.searchField = req.body.search;
   } else {
-    if(req.body.postcode){
+    if(req.body.postcode != ''){
       customers = customers
             .filter(customer => sanitizeField(customer.address.postcode) === sanitizeField(req.body.postcode));
     }
     if(req.body.name){
+      console.log(customers);
       customers = customers
             .filter(customer => sanitizeField(customer.name.last) === sanitizeField(req.body.name));
     }
+    console.log(customers)
     res.locals.customers = customers;    
   }
   res.render(viewPath +'/search-results');

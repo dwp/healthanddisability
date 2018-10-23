@@ -9,9 +9,9 @@
           <div class="grid-row">
               <div class="column-one-quarter">
              
-                 
+                <h1  class="heading-medium">Search for a customer</h1>
                 <form action="/{{path}}/search-results" method="post">
-                  <label class="form-label" for="search">Enter an NI number</label>
+                  <label class="form-label" for="search">National Insurance Number</label>
                   <input class="form-control form-control-full" id="search" type="text" name="NINO" value="{{data.NINO}}">
                 
                 
@@ -53,6 +53,7 @@
                 </fieldset>
             </div>
             <p><button type="submit" class="button-secondary">Search</button></p>
+            <p><a href="/{{path}}/clearSearch">Clear search</a></p>
         </form>
                           
               </div>
