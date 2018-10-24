@@ -1,0 +1,93 @@
+{% extends path2+"/_layout.html" %}
+
+{% block scoring_content %}
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<h1 class="heading-large mt0 mb30"><span class="heading-secondary">Step 1 of 2</span>Moving around and climbing steps without help</h1>
+
+  
+  <div class="grid-row">
+	  
+	  <div class="column-two-thirds">
+	 
+
+   <form action="mobility" method="post">
+  
+  	<fieldset>
+					
+	    <legend class="heading-medium mb20">
+	       Choose statements that are relevant to this descriptor:
+	    </legend>
+
+	    {% for comment in socialWorkComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="movingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+	    </div>
+	    {% endfor %}
+		{% for comment in typicalDayComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="movingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+	    </div>
+	    {% endfor %}
+	   
+  </fieldset>
+  
+  
+  
+  
+  <p class="mt30"><button class="button">Next</button></p>
+  </form>
+  
+  </div>
+
+
+  
+  
+  </div>
+  
+
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('#change_score').on('click',function(e)
+    {
+      e.preventDefault();
+      console.log('got here')
+      $('#been_scored').addClass('js-hidden');
+      $('#rescore').removeClass('js-hidden');
+    });
+
+    // highlight the right left nav link.
+    $($(".nav")[0]).children(":nth-child(1)").addClass('active')
+  });
+</script>
+
+<script>
+  $(".gp-report-show td span").click(function(){
+  $(".content-hide").toggleClass("content-show");
+  $(".gp-report-show").toggleClass("active-show");
+});
+</script>
+<script>
+  $(".esa50-show td span").click(function(){
+  $(".content-hide3").toggleClass("content-show3");
+  $(".esa50-show").toggleClass("active-show");
+});
+</script>
+<script>
+  $(".med3-show td span").click(function(){
+  $(".content-hide2").toggleClass("content-show2");
+  $(".med3-show").toggleClass("active-show");
+});
+</script>
+{% endblock %}

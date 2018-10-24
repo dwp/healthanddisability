@@ -1,0 +1,13 @@
+{% import path + "/_descriptors.nunj"  as data %}
+
+<div class="form-group">
+  {% for item in data.descriptors %}
+  <div class="multiple-choice">
+    <input id="{{ item.url }}" name="{{ item.url }}" type="checkbox" value="{{ item.url }}">
+    <label for="{{ item.url }}">{{ item.label }}</label>
+  </div>
+  {% endfor %}
+</div>
+<div class="form-group">
+  <button class="button" data-fancybox-close >Save &amp; Continue</button>
+</div>

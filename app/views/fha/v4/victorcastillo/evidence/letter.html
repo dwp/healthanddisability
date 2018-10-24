@@ -1,0 +1,265 @@
+<title>{% block page_title %}GOV.UK - The best place to find government services and information{% endblock %}</title>
+
+<!--[if gt IE 8]><!--><link href="{{ asset_path }}stylesheets/govuk-template.css?0.19.0" media="screen" rel="stylesheet" /><!--<![endif]-->
+<!--[if IE 6]><link href="{{ asset_path }}stylesheets/govuk-template-ie6.css?0.19.0" media="screen" rel="stylesheet" /><![endif]-->
+<!--[if IE 7]><link href="{{ asset_path }}stylesheets/govuk-template-ie7.css?0.19.0" media="screen" rel="stylesheet" /><![endif]-->
+<!--[if IE 8]><link href="{{ asset_path }}stylesheets/govuk-template-ie8.css?0.19.0" media="screen" rel="stylesheet" /><![endif]-->
+<link href="{{ asset_path }}stylesheets/govuk-template-print.css?0.19.0" media="print" rel="stylesheet" />
+
+<!--[if IE 8]><link href="{{ asset_path }}stylesheets/fonts-ie8.css?0.19.0" media="all" rel="stylesheet" /><![endif]-->
+<!--[if gte IE 9]><!--><link href="{{ asset_path }}stylesheets/fonts.css?0.19.0" media="all" rel="stylesheet" /><!--<![endif]-->
+<!--[if lt IE 9]><script src="{{ asset_path }}javascripts/ie.js?0.19.0"></script><![endif]-->
+<link href="{{cssPath}}" media="screen" rel="stylesheet" type="text/css" />
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:image" content="{{ asset_path }}images/opengraph-image.png?0.19.0">
+
+{% block head %}{% endblock %}
+</head>
+
+
+<style>
+body{
+    background:transparent;
+}
+
+.letterhead{
+    background:url(/public/images/dwp.png) no-repeat right 0 ;
+    background-size:10%;
+    height:80px;
+    font-size:1.5em;
+    line-height: 80px;
+    padding-bottom:20px;
+    border-bottom:1px solid #bfc1c3;
+}
+
+
+.letterhead h1{
+    margin:0px;
+    line-height: 80px;
+}
+
+.factual-report{
+    width:60%;
+    max-width:1100px;
+    background:#fff;
+    margin:60px auto;
+    padding:20px 40px;
+}
+
+.formbox{
+    border:1px solid #bfc1c3;
+    height:600px;
+    width:100%;
+    position:relative;
+    margin-bottom:30px;
+}
+
+.formbox p.statement{
+
+    position:absolute;
+    bottom:0px;
+    right:20px;
+}
+.hcpdetails .titles{
+    float:left;
+}
+
+.hcpdetails hr{
+
+        margin-top: 35px;
+    margin-bottom: 45px;
+
+}
+</style>
+
+
+<div class="factual-report">
+   <div class="letterhead">
+    <h1 class="heading-medium">Health Assessment Advisory Service</h1>
+   </div>
+        <div class="grid-row">
+            <div class="column-half">
+                    <h2 class="heading-small">GP details</h2>
+            
+                   
+                         <p>Dr. Sheila Turner<br />
+                       
+                 
+                 
+                         
+                 
+                         <p class="address-stack">
+                             <span class="bold">Address</span>
+                             <span>0 Brixton Lane</span>
+                             <span>Brixton</span>
+                             <span>London</span>
+                             <span>SW2 000</span>
+                         </p>
+                         </div>
+            <div class="column-half">
+                    <h2 class="heading-small">Client details</h2>
+    
+                    <p>Tomas Fernandez<br />
+                        15 October 1994<br />
+                        QQ 53 12 35 C
+                    </p>
+               
+            
+        <p class="address-stack">
+            <span class="bold">Address</span>
+            <span>0 Coldharbour Street</span>
+            <span>Brixton</span>
+            <span>London</span>
+            <span>SW2 000</span>
+            </p>
+
+      
+    
+            </div>
+ 
+            <div class="column-full"> 
+                    <br /><br />
+                    <p>27th October 2018</p>
+    
+                    <p>Your patient has made a claim for benefit and you may have already given us information about his/her history.  
+                            However, so that we can consider the claim, we need some additional details.  Your patient has given consent to 
+                            allow us to approach you for this information. </p>
+                
+                    <h2 class="heading-small">What we need you to do </h2>
+                    <p>Please supply a factual report answering the questions listed on the enclosed form.  You should base your replies 
+                            on your knowledge of the patient and on his/her records.  A special examination is not required. 
+                             </p>
+                    <p>
+                            Please include in your report any relevant information contained in letters or reports from hospitals or consultants. 
+                            If you think it is essential to send us originals or copies of any letters from consultants, please obtain the authorâ€™s 
+                           consent beforehand.  You should also confirm in a covering note that they have agreed to the correspondence 
+                           being used in connection with this claim. 
+                    </p>
+
+                    <p>Please let us know immediately if this patient is no longer under your care.</p>
+                
+
+                    <p>Please be aware that if you are treating this patient under the NHS, you are obliged by your terms of service to 
+                            supply clinical information to a medical officer if you have issued or refused to issue a medical certificate to a 
+                            patient.  You are not obliged to do this if you are not treating the patient under the NHS, but any information you 
+                            are willing to provide would be most appreciated.  Unfortunately, we would be unable to pay you for it. 
+                            Please note that a full and prompt reply may prevent the patient from being required to undergo a medical 
+                            examination. </p>
+
+                            <h2 class="heading-small">Harmful information </h2> 
+                            <p>We may need to send a copy of the report to the patient. We can withhold information from the patient that would 
+                                    be harmful to his/her health.  Please put any such information on a separate sheet and mark it accordingly.  
+                                    Please note we cannot withhold information on any other grounds. </p>      
+                           
+                                    <h2 class="heading-small">What to do next  </h2> 
+                                    <p>We would appreciate a reply to the address shown on the enclosed form within seven days.  We have enclosed a 
+                                            pre-paid envelope for the return of the report. </p>
+
+                                            <p>Yours sincerely, </p>
+
+                                            <p>For the Medical Officer 
+                                                    FRR2 10/10 </p>
+
+                                                    <hr/>
+
+                        </div>
+
+
+        
+        </div>
+        <div class="letterhead">
+                <h1 class="heading-medium">Health Assessment Advisory Service</h1>
+               </div>
+
+        <div class="grid-row">
+            <div class="column-full">
+                <h2 class="heading-large">Factual Report</h2>
+            </div>
+            <div class="column-half">
+                    <h2 class="heading-small">GP details</h2>
+            
+                   
+                         <p>Dr. Sheila Turner<br />
+                       
+                 
+                 
+                         
+                 
+                         <p class="address-stack">
+                             <span class="bold">Address</span>
+                             <span>0 Brixton Lane</span>
+                             <span>Brixton</span>
+                             <span>London</span>
+                             <span>SW2 000</span>
+                         </p>
+                         </div>
+            <div class="column-half">
+                    <h2 class="heading-small">Client details</h2>
+    
+                    <p>Tomas Fernandez<br />
+                        15 October 1994<br />
+                        QQ 53 12 35 C
+                    </p>
+               
+            
+        <p class="address-stack">
+            <span class="bold">Address</span>
+            <span>0 Coldharbour Street</span>
+            <span>Brixton</span>
+            <span>London</span>
+            <span>SW2 000</span>
+            </p>
+
+      
+    
+            </div>
+            
+            <div class="column-full">
+                <hr />
+                    <div class="notice">
+                            <i class="icon icon-important">
+                              <span class="visually-hidden">Warning</span>
+                            </i>
+                            <strong class="bold-small">
+                                    Please return this form in the envelope supplied. 
+                            </strong>
+                      </div>
+               
+                <h2 class="heading-small mt30">We would like further information regarding the points raised below please:</h2>
+                {% if data['frrinformation'] %}
+                <p class="pre-wrap">{{ data['frrinformation'] }}</p>
+                {% else %}
+                <p class="">This patient is known to have epilepsy, please could you let us know how many recorded seizures they have had in the last 3 years?</p>
+                {% endif %}
+                <h2 class="heading-small">Your response</h2>
+                <div class="formbox">
+                <p class="statement">Please continue on a seperate sheet of paper if necessary.</p>
+                </div>
+
+                <div class="hcpdetails">
+                        <div class="titles">
+                        <h2 class="heading-small">Name:</h2>
+                        <h2 class="heading-small">Your signature:</h2>
+                        <h2 class="heading-small">Position held:</h2>
+                        <h2 class="heading-small">Date:</h2>
+                    </div>
+                      <div class="column-half">
+                        <hr/>
+                
+                        <hr/>
+                    
+                        <hr/>
+                       
+                        <hr/>
+                    </div>
+                </div>
+            
+            </div>
+
+      
+
+            </div>
+           
+            </div>

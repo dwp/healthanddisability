@@ -1,0 +1,78 @@
+{% extends path1+"/_layout-info.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+<h1 class="heading-large mt30 mb30">Moving around and using steps</h1>
+
+      
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+  
+  
+    <form class="form">
+
+		     	<div class="form-group">
+		     	
+		     	<fieldset class="stacked">
+
+					  <legend class="heading-medium mb10">How far can Tomas move safely and repeatedly on level ground without needing to stop?</legend>
+					
+						
+							    <div class="multiple-choice">
+							      <input id="50m" name="metres" type="checkbox" value="50">
+							      <label for="50m">50 metres</label>
+							    </div>
+							
+							    <div class="multiple-choice">
+							      <input id="100m" name="metres" type="checkbox" value="100">
+							      <label for="100m">100 metres</label>
+							    </div>
+
+							    <div class="multiple-choice">
+							      <input id="200m" name="metres" type="checkbox" value="200">
+							      <label for="200m">200 metres or more</label>
+							    </div>
+							    
+							    <div class="multiple-choice">
+							      <input id="varies" name="metres" type="checkbox" value="varies">
+							      <label for="varies">It varies</label>
+							    </div>
+							    
+							    <div class="multiple-choice">
+							      <input id="not" name="metres" type="checkbox" value="not">
+							      <label for="not">Not answered</label>
+							    </div>
+
+				  
+				  </fieldset>
+				  
+		     	</div>
+		     	
+		     	
+		      <div class="form-group">
+		      	  <label class="heading-medium" for="nugget">Additional comments</label>
+		      	  <p class="form-hint mt5 mb5">What Tomas wrote in the box</p>
+		          <textarea type="text" id="nugget" class="form-control" name="nugget" style="width: 80%; height: 200px;"></textarea>
+		      </div><!-- form-group -->
+										    
+    
+    <p><a href="wca-index2" class="button">Save</a></p>
+
+    </form>
+    
+   
+  </div><!-- column -->
+
+ 
+</div><!-- row -->
+
+{% endblock %}
+
+

@@ -1,0 +1,181 @@
+{% extends path1+"/_addlayout.html" %}
+
+{% block citizen_content %}
+
+{% set slots = [{
+    "time": "9:00am",
+    "availableSlots": 5,
+    "remainingSlots": 1
+    },{
+    "time": "10:00am",
+    "availableSlots": 5,
+    "remainingSlots": 0
+    },{
+    "time": "11:00am",
+    "availableSlots": 5,
+    "remainingSlots": 5
+    },{
+    "time": "13:00pm",
+    "availableSlots": 5,
+    "remainingSlots": 3
+    },{
+    "time": "14:00pm",
+    "availableSlots": 5,
+    "remainingSlots": 5
+    },{
+    "time": "15:00pm",
+    "availableSlots": 5,
+    "remainingSlots": 0
+}]
+%}
+
+<div class="container">
+
+<p><a href="fiveways" class="link-back">Back</a></p>
+
+<h1 class="heading-large mt0">Appointment schedule</h1>
+
+
+    <div class="grid-row mt30">
+          
+          
+          <div class="column-half">
+        <h3 class="heading-medium mt0">Choose a date</h3>
+        
+        <div class="calendar-book">
+        <table>
+        <caption>December 2017</caption>
+        <thead>
+            <tr>
+                <th>MON</th>
+                <th>TUE</th>
+                <th>WED</th>
+                <th>THU</th>
+                <th>FRI</th>
+                <th>SAT</th>
+                <th>SUN</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="available"><a href="#">1</a></td>
+                <td class="available"><a href="#">2</a></td>
+                <td class="available"><a href="#">3</a></td>
+                <td class="available"><a href="#" class="selected">4</a></td>
+                <td class="available available--full"><a href="#">5</a></td>
+                <td class="available"><a href="#">6</a></td>
+                <td class="available">7</td>
+            </tr>
+            <tr>
+                <td class="available"><a href="#">8</a></td>
+                <td class="available"><a href="#">9</a></td>
+                <td class="available"><a href="#">10</a></td>
+                <td class="available"><a href="#">11</a></td>
+                <td class="available available--full"><a href="#">12</a></td>
+                <td class="available"><a href="#">13</a></td>
+                <td class="available">14</td>
+            </tr>
+            <tr>
+                <td class="available available--full"><a href="#">15</a></td>
+                <td class="available"><a href="#">16</a></td>
+                <td class="available available--full"><a href="#">17</a></td>
+                <td class="available"><a href="#">18</a></td>
+                <td class="available"><a href="#">19</a></td>
+                <td class="available"><a href="#">20</a></td>
+                <td class="available">21</td>
+            </tr>
+            <tr>
+                <td class="available"><a href="#">22</a></td>
+                <td class="available"><a href="#">23</a></td>
+                <td class="available available--full"><a href="#">24</a></td>
+                <td class="available"><a href="#">25</a></td>
+                <td class="available"><a href="#">26</a></td>
+                <td class="available"><a href="#">27</a></td>
+                <td class="available">28</td>
+            </tr>
+            <tr>
+                <td class="available available--full available--full"><a href="#">29</a></td>
+                <td class="available"><a href="#">30</a></td>
+                <td class="available available--full"><a href="#">31</a></td>
+                <td class="available">1</td>
+                <td class="available">2</td>
+                <td class="available">3</td>
+                <td class="available">4</td>
+            </tr>
+        </tbody>
+        </table>
+        
+
+        
+        
+ 
+        </div>  
+        
+        
+    </div><!-- column -->
+    
+    
+    
+
+    
+    
+    
+    <div class="column-half">
+   <h3 class="heading-medium mt0">Appointment slots</h3>
+    
+    
+   <div class="grey-list">
+    <fieldset>
+        <legend class="heading-small">Available slots for Thursday 4th Decenber</legend>
+    
+
+
+        {%for slot in slots %}
+        <label class="form-label mt20" for="slot-{{slot.time}}">{{slot.time}}</label>
+        <input class="form-control" id="slot-{{slot.time}}" type="number" name="slot-{{slot.time}}" value={{slot.remainingSlots}}>
+
+       <!--  <li 
+            class="time-slot__list
+            {% if slot.remainingSlots == 0 %}
+                time-slot__list--full
+            {% else %}
+                time-slot__list--available
+            {% endif %}
+            ">
+            <h4 class="time-slot__heading">{{ slot.time }}</h4>
+            <h4 class="time-slot__heading">
+            {% if slot.remainingSlots == 0 %}
+            full
+            {% else %}
+            {{ slot.remainingSlots }} slots available
+            {% endif %}</h4>
+            <span>{{ slot.availableSlots }} total slots</span>
+
+        </li> -->
+        {% endfor %}
+    </fieldset>
+    <p><a href="fiveways-scheduler-saved" class="button">Save</a></p>
+   </div>
+   
+  
+    
+    
+    </div>
+    
+    
+  
+  
+  
+    
+  
+          
+          
+        </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

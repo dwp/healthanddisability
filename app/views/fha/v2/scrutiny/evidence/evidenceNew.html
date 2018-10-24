@@ -1,0 +1,56 @@
+{% extends path1+"/evidence/_layout.html" %}
+
+
+{% block case_content %}
+
+<h1 class="heading-large mt10">Recorded evidence</h1>
+<!---
+<table class="evidence-list">
+
+                <thead>
+	                  <tr>
+	                    <th>Evidence type</th>
+	                    <th>Source</th>
+	                    <th class="numeric">Recorded</th>
+	                  </tr>
+	                </thead>
+	                
+	                {% if data.nuggets.length %}
+		              <tr>
+		                  <td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/medical_assessment">Work capability assessment</a></td>
+		                  <td>Heather Harrison <span>Healthcare Professional</span></td>
+		                  <td class="numeric">{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+	                </tr>
+		            {% endif %}
+		            
+		          <tr>
+	                  <td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/reviewOutcome">Pre-assessment report</a></td>
+	                  <td>Heather Harrison <span>Tresco House</span></td>
+	                  <td class="numeric">{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+	                </tr>
+	                
+	         
+
+	          	
+	                <tr>
+	                  <td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/gp_report">GP Report (ESA113)</a></td>
+	                  <td>Shiela Turner <span>Brixton medical centre</span></td>
+	                  <td class="numeric">26 August 2018</td>
+	                </tr>
+
+							</table> -->
+							<p class="mt30"><a href="/fha/v2/scrutiny/5bbf32d5559a875a93dc114a/evidence/not-testing" class="button secondary">Record evidence</a></p>
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.details-nav ul')
+      .children(":nth-child(1)")
+      .addClass('active_detail')
+  });
+</script>
+{% endblock %}

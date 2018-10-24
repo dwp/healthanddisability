@@ -1,0 +1,105 @@
+{% extends path1+"/_layout-underway.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+{{ nav.case_tabs("evidence",1,path1) }}{# macro #}
+
+
+<h2 class="heading-large mt30 mb0">Physical assessments</h2>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	<div class="exam-content">
+	
+		<table>
+			
+			<caption>Physical exam process</caption>
+			
+			
+			<tr>
+				<th><a href="lower-limbs">Lower back and legs</a></th>
+				<td><span>Not assessed</span></td>
+			</tr>
+			<tr>
+				<th><a href="#">Neck and arms</a></th>
+				<td><span>Not assessed</span></td>
+			</tr>
+			<tr>
+				<th><a href="#">Cardiac</a></th>
+				<td><span>Not assessed</span></td>
+			</tr>
+			<tr>
+				<th><a href="#">Respiratory</a></th>
+				<td><span>Not assessed</span></td>
+			</tr>
+			<tr>
+				<th><a href="#">Peripheral vascular</a></th>
+				<td><span>Not assessed</span></td>
+			</tr>
+			<tr>
+				<th><a href="#">Vision, speech and hearing</a></th>
+				<td><span>Not assessed</span></td>
+			</tr>
+			<tr>
+				<th><a href="#">Consciousness</a></th>
+				<td><span>Not assessed</span></td>
+			</tr>
+			<tr>
+				<th><a href="#">Continence</a></th>
+				<td><span>Not assessed</span></td>
+			</tr>
+			<tr>
+				<th><a href="#">Mental health</a></th>
+				<td><span>Not assessed</span></td>
+			</tr>
+			
+		</table>
+		
+	</div>
+	
+
+
+
+
+
+
+
+    <p class="mt30"><a href="medical_assessment_stripped" class="button">Finish assessment</a></p>
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+{% macro physGroup(name,sel) %}
+  {% set s = name | slug %}
+  <!-- GROUP -->
+  <div class="multiple-choice" data-target="group_{{s}}_yes">
+    <input id="group_{{s}}" type="checkbox" name="group_{{s}}" sue="group_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="group_{{s}}">{{name}}</label>
+  </div>
+{% endmacro %}
+
+{% macro physObs(name,sel) %}
+  {% set s = name | slug %}
+  <div class="multiple-choice" data-target="phys_{{s}}_yes">
+    <input id="phys_{{s}}" type="checkbox" name="mobility" value="phys_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="phys_{{s}}">{{name}}</label>
+  </div>
+  <div class="form-group panel panel-indent js-hidden mt0 mb20" id="phys_{{s}}_yes">
+    <p>
+      <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
+      <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
+    </p>
+  </div>
+{% endmacro %}
+
+{% block footer_top %}
+{{ super() }}
+<p class="font-xsmall">
+  <a href="/{{ path2 }}/phys_exam_1">exam v1</a> |
+  <a href="/{{ path2 }}/phys_exam_2">exam v2</a>
+</p>
+{% endblock %}
