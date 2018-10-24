@@ -1,0 +1,43 @@
+{% extends path+"/_layout-caselist.html" %}
+
+{% block horizontal_secondary_nav %}
+              
+{{ secondaryNav.nav("review", "requested-medical-evidence", menuItems ) }}
+
+
+{% endblock %}  
+
+{% block caselist_content %}
+<h2 class="heading-medium mt0"><span class="heading-xlarge">{{customers.length}}</span><br/>Requests for medical evidence</h2>
+              <table>
+
+                <thead>
+                  <tr>
+                    <th>Details</th>
+                    <th>Type of evidence</th>
+                    <th>Date requested</th>
+                   
+                  </tr>
+                </thead>
+                
+               {% for customer in customers | sort(attribute="fmeRequestedDate", reverse=false) %}
+                <tr>
+                    <td><a href="scrutiny/{{customer._id}}/timeline"><span class="visually-hidden">Name</span>{{customer.name.fullName}} </a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span>
+                    </td>
+                    <td>
+                        {% if customer.fmeType.indexOf("113") > -1 %}
+                         GP report
+                        {% elif customer.fmeType.indexOf("FRR") > -1 %}
+                        Factual report
+                        {% else %}
+                        {{customer.fmeType}}
+                        {% endif %}
+                    </td>
+                    <td>{{customer.fmeRequestedDate | formatDate('D MMMM YYYY')}}</td>
+
+                </tr>
+
+                {% endfor %}
+
+</table>
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends path1+"/_layout-info.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+{{ nav.case_tabs("evidence2",1,path1) }}{# macro #}
+
+
+<h1 class="heading-large mt30">Work capability assessment</h1>
+
+
+     <!-- <p>Assessment started: {{ last_one.time | formatDate("H:mma D MMMM YYYY") }}</p> -->
+      
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <form class="form">
+	 
+      <div class="form-group mb30">
+      	  <label class="heading-medium" for="nugget">Social and work history</label>
+          <textarea type="text" id="nugget" class="form-control" name="nugget" style="width: 80%; height: 200px;"></textarea>
+      </div><!-- form-group -->
+      <p class="mt30"><input class="button" type="submit" value="Continue to typical day" id="submitButton"/></p>
+
+       
+
+    </form>
+    
+   
+  </div><!-- column -->
+
+ 
+</div><!-- row -->
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+$(document).on('ready',function()
+{
+
+
+  $('#submitButton').on('click',function(e)
+  {
+    e.preventDefault();
+    // get values from the form you're submitting.
+    var nugget = $('#nugget').val();
+    console.log(nugget)
+
+    // gather values into a data object.
+    var formdata = JSON.stringify({"nugget":nugget});
+    console.log(formdata)
+    console.log({url: '/{{ path }}/saveText'})
+
+    // send data object off to node route for saving.
+    $.ajax({
+      url: '/{{ path }}/saveText',
+      method: "POST",
+      contentType: 'application/json',
+      data: formdata,
+      dataType: 'json',
+      complete:  function(data,status,xhr) {
+        // sort out the page after data is successfully saved.
+        // $('#status_form').hide();
+        // $('#status_button').show();
+        window.location.href = '/{{path2}}/add3';
+      }
+    });
+  });
+  
+});
+</script>
+
+{% endblock %}

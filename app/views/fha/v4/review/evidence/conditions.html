@@ -1,0 +1,26 @@
+{% extends path2+"/_layout.html" %}
+
+{% block case_content %}
+
+<a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+
+       <h2 class="heading-large mt20 mb30">Medication and side effects</h2>
+
+
+
+	        <h3 class="heading-medium mt30 mb0">Zomorph</h3>
+	        <p class="mt10 mb0"><span class="bold-small">Dose:</span> 60mg twice a day</p>
+			<p class="mt10 mb0"><span class="bold-small">Last prescribed:</span> 21/1/2018</p>
+
+		   <p class="mt10 mb0"><span class="bold-small">Side effects:</span> Nausea and occasional vomiting. </p>
+		   
+		   <div class="given_descriptors mt20">
+		        <ul>
+		        	<li><span class="tag">Moving around and using steps</span> <span class="tag">Standing and sitting</span></li>
+					<li class="mt10"><a data-fancybox data-src="#descriptor_choice" href="javascript:;">change</a></li>
+		        </ul>
+		      </div>
+
+			  <hr>
+{% endblock %}

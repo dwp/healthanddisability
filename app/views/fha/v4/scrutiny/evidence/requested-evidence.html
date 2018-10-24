@@ -1,0 +1,62 @@
+{% extends path1+"/evidence/_layout.html" %}
+
+
+{% block case_content %}
+
+<h1 class="heading-large mt10">Requested evidence</h1>
+{% if %}
+{% elif customer.fmeType.indexOf("113") > -1 or customer.fmeType.indexOf("FRR") > -1 %}
+<table class="evidence-list">
+
+                <thead>
+	                  <tr>
+	                    <th>Evidence type</th>
+	                    <th>Source</th>
+	                    <th class="numeric">Requested</th>
+	                  </tr>
+	                </thead>
+	                
+	                {% if data.nuggets.length %}
+		              <tr>
+		                  <td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/medical_assessment">Work capability assessment</a></td>
+		                  <td>Heather Harrison <span>Healthcare Professional</span></td>
+		                  <td class="numeric">{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+	                </tr>
+								{% endif %}
+								
+								{% if customer.fmeType.indexOf("113") > -1 %}
+
+		            
+		          <tr>
+	                  <td>GP report</td>
+	                  <td>GP: Dr.{{customer.address.gpName.fullName}}</td>
+	                  <td class="numeric">{{ 'Do MMMM YYYY' | randDaysAgo(0)}}</td>
+	                </tr>
+	                
+									{% endif %}
+
+									{% if  customer.fmeType.indexOf("FRR") > -1 %}
+	                <tr>
+	                  <td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/factual_report">Factual report</a></td>
+	                  <td>Consultant: Dr. {{customer.otherHcp.name.fullName}}</td>
+	                  <td class="numeric">{{ 'Do MMMM YYYY' | randDaysAgo(0)}}</td>
+									</tr>
+									{% endif %}
+
+							</table> 
+							{% endif %}
+							<p class="mt30"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/request-evidence" class="button secondary">Request evidence</a></p>
+            
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.details-nav ul')
+      .children(":nth-child(2)")
+      .addClass('active_detail')
+  });
+</script>
+{% endblock %}
