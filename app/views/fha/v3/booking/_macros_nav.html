@@ -5,7 +5,7 @@
         {url:"timeline",label:"Timeline"},
         {url:"details",label:"Details"},
         {url:"appointment-details",label:"Appointment details"},
-        {url:"evidence",label:"Evidence"}
+        {url:"history",label:"Contact history"}
         ] %}
       {% for item in navs %}
         <li {% if item.url == selected %} class="active"{% endif %}><a href="/{{path}}/{{id}}/{{ item.url }}">{{ item.label }}</a></li>

@@ -17,7 +17,8 @@
           {% if query.booked == 'true' %}
           <h3 class="timeline__heading">Appoinment booked {{appointments.nextAvailable | formatDate('D MMMM YYYY')}} at {{appointments.nextAvailable | formatDate('hh:mma')}}</h3>
           {% else %}
-          <h3 class="timeline__heading">Appoinment booked {{customer.appointmentDate | formatDate('D MMMM YYYY')}} at {{customer.appointmentTime}}</h3>
+          <h3 class="timeline__heading">Appoinment booked {{customer.appointmentDate | formatDate('D MMMM YYYY')}} at {{customer.appointmentTime |formatDate('h:mma')}}</h3>
+
           {% endif %}
           <p class="timeline_datetime">30 January 2018</p>
         </div>

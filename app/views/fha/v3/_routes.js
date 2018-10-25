@@ -1727,7 +1727,7 @@ router.post('/search-results', function(req, res, next){
     res.locals.customers = customers;
 
   } else if(req.body.NINO) {
-    res.locals.customers = customers
+    customers = customers
             .filter(customer => sanitizeField(customer.NINO) === sanitizeField(req.body.NINO));
   } else {
     if(req.body.postcode != ''){
@@ -1739,10 +1739,15 @@ router.post('/search-results', function(req, res, next){
       customers = customers
             .filter(customer => sanitizeField(customer.name.last) === sanitizeField(req.body.name));
     }
-    console.log(customers)
-    res.locals.customers = customers;    
   }
-  res.render(viewPath +'/search-results');
+  console.log(customers.length);
+  if(customers.length === 1){
+    res.redirect(`/${res.locals.path}/booking/booked/${customers[0]._id}/check-details`)
+  } else {
+    res.locals.customers = customers;    
+
+    res.render(viewPath +'/search-results');
+  }
   
 })
 
