@@ -1,0 +1,24 @@
+{% extends path+"/_layout-manage-centre.html" %} 
+{% block assess_content %} 
+<main id="content" role="main" class="main-content">
+    <div class="container">
+        <div class="grid-row">
+            <div class="column-one-quarter">
+              {% block manage_centre_nav %}
+              <nav class="details-nav v2" clearfix mb20 ">
+                <ul>
+                    <li class="{{ 'active_detail' if (selectedTab==='details' ) }} "><a href="/{{path1}}/manage-centre/{{centre.id}}/details ">Details</a></li>
+                    <li class="{{ 'active_detail' if (selectedTab==='manage-staff' ) }} "><a href="/{{path1}}/manage-centre/{{centre.id}}/manage-staff ">Staff</a></li>
+                    <!--<li class="{{ 'active_detail' if (selectedTab==='slots' ) }} "><a href="/{{path1}}/manage-centre/{{centre.id}}/slots ">Appointment times</a></li>
+                    <li class="{{ 'active_detail' if (selectedTab==='rooms' ) }} "s><a href="/{{path1}}/manage-centre/{{centre.id}}/rooms ">Rooms</a></li>
+                    <li class="{{ 'active_detail' if (selectedTab==='capacity' ) }} "><a href="/{{path1}}/manage-centre/{{centre.id}}/capacity?day=monday ">Capacity Planner</a></li>-->
+                </ul>
+              </nav>
+            {% endblock %}
+            </div>
+            <div class="column-three-quarters">
+          {% block citizen_content %}{% endblock %}
+            </div><!-- column -->
+        </div>
+    </div>
+{% endblock %}

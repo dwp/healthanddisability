@@ -1,0 +1,165 @@
+{% extends path1+"/_layout-info.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+
+<h1 class="heading-large mt30 mb0">Review</h1>
+
+
+
+<div class="grid-row">
+  <div class="column-full">
+ 
+  <div class="review-item">
+  	<h3 class="heading-medium mb20">Moving around and using steps</h3>
+  	<p>Tomas says they can move safely and repeatedly on level ground without needing to stop for: <b>100 metres</b>.</p>
+  	<p>“I had an accident in July - I was run over and it damaged my left leg. On a good day I can walk 100m slowly with crutches on the flat - I'd have to rest a couple of times though, as I'd be in pain. On a bad day, I can just about get around my flat but would usually stay in bed so I don't have to move much.”</p>
+  	 <p><a href="#">Edit</a></p>
+  	
+  </div>
+  
+  
+ <div class="review-item">
+  	<h3 class="heading-medium mb20">Standing and sitting</h3>
+  	<p>Tomas says they can move safely and repeatedly on level ground without needing to stop for: <b>100 metres</b>.</p>
+  	<p>“I had an accident in July - I was run over and it damaged my left leg. On a good day I can walk 100m slowly with crutches on the flat - I'd have to rest a couple of times though, as I'd be in pain. On a bad day, I can just about get around my flat but would usually stay in bed so I don't have to move much.” </p>
+  	 <p><a href="#">Edit</a></p>
+  </div>
+  <hr>
+  
+  <h2 class="heading-medium mt0">Tomas has no difficulties with:</h2>
+  <ul class="list-bullet">
+  	<li>Standing and sitting</li>
+  	<li>Eating and drinking</li>
+  	<li>Going to the toilet</li>
+  </ul>
+  <p><a href="#">Edit</a></p>
+  
+  <hr>
+  
+  
+  <h2 class="heading-medium mt0">Tomas has not answered:</h2>
+  <ul class="list-bullet">
+  	<li>Standing and sitting</li>
+  	<li>Eating and drinking</li>
+  	<li>Going to the toilet</li>
+  </ul>
+  <p><a href="#">Edit</a></p>
+  
+  <hr>
+  
+  
+  
+  
+  <div class="review-item">
+  	<h3 class="heading-medium mt10">Illness and disabilities</h3>
+  	<table>
+    
+    	<caption class="visually-hidden">What we know:</caption>
+    	
+    	<thead>
+    		<tr>
+    			<th>Name</th>
+    			<th>Date</th>
+    			<th>Status</th>
+    			<th class="numeric"><span class="visually-hidden">Make changes</span></th>
+    		</tr>
+    	</thead>
+    	
+    	<tbody>
+    		<tr>
+    			<td>Emergency fasciotomy</td>
+    			<td>August 2017</td>
+    			<td>Verified</td>
+    			<td class="numeric"><a href="#">Edit</a></td>
+    		</tr>
+    		<tr>
+    			<td>Acute compartment syndrome</td>
+    			<td>August 2017</td>
+    			<td>Verified</td>
+    			<td class="numeric"><a href="#">Edit</a></td>
+    		</tr>
+    		<tr>
+    			<td>Compound fracture - shinbone</td>
+    			<td>July 2017</td>
+    			<td>Verified</td>
+    			<td class="numeric"><a href="#">Edit</a></td>
+    		</tr>
+    	</tbody>
+    	
+    </table>
+  </div>
+  
+  
+  
+  <div class="review-item">
+  	<h3 class="heading-medium mt10">Medication and side effects</h3>
+  	<table>
+    
+    	<caption class="visually-hidden">What we know:</caption>
+    	
+    	<thead>
+    		<tr>
+    			<th>Name</th>
+    			<th>Dose</th>
+    			<th>Last prescribed</th>
+    			<th>Side effects</th>
+    			<th class="numeric"><span class="visually-hidden">Make changes</span></th>
+    		</tr>
+    	</thead>
+    	
+    	<tbody>
+    		<tr>
+    			<td>Zomorph</td>
+    			<td>60mg twice a day</td>
+    			<td>August 2017</td>
+    			<td>Nausea and occasional vomiting</td>
+    			<td class="numeric"><a href="#">Edit</a></td>
+    		</tr>
+    		<tr>
+    			<td>Sertraline</td>
+    			<td>100mg a day</td>
+    			<td>April 2018</td>
+    			<td>Insomnia</td>
+    			<td class="numeric"><a href="#">Edit</a></td>
+    		</tr>
+    	</tbody>
+    	
+    </table>
+  </div>
+
+	
+	
+    <p class="save-continue"><a href="/{{path}}/ready-for-review" class="button">Finish</a></p>
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+{% macro physGroup(name,sel) %}
+  {% set s = name | slug %}
+  <!-- GROUP -->
+  <div class="multiple-choice" data-target="group_{{s}}_yes">
+    <input id="group_{{s}}" type="checkbox" name="group_{{s}}" sue="group_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="group_{{s}}">{{name}}</label>
+  </div>
+{% endmacro %}
+
+{% macro physObs(name,sel) %}
+  {% set s = name | slug %}
+  <div class="multiple-choice" data-target="phys_{{s}}_yes">
+    <input id="phys_{{s}}" type="checkbox" name="mobility" value="phys_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="phys_{{s}}">{{name}}</label>
+  </div>
+  <div class="form-group panel panel-indent js-hidden mt0 mb20" id="phys_{{s}}_yes">
+    <p>
+      <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
+      <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
+    </p>
+  </div>
+{% endmacro %}
+

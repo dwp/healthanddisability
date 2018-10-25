@@ -1,0 +1,78 @@
+{% extends path+"/_layout.html" %}
+
+{% block assess_content %}
+
+<main id="content" role="main" class="main-content">
+ 
+
+
+      <div class="container">
+          <div class="grid-row">
+    
+              <div class="column-full">
+                 
+                    <div class="grid-row">
+                      <div class="column-full">
+                        <h1 class="heading-xlarge">
+                          Choose centre
+                            </h1>
+                          </div>
+                          </div>
+                          <div class="grid-row">   
+                      <div class="card-container">
+                        <div class="card">
+
+                        	<form action="index" method="POST" class="form-card">
+                          <button class="card-button">
+                        
+
+                              <h2 class="heading-medium">
+                                
+                               Tresco House
+                               </h2>
+                        
+                              </button>
+
+                              <div class="multiple-choice" style="display:none">
+                                  <input id="radio-inline-4" type="radio" name="Choose-centre" value="Tresco" checked>
+                                    
+                                  <label for="radio-4">hidden radio one</label>
+                                </div>
+                              
+                            </form>
+                        </div>
+    
+                        <div class="card">
+                            <form action="index" method="POST" class="form-card">
+                                <button class="card-button">
+                              
+      
+                                    <h2 class="heading-medium">
+                                      
+                                     Birmingham Fiveways
+                                     </h2>
+                              
+                                    </button>
+                                    <div class="multiple-choice" style="display:none">
+                                        <input id="radio-inline-4" type="radio" name="Choose-centre" value="Fiveways" checked>
+                                          
+                                        <label for="radio-4">hidden radio one</label>
+                                      </div>
+                                  </form>
+                        </div>
+    
+                    
+                        </div>
+                        <div class="column-full">
+                        <p><a href="#" class="button">Add another centre</a></p>
+                       </div>
+                    </div>
+              </div><!-- column -->
+            </div>
+     
+        <!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

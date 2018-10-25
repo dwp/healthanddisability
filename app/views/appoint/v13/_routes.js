@@ -623,10 +623,10 @@ router.get('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffI
   var staff = require('../../../../app/views/appoint/v13/data/staff.js');
 
   res.locals.person = staff.filter(person => person.id === req.params.staffId)[0];
-  var today = moment(new Date(2018,8,9));
+  var today = moment();
   var year = today.year();
   var month = today.month() + 1;
-  res.locals.calendar  = new calendar.Calendar(0).monthdatescalendar(2018, 8);
+  res.locals.calendar  = new calendar.Calendar(0).monthdatescalendar(2018, 10);
   res.locals.today = today.format();
   next()
 })

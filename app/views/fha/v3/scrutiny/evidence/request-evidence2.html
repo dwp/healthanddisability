@@ -1,0 +1,109 @@
+{% extends path1+"/_layoutRecording.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+
+  	
+
+    <div class="column-full">
+    
+    
+    	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    	
+    	<h1 class="heading-large mt0"><span class="heading-secondary">Step 2 of 2</span>Request evidence</h1>
+ 
+
+
+
+    	
+    	
+  
+<div class="grid-row">
+	<div class="column-two-thirds">
+
+
+				{% if checked('type','113') %}
+	
+
+			
+						<h2 class="heading-medium">GP report (113 form)</h2>
+					
+						<h3 class="heading-small">Reason for request:</h3>
+						{% if data['scenario']==='insufficient-113' %}
+						<p class="reason">Insufficient evidence to support claimants statements</p>
+						{% else %}
+					  <p>{{ data['reason-113'] }}</p>
+						{% endif %}
+					<p><a href="letter-113" target="_blank" class="button secondary">Print gp report (113 form)</a></p>
+					<hr />
+				{% endif %}
+
+{% if checked('type','FRR') %}
+			
+						<h2 class="heading-medium">Factual report (FRR form)</h2>
+						<h3 class="heading-small">what information are you requesting?</h3>
+						<p class="pre-wrap">{{ data['frrinformation'] }}</p>
+						<h3 class="heading-small">Reason for request:</h3>
+						{% if data['scenario-frr']==='insufficient-frr' %}
+						<p class="reason">Insufficient evidence to support claimants statements</p>
+						{% else %}
+					  <p>{{ data['reason-frr'] }}</p>
+						{% endif %}
+						<h3 class="heading-small">You are requesting this evidence off</h3>
+						{% if checked('hcp-type','gp') %}
+					
+						<p>GP: Dr.{{customer.address.gpName.fullName}}</p>
+						{% elif checked('hcp-type','consultant')%}
+						<p>Consultant: Dr. {{customer.otherHcp.name.fullName}}</p>
+						{% endif %}
+						<p><a href="letter" target="_blank" class="button secondary">Print factual report (FFR)</a></p>
+						<hr />
+{% endif %}
+
+
+		
+		   	
+<div class="notice">
+		<i class="icon icon-important">
+			<span class="visually-hidden">Warning</span>
+		</i>
+		<strong class="bold-small">
+			To complete the evidence request process:<br>you need to print off the relevant forms and send them 
+		</strong>
+	</div>
+		
+
+		    <form class="mt30" method="post" action="/{{path}}/scrutiny/{{customer._id}}/fme-confirm"">
+		    <button class="button">Confirm - evidence has been requested</button>
+		</form>
+		
+			</div></div>
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+	<script type="text/javascript">
+		alert();
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+			$('#app_team').combobox();
+		
+			
+		});
+		
+
+  </script>
+{% endblock %} #}

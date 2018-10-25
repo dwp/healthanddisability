@@ -1,0 +1,41 @@
+
+{% extends path1+"/_manage-centre-layout.html" %} 
+
+
+{% block header %}
+
+  {% include path2+"/_staff_heading.html" %}
+
+{% endblock %}
+
+
+{% block citizen_content %}
+
+<div class="container">
+
+    <div class="grid-row mt30">
+        <div class="column-one-quarter">
+            <nav class="left-nav">
+                <a href="?tab=details" class="left-nav__link {{ 'left-nav__link--selected 'if (query.tab === 'details') }}">Details</a>
+                <a href="?tab=hours" class="left-nav__link {{ 'left-nav__link--selected 'if (query.tab === 'hours') }}">Rota</a>
+                <a href="?tab=leave" class="left-nav__link {{ 'left-nav__link--selected 'if (query.tab === 'leave') }}">Availability</a>
+                
+            </nav>
+        </div>
+
+
+        {% include path1+"/manage-staff/_details.html" %}
+        {% include path1+"/manage-staff/_hours.html" %}
+        {% include path1+"/manage-staff/_leave-2.html" %}
+
+
+
+            
+            
+        <!-- column -->
+       
+    </div>
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

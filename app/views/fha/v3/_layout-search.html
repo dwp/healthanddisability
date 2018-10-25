@@ -1,0 +1,70 @@
+{% extends path+"/_layout.html" %}
+
+{% block assess_content %}
+
+<main id="content" role="main" class="main-content">
+  
+
+      <div class="container">
+          <div class="grid-row">
+              <div class="column-one-quarter">
+             
+                <h1  class="heading-medium">Search for a customer</h1>
+                <form action="/{{path}}/search-results" method="post">
+                  <label class="form-label" for="search">National Insurance Number</label>
+                  <input class="form-control form-control-full" id="search" type="text" name="NINO" value="{{data.NINO}}">
+                
+                
+
+                  <p class="mt20">or</p>
+
+                  
+        <h2 class="heading-small">Search customer details</h2>
+            <div class="form-group">
+                <label class="form-label" for="postcode">Postcode</label>
+                <input type="text" name="postcode" value="{{data.postcode}}" class="form-control form-control-full">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="name">Last name</label>
+                <input type="text" name="name" value="{{data.name}}" class="form-control form-control-full">
+            </div>
+            <div class="form-group">
+                <fieldset>
+                  <legend>
+                    <span class="form-label">
+                      Date of birth
+                    </span>
+                    <span class="form-hint">For example, 31 3 1980</span>
+                  </legend>
+                  <div class="form-date">
+                    <div class="form-group form-group-day">
+                      <label class="form-label" for="dob-day">Day</label>
+                      <input class="form-control" id="dob-day" name="dob-day" value="{{data.dob-day}}" type="number" pattern="[0-9]*">
+                    </div>
+                    <div class="form-group form-group-month">
+                      <label class="form-label" for="dob-month">Month</label>
+                      <input class="form-control" id="dob-month" name="dob-month" value="{{data.dob-month}}" type="number" pattern="[0-9]*">
+                    </div>
+                    <div class="form-group form-group-year">
+                      <label class="form-label" for="dob-year">Year</label>
+                      <input class="form-control" id="dob-year" name="dob-year" value="{{data.dob-year}}" type="number" pattern="[0-9]*">
+                    </div>
+                  </div>
+                </fieldset>
+            </div>
+            <p><button type="submit" class="button-secondary">Search</button></p>
+            <p><a href="/{{path}}/clearSearch">Clear search</a></p>
+        </form>
+                          
+              </div>
+              <div class="column-three-quarters">
+                 {% block search_content %}
+                 {% endblock %}
+            </div>
+     
+        <!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}
