@@ -361,6 +361,30 @@ $(document).ready(function(){
 
   });
 
+  $(".calendar__day-link").click(function(e){
+
+    e.preventDefault();
+
+    var thisDate = $(this).data("date");
+
+    if(selectedDates.indexOf(thisDate) === -1){
+      selectedDates.push(thisDate);
+    } else {
+      selectedDates = selectedDates.filter( date => date !== thisDate);
+    }
+    selectedDates.sort(function(a,b){
+      return moment(a) - moment(b);
+    });
+
+    $(this).toggleClass("calendar__day-link--selected");
+
+    $("#availability-form").removeClass("hidden");
+    document.getElementById("dateList").innerHTML = generateDateList(selectedDates);
+    generateInputs(selectedDates);
+
+  });
+
+
 });
 
 
