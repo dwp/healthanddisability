@@ -625,8 +625,13 @@ router.get('/capacity/manage-centre/:centreId/manage-staff/staff-profile/:staffI
   res.locals.person = staff.filter(person => person.id === req.params.staffId)[0];
   var today = moment();
   var year = today.year();
-  var month = today.month() + 1;
-  res.locals.calendar  = new calendar.Calendar(0).monthdatescalendar(2018, 10);
+  if(req.query.month == "next"){
+    var month = today.month() + 2;
+  } else {
+    var month = today.month() + 1;
+  }
+  res.locals.calendaDate = moment().month(month -1).year(year);
+  res.locals.calendar  = new calendar.Calendar(0).monthdatescalendar(year, month);
   res.locals.today = today.format();
   next()
 })

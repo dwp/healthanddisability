@@ -74,7 +74,6 @@ module.exports = function (env) {
     } else if (today > testDate){
       return 'calendar__day--past';
     } else if(today.toString() == testDate.toString() ){
-      return 'calendar__day--today';
     } 
   }
 
@@ -83,6 +82,22 @@ module.exports = function (env) {
       return 'calendar__day--scrutiny'
     } else if(date.getDay() !== 0 && date.getDay() !== 6){
       return 'calendar__day--appointments'
+    }
+  }
+
+  filters.formatSessionClass = function(date){
+    if(date.getDay() === 1){
+      return 'calendar__session--unavailable'
+    } else if(date.getDay() !== 0 && date.getDay() !== 6){
+      return 'calendar__session--available'
+    }
+  }
+
+  filters.formatSessionValue = function(date){
+    if(date.getDay() === 1){
+      return 'unavailable'
+    } else if(date.getDay() !== 0 && date.getDay() !== 6){
+      return 'available'
     }
   }
 

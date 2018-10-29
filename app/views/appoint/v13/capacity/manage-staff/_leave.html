@@ -1,43 +1,62 @@
 
 
 <div class="column-half" {{ 'hidden' if not (query.tab==='leave' ) }}>
-        <p><a href="{{person.id}}/staff-availability" class="button mt10">Change availability</a></p>
 
    
 
-
+<nav class="calendar-nav">
+{% if query.month %}
+<div class="calendar-nav__linkdiv">
+<a class="calendar-nav__link calendar-nav__link--previous" href="?tab=leave">previous <span class="visually-hidden">previous</span></a>
+</div>
+{% else %}
+<div class="calendar-nav__linkdiv"></div>
+{% endif %}
+<h2 class="calendar-nav__heading">{{ calendaDate | formatDate('MMMM YYYY') }}</h2>
+<div class="calendar-nav__linkdiv">
+<a class="calendar-nav__link calendar-nav__link--next" href="?tab=leave&month=next">next <span class="visually-hidden">month</span></a></div>
+</nav>
 <table 
         class=
         "calendar">
-        <caption>August 2018</caption>
         <thead>
             <tr>
-                <th>MON</th>
-                <th>TUE</th>
-                <th>WED</th>
-                <th>THU</th>
-                <th>FRI</th>
-                <th>SAT</th>
-                <th>SUN</th>
+                <th class="calendar__col-header calendar__col-header--blank"></th>
+                <th class="calendar__col-header">MON</th>
+                <th class="calendar__col-header">TUE</th>
+                <th class="calendar__col-header">WED</th>
+                <th class="calendar__col-header">THU</th>
+                <th class="calendar__col-header">FRI</th>
+                <th class="calendar__col-header">SAT</th>
+                <th class="calendar__col-header">SUN</th>
             </tr>
         </thead>
         <tbody>
             {% for week in calendar %} 
             <tr>
+                <th class="calendar__row-header">Morning <br>Afternoon </th>
+
                 {% for day in week %} 
-
                 <td  
-                    class="calendar__day
-
-                        {{ day | formatRole() }} 
+                    class="
                         {{ day | formatInPast() }} 
                         {{ day | formatClosed() }} ">
-                    {{ day | formatDate("D") }} </td>
+                    {% if loop.index < 6 %}   
+                    <div class="calendar__day">
+                        <div class="calendar__date">{{ day | formatDate("D") }}</div>
+                        <div class="calendar__session {{ day | formatSessionClass() }}"><span class="visually-hidden"> morning </span> {{ day | formatSessionValue() }}</div>
+                        <div class="calendar__session {{ day | formatSessionClass() }}"><span class="visually-hidden"> afternoon </span>{{ day | formatSessionValue() }} </div>   
+                    </div>
+                    {% else %}
+                        {{ day | formatDate("D") }}
+                    {% endif %}
+                </td>
                 {% endfor %}
             </tr>
             {% endfor %}
         </tbody>
     </table>
+        <p><a href="{{person.id}}/staff-availability" class="button-secondary mt10">Change availability</a></p>
 
 <!-- 
 <h3 class="heading-medium">Old table:</h3>
