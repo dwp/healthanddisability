@@ -44,7 +44,7 @@
 						{% else %}
 					  <p>{{ data['reason-113'] }}</p>
 						{% endif %}
-					<p><a href="letter-113" target="_blank" class="button secondary">Print gp report (113 form)</a></p>
+					<p><a href="letter-113" target="_blank" class="button secondary">Preview gp report (113 form)</a></p>
 					<hr />
 				{% endif %}
 
@@ -66,7 +66,7 @@
 						{% elif checked('hcp-type','consultant')%}
 						<p>Consultant: Dr. {{customer.otherHcp.name.fullName}}</p>
 						{% endif %}
-						<p><a href="letter" target="_blank" class="button secondary">Print factual report (FFR)</a></p>
+						<p><a href="letter" target="_blank" class="button secondary">Preview factual report (FFR)</a></p>
 						<hr />
 {% endif %}
 
@@ -83,7 +83,7 @@
 	</div>
 		
 
-		    <form class="mt30" method="post" action="/{{path}}/scrutiny/{{customer._id}}/fme-confirm"">
+		    <form class="mt30" method="post" action="/{{path}}/scrutiny/{{customer._id}}/fme-confirm">
 		    <button class="button">Confirm - evidence has been requested</button>
 		</form>
 		

@@ -34,9 +34,18 @@
 				<div class="form-group">
 							       
 							      <div class="multiple-choice" data-target="113-view">
-								      <input id="113" name="type[]" type="checkbox" value="113"  >
+								      <input id="113" name="type" type="checkbox" value="113"  >
 								      <label for="113">GP report (113)</label>
 										</div>
+
+										{% if customer.fmeType.indexOf("113") > -1 %}
+										<div class="visually-hidden">
+										<div class="multiple-choice">
+								      <input id="113-revisited" name="type" type="checkbox" value="113visited" checked >
+								      <label for="113-revisited">GP report (113)</label>
+										</div>
+									</div>
+										{% endif %}
 										
 
 						 <div class="panel panel-border-narrow js-hidden" id="113-view">
@@ -74,9 +83,19 @@
 
 					  
 								    <div class="multiple-choice" data-target="frr-view">
-								      <input id="FRR" name="type[]" type="checkbox" value="FRR"  >
+								      <input id="FRR" name="type" type="checkbox" value="FRR"  >
 								      <label for="frr">Factual report (FRR)</label>
-								    </div>	
+										</div>	
+										
+
+										{% if customer.fmeType.indexOf("FRR") > -1 %}
+										<div class="visually-hidden">
+										<div class="multiple-choice">
+								      <input id="113-revisited" name="type" type="checkbox" value="FRRvisited" checked >
+								      <label for="113-revisited">GP report (113)</label>
+										</div>
+									</div>
+										{% endif %}
 								    
 								    <div class="panel panel-border-narrow js-hidden" id="frr-view">
 									  <div class="form-group">	

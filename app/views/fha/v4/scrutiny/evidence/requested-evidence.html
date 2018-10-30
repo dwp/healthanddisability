@@ -4,8 +4,9 @@
 {% block case_content %}
 
 <h1 class="heading-large mt10">Requested evidence</h1>
-{% if %}
-{% elif customer.fmeType.indexOf("113") > -1 or customer.fmeType.indexOf("FRR") > -1 %}
+
+{% if data['recordevidencegp']==='gp' and customer.fmeType.indexOf("113") > -1 or data['recordevidencefrr']==='frr' and  customer.fmeType.indexOf("FRR") > -1 %}
+{% elif  customer.fmeType.indexOf("FRR") > -1 or customer.fmeType.indexOf("113") > -1 %}
 <table class="evidence-list">
 
                 <thead>
@@ -15,27 +16,19 @@
 	                    <th class="numeric">Requested</th>
 	                  </tr>
 	                </thead>
-	                
-	                {% if data.nuggets.length %}
-		              <tr>
-		                  <td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/medical_assessment">Work capability assessment</a></td>
-		                  <td>Heather Harrison <span>Healthcare Professional</span></td>
-		                  <td class="numeric">{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
-	                </tr>
-								{% endif %}
-								
-								{% if customer.fmeType.indexOf("113") > -1 %}
-
-		            
-		          <tr>
+	          
+								{% if data['recordevidencegp']==='gp' %}
+								{% elif customer.fmeType.indexOf("113") > -1 or  customer.fmeType.indexOf("113visited") > -1 %}
+									
+									<tr>
 	                  <td>GP report</td>
 	                  <td>GP: Dr.{{customer.address.gpName.fullName}}</td>
 	                  <td class="numeric">{{ 'Do MMMM YYYY' | randDaysAgo(0)}}</td>
-	                </tr>
-	                
-									{% endif %}
+									</tr>
 
-									{% if  customer.fmeType.indexOf("FRR") > -1 %}
+									{% endif %}
+									{% if data['recordevidencegpfrr']==='FRR' %}
+									{% elif  customer.fmeType.indexOf("FRR") > -1 or customer.fmeType.indexOf("FRRvisited") > -1 %}
 	                <tr>
 	                  <td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/factual_report">Factual report</a></td>
 	                  <td>Consultant: Dr. {{customer.otherHcp.name.fullName}}</td>
@@ -44,6 +37,7 @@
 									{% endif %}
 
 							</table> 
+					
 							{% endif %}
 							<p class="mt30"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/request-evidence" class="button secondary">Request evidence</a></p>
             
