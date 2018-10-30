@@ -18,12 +18,25 @@
         </div>
 
         {% endif %}
-        <form action="timepicker-post" method="post">
 
+        <form action="timepicker-post" method="post">
+<div class="grid-row">
         <div class="column-half">
             <h3 class="heading-medium mt0">Choose a date</h3>
+
+            <nav class="calendar-nav">
+            {% if query.month %}
+            <div class="calendar-nav__linkdiv">
+            <a class="calendar-nav__link calendar-nav__link--previous" href="?tab=leave">previous <span class="visually-hidden">previous</span></a>
+            </div>
+            {% else %}
+            <div class="calendar-nav__linkdiv"></div>
+            {% endif %}
+            <h2 class="calendar-nav__heading">{{ calendarDate | formatDate('MMMM YYYY') }}</h2>
+            <div class="calendar-nav__linkdiv">
+            <a class="calendar-nav__link calendar-nav__link--next" href="?tab=leave&month=next">next <span class="visually-hidden">month</span></a></div>
+            </nav>
             <table class="calendar-picker mt0">
-                <caption>April 2018</caption>
                 <thead>
                     <tr>
                         <th>MON</th>
@@ -131,9 +144,10 @@
 
         </div>        
     </form>
-
+</div>
     <!-- row -->
 </div>
+
 <!-- container -->
 {% endblock %}
 
