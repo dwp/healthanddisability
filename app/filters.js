@@ -34,6 +34,10 @@ module.exports = function (env) {
       else return '';
   }
 
+  filters.fmeOverdue = function(date){
+    return moment(date).diff(moment()) < -18;
+  }
+
   filters.formatDateAdd2Days = function(str,format) {
       var d = moment(str).add(2, 'days').format(format);
       if (d !== 'Invalid date') return d;
