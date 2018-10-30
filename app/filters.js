@@ -185,6 +185,14 @@ module.exports = function (env) {
     return str.replace(/\r|\n|\r\n/g, '<br>')
   }
 
+  filters.checkedIfAvailable = function(date){
+    if(moment(date).day() === 1){
+      return ''
+    } else {
+      return 'checked'
+    }
+  }
+
 
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:

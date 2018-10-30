@@ -23,11 +23,12 @@
         <fieldset>
             <legend class="heading-medium">{{ date | formatDate('dddd DD MMMM YYYY') }}</legend>
             <div class="multiple-choice">
-                <input name="date-{{loop.index}}" type="checkbox" class="form-control" value="morning"id="morning-{{loop.index}}">
+                <input name="date-{{loop.index}}" type="checkbox" class="form-control" value="morning"id="morning-{{loop.index}}" {{ date | checkedIfAvailable }}
+                >
                 <label for="morning-{{loop.index}}" class="form-label">Morning</label>
             </div>
             <div class="multiple-choice">
-                <input name="date-{{loop.index}}" type="checkbox" class="form-control" value="afternoon"id="afternoon-{{loop.index}}">
+                <input name="date-{{loop.index}}" type="checkbox" class="form-control" value="afternoon"id="afternoon-{{loop.index}}" {{ date | checkedIfAvailable }}>
                 <label for="afternoon-{{loop.index}}" class="form-label">Afternoon</label>
             </div>
 
