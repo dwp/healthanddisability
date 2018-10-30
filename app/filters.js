@@ -35,7 +35,7 @@ module.exports = function (env) {
   }
 
   filters.fmeOverdue = function(date){
-    return moment(date).diff(moment()) < -18;
+    return moment(date).diff(moment(), "days") < -18;
   }
 
   filters.formatDateAdd2Days = function(str,format) {
