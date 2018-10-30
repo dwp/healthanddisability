@@ -33,7 +33,11 @@
                         {{customer.fmeType}}
                         {% endif %}
                     </td>
-                    <td>{{customer.fmeRequestedDate | formatDate('D MMMM YYYY')}}</td>
+                    <td><span class="block">{{customer.fmeRequestedDate | formatDate('D MMMM YYYY')}}</span>
+                      {% if customer.fmeRequestedDate | fmeOverdue %}
+                      <span class="badge warning">Overdue</span>
+                      {% endif %}
+                    </td>
 
                 </tr>
 
