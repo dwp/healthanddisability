@@ -30,15 +30,38 @@
 							</h1>
 							<p class="form-hint mb5 mt10">Select the evidence you would like to record.</p>
 						</legend>
-				    {% if  customer.fmeType.indexOf("113") > -1 %}
+
+						{% if  data['recordevidencegp']==='gp' %}
+						<div class="visually-hidden">
 						<div class="multiple-choice">
-							<input id="gp" name="evidenceType" type="checkbox" value="Gp">
-							<label for="gp" class="form-label-bold">GP report (113 form)</label>
+							<input id="gpreport" name="recordEvidence" type="checkbox" value="gpvisited" checked>
+							<label for="gpreport" class="form-label-bold">GP report</label>
 						</div>
+				</div>
+					
+				    {% elif customer.fmeType.indexOf("113") > -1 or data['type']==='113visited'%}
+				
+					
+					<div class="multiple-choice">
+						<input id="Gp" name="recordevidencegp" type="checkbox" value="gp">
+						<label for="Gp" class="form-label-bold">GP report</label>
+					</div>
 						{% endif %}
-						{% if  customer.fmeType.indexOf("FRR") > -1 %}
+
+
+						{% if data['recordevidencefrr']==='frr'%}
+						<div class="visually-hidden">
 						<div class="multiple-choice">
-							<input id="factualreport" name="evidenceType" type="checkbox" value="factualreport">
+							<input id="factualreportvisited" name="recordevidence" type="checkbox" value="FRRvisisted" checked>
+							<label for="factualreportvisited" class="form-label-bold">Factual report hidden (FRR)</label>
+						</div>
+					</div>
+					
+				    {% elif customer.fmeType.indexOf("FRR") > -1%}
+
+				
+						<div class="multiple-choice">
+							<input id="factualreport" name="recordevidencefrr" type="checkbox" value="frr">
 							<label for="factualreport" class="form-label-bold">Factual report (FRR)</label>
 						</div>
 						{% endif %}
@@ -51,19 +74,25 @@
 										<label for="type" class="form-label">
 											Evidence type
 										</label>
-										<input type="text" id="type" class="form-control form-control-1-3">
+										<input type="text" id="type" name="newevidencename"class="form-control form-control-1-3">
 									</div>
 									
 									<div class="form-group">
 										<label for="source" class="form-label">
-											Source
+											Sources
 										</label>
-										<input type="text" id="source" class="form-control form-control-1-3">
+										<input type="text" id="source" name="newevidencesource" class="form-control form-control-1-3">
 									</div>
+									{% if data['newevidencename']%}
+									<div class="visually-hidden">
+										<input type="text" id="source" name="newevidencenamevisited" class="form-control form-control-1-3" value="{{ data['newevidencename'] }}">
+										<input type="text" id="source" name="newevidencesourcevisited" class="form-control form-control-1-3" value="{{ data['newevidencesource'] }}">
+								</div>
+								{% endif %}	
 						</div>
 						<div class="multiple-choice" data-target="telephone">
-								<input id="nationalities-other" name="evidenceType" type="checkbox" value="evidence">
-								<label for="nationalities-other" class="form-label-bold">	Telephone contact report (FRR4)</label>
+								<input id="nationalities-other" name="telephonecontactreport" type="checkbox" value="evidence">
+								<label for="nationalities-other" class="form-label-bold">	Telephone contact report</label>
 							</div>
 							<div class="panel panel-border-narrow js-hidden" id="telephone">
 									<div class="form-group">	
@@ -83,7 +112,7 @@
 															</legend>
 
 															<div class="multiple-choice" data-target="client">
-																	<input id="example-contact-by-email" type="radio" name="hcp-type" value="gp">
+																	<input id="example-contact-by-email" type="radio" name="hcp-type" value="client">
 																	<label for="example-contact-by-email">Client: {{customer.name.fullName}}</label>
 																</div>
 																<div class="panel panel-border-narrow js-hidden" id="client">

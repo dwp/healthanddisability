@@ -4,11 +4,14 @@
 
 <a href="javascript: history.go(-1)" class="link-back">Back</a>
 
-  <h1 class="heading-large mt20 mb30">Factual report request</h1>
+  <h1 class="heading-large mt20 mb30">Telephone conversation</h1>
 
-  <p class="form-hint bold-xsmall mb0">Requested this evidence off</p>
-
-    {% if checked('hcp-type','gp') %}
+  <p class="form-hint bold-xsmall mb0">With</p>
+  {% if checked('hcp-type','client') %}
+  <h2 class="heading-small mt10">Client</h2>
+  <p>{{customer.name.fullName}}</p>
+  
+    {% elif checked('hcp-type','gp') %}
     <h2 class="heading-small mt10">GP</h2>
     <p>Dr.{{customer.address.gpName.fullName}}</p>
 
@@ -17,9 +20,9 @@
     <h2 class="heading-small mt10">Consultant</h2>
     <p>Dr. {{customer.otherHcp.name.fullName}}</p>
     {% endif %}
-    {% if checked('hcp-type','gp') %}
-    <h2 class="heading-small">Surgery number</h2>
-    <p>0207 000 0000</p>
+    {% if checked('hcp-type','client') %}
+    <h2 class="heading-small">Phone number</h2>
+    <p>{{customer.phone}}</p>
     <h2 class="heading-small">Address</h2>
     <p class="address-stack">
     	<span>{{customer.address.street}}</span>
@@ -27,29 +30,26 @@
     	<span>{{customer.address.postcode}}</span>
     </p>
     {% endif %}
-    {% if checked('hcp-type','consultant') %}
-    <h2 class="heading-small">Telephone number</h2>
-    <p>{{customer.otherHcp.phone}}</p>
+    {% if checked('hcp-type','gp') %}
+    <h2 class="heading-small">Surgery number</h2>
+    <p>0207 000 0000</p>
     <h2 class="heading-small">Address</h2>
     <p class="address-stack">
-      <span>{{customer.otherHcp.address.street}}</span>
-      <span>{{customer.otherHcp.address.city}}</span>
-      <span>{{customer.otherHcp.address.postcode}}</span>
+    	<span>{{customer.address.gpStreet}}</span>
+    	<span>{{customer.address.gpCity}}</span>
+    	<span>{{customer.address.gpPostcode}}</span>
     </p>
     {% endif %}
 
 
   <p class="mt5">{{ 'Do MMMM YYYY' | randDaysAgo(0)}}</p>
-<hr />
-  <h3 class="heading-small">What information are you requesting?</h3>
-  <p class="pre-wrap">{{ data['frrinformation'] }}</p>
-  <h3 class="heading-small">Reason for request:</h3>
-  {% if data['scenario-frr']==='insufficient-frr' %}
-  <p class="reason">Insufficient evidence to support claimants statements</p>
-  {% else %}
-  <p>{{ data['reason-frr'] }}</p>
-  {% endif %}
- 
+  <hr />
+
+  <h2 class="heading-small">Information sought</h3>
+  <p class="pre-wrap">{{ data['telephoneReport'] }}</p>
+  <h3 class="heading-small">Information gathered</h3>
+  <p class="pre-wrap">{{ data['telephoneReportGathered'] }}</p>
+
 
 {% endblock %}
 
@@ -59,7 +59,7 @@
   $(document).on('ready',function()
   {
     $('.details-nav ul')
-      .children(":nth-child(2)")
+      .children(":nth-child(1)")
       .addClass('active_detail')
   });
 </script>

@@ -4,59 +4,82 @@
 {% block case_content %}
 
 <h1 class="heading-large mt10">Recorded evidence</h1>
+<p class="mt30"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/record-evidence" class="button secondary">Record evidence</a></p>
 
-{% if data[evidenceType]==='GP' %}
-<span class="line"></span>
-  <div class="timeline__event">
-    <h3 class="timeline__heading">Medical evidence requested (GP Report 113)</h3>
-    <p class="timeline_datetime">{{customer.fmeRequestedDate | formatDate("D MMMM YYYY") }}</p>
-  </div>
-{% endif %}
-{% if customer.fmeType.indexOf("FRR") > -1 %}
-<span class="line"></span>
-  <div class="timeline__event">
-    <h3 class="timeline__heading">Medical evidence requested (Factual report)</h3>
-    <p class="timeline_datetime">{{customer.fmeRequestedDate | formatDate("D MMMM YYYY") }}</p>
-  </div>
-{% endif %}
 
-{% if data['evidenceType']==='Gp' %}
+
+{% if data['recordevidencegp']==='gp' %}
 <table class="evidence-list">
 
                 <thead>
 	                  <tr>
 	                    <th>Evidence type</th>
-	                    <th>Source</th>
-	                    <th class="numeric">Recorded</th>
+											<th>Source</th>
+											<th>Recieved</th>
+	                    <th class="numeric">Requested</th>
 	                  </tr>
 	                </thead>
 	                
-	                {% if data.nuggets.length %}
-		              <tr>
-		                  <td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/medical_assessment">Work capability assessment</a></td>
-		                  <td>Heather Harrison <span>Healthcare Professional</span></td>
-		                  <td class="numeric">{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
-	                </tr>
-		            {% endif %}
-								{% if data['evidenceType']==='Gp' %}  
-								<tr>
+	          
+								
+								{% if  data['recordevidencegp']==='gp' %}
+
+		            
+		          <tr>
 	                  <td>GP report</td>
-	                  <td>GP: Dr.{{customer.address.gpName.fullName}}</td>
+										<td>GP: Dr.{{customer.address.gpName.fullName}}</td>
+										<td>{{ 'Do MMMM YYYY' | randDaysAgo(0)}}</td>
 	                  <td class="numeric">{{ 'Do MMMM YYYY' | randDaysAgo(0)}}</td>
 	                </tr>
-									{% endif %} 
-	         
+	                
+									{% endif %}
 
-									{% if data['evidenceType']==='factualreport' %}  
+									{% if data['recordevidencefrr']==='frr'%}
 	                <tr>
-											<td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/factual_report">Factual report</a></td>
-											<td>Consultant: Dr. {{customer.otherHcp.name.fullName}}</td>
-											<td class="numeric">{{ 'Do MMMM YYYY' | randDaysAgo(0)}}</td>
-										</tr>
-									{% endif %} 
+	                  <td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/factual_report">Factual report</a></td>
+										<td>Consultant: Dr. {{customer.otherHcp.name.fullName}}</td>
+										<td>{{ 'Do MMMM YYYY' | randDaysAgo(-1)}}</td>
+	                  <td class="numeric">{{ 'Do MMMM YYYY' | randDaysAgo(0)}}</td>
+									</tr>
+									{% endif %}
+
+									{% if data['newevidencename'] %}
+	                <tr>
+	                  <td>{{ data['newevidencename'] }}</td>
+										<td>{{ data['newevidencesource'] }}</td>
+										<td>{{ 'Do MMMM YYYY' | randDaysAgo(-1)}}</td>
+	                  <td class="numeric"></td>
+									</tr>
+									{% endif %}
+
+									{% if data['newevidencenamevisited']%}
+	                <tr>
+	                  <td>{{ data['newevidencenamevisited'] }}</td>
+										<td>{{ data['newevidencesourcevisited'] }}</td>
+										<td>{{ 'Do MMMM YYYY' | randDaysAgo(-1)}}</td>
+	                  <td class="numeric"></td>
+									</tr>
+									{% endif %}
+
+									{% if data['telephonecontactreport']%}
+	                <tr>
+	                  <td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/telephone_report">Telephone coversation</a></td>
+										<td>	{% if checked('hcp-type','client') %}
+											Client: {{customer.name.fullName}}
+											{% elif checked('hcp-type','gp') %}
+											GP: Dr.{{customer.address.gpName.fullName}}
+											{% elif checked('hcp-type','consultant')%}
+											Consultant: Dr. {{customer.otherHcp.name.fullName}}
+											{% endif %}</td>
+										<td>{{ 'Do MMMM YYYY' | randDaysAgo(-1)}}</td>
+	                  <td class="numeric"></td>
+									</tr>
+									{% endif %}
+
 							</table> 
+							{% else %}
 							{% endif %}
-							<p class="mt30"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/record-evidence" class="button secondary">Record evidence</a></p>
+						
 
 {% endblock %}
 
