@@ -1,0 +1,25 @@
+{% extends path1+"/_layout.html" %}
+
+{% block citizen_content %}
+
+<div class="container">
+
+  {# macro #}
+  {{ nav.case_tabs("recommendation",1,path1) }}
+
+  <div class="grid-row">
+    <div class="column-third">
+      <p>This is where a Decision Maker would look at a final report and be able to see why the recommendation was made and be able to challenge it or decide to keep it.</p>    
+    </div><!-- column -->
+  </div><!-- row -->
+
+
+
+
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

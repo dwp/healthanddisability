@@ -1,0 +1,363 @@
+{% extends path+"/_layout.html" %}
+
+
+{% block assess_content %}
+
+ 
+
+  <main id="content" role="main" class="main-content-inner review-panel">
+
+    <div class="container">
+    
+      <div class="grid-row main-row">
+      
+      <div class="column-one-quarter left-area">
+      
+      	<div class="left-panel">
+      
+      	
+      	
+      	
+      	 <div class="case-status">
+		 
+ <p class="mt10 mb0 bold-small">Assessment started</p>
+
+		  <p class="mt10">Assigned to Heather Harrison</p>
+
+		  <hr>
+		  <ul class="secondary-actions">
+					  <li><a href="/{{path}}/assessment/general-observations">General observations {% if data['general-observations-post']==='posted' %}({{ observations.length }}){% endif%}</a></li>
+			  	  <li><a href="/{{path}}/assessment/evidence/stopAssess">Stop assessment</a></li>
+		      </ul>
+	  </div>
+      	
+      	
+      	</div>
+      
+      </div>
+      
+        <div class="column-three-quarters main-area">
+        
+        {#  This is the BIG BLUE BAR at the top - #jussayin #}
+  {% include path1+"/_staff_heading.html" %}
+
+          <div nunj-block="citizen_content">
+            {% block citizen_content %}{% endblock %}
+          </div>
+
+        </div><!-- column -->
+        
+        
+      </div><!-- row -->
+    </div><!-- container -->
+    
+   
+
+  </main>
+  
+  
+  
+   <div class="inner-panel">
+   
+   
+   <div class="panel-switch">
+			<a href="#" class="panel-closed heading-small">Review evidence</a>
+		</div>
+   
+   
+		<div class="inner-panel-content">
+			<h2 class="heading-large mt20">Review evidence</h2>
+			
+			<h3 class="heading-medium">Illnesses and disabilities</h3>
+			
+			
+			<table class="review-case-list">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Since</th>
+						<th>Source</th>
+					</tr>
+				</thead>
+				<tbody>
+
+				<tr>
+						<td>Depression</td>
+						<td>February 2018</td>
+						<td>Claimant</td>
+					</tr>
+					<tr>
+						<td>Emergency fasciotomy</td>
+						<td>August 2017</td>
+						<td>Claimant</td>
+					</tr>
+					<tr>
+						<td>Acute compartment syndrom</td>
+						<td>August 2017</td>
+						<td>Claimant</td>
+					</tr>
+					<tr>
+						<td>Compound fracture - shinbone</td>
+						<td>July 2017</td>
+						<td>Claimant</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			
+			
+			<h3 class="heading-medium">Evidence</h3>
+			
+			
+			
+			
+			
+			<table class="review-case-list">
+
+                <thead>
+	                  <tr>
+	                    <th>Evidence type</th>
+	                    <th>Source</th>
+	                    <th>Received</th>
+	                  </tr>
+	                </thead>
+
+	          	
+	                <tr class="gp-report-show">
+	                  <td><span>GP Report (ESA113)</span></td>
+	                  <td>Shiela Turner <em>Brixton medical centre</em></td>
+	                  <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+	                </tr>
+	                
+	                <!-- panel -->
+	                <tr class="content-hide">  	
+		                <td class="evidence-show" colspan="3">
+
+							<h3 class="heading-small mt0">Moving around and using steps</h3>
+							  <p>“I don’t know how far Tomas can walk. He uses crutches. ”</p>
+
+							  <h3 class="heading-small mt0">Standing and sitting</h3>
+							  <p>"Tomas won’t be able to stand for long as he needs crutches to move and to balance. He sits for his appointments, usually about 10 minutes. I have prescribed an increasing dosage of opioids as Tomas is in a lot of pain."</p>
+							  
+							  <h3 class="heading-small mt0">Coping with changes to your daily routine</h3>
+  <p>"Tomas has been badly affected by the accident. I increased his dosage of Sertraline and also recommended talking therapies such as counselling, which he refused as he said he couldn't talk about it. Tomas is struggling. I don’t think he could work in his current state of mind. "</p>
+  
+  <h3 class="heading-small mt0">Meeting and being with people</h3>
+  <p>"I currently see Tomas every 2 months as this is the duration of his sick note. He has appeared more withdrawn in the last few months. I don’t know how he interacts with other people but my professional opinion is that his depression has got significantly worse. "</p>
+		                	
+		                </td>
+	                </tr>
+	                <!-- // panel -->
+	                
+	                <tr class="med3-show">
+	                  <td><span>MED3 (fit note) information</span></td>
+	                  <td>UC50</td>
+	                  <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+	                </tr>
+	                
+	                <!-- panel -->
+	                <tr class="content-hide2">  	
+		                <td class="evidence-show" colspan="3">
+
+							<h3 class="heading-small mt10">Tomas has following conditions:</h3>
+							  <ul class="list list-bullet">
+
+							    <li>Depression <em> (3 June 2018 to 2 August 2018)</em></li>
+								  <li>Depression <em> (3 April 2018 to 2 June 2018)</em></li>
+								  <li>Depression <em> (3 February 2018 to 2 April 2018)</em></li>
+							    <li>Complications of emergency fasciotomy <em> (4 December 2017 to 2 February 2018)</em></li>
+							    <li>Complications of emergency fasciotomy <em> (13 October 2017 to 3 December 2017)</em></li>
+							    <li>Acute compartment syndrome and emergency fasciotomy <em> (13 August 2017 to 12 October 2017)</em></li>
+							    <li>Compound fracture - shinbone <em>(28 July 2017 to 12 August)</em></li>
+							  </ul>
+							  
+							  
+			  
+							  
+		                	
+		                </td>
+	                </tr>
+	                <!-- // panel -->
+	                
+	                <tr class="UC50-show">
+	                  <td><span>Tomas's statements</span></td>
+	                  <td>UC50</td>
+	                  <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+	                </tr>
+	                
+	                <!-- panel -->
+	                <tr class="content-hide3">  	
+		                <td class="evidence-show" colspan="3">
+
+					      <h3 class="heading-small mt10">Moving around and using steps</h3>
+					      <p>Tomas says he can: move safely and repeatedly on level ground without needing to stop for: <b>100 metres</b></p>
+					      <p>“I had an accident in July - I was run over and it damaged my left leg. On a good day I can walk 100m slowly with crutches on the flat - I'd have to rest a couple of times though, as I'd be in pain. On a bad day, I can just about get around my flat but would usually stay in bed so I don't have to move much.”</p>
+					      <h3 class="heading-small mt10">Going up or down 2 steps</h3>
+					      <p> “I’d find it hard to get up or down 2 steps on my own. My leg is damaged and I’m in constant pain, I can’t put any weight on it. I can use crutches. ” </p>
+					
+					      <h3 class="heading-small mt10">Standing and sitting</h3>
+					      <p>"I can stand with crutches, but not without them. On a good day I might be able to stand for about 10 minutes but on a bad day it’s hard for me to use crutches at all, so I couldn’t really stand because I can’t put weight on my leg."</p>
+					      <p>"I can sit down but I have to elevate my leg and move it every so often. It gets uncomfortable because of the pain so I end up having to reposition myself."</p>
+						   <h3 class="heading-small mt10">Coping with changes to your daily routine</h3>
+				      <p>"I’ve had anxiety and depression for a while now, I’ve probably been on antidepressants for about 5 months. It got much worse since the accident. I’ve found it hard to cope recently. My middle daughter has gone off the rails as I'm finding it hard to deal with her. Social services have got involved because she’s getting into trouble. With all this happening I’m not coping. My eldest daughter is having to do things that I should be doing for the kids, and I feel guilty all the time."</p>
+
+
+    <h3 class="heading-small mt10">Meeting and being with people</h3>
+      <p>"I’m finding it hard to deal with people. I have to go out and get things sometimes I don’t speak to anyone while I’m out. I know other parents and the neighbours think I’m rude but I just can’t."</p>
+      
+
+		                	
+		                </td>
+	                </tr>
+	                <!-- // panel -->
+
+	                <tr class="side-show">
+	                  <td><span>Medication and side effects</span></td>
+	                  <td>UC50</td>
+	                  <td>{{ 'Do MMMM YYYY' | randDaysAgo(100)}}</td>
+	                </tr>
+	                
+	                <!-- panel -->
+	                <tr class="content-hide4">  	
+		                <td class="evidence-show" colspan="3">
+
+					      <h3 class="heading-small mt10">Zomorph</h3>
+					        <p class="mb0"><b>Dose:</b> 60mg twice a day</p>
+							<p class="mb0"><b>Last prescribed:</b> 21/1/2018</p>
+				
+						   <p><b>Side effects:</b> Nausea and occasional vomiting. </p>
+						   
+						   <h3 class="heading-small mt10">Sertraline</h3>
+					        <p class="mb0"><b>Dose:</b> 100mg a day</p>
+							<p class="mb0"><b>Last prescribed:</b> 26/4/2018</p>
+				
+						   <p><b>Side effects:</b> Insomnia </p>
+						   
+		                </td>
+	                </tr>
+	                <!-- // panel -->
+
+
+	
+	
+
+              </table>
+
+	    
+		
+	</div>
+	
+	
+	
+    </div>
+  
+  
+  
+
+
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.function_link').on('click',function(e)
+    {
+      e.preventDefault();
+      var href = $(this).attr('href');
+      console.log(href)
+      $.ajax({
+        url: href,
+        method: "GET",
+        complete:  function(data,status,xhr) {
+          console.log(data)
+          document.location.reload(true);
+        }
+      });
+    });
+  });
+</script>
+
+<script type="text/javascript">
+ $( document ).ready(function() {
+        $( ".panel-switch" ).click(function() {
+            $( ".inner-panel" ).toggleClass( "panel-open" );
+        });
+    }); 
+</script>
+
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.tag').on('click',function(e)
+    {
+      e.preventDefault();
+      $(this).toggleClass('clicked');
+    });
+
+    $('.tag').on('mouseleave',function(e)
+    {
+      e.preventDefault();
+      $(this).removeClass('clicked');
+    });
+
+    $.fancybox.defaults.beforeShow = function(){
+        $("html").css({'overflow-y':'hidden'});
+    };
+    $.fancybox.defaults.afterClose = function(){
+        $("html").css({'overflow-y':'visible'});
+        $('.des_trigger').blur();
+    };
+    // highlight the approrpaiet left nav
+    $('.evidence__leftnav a h3').each(function(i,e)
+    {
+      if ($(e).text() == $('h2.heading-large').text()) $(e).parent().addClass('active');
+    })
+  });
+</script>
+
+<script>
+  $(".gp-report-show td span").click(function(){
+  $(".content-hide").toggleClass("content-show");
+  $(".gp-report-show").toggleClass("active-show");
+});
+</script>
+
+<script>
+  $(".med3-show td span").click(function(){
+  $(".content-hide2").toggleClass("content-show2");
+  $(".med3-show").toggleClass("active-show");
+});
+</script>
+
+<script>
+  $(".UC50-show td span").click(function(){
+  $(".content-hide3").toggleClass("content-show3");
+  $(".UC50-show").toggleClass("active-show");
+});
+</script>
+
+<script>
+  $(".side-show td span").click(function(){
+  $(".content-hide4").toggleClass("content-show4");
+  $(".side-show").toggleClass("active-show");
+});
+</script>
+
+
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+<p class="font-xsmall">
+  <a href="wca-index">start again</a>&nbsp;&nbsp;
+  <a href="/{{ path }}/clearSession" id="clear_data" class="function_link">clear data</a>
+</p>
+{% endblock %}
+
+
+
+

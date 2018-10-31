@@ -1,0 +1,121 @@
+{% extends path2+"/_layout.html" %}
+
+{% block case_content %}
+
+      <h1 class="heading-large mt10">Tomas's details</h1>
+      
+      
+      <div class="grid-row mt30">
+  
+  
+  <div class="column-half">
+  
+
+    
+    <h4 class="heading-small mt0">Phone</h4>
+    <p>0207 000 0000</p>
+    
+    <h4 class="heading-small">Text</h4>
+    <p>07979 000000</p>
+    
+    <h4 class="heading-small">Email</h4>
+    <p>the.tomas.fernandez@madeup.com</p>
+    
+    <h4 class="heading-small">Address</h4>
+    <p class="address-stack">
+    	<span>0 Coldharbour Street</span>
+    	<span>Brixton</span>
+    	<span>London</span>
+    	<span>SW2 000</span>
+    </p>
+    
+    <h4 class="heading-small">Has Tomas given consent to request further medical evidence?</h4>
+
+    <p>Yes</p>
+    
+    <p class="mt30"><a href="contactEdit" class="secondary button">Edit details</a></p>
+
+       
+    
+    </div><!-- column -->
+    
+    <div class="column-half">
+    
+    
+         
+   <!-- <h3 class="heading-medium mt0">Appointee</h3>
+    
+    <h4 class="heading-small">Phone</h4>
+    <p>0151 924 2080</p>
+    
+    <h4 class="heading-small">Text</h4>
+    <p>07979 000000</p>
+    
+    <h4 class="heading-small">Email</h4>
+    <p>the.victor.castillo@madeup.com</p>
+    
+    <h4 class="heading-small">Address</h4>
+    <p class="address-stack">
+    	<span>27 Redhill Lane</span>
+    	<span>Ainsdale</span>
+    	<span>London</span>
+    	<span>Merseyside</span>
+    	<span>PR8 9UE</span>
+    </p>
+    
+    <p><a href="#" class="button mt10">Edit appointee details</a></p> -->
+
+       
+  
+     
+    
+    </div><!-- column -->
+
+    
+  
+
+
+    
+    </div><!-- column -->
+    
+    
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div><!-- row -->
+      
+      
+      
+      
+      
+      
+           
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.details-nav ul')
+      .children(":nth-child(2)")
+      .addClass('active_detail')
+  });
+</script>
+{% endblock %}
+
+
+
+
+
+
+

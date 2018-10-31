@@ -1,0 +1,114 @@
+{% extends path+"/_layout.html" %}
+{% import path+"/caselist/_nav.html" as mainNav %}
+{% block mainNav %}
+{{ mainNav.nav("case", path) }}
+  
+{% endblock %}
+{% block assess_content %}
+
+<main id="content" role="main" class="main-content">
+  
+
+      <div class="container">
+          <div class="grid-row">
+              <div class="column-one-quarter">
+             
+                  {% include path+"/caselist/_search-box.html" %}
+
+                   
+                            <div class="details-nav v2">
+                                 <ul>
+                                   <li class="active_detail">
+                                   <a href="/{{path}}/">All cases</a>
+                                 </li>
+                                 <li>
+                                    <a href="/{{path}}/myCases.html">My cases</a>
+                                  </li>
+                                </ul>
+                              </div> 
+              </div>
+              <div class="column-three-quarters">
+                 
+                    <div class="grid-row">
+                      <div class="column-full">
+                      <a href="#" class="button mt25">Create new referral</a>
+                          <hr />
+                          
+                        <h1 class="heading-xlarge mt0 mb20">All cases</h1>
+                          </div>
+                          </div>
+                          <div class="grid-row">   
+                      <div class="card-container">
+                      
+                      
+                      		 <div class="card">
+	                                <a href="/{{path}}/assess-reports.html">
+	                              
+	                                  <h2 class="heading-xlarge">
+	                                      24
+	                                    <span class="heading-small">Assessment reports</span>
+	                                   </h2>
+	                              
+	                                </a>
+	                                <ul>
+	                                  <li><a href="/{{path}}/assess-reports.html">Ready for decision (20)</a></li>
+	                                  <li><a href="#">Re-work requests (4)</a></li> 
+	                                  <li><a href="#">Decision made (4008)</a></li> 
+	                                </ul>
+                              
+                                </div>
+                                
+                             
+                              <div class="card">
+	                                <a href="/{{path}}/index.html">
+	                              
+	                                  <h2 class="heading-xlarge">
+	                                      24
+	                                    <span class="heading-small">Case actions</span>
+	                                   </h2>
+	                              
+	                                </a>
+	                                <ul>
+	                                  <li><a href="/{{path}}/">Failed to attend (18)</a></li>
+	
+	                                  <li><a href="/{{path}}/">Application not returned (6)</a></li>     
+	                                 </ul>
+                              
+                                </div>
+
+                      
+                      
+                                
+
+                            <div class="card">
+	                                <a href="/{{path}}/index.html">
+	                              
+	                                  <h2 class="heading-xlarge">
+	                                      724
+	                                    <span class="heading-small">Live case view</span>
+	                                   </h2>
+	                              
+	                                </a>
+	                                <ul>
+	                                  <li><a href="/{{path}}/referrals.html">Referrals (735)</a></li>
+	                                  <li><a href="/{{path}}/review.html">Reviews (400)</a></li> 
+	                                  <li><a href="/{{path}}/appointments.html">Appointments (245)</a></li>
+	                                  <li><a href="/{{path}}/assessment">Assessments (332)</a></li>
+	                          
+	                                  
+	                                 </ul>
+                              
+                                </div>
+                                
+                               
+                        </div>
+                    </div>
+              </div><!-- column -->
+            </div>
+     
+        <!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

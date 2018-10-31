@@ -1,0 +1,185 @@
+{% extends path+"/_layout.html" %}
+{% import path1+"/_macros_nav2.html" as nav %}
+
+{% block assess_content %}
+
+
+
+  <main id="content" role="main" class="main-content-inner">
+
+    <div class="container">
+    
+      <div class="grid-row main-row">
+      
+      <div class="column-one-quarter left-area">
+      
+      	<div class="left-panel">
+      
+      	
+      	
+      	
+      	 <div class="case-status">
+		 
+ <p class="mt10 mb0 bold-small">Ready for recommendation</p>
+		  <p class="mt10">Assigned to Heather Harrison</p>
+		<!-- <p><a href="/assess/v8/victorcastillo/scoring/" class="button">Make your recommendation</a></p> -->
+		  <hr>
+		  <ul class="mt30">
+		   <!-- <li class="mt10"><a href="#">Record new evidence</a></li> -->
+		   <!--  <li class="mt10"><a href="#">Request evidence</a></li>  -->
+	    </ul>
+	  </div>
+      	
+      	
+      	</div>
+      
+      </div>
+      
+        <div class="column-three-quarters main-area">
+        
+           	{#  This is the BIG BLUE BAR at the top - #jussayin #}
+  {% include path1+"/_staff_heading.html" %}
+  
+
+          <div nunj-block="citizen_content">
+
+            {% block citizen_content %}{% endblock %}
+          </div>
+
+        </div><!-- column -->
+        
+        
+      </div><!-- row -->
+    </div><!-- container -->
+
+  </main>
+  
+  
+  
+  
+   <div class="inner-panel">
+
+		
+		 <div class="panel-switch">
+			<a href="#" class="panel-closed heading-small support">Supporting evidence</a>
+		</div>
+   
+   
+		<div class="inner-panel-content">
+			<h2 class="heading-large mt20">Supporting evidence</h2>
+			
+			<h3 class="heading-medium">Moving around and using steps</h3>
+			
+			 <div class="evidence__box assessment">
+    <div class="evidence__label">Work capability assessment</div>
+    <div class="evidence__content">
+    <h4 class="heading-small mt5">Heather Harrison</h4>
+    <p class="mb20">Birmingham Five Ways, {{ "Do MMM YYYY" | daysAgo }}</p>
+    
+    <ul class="list-bullet list-evidence mb20">
+   <li>Tomas has a bath and shower upstairs and a separate shower en suite also.</li>
+
+   <li>Tomas a toilet upstairs and downstairs.</li>
+
+   <li>Showers, washes own hair and dresses himself.</li>
+
+   <li>Using furniture in his bedroom as needed - no official adaptations.</li>
+
+   <li>Got a lift today from his brother but attended alone. Attends all his appointments alone.</li>
+
+   <li>Struggles to lie flat due to back pain. He sometimes sleeps on the couch propped with pillows due to pain.</li>
+
+   <li>He walks 3 minutes to local shop with a crutch in right hand. He is able to manage his own shopping and carry this home.</li>
+
+   <li>He does his own shopping at supermarket, gets taxi there as cannot carry all the bags home due to back pain. Able to walk around a supermarket holding onto trolley and get own purchases.</li>
+
+   <li>Doesn’t really have time for hobbies or sitting down with 4 children. When that are at school he is tidying the house and doing laundry for when they all get back.</li>
+
+   <li>Repositions in the chair if he is sitting down due to back pain.</li>
+
+   <li>Able to use stairs with banister.</li>
+    </ul>
+      
+      
+    
+    </div>
+      </div>
+  
+  
+
+  <div class="evidence__box citizen mt0">
+    <div class="evidence__label">Tomas's statements</div>
+    <div class="evidence__content">
+      <p>Tomas says he can move safely and repeatedly on level ground without needing to stop for:
+        <span class="bold-small">100 metres</span>
+      </p>
+      <h3 class="heading-small mt5 mb0">Moving around and using steps</h3>
+      {# <p class="mb0"><span class="bold-small">Tony says:</span></p> #}
+      <p class="mt0 quote">“I had an accident in July - I was run over and it damaged my left leg. On a good day I can walk 100m slowly with crutches on the flat - I'd have to rest a couple of times though, as I'd be in pain. On a bad day, I can just about get around my flat but would usually stay in bed so I don't have to move much”</p>
+      <h3 class="heading-small mt5 mb0">Going up or down 2 steps</h3>
+      {# <p class="mb0"><span class="bold-small">Tony says:</span></p> #}
+      <p class="mt0 quote mb0"> “I’d find it hard to get up or down 2 steps on my own. My leg is damaged and I’m in constant pain, I can’t put any weight on it. I can use crutches. ” </p>
+    </div>
+  </div>
+
+  <div class="evidence__box med_records">
+    <div class="evidence__label">MED3 (sick notes)</div>
+    <div class="evidence__content">
+      <p>MED3 (sick notes) confirm that Tomas has: <span class="bold-small">Emergency faciotomy</span>, <span class="bold-small">Acute compartment syndrome</span> and <span class="bold-small">Compound fracture - shinbone</span>.</p>
+    </div>
+  </div>
+
+  <div class="evidence__box gp_report">
+    <div class="evidence__label">GP Report</div>
+    <div class="evidence__content">
+      <h4 class="heading-small mt5">Dr. Sheila Turner</h4>
+      <p>Brixton Medical Centre</p>
+      <p class="mt0 quote mb0"> “I don’t know how far Tomas can walk. He uses crutches.” </p>
+    </div>
+  </div>
+			
+		</div>
+		
+   </div>
+  
+  
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.function_link').on('click',function(e)
+    {
+      e.preventDefault();
+      var href = $(this).attr('href');
+      console.log(href)
+      $.ajax({
+        url: href,
+        method: "GET",
+        complete:  function(data,status,xhr) {
+          console.log(data)
+          document.location.reload(true);
+        }
+      });
+    });
+  });
+</script>
+<script type="text/javascript">
+ $( document ).ready(function() {
+        $( ".panel-switch" ).click(function() {
+            $( ".inner-panel" ).toggleClass( "panel-open" );
+        });
+    }); 
+</script>
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+<p class="font-xsmall">
+  <a href="/{{ path }}/clearSession" id="clear_data" class="function_link">clear data</a>
+  <a href="/{{ path }}/prefillAssessment" id="prefill" class="function_link">prefill</a>
+</p>
+{% endblock %}

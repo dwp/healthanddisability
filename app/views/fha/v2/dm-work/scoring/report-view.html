@@ -1,0 +1,377 @@
+{% extends path2+"/_layout.html" %}
+
+{% block scoring_content %}
+
+
+
+ <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+  
+<h1 class="heading-large mt10"><span class="heading-secondary">Step 1 of 2</span>Review assessment report</h1>
+  
+  
+  <dl class="assessment-overview">
+  	
+  	<dt>Date of assessment</dt>
+  	<dd>{{ "Do MMM YYYY" | daysAgo }}</dd>
+  	
+  	<dt>Assessment centre</dt>
+  	<dd>Fiveways, Birmingham</dd>
+  	
+  	<dt>Assessor</dt>
+  	<dd>Heather Harrison</dd>
+  	
+  	<dt>Assessment start</dt>
+  	<dd>{{ last_one.time | formatDate("H:mma") }}</dd>
+  	
+  	<dt>Assessment finish</dt>
+  	<dd>{{ first_one.time | formatDate("H:mma") }}</dd>
+  
+
+  </dl>
+
+   
+ <div class="review-wrapper dm-wrapper">
+ 
+ 
+    
+    
+    
+<div class="review-item">
+	<h2 class="heading-medium">Illnesses and conditions</h2>
+	
+	
+
+		<table>
+			<caption class="visually-hidden">List of illnesses</caption>
+			
+			<thead>
+			
+			<tr>
+				<th>Name</th>
+				<th>Since</th>
+				<th>Source</th>
+			</tr>
+			
+			</thead>
+			
+			<tbody>	
+				<tr>
+					<td>Depression</td>
+					<td>February 2018</td>
+					<td>Claimant</td>
+				</tr>
+				<tr>
+					<td>Emergency fasciotomy</td>
+					<td>August 2017</td>
+					<td>Claimant</td>
+				</tr>
+				<tr>
+					<td>Acute compartment syndrome</td>
+					<td>August 2017</td>
+					<td>Claimant</td>
+				</tr>
+				<tr>
+					<td>Compound fracture</td>
+					<td>July 2017</td>
+					<td>Claimant</td>
+				</tr>
+			</tbody>
+		</table>
+		
+
+		<h3 class="heading-small mt30">History</h4>
+		<p><!-- {{conditionHistory4}} --> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+	
+  
+	<p><a href="#" class="button secondary">Change Illnesses and conditions</a></p>
+</div>
+
+<!--<div class="review-item">
+	<h2 class="heading-medium">Social and work history</h2>
+	{% for comment in socialWorkComments %}
+	<p>{{comment.comment}}</p>
+	{% endfor %}
+	<p><a href="#" class="button secondary">Edit social and work history</a></p>
+</div>-->
+
+
+
+<!--<div class="review-item">
+	<h2 class="heading-medium">Typical day</h2>
+	    
+	{% for comment in typicalDayComments %}
+	<p>{{comment.comment}}</p>
+	{% endfor %}
+	<p><a href="#" class="button secondary">Edit typical day</a></p>
+</div>  -->
+
+<div class="review-item">
+	<h2 class="heading-medium">Physical assessments</h2>
+	
+	<p>Consent was given by Tomas to start the physical assessment.</p>
+	
+	<div class="review-inner">	
+		<h3 class="heading-medium">Lower back and legs</h3>
+		
+		<h4 class="heading-small">Lower back</h4>
+		<p>{{physLowerbackObs}}</p>
+		
+		<h4 class="heading-small">Left leg</h4>
+		<p>{{leftLowerbackObs}}</p>
+		
+		<h4 class="heading-small">Right leg</h4>
+		<p>{{rightLowerbackObs}}</p>
+	
+		
+		<p><a href="#" class="button secondary">Change lower back and legs</a></p>
+	</div>
+	
+	
+	
+</div>  
+ 
+ <div class="review-item">
+	<h2 class="heading-medium">Mental health</h2>
+{% if data['Appearance'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Appearance <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhappearance}}</p>
+	
+	<p><a href="#" class="button secondary">Change appearance</a></p>
+</div>
+{% endif %}
+
+{% if data['Behaviour'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Behaviour <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhbehaviour}}</p>
+	
+	<p><a href="#" class="button secondary">Change Behaviour</a></p>
+</div>
+{% endif %}
+
+{% if data['Speech'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Speech <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhspeech}}</p>
+	
+	<p><a href="#" class="button secondary">Change Speech</a></p>
+</div>
+{% endif %}
+
+{% if data['Mood'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Mood <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhmood}}</p>
+	
+	<p><a href="#" class="button secondary">Change Mood</a></p>
+</div>
+{% endif %}
+
+{% if data['Cognition'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Cognition <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhcognition}}</p>
+	
+	<p><a href="#" class="button secondary">Change Cognition</a></p>
+</div>
+{% endif %}
+
+{% if data['General'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">General <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhgeneral}}</p>
+	
+	<p><a href="#" class="button secondary">Change General</a></p>
+</div>
+{% endif %}
+
+
+
+{% if data['Insight'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Insight <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhinsight}}</p>
+	
+	<p><a href="#" class="button secondary">Change Insight</a></p>
+</div>
+{% endif %}
+
+{% if data['Thoughts'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Thoughts <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhthoughts}}</p>
+	
+	<p><a href="#" class="button secondary">Change Thoughts</a></p>
+</div>
+{% endif %}
+
+
+{% if data['Perceptions'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Perceptions <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhperceptions}}</p>
+	
+	<p><a href="#" class="button secondary">Change Perceptions</a></p>
+</div>
+{% endif %}
+
+{% if data['Addiction'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Addiction <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhaddiction}}</p>
+	
+	<p><a href="#" class="button secondary">Change Addiction</a></p>
+</div>
+{% endif %}
+
+{% if data['Involentry-movements'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Involuntary movements <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhinvolentry}}</p>
+	
+	<p><a href="#" class="button secondary">Change Involuntary movements</a></p>
+</div>
+{% endif %}
+
+
+{% if data['Cognative-test'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Cognitive tests <!-- <span class="edited">Edited</span> --></h3>
+	<h4 class="heading-small">Serial sevens</h4>
+<p>{{serialSeven}}</p>
+<h4 class="heading-small">Calculating change</h4>
+<p>{{Calculating}}</p>
+<h4 class="heading-small">Follow commands</h4>
+<p>{{follow}}</p>
+<h4 class="heading-small">Attention</h4>
+<p>{{attention}}</p>
+<h4 class="heading-small">Registration</h4>
+<p>{{registration}}</p>
+<h4 class="heading-small">Recall</h4>
+<p>{{recall}}</p>
+<h4 class="heading-small">Informal tests</h4>
+<p>{{mhcognativetests}}</p>
+	
+	<p><a href="#" class="button secondary">Change appearance</a></p>
+</div>
+{% endif %}
+
+	
+
+	
+</div>  
+
+
+
+ <div class="review-item">
+
+	
+		<h2 class="heading-medium">Moving around and climbing steps without someone's help</h2>
+		<ul class="list-bullet">
+			{% for descriptor in movingDescriptors %}
+
+				<li>{{descriptor}}</li>
+			{% endfor %}
+		</ul>
+
+				
+		<h4 class="heading-small">How far can Tomas walk or move on level ground without help from someone, and without stopping due to severe pain or tiredness?</h4>
+		
+		{% if checked('mobilityDistance', 'morethan_200') %}
+		<p>More than 200 metres</p>
+		{% else %}
+		<p>No more than {{mobilityDistance}} metres.</p>
+		{% endif %}
+		
+		<h4 class="heading-small">Can Tomas go up or down 2 steps without help, if they use a handrail?</h4>
+		
+		{% if checked('mobilitySteps', 'yes') %}
+		<p>Yes</p>
+		{% else %}
+		<p>No</p>
+		{% endif %}
+		
+		<h4 class="heading-small">Justification:</h4>
+		
+		<p>{{mobilityDetails}}</p>
+		
+		<p><a href="#" class="button secondary">Change moving around and using steps</a></p>
+
+	
+	
+</div>  
+
+
+
+
+<div class="review-item">
+	<h2 class="heading-medium">Exceptional circumstances</h2>
+
+		<h3 class="heading-small">Circumstances why Tomas should be treated as LCW and LCWRA:</h3>
+		{% if checked("LcwAndLcwra", "yes") %}
+		<ul class="list-bullet">
+			{% for reason in LcwAndLcwraReasons %}
+				<li>{{reason}}</li>
+			{% endfor %}
+		</ul>
+		<p class="mt30">{{LcwAndLcwraTests}}</p>
+		{% else %}
+		<p>None</p>
+		{% endif %}
+
+		<h3 class="heading-small">Circumstances why Tomas should be treated as LCW:</h3>
+		{% if checked("lcw", "yes") %}
+		<ul class="list-bullet">
+			{% for reason in lcwReasons %}
+				<li>{{reason}}</li>
+			{% endfor %}
+		</ul>
+		<p class="mt30">{{lcwTests}}</p>
+		{% else %}
+		<p>None</p>
+		{% endif %}
+		
+		<p><a href="#" class="button secondary">Change exceptional circumstances</a></p>
+</div>  
+
+<div class="review-item">
+	<h2 class="heading-medium">Prognosis</h2>
+
+		<h3 class="heading-small">Time until Tomas's case needs reviewing:</h3>
+		<p>{{caseReviewTime}}</p>
+
+		<h3 class="heading-small">Reason</h3>
+		<p>{{caseReviewTimeReason}}</p>		
+		<p><a href="#" class="button secondary">Change prognosis</a></p>
+</div> 
+
+
+
+  
+  
+   </div>
+ <!-- / wrapper -->
+  
+  
+  
+ <p><a href="decision" class="button">Continue to make your decision</a></p>
+
+
+
+
+{% endblock %}
+
