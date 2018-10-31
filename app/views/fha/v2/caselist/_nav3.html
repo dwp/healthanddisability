@@ -1,0 +1,22 @@
+
+
+
+
+{% macro nav(selected, path) %}
+
+{% set navs = [
+        {url:"",label:"Case list",id:"case"}
+        ] %}
+        
+    <nav class="navigation-secondary">
+      <ul>
+        {% for item in navs %}
+        <li>
+          <a href="/{{path}}/dm-index" class="{{ 'active' if item.id == selected }}" 
+          >{{item.label}}</a>
+        </li>
+        {% endfor %}
+
+      </ul>
+    </nav>
+{% endmacro %}
