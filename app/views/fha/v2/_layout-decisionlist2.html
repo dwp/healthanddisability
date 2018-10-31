@@ -1,0 +1,58 @@
+{% extends path+"/_layout.html" %} 
+{% block mainNav %}
+{{ mainNav.nav("case", path) }}
+  
+{% endblock %}
+{% import path+"/_macro_horizonalSecondaryNav.html" as secondaryNav %} 
+
+{% block assess_content %}
+<main id="content" role="main" class="main-content">
+    <div class="container">
+        {% include path+"/caselist/_nav2.html" %}
+        <div class="grid-row">
+             
+            <div class="column-one-quarter">
+                {% include path+"/caselist/_search-box.html" %}
+                
+
+<nav class="details-nav v2">
+	<ul>
+		<li> 
+	    	<a href="assess-reports">Assessment reports</a>
+	    	<!--<ul>
+	    		<li><a href="#" class="active_child">Ready for decision</a></li>
+	    		<li><a href="#">Re-work requested</a></li>
+	    		<li><a href="#">Decision made</a></li>
+	    	</ul>-->
+	    </li>
+
+	    <li class="active_detail"> 
+	    	<a href="#">Case actions</a>
+	    	<ul>
+	    		<li><a href="#">Failed to attend</a></li>
+	    		<li><a href="#">Application not returned</a></li>
+	    	</ul>
+	    </li>
+	  
+	    <li> 
+	    	<a href="#">Live case view</a>
+	    </li>
+	  	
+	</ul>
+</nav>
+
+                
+                
+            </div>
+            <div class="column-three-quarters">
+                {% block caselist_content %}
+
+                {% endblock %}
+            </div>
+            <!-- column -->
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+</main>
+{% endblock %}

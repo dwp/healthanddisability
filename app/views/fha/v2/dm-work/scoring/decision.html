@@ -1,0 +1,44 @@
+{% extends path2+"/_layout.html" %}
+
+	{% block scoring_content %}
+	
+	
+	
+	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+	
+	  
+	<h1 class="heading-large mt10"><span class="heading-secondary">Step 2 of 2</span>Make your decision</h1>
+	  
+		<div class="form-group">
+				<fieldset>
+			    
+				   <legend class="heading-medium mb10">What would you like to do with Tomas's case?</legend>
+		
+					    <div class="multiple-choice">
+					      <input id="score" name="what" type="radio" value="Yes">
+					      <label for="score">Give a score</label>
+					    </div>
+		  
+					    <div class="multiple-choice">
+					      <input id="rework" name="what" type="radio" value="No">
+					      <label for="rework">Request re-work</label>
+					    </div>
+					    
+					    <div class="multiple-choice">
+					      <input id="evid" name="what" type="radio" value="No">
+					      <label for="evid">Request evidence</label>
+					    </div>	
+					    
+				 </fieldset>
+		</div>
+	 
+	  <div class="form-group">
+	  
+	  
+					<p><a href="#" class="button">Continue</a></p>
+	
+	
+	 </div>
+					
+{% endblock %}
+
