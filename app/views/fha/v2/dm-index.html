@@ -1,4 +1,4 @@
-{% extends path+"/_layout.html" %}
+{% extends path+"/_layoutDM.html" %}
 {% import path+"/caselist/_nav.html" as mainNav %}
 {% block mainNav %}
 {{ mainNav.nav("case", path) }}
@@ -19,10 +19,10 @@
                             <div class="details-nav v2">
                                  <ul>
                                    <li class="active_detail">
-                                   <a href="/{{path}}/">All cases</a>
+                                   <a href="#">All cases</a>
                                  </li>
                                  <li>
-                                    <a href="/{{path}}/myCases.html">My cases</a>
+                                    <a href="#">My cases</a>
                                   </li>
                                 </ul>
                               </div> 
@@ -31,9 +31,7 @@
                  
                     <div class="grid-row">
                       <div class="column-full">
-                      <a href="#" class="button mt25">Create new referral</a>
-                          <hr />
-                          
+                                                
                         <h1 class="heading-xlarge mt0 mb20">All cases</h1>
                           </div>
                           </div>
@@ -45,14 +43,14 @@
 	                                <a href="/{{path}}/assess-reports.html">
 	                              
 	                                  <h2 class="heading-xlarge">
-	                                      24
+	                                      10
 	                                    <span class="heading-small">Assessment reports</span>
 	                                   </h2>
 	                              
 	                                </a>
 	                                <ul>
 	                                  <li><a href="/{{path}}/assess-reports.html">Ready for decision (20)</a></li>
-	                                  <li><a href="#">Re-work requests (4)</a></li> 
+	                                  <li><a href="#">Rework requests (4)</a></li> 
 	                                  <li><a href="#">Decision made (4008)</a></li> 
 	                                </ul>
                               
@@ -60,10 +58,10 @@
                                 
                              
                               <div class="card">
-	                                <a href="/{{path}}/index.html">
+	                                <a href="/{{path}}/assess-actions.html">
 	                              
 	                                  <h2 class="heading-xlarge">
-	                                      24
+	                                      8
 	                                    <span class="heading-small">Case actions</span>
 	                                   </h2>
 	                              
