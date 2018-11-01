@@ -311,14 +311,14 @@ router.post('/booking/booked/:customerId/history', function(req, res, next){
         hasComment: true,
         isCustomer: true
         })
-      res.render(viewPath +'/booking/history');
+    next();
 
   })
 router.post('/booking/cancel-appointment', function(req, res, next){
     if(req.body.change_now === "true"){
       res.redirect('timepicker')
     } else {
-      res.redirect('/fha/v' + versionNumber +'/appointments-changed?reason=' + req.body.reason)
+      res.redirect(viewPath +'/appointments-changed?reason=' + req.body.reason)
     }
 
   })
