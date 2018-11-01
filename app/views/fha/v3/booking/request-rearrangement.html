@@ -11,9 +11,12 @@
 {% block citizen_content %}
 
 <div class="container">
-    <div class="grid-row mt30">
+    <div class="grid-row">
         <div class="column-full">
-            <h1 class="heading-large no-kdBar">Rearrange appointment</h1>
+            <div class=" no-kdBar">
+                <a href="/{{path}}/booking/booked/{{customer._id}}/timeline" class="link-back">Back</a>
+            </div>
+            <h1 class="heading-large mt30">Rearrange appointment</h1>
             
             <form action="request-rearrangement-post" method="post">
                 <fieldset class="form-group">

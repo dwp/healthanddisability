@@ -1,9 +1,8 @@
 {% extends path1+"/_layout.html" %}
 
+
 {% block left_content %}
  <p class="mt10 mb0 bold-small">Booked</p>
-
-
  <hr>
 {% endblock %}
 
@@ -11,30 +10,33 @@
 {% block citizen_content %}
 
 <div class="container">
-        <h1 class="heading-large no-kdBar">Rearrange appointment</h3>
-        {% if query.changedBy == "customer" and customer.ableToRearrange == false %}
+    <div class=" no-kdBar">
+                <a href="/{{path}}/booking/booked/{{customer._id}}/request-rearrangement" class="link-back">Back</a>
+            </div>
+        <h1 class="heading-large">Rearrange appointment</h3>
+        {% if restrictAppointments %}
         <div class="panel panel-border-wide" id="customer-rearranged">
             <p>{{customer.name.first}} has previously re-arranged their appointment. A new appointment can only be booked for before their current appointment date.</p>
         </div>
 
         {% endif %}
 
-        <form action="timepicker-post" method="post">
+        
 <div class="grid-row">
         <div class="column-half">
             <h3 class="heading-medium mt0">Choose a date</h3>
 
             <nav class="calendar-nav">
-            {% if query.month %}
+            {% if query.month == 'next' %}
             <div class="calendar-nav__linkdiv">
-            <a class="calendar-nav__link calendar-nav__link--previous" href="?tab=leave">previous <span class="visually-hidden">previous</span></a>
+            <a class="calendar-nav__link calendar-nav__link--previous" href="?month=current">previous <span class="visually-hidden">previous</span></a>
             </div>
             {% else %}
             <div class="calendar-nav__linkdiv"></div>
             {% endif %}
             <h2 class="calendar-nav__heading">{{ calendarDate | formatDate('MMMM YYYY') }}</h2>
             <div class="calendar-nav__linkdiv">
-            <a class="calendar-nav__link calendar-nav__link--next" href="?tab=leave&month=next">next <span class="visually-hidden">month</span></a></div>
+            <a class="calendar-nav__link calendar-nav__link--next" href="?month=next">next <span class="visually-hidden">month</span></a></div>
             </nav>
             <table class="calendar-picker mt0">
                 <thead>
@@ -49,101 +51,64 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% for week in calendar %}
                     <tr>
-                        <td class="calendar-picker__day calendar-picker__day--closed">26</td>
-                        <td class="calendar-picker__day calendar-picker__day--closed">27</td>
-                        <td class="calendar-picker__day calendar-picker__day--closed">28</td>
-                        <td class="calendar-picker__day calendar-picker__day--closed">29</td>
-                        <td class="calendar-picker__day calendar-picker__day--closed">30</td>
-                        <td class="calendar-picker__day calendar-picker__day--closed">31</td>
-                        <td class="calendar-picker__day calendar-picker__day--closed">1</td>
+                        {% for day in week %}
+
+                    <td  
+                    class="
+                        calendar-picker__day
+                        {{ day | formatInPastPicker(restrictAppointments) }} 
+                        {{ day | formatClosed() }} 
+                        {{ day | formatCalendarFull() }} 
+                        {{ day | formatSelected(query.date)}}
+                        {% if restrictAppointments %}
+                            {{ day | formatAvailable(customer.appointmentDate)}}
+                        {% endif %}
+                        ">
+                        {% if (day | formatInPastPicker() or day | formatCalendarFull() ) or (day | formatAvailable(customer.appointmentDate) and restrictAppointments )%}
+                            {{ day | formatDate("D") }}
+                        {% else %}
+                        <a class="calendar-picker__link" 
+                        href="?month={{query.month}}&date={{day | formatDate('YYYY-M-D')}}">{{ day | formatDate("D") }}</a>
+                        
+                        {% endif %}
+                        </td>
+                        {% endfor %}
                     </tr>
-                    <tr>
-                        <td class="calendar-picker__day calendar-picker__day--closed">2</td>
-                        <td class="calendar-picker__day calendar-picker__day--closed">3</td>
-                        <td class="calendar-picker__day calendar-picker__day--today calendar-picker__day--full">4 <span class="visually-hidden">Today</span></td>
-                        <td class="calendar-picker__day calendar-picker__day--full">5</td>
-                        <td class="calendar-picker__day calendar-picker__day--full">6</td>
-                        <td class="calendar-picker__day calendar-picker__day--closed">7</td>
-                        <td class="calendar-picker__day calendar-picker__day--closed">8</td>
-                    </tr>
-                    <tr>
-                        <td class="calendar-picker__day calendar-picker__day--full">9</td>
-                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '10 April' }}"><a class="calendar-picker__link" href="?day=tuesday&date=10 April">10</a></td>
-                        <td class="calendar-picker__day calendar-picker__day--full">11</td>
-                        <td class="calendar-picker__day calendar-picker__day--full">12</td>
-                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '13 April' }}"><a class="calendar-picker__link" href="?day=friday&date=13 April">13</a></td>
-                        <td class="calendar-picker__day calendar-picker__day--closed">14</td>
-                        <td class="calendar-picker__day calendar-picker__day--closed">15</td>
-                    </tr>
-                    <tr>
-                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '16 April' }}"><a class="calendar-picker__link" href="?day=monday&date=16 April">16</a></td>
-                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '17 April' }}"><a class="calendar-picker__link" href="?day=tuesday&date=17 April">17</a></td>
-                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '18 April' }}"><a class="calendar-picker__link" href="?day=wednesday&date=18 April">18</a></td>
-                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '19 April' }}"><a class="calendar-picker__link" href="?day=thursday&date=19 April">19</a></td>
-                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '20 April' }}"><a class="calendar-picker__link" href="?day=friday&date=20 April">20</a></td>
-                        <td class="calendar-picker__day calendar-picker__day--closed">21</td>
-                        <td class="calendar-picker__day calendar-picker__day--closed">22</td>
-                    </tr>
-                    <tr>
-                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '23 April' }}"><a class="calendar-picker__link" href="?day=monday&date=23 April">23</a></td>
-                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '24 April' }}"><a class="calendar-picker__link" href="?day=monday&date=24 April">24</a></td>
-                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '25 April' }}"><a class="calendar-picker__link" href="?day=monday&date=25 April">25</a></td>
-                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '26 April' }}"><a class="calendar-picker__link" href="?day=monday&date=26 April">26</a></td>
-                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '27 April' }}"><a class="calendar-picker__link" href="?day=monday&date=27 April">27</a></td>
-                        <td class="calendar-picker__day calendar-picker__day--closed">28</td>
-                        <td class="calendar-picker__day calendar-picker__day--closed">29</td>
-                    </tr>
-                    <tr>
-                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '30 April' }}"><a class="calendar-picker__link" href="?day=monday&date=30 April">30</a></td>
-                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '1 May' }}"><a class="calendar-picker__link" href="?day=monday&date=1 May">1</a></td>
-                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '2 May' }}"><a class="calendar-picker__link" href="?day=monday&date=2 May">2</a></td>
-                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '3 May' }}"><a class="calendar-picker__link" href="?day=monday&date=3 May">3</a></td>
-                        <td class="calendar-picker__day {{ 'calendar-picker__day--selected' if query.date == '4 May' }}"><a class="calendar-picker__link" href="?day=monday&date=4 May">4</a></td>
-                        <td class="calendar-picker__day calendar-picker__day--closed">5</td>
-                        <td class="calendar-picker__day calendar-picker__day--closed">6</td>
-                    </tr>
+                    {% endfor %}
+                    
                 </tbody>
             </table>
         </div>
         <div class="column-half">
-            <h3 class="heading-medium mt0">Choose a time</h3>
-            <h4 class="heading-small mt0"><span class="capitalise">{{query.day}}</span> {{query.date}}</h4>
-            <ul class="time-slot time-slots-available">
-                {% for slot in slots %}
-                <li class="time-slot__list time-slot__list--link
-                    {{ 'time-slot__list--selected' if query.time == slot.time }}
-                            {% if staffTotals.available - slot.usedSlots < 1  %}
-                                hidden
-                            {% endif %}
-                            ">
-                    <a href="?day={{query.day}}&date={{query.date}}&time={{slot.time}}" class="time-slot__link">
-                        <h4 class="time-slot__heading">{{ slot.time }}</h4>
-                        <h4 class="time-slot__heading">
-                            {% if staffTotals.available - slot.usedSlots < 1 %}
-                            full
-                            {% else %}
-                            {{ staffTotals.available - slot.usedSlots }} slots available
-                            {% endif %}</h4>
-                    </a>
-                </li>
-                {% endfor %}
-                </li>
-            </ul>
-            {% if query.time %}
-                <h3 class="heading-medium">Selected appointment</h3>
-                <p><span class="capitalise">{{query.day}}</span> {{query.date}} at {{query.time}}</p>
-                {% if query.date == '10 April' and query.time == '11:00am' %}
-                <p>This is the next available appointment.</p>
-                {% endif %}
-                <p><a href="rearrange-reason?day={{query.day}}&time={{query.time}}&date={{query.date}}" class="button">Next</a></p>
+            {% if query.date %}
+            <form action="timepicker-post" method="post">
+                <div class="form-group">
+                  <fieldset>
 
+                    <legend class="heading"><h2 class="heading-medium mt0">Choose a time</h2></legend>
+                    <h4 class="heading-small"><span class="capitalise">{{query.day | formatDate('dddd')}}</span> {{query.date | formatDate('D MMMM YYYY')}}</h4>
+                    {% for time in appontmentTimes %}
+                    <div class="multiple-choice">
+                      <input id="appointment-date-{{loop.index}}" type="radio" name="appointment" value="{{ time }}">
+                      <label for="appointment-date-{{loop.index}}">{{ time | formatDate('h:mma') }}</label>
+                    </div>
+                    {% endfor %}
+
+
+                  </fieldset>
+                </div>
+            <button type="submit" class="button">Confirm</button>
+            </form>
+            {% else %}
+            <p>Pick a date from the calendar first.</p>
             {% endif %}
-
-            <p class="mt40"><a href="bobby_timeline">Cancel</a></p>
-
+            <form action="timepicker-post" method="post">
+                <input type="hidden" name="appointment" value="noAppointmentAvailable">
+                <div class="form-group mt20"><button type="submit" class="button-secondary">Cancel</button></div>
+            </form>
         </div>        
-    </form>
 </div>
     <!-- row -->
 </div>

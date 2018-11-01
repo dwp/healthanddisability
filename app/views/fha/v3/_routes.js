@@ -293,12 +293,12 @@ router.get('/booked-appointments', function(req, res, next){
   next()
 })
 
-router.get('/booking/history', function(req, res, next){
+router.get('/booking/booked/:customerId/history', function(req, res, next){
     res.locals.comments = commentsData
     next()
   })
 
-router.post('/booking/history', function(req, res, next){
+router.post('/booking/booked/:customerId/history', function(req, res, next){
     var time = new Date();
     res.locals.comments = commentsData
 
@@ -517,33 +517,31 @@ router.post('/booking/arrived/:customerId*', function(req, res, next){
   next()
 })
 
-router.get('*/timepicker', function(req, res, next){
+router.get('*/:customerId/timepicker', function(req, res, next){
   var getAppointemnts = require(filePath +'/data/availableAppointments.js');
-  var showAppointmentsAfter = 15;
-
-  var showAppointmentsBefore = 0 - moment(res.locals.customer.appointmentDate).diff(moment(), "days");
-  if(res.locals.query.changedBy == 'customer' && !res.locals.customer.ableToRearrange ){
-    showAppointmentsAfter = 0;
+  var today = moment();
+  var year = today.year();
+  if(req.query.month == "next"){
+    var month = today.month() + 2;
+  } else {
+    var month = today.month() + 1;
   }
-  var date = res.locals.customer.appointmentDate;
+  res.locals.calendarDate = moment().month(month -1).year(year);
+  res.locals.calendar  = new calendar.Calendar(0).monthdatescalendar(year, month);
+  res.locals.today = today.format();
 
-  if(res.locals.query.cshu == 'true') {
-    date = moment().format();
-    showAppointmentsBefore = 1;
+  if(req.session.data.changedBy == 'customer' && !res.locals.customer.ableToRearrange ){
+    res.locals.restrictAppointments = res.locals.customer.appointmentDate;
+  } else {
+    res.locals.restrictAppointments = false;
   }
-  console.log(res.locals.customer.ableToRearrange)
-  console.log("diff: " + moment(res.locals.customer.appointmentDate).diff(moment(), "days"))
-  console.log('showAppointmentsBefore: ' + showAppointmentsBefore)
-  console.log('showAppointmentsAfter: ' + showAppointmentsAfter)
-  console.log(date)
 
-  var availableAppointments = getAppointemnts.generateAppointmentDates(date, showAppointmentsBefore, showAppointmentsAfter);
-  
-  if(!res.locals.query.number){
-    res.locals.query.number = 4;
-  }
-  res.locals.availableAppointments = availableAppointments.filter(appointment => moment(appointment.appointmentDate).day() > 0 && moment(appointment.appointmentDate).day() < 6);
-  res.locals.newNumber = parseInt(res.locals.query.number) + 4;
+  res.locals.appontmentTimes = getAppointemnts.appointmentTimes
+    .map(time => time = moment(req.query.date + ' ' + time, 'YYYY-M-D hh:mm').format())
+    .sort(function(left,right){
+      return moment(left).diff(moment(right))
+    });
+
   next()
 })
 
@@ -741,12 +739,13 @@ router.post('/booking/booked/:customerId/request-rearrangement-post', function(r
     
   if(req.body.changedByCustomer === 'no'){
     req.session.apointmentHistory.title = "Appointment cancelled by assessment centre";
-    res.redirect(301, 'timepicker?changedBy=dwp');
+    req.session.data.changedBy = 'dwp';
   } else { 
     req.session.apointmentHistory.title = "Unable to attend";
     req.session.apointmentHistory.code = 'UTA';
-    res.redirect(301, 'timepicker?changedBy=customer');
+    req.session.data.changedBy = 'customer';
   }
+  res.redirect(301, 'timepicker');
 });
 
 

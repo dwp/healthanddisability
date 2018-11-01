@@ -81,6 +81,53 @@ module.exports = function (env) {
     } 
   }
 
+  filters.formatInPastPicker = function(date){
+    var today = moment(new Date()).hours(0).minutes(0).seconds(0).milliseconds(0);
+    var testDate = moment(date).hours(0).minutes(0).seconds(0).milliseconds(0);
+    if(date.getDay() === 0 || date.getDay() === 6){
+      return 'calendar-picker__day--closed';
+    } else if (today > testDate){
+      return 'calendar-picker__day--closed';
+    } else if(today.toString() == testDate.toString() ){
+    } 
+  }
+
+  filters.formatAvailable = function(date1, date2){
+    if(moment(date1).diff(moment(date2), "days") > 0){
+      return 'calendar-picker__day--closed'
+    }
+  }
+
+  filters.formatCalendarFull = function(date){
+    console.log(moment(date).diff(moment(), "days"));
+    if(moment(date).day() !== 6 &&
+       moment(date).day() !== 0 && (
+       moment(date).diff(moment(), "days") == 0 ||
+       moment(date).diff(moment(), "days") == 3 ||
+       moment(date).diff(moment(), "days") == 5 ||
+       moment(date).diff(moment(), "days") == 6 ||
+       moment(date).diff(moment(), "days") == 8 ||
+       moment(date).diff(moment(), "days") == 9 ||
+       moment(date).diff(moment(), "days") == 10 ||
+       moment(date).diff(moment(), "days") == 11 ||
+       moment(date).diff(moment(), "days") == 12 )){
+      return 'calendar-picker__day--full';
+    }
+
+
+  }
+
+  filters.formatSelected = function(date1, date2){
+    if(!date1 || !date2){
+      return '';
+    }
+    if(moment(date1).format('YYYYMD') === moment(date2).format('YYYYMD')){
+      return 'calendar-picker__day--selected';
+    } else {
+      return '';
+    }
+  }
+
   filters.formatRole = function(date){
     if(date.getDay() === 1){
       return 'calendar__day--scrutiny'
@@ -88,6 +135,7 @@ module.exports = function (env) {
       return 'calendar__day--appointments'
     }
   }
+
 
   filters.formatSessionClass = function(date){
     if(date.getDay() === 1){

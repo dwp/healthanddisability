@@ -15,6 +15,22 @@ module.exports = {
     return dates;
   },
 
+  generateAppointmentTimes: function(date1, date2){
+
+  },
+
+  appointmentTimes: [
+    "13:45",
+    "13:30",
+    "10:00",
+    "9:30",
+    "15:00",
+    "15:30",
+    "16:00",
+    "10:45",
+    "14:00"
+  ],
+
   appointmentDates: [
   {
     "daysInFuture": 19,
