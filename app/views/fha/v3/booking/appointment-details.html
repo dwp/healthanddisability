@@ -9,10 +9,14 @@
   
   <div class="grid-row">
       <h1 class="heading-large mt20 visually-hidden">Appointment details</h1>
-
-    {% if customer.appointmentDate %}
     <div class="column-half">
       <div class="evidence-panel">
+    {% if customer.status == "hold" %}
+      <h4 class="heading-small">Appointment on hold</h4>
+      <p class="lede">Waiting further medical evidence</p>
+    {% elseif customer.appointmentDate %}
+    
+      
         <h4 class="heading-small">Appointment Booked</h4> 
         
         
@@ -22,7 +26,6 @@
           {%endif%}
       {% endif %}
     </div>
-
   </div>
     <div class="column-three-quarters">
             <h2 class="heading-medium">Appointment history</h2>

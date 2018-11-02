@@ -1,86 +1,66 @@
 {% extends path1+"/_layout.html" %}
 
-{% block heading %}
-
-
-
-
-<div class="staff__heading">
-  <div class="staff__centred">
-    <div class="grid-row">
-      <div class="column-half">
-    <h2 class="heading-xlarge" style="margin:0 0 10px">Mendez Dalton</h2>
-    </div>
-      <div class="column-quarter">
-        <p><span class="font-xsmall">National Insurance Number</span><br /><span class="bold-medium">QQ 53 12 49 C </span></p>
-      </div>
-      <div class="column-quarter">
-        <p><span class="font-xsmall">Date of birth</span><br /><span class="bold-medium">10 June 1980 </span></p>
-      </div>
-      
-
-    </div>
-  </div>
-</div>
-
-
-{% endblock %}
-
 {% block left_content %}
+ <p class="mt10 mb0 bold-small">Booked</p>
 
-<p class="mt10 mb0 bold-small">Appointment today at 2:00pm</p>
-<p>Arrived at 1:55pm</p>
-<hr>
+
+ <hr>
 {% endblock %}
 
 
 {% block citizen_content %}
- {# macro #}
 
 <div class="container">
-<!-- timeline -->
-<h1 class="heading-medium">Cancel Appointment</h1>
-<form action="" method="post">
- <fieldset class="form-group">
-    <legend>
-        <span class="form-label-bold">
-            Why has the appointment been cancelled?
-          </span>
-    </legend>
-    <div class="multiple-choice">
-        <input id="reason-cshu" type="radio" name="reason" value="cshu">
-        <label for="reason-cshu">Customer had to be sent home</label>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-medium mt20">Cancel appointment</h1>
+            <div class="panel panel-border-wide">
+                <p>Completing this form will cancel the appointment while further medical evidence will need to be sent to be assessed.</p>
+            </div>
+        </div>
     </div>
-    <div class="multiple-choice">
-        <input id="reason-uta" type="radio" name="reason" value="uta">
-        <label for="reason-uta">Customer re-arranged</label>
-    </div>
-</fieldset>
 
-<fieldset class="form-group inline">
-    <legend>
-        <span class="form-label-bold">
-            Can the appointment be re-arranged now?
-          </span>
-    </legend>
-    <div class="multiple-choice">
-        <input id="change_now-yes" type="radio" name="change_now" value="true">
-        <label for="change_now-yes">Yes</label>
-    </div>
-    <div class="multiple-choice">
-        <input id="change_now-no" type="radio" name="change_now" value="false">
-        <label for="change_now-no">No</label>
-    </div>
-</fieldset>
-    <button class="button">Save</button>
-
-</form>
-</div><!-- container -->
-
+    <form action="cancel-appointment-post" method="post">
+      <fieldset class="form-group">
+          <legend class="form-label-bold">
+              Why does this need to be reviewed by scrutiny?
+          </legend>
+          <div class="multiple-choice">
+              <input type="radio" name="reason" id="reason-condition" value="Customer's condition has changed">
+              <label for="reason-condition">Customer's condition has changed</label>
+          </div>
+          <div class="multiple-choice">
+              <input type="radio" name="reason" id="reason-terminal" value="Customer is now terminally ill">
+              <label for="reason-terminal">Customer is now terminally ill</label>
+          </div>
+          <div class="multiple-choice">
+              <input type="radio" name="reason" id="reason-new-evidence" value="New medical evidence is available">
+              <label for="reason-new-evidence">New medical evidence is available</label>
+          </div>
+          <div class="multiple-choice">
+              <input type="radio" name="reason" id="reason-taxi" value="Taxi requested">
+              <label for="reason-taxi">Customer has requested a taxi to the assessment centre</label>
+          </div>
+          <div class="multiple-choice">
+              <input type="radio" name="reason" id="reason-home-visit" value="Home visit requested">
+              <label for="reason-home-visit">Customer has requested a home visit</label>
+          </div>
+          <!-- <div class="multiple-choice" data-target="reason-other-content">
+              <input id="reason-other" type="radio" name="reason" value="other" >
+              <label for="reason-other">Other</label>
+          </div>
+          <div class="panel panel-border-narrow js-hidden" id="reason-other-content">
+              <label class="form-label" for="other-reason-details">Please provide reason</label>
+              <input class="form-control" name="other-reason-details" type="text" id="other-reason-details">
+          </div> -->
+      </fieldset>
+      <button class="button">Save</button>
+    </form>
+</div>
+<!-- container -->
 {% endblock %}
 
 {% block footer_top %}
 {{ super() }}
 {# {% include path1+"/footer_links.html" %} #}
 {% endblock %}
-_

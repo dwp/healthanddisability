@@ -727,6 +727,23 @@ router.post('/assessment/evidence/medical_assessment_dashboard', function(req, r
   next()
 });
 
+router.post('/booking/booked/:customerId/cancel-appointment-post', function(req, res, next){
+  var comments = req.body.otherReason || req.body.reason;
+  
+  appointmentHistory.push( {
+      _id: req.params.customerId,
+      title: "Appointment cancelled",
+      entryDate: moment(new Date()).format(),
+      comments: "Medical evidence needed, " + comments
+    } );
+
+  res.locals.customer.status = "hold";
+  res.locals.customer.onHoldReason = comments;
+
+  res.redirect(301, 'appointment-details');
+
+});
+
 router.post('/booking/booked/:customerId/request-rearrangement-post', function(req, res, next){  
   
   var changedByCustomer = req.body.changedByCustomer === 'yes' || false;
@@ -765,6 +782,8 @@ router.post('/booking/decision/:customerId/decision-post', function(req, res, ne
 });
 
 
+
+
 router.post('/booking/arrived/:customerId/send-home-post', function(req, res, next){
   var comments = req.body.otherReason || req.body.reason;
   
@@ -780,6 +799,22 @@ router.post('/booking/arrived/:customerId/send-home-post', function(req, res, ne
   res.redirect(301, 'timepicker?reasonNeeded=false&cshu=true');
 
 });
+
+router.post('/booking/booked/:customerId/cancel-appointment-post', function(req, res, next){
+  var comments = req.body.otherReason || req.body.reason;
+  
+  req.session.apointmentHistory = {
+      _id: req.params.customerId,
+      title: "Appointment cancelled",
+      entryDate: moment(new Date()).format(),
+      comments: comments
+    }
+
+  res.redirect(301, 'appointment-details');
+
+});
+
+
 
 router.post('/booking/booked/:customerId/arrived-post', function(req, res, next){
   var comments = req.body.otherReason || req.body.reason;
@@ -800,6 +835,24 @@ router.post('/booking/booked/:customerId/arrived-post', function(req, res, next)
   res.redirect(301, '/' + res.locals.path + '/booking/arrived/' + req.params.customerId + '/appointment-details');
 
 });
+
+router.post('/booking/booked/:customerId/contact-hostory-post', function(req, res, next){
+  var comments = req.body.otherReason || req.body.reason;
+  var time = new Date();
+  commentsData.push({
+    timestamp: time.getTime(),
+    dateFormatted: moment(time).format("dddd DD MMM YYYY hh:mm a"),
+    name: "Shelia Hopper",
+    hasComment: false,
+    isCustomer: req.body.caller === "customer",
+    authenticated: req.body.confirmed
+    })
+
+  res.redirect(301, '/' + res.locals.path + '/booking/booked/' + req.params.customerId + '/details');
+
+});
+
+
 
 router.post('*/:customerId/timepicker-post', function(req, res, next){
     if(req.body.appointment === "unableToBook"){

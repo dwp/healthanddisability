@@ -6,9 +6,29 @@
 
 {% block citizen_content %}
 <h1 class="heading-large">Security check</h1>
-<form action="/{{path}}/booking/booked/{{customer._id}}/details", method="post">
-                
-            <p>The caller must confirm the following details first.</p>
+<form action="/{{path}}/booking/booked/{{customer._id}}/contact-hostory-post" method="post">
+            {% if customer.appointee %}
+            <h2 class="heading-medium">Appointee details</h2>
+            <dl class="govuk-check-your-answers cya-questions-short">
+                <div>
+                    <dt class="cya-question">Name</dt>
+                    <dd class="cya-answer">{{customer.appointee.name}}</dd>
+                </div>
+
+                <div>
+                    <dt class="cya-question">Address</dt>
+                    <dd class="cya-answer">{{customer.appointee.address.street}}
+                        <br> {{customer.appointee.address.city}}
+                        <br> {{customer.appointee.address.postcode}}
+                        </dd>
+                </div>
+            </dl>
+            <p class="mt30">The appointee must confirm the following details.</p>
+            <input type="hidden" name="caller" value="appointee">
+            {% else %}
+            <p class="mt30">The customer must confirm the following details.</p>
+            <input type="hidden" name="caller" value="customer">
+            {% endif %}
             <dl class="govuk-check-your-answers cya-questions-short">
 
                 <div>
@@ -58,7 +78,7 @@
                 <fieldset>
                     <legend>
                         <span class="form-label-bold">
-                            Where the details confirmed?
+                            Were the details confirmed?
                           </span>
                     </legend>
                     <div class="multiple-choice">
