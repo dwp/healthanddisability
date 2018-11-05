@@ -12,22 +12,36 @@
 
     <div class="column-two-thirds">
       <div class="timeline">
+
+        {% for entry in history | sort(attribute='entryDate', reverse=true)  %}
+        {% if entry.code == 'UTA' or entry.code == 'CSHU' %}
         <span class="line"></span>
         <div class="timeline__event">
-          {% if query.booked == 'true' %}
-          <h3 class="timeline__heading">Appoinment booked {{appointments.nextAvailable | formatDate('D MMMM YYYY')}} at {{appointments.nextAvailable | formatDate('hh:mma')}}</h3>
-          {% else %}
-          <h3 class="timeline__heading">Appoinment booked {{customer.appointmentDate | formatDate('D MMMM YYYY')}} at {{customer.appointmentTime |formatDate('h:mma')}}</h3>
-
-          {% endif %}
-          <p class="timeline_datetime">30 January 2018</p>
+          
+            <h3 class="timeline__heading">
+              {{entry.title}}
+            </h3>
+            <p class="timeline_datetime">{{entry.entryDate | formatDate("D MMMM YYYY")}}</p>
+          
         </div>
+        {% endif %}
+        {% endfor %}
 
+
+        {% if customer.originalAppointmentDate %}
         <span class="line"></span>
         <div class="timeline__event">
-          <h3 class="timeline__heading">Referred for appointment</h3>
-          <p class="timeline_datetime">30 January 2018</p>
-        </div>
+          
+          <h3 class="timeline__heading">Appointment booked</h3>
+          <p class="timeline_datetime">{{customer.receivedDate | formatDateAdd2Days("D MMMM YYYY")}}</p>
+        </div> 
+        {% endif %}
+
+         <span class="line"></span>
+        <div class="timeline__event">
+            <h3 class="timeline__heading">Referred for appointment</h3>
+            <p class="timeline_datetime">{{customer.receivedDate | formatDate("D MMMM YYYY")}}</p>
+        </div> 
 
          <span class="line"></span>
         <div class="timeline__event">
@@ -49,19 +63,13 @@
 
         <span class="line"></span>
         <div class="timeline__event">
-          <h3 class="timeline__heading">ESA50 form sent out to Tomas</h3>
+          <h3 class="timeline__heading">ESA50 form sent out </h3>
           <p class="timeline_datetime">12 December 2018</p>
         </div>
 
         <span class="line"></span>
         <div class="timeline__event">
-          <h3 class="timeline__heading">FIT note (MED3) received </h3>
-          <p class="timeline_datetime">19 November 2017</p>
-        </div>
-
-        <span class="line"></span>
-        <div class="timeline__event">
-          <h3 class="timeline__heading">Entitlement letter sent to Tomas</h3>
+          <h3 class="timeline__heading">Entitlement letter sent </h3>
           <p class="timeline_datetime">5 November 2017</p>
         </div>
 

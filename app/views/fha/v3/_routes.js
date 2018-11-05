@@ -981,7 +981,10 @@ router.get('/booking/booked/:customerId/details', function(req, res, next){
 })
 
 router.get('/booking/booked/:customerId/timeline', function(req, res, next){
+  res.locals.history = appointmentHistory.filter(entry => entry._id == req.params.customerId);
+  
   res.render(viewPath +'/booking/timeline_booked');
+
 })
 
 router.post('/booking/booked/mendez/mendez_timeline-arrived', function(req, res, next){
