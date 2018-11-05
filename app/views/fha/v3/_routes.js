@@ -982,7 +982,7 @@ router.get('/booking/booked/:customerId/details', function(req, res, next){
 
 router.get('/booking/booked/:customerId/timeline', function(req, res, next){
   res.locals.history = appointmentHistory.filter(entry => entry._id == req.params.customerId);
-  
+
   res.render(viewPath +'/booking/timeline_booked');
 
 })
@@ -1773,11 +1773,13 @@ router.post('/planning/centre/:centre', function(req, res, next){
 
 router.post('/search-results', function(req, res, next){
   var customers = require(filePath +'/data/booked.js');
+
   var sanitizeField = function(string){
     return string.replace(/\s/g,'').toUpperCase();
   }
 
-  if(!req.body.NINO && !req.body.postcode && !req.body.name){
+
+  if(!req.body.NINO && !req.body.postcode && !req.body.name && !req.body.dobyear && !req.body.dobmonth && !req.body.dobday){
     
     res.locals.customers = customers;
 
@@ -1793,6 +1795,12 @@ router.post('/search-results', function(req, res, next){
       console.log(customers);
       customers = customers
             .filter(customer => sanitizeField(customer.name.last) === sanitizeField(req.body.name));
+    }
+
+    if(req.body.dobyear && req.body.dobmonth && req.body.dobday){
+      var date = moment(`${req.body.dobyear}/${req.body.dobmonth}/${req.body.dobday}`, "YYYY/MM/DD");
+      customers = customers
+            .filter(customer => moment(date).diff(moment(customer.dateOfBirth), "days") === 0 ); 
     }
   }
   console.log(customers.length);

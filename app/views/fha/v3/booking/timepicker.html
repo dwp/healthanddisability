@@ -88,7 +88,7 @@
                   <fieldset>
 
                     <legend class="heading"><h2 class="heading-medium mt0">Choose a time</h2></legend>
-                    <h4 class="heading-small"><span class="capitalise">{{query.day | formatDate('dddd')}}</span> {{query.date | formatDate('D MMMM YYYY')}}</h4>
+                    <h4 class="heading-small"><span class="capitalise">{{query.date | formatDate('dddd')}}</span> {{query.date | formatDate('D MMMM YYYY')}}</h4>
                     {% for time in appontmentTimes %}
                     <div class="multiple-choice">
                       <input id="appointment-date-{{loop.index}}" type="radio" name="appointment" value="{{ time }}">

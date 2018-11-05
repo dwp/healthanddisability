@@ -21,6 +21,7 @@
         
         
           <p class="lede">{{customer.appointmentDate |formatDate('dddd D MMMM YYYY')}} <br> {{customer.appointmentDate |formatDate('h:mma')}}</p>
+          <p>at {{ customer.assessmentCentre }} assessment centre</p>
           {% if customer.arrived %}
           <p>Arrived at {{customer.timeArrived }}</p>
           {%endif%}
@@ -56,7 +57,7 @@
           
             <h3 class="heading-small">Appointment booked</h3>
             <p class="mt20">Appointment details: 
-            {{customer.originalAppointmentDate | formatDate("D MMMM YYYY")}} at {{customer.originalAppointmentDate | formatDate("hh:mma")}}</p>
+            {{customer.originalAppointmentDate | formatDate("D MMMM YYYY")}} at {{customer.originalAppointmentDate | formatDate("h:mma")}}</p>
             <p class="timeline_datetime">{{customer.receivedDate | formatDateAdd2Days("D MMMM YYYY")}}</p>
         </div> 
         {% endif %}
