@@ -169,7 +169,17 @@ module.exports = [{
   "address": {
     "street": "799 Logan Park",
     "city": "Horton",
-    "postcode": "BS37 0YH"
+    "postcode": "BS37 0YH",
+    "gpName": {
+        "first": "Mayo",
+        "last": "Oconnor",
+        "fullName": "Mayo Oconnor"
+      },
+      "gpStreet": "967 Clinton Avenue",
+      "gpCity": "Horton",
+      "gpPostcodePrefix": "B",
+      "gpPostcodeSuffix": "18 8SI",
+      "gpPostcode": "BS37 8SI"
   },
   "appointee":{
     "name":  "Emili Stapley",
@@ -453,7 +463,17 @@ module.exports = [{
   "address": {
     "street": "8 Prairieview Place",
     "city": "Upton",
-    "postcode": "WF9 4EH"
+    "postcode": "WF9 4EH",
+    "gpName": {
+        "first": "Millie",
+        "last": "Powell",
+        "fullName": "Millie Powell"
+      },
+      "gpStreet": "631 Bergen Street",
+      "gpCity": "Upton",
+      "gpPostcodePrefix": "B",
+      "gpPostcodeSuffix": "5 8EA",
+      "gpPostcode": "WF9 8EA"
   },
   "postcodeSuffix": "4EH",
   "phone": "0118 476 266",
@@ -519,7 +539,17 @@ module.exports = [{
   "address": {
     "street": "2 Dapin Parkway",
     "city": "Norton",
-    "postcode": "S8 0XO"
+    "postcode": "S8 0XO",
+    "gpName": {
+        "first": "Margaret",
+        "last": "Zamora",
+        "fullName": "Margaret Zamora"
+      },
+      "gpStreet": "559 Nostrand Avenue",
+      "gpCity": "Norton",
+      "gpPostcodePrefix": "S8",
+      "gpPostcodeSuffix": "17 1NO",
+      "gpPostcode": "S8 1NO"
   },
   "postcodeSuffix": "0XO",
   "phone": "0106 430 641",
@@ -765,7 +795,17 @@ module.exports = [{
   "address": {
     "street": "6 Thierer Place",
     "city": "Carlton",
-    "postcode": "DL8 9CY"
+    "postcode": "DL8 9CY",
+    "gpName": {
+        "first": "Carey",
+        "last": "Morin",
+        "fullName": "Carey Morin"
+      },
+      "gpStreet": "573 Greene Avenue",
+      "gpCity": "Carlton",
+      "gpPostcodePrefix": "B",
+      "gpPostcodeSuffix": "10 3MA",
+      "gpPostcode": "DL10 3MA"
   },
   "postcodeSuffix": "9CY",
   "phone": "0179 341 569",
@@ -828,7 +868,17 @@ module.exports = [{
   "address": {
     "street": "69 Aberg Center",
     "city": "Charlton",
-    "postcode": "OX12 1XS"
+    "postcode": "OX12 1XS",
+    "gpName": {
+        "first": "Dixie",
+        "last": "Davis",
+        "fullName": "Dixie Davis"
+      },
+      "gpStreet": "660 Schenck Street",
+      "gpCity": "Charlton",
+      "gpPostcodePrefix": "B",
+      "gpPostcodeSuffix": "1 1ES",
+      "gpPostcode": "OX12 1ES"
   },
   "postcodeSuffix": "1XS",
   "phone": "0156 013 863",
@@ -897,7 +947,17 @@ module.exports = [{
   "address": {
     "street": "1 Meadow Vale Road",
     "city": "London",
-    "postcode": "WC1B 7IS"
+    "postcode": "WC1B 7IS",
+    "gpName": {
+        "first": "Gallegos",
+        "last": "Wyatt",
+        "fullName": "Gallegos Wyatt"
+      },
+      "gpStreet": "248 Lefferts Place",
+      "gpCity": "London",
+      "gpPostcodePrefix": "B",
+      "gpPostcodeSuffix": "10 3DO",
+      "gpPostcode": "WC1B 3DO"
   },
   "postcodeSuffix": "7IS",
   "phone": "0103 464 762",
@@ -1275,7 +1335,17 @@ module.exports = [{
   "address": {
     "street": "8125 Maple Wood Avenue",
     "city": "Ashley",
-    "postcode": "SN13 9DL"
+    "postcode": "SN13 9DL",
+    "gpName": {
+        "first": "Hyde",
+        "last": "Allison",
+        "fullName": "Hyde Allison"
+      },
+      "gpStreet": "722 Linden Boulevard",
+      "gpCity": "Ashley",
+      "gpPostcodePrefix": "B",
+      "gpPostcodeSuffix": "11 2AM",
+      "gpPostcode": "SN13 2AM"
   },
   "postcodeSuffix": "9DL",
   "phone": "0184 073 181",
@@ -3006,8 +3076,18 @@ module.exports = [{
   "address": {
     "street": "832 Forster Alley",
     "city": "Craigavon",
-    "postcode": "BT66 6ZT"
-  },
+    "postcode": "BT66 6ZT",
+    "gpName": {
+        "first": "Green",
+        "last": "Wright",
+        "fullName": "Green Wright"
+      },
+      "gpStreet": "405 Central Avenue",
+      "gpCity": "Craigavon",
+      "gpPostcodePrefix": "B",
+      "gpPostcodeSuffix": "18 6AD",
+      "gpPostcode": "BT67 6AD"
+    },
   "postcodeSuffix": "6ZT",
   "phone": "0184 967 580",
   "mobile": "07580 513 369",
