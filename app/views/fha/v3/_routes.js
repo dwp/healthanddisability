@@ -836,7 +836,7 @@ router.post('/booking/booked/:customerId/arrived-post', function(req, res, next)
 
 });
 
-router.post('/booking/booked/:customerId/contact-hostory-post', function(req, res, next){
+router.post('/booking/booked/:customerId/contact-history-post', function(req, res, next){
   var comments = req.body.otherReason || req.body.reason;
   var time = new Date();
   commentsData.push({
@@ -848,7 +848,7 @@ router.post('/booking/booked/:customerId/contact-hostory-post', function(req, re
     authenticated: req.body.confirmed
     })
 
-  res.redirect(301, '/' + res.locals.path + '/booking/booked/' + req.params.customerId + '/details');
+  res.redirect(301, '/' + res.locals.path + '/booking/booked/' + req.params.customerId + '/appointment-details');
 
 });
 
@@ -873,7 +873,6 @@ router.post('*/:customerId/timepicker-post', function(req, res, next){
         
         res.redirect(302, '/' + res.locals.path + '/booking/booked/' + req.params.customerId + '/appointment-details');
   
-
     } else {
 
     if(req.session.apointmentHistory.code === "UTA"){
