@@ -1,5 +1,5 @@
- {% extends path1+"/_layout-info.html" %} {% block citizen_content %} {{ data.nuggets | log }}
-<form action="/{{path}}/assessment/evidence/medical_assessment_dashboard" method="POST" class="form">
+ {% extends path+"/_layout-case-action.html" %} {% block citizen_content %} {{ data.nuggets | log }}
+<form action="/{{path}}/assessment/{{customer._id}}/evidence/medical_assessment_dashboard" method="POST" class="form">
     <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
     <h1 class="heading-large mt10 mb0">Lower back and legs</h1>
     <div class="form-group mt30">

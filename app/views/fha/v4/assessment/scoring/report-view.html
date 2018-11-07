@@ -1,6 +1,6 @@
-{% extends path2+"/_layout.html" %}
+{% extends path+"/_layout-case-action.html" %}
 
-{% block scoring_content %}
+{% block citizen_content %}
 
 
 
@@ -363,11 +363,10 @@
    </div>
  <!-- / wrapper -->
   
-  
-  
- <p><a href="report-print" class="button">Finish - sign off report</a></p>
 
-
+ <form class="mt30" method="post" action="/{{path}}/assessment/{{customer._id}}/completed-assessment">
+	<p class="mt30"><button class="button">Finish - sign off report</button></p>
+	</form>
 
 
 {% endblock %}

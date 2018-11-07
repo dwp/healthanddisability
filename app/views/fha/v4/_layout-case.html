@@ -1,0 +1,134 @@
+{% extends path+"/_layout.html" %}
+{% import path+"/scrutiny/_macros_nav.html" as nav %}
+
+{% block assess_content %}
+
+
+  <main id="content" role="main" class="main-content-inner">
+
+    <div class="container">
+    
+      <div class="grid-row main-row">
+      
+      <div class="column-one-quarter left-area">
+      
+      	<div class="left-panel">
+            {% if customer.status == 'Assessment started' or customer.status == 'Ready for recommendation'%}
+            {% elif customer.status == 'Ready for assessment' or customer.status == 'Assessment completed'%}
+            <p class="returnRef"><a href="/{{path}}/assessment">Return to case list</a></p>
+            <hr>
+            {% else %}
+      		<p class="returnRef"><a href="/{{path}}/ready-for-review">Return to case list</a></p>
+          <hr>
+          {% endif %}
+      	
+      	
+      	
+      	 <div class="case-status">
+      	     	 
+      	 
+		 
+ <p class="mt10 mb0 bold-small">
+{{ 'Ready for review' if customer.status == 'review' }}
+{{ 'Requested further medical evidence' if customer.status == 'fme' }}
+{{ 'Ready for assessment' if customer.status == 'Ready for assessment'}}
+{{ 'Assessment started' if customer.status == 'Assessment started' }}
+{{ 'Ready for recommendation' if customer.status == 'Ready for recommendation' }}
+{{ 'Assessment completed' if customer.status == 'Assessment completed' }}
+{{ 'Assessment stopped' if customer.status == 'Assessment stopped' }}
+ </p>
+     {% if customer.status == 'Assessment started' or customer.status == 'Assessment completed' %}
+   
+     {% elif customer.status == 'Assessment stopped' %}
+     <p><a href="/{{path}}/assessment/{{customer._id}}/start-assessment" class="button">Restart assessment</a></p>   
+
+
+     {% elif customer.status == 'Ready for recommendation' %}
+     <p><a href="/{{path}}/assessment/{{customer._id}}/scoring/" class="button">Make your recommendation</a></p>   
+      {% elif customer.status == 'Ready for assessment'%}
+     
+      <form class="" method="post" action="/{{path}}/assessment/{{customer._id}}/start-assessment">
+		  <p><button  class="button">Start assessment</button></p>
+      <div class="multiple-choice" style="display:none">
+          <input id="radio-inline-4" type="radio" name="wca" value="yes" checked>
+          <label for="radio-4">hidden radio one</label>
+        </div>
+    </form>
+
+   
+
+    
+
+      {% else %}
+      <p class="mt10"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/rec" class="button">Make a recommendation</a></p>
+      {% endif%}
+      <hr>
+		  
+		  
+		  
+		  <ul class="secondary-actions">
+
+        
+          {% if customer.status == 'Ready for assessment' or customer.status == 'Assessment started' or customer.status == 'Ready for recommendation' %}  
+          <li>
+            
+              <a href="/{{path}}/assessment/{{customer._id}}/general-observations">General observations {% if data['general-observations-post']==='posted' %}({{ observations.length }}){% endif%}</a></li>
+  
+            {% endif %}
+
+            {% if customer.status == 'Assessment started' or customer.status == 'Ready for recommendation'%}  
+            <li>
+            
+                <a href="/{{path}}/assessment/{{customer._id}}/evidence/stopAssess">Stop assessment</a></li>
+            {% endif %}
+
+            {% if customer.status == 'Assessment stopped' %}
+            <a href="/{{path}}/assessment/{{customer._id}}/evidence/stopAssess">Send home</a></li>
+            {% endif %}
+            
+           <!-- <li><a href="#">Close case</a></li> -->
+          </ul>
+          
+		  </div>
+      	
+      	
+      	</div>
+      
+      </div>
+      
+        <div class="column-three-quarters main-area">
+        
+
+  {% include path+"/includes/_staff_heading.html" %}
+          <div nunj-block="citizen_content">
+            {% block citizen_content %}{% endblock %}
+          </div>
+
+        </div><!-- column -->
+        
+        
+      </div><!-- row -->
+    </div><!-- container -->
+
+  </main>
+  {%if customer.status == 'Assessment started' or customer.status == 'Assessment completed' %}
+  {% include path+"/includes/evidence/_evidence_panel.html" %}
+  {% endif %}
+{% endblock %}
+
+{% block page_scripts %}
+{{ super }}
+
+<script type="text/javascript">
+  $( document ).ready(function() {
+         $( ".panel-switch" ).click(function() {
+             $( ".inner-panel" ).toggleClass( "panel-open" );
+         });
+     }); 
+ </script>
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+
+{% endblock %}
