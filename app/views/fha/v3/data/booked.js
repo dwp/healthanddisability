@@ -1364,8 +1364,8 @@ module.exports = [{
   "NINO": "QQ 48 85 81 S",
   "receivedDate": "2018-10-19 15:07:22",
   "appointmentDate": "2018-11-14 12:00:00 UTC",
-  "originalAppointmentDate": "2018-11-14 12:00:00 UTC",
-  "ableToRearrange": true,
+  "originalAppointmentDate": "2018-11-05 12:00:00 UTC",
+  "ableToRearrange": false,
   "appointmentTime": "2018-10-31 12:00:00 UTC",
   "assessmentCentre": "Bristol (Flowers Hill)",
   "dateOfBirth": "1988-11-06T14:32:54Z"
