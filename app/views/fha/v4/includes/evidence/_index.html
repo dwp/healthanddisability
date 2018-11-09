@@ -5,9 +5,8 @@
 
 
 
-<h1 class="heading-large mt10">Record evidence</h1>
-<p class="mt10"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/record-evidence" class="button secondary">Record evidence recieved</a></p>
-
+<h1 class="heading-large mt10">Recorded evidence</h1>
+<!--<p class="mt10"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/record-evidence" class="button secondary">Record evidence recieved</a></p> -->
 <table class="evidence-list">
 
                 <thead>
@@ -46,8 +45,8 @@
 	                <tr>
 	                  <td>{{ data['newevidencename'] }}</td>
 										<td>{{ data['newevidencesource'] }}</td>
-										<td>{{ 'Do MMMM YYYY' | randDaysAgo(-1)}}</td>
-	                  <td class="numeric"></td>
+										<td><span class="secondary-text">{{ 'Do MMMM YYYY' | randDaysAgo(-1)}}</span></td>
+	                  <td class="numeric"><span class="secondary-text">{{ 'Do MMMM YYYY' | randDaysAgo(-1)}}</span></td>
 									</tr>
 									{% endif %}
 

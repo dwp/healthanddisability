@@ -273,7 +273,7 @@
 </div>  
 
 
-
+{% if data['moving']==='moving' %}
  <div class="review-item">
 
 	
@@ -310,8 +310,132 @@
 
 	
 	
-</div>  
+</div> 
+{% endif %} 
+{% if data['standing']==='standing' %}
+<div class="review-item">
 
+	
+		<h2 class="heading-medium"> Standing, sitting and moving between the two</h2>
+			<ul class="list-bullet">
+				{% for descriptor in standingDescriptors %}
+				<li>{{descriptor}}</li>
+			{% endfor %}
+			</ul>
+
+				
+		<h4 class="heading-small">How far can Tomas walk or move on level ground without help from someone, and without stopping due to severe pain or tiredness?</h4>
+		
+		{% if checked('mobilityDistance', 'morethan_200') %}
+		<p>More than 200 metres</p>
+		{% else %}
+		<p>No more than {{mobilityDistance}} metres.</p>
+		{% endif %}
+		
+		<h4 class="heading-small">Can Tomas go up or down 2 steps without help, if they use a handrail?</h4>
+		
+		{% if checked('mobilitySteps', 'yes') %}
+		<p>Yes</p>
+		{% else %}
+		<p>No</p>
+		{% endif %}
+		
+		<h4 class="heading-small">Justification:</h4>
+		
+		<p>{{mobilityDetails}}</p>
+		
+		<p><a href="#" class="button secondary">Edit standing, sitting and moving between the two</a></p>
+
+	
+	
+</div>
+{% endif %}
+{% if data['reaching']==='reaching' %}
+<div class="review-item">
+
+	
+		<h2 class="heading-medium">Reaching</h2>
+		<ul class="list-bullet">
+			{% for descriptor in reachingDescriptors %}
+			<li>{{descriptor}}</li>
+		{% endfor %}
+		</ul>
+
+
+				
+		<h4 class="heading-small">How far can Tomas walk or move on level ground without help from someone, and without stopping due to severe pain or tiredness?</h4>
+		
+		{% if checked('mobilityDistance', 'morethan_200') %}
+		<p>More than 200 metres</p>
+		{% else %}
+		<p>No more than {{mobilityDistance}} metres.</p>
+		{% endif %}
+		
+		<h4 class="heading-small">Can Tomas go up or down 2 steps without help, if they use a handrail?</h4>
+		
+		{% if checked('mobilitySteps', 'yes') %}
+		<p>Yes</p>
+		{% else %}
+		<p>No</p>
+		{% endif %}
+		
+		<h4 class="heading-small">Justification:</h4>
+		
+		<p>{{mobilityDetails}}</p>
+		
+		<p><a href="#" class="button secondary">Edit reaching</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+{% if data['reaching']==='picking' %}
+<div class="review-item">
+
+	
+		<h2 class="heading-medium">Picking things up and moving them</h2>
+		<ul class="list-bullet">
+			{% for descriptor in pickingDescriptors %}
+			<li>{{descriptor}}</li>
+		{% endfor %}
+		</ul>
+
+		<h4 class="heading-small">Justification:</h4>
+		
+		<p>{{mobilityDetails}}</p>
+		
+		<p><a href="#" class="button secondary">Edit picking things up and moving them</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+{% if data['reaching']==='using' %}
+<div class="review-item">
+
+	
+		<h2 class="heading-medium">Using things up and moving them</h2>
+		<ul class="list-bullet">
+			{% for descriptor in usingDescriptors %}
+			<li>{{descriptor}}</li>
+		{% endfor %}
+		</ul>
+		
+		<h4 class="heading-small">Justification:</h4>
+		
+		<p>{{mobilityDetails}}</p>
+		
+		<p><a href="#" class="button secondary">Edit using things up and moving them</a></p>
+
+	
+	
+</div>
+
+{% endif %}
 
 
 

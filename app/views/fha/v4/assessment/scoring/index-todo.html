@@ -9,38 +9,214 @@
 
 <div class="grid-row">
   <div class="column-two-thirds">
+	    <div class="task-list">
+				<h2 class="task-list-section">
+						Physical descriptors to review
+				  </h2>
+				<ul class="task-list-itmes">
+				{% if data['moving']==='moving' %}
+					<li class="task-list-item"><a href="/{{path}}/assessment/{{customer._id}}/descriptor-moving">Moving around and climbing steps without someone’s help {% if data['movingDescriptors']%}<span class="task-completed">Scored</span>{% endif %}</a></li>
+				{% endif %}
+				{% if data['standing']==='standing' %}
+					<li class="task-list-item"><a href="/{{path}}/assessment/{{customer._id}}/descriptor-standing">Standing, sitting and moving between the two{% if data['standingDescriptors']%}<span class="task-completed">Scored</span>{% endif %}</a></a></li>
+				{% endif %}
+				{% if data['reaching']==='reaching' %}
+					<li class="task-list-item"><a href="/{{path}}/assessment/{{customer._id}}/descriptor-reaching">Reaching {% if data['reachingDescriptors']%}<span class="task-completed">Scored</span>{% endif %}</a></a></li>
+				{% endif %}
+				{% if data['picking']==='picking' %}
+				<li class="task-list-item"><a href="/{{path}}/assessment/{{customer._id}}/descriptor-picking">Picking things up and moving them {% if data['pickingDescriptors']%}<span class="task-completed">Scored</span>{% endif %}</a></a></li>
+			{% endif %}
+				{% if data['using']==='using' %}
+				<li class="task-list-item"><a href="/{{path}}/assessment/{{customer._id}}/descriptor-using">Using your hands{% if data['usingDescriptors']%}<span class="task-completed">Scored</span>{% endif %}</a></a></li>
+			{% endif %}
+				{% if data['speaking']==='speaking' %}
+				<li class="task-list-item"><a href="/{{path}}/assessment/{{customer._id}}/descriptor-speaking">Speaking, writing and typing{% if data['speakingDescriptors']%}<span class="task-completed">Scored</span>{% endif %}</a></a></li>
+			{% endif %}
+			{% if data['hearing']==='hearing' %}
+			<li class="task-list-item"><a href="/{{path}}/assessment/{{customer._id}}/descriptor-hearing">Hearing and reading{% if data['hearingDescriptors']%}<span class="task-completed">Scored</span>{% endif %}</a></a></li>
+		{% endif %}
+		{% if data['seeing']==='seeing' %}
+			<li class="task-list-item"><a href="/{{path}}/assessment/{{customer._id}}/descriptor-seeing">Seeing well enough to get around safely{% if data['seeingDescriptors']%}<span class="task-completed">Scored</span>{% endif %}</a></a></li>
+		{% endif %}
+		{% if data['controlling']==='controlling' %}
+			<li class="task-list-item"><a href="/{{path}}/assessment/{{customer._id}}/descriptor-controlling">Controlling your bowels and bladder{% if data['controllingDescriptors']%}<span class="task-completed">Scored</span>{% endif %}</a></a></li>
+		{% endif %}
+		{% if data['staying']==='staying' %}
+		<li class="task-list-item"><a href="/{{path}}/assessment/{{customer._id}}/descriptor-staying">Staying conscious without fainting, seizures, or blackouts {% if data['stayingDescriptors']%}<span class="task-completed">Scored</span>{% endif %}</a></a></li>
+	{% endif %}
+				</ul>
+			</div>
 
-	<div class="exam-content">
-	
-		<table>
-			
-			<caption>Descriptors to review</caption>
-			
-			
-			<thead>
-			
-				<tr>
-					<th>Descriptor</th>
-					<th>Score</th>
-				</tr>
-				
-			</thead>
-			
-			<tbody>
-			
-			<tr>
-				<td><a href="moving1">Moving around and climbing steps without someone’s help</a></td>
-				<td><span class="visually-hidden">Not scored</span></td>
-			</tr>
-			
-
-			</tbody>
-			
+			<div class="task-list">
+					<h2 class="task-list-section">
+							Mental descriptors to review
+					  </h2>
+					<ul class="task-list-itmes">
+					{% if data['learning']==='learning' %}
+						<li class="task-list-item"><a href="/{{path}}/assessment/{{customer._id}}/descriptor-learning">Learning to do new tasks{% if data['learningDescriptors']%}<span class="task-completed">Scored</span>{% endif %}</a></li>
+					{% endif %}
+					{% if data['being']==='being' %}
+						<li class="task-list-item"><a href="/{{path}}/assessment/{{customer._id}}/descriptor-being">Being aware of hazards and danger{% if data['beingDescriptors']%}<span class="task-completed">Scored</span>{% endif %}</a></li>
+					{% endif %}
+					{% if data['planning']==='planning' %}
+						<li class="task-list-item"><a href="/{{path}}/assessment/{{customer._id}}/descriptor-planning">Planning, starting and finishing everyday tasks {% if data['planningDescriptors']%}<span class="task-completed">Scored</span>{% endif %}</a></li>
+					{% endif %}
+					{% if data['coping']==='coping' %}
+					<li class="task-list-item"><a href="/{{path}}/assessment/{{customer._id}}/descriptor-coping">Coping with changes to your daily routine{% if data['copingDescriptors']%}<span class="task-completed">Scored</span>{% endif %}</a></li>
+				{% endif %}
+				{% if data['going']==='going' %}
+				<li class="task-list-item"><a href="/{{path}}/assessment/{{customer._id}}/descriptor-going">Going out on your own{% if data['goingDescriptors']%}<span class="task-completed">Scored</span>{% endif %}</a></li>
+			{% endif %}
+			{% if data['meeting']==='meeting' %}
+			<li class="task-list-item"><a href="/{{path}}/assessment/{{customer._id}}/descriptor-meeting">Meeting and being with people {% if data['meetingDescriptors']%}<span class="task-completed">Scored</span>{% endif %}</a></li>
+		{% endif %}
+		{% if data['behaving']==='behaving' %}
+			<li class="task-list-item"><a href="/{{path}}/assessment/{{customer._id}}/descriptor-behaving">Behaving appropriately around other people {% if data['behavingDescriptors']%}<span class="task-completed">Scored</span>{% endif %}</a></li>
+		{% endif %}
 					
-		</table>
+					</ul>
+				</div>
+
+
+				<div class="task-list">
+						<h2 class="task-list-section">
+								Eating or drinking descriptor to review
+						  </h2>
+						<ul class="task-list-itmes">
+						{% if data['eating']==='eating' %}
+							<li class="task-list-item"><a href="/{{path}}/assessment/{{customer._id}}/descriptor-eating">Eating or drinking {% if data['eatingDescriptors']%}<span class="task-completed">Scored</span>{% endif %}</a></li>
+						{% endif %}
+			
+						
+						</ul>
+					</div>
+
+
+
+		<p class="mt30"><a href="other" class="button">Continue</a></p>
 		
-	</div>
-	
+
+		<hr />
+		<h2 class="heading-medium"> Moving around and climbing steps without help</h2>
+		<ul>
+			{% for descriptor in movingDescriptors %}
+		  
+			<li>{{descriptor}}</li>
+		  {% endfor %}
+		</ul>
+		<h2 class="heading-medium"> Standing, sitting and moving between the two</h2>
+		<ul>
+			{% for descriptor in standingDescriptors %}
+			<li>{{descriptor}}</li>
+		  {% endfor %}
+		</ul>
+		<h2 class="heading-medium">Reaching</h2>
+		<ul>
+			{% for descriptor in reachingDescriptors %}
+			<li>{{descriptor}}</li>
+		  {% endfor %}
+		</ul>
+	  
+		<h2 class="heading-medium">Picking</h2>
+		<ul>
+			{% for descriptor in pickingDescriptors %}
+			<li>{{descriptor}}</li>
+		  {% endfor %}
+		</ul>
+	  
+		<h2 class="heading-medium">Using</h2>
+		<ul>
+			{% for descriptor in pickingDescriptors %}
+			<li>{{descriptor}}</li>
+		  {% endfor %}
+		</ul>
+
+		<h2 class="heading-medium">Speaking</h2>
+		<ul>
+			{% for descriptor in pickingDescriptors %}
+			<li>{{descriptor}}</li>
+		  {% endfor %}
+		</ul>
+
+		<h2 class="heading-medium">Hearing and reading</h2>
+		<ul>
+			{% for descriptor in hearingDescriptors %}
+			<li>{{descriptor}}</li>
+		  {% endfor %}
+		</ul>
+
+
+		<h2 class="heading-medium">Seeing</h2>
+		<ul>
+			{% for descriptor in seeingDescriptors %}
+			<li>{{descriptor}}</li>
+		  {% endfor %}
+		</ul>
+
+		<h2 class="heading-medium">Controlling</h2>
+		<ul>
+			{% for descriptor in controllingDescriptors %}
+			<li>{{descriptor}}</li>
+		  {% endfor %}
+		</ul>
+
+
+		<h2 class="heading-medium">Staying</h2>
+		<ul class="list-bullet">
+			{% for descriptor in stayingDescriptors %}
+			<li>{{descriptor}}</li>
+		  {% endfor %}
+		</ul>
+
+		<h2 class="heading-medium">Learning</h2>
+		<ul class="list-bullet">
+			{% for descriptor in learningDescriptors %}
+			<li>{{descriptor}}</li>
+		  {% endfor %}
+		</ul>
+
+		<h2 class="heading-medium">Being</h2>
+		<ul class="list-bullet">
+			{% for descriptor in beingDescriptors %}
+			<li>{{descriptor}}</li>
+		  {% endfor %}
+		</ul>
+
+		<h2 class="heading-medium">Planning</h2>
+		<ul class="list-bullet">
+			{% for descriptor in planningDescriptors %}
+			<li>{{descriptor}}</li>
+		  {% endfor %}
+		</ul>
+
+
+		<h2 class="heading-medium">Coping</h2>
+		<ul class="list-bullet">
+			{% for descriptor in copingDescriptors %}
+			<li>{{descriptor}}</li>
+		  {% endfor %}
+		</ul>
+
+		<h2 class="heading-medium">Going</h2>
+		<ul class="list-bullet">
+			{% for descriptor in goingDescriptors %}
+			<li>{{descriptor}}</li>
+		  {% endfor %}
+		</ul>
+
+		<h2 class="heading-medium">Meeting</h2>
+		<ul class="list-bullet">
+			{% for descriptor in meetingDescriptors %}
+			<li>{{descriptor}}</li>
+		  {% endfor %}
+		</ul>
+
+		<h2 class="heading-medium">Behaving</h2>
+		<ul class="list-bullet">
+			{% for descriptor in behavingDescriptors %}
+			<li>{{descriptor}}</li>
+		  {% endfor %}
+		</ul>
 
   </div>
 </div>

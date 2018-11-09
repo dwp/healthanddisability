@@ -1,4 +1,4 @@
-<form class="form" action="index-scored" method="post">
+<form class="form" action="index-todo" method="post">
 
 
 <div class="form-group">
@@ -57,7 +57,12 @@
     <label class="form-label" for="justificaiton">Give details</label>
     <textarea class="form-control form-control-3-4" name="mobilityDetails" id="justificaiton" rows="5">{{mobilityDetails}}</textarea>
   </div><!-- .form-group -->
-  	
+<div class="visually-hidden">
+  <div class="multiple-choice ">
+      <input id="steps_no" type="radio" name="movingscored" value="yes">
+      <label for="steps_no">No</label>
+    </div>
+  </div>	
   	<p><button class="button">Save</button></p>
   
 

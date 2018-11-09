@@ -616,6 +616,16 @@ router.get('/booking/decision/:customerId/:page', function(req, res, next){
 })
 
 
+router.get('/assessment/:customerId/*', function(req, res, next){
+  res.locals.customer = assessmentCustomers
+                          .filter(customer => customer._id === req.params.customerId)[0];
+
+  console.log(res.locals.customer)
+  next()
+
+})
+
+
 router.get('/assessment/:customerId/evidence/typicalDayEdit/:commentId', function(req, res, next){  
   res.locals.comment = req.session.data.typicalDayComments.filter(item => item.id === req.params.commentId)[0];
 
@@ -642,15 +652,13 @@ router.post('/assessment/:customerId/evidence/typicalDayEdit', function(req, res
 
 router.get('/assessment/:customerId/evidence/socialWorkHistoryEdit/:commentId', function(req, res, next){  
   res.locals.comment = req.session.data.socialWorkComments.filter(item => item.id === req.params.commentId)[0];
-
-
-  res.render(viewPath +'/assessment/evidence/contentEdit/{{item.id}}');
+  res.render(viewPath +'/assessment/evidence/contentEdit');
   
 });
 
 
 
-router.post('/assessment/evidence/socialWorkHistoryEdit', function(req, res, next){  
+router.post('/assessment/:customerId/evidence/socialWorkHistoryEdit', function(req, res, next){  
   
   req.session.data.socialWorkComments.map(function(item){
     if(item.id === req.body.id){
@@ -1576,6 +1584,14 @@ router.get('/scrutiny/:customerId/evidence/:pageName', function(req, res, next){
 
 })
 
+router.get('/assessment/:customerId/evidence/socialWorkHistoryEdit/:pageName', function(req, res, next){
+  
+  res.render(viewPath +'/assessment/evidence/socialWorkHistoryEdit' + req.params.pageName)
+
+})
+
+
+
 
 router.get('/scrutiny/:customerId/:pageName', function(req, res, next){
   
@@ -1614,13 +1630,15 @@ router.get('/assessment', function(req, res, next){
 
 
 
-router.get('/assessment/:customerId/*', function(req, res, next){
+
+router.get('/assessment/:customerId/assessment*', function(req, res, next){
   res.locals.customer = assessmentCustomers
                           .filter(customer => customer._id === req.params.customerId)[0];
+
+  console.log(res.locals.customer)
   next()
 
 })
-
 
 
 
@@ -1671,12 +1689,6 @@ router.get('/assessment/:customerId/scoring/:pageName', function(req, res, next)
 })
 
 
-router.get('/assessment/:customerId/:pageName', function(req, res, next){
-  
-      res.render(viewPath +'/assessment/' + req.params.pageName);
-  
-
-})
 
 
 router.post("/assessment/:customerId/start-assessment", function(req, res, next){
@@ -1746,8 +1758,25 @@ router.post("/assessment/:customerId/assessment-stopped", function(req, res, nex
 
 
 
+router.get("/assessment/:customerId/descriptor-:descriptorName", function(req, res, next){
+  assessmentCustomers.map(customer => {
+    if(customer._id === req.params.customerId){
+      customer.descriptor = req.params.descriptorName;
+      console.log(customer);
+    }
+  })
+
+  res.render(viewPath +'/assessment/scoring/moving1');
+});
 
 
+
+router.get('/assessment/:customerId/:pageName', function(req, res, next){
+  
+  res.render(viewPath +'/assessment/' + req.params.pageName);
+
+
+})
 
 
 router.post("/scrutiny/:customerId/booking-post", function(req, res, next){

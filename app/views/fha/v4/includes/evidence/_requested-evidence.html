@@ -3,14 +3,13 @@
 
 {% block case_content %}
 
-<h1 class="heading-large mt10">Request evidence</h1>
-<p class="mt10"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/request-evidence" class="button secondary">Request further evidence</a></p>
+<h1 class="heading-large mt10">Requested evidence</h1>
+<!--<p class="mt10"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/request-evidence" class="button secondary">Request further evidence</a></p>-->
 
 
 
-{% if data['recordevidencegp']==='gp' or data['recordevidencegp']==='gp' and customer.fmeType.indexOf("113") > -1 or data['recordevidencefrr']==='frr' and  customer.fmeType.indexOf("FRR") > -1 %}
+{% if data['recordevidencegp']==='gp' and customer.fmeType.indexOf("113") > -1 or data['recordevidencefrr']==='frr' and  customer.fmeType.indexOf("FRR") > -1 %}
 {% elif  customer.fmeType.indexOf("FRR") > -1 or customer.fmeType.indexOf("113") > -1 or customer.status == 'fme'  %}
-
 
 <table class="evidence-list">
 
@@ -36,7 +35,7 @@
 									</tr>
 
 									{% endif %}
-									{% if data['recordevidencegpfrr']==='FRR' %}
+									{% if data['recordevidencefrr']==='FRR' %}
 									{% elif  customer.fmeType.indexOf("FRR") > -1 or customer.fmeType.indexOf("FRRvisited") > -1 or customer.fmeType == 'Factual report' %}
 	                <tr>
 	                  <td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/factual_report">Factual report</a></td>

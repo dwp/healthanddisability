@@ -68,7 +68,13 @@
 		  
 		  <ul class="secondary-actions">
 
-        
+          
+          <li><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/record-evidence" class="">Record evidence</a></li>
+
+
+          {% if customer.status == 'fme' or customer.status == 'review' %}
+          <li><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/request-evidence" class="">Request evidence</a></li>
+          {% endif %}
           {% if customer.status == 'Ready for assessment' or customer.status == 'Assessment started' or customer.status == 'Ready for recommendation' %}  
           <li>
             
