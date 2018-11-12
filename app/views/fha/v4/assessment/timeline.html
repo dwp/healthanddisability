@@ -1,4 +1,4 @@
-{% extends path1+"/_layout.html" %}
+{% extends path+"/_layout-case.html" %}
 
 {% block citizen_content %}
 
@@ -19,9 +19,7 @@
     
     
     {# macro #}
-  {{ nav.case_tabs("timeline",1,path1) }}
-    
-    
+  {{ nav.case_tabs("timeline",1,path1, customer._id) }}
     
      
     

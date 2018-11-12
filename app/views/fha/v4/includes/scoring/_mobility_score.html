@@ -1,0 +1,69 @@
+<form class="form" action="index-todo" method="post">
+
+
+<div class="form-group">
+<fieldset>
+	<legend class="heading-medium mb10 mt10">How far can Tomas walk or move on level ground without help from someone, and without stopping due to severe pain or tiredness?</legend>
+	
+	<p class="mb5">Moving includes:</p>
+    <ul class="list list-bullet">
+      <li>walking with a stick</li>
+      <li>using crutches</li>
+      <li>using a manual wheelchair by themself</li>
+    </ul>
+    
+    <div class="multiple-choice">
+      <input id="nomore_50" type="radio" name="mobilityDistance" value="50" {{checked('mobilityDistance', '50')}}>
+      <label for="nomore_50">No more than 50 metres</label>
+    </div>
+    <div class="multiple-choice" data-target="the_rest">
+      <input id="nomore_100" type="radio" name="mobilityDistance" value="100" {{checked('mobilityDistance', '100')}}>
+      <label for="nomore_100">No more than 100 metres</label>
+    </div>
+    <div class="multiple-choice" data-target="the_rest">
+      <input id="nomore_200" type="radio" name="mobilityDistance" value="200" {{checked('mobilityDistance', '200')}}>
+      <label for="nomore_200">No more than 200 metres</label>
+    </div>
+    <div class="multiple-choice" data-target="the_rest">
+      <input id="morethan_200" type="radio" name="mobilityDistance" value="morethan_200" {{checked('mobilityDistance', 'morethan_200')}}>
+      <label for="morethan_200">More than 200 metres</label>
+    </div>
+    
+    
+    <div class="panel js-hidden" id="the_rest">
+  
+  	<fieldset class="inline">
+  		<legend class="mb5">Can Tomas go up or down 2 steps without help, if they use a handrail?</legend>
+  		<div class="multiple-choice">
+        <input id="steps_yes" type="radio" name="mobilitySteps" value="yes" {{checked('mobilitySteps', 'yes')}}>
+        <label for="steps_yes">Yes</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="steps_no" type="radio" name="mobilitySteps" value="no" {{checked('mobilitySteps', 'no')}}>
+        <label for="steps_no">No</label>
+      </div>
+  	</fieldset>
+  	
+  </div>
+    
+</fieldset>
+
+</div>
+  
+  
+  
+  
+  <div class="form-group">
+    <label class="form-label" for="justificaiton">Give details</label>
+    <textarea class="form-control form-control-3-4" name="mobilityDetails" id="justificaiton" rows="5">{{mobilityDetails}}</textarea>
+  </div><!-- .form-group -->
+<div class="visually-hidden">
+  <div class="multiple-choice ">
+      <input id="steps_no" type="radio" name="movingscored" value="yes">
+      <label for="steps_no">No</label>
+    </div>
+  </div>	
+  	<p><button class="button">Save</button></p>
+  
+
+</form>

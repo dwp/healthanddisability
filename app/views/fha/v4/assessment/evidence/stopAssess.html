@@ -1,4 +1,4 @@
-{% extends path1+"/_layout-stop.html" %}
+{% extends path+"/_layout-case-action.html" %}
 
 {% block citizen_content %}
 
@@ -67,8 +67,7 @@
 						    
 					</div>
 					
-					
-					
+	
 					
 					
 					
@@ -80,11 +79,14 @@
 				
 				
 			</fieldset>
-			
-			
-			<p><a href="/{{path}}/assessment/timeline3" class="button">Confirm - stop assessment</a></p>
-			
+							
 		</form>
+			
+			<form class="mt30" method="post" action="/{{path}}/assessment/{{customer._id}}/assessment-stopped">
+				<p class="mt30"><button class="button">Confirm - stop assessment</button></p>
+				</form>
+			
+
 		
     
 

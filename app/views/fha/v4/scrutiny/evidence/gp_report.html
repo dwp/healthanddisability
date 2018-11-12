@@ -1,34 +1,52 @@
-{% extends path1+"/evidence/_layout.html" %}
+{% extends path+"/_layout-tabs.html" %}
 
 {% block case_content %}
 
 <a href="javascript: history.go(-1)" class="link-back">Back</a>
 
-  <h2 class="heading-large mt20 mb30">GP report (113)</h2>
+  <h1 class="heading-large mt20 mb30">GP report request</h1>
+
+  <p class="form-hint bold-xsmall mb0">Requested this evidence off</p>
+
+
+    <h2 class="heading-small mt10">GP</h2>
+    <p>Dr.{{customer.address.gpName.fullName}}</p>
 
  
-  <p class="heading-small">Dr. Sheila Turner</p>
-  <p>Brixton Medical Centre, 0 Brixton Lane, Brixton, London</p>
-  <p class="form-hint bold-xsmall mb0">Date recorded:</p>
-  <p class="mt5">26 August 2018</p>
-  <hr />
 
-  <h3 class="heading-medium">Moving around and using steps</h3>
-  <p>“I don’t know how far Tomas can walk. He uses crutches. ”</p>
-  
-  <hr>
-  <h3 class="heading-medium">Standing and sitting</h3>
-  <p>"Tomas won’t be able to stand for long as he needs crutches to move and to balance. He sits for his appointments, usually about 10 minutes. I have prescribed an increasing dosage of opioids as Tomas is in a lot of pain."</p>
-  
-<hr>
-  <h3 class="heading-medium">Coping with changes to your daily routine</h3>
-  <p>"Tomas has been badly affected by the accident. I increased his dosage of Sertraline and also recommended talking therapies such as counselling, which he refused as he said he couldn't talk about it. Tomas is struggling. I don’t think he could work in his current state of mind. "</p>
-  
-<hr>
-  <h3 class="heading-medium">Meeting and being with people</h3>
-  <p>"I currently see Tomas every 2 months as this is the duration of his sick note. He has appeared more withdrawn in the last few months. I don’t know how he interacts with other people but my professional opinion is that his depression has got significantly worse. "</p>
+    <h2 class="heading-small">Surgery number</h2>
+    <p>0207 000 0000</p>
+    <h2 class="heading-small">Address</h2>
+    <p class="address-stack">
+    	<span>{{customer.address.street}}</span>
+    	<span>{{customer.address.city}}</span>
+    	<span>{{customer.address.postcode}}</span>
+    </p>
 
-  
+   
 
+    <h2 class="heading-small">Requested date</h2>
+  <p class="mt5">{{ 'Do MMMM YYYY' | randDaysAgo(0)}}</p>
+<hr />
+  <h3 class="heading-small">Reason for request:</h3>
+  {% if data['scenario']==='insufficient-113' %}
+  <p class="reason">Insufficient evidence to support claimants statements</p>
+  {% else %}
+  <p>{{ data['reason-113'] }}</p>
+  {% endif %}
+ 
 
 {% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.details-nav ul')
+      .children(":nth-child(2)")
+      .addClass('active_detail')
+  });
+</script>
+{% endblock %}
+

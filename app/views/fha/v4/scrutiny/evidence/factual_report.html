@@ -1,4 +1,4 @@
-{% extends path1+"/evidence/_layout.html" %}
+{% extends path+"/_layout-tabs.html" %}
 
 {% block case_content %}
 
@@ -38,7 +38,7 @@
     </p>
     {% endif %}
 
-
+  <h2 class="heading-small">Requested date</h2>
   <p class="mt5">{{ 'Do MMMM YYYY' | randDaysAgo(0)}}</p>
 <hr />
   <h3 class="heading-small">What information are you requesting?</h3>

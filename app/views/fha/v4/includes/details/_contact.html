@@ -1,21 +1,41 @@
-{% extends path2+"/_layout.html" %}
+{% extends path+"/_layout-details.html" %}
 
 {% block case_content %}
 
-      <h3 class="heading-large mt10">Consent</h3>
+      <h1 class="heading-large mt10">{{customer.name.first}} details</h1>
       
       
       <div class="grid-row mt30">
   
   
-  <div class="column-two-thirds">
+  <div class="column-half">
   
-     
-    <h3 class="heading-medium mt0">Has Tomas given consent to request further medical evidence?</h3>
+
+    
+    <h4 class="heading-small mt0">Phone</h4>
+    <p>{{customer.phone}}</p>
+    
+    <h4 class="heading-small">Text</h4>
+    <p>{{customer.mobile}}</p>
+    
+    <h4 class="heading-small">Email</h4>
+    <p>{{customer.email}}</p>
+    
+    <h4 class="heading-small">Address</h4>
+    <p class="address-stack">
+    	<span>{{customer.address.street}}</span>
+    	<span>{{customer.address.city}}</span>
+    	<span>{{customer.address.postcode}}</span>
+    </p>
+    
+    <h4 class="heading-small">Has Tomas given consent to request further medical evidence?</h4>
 
     <p>Yes</p>
     
-      
+    <p class="mt30"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit details</a></p>
+
+       
+    
     </div><!-- column -->
     
     <div class="column-half">
@@ -85,8 +105,8 @@
 <script type="text/javascript">
   $(document).on('ready',function()
   {
-    $('.evidence__leftnav')
-      .children(":nth-child(4)")
+    $('.details-nav ul')
+      .children(":nth-child(2)")
       .addClass('active_detail')
   });
 </script>

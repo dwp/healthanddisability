@@ -20,7 +20,7 @@
     
     	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
 		
-		<form action="/{{path}}/scrutiny/{{customer._id}}/evidence" method="POST" class="form">
+		<form action="/{{path}}/scrutiny/{{customer._id}}/timeline" method="POST" class="form">
 			<div class="form-group">
 					<fieldset>
 				
@@ -28,24 +28,25 @@
 							<h1 class="heading-large mt0">
 								Record evidence
 							</h1>
-							<p class="form-hint mb5 mt10">Select the evidence you would like to record.</p>
+							<p class="bold mb10">Select the evidence you would like to record.</p>
 						</legend>
-
-						{% if  data['recordevidencegp']==='gp' %}
+						
+				{% if  data['recordevidencegp']==='gp' %}
 						<div class="visually-hidden">
 						<div class="multiple-choice">
 							<input id="gpreport" name="recordEvidence" type="checkbox" value="gpvisited" checked>
-							<label for="gpreport" class="form-label-bold">GP report</label>
+							<label for="gpreport" class="form-label-bold">GP report </label>
 						</div>
 				</div>
 					
-				    {% elif customer.fmeType.indexOf("113") > -1 or data['type']==='113visited'%}
+				    {% elif customer.fmeType.indexOf("113") > -1 or data['type']==='113visited' or  customer.fmeType == 'GP Report'%}
 				
 					
 					<div class="multiple-choice">
 						<input id="Gp" name="recordevidencegp" type="checkbox" value="gp">
-						<label for="Gp" class="form-label-bold">GP report</label>
+						<label for="Gp" class="form-label">GP report requested - <span class="text-secondary">{{ 'Do MMMM YYYY' | randDaysAgo(0)}}</span></label>
 					</div>
+					
 						{% endif %}
 
 
@@ -53,21 +54,20 @@
 						<div class="visually-hidden">
 						<div class="multiple-choice">
 							<input id="factualreportvisited" name="recordevidence" type="checkbox" value="FRRvisisted" checked>
-							<label for="factualreportvisited" class="form-label-bold">Factual report hidden (FRR)</label>
+							<label for="factualreportvisited" class="form-label">Factual report hidden (FRR)</label>
 						</div>
 					</div>
 					
-				    {% elif customer.fmeType.indexOf("FRR") > -1%}
-
-				
+				    {% elif customer.fmeType.indexOf("FRR") > -1  or customer.fmeType == 'Factual report'%}
 						<div class="multiple-choice">
 							<input id="factualreport" name="recordevidencefrr" type="checkbox" value="frr">
-							<label for="factualreport" class="form-label-bold">Factual report (FRR)</label>
-						</div>
+							<label for="factualreport" class="form-label">Factual report requested - <span class="text-secondary"> {{ 'Do MMMM YYYY' | randDaysAgo(0)}}</span></label>
+					</div>
 						{% endif %}
+
 						<div class="multiple-choice" data-target="evidence">
 							<input id="nationalities-other" name="evidenceType" type="checkbox" value="evidence">
-							<label for="nationalities-other" class="form-label-bold">Record new evidence</label>
+							<label for="nationalities-other" class="form-label">Record new evidence</label>
 						</div>
 						<div class="panel panel-border-narrow js-hidden" id="evidence">
 								<div class="form-group">
@@ -79,7 +79,7 @@
 									
 									<div class="form-group">
 										<label for="source" class="form-label">
-											Sources
+											Source
 										</label>
 										<input type="text" id="source" name="newevidencesource" class="form-control form-control-1-3">
 									</div>
@@ -92,7 +92,7 @@
 						</div>
 						<div class="multiple-choice" data-target="telephone">
 								<input id="nationalities-other" name="telephonecontactreport" type="checkbox" value="evidence">
-								<label for="nationalities-other" class="form-label-bold">	Telephone contact report</label>
+								<label for="nationalities-other" class="form-label">Telephone conversation</label>
 							</div>
 							<div class="panel panel-border-narrow js-hidden" id="telephone">
 									<div class="form-group">	
