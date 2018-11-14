@@ -1,0 +1,31 @@
+{% extends path1+"/_addlayout.html" %} {% block citizen_content %}
+<div class="container">
+    
+    <div class="grid-row mt30">
+        <div class="column-one-third">
+            <h3 class="heading-medium mt0">Rooms</h3>
+            <ul>
+                <li>5 Rooms</li>
+                <li>3 Ground Floor</li>
+                <li>2 Wheelchair accessible</li>
+            </ul>
+            <p><a href="manage-rooms" class="button">Manage Rooms</a></p>
+        </div>
+        <div class="column-one-third">
+            <h3 class="heading-medium mt0">Health Care Professionals<h3>
+            <ul>
+                <li>6 Total</li>
+                <li>1 Doctors</li>
+                <li>5 Nursers</li>
+            </ul>
+            <p><a href="manage-staff" class="button">Manage Staff</a></p>
+        </div>
+        <div class="column-one-third">
+            <p><a href="fiveways-scheduler" class="button">Capacity Calendar</a></p>
+        </div>
+        <!-- column -->
+    </div>
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

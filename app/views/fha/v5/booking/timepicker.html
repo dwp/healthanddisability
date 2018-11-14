@@ -1,0 +1,122 @@
+{% extends path1+"/_layout.html" %}
+
+
+{% block left_content %}
+ <p class="mt10 mb0 bold-small">Booked</p>
+ <hr>
+{% endblock %}
+
+
+{% block citizen_content %}
+
+<div class="container">
+    <div class=" no-kdBar">
+                <a href="/{{path}}/booking/booked/{{customer._id}}/request-rearrangement" class="link-back">Back</a>
+            </div>
+        <h1 class="heading-large">Rearrange appointment</h3>
+        {% if restrictAppointments %}
+        <div class="panel panel-border-wide" id="customer-rearranged">
+            <p>{{customer.name.first}} has previously re-arranged their appointment. A new appointment can only be booked for before their current appointment date.</p>
+        </div>
+
+        {% endif %}
+
+        
+<div class="grid-row">
+        <div class="column-half">
+            <h3 class="heading-medium mt0">Choose a date</h3>
+
+            <nav class="calendar-nav">
+            {% if query.month == 'next' %}
+            <div class="calendar-nav__linkdiv">
+            <a class="calendar-nav__link calendar-nav__link--previous" href="?month=current">previous <span class="visually-hidden">previous</span></a>
+            </div>
+            {% else %}
+            <div class="calendar-nav__linkdiv"></div>
+            {% endif %}
+            <h2 class="calendar-nav__heading">{{ calendarDate | formatDate('MMMM YYYY') }}</h2>
+            <div class="calendar-nav__linkdiv">
+            <a class="calendar-nav__link calendar-nav__link--next" href="?month=next">next <span class="visually-hidden">month</span></a></div>
+            </nav>
+            <table class="calendar-picker mt0">
+                <thead>
+                    <tr>
+                        <th>MON</th>
+                        <th>TUE</th>
+                        <th>WED</th>
+                        <th>THU</th>
+                        <th>FRI</th>
+                        <th>SAT</th>
+                        <th>SUN</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for week in calendar %}
+                    <tr>
+                        {% for day in week %}
+
+                    <td  
+                    class="
+                        calendar-picker__day
+                        {{ day | formatInPastPicker(restrictAppointments) }} 
+                        {{ day | formatClosed() }} 
+                        {{ day | formatCalendarFull() }} 
+                        {{ day | formatSelected(query.date)}}
+                        {% if restrictAppointments %}
+                            {{ day | formatAvailable(customer.appointmentDate)}}
+                        {% endif %}
+                        ">
+                        {% if (day | formatInPastPicker() or day | formatCalendarFull() ) or (day | formatAvailable(customer.appointmentDate) and restrictAppointments )%}
+                            {{ day | formatDate("D") }}
+                        {% else %}
+                        <a class="calendar-picker__link" 
+                        href="?month={{query.month}}&date={{day | formatDate('YYYY-M-D')}}">{{ day | formatDate("D") }}</a>
+                        
+                        {% endif %}
+                        </td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                    
+                </tbody>
+            </table>
+        </div>
+        <div class="column-half">
+            {% if query.date %}
+            <form action="timepicker-post" method="post">
+                <div class="form-group">
+                  <fieldset>
+
+                    <legend class="heading"><h2 class="heading-medium mt0">Choose a time</h2></legend>
+                    <h4 class="heading-small"><span class="capitalise">{{query.date | formatDate('dddd')}}</span> {{query.date | formatDate('D MMMM YYYY')}}</h4>
+                    {% for time in appontmentTimes %}
+                    <div class="multiple-choice">
+                      <input id="appointment-date-{{loop.index}}" type="radio" name="appointment" value="{{ time }}">
+                      <label for="appointment-date-{{loop.index}}">{{ time | formatDate('h:mma') }}</label>
+                    </div>
+                    {% endfor %}
+
+
+                  </fieldset>
+                </div>
+            <button type="submit" class="button">Confirm</button>
+            </form>
+            {% else %}
+            <p>Pick a date from the calendar first.</p>
+            {% endif %}
+            <form action="timepicker-post" method="post">
+                <input type="hidden" name="appointment" value="noAppointmentAvailable">
+                <div class="form-group mt20"><button type="submit" class="button-secondary">Cancel</button></div>
+            </form>
+        </div>        
+</div>
+    <!-- row -->
+</div>
+
+<!-- container -->
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

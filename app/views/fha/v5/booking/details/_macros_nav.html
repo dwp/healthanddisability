@@ -1,0 +1,19 @@
+{% macro case_secondary (selected,num,path,id, name) %}
+{% set details = name +  '\'s contact details' %}
+{% set navs = [
+        {url:"details",label:details},
+        {url:"illness",label:"Illnesses and disabilities"},
+        {url:"gp",label:"GP details"}
+        ] %}
+
+ <div class="details-nav">
+    <ul>
+      {% for item in navs %}
+        <li {% if item.url == selected %} class="active_detail"{% endif %}><a href="/{{path}}/{{id}}/{{ item.url }}">{{ item.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endmacro %}
+
+
+

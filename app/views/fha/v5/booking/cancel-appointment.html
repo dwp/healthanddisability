@@ -1,0 +1,66 @@
+{% extends path1+"/_layout.html" %}
+
+{% block left_content %}
+ <p class="mt10 mb0 bold-small">Booked</p>
+
+
+ <hr>
+{% endblock %}
+
+
+{% block citizen_content %}
+
+<div class="container">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-medium mt20">Cancel appointment</h1>
+            <div class="panel panel-border-wide">
+                <p>Completing this form will cancel the appointment. Further medical evidence will need to be sent to be assessed.</p>
+            </div>
+        </div>
+    </div>
+
+    <form action="cancel-appointment-post" method="post">
+      <fieldset class="form-group">
+          <legend class="form-label-bold">
+              Why does this need to be reviewed by scrutiny?
+          </legend>
+          <div class="multiple-choice">
+              <input type="radio" name="reason" id="reason-condition" value="Customer's condition has changed">
+              <label for="reason-condition">Customer's condition has changed</label>
+          </div>
+          <div class="multiple-choice">
+              <input type="radio" name="reason" id="reason-terminal" value="Customer is now terminally ill">
+              <label for="reason-terminal">Customer is now terminally ill</label>
+          </div>
+          <div class="multiple-choice">
+              <input type="radio" name="reason" id="reason-new-evidence" value="New medical evidence is available">
+              <label for="reason-new-evidence">New medical evidence is available</label>
+          </div>
+          <div class="multiple-choice">
+              <input type="radio" name="reason" id="reason-taxi" value="Taxi requested">
+              <label for="reason-taxi">Customer has requested a taxi to the assessment centre</label>
+          </div>
+          <div class="multiple-choice">
+              <input type="radio" name="reason" id="reason-home-visit" value="Home visit requested">
+              <label for="reason-home-visit">Customer has requested a home visit</label>
+          </div>
+          <!-- <div class="multiple-choice" data-target="reason-other-content">
+              <input id="reason-other" type="radio" name="reason" value="other" >
+              <label for="reason-other">Other</label>
+          </div>
+          <div class="panel panel-border-narrow js-hidden" id="reason-other-content">
+              <label class="form-label" for="other-reason-details">Please provide reason</label>
+              <input class="form-control" name="other-reason-details" type="text" id="other-reason-details">
+          </div> -->
+      </fieldset>
+      <button class="button">Save</button>
+    </form>
+</div>
+<!-- container -->
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

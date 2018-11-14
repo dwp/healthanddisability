@@ -1,0 +1,63 @@
+{% extends path+"/_layout.html" %}
+
+
+{% block mainNav %}
+{{ mainNav.nav("centre", path) }}
+  
+{% endblock %}
+{% block assess_content %}
+
+
+
+<main id="content" role="main" class="main-content mt30">
+
+      <div class="container">
+      
+   <h1 class="heading-large">Manchester area assessment centres</h1>
+   
+   
+ <!--  <div class="section-tabs clearfix">
+    <ul>
+
+        <li class="active"><a href="#">Referrals</a></li>
+      
+        <li><a href="booked_appointments">Scheduled</a></li>
+      
+    </ul>
+  </div> -->
+
+      
+      
+        <div class="grid-row">
+          <div class="column-full">
+          
+              <table class="appointments-view">
+
+                <thead>
+                  <tr class="header-view">
+                    <th>Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for centreKey, centre in centres %}
+                <tr>
+                  <td><a href="capacity/manage-centre/{{centreKey}}/details">{{centre.name}}</a></td>
+                </tr>
+                {% endfor %}
+                </tbody>           
+              </table>
+
+              <p class="mt30"> <a href="capacity/new-centre" class="button-secondary">Create assessment centre</a> </p>
+
+          </div><!-- column -->
+          
+          
+          
+                
+          
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

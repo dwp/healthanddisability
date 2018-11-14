@@ -1,0 +1,58 @@
+{% extends path+"/_layout.html" %}
+
+{% block assess_content %}
+
+<main id="content" role="main" class="main-content">
+
+      <div class="container">
+          {% include path+"/caselist/_nav.html" %}
+          <div class="grid-row">
+            <div class="column-one-quarter">
+                {% include path+"/caselist/_search-box.html" %}
+  
+              <div class="details-nav v2">
+             <ul>
+                <li>
+                    <a href="caselist.html">All cases</a>
+                  </li>
+             <li>
+             <a href="referrals">Referral's (28)</a>
+           </li>
+           <li class="active_detail">
+              <a href="review">Review's (10)</a>
+              <ul>
+                  <li><a href="ready-for-review-updated.html">Ready for review (5)</a></li>
+                   <li><a href="requested-medical-evidence-updated.html">Requested medical evidence (5)</a></li>
+                </ul>
+            </li>
+              <li>
+                  <a href="appointments">Appointments (10)</a>
+                </li>
+                <li>
+                    <a href="assessment">Todays assessments (24)</a>
+                  </li>
+          </ul>
+        </div>
+          </div>
+          <div class="column-three-quarters">
+            <h2 class="heading-medium mt0"><span class="heading-xlarge">10</span><br/>Reviews</h2>
+              <table class="zebra">
+
+                <thead>
+                  <tr>
+                    <th>Details</th>
+                    <th>Status</th>
+                   
+                  </tr>
+                </thead>
+                
+                {% include path+"/caselist/_table_data_status_updated.html" %}
+
+              </table>
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

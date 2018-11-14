@@ -1,0 +1,84 @@
+{% extends path+"/booking/details/_layout2.html" %}
+
+ {% block app_nav %}
+          
+          {{ secondaryNav.case_secondary("illness",1,path1 + "/" + section, customer._id, customer.name.first) }}{# macro #}
+
+        {% endblock %}
+{% block case_content %}
+
+      <h1 class="heading-large mt10">Illnesses disabilties and medication </h1>
+
+		<h2 class="heading-medium">Illnesses and disabilities</h2>
+		<div class="table-layout">
+		<table>
+			<caption class="visually-hidden">List of illnesses and disabilities</caption>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Source</th>
+					<th>Since</th>
+				
+				</tr>
+			</thead>
+			<tbody>
+				{% for illness in customer.illnesses %}
+				<tr>
+					<td>{{illness.name}}</td>
+					<td>{{illness.source}}</td>
+					<td>{{illness.date |formatDate('MMMM YYYY')}}</td>
+				
+				</tr>
+				{% endfor %}
+				
+			</tbody>
+		</table>
+		</div>
+		<p class="mt30"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Add or edit illnesses and disabilities</a></p>
+
+	
+							
+		<h2 class="heading-medium">Medication and side effects</h2>
+			{% if customer.medication.length > 0 %}
+				<table>
+					<caption class="visually-hidden">List of medication and side effects</caption>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Dose</th>
+							<th>Side effects</th>
+						
+						</tr>
+					</thead>
+					<tbody>
+
+						{% for medication in customer.medication %}
+							<tr>
+								<td>{{medication.name}}</td>
+								<td>{{medication.dose}}</td>
+								<td>{{medication.sideEffects}}</td>
+							
+							</tr>
+						{% endfor %}
+						
+						
+					</tbody>
+				</table>
+				{% endif %}
+				<p class="mt30"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Add or edit medication or side effects</a></p>
+		
+      
+           
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.evidence__leftnav')
+      .children(":nth-child(2)")
+      .addClass('active_detail')
+  });
+</script>
+{% endblock %}

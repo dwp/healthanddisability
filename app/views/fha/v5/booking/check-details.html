@@ -1,0 +1,98 @@
+{% extends path1+"/_layout-booking.html" %}
+
+
+{% block left_content %}
+{% endblock %}
+
+{% block citizen_content %}
+<h1 class="heading-large">Security check</h1>
+<form action="/{{path}}/booking/booked/{{customer._id}}/contact-history-post" method="post">
+            {% if customer.appointee %}
+            <h2 class="heading-medium">Appointee details</h2>
+            <dl class="govuk-check-your-answers cya-questions-short">
+                <div>
+                    <dt class="cya-question">Name</dt>
+                    <dd class="cya-answer">{{customer.appointee.name}}</dd>
+                </div>
+
+                <div>
+                    <dt class="cya-question">Address</dt>
+                    <dd class="cya-answer">{{customer.appointee.address.street}}
+                        <br> {{customer.appointee.address.city}}
+                        <br> {{customer.appointee.address.postcode}}
+                        </dd>
+                </div>
+            </dl>
+            <p class="mt30">The appointee must confirm the following details.</p>
+            <input type="hidden" name="caller" value="appointee">
+            {% else %}
+            <p class="mt30">The customer must confirm the following details.</p>
+            <input type="hidden" name="caller" value="customer">
+            {% endif %}
+            <dl class="govuk-check-your-answers cya-questions-short">
+
+                <div>
+                    <dt class="cya-question">Name</dt>
+                    <dd class="cya-answer">{{customer.name.fullName}}</dd>
+                </div>
+                <div>
+                    <dt class="cya-question">Date of birth</dt>
+                    <dd class="cya-answer">{{customer.dateOfBirth | formatDate("D MMMM YYYY") }}</dd>
+                </div>
+                <div>
+                    <dt class="cya-question">Address</dt>
+                    <dd class="cya-answer">{{customer.address.street}}
+                        <br> {{customer.address.city}}
+                        <br> {{customer.address.postcode}}
+                        </dd>
+                </div>
+            </dl>
+            <!--<div class="form-group mt30">
+                <fieldset>
+                    <legend>
+                        <span class="form-label-bold">
+                            Who is calling?
+                          </span>
+                    </legend>
+                    <div class="multiple-choice">
+                        <input id="caller-customer" type="radio" name="caller" value="customer" >
+                        <label for="caller-customer">Customer</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="caller-appointee" type="radio" name="caller" value="appointee" >
+                        <label for="caller-appointee">Appointee</label>
+                    </div>
+
+                    <!-- <div class="multiple-choice" data-target="caller-other">
+                        <input id="caller-other" type="radio" name="caller" value="other" >
+                        <label for="caller-other">Other</label>
+                    </div>
+                    <div class="panel panel-border-narrow" id="caller-other-content">
+                        <label class="form-label" for="other-caller-details">Caller details</label>
+                        <input class="form-control" name="other-caller-details" type="text" id="other-caller-details">
+                    </div>  -->
+
+                </fieldset>
+            </div>
+            <div class="form-group mt30 inline">
+                <fieldset>
+                    <legend>
+                        <span class="form-label-bold">
+                            Were the details confirmed?
+                          </span>
+                    </legend>
+                    <div class="multiple-choice">
+                        <input id="confirmed-yes" type="radio" name="confirmed" value="true" >
+                        <label for="confirmed-yes">Yes</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="confirmed-no" type="radio" name="confirmed" value="false" >
+                        <label for="confirmed-no">No</label>
+                    </div>
+                </fieldset>
+            </div>
+            <p><button class="button">Next</button></p>
+        </form>
+{% endblock %}
+
+

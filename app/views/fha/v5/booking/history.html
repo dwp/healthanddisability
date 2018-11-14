@@ -1,0 +1,43 @@
+{% extends path+"/booking/details/_layout2.html" %}
+
+{% block citizen_content %} 
+{# macro #}
+{{ nav.case_tabs("history",1,path1 + "/" + section, customer._id) }}{# macro #}
+<div class="container">
+    <div class="grid-row">
+        <div class="column-full">
+    <form class="m-t-xl" method="post">
+
+      <div class="form-group">
+        <label class="form-label m-b-xs" for="add-comment">Your comment</label>
+        <textarea class="form-control span-width" name="comment" id="add-comment"></textarea>
+      </div>
+
+      <p><button type="submit" class="button">Save comment</button></p>
+
+    </form>
+        </div>
+        <div class="column-half">
+          {% for comment in comments | sort(attribute='timestamp', reverse=true) %}
+          <div class="comment-heading">
+            <h3  class="heading-small mt0">{{comment.name}}</h3>
+            {% if not comment.hasComment %}
+            <h4>
+              {{ 'Customer' if comment.isCustomer }} {{ 'Appointee' if not comment.isCustomer }} passed security</h4>
+            {% endif %}
+          </div>
+          <p class="form-hint">{{comment.dateFormatted}}</p>
+          {% if comment.hasComment %}
+          <p>{{comment.comment}}</p>
+          {% endif %}
+          <hr>
+        {% endfor %}
+
+        </div>
+
+        <!-- column -->
+    </div>
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

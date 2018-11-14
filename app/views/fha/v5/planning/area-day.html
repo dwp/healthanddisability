@@ -1,0 +1,72 @@
+{% extends path1+"/_layout.html" %} 
+{% block mainNav %}
+{% endblock %}
+{% block leftNav %}
+
+{% endblock %}
+
+{% block main_content %}
+<a href="/{{path}}/planning" class="link-back">Back</a>
+
+<h1 class="heading-large mt0">Manchester area ({{centres.length}} centres)</h1>
+<h2>Staff assigned on <span class="lede">Monday 10 December 2018</span></h2>
+<form class="mt30 mb30" action="/{{path}}/planning" method="post" accept-charset="utf-8">
+    <input type="hidden" value="true" name="mondayComplete">
+    <button class="button">Complete day</button>
+</form>
+<div class="grid-4-col">
+
+    {% for centre in centres | sort(attribute="name") %}
+    <div class="grid-area-{{loop.index}}">
+        <h3 class="heading-medium mt0 mb0">{{centre.name}}</h3>
+        <h4>{{centre.rooms}} assessment rooms</h4>
+        <div class="panel assess-centre">
+            <div class="grid-2-col">
+                <div class="grid-2-col__area-1">
+                    <h4 class="heading-small mt0">Morning</h4>
+                    <div class="data-grid">
+                    	<span class="data-centre bold-xlarge">{{centre.morning.assessments.length}}</span>
+                        <span class="xsmall">Assessments</span>
+                    </div>
+                    <div class="data-grid">
+                        <span class="data-centre bold-large">{{centre.morning.complex}}</span>
+                        <span class="data-description">Complex neuro</span>
+                        
+                    </div>
+                    <hr class="assess-centre__divider">
+                    <div class="data-grid">
+                        <span class="data-centre bold-large">{{centre.morning.reviews.length}}</span>
+                        <span class="xsmall">Reviews</span>
+                    </div>
+                </div>
+                <div class="grid-2-col__area-2">
+                    <h4 class="heading-small">Afternoon</h4>
+                    <div class="data-grid">
+                        <span class="data-centre bold-xlarge">{{centre.afternoon.assessments.length}}</span>
+                        <span class="xsmall">Assessments</span>
+                    </div>
+                    <div class="data-grid">
+                        <span class="data-centre bold-large">{{centre.afternoon.complex}}</span>
+                        <span class="data-description">Complex neuro</span>
+                        
+                    </div>
+                    <hr class="assess-centre__divider">
+                    <div class="data-grid">
+                        <span class="data-centre bold-large">{{centre.afternoon.reviews.length}}</span>
+                        <span class="xsmall">Reviews</span>
+                    </div>
+                </div>
+            </div>
+            <hr class="assess-centre__divider">
+
+        	<div class="assess-centre__link"><a class="button-secondary" href="/{{path}}/planning/centre/{{centre.name}}">Reassign practitioners</a></div>
+
+        </div>
+    </div>
+
+    {% endfor %}
+    
+</div>
+
+
+{% endblock %}
