@@ -96,10 +96,21 @@
 		
 	</div>
 
-
-		<form action="physical-updated" method="POST" class="form">
+	{% if customer.status == 'Ready for recommendation' %}
+		 
+	<form action="medical_assessment_dashboard" method="POST" class="form">
+			<input type="submit" class="button mt30" value="Finish review">
+			<div class="multiple-choice" style="display:none">
+					<input id="radio-inline-4" type="radio" name="mentalVisited" value="mentalVisited" checked>
+			
+					<label for="radio-4">hidden radio one</label>
+				</div>
+					
+		{% else %}
+		<form action="physical" method="POST" class="form">
+		
 				<input type="submit" class="button mt30" value="Save and continue">
-								
+				{% endif%}			
 				<div class="multiple-choice" style="display:none">
 						<input id="radio-inline-4" type="radio" name="mental-health" value="mental-health" checked>
 				

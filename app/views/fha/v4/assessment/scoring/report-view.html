@@ -37,53 +37,84 @@
     
     
     
-<div class="review-item">
-	<h2 class="heading-medium">Illnesses and their effects</h2>
-	
-	
-	<div class="review-inner">
-		<h3 class="heading-medium">Depression</h3>
-		<h4 class="heading-small">Since:</h4>
-		<p>February 2018</p>
-		<h4 class="heading-small">Source:</h4>
-		<p>Claimant</p>
-		<h4 class="heading-small">Condition history</h4>
-		<p>{{conditionHistory1}}</p>
-	</div>
-	
-	<div class="review-inner">
-		<h3 class="heading-medium">Emergency fasciotomy</h3>
-		<h4 class="heading-small">Since:</h4>
-		<p>August 2017</p>
-		<h4 class="heading-small">Source:</h4>
-		<p>Claimant</p>
-		<h4 class="heading-small">Condition history</h4>
-		<p>{{conditionHistory2}}</p>
-	</div>
-	
-	<div class="review-inner">
-		<h3 class="heading-medium">Acute compartment syndrome</h3>
-		<h4 class="heading-small">Since:</h4>
-		<p>August 2017</p>
-		<h4 class="heading-small">Source:</h4>
-		<p>Claimant</p>
-		<h4 class="heading-small">Condition history</h4>
-		<p>{{conditionHistory3}}</p>
-	</div>
-	
-	<div class="review-inner">
-		<h3 class="heading-medium">Compound fracture</h3>
-		<h4 class="heading-small">Since:</h4>
-		<p>July 2017</p>
-		<h4 class="heading-small">Source:</h4>
-		<p>Claimant</p>
-		<h4 class="heading-small">Condition history</h4>
-		<p>{{conditionHistory4}}</p>
-	</div>
- 
-	</div> 
+		<div class="review-item">
+				<h2 class="heading-medium">Illnesses and their effects</h2>
+			
+				<table>
+					<caption class="visually-hidden">List of illnesses and disabilities</caption>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Source</th>
+							<th>Since</th>
+						
+						</tr>
+					</thead>
+					<tbody>
+						{% for illness in customer.illnesses %}
+						<tr>
+							<td>{{illness.name}}</td>
+							<td>{{illness.source}}</td>
+							<td class="text-secondary">{{illness.date |formatDate('MMMM YYYY')}}</td>
+						
+						</tr>
+						{% endfor %}
+						{% if data['newillness']==='meds1' %}
+						<tr>
+								<td>{{newillneesname}}</td>
+								<td>{{newillnesssource}}</td>
+								<td class="text-secondary">{{newillnessmonth | formatDate('MMMM')}} {{newillnessyear}}</td>
+							
+							</tr>
+						{% endif %}
+						
+					</tbody>
+				</table>
+
+
+				<h3 class="heading-medium">Medication and side effects</h3>
+						
+			
+				
+					{% if customer.medication.length > 0 %}
+						<table>
+							<caption class="visually-hidden">List of medication and side effects</caption>
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Dose</th>
+									<th>Side effects</th>
+								
+								</tr>
+							</thead>
+							<tbody>
+		
+								{% for medication in customer.medication %}
+									<tr>
+										<td>{{medication.name}}</td>
+										<td>{{medication.dose}}</td>
+										<td>{{medication.sideEffects}}</td>
+									
+									</tr>
+								{% endfor %}
+								{% if data['illnessMedication']==="other" %}  	
+								<tr>
+										<td>{{otherMedName}}</td>
+										<td>{{otherMedDose}}</td>
+										<td>{{otherMedSideEffects}}</td>
+									
+									</tr>
+								{% endif %}
+								
+							</tbody>
+						</table>
+						{% endif %}
+			 
+				
+			    <h3 class="heading-medium">Condition history</h3>
+				<p>{{conditionHistory1}}</p>
 	<p><a href="#" class="button secondary">Edit Illnesses and their effects</a></p>
-</div>
+</div> 
 
 <!--<div class="review-item">
 	<h2 class="heading-medium">Social and work history</h2>
@@ -107,20 +138,27 @@
 <div class="review-item">
 	<h2 class="heading-medium">Physical assessments</h2>
 	
-	<p>Consent was given by Tomas to start the physical assessment.</p>
+	<p>Consent was given by {{customer.name.first}} to start the physical assessment.</p>
 	
 	<div class="review-inner">	
-		<h3 class="heading-medium">Lower back and legs</h3>
+		<h3 class="heading-medium mt0">Lower back and legs</h3>
+		
 		
 		<h4 class="heading-small">Lower back</h4>
+	    {% if data['physLowerbackObs']%}
 		<p>{{physLowerbackObs}}</p>
-		
+		{% else%}
+		<p>Assessed - no difficulties in this area</p>
+		{% endif %}
 		<h4 class="heading-small">Left leg</h4>
+		{% if data['leftLowerbackObs']%}
 		<p>{{leftLowerbackObs}}</p>
-		
+		{% else%}
+		<p>Assessed - no difficulties in this area</p>
+		{% endif %}
 		<h4 class="heading-small">Right leg</h4>
 		<p>{{rightLowerbackObs}}</p>
-	
+	    <p>Assessed - no difficulties in this area</p>
 		
 		<p><a href="#" class="button secondary">Edit lower back and legs</a></p>
 	</div>
@@ -286,7 +324,7 @@
 		</ul>
 
 				
-		<h4 class="heading-small">How far can Tomas walk or move on level ground without help from someone, and without stopping due to severe pain or tiredness?</h4>
+		<h4 class="heading-small">How far can {{customer.name.first}} walk or move on level ground without help from someone, and without stopping due to severe pain or tiredness?</h4>
 		
 		{% if checked('mobilityDistance', 'morethan_200') %}
 		<p>More than 200 metres</p>
@@ -294,7 +332,7 @@
 		<p>No more than {{mobilityDistance}} metres.</p>
 		{% endif %}
 		
-		<h4 class="heading-small">Can Tomas go up or down 2 steps without help, if they use a handrail?</h4>
+		<h4 class="heading-small">Can {{customer.name.first}} go up or down 2 steps without help, if they use a handrail?</h4>
 		
 		{% if checked('mobilitySteps', 'yes') %}
 		<p>Yes</p>
@@ -306,7 +344,7 @@
 		
 		<p>{{mobilityDetails}}</p>
 		
-		<p><a href="#" class="button secondary">Edit moving around and using steps</a></p>
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit moving around and using steps</a></p>
 
 	
 	
@@ -324,27 +362,20 @@
 			</ul>
 
 				
-		<h4 class="heading-small">How far can Tomas walk or move on level ground without help from someone, and without stopping due to severe pain or tiredness?</h4>
+		<h3 class="heading-small">Can  {{customer.name.first}} move from one seat to another right next to it without help from another person</h3>
 		
-		{% if checked('mobilityDistance', 'morethan_200') %}
-		<p>More than 200 metres</p>
-		{% else %}
-		<p>No more than {{mobilityDistance}} metres.</p>
-		{% endif %}
-		
-		<h4 class="heading-small">Can Tomas go up or down 2 steps without help, if they use a handrail?</h4>
-		
-		{% if checked('mobilitySteps', 'yes') %}
+		{% if checked('standing-sitting', 'yes') %}
 		<p>Yes</p>
 		{% else %}
-		<p>No</p>
+		<p>No </p>
 		{% endif %}
+		
 		
 		<h4 class="heading-small">Justification:</h4>
 		
-		<p>{{mobilityDetails}}</p>
+		<p>{{standingDetails}}</p>
 		
-		<p><a href="#" class="button secondary">Edit standing, sitting and moving between the two</a></p>
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit standing, sitting and moving between the two</a></p>
 
 	
 	
@@ -355,35 +386,33 @@
 
 	
 		<h2 class="heading-medium">Reaching</h2>
+	
 		<ul class="list-bullet">
 			{% for descriptor in reachingDescriptors %}
 			<li>{{descriptor}}</li>
 		{% endfor %}
 		</ul>
 
-
 				
-		<h4 class="heading-small">How far can Tomas walk or move on level ground without help from someone, and without stopping due to severe pain or tiredness?</h4>
+		<h3 class="heading-small">	Which of these options describes how {{customer.name.first}} can reach for thing?</h3>
 		
-		{% if checked('mobilityDistance', 'morethan_200') %}
-		<p>More than 200 metres</p>
+		{% if checked('mobilityDistance', 'pocket') %}
+		<p>{{customer.name.first}} cannot raise either arm as if to put something in their top pocket</p>
+		{% elif checked('mobilityDistance', 'hat') %}
+		<p>{{customer.name.first}} cannot raise either arm to the top of there head to put a hat on </p>
+		{% elif checked('mobilityDistance', 'reach') %}
+		<p>{{customer.name.first}} cannot raise either arm above their head to reach for something</p>
 		{% else %}
-		<p>No more than {{mobilityDistance}} metres.</p>
+		<p>{{customer.name.first}} doesn't have problems when reaching for things</label>
+		</p>
 		{% endif %}
 		
-		<h4 class="heading-small">Can Tomas go up or down 2 steps without help, if they use a handrail?</h4>
 		
-		{% if checked('mobilitySteps', 'yes') %}
-		<p>Yes</p>
-		{% else %}
-		<p>No</p>
-		{% endif %}
+		<h3 class="heading-small">Justification:</h3>
 		
-		<h4 class="heading-small">Justification:</h4>
+		<p>{{reachingDetails}}</p>
 		
-		<p>{{mobilityDetails}}</p>
-		
-		<p><a href="#" class="button secondary">Edit reaching</a></p>
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit reaching</a></p>
 
 	
 	
@@ -391,7 +420,7 @@
 
 {% endif %}
 
-{% if data['reaching']==='picking' %}
+{% if data['picking']==='picking' %}
 <div class="review-item">
 
 	
@@ -402,11 +431,17 @@
 		{% endfor %}
 		</ul>
 
-		<h4 class="heading-small">Justification:</h4>
+        <div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+
+		<h3 class="heading-small">Justification:</h3>
 		
-		<p>{{mobilityDetails}}</p>
+		<p>{{pickingDetails}}</p>
 		
-		<p><a href="#" class="button secondary">Edit picking things up and moving them</a></p>
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit picking things up and moving them</a></p>
 
 	
 	
@@ -414,7 +449,7 @@
 
 {% endif %}
 
-{% if data['reaching']==='using' %}
+{% if data['using']==='using' %}
 <div class="review-item">
 
 	
@@ -424,18 +459,405 @@
 			<li>{{descriptor}}</li>
 		{% endfor %}
 		</ul>
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
 		
-		<h4 class="heading-small">Justification:</h4>
+		<h3 class="heading-small">Justification:</h3>
 		
-		<p>{{mobilityDetails}}</p>
+		<p>{{usingDetails}}</p>
 		
-		<p><a href="#" class="button secondary">Edit using things up and moving them</a></p>
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit using things up and moving them</a></p>
 
 	
 	
 </div>
 
 {% endif %}
+
+{% if data['speaking']==='speaking' %}
+<div class="review-item">
+
+	
+		<h2 class="heading-medium"> Speaking, writing and typing</h2>
+		<ul class="list-bullet">
+			{% for descriptor in speakingDescriptors %}
+			<li>{{descriptor}}</li>
+		{% endfor %}
+		</ul>
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h3 class="heading-small">Justification:</h3>
+		
+		<p>{{speakingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit speaking, writing and typing</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+{% if data['hearing']==='hearing' %}
+<div class="review-item">
+
+	
+		<h2 class="heading-medium">Hearing and reading</h2>
+		<ul class="list-bullet">
+			{% for descriptor in hearingDescriptors %}
+			<li>{{descriptor}}</li>
+		{% endfor %}
+		</ul>
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h3 class="heading-small">Justification:</h3>
+		
+		<p>{{hearingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit hearing and reading</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+{% if data['seeing']==='seeing' %}
+<div class="review-item">
+
+	
+		<h2 class="heading-medium">Seeing well enough to get around safely</h2>
+		<ul class="list-bullet">
+			{% for descriptor in seeingDescriptors %}
+			<li>{{descriptor}}</li>
+		{% endfor %}
+		</ul>
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h3 class="heading-small">Justification:</h3>
+		
+		<p>{{seeingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit seeing well enough to get around safely</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+{% if data['controlling']==='controlling' %}
+<div class="review-item">
+
+	
+		<h2 class="heading-medium">Controlling your bowels and bladder</h2>
+		<ul class="list-bullet">
+			{% for descriptor in controllingDescriptors %}
+			<li>{{descriptor}}</li>
+		{% endfor %}
+		</ul>
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h3 class="heading-small">Justification:</h3>
+		
+		<p>{{controllingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit controlling your bowels and bladder</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+{% if data['staying']==='staying' %}
+<div class="review-item">
+
+	
+		<h2 class="heading-medium">Staying conscious without fainting, seizures, or blackouts</h2>
+		<ul class="list-bullet">
+			{% for descriptor in stayingDescriptors %}
+			<li>{{descriptor}}</li>
+		{% endfor %}
+		</ul>
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h3 class="heading-small">Justification:</h3>
+		
+		<p>{{stayingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit staying conscious without fainting, seizures, or blackouts</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+{% if data['learning']==='learning' %}
+<div class="review-item">
+
+	
+		<h2 class="heading-medium">Learning to do new tasks</h2>
+		<ul class="list-bullet">
+			{% for descriptor in learningDescriptors %}
+			<li>{{descriptor}}</li>
+		{% endfor %}
+		</ul>
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h3 class="heading-small">Justification:</h3>
+		
+		<p>{{learningDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit learning to do new tasks</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+
+{% if data['being']==='being' %}
+<div class="review-item">
+
+	
+		<h2 class="heading-medium">Being aware of hazards and danger</h2>
+		<ul class="list-bullet">
+			{% for descriptor in beingDescriptors %}
+			<li>{{descriptor}}</li>
+		{% endfor %}
+		</ul>
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h3 class="heading-small">Justification:</h3>
+		
+		<p>{{beingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit being aware of hazards and danger</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+{% if data['planning']==='planning' %}
+<div class="review-item">
+
+	
+		<h2 class="heading-medium">Planning, starting and finishing everyday tasks</h2>
+		<ul class="list-bullet">
+			{% for descriptor in planningDescriptors %}
+			<li>{{descriptor}}</li>
+		{% endfor %}
+		</ul>
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h3 class="heading-small">Justification:</h3>
+		
+		<p>{{planningDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit planning, starting and finishing everyday tasks</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+{% if data['coping']==='coping' %}
+<div class="review-item">
+
+	
+		<h2 class="heading-medium">Coping with changes to your daily routine</h2>
+		<ul class="list-bullet">
+			{% for descriptor in copingDescriptors %}
+			<li>{{descriptor}}</li>
+		{% endfor %}
+		</ul>
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h3 class="heading-small">Justification:</h3>
+		
+		<p>{{copingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit coping with changes to your daily routine</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+{% if data['going']==='going' %}
+<div class="review-item">
+
+	
+		<h2 class="heading-medium">Going out on your own</h2>
+		<ul class="list-bullet">
+			{% for descriptor in goingDescriptors %}
+			<li>{{descriptor}}</li>
+		{% endfor %}
+		</ul>
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h3 class="heading-small">Justification:</h3>
+		
+		<p>{{goingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit going out on your own</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+{% if data['meeting']==='meeting' %}
+<div class="review-item">
+
+	
+		<h2 class="heading-medium">Meeting and being with people</h2>
+		<ul class="list-bullet">
+			{% for descriptor in meetingDescriptors %}
+			<li>{{descriptor}}</li>
+		{% endfor %}
+		</ul>
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h3 class="heading-small">Justification:</h3>
+		
+		<p>{{meetingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit meeting and being with people</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+
+{% if data['behaving']==='behaving' %}
+<div class="review-item">
+
+	
+		<h2 class="heading-medium">Behaving appropriately around other people</h2>
+		<ul class="list-bullet">
+			{% for descriptor in behavingDescriptors %}
+			<li>{{descriptor}}</li>
+		{% endfor %}
+		</ul>
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h3 class="heading-small">Justification:</h3>
+		
+		<p>{{behavingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit behaving appropriately around other people</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+{% if data['eating']==='eating' %}
+<div class="review-item">
+
+	
+		<h2 class="heading-medium">Eating or drinking</h2>
+		<ul class="list-bullet">
+			{% for descriptor in eatingDescriptors %}
+			<li>{{descriptor}}</li>
+		{% endfor %}
+		</ul>
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h3 class="heading-small">Justification:</h3>
+		
+		<p>{{eatingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit eating or drinking</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+
 
 
 

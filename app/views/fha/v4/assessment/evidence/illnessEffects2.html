@@ -22,36 +22,41 @@
   
   
 	
-	<form action="wca-index" method="POST" class="form">
+
 
 <div class="form-group medication-stored">
 				<fieldset>
-					<legend class="heading-medium">What Medication is Tomas currently taking?</legend>
+					<legend class="heading-medium">What Medication is {{customer.name.first}} currently taking?</legend>
 					
-			
-					
+					{% for medication in customer.medication %}
 					<div class="multiple-choice">
-				      <input id="meds1" type="checkbox" name="illnessMedication3[]" value="Sertraline" {{checked('illnessMedication3', 'Sertraline') }}>
+				      <input id="meds1" type="checkbox" name="{{medication.name}}" value="{{medication.name}}" {{checked('{{medication.name}}', '{{medication.name}}') }}>
 				      <label for="meds1">
-				      	Sertraline
+									{{medication.name}}<br />
+								
 					  	<div class="meds-block">
-					      	<span>Dose: 100mg a day</span>
+					      	<span>	{{medication.dose}}</span>
 					  	</div>
 				      </label>
 				    </div>
 				    
-				    <div class="multiple-choice">
-				      <input id="meds2" type="checkbox" name="illnessMedication3[]" value="Zomorph" {{checked('illnessMedication3', 'Zomorph') }}>
-				      <label for="meds2">
-				      	Zomorph
-					  	<div class="meds-block">
-					      	<span>Dose: 60mg twice a day</span>
-					  	</div>
-				      </label>
-				    </div>		    			
-	  
+				{% endfor %}	  
+				{% if data['illnessMedication']==="other" %}  	
+				<div class="multiple-choice">
+						<input id="meds1" type="checkbox" name="{{otherMedName}}" value="{{otherMedName}}" {{checked('{{otherMedName}}', '{{otherMedName}}') }}>
+						<label for="meds1">
+								{{otherMedName}}<br />
+							
+						<div class="meds-block">
+								<span>	{{otherMedDose}}</span>
+						</div>
+						</label>
+					</div>
+
+				{% endif %}		
+				<form action="illnessEffects2" method="POST" class="form">
 				   <div class="multiple-choice" data-target="other-meds">
-				      <input id="otherMeds"  type="checkbox" name="illnessMedication3[]" value="Other" {{checked('illnessMedication3', 'Other') }}>
+				      <input id="otherMeds"  type="checkbox" name="illnessMedication" value="other">
 				      <label for="otherMeds">Other</label>
 				    </div>
 				    
@@ -68,7 +73,7 @@
 						      	<div class="form-group">
 						        
 									<label class="form-label form-label-large" for="illnessname">Name of medication</label>
-									 <input type="text" name="otherMedName3" value="{{otherMedName3}}" class="form-control" id="illnessname">
+									 <input type="text" name="otherMedName" value="" class="form-control" id="newmedicatiomname">
 									 
 								 </div>
 								 
@@ -76,7 +81,7 @@
 								 <div class="form-group">
 						        
 									<label class="form-label form-label-large" for="dose">Dose</label>
-									 <input type="text" name="otherMedDose3" value="{{otherMedDose3}}" class="form-control form-control-1-4" id="dose">
+									 <input type="text" name="otherMedDose" value="" class="form-control form-control-1-4" id="dose">
 									 
 								 </div>
 				              
@@ -111,30 +116,40 @@
 								 
 								<div>
 									 <label class="form-label" for="side">Side effects</label>
-									 <textarea type="text" id="side" class="form-control" name="otherMedSideEffects3" style="height: 100px;">{{otherMedSideEffects3}}</textarea>
+									 <textarea type="text" id="side" class="form-control" name="otherMedSideEffects" style="height: 100px;">{{otherMedSideEffects}}</textarea>
 								</div>
 				
 				            
 				            
 				          </fieldset>
 				   		
-				   		
+				   		  <p><button class="button-secondary mt20">Confirm medication and side effects</button></p>
 				   		
 				   </div>
 				    
 				</fieldset>
 			</div>
-			
-	
-  
-	<p><button class="button">Save and continue</button></p>
-	
-	
+		</form>
+		{% if customer.status == 'Ready for recommendation' %}
+		 
+		<form action="medical_assessment_dashboard" method="POST" class="form">
+				<p><button class="button">Finish reviewing</button></p>
+
+				<div class="multiple-choice" style="display:none">
+						<input id="radio-inline-4" type="radio" name="illnessVisited" value="illnessVisited" checked>
+							
+						<label for="radio-4">hidden radio one</label>
+					</div>
+
+      {% else %}
+			<form action="wca-index" method="POST" class="form">
+					<p><button class="button">Save and continue</button></p>
+	{% endif %}
 	<div class="multiple-choice" style="display:none">
-						        <input id="radio-inline-4" type="radio" name="illnessEffects" value="illnessEffects" checked>
-						          
-						        <label for="radio-4">hidden radio one</label>
-						      </div>
+			<input id="radio-inline-4" type="radio" name="illnessEffectsVisited" value="illnessEffectsVisited" checked>
+				
+			<label for="radio-4">hidden radio one</label>
+		</div>
 
 	</form>
 

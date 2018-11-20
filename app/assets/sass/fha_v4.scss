@@ -799,6 +799,14 @@ caption {
 	margin-bottom: 2em;
 	padding: 2em 0 .4em 0;
 	border-top: 1px solid $grey-3;
+
+	p{
+		white-space: pre-line;
+	}
+
+	.panel p {
+		white-space:normal;
+	}
 	
 	.total-score {
 		font-size: 19px;
@@ -820,9 +828,10 @@ caption {
 	h2 {
 		margin: 0 0 .8em 0;
 	}
-	h3 {
-		margin: 0 0 .8em 0;
-	}
+h3 {
+		//margin: 0 0 .8em 0;
+		margin-bottom:.6em;
+}
 	p {
 		&:last-child {
 			margin-bottom: 0;
