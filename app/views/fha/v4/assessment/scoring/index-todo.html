@@ -9,6 +9,8 @@
 
 <div class="grid-row">
   <div class="column-two-thirds">
+		{% if data['moving']==='moving' or data['standing']==='standing' or data['reaching']==='reaching' or data['picking']==='picking' or data['using']==='using'
+		or data['speaking']==='speaking' or data['hearing']==='hearing' or data['seeing']==='seeing' or data['controlling']==='controlling' or data['staying']==='staying' %}
 	    <div class="task-list">
 				<h2 class="task-list-section">
 						Physical descriptors to review
@@ -46,7 +48,9 @@
 	{% endif %}
 				</ul>
 			</div>
-
+			{% endif %}
+			{% if data['learning']==='learning' or data['being']==='being' or data['planning']==='planning' or data['coping']==='coping' or  data['going']==='going' or data['meeting']==='meeting' 
+			or data['behaving']==='behaving' %}
 			<div class="task-list">
 					<h2 class="task-list-section">
 							Mental descriptors to review
@@ -76,21 +80,22 @@
 					
 					</ul>
 				</div>
-
-
+				{% endif %}
+		
+				{% if data['eating']==='eating' %}
 				<div class="task-list">
 						<h2 class="task-list-section">
 								Eating or drinking descriptor to review
 						  </h2>
 						<ul class="task-list-itmes">
-						{% if data['eating']==='eating' %}
+						
 							<li class="task-list-item"><a href="/{{path}}/assessment/{{customer._id}}/descriptor-eating">Eating or drinking {% if data['eatingDescriptors']%}<span class="task-completed">Scored</span>{% endif %}</a></li>
-						{% endif %}
+					
 			
 						
 						</ul>
 					</div>
-
+					{% endif %}
 
 
 		<p class="mt30"><a href="other" class="button">Continue</a></p>

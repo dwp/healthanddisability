@@ -49,7 +49,23 @@
     </form>
     
     
-    <p class="mt30"><a href="medical_assessment_dashboard" class="button">Finish reviewing</a></p>
+   
+
+
+		 
+		<form action="medical_assessment_dashboard" method="POST" class="form">
+
+
+	<p class="mt30"><button class="button">Finish reviewing</button></p>
+	
+  {% if customer.status == 'Ready for recommendation' %}
+	<div class="multiple-choice" style="display:none">
+						        <input id="radio-inline-4" type="radio" name="socialVisited" value="socialVisited" checked>
+						          
+						        <label for="radio-4">hidden radio one</label>
+						      </div>
+  {% endif %}
+	</form>
    
   </div><!-- column -->
 

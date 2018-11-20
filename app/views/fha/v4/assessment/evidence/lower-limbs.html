@@ -2,8 +2,14 @@
 {% extends path+"/_layout-case-action.html" %} 
 {% block citizen_content %} {{ data.nuggets | log }}
 
+{% if customer.status == 'Ready for recommendation' %}
+		 
+<form action="medical_assessment_dashboard" method="POST" class="form">
 
-<form action="physical-updated" method="POST" class="form">
+{% else %}
+<form action="physical" method="POST" class="form">
+{% endif %}	
+
 <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
 <h1 class="heading-large mt10 mb0">Lower back and legs</h1>
 
@@ -13,7 +19,7 @@
   <div class="form-group mt30">
 	  <fieldset class="inline">
 	
-		  <legend class="heading-medium mb10">Have you examined Tomas's lower back and legs?</legend>
+		  <legend class="heading-medium mb10">Have you examined {{customer.name.first}} lower back and legs?</legend>
 		  
 		
 			  <div class="form-group">
@@ -36,17 +42,17 @@
 				    
 					    	<fieldset class="inline">
 		
-								  <legend class="heading-medium mb10">Does Tomas have difficulties in any of these areas?</legend>
+								  <legend class="heading-medium mb10">Does {{customer.name.first}} have difficulties in any of these areas?</legend>
 								
 									  <div class="form-group">
 									
 										    <div class="multiple-choice" data-target="findings-yes">
-										      <input id="findyes" name="findings" type="radio" value="Yes">
-										      <label for="findyes"> Yes</label>
+										      <input id="findyes" name="findings" type="radio" value="Yes"  {{ checked('findings', 'Yes') }}>
+										      <label for="findyes">Yes</label>
 										    </div>
 										
 										    <div class="multiple-choice">
-										      <input id="findno" name="findings" type="radio" value="No">
+										      <input id="findno" name="findings" type="radio" value="No"  {{ checked('findings', 'No') }}>
 										      <label for="findno"> No</label>
 										    </div>
 										    
@@ -59,7 +65,7 @@
 														  <div class="form-group">
 														
 															    <div class="multiple-choice" data-target="lowerback-checked">
-															      <input id="lowerback" name="lowerlimbs" type="checkbox" value="Lower">
+															      <input id="lowerback" name="lowerlimbs" type="checkbox" value="Lower" {{ checked('lowerlimbs', 'Lower') }}>
 															      <label for="lowerback"> Lower back</label>
 															    </div>
 															    
@@ -89,7 +95,7 @@
 															    
 															    
 															    <div class="multiple-choice" data-target="rightleg-checked">
-															      <input id="rightleg" name="lowerlimbs" type="checkbox" value="Right">
+															      <input id="rightleg" name="lowerlimbs" type="checkbox" value="Left" {{ checked('lowerlimbs', 'Left') }}>
 															      <label for="rightleg"> Left leg</label>
 															    </div>
 															    
@@ -121,7 +127,7 @@
 															    
 															    
 															    <div class="multiple-choice" data-target="leftleg-checked">
-															      <input id="leftleg" name="lowerlimbs" type="checkbox" value="Left">
+															      <input id="leftleg" name="lowerlimbs" type="checkbox" value="Right"  {{ checked('lowerlimbs', 'Right') }}>
 															      <label for="leftleg"> Right leg</label>
 															    </div>
 															    
@@ -161,18 +167,44 @@
 									  </div><!-- form-group -->
 							  
 							  </fieldset>
-				    	
-				    </div>
+				    	     
+					</div>
+					
+
 			
 			  </div><!-- form-group -->
+			  {% if customer.status == 'Ready for recommendation' %}
+			  <p class="mt0"><button class="button">Finish reviewing</button></p>
+			  <div class="multiple-choice" style="display:none">
+					<input id="radio-inline-4" type="radio" name="physicalVisited" value="physicalVisited" checked>
+					  
+					<label for="radio-4">hidden radio one</label>
+				  </div>
+			  {% else %}
 			  <p class="mt0"><button class="button">Save</button></p>
+			  {% endif %}
 	  </fieldset>
   </div>
 </form>
 
-
-
-
+<h4 class="heading-small">Lower back</h4>
+{% if  checked('lowerlimbs', 'Lower')%}
+<p>{{physLowerbackObs}}</p>
+{% else%}
+<p>Assessed - no difficulties in this area</p>
+{% endif %}
+<h4 class="heading-small">Left leg</h4>
+{% if checked('lowerlimbs', 'Left') %}
+<p>{{leftLowerbackObs}}</p>
+{% else%}
+<p>Assessed - no difficulties in this area</p>
+{% endif %}
+<h4 class="heading-small">Right leg</h4>
+{% if checked('lowerlimbs', 'Right') %}
+<p>{{rightLowerbackObs}}</p>
+{% else %}
+<p>Assessed - no difficulties in this area</p>
+{% endif %}
   </div><!-- column -->
 </div><!-- row -->
 {% endblock %}

@@ -1,0 +1,302 @@
+
+{% extends path+"/_layout-case-action.html" %} 
+{% block citizen_content %} {{ data.nuggets | log }}
+
+{% if customer.status == 'Ready for recommendation' %}
+		 
+<form action="medical_assessment_dashboard" method="POST" class="form">
+
+{% else %}
+<form action="physical" method="POST" class="form">
+{% endif %}	
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+<h1 class="heading-large mt10 mb0">Neck and arms</h1>
+
+
+
+  
+  <div class="form-group mt30">
+	  <fieldset class="inline">
+	
+		  <legend class="heading-medium mb10">Have you examined {{customer.name.first}} neck and arms?</legend>
+		  
+		
+			  <div class="form-group">
+			
+				    <div class="multiple-choice" data-target="exam-yes">
+				      <input id="decide_now" name="neckwhatcando" type="radio" value="Yes"
+				      {{ checked('whatcando', 'Yes') }}>
+				      <label for="decide_now"> Yes</label>
+				    </div>
+				
+				    <div class="multiple-choice" data-target="">
+				      <input id="face2face" name="neckwhatcando" type="radio" value="No, redirect({{ path1 }}/support/rejected)"
+				      {{ checked('whatcando', 'No') }}>
+				      <label for="face2face"> No</label>
+				    </div>
+				    
+				    
+				    
+				    <div class="form-group panel panel-border-narrow js-hidden mt10" id="exam-yes">
+				    
+					    	<fieldset class="inline">
+		
+								  <legend class="heading-medium mb10">Does {{customer.name.first}} have difficulties in any of these areas?</legend>
+								
+									  <div class="form-group">
+									
+										    <div class="multiple-choice" data-target="findings-yes">
+										      <input id="findyes" name="neckfindings" type="radio" value="Yes" {{ checked('neckfindings', 'Yes') }}>
+										      <label for="findyes">Yes</label>
+										    </div>
+										
+										    <div class="multiple-choice">
+										      <input id="findno" name="findings" type="radio" value="No" {{ checked('neckfindings', 'No') }}>
+										      <label for="findno"> No</label>
+										    </div>
+										    
+										     <div class="form-group panel panel-border-narrow js-hidden mt10" id="findings-yes" >
+										     	
+										     	<fieldset class="stacked">
+		
+													  <legend class="mb10">Select all of the affected areas:</legend>
+													
+														  <div class="form-group">
+														
+															    <div class="multiple-choice" data-target="neck-checked">
+															      <input id="neck" name="neckArms" type="checkbox" value="neck" {{ checked('neckArms', 'neck') }}>
+															      <label for="neck">Neck</label>
+															    </div>
+															    
+															    <div class="form-group panel panel-border-narrow js-hidden mt0 mb20" id="neck-checked">
+																			<details class="mb10">
+
+																					<summary><span class="summary">Help prompts</span></summary>
+																				
+																					<div class="p20">
+																							<ul class="list list-bullet">
+																									<li>Neck tenderness</li>
+																									<li>Creptus</li>
+																									<li>Chin to chest</li>
+																									<li>Extention</li>
+																									<li>Rotation</li>
+																										<li>Ear to shoulder</li>
+																								
+																								</ul>
+																						</div>
+																				
+																				
+																				</details>
+
+																      <label class="form-label" for="phys_lowerback_obs">Observation, palpation, movement</label>
+																      <textarea class="form-control form-control-3-4" name="neckObs" id="phys_lowerback_obs" rows="4">{{neckObs}}</textarea>
+															    </div>
+															
+															    
+															    
+															    
+															    <div class="multiple-choice" data-target="leftUpperArm-checked">
+															      <input id="leftUpperArm" name="neckArms" type="checkbox" value="leftUpperArm" {{ checked('neckArms', 'leftUpperArm') }}>
+															      <label for="leftUpperArm"> Left upper arm</label>
+															    </div>
+															    
+															    <div class="form-group panel panel-border-narrow js-hidden mt0 mb20" id="leftUpperArm-checked">
+																			<details class="mb10">
+
+																					<summary><span class="summary">Help prompts</span></summary>
+																				
+																					<div class="p20">
+																							<ul class="list list-bullet">
+																									<li>Shoulder external rotation</li>
+																									<li>Hands behind neck</li>
+																									<li>Hands behind back</li>
+																									<li>Scapular movement</li>
+																									<li>Shoulder abduction</li>
+																									<li>Elbow flexion</li>
+																									<li>Tone</li>
+																									<li>Power</li>
+																									<li>Refexes (biceps , triceps ,supinator)</li>
+																																								
+																								</ul>
+																						</div>
+																				
+																				
+																				</details>
+																      <label class="form-label" for="right_lowerback_obs">Observation, palpation, movement</label>
+																      <textarea class="form-control form-control-3-4" name="leftUpperArmObs" id="nugget" rows="4">{{lleftUpperArmObs}}</textarea>
+																</div>
+																
+																<div class="multiple-choice" data-target="rightUpperArm-checked">
+																		<input id="rightUpperArm" name="neckArms" type="checkbox" value="rightUpperArm" {{ checked('neckArms', 'rightUpperArm') }}>
+																		<label for="rightUpperArm"> Right upper arm</label>
+																	  </div>
+																	  
+																	  <div class="form-group panel panel-border-narrow js-hidden mt0 mb20" id="rightUpperArm-checked">
+																				  <details class="mb10">
+	  
+																						  <summary><span class="summary">Help prompts</span></summary>
+																					  
+																						  <div class="p20">
+																								  <ul class="list list-bullet">
+																										  <li>Shoulder external rotation</li>
+																										  <li>Hands behind neck</li>
+																										  <li>Hands behind back</li>
+																										  <li>Scapular movement</li>
+																										  <li>Shoulder abduction</li>
+																										  <li>Elbow flexion</li>
+																										  <li>Tone</li>
+																										  <li>Power</li>
+																										  <li>Refexes (biceps , triceps ,supinator)</li>
+																																									  
+																									  </ul>
+																							  </div>
+																					  
+																					  
+																					  </details>
+																			<label class="form-label" for="right_lowerback_obs">Observation, palpation, movement</label>
+																			<textarea class="form-control form-control-3-4" name="rightUpperArmObs" id="nugget" rows="4">{{rightUpperArmObs}}</textarea>
+																	  </div>
+
+																	  <div class="multiple-choice" data-target="leftForearm-checked">
+																			<input id="leftForearm" name="neckArms" type="checkbox" value="leftForearm" {{ checked('neckArms', 'leftForearm') }}>
+																			<label for="leftForearm">Left forearm</label>
+																		  </div>
+																		  
+																		  <div class="form-group panel panel-border-narrow js-hidden mt0 mb20" id="leftForearm-checked" >
+																					  <details class="mb10">
+		  
+																							  <summary><span class="summary">Help prompts</span></summary>
+																						  
+																							  <div class="p20">
+																									  <ul class="list list-bullet">
+																											  <li>Wrist pronation</li>
+																											  <li>Wrist supination</li>
+																											  <li>Wrist dorsi-flextion</li>
+																											  <li>Wrist parlmar-flextion</li>
+																											  <li>Pinch grip</li>
+																											  <li>Power grip</li>
+																											
+																																										  
+																										  </ul>
+																								  </div>
+																						  
+																						  
+																						  </details>
+																				<label class="form-label" for="leftForearm_obs">Observation, palpation, movement</label>
+																				<textarea class="form-control form-control-3-4" name="leftForearmObs" id="nugget" rows="4">{{leftForearmObs}}</textarea>
+																		  </div>
+
+															
+
+																			  <div class="multiple-choice" data-target="rightForearm-checked">
+																					<input id="rightForearm" name="neckArms" type="checkbox" value="rightForearm" {{ checked('neckArms', 'rightForearm') }}>
+																					<label for="rightForearm">Right forearm</label>
+																				  </div>
+																				  
+																				  <div class="form-group panel panel-border-narrow js-hidden mt0 mb20" id="rightForearm-checked">
+																							  <details class="mb10">
+				  
+																									  <summary><span class="summary">Help prompts</span></summary>
+																								  
+																									  <div class="p20">
+																											  <ul class="list list-bullet">
+																													  <li>Wrist pronation</li>
+																													  <li>Wrist supination</li>
+																													  <li>Wrist dorsi-flextion</li>
+																													  <li>Wrist parlmar-flextion</li>
+																													  <li>Pinch grip</li>
+																													  <li>Power grip</li>
+																													
+																																												  
+																												  </ul>
+																										  </div>
+																								  
+																								  
+																								  </details>
+																						<label class="form-label" for="rightForearm_obs">Observation, palpation, movement</label>
+																						<textarea class="form-control form-control-3-4" name="rightForearmObs" id="nugget" rows="4">{{rightForearmObs}}</textarea>
+																				  </div>
+																	
+															    
+															    
+														
+															    
+															    
+															    
+														  </div><!-- form-group -->
+												  
+												  </fieldset>
+										     	
+										     </div>
+										    
+									  </div><!-- form-group -->
+							  
+							  </fieldset>
+				    	
+				    </div>
+			
+			  </div><!-- form-group -->
+			  {% if customer.status == 'Ready for recommendation' %}
+			  <p class="mt0"><button class="button">Finish reviewing</button></p>
+			  <div class="multiple-choice" style="display:none">
+					<input id="radio-inline-4" type="radio" name="physicalVisited" value="physicalVisited" checked>
+					  
+					<label for="radio-4">hidden radio one</label>
+				  </div>
+			  {% else %}
+			  <p class="mt0"><button class="button">Save</button></p>
+			  {% endif %}
+	  </fieldset>
+  </div>
+</form>
+
+<h4 class="heading-small">Neck</h4>
+{% if checked('neckArms', 'neck')  %}
+<p>{{neckObs}}</p>
+{% else%}
+<p>Assessed - no difficulties in this area</p>
+{% endif %}
+<h4 class="heading-small">Left upper arm</h4>
+{% if checked('neckArms', 'leftUpperArm') %}
+<p>{{leftLowerbackObs}}</p>
+{% else%}
+<p>Assessed - no difficulties in this area</p>
+{% endif %}
+<h4 class="heading-small">Right upper arm</h4>
+{% if checked('neckArms', 'rightUpperArm')  %}
+<p>{{rightLowerbackObs}}</p>
+{% else %}
+<p>Assessed - no difficulties in this area</p>
+{% endif %}
+
+
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+{% macro physGroup(name,sel) %}
+  {% set s = name | slug %}
+  <!-- GROUP -->
+  <div class="multiple-choice" data-target="group_{{s}}_yes">
+    <input id="group_{{s}}" type="checkbox" name="group_{{s}}" sue="group_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="group_{{s}}">{{name}}</label>
+</div>
+{% endmacro %} {% macro physObs(name,sel) %} {% set s = name | slug %}
+<div class="multiple-choice" data-target="phys_{{s}}_yes">
+    <input id="phys_{{s}}" type="checkbox" name="mobility" value="phys_{{s}}" {% if sel %} checked="checked" {% endif %}>
+    <label for="phys_{{s}}">{{name}}</label>
+</div>
+<div class="form-group panel panel-border-narrow js-hidden mt0 mb20" id="phys_{{s}}_yes">
+    <p>
+        <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
+        <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
+    </p>
+</div>
+{% endmacro %} {% block footer_top %} {{ super() }}
+<p class="font-xsmall">
+    <a href="/{{ path2 }}/phys_exam_1">exam v1</a> |
+    <a href="/{{ path2 }}/phys_exam_2">exam v2</a>
+</p>
+{% endblock %} {% block page_scripts %} {{ super() }} {% endblock %}

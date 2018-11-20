@@ -1404,7 +1404,7 @@ router.post('/assessment/general-observations-post', function(req, res, next){
 })
 
 
-router.post('/assessment/evidence/mentalHealthAssessment', function(req, res, next){
+router.post('/assessment/:customerId/evidence/mentalHealthAssessment', function(req, res, next){
   var mentalHealthFields = [
       "Appearance",
       "Behaviour",
@@ -1524,6 +1524,8 @@ router.post('/planning/centre/:centre', function(req, res, next){
   
 })
 
+
+
 var reviewCustomers = require(filePath +'/data/reviews/readyForReview.js');
 
 router.get('/review', function(req, res, next){
@@ -1620,11 +1622,11 @@ router.post("/scrutiny/:customerId/fme-confirm", function(req, res, next){
 });
 
 
-
 var assessmentCustomers = require(filePath +'/data/assessment/readyForAssessment.js');
 
 router.get('/assessment', function(req, res, next){
   res.locals.customers = assessmentCustomers;
+ 
   next()
 })
 
@@ -1673,6 +1675,12 @@ router.get('/assessment/:customerId/evidence/:pageName', function(req, res, next
   
 
 })
+
+router.get('/assessment/:customerId/dashboard', function(req, res, next){
+  res.render(viewPath +'/assessment/evidence/illnessEffects');
+})
+
+
 
 router.get('/assessment/:customerId/scoring', function(req, res, next){
   
@@ -1777,6 +1785,10 @@ router.get('/assessment/:customerId/:pageName', function(req, res, next){
 
 
 })
+
+
+
+
 
 
 router.post("/scrutiny/:customerId/booking-post", function(req, res, next){

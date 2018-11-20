@@ -12,56 +12,43 @@
 <div class="grid-row">
   <div class="column-two-thirds">
 
-	<div class="exam-content">
+      {% for physical in physicalAssessment %}
+      {{physical.name}}
+test
+{% endfor %}
+
+		  <div class="task-list">
+					<h2 class="task-list-section">
+							Physical exam process
+						</h2>
+					<ul class="task-list-itmes">
+				
+						<li class="task-list-item"><a href="lower-limbs">Lower back and legs {% if data['whatcando']==='Yes'%}<span class="task-completed">Assessed</span>{% endif %}</a></li>
+						<li class="task-list-item"><a href="neck-arms">Neck and arms{% if data['neckwhatcando']==='Yes'%}<span class="task-completed">Assessed</span>{% endif %}</a></li>
+						<li class="task-list-item">Cardiac</li>
+						<li class="task-list-item">Respiratory</li>
+						<li class="task-list-item">Peripheral vascular</li>
+						<li class="task-list-item">Vision, speech and hearing</li>
+						<li class="task-list-item">Consciousness</li>
+						<li class="task-list-item">Continence</li>
+						<li class="task-list-item"><a href="mentalHealthAssessment">Mental health</a> {% if data['mental-health']==='mental-health'%}<span class="task-completed">Assessed</span>{% endif %}</a></li>
+
+
+
+
 	
-		<table>
-			
-			<caption>Physical exam process</caption>
-			
-			
-			<tr>
-				<th><a href="lower-limbs">Lower back and legs</a></th>
-				<td></td>
-			</tr>
-			<tr>
-				<th><a href="#">Neck and arms</a></th>
-				<td></td>
-			</tr>
-			<tr>
-				<th><a href="#">Cardiac</a></th>
-				<td></td>
-			</tr>
-			<tr>
-				<th><a href="#">Respiratory</a></th>
-				<td></td>
-			</tr>
-			<tr>
-				<th><a href="#">Peripheral vascular</a></th>
-				<td></td>
-			</tr>
-			<tr>
-				<th><a href="#">Vision, speech and hearing</a></th>
-				<td></td>
-			</tr>
-			<tr>
-				<th><a href="#">Consciousness</a></th>
-				<td></td>
-			</tr>
-			<tr>
-				<th><a href="#">Continence</a></th>
-				<td></td>
-			</tr>
-			<tr>
-				<th><a href="mentalHealthAssessment">Mental health</a></th>
-				<td>{% if data['mental-health'] %}     
-						<span class="blue">Assessed</span>
-					{% endif %}</td>
-			</tr>
-			
-		</table>
-		
-	</div>
-	
+  <form class="mt30" method="post" action="/{{path}}/assessment/{{customer._id}}/ready-for-recommendation">
+		<p class="mt30"><button class="button">Finish assessment</button></p>
+
+		{% if customer.status == 'Ready for recommendation' %}
+		 
+				<div class="multiple-choice" style="display:none">
+						<input id="radio-inline-4" type="radio" name="physicalVisited" value="physicalVisited" checked>
+				
+						<label for="radio-4">hidden radio one</label>
+					</div>
+					{% endif %}
+		</form>
 
 
 

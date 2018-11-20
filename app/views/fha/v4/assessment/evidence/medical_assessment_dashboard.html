@@ -32,82 +32,110 @@
     </table>
 
 
-  
-  <div class="assessDashboard">
+  <div class="grid-row mt30">
+  <div class="card-container">
     	
-    	<div class="row">
-	    	<section class="illnessEffects">
+   
+	    	<section class="card">
+						<a href="/{{path}}/assessment/{{customer._id}}/evidence/illnessEffects">
 	    		<h2 class="heading-small">
-	    			Illnesses and conditions
+						<span class="font-small card-header">Review </span>Illnesses and conditions 
+						{% if data['illnessVisited']==='illnessVisited'%}
+						<span class="badge">Reviewed</span>
+						{% endif %}	
 	    		</h2>
-	    		<p class="comments">Assessed:
-	    		<span class="number">
-	    			4
-	    		</span>
-	    		</p>
-	    		<p class="review"><a href="illnessEffectsEdit">Review</a></p>
+	    		<p>Assessed:
+	    		<span class="heading-xlarge">
+							{% if data['newillness']==='meds1'%}
+							{{customer.illnesses.length + 1}}
+							{% else %}
+							{{customer.illnesses.length}}
+							{% endif %}
+					</span></p>
+			    </a>
+	    
+	    
 	    	</section>
 	    	
-	    	<section class="socialWorkHistory">
-	    		<h2 class="heading-small">
-	    			Social and work history
+	    	<section class="card">
+						<a href="socialWorkHistoryEdit">	<h2 class="heading-small">
+								<span class="font-small card-header">Review </span>Social and work history 	
+								{% if data['socialVisited']==='socialVisited'%}
+								<span class="badge">Reviewed</span>
+								{% endif %}	
 	    		</h2>
-	    		<p class="comments">Statements:
-	    		<span class="number">
+	    		<p>Statements:
+	    		<span class="heading-xlarge">
             {{ '0' if not socialWorkComments }}
 	    			{{socialWorkComments.length}}
             
 	    		</span>
 	    		</p>
-	    		<p class="review"><a href="socialWorkHistoryEdit">Review </a></p>
+	    		 </a>
 	    	<!--	<p><a href="socialWorkHistoryEdit">Review</a></p> -->
 	    	</section>
 	    		
-	    	<section class="typicalDay">
+	    	<section class="card">
+						<a href="typicalDayEdit">
 	    		<h2 class="heading-small">
-	    			Typical day
+						<span class="font-small card-header">Review </span>Typical day	 
+						{% if data['typicalVisited']==='typicalVisited'%}
+						<span class="badge">Reviewed</span>
+						{% endif %}	
 	    		</h2>
-	    		<p class="comments">Statements:
-	    		<span class="number">
+	    		<p>Statements:
+	    		<span class="heading-xlarge">
             {{typicalDayComments.length}}
             {{ '0' if not typicalDayComments }}
 	    			
 	    		</span>
 	    		</p>
-	    		<p class="review"><a href="typicalDayEdit">Review </a></p>
+	    		</a>
 	    	</section>
-    	</div>
     	
-    	<div class="row">
+    	
+    	
 	    	
-	    	<section class="physicalAssessment">
-	    		<h2 class="heading-small">
-	    			Physical assessment
+	    	<section class="physicalAssessment card">
+					<a href="physical">
+					<h2 class="heading-small">
+							<span class="font-small card-header">Review </span>Physical assessment
+							{% if data['physicalVisited']==='physicalVisited'%}
+							<span class="badge">Reviewed</span>
+							{% endif %}
+					
 	    		</h2>
-	    		<p class="comments">Assessed:
-	    		<span class="number">
+	    		<p>Assessed:
+	    		<span class="heading-xlarge">
 	    			1
 	    		</span>
 	    		</p>
-	    		<p class="review"><a href="lower-limbs-edit">Review</a></p>
+	    	</a>
 	    	</section>
 	    		
-	    	<section class="mentalHealth">
+	    	<section class="card">
+					<a href="mentalHealthAssessment">
 	    		<h2 class="heading-small">
-	    			Mental health
+							<span class="font-small card-header">Review </span>Mental health
+							{% if data['mentalVisited']==='mentalVisited'%}
+							<span class="badge">Reviewed</span>
+							{% endif %}	
+						
 	    		</h2>
-	    		<p class="comments">Assessed:
-	    		<span class="number">
+	    		<p>Assessed:
+	    		<span class="heading-xlarge">
 	    			{{mentalHealthCount}}
             {{ '0' if not mentalHealthCount }}
 	    		</span>
 	    		</p>
-	    		<p class="review"><a href="mentalHealthEdit">Review </a></p>
+	    		</a>
 	    	</section>
-    	</div>
+    
     	
     	
-    </div>
+		</div>
+    </div>		
+
 
 {% endblock %}
 

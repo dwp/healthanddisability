@@ -2,6 +2,7 @@
 
 
 <div class="form-group">
+    {% if customer.descriptor == "moving" %}
 <fieldset>
 	<legend class="heading-medium mb10 mt10">How far can Tomas walk or move on level ground without help from someone, and without stopping due to severe pain or tiredness?</legend>
 	
@@ -50,12 +51,111 @@
 
 </div>
   
+
+  {% elif customer.descriptor == "standing" %}
+  <fieldset class="inline">
+    <legend class="heading-medium mb10 mt10">Can  {{customer.name.first}} move from one seat to another right next to it without help from another person</legend>
+    
+    <p class="mb5">This means:</p>
+      <ul class="list list-bullet">
+        <li>Repeatedly</li>
+        <li>Safely</li>
+        <li>reliably</li>
+        <li>without causing significant pain</li>
+      </ul>
+      
+      <div class="multiple-choice">
+        <input id="nomore_50" type="radio" name="standing-sitting" value="yes" {{checked('standing-sitting', 'yes')}}>
+        <label for="nomore_50">yes</label>
+      </div>
+      <div class="multiple-choice" data-target="the_rest">
+        <input id="nomore_100" type="radio" name="standing-sitting" value="no" {{checked('standing-sitting', 'no')}}>
+        <label for="nomore_100">no</label>
+      </div>
+     
+      
+  </fieldset>
+  
+  </div>
+  
+
+      {% elif customer.descriptor == "reaching" %}
+      <fieldset class="inline">
+        <legend class="heading-medium mb10 mt10">Which of these options describes how {{customer.name.first}} can reach for thing?</legend>
+        
+       
+          
+          <div class="multiple-choice">
+            <input id="nomore_50" type="radio" name="reaching-radio" value="pocket" {{checked('reaching-radio', 'pocket')}}>
+            <label for="nomore_50">{{customer.name.first}} cannot raise either arm as if to put something in their top pocket</label>
+          </div>
+          <div class="multiple-choice">
+            <input id="nomore_100" type="radio" name="standing-sitting" value="hat" {{checked('reaching-radio', 'hat')}}>
+            <label for="nomore_100">{{customer.name.first}} cannot raise either arm to the top of there head to put a hat on </label>
+          </div>
+          <div class="multiple-choice">
+              <input id="nomore_100" type="radio" name="standing-sitting" value="reach" {{checked('reaching-radio', 'reach')}}>
+              <label for="nomore_100">{{customer.name.first}} cannot raise either arm above their head to reach for something</label>
+            </div>
+            <div class="multiple-choice">
+                <input id="nomore_100" type="radio" name="standing-sitting" value="no" {{checked('reaching-radio', 'no')}}>
+                <label for="nomore_100">{{customer.name.first}} doesn't have problems when reaching for things</label>
+              </div>
+         
+          
+      </fieldset>
+      
+      </div>
+      {% else %}
+      <div class="panel panel-border-wide">
+          <p>
+            Were not testing this descriptor fully today, so a few things may be missing, but please carry on and fill in the details box below
+          </p>
+        </div>
+        {% endif %}
+
   
   
   
   <div class="form-group">
     <label class="form-label" for="justificaiton">Give details</label>
+    {% if customer.descriptor == "moving" %}
     <textarea class="form-control form-control-3-4" name="mobilityDetails" id="justificaiton" rows="5">{{mobilityDetails}}</textarea>
+    {% elif customer.descriptor == "standing" %}
+    <textarea class="form-control form-control-3-4" name="standingDetails" id="justificaiton" rows="5">{{standingDetails}}</textarea>
+    {% elif customer.descriptor == "reaching" %}
+    <textarea class="form-control form-control-3-4" name="reachingDetails" id="justificaiton" rows="5">{{reachingDetails}}</textarea>
+    {% elif customer.descriptor == "picking" %}
+    <textarea class="form-control form-control-3-4" name="pickingDetails" id="justificaiton" rows="5">{{pickingDetails}}</textarea> 
+    {% elif customer.descriptor == "using" %}
+    <textarea class="form-control form-control-3-4" name="usingDetails" id="justificaiton" rows="5">{{usingDetails}}</textarea> 
+    {% elif customer.descriptor == "speaking" %}
+    <textarea class="form-control form-control-3-4" name="speakingDetails" id="justificaiton" rows="5">{{speakingDetails}}</textarea> 
+    {% elif customer.descriptor == "hearing" %}
+    <textarea class="form-control form-control-3-4" name="hearingDetails" id="justificaiton" rows="5">{{hearingDetails}}</textarea> 
+    {% elif customer.descriptor == "seeing" %}
+    <textarea class="form-control form-control-3-4" name="seeingDetails" id="justificaiton" rows="5">{{seeingDetails}}</textarea> 
+    {% elif customer.descriptor == "controlling" %}
+    <textarea class="form-control form-control-3-4" name="controllingDetails" id="justificaiton" rows="5">{{controllingDetails}}</textarea> 
+    {% elif customer.descriptor == "staying" %}
+    <textarea class="form-control form-control-3-4" name="stayingDetails" id="justificaiton" rows="5">{{stayingDetails}}</textarea> 
+    {% elif customer.descriptor == "learning" %}
+    <textarea class="form-control form-control-3-4" name="learningDetails" id="justificaiton" rows="5">{{learningDetails}}</textarea> 
+    {% elif customer.descriptor == "being" %}
+    <textarea class="form-control form-control-3-4" name="beingDetails" id="justificaiton" rows="5">{{beingDetails}}</textarea> 
+    {% elif customer.descriptor == "planning" %}
+    <textarea class="form-control form-control-3-4" name="planningDetails" id="justificaiton" rows="5">{{planningDetails}}</textarea> 
+    {% elif customer.descriptor == "coping" %}
+    <textarea class="form-control form-control-3-4" name="copingDetails" id="justificaiton" rows="5">{{copingDetails}}</textarea> 
+    {% elif customer.descriptor == "going" %}
+    <textarea class="form-control form-control-3-4" name="goingDetails" id="justificaiton" rows="5">{{goingDetails}}</textarea> 
+    {% elif customer.descriptor == "meeting" %}
+    <textarea class="form-control form-control-3-4" name="meetingDetails" id="justificaiton" rows="5">{{meetingDetails}}</textarea> 
+    {% elif customer.descriptor == "behaving" %}
+    <textarea class="form-control form-control-3-4" name="behavingDetails" id="justificaiton" rows="5">{{behavingDetails}}</textarea> 
+    {% elif customer.descriptor == "eating" %}
+    <textarea class="form-control form-control-3-4" name="eatingDetails" id="justificaiton" rows="5">{{eatingDetails}}</textarea>
+    {% endif %}
   </div><!-- .form-group -->
 <div class="visually-hidden">
   <div class="multiple-choice ">
