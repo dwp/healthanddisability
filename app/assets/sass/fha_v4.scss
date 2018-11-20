@@ -73,7 +73,22 @@ a:visited {
 }
 
 .staff__heading {
-  padding: 14px 0;
+  padding: 14px 0 10px 0;
+  	
+  	h1 {
+	  	margin: 0;
+	  	padding: 0;
+  	}
+  	
+  	.badges {
+	  	ul {
+		  	margin: -14px 0 12px 0;
+		  	position: relative;
+		  	li {
+			  	margin: 0;
+		  	}
+	  	}
+  	}
 
 }
 
