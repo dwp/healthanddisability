@@ -26,16 +26,19 @@
 			
 				    <div class="multiple-choice" data-target="exam-yes">
 				      <input id="decide_now" name="neckwhatcando" type="radio" value="Yes"
-				      {{ checked('whatcando', 'Yes') }}>
+				      {{ checked('neckwhatcando', 'Yes') }}>
 				      <label for="decide_now"> Yes</label>
 				    </div>
 				
-				    <div class="multiple-choice" data-target="">
-				      <input id="face2face" name="neckwhatcando" type="radio" value="No, redirect({{ path1 }}/support/rejected)"
-				      {{ checked('whatcando', 'No') }}>
+				    <div class="multiple-choice" data-target="neck-exam-no">
+				      <input id="face2face" name="neckwhatcando" type="radio" value="No"
+				      {{ checked('neckwhatcando', 'No') }}>
 				      <label for="face2face"> No</label>
 				    </div>
-				    
+				    <div class="form-group panel panel-border-narrow js-hidden mt10" id="neck-exam-no">
+							<label class="form-label" for="examinationNoObs">Why haven't you examined {{customer.name.first}}'s neck and arms?</label>
+							<textarea class="form-control form-control-3-4" name="neckExaminationNoObs" id="examinationNoObs" rows="4">{{neckExaminationNoObs}}</textarea>
+					  </div>
 				    
 				    
 				    <div class="form-group panel panel-border-narrow js-hidden mt10" id="exam-yes">
@@ -52,7 +55,7 @@
 										    </div>
 										
 										    <div class="multiple-choice">
-										      <input id="findno" name="findings" type="radio" value="No" {{ checked('neckfindings', 'No') }}>
+										      <input id="findno" name="neckfindings" type="radio" value="No" {{ checked('neckfindings', 'No') }}>
 										      <label for="findno"> No</label>
 										    </div>
 										    
@@ -124,7 +127,7 @@
 																				
 																				</details>
 																      <label class="form-label" for="right_lowerback_obs">Observation, palpation, movement</label>
-																      <textarea class="form-control form-control-3-4" name="leftUpperArmObs" id="nugget" rows="4">{{lleftUpperArmObs}}</textarea>
+																      <textarea class="form-control form-control-3-4" name="leftUpperArmObs" id="nugget" rows="4">{{leftUpperArmObs}}</textarea>
 																</div>
 																
 																<div class="multiple-choice" data-target="rightUpperArm-checked">
@@ -251,26 +254,62 @@
   </div>
 </form>
 
+
+
+
+<div class="review-item">
+		<h2 class="heading-medium">Physical assessments</h2>
+		
+		<p>Consent was given by {{customer.name.first}} to start the physical assessment.</p>
+		
+		<div class="review-inner">	
+			
+
+				{% if checked('neckwhatcando', 'No') %}
+<h3 class="heading-medium mt0">Neck and arms</h3>
+<p>{{customer.name.first}}'s neck and arms were not examined</p>
+<h4 class="heading-small">Reason</h4>
+<p>{{examinationNoObs}}</p>
+<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit lower back and legs</a></p>
+{% elif checked('neckfindings', 'Yes') or checked('neckfindings', 'No') %}
+<h3 class="heading-medium mt0">Neck and arms</h3>
+<p>{{customer.name.first}}'s neck and arms have been assessed</p>
+
 <h4 class="heading-small">Neck</h4>
-{% if checked('neckArms', 'neck')  %}
+{% if checked('neckfindings', 'Yes') and checked('neckArms', 'neck')  %}
 <p>{{neckObs}}</p>
 {% else%}
 <p>Assessed - no difficulties in this area</p>
 {% endif %}
 <h4 class="heading-small">Left upper arm</h4>
-{% if checked('neckArms', 'leftUpperArm') %}
-<p>{{leftLowerbackObs}}</p>
+{% if checked('neckfindings', 'Yes') and checked('neckArms', 'leftUpperArm') %}
+<p>{{leftUpperArmObs}}</p>
 {% else%}
 <p>Assessed - no difficulties in this area</p>
 {% endif %}
 <h4 class="heading-small">Right upper arm</h4>
-{% if checked('neckArms', 'rightUpperArm')  %}
-<p>{{rightLowerbackObs}}</p>
+{% if checked('neckfindings', 'Yes') and checked('neckArms', 'rightUpperArm')  %}
+<p>{{rightUpperArmObs}}</p>
 {% else %}
 <p>Assessed - no difficulties in this area</p>
 {% endif %}
+<h4 class="heading-small">Left Forearm</h4>
+{% if checked('neckfindings', 'Yes') and checked('neckArms', 'leftForearm')  %}
+<p>{{leftForearmObs}}</p>
+{% else %}
+<p>Assessed - no difficulties in this area</p>
+{% endif %}
+<h4 class="heading-small">Right Forearm</h4>
+{% if checked('neckfindings', 'Yes') and checked('neckArms', 'rightForearm')  %}
+<p>{{rightForearmObs}}</p>
+{% else %}
+<p>Assessed - no difficulties in this area</p>
+{% endif %}
+<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit lower back and legs</a></p>
 
-
+{% endif %}
+</div>
+</div> 
 
   </div><!-- column -->
 </div><!-- row -->

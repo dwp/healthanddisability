@@ -15,14 +15,47 @@
     <div class="column-full">
     
     
-    	<p class="no-kdBar"> <a href="javascript: history.go(-1)" class="link-back">Back</a></p>	
+			<p class="no-kdBar"> <a href="javascript: history.go(-1)" class="link-back">Back</a></p>	
+			
+<div class="grid-row">		
+<div class="column-two-thirds">
 <h1 class="heading-large mt0">General observations</h1>
+
+{% if data['general-observations-post']==='posted' %}
+
+<h2 class="heading-medium">Observations</h2>
+<div class="review-item">
+			{% for comment in comments|sort(attribute='timestamp', reverse=true) %}
+			
+			<div class="review-inner" >
+				
+							<p>{{comment.comment}}</p>
+	
+					{% if not comment.hasComment %}
+					<h4>
+						{{ 'Customer' if comment.isCustomer }} {{ 'Appointee' if not comment.isCustomer }} passed security</h4>
+					{% endif %}
+				
+				<p class="namedate">{{comment.name}} | <span class="text-secondary"> {{comment.dateFormatted}}</span></p>
+				{% if comment.hasComment %}
+		
+			{% endif %}
+
+					</div>
+		{% endfor %}
+
+
+</div>
+<hr />
+	{% endif %}		
+
+	
 
 <form class="m-t-xl" method="post" action="general-observations-post">
 
 	<div class="form-group">
 		<label class="form-label m-b-xs" for="add-comment">Your comment</label>
-		<textarea class="form-control span-width" name="comment" id="add-comment" rows="5"></textarea>
+		<textarea class="form-control form-control-3-4" name="comment" id="add-comment" rows="5"></textarea>
 	</div>
 	<p><button type="submit" class="button button-secondary">Add observation</button></p>
 	{% if data['wca']==='yes' %}
@@ -40,34 +73,11 @@
 	</div>
 	</form>
 </div>
+</div>	
+</div>	
 <div class="column-full">
 
-{% if data['general-observations-post']==='posted' %}
-<h2 class="heading-medium">Observations</h2>
-<ul class="comments">
-			{% for comment in comments|sort(attribute='timestamp', reverse=true) %}
-			
-			<li class="comments-item" >
-					<div class="column-two-thirds">
-							<p>{{comment.comment}}</p>
-			</div>
-				<div class="column-one-third">			<h3  class="heading-small mt0">{{comment.name}}</h3>
-					{% if not comment.hasComment %}
-					<h4>
-						{{ 'Customer' if comment.isCustomer }} {{ 'Appointee' if not comment.isCustomer }} passed security</h4>
-					{% endif %}
-				
-				<p class="form-hint">{{comment.dateFormatted}}</p>
-				{% if comment.hasComment %}</div>
-		
-			{% endif %}
-
-					</li>
-		{% endfor %}
-
-
-				</ul>
-	{% endif %}			
+	
 	</div>
 	</div>
   </div><!-- row -->

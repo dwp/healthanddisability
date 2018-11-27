@@ -56,7 +56,7 @@
     </div><!-- container -->
 
   </main>
-  {%if customer.status == 'Assessment started' or customer.status == 'Assessment completed'%}
+  {%if customer.status == 'Assessment started' or customer.status == 'Assessment completed' or customer.status == 'Ready for recommendation'%}
   {% include path+"/includes/evidence/_evidence_panel.html"%}
   {% endif %}
 {% endblock %}

@@ -30,11 +30,16 @@
 				      <label for="decide_now"> Yes</label>
 				    </div>
 				
-				    <div class="multiple-choice" data-target="">
-				      <input id="face2face" name="whatcando" type="radio" value="No, redirect({{ path1 }}/support/rejected)"
+				    <div class="multiple-choice" data-target="exam-no">
+				      <input id="face2face" name="whatcando" type="radio" value="No"
 				      {{ checked('whatcando', 'No') }}>
 				      <label for="face2face"> No</label>
-				    </div>
+					</div>
+					
+					<div class="form-group panel panel-border-narrow js-hidden mt10" id="exam-no">
+							<label class="form-label" for="examinationNoObs">Why haven't you examined {{customer.name.first}}'s lower back and legs?</label>
+							<textarea class="form-control form-control-3-4" name="examinationNoObs" id="examinationNoObs" rows="4">{{examinationNoObs}}</textarea>
+					  </div>
 				    
 				    
 				    
@@ -54,7 +59,8 @@
 										    <div class="multiple-choice">
 										      <input id="findno" name="findings" type="radio" value="No"  {{ checked('findings', 'No') }}>
 										      <label for="findno"> No</label>
-										    </div>
+											</div>
+										
 										    
 										     <div class="form-group panel panel-border-narrow js-hidden mt10" id="findings-yes">
 										     	
@@ -122,7 +128,7 @@
 																				
 																				</details>
 																      <label class="form-label" for="right_lowerback_obs">Observation, palpation, movement</label>
-																      <textarea class="form-control form-control-3-4" name="leftLowerbackObs" id="nugget" rows="4">{{leftLowerbackObs}}</textarea>
+																      <textarea class="form-control form-control-3-4" name="leftLegObs" id="nugget" rows="4">{{leftLegObs}}</textarea>
 															    </div>
 															    
 															    
@@ -153,7 +159,7 @@
 																				
 																				</details>
 																      <label class="form-label" for="left_lowerback_obs">Observation, palpation, movement </label>
-																      <textarea class="form-control form-control-3-4" name="rightLowerbackObs" id="left_lowerback_obs" rows="4">{{rightLowerbackObs}}</textarea>
+																      <textarea class="form-control form-control-3-4" name="rightLegObs" id="left_lowerback_obs" rows="4">{{rightLegObs}}</textarea>
 															    </div>
 															    
 															    
@@ -187,24 +193,58 @@
   </div>
 </form>
 
-<h4 class="heading-small">Lower back</h4>
-{% if  checked('lowerlimbs', 'Lower')%}
-<p>{{physLowerbackObs}}</p>
-{% else%}
-<p>Assessed - no difficulties in this area</p>
-{% endif %}
-<h4 class="heading-small">Left leg</h4>
-{% if checked('lowerlimbs', 'Left') %}
-<p>{{leftLowerbackObs}}</p>
-{% else%}
-<p>Assessed - no difficulties in this area</p>
-{% endif %}
-<h4 class="heading-small">Right leg</h4>
-{% if checked('lowerlimbs', 'Right') %}
-<p>{{rightLowerbackObs}}</p>
-{% else %}
-<p>Assessed - no difficulties in this area</p>
-{% endif %}
+
+<div class="review-item">
+		<h2 class="heading-medium">Physical assessments</h2>
+		
+		<p>Consent was given by {{customer.name.first}} to start the physical assessment.</p>
+		
+		{% if checked('whatcando', 'Yes')%}
+		<div class="review-inner">	
+				
+			<h3 class="heading-medium mt0">Lower back and legs</h3>
+			<p>{{customer.name.first}}'s lower back and legs have been assessed</p>
+			
+			<h4 class="heading-small">Lower back</h4>
+			{% if checked('findings', 'Yes') and  checked('lowerlimbs', 'Lower')%}
+			<p>{{physLowerbackObs}}</p>
+	
+			{% else%}
+			<p>Assessed - no difficulties in this area</p>
+			{% endif %}
+			<h4 class="heading-small">Left leg</h4>
+			{% if checked('findings', 'Yes') and checked('lowerlimbs', 'Left')%}
+			<p>{{leftLegObs}}</p>
+			
+			{% else%}
+			<p>Assessed - no difficulties in this area</p>
+			{% endif %}
+			<h4 class="heading-small">Right leg</h4>
+		
+			{% if checked('findings', 'Yes') and  checked('lowerlimbs', 'Right')%}
+			<p>{{rightLegObs}}</p>
+			{% else%}
+			<p>Assessed - no difficulties in this area</p>
+			{% endif %}
+			<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit lower back and legs</a></p>
+			{% else %}
+			<h3 class="heading-medium mt0">Lower back and legs</h3>
+			<p>{{customer.name.first}}'s lower back and legs were not examined</p>
+			<h4 class="heading-small">Reason</h4>
+			<p>{{examinationNoObs}}</p>
+			<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit lower back and legs</a></p>
+		
+
+		
+		</div>
+	
+		
+		{% endif %}
+		
+		
+	</div> 
+		
+
   </div><!-- column -->
 </div><!-- row -->
 {% endblock %}

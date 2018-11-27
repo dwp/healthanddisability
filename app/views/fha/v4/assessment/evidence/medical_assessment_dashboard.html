@@ -107,7 +107,13 @@
 	    		</h2>
 	    		<p>Assessed:
 	    		<span class="heading-xlarge">
-	    			1
+							{% if data['whatcando'] and data['neckwhatcando'] %}
+							2
+							{% elif data['whatcando'] or data['neckwhatcando'] %}
+							1
+						 {% else %}
+						 0
+						 {% endif %}
 	    		</span>
 	    		</p>
 	    	</a>

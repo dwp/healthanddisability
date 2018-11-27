@@ -10,91 +10,22 @@
 
 <div class="grid-row">
   <div class="column-two-thirds">
+			<div class="task-list">
+					<ul class="task-list-itmes">
+						<li class="task-list-item"><a href="mh-appearance.html">Appearance {% if data['Appearance'] %}<span class="task-completed">Assessed</span>{% endif %}</a></li>
+						<li class="task-list-item"><a href="mh-behaviour.html">Behaviour {% if data['Behaviour'] %}<span class="task-completed">Assessed</span>{% endif %}</a></li>
+						<li class="task-list-item"><a href="mh-speech.html">Speech {% if data['Speech'] %}<span class="task-completed">Assessed</span>{% endif %}</a></li>
+						<li class="task-list-item"><a href="mh-mood.html">Mood {% if data['Mood'] %}<span class="task-completed">Assessed</span>{% endif %}</a></li>
+						<li class="task-list-item"><a href="mh-cognition.html">General cognition {% if data['Cognition'] %}<span class="task-completed">Assessed</span>{% endif %}</a></li>
+						<li class="task-list-item"><a href="mh-insight.html">Insight {% if data['Insight'] %}<span class="task-completed">Assessed</span>{% endif %}</a></li>
+						<li class="task-list-item"><a href="mh-thoughts.html">Thoughts{% if data['Thoughts'] %}<span class="task-completed">Assessed</span>{% endif %}</a></li>
+						<li class="task-list-item"><a href="mh-perceptions.html">Perceptions {% if data['Perceptions'] %}<span class="task-completed">Assessed</span>{% endif %}</a></li>
+						<li class="task-list-item"><a href="mh-addictions.html">Addictions {% if data['Addictions'] %}<span class="task-completed">Assessed</span>{% endif %}</a></li>
+						<li class="task-list-item"><a href="mh-involentry-movements.html">Involentry movements {% if data['involentry-movements'] %}<span class="task-completed">Assessed</span>{% endif %}</a></li>
+						<li class="task-list-item"><a href="mh-cognative-tests.html">Cognitive tests {% if data['Cognative-test'] %}<span class="task-completed">Assessed</span>{% endif %}</a></li>
 
-	<div class="exam-content">
-	
-		<table>
-			
-			<caption>Physical exam process</caption>
-			
-			
-			<tr class="complete">
-				<th><a href="mh-appearance.html">Appearance</a></th>
-				<td>
-						{% if data['Appearance'] %}     
-						<span class="blue">Assessed</span>
-					{% endif %}
-				</td>
-			</tr>
-
-			<tr>
-				<th><a href="mh-behaviour.html">Behaviour</a></th>
-				<td>		{% if data['Behaviour'] %}     
-						<span class="blue">Assessed</span>
-					{% endif %}</td>
-			</tr>
-			<tr>
-				<th><a href="mh-speech.html">Speech</a></th>
-				<td>{% if data['Speech'] %}     
-						<span class="blue">Assessed</span>
-					{% endif %}</td>
-			</tr>
-			<tr>
-				<th><a href="mh-mood.html">Mood</a></th>
-				<td>{% if data['Mood'] %}     
-						<span class="blue">Assessed</span>
-					{% endif %}</td>
-			</tr>
-			<tr>
-				<th><a href="mh-cognition.html">Cognition</a></th>
-				<td>{% if data['Cognition'] %}     
-						<span class="blue">Assessed</span>
-					{% endif %}</td>
-			</tr>
-			<tr>
-				<th><a href="mh-general.html">General</a></th>
-				<td>{% if data['General'] %}     
-						<span class="blue">Assessed</span>
-					{% endif %}</td>
-			</tr>
-			<tr>
-				<th><a href="mh-insight.html">Insight</a></th>
-				<td>{% if data['Insight'] %}     
-						<span class="blue">Assessed</span>
-					{% endif %}</td>
-			</tr>
-			<tr>
-				<th><a href="mh-thoughts.html">Thoughts</a></th>
-				<td>{% if data['Thoughts'] %}     
-						<span class="blue">Assessed</span>
-					{% endif %}</td>
-			</tr>
-			<tr>
-					<th><a href="mh-perceptions.html">Perceptions</a></th>
-					<td>{% if data['Perceptions'] %}     
-							<span class="blue">Assessed</span>
-						{% endif %}</td>
-				</tr>
-				<tr>
-					<th><a href="mh-addictions">Addictions</a></th>
-					<td>{% if data['Addiction'] %}     
-							<span class="blue">Assessed</span>
-						{% endif %}</td>
-				</tr>
-				<tr>
-					<th><a href="mh-involentry-movements.html">Involuntary Movements</a></th>
-					<td>{% if data['Involentry-movements'] %}     
-							<span class="blue">Assessed</span>
-						{% endif %}</td>
-				</tr>	<tr>
-							<th><a href="mh-cognative-tests.html">Cognitive tests</a></th>
-							<td>{% if data['Cognative-test'] %}     
-									<span class="blue">Assessed</span>
-								{% endif %}</td>
-						</tr>
-		</table>
-		
-	</div>
+					</ul>
+				</div>
 
 	{% if customer.status == 'Ready for recommendation' %}
 		 

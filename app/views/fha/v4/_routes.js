@@ -46,7 +46,7 @@ router.get('*', function (req, res, next) {
     req.session.data.observations = [];
   }
 
-  res.locals.menuItems = require(filePath +'/caselist/_navItems.js')(versionNumber, reviewCustomers);
+  res.locals.menuItems = require(filePath +'/caselist/_navItems.js')(versionNumber, reviewCustomers, assessmentCustomers, );
 
   next()
 })
@@ -56,7 +56,17 @@ router.get('/', function (req, res, next) {
   res.locals.reviewNumbers = {
     total: reviewCustomers.length,
     readyForReview: reviewCustomers.filter(customer => customer.status === "review").length,
-    fme: reviewCustomers.filter(customer => customer.status === "fme").length
+    fme: reviewCustomers.filter(customer => customer.status === "fme").length,
+  }
+  next()
+})
+
+router.get('/', function (req, res, next) {
+  
+  res.locals.assessNumbers = {
+    total: assessmentCustomers.length,
+    readyForAssessment: assessmentCustomers.filter(customer => customer.status === "Ready for assessment").length,
+    assesmentComplete: assessmentCustomers.filter(customer => customer.status === "Assessment completed").length,
   }
   next()
 })
@@ -85,7 +95,7 @@ router.post('*', function (req, res, next) {
   if(!req.session.data.observations){
     req.session.data.observations = [];
   }
-  res.locals.menuItems = require(filePath +'/caselist/_navItems.js')(versionNumber, reviewCustomers);
+  res.locals.menuItems = require(filePath +'/caselist/_navItems.js')(versionNumber, reviewCustomers, assessmentCustomers);
   
   next()
 })
@@ -1381,12 +1391,18 @@ router.get('/capacity/manage-centre/capacity-2', function(req, res, next){
 });
 
 
-router.get('/assessment/general-observations', function(req, res, next){
+
+router.get('/assessment/:customerId/general-observations', function(req, res, next){
   res.locals.comments = req.session.data.observations
   next()
 })
 
-router.post('/assessment/general-observations-post', function(req, res, next){
+router.get('/assessment/:customerId/scoring/report-view', function(req, res, next){
+  res.locals.comments = req.session.data.observations
+  next()
+})
+
+router.post('/assessment/:customerId/general-observations-post', function(req, res, next){
   var time = new Date();
   res.locals.comments = req.session.data.observations
 
@@ -1395,39 +1411,19 @@ router.post('/assessment/general-observations-post', function(req, res, next){
       comment: req.body.comment,
       timestamp: time.getTime(),
       dateFormatted: moment(time).format("dddd DD MMM YYYY hh:mm a"),
-      name: "Shelia Hopper",
+      name: "Heather Harrison",
       hasComment: true,
       isCustomer: true
       })
-    res.redirect(301, '/fha/v' + versionNumber +'/assessment/general-observations');
+    res.redirect(301, '/fha/v' + versionNumber +'/assessment/' + req.params.customerId + '/general-observations');
 
-})
-
-
-router.post('/assessment/:customerId/evidence/mentalHealthAssessment', function(req, res, next){
-  var mentalHealthFields = [
-      "Appearance",
-      "Behaviour",
-      "Speech",
-      "Mood",
-      "Cognition",
-      "General",
-      "Insight",
-      "Thoughts",
-      "Perceptions",
-      "Addiction",
-      "Involentry-movements",
-      "Cognative-test"];
-  var count = 0;
-  mentalHealthFields.forEach( function(element, index) {
-    if(req.session.data[element]){
-      count ++;
-    }
-  req.session.data.mentalHealthCount = count;
-  console.log('Mental Health count: ' + count)
-  next()
-  });
 });
+
+
+
+
+
+
 
 router.get('/planning/*', function(req, res, next){
 
@@ -1627,6 +1623,18 @@ var assessmentCustomers = require(filePath +'/data/assessment/readyForAssessment
 router.get('/assessment', function(req, res, next){
   res.locals.customers = assessmentCustomers;
  
+  next()
+})
+
+router.get('/ready-for-assessment', function(req, res, next){
+  res.locals.customers = assessmentCustomers
+                            .filter(customer => customer.status === "Ready for assessment");
+  next()
+})
+
+router.get('/completed-assessments', function(req, res, next){
+  res.locals.customers = assessmentCustomers
+                            .filter(customer => customer.status === "Assessment completed");
   next()
 })
 
@@ -1899,6 +1907,10 @@ router.post('/planning/centre/:centre', function(req, res, next){
   
 })
 
+
+
+
+
 router.post('/search-results', function(req, res, next){
 
   var sanitizeField = function(string){
@@ -1912,6 +1924,35 @@ router.post('/search-results', function(req, res, next){
   res.render(viewPath +'/search-results');
   
 })
+
+
+
+router.post('/assessment/:customerId/evidence/mentalHealthAssessment', function(req, res, next){
+  var mentalHealthFields = [
+      "Appearance",
+      "Behaviour",
+      "Speech",
+      "Mood",
+      "Cognition",
+      "General",
+      "Insight",
+      "Thoughts",
+      "Perceptions",
+      "Addiction",
+      "Involentry-movements",
+      "Cognative-test"];
+  var count = 0;
+  mentalHealthFields.forEach( function(mhelement, index) {
+    if(req.session.data[mhelement]){
+      count ++;
+    }
+  req.session.data.mentalHealthCount = count;
+  console.log('Mental Health count: ' + count)
+  next()
+  })
+})
+
+
 
 
 module.exports = router

@@ -37,7 +37,9 @@
 {{ 'Assessment completed' if customer.status == 'Assessment completed' }}
 {{ 'Assessment stopped' if customer.status == 'Assessment stopped' }}
  </p>
-     {% if customer.status == 'Assessment started' or customer.status == 'Assessment completed' %}
+     {% if customer.status == 'Assessment started' %}
+     {% elif customer.status == 'Assessment completed' %}
+     <p><a href="/{{path}}/assessment/{{customer._id}}/scoring/report-view" class="button">Rework report</a></p>   
    
      {% elif customer.status == 'Assessment stopped' %}
      <p><a href="/{{path}}/assessment/{{customer._id}}/start-assessment" class="button">Restart assessment</a></p>   
@@ -85,7 +87,7 @@
             {% if customer.status == 'Assessment started' or customer.status == 'Ready for recommendation'%}  
             <li>
             
-                <a href="/{{path}}/assessment/{{customer._id}}/evidence/stopAssess">Stop assessment</a></li>
+                <a href="/{{path}}/assessment/{{customer._id}}/evidence/stopAssess">Abandon assessment</a></li>
             {% endif %}
 
             {% if customer.status == 'Assessment stopped' %}
@@ -117,7 +119,7 @@
     </div><!-- container -->
 
   </main>
-  {%if customer.status == 'Assessment started' or customer.status == 'Assessment completed' %}
+  {%if customer.status == 'Assessment started' or customer.status == 'Assessment completed' or customer.status == 'Ready for recommendation'%}
   {% include path+"/includes/evidence/_evidence_panel.html" %}
   {% endif %}
 {% endblock %}

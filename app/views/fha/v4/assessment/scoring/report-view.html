@@ -135,43 +135,139 @@
 	<p><a href="#" class="button secondary">Edit typical day</a></p>
 </div>  -->
 
+{% if data['physicalAssessed']==='physicalAssessed' %}
+
 <div class="review-item">
 	<h2 class="heading-medium">Physical assessments</h2>
 	
 	<p>Consent was given by {{customer.name.first}} to start the physical assessment.</p>
-	
+	{% if checked('whatcando', 'Yes')%}
 	<div class="review-inner">	
+			
 		<h3 class="heading-medium mt0">Lower back and legs</h3>
-		
+		<p>{{customer.name.first}}'s lower back and legs have been assessed</p>
 		
 		<h4 class="heading-small">Lower back</h4>
-	    {% if data['physLowerbackObs']%}
+		{% if checked('findings', 'Yes') and  checked('lowerlimbs', 'Lower')%}
 		<p>{{physLowerbackObs}}</p>
+
 		{% else%}
 		<p>Assessed - no difficulties in this area</p>
 		{% endif %}
 		<h4 class="heading-small">Left leg</h4>
-		{% if data['leftLowerbackObs']%}
-		<p>{{leftLowerbackObs}}</p>
+		{% if checked('findings', 'Yes') and checked('lowerlimbs', 'Left')%}
+		<p>{{leftLegObs}}</p>
+		
 		{% else%}
 		<p>Assessed - no difficulties in this area</p>
 		{% endif %}
 		<h4 class="heading-small">Right leg</h4>
-		<p>{{rightLowerbackObs}}</p>
-	    <p>Assessed - no difficulties in this area</p>
-		
-		<p><a href="#" class="button secondary">Edit lower back and legs</a></p>
-	</div>
 	
+		{% if checked('findings', 'Yes') and  checked('lowerlimbs', 'Right')%}
+		<p>{{rightLegObs}}</p>
+		{% else%}
+		<p>Assessed - no difficulties in this area</p>
+		{% endif %}
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit lower back and legs</a></p>
+	</div>
+		{% elif checked('whatcando', 'No') %}
+		<div class="review-inner">	
+		<h3 class="heading-medium mt0">Lower back and legs</h3>
+		<p>{{customer.name.first}}'s lower back and legs were not examined</p>
+		<h4 class="heading-small">Reason</h4>
+		<p>{{examinationNoObs}}</p>
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit lower back and legs</a></p>
+	
+
+	
+	</div>
+	{% endif %}
+
+	{% if checked('neckwhatcando', 'No') %}		
+	<div class="review-inner">	
+		
+
+<h3 class="heading-medium mt0">Neck and arms</h3>
+<p>{{customer.name.first}}'s neck and arms were not examined</p>
+<h4 class="heading-small">Reason</h4>
+<p>{{examinationNoObs}}</p>
+<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit lower back and legs</a></p>
+</div>
+{% elif checked('neckfindings', 'Yes') or checked('neckfindings', 'No') %}
+<div class="review-inner">	
+<h3 class="heading-medium mt0">Neck and arms</h3>
+<p>{{customer.name.first}}'s neck and arms have been assessed</p>
+
+<h4 class="heading-small">Neck</h4>
+{% if checked('neckfindings', 'Yes') and checked('neckArms', 'neck')  %}
+<p>{{neckObs}}</p>
+{% else%}
+<p>Assessed - no difficulties in this area</p>
+{% endif %}
+<h4 class="heading-small">Left upper arm</h4>
+{% if checked('neckfindings', 'Yes') and checked('neckArms', 'leftUpperArm') %}
+<p>{{leftUpperArmObs}}</p>
+{% else%}
+<p>Assessed - no difficulties in this area</p>
+{% endif %}
+<h4 class="heading-small">Right upper arm</h4>
+{% if checked('neckfindings', 'Yes') and checked('neckArms', 'rightUpperArm')  %}
+<p>{{rightUpperArmObs}}</p>
+{% else %}
+<p>Assessed - no difficulties in this area</p>
+{% endif %}
+<h4 class="heading-small">Left Forearm</h4>
+{% if checked('neckfindings', 'Yes') and checked('neckArms', 'leftForearm')  %}
+<p>{{leftForearmObs}}</p>
+{% else %}
+<p>Assessed - no difficulties in this area</p>
+{% endif %}
+<h4 class="heading-small">Right Forearm</h4>
+{% if checked('neckfindings', 'Yes') and checked('neckArms', 'rightForearm')  %}
+<p>{{rightForearmObs}}</p>
+{% else %}
+<p>Assessed - no difficulties in this area</p>
+{% endif %}
+<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit lower back and legs</a></p>
+
+
+</div>
+{% endif %}
+
+{% if checked('continencecando', 'Yes')%}
+<div class="review-inner">	
+
+	<h3 class="heading-medium mt0">Continence</h3>
+	<p>{{customer.name.first}}'s  continence issues have been disscussed</p>
+	<h4 class="heading-small">Continence issues</h4>
+	<p>{{continenceObs}}</p>
+	<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit continence</a></p>
+</div>
+	{% elif checked('continencecando', 'No') %}
+	<div class="review-inner">
+	<h3 class="heading-medium mt0">Continence</h3>
+	<p>{{customer.name.first}}'s continence was not discussed</p>
+	<h4 class="heading-small">Reason</h4>
+	<p>{{continenceNoObs}}</p>
+	<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit continence</a></p>
+
+
+
+</div>
+
+
+{% endif %}
 	
 	
 </div>  
- 
+{% endif %}
+
+{% if checked('mental-health', 'mental-health')%}
  <div class="review-item">
 	<h2 class="heading-medium">Mental health</h2>
 {% if data['Appearance'] %}    
 <div class="review-inner">	
-	<h3 class="heading-medium">Appearance <!-- <span class="edited">Edited</span> --></h3>
+	<h3 class="heading-medium mt0">Appearance <!-- <span class="edited">Edited</span> --></h3>
 	
 	<p>{{mhappearance}}</p>
 	
@@ -181,7 +277,7 @@
 
 {% if data['Behaviour'] %}    
 <div class="review-inner">	
-	<h3 class="heading-medium">Behaviour <!-- <span class="edited">Edited</span> --></h3>
+	<h3 class="heading-medium mt0">Behaviour <!-- <span class="edited">Edited</span> --></h3>
 	
 	<p>{{mhbehaviour}}</p>
 	
@@ -191,7 +287,7 @@
 
 {% if data['Speech'] %}    
 <div class="review-inner">	
-	<h3 class="heading-medium">Speech <!-- <span class="edited">Edited</span> --></h3>
+	<h3 class="heading-medium mt0">Speech <!-- <span class="edited">Edited</span> --></h3>
 	
 	<p>{{mhspeech}}</p>
 	
@@ -201,7 +297,7 @@
 
 {% if data['Mood'] %}    
 <div class="review-inner">	
-	<h3 class="heading-medium">Mood <!-- <span class="edited">Edited</span> --></h3>
+	<h3 class="heading-medium mt0">Mood <!-- <span class="edited">Edited</span> --></h3>
 	
 	<p>{{mhmood}}</p>
 	
@@ -211,7 +307,7 @@
 
 {% if data['Cognition'] %}    
 <div class="review-inner">	
-	<h3 class="heading-medium">Cognition <!-- <span class="edited">Edited</span> --></h3>
+	<h3 class="heading-medium mt0">Cognition <!-- <span class="edited">Edited</span> --></h3>
 	
 	<p>{{mhcognition}}</p>
 	
@@ -221,7 +317,7 @@
 
 {% if data['General'] %}    
 <div class="review-inner">	
-	<h3 class="heading-medium">General <!-- <span class="edited">Edited</span> --></h3>
+	<h3 class="heading-medium mt0">General <!-- <span class="edited">Edited</span> --></h3>
 	
 	<p>{{mhgeneral}}</p>
 	
@@ -233,7 +329,7 @@
 
 {% if data['Insight'] %}    
 <div class="review-inner">	
-	<h3 class="heading-medium">Insight <!-- <span class="edited">Edited</span> --></h3>
+	<h3 class="heading-medium mt0">Insight <!-- <span class="edited">Edited</span> --></h3>
 	
 	<p>{{mhinsight}}</p>
 	
@@ -254,7 +350,7 @@
 
 {% if data['Perceptions'] %}    
 <div class="review-inner">	
-	<h3 class="heading-medium">Perceptions <!-- <span class="edited">Edited</span> --></h3>
+	<h3 class="heading-medium mt0">Perceptions <!-- <span class="edited">Edited</span> --></h3>
 	
 	<p>{{mhperceptions}}</p>
 	
@@ -264,7 +360,7 @@
 
 {% if data['Addiction'] %}    
 <div class="review-inner">	
-	<h3 class="heading-medium">Addiction <!-- <span class="edited">Edited</span> --></h3>
+	<h3 class="heading-medium mt0">Addiction <!-- <span class="edited">Edited</span> --></h3>
 	
 	<p>{{mhaddiction}}</p>
 	
@@ -274,7 +370,7 @@
 
 {% if data['Involentry-movements'] %}    
 <div class="review-inner">	
-	<h3 class="heading-medium">Involuntary movements <!-- <span class="edited">Edited</span> --></h3>
+	<h3 class="heading-medium mt0">Involuntary movements <!-- <span class="edited">Edited</span> --></h3>
 	
 	<p>{{mhinvolentry}}</p>
 	
@@ -285,7 +381,7 @@
 
 {% if data['Cognative-test'] %}    
 <div class="review-inner">	
-	<h3 class="heading-medium">Cognitive tests <!-- <span class="edited">Edited</span> --></h3>
+	<h3 class="heading-medium mt0">Cognitive tests <!-- <span class="edited">Edited</span> --></h3>
 	<h4 class="heading-small">Serial sevens</h4>
 <p>{{serialSeven}}</p>
 <h4 class="heading-small">Calculating change</h4>
@@ -309,6 +405,7 @@
 
 	
 </div>  
+{% endif %}
 
 
 {% if data['moving']==='moving' %}
@@ -856,6 +953,34 @@
 </div>
 
 {% endif %}
+
+
+{% if data['general-observations-post']==='posted' %}
+<div class="review-item">
+<h2 class="heading-medium">General Observations</h2>
+
+			{% for comment in comments|sort(attribute='timestamp', reverse=true) %}
+			
+			<div class="review-inner">	
+				
+							<p>{{comment.comment}}</p>
+	
+				
+				
+				<p class="namedate">{{comment.name}} /  <span class="text-secondary"> {{comment.dateFormatted}}</span></p>
+				{% if comment.hasComment %}
+		
+			{% endif %}
+
+		
+
+			</div>
+		{% endfor %}
+
+		<p class="mt30"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit general obsevations</a></p>
+
+			</div>
+	{% endif %}		
 
 
 

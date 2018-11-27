@@ -102,15 +102,15 @@
                                 <a href="/{{path}}/assessment.html">
                               
                                   <h2 class="heading-xlarge">
-                                      24
+                                      {{assessNumbers.total}}
                                     <span class="heading-small">Assessments</span>
                                    </h2>
                               
                                 </a>
                                 <ul>
-                                    <li><a href="/{{path}}/">Ready for assessment</a></li>
+                                    <li><a href="/{{path}}/">Ready for assessment ({{assessNumbers.readyForAssessment}})</a></li>
                                   <li><a href="/{{path}}/">Assessments in progress</a></li>
-                                  <li><a href="/{{path}}/">Assessments completed</a></li>
+                                  <li><a href="/{{path}}/">Assessments completed ({{assessNumbers.assesmentComplete}})</a></li>
                           
                                   
                                  </ul>
