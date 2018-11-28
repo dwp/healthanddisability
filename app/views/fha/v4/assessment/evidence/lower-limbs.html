@@ -11,15 +11,15 @@
 {% endif %}	
 
 <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
-<h1 class="heading-large mt10 mb0">Lower back and legs</h1>
+<h1 class="heading-large">Lower back and legs</h1>
 
 
 
   
-  <div class="form-group mt30">
+  <div class="form-group">
 	  <fieldset class="inline">
 	
-		  <legend class="heading-medium mb10">Have you examined {{customer.name.first}} lower back and legs?</legend>
+		  <legend class="heading-medium mb10">Have you examined {{customer.name.first}}'s lower back and legs?</legend>
 		  
 		
 			  <div class="form-group">
@@ -193,56 +193,6 @@
   </div>
 </form>
 
-
-<div class="review-item">
-		<h2 class="heading-medium">Physical assessments</h2>
-		
-		<p>Consent was given by {{customer.name.first}} to start the physical assessment.</p>
-		
-		{% if checked('whatcando', 'Yes')%}
-		<div class="review-inner">	
-				
-			<h3 class="heading-medium mt0">Lower back and legs</h3>
-			<p>{{customer.name.first}}'s lower back and legs have been assessed</p>
-			
-			<h4 class="heading-small">Lower back</h4>
-			{% if checked('findings', 'Yes') and  checked('lowerlimbs', 'Lower')%}
-			<p>{{physLowerbackObs}}</p>
-	
-			{% else%}
-			<p>Assessed - no difficulties in this area</p>
-			{% endif %}
-			<h4 class="heading-small">Left leg</h4>
-			{% if checked('findings', 'Yes') and checked('lowerlimbs', 'Left')%}
-			<p>{{leftLegObs}}</p>
-			
-			{% else%}
-			<p>Assessed - no difficulties in this area</p>
-			{% endif %}
-			<h4 class="heading-small">Right leg</h4>
-		
-			{% if checked('findings', 'Yes') and  checked('lowerlimbs', 'Right')%}
-			<p>{{rightLegObs}}</p>
-			{% else%}
-			<p>Assessed - no difficulties in this area</p>
-			{% endif %}
-			<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit lower back and legs</a></p>
-			{% else %}
-			<h3 class="heading-medium mt0">Lower back and legs</h3>
-			<p>{{customer.name.first}}'s lower back and legs were not examined</p>
-			<h4 class="heading-small">Reason</h4>
-			<p>{{examinationNoObs}}</p>
-			<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit lower back and legs</a></p>
-		
-
-		
-		</div>
-	
-		
-		{% endif %}
-		
-		
-	</div> 
 		
 
   </div><!-- column -->

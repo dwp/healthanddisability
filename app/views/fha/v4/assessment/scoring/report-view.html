@@ -550,7 +550,7 @@
 <div class="review-item">
 
 	
-		<h2 class="heading-medium">Using things up and moving them</h2>
+		<h2 class="heading-medium">Using your hands</h2>
 		<ul class="list-bullet">
 			{% for descriptor in usingDescriptors %}
 			<li>{{descriptor}}</li>
@@ -567,7 +567,7 @@
 		
 		<p>{{usingDetails}}</p>
 		
-		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit using things up and moving them</a></p>
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit using your hands</a></p>
 
 	
 	
@@ -989,7 +989,7 @@
 <div class="review-item">
 	<h2 class="heading-medium">Exceptional circumstances</h2>
 
-		<h3 class="heading-small">Circumstances why Tomas should be treated as LCW and LCWRA:</h3>
+		<h3 class="heading-small">Circumstances why {{customer.name.first}} should be treated as LCW and LCWRA:</h3>
 		{% if checked("LcwAndLcwra", "yes") %}
 		<ul class="list-bullet">
 			{% for reason in LcwAndLcwraReasons %}
@@ -1001,7 +1001,7 @@
 		<p>None</p>
 		{% endif %}
 
-		<h3 class="heading-small">Circumstances why Tomas should be treated as LCW:</h3>
+		<h3 class="heading-small">Circumstances why {{customer.name.first}} should be treated as LCW:</h3>
 		{% if checked("lcw", "yes") %}
 		<ul class="list-bullet">
 			{% for reason in lcwReasons %}
@@ -1019,7 +1019,7 @@
 <div class="review-item">
 	<h2 class="heading-medium">Prognosis</h2>
 
-		<h3 class="heading-small">Time until Tomas's case needs reviewing:</h3>
+		<h3 class="heading-small">Time until {{customer.name.first}}'s case needs reviewing:</h3>
 		<p>{{caseReviewTime}}</p>
 
 		<h3 class="heading-small">Reason</h3>
