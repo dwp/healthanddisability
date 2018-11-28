@@ -1,0 +1,108 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+		
+		
+			
+		
+		<form>
+			<fieldset>
+				<legend><h1 class="heading-large mt0">Additional attendee</h1></legend>
+				
+
+							       
+							      <div class="form-group mt30">
+							      	<label for="name" class="form-label">Name</label>
+							      	 <input class="form-control form-control-1-3" name="name" type="text" id="name">
+							      </div>
+							      
+							      <div class="form-group">
+							      	<label for="name" class="form-label">Relationship to {{customer.name.first}}</label>
+							      	 <input class="form-control form-control-1-3" name="name" type="text" id="name">
+							      </div>
+								   
+								  <div class="form-group">
+									<fieldset class="address-stack">
+									      <legend class="form-label">
+									         Address   
+									      </legend>
+									       
+									       <div class="form-group street">
+									       		<div>
+										       		<label for="address1" class="visually-hidden">Line 1</label>
+										       		<input class="form-control form-control-1-3" id="address1" type="text">
+									       		</div>
+									       		<div>
+										       		<label for="address2" class="visually-hidden">Line 2</label>
+										       		<input class="form-control form-control-1-3" id="address2" type="text">
+									       		</div>
+									       		
+									       		<div>
+										       		<label for="address3" class="visually-hidden">Line 3</label>
+										       		<input class="form-control form-control-1-3" id="address3" type="text">
+									       		</div>
+									       		
+									       		<div>
+										       		<label for="address4" class="visually-hidden">Line 4</label>
+										       		<input class="form-control form-control-1-3" id="address4" type="text">
+									       		</div>
+									       </div>
+									       
+									      
+									       <div class="form-group">
+									       		<label for="postcode" class="form-label">Postcode</label>
+									       		<input class="form-control form-control-1-4" id="postcode" type="text">
+									       </div>
+								    </fieldset>
+				
+								</div>	
+								
+								
+							      
+			</fieldset>   
+
+							
+		</form>
+			
+			<form method="post" action="/{{path}}/assessment/{{customer._id}}/assessment-stopped">
+				<p class="mt20"><a href="javascript: history.go(-1)" class="button">Confirm - resume assessment</a></p>
+				</form>
+			
+
+		
+    
+
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
