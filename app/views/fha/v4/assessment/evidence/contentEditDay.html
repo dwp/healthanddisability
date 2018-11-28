@@ -1,4 +1,4 @@
- {% extends path2+"/_layout-review2.html" %}
+ {% extends path+"/_layout-case-action.html" %}
 
 {% block citizen_content %}
 
@@ -17,12 +17,12 @@
   <div class="column-full">
   
   
-<p><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
   
   
   
   <h1 class="heading-large mt20"><span class="heading-secondary">Review</span>Typical day</h1>
-       <form class="form" id="add_ev" action="/{{path}}/assessment/evidence/typicalDayEdit" method="post">
+       <form class="form" id="add_ev" action="/{{path}}/assessment/{{customer._id}}/evidence/typicalDayEdit" method="post">
 
 
       <div>
