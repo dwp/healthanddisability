@@ -1,0 +1,179 @@
+{% extends path1+"/_layout-info.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<h1 class="heading-large mt0"><span class="heading-secondary">Illnesses and conditions - step 4 of 4</span>Compound fracture - shinbone</h1>
+
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+  
+   <div class="whatweknow">
+
+        
+    <table>
+    
+    	<caption class="heading-medium mt10 mb10">What we already know:</caption>
+    	
+    	<thead>
+					<tr>
+						<th>Name</th>
+						<th>Since</th>
+						<th>Source</th>
+					</tr>
+				</thead>
+				<tbody>
+
+				<tr>
+						<td>Compound fracture - shinbone</td>
+						<td>July 2017</td>
+						<td>Claimant</td>
+					</tr>
+				</tbody>
+    	
+    </table>
+        
+        
+	    
+	</div> 
+	
+	
+
+
+	<form method="post" action="medical_assessment_dashboard">
+		<fieldset>
+			<legend class="visually-hidden">Condition details</legend>
+			
+			<div class="form-group">
+				<label class="heading-small" for="field-8">Condition history</label>
+				<p class="form-hint mb5 mt5">This should be specific to Compound fracture - shinbone.</p>
+				<textarea class="form-control form-control-3-4" name="conditionHistory4" id="field-8" style="height:250px;">{{conditionHistory4}}</textarea>
+			</div>
+			
+			
+			<div class="form-group medication-stored">
+				<fieldset>
+					<legend class="heading-small">Medication taken:</legend>
+					
+			
+					
+					<div class="multiple-choice">
+				      <input id="meds1" type="checkbox" name="illnessMedication4[]" value="Sertraline" {{checked('illnessMedication4', 'Sertraline') }}>
+				      <label for="meds1">
+				      	Sertraline
+					  	<div class="meds-block">
+					      	<span>Dose: 100mg a day</span>
+					  	</div>
+				      </label>
+				    </div>
+				    
+				    <div class="multiple-choice">
+				      <input id="meds2" type="checkbox" name="illnessMedication4[]" value="Zomorph" {{checked('illnessMedication4', 'Zomorph') }}>
+				      <label for="meds2">
+				      	Zomorph
+					  	<div class="meds-block">
+					      	<span>Dose: 60mg twice a day</span>
+					  	</div>
+				      </label>
+				    </div>		    			
+	  
+				   <div class="multiple-choice" data-target="other-meds">
+				      <input id="otherMeds"  type="checkbox" name="illnessMedication4[]" value="Other" {{checked('illnessMedication4', 'Other') }}>
+				      <label for="otherMeds">Other</label>
+				    </div>
+				    
+				    <div class="panel panel-border-narrow js-hidden form-group" id="other-meds">
+				   		
+				   		
+				   		<fieldset class="item-compound">
+                 
+            
+				            <legend class="visuallyhidden">Medication and side effects details</legend>
+				
+				
+						
+						      	<div class="form-group">
+						        
+									<label class="form-label form-label-large" for="illnessname">Name of medication</label>
+									 <input type="text" name="otherMedName4" value="{{otherMedName4}}" class="form-control" id="illnessname">
+									 
+								 </div>
+								 
+								 
+								 <div class="form-group">
+						        
+									<label class="form-label form-label-large" for="dose">Dose</label>
+									 <input type="text" name="otherMedDose4" value="{{otherMedDose4}}" class="form-control form-control-1-4" id="dose">
+									 
+								 </div>
+				              
+						
+								 
+								 
+								 <div class="form-group">
+								 
+								 	<fieldset>
+								      <legend class="form-label">
+								          Last prescribed date
+								      </legend>
+								       <span class="form-hint" id="otherMed_hint4">For example, 31 3 2018</span>
+								      <div class="form-date">
+								        <div class="form-group form-group-day">
+								          <label class="form-label" for="otherMed_day4">Day</label>
+								          <input class="form-control" id="otherMed_day4" name="otherMed_day4" value="{{otherMed_day4}}" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="otherMed_hint4">
+								        </div>
+								        <div class="form-group form-group-month">
+								          <label class="form-label" for="otherMed_month4">Month</label>
+								          <input class="form-control" id="otherMed_month4" name="otherMed_month4" value="{{otherMed_month4}}" type="number" pattern="[0-9]*" min="0" max="12">
+								        </div>
+								        <div class="form-group form-group-year">
+								          <label class="form-label" for="otherMed_year4">Year</label>
+								          <input class="form-control" id="otherMed_year4" name="otherMed_year4" value="{{otherMed_year4}}" type="number" pattern="[0-9]*" min="0" max="2018">
+								        </div>
+								      </div>
+								    </fieldset>
+								    
+								 </div>
+								 
+								 
+								<div>
+									 <label class="form-label" for="side">Side effects</label>
+									 <textarea type="text" id="side" class="form-control" name="otherMedSideEffects4" style="height: 100px;">{{otherMedSideEffects4}}</textarea>
+								</div>
+				
+				            
+				            
+				          </fieldset>
+				   		
+				   		
+				   		
+				   </div>
+				    
+				</fieldset>
+			</div>
+			
+		</fieldset>
+	
+  
+	<p><button class="button">Continue</button></p>
+
+	</form>
+  
+
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+

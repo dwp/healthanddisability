@@ -1,0 +1,162 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+<h1 class="heading-large mt0"><span class="heading-secondary">Illnesses and conditions</span><span class="heading-secondary">Step 2 of 2</span>Medication and side effects</h1>
+
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+  
+  
+	
+
+
+<div class="form-group medication-stored">
+				<fieldset>
+					<legend class="heading-medium">What Medication is {{customer.name.first}} currently taking?</legend>
+					
+					{% for medication in customer.medication %}
+					<div class="multiple-choice">
+				      <input id="meds1" type="checkbox" name="{{medication.name}}" value="{{medication.name}}" {{checked('{{medication.name}}', '{{medication.name}}') }}>
+				      <label for="meds1">
+									{{medication.name}}<br />
+								
+					  	<div class="meds-block">
+					      	<span>	{{medication.dose}}</span>
+					  	</div>
+				      </label>
+				    </div>
+				    
+				{% endfor %}	  
+				{% if data['illnessMedication']==="other" %}  	
+				<div class="multiple-choice">
+						<input id="meds1" type="checkbox" name="{{otherMedName}}" value="{{otherMedName}}" {{checked('{{otherMedName}}', '{{otherMedName}}') }}>
+						<label for="meds1">
+								{{otherMedName}}<br />
+							
+						<div class="meds-block">
+								<span>	{{otherMedDose}}</span>
+						</div>
+						</label>
+					</div>
+
+				{% endif %}		
+				<form action="illnessEffects2" method="POST" class="form">
+				   <div class="multiple-choice" data-target="other-meds">
+				      <input id="otherMeds"  type="checkbox" name="illnessMedication" value="other">
+				      <label for="otherMeds">Other</label>
+				    </div>
+				    
+				    <div class="panel panel-border-narrow js-hidden form-group" id="other-meds">
+				   		
+				   		
+				   		<fieldset class="item-compound">
+                 
+            
+				            <legend class="visuallyhidden">Medication and side effects details</legend>
+				
+				
+						
+						      	<div class="form-group">
+						        
+									<label class="form-label form-label-large" for="illnessname">Name of medication</label>
+									 <input type="text" name="otherMedName" value="" class="form-control" id="newmedicatiomname">
+									 
+								 </div>
+								 
+								 
+								 <div class="form-group">
+						        
+									<label class="form-label form-label-large" for="dose">Dose</label>
+									 <input type="text" name="otherMedDose" value="" class="form-control form-control-1-4" id="dose">
+									 
+								 </div>
+				              
+						
+								 
+								 
+								 <div class="form-group">
+								 
+								 	<fieldset>
+								      <legend class="form-label">
+								          Last prescribed date
+								      </legend>
+								       <span class="form-hint" id="otherMed_hint3">For example, 31 3 2018</span>
+								      <div class="form-date">
+								        <div class="form-group form-group-day">
+								          <label class="form-label" for="otherMed_day3">Day</label>
+								          <input class="form-control" id="otherMed_day3" name="otherMed_day3" value="{{otherMed_day3}}" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="otherMed_hint3">
+								        </div>
+								        <div class="form-group form-group-month">
+								          <label class="form-label" for="otherMed_month3">Month</label>
+								          <input class="form-control" id="otherMed_month3" name="otherMed_month3" value="{{otherMed_month3}}" type="number" pattern="[0-9]*" min="0" max="12">
+								        </div>
+								        <div class="form-group form-group-year">
+								          <label class="form-label" for="otherMed_year3">Year</label>
+								          <input class="form-control" id="otherMed_year3" name="otherMed_year3" value="{{otherMed_year3}}" type="number" pattern="[0-9]*" min="0" max="2018">
+								        </div>
+								      </div>
+								    </fieldset>
+								    
+								 </div>
+								 
+								 
+								<div>
+									 <label class="form-label" for="side">Side effects</label>
+									 <textarea type="text" id="side" class="form-control" name="otherMedSideEffects" style="height: 100px;">{{otherMedSideEffects}}</textarea>
+								</div>
+				
+				            
+				            
+				          </fieldset>
+				   		
+				   		  <p><button class="button-secondary mt20">Confirm medication and side effects</button></p>
+				   		
+				   </div>
+				    
+				</fieldset>
+			</div>
+		</form>
+		{% if customer.status == 'Ready for recommendation' %}
+		 
+		<form action="medical_assessment_dashboard" method="POST" class="form">
+				<p><button class="button">Finish reviewing</button></p>
+
+				<div class="multiple-choice" style="display:none">
+						<input id="radio-inline-4" type="radio" name="illnessVisited" value="illnessVisited" checked>
+							
+						<label for="radio-4">hidden radio one</label>
+					</div>
+
+      {% else %}
+			<form action="wca-index" method="POST" class="form">
+					<p><button class="button">Save and continue</button></p>
+	{% endif %}
+	<div class="multiple-choice" style="display:none">
+			<input id="radio-inline-4" type="radio" name="illnessEffectsVisited" value="illnessEffectsVisited" checked>
+				
+			<label for="radio-4">hidden radio one</label>
+		</div>
+
+	</form>
+
+
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+

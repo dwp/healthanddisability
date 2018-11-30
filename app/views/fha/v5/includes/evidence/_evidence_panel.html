@@ -1,0 +1,155 @@
+<div class="inner-panel">
+   
+   
+        <div class="panel-switch">
+                 <a href="#" class="panel-closed heading-small">Review evidence</a>
+             </div>
+        
+        
+             <div class="inner-panel-content">
+                 <h2 class="heading-large mt20">Review evidence</h2>
+
+		  
+		
+                 <h3 class="heading-medium">Recorded Illnesses and disabilities</h3>
+    
+                 <div class="table-layout">
+                 <table>
+                     <caption class="visually-hidden">List of illnesses and disabilities</caption>
+                     <thead>
+                         <tr>
+                             <th>Name</th>
+                             <th>Source</th>
+                             <th>Since</th>
+                         
+                         </tr>
+                     </thead>
+                     <tbody>
+                         {% for illness in customer.illnesses %}
+                         <tr>
+                             <td>{{illness.name}}</td>
+                             <td>{{illness.source}}</td>
+                             <td class="text-secondary">{{illness.date |formatDate('MMMM YYYY')}}</td>
+                         
+                         </tr>
+                         {% endfor %}
+                         
+                     </tbody>
+                 </table>
+                 </div>
+                 
+                 <h3 class="heading-medium">Medication and side effects</h3>
+
+             
+                 
+                     {% if customer.medication.length > 0 %}
+                         <table>
+                             <caption class="visually-hidden">List of medication and side effects</caption>
+                             <thead>
+                                 <tr>
+                                     <th>Name</th>
+                                     <th>Dose</th>
+                                     <th>Side effects</th>
+                                 
+                                 </tr>
+                             </thead>
+                             <tbody>
+         
+                                 {% for medication in customer.medication %}
+                                     <tr>
+                                         <td>{{medication.name}}</td>
+                                         <td>{{medication.dose}}</td>
+                                         <td>{{medication.sideEffects}}</td>
+                                     
+                                     </tr>
+                                 {% endfor %}
+                                 
+                                 
+                             </tbody>
+                         </table>
+                         {% endif %}
+
+
+
+                         <h3 class="heading-medium">Recorded evidence</h3>
+<table class="evidence-list">
+
+                <thead>
+	                  <tr>
+	                    <th>Evidence type</th>
+											<th>Source</th>
+											<th>Received</th>
+	                    <th class="numeric">Recorded</th>
+	                  </tr>
+	                </thead>
+	                
+	          
+								
+								{% if  data['recordevidencegp']==='gp' %}
+
+		            
+		          <tr>
+	                  <td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/gp_report">GP report</a></td>
+										<td>GP: Dr.{{customer.address.gpName.fullName}}</td>
+										<td><span class="secondary-text">{{ 'Do MMMM YYYY' | randDaysAgo(0)}}</span></td>
+	                  <td class="numeric"><span>{{ 'Do MMMM YYYY' | randDaysAgo(0)}}</span></td>
+	                </tr>
+	                
+									{% endif %}
+
+									{% if data['recordevidencefrr']==='frr'%}
+	                <tr>
+	                  <td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/factual_report">Factual report</a></td>
+										<td>Consultant: Dr. {{customer.otherHcp.name.fullName}}</td>
+										<td><span class="secondary-text">{{ 'Do MMMM YYYY'}}</span></td>
+	                  <td class="numeric"><span>{{ 'Do MMMM YYYY' | randDaysAgo(0)}}</span></td>
+									</tr>
+									{% endif %}
+
+									{% if data['newevidencename'] %}
+	                <tr>
+	                  <td>{{ data['newevidencename'] }}</td>
+										<td>{{ data['newevidencesource'] }}</td>
+										<td><span class="secondary-text">{{ 'Do MMMM YYYY' | randDaysAgo(-1)}}</span></td>
+	                  <td class="numeric"><span class="secondary-text">{{ 'Do MMMM YYYY' | randDaysAgo(-1)}}</span></td>
+									</tr>
+									{% endif %}
+
+									{% if data['newevidencenamevisited']%}
+	                <tr>
+	                  <td>{{ data['newevidencenamevisited'] }}</td>
+										<td>{{ data['newevidencesourcevisited'] }}</td>
+										<td>{{ 'Do MMMM YYYY' | randDaysAgo(-1)}}</td>
+	                  <td class="numeric"></td>
+									</tr>
+									{% endif %}
+
+									{% if data['telephonecontactreport']%}
+	                <tr>
+	                  <td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/telephone_report">Telephone coversation</a></td>
+										<td>	{% if checked('hcp-type','client') %}
+											Client: {{customer.name.fullName}}
+											{% elif checked('hcp-type','gp') %}
+											GP: Dr.{{customer.address.gpName.fullName}}
+											{% elif checked('hcp-type','consultant')%}
+											Consultant: Dr. {{customer.otherHcp.name.fullName}}
+											{% endif %}</td>
+										<td>{{ 'Do MMMM YYYY' | randDaysAgo(-1)}}</td>
+	                  <td class="numeric"></td>
+									</tr>
+									{% endif %}
+
+									<tr>
+	                  <td>MED 3 </td>
+										<td>GP: Dr.{{customer.address.gpName.fullName}}</td>
+										<td ><span class="text-secondary">{{ 'Do MMMM YYYY' | randDaysAgo(5)}}</span></td>
+	                  <td class="numeric"><span>{{ 'Do MMMM YYYY' | randDaysAgo(5)}}</span></td>
+	                </tr>
+
+							</table> 
+             
+         </div>
+
+         </div> 
+
+  

@@ -1,0 +1,134 @@
+{% extends path2+"/_layout.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+		
+		
+			
+		
+		<form>
+			<fieldset>
+				<legend><h1 class="heading-large mt0">Record evidence</h1></legend>
+				
+				
+
+				
+				
+				<!--<div class="form-group mt30">
+
+					    	<fieldset>
+							      <legend class="heading-small mb10">
+							        Evidence type: 
+							      </legend>
+							       
+							       
+							       <div class="multiple-choice">
+								      <input id="terminally" name="reasons" type="radio" value="terminally ill">
+								      <label for="terminally">Evidence type 1</label>
+								    </div>
+					  
+								    <div class="multiple-choice">
+								      <input id="preg" name="reasons" type="radio" value="Pregnancy">
+								      <label for="preg">Evidence type 2</label>
+								    </div>
+								    
+								    <div class="multiple-choice">
+								      <input id="disease" name="reasons" type="radio" value="Disease">
+								      <label for="disease">Evidence type 3</label>
+								    </div>
+					  
+								    <div class="multiple-choice">
+								      <input id="substantial" name="reasons" type="radio" value="Substantial">
+								      <label for="substantial">Evidence type 4</label>
+								    </div>
+								    
+								    <div class="multiple-choice" data-target="other-evidence">
+								      <input id="other" name="reasons" type="radio" value="other">
+								      <label for="other">Other</label>
+								    </div>	       
+						    </fieldset>
+						    
+					</div>-->
+					
+					<div class="form-group mt30">
+						<label for="type" class="form-label">
+							Evidence type
+						</label>
+						<input type="text" id="type" class="form-control form-control-1-3">
+					</div>
+					
+					<div class="form-group">
+						<label for="source" class="form-label">
+							Source
+						</label>
+						<input type="text" id="source" class="form-control form-control-1-3">
+					</div>
+					
+					<div class="form-group">
+				    <fieldset>
+				      <legend>
+				          Date received
+				        <span class="form-hint">For example, 31 3 1980</span>
+				      </legend>
+				      <div class="form-date">
+				        <div class="form-group form-group-day">
+				          <label class="form-label" for="dob-day">Day</label>
+				          <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
+				        </div>
+				        <div class="form-group form-group-month">
+				          <label class="form-label" for="dob-month">Month</label>
+				          <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
+				        </div>
+				        <div class="form-group form-group-year">
+				          <label class="form-label" for="dob-year">Year</label>
+				          <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
+				        </div>
+				      </div>
+				    </fieldset>
+				  </div>
+
+				
+				
+				
+			</fieldset>
+			
+			
+			<p><a href="index" class="button mt20">Save</a></p>
+			
+		</form>
+		
+    
+
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

@@ -1,0 +1,81 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+
+
+  <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+<h1 class="heading-large">Time until {{customer.name.first}}'s case needs reviewing</h1>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+  
+  <form action="report-view" method="post">
+  
+  	<div class="form-group">
+
+					    	<fieldset>
+							      <legend class="heading-medium">
+							        How long would you recommend that {{customer.name.first}} needs before their case is reviewed? 
+							      </legend>
+							       
+							       
+							       <div class="multiple-choice">
+								      <input id="terminally" name="caseReviewTime" type="radio" value="3 months">
+								      <label for="terminally"> 3 months </label>
+								    </div>
+					  
+								    <div class="multiple-choice">
+								      <input id="preg" name="caseReviewTime" type="radio" value="6 months">
+								      <label for="preg">6 months</label>
+								    </div>
+								    
+								    <div class="multiple-choice">
+								      <input id="disease" name="caseReviewTime" type="radio" value="12 months">
+								      <label for="disease">12 months </label>
+								    </div>
+					  
+								    <div class="multiple-choice">
+								      <input id="substantial" name="caseReviewTime" type="radio" value="18 months">
+								      <label for="substantial">18 months</label>
+								    </div>	       
+
+								    
+								    <div class="multiple-choice">
+								      <input id="chemotherapy" name="caseReviewTime" type="radio" value="within 2 years">
+								      <label for="chemotherapy"> within 2 years </label>
+								    </div>
+					  
+								    <div class="multiple-choice">
+								      <input id="disabled" name="caseReviewTime" type="radio" value="in the longer term">
+								      <label for="disabled">in the longer term </label>
+								    </div>
+								    
+						    </fieldset>
+						    
+						    
+  	</div>
+  	
+  	
+  	<div class="form-group">
+	  <label class="form-label" for="reason">
+	  	Give reasons
+	  </label>
+	  <textarea class="form-control" name="caseReviewTimeReason" style="height:200px; width: 98%;"></textarea> 
+  </div> 
+
+
+  <p class="mt30"><button class="button">Generate report</button></p>
+
+
+					    
+  </form>
+  
+
+
+
+{% endblock %}
+

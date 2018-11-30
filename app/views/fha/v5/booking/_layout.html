@@ -1,0 +1,43 @@
+{% extends path+"/_layout.html" %}
+{% import path1+"/_macros_nav.html" as nav %}
+{% import path1+"/_macros_nav2.html" as nav2 %}
+{% import path1+"/_macros_nav-mendez.html" as nav_mendez %}
+
+{% block assess_content %}
+
+
+<main id="content" role="main" class="main-content-inner">
+    <div class="container">
+        <div class="grid-row main-row">
+            <div class="column-one-quarter left-area">
+                <div class="left-panel">
+                    {% block caselist_link %}
+                    <p class="returnRef"><a href="/{{path}}/ready-to-book">Return to case list</a></p>
+                    {% endblock %}
+                    <hr>
+
+                    {% block left_content %}
+                    <h3 class="heading-medium mt20">Next available appointment</h3>
+                            <h4 class="heading-small">{{appointments.nextAvailable | formatDate("dddd D MMMM YYYY")}}</h4>
+                            <p>{{appointments.nextAvailable | formatDate("hh:mma")}}</p>
+                            <a href="/{{path}}/booking/booked/{{customer._id}}/timeline" class="button">Book this appointment</a>
+                    <hr>
+                    {% endblock %}
+                </div>
+            </div>
+            <div class="column-three-quarters main-area">
+                <div nunj-block="citizen_content">
+                   {% include path1+"/_heading.html" %}
+
+                    {% block citizen_content %}{% endblock %}
+                </div>
+            </div>
+            <!-- column -->
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+</main>
+          
+
+{% endblock %}

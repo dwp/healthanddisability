@@ -1,0 +1,225 @@
+
+{% extends path+"/_layout-case-action.html" %} 
+{% block citizen_content %} {{ data.nuggets | log }}
+
+{% if customer.status == 'Ready for recommendation' %}
+		 
+<form action="medical_assessment_dashboard" method="POST" class="form">
+
+{% else %}
+<form action="physical" method="POST" class="form">
+{% endif %}	
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+<h1 class="heading-large">Lower back and legs</h1>
+
+
+
+  
+  <div class="form-group">
+	  <fieldset class="inline">
+	
+		  <legend class="heading-medium mb10">Have you examined {{customer.name.first}}'s lower back and legs?</legend>
+		  
+		
+			  <div class="form-group">
+			
+				    <div class="multiple-choice" data-target="exam-yes">
+				      <input id="decide_now" name="whatcando" type="radio" value="Yes"
+				      {{ checked('whatcando', 'Yes') }}>
+				      <label for="decide_now"> Yes</label>
+				    </div>
+				
+				    <div class="multiple-choice" data-target="exam-no">
+				      <input id="face2face" name="whatcando" type="radio" value="No"
+				      {{ checked('whatcando', 'No') }}>
+				      <label for="face2face"> No</label>
+					</div>
+					
+					<div class="form-group panel panel-border-narrow js-hidden mt10" id="exam-no">
+							<label class="form-label" for="examinationNoObs">Why haven't you examined {{customer.name.first}}'s lower back and legs?</label>
+							<textarea class="form-control form-control-3-4" name="examinationNoObs" id="examinationNoObs" rows="4">{{examinationNoObs}}</textarea>
+					  </div>
+				    
+				    
+				    
+				    <div class="form-group panel panel-border-narrow js-hidden mt10" id="exam-yes">
+				    
+					    	<fieldset class="inline">
+		
+								  <legend class="heading-medium mb10">Does {{customer.name.first}} have difficulties in any of these areas?</legend>
+								
+									  <div class="form-group">
+									
+										    <div class="multiple-choice" data-target="findings-yes">
+										      <input id="findyes" name="findings" type="radio" value="Yes"  {{ checked('findings', 'Yes') }}>
+										      <label for="findyes">Yes</label>
+										    </div>
+										
+										    <div class="multiple-choice">
+										      <input id="findno" name="findings" type="radio" value="No"  {{ checked('findings', 'No') }}>
+										      <label for="findno"> No</label>
+											</div>
+										
+										    
+										     <div class="form-group panel panel-border-narrow js-hidden mt10" id="findings-yes">
+										     	
+										     	<fieldset class="stacked">
+		
+													  <legend class="mb10">Select all of the affected areas:</legend>
+													
+														  <div class="form-group">
+														
+															    <div class="multiple-choice" data-target="lowerback-checked">
+															      <input id="lowerback" name="lowerlimbs" type="checkbox" value="Lower" {{ checked('lowerlimbs', 'Lower') }}>
+															      <label for="lowerback"> Lower back</label>
+															    </div>
+															    
+															    <div class="form-group panel panel-border-narrow js-hidden mt0 mb20" id="lowerback-checked">
+																			<details class="mb10">
+
+																					<summary><span class="summary">Help prompts</span></summary>
+																				
+																					<div class="p20">
+																							<ul class="list list-bullet">
+																									<li>Spinal curves</li>
+																									<li>Palpation</li>
+																									<li>Forward flextion</li>
+																									<li>Squat and rise</li>
+																											
+																								</ul>
+																						</div>
+																				
+																				
+																				</details>
+
+																      <label class="form-label" for="phys_lowerback_obs">Observation, palpation, movement</label>
+																      <textarea class="form-control form-control-3-4" name="physLowerbackObs" id="phys_lowerback_obs" rows="4">{{physLowerbackObs}}</textarea>
+															    </div>
+															
+															    
+															    
+															    
+															    <div class="multiple-choice" data-target="rightleg-checked">
+															      <input id="rightleg" name="lowerlimbs" type="checkbox" value="Left" {{ checked('lowerlimbs', 'Left') }}>
+															      <label for="rightleg"> Left leg</label>
+															    </div>
+															    
+															    <div class="form-group panel panel-border-narrow js-hidden mt0 mb20" id="rightleg-checked">
+																			<details class="mb10">
+
+																					<summary><span class="summary">Help prompts</span></summary>
+																				
+																					<div class="p20">
+																							<ul class="list list-bullet">
+																									<li>Straight leg raise</li>
+																									<li>Flextion (Knee/Hip)</li>
+																									<li>Knee extension</li>
+																									<li>External hip rotation</li>
+																									<li>Plantarflextion (Ankle/Hallux)</li>
+																									<li>Reflexes (Knee/Ankle/Plantar) </li>
+																									<li>Dorsiflextion (Ankle/Hallux)</li>
+																									<li>Power</li>
+																									<li>Tone</li>
+																																												
+																								</ul>
+																						</div>
+																				
+																				
+																				</details>
+																      <label class="form-label" for="right_lowerback_obs">Observation, palpation, movement</label>
+																      <textarea class="form-control form-control-3-4" name="leftLegObs" id="nugget" rows="4">{{leftLegObs}}</textarea>
+															    </div>
+															    
+															    
+															    <div class="multiple-choice" data-target="leftleg-checked">
+															      <input id="leftleg" name="lowerlimbs" type="checkbox" value="Right"  {{ checked('lowerlimbs', 'Right') }}>
+															      <label for="leftleg"> Right leg</label>
+															    </div>
+															    
+															    <div class="form-group panel panel-border-narrow js-hidden mt0 mb20" id="leftleg-checked">
+																			<details class="mb10">
+
+																					<summary><span class="summary">Help prompts</span></summary>
+																				
+																					<div class="p20">
+																							<ul class="list list-bullet">
+																								<li>Straight leg raise</li>
+																									<li>Flextion (Knee/Hip)</li>
+																									<li>Knee extension</li>
+																									<li>External hip rotation</li>
+																									<li>Plantarflextion (Ankle/Hallux)</li>
+																									<li>Reflexes (Knee/Ankle/Plantar) </li>
+																									<li>Dorsiflextion (Ankle/Hallux)</li>
+																									<li>Power</li>
+																									<li>Tone</li>																							
+																								</ul>
+																						</div>
+																				
+																				
+																				</details>
+																      <label class="form-label" for="left_lowerback_obs">Observation, palpation, movement </label>
+																      <textarea class="form-control form-control-3-4" name="rightLegObs" id="left_lowerback_obs" rows="4">{{rightLegObs}}</textarea>
+															    </div>
+															    
+															    
+															    
+														  </div><!-- form-group -->
+												  
+												  </fieldset>
+										     	
+										     </div>
+										    
+									  </div><!-- form-group -->
+							  
+							  </fieldset>
+				    	     
+					</div>
+					
+
+			
+			  </div><!-- form-group -->
+			  {% if customer.status == 'Ready for recommendation' %}
+			  <p class="mt0"><button class="button">Finish reviewing</button></p>
+			  <div class="multiple-choice" style="display:none">
+					<input id="radio-inline-4" type="radio" name="physicalVisited" value="physicalVisited" checked>
+					  
+					<label for="radio-4">hidden radio one</label>
+				  </div>
+			  {% else %}
+			  <p class="mt0"><button class="button">Save</button></p>
+			  {% endif %}
+	  </fieldset>
+  </div>
+</form>
+
+		
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+{% macro physGroup(name,sel) %}
+  {% set s = name | slug %}
+  <!-- GROUP -->
+  <div class="multiple-choice" data-target="group_{{s}}_yes">
+    <input id="group_{{s}}" type="checkbox" name="group_{{s}}" sue="group_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="group_{{s}}">{{name}}</label>
+</div>
+{% endmacro %} {% macro physObs(name,sel) %} {% set s = name | slug %}
+<div class="multiple-choice" data-target="phys_{{s}}_yes">
+    <input id="phys_{{s}}" type="checkbox" name="mobility" value="phys_{{s}}" {% if sel %} checked="checked" {% endif %}>
+    <label for="phys_{{s}}">{{name}}</label>
+</div>
+<div class="form-group panel panel-border-narrow js-hidden mt0 mb20" id="phys_{{s}}_yes">
+    <p>
+        <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
+        <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
+    </p>
+</div>
+{% endmacro %} {% block footer_top %} {{ super() }}
+<p class="font-xsmall">
+    <a href="/{{ path2 }}/phys_exam_1">exam v1</a> |
+    <a href="/{{ path2 }}/phys_exam_2">exam v2</a>
+</p>
+{% endblock %} {% block page_scripts %} {{ super() }} {% endblock %}

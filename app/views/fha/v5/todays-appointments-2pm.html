@@ -1,0 +1,59 @@
+{% extends path+"/_layout-caselist.html" %}
+
+{% block horizontal_secondary_nav %}
+              
+{{ secondaryNav.nav("assessment", "todays-appointments-2pm", menuItems ) }}
+
+
+{% endblock %}  
+
+{% block caselist_content %}
+            <h2 class="heading-medium mt0"><span class="heading-xlarge">24</span><br/>Assessments today</h2>
+              <table class="zebra">
+
+                <thead>
+                  <tr>
+                    <th >Details</th>
+                    <th class="numeric">Status</th>
+                  </tr>
+                </thead>
+                
+                
+
+        {% for customer in customers | sort(true, false, 'waitTime') | selectattr("arrived") %}
+                <tr>
+
+                  <td ><a href="/{{path}}/booking/arrived/{{customer._id}}/details"><span class="visually-hidden">Name</span>{{customer.name.fullName}} </a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span></td>
+
+                  
+                  <td class="numeric">
+                    {% if customer.arrived %}
+                    <span class="status {{ 'blue' if customer.waitTime < 30 }}{{ 'red' if customer.waitTime > 29 }}">Waiting {{customer.waitTime}} minutes</span>
+                    <span class="status {{ 'blue' if customer.arrivedTime < 11 }}{{ 'red' if customer.arrivedTime > 10 }}">Arrived at {{customer.timeArrived}}</span>
+                    {% endif %}
+                  </td>
+                </tr>
+                {% endfor %}
+
+                {% for customer in customers | sort(false, false, 'appointmentDate') | rejectattr("arrived") %}
+                <tr>
+
+                  <td ><a href="/{{path}}/booking/booked/{{customer._id}}/details"><span class="visually-hidden">Name</span>{{customer.name.fullName}} </a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span></td>
+                  <td class="numeric">
+                    not arrived yet
+                  </td>
+                </tr>
+                {% endfor %}
+
+    
+
+
+              </table>
+
+{% endblock %}
+
+
+
+
+
+

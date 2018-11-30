@@ -1,0 +1,55 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+<h2 class="heading-large">Physical assessments</h2>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    
+    
+    
+    
+ <div class="form-group">
+		    
+				    <fieldset class="inline">
+		    
+				    	<legend class="heading-medium mb10">Has {{customer.name.first}} given their consent for this assessment?</legend>
+		
+					    <div class="multiple-choice" data-target="reasons1">
+					      <input id="decide_now" name="whatcando" type="radio" value="Yes">
+					      <label for="decide_now"> Yes</label>
+					    </div>
+		  
+					    <div class="multiple-choice" data-target="reasons2">
+					      <input id="face2face" name="whatcando" type="radio" value="No">
+					      <label for="face2face"> No</label>
+					    </div>	
+					    
+					    
+					      <div class="panel panel-border-narrow js-hidden" id="reasons1">
+					      	<p class="mt0 mb10"><a href="physical" class="button">Continue</a></p>
+					      </div>
+					      
+					      <div class="panel panel-border-narrow js-hidden" id="reasons2">
+							 <label class="form-label" for="justificaiton">Why doesn't Tomas consent?</label>
+							 <textarea class="form-control form-control-3-4" name="justificaiton" id="justificaiton" rows="5"></textarea>
+							 <p class="mt30"><a href="medical_assessment_dashboard" class="button">Finish assessment</a></p>
+					      </div>
+					    
+				    </fieldset>
+				    
+				</div>
+    
+    
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+
+
