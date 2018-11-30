@@ -319,7 +319,7 @@ module.exports = [
       "postcode": "B5 8ID"
     },
     "otherHcp": {
-      "hasOtherHcp": true,
+      "hasOtherHcp": false,
       "type": "Physiotherapist",
       "phone": "0121 930 564",
       "name": {
