@@ -1,0 +1,50 @@
+{% extends path1+"/_layout.html" %} {% block left_content %}
+<p class="mt10 mb0 bold-small"><span class="circle purple"></span>Booked</p>
+<div class="available-slot">
+    <div class="column-half" style="padding: 0;">
+        <h4 class="heading-small">Tuesday 10 May</h4>
+        <p>14:00pm</p>
+    </div>
+    <div class="column-half" style="padding: 0; text-align: right;">
+        <a href="timepicker?day=tuesday&date=10%20April&time=11:00am" class="button">Edit</a>
+    </div>
+</div>
+<hr> {% endblock %} {% block citizen_content %} {# macro #} {{ nav2.case_tabs("history",1,path1) }}
+<div class="container">
+    <div class="grid-row">
+        <div class="column-full">
+    <form class="m-t-xl" method="post">
+
+      <div class="form-group">
+        <label class="form-label m-b-xs" for="add-comment">Your comment</label>
+        <textarea class="form-control span-width" name="comment" id="add-comment"></textarea>
+      </div>
+
+      <p><button type="submit" class="button">Save comment</button></p>
+
+    </form>
+        </div>
+        <div class="column-half">
+          {% for comment in comments|sort(attribute='timestamp', reverse=true) %}
+          <div class="comment-heading">
+            <h3  class="heading-small mt0">{{comment.name}}</h3>
+            {% if not comment.hasComment %}
+            <h4>
+              {{ 'Customer' if comment.isCustomer }} {{ 'Appointee' if not comment.isCustomer }} passed security</h4>
+            {% endif %}
+          </div>
+          <p class="form-hint">{{comment.dateFormatted}}</p>
+          {% if comment.hasComment %}
+          <p>{{comment.comment}}</p>
+          {% endif %}
+          <hr>
+        {% endfor %}
+
+        </div>
+
+        <!-- column -->
+    </div>
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

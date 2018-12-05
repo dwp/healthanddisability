@@ -275,6 +275,7 @@ if (typeof (routes) !== 'function') {
   app.use('/appoint/v11/', require('./app/views/appoint/v11/_routes.js'))   
   app.use('/appoint/v12/', require('./app/views/appoint/v12/_routes.js')) 
   app.use('/appoint/v13/', require('./app/views/appoint/v13/_routes.js')) 
+  app.use('/appoint/v14/', require('./app/views/appoint/v14/_routes.js')) 
 
   app.use('/vouch/', require('./app/views/vouch/_routes.js'))
   app.use('/esa113/', require('./app/views/esa113/_routes.js'))

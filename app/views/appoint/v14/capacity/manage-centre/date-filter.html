@@ -1,0 +1,89 @@
+{% extends path1+"/_manage-centre-layout.html" %} 
+
+
+
+
+{% block citizen_content %}
+
+<p><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<section id="Default hours" class="">
+
+<h1 class="heading-large"><span class="heading-secondary">Step 1 of 3</span>Appointment times</h1>
+
+
+    <div class="grid-row">
+           <div class="column-half">
+
+<form>
+            <div class="form-group inline mt20">
+                <fieldset>
+                    <legend>
+                        <span class="heading-medium">
+                            Choose a date range
+                        </span>
+                    </legend>
+                    
+                    
+                    <div class="form-group mt10">
+				    <fieldset>
+				      <legend>
+				          Date from:
+				        <span class="form-hint">For example, 31 3 1980</span>
+				      </legend>
+				      <div class="form-date">
+				        <div class="form-group form-group-day">
+				          <label class="form-label" for="dob-day">Day</label>
+				          <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
+				        </div>
+				        <div class="form-group form-group-month">
+				          <label class="form-label" for="dob-month">Month</label>
+				          <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
+				        </div>
+				        <div class="form-group form-group-year">
+				          <label class="form-label" for="dob-year">Year</label>
+				          <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
+				        </div>
+				      </div>
+				    </fieldset>
+				  </div>
+				  
+				  <div class="form-group">
+				    <fieldset>
+				      <legend>
+				          Date to:
+				        <span class="form-hint">For example, 31 3 1980</span>
+				      </legend>
+				      <div class="form-date">
+				        <div class="form-group form-group-day">
+				          <label class="form-label" for="dob-day">Day</label>
+				          <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
+				        </div>
+				        <div class="form-group form-group-month">
+				          <label class="form-label" for="dob-month">Month</label>
+				          <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
+				        </div>
+				        <div class="form-group form-group-year">
+				          <label class="form-label" for="dob-year">Year</label>
+				          <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
+				        </div>
+				      </div>
+				    </fieldset>
+				  </div>
+                    
+                    
+                </fieldset>
+            </div>
+</form>
+            
+            <p class="mt30"><a href="generated-slots" class="button">Continue</a></p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+  
+
+
+
+ {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

@@ -1,0 +1,44 @@
+
+{% extends path1+"/_manage-centre-layout.html" %} 
+
+
+{% block header %}
+
+  {% include path2+"/_staff_heading.html" %}
+
+{% endblock %}
+  {% block manage_centre_nav %}{% endblock %}
+
+{% block citizen_content %}
+
+
+<div class="container">
+    <form action="staff-profile-2?tab=leave" method="post" accept-charset="utf-8">
+    
+    <p><a href="/{{path2}}/{{centre.id}}/manage-staff/staff-profile/{{person.id}}?tab=leave" class="link-back">Back</a></p>
+    <h1 class="heading-large mt0">Select availability</h1>
+    
+        {% for date in formData.dates %}
+        <div class="form-group">
+        <fieldset>
+            <legend class="heading-medium">{{ date | formatDate('dddd DD MMMM YYYY') }}</legend>
+            <div class="multiple-choice">
+                <input name="date-{{loop.index}}" type="checkbox" class="form-control" value="morning"id="morning-{{loop.index}}" {{ date | checkedIfAvailable }}
+                >
+                <label for="morning-{{loop.index}}" class="form-label">Morning</label>
+            </div>
+            <div class="multiple-choice">
+                <input name="date-{{loop.index}}" type="checkbox" class="form-control" value="afternoon"id="afternoon-{{loop.index}}" {{ date | checkedIfAvailable }}>
+                <label for="afternoon-{{loop.index}}" class="form-label">Afternoon</label>
+            </div>
+
+        </fieldset>
+        <input type="hidden" name="dates" value="{{date}}">
+    </div>
+        {% endfor %}
+    <p><a href="staff-profile?tab=leave" class="button">Save and complete</a></p>
+    </form>
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

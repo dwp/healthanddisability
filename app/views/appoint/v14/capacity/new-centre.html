@@ -1,0 +1,61 @@
+{% extends path1+"/_manage-centre-layout.html" %} 
+ {% block header %}
+ {% endblock %}
+
+
+
+{% block manage_centre_nav %}
+
+{% endblock %}
+  
+
+{% block citizen_content %}
+<h1 class="heading-medium">Add new assessment centre</h1>
+
+<div class="container">
+    <div class="grid-row">
+        <div class="column-half">
+            <form action="new-centre-2" method="post">
+            <div class="form-group">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" name="name" class="form-control" value="">
+            </div>
+            <div class="form-group">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="text" name="phone" class="form-control" value="">
+            </div>
+           	<div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="text" name="email" class="form-control" value="">
+            </div>
+
+            <fieldset>
+            	<legend class="heading-medium"><span class="visually-hidden">Asessment centre </span>Address</legend>
+            	<div class="form-group">
+	                <label for="address1" class="form-label">Building and street</label>
+	                <input type="text" name="address1" class="form-control" value="">
+	            </div>
+	            <div class="form-group">
+	                <label for="address2" class="form-label visually-hidden">Building and street line 2</label>
+	                <input type="text" name="address2" class="form-control" value="">
+	            </div>
+	            <div class="form-group">
+	                <label for="address3" class="form-label visually-hidden">Building and street line 3</label>
+	                <input type="text" name="address3" class="form-control" value="">
+	            </div>
+	            <div class="form-group">
+	                <label for="addresstown" class="form-label">Town or City</label>
+	                <input type="text" name="location" class="form-control" value="">
+	            </div>
+	            <div class="form-group">
+	                <label for="postcode" class="form-label">Postcode</label>
+	                <input type="text" name="postcode" class="form-control" value="">
+	            </div>
+            </fieldset>
+            <p><button class="button">Save and continue</button></p>
+        </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %} {% block footer_top %} {%endblock %}
