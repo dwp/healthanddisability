@@ -1,0 +1,152 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+		
+		
+			
+		
+		
+
+		<form method="post" action="/{{path}}/assessment/{{customer._id}}/booked">
+
+	
+		
+			<fieldset>
+				<legend><h1 class="heading-large">Book appointment</h1></legend>
+	                  	{% if checked('stoppassess','unfit') %}
+								<div class="panel panel-border-wide">
+										<p>
+								{{customer.name.first}} is unfit to be examined
+						    	</p>
+					        	</div>
+								{% elif checked('stoppassess','specialreq') %}
+									
+				<div class="panel panel-border-wide">
+						<p>
+							
+								{{customer.name.first}} has a special need they've not previously disclosed
+							</p>
+						</div>
+								{% endif%}
+					
+
+				
+				
+				<div class="form-group mt30">
+
+						<fieldset class="form-group">
+								<legend class="form-label-bold mb10">Do you want to book the appointment now?</legend>
+								
+					
+								<div class="multiple-choice" data-target="other-info2">
+									<input type="radio" name="appointments" id="available-appointments-unable" value="yes" {{checked('appointments', 'yes') }}>
+									<label for="available-appointments-unable">Yes</label>
+								</div>
+
+								<div class="panel panel-border-narrow js-hidden form-group" id="other-info2">
+
+
+
+										{% include path+"/includes/appointmentsTypeAhead.html" %}  
+
+                                       <!--
+										<fieldset style="float:none">
+												<legend class="bold mb10">
+														Please select a new appointment time: 
+												</legend>
+												 
+												<div class="multiple-choice">
+														<input type="radio" name="appointment" id="available-appointments-1" value="Mon Dec 10 2018 14:00:28 GMT+0000">
+														<label for="available-appointments-1">Monday 10 December 2018 2:00pm</label>
+													</div>
+										
+													
+													<div class="multiple-choice">
+														<input type="radio" name="appointment" id="available-appointments-2" value="Tue Dec 11 2018 14:00:28 GMT+0000">
+														<label for="available-appointments-2">Tuesday 11 December 2018 2:00pm</label>
+													</div>
+										
+													
+													<div class="multiple-choice">
+														<input type="radio" name="appointment" id="available-appointments-3" value="Wed Dec 12 2018 14:00:28 GMT+0000">
+														<label for="available-appointments-3">Wednesday 12 December 2018 2:00pm</label>
+													</div>
+										
+													
+													<div class="multiple-choice">
+														<input type="radio" name="appointment" id="available-appointments-4" value="Thu Dec 13 2018 14:00:28 GMT+0000">
+														<label for="available-appointments-4">Thursday 13 December 2018 2:00pm</label>
+													</div>
+										</fieldset>
+										<p class="mt20"><a href=''>View more appointments</a></p> -->
+							 </div>
+								
+								
+								
+								
+								<div class="multiple-choice">
+									<input type="radio" name="appointments" id="available-appointments-1" value="no"  {{checked('appointments', 'no') }}>
+									<label for="available-appointments-1">No</label>
+								</div>
+					
+								
+				
+								
+							   
+							</fieldset>
+							<p><button class="button">Next</button></p>
+						    
+					</div>
+				
+	
+			</fieldset>
+				
+
+			
+				</form>
+			
+
+		
+    
+
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+
+{% endblock %}
+
+ {% block page_script %}
+
+ <script type="text/javascript">
+    $(document).ready(function(){
+		alert();
+		accessibleAutocomplete.enhanceSelectElement({
+		  selectElement: document.querySelector('#Agents')
+		})
+	});
+	
+
+  </script>
+
+ 
+{% endblock %} 

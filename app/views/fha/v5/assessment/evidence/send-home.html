@@ -1,0 +1,103 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+		
+		
+			
+		
+	
+		   <form  method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/send-home">
+			
+	
+		
+			<fieldset>
+				<legend><h1 class="heading-large">Rearrange appointment</h1></legend>
+			
+				<div class="panel panel-border-wide">
+					
+			
+								<ul class="list-bullet">
+										<li>{{customer.name.first}} has been waiting less  than 30 minutes</li>
+										<li>{{customer.name.first}}  arrived on time</li>
+										<li>Longest wait time is currently over 30 minutes</li>
+									</ul>
+							
+						
+					</div>
+
+				
+				
+				<div class="form-group mt30">
+
+					    	<fieldset>
+							      <legend class="heading-medium">
+							       Why do we need to rearrange this appointment?
+							      </legend>
+							       
+							       
+							       <div class="multiple-choice">
+										      <input id="know-1" name="scenario" type="radio" value="know-1"  {{checked('scenario', 'know-1') }}>
+										      <label for="know-1">{{customer.name.first}} does not want to wait any longer</label>
+										    </div>
+										
+										    <div class="multiple-choice">
+										      <input id="know-2" name="scenario" type="radio" value="know-2"  {{checked('scenario', 'know-2') }}>
+										      <label for="know-2">{{customer.name.first}} arrived late</label>
+												</div>
+						
+												<div class="multiple-choice">
+														<input id="know-3" name="scenario" type="radio" value="know-3"  {{checked('scenario', 'know-3') }}>
+														<label for="know-3">We cannot carry out or complete the assesment</label>
+													</div>
+										    
+								    
+								    
+								    
+						    </fieldset>
+						    
+					</div>
+	
+			</fieldset>
+			
+
+				<p class="mt30"><button class="button">Next</button></p>
+
+			</form>
+
+		
+    
+
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

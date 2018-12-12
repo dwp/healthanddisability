@@ -54,7 +54,9 @@ module.exports = function(versionNumber, reviewCustomers, assessmentCustomers, a
 			url: "ready-for-assessment",
 			label: "Ready for Assessment",
 			quantity: assessmentCustomers.filter(customer => customer.status === "Ready for assessment").length
-		},{
+		},
+		
+		{
 			url: "completed-assessments",
 			label: "Assessments completed",
 			quantity: assessmentCustomers.filter(customer => customer.status === "Assessment completed").length

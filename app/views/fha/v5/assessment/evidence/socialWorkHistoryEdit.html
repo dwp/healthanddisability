@@ -44,6 +44,22 @@
       </div>
         
     {% endfor %}
+<h2 class="heading-medium">Condition history</h2>
+    {% for item in conditionComments | sortBy("time",true) %}
+  
+    <div class="tag-box">
+    
+      <div class="tag-text">{{ item.comment }}</div>
+      
+      <div class="edit-item">
+         <a href="conditionHistoryNew/{{item.id}}" class="button secondary">Edit</a>
+         
+       
+     </div>
+     
+    </div>
+      
+  {% endfor %}
     
   </div>
     </form>

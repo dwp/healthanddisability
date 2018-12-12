@@ -48,13 +48,24 @@ module.exports = function(versionNumber, reviewCustomers, assessmentCustomers, a
 		}]
 	},{
 		url:"assessment",
-		label:"Assessments", 
+		label:"Today's appointments", 
 		quantity:  assessmentCustomers.length,
 		subItems: [{
+			url: "todays-appointments",
+			label: "Confirm arrival",
+			quantity: assessmentCustomers.filter(customer => customer.status === "Appointment today").length
+		},
+		{
 			url: "ready-for-assessment",
 			label: "Ready for Assessment",
 			quantity: assessmentCustomers.filter(customer => customer.status === "Ready for assessment").length
-		},{
+		},
+		{
+			url: "assessment-stopped",
+			label: "Assessment stopped",
+			quantity: assessmentCustomers.filter(customer => customer.status === "Assessment stopped").length
+		},
+		{
 			url: "completed-assessments",
 			label: "Assessments completed",
 			quantity: assessmentCustomers.filter(customer => customer.status === "Assessment completed").length

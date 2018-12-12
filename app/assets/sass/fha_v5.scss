@@ -37,6 +37,10 @@ $path: "/public/images/";
 @import "inc/caselist_v1";
 @import "inc/inner-panel";
 
+//typeahead
+
+@import "inc/accessible-autocomplete.min";
+
 
 body {
    height:100%;
@@ -701,6 +705,7 @@ td{
 	border-top: 2px solid $grey-2;
 	border-bottom: 2px solid $grey-2;
 	}
+	
 
 	.chat-capture {
 		background: $grey-3;

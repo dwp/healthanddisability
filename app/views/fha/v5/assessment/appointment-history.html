@@ -1,0 +1,63 @@
+{% extends path+"/_layout-case.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.case_tabs("appointment",1,path1, customer._id) }}
+    
+  <div class="grid-row">
+    <div class="column-two-thirds">
+  <a href="javascript: history.go(-1)" class="link-back mt0">Back</a>
+
+  <h1 class="heading-large">
+    Appiontment history
+  </h1>
+  <h2 class="heading-medium">Assessment centre rearranged appointment</h2>
+  <p class="small">Does not want to wait any longer - more than 30 minutes
+    <span class="date block mt10 text-secondary">10 December 2018 | 2:46 pm</span>
+  </p>
+  <hr />
+  <h2 class="heading-medium">Rearranged appointment - on day of appointment </h2>
+  <p class="small">Healthcare professional did not attend session, unexpectedly
+    <span class="date block mt10 text-secondary">07 November 2018 | 10:15 am</span>
+  </p>
+  <hr />
+  <h2 class="heading-medium">Requested rearrangement</h2>
+  <p class="small">{{customer.name.first}} requested to rearrange apointment because original appointment clashed with another appointment
+    <span class="date block mt10 text-secondary">01 November 2018 | 11:15 am</span>
+  </p>
+</div> 
+</div>
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
