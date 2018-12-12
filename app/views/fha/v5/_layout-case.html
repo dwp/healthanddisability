@@ -14,7 +14,7 @@
       
       	<div class="left-panel">
             {% if customer.status == 'Assessment started' or customer.status == 'Ready for recommendation'%}
-            {% elif customer.status == 'Ready for assessment' or customer.status == 'Assessment completed'%}
+            {% elif customer.status == 'Ready for assessment' or customer.status == 'Assessment completed' or customer.status == 'Assessment stopped' or customer.status == 'Appointment today'%}
             <p class="returnRef"><a href="/{{path}}/assessment">Return to case list</a></p>
             <hr>
             {% else %}
@@ -31,20 +31,23 @@
  <p class="mt10 mb0 bold-small">
 {{ 'Ready for review' if customer.status == 'review' }}
 {{ 'Requested further medical evidence' if customer.status == 'fme' }}
+{{ 'Appointment today' if customer.status == 'Appointment today'}}
 {{ 'Ready for assessment' if customer.status == 'Ready for assessment'}}
 {{ 'Assessment started' if customer.status == 'Assessment started' }}
 {{ 'Ready for recommendation' if customer.status == 'Ready for recommendation' }}
 {{ 'Assessment completed' if customer.status == 'Assessment completed' }}
 {{ 'Assessment stopped' if customer.status == 'Assessment stopped' }}
+{{ 'Booked' if customer.status == 'Booked' }}
+
  </p>
-     {% if customer.status == 'Assessment started' %}
+     {% if customer.status == 'Assessment started' or customer.status == 'Booked' %}
      {% elif customer.status == 'Assessment completed' %}
      <p><a href="/{{path}}/assessment/{{customer._id}}/scoring/report-view" class="button">Rework report</a></p>   
    
      {% elif customer.status == 'Assessment stopped' %}
-     <p><a href="/{{path}}/assessment/{{customer._id}}/start-assessment" class="button">Restart assessment</a></p>   
-
-
+     <form class="" method="post" action="/{{path}}/assessment/{{customer._id}}/start-assessment">
+      <p><button  class="button">Restart assessment</button></p>
+    </form>
      {% elif customer.status == 'Ready for recommendation' %}
      <p><a href="/{{path}}/assessment/{{customer._id}}/scoring/" class="button">Make your recommendation</a></p>   
       {% elif customer.status == 'Ready for assessment'%}
@@ -57,9 +60,10 @@
         </div>
     </form>
 
-   
-
-    
+    {% elif customer.status == 'Appointment today' %}
+    <form class="" method="post" action="/{{path}}/assessment/{{customer._id}}/ready-for-assessment">
+		  <p><button  class="button">Confirm arrival</button></p>
+    </form>
 
       {% else %}
       <p class="mt10"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/rec" class="button">Make a recommendation</a></p>
@@ -69,33 +73,29 @@
 		  
 		  
 		  <ul class="secondary-actions">
-
-          
           <li><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/record-evidence" class="">Record evidence</a></li>
-
-
           {% if customer.status == 'fme' or customer.status == 'review' %}
           <li><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/request-evidence" class="">Request evidence</a></li>
           {% endif %}
-          {% if customer.status == 'Ready for assessment' or customer.status == 'Assessment started' or customer.status == 'Ready for recommendation' %}  
-          <li>
-            
-              <a href="/{{path}}/assessment/{{customer._id}}/general-observations">General observations {% if data['general-observations-post']==='posted' %}({{ observations.length }}){% endif%}</a></li>
-  
-            {% endif %}
+         
 
             {% if customer.status == 'Assessment started' or customer.status == 'Ready for recommendation'%}  
-            <li>
+            <li><a href="/{{path}}/assessment/{{customer._id}}/general-observations">General observations {% if data['general-observations-post']==='posted' %}({{ observations.length }}){% endif%}</a></li>
+            <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/addAttendee" class="">Additional attendee</a></li>
+           
             
-                <a href="/{{path}}/assessment/{{customer._id}}/evidence/stopAssess">Abandon assessment</a></li>
+            <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/stopAssess">Abandon assessment</a></li>
             {% endif %}
 
-            {% if customer.status == 'Assessment stopped' %}
-            <a href="/{{path}}/assessment/{{customer._id}}/evidence/stopAssess">Send home</a></li>
+           {% if customer.status == 'Assessment stopped' or customer.status == 'Ready for assessment'%}
+            {% if data['stoppassess']==='unfit' or data['stoppassess']==='specialreq'%}
+            <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/send-home-book">Rearrange this appointment</a></li>
+            {% elif data['stoppassess']==='other'%}
+            <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/send-home-asses-not-comp">Rearrange this appointment</a></li>
+            {% else %}
+            <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/send-home">Rearrange this appointment</a></li>
             {% endif %}
-            
-            <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/addAttendee" class="">Additional attendee</a></li>
-            
+            {% endif %} 
            <!-- <li><a href="#">Close case</a></li> -->
           </ul>
           
@@ -135,7 +135,12 @@
              $( ".inner-panel" ).toggleClass( "panel-open" );
          });
      }); 
+     
  </script>
+
+
+
+page_script
 {% endblock %}
 
 {% block footer_top %}

@@ -8,7 +8,7 @@ var calendar = require('node-calendar');
 var moment = require('moment')
 const crypto = require("crypto");
 
-var versionNumber = "4";
+var versionNumber = "5";
 var filePath = '../../../../app/views/fha/v' + versionNumber;
 var viewPath = 'fha/v' + versionNumber;
 
@@ -67,6 +67,11 @@ router.get('/', function (req, res, next) {
     total: assessmentCustomers.length,
     readyForAssessment: assessmentCustomers.filter(customer => customer.status === "Ready for assessment").length,
     assesmentComplete: assessmentCustomers.filter(customer => customer.status === "Assessment completed").length,
+    assesmentStopped: assessmentCustomers.filter(customer => customer.status === "Assessment stopped").length,
+    appointmentToday: assessmentCustomers.filter(customer => customer.status === "Appointment today").length,
+    readyToBook: assessmentCustomers.filter(customer => customer.status === "Ready to book").length,
+    booked: assessmentCustomers.filter(customer => customer.status === "Booked").length,
+
   }
   next()
 })
@@ -90,6 +95,11 @@ router.post('*', function (req, res, next) {
 
   if(!req.session.data.typicalDayComments){
     req.session.data.typicalDayComments = [];
+  }
+
+
+  if(!req.session.data.conditionComments){
+    req.session.data.conditionComments = [];
   }
 
   if(!req.session.data.observations){
@@ -148,6 +158,7 @@ router.get('/clearSession',function(req, res, next) {
   observations = [];
   req.session.data.socialWorkComments = [];
   req.session.data.typicalDayComments = [];
+  req.session.data.conditionComments = [];
   nug_id = 0;
   res.send("success");
 })
@@ -666,6 +677,12 @@ router.get('/assessment/:customerId/evidence/socialWorkHistoryEdit/:commentId', 
   
 });
 
+router.get('/assessment/:customerId/evidence/conditionHistoryNew/:commentId', function(req, res, next){  
+  res.locals.comment = req.session.data.conditionComments.filter(item => item.id === req.params.commentId)[0];
+  res.render(viewPath +'/assessment/evidence/contentEditCondition');
+  
+});
+
 
 
 router.post('/assessment/:customerId/evidence/socialWorkHistoryEdit', function(req, res, next){  
@@ -681,6 +698,22 @@ router.post('/assessment/:customerId/evidence/socialWorkHistoryEdit', function(r
   next()
   
 });
+
+router.post('/assessment/:customerId/evidence/conditionHistoryNew', function(req, res, next){  
+  
+  req.session.data.conditionComments.map(function(item){
+    if(item.id === req.body.id){
+      item.comment = req.body.comment;
+    }
+  })
+  console.log(req.session.data.conditionComments);
+  
+  
+  next()
+  
+});
+
+
 
 
 
@@ -721,6 +754,24 @@ router.post('/assessment/:customerId/evidence/typicalDay', function(req, res, ne
 });
 
 
+router.post('/assessment/:customerId/evidence/conditionHistoryNew', function(req, res, next){  
+  if(req.body.delete == "true"){
+     req.session.data.conditionComments = req.session.data.conditionComments.filter(item => item.id != req.body.id);
+
+  } else {
+
+    req.session.data.conditionComments.push({
+      id: crypto.randomBytes(16).toString("hex"),
+      comment: req.body.comments,
+      time: moment().format()
+    });
+
+    res.locals.comments = req.session.data.conditionComments;
+  }
+  next()
+
+});
+
 
 router.get('/assessment/:customerId/evidence/socialWorkHistory*', function(req, res, next){  
   res.locals.comments = req.session.data.socialWorkComments;
@@ -729,6 +780,11 @@ router.get('/assessment/:customerId/evidence/socialWorkHistory*', function(req, 
 
 router.get('/assessment/:customerId/evidence/typicalDay', function(req, res, next){  
   res.locals.comments = req.session.data.typicalDayComments;
+  next()
+});
+
+router.get('/assessment/:customerId/evidence/conditionHistoryNew', function(req, res, next){  
+  res.locals.comments = req.session.data.conditionComments;
   next()
 });
 
@@ -1632,11 +1688,38 @@ router.get('/ready-for-assessment', function(req, res, next){
   next()
 })
 
+router.get('/assessment-stopped', function(req, res, next){
+  res.locals.customers = assessmentCustomers
+                            .filter(customer => customer.status === "Assessment stopped");
+  next()
+})
+
 router.get('/completed-assessments', function(req, res, next){
   res.locals.customers = assessmentCustomers
                             .filter(customer => customer.status === "Assessment completed");
   next()
 })
+
+router.get('/todays-appointments', function(req, res, next){
+  res.locals.customers = assessmentCustomers
+                            .filter(customer => customer.status === "Appointment today");
+  next()
+})
+
+router.get('/ready-to-book', function(req, res, next){
+  res.locals.customers = assessmentCustomers
+                            .filter(customer => customer.status === "Ready to book");
+  next()
+})
+
+router.get('/booked', function(req, res, next){
+  res.locals.customers = assessmentCustomers
+                            .filter(customer => customer.status === "Booked");
+  next()
+})
+
+
+
 
 
 
@@ -1768,9 +1851,79 @@ router.post("/assessment/:customerId/assessment-stopped", function(req, res, nex
     }
   })
 
-  res.redirect(301, '/fha/v' + versionNumber +'/assessment/' + req.params.customerId + '/timeline3');
+  res.redirect(301, '/fha/v' + versionNumber +'/assessment/' + req.params.customerId + '/timeline');
 
 });
+
+router.post("/assessment/:customerId/ready-for-assessment", function(req, res, next){
+  assessmentCustomers.map(customer => {
+    if(customer._id === req.params.customerId){
+
+      customer.status = "Ready for assessment";
+
+      delete req.session.data.type;
+
+      console.log(customer);
+    }
+  })
+
+  res.redirect(301, '/fha/v' + versionNumber +'/assessment/' + req.params.customerId + '/timeline');
+
+});
+
+
+router.post("/assessment/:customerId/todays-appointments", function(req, res, next){
+  assessmentCustomers.map(customer => {
+    if(customer._id === req.params.customerId){
+
+      customer.status = "Appointment today";
+
+      delete req.session.data.type;
+
+      console.log(customer);
+    }
+  })
+
+  res.redirect(301, '/fha/v' + versionNumber +'/assessment/' + req.params.customerId + '/timeline');
+
+});
+
+
+router.post("/assessment/:customerId/booked", function(req, res, next){
+  assessmentCustomers.map(customer => {
+    if(customer._id === req.params.customerId){
+
+      customer.status = "Booked";
+
+      delete req.session.data.type;
+
+      console.log(customer);
+    }
+  })
+
+  res.redirect(301, '/fha/v' + versionNumber +'/assessment/' + req.params.customerId + '/timeline');
+
+});
+
+router.post("/assessment/:customerId/ready-to-book", function(req, res, next){
+  assessmentCustomers.map(customer => {
+    if(customer._id === req.params.customerId){
+
+      customer.status = "Ready to book";
+
+      delete req.session.data.type;
+
+      console.log(customer);
+    }
+  })
+
+  res.redirect(301, '/fha/v' + versionNumber +'/assessment/' + req.params.customerId + '/timeline');
+
+});
+
+
+
+
 
 
 
@@ -1952,6 +2105,24 @@ router.post('/assessment/:customerId/evidence/mentalHealthAssessment', function(
   })
 })
 
+
+
+router.post('/assessment/:customerId/evidence/send-home',function (req, res) {
+      
+  var scenariopicker = req.session.data['scenario']
+
+
+  if(scenariopicker == 'know-3'){
+    res.redirect('/fha/v' + versionNumber + '/assessment/' + req.params.customerId + '/evidence/send-home-asses-not-comp')
+  }
+
+ 
+
+  else{
+    res.redirect('/fha/v' + versionNumber + '/assessment/' + req.params.customerId + '/evidence/send-home-book')
+  }
+
+}) 
 
 
 

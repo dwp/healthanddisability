@@ -29,7 +29,7 @@ module.exports = [
         "sideEffects": "not recorded"
       }
     ],
-    "status": "Assessment completed",
+    "status": "Appointment today",
     "dateOfBirth": "1966-08-05T14:41:40+00:00",
     "mobile": "07857 438 301",
     "NINO": "QQ 39 18 21 C",
@@ -360,7 +360,7 @@ module.exports = [
         "sideEffects": ""
       }
     ],
-   "status": "Assessment completed",
+   "status": "Appointment today",
     "dateOfBirth": "1966-04-19T11:48:53+00:00",
     "mobile": "07977 416 302",
     "NINO": "QQ 47 36 71 C",
@@ -509,7 +509,7 @@ module.exports = [
       }
 
     ],
-    "status": "Assessment completed",
+    "status": "Appointment today",
     "dateOfBirth": "1956-02-13T23:13:32+00:00",
     "mobile": "07961 542 293",
     "NINO": "QQ 78 13 92 C",
@@ -576,7 +576,7 @@ module.exports = [
         "sideEffects": ""
       }
     ],
-   "status": "Assessment completed",
+   "status": "Appointment today",
     "dateOfBirth": "1985-11-23T18:47:31+00:00",
     "mobile": "07809 462 367",
     "NINO": "QQ 81 55 93 C",
@@ -643,7 +643,7 @@ module.exports = [
         "sideEffects": ""
       }
     ],
-    "status": "Assessment completed",
+    "status": "Appointment today",
     "dateOfBirth": "1971-01-10T22:53:59+00:00",
     "mobile": "07823 427 394",
     "NINO": "QQ 29 61 64 C",
@@ -735,7 +735,7 @@ module.exports = [
         "sideEffects": ""
       }
     ],
-    "status": "Assessment completed",
+    "status": "Appointment today",
     "dateOfBirth": "1963-03-21T02:07:51+00:00",
     "mobile": "07887 561 302",
     "NINO": "QQ 84 52 37 C",
@@ -1119,7 +1119,7 @@ module.exports = [
         "sideEffects": ""
       }
     ],
-    "status": "Assessment completed",
+    "status": "Appointment today",
     "dateOfBirth": "1983-04-13T22:44:09+00:00",
     "mobile": "07988 449 248",
     "NINO": "QQ 56 26 22 C",
@@ -1211,7 +1211,7 @@ module.exports = [
         "sideEffects": ""
       }
     ],
-    "status": "Assessment completed",
+    "status": "Appointment today",
     "dateOfBirth": "1952-04-24T02:55:01+00:00",
     "mobile": "07918 463 245",
     "NINO": "QQ 69 73 59 C",
@@ -1278,7 +1278,7 @@ module.exports = [
         "sideEffects": ""
       }
     ],
-   "status": "Assessment completed",
+   "status": "Appointment today",
     "dateOfBirth": "1956-09-01T01:44:30+00:00",
     "mobile": "07835 476 385",
     "NINO": "QQ 74 57 26 C",
@@ -1557,7 +1557,7 @@ module.exports = [
         "sideEffects": ""
       }
     ],
-    "status": "Assessment completed",
+    "status": "Appointment today",
     "dateOfBirth": "1966-11-25T05:50:41+00:00",
     "mobile": "07815 526 315",
     "NINO": "QQ 69 25 34 C",

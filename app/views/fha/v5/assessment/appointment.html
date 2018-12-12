@@ -1,0 +1,120 @@
+{% extends path+"/_layout-case.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.case_tabs("appointment",1,path1, customer._id) }}
+    
+<div class="grid-row">
+  <div class="column-one-third">
+
+          <h2 class="heading-small">{{customer.name.first}}'s current appointment</h4> 
+          
+          
+            <p>Tuesday 11 December 2018 <br> 2:00pm</p>
+            {% if customer.status == 'Assessment stopped' or customer.status == 'Ready for assessment' or customer.status == 'Booked' %}
+            {% if data['stoppassess']==='unfit' or data['stoppassess']==='specialreq'%}
+            <p><a href="/{{path}}/assessment/{{customer._id}}/evidence/send-home-book"  class="button-secondary">Rearrange this appointment</a></p>
+            {% elif data['stoppassess']==='other'%}
+            <p><a href="/{{path}}/assessment/{{customer._id}}/evidence/send-home-asses-not-comp"  class="button-secondary">Rearrange this appointment</a></p>
+            {% else %}
+            <p><a href="/{{path}}/assessment/{{customer._id}}/evidence/send-home"  class="button-secondary">Rearrange this appointment</a></p>
+            {% endif %}
+            {% endif %}
+            <hr />
+        
+  </div>
+  <div class="column-two-thirds">
+      <div class="card-container">
+    	
+   
+          <section class="card">
+              <a href="/fha/v5/assessment/5bbf32d5043f00fdd9b4a8b6/appointment-history">
+            <h2 class="heading-small">
+              Appointment history
+              <span class="heading-xlarge mt10 mb0">
+              
+                 3
+                  
+                </span>
+            </h2>
+            <ul class="content">
+              <li>
+                <h3 class="bold mt0 small">Rearranged appointment - sent home</h3>
+                <p class="small">Does not want to wait any longer - more than 30 minutes <br />
+                  <span class="date">10 December 2018 | 2:46 pm</span>
+                </p></li>
+                <li>
+                    <h3 class="bold mt0 small">Rearranged appointment - sent home</h3>
+                    <p class="small">Healthcare professional did not attend session, unexpectedly<br />
+                      <span class="date">07 November 2018 | 10:15 am</span>
+                    </p></li>
+                    <li><p class="small" ><span>More appointment history</span></p></li>
+            </ul>
+            
+
+          
+            </a>
+        
+        
+          </section>
+          
+          <section class="card">
+              <a href="socialWorkHistoryEdit">	<h2 class="heading-small">
+             Failure to attend  
+             <span class="heading-xlarge mt10 mb0">
+              
+                1
+                
+              </span>	
+                    
+            </h2>
+            <ul class="content">
+                <li>
+                  <h3 class="bold mt0 small">Reason</h3>
+                  <p class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl ipsum, iaculis sed ultricies a, vulputate vel eros. Vestibulum tempor arcu at est accumsan, sed suscipit lacus pharetra.
+                    <span class="date">10 December 2018 | 2:46 pm</span>
+                  </p></li>
+              
+              </ul>
+             </a>
+          <!--	<p><a href="socialWorkHistoryEdit">Review</a></p> -->
+          </section>
+      </div>
+    </div>
+  
+</div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

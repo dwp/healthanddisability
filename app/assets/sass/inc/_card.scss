@@ -60,6 +60,13 @@
 		width:calc(100% * (1/3) - 15px - 15px);
 	}
 
+	.column-two-thirds & {
+		@media screen and (min-width:1224px){
+			width:calc(100% * (1/2) - 15px - 15px);
+		}
+
+	}
+
 	//@media screen and (min-width:1500px){
 //		width:calc(100% * (1/4) - 15px - 15px);
 //	}
@@ -80,17 +87,43 @@
 	}
 
 	   
-    h2{
+    h2 {
         margin:0px;
         padding:20px 20px 10px 20px;
+	}
+	h3{
+        margin:0px;
+		padding:0px 20px 0px 20px;
 	}
 
 		   
      p {
         margin:0px;
 		padding:0 20px 20px 20px;
+
 	}
+
+	.small
+{
+	font-size:17px;
+}
 	
+
+ul.content li{
+
+	margin:0 20px;
+	padding:20px 0 10px 0;
+
+	h2 ,h3, p {
+		padding:0px 0 10px 0;
+	}
+
+	.date{
+		text-decoration:none;
+		padding-top:10px;
+	}
+	  
+  }
 
 
 
@@ -151,6 +184,8 @@
 	 }
 	
   }	
+
+
 }
 }
 
