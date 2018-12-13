@@ -19,17 +19,13 @@
            <form action="request-rearrangement-post" method="post">
                 <fieldset class="form-group">
                     <legend class="form-label-bold">
-                        Is the appointment being changed by {{customer.name.first}}?
+                        Reason for rearrangement:
                     </legend>
                     <div class="multiple-choice" data-target="customer-rearranged">
                         <input type="radio" name="changedByCustomer" id="changedByCustomer-yes" value="yes">
-                        <label for="changedByCustomer-yes">Yes</label>
+                        <label for="changedByCustomer-yes">{{customer.name.first}}</label>
                     </div>
-                   <!-- {% if customer.ableToRearrange == false %}
-                    <div class="panel panel-border-narrow js-hidden" id="customer-rearranged">
-                        <p>{{customer.name.first}} has previously re-arranged their appointment. A new appointment can only be booked for before their current appointment date.</p>
-                    </div>
-                    {% endif %} -->
+
                     <div class="multiple-choice">
                         <input type="radio" name="changedByCustomer" id="changedByCustomer-no" value="no">
                         <label for="changedByCustomer-no">No - We have had to change the appointment</label>
