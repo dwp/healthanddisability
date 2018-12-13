@@ -1,0 +1,89 @@
+{% extends path+"/_layout.html" %}
+{% import path+"/caselist/_nav.html" as mainNav %}
+{% block mainNav %}
+{{ mainNav.nav("search", path) }}
+  
+{% endblock %}
+{% block assess_content %}
+
+<main id="content" role="main" class="main-content">
+  
+
+      <div class="container">
+     
+      	
+      	
+          <div class="grid-row">
+          
+          	<div class="column-quarter">
+          		<!-- <form action="search-results" method="post">
+			                 <fieldset>
+			                 	<h1 class="heading-medium mt0"><legend>Customer search</legend></h1>
+			                 	
+			                 	<div class="form-group">
+			                 		<label class="form-label" for="search">Enter an NI number</label>
+							 		<input class="form-control form-control-3-4" id="search" type="text" name="NINO">
+			                 	</div>
+			                
+			                
+		
+							 	<p><a href="search-results" class="button">Search</a></p>
+			                 </fieldset>
+			        </form> -->
+			        
+			         <div class="search-customer">
+						<form action="search-results" method="post">
+					        <label class="form-label" for="search">Enter an NI number</label>
+					        <input class="form-control form-control-2-3" id="search" type="text" name="search">
+					        <a href="search-results" class="gem-c-search__submit">Search</a>
+					    </form>
+					</div>
+			        
+          	</div>
+          
+              <div class="column-three-quarters">
+              
+              
+              <h2 class="heading-medium mt0"><span class="heading-xlarge">1</span><br>Customer found</h2>
+              
+		        
+			  <table class="zebra">
+
+                <thead>
+                  <tr>
+                    <th>Details</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                
+				<tbody>
+					 <tr>
+						 <td>
+						 <a href="review/timeline">
+							 <span class="visually-hidden">Name</span>
+							 Bobby Henderson
+						</a>
+						 <span class="text-secondary block">
+						 	<span class="visually-hidden">Nino</span>
+						 	AA 12 34 56 B</span>
+						 </td>
+						 <td>Appointment booked</td>
+					</tr>
+				</tbody>
+				
+				
+				
+                
+                              
+                              
+              </table>
+         
+              </div><!-- column -->
+            </div>
+     
+        <!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

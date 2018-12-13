@@ -1606,6 +1606,14 @@ router.get('/scrutiny/:customerId/*', function(req, res, next){
 
 })
 
+router.get('/security/:customerId/*', function(req, res, next){
+  res.locals.customer = reviewCustomers
+                          .filter(customer => customer._id === req.params.customerId)[0];
+    
+  next()
+
+})
+
 
 
 router.get('/scrutiny/:customerId/details', function(req, res, next){
@@ -1650,6 +1658,13 @@ router.get('/assessment/:customerId/evidence/socialWorkHistoryEdit/:pageName', f
 router.get('/scrutiny/:customerId/:pageName', function(req, res, next){
   
       res.render(viewPath +'/scrutiny/' + req.params.pageName);
+  
+
+})
+
+router.get('/security/:customerId/:pageName', function(req, res, next){
+  
+      res.render(viewPath +'/security/' + req.params.pageName);
   
 
 })
@@ -2061,6 +2076,19 @@ router.post('/planning/centre/:centre', function(req, res, next){
 })
 
 
+router.post('/search-results-id', function(req, res, next){
+
+  var sanitizeField = function(string){
+    return string.replace(/\s/g,'').toUpperCase();
+  }
+  var NINO = req.body.search.trim('')
+  res.locals.customers = reviewCustomers
+          .filter(customer => sanitizeField(customer.NINO) === sanitizeField(req.body.search));
+
+  res.locals.searchField = req.body.search;
+  res.render(viewPath +'/search-results-id');
+  
+})
 
 
 

@@ -28,6 +28,7 @@ $path: "/public/images/";
 @import "inc/calendar";
 @import "inc/capacity-area";
 @import "patterns/task-list";
+@import "patterns/check-your-answers";
 
 
 // case list styles
@@ -518,6 +519,8 @@ hr {
 
 	.link-back {
 		margin-bottom:0px;
+		margin-top: 30px;
+		display: inline-block;
 	}
 }
 
@@ -1138,6 +1141,9 @@ span.status {
 }
 
 
+.heading-large {
+	margin-top: 30px;
+}
 
 
 

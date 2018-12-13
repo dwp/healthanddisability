@@ -1,0 +1,34 @@
+{% extends path+"/_layout.html" %} 
+{% block mainNav %}
+{{ mainNav.nav("search", path) }}
+  
+{% endblock %}
+{% import path+"/_macro_horizonalSecondaryNav.html" as secondaryNav %} 
+
+{% block assess_content %}
+<main id="content" role="main" class="main-content">
+    <div class="container">
+        {% include path+"/caselist/_nav.html" %}
+        <div class="grid-row">
+             
+            <div class="column-one-quarter">
+                {% include path+"/caselist/_search-box.html" %}
+                {% block horizontal_secondary_nav %}
+                
+                {{ secondaryNav.nav("caselist", false, menuItems) }}
+
+          
+                {% endblock %}  
+            </div>
+            <div class="column-three-quarters">
+                {% block caselist_content %}
+
+                {% endblock %}
+            </div>
+            <!-- column -->
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+</main>
+{% endblock %}

@@ -1,8 +1,8 @@
-{% extends path+"/_layout-caselist.html" %}
+{% extends path+"/_layout-caselist-search.html" %}
 
 {% block horizontal_secondary_nav %}
             
-{{ secondaryNav.nav("", false, menuItems ) }}
+
 
 {% endblock %}  
 
@@ -18,7 +18,7 @@
     </thead>
     {% for customer in customers %}
     <tr>
-        <td><a href="scrutiny/{{customer._id}}/timeline"><span class="visually-hidden">Name</span>{{customer.name.fullName}} </a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span>
+        <td><a href="security/{{customer._id}}/index"><span class="visually-hidden">Name</span>{{customer.name.fullName}} </a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span>
         </td>
         <td>	<span class="block">
                 {{ 'Requested medical evidence'  if customer.status == 'fme'}}
