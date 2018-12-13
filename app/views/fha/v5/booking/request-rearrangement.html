@@ -16,25 +16,48 @@
         <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
             <h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Rearrange appointment</h1>
             
-           <form action="request-rearrangement-post" method="post">
+           <form action="request-rearrangement-book" method="post">
                 <fieldset class="form-group">
                     <legend class="form-label-bold">
                         Reason for rearrangement:
                     </legend>
-                    <div class="multiple-choice" data-target="customer-rearranged">
+                    <div class="multiple-choice" data-target="customer-request-box">
                         <input type="radio" name="changedByCustomer" id="changedByCustomer-yes" value="yes">
-                        <label for="changedByCustomer-yes">{{customer.name.first}}</label>
+                        <label for="changedByCustomer-yes">Request from {{customer.name.first}}</label>
+                    </div>
+                   <div class="panel js-hidden" id="customer-request-box">
+                    <label class="form-label">Reason for request:</label>
+                    <textarea name="comments" class="form-control" style="height: 150px;"></textarea>
+                </div>
+
+                    <div class="multiple-choice" data-target="we-changed">
+                        <input type="radio" name="changedByCustomer" id="changedByCustomer-no" value="no">
+                        <label for="changedByCustomer-no">We have had to change the appointment</label>
+                    </div>
+                    
+                    
+                    <div class="panel js-hidden" id="we-changed">
+                     <fieldset>
+	                    <legend class="form-label">
+	                        Reason:
+	                    </legend>
+	                    <div class="multiple-choice">
+	                        <input type="radio" name="changes" id="changedBy1" value="yes">
+	                        <label for="changedBy1">Reason for the change is...</label>
+	                    </div>
+	                    <div class="multiple-choice">
+	                        <input type="radio" name="changes" id="changedBy2" value="yes">
+	                        <label for="changedBy2">Reason for the change is...</label>
+	                    </div>
+	                    <div class="multiple-choice">
+	                        <input type="radio" name="changes" id="changedBy3" value="yes">
+	                        <label for="changedBy3">Reason for the change is...</label>
+	                    </div>
+                     </fieldset>
                     </div>
 
-                    <div class="multiple-choice">
-                        <input type="radio" name="changedByCustomer" id="changedByCustomer-no" value="no">
-                        <label for="changedByCustomer-no">No - We have had to change the appointment</label>
-                    </div>
                 </fieldset>
-                <div class="form-group">
-                    <label class="form-label-bold">Why does the appointment need to be rearranged? </label>
-                    <textarea name="comments" class="form-control span-width"></textarea>
-                </div>
+               
                 <p>
                     <button class="button">Next</button>
                 </p>
