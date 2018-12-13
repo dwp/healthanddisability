@@ -2152,6 +2152,18 @@ router.post('/assessment/:customerId/evidence/send-home',function (req, res) {
 
 }) 
 
+router.get('/send-home-book', function (req, res) {
+  var locale = 'en-GB'
+
+  res.render('location-picker-8', {
+   // html_lang: 'en',
+    //graph: locationServiceV3.locationGraph,
+    //locations: locationServiceV3.canonicalLocationList(locale),
+    //reverseMap: locationServiceV3.locationReverseMap(locale),
+    //locale: locale
+  })
+})
+
 
 
 module.exports = router
