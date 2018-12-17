@@ -36,14 +36,14 @@
 				      <label for="face2face"> No</label>
 					</div>
 					
-					<div class="form-group panel panel-border-narrow js-hidden mt10" id="exam-no">
+					<div class="form-group panel js-hidden mt10" id="exam-no">
 							<label class="form-label" for="examinationNoObs">Why haven't you examined {{customer.name.first}}'s lower back and legs?</label>
 							<textarea class="form-control form-control-3-4" name="examinationNoObs" id="examinationNoObs" rows="4">{{examinationNoObs}}</textarea>
 					  </div>
 				    
 				    
 				    
-				    <div class="form-group panel panel-border-narrow js-hidden mt10" id="exam-yes">
+				    <div class="form-group panel js-hidden mt10" id="exam-yes">
 				    
 					    	<fieldset class="inline">
 		
@@ -62,7 +62,7 @@
 											</div>
 										
 										    
-										     <div class="form-group panel panel-border-narrow js-hidden mt10" id="findings-yes">
+										     <div class="form-group panel js-hidden mt10" id="findings-yes">
 										     	
 										     	<fieldset class="stacked">
 		
@@ -75,7 +75,7 @@
 															      <label for="lowerback"> Lower back</label>
 															    </div>
 															    
-															    <div class="form-group panel panel-border-narrow js-hidden mt0 mb20" id="lowerback-checked">
+															    <div class="form-group panel js-hidden mt0 mb20" id="lowerback-checked">
 																			<details class="mb10">
 
 																					<summary><span class="summary">Help prompts</span></summary>
@@ -105,7 +105,7 @@
 															      <label for="rightleg"> Left leg</label>
 															    </div>
 															    
-															    <div class="form-group panel panel-border-narrow js-hidden mt0 mb20" id="rightleg-checked">
+															    <div class="form-group panel js-hidden mt0 mb20" id="rightleg-checked">
 																			<details class="mb10">
 
 																					<summary><span class="summary">Help prompts</span></summary>
@@ -137,7 +137,7 @@
 															      <label for="leftleg"> Right leg</label>
 															    </div>
 															    
-															    <div class="form-group panel panel-border-narrow js-hidden mt0 mb20" id="leftleg-checked">
+															    <div class="form-group panel js-hidden mt0 mb20" id="leftleg-checked">
 																			<details class="mb10">
 
 																					<summary><span class="summary">Help prompts</span></summary>
@@ -211,7 +211,7 @@
     <input id="phys_{{s}}" type="checkbox" name="mobility" value="phys_{{s}}" {% if sel %} checked="checked" {% endif %}>
     <label for="phys_{{s}}">{{name}}</label>
 </div>
-<div class="form-group panel panel-border-narrow js-hidden mt0 mb20" id="phys_{{s}}_yes">
+<div class="form-group panel js-hidden mt0 mb20" id="phys_{{s}}_yes">
     <p>
         <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
         <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>

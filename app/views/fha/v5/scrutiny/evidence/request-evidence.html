@@ -19,6 +19,8 @@
     
     
     	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    	
+    	<h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Request evidence</h1>
 		
 		
 		<div class="evidence-requests">
@@ -26,9 +28,8 @@
 				
 			<form action="request-evidence2" method="POST" class="form">
 			<fieldset>
-				<legend><h1 class="heading-large mt0"><span class="heading-secondary">Step 1 of 2</span>Request evidence</h1></legend>
+				<legend class="form-label-bold mb10">Select the evidence you would like to request</legend>
 				
-				<p class="form-hint mb5 mt10">Select the evidence you would like to request.</p>
 				
 				
 				<div class="form-group">
@@ -48,7 +49,7 @@
 										{% endif %}
 										
 
-						 <div class="panel panel-border-narrow js-hidden" id="113-view">
+						 <div class="panel js-hidden" id="113-view">
 							<fieldset>
 						  
 							  <legend class="bold">
@@ -68,7 +69,7 @@
 								<input id="example-contact-by-phone" type="radio" name="scenario" value="No">
 								<label for="example-contact-by-phone">Other reason</label>
 							  </div>
-							  <div class="panel panel-border-narrow js-hidden" id="113-reason">
+							  <div class="panel js-hidden" id="113-reason">
 								<label for="113-reason" class="bold">
 									Add a reason for requesting this evidence
 								</label>
@@ -97,7 +98,7 @@
 									</div>
 										{% endif %}
 								    
-								    <div class="panel panel-border-narrow js-hidden" id="frr-view">
+								    <div class="panel js-hidden" id="frr-view">
 									  <div class="form-group">	
 										<label for="frr-evidence" class="bold">
 										What information do you require?
@@ -157,7 +158,7 @@
 												<input id="example-contact-by-phone" type="radio" name="scenario-frr" value="No">
 												<label for="example-contact-by-phone">Other reason</label>
 												</div>
-												<div class="panel panel-border-narrow js-hidden" id="frr-reason-view">
+												<div class="panel js-hidden" id="frr-reason-view">
 												<label for="FRR-reason">
 													Add a reason for requesting this evidence
 												</label>

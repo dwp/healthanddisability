@@ -19,16 +19,15 @@
     
     
     	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    	
+    	<h1 class="heading-large">Record evidence</h1>
 		
 		<form action="/{{path}}/scrutiny/{{customer._id}}/timeline" method="POST" class="form">
 			<div class="form-group">
 					<fieldset>
 				
-						<legend>
-							<h1 class="heading-large mt0">
-								Record evidence
-							</h1>
-							<p class="bold mb10">Select the evidence you would like to record.</p>
+						<legend class="form-label-bold mb10">
+							Select the evidence you would like to record
 						</legend>
 						
 				{% if  data['recordevidencegp']==='gp' %}
@@ -69,7 +68,7 @@
 							<input id="nationalities-other" name="evidenceType" type="checkbox" value="evidence">
 							<label for="nationalities-other" class="form-label">Record new evidence</label>
 						</div>
-						<div class="panel panel-border-narrow js-hidden" id="evidence">
+						<div class="panel js-hidden" id="evidence">
 								<div class="form-group">
 										<label for="type" class="form-label">
 											Evidence type
@@ -94,7 +93,7 @@
 								<input id="nationalities-other" name="telephonecontactreport" type="checkbox" value="evidence">
 								<label for="nationalities-other" class="form-label">Telephone conversation</label>
 							</div>
-							<div class="panel panel-border-narrow js-hidden" id="telephone">
+							<div class="panel js-hidden" id="telephone">
 									<div class="form-group">	
 											<label for="telephoneReport" class="bold">
 											Information sought
@@ -115,7 +114,7 @@
 																	<input id="example-contact-by-email" type="radio" name="hcp-type" value="client">
 																	<label for="example-contact-by-email">Client: {{customer.name.fullName}}</label>
 																</div>
-																<div class="panel panel-border-narrow js-hidden" id="client">
+																<div class="panel js-hidden" id="client">
 																	  <fieldset class="inline">
 
 																				<legend>
