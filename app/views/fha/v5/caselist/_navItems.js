@@ -52,7 +52,7 @@ module.exports = function(versionNumber, reviewCustomers, assessmentCustomers, a
 		quantity:  assessmentCustomers.length,
 		subItems: [{
 			url: "todays-appointments",
-			label: "Confirm arrival",
+			label: "Arrivals",
 			quantity: assessmentCustomers.filter(customer => customer.status === "Appointment today").length
 		},
 		{

@@ -1,75 +1,18 @@
-{% extends templatePath %}
+{% extends path+"/_layout-case.html" %}
 
 {% block citizen_content %}
 
 <div class="container">
 
   {# macro #}
-    {{ nav.case_tabs("appointment-details",1,path1 + "/" + section, customer._id) }}{# macro #}
+    {{ nav.case_tabs("appointment",1,path1 + "/" + section, customer._id) }}{# macro #}
   
   <div class="grid-row">
-      <h1 class="heading-large mt20 visually-hidden">Appointment details</h1>
-
-    {% if customer.appointmentDate %}
-    <div class="column-half">
-      <div class="evidence-panel">
-        <h4 class="heading-small">Appointment Booked</h4> 
-        
-        
-          <p class="lede">{{customer.appointmentDate |formatDate('dddd D MMMM YYYY')}} <br> {{customer.appointmentDate |formatDate('h:mma')}}</p>
-          {% if customer.arrived %}
-          <p>Arrived at {{customer.timeArrived }}</p>
-          {%endif%}
-      {% endif %}
-    </div>
-
-  </div>
-    <div class="column-three-quarters">
-            <h2 class="heading-medium">Appointment history</h2>
-
-      
-      <div class="timeline">
-
-        {% for entry in history | sort(attribute='entryDate', reverse=true)  %}
-        <span class="line"></span>
-        <div class="timeline__event">
-          
-            <h3 class="heading-small">
-              {{entry.title}}
-            </h3>
-            <p>{{entry.comments}}</p>
-            {% if entry.appointmentDate %}
-            <p class="mt20">Appointment details: {{entry.appointmentDate | formatDate("D MMMM YYYY h:mma")}}</p>
-            {% endif %}
-            <p class="timeline_datetime">{{entry.entryDate | formatDate("D MMMM YYYY")}}</p>
-          
-        </div>
-        {% endfor %}
 
 
-        {% if customer.originalAppointmentDate %}
-        <span class="line"></span>
-        <div class="timeline__event">
-          
-            <h3 class="heading-small">Appointment booked</h3>
-            <p class="mt20">Appointment details: 
-            {{customer.originalAppointmentDate | formatDate("D MMMM YYYY")}} at {{customer.originalAppointmentDate | formatDate("hh:mma")}}</p>
-            <p class="timeline_datetime">{{customer.receivedDate | formatDateAdd2Days("D MMMM YYYY")}}</p>
-        </div> 
-        {% endif %}
-        <span class="line"></span>
-        <div class="timeline__event">
-          
-            <h3 class="heading-small">Referred for appointment</h3>
-            
-            <p class="timeline_datetime">{{customer.receivedDate | formatDate("D MMMM YYYY")}}</p>
-        </div> 
-        <div style="clear:both"></div>
-
-      </div><!-- timeline -->
+      {% include path+"/includes/appointment/_index.html" %}
 
 
-    </div><!-- column -->
 
     
 

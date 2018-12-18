@@ -23,8 +23,13 @@
 	   border-bottom:1px solid $border-colour;
 	   padding-bottom:15px;
 	   margin-bottom:15px;
-   }
 
+   }
+   h2 .badge{
+	position:absolute;
+	top:20px;
+	right:20px;
+}
 
 	&.reviewed{
 
@@ -80,10 +85,6 @@
 	span{
 		display:block;
 		margin:0;
-
-		.badge{
-			display:inline-block;
-		}
 	}
 
 	   
@@ -151,10 +152,14 @@ ul.content li{
 		   padding-bottom:5px;
 		   
 		   &.badge{
-			   position:absolute;
-			   top:20px;
-			   right:20px;
 			   text-decoration: none;
+			   display:inline-block;
+
+			   &.alt{
+				   background:$white;
+				   color:$text-colour;
+				   font-weight:normal;
+			   }
 		   }
 		}
 	}

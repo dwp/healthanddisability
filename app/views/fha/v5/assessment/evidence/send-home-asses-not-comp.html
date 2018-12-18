@@ -37,8 +37,16 @@
 								{{ specific }}
 						</p>
 					</div>
-         {% endif %}
-				
+		 {% endif %}
+		 
+		 {% if customer.name.first == 'Dominguez' %}
+		 <div class="panel panel-info">
+				 <p>
+						{{customer.name.first}} needs to see a doctor because a new condition has been identified 
+				 </p>
+			 </div>
+		 {% endif %}
+		 
 				
 				<div class="form-group mt30">
 
@@ -47,7 +55,7 @@
 												Why are we unable to complete the assessment? <span class="form-hint mt10 mb0"> Please choose a reason: </span>
 							      </legend>
 							       
-								   {% if checked('stoppassess','other') %}
+								   {% if checked('stoppassess','other') or customer.status == 'Assessment stopped' %}
 
 									<div class="multiple-choice" data-target="resourcing">
 											<input id="know-4" name="Issue" type="radio" value="resourcing"  {{checked('assesnotcomp', 'resourcing') }}>
