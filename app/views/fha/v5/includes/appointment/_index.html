@@ -2,10 +2,13 @@
   <div class="full">
    
 </div>
-<!--{{customer.name.first}} has previously re-arranged their appointment, A new appointment can only be booked for before their current appointment date. -->
+
 <div class="column-one-third">
-    {% if data['changedByCustomer']==="yes" and customer.name.first !== 'Dillon'%}
-    <div class="panel panel-warning">{{customer.name.first}} has previously re-arranged their appointment</div>
+    {% if data['changedByCustomer']==="yes" and customer.name.first !== 'Dillon' and customer.name.first == 'Valerie'%}
+    <div class="panel panel-warning">
+      <p>{{customer.name.first}} has previously re-arranged their appointment</p>
+       <p>Earlier appointments available</p>
+    </div>
     {% endif%}
     {% if customer.name.first == 'Dillon' and data['book-next']==="yes" %}
     {% elif  customer.name.first == 'Dillon' and data['appointments']==="no"  %}
