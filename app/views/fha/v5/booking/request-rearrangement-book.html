@@ -17,12 +17,7 @@
             <h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Rearrange appointment</h1>
 
             <div class="form-group">
-                    {% if data['changedByCustomer']==="yes" and customer.name.first !== 'Dillon'%}
-                    <div class="panel panel-warning"><p>{{customer.name.first}} has previously re-arranged their appointment, A new appointment can only be booked for before their current appointment date.</p>
-                     <p>Monday 14 Jan 2018
-                            4:00pm</p>
-                    </div>    
-                    {% endif %}
+        
                     {% include path+"/includes/appointmentsTypeAhead.html" %}  
             </div>
             <p ><button class="button">Confirm appointment</button></p>
