@@ -29,7 +29,7 @@ module.exports = [
         "sideEffects": "not recorded"
       }
     ],
-    "status": "review",
+    "status": "booked",
     "dateOfBirth": "1966-08-05T14:41:40+00:00",
     "mobile": "07857 438 301",
     "NINO": "QQ 39 18 21 C",

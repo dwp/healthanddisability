@@ -22,7 +22,9 @@
         </td>
         <td>	<span class="block">
                 {{ 'Requested medical evidence'  if customer.status == 'fme'}}
-                {{ 'Ready for review' if customer.status == 'review'}}</span></span>
+                {{ 'Ready for review' if customer.status == 'review'}}
+                {{ 'Booked' if customer.status == 'booked'}}
+                </span></span>
         </td>
     </tr>
 
