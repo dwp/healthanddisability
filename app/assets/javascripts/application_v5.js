@@ -398,7 +398,7 @@ $(document).ready(function(){
 
   $(document).ready(function(){
   accessibleAutocomplete.enhanceSelectElement({
-    selectElement: document.querySelector('#Appointments')
+    selectElement: document.querySelector('government-organisations')
   })
 });
 

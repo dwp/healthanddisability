@@ -186,8 +186,8 @@
 
                  
               {% endif %}
-
-              {% if data['changedByCustomer']==="yes"%}
+{% if customer.name.first == 'Valerie'%}
+              {% if  data['changedByCustomer']==="yes"%}
               <li>
                   <h3 class="bold mt0 small">Rearranged appointment  <span class="badge alt mt10">Unable to attend</span></h3>
                   <p class="small">{{changedByCustomerComments}}
@@ -214,7 +214,7 @@
                  
               {% endif %}
 
-         
+         {% endif %}
               <li><p class="small" ><span>More appointment history</span></p></li>
         
           </ul>

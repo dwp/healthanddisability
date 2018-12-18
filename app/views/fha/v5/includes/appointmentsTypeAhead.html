@@ -4,17 +4,10 @@
                     Please select a new appointment time:
 
                   <span class="form-hint mt10 mb10">
-                      For example Mon 4 Jan 1pm
+                      For example Monday 7 January 1pm
                       </span>
                 </label>
                 <div class="form-control-1-2">
-                <select class="form-control" name="appointmentTypeahead" id="location-select-dropdown">
-                  <option value="" disabled selected>
-                  Choose a date
-                  </option>
-                  {% for location in locations %}
-                  <option name="location" value="{{location}}">{{location}}</option>
-                  {% endfor %}
-                </select>
+                    <div id="tt-default" class="autocomplete-wrapper"></div>
                 </div>
               </div>
