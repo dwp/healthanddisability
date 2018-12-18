@@ -509,7 +509,7 @@ module.exports = [
       }
 
     ],
-    "status": "Appointment today",
+    "status": "Ready for assessment",
     "dateOfBirth": "1956-02-13T23:13:32+00:00",
     "mobile": "07961 542 293",
     "NINO": "QQ 78 13 92 C",
@@ -802,7 +802,7 @@ module.exports = [
         "sideEffects": ""
       }
     ],
-   "status": "Assessment completed",
+   "status": "Assessment stopped",
     "dateOfBirth": "1952-11-03T09:07:41+00:00",
     "mobile": "07906 407 310",
     "NINO": "QQ 37 36 57 C",
@@ -869,7 +869,7 @@ module.exports = [
         "sideEffects": ""
       }
     ],
-   "status": "Assessment completed",
+   "status": "Assessment stopped",
     "dateOfBirth": "1994-05-12T23:18:29+00:00",
     "mobile": "07902 590 389",
     "NINO": "QQ 27 81 13 C",

@@ -30,15 +30,15 @@
 	
 		
 			<h1 class="heading-large">Book appointment</h1>
-	                  	{% if checked('stoppassess','unfit') %}
-								<div class="panel panel-border-wide">
+	                  	{% if checked('stoppassess','unfit') or customer.name.first == 'Dillon'%}
+								<div class="panel panel-info">
 										<p>
 								{{customer.name.first}} is unfit to be examined
 						    	</p>
 					        	</div>
 								{% elif checked('stoppassess','specialreq') %}
 									
-				<div class="panel panel-border-wide">
+				<div class="panel panel-info">
 						<p>
 							
 								{{customer.name.first}} has a special need they've not previously disclosed
@@ -49,71 +49,25 @@
 
 				
 				
-				
+			
 
-						<fieldset class="form-group ">
+						<fieldset class="form-group">
 								<legend class="form-label-bold">Do you want to book the appointment now?</legend>
 								
 					
 								<div class="multiple-choice" data-target="other-info2">
+										{% if customer.name.first == 'Dominguez' %}
+									<input type="radio" name="appointments-dom" id="available-appointments-unable" value="yes" {{checked('appointments-dom', 'yes') }}>
+									{% else %}
 									<input type="radio" name="appointments" id="available-appointments-unable" value="yes" {{checked('appointments', 'yes') }}>
+									{% endif%}
 									<label for="available-appointments-unable">Yes</label>
 								</div>
 
 								<div class="panel js-hidden" id="other-info2">
 
-
-										  <!-- Location picker -->
-										<div class="">
-												<label class="form-label" for="location-select-dropdown">
-														Please select a new appointment time:
-
-													<span class="form-hint mt10 mb10">
-															For example Mon 4 Jan 1pm
-															</span>
-												</label>
-												<div class="form-control-1-2">
-												<select class="form-control" id="location-select-dropdown">
-													<option value="" disabled selected>
-													Choose a date
-													</option>
-													{% for location in locations %}
-													<option value="{{location}}">{{location}}</option>
-													{% endfor %}
-												</select>
-												</div>
-											</div>
-
-                                       <!--
-										<fieldset style="float:none">
-												<legend class="bold mb10">
-														Please select a new appointment time: 
-												</legend>
-												 
-												<div class="multiple-choice">
-														<input type="radio" name="appointment" id="available-appointments-1" value="Mon Dec 10 2018 14:00:28 GMT+0000">
-														<label for="available-appointments-1">Monday 10 December 2018 2:00pm</label>
-													</div>
+										{% include path+"/includes/appointmentsTypeAhead.html" %}  
 										
-													
-													<div class="multiple-choice">
-														<input type="radio" name="appointment" id="available-appointments-2" value="Tue Dec 11 2018 14:00:28 GMT+0000">
-														<label for="available-appointments-2">Tuesday 11 December 2018 2:00pm</label>
-													</div>
-										
-													
-													<div class="multiple-choice">
-														<input type="radio" name="appointment" id="available-appointments-3" value="Wed Dec 12 2018 14:00:28 GMT+0000">
-														<label for="available-appointments-3">Wednesday 12 December 2018 2:00pm</label>
-													</div>
-										
-													
-													<div class="multiple-choice">
-														<input type="radio" name="appointment" id="available-appointments-4" value="Thu Dec 13 2018 14:00:28 GMT+0000">
-														<label for="available-appointments-4">Thursday 13 December 2018 2:00pm</label>
-													</div>
-										</fieldset>
-										<p class="mt20"><a href=''>View more appointments</a></p> -->
 							 </div>
 								
 								
@@ -129,9 +83,9 @@
 								
 							   
 							</fieldset>
-							<p><button class="button">Confirm </button></p>
+							<p><button class="button">Confirm appointment</button></p>
 						    
-					
+					</div>
 				
 	
 		

@@ -1040,6 +1040,11 @@ span.status {
 	}
 }
 
+
+
+
+
+
 .search-customer{
 
 	position:relative;
@@ -1146,5 +1151,21 @@ span.status {
 }
 
 
+.panel{
+
+	max-width:650px;
+
+&.panel-info{
+
+	background: rgba($govuk-blue, 0.05);
+	border-color:$govuk-blue;
+}
+
+&.panel-warning{
+	border-color:$orange;
+	background: rgba($orange, 0.1);
+}
+
+}
 
 

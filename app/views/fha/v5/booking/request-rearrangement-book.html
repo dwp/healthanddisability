@@ -9,20 +9,56 @@
 
 
 {% block citizen_content %}
-
+<form method="post" action="/{{path}}/booking/booked/{{customer._id}}/appointment-details">
 <div class="container">
     <div class="grid-row">
         <div class="column-full">
         <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
             <h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Rearrange appointment</h1>
-            
-          
+
+            <div class="form-group">
+                    {% if data['changedByCustomer']==="yes" and customer.name.first !== 'Dillon'%}
+                    <div class="panel panel-warning"><p>{{customer.name.first}} has previously re-arranged their appointment, A new appointment can only be booked for before their current appointment date.</p>
+                     <p>Monday 14 Jan 2018
+                            4:00pm</p>
+                    </div>    
+                    {% endif %}
+                    {% include path+"/includes/appointmentsTypeAhead.html" %}  
+            </div>
+            <p ><button class="button">Confirm appointment</button></p>
         </div>
+
     </div>
+</form>
     <!-- row -->
 </div>
 <!-- container -->
 {% endblock %}
+
+{% block page_scripts %}
+
+ <link rel="stylesheet" href="https://unpkg.com/accessible-typeahead@0.4.1/dist/styled.min.css">
+ <style>
+   .typeahead__menu--inline {
+	 max-height: none;
+	 overflow-x: visible;
+   }
+ </style>
+ <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+ <script type="text/javascript" src="https://unpkg.com/registers-picker-engine@0.0.2"></script>
+ <script type="text/javascript" src="https://unpkg.com/accessible-typeahead@0.4.1"></script>
+ <script type="text/javascript">
+   var dataFilePath = '/public/data/picker-data-4.json'
+   AccessibleTypeahead.enhanceSelectElement({
+	 autoselect: true,
+	 selectElement: document.getElementById('location-select-dropdown'),
+	 minLength: 2,
+	 source: locationPickerSuggestions(dataFilePath)
+   })
+ </script>
+
+ 
+{% endblock %} 
 
 {% block footer_top %}
 {{ super() }}

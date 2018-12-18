@@ -14,7 +14,7 @@
       
       	<div class="left-panel">
             {% if customer.status == 'Assessment started' or customer.status == 'Ready for recommendation'%}
-            {% elif customer.status == 'Ready for assessment' or customer.status == 'Assessment completed' or customer.status == 'Assessment stopped' or customer.status == 'Appointment today'%}
+            {% elif customer.status == 'Ready for assessment' or customer.status == 'Assessment completed' or customer.status == 'Assessment stopped' or customer.status == 'Appointment today' or customer.status == 'Booked' %}
             <p class="returnRef"><a href="/{{path}}/assessment">Return to case list</a></p>
             <hr>
             {% else %}
@@ -37,7 +37,9 @@
 {{ 'Ready for recommendation' if customer.status == 'Ready for recommendation' }}
 {{ 'Assessment completed' if customer.status == 'Assessment completed' }}
 {{ 'Assessment stopped' if customer.status == 'Assessment stopped' }}
-{{ 'Booked' if customer.status == 'Booked' }}
+{{ 'Ready to book' if customer.status == 'Booked' and customer.name.first == 'Dillon' and data['book-next']!=="yes" }}
+{{ 'Booked' if customer.status == 'Booked' and customer.name.first !== 'Dillon' }}
+{{ 'Booked' if customer.status == 'Booked' and customer.name.first == 'Dillon' and data['book-next']==="yes" }}
 
  </p>
      {% if customer.status == 'Assessment started' or customer.status == 'Booked' %}
@@ -87,7 +89,7 @@
             <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/stopAssess">Abandon assessment</a></li>
             {% endif %}
 
-           {% if customer.status == 'Assessment stopped' or customer.status == 'Ready for assessment'%}
+         <!--  {% if customer.status == 'Assessment stopped' or customer.status == 'Ready for assessment'%}
             {% if data['stoppassess']==='unfit' or data['stoppassess']==='specialreq'%}
             <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/send-home-book">Rearrange this appointment</a></li>
             {% elif data['stoppassess']==='other'%}
@@ -95,7 +97,7 @@
             {% else %}
             <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/send-home">Rearrange this appointment</a></li>
             {% endif %}
-            {% endif %} 
+            {% endif %} -->
            <!-- <li><a href="#">Close case</a></li> -->
           </ul>
           
@@ -140,7 +142,7 @@
 
 
 
-page_script
+
 {% endblock %}
 
 {% block footer_top %}

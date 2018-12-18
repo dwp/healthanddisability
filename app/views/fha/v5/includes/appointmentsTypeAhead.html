@@ -1,42 +1,20 @@
-<label class="form-label-bold" for="jobcentres">Please select a new appointment time:
+					  <!-- Location picker -->
+            <div class="">
+                <label class="form-label" for="location-select-dropdown">
+                    Please select a new appointment time:
 
-    <span class="form-hint mt10 mb10">
-      For example Mon 4 Jan 1pm
-      </span>
-    </label>
-    <select class="select form-control" id="Appointments" name="Appointments" >
-
-      <option value=""></option>
-      
-      <option value="672">Mon 4 Jan 1pm </option>
-      <option value="298">Mon 4 Jan 2pm</option>
-      <option value="441">Mon 4 Jan 3pm</option>
-      <option value="66">Mon 11 Jan 1pm</option>
-      <option value="275">Mon 11 Jan 2pm</option>
-      <option value="214">Mon 11 Jan 3pm</option>
-      <option value="209">Tues 5 Jan 1pm</option>
-      <option value="348">Tues 5 Jan 2pm</option>
-      <option value="348">Tues 5 Jan 3pm</option>
-      <option value="209">Tues 12 Jan 1pm</option>
-      <option value="348">Tues 12 Jan 2pm</option>
-      <option value="348">Tues 12 Jan 3pm</option>
-      <option value="348">Wed 6 Jan 1pm</option>
-      <option value="348">Wed 6 Jan 10am</option>
-      <option value="348">Wed 6 Jan 11am</option>
-      <option value="348">Wed 13 Jan 1pm</option>
-      <option value="348">Wed 13 Jan 10am</option>
-      <option value="348">Wed 13 Jan 11am</option>
-      <option value="348">Thurs 7 Jan 1pm</option>
-      <option value="348">Thurs 7 Jan 2pm</option>
-      <option value="348">Thurs 7 Jan 3pm</option>
-      <option value="348">Thurs 14 Jan 1pm</option>
-      <option value="348">Thurs 14 Jan 2pm</option>
-      <option value="348">Thurs 14 Jan 3pm</option>
-      <option value="348">Fri 8 Jan 1pm</option>
-      <option value="348">Fri 8 Jan 2pm</option>
-      <option value="348">Fri 8 Jan 3pm</option>
-      <option value="348">Fri 15 Jan 1pm</option>
-      <option value="348">Fri 15 Jan 2pm</option>
-      <option value="348">Fri 15 Jan 3pm</option>
-  
-    </select>  
+                  <span class="form-hint mt10 mb10">
+                      For example Mon 4 Jan 1pm
+                      </span>
+                </label>
+                <div class="form-control-1-2">
+                <select class="form-control" name="appointmentTypeahead" id="location-select-dropdown">
+                  <option value="" disabled selected>
+                  Choose a date
+                  </option>
+                  {% for location in locations %}
+                  <option name="location" value="{{location}}">{{location}}</option>
+                  {% endfor %}
+                </select>
+                </div>
+              </div>

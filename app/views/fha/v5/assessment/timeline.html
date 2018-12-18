@@ -39,16 +39,18 @@
           </div>
           {% endif %}
 
+          {% if checked('book-next', 'yes') %}
+          <span class="line"></span>
+          <div class="timeline__event">
+            <h3 class="timeline__heading">Appointment booked</h3>
+            <p class="timeline_datetime">{{customer | formatDate("D MMMM YYYY") }}</p>
+          </div>
+
+          {% endif %}
         {% if checked('appointments', 'no') %}
         <span class="line"></span>
         <div class="timeline__event">
           <h3 class="timeline__heading">Referred for appointment</h3>
-          <p class="timeline_datetime">{{customer | formatDate("D MMMM YYYY") }}</p>
-        </div>
-
-        <span class="line"></span>
-        <div class="timeline__event">
-          <h3 class="timeline__heading">Rearranged appointment</h3>
           <p class="timeline_datetime">{{customer | formatDate("D MMMM YYYY") }}</p>
         </div>
         {% endif %}
