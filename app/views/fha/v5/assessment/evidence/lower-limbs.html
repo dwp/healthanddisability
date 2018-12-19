@@ -2,38 +2,52 @@
 {% extends path+"/_layout-case-action.html" %} 
 {% block citizen_content %} {{ data.nuggets | log }}
 
-{% if customer.status == 'Ready for recommendation' %}
-		 
-<form action="medical_assessment_dashboard" method="POST" class="form">
 
-{% else %}
-<form action="physical" method="POST" class="form">
-{% endif %}	
 
 <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
 <h1 class="heading-large">Lower back and legs</h1>
 
 
 
-  
-  <div class="form-group">
+				<form action="lower-limbs" method="Post">
 
-										    
-										     <div class="form-group" id="findings-yes">
-										     	
-										     	<fieldset class="stacked">
+										     	<fieldset>
 		
-													  <legend class="mb10">Select an area to examine:</legend>
+													  <legend class="mb10">Select the area(s) you want to assess:</legend>
 													
-														  <div class="form-group">
+														  <div class="lower-back-option">
 														
-															    <div class="multiple-choice" data-target="lowerback-checked">
+															    <div class="multiple-choice" data-target="lowerback-guard">
 															      <input id="lowerback" name="lowerlimbs" type="checkbox" value="Lower" {{ checked('lowerlimbs', 'Lower') }}>
 															      <label for="lowerback"> Lower back</label>
 															    </div>
 															    
-															    <div class="form-group panel js-hidden mt0 mb20" id="lowerback-checked">
-																			<details class="mb10">
+															    
+															   <div class="panel js-hidden" id="lowerback-guard">
+																	
+																	<fieldset class="inline">
+		
+																		  <legend class="form-label-bold">Have you identified any issues?</legend>																		
+																
+																			
+																				    <div class="multiple-choice" data-target="lowerback-yes">
+																				      <input id="findyes" name="neckfindings" type="radio" value="Yes">
+																				      <label for="findyes">Yes</label>
+																				    </div>
+																				
+																				    <div class="multiple-choice" data-target="lowerback-no">
+																				      <input id="findno" name="neckfindings" type="radio" value="No">
+																				      <label for="findno"> No</label>
+																				    </div>
+																				    
+																	
+											
+																		 
+																		 
+																	<div class="panel js-hidden" id="lowerback-yes">
+																	
+																      <label class="form-label" for="phys_lowerback_obs">Observation, palpation, movement</label>
+																      <details class="mt5 mb5">
 
 																					<summary><span class="summary">Help prompts</span></summary>
 																				
@@ -47,23 +61,73 @@
 																								</ul>
 																						</div>
 																				
+
 																				
 																				</details>
+																      <textarea class="form-control form-control-3-4" name="lowerback-obs" id="lowerback-obs" rows="4">{{physLowerbackObs}}</textarea>
+															    </div>
+															    
+															    
+															    <div class="panel js-hidden" id="lowerback-no">
+																	
+																      <label class="form-label" for="optional">Optional comments</label>
+																     
+																      <textarea class="form-control form-control-3-4" name="optional" id="optional" rows="4">{{optionalcomments}}</textarea>
+															    </div>
+																		 
+																		 
+																				    
+														</fieldset>
+																	
+																	
 
-																      <label class="form-label" for="phys_lowerback_obs">Observation, palpation, movement</label>
-																      <textarea class="form-control form-control-3-4" name="physLowerbackObs" id="phys_lowerback_obs" rows="4">{{physLowerbackObs}}</textarea>
+												 </div> <!-- panel end -->
+												
+												 
+														  </div>
+														   <!-- / lower back end-->
+														   
+														   
+														   
+														   
+														   
+														   
+														   
+														   
+														   
+														   <div class="left-leg-option">
+														
+															    <div class="multiple-choice" data-target="leftleg-guard">
+															      <input id="leftleg" name="lowerlimbs" type="checkbox" value="leftleg" {{ checked('lowerlimbs', 'leftleg') }} >
+															      <label for="leftleg"> Left leg</label>
 															    </div>
-															
 															    
 															    
-															    
-															    <div class="multiple-choice" data-target="rightleg-checked">
-															      <input id="rightleg" name="lowerlimbs" type="checkbox" value="Left" {{ checked('lowerlimbs', 'Left') }}>
-															      <label for="rightleg"> Left leg</label>
-															    </div>
-															    
-															    <div class="form-group panel js-hidden mt0 mb20" id="rightleg-checked">
-																			<details class="mb10">
+															   <div class="panel js-hidden" id="leftleg-guard">
+																	
+																	<fieldset class="inline">
+		
+																		  <legend class="form-label-bold">Have you identified any issues?</legend>																		
+																
+																			
+																				    <div class="multiple-choice" data-target="leftleg-yes">
+																				      <input id="leftlegfindyes" name="leftlegfindings" type="radio" value="Yes">
+																				      <label for="leftlegfindyes">Yes</label>
+																				    </div>
+																				
+																				    <div class="multiple-choice" data-target="leftleg-no">
+																				      <input id="leftlegfindno" name="leftlegfindings" type="radio" value="No">
+																				      <label for="leftlegfindno"> No</label>
+																				    </div>
+																				    
+																	
+											
+																		 
+																		 
+																	<div class="panel js-hidden" id="leftleg-yes">
+																	
+																      <label class="form-label" for="leftleg-obs">Observation, palpation, movement</label>
+																      <details class="mt5 mb5">
 
 																					<summary><span class="summary">Help prompts</span></summary>
 																				
@@ -78,30 +142,84 @@
 																									<li>Dorsiflextion (Ankle/Hallux)</li>
 																									<li>Power</li>
 																									<li>Tone</li>
-																																												
 																								</ul>
 																						</div>
 																				
+
 																				
 																				</details>
-																      <label class="form-label" for="right_lowerback_obs">Observation, palpation, movement</label>
-																      <textarea class="form-control form-control-3-4" name="leftLegObs" id="nugget" rows="4">{{leftLegObs}}</textarea>
+																      <textarea class="form-control form-control-3-4" name="leftleg-obs" id="leftleg-obs" rows="4">{{physLowerbackObs}}</textarea>
 															    </div>
 															    
 															    
-															    <div class="multiple-choice" data-target="leftleg-checked">
-															      <input id="leftleg" name="lowerlimbs" type="checkbox" value="Right"  {{ checked('lowerlimbs', 'Right') }}>
-															      <label for="leftleg"> Right leg</label>
+															    <div class="panel js-hidden" id="leftleg-no">
+																	
+																      <label class="form-label" for="optionalleftleg">Optional comments</label>
+																     
+																      <textarea class="form-control form-control-3-4" name="optional" id="optionalleftleg" rows="4">{{optionalcomments}}</textarea>
+															    </div>
+																		 
+																		 
+																				    
+														</fieldset>
+																	
+																	
+
+												 </div> <!-- panel end -->
+												
+												 
+														  </div>
+														   <!-- / left leg end-->
+														   
+														   
+														   
+														   
+														   
+														   
+														   
+														   
+														   
+														   
+														     
+														   <div class="form-group left-leg-option">
+														
+															    <div class="multiple-choice" data-target="rightleg-guard">
+															      <input id="rightleg" name="lowerlimbs" type="checkbox" value="rightleg" {{ checked('lowerlimbs', 'rightleg') }}>
+															      <label for="rightleg"> Right leg</label>
 															    </div>
 															    
-															    <div class="form-group panel js-hidden mt0 mb20" id="leftleg-checked">
-																			<details class="mb10">
+															    
+															   <div class="panel js-hidden" id="rightleg-guard">
+																	
+																	<fieldset class="inline">
+		
+																		  <legend class="form-label-bold">Have you identified any issues?</legend>																		
+																
+																			
+																				    <div class="multiple-choice" data-target="rightleg-yes">
+																				      <input id="rightlegfindyes" name="rightlegfindings" type="radio" value="Yes">
+																				      <label for="rightlegfindyes">Yes</label>
+																				    </div>
+																				
+																				    <div class="multiple-choice" data-target="rightleg-no">
+																				      <input id="rightlegfindno" name="rightlegfindings" type="radio" value="No">
+																				      <label for="rightlegfindno"> No</label>
+																				    </div>
+																				    
+																	
+											
+																		 
+																		 
+																	<div class="panel js-hidden" id="rightleg-yes">
+																	
+																      <label class="form-label" for="rightleg-obs">Observation, palpation, movement</label>
+																      <details class="mt5 mb5">
 
 																					<summary><span class="summary">Help prompts</span></summary>
 																				
 																					<div class="p20">
 																							<ul class="list list-bullet">
-																								<li>Straight leg raise</li>
+																									<li>Straight leg raise</li>
 																									<li>Flextion (Knee/Hip)</li>
 																									<li>Knee extension</li>
 																									<li>External hip rotation</li>
@@ -109,38 +227,103 @@
 																									<li>Reflexes (Knee/Ankle/Plantar) </li>
 																									<li>Dorsiflextion (Ankle/Hallux)</li>
 																									<li>Power</li>
-																									<li>Tone</li>																							
+																									<li>Tone</li>
 																								</ul>
 																						</div>
 																				
+
 																				
 																				</details>
-																      <label class="form-label" for="left_lowerback_obs">Observation, palpation, movement </label>
-																      <textarea class="form-control form-control-3-4" name="rightLegObs" id="left_lowerback_obs" rows="4">{{rightLegObs}}</textarea>
+																      <textarea class="form-control form-control-3-4" name="rightleg-obs" id="rightleg-obs" rows="4">{{rightleg-obs}}</textarea>
 															    </div>
 															    
 															    
-															    
-														  </div><!-- form-group -->
-												  
+															    <div class="panel js-hidden" id="rightleg-no">
+																	
+																      <label class="form-label" for="optionalrightleg">Optional comments</label>
+																     
+																      <textarea class="form-control form-control-3-4" name="optional" id="optionalrightleg" rows="4">{{optionalcomments}}</textarea>
+															    </div>
+																		 
+																		 
+																				    
+														</fieldset>
+																	
+																	
 
-			
-			  </div><!-- form-group -->
-			  {% if customer.status == 'Ready for recommendation' %}
-			  <p class="mt0"><button class="button">Finish reviewing</button></p>
-			  <div class="multiple-choice" style="display:none">
-					<input id="radio-inline-4" type="radio" name="physicalVisited" value="physicalVisited" checked>
-					  
-					<label for="radio-4">hidden radio one</label>
-				  </div>
-			  {% else %}
-			  <p class="mt0"><button class="button">Save</button></p>
-			  {% endif %}
-	  </fieldset>
-  </div>
-</form>
-
+												 </div> <!-- panel end -->
+												
+												 
+														  </div>
+														   <!-- / right leg end-->
+														   
+														   
+														   
+														   
+														   
+														   
+														   
+														   
+														   
+														   
+														   
+														   
+										     	</fieldset>
+												 
+												 
+												  <p class="mt0"><button class="button">Save</button></p>
+												 
 		
+				</form>
+				
+	<!--			
+				<div class="review-item">
+       <h2 class="heading-medium">Physical assessments</h2>
+
+       <p>Consent was given by {{customer.name.first}} to start the physical assessment.</p>
+
+       <div class="review-inner">    
+
+         <h3 class="heading-medium mt0">Lower back and legs</h3>
+         <p>{{customer.name.first}}'s lower back and legs have been assessed</p>
+
+        
+         {% if checked('lowerlimbs', 'Lower')%}
+          <h4 class="heading-small">Lower back</h4>
+         <p>{{lowerback-obs}}</p>
+
+         {% else%}
+        
+         {% endif %}
+        
+         {% if checked('lowerlimbs', 'leftleg')%}
+         <h4 class="heading-small">Left leg</h4>
+         <p>{{leftleg-obs}}</p>
+
+         {% else%}
+         
+         {% endif %}
+   
+
+         {% if checked('lowerlimbs', 'rightleg')%}
+         <h4 class="heading-small">Right leg</h4>
+         <p>{{rightleg-obs}}</p>
+         {% else%}
+         <p>Assessed - no difficulties in this area</p>
+         {% endif %}
+ 
+       </div>
+				</div>
+				
+				
+				
+				<p>Assessed - no difficulties in this area</p> -->
+												 
+												 
+												 
+												 
+
+
 
   </div><!-- column -->
 </div><!-- row -->
