@@ -1916,7 +1916,7 @@ router.post("/assessment/:customerId/booked", function(req, res, next){
     }
   })
 
-  res.redirect(301, '/fha/v' + versionNumber +'/assessment/' + req.params.customerId + '/appointment');
+  res.redirect(301, '/fha/v' + versionNumber +'/assessment/' + req.params.customerId + '/timeline');
 
 });
 
