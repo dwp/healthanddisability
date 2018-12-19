@@ -17,56 +17,13 @@
 
   
   <div class="form-group">
-	  <fieldset class="inline">
-	
-		  <legend class="heading-medium mb10">Have you examined {{customer.name.first}}'s lower back and legs?</legend>
-		  
-		
-			  <div class="form-group">
-			
-				    <div class="multiple-choice" data-target="exam-yes">
-				      <input id="decide_now" name="whatcando" type="radio" value="Yes"
-				      {{ checked('whatcando', 'Yes') }}>
-				      <label for="decide_now"> Yes</label>
-				    </div>
-				
-				    <div class="multiple-choice" data-target="exam-no">
-				      <input id="face2face" name="whatcando" type="radio" value="No"
-				      {{ checked('whatcando', 'No') }}>
-				      <label for="face2face"> No</label>
-					</div>
-					
-					<div class="form-group panel js-hidden mt10" id="exam-no">
-							<label class="form-label" for="examinationNoObs">Why haven't you examined {{customer.name.first}}'s lower back and legs?</label>
-							<textarea class="form-control form-control-3-4" name="examinationNoObs" id="examinationNoObs" rows="4">{{examinationNoObs}}</textarea>
-					  </div>
-				    
-				    
-				    
-				    <div class="form-group panel js-hidden mt10" id="exam-yes">
-				    
-					    	<fieldset class="inline">
-		
-								  <legend class="heading-medium mb10">Does {{customer.name.first}} have difficulties in any of these areas?</legend>
-								
-									  <div class="form-group">
-									
-										    <div class="multiple-choice" data-target="findings-yes">
-										      <input id="findyes" name="findings" type="radio" value="Yes"  {{ checked('findings', 'Yes') }}>
-										      <label for="findyes">Yes</label>
-										    </div>
-										
-										    <div class="multiple-choice">
-										      <input id="findno" name="findings" type="radio" value="No"  {{ checked('findings', 'No') }}>
-										      <label for="findno"> No</label>
-											</div>
-										
+
 										    
-										     <div class="form-group panel js-hidden mt10" id="findings-yes">
+										     <div class="form-group" id="findings-yes">
 										     	
 										     	<fieldset class="stacked">
 		
-													  <legend class="mb10">Select all of the affected areas:</legend>
+													  <legend class="mb10">Select an area to examine:</legend>
 													
 														  <div class="form-group">
 														
@@ -166,16 +123,6 @@
 															    
 														  </div><!-- form-group -->
 												  
-												  </fieldset>
-										     	
-										     </div>
-										    
-									  </div><!-- form-group -->
-							  
-							  </fieldset>
-				    	     
-					</div>
-					
 
 			
 			  </div><!-- form-group -->
