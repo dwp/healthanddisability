@@ -30,7 +30,7 @@
 	
 		
 			<fieldset>
-				<legend><h1 class="heading-large">We cannot complete the assessment</h1></legend>
+				<legend><h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Reasons we cannot complete the assessment</h1></legend>
 				{% if checked('stoppassess','other') %}
 				<div class="panel panel-border-wide">
 						<p>
@@ -51,15 +51,13 @@
 				<div class="form-group mt30">
 
 					    	<fieldset>
-							      <legend class="heading-medium mb10">
-												Why?
-							      </legend>
+							      
 							       
 								   {% if checked('stoppassess','other') or customer.status == 'Assessment stopped' %}
 
 									<div class="multiple-choice" data-target="resourcing">
 											<input id="know-4" name="Issue" type="radio" value="resourcing"  {{checked('assesnotcomp', 'resourcing') }}>
-											<label for="know-4">Resourcing, technology or facilities issue
+											<label for="know-4">Resourcing, technology or facilities
 												</label>
 										</div>
 
@@ -103,7 +101,7 @@
 
 									<div class="multiple-choice" data-target="hcp">
 										<input id="know-5" name="Issue" type="radio" value="hcp"  {{checked('assesnotcomp', 'hcp') }}>
-										<label for="know-5">Issue with healthcare professional
+										<label for="know-5">Healthcare professional is responsible
 
 											</label>
 									</div>
@@ -176,7 +174,7 @@
 													{% else %}
 													<div class="multiple-choice" data-target="other-info2">
 															<input id="Issue" name="Issue" type="radio" value="claimant"  {{checked('Issue', 'claimant') }}>
-															<label for="Issue">Issue with claimant </label>
+															<label for="Issue">Claimant is responsible</label>
 														</div>
 		
 						
@@ -203,10 +201,45 @@
 																					</div>
 																	</fieldset>
 														 </div>
+
+														 <div class="multiple-choice" data-target="hcp">
+															<input id="know-5" name="Issue" type="radio" value="hcp"  {{checked('assesnotcomp', 'hcp') }}>
+															<label for="know-5">Healthcare professional is responsible
+		
+																</label>
+														</div>
+
+														<div class="panel panel-border-narrow js-hidden form-group" id="hcp">
+																<fieldset>
+																		<legend class="bold mb10">
+																			Choose a reason:
+																		</legend>
+																				<div class="multiple-choice">
+																						<input id="know-2" name="Reason" type="radio" value="unavailable"  {{checked('Reason', 'unavailable') }}>
+																						<label for="know-2">Healthcare professional is unavailable (for example, they're ill or called away urgently)
+																							</label>
+																					</div>
+																					<div class="multiple-choice">
+																							<input id="know-2" name="Reason" type="radio" value="attend"  {{checked('Reason', 'attend') }}>
+																							<label for="know-2">Healthcare professional did not attend session, unexpectedly
+																								</label>
+																						</div>
+																						<div class="multiple-choice">
+																								<input id="know-2" name="Reason" type="radio" value="unable"  {{checked('Reason', 'unable') }}>
+																								<label for="know-2">Healthcare professional is unable to continue (for example, a specialist is required)
+																									</label>
+																							</div>
+																							<div class="multiple-choice">
+																									<input id="know-2" name="Reason" type="radio" value="inappropriate"  {{checked('Reason', 'inappropriate') }}>
+																									<label for="know-2">Inappropriate for healthcare professional to see claimant (for example, if they know them)
+																										</label>
+																								</div>
+																</fieldset>
+													 </div>
 		
 														<div class="multiple-choice" data-target="resourcing">
 																<input id="know-4" name="Issue" type="radio" value="resourcing"  {{checked('assesnotcomp', 'resourcing') }}>
-																<label for="know-4">Resourcing, technology or facilities issue
+																<label for="know-4">Resourcing, technology or facilities
 																	</label>
 															</div>
 
@@ -244,44 +277,7 @@
 																											</label>
 																									</div>
 																	</fieldset>
-														 </div>
-
-                             
-
-														<div class="multiple-choice" data-target="hcp">
-															<input id="know-5" name="Issue" type="radio" value="hcp"  {{checked('assesnotcomp', 'hcp') }}>
-															<label for="know-5">Issue with healthcare professional
-		
-																</label>
-														</div>
-
-														<div class="panel panel-border-narrow js-hidden form-group" id="hcp">
-																<fieldset>
-																		<legend class="bold mb10">
-																			Choose a reason:
-																		</legend>
-																				<div class="multiple-choice">
-																						<input id="know-2" name="Reason" type="radio" value="unavailable"  {{checked('Reason', 'unavailable') }}>
-																						<label for="know-2">Healthcare professional is unavailable (for example, they're ill or called away urgently)
-																							</label>
-																					</div>
-																					<div class="multiple-choice">
-																							<input id="know-2" name="Reason" type="radio" value="attend"  {{checked('Reason', 'attend') }}>
-																							<label for="know-2">Healthcare professional did not attend session, unexpectedly
-																								</label>
-																						</div>
-																						<div class="multiple-choice">
-																								<input id="know-2" name="Reason" type="radio" value="unable"  {{checked('Reason', 'unable') }}>
-																								<label for="know-2">Healthcare professional is unable to continue (for example, a specialist is required)
-																									</label>
-																							</div>
-																							<div class="multiple-choice">
-																									<input id="know-2" name="Reason" type="radio" value="inappropriate"  {{checked('Reason', 'inappropriate') }}>
-																									<label for="know-2">Inappropriate for healthcare professional to see claimant (for example, if they know them)
-																										</label>
-																								</div>
-																</fieldset>
-													 </div>
+																</div>
 
 
 														<div class="multiple-choice" data-target="requests">
