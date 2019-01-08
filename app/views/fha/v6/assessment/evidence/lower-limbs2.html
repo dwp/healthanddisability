@@ -9,7 +9,7 @@
 
 
 
-				<form action="lower-limbs3" method="Post">
+				<form action="lower-limbs2" method="Post">
 
 										     	<fieldset class="inline">
 		
@@ -28,10 +28,20 @@
 																				    
 																				    </fieldset>
 																	
-											
+																						{% if checked('phys_straightLegRaising', 'phys_straightLegRaising')%}
+																						<p>{{ phys_straightlegraising_obs }}</p>
+																						{% else %}
+																						<p>No functional difficulties in this area</p>
+																						<p>{{optionalcommentslowerback}}</p>
+																						{% endif %}
 																		 
 																		 
 																	<div class="panel js-hidden" id="leftleg-yes">
+
+																		<fieldset>
+																				{{ physObs("straightLegRaising", "Straight Leg raising") }}
+																				{{ physObs("hipFlexion", "Hip flexion") }}
+																		</fieldset>
 																	
 																			
 																			<fieldset>
@@ -215,14 +225,14 @@
     <input id="group_{{s}}" type="checkbox" name="group_{{s}}" sue="group_{{s}}" {% if sel %} checked="checked"{% endif %}>
     <label for="group_{{s}}">{{name}}</label>
 </div>
-{% endmacro %} {% macro physObs(name,sel) %} {% set s = name | slug %}
+{% endmacro %} {% macro physObs(name, displayname ,sel) %} {% set s = name | slug %}
 <div class="multiple-choice" data-target="phys_{{s}}_yes">
-    <input id="phys_{{s}}" type="checkbox" name="mobility" value="phys_{{s}}" {% if sel %} checked="checked" {% endif %}>
-    <label for="phys_{{s}}">{{name}}</label>
+    <input id="phys_{{s}}" type="checkbox" name="phys_{{s}}" value="phys_{{s}}" {% if sel %} checked="checked" {% endif %}>
+    <label for="phys_{{s}}">{{displayname}}</label>
 </div>
 <div class="form-group panel js-hidden mt0 mb20" id="phys_{{s}}_yes">
     <p>
-        <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
+        <label class="form-label" for="phys_{{s}}_obs">Comments</label>
         <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
     </p>
 </div>

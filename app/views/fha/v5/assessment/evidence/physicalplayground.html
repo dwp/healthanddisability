@@ -23,7 +23,19 @@
 
 
     
-  
+        {% macro physObs(name,sel) %}
+        {% set s = name | slug %}
+        <div class="multiple-choice" data-target="phys_{{s}}_yes">
+          <input id="phys_{{s}}" type="checkbox" name="mobility" value="phys_{{s}}" {% if sel %} checked="checked"{% endif %}>
+          <label for="phys_{{s}}">{{name}}</label>
+        </div>
+        <div class="form-group panel panel-indent js-hidden mt0 mb20" id="phys_{{s}}_yes">
+          <p>
+            <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
+            <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
+          </p>
+        </div>
+      {% endmacro %}
   
   
     
@@ -143,7 +155,12 @@
 {{ phycheck("lowerback", "Lower back", "lowerbackfindings", "lowerbackobs", "optionallowerback") }}
 {{ phycheck("leftleg", "Left leg", "leftlegfindings", "leftlegobs", "optionalleftleg") }}
 {{ phycheck("rightleg", "Right leg", "rightlegfindings", "rightlegobs", "optionalrightleg") }}
+{{ phycheck("rightleg", "Right leg", "rightlegfindings", "rightlegobs", "optionalrightleg") }}
+
+
 </fieldset>
+
+
 
 <p class="mt20"><button class="button">Save</button></p>
  </form>

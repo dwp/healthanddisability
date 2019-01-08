@@ -49,6 +49,7 @@
 
 
 
+  
 
 
 
@@ -58,14 +59,7 @@
 </div><!-- row -->
 {% endblock %}
 
-{% macro physGroup(name,sel) %}
-  {% set s = name | slug %}
-  <!-- GROUP -->
-  <div class="multiple-choice" data-target="group_{{s}}_yes">
-    <input id="group_{{s}}" type="checkbox" name="group_{{s}}" sue="group_{{s}}" {% if sel %} checked="checked"{% endif %}>
-    <label for="group_{{s}}">{{name}}</label>
-  </div>
-{% endmacro %}
+
 
 {% macro physObs(name,sel) %}
   {% set s = name | slug %}
