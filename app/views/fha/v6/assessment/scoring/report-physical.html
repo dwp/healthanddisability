@@ -1,0 +1,133 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+
+
+ <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+  
+<h1 class="heading-large">Work capability assessment report</h1>
+  
+  
+  <dl class="assessment-overview">
+  	
+  	<dt>Date of assessment</dt>
+  	<dd>{{ "Do MMM YYYY" | daysAgo }}</dd>
+  	
+  	<dt>Assessment centre</dt>
+  	<dd>Fiveways, Birmingham</dd>
+  	
+  	<dt>Assessor</dt>
+  	<dd>Heather Harrison</dd>
+  	
+  	<dt>Assessment start</dt>
+  	<dd>{{ last_one.time | formatDate("H:mma") }}</dd>
+  	
+  	<dt>Assessment finish</dt>
+  	<dd>{{ first_one.time | formatDate("H:mma") }}</dd>
+  
+
+  </dl>
+
+   
+ <div class="review-wrapper">
+ 
+    
+
+
+<div class="review-item">
+	<h2 class="heading-medium">Physical assessments</h2>
+	
+	<p>Consent was given by {{customer.name.first}} to start the physical assessment.</p>
+
+
+
+
+	<div class="">	
+	
+		<h3 class="heading-medium">Lower back and legs</h3>
+			
+			<table>
+				<caption>Left leg</caption>
+
+				<tbody>
+					<tr>
+						<th>Straight Leg raising</th>
+						<td>Normal (more than 70˚)</td>
+					</tr>
+					<tr>
+						<th>Hip flexion</th>
+						<td>Reduced to 110˚</td>
+					</tr>
+					<tr>
+						<th>Knee flexion</th>
+						<td>Reduced to less than 45˚</td>
+					</tr>
+					<tr>
+						<th>Knee extension</th>
+						<td>Less than full</td>
+					</tr>
+					<tr>
+						<th>External hip rotation</th>
+						<td>Client Declined</td>
+					</tr>
+					<tr>
+						<th>Ankle Plantarflexion</th>
+						<td>Reduced (less than 50°)</td>
+					</tr>
+					<tr>
+						<th>Ankle dorsiflexion</th>
+						<td>Normal (20°)</td>
+					</tr>
+					<tr>
+						<th>Hallux dorsiflexion</th>
+						<td>No movement</td>
+					</tr>
+					<tr>
+						<th>Hallux plantarflexion</th>
+						<td>Less than 40°</td>
+					</tr>
+					<tr>
+						<th>Power</th>
+						<td>Slightly reduced</td>
+					</tr>
+					<tr>
+						<th>Tone</th>
+						<td>Increased</td>
+					</tr>
+					<tr>
+						<th>Knee reflexes</th>
+						<td>Brisk</td>
+					</tr>
+					<tr>
+						<th>Ankle reflexes</th>
+						<td>Absent</td>
+					</tr>
+					<tr>
+						<th>Plantar reflexes</th>
+						<td>Down going</td>
+					</tr>
+					<tr>
+						<th>Other findings</th>
+						<td>N/A</td>
+					</tr>
+				</tbody>
+			</table>
+			
+						
+
+	</div>
+  
+  
+   </div>
+ <!-- / wrapper -->
+  
+
+ <form class="mt30" method="post" action="/{{path}}/assessment/{{customer._id}}/completed-assessment">
+	<p class="mt30"><button class="button">Finish - sign off report</button></p>
+	</form>
+
+
+{% endblock %}
+
