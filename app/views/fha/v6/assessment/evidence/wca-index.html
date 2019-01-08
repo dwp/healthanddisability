@@ -15,60 +15,22 @@
 <div class="grid-row">
   <div class="column-two-thirds">
 
-	<div class="exam-content">
-	
-		<table>
-			
-			<caption>Physical exam process</caption>
-			
-			
-			<tr>
-				<th><a href="illnessEffects">Illnesses, disabilities and medication</a></th>
-        <td><span class="visually-hidden">Not started</span>
-          {% if data['illnessEffectsVisited'] %}     
-          <span class="blue">Saved</span>
-        {% endif %}
-       
-        
-        </td>
-			</tr>
-			<tr>
-				<th><a href="socialWorkHistory">Social and work history</a></th>
-        <td><span class="visually-hidden">Not started</span>
-          {% if data['socialWorkHistory'] %}     
-          <span class="blue">Saved</span>
-        {% endif %}
-        </td>
-			</tr>
-			<tr>
-				<th><a href="typicalDay">Typical day</a></th>
-        <td><span class="visually-hidden">Not started</span>
-          {% if data['typicalDay'] %}     
-          <span class="blue">Saved</span>
-        {% endif %}
-        </td>
-      </tr>
-
-		</table>
-		
-	</div>
-  
-
-
-
-
-
-
-<form action="phys_consent" method="POST" class="form">
-
-    <p class="mt30"><button class="button">Continue</a></button>
-    <div class="multiple-choice" style="display:none">
-        <input id="radio-inline-4" type="radio" name="wca" value="continue" checked>
-        <label for="radio-4">hidden radio one</label>
-      </div>
-</form>
+      <div class="task-list">
+					<ul class="task-list-itmes">
+            <li class="task-list-item"><a href="illnessEffects">Illnesses, disabilities and medication {% if data['illnessEffectsVisited'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+            <li class="task-list-item"><a href="socialWorkHistory">Social and work history {% if data['socialWorkHistory'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+            <li class="task-list-item"><a href="typicalDay">Typical day {% if data['typicalDay'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+            <li class="task-list-item"><a href="phys_consent">Physical assessments{% if data['physicalAssessed'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+            <li class="task-list-item"><a href="mentalHealthAssessment">Mental health assessments {% if data['mental-health'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+          </ul>
+        </div>
   </div><!-- column -->
 </div><!-- row -->
+
+<form class="mt30" method="post" action="/{{path}}/assessment/{{customer._id}}/scoring/report-view">
+  <p class="mt30"><button class="button">Finish assessment</button></p>
+</form>
+
 {% endblock %}
 
 {% macro physGroup(name,sel) %}
