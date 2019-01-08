@@ -1,0 +1,85 @@
+{% extends path+"/_layout-details.html" %}
+
+{% block case_content %}
+
+      <h1 class="heading-large mt10">Other healthcare professionals</h1>
+       
+{% if customer.otherHcp.hasOtherHcp %}
+       <div class="grid-row mt30">
+  
+  
+  <div class="column-two-thirds">
+
+     
+ 
+      <h2 class="heading-medium mt0">{{customer.otherHcp.type}}</h2>
+
+     
+      <h4 class="heading-small mt0">Name</h4>
+     <p>{{customer.otherHcp.name.fullName}}</p>
+      
+     
+     <h4 class="heading-small">Phone number</h4>
+     <p>{{customer.otherHcp.phone}}</p>
+ 
+ 
+     
+     <h4 class="heading-small">Address</h4>
+     <p class="address-stack">
+       <span>{{customer.otherHcp.address.street}}</span>
+       <span>{{customer.otherHcp.address.city}}</span>
+       <span>{{customer.otherHcp.address.postcode}}</span>
+     </p>
+   
+     <p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Add or edit healthcare professionals</a></p>
+{% else %}
+
+     <p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Add healthcare professionals</a></p>
+
+
+{% endif %}
+       
+    
+    </div><!-- column -->
+    
+    <div class="column-half">
+  
+     
+    
+    </div><!-- column -->
+
+    
+  
+
+
+    
+    </div><!-- column -->
+    
+    
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div><!-- row -->
+           
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.details-nav ul')
+      .children(":nth-child(4)")
+      .addClass('active_detail')
+  });
+</script>
+{% endblock %}

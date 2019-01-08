@@ -1,0 +1,19 @@
+{% import path + "/_descriptors.nunj"  as data %}
+{#
+  The modal window with all the descriptors tick boxes that is triggered
+  by clicking the "Assign descriptors" button (of the 'change' link)
+#}
+<form class="form" method="post" id="des_form">
+  <input type="hidden" name="des_id" value="" id="des_id"/>
+<div class="form-group">
+  {% for item in data.descriptors %}
+  <div class="multiple-choice">
+    <input id="{{ item.url }}" name="descriptors" type="checkbox" value="{{ item.label }}">
+    <label for="{{ item.url }}">{{ item.label }}</label>
+  </div>
+  {% endfor %}
+</div>
+<div class="form-group">
+  <button class="button" data-fancybox-close id="des_submit">Save &amp; Continue</button>
+</div>
+</form>

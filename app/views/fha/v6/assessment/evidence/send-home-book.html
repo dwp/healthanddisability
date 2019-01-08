@@ -1,0 +1,115 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+		
+		
+			
+		
+		
+
+		<form method="post" action="/{{path}}/assessment/{{customer._id}}/booked">
+
+	
+		
+			<h1 class="heading-large">Book appointment</h1>
+	                  	{% if checked('stoppassess','unfit') or customer.name.first == 'Dillon'%}
+								<div class="panel panel-info">
+										<p>
+								{{customer.name.first}} is unfit to be examined
+						    	</p>
+					        	</div>
+								{% elif checked('stoppassess','specialreq') %}
+									
+				<div class="panel panel-info">
+						<p>
+							
+								{{customer.name.first}} has a special need they've not previously disclosed
+							</p>
+						</div>
+								{% endif%}
+					
+
+				
+				
+			
+
+						<fieldset class="form-group">
+								<legend class="form-label-bold">Do you want to book the appointment now?</legend>
+								
+					
+								<div class="multiple-choice" data-target="other-info2">
+										{% if customer.name.first == 'Dominguez' %}
+									<input type="radio" name="appointments-dom" id="available-appointments-unable" value="yes" {{checked('appointments-dom', 'yes') }}>
+									{% else %}
+									<input type="radio" name="appointments" id="available-appointments-unable" value="yes" {{checked('appointments', 'yes') }}>
+									{% endif%}
+									<label for="available-appointments-unable">Yes</label>
+								</div>
+
+								<div class="panel js-hidden" id="other-info2">
+
+										{% include path+"/includes/appointmentsTypeAhead.html" %}  
+										
+							 </div>
+								
+								
+								
+								
+								<div class="multiple-choice">
+									<input type="radio" name="appointments" id="available-appointments-1" value="no"  {{checked('appointments', 'no') }}>
+									<label for="available-appointments-1">No</label>
+								</div>
+					
+								
+				
+								
+							   
+							</fieldset>
+							<p><button class="button">Confirm appointment</button></p>
+						    
+					</div>
+				
+	
+		
+				
+
+			
+				</form>
+			
+
+		
+    
+
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+
+{% endblock %}
+
+ {% block page_scripts %}
+
+{% include path+"/includes/appointment/_typaheadscript.html" %}
+  
+
+ 
+{% endblock %} 

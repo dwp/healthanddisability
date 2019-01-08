@@ -1,0 +1,168 @@
+{% extends path2+"/_layout.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+{{ nav.case_tabs("evidence",1,path1) }}{# macro #}
+
+<h2 class="heading-large mt30">Physical Examination</h2>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+    <h3 class="heading-medium">Indicate any abnormal findings</h3>
+
+    <!-- LOWER LIMB -->
+    <div class="form-group">
+
+      {{ physGroup("Lower limbs",0) }}
+      <!-- FINDINGS -->
+      <div class="form-group panel panel-indent js-hidden mt0 mb20" id="group_{{"Lower limbs"|slug}}_yes">
+        {{ physObs("Lower back",0) }}
+        {{ physObs("Left leg",0) }}
+        {{ physObs("Right leg",0) }}
+      </div><!-- .form-group -->
+
+      {{ physGroup("Upper limbs") }}
+      <!-- FINDINGS -->
+      <div class="form-group panel panel-indent js-hidden mt0 mb20" id="group_{{"Upper limbs"|slug}}_yes">
+        {{ physObs("Neck",0) }}
+        {{ physObs("Left upper arm",0) }}
+        {{ physObs("Right upper arm",0) }}
+        {{ physObs("Left forearm",0) }}
+        {{ physObs("Right forearm",0) }}
+      </div><!-- .form-group -->
+
+      {{ physGroup("Cardiac") }}
+      <!-- FINDINGS -->
+      <div class="form-group panel panel-indent js-hidden mt0 mb20" id="group_{{"Cardiac"|slug}}_yes">
+        {{ physObs("General",0) }}
+        {{ physObs("Face",0) }}
+        {{ physObs("Hands",0) }}
+        {{ physObs("Radial pulse",0) }}
+        {{ physObs("Blood pressure",0) }}
+        {{ physObs("Jugular venous pressure",0) }}
+        {{ physObs("Heart sounds",0) }}
+        {{ physObs("Lung sounds",0) }}
+        {{ physObs("Fundoscopy",0) }}
+      </div><!-- .form-group -->
+
+      {{ physGroup("Respiratory") }}
+      <!-- FINDINGS -->
+      <div class="form-group panel panel-indent js-hidden mt0 mb20" id="group_{{"Respiratory"|slug}}_yes">
+        {{ physObs("General",0) }}
+        {{ physObs("Face",0) }}
+        {{ physObs("Hands",0) }}
+        {{ physObs("Radial pulse",0) }}
+        {{ physObs("Peak expiry flow rate",0) }}
+        {{ physObs("Heart sounds",0) }}
+        {{ physObs("Chest inspection",0) }}
+        {{ physObs("Lung sounds",0) }}
+      </div><!-- .form-group -->
+
+      {{ physGroup("Peripheral vascular") }}
+      <!-- FINDINGS -->
+      <div class="form-group panel panel-indent js-hidden mt0 mb20" id="group_{{"Respiratory"|slug}}_yes">
+        {{ physObs("Face",0) }}
+        {{ physObs("Hands",0) }}
+        {{ physObs("Radial pulse",0) }}
+        {{ physObs("Left leg peripheral circulation",0) }}
+        {{ physObs("Right leg peripheral circulation",0) }}
+        {{ physObs("Blood pressure",0) }}
+        {{ physObs("Fundoscopy",0) }}
+      </div><!-- .form-group -->
+
+      {{ physGroup("Vision, speech & hearing") }}
+      {% set s = "Vision, speech & hearing" | slug %}
+      <div class="form-group panel panel-indent js-hidden mt0 mb20" id="group_{{s}}_yes">
+        <p><label class="form-label" for="phys_{{s}}_obs">Observation</label>
+        <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="2"></textarea></p>
+        <p><label class="form-label" for="phys_{{s}}_palp">Palpation</label>
+        <textarea class="form-control form-control-3-4" name="phys_{{s}}_palp" id="phys_{{s}}_palp" rows="2"></textarea></p>
+        <p><label class="form-label" for="phys_{{s}}_mov">Movement</label>
+        <textarea class="form-control form-control-3-4" name="phys_{{s}}_mov" id="phys_{{s}}_mov" rows="2"></textarea></p>
+      </div>
+
+      {{ physGroup("Consciousness") }}
+      {% set s = "Consciousness" | slug %}
+      <div class="form-group panel panel-indent js-hidden mt0 mb20" id="group_{{s}}_yes">
+        <p><label class="form-label" for="phys_{{s}}_obs">Observation</label>
+        <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="2"></textarea></p>
+        <p><label class="form-label" for="phys_{{s}}_palp">Palpation</label>
+        <textarea class="form-control form-control-3-4" name="phys_{{s}}_palp" id="phys_{{s}}_palp" rows="2"></textarea></p>
+        <p><label class="form-label" for="phys_{{s}}_mov">Movement</label>
+        <textarea class="form-control form-control-3-4" name="phys_{{s}}_mov" id="phys_{{s}}_mov" rows="2"></textarea></p>
+      </div>
+
+      {{ physGroup("Continence") }}
+      {% set s = "Continence" | slug %}
+      <div class="form-group panel panel-indent js-hidden mt0 mb20" id="group_{{s}}_yes">
+        <p><label class="form-label" for="phys_{{s}}_obs">Observation</label>
+        <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="2"></textarea></p>
+        <p><label class="form-label" for="phys_{{s}}_palp">Palpation</label>
+        <textarea class="form-control form-control-3-4" name="phys_{{s}}_palp" id="phys_{{s}}_palp" rows="2"></textarea></p>
+        <p><label class="form-label" for="phys_{{s}}_mov">Movement</label>
+        <textarea class="form-control form-control-3-4" name="phys_{{s}}_mov" id="phys_{{s}}_mov" rows="2"></textarea></p>
+      </div>
+
+      {{ physGroup("Mental health") }}
+      <!-- FINDINGS -->
+      <div class="form-group panel panel-indent js-hidden mt0 mb20" id="group_{{"Mental health"|slug}}_yes">
+        {{ physObs("Appearance",0) }}
+        {{ physObs("Behaviour",0) }}
+        {{ physObs("Speech",0) }}
+        {{ physObs("Mood",0) }}
+        {{ physObs("General Congition",0) }}
+        {{ physObs("Insight",0) }}
+        {{ physObs("Thoughts",0) }}
+        {{ physObs("Perceptions",0) }}
+        {{ physObs("Addictions",0) }}
+        {{ physObs("Involuntary Movements",0) }}
+        {{ physObs("Cognitive Tests",0) }}
+      </div><!-- .form-group -->
+
+
+    </div><!-- .form-group -->
+
+
+    <div class="form-group">
+      <a href="phys_declaration" class="button">Finish exam</a>
+    </div><!-- .form-group -->
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+{% macro physGroup(name,sel) %}
+  {% set s = name | slug %}
+  <!-- GROUP -->
+  <div class="multiple-choice" data-target="group_{{s}}_yes">
+    <input id="group_{{s}}" type="checkbox" name="group_{{s}}" sue="group_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="group_{{s}}">{{name}}</label>
+  </div>
+{% endmacro %}
+
+{% macro physObs(name,sel) %}
+  {% set s = name | slug %}
+  <div class="multiple-choice" data-target="phys_{{s}}_yes">
+    <input id="phys_{{s}}" type="checkbox" name="mobility" value="phys_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="phys_{{s}}">{{name}}</label>
+  </div>
+  <div class="form-group panel panel-indent js-hidden mt0 mb20" id="phys_{{s}}_yes">
+    <p><label class="form-label" for="phys_{{s}}_obs">Observation</label>
+    <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="2"></textarea></p>
+    <p><label class="form-label" for="phys_{{s}}_palp">Palpation</label>
+    <textarea class="form-control form-control-3-4" name="phys_{{s}}_palp" id="phys_{{s}}_palp" rows="2"></textarea></p>
+    <p><label class="form-label" for="phys_{{s}}_mov">Movement</label>
+    <textarea class="form-control form-control-3-4" name="phys_{{s}}_mov" id="phys_{{s}}_mov" rows="2"></textarea></p>
+  </div>
+{% endmacro %}
+
+{% block footer_top %}
+{{ super() }}
+<p class="font-xsmall">
+  <a href="/{{ path2 }}/phys_exam_1">exam v1</a> | 
+  <a href="/{{ path2 }}/phys_exam_2">exam v2</a>
+</p>
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends path1+"/_layout-stripped.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+<a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+
+<h1 class="heading-large mt30 mb20"><span class="heading-secondary">Step 3 of 5</span>Contact</h1>
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	<form>
+
+					  <fieldset>
+					
+					    <legend class="heading-medium mb10">
+					        How can we contact Tomas?
+					    </legend>
+					    
+					    <div class="multiple-choice" data-target="contact-by-phone">
+					      <input id="example-contact-by-phone" type="checkbox" name="radio-contact-group" value="No">
+					      <label for="example-contact-by-phone">Phone</label>
+					    </div>
+					    <div class="panel panel-border-narrow js-hidden" id="contact-by-phone">
+					      <div class="form-group">
+					     	 <label class="form-label" for="contact-phone">Home</label>
+						 	 <input class="form-control" name="contact-phone" type="text" id="contact-phone">
+					      </div>
+					      <div class="form-group">
+					     	 <label class="form-label" for="contact-phone">Mobile</label>
+						 	 <input class="form-control" name="contact-phone" type="text" id="contact-phone">
+					      </div>
+					    </div>
+					
+					    <div class="multiple-choice" data-target="contact-by-email">
+					      <input id="example-contact-by-email" type="checkbox" name="radio-contact-group" value="Yes">
+					      <label for="example-contact-by-email">Email</label>
+					    </div>
+					    <div class="panel panel-border-narrow js-hidden" id="contact-by-email">
+					      <label class="form-label" for="contact-email">Email address</label>
+					      <input class="form-control" name="contact-email" type="text" id="contact-email">
+					    </div>
+					
+					
+					  </fieldset>
+		
+		    
+
+		    
+		    
+		    
+		    <p class="mt30"><a href="case-creation4" class="button">Continue to GP details</a></p>
+				    
+		
+		
+		<!-- ********************************* Page end ********************************* -->
+		
+		
+
+
+	
+		
+		
+	</form>
+	
+    
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+{% macro physGroup(name,sel) %}
+  {% set s = name | slug %}
+  <!-- GROUP -->
+  <div class="multiple-choice" data-target="group_{{s}}_yes">
+    <input id="group_{{s}}" type="checkbox" name="group_{{s}}" sue="group_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="group_{{s}}">{{name}}</label>
+  </div>
+{% endmacro %}
+
+{% macro physObs(name,sel) %}
+  {% set s = name | slug %}
+  <div class="multiple-choice" data-target="phys_{{s}}_yes">
+    <input id="phys_{{s}}" type="checkbox" name="mobility" value="phys_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="phys_{{s}}">{{name}}</label>
+  </div>
+  <div class="form-group panel panel-indent js-hidden mt0 mb20" id="phys_{{s}}_yes">
+    <p>
+      <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
+      <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
+    </p>
+  </div>
+{% endmacro %}
+

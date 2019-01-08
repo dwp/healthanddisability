@@ -1,0 +1,58 @@
+{% extends path1+"/_layout-info.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+<h2 class="heading-large mt30 mb0">Work capability assessment</h2>
+
+
+<p class="mt30 mb0">Assessment started: {{ last_one.time | formatDate("H:mma D MMMM YYYY") }}</p>
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	<div class="exam-content">
+	
+		<table>
+			
+			<caption>Physical exam process</caption>
+			
+			
+			<tr class="complete">
+				<th><a href="add">Condition history</a></th>
+				<td><span class="red">Done</span></td>
+			</tr>
+			<tr class="complete">
+				<th><a href="add2">Social and work history</a></th>
+				<td><span class="red">Done</span></td>
+			</tr>
+			<tr>
+				<th><a href="add3">Typical day</a></th>
+				<td><span>Not started</span></td>
+			</tr>
+			<tr>
+				<th><a href="add4">Medication and side effects</a></th>
+				<td><span>Not started</span></td>
+			</tr>
+
+			
+		</table>
+		
+	</div>
+	
+
+
+
+
+
+
+
+    <p class="mt30"><a href="phys_consent" class="button">Save and continue</a></p>
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+

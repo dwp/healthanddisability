@@ -1,0 +1,43 @@
+{% extends path+"/_layout-caselist.html" %}
+
+{% block horizontal_secondary_nav %}
+              
+{{ secondaryNav.nav("appointments", "ready-to-book", menuItems ) }}
+
+
+{% endblock %}  
+
+{% block caselist_content %}
+
+
+            <h2 class="heading-medium mt0"><span class="heading-xlarge">{{customersTotal}}</span><br/>Ready to book</h2>
+              <table class="zebra">
+
+                <thead>
+                  <tr>
+                    <th>Details</th>
+                    <th>Received from scrutiny</th>
+                  </tr>
+                </thead>
+                {% for customer in customers | sort(false, false, 'receivedDate') | selectattr('cshu') %}
+
+                <tr>
+                  <td ><a href="booking/referrals/{{customer._id}}/details"><span class="visually-hidden">Name</span>{{customer.name.fullName}}</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span></td>
+                  <td>{{customer.receivedDate | formatDate("D MMMM YYYY")}}
+                   <br> <span class="status orange">Sent home unseen</span>
+                </td>
+                </tr>
+                {% endfor %}
+                {% for customer in customers | sort(false, false, 'receivedDate') | rejectattr('cshu') %}
+
+                <tr>
+                  <td ><a href="booking/referrals/{{customer._id}}/details"><span class="visually-hidden">Name</span>{{customer.name.fullName}}</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span></td>
+                  <td>{{customer.receivedDate | formatDate("D MMMM YYYY")}}
+                </td>
+                </tr>
+                {% endfor %}
+
+              </table>
+
+
+{% endblock %}
