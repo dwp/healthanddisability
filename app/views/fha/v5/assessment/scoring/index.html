@@ -6,15 +6,16 @@
 <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
 
 <h1 class="heading-large">Make your recommendation</h1>
-
+<h2 class="heading-medium">Choose the areas that you have considered relevant to {{customer.name.first}}:</h2>
 
 <form class="" method="post" action="/{{path}}/assessment/{{customer._id}}/scoring/index-todo">
-	<h2 class="heading-medium">Choose the areas that you have considered relevant to {{customer.name.first}}:</h2>
+	
+	
+	<h3 class="heading-small">Physical functions</h3>
+	
   	<fieldset>
 					
-	    <legend >
-					<h3 class="heading-small">Physical functions</h3>
-	    </legend>
+	    <legend class="visually-hidden">Choose the relevant descriptor:</legend>
 	    
 	    
 	    
@@ -68,11 +69,13 @@
 	      <label for="des10">Staying conscious without fainting, seizures, or blackouts</label>
 			</div>
   	</fieldset>
+  	
+  	
+  	<h3 class="heading-small">Mental, cognitive and intellectual capabilities</h3>
 			<fieldset>
 					
-					<legend >
-							<h3 class="heading-small">Mental, cognitive and intellectual capabilities</h3>
-					</legend>
+		<legend class="visually-hidden">Choose the relevant descriptor:</legend>
+		
 	    <div class="multiple-choice">
 	      <input id="des11" type="checkbox" name="learning" value="learning">
 	      <label for="des11">Learning to do new tasks</label>
@@ -108,19 +111,21 @@
 	      <label for="des17">Behaving appropriately around other people</label>
 			</div>
 			</fieldset>
+			
+			<h3 class="heading-small">Eating and drinking</h3>
 			<fieldset>
 					
-					<legend >
-							<h3 class="heading-small">Eating and drinking</h3>
-					</legend>
+			<legend class="visually-hidden">Choose the relevant descriptor:</legend>
 		  
-	<div class="multiple-choice">
-	      <input id="des17" type="checkbox" name="eating" value="eating">
-	      <label for="des17">Eating and drinking</label>
-	    </div>
+		<div class="multiple-choice">
+		      <input id="des17" type="checkbox" name="eating" value="eating">
+		      <label for="des17">Eating and drinking</label>
+		    </div>
 
 
 	</fieldset>
+	
+	
 	<p class="mt30"><button class="button">Continue</button></p>
   
   </form>
