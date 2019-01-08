@@ -17,11 +17,11 @@
 		  <div class="task-list">
 					<ul class="task-list-itmes">
 				
-						<li class="task-list-item"><a href="lower-limbs">Lower back and legs {% if data['whatcando'] %}<span class="task-completed">Assessed</span>{% endif %}</a></li>
-						<li class="task-list-item"><a href="neck-arms">Neck and arms{% if data['neckwhatcando']==='Yes' or data['neckwhatcando']==='No'%}<span class="task-completed">Assessed</span>{% endif %}</a></li>
-						<li class="task-list-item"><a href="">Cardiac and respiratory</a></li>
-						<li class="task-list-item"><a href="">Another</a></li>
-            <li class="task-list-item"><a href="">General</a></li>
+						<li class="task-list-item"><a href="lower-limbs">Lower back and legs {% if data['lowerlimbs'] %}<span class="task-completed">Assessed</span>{% endif %}</a></li>
+						<li class="task-list-item"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing">Neck and arms{% if data['neckwhatcando']==='Yes' or data['neckwhatcando']==='No'%}<span class="task-completed">Assessed</span>{% endif %}</a></li>
+						<li class="task-list-item"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing">Cardiac and respiratory</a></li>
+						<li class="task-list-item"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing">Another</a></li>
+            <li class="task-list-item"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing">General</a></li>
          
 
 	
