@@ -1,0 +1,70 @@
+{% extends path+"/_layout-evidence.html" %}
+
+
+{% block case_content %}
+
+<h1 class="heading-large mt10">Requested evidence</h1>
+<!--<p class="mt10"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/request-evidence" class="button secondary">Request further evidence</a></p>-->
+
+
+
+{% if data['recordevidencegp']==='gp' and customer.fmeType.indexOf("113") > -1 or data['recordevidencefrr']==='frr' and  customer.fmeType.indexOf("FRR") > -1 %}
+{% elif  customer.fmeType.indexOf("FRR") > -1 or customer.fmeType.indexOf("113") > -1 or customer.status == 'fme'  %}
+
+<table class="evidence-list">
+
+                <thead>
+	                  <tr>
+	                    <th>Evidence type</th>
+	                    <th>Source</th>
+	                    <th class="numeric">Requested</th>
+	                  </tr>
+	                </thead>
+	          
+								{% if data['recordevidencegp']==='gp'  %}
+								{% elif customer.fmeType.indexOf("113") > -1 or  customer.fmeType.indexOf("113visited") > -1 or customer.fmeType == 'GP Report' %}
+									
+									<tr>
+	                  <td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/gp_report">GP report</a></td>
+	                  <td>GP: Dr.{{customer.address.gpName.fullName}}</td>
+										<td class="numeric">
+											<span class="block">{{ 'Do MMMM YYYY' | randDaysAgo(0)}}</span>
+										  {% if customer.fmeRequestedDate | fmeOverdue %}
+											<span class="badge warning" style="display:inline-block; color:#fff">Overdue</span>
+											{% endif %}</td>
+									</tr>
+
+									{% endif %}
+									{% if data['recordevidencefrr']==='FRR' %}
+									{% elif  customer.fmeType.indexOf("FRR") > -1 or customer.fmeType.indexOf("FRRvisited") > -1 or customer.fmeType == 'Factual report' %}
+	                <tr>
+	                  <td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/factual_report">Factual report</a></td>
+	                  <td>Consultant: Dr. {{customer.otherHcp.name.fullName}}</td>
+	                  <td class="numeric">
+											<span class="block">{{customer.fmeRequestedDate | formatDate('Do MMMM YYYY')}}</span>
+                      {% if customer.fmeRequestedDate | fmeOverdue %}
+											<span class="badge warning" style="display:inline-block; color:#fff">Overdue</span>
+											{% endif %}
+										</td>
+
+									</tr>
+									{% endif %}
+                
+							</table> 
+					
+							{% endif %}
+						
+            
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.details-nav ul')
+      .children(":nth-child(2)")
+      .addClass('active_detail')
+  });
+</script>
+{% endblock %}

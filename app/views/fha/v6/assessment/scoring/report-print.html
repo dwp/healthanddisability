@@ -1,0 +1,47 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+
+
+ <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+  
+<h1 class="heading-large">Recommendation complete</h1>
+  
+
+<div class="notice">
+			  <i class="icon icon-important">
+			    <span class="visually-hidden">Warning</span>
+			  </i>
+			  <strong class="bold-small">
+			    To complete the assessment process:<br>you need to print off the report and notify the relevant decision maker.
+			  </strong>
+    	</div>
+    	
+
+
+		<div class="evidence-panel-wrapper">
+		
+				<div class="evidence-panel">
+						<h2 class="heading-medium">{{customer.name.first}}</h2>
+						<h3 class="heading-small">Assessment report</h3>
+						<p class="reason">Signed off by Heather Harrison</p>
+						<p><a href="#" class="print">Print report</a></p>
+						
+				</div>
+				
+		</div>
+  
+  
+  
+<p><a href="../timeline2" class="button mt20">Finish</a></p>
+
+
+
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,36 @@
+{% macro nav(section, subSection) %}
+
+{% set sections = [{
+    url:"/planning",
+    label:"Week 10 - 10 December"
+    },{
+    url:"#",
+    label:"Week 9 - 3 December"
+    },{
+    url:"#",
+    label:"Week 8 - 26 November"
+    },{
+    url:"#",
+    label:"Week 7 - 19 November"
+    },{
+    url:"#",
+    label:"Week 6 - 12 November"
+    },{
+    url:"#",
+    label:"Week 5 - 5 November"
+    }] 
+%}
+
+<nav class="details-nav v2">
+  <ul>
+    
+    {% for item in sections %}
+      <li {% if item.url == section %} 
+        class="active_detail"{% endif %}>
+        <a href="{{item.url}}">{{ item.label }}</a>
+      
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+{% endmacro %}

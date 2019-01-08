@@ -1,0 +1,37 @@
+{% extends path+"/_layout-case.html" %}
+
+{% block citizen_content %}
+
+  <div class="container">
+
+    {{ nav.case_tabs("details",1,path1, customer._id) }}{# macro #}
+
+    <div class="grid-row">
+      <div class="column-third">
+        {% block app_nav %}
+          <div class="details-nav">
+			  <ul>
+				<li><a href="index">Illnesses disabilities and medication</a></li>
+				<li><a href="contact">{{customer.name.first}}'s details </a></li>
+        <li><a href="gp">GP details</a></li>
+        <li><a href="hcp">Other healthcare professionals</a></li>
+            </ul>
+            
+          </div>
+        {% endblock %}
+      </div><!-- column -->
+      <div class="column-two-thirds">
+          {% block case_content %}{% endblock %}
+      </div><!-- column-full -->
+    </div><!-- grid-row -->
+  </div><!-- container -->
+{% endblock %}
+
+{% block body_end %}
+
+{{ super() }}
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+{% endblock %}

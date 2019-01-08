@@ -1,0 +1,355 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+		
+		
+			
+		
+		
+
+		<form method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/send-home-book">
+
+	
+		
+			<fieldset>
+				<legend><h1 class="heading-large">Assessment cannot be completed</h1></legend>
+				{% if checked('stoppassess','other') %}
+				<div class="panel panel-border-wide">
+						<p>
+								{{ specific }}
+						</p>
+					</div>
+		 {% endif %}
+		 
+		 {% if customer.name.first == 'Dominguez' %}
+		 <div class="panel panel-info">
+				 <p>
+						{{customer.name.first}} needs to see a doctor because a new condition has been identified 
+				 </p>
+			 </div>
+		 {% endif %}
+		 
+				
+				<div class="form-group mt30">
+
+					    	<fieldset>
+							      <legend class="heading-medium mb10">
+												Why are we unable to complete the assessment? <span class="form-hint mt10 mb0"> Please choose a reason: </span>
+							      </legend>
+							       
+								   {% if checked('stoppassess','other') or customer.status == 'Assessment stopped' %}
+
+									<div class="multiple-choice" data-target="resourcing">
+											<input id="know-4" name="Issue" type="radio" value="resourcing"  {{checked('assesnotcomp', 'resourcing') }}>
+											<label for="know-4">Resourcing, technology or facilities issue
+												</label>
+										</div>
+
+
+										<div class="panel panel-border-narrow js-hidden form-group" id="resourcing">
+												<fieldset>
+														<legend class="bold mb10">
+																Please select a specific reason: 
+														</legend>
+																<div class="multiple-choice">
+																		<input id="know-2" name="Reason" type="radio" value="capacity"  {{checked('Reason', 'capacity') }}>
+																		<label for="know-2">Number of claimants in attendance exceeds medical capacity
+																			</label>
+																	</div>
+																	<div class="multiple-choice">
+																			<input id="know-2" name="Reason" type="radio" value="error"  {{checked('Reason', 'error') }}>
+																			<label for="know-2">Claimant called for assessment in error
+
+																				</label>
+																		</div>
+																		<div class="multiple-choice">
+																				<input id="know-2" name="Reason" type="radio" value="tech"  {{checked('Reason', 'tech') }}>
+																				<label for="know-2">Technology performance issues (for example, system is down or too slow)
+
+																					</label>
+																			</div>
+																			<div class="multiple-choice">
+																					<input id="know-2" name="Reason" type="radio" value="safety"  {{checked('Reason', 'safety') }}>
+																					<label for="know-2">Health and safety issues (for example, claimant is unable to use emergency exits)
+																						</label>
+																				</div>
+																				<div class="multiple-choice">
+																						<input id="know-2" name="Reason" type="radio" value="accommodation"  {{checked('Reason', 'accommodation') }}>
+																						<label for="know-2">Accommodation problem (for example, power failure or evacuation)
+																						</label>
+																				</div>
+												</fieldset>
+									 </div>
+
+		 
+
+									<div class="multiple-choice" data-target="hcp">
+										<input id="know-5" name="Issue" type="radio" value="hcp"  {{checked('assesnotcomp', 'hcp') }}>
+										<label for="know-5">Issue with healthcare professional
+
+											</label>
+									</div>
+
+									<div class="panel panel-border-narrow js-hidden form-group" id="hcp">
+											<fieldset>
+													<legend class="bold mb10">
+															Please select a specific reason: 
+													</legend>
+															<div class="multiple-choice">
+																	<input id="know-2" name="Reason" type="radio" value="unavailable"  {{checked('Reason', 'unavailable') }}>
+																	<label for="know-2">Healthcare professional is unavailable (for example, they're ill or called away urgently)
+																		</label>
+																</div>
+																<div class="multiple-choice">
+																		<input id="know-2" name="Reason" type="radio" value="attend"  {{checked('Reason', 'attend') }}>
+																		<label for="know-2">Healthcare professional did not attend session, unexpectedly
+																			</label>
+																	</div>
+																	<div class="multiple-choice">
+																			<input id="know-2" name="Reason" type="radio" value="unable"  {{checked('Reason', 'unable') }}>
+																			<label for="know-2">Healthcare professional is unable to continue (for example, a specialist is required)
+																				</label>
+																		</div>
+																		<div class="multiple-choice">
+																				<input id="know-2" name="Reason" type="radio" value="inappropriate"  {{checked('Reason', 'inappropriate') }}>
+																				<label for="know-2">Inappropriate for healthcare professional to see claimant (for example, if they know them)
+																					</label>
+																			</div>
+											</fieldset>
+								 </div>
+
+
+									<div class="multiple-choice" data-target="requests">
+											<input id="know-6" name="Issue" type="radio" value="requests"  {{checked('assesnotcomp', 'requests') }}>
+											<label for="know-6">Information or requests not provided</label>
+										</div>
+
+										<div class="panel panel-border-narrow js-hidden form-group" id="requests">
+												<fieldset>
+														<legend class="bold mb10">
+																Please select a specific reason: 
+														</legend>
+																<div class="multiple-choice">
+																		<input id="know-2" name="Reason" type="radio" value="file"  {{checked('Reason', 'file') }}>
+																		<label for="know-2">File is not available
+																			</label>
+																	</div>
+																	<div class="multiple-choice">
+																			<input id="know-2" name="Reason" type="radio" value="gender"  {{checked('Reason', 'gender') }}>
+																			<label for="know-2">Healthcare practitioner of same gender not provided, despite claimant request
+
+																				</label>
+																		</div>
+																		<div class="multiple-choice">
+																				<input id="know-2" name="Reason" type="radio" value="inertpreter"  {{checked('Reason', 'inertpreter') }}>
+																				<label for="know-2">Interpreter not provided, despite claimant request
+
+																					</label>
+																			</div>
+																			<div class="multiple-choice">
+																					<input id="know-2" name="Reason" type="radio" value="audio"  {{checked('Reason', 'audio') }}>
+																					<label for="know-2">Audio recording equipment not provided, despite claimant request
+																						</label>
+																				</div>		
+												</fieldset>
+									 </div>
+
+							
+													{% else %}
+													<div class="multiple-choice" data-target="other-info2">
+															<input id="Issue" name="Issue" type="radio" value="claimant"  {{checked('Issue', 'claimant') }}>
+															<label for="Issue">Issue with claimant </label>
+														</div>
+		
+						
+															
+															<div class="panel panel-border-narrow js-hidden form-group" id="other-info2">
+																	<fieldset>
+																			<legend class="bold mb10">
+																					Please select a specific reason: 
+																			</legend>
+																			 
+																			 
+																
+																					<div class="multiple-choice">
+																							<input id="know-2" name="Reason" type="radio" value="unfit"  {{checked('Reason', 'unfit') }}>
+																							<label for="know-2">Claimant is unfit to be examined
+		
+																								</label>
+																						</div>
+																					<div class="multiple-choice">
+																						<input id="know-3" name="Reason" type="radio" value="hcp"  {{checked('Reason', 'special') }}>
+																						<label for="know-3">Claimant has a special need they've not previously disclosed
+									
+																							</label>
+																					</div>
+																	</fieldset>
+														 </div>
+		
+														<div class="multiple-choice" data-target="resourcing">
+																<input id="know-4" name="Issue" type="radio" value="resourcing"  {{checked('assesnotcomp', 'resourcing') }}>
+																<label for="know-4">Resourcing, technology or facilities issue
+																	</label>
+															</div>
+
+
+															<div class="panel panel-border-narrow js-hidden form-group" id="resourcing">
+																	<fieldset>
+																			<legend class="bold mb10">
+																					Please select a specific reason: 
+																			</legend>
+																					<div class="multiple-choice">
+																							<input id="know-2" name="Reason" type="radio" value="capacity"  {{checked('Reason', 'capacity') }}>
+																							<label for="know-2">Number of claimants in attendance exceeds medical capacity
+																								</label>
+																						</div>
+																						<div class="multiple-choice">
+																								<input id="know-2" name="Reason" type="radio" value="error"  {{checked('Reason', 'error') }}>
+																								<label for="know-2">Claimant called for assessment in error
+
+																									</label>
+																							</div>
+																							<div class="multiple-choice">
+																									<input id="know-2" name="Reason" type="radio" value="tech"  {{checked('Reason', 'tech') }}>
+																									<label for="know-2">Technology performance issues (for example, system is down or too slow)
+	
+																										</label>
+																								</div>
+																								<div class="multiple-choice">
+																										<input id="know-2" name="Reason" type="radio" value="safety"  {{checked('Reason', 'safety') }}>
+																										<label for="know-2">Health and safety issues (for example, claimant is unable to use emergency exits)
+																											</label>
+																									</div>
+																									<div class="multiple-choice">
+																											<input id="know-2" name="Reason" type="radio" value="accommodation"  {{checked('Reason', 'accommodation') }}>
+																											<label for="know-2">Accommodation problem (for example, power failure or evacuation)
+																											</label>
+																									</div>
+																	</fieldset>
+														 </div>
+
+                             
+
+														<div class="multiple-choice" data-target="hcp">
+															<input id="know-5" name="Issue" type="radio" value="hcp"  {{checked('assesnotcomp', 'hcp') }}>
+															<label for="know-5">Issue with healthcare professional
+		
+																</label>
+														</div>
+
+														<div class="panel panel-border-narrow js-hidden form-group" id="hcp">
+																<fieldset>
+																		<legend class="bold mb10">
+																				Please select a specific reason: 
+																		</legend>
+																				<div class="multiple-choice">
+																						<input id="know-2" name="Reason" type="radio" value="unavailable"  {{checked('Reason', 'unavailable') }}>
+																						<label for="know-2">Healthcare professional is unavailable (for example, they're ill or called away urgently)
+																							</label>
+																					</div>
+																					<div class="multiple-choice">
+																							<input id="know-2" name="Reason" type="radio" value="attend"  {{checked('Reason', 'attend') }}>
+																							<label for="know-2">Healthcare professional did not attend session, unexpectedly
+																								</label>
+																						</div>
+																						<div class="multiple-choice">
+																								<input id="know-2" name="Reason" type="radio" value="unable"  {{checked('Reason', 'unable') }}>
+																								<label for="know-2">Healthcare professional is unable to continue (for example, a specialist is required)
+																									</label>
+																							</div>
+																							<div class="multiple-choice">
+																									<input id="know-2" name="Reason" type="radio" value="inappropriate"  {{checked('Reason', 'inappropriate') }}>
+																									<label for="know-2">Inappropriate for healthcare professional to see claimant (for example, if they know them)
+																										</label>
+																								</div>
+																</fieldset>
+													 </div>
+
+
+														<div class="multiple-choice" data-target="requests">
+																<input id="know-6" name="Issue" type="radio" value="requests"  {{checked('assesnotcomp', 'requests') }}>
+																<label for="know-6">Information or requests not provided</label>
+															</div>
+
+															<div class="panel panel-border-narrow js-hidden form-group" id="requests">
+																	<fieldset>
+																			<legend class="bold mb10">
+																					Please select a specific reason: 
+																			</legend>
+																					<div class="multiple-choice">
+																							<input id="know-2" name="Reason" type="radio" value="file"  {{checked('Reason', 'file') }}>
+																							<label for="know-2">File is not available
+																								</label>
+																						</div>
+																						<div class="multiple-choice">
+																								<input id="know-2" name="Reason" type="radio" value="gender"  {{checked('Reason', 'gender') }}>
+																								<label for="know-2">Healthcare practitioner of same gender not provided, despite claimant request
+
+																									</label>
+																							</div>
+																							<div class="multiple-choice">
+																									<input id="know-2" name="Reason" type="radio" value="inertpreter"  {{checked('Reason', 'inertpreter') }}>
+																									<label for="know-2">Interpreter not provided, despite claimant request
+
+																										</label>
+																								</div>
+																								<div class="multiple-choice">
+																										<input id="know-2" name="Reason" type="radio" value="audio"  {{checked('Reason', 'audio') }}>
+																										<label for="know-2">Audio recording equipment not provided, despite claimant request
+																											</label>
+																									</div>		
+																	</fieldset>
+														 </div>
+													{% endif %}
+										    
+								    
+								    
+								    
+						    </fieldset>
+						    
+					</div>
+	
+			</fieldset>
+				
+
+				<p class="mt30"><button class="button">Next</button></p>
+				</form>
+			
+
+		
+    
+
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
