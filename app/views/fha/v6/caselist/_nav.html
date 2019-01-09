@@ -1,0 +1,25 @@
+
+
+
+
+{% macro nav(selected, path) %}
+
+{% set navs = [
+        {url:"",label:"Case list",id:"case"},
+        {url:"assessment-centres",label:"Manage centres", id:"centre"},
+        {url:"planning",label:"Resource planning", id:"planning"},
+        {url:"search",label:"Customer search", id:"search"}
+        ] %}
+        
+    <nav class="navigation-secondary">
+      <ul>
+        {% for item in navs %}
+        <li>
+          <a href="/{{path}}/{{item.url}}" class="{{ 'active' if item.id == selected }}" 
+          >{{item.label}}</a>
+        </li>
+        {% endfor %}
+
+      </ul>
+    </nav>
+{% endmacro %}

@@ -1,0 +1,132 @@
+{% extends path+"/_layout.html" %}
+{% import path1+"/_macros_nav.html" as nav %}
+
+{% block assess_content %}
+
+  
+
+  <main id="content" role="main" class="main-content">
+
+    <div class="container">
+      <div class="grid-row">
+        <div class="column-full">
+        
+        {#  This is the BIG BLUE BAR at the top - #jussayin #}
+  {% include path+"/includes/_staff_heading.html" %}
+
+          <div nunj-block="citizen_content">
+            {% block citizen_content %}{% endblock %}
+          </div>
+
+        </div><!-- column -->
+      </div><!-- row -->
+    </div><!-- container -->
+
+  </main>
+  
+	{% include path+"/includes/evidence/_evidence_panel.html" %}
+   
+	
+	
+
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.function_link').on('click',function(e)
+    {
+      e.preventDefault();
+      var href = $(this).attr('href');
+      console.log(href)
+      $.ajax({
+        url: href,
+        method: "GET",
+        complete:  function(data,status,xhr) {
+          console.log(data)
+          document.location.reload(true);
+        }
+      });
+    });
+  });
+</script>
+
+<script type="text/javascript">
+	$( document ).ready(function() {
+				 $( ".panel-switch" ).click(function() {
+						 $( ".inner-panel" ).toggleClass( "panel-open" );
+				 });
+		 }); 
+ </script>
+
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.tag').on('click',function(e)
+    {
+      e.preventDefault();
+      $(this).toggleClass('clicked');
+    });
+
+    $('.tag').on('mouseleave',function(e)
+    {
+      e.preventDefault();
+      $(this).removeClass('clicked');
+    });
+
+    $.fancybox.defaults.beforeShow = function(){
+        $("html").css({'overflow-y':'hidden'});
+    };
+    $.fancybox.defaults.afterClose = function(){
+        $("html").css({'overflow-y':'visible'});
+        $('.des_trigger').blur();
+    };
+    // highlight the approrpaiet left nav
+    $('.evidence__leftnav a h3').each(function(i,e)
+    {
+      if ($(e).text() == $('h2.heading-large').text()) $(e).parent().addClass('active');
+    })
+  });
+</script>
+
+<script>
+  $(".gp-report-show td span").click(function(){
+  $(".content-hide").toggleClass("content-show");
+  $(".gp-report-show").toggleClass("active-show");
+});
+</script>
+
+<script>
+  $(".med3-show td span").click(function(){
+  $(".content-hide2").toggleClass("content-show2");
+  $(".med3-show").toggleClass("active-show");
+});
+</script>
+
+<script>
+  $(".UC50-show td span").click(function(){
+  $(".content-hide3").toggleClass("content-show3");
+  $(".UC50-show").toggleClass("active-show");
+});
+</script>
+
+<script>
+  $(".side-show td span").click(function(){
+  $(".content-hide4").toggleClass("content-show4");
+  $(".side-show").toggleClass("active-show");
+});
+</script>
+
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+<p class="font-xsmall">
+  <a href="/{{ path }}/clearSession" id="clear_data" class="function_link">clear data</a>
+  | <a href="/{{ path }}/prefillAssessment" id="prefill" class="function_link">prefill</a>
+</p>
+{% endblock %}

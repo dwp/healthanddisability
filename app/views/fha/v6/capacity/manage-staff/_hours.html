@@ -1,0 +1,21 @@
+<section class="column-half {{ 'hidden' if not (query.tab === 'hours') }}">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Times</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for day, dayDetails in person.days %}
+            <tr>
+                <td><span class="capitalise">{{day}}</span></td>
+                <td>{{dayDetails.start}} to {{dayDetails.end}}</td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+        <p class="mt30"><a href="/{{path2}}/{{centre.id}}/manage-staff/staff-profile/{{person.id}}/edit-staff-hours" class="button-secondary">Edit working pattern</a></p>
+</section>

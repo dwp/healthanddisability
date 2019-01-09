@@ -1,0 +1,78 @@
+{% extends path+"/_layout-security.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    	
+		<h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Security check</h1>
+		
+		
+		<form action="/{{path}}/security/{{customer._id}}/security-name" method="post">
+			
+			
+			<div class="form-group">
+			                <fieldset>
+			                    <legend>
+			                        <span class="form-label-bold">
+			                           Who is on the phone?
+			                          </span>
+			                    </legend>
+			                    <div class="multiple-choice">
+			                        <input id="caller-customer" type="radio" name="caller" value="customer" >
+			                        <label for="caller-customer">{{customer.name.fullName}}</label>
+			                    </div>
+			                  <!--  <div class="multiple-choice">
+			                        <input id="caller-appointee" type="radio" name="caller" value="appointee" >
+			                        <label for="caller-appointee">Appointee</label>
+			                    </div> -->
+			
+			                   <div class="multiple-choice" data-target="caller-other">
+			                        <input id="caller-other" type="radio" name="caller" value="other" >
+			                        <label for="caller-other">Other</label>
+			                    </div>
+			                    <div class="panel panel-border-narrow" id="caller-other-content">
+			                        <div class="form-group">
+			                        	<label class="form-label" for="other-caller-details">Name</label>
+										<input class="form-control form-control-1-4" name="other-caller-details" type="text" id="other-caller-details">
+			                        </div>
+			                        <div>
+			                        	<label class="form-label" for="other-caller-details">Relationship to {{customer.name.first}}</label>
+										<input class="form-control form-control-1-4" name="other-caller-details" type="text" id="other-caller-details">
+			                        </div>
+			                    </div>  
+			
+			                </fieldset>
+			            </div>
+			
+				
+			           
+			         			            
+			            
+			            
+			            <p><button class="button">Next</button></p>
+			        </form>
+		
+		
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+

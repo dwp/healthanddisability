@@ -1,0 +1,45 @@
+{% extends path1+"/_layout.html" %}
+
+{% block left_content %}
+ <p class="mt10 mb0 bold-small">Booked</p>
+
+
+ <hr>
+{% endblock %}
+
+
+{% block citizen_content %}
+<form method="post" action="/{{path}}/booking/booked/{{customer._id}}/appointment-details">
+<div class="container">
+    <div class="grid-row">
+        <div class="column-full">
+        <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+            <h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Rearrange appointment</h1>
+
+            <div class="form-group">
+
+        
+                    {% include path+"/includes/appointmentsTypeAhead.html" %}  
+            </div>
+            <p ><button class="button">Confirm appointment</button></p>
+        </div>
+
+    </div>
+</form>
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %}
+
+{% block page_scripts %}
+
+{% include path+"/includes/appointment/_typaheadscript.html" %}
+  
+
+ 
+{% endblock %} 
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

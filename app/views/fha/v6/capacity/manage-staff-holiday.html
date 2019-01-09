@@ -1,0 +1,154 @@
+{% extends path1+"/_addlayout.html" %} 
+
+{%
+set staff = [
+  {
+    "id": "5aa7dcc37b7c36968d762580",
+    "index": 0,
+    "guid": "533684dd-ec4c-4dca-9acb-ce295615d376",
+    "surname": "Dillon",
+    "firstname": "Salazar",
+    "name": "Salazar Dillon",
+    "gender": "male",
+    "type": "Doctor",
+    "href": "salazar"
+  }
+]
+%}
+
+{%
+set days = [{
+    "day": "Monday",
+    "checked": true,
+    "startTime": "09:00",
+    "finishTime": "17:00"
+    },{
+    "day": "Tuesday",
+    "checked": true,
+    "startTime": "09:00",
+    "finishTime": "17:00"
+    },{
+    "day": "Wednesday",
+    "checked": "",
+    "startTime": "",
+    "finishTime": ""
+    },{
+    "day": "Thursday",
+    "checked": true,
+    "startTime": "09:00",
+    "finishTime": "17:00"
+    },{
+    "day": "Friday",
+    "checked": true,
+    "startTime": "09:00",
+    "finishTime": "17:00"
+    },{
+    "day": "Saturday",
+    "checked": true,
+    "startTime": "09:00",
+    "finishTime": "13:00"
+}]
+
+%}
+
+{% block citizen_content %}
+<div class="container">
+    {% for person in staff %}
+    <h3 class="heading-medium mt0">{{ person.name }}</h3>
+    <div class="grid-row mt30">
+        <div class="column-two-thirds">
+            <h4 class="heading-small"></h4>
+            <p>{{person.name }} Will be unnavailable on the following dates:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>From</th>
+                        <th>To</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12 March 2018</td>
+                        <td>16 March 2018 </td>
+                    </tr>
+                    <tr>
+                        <td>20 August 2018</td>
+                        <td>24 August 2018 </td>
+                    </tr>
+                </tbody>
+            </table>
+            <fieldset>
+
+            <legend>
+              <h3 class="heading-medium">Add new planned absence</h3>
+            </legend>
+            <div class="form-group">
+                <fieldset>
+                    <legend>
+                        <span class="form-label-bold">Start date</span>
+                    </legend>
+                    <div class="form-date">
+                        <div class="form-group form-group-day">
+                            <label class="form-label" for="start-day">Day</label>
+                            <input class="form-control" id="start-day" name="start-day" type="number" pattern="[0-9]*">
+                        </div>
+                        <div class="form-group form-group-month">
+                            <label class="form-label" for="start-month">Month</label>
+                            <input class="form-control" id="start-month" name="start-month" type="number" pattern="[0-9]*">
+                        </div>
+                        <div class="form-group form-group-year">
+                            <label class="form-label" for="start-year">Year</label>
+                            <input class="form-control" id="start-year" name="start-year" type="number" pattern="[0-9]*">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="mt30">
+                    <legend>
+                        <span class="form-label-bold">End date</span>
+                        <span class="form-hint">Leave blank if only 1 day</span>
+                    </legend>
+                    <div class="form-date">
+                        <div class="form-group form-group-day">
+                            <label class="form-label" for="end-day">Day</label>
+                            <input class="form-control" id="end-day" name="end-day" type="number" pattern="[0-9]*">
+                        </div>
+                        <div class="form-group form-group-month">
+                            <label class="form-label" for="end-month">Month</label>
+                            <input class="form-control" id="end-month" name="end-month" type="number" pattern="[0-9]*">
+                        </div>
+                        <div class="form-group form-group-year">
+                            <label class="form-label" for="end-year">Year</label>
+                            <input class="form-control" id="end-year" name="end-year" type="number" pattern="[0-9]*">
+                        </div>
+                    </div>
+                </fieldset>
+                <p><a href="manage-staff-holiday-2" class="button mt30">Save</a></p>
+            </div>
+
+            
+            
+        <!-- column -->
+    </div>
+
+    {% endfor %}
+    <div class="column-one-third">
+            <div class="info-panel">
+                <h3 class="heading-small">Type</h3>
+                <p>{{ person.type }}</p>
+                <h3 class="heading-small">Skill</h3>
+                <p>Complex Neuroi</p>
+                <h3 class="heading-small mt0">Gender</h3>
+                <p>{{ person.gender }}</p>
+                <h3 class="heading-small mt0">Email</h3>
+                <p>salazar.dillon@fakemail.gov.uk</p>
+                <h3 class="heading-small mt0">Phone</h3>
+                <p>0121 123 456</p>
+                <h3 class="heading-small mt0">Mobile</h3>
+                <p>0712345678</p>
+            </div>
+        </div>
+    <!-- row -->
+</div>
+
+<!-- container -->
+{% endblock %} {% block footer_top %} {{ super() }} {# {% include path1+"/footer_links.html" %} #} {% endblock %}

@@ -1,0 +1,343 @@
+{% extends path1+"/_layoutChat.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<style>
+.panel-switch{
+  display:none;
+}
+</style>
+
+
+<div class="grid-row no-kdBar">
+
+    <form action="pysicalplayground" method="POST" class="form">
+<div class="column-full">
+    <p class="mt0"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+</div>
+
+    <div class="column-one-half">
+
+
+
+    
+        {% macro physObs(name,sel) %}
+        {% set s = name | slug %}
+        <div class="multiple-choice" data-target="phys_{{s}}_yes">
+          <input id="phys_{{s}}" type="checkbox" name="mobility" value="phys_{{s}}" {% if sel %} checked="checked"{% endif %}>
+          <label for="phys_{{s}}">{{name}}</label>
+        </div>
+        <div class="form-group panel panel-indent js-hidden mt0 mb20" id="phys_{{s}}_yes">
+          <p>
+            <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
+            <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
+          </p>
+        </div>
+      {% endmacro %}
+  
+  
+    
+    {% macro phycheck(name, displayname, namefindings, findingsobs, optionalfindings ) %}
+
+          
+        <div class="multiple-choice" data-target="{{ name }}-guard">
+          <input id="lowerback" name="{{ name }}" type="checkbox" value="{{ name }}" {{ checked('{{ name }}', '{{ name }}') }}>
+          <label for="lowerback">{{ displayname }}</label>
+        </div>
+
+  
+        <div class="panel js-hidden" id="{{ name }}-guard">
+  
+          <fieldset class="inline">
+  
+            <legend class="form-label-bold">Have you identified any issues with function ?</legend>
+  
+  
+            <div class="multiple-choice" data-target="{{ name }}-yes">
+              <input id="{{ namefindings }}" name="{{ namefindings }}" type="radio" value="Yes" {{ checked('{{ namefindings }}', 'Yes') }}>
+              <label for="findyes">Yes</label>
+            </div>
+  
+            <div class="multiple-choice" data-target="{{ name }}-no">
+              <input id="{{ namefindings }}no" name="{{ namefindings }}" type="radio" value="No" {{ checked('{{ namefindings }}', 'No') }}>
+              <label for="findno"> No</label>
+            </div>
+  
+  
+  
+  
+  
+            <div class="panel js-hidden" id="{{ name }}-yes">
+  
+              <label class="form-label" for="phys_lowerback_obs">Observation, palpation, movement</label>
+              <details class="mt5 mb5">
+  
+                <summary><span class="summary">Help prompts</span></summary>
+  
+                <div class="p20">
+                  <ul class="list list-bullet">
+                    <li>Spinal curves</li>
+                    <li>Palpation</li>
+                    <li>Forward flextion</li>
+                    <li>Squat and rise</li>
+  
+                  </ul>
+                </div>
+  
+  
+  
+              </details>
+              <textarea class="form-control form-control-3-4" name="{{ findingsobs }}" id="{{ findingsobs }}" rows="4"></textarea>
+            </div>
+  
+  
+            <div class="panel js-hidden" id="{{ name }}-no">
+  
+              <label class="form-label" for="optional">Optional comments</label>
+  
+              <textarea class="form-control form-control-3-4" name="{{ optionalfindings }}" id="{{ optionalfindings }}" rows="4"></textarea>
+            </div>
+  
+  
+  
+          </fieldset>
+  
+  
+  
+        </div> <!-- panel end -->
+  
+  
+
+
+{% endmacro %}
+
+{% if checked('lowerback', 'lowerback') %}
+<h4 class="heading-small">Lower back</h4>
+{% if checked('lowerbackfindings', 'Yes')%}
+<p>{{lowerbackobs}}</p>
+{% else %}
+<p >No functional difficulties in this area</p>
+<p>{{optionallowerback}}</p>
+{% endif %}
+{% else%}
+
+{% endif %}
+
+{% if checked('leftleg', 'leftleg') %}
+<h4 class="heading-small">Left leg</h4>
+{% if checked('leftlegfindings', 'Yes')%}
+<p>{{leftlegobs}}</p>
+{% else %}
+<p >No functional difficulties in this area</p>
+<p>{{optionalleftleg}}</p>
+{% endif %}
+
+{% else%}
+{% endif %}
+
+
+{% if checked('rightleg', 'rightleg') %}
+<h4 class="heading-small">Right leg</h4>
+{% if checked('rightlegfindings', 'Yes')%}
+<p>{{rightlegobs}}</p>
+{% else %}
+<p >No functional difficulties in this area</p>
+<p>{{optionalrightleg}}</p>
+{% endif %}
+{% else%}
+{% endif %}
+<h1 class="heading-large">Lower back and legs</h1>
+<fieldset>
+          
+  <legend class="mb10">Select the area(s) you want to assess:</legend>
+{{ phycheck("lowerback", "Lower back", "lowerbackfindings", "lowerbackobs", "optionallowerback") }}
+{{ phycheck("leftleg", "Left leg", "leftlegfindings", "leftlegobs", "optionalleftleg") }}
+{{ phycheck("rightleg", "Right leg", "rightlegfindings", "rightlegobs", "optionalrightleg") }}
+{{ phycheck("rightleg", "Right leg", "rightlegfindings", "rightlegobs", "optionalrightleg") }}
+
+
+</fieldset>
+
+
+
+<p class="mt20"><button class="button">Save</button></p>
+ </form>
+
+  </div>
+  <div class="column-one-half">
+    <h1 class="heading-large">Report</h1>
+    
+
+      <div class="review-item">
+        <h2 class="heading-medium">Physical assessments</h2>
+        
+        <p>Consent was given by {{customer.name.first}} to start the physical assessment.</p>
+        
+        <div class="review-inner">	
+            
+          <h3 class="heading-medium mt0">Lower back and legs</h3>
+          <p>Area's assessed</p>
+          {% if checked('lowerlimbs', 'Lower') %}
+          <h4 class="heading-small">Lower back</h4>
+          {% if checked('backfindings', 'Yes')%}
+          <p>{{lowerbackobs}}</p>
+          {% else %}
+          <p >No functional difficulties in this area</p>
+          <p>{{optionalcommentslowerback}}</p>
+          {% endif %}
+          {% else%}
+        
+          {% endif %}
+          {% if checked('lowerlimbs', 'leftleg') %}
+                <h4 class="heading-small">Left leg</h4>
+                {% if checked('leftlegfindings', 'Yes')%}
+                <p>{{leftlegobs}}</p>
+                {% else %}
+                <p>No functional difficulties in this area</p>
+                <p>{{optionalleftleg}}</p>
+                {% endif %}
+                {% else%}
+              
+          {% endif %}
+
+          {% if checked('lowerlimbs', 'rightleg') %}
+          <h4 class="heading-small">Right leg</h4>
+          {% if checked('rightlegfindings', 'Yes')%}
+          <p>{{rightlegobs}}</p>
+          {% else %}
+          <p>No functional difficulties in this area</p>
+          <p>{{optionalrightleg}}</p>
+          {% endif %}
+          {% else%}
+        
+          {% endif %}
+          <p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit lower back and legs</a></p>
+        </div>
+         
+      <div class="review-inner">
+          <h3 class="heading-medium mt0">Neck and arms</h3>
+          {% if checked('neckArms', 'Neck') %}
+          <h4 class="heading-small">Neck</h4>
+          {% if checked('neckfindings', 'Yes')%}
+          <p>{{neckobs}}</p>
+          {% else %}
+          <p >No functional difficulties in this area</p>
+          <p>{{optionalneck}}</p>
+          {% endif %}
+          {% else%}
+        
+          {% endif %}
+      </div>
+      
+        {% if checked('neckwhatcando', 'No') %}		
+        <div class="review-inner">	
+          
+      
+      <h3 class="heading-medium mt0">Neck and arms</h3>
+      <p>{{customer.name.first}}'s neck and arms were not examined</p>
+      <h4 class="heading-small">Reason</h4>
+      <p>{{neckExaminationNoObs}}</p>
+      <p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit lower back and legs</a></p>
+      </div>
+      {% elif checked('neckfindings', 'Yes') or checked('neckfindings', 'No') %}
+      <div class="review-inner">	
+      <h3 class="heading-medium mt0">Neck and arms</h3>
+      <p>{{customer.name.first}}'s neck and arms have been assessed</p>
+      
+      <h4 class="heading-small">Neck</h4>
+      {% if checked('neckfindings', 'Yes') and checked('neckArms', 'neck')  %}
+      <p>{{neckObs}}</p>
+      {% else%}
+      <p>Assessed - no difficulties in this area</p>
+      {% endif %}
+      <h4 class="heading-small">Left upper arm</h4>
+      {% if checked('neckfindings', 'Yes') and checked('neckArms', 'leftUpperArm') %}
+      <p>{{leftUpperArmObs}}</p>
+      {% else%}
+      <p>Assessed - no difficulties in this area</p>
+      {% endif %}
+      <h4 class="heading-small">Right upper arm</h4>
+      {% if checked('neckfindings', 'Yes') and checked('neckArms', 'rightUpperArm')  %}
+      <p>{{rightUpperArmObs}}</p>
+      {% else %}
+      <p>Assessed - no difficulties in this area</p>
+      {% endif %}
+      <h4 class="heading-small">Left Forearm</h4>
+      {% if checked('neckfindings', 'Yes') and checked('neckArms', 'leftForearm')  %}
+      <p>{{leftForearmObs}}</p>
+      {% else %}
+      <p>Assessed - no difficulties in this area</p>
+      {% endif %}
+      <h4 class="heading-small">Right Forearm</h4>
+      {% if checked('neckfindings', 'Yes') and checked('neckArms', 'rightForearm')  %}
+      <p>{{rightForearmObs}}</p>
+      {% else %}
+      <p>Assessed - no difficulties in this area</p>
+      {% endif %}
+      <p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit lower back and legs</a></p>
+      
+      
+      </div>
+      {% endif %}
+      
+      {% if checked('continencecando', 'Yes')%}
+      <div class="review-inner">	
+      
+        <h3 class="heading-medium mt0">Continence</h3>
+        <p>{{customer.name.first}}'s  continence issues have been disscussed</p>
+        <h4 class="heading-small">Continence issues</h4>
+        <p>{{continenceObs}}</p>
+        <p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit continence</a></p>
+      </div>
+        {% elif checked('continencecando', 'No') %}
+        <div class="review-inner">
+        <h3 class="heading-medium mt0">Continence</h3>
+        <p>{{customer.name.first}}'s continence was not discussed</p>
+        <h4 class="heading-small">Reason</h4>
+        <p>{{continenceNoObs}}</p>
+        <p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit continence</a></p>
+      
+      
+      
+      </div>
+      
+      
+      {% endif %}
+        
+        
+      </div>  
+  
+  </div>
+<!-- column -->
+</div><!-- row -->
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+$(document).on('ready',function()
+
+{
+  $('#nugget').focus();
+  
+  $("#nugget").keydown(function (event) {
+    if ((event.keyCode == 13))
+    {
+      $('#submitButton').trigger('click');
+    }
+  });
+
+
+});
+
+
+
+</script>
+
+
+
+
+{% endblock %}

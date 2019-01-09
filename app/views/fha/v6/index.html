@@ -1,0 +1,141 @@
+{% extends path+"/_layout.html" %}
+{% import path+"/caselist/_nav.html" as mainNav %}
+{% block mainNav %}
+{{ mainNav.nav("case", path) }}
+  
+{% endblock %}
+{% block assess_content %}
+
+<main id="content" role="main" class="main-content">
+  
+
+      <div class="container">
+          <div class="grid-row">
+              <div class="column-one-quarter">
+             
+                  {% include path+"/caselist/_search-box.html" %}
+
+                   
+                           <!--   <div class="details-nav v2">
+                                 <ul>
+                                   <li class="active_detail">
+                                   <a href="/{{path}}/">All cases</a>
+                                 </li>
+                                 <li>
+                                    <a href="/{{path}}/myCases.html">My cases</a>
+                                  </li>
+                                </ul>
+                              </div> -->
+              </div>
+              <div class="column-three-quarters">
+                 
+                    <div class="grid-row">
+                      <div class="column-full">
+                          <a href="#" class="button mt25">Create new referal</a>
+                          <hr />
+                        <h1 class="heading-xlarge mt0 mb20">
+                            {% if checked('Choose-centre','Tresco') %}
+                            <span class="heading-secondary">Tresco House</span>
+      {% elif checked('Choose-centre','Fiveways') %}
+      <span class="heading-secondary">Birmingham Fiveways</span>
+      {% endif%}
+                         
+                          450 cases
+                            </h1>
+                          </div>
+                          </div>
+                          <div class="grid-row">   
+                      <div class="card-container">
+
+                        <div class="card">
+                          <a href="/{{path}}/referrals.html">
+                        
+
+                              <h2 class="heading-xlarge">
+                                 49
+                                <span class="heading-small">Referrals</span>
+                               </h2>
+                        
+                          </a>
+                          <ul>
+                          <li><a href="/{{path}}/new-referrals.html">New referrals (35)</a></li>
+                          <li><a href="/{{path}}/uc50-posted.html">In progress</a></li>
+                    
+                         </ul>
+                        </div>
+    
+                        <div class="card">
+                            <a href="/{{path}}/review.html">
+                          
+                          
+
+                                <h2 class="heading-xlarge">
+                                   {{reviewNumbers.total}}
+                                  <span class="heading-small">Reviews</span>
+                                 </h2>
+                          
+                            </a>
+                           <ul>
+                             <li><a href="/{{path}}/ready-for-review.html">Ready for review ({{reviewNumbers.readyForReview}})</a></li>
+                            <li><a href="/{{path}}/requested-medical-evidence.html">Requested medical evidence ({{reviewNumbers.fme}})</a></li>
+                      
+                          </ul> 
+                        </div>
+    
+                          <div class="card">
+                              <a href="/{{path}}/appointments.html">
+                            
+                             
+                            
+                                  <h2 class="heading-xlarge">
+                                     223
+                                    <span class="heading-small">Appointments</span>
+                                   </h2>
+                              </a>
+                              <ul>
+                                  <li><a href="/{{path}}/ready-to-book">Ready to book (35)</a></li>
+                                 <li><a href="/{{path}}/booked-appointments">Booked appointments (178)</a></li>
+                               </ul> 
+                            
+                              </div>
+                            <div class="card">
+                                <a href="/{{path}}/assessment.html">
+                              
+                                  <h2 class="heading-xlarge">
+                                      {{assessNumbers.total}}
+                                    <span class="heading-small">Assessments</span>
+                                   </h2>
+                              
+                                </a>
+                                <ul>
+                                    <li><a href="/{{path}}/ready-for-assessment.html">Ready for assessment ({{assessNumbers.readyForAssessment}})</a></li>
+                                  <li><a href="/{{path}}/">Assessments in progress</a></li>
+                                  <li><a href="/{{path}}/completed-assessments">Assessments completed ({{assessNumbers.assesmentComplete}})</a></li>
+                          
+                                  
+                                 </ul>
+                              
+                                </div>
+                                <div class="card">
+                                    <a href="/{{path}}/assessment.html">
+                                  
+                                      <h2 class="heading-xlarge">
+                                          10
+                                        <span class="heading-small">Outcomes</span>
+                                       </h2>
+                                  
+                                    </a>
+                                
+                                  
+                                    </div>
+                        </div>
+                    </div>
+              </div><!-- column -->
+            </div>
+     
+        <!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

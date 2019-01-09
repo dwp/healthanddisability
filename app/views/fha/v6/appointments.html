@@ -1,0 +1,24 @@
+{% extends path+"/_layout-caselist.html" %}
+
+{% block horizontal_secondary_nav %}
+              
+{{ secondaryNav.nav("appointments", false, menuItems ) }}
+
+
+{% endblock %}  
+
+{% block caselist_content %}
+            <h2 class="heading-medium mt0"><span class="heading-xlarge">10</span><br/>Appointments</h2>
+              <table class="zebra">
+
+                <thead>
+                  <tr>
+                    <th >Details</th>
+                  
+                  </tr>
+                </thead>
+                
+
+              </table>
+
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends path2+"/_layout.html" %}
+
+{% block case_content %}
+
+  {{ data.nuggets | log }}
+  
+  <a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+  <h2 class="heading-large mt20">Work capability assessment</h2>
+
+  {% if data.nuggets.length %}
+
+    {% set last_one = data.nuggets | sortBy("time",true) | last  %}
+    {% set first_one = data.nuggets | sortBy("time",true) | first  %}
+
+    <table class="mb30">
+      <tr>
+        <td>
+          <span class="bold-small">Date:</span> {{ "Do MMM YYYY" | daysAgo }}<br />
+          <span class="bold-small">Time:</span> {{ last_one.time | formatDate("H:mma") }} - {{ first_one.time | formatDate("H:mma") }}
+        </td>
+        <td>
+          <span class="bold-small">Assessor:</span> <a href="mandy_profile/">Heather Harrison</a><br />
+          <span class="bold-small">Assessment Centre:</span> <a href="#">Preston</a>
+        </td>
+      </tr>
+    </table>
+
+    {% for item in data.nuggets | sortBy("time",true) %}
+      <div class="mb10 ev_box">
+        <div class="mb10 ev_content p20">
+          <p class="mb0">{{ item.text }}<br /><!-- <span class="font-xsmall">(<span>{{ item.time | formatDate("H:mma") }}</span>)</span> --></p>
+        {% if item.descriptors.length %}
+          <p class="mt20 mb5">
+          {% for d in item.descriptors %}
+            <span class="tag">{{ d }}</span>
+          {% endfor %}
+            <a data-fancybox data-src="#descriptor_choice" href="javascript:;" data-id="{{ item.id }}" class="des_trigger">change</a>
+          </p>
+        {% else %}
+          <p class="mt20 mb5"><a data-fancybox class="button des_trigger button-small" data-src="#descriptor_choice" href="javascript:;" data-id="{{ item.id }}">Assign descriptors</a></p>
+        {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  {% endif %}
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.evidence__leftnav')
+      .children(":nth-child(1)")
+      .addClass('active')
+
+    $('#des_submit').on('click',function(e)
+    {
+      e.preventDefault();
+      var t = $('#des_form').serializeArray();
+      var des = [], id;
+      $.each(t,function(i,e)
+      {
+        if (e.name == "des_id") id = e.value;
+        if (e.name == "descriptors") des.push(e.value);
+      });
+      var data = {
+        id: id,
+        descriptors: des,
+      }
+      console.log('got here1 ')
+      $.ajax({
+        url: '/{{ path }}/updateEvidence',
+        method: "POST",
+        contentType: 'application/json',
+        data: JSON.stringify(data),
+        dataType: 'json',
+        complete:  function(data,status,xhr) {
+          console.log('got here')
+          document.location.reload(true);
+        }
+      })
+    })
+
+    $('.des_trigger').on('click',function(e)
+    {
+      var id = $(this).data('id');
+      console.log(id)
+      $('#des_id').val(id);
+    });
+  });
+</script>
+{% endblock %}

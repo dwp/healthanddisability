@@ -1,0 +1,398 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>
+  {% if customer.descriptor == "moving" %}
+  Moving around and climbing steps without help
+  {% elif customer.descriptor == 'standing'%}
+  Standing, sitting and moving between the two
+  {% elif customer.descriptor =='reaching'%}
+  Reaching
+  {% elif customer.descriptor =='picking'%}
+  Picking things up and moving them
+  {% elif customer.descriptor =='using'%}
+  Using your hands
+  {% elif customer.descriptor =='speaking'%}
+  Speaking, writing and typing
+  {% elif customer.descriptor =='hearing'%}
+  Hearing and reading
+  {% elif customer.descriptor =='seeing'%}
+  Seeing well enough to get around safely
+  {% elif customer.descriptor =='controlling'%}
+  Controlling your bowels and bladder
+  {% elif customer.descriptor =='staying'%}
+  Staying conscious without fainting, seizures, or blackouts
+  {% elif customer.descriptor =='learning'%}
+  Learning to do new tasks
+  {% elif customer.descriptor =='being'%}
+  Being aware of hazards and danger
+  {% elif customer.descriptor =='planning'%}
+  Planning, starting and finishing everyday tasks
+  {% elif customer.descriptor =='coping'%}
+  Coping with changes to your daily routine
+  {% elif customer.descriptor =='going'%}
+  Going out on your own
+  {% elif customer.descriptor =='meeting'%}
+  Meeting and being with people
+  {% elif customer.descriptor =='behaving'%}
+  Behaving appropriately around other people
+  {% elif customer.descriptor =='eating'%}
+  Eating or drinking
+  {% endif %}
+  
+</h1>
+
+  
+  <div class="grid-row">
+	  
+	  <div class="column-two-thirds">
+	 
+
+   <form action="scoring/mobility" method="post">
+  
+  	<fieldset>
+					
+	    <legend class="heading-medium mb20">
+	       Choose statements that are relevant to this descriptor:
+      </legend>
+      
+       
+      {% if customer.descriptor == "moving" %}
+	    {% for comment in socialWorkComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="movingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+      </div>
+      {% endfor %}
+      {% for comment in typicalDayComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="movingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+	    </div>
+      {% endfor %}
+      {% endif %}
+
+      {% if customer.descriptor == "standing" %}
+	    {% for comment in socialWorkComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="standingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+      </div>
+      {% endfor %}
+      {% for comment in typicalDayComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="standingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+	    </div>
+      {% endfor %}
+      {% endif %}   
+
+      {% if customer.descriptor == "reaching" %}
+	    {% for comment in socialWorkComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="reachingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+      </div>
+      {% endfor %}
+      {% for comment in typicalDayComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="reachingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+	    </div>
+      {% endfor %}
+      {% endif %} 
+
+      {% if customer.descriptor == "picking" %}
+	    {% for comment in socialWorkComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="pickingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+      </div>
+      {% endfor %}
+      {% for comment in typicalDayComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="pickingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+	    </div>
+      {% endfor %}
+      {% endif %} 
+
+      {% if customer.descriptor == "using" %}
+	    {% for comment in socialWorkComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="usingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+      </div>
+      {% endfor %}
+      {% for comment in typicalDayComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="usingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+	    </div>
+      {% endfor %}
+      {% endif %} 
+
+      {% if customer.descriptor == "speaking" %}
+	    {% for comment in socialWorkComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="speakingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+      </div>
+      {% endfor %}
+      {% for comment in typicalDayComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="speakingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+	    </div>
+      {% endfor %}
+      {% endif %} 
+
+      {% if customer.descriptor == "hearing" %}
+	    {% for comment in socialWorkComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="hearingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+      </div>
+      {% endfor %}
+      {% for comment in typicalDayComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="hearingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+	    </div>
+      {% endfor %}
+      {% endif %} 
+
+      {% if customer.descriptor == "seeing" %}
+	    {% for comment in socialWorkComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="seeingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+      </div>
+      {% endfor %}
+      {% for comment in typicalDayComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="seeingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+	    </div>
+      {% endfor %}
+      {% endif %} 
+
+      {% if customer.descriptor == "controlling" %}
+	    {% for comment in socialWorkComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="controllingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+      </div>
+      {% endfor %}
+      {% for comment in typicalDayComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="controllingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+	    </div>
+      {% endfor %}
+      {% endif %} 
+
+
+      {% if customer.descriptor == "staying" %}
+	    {% for comment in socialWorkComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="stayingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+      </div>
+      {% endfor %}
+      {% for comment in typicalDayComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="stayingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+	    </div>
+      {% endfor %}
+      {% endif %} 
+
+      {% if customer.descriptor == "learning" %}
+	    {% for comment in socialWorkComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="learningDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+      </div>
+      {% endfor %}
+      {% for comment in typicalDayComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="learningDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+	    </div>
+      {% endfor %}
+      {% endif %} 
+
+      {% if customer.descriptor == "being" %}
+	    {% for comment in socialWorkComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="beingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+      </div>
+      {% endfor %}
+      {% for comment in typicalDayComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="beingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+	    </div>
+      {% endfor %}
+      {% endif %} 
+
+      {% if customer.descriptor == "planning" %}
+	    {% for comment in socialWorkComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="planningDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+      </div>
+      {% endfor %}
+      {% for comment in typicalDayComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="planningDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+	    </div>
+      {% endfor %}
+      {% endif %} 
+
+      {% if customer.descriptor == "coping" %}
+	    {% for comment in socialWorkComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="copingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+      </div>
+      {% endfor %}
+      {% for comment in typicalDayComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="copingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+	    </div>
+      {% endfor %}
+      {% endif %} 
+
+
+      {% if customer.descriptor == "going" %}
+	    {% for comment in socialWorkComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="goingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+      </div>
+      {% endfor %}
+      {% for comment in typicalDayComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="goingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+	    </div>
+      {% endfor %}
+      {% endif %} 
+
+      {% if customer.descriptor == "meeting" %}
+	    {% for comment in socialWorkComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="meetingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+      </div>
+      {% endfor %}
+      {% for comment in typicalDayComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="meetingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+	    </div>
+      {% endfor %}
+      {% endif %} 
+
+      {% if customer.descriptor == "behaving" %}
+	    {% for comment in socialWorkComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="behavingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+      </div>
+      {% endfor %}
+      {% for comment in typicalDayComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="behavingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+	    </div>
+      {% endfor %}
+      {% endif %} 
+
+      {% if customer.descriptor == "eating" %}
+	    {% for comment in socialWorkComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="eatingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+      </div>
+      {% endfor %}
+      {% for comment in typicalDayComments %}
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="eatingDescriptors[]" value="{{comment.comment}}">
+	      <label for="des1">{{comment.comment}}</label>
+	    </div>
+      {% endfor %}
+      {% endif %} 
+
+
+
+  
+	
+   
+  
+	   
+  </fieldset>
+  
+ 
+  
+  <p class="mt30"><button class="button">Next</button></p>
+  </form>
+  
+  </div>
+
+
+  
+  
+  </div>
+  
+
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('#change_score').on('click',function(e)
+    {
+      e.preventDefault();
+      console.log('got here')
+      $('#been_scored').addClass('js-hidden');
+      $('#rescore').removeClass('js-hidden');
+    });
+
+    // highlight the right left nav link.
+    $($(".nav")[0]).children(":nth-child(1)").addClass('active')
+  });
+</script>
+
+<script>
+  $(".gp-report-show td span").click(function(){
+  $(".content-hide").toggleClass("content-show");
+  $(".gp-report-show").toggleClass("active-show");
+});
+</script>
+<script>
+  $(".esa50-show td span").click(function(){
+  $(".content-hide3").toggleClass("content-show3");
+  $(".esa50-show").toggleClass("active-show");
+});
+</script>
+<script>
+  $(".med3-show td span").click(function(){
+  $(".content-hide2").toggleClass("content-show2");
+  $(".med3-show").toggleClass("active-show");
+});
+</script>
+{% endblock %}
