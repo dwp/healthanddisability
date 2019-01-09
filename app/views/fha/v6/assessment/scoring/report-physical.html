@@ -37,7 +37,7 @@
 
 
 <div class="review-item">
-	<h2 class="heading-medium">Physical assessments</h2>
+	<h2 class="heading-large">Physical assessments</h2>
 	
 	<p>Consent was given by {{customer.name.first}} to start the physical assessment.</p>
 
@@ -48,8 +48,8 @@
 	
 		<h3 class="heading-medium">Lower back and legs</h3>
 			
-		<table>
-				<caption>Left leg</caption>
+		<table class="report-view-table">
+				<caption class="heading-small">Left leg</caption>
 
 				<tbody>
 					<tr>
@@ -67,7 +67,7 @@
 					</tr>
 					<tr>
 						<th>Hip flexion</th>
-						<td>	{% if data['issue2opencomments' and data['leftegfinding']==='Yes'] %}
+						<td>	{% if data['issue2opencomments'] and data['leftegfinding']==='Yes' %}
 							
 							  {{ issue2opencomments }}</p>
 								{% else %}
