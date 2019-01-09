@@ -7,42 +7,52 @@
  <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
 
   
-<h1 class="heading-large">Work capability assessment report</h1>
-  
-  
-  <dl class="assessment-overview">
-  	
-  	<dt>Date of assessment</dt>
-  	<dd>{{ "Do MMM YYYY" | daysAgo }}</dd>
-  	
-  	<dt>Assessment centre</dt>
-  	<dd>Fiveways, Birmingham</dd>
-  	
-  	<dt>Assessor</dt>
-  	<dd>Heather Harrison</dd>
-  	
-  	<dt>Assessment start</dt>
-  	<dd>{{ last_one.time | formatDate("H:mma") }}</dd>
-  	
-  	<dt>Assessment finish</dt>
-  	<dd>{{ first_one.time | formatDate("H:mma") }}</dd>
-  
+<h1 class="heading-large">Work capability report</h1>
 
-  </dl>
 
-   
- <div class="review-wrapper">
+<div class="review-wrapper">
+
+
+<table class="report-view-table">
+<caption class="heading-small">Assessment overview</caption>
+
+	<tbody>
+		<tr>
+			<th>Date of assessment</th>
+			<td>{{ "Do MMM YYYY" | daysAgo }}</td>
+		</tr>
+		<tr>
+			<th>Assessment centre</th>
+			<td>Fiveways, Birmingham</td>
+		</tr>
+		<tr>
+			<th>Assessor</th>
+			<td>Heather Harrison</td>
+		</tr>
+		<tr>
+			<th>Assessment start</th>
+			<td>{{ last_one.time | formatDate("H:mma") }}</td>
+		</tr>
+		<tr>
+			<th>Assessment finish</th>
+			<td>{{ first_one.time | formatDate("H:mma") }}</td>
+		</tr>
+	</tbody>
+</table>
+
  
+	
 
-<h2 class="heading-large">Physical assessments</h2>    
+	<div class="report-item">	
+	
+	
+	<h2 class="heading-large mt0">Physical assessments</h2>    
 
 	
 	<p>Consent was given by {{customer.name.first}} to start the physical assessment.</p>
 	
-
-	<div class="report-item">	
 			
-		<h3 class="heading-medium mt0 mb0">Lower back and legs</h3>
+		<h3 class="heading-medium mt30 mb0">Lower back and legs</h3>
 			
 		<table class="report-view-table">
 				<caption class="heading-small">Left leg</caption>
