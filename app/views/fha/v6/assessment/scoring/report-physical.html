@@ -48,70 +48,160 @@
 	
 		<h3 class="heading-medium">Lower back and legs</h3>
 			
-			<table>
+		<table>
 				<caption>Left leg</caption>
 
 				<tbody>
 					<tr>
 						<th>Straight Leg raising</th>
-						<td>Normal (more than 70˚)</td>
+						<td>
+								{% if data['issue1opencomments'] and data['leftegfinding']==='Yes' %}
+							
+							  {{ issue1opencomments }}</p>
+								{% else %}
+								Normal (more than 70˚)
+								{% endif %}
+							
+							
+						</td>
 					</tr>
 					<tr>
 						<th>Hip flexion</th>
-						<td>Reduced to 110˚</td>
+						<td>	{% if data['issue2opencomments' and data['leftegfinding']==='Yes'] %}
+							
+							  {{ issue2opencomments }}</p>
+								{% else %}
+								Normal (more than 130˚)
+								{% endif %}</td>
 					</tr>
 					<tr>
 						<th>Knee flexion</th>
-						<td>Reduced to less than 45˚</td>
+						<td>	{% if data['issue3opencomments'] and data['leftegfinding']==='Yes' %}
+							
+							  {{ issue3opencomments }}</p>
+								{% else %}
+								Normal (more than 120˚)
+								{% endif %}</td>
 					</tr>
 					<tr>
 						<th>Knee extension</th>
-						<td>Less than full</td>
+						<td>	{% if data['issue4opencomments'] and data['leftegfinding']==='Yes' %}
+							
+							  {{ issue4opencomments }}</p>
+								{% else %}
+								Full
+								{% endif %}</td>
 					</tr>
 					<tr>
 						<th>External hip rotation</th>
-						<td>Client Declined</td>
+						<td>	{% if data['issue5opencomments'] and data['leftegfinding']==='Yes'%}
+							
+							  {{ issue5opencomments }}</p>
+								{% else %}
+								Normal (more than 45˚)
+								{% endif %}</td>
 					</tr>
 					<tr>
 						<th>Ankle Plantarflexion</th>
-						<td>Reduced (less than 50°)</td>
+						<td>	{% if data['issue6opencomments']and data['leftegfinding']==='Yes' %}
+							
+							  {{ issue6opencomments }}</p>
+								{% else %}
+								Normal (more than 50˚)
+								{% endif %}</td>
 					</tr>
 					<tr>
 						<th>Ankle dorsiflexion</th>
-						<td>Normal (20°)</td>
+						<td>	{% if data['issue7opencomments'] and data['leftegfinding']==='Yes' %}
+							
+							  {{ issue7opencomments }}</p>
+								{% else %}
+								Normal (more than 20˚)
+								{% endif %}</td>
 					</tr>
 					<tr>
 						<th>Hallux dorsiflexion</th>
-						<td>No movement</td>
+						<td>	{% if data['issue8opencomments'] and data['leftegfinding']==='Yes' %}
+							
+							  {{ issue8opencomments }}</p>
+								{% else %}
+								Normal (more than 60˚)
+								{% endif %}</td>
 					</tr>
 					<tr>
 						<th>Hallux plantarflexion</th>
-						<td>Less than 40°</td>
+						<td>	{% if data['issue9opencomments'] and data['leftegfinding']==='Yes' %}
+							
+							  {{ issue9opencomments }}</p>
+								{% else %}
+								Normal (more than 40˚)
+								{% endif %}</td>
 					</tr>
 					<tr>
 						<th>Power</th>
-						<td>Slightly reduced</td>
+						<td>	{% if data['issue10opencomments'] and data['leftegfinding']==='Yes' %}
+							
+							  {{ issue10opencomments }}</p>
+								{% else %}
+								Normal
+								{% endif %}</td>
 					</tr>
 					<tr>
 						<th>Tone</th>
-						<td>Increased</td>
+						<td>	{% if data['issue11opencomments'] and data['leftegfinding']==='Yes' %}
+							
+							  {{ issue11opencomments }}</p>
+								{% else %}
+								Normal 
+								{% endif %}</td>
 					</tr>
 					<tr>
 						<th>Knee reflexes</th>
-						<td>Brisk</td>
+						<td>	{% if data['issue12opencomments'] and data['leftegfinding']==='Yes' %}
+							
+							  {{ issue12opencomments }}</p>
+								{% else %}
+								Normal 
+								{% endif %}</td>
 					</tr>
 					<tr>
 						<th>Ankle reflexes</th>
-						<td>Absent</td>
+						<td>	{% if data['issue13opencomments'] and data['leftegfinding']==='Yes' %}
+							
+							  {{ issue13opencomments }}</p>
+								{% else %}
+								Normal 
+								{% endif %}</td>
 					</tr>
 					<tr>
 						<th>Plantar reflexes</th>
-						<td>Down going</td>
+						<td>	{% if data['issue14opencomments'] and data['leftegfinding']==='Yes' %}
+							
+							  {{ issue14opencomments }}</p>
+								{% else %}
+								Normal 
+								{% endif %}</td>
 					</tr>
+					{% if data['leftegfinding']==='Yes' and data['issue15opencomments'] %}
 					<tr>
 						<th>Other findings</th>
-						<td>N/A</td>
+						<td>
+							
+							  {{ issue15opencomments }}
+						
+							</td>
 					</tr>
+					{% endif %}
+					{% if data['leftegfinding']==='No' and data['optionalcomments'] %}
+					<tr>
+						<th>Other findings</th>
+						<td>
+							
+							  {{ optionalcomments }}
+						
+							</td>
+					</tr>
+					{% endif %}
 				</tbody>
 			</table>
 			

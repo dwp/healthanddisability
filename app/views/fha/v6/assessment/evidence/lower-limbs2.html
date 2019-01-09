@@ -19,176 +19,8 @@
 		
 		
 		
-		
-			<div class="">	
-			
-				<h3 class="heading-medium">Lower back and legs</h3>
-					
-					<table>
-						<caption>Left leg</caption>
-		
-						<tbody>
-							<tr>
-								<th>Straight Leg raising</th>
-								<td>
-										{% if data['issue1opencomments'] %}
-									
-									  {{ issue1opencomments }}</p>
-										{% else %}
-										Normal (more than 70˚)
-										{% endif %}
-									
-									
-								</td>
-							</tr>
-							<tr>
-								<th>Hip flexion</th>
-								<td>	{% if data['issue2opencomments'] %}
-									
-									  {{ issue2opencomments }}</p>
-										{% else %}
-										Normal (more than 130˚)
-										{% endif %}</td>
-							</tr>
-							<tr>
-								<th>Knee flexion</th>
-								<td>	{% if data['issue3opencomments'] %}
-									
-									  {{ issue3opencomments }}</p>
-										{% else %}
-										Normal (more than 120˚)
-										{% endif %}</td>
-							</tr>
-							<tr>
-								<th>Knee extension</th>
-								<td>	{% if data['issue4opencomments'] %}
-									
-									  {{ issue4opencomments }}</p>
-										{% else %}
-										Full
-										{% endif %}</td>
-							</tr>
-							<tr>
-								<th>External hip rotation</th>
-								<td>	{% if data['issue5opencomments'] %}
-									
-									  {{ issue5opencomments }}</p>
-										{% else %}
-										Normal (more than 45˚)
-										{% endif %}</td>
-							</tr>
-							<tr>
-								<th>Ankle Plantarflexion</th>
-								<td>	{% if data['issue6opencomments'] %}
-									
-									  {{ issue6opencomments }}</p>
-										{% else %}
-										Normal (more than 50˚)
-										{% endif %}</td>
-							</tr>
-							<tr>
-								<th>Ankle dorsiflexion</th>
-								<td>	{% if data['issue7opencomments'] %}
-									
-									  {{ issue7opencomments }}</p>
-										{% else %}
-										Normal (more than 20˚)
-										{% endif %}</td>
-							</tr>
-							<tr>
-								<th>Hallux dorsiflexion</th>
-								<td>	{% if data['issue8opencomments'] %}
-									
-									  {{ issue8opencomments }}</p>
-										{% else %}
-										Normal (more than 60˚)
-										{% endif %}</td>
-							</tr>
-							<tr>
-								<th>Hallux plantarflexion</th>
-								<td>	{% if data['issue9opencomments'] %}
-									
-									  {{ issue9opencomments }}</p>
-										{% else %}
-										Normal (more than 40˚)
-										{% endif %}</td>
-							</tr>
-							<tr>
-								<th>Power</th>
-								<td>	{% if data['issue10opencomments'] %}
-									
-									  {{ issue10opencomments }}</p>
-										{% else %}
-										Normal
-										{% endif %}</td>
-							</tr>
-							<tr>
-								<th>Tone</th>
-								<td>	{% if data['issue11opencomments'] %}
-									
-									  {{ issue11opencomments }}</p>
-										{% else %}
-										Normal 
-										{% endif %}</td>
-							</tr>
-							<tr>
-								<th>Knee reflexes</th>
-								<td>	{% if data['issue12opencomments'] %}
-									
-									  {{ issue12opencomments }}</p>
-										{% else %}
-										Normal 
-										{% endif %}</td>
-							</tr>
-							<tr>
-								<th>Ankle reflexes</th>
-								<td>	{% if data['issue13opencomments'] %}
-									
-									  {{ issue13opencomments }}</p>
-										{% else %}
-										Normal 
-										{% endif %}</td>
-							</tr>
-							<tr>
-								<th>Plantar reflexes</th>
-								<td>	{% if data['issue14opencomments'] %}
-									
-									  {{ issue14opencomments }}</p>
-										{% else %}
-										Normal 
-										{% endif %}</td>
-							</tr>
-							{% if data['leftegfinding']==='Yes' %}
-							<tr>
-								<th>Other findings</th>
-								<td>
-									
-									  {{ issue15opencomments }}
-								
-									</td>
-							</tr>
-							{% endif %}
-							{% if data['leftegfinding']==='No' %}
-							<tr>
-								<th>Other findings</th>
-								<td>
-									
-									  {{ optionalcomments }}
-								
-									</td>
-							</tr>
-							{% endif %}
-						</tbody>
-					</table>
-					
-								
-		
-			</div>
-			
-			
-			 </div>
 
-				<form action="lower-limbs2" method="Post">
+				<form action="lower-limbs3" method="Post">
 
 										     	<fieldset class="inline">
 		
@@ -196,13 +28,13 @@
 																
 																			
 																				    <div class="multiple-choice" data-target="leftleg-yes">
-																		<input id="findyes" name="leftegfinding" type="radio" value="Yes" {{ 'checked' if data[ 'leftegfinding']==='Yes' else ''}}>
+																		<input id="findyes" name="leftegfinding" type="radio" value="Yes" >
 																							
 																				      <label for="findyes">Yes</label>
 																				    </div>
 																				
 																				    <div class="multiple-choice" data-target="leftleg-no">
-																				      <input id="findno" name="leftegfinding" type="radio" value="No" {{ 'checked' if data[ 'leftegfinding']==='No' else ''}}>
+																				      <input id="findno" name="leftegfinding" type="radio" value="No" >
 																				      <label for="findno"> No - all areas are normal</label>
 																				    </div>
 																				    
@@ -222,7 +54,7 @@
 																		
 																					
 																						    <div class="multiple-choice" data-target="issue1open">
-																						      <input id="issue1" name="issueswith" type="checkbox" value="Issue 1" {{ 'checked' if data[ 'issueswith']==='Issue 1' else ''}}>
+																						      <input id="issue1" name="issueswith" type="checkbox" value="Issue 1" >
 																						      <label for="issue1">Straight Leg raising</label>
 																						    </div>
 																						     <div class="panel js-hidden" id="issue1open">
@@ -231,7 +63,7 @@
 																							</div>
 																						
 																						    <div class="multiple-choice" data-target="issue2open">
-																						      <input id="issue2" name="issueswith" type="checkbox" value="Issue 2" {{ 'checked' if data[ 'issueswith']==='Issue 2' else ''}}>
+																						      <input id="issue2" name="issueswith" type="checkbox" value="Issue 2">
 																						      <label for="issue2"> Hip flexion</label>
 																						    </div>
 																						    <div class="panel js-hidden" id="issue2open">
@@ -240,7 +72,7 @@
 																							</div>
 																						    
 																						    <div class="multiple-choice" data-target="issue3open">
-																						      <input id="issue3" name="issueswith" type="checkbox" value="Issue 3" {{ 'checked' if data[ 'issueswith']==='Issue 3' else ''}}>
+																						      <input id="issue3" name="issueswith" type="checkbox" value="Issue 3" >
 																						      <label for="issue3"> Knee flexion</label>
 																						    </div>
 																						    <div class="panel js-hidden" id="issue3open">
@@ -249,7 +81,7 @@
 																							</div>
 																						    
 																						    <div class="multiple-choice" data-target="issue4open">
-																						      <input id="issue4" name="issueswith" type="checkbox" value="Issue 4" {{ 'checked' if data[ 'issueswith']==='Issue 4' else ''}}>
+																						      <input id="issue4" name="issueswith" type="checkbox" value="Issue 4" >
 																						      <label for="issue4"> Knee extension</label>
 																						    </div>
 																						    <div class="panel js-hidden" id="issue4open">
@@ -258,7 +90,7 @@
 																							</div>
 																						    
 																						    <div class="multiple-choice" data-target="issue5open">
-																						      <input id="issue5" name="issueswith" type="checkbox" value="Issue 5" {{ 'checked' if data[ 'issueswith']==='Issue 5' else ''}}>
+																						      <input id="issue5" name="issueswith" type="checkbox" value="Issue 5">
 																						      <label for="issue5"> External hip rotation</label>
 																						    </div>
 																						    <div class="panel js-hidden" id="issue5open">
@@ -267,7 +99,7 @@
 																							</div>
 																						    
 																						    <div class="multiple-choice" data-target="issue6open">
-																						      <input id="issue6" name="issueswith" type="checkbox" value="Issue 6" {{ 'checked' if data[ 'issueswith']==='Issue 6' else ''}}>
+																						      <input id="issue6" name="issueswith" type="checkbox" value="Issue 6" >
 																						      <label for="issue6"> Ankle Plantarflexion</label>
 																						    </div>
 																						    <div class="panel js-hidden" id="issue6open">
@@ -276,7 +108,7 @@
 																							</div>
 																						    
 																						    <div class="multiple-choice" data-target="issue7open">
-																						      <input id="issue7" name="issueswith" type="checkbox" value="Issue 7" {{ 'checked' if data[ 'issueswith']==='Issue 7' else ''}}>
+																						      <input id="issue7" name="issueswith" type="checkbox" value="Issue 7" >
 																						      <label for="issue7"> Ankle dorsiflexion</label>
 																						    </div>
 																						    <div class="panel js-hidden" id="issue7open">
@@ -285,7 +117,7 @@
 																							</div>
 																						    
 																						    <div class="multiple-choice" data-target="issue8open">
-																						      <input id="issue8" name="issueswith" type="checkbox" value="Issue 8" {{ 'checked' if data[ 'issueswith']==='Issue 8' else ''}}>
+																						      <input id="issue8" name="issueswith" type="checkbox" value="Issue 8" >
 																						      <label for="issue8"> Hallux dorsiflexion</label>
 																						    </div>
 																						    <div class="panel js-hidden" id="issue8open">
@@ -294,7 +126,7 @@
 																							</div>
 																						    
 																						    <div class="multiple-choice" data-target="issue9open">
-																						      <input id="issue9" name="issueswith" type="checkbox" value="Issue 9" {{ 'checked' if data[ 'issueswith']==='Issue 9' else ''}}>
+																						      <input id="issue9" name="issueswith" type="checkbox" value="Issue 9" >
 																						      <label for="issue9"> Hallux plantarflexion</label>
 																						    </div>
 																						    <div class="panel js-hidden" id="issue9open">
@@ -303,7 +135,7 @@
 																							</div>
 																						    
 																						    <div class="multiple-choice" data-target="issue10open">
-																						      <input id="issue10" name="issueswith" type="checkbox" value="Issue 10" {{ 'checked' if data[ 'issueswith']==='Issue 10' else ''}}>
+																						      <input id="issue10" name="issueswith" type="checkbox" value="Issue 10">
 																						      <label for="issue10"> Power</label>
 																						    </div>
 																						    <div class="panel js-hidden" id="issue10open">
@@ -312,7 +144,7 @@
 																							</div>
 																						    
 																						    <div class="multiple-choice" data-target="issue11open">
-																						      <input id="issue11" name="issueswith" type="checkbox" value="Issue 11" {{ 'checked' if data[ 'issueswith']==='Issue 11' else ''}}>
+																						      <input id="issue11" name="issueswith" type="checkbox" value="Issue 11" >
 																						      <label for="issue11"> Tone</label>
 																						    </div>
 																						    <div class="panel js-hidden" id="issue11open">
@@ -321,7 +153,7 @@
 																							</div>
 																						    
 																						    <div class="multiple-choice" data-target="issue12open">
-																						      <input id="issue12" name="issueswith" type="checkbox" value="Issue 12" {{ 'checked' if data[ 'issueswith']==='Issue 12' else ''}}>
+																						      <input id="issue12" name="issueswith" type="checkbox" value="Issue 12" >
 																						      <label for="issue12"> Knee reflexes</label>
 																						    </div>
 																						    <div class="panel js-hidden" id="issue12open">
@@ -330,7 +162,7 @@
 																							</div>
 																						    
 																						    <div class="multiple-choice" data-target="issue13open">
-																						      <input id="issue13" name="issueswith" type="checkbox" value="Issue 13" {{ 'checked' if data[ 'issueswith']==='Issue 13' else ''}}>
+																						      <input id="issue13" name="issueswith" type="checkbox" value="Issue 13" >
 																						      <label for="issue13"> Ankle reflexes</label>
 																						    </div>
 																						    <div class="panel js-hidden" id="issue13open">
@@ -339,7 +171,7 @@
 																							</div>
 																						    
 																						    <div class="multiple-choice" data-target="issue14open">
-																						      <input id="issue14" name="issueswith" type="checkbox" value="Issue 14" {{ 'checked' if data[ 'issueswith']==='Issue 14' else ''}}>
+																						      <input id="issue14" name="issueswith" type="checkbox" value="Issue 14" >
 																						      <label for="issue14"> Plantar reflexes</label>
 																						    </div>
 																						    <div class="panel js-hidden" id="issue14open">
@@ -348,7 +180,7 @@
 																							</div>
 																						    
 																						    <div class="multiple-choice" data-target="issue15open">
-																						      <input id="issue15" name="issueswith" type="checkbox" value="Issue 15" {{ 'checked' if data[ 'issueswith']==='Issue 15' else ''}}>
+																						      <input id="issue15" name="issueswith" type="checkbox" value="Issue 15">
 																						      <label for="issue15"> Other findings</label>
 																						    </div>
 																						    <div class="panel js-hidden" id="issue15open">
