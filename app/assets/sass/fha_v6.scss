@@ -1176,18 +1176,25 @@ span.status {
 
 }
 
+.report-item {
+	padding-top: 20px;
 
+	.report-view-table {
+		margin-bottom: 20px;
+	
+		.heading-medium {
+			margin: 0!important;
+		}
+		caption {
+			padding: 12px 10px 10px 10px;
+			background: $grey-4;
+		}
+		th {
+			font-weight: normal!important;
+			padding-left: 10px;
+			width: 36%!important;
+			vertical-align: top;
+		}
+	}
 
-.report-view-table {
-
-	.heading-medium {
-		margin: 10px 0 10px 0!important;
-	}
-	caption {
-		padding: 12px 10px 10px 10px;
-		background: $grey-4;
-	}
-	th {
-		font-weight: normal!important;
-	}
 }
