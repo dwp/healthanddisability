@@ -41,6 +41,7 @@
 {{ 'Booked' if customer.status == 'Booked' and customer.name.first !== 'Dillon' }}
 {{ 'Booked' if customer.status == 'Booked' and customer.name.first == 'Dillon' and data['book-next']==="yes" }}
 
+
  </p>
      {% if customer.status == 'Assessment started' or customer.status == 'Booked' %}
      {% elif customer.status == 'Assessment completed' %}
