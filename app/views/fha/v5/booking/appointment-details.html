@@ -1,11 +1,12 @@
-{% extends path+"/_layout-case.html" %}
+{% extends path+"/booking/evidence/_layout.html" %}
 
 {% block citizen_content %}
 
 <div class="container">
 
   {# macro #}
-    {{ nav.case_tabs("appointment",1,path1 + "/" + section, customer._id) }}{# macro #}
+
+    {{ nav.case_tabs("appointment-details",1,path1 + "/" + section, customer._id) }}{# macro #}
   
   <div class="grid-row">
 

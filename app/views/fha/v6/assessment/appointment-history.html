@@ -106,20 +106,32 @@
       </p>   
 
       {% else %}
-      <h2 class="heading-medium">Assessment centre rearranged appointment</h2>
-      <p class="small">Does not want to wait any longer - more than 30 minutes
-        <span class="date block mt10 text-secondary">10 December 2018 | 2:46 pm</span>
-      </p>
-      <hr />
-      <h2 class="heading-medium">Rearranged appointment - on day of appointment </h2>
-      <p class="small">Healthcare professional did not attend session, unexpectedly
+  
+              {% if  data['changedByCustomer']==="yes"%}
+                  <h2 class="heading-medium">Rearranged appointment - unable to attend </h2>
+                  <p class="small">{{changedByCustomerComments}}
+                    <span class="date block mt10 text-secondary">07 November 2018 | 10:15 am</span>
+                  </p>
+                  <hr />
+                 
+              {% endif %}
+              
+              {% if data['changedByCustomerComments2'] %}
+      <h2 class="heading-medium">Rearranged appointment - unable to attend </h2>
+      <p class="small">{{changedByCustomerComments2}}
         <span class="date block mt10 text-secondary">07 November 2018 | 10:15 am</span>
       </p>
       <hr />
-      <h2 class="heading-medium">Requested rearrangement</h2>
-      <p class="small">{{customer.name.first}} requested to rearrange apointment because original appointment clashed with another appointment
-        <span class="date block mt10 text-secondary">01 November 2018 | 11:15 am</span>
-      </p>
+              {% endif %}
+
+              {% if data['changedByCustomer']==="no"%}
+               
+                  <h2 class="heading-medium">Rearranged appointment - assessment centre</h2>
+                  <p class="small">Reason for the change is..
+                    <span class="date block mt10 text-secondary">01 November 2018 | 11:15 am</span>
+                  </p>
+
+         {% endif %}
 
   {% endif %}
 </div> 
