@@ -21,16 +21,9 @@
     	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
 		
 		
+			<h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Rearrange appointment</h1>
 			
-		
-		
-
-		<form method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/send-home-book">
-
-	
-		
-			<fieldset>
-				<legend><h1 class="heading-large">Assessment cannot be completed</h1></legend>
+			<legend></legend>
 				{% if checked('stoppassess','other') %}
 				<div class="panel panel-border-wide">
 						<p>
@@ -46,13 +39,15 @@
 				 </p>
 			 </div>
 		 {% endif %}
-		 
-				
-				<div class="form-group mt30">
+		
+		
+
+		<form method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/send-home-book">
+
 
 					    	<fieldset>
 							      <legend class="heading-medium mb10">
-												Why are we unable to complete the assessment? <span class="form-hint mt10 mb0"> Please choose a reason: </span>
+										Reasons we cannot complete the assessment:
 							      </legend>
 							       
 								   {% if checked('stoppassess','other') or customer.status == 'Assessment stopped' %}
@@ -64,10 +59,10 @@
 										</div>
 
 
-										<div class="panel panel-border-narrow js-hidden form-group" id="resourcing">
+										<div class="panel js-hidden" id="resourcing">
 												<fieldset>
 														<legend class="bold mb10">
-																Please select a specific reason: 
+																Choose a reason: 
 														</legend>
 																<div class="multiple-choice">
 																		<input id="know-2" name="Reason" type="radio" value="capacity"  {{checked('Reason', 'capacity') }}>
@@ -108,10 +103,10 @@
 											</label>
 									</div>
 
-									<div class="panel panel-border-narrow js-hidden form-group" id="hcp">
+									<div class="panel js-hidden" id="hcp">
 											<fieldset>
 													<legend class="bold mb10">
-															Please select a specific reason: 
+															Choose a reason: 
 													</legend>
 															<div class="multiple-choice">
 																	<input id="know-2" name="Reason" type="radio" value="unavailable"  {{checked('Reason', 'unavailable') }}>
@@ -142,10 +137,10 @@
 											<label for="know-6">Information or requests not provided</label>
 										</div>
 
-										<div class="panel panel-border-narrow js-hidden form-group" id="requests">
+										<div class="panel js-hidden" id="requests">
 												<fieldset>
 														<legend class="bold mb10">
-																Please select a specific reason: 
+																Choose a reason: 
 														</legend>
 																<div class="multiple-choice">
 																		<input id="know-2" name="Reason" type="radio" value="file"  {{checked('Reason', 'file') }}>
@@ -176,15 +171,15 @@
 													{% else %}
 													<div class="multiple-choice" data-target="other-info2">
 															<input id="Issue" name="Issue" type="radio" value="claimant"  {{checked('Issue', 'claimant') }}>
-															<label for="Issue">Issue with claimant </label>
+															<label for="Issue">Claimant is responsible </label>
 														</div>
 		
 						
 															
-															<div class="panel panel-border-narrow js-hidden form-group" id="other-info2">
+															<div class="panel js-hidden" id="other-info2">
 																	<fieldset>
 																			<legend class="bold mb10">
-																					Please select a specific reason: 
+																					Choose a reason: 
 																			</legend>
 																			 
 																			 
@@ -203,18 +198,57 @@
 																					</div>
 																	</fieldset>
 														 </div>
+														 
+														 
+														 <div class="multiple-choice" data-target="hcp">
+															<input id="know-5" name="Issue" type="radio" value="hcp"  {{checked('assesnotcomp', 'hcp') }}>
+															<label for="know-5">Healthcare professional is responsible
+		
+																</label>
+														</div>
+
+														<div class="panel js-hidden form-group" id="hcp">
+																<fieldset>
+																		<legend class="bold mb10">
+																				Choose a reason: 
+																		</legend>
+																				<div class="multiple-choice">
+																						<input id="know-2" name="Reason" type="radio" value="unavailable"  {{checked('Reason', 'unavailable') }}>
+																						<label for="know-2">Healthcare professional is unavailable (for example, they're ill or called away urgently)
+																							</label>
+																					</div>
+																					<div class="multiple-choice">
+																							<input id="know-2" name="Reason" type="radio" value="attend"  {{checked('Reason', 'attend') }}>
+																							<label for="know-2">Healthcare professional did not attend session, unexpectedly
+																								</label>
+																						</div>
+																						<div class="multiple-choice">
+																								<input id="know-2" name="Reason" type="radio" value="unable"  {{checked('Reason', 'unable') }}>
+																								<label for="know-2">Healthcare professional is unable to continue (for example, a specialist is required)
+																									</label>
+																							</div>
+																							<div class="multiple-choice">
+																									<input id="know-2" name="Reason" type="radio" value="inappropriate"  {{checked('Reason', 'inappropriate') }}>
+																									<label for="know-2">Inappropriate for healthcare professional to see claimant (for example, if they know them)
+																										</label>
+																								</div>
+																</fieldset>
+													 </div>
+														 
+														 
+														 
 		
 														<div class="multiple-choice" data-target="resourcing">
 																<input id="know-4" name="Issue" type="radio" value="resourcing"  {{checked('assesnotcomp', 'resourcing') }}>
-																<label for="know-4">Resourcing, technology or facilities issue
+																<label for="know-4">Resourcing, technology or facilities
 																	</label>
 															</div>
 
 
-															<div class="panel panel-border-narrow js-hidden form-group" id="resourcing">
+															<div class="panel js-hidden" id="resourcing">
 																	<fieldset>
 																			<legend class="bold mb10">
-																					Please select a specific reason: 
+																					Choose a reason: 
 																			</legend>
 																					<div class="multiple-choice">
 																							<input id="know-2" name="Reason" type="radio" value="capacity"  {{checked('Reason', 'capacity') }}>
@@ -240,7 +274,7 @@
 																									</div>
 																									<div class="multiple-choice">
 																											<input id="know-2" name="Reason" type="radio" value="accommodation"  {{checked('Reason', 'accommodation') }}>
-																											<label for="know-2">Accommodation problem (for example, power failure or evacuation)
+																											<label for="know-2">Building problem (for example, power failure or evacuation)
 																											</label>
 																									</div>
 																	</fieldset>
@@ -248,51 +282,18 @@
 
                              
 
-														<div class="multiple-choice" data-target="hcp">
-															<input id="know-5" name="Issue" type="radio" value="hcp"  {{checked('assesnotcomp', 'hcp') }}>
-															<label for="know-5">Issue with healthcare professional
-		
-																</label>
-														</div>
-
-														<div class="panel panel-border-narrow js-hidden form-group" id="hcp">
-																<fieldset>
-																		<legend class="bold mb10">
-																				Please select a specific reason: 
-																		</legend>
-																				<div class="multiple-choice">
-																						<input id="know-2" name="Reason" type="radio" value="unavailable"  {{checked('Reason', 'unavailable') }}>
-																						<label for="know-2">Healthcare professional is unavailable (for example, they're ill or called away urgently)
-																							</label>
-																					</div>
-																					<div class="multiple-choice">
-																							<input id="know-2" name="Reason" type="radio" value="attend"  {{checked('Reason', 'attend') }}>
-																							<label for="know-2">Healthcare professional did not attend session, unexpectedly
-																								</label>
-																						</div>
-																						<div class="multiple-choice">
-																								<input id="know-2" name="Reason" type="radio" value="unable"  {{checked('Reason', 'unable') }}>
-																								<label for="know-2">Healthcare professional is unable to continue (for example, a specialist is required)
-																									</label>
-																							</div>
-																							<div class="multiple-choice">
-																									<input id="know-2" name="Reason" type="radio" value="inappropriate"  {{checked('Reason', 'inappropriate') }}>
-																									<label for="know-2">Inappropriate for healthcare professional to see claimant (for example, if they know them)
-																										</label>
-																								</div>
-																</fieldset>
-													 </div>
+														
 
 
 														<div class="multiple-choice" data-target="requests">
 																<input id="know-6" name="Issue" type="radio" value="requests"  {{checked('assesnotcomp', 'requests') }}>
-																<label for="know-6">Information or requests not provided</label>
+																<label for="know-6">Missing information or requests</label>
 															</div>
 
-															<div class="panel panel-border-narrow js-hidden form-group" id="requests">
+															<div class="panel js-hidden form-group" id="requests">
 																	<fieldset>
 																			<legend class="bold mb10">
-																					Please select a specific reason: 
+																					Choose a reason: 
 																			</legend>
 																					<div class="multiple-choice">
 																							<input id="know-2" name="Reason" type="radio" value="file"  {{checked('Reason', 'file') }}>
@@ -324,13 +325,8 @@
 								    
 								    
 						    </fieldset>
-						    
-					</div>
-	
-			</fieldset>
-				
 
-				<p class="mt30"><button class="button">Next</button></p>
+				<p class="mt30"><button class="button">Save and continue</button></p>
 				</form>
 			
 
