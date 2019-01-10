@@ -1,0 +1,91 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+		
+		
+			
+		
+	
+		   <form  method="post" action="/{{path}}/scrutiny/{{customer._id}}/appointment">
+			
+	
+		<h1 class="heading-large">Choose appointment preferences</h1>
+		
+		
+
+				
+				
+				<div class="form-group">
+
+					    	<fieldset>
+							      <legend class="visually-hidden">
+							       Choose appointment prefeerences
+							      </legend>
+							       
+							       
+							       <div class="multiple-choice">
+										      <input id="know-1" name="scenario" type="checkbox" value="pref-1"  {{checked('scenario', 'pref-1') }}>
+										      <label for="know-1">Preference one</label>
+										    </div>
+										
+										    <div class="multiple-choice">
+										      <input id="know-2" name="scenario" type="checkbox" value="pref-2"  {{checked('scenario', 'pref-2') }}>
+										      <label for="know-2">Preference two</label>
+												</div>
+						
+												<div class="multiple-choice">
+														<input id="know-3" name="scenario" type="checkbox" value="pref-3"  {{checked('scenario', 'pref-2') }}>
+														<label for="know-3">Preference three</label>
+													</div>
+										    
+								    
+								    
+								    
+						    </fieldset>
+						    
+					</div>
+	
+
+			
+
+				<p class="mt30"><button class="button">Save and continue</button></p>
+
+			</form>
+
+		
+    
+
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

@@ -1,0 +1,65 @@
+{% extends path+"/_layout-case.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.case_tabs("appointment",1,path1, customer._id) }}
+    
+<div class="grid-row">
+    <div class="column-one-third">
+          
+            <h2 class="heading-small">Appointment preferences</h2> 
+            {% if data['scenario'] %}
+            <ul class="list-bullet mb10">
+  
+                {% if checked('scenario', 'pref-1')%}
+                <li>Preference one</li>
+                {% endif %}
+                {% if checked('scenario', 'pref-2')%}
+                <li>Preference two</li>
+                {% endif %}
+                {% if checked('scenario', 'pref-3')%}
+                <li>Preference three</li> 
+                {% endif %}
+                </ul>
+            {% endif %}  
+              <p><a href="/{{path}}/scrutiny/{{customer._id}}/appointment-preferences"  class="button-secondary">Add preferences</a></p>
+           
+        
+          
+    </div>
+</div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
