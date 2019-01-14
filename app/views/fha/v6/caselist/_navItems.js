@@ -45,6 +45,11 @@ module.exports = function(versionNumber, reviewCustomers, assessmentCustomers, a
 			url: "booked-appointments",
 			label: "Booked appointments",
 			quantity: 26
+		}
+	    ,{
+			url: "did-not-attend",
+			label: "Did not attend",
+			quantity: 10
 		}]
 	},{
 		url:"assessment",
@@ -52,7 +57,7 @@ module.exports = function(versionNumber, reviewCustomers, assessmentCustomers, a
 		quantity:  assessmentCustomers.length,
 		subItems: [{
 			url: "todays-appointments",
-			label: "Arrivals",
+			label: "Confirm arrival",
 			quantity: assessmentCustomers.filter(customer => customer.status === "Appointment today").length
 		},
 		{

@@ -46,7 +46,7 @@ router.get('*', function (req, res, next) {
     req.session.data.observations = [];
   }
 
-  res.locals.menuItems = require(filePath +'/caselist/_navItems.js')(versionNumber, reviewCustomers, assessmentCustomers );
+  res.locals.menuItems = require(filePath +'/caselist/_navItems.js')(versionNumber, reviewCustomers, assessmentCustomers, appointmentCustomers );
 
   next()
 })
@@ -57,6 +57,17 @@ router.get('/', function (req, res, next) {
     total: reviewCustomers.length,
     readyForReview: reviewCustomers.filter(customer => customer.status === "review").length,
     fme: reviewCustomers.filter(customer => customer.status === "fme").length,
+  }
+  next()
+})
+
+router.get('/', function (req, res, next) {
+  
+  res.locals.appointmentNumbers = {
+    total: appointmentCustomers.length,
+    readyToBook: appointmentCustomers.filter(customer => customer.status === "Ready to book").length,
+    booked: appointmentCustomers.filter(customer => customer.status === "Booked").length,
+    didNotAttend: appointmentCustomers.filter(customer => customer.status === "Did not attend").length,
   }
   next()
 })
@@ -105,7 +116,7 @@ router.post('*', function (req, res, next) {
   if(!req.session.data.observations){
     req.session.data.observations = [];
   }
-  res.locals.menuItems = require(filePath +'/caselist/_navItems.js')(versionNumber, reviewCustomers, assessmentCustomers);
+  res.locals.menuItems = require(filePath +'/caselist/_navItems.js')(versionNumber, reviewCustomers, assessmentCustomers, appointmentCustomers);
   
   next()
 })
@@ -132,6 +143,7 @@ router.get('*/record_phys_exam', function (req, res, next) {
 })
 
 var nug_id = 0;
+
 
 /*
   Used to save indiviudal "nuggets" of evidence from the add evidence screen
@@ -1689,6 +1701,10 @@ router.post("/scrutiny/:customerId/fme-confirm", function(req, res, next){
 });
 
 
+
+
+
+
 var assessmentCustomers = require(filePath +'/data/assessment/readyForAssessment.js');
 
 router.get('/assessment', function(req, res, next){
@@ -2163,6 +2179,52 @@ router.get('/send-home-book', function (req, res) {
     //locale: locale
   })
 })
+
+
+/// appointment data -------
+var appointmentCustomers = require(filePath +'/data/appointment/appointments.js');
+
+
+router.get('/booking/:customerId/*', function(req, res, next){
+  res.locals.customer = appointmentCustomers
+                          .filter(customer => customer._id === req.params.customerId)[0];
+
+  console.log(res.locals.customer)
+  next()
+
+})
+
+router.get('/booking', function(req, res, next){
+  res.locals.customers = appointmentCustomers;
+ 
+  next()
+})
+
+router.get('/did-not-attend', function(req, res, next){
+  res.locals.customers = appointmentCustomers
+                            .filter(customer => customer.status === "Did not attend");
+  next()
+})
+
+
+
+
+router.get('/booking/:customerId/:pageName', function(req, res, next){
+  
+  res.render(viewPath +'/booking/' + req.params.pageName);
+
+
+})
+
+router.get('/booking/:customerId/details', function(req, res, next){
+  
+  res.render(viewPath +'/booking/details/index');
+
+
+})
+
+
+/// end appointment data -------
 
 
 
