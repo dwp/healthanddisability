@@ -24,18 +24,28 @@
 <div class="grid-row">
     <div class="column-one-third">
           
-            <h2 class="heading-small">Appointment preferences</h2> 
+            <h2 class="heading-medium mt10">Appointment preferences</h2> 
+            
             {% if data['scenario'] %}
-            <ul class="list-bullet mb10">
+            
+            <h3 class="heading-small">{{customer.name.first}} is unavailable on:</h3>
+            <ul class="list-bullet pref-list">
   
                 {% if checked('scenario', 'pref-1')%}
-                <li>Preference one</li>
+                <li>Monday <span>afternoon</span>
+                </li>
                 {% endif %}
                 {% if checked('scenario', 'pref-2')%}
-                <li>Preference two</li>
+                <li>Tuesday</li>
                 {% endif %}
                 {% if checked('scenario', 'pref-3')%}
-                <li>Preference three</li> 
+                <li>Wednesday</li> 
+                {% endif %}
+                {% if checked('scenario', 'pref-4')%}
+                <li>Thursday</li> 
+                {% endif %}
+                {% if checked('scenario', 'pref-5')%}
+                <li>Friday</li> 
                 {% endif %}
                 </ul>
             {% endif %}  
