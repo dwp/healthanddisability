@@ -18,7 +18,7 @@
             
            <form action="request-rearrangement-book" method="post">
                 <fieldset class="form-group">
-                    <legend class="form-label-bold">
+                    <legend class="heading-medium mb5">
                         Reason for rearrangement:
                     </legend>
                     <div class="multiple-choice" data-target="customer-request-box">
@@ -41,12 +41,12 @@
 
                     
                    <div class="panel js-hidden" id="customer-request-box">
-                    <label class="form-label">Reason for request:</label>
+                    <label class="form-label-bold">What is the request?</label>
                     {% if data['changedByCustomer']==="yes" %}
                   
-                    <textarea name="changedByCustomerComments2" class="form-control" style="height: 150px;"></textarea>
+                    <textarea name="changedByCustomerComments2" class="form-control" style="height: 150px; width: 90%;"></textarea>
                     {% else %}
-                    <textarea name="changedByCustomerComments" class="form-control" style="height: 150px;"></textarea>
+                    <textarea name="changedByCustomerComments" class="form-control" style="height: 150px; width: 90%;"></textarea>
                     {% endif%}
                 </div>
 
@@ -58,28 +58,25 @@
                     
                     <div class="panel js-hidden" id="we-changed">
                      <fieldset>
-	                    <legend class="form-label">
+	                    <legend class="form-label-bold">
 	                        Reason:
 	                    </legend>
 	                    <div class="multiple-choice">
 	                        <input type="radio" name="changes" id="changedBy1" value="yes">
-	                        <label for="changedBy1">Reason for the change is...</label>
+	                        <label for="changedBy1">Healthcare professional is unavailable (for example, they're ill or called away urgently)</label>
 	                    </div>
 	                    <div class="multiple-choice">
 	                        <input type="radio" name="changes" id="changedBy2" value="yes">
-	                        <label for="changedBy2">Reason for the change is...</label>
+	                        <label for="changedBy2">Building problem (for example, power failure or evacuation)</label>
 	                    </div>
-	                    <div class="multiple-choice">
-	                        <input type="radio" name="changes" id="changedBy3" value="yes">
-	                        <label for="changedBy3">Reason for the change is...</label>
-	                    </div>
+
                      </fieldset>
                     </div>
 
                 </fieldset>
                
                 <p>
-                    <button class="button">Next</button>
+                    <button class="button">Save and continue</button>
                 </p>
             </form>
         </div>

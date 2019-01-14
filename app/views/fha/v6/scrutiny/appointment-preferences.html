@@ -27,7 +27,7 @@
 		   <form  method="post" action="/{{path}}/scrutiny/{{customer._id}}/appointment">
 			
 	
-		<h1 class="heading-large">Choose appointment preferences</h1>
+		<h1 class="heading-large">Appointment preferences</h1>
 		
 		
 
@@ -36,24 +36,54 @@
 				<div class="form-group">
 
 					    	<fieldset>
-							      <legend class="visually-hidden">
-							       Choose appointment prefeerences
+							      <legend class="heading-medium mb5">
+							       Select the days {{customer.name.first}} is unavailable:
 							      </legend>
 							       
 							       
-							       <div class="multiple-choice">
+							       <div class="multiple-choice" data-target="monday-panel">
 										      <input id="know-1" name="scenario" type="checkbox" value="pref-1"  {{checked('scenario', 'pref-1') }}>
-										      <label for="know-1">Preference one</label>
+										      <label for="know-1">Monday</label>
 										    </div>
+										    
+										   <div class="panel js-hidden" id="monday-panel">
+												<fieldset>
+												      <legend class="form-label-bold mb5">
+												      {{customer.name.first}} is unavailable:
+												      </legend>
+												      <div class="multiple-choice">
+													      <input id="available1" name="available" type="radio" value="available1">
+													      <label for="available1">Morning</label>
+													    </div>
+													    <div class="multiple-choice">
+													      <input id="available2" name="available" type="radio" value="available2">
+													      <label for="available2">Afternoon</label>
+													    </div>
+													    <div class="multiple-choice">
+													      <input id="available3" name="available" type="radio" value="available3">
+													      <label for="available3">All day</label>
+													    </div>
+												</fieldset>
+											</div>
 										
 										    <div class="multiple-choice">
 										      <input id="know-2" name="scenario" type="checkbox" value="pref-2"  {{checked('scenario', 'pref-2') }}>
-										      <label for="know-2">Preference two</label>
+										      <label for="know-2">Tuesday</label>
 												</div>
 						
 												<div class="multiple-choice">
-														<input id="know-3" name="scenario" type="checkbox" value="pref-3"  {{checked('scenario', 'pref-2') }}>
-														<label for="know-3">Preference three</label>
+														<input id="know-3" name="scenario" type="checkbox" value="pref-3"  {{checked('scenario', 'pref-3') }}>
+														<label for="know-3">Wednesday</label>
+													</div>
+													
+													<div class="multiple-choice">
+														<input id="know-4" name="scenario" type="checkbox" value="pref-4"  {{checked('scenario', 'pref-4') }}>
+														<label for="know-4">Thursday</label>
+													</div>
+													
+													<div class="multiple-choice">
+														<input id="know-5" name="scenario" type="checkbox" value="pref-5"  {{checked('scenario', 'pref-5') }}>
+														<label for="know-5">Friday</label>
 													</div>
 										    
 								    
