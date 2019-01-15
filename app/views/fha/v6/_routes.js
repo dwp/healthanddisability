@@ -649,6 +649,15 @@ router.get('/booking/decision/:customerId/:page', function(req, res, next){
 })
 
 
+router.get('/booking/booked/:customerId/*', function(req, res, next){
+  res.locals.customer = appointmentCustomers
+                          .filter(customer => customer._id === req.params.customerId)[0];
+
+  console.log(res.locals.customer)
+  next()
+
+})
+
 router.get('/assessment/:customerId/*', function(req, res, next){
   res.locals.customer = assessmentCustomers
                           .filter(customer => customer._id === req.params.customerId)[0];
@@ -1011,7 +1020,7 @@ router.get('/booking/arrived/:customerId/send-home', function(req, res, next){
 
 
 router.get('/booking/booked/:customerId/details', function(req, res, next){
-  res.render(viewPath +'/booking/details/contact');
+  res.render(viewPath +'/booking/details/index');
 })
 
 router.get('/booking/booked/:customerId/timeline', function(req, res, next){
@@ -2182,19 +2191,13 @@ router.get('/send-home-book', function (req, res) {
 
 
 /// appointment data -------
+
+
+
 var appointmentCustomers = require(filePath +'/data/appointment/appointments.js');
 
 
-router.get('/booking/:customerId/*', function(req, res, next){
-  res.locals.customer = appointmentCustomers
-                          .filter(customer => customer._id === req.params.customerId)[0];
-
-  console.log(res.locals.customer)
-  next()
-
-})
-
-router.get('/booking', function(req, res, next){
+router.get('/appointments', function(req, res, next){
   res.locals.customers = appointmentCustomers;
  
   next()
@@ -2206,22 +2209,35 @@ router.get('/did-not-attend', function(req, res, next){
   next()
 })
 
-
-
-
-router.get('/booking/:customerId/:pageName', function(req, res, next){
-  
-  res.render(viewPath +'/booking/' + req.params.pageName);
-
-
+router.get('/ready-to-book', function(req, res, next){
+  res.locals.customers = appointmentCustomers
+                            .filter(customer => customer.status === "Ready to book");
+  next()
 })
 
-router.get('/booking/:customerId/details', function(req, res, next){
+router.get('/booked-appointments', function(req, res, next){
+  res.locals.customers = appointmentCustomers
+                            .filter(customer => customer.status === "Ready to book");
+  next()
+})
+
+
+router.get('/booking/booked/:customerId/evidence', function(req, res, next){
   
   res.render(viewPath +'/booking/details/index');
 
 
 })
+
+router.get('/booking/booked/:customerId/details/:pageName', function(req, res, next){
+  
+  res.render(viewPath +'/booking/details/' + req.params.pageName);
+
+
+})
+
+
+
 
 
 /// end appointment data -------

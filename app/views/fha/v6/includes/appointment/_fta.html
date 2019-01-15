@@ -1,0 +1,104 @@
+
+  <div class="full">
+   
+</div>
+
+<div class="column-one-third">
+    {% if customer.name.first == 'Valerie' %}
+    <div class="panel panel-warning">
+      <p>{{customer.name.first}} has previously re-arranged their appointment</p>
+    </div>
+    {% endif %}  
+
+    <!--<div class="panel panel-info">{{customer.name.first}} contacted us and provided us with a reason</div> -->
+    {% if customer.name.first == 'Sarah' %}
+    <div class="panel panel-warning">
+        <p>{{customer.name.first}} missed there appointment</p>
+      </div>
+    <p><a href="/{{path1}}/booked/{{customer._id}}/request-rearrangement" class="button-secondary">Did not attend</a></p>
+    {% endif %}  
+      
+</div>
+<div class="column-two-thirds">
+    <div class="card-container">
+      
+ 
+        <section class="card">
+            <a href="/fha/v6/booking/booked/{{customer._id}}/appointment-history">
+          <h2 class="heading-small">
+            Appointment history
+            <span class="heading-xlarge mt10 mb0">
+                {% if customer.name.first == 'Dominguez' and data['appointments-dom']==="yes" %}
+                3
+                {% elif data['changedByCustomer']==="yes" and  data['changedByCustomer']==="no" 
+                or customer.name.first == 'Dominguez' or customer.name.first == 'Dillon' and data['book-next']==="yes"
+                or data['changedByCustomer']==="yes" and data['changedByCustomerComments2']
+                or customer.name.first == 'Arnaq'
+                %}
+                2
+                {% elif data['changedByCustomer']==="yes" or data['changedByCustomer']==="no" 
+                 %}
+                1
+                {% else%}
+              0
+                {% endif %}
+              </span>
+          </h2>
+          <ul class="content">
+
+              {% if customer.name.first == 'Arnaq'%}
+              <li>
+                  <h3 class="bold mt0 small">Did not attend appointment <span class="badge alt mt10">Did not attend</span></h3>
+                  <p class="small">Monday 14 Jan 2018 4:00pm
+                  </p></li>
+
+
+                  <li>
+                      <h3 class="bold mt0 small">Rearranged appointment  <span class="badge alt mt10">Unable to attend</span></h3>
+                      <p class="small">Arnaq requested to rearrange appointment because original appointment clashed with another appointment
+                        <span class="date">23 October 2018 | 10:15 am</span>
+                      </p></li>
+
+              {% endif %}
+              <li><p class="small" ><span>More appointment history</span></p></li>
+        
+          </ul>
+          
+
+        
+          </a>
+      
+      
+        </section>
+        
+        <section class="card">
+            <a href="/fha/v6/booking/booked/{{customer._id}}/appointment-fta">
+          <h2 class="heading-small">
+           Failure to attend  
+           <span class="heading-xlarge mt10 mb0">
+            
+            1
+              
+            </span>	
+                  
+          </h2>
+
+          <ul class="content">
+
+              {% if customer.name.first == 'Arnaq'%} 
+              <li>
+                  <h3 class="bold mt0 small">Reason</h3>
+                  <p class="small">Arnaq was having a bad day with his arthritis and was struggling to get out of the house, he asked for a rearrangement but we couldnt because he had previously re-arranged
+                    his appointment.
+                  </p></li>
+
+              {% endif %}
+              <li><p class="small" ><span>More failure to attend</span></p></li>
+        
+          </ul>
+
+          
+        </a> 
+        </section>
+    </div>
+  </div>

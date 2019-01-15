@@ -1,0 +1,67 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.case_tabs("appointment",1,path1, customer._id) }}
+    
+    
+    <p class="yes-kdBar"> <a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+  <h1 class="heading-large mb0">Failure to attend</h1>
+    
+    
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+
+        <h2 class="heading-medium">Did not attend -  Monday 14 Jan 2018 4:00pm</h2>
+        <div class="panel panel-warning">
+            <p>Arnaq has previously re-arranged their appointment</p>
+          </div>
+                
+        <h3 class="heading-small">Reason</h3>
+        <p class="small">Arnaq was having a bad day with his arthritis and was struggling to get out of the house, he asked for a rearrangement but we couldnt because he had previously re-arranged
+            his appointment.
+                  </p>
+
+        <p><a href="/{{path}}/assessment/{{customer._id}}/evidence/send-home-book"  class="button-secondary">Add or edit reason</a></p>
+ 
+
+
+  
+</div> 
+</div>
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

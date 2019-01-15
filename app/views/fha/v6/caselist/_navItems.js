@@ -36,20 +36,20 @@ module.exports = function(versionNumber, reviewCustomers, assessmentCustomers, a
 	},{
 		url:"appointments",
 		label:"Appointments", 
-		quantity: 46,
+		quantity: appointmentCustomers.length,
 		subItems: [{
 			url: "ready-to-book",
 			label: "Ready to book",
-			quantity: 21
+			quantity:appointmentCustomers.filter(customer => customer.status === "Ready to book").length
 		},{
 			url: "booked-appointments",
 			label: "Booked appointments",
-			quantity: 26
+			quantity: appointmentCustomers.filter(customer => customer.status === "Booked").length
 		}
 	    ,{
 			url: "did-not-attend",
 			label: "Did not attend",
-			quantity: 10
+			quantity: appointmentCustomers.filter(customer => customer.status === "Did not attend").length
 		}]
 	},{
 		url:"assessment",

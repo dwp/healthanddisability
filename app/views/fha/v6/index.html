@@ -88,13 +88,14 @@
                              
                             
                                   <h2 class="heading-xlarge">
-                                     223
+                                      {{appointmentNumbers.total}}
                                     <span class="heading-small">Appointments</span>
                                    </h2>
                               </a>
                               <ul>
-                                  <li><a href="/{{path}}/ready-to-book">Ready to book (35)</a></li>
-                                 <li><a href="/{{path}}/booked-appointments">Booked appointments (178)</a></li>
+                                  <li><a href="/{{path}}/ready-to-book">Ready to book ({{ appointmentNumbers.readyToBook}})</a></li>
+                                 <li><a href="/{{path}}/booked-appointments">Booked appointments({{ appointmentNumbers.booked}})</a></li>
+                                 <li><a href="/{{path}}/did-not-attend">Did not attend ({{ appointmentNumbers.didNotAttend}})</a></li>
                                </ul> 
                             
                               </div>
@@ -103,13 +104,14 @@
                               
                                   <h2 class="heading-xlarge">
                                       {{assessNumbers.total}}
-                                    <span class="heading-small">Assessments</span>
+                                    <span class="heading-small">Today's appointments</span>
                                    </h2>
                               
                                 </a>
                                 <ul>
-                                    <li><a href="/{{path}}/ready-for-assessment.html">Ready for assessment ({{assessNumbers.readyForAssessment}})</a></li>
-                                  <li><a href="/{{path}}/">Assessments in progress</a></li>
+                                  <li><a href="/{{path}}/todays-appointments.html">Confirm arrival ({{assessNumbers.appointmentToday}})</a></li>
+                                  <li><a href="/{{path}}/ready-for-assessment.html">Ready for assessment ({{assessNumbers.readyForAssessment}})</a></li>
+                                  <li><a href="/{{path}}/assessment-stopped">Assessments stopped ({{assessNumbers.assesmentStopped}})</a></li>
                                   <li><a href="/{{path}}/completed-assessments">Assessments completed ({{assessNumbers.assesmentComplete}})</a></li>
                           
                                   
