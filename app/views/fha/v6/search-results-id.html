@@ -23,13 +23,14 @@
         <td>	<span class="block">
                 {{ 'Requested medical evidence'  if customer.status == 'fme'}}
                 {{ 'Ready for review' if customer.status == 'review'}}
-                {{ 'Booked' if customer.status == 'booked'}}
+                {{ 'Booked' if customer.status == 'Booked'}}
+                {{ 'Ready to book' if customer.status == 'Ready to book'}}
                 </span></span>
         </td>
     </tr>
 
     {% endfor %}
-{% else %}
+{% elif customers.length < 1 %}
 
 <h2 class="heading-medium mt0"><span class="heading-xlarge">0</span><br/>Search results</h2>
 <hr class="mt0"/>

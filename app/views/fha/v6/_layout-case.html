@@ -20,6 +20,9 @@
             {% elif customer.status == 'Ready to book' or customer.status == 'Booked' or customer.status == 'Did not attend'%}
             <p class="returnRef"><a href="/{{path}}/appointments">Return to case list</a></p>
             <hr>
+            {% elif customer.status == 'Security booked'%}
+            <p class="returnRef"><a href="/{{path}}/search-results-id">Return to search</a></p>
+            <hr>
             {% else %}
       		<p class="returnRef"><a href="/{{path}}/ready-for-review">Return to case list</a></p>
           <hr>
@@ -45,9 +48,10 @@
 {{ 'Ready to book' if customer.status == 'Booked' and customer.name.first == 'Dillon' and data['book-next']!=="yes" }}
 {{ 'Booked' if customer.status == 'Booked' and customer.name.first !== 'Dillon' }}
 {{ 'Booked' if customer.status == 'Booked' and customer.name.first == 'Dillon' and data['book-next']==="yes" }}
+{{ 'Booked' if customer.status == 'Security booked' }}
 
  </p>
-     {% if customer.status == 'Assessment started' or customer.status == 'Booked' %}
+     {% if customer.status == 'Assessment started' or customer.status == 'Booked' or customer.status == 'Security booked'%}
      {% elif customer.status == 'Assessment completed' %}
      <p><a href="/{{path}}/assessment/{{customer._id}}/scoring/report-view" class="button">Rework report</a></p>   
    

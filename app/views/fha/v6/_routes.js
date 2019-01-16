@@ -1628,7 +1628,7 @@ router.get('/scrutiny/:customerId/*', function(req, res, next){
 })
 
 router.get('/security/:customerId/*', function(req, res, next){
-  res.locals.customer = reviewCustomers
+  res.locals.customer = appointmentCustomers
                           .filter(customer => customer._id === req.params.customerId)[0];
     
   next()
@@ -2107,7 +2107,7 @@ router.post('/search-results-id', function(req, res, next){
     return string.replace(/\s/g,'').toUpperCase();
   }
   var NINO = req.body.search.trim('')
-  res.locals.customers = reviewCustomers
+  res.locals.customers = appointmentCustomers
           .filter(customer => sanitizeField(customer.NINO) === sanitizeField(req.body.search));
 
   res.locals.searchField = req.body.search;
