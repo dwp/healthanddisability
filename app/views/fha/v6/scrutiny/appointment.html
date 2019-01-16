@@ -28,7 +28,10 @@
             
             {% if data['scenario'] %}
             
-            <h3 class="heading-small">{{customer.name.first}} is unavailable on:</h3>
+            
+            
+            <h3 class="heading-small">Days {{customer.name.first}} is unavailable:</h3>            
+            
             <ul class="list-bullet pref-list">
   
                 {% if checked('scenario', 'pref-1')%}
@@ -49,6 +52,18 @@
                 {% endif %}
                 </ul>
             {% endif %}  
+                     
+            <h3 class="heading-small">Dates {{customer.name.first}} is unavailable:</h3>
+            <ul class="list-bullet pref-list">
+  
+                <li>26 June 2019 &ndash; 14 July 2019</li>
+                
+  
+               
+            </ul>
+            
+            <hr>
+            
               <p><a href="/{{path}}/scrutiny/{{customer._id}}/appointment-preferences"  class="button-secondary">Add preferences</a></p>
            
         
