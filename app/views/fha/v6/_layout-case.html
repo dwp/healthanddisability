@@ -40,6 +40,7 @@
 {{ 'Ready to book' if customer.status == 'Booked' and customer.name.first == 'Dillon' and data['book-next']!=="yes" }}
 {{ 'Booked' if customer.status == 'Booked' and customer.name.first !== 'Dillon' }}
 {{ 'Booked' if customer.status == 'Booked' and customer.name.first == 'Dillon' and data['book-next']==="yes" }}
+{{ 'Appointment cancelled' if customer.status == 'Appointment cancelled' }}
 
  </p>
      {% if customer.status == 'Assessment started' or customer.status == 'Booked' %}
