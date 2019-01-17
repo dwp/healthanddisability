@@ -9,18 +9,50 @@
 
 
 {% block citizen_content %}
-<form method="post" action="/{{path}}/booking/booked/{{customer._id}}/appointment-details">
+<form method="post" action="/{{path}}/booking/{{customer._id}}/appointment">
 <div class="container">
     <div class="grid-row">
         <div class="column-full">
         <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
             <h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Rearrange appointment</h1>
 
-            <div class="form-group">
+  
 
-        
-                    {% include path+"/includes/appointmentsTypeAhead.html" %}  
-            </div>
+		
+						<fieldset class="inline mt30">
+								<legend class="heading-medium mb5">Do you want to book the appointment now?</legend>
+																
+					
+								<div class="multiple-choice" data-target="other-info2">
+										{% if customer.name.first == 'Dominguez' %}
+									<input type="radio" name="appointments" id="available-appointments-unable" value="yes" {{checked('appointments-dom', 'yes') }}>
+									{% else %}
+									<input type="radio" name="appointments" id="available-appointments-unable" value="yes" {{checked('appointments', 'yes') }}>
+									{% endif%}
+									<label for="available-appointments-unable">Yes</label>
+								</div>
+
+								<div class="multiple-choice" data-target="other-info-no">
+									<input type="radio" name="appointments" id="available-appointments-1" value="no"  {{checked('appointments', 'no') }}>
+									<label for="available-appointments-1">No</label>
+								</div>
+								
+								<div class="panel js-hidden" id="other-info2" >
+
+									{% include path+"/includes/appointmentsTypeAhead.html" %}  
+										
+                                </div>
+                                
+                                           
+                   <div class="panel js-hidden" id="other-info-no">
+                        <label class="form-label-bold">What is the request?</label>
+                        <textarea name="changedByCustomerComments" class="form-control" style="height: 150px; width: 90%;"></textarea>
+                    </div>
+					
+								
+								</fieldset>
+				
+
             <p class="mt30"><button class="button">Save and continue</button></p>
         </div>
 

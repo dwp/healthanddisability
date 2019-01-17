@@ -1,0 +1,121 @@
+<div class="full">
+
+</div>
+<div class="column-one-third">
+    {% if customer.name.first == 'Mcconnell'%}
+    <div class="panel panel-warning">
+      <p>{{customer.name.first}} has previously re-arranged their appointment</p>
+       <p>Earlier appointments available</p>
+    </div>
+    {% endif%}
+
+  <!--<div class="panel panel-info">{{customer.name.first}} contacted us and provided us with a reason</div> -->
+  {% if customer.name.first == 'Sarah' %}
+  <div class="panel panel-warning">
+    <p>{{customer.name.first}} missed there appointment</p>
+  </div>
+  <p><a href="/{{path1}}/booked/{{customer._id}}/request-rearrangement" class="button-secondary">Did not attend</a></p>
+  {% endif %}
+
+  <h2 class="heading-small">{{customer.name.first}}'s current appointment</h2>
+
+  {% if customer.name.first == 'Dominguez' and data['changedByCustomer']==="yes" %}
+  <span class="badge">Updated</span>
+
+  <ul class="list-bullet mt10 mb10">
+    <li>Tuesday 19 February 2019</li>
+    <li>11:00am</li>
+    <li>Tresco House</li>
+  </ul>
+  {% else %}
+  <ul class="list-bullet mt10 mb10">
+    <li>Tuesday 5 Feb 2018</li>
+    <li>4:00pm</li>
+    <li>Tresco House</li>
+  </ul>
+  {% endif%}
+
+  <p><a href="/{{path1}}/{{customer._id}}/request-rearrangement" class="button-secondary">Rearrange this appointment</a></p>
+</div>
+<div class="column-two-thirds">
+  <div class="card-container">
+
+
+    <section class="card">
+      <a href="/fha/v6/booking/{{customer._id}}/appointment-history">
+        <h2 class="heading-small">
+          Appointment history
+          <span class="heading-xlarge mt10 mb0">
+            {% if customer.name.first == 'Dominguez' and data['changedByCustomer']==="yes" %}
+            2
+            {% else %}
+            1
+            {% endif %}
+
+          </span>
+        </h2>
+        <ul class="content">
+
+          {% if customer.name.first == 'Dominguez' and data['changedByCustomer']==="yes" %}
+          <li>
+            <h3 class="bold mt0 small">Rearranged appointment <span class="badge alt mt10">Unable to attend</span></h3>
+            <p class="small">{{changedByCustomerComments}}
+            </p>
+          </li>
+          <li>
+            <h3 class="bold mt0 small">Appointment booked</h3>
+          </li>
+          {% else %}
+          <li>
+              <h3 class="bold mt0 small">Appointment booked</h3>
+            </li>
+          {% endif %}
+        
+          <li>
+            <p class="small"><span>More appointment history</span></p>
+          </li>
+
+        </ul>
+
+
+
+      </a>
+
+
+    </section>
+
+    <section class="card">
+      <a href="/fha/v6/booking/booked/{{customer._id}}/appointment-fta">
+        <h2 class="heading-small">
+          Failure to attend
+          <span class="heading-xlarge mt10 mb0">
+
+            0
+
+          </span>
+
+        </h2>
+
+        <ul class="content">
+
+          {% if customer.name.first == 'Arnaq'%}
+          <li>
+            <h3 class="bold mt0 small">Reason</h3>
+            <p class="small">Arnaq was having a bad day with his arthritis and was struggling to get out of the house,
+              he asked for a rearrangement but we couldnt because he had previously re-arranged
+              his appointment.
+            </p>
+          </li>
+
+          {% endif %}
+          <li>
+            <p class="small"><span>More failure to attend</span></p>
+          </li>
+
+        </ul>
+
+
+      </a>
+    </section>
+  </div>
+</div>

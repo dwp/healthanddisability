@@ -6,13 +6,15 @@
 
   {# macro #}
 
-    {{ nav.case_tabs("appointment",1,path1 + "/" + section , customer._id) }}{# macro #}
+  {{ nav.case_tabs("appointment",1,path1, customer._id) }}{# macro #}
   
   <div class="grid-row">
 
-
-      {% include path+"/includes/appointment/_fta.html" %}
-
+{% if customer.status == 'Security booked' %}
+      {% include path+"/includes/appointment/_uta.html" %}
+{% else %}
+{% include path+"/includes/appointment/_fta.html" %}
+{% endif%}
 
 
     

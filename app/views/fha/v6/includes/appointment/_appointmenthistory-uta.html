@@ -1,0 +1,36 @@
+
+
+{% if customer.name.first == 'Dominguez' and data['changedByCustomer']==="yes"%}
+
+      <h2 class="heading-medium">Rearranged appointment</h2>
+      
+   
+            <ul class="list-bullet">
+           <li>Tuesday 19 February 2019</li> 
+           <li>11am</li>  
+           <li>Tresco House</li> 
+            </ul>
+        
+   
+      
+      <h3 class="heading-small">Unable to attend</h3>
+      <p>{{changedByCustomerComments}}
+        <span class="date block mt10 text-secondary">{{customer | formatDate("D MMMM YYYY") }}</span>
+      </p>
+      {% endif %}
+
+      <h2 class="heading-medium">Appointment booked</h2>
+
+      <ul class="list-bullet">
+          <li>Tuesday 5 February 2019</li> 
+          <li>4:00pm</li>  
+          <li>Tresco House</li> 
+           </ul>
+
+        <span class="date block mt10 text-secondary">6 January 2019 1:30pm</span>
+      </p> 
+
+
+     
+
+
