@@ -14,7 +14,7 @@
     <div class="grid-row">
         <div class="column-full">
         <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
-            <h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Rearrange appointment</h1>
+            <h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Rearrange appointment or request one</h1>
             
            <form action="request-rearrangement-book" method="post">
                 <fieldset class="form-group">
@@ -40,15 +40,11 @@
                   
 
                     
-                   <div class="panel js-hidden" id="customer-request-box">
+                 <!--  <div class="panel js-hidden" id="customer-request-box">
                     <label class="form-label-bold">What is the request?</label>
-                    {% if data['changedByCustomer']==="yes" %}
-                  
-                    <textarea name="changedByCustomerComments2" class="form-control" style="height: 150px; width: 90%;"></textarea>
-                    {% else %}
                     <textarea name="changedByCustomerComments" class="form-control" style="height: 150px; width: 90%;"></textarea>
-                    {% endif%}
-                </div>
+
+                </div> -->
 
                     <div class="multiple-choice" data-target="we-changed">
                         <input type="radio" name="changedByCustomer" id="changedByCustomer-no" value="no">
@@ -60,15 +56,21 @@
                      <fieldset>
 	                    <legend class="form-label-bold">
 	                        Reason:
-	                    </legend>
+                        </legend>
+                        
+                        
 	                    <div class="multiple-choice">
 	                        <input type="radio" name="changes" id="changedBy1" value="yes">
-	                        <label for="changedBy1">Healthcare professional is unavailable (for example, they're ill or called away urgently)</label>
+	                        <label for="changedBy1">Appointment conflicts with a appointment preference or special requirement</label>
 	                    </div>
 	                    <div class="multiple-choice">
 	                        <input type="radio" name="changes" id="changedBy2" value="yes">
-	                        <label for="changedBy2">Building problem (for example, power failure or evacuation)</label>
-	                    </div>
+	                        <label for="changedBy2">Healthcare professional is unavailable (for example, they're ill or called away urgently)</label>
+                        </div>
+                        <div class="multiple-choice">
+                                <input type="radio" name="changes" id="changedBy3" value="yes">
+                                <label for="changedBy3">Building problem (for example, power failure or evacuation)</label>
+                            </div>
 
                      </fieldset>
                     </div>

@@ -20,7 +20,7 @@
                 </thead>
                 {% for customer in customers %}
                 <tr>
-                    <td><a href="booking/booked/{{customer._id}}/timeline"><span class="visually-hidden">Name</span>{{customer.name.fullName}} </a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span>
+                    <td><a href="booking/{{customer._id}}/timeline"><span class="visually-hidden">Name</span>{{customer.name.fullName}} </a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span>
                     </td>
                 </tr>
             

@@ -1,14 +1,13 @@
-{% extends templatePath %}
+{% extends path+"/_layout-case.html" %}
 
 {% block citizen_content %}
 
 <div class="container">
 
   {# macro #}
-  {{ nav.case_tabs("timeline",1,path1 + "/" + section, customer._id) }}{# macro #}
+  {{ nav.case_tabs("timeline",1,path1, customer._id) }}{# macro #}
   
   <div class="grid-row">
-
     <div class="column-two-thirds">
       <div class="timeline">
         <span class="line"></span>
@@ -17,48 +16,59 @@
           <p class="timeline_datetime">30 January 2018</p>
         </div>
 
-         <span class="line"></span>
-        <div class="timeline__event">
-          <h3 class="timeline__heading">GP statement received (ESA113)</h3>
-          <p class="timeline_datetime">29 January 2018</p>
-        </div>
+       
+
+<span class="line"></span>
+  <div class="timeline__event">
+    <h3 class="timeline__heading">Factual report - medical evidence recorded</h3>
+    <p class="timeline_datetime">{{customer.fmeRequestedDate | formatDate("D MMMM YYYY") }}</p>
+  </div>
+
+<span class="line"></span>
+  <div class="timeline__event">
+    <h3 class="timeline__heading"> Factual report - medical evidence requested</h3>
+    <p class="timeline_datetime">{{customer.fmeRequestedDate | formatDate("D MMMM YYYY") }}</p>
+  </div>
+
+
+<span class="line"></span>
+  <div class="timeline__event">
+    <h3 class="timeline__heading">GP report - medical evidence recieved</h3>
+    <p class="timeline_datetime">{{customer.fmeRequestedDate | formatDate("D MMMM YYYY") }}</p>
+  </div>
+
+
+<span class="line"></span>
+  <div class="timeline__event">
+    <h3 class="timeline__heading">GP Report - medical evidence requested</h3>
+    <p class="timeline_datetime">{{customer.fmeRequestedDate | formatDate("D MMMM YYYY") }}</p>
+  </div>
+
         
-          <span class="line"></span>
+        <span class="line"></span>
         <div class="timeline__event">
-          <h3 class="timeline__heading">Request for GP statement sent (ESA113)</h3>
-          <p class="timeline_datetime">19 January 2018</p>
+          <h3 class="timeline__heading">Med 3 - medical evidence recieved </h3>
+          <p class="timeline_datetime">10 August 2018</p>
         </div>
-        
-          <span class="line"></span>
+        <span class="line"></span>
         <div class="timeline__event">
-          <h3 class="timeline__heading">ESA50 form received at CHDA</h3>
-          <p class="timeline_datetime">4 January 2018</p>
+          <h3 class="timeline__heading">UC50 form received</h3>
+          <p class="timeline_datetime">10 August 2018</p>
         </div>
 
         <span class="line"></span>
         <div class="timeline__event">
-          <h3 class="timeline__heading">ESA50 form sent out to Tomas</h3>
-          <p class="timeline_datetime">12 December 2018</p>
+          <h3 class="timeline__heading">UC50 form sent out to {{customer.name.first}}</h3>
+          <p class="timeline_datetime">19 July 2018</p>
         </div>
+
+   
 
         <span class="line"></span>
         <div class="timeline__event">
-          <h3 class="timeline__heading">FIT note (MED3) received </h3>
-          <p class="timeline_datetime">19 November 2017</p>
+          <h3 class="timeline__heading">New referral created</h3>
+          <p class="timeline_datetime">17 July 2018</p>
         </div>
-
-        <span class="line"></span>
-        <div class="timeline__event">
-          <h3 class="timeline__heading">Entitlement letter sent to Tomas</h3>
-          <p class="timeline_datetime">5 November 2017</p>
-        </div>
-
-        <span class="line"></span>
-        <div class="timeline__event">
-          <h3 class="timeline__heading">ESA application completed on the phone</h3>
-          <p class="timeline_datetime">1 November 2017</p>
-        </div>
-
         <div style="clear:both"></div>
 
       </div><!-- timeline -->

@@ -17,7 +17,10 @@
       </div>
     <p><a href="/{{path1}}/booked/{{customer._id}}/request-rearrangement" class="button-secondary">Did not attend</a></p>
     {% endif %}  
-      
+
+    <h2 class="heading-small">{{customer.name.first}}'s current appointment</h2> 
+    <p>Monday 14 Jan 2018 <br> 4:00pm</p> 
+    <p><a href="/{{path1}}/booked/{{customer._id}}/request-rearrangement" class="button-secondary">Rearrange this appointment</a></p> 
 </div>
 <div class="column-two-thirds">
     <div class="card-container">

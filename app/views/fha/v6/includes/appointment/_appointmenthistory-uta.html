@@ -1,0 +1,85 @@
+{% if customer.name.first == 'Lowery' and data['changedByCustomer']==="no"%}
+
+      <h2 class="heading-medium">Rearranged appointment</h2>
+      
+   
+            <ul class="list-bullet">
+           <li>Monday 18 February 2019</li> 
+           <li>11am</li>  
+           <li>Tresco House</li> 
+            </ul>
+        
+   
+      
+      <h3 class="heading-small">We have had to change the appointment</h3>
+      <p>Appointment conflicts with a appointment preference or special requirement
+                
+        <span class="date block mt10 text-secondary">{{customer | formatDate("D MMMM YYYY") }}</span>
+      </p>
+      {% endif %}
+
+{% if customer.name.first == 'Dominguez' and data['changedByCustomer']==="yes"%}
+
+      <h2 class="heading-medium">Rearranged appointment</h2>
+      
+   
+            <ul class="list-bullet">
+           <li>Tuesday 19 February 2019</li> 
+           <li>11am</li>  
+           <li>Tresco House</li> 
+            </ul>
+        
+   
+      
+      <h3 class="heading-small">Unable to attend</h3>
+      <p>{{changedByCustomerComments}}
+        <span class="date block mt10 text-secondary">{{customer | formatDate("D MMMM YYYY") }}</span>
+      </p>
+      {% endif %}
+
+      {% if customer.name.first == 'Mcconnell' %}
+
+      <h2 class="heading-medium">Rearranged appointment</h2>
+      
+   
+          <ul class="list-bullet">
+           <li>Tuesday 5 February 2019</li> 
+           <li>4:00pm</li>  
+           <li>Tresco House</li> 
+          </ul>
+        
+   
+      
+      <h3 class="heading-small">Unable to attend</h3>
+      <p>Customer rearranged because they have another appointment with there specialist on the same day
+        <span class="date block mt10 text-secondary">{{customer | formatDate("D MMMM YYYY") }}</span>
+      </p>
+      <h2 class="heading-medium">Appointment booked</h2>
+
+      <ul class="list-bullet">
+          <li>Monday 15 January 2019</li> 
+          <li>4:00pm</li>  
+          <li>Tresco House</li> 
+           </ul>
+
+        <span class="date block mt10 text-secondary">2 January 2019 1:30pm</span>
+      </p> 
+      {% else %}
+      <h2 class="heading-medium">Appointment booked</h2>
+
+      <ul class="list-bullet">
+          <li>Tuesday 5 February 2019</li> 
+          <li>4:00pm</li>  
+          <li>Tresco House</li> 
+           </ul>
+
+        <span class="date block mt10 text-secondary">2 January 2019 1:30pm</span>
+      </p> 
+      {% endif %}
+
+  
+
+
+     
+
+

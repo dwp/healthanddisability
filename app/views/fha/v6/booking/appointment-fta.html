@@ -30,7 +30,20 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
+        {% if customer.name.first == 'Mcconnell' and data['appointments']==="no" %}
+        <h2 class="heading-medium">Possible failure to attend</h2>
+        <div class="panel panel-warning">
+          <h3 class="heading-small" >Previous rearangement</h3>
+            <p>{{customer.name.first}} has previously re-arranged their appointment and earlier appointments were available
+            </p>
+ 
+          </div>
 
+          <h3 class="heading-small">Reason</h3>
+        <p class="small">{{changedByCustomerComments}}
+                  </p>
+                  <span class="date block mt10 text-secondary">{{customer | formatDate("D MMMM YYYY") }}</span>
+        {% else %}
         <h2 class="heading-medium">Did not attend -  Monday 14 Jan 2018 4:00pm</h2>
         <div class="panel panel-warning">
             <p>Arnaq has previously re-arranged their appointment</p>
@@ -42,7 +55,7 @@
                   </p>
 
         <p><a href="/{{path}}/assessment/{{customer._id}}/evidence/send-home-book"  class="button-secondary">Add or edit reason</a></p>
- 
+ {% endif%}
 
 
   

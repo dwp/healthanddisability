@@ -23,13 +23,14 @@
 <tr>
 
 <td>
-<a href="assessment/{{customer._id}}/timeline"><span class="visually-hidden">Name</span>{{customer.name.fullName}}</a>
+<a href="booking/{{customer._id}}/timeline"><span class="visually-hidden">Name</span>{{customer.name.fullName}}</a>
 <span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span>
 </td>
 <td>
 <span class="block">
 {{ 'Ready to book'  if customer.status == 'Ready to book'}}
-{{ 'Booked appointments' if customer.status == 'Booked'}}
+{{ 'Booked appointments' if customer.status == 'Booked' or customer.status == 'Security booked'}}
+
 {{ 'Did not attend' if customer.status == 'Did not attend'}}
 </span> </td>
 </tr>

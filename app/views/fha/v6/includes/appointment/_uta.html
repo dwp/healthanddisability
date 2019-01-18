@@ -1,0 +1,217 @@
+<div class="full">
+
+</div>
+<div class="column-one-third">
+    {% if customer.name.first == 'Mcconnell'%}
+    <div class="panel panel-warning">
+        <h3 class="heading-small">Previous rearangement</h3>
+          <p>Mcconnell has previously re-arranged their appointment and earlier appointments are available
+          </p>
+
+        </div> 
+    {% endif%}
+
+  <h2 class="heading-small">{{customer.name.first}}'s current appointment</h2>
+
+  {% if customer.name.first == 'Lowery' and data['changedByCustomer']==="no" %}
+  <span class="badge">Updated</span>
+
+  <ul class="list-bullet mt10 mb10">
+    <li>Mon 18 February 2019</li>
+    <li>11:00am</li>
+    <li>Tresco House</li>
+  </ul>
+
+  <details class="mb10">
+  
+      <summary><span class="summary">Appointment preferences</span></summary>
+    
+    
+      <h3 class="heading-small">Days {{customer.name.first}} is unavailable:</h3>
+    
+      <ul class="list-bullet pref-list">
+    
+    
+        <li>Monday <span>afternoons</span>
+        </li>
+    
+    
+        <li>Tuesday's</li>
+    
+    
+    
+    
+      </ul>
+    
+    
+      <h3 class="heading-small">Dates {{customer.name.first}} is unavailable:</h3>
+      <ul class="list-bullet pref-list">
+    
+        <li>11 Febuary 2019 – 17 Febuary 2019</li>
+    
+    
+    
+      </ul>
+    
+    
+    
+    </details>
+
+  {% elif customer.name.first == 'Dominguez' and data['changedByCustomer']==="yes" %}
+  <span class="badge">Updated</span>
+
+  <ul class="list-bullet mt10 mb10">
+    <li>Tuesday 19 February 2019</li>
+    <li>11:00am</li>
+    <li>Tresco House</li>
+  </ul>
+  {% else %}
+  <ul class="list-bullet mt10 mb10">
+    <li>Tuesday 5 Feb 2018</li>
+    <li>4:00pm</li>
+    <li>Tresco House</li>
+  </ul>
+  {% if customer.name.first == 'Lowery'  %}
+  <details class="mb10">
+  
+    <summary><span class="summary">Appointment preferences</span></summary>
+  
+  
+    <h3 class="heading-small">Days {{customer.name.first}} is unavailable:</h3>
+  
+    <ul class="list-bullet pref-list">
+  
+  
+      <li>Monday <span>afternoons</span>
+      </li>
+  
+  
+      <li>Tuesday's</li>
+  
+  
+  
+  
+    </ul>
+  
+  
+    <h3 class="heading-small">Dates {{customer.name.first}} is unavailable:</h3>
+    <ul class="list-bullet pref-list">
+  
+      <li>11 Febuary 2019 – 17 Febuary 2019</li>
+  
+  
+  
+    </ul>
+  
+  
+  
+  </details>
+  {% endif %}
+  {% endif%}
+
+  <p><a href="/{{path1}}/{{customer._id}}/request-rearrangement" class="button-secondary">Request or rearrange  appointment</a></p>
+</div>
+<div class="column-two-thirds">
+  <div class="card-container">
+
+
+    <section class="card">
+      <a href="/fha/v6/booking/{{customer._id}}/appointment-history">
+        <h2 class="heading-small">
+          Appointment history
+          <span class="heading-xlarge mt10 mb0">
+            {% if customer.name.first == 'Dominguez' and data['changedByCustomer']==="yes" or customer.name.first == 'Mcconnell' or customer.name.first == 'Lowery' and data['changedByCustomer']==="no" %}
+            2
+            {% else %}
+            1
+            {% endif %}
+
+          </span>
+        </h2>
+        <ul class="content">
+            {% if customer.name.first == 'Lowery' and data['changes']==="yes" %}
+
+            <li>
+                <h3 class="bold mt0 small">Rearranged appointment</h3>
+                <span class="badge alt">We have had to change the appointment</span>
+                <p class="small">Appointment conflicts with a appointment preference or special requirement
+                </p>
+              </li>
+              <li>
+                <h3 class="bold mt0 small">Appointment booked</h3>
+              </li>
+
+          {% elif customer.name.first == 'Dominguez' and data['changedByCustomer']==="yes" %}
+          <li>
+            <h3 class="bold mt0 small">Rearranged appointment</h3>
+            <span class="badge alt">Unable to attend</span>
+            <p class="small">{{changedByCustomerComments}}
+            </p>
+          </li>
+          <li>
+            <h3 class="bold mt0 small">Appointment booked</h3>
+          </li>
+
+          {% elif customer.name.first == 'Mcconnell' %}
+          <li>
+            <h3 class="bold mt0 small">Rearranged appointment</h3>
+            <span class="badge alt">Unable to attend</span>
+            <p class="small">Customer rearranged because they have another appointment with there specialist on the same day
+            </p>
+          </li>
+          <li>
+            <h3 class="bold mt0 small">Appointment booked</h3>
+          </li>
+          {% else %}
+          <li>
+              <h3 class="bold mt0 small">Appointment booked</h3>
+            </li>
+          {% endif %}
+        
+          <li>
+            <p class="small"><span>More appointment history</span></p>
+          </li>
+
+        </ul>
+
+
+
+      </a>
+
+
+    </section>
+
+    <section class="card">
+      <a href="/fha/v6/booking/{{customer._id}}/appointment-fta">
+        <h2 class="heading-small">
+          Failure to attend
+          <span class="heading-xlarge mt10 mb0">
+              {% if customer.name.first == 'Mcconnell' and data['appointments']==="no" %}
+             1
+              {% else %}
+              0
+              {% endif %}
+           
+
+          </span>
+
+        </h2>
+
+        <ul class="content">
+
+          {% if customer.name.first == 'Mcconnell' and data['appointments']==="no" %}
+         <li> <h3 class="bold small">Possible failure to attend</h3>
+          <p class="small">{{changedByCustomerComments}}
+          </p>
+        </li>
+
+          {% endif %}
+          <li>
+            <p class="small"><span>More failure to attend</span></p>
+          </li>
+
+        </ul>
+      </a>
+    </section>
+  </div>
+</div>

@@ -9,22 +9,122 @@
 
 
 {% block citizen_content %}
-<form method="post" action="/{{path}}/booking/booked/{{customer._id}}/appointment-details">
+<form method="post" action="/{{path}}/booking/{{customer._id}}/appointment">
 <div class="container">
     <div class="grid-row">
         <div class="column-full">
         <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
-            <h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Rearrange appointment</h1>
+           
+        <div class="grid-row">
+            <div class="column-two-thirds">
+        <h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Rearrange appointment or request one</h1>
 
-            <div class="form-group">
+            {% if customer.name.first == 'Mcconnell' %}
+            <div class="panel panel-warning">
+                    <h3 class="heading-small">Previous rearangement</h3>
+                      <p>Mcconnell has previously re-arranged their appointment and earlier appointments are available
+                      </p>
+           
+                    </div> 
+     
+            {% endif%}    
 
-        
-                    {% include path+"/includes/appointmentsTypeAhead.html" %}  
-            </div>
+		<div class="form-group">
+						<fieldset class="inline mt30">
+								<legend class="heading-medium mb5">Do you want to book the appointment now?</legend>
+																
+					
+								<div class="multiple-choice" data-target="other-info2">
+										{% if customer.name.first == 'Dominguez' %}
+									<input type="radio" name="appointments" id="available-appointments-unable" value="yes" {{checked('appointments-dom', 'yes') }}>
+									{% else %}
+									<input type="radio" name="appointments" id="available-appointments-unable" value="yes" {{checked('appointments', 'yes') }}>
+									{% endif%}
+									<label for="available-appointments-unable">Yes</label>
+								</div>
+
+								<div class="multiple-choice">
+									<input type="radio" name="appointments" id="available-appointments-1" value="no"  {{checked('appointments', 'no') }}>
+									<label for="available-appointments-1">No</label>
+								</div>
+								
+								<div class="panel js-hidden" id="other-info2" >
+
+                                    <div class="form-group">
+                                            <div class="panel panel-info"> <h2 class="heading-small">{{customer.name.first}}'s current appointment</h2>
+
+                                                {% if customer.name.first == 'Lowery' %}
+                                                <ul class="list-bullet mt10 mb10">
+                                                  <li>Tuesday 5 Feb 2018</li>
+                                                  <li>4:00pm</li>
+                                                  <li>Tresco House</li>
+                                                </ul>
+                                                <details>
+
+                                                        <summary><span class="summary">Appointment preferences</span></summary>
+                                                
+                                                        <h3 class="heading-small">Days {{customer.name.first}} is unavailable:</h3>            
+                                                  
+                                                        <ul class="list-bullet pref-list">
+                
+                                                            <li>Monday <span>afternoons</span>
+                                                            </li>
+                                                    
+                                                            <li>Tuesday's</li>
+                                                    
+                                                            </ul>
+                                                       
+                                                        <h3 class="heading-small">Dates {{customer.name.first}} is unavailable:</h3>
+                                                        <ul class="list-bullet pref-list">
+                                                  
+                                                            <li>11 Febuary 2019 – 17 Febuary 2019</li>
+                                
+                                                        </ul>
+                                                      </details>
+                                                  
+                                               
+                                                {% elif customer.name.first == 'Mcconnell' %}
+                                                <ul class="list-bullet mt10 mb10">
+                                                  <li>Tuesday 5 Feb 2018</li>
+                                                  <li>4:00pm</li>
+                                                  <li>Tresco House</li>
+                                                </ul>
+
+                                                      {% else %}
+                                                      <ul class="list-bullet mt10 mb10">
+                                                            <li>Tuesday 5 Feb 2018</li>
+                                                            <li>4:00pm</li>
+                                                            <li>Tresco House</li>
+                                                          </ul>
+          
+                                                         
+
+                                                      {% endif%}
+                                            </div>    
+                                    {% include path+"/includes/appointmentsTypeAhead.html" %}  
+                                    </div>
+                                    
+										
+                                </div>
+                            </div>
+                            {% if customer.name.first == 'Lowery' %}
+                            {% else %}
+                                    <div class="form-group">
+                                            <label class="form-label-bold">What is the reason for this request or rearrangement? </label>
+                                            <textarea name="changedByCustomerComments" class="form-control " style="height: 150px; width:100%; max-width:650px;"></textarea>
+                                    </div>        
+                             {% endif %}
+					
+								
+								</fieldset>
+				
+
             <p class="mt30"><button class="button">Save and continue</button></p>
         </div>
 
     </div>
+</div>
+</div>
 </form>
     <!-- row -->
 </div>
