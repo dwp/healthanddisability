@@ -9,6 +9,15 @@
           </p>
 
         </div> 
+   
+    {% endif%}
+
+    {% if customer.name.first == 'Deena'  and data['changedByCustomer']==="yes"%}
+  
+    {% elif customer.name.first == 'Deena'%}  
+    <div class="panel panel-warning">
+        <p>There are currently no alternative appointments available</p>
+    </div>
     {% endif%}
 
     {% if customer.name.first == 'Christie' and data['reason']%}
@@ -39,10 +48,14 @@
     {% endif %}
 
 
-
+    {% if customer.name.first == 'Deena' and data['changedByCustomer']==="yes" %}
+    <h2 class="heading-small">{{customer.name.first}}'s currently doesn't have an appointment booked</h2>
+    {% else %}
   <h2 class="heading-small">{{customer.name.first}}'s current appointment</h2>
+  {% endif %}
+  {% if customer.name.first == 'Deena' and data['changedByCustomer']==="yes" %}
 
-  {% if customer.name.first == 'Lowery' and data['changedByCustomer']==="no" %}
+  {% elif customer.name.first == 'Lowery' and data['changedByCustomer']==="no" %}
  <!-- <span class="badge">Updated</span> -->
 
   <ul class="list-bullet mt10 mb10">
@@ -137,13 +150,13 @@
   </details>
   {% endif %}
   {% endif%}
+  {% if customer.name.first == 'Deena' and data['changedByCustomer']==="yes" %}
+  <p><a href="/{{path1}}/{{customer._id}}/request-rearrangement" class="button-secondary">Book appointment</a></p>
+  {% else %}
+  <p><a href="/{{path1}}/{{customer._id}}/request-rearrangement" class="button-secondary">Rearrange {% if customer.name.first == 'Mcconnell' %} , request {% endif %} or cancel appointment</a></p>
+  {% endif %}
+  <p><a href="/{{path1}}/{{customer._id}}/appointment-changeofcircumstances" class="">Record change of circumstances</a></p>
 
-  <p><a href="/{{path1}}/{{customer._id}}/request-rearrangement" class="button-secondary">Rearrange appointment or request one</a></p>
-  <p>Or</p>
-  <ul class="secondary-actions">
-    <li><a href="/{{path1}}/{{customer._id}}/appointment-changeofcircumstances" class="">Record change of circumstances</a></li>
-    <li><a href="/{{path1}}/{{customer._id}}/appointment-cancel" class="">Cancel appointment</a></li>
-  </ul>
 
 </div>
 <div class="column-two-thirds">
@@ -155,14 +168,14 @@
 
         <h2 class="heading-small">
 						<span class="font-small card-header">Review </span> Appointment history
-            {% if customer.name.first == 'Mcconnell' and data['appointments']==="no" or  customer.name.first == 'Dominguez' and data['changedByCustomer']==="yes" or  customer.name.first == 'Lowery' and data['changedByCustomer']==="no" %}
+            {% if customer.name.first == 'Mcconnell' and data['appointments']==="no" or  customer.name.first == 'Dominguez' and data['changedByCustomer']==="yes" or  customer.name.first == 'Lowery' and data['changedByCustomer']==="no" or  customer.name.first == 'Deena' and data['changedByCustomer']==="yes" %}
             <span class="badge">Updated</span>
             {% endif %}
 							
           </h2>
           <p>
               <span class="heading-xlarge mt0 mb0">
-                  {% if customer.name.first == 'Dominguez' and data['changedByCustomer']==="yes" or customer.name.first == 'Mcconnell' or customer.name.first == 'Lowery' and data['changedByCustomer']==="no" %}
+                  {% if customer.name.first == 'Dominguez' and data['changedByCustomer']==="yes" or customer.name.first == 'Mcconnell' or customer.name.first == 'Lowery' and data['changedByCustomer']==="no" or  customer.name.first == 'Deena' and data['changedByCustomer']==="yes" %}
                   2
                   {% else %}
                   1
@@ -171,7 +184,17 @@
                 </span>
           </p>
         <ul class="content">
-            {% if customer.name.first == 'Lowery' and data['changes']==="yes" %}
+
+            {% if customer.name.first == 'Deena' and data['changedByCustomer']==="yes" %}
+            <li>
+              <h3 class="bold mt0 small">Appointment cancelled</h3>
+              <span class="badge alt">Unable to attend</span>
+              <p class="small">{{changedByCustomerComments}}
+              </p>
+            </li>
+
+
+            {% elif customer.name.first == 'Lowery' and data['changes']==="yes" %}
 
             <li>
                 <h3 class="bold mt0 small">Rearranged appointment</h3>

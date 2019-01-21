@@ -17,7 +17,7 @@
            
         <div class="grid-row">
             <div class="column-two-thirds">
-        <h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Rearrange appointment or request one</h1>
+        <h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Rearrange  {% if customer.name.first == 'Mcconnell' %} , request {% endif %} or cancel appointment</h1>
 
             {% if customer.name.first == 'Mcconnell' %}
             <div class="panel panel-warning">
@@ -30,8 +30,8 @@
             {% endif%}    
 
 		<div class="form-group">
-						<fieldset class="inline mt30">
-								<legend class="heading-medium mb5">Do you want to book the appointment now?</legend>
+						<fieldset class="mt20">
+								<legend class="heading-medium mb5">What do you want to do?</legend>
 																
 					
 								<div class="multiple-choice" data-target="other-info2">
@@ -40,77 +40,109 @@
 									{% else %}
 									<input type="radio" name="appointments" id="available-appointments-unable" value="yes" {{checked('appointments', 'yes') }}>
 									{% endif%}
-									<label for="available-appointments-unable">Yes</label>
-								</div>
+									<label for="available-appointments-unable">Rearrange appointment</label>
+                                </div>
+                                
+                                <div class="panel js-hidden" id="other-info2" >
 
+                                        <div class="form-group">
+                                                <div class="panel panel-info"> <h2 class="heading-small">{{customer.name.first}}'s current appointment</h2>
+    
+                                                    {% if customer.name.first == 'Lowery' %}
+                                                    <ul class="list-bullet mt10 mb10">
+                                                      <li>Tuesday 5 Feb 2018</li>
+                                                      <li>4:00pm</li>
+                                                      <li>Tresco House</li>
+                                                    </ul>
+                                                    <details>
+    
+                                                            <summary><span class="summary">Appointment preferences</span></summary>
+                                                    
+                                                            <h3 class="heading-small">Days {{customer.name.first}} is unavailable:</h3>            
+                                                      
+                                                            <ul class="list-bullet pref-list">
+                    
+                                                                <li>Monday <span>afternoons</span>
+                                                                </li>
+                                                        
+                                                                <li>Tuesday's</li>
+                                                        
+                                                                </ul>
+                                                           
+                                                            <h3 class="heading-small">Dates {{customer.name.first}} is unavailable:</h3>
+                                                            <ul class="list-bullet pref-list">
+                                                      
+                                                                <li>11 Febuary 2019 – 17 Febuary 2019</li>
+                                    
+                                                            </ul>
+                                                          </details>
+                                                      
+                                                   
+                                                    {% elif customer.name.first == 'Mcconnell' %}
+                                                    <ul class="list-bullet mt10 mb10">
+                                                      <li>Tuesday 5 Feb 2018</li>
+                                                      <li>4:00pm</li>
+                                                      <li>Tresco House</li>
+                                                    </ul>
+    
+                                                          {% else %}
+                                                          <ul class="list-bullet mt10 mb10">
+                                                                <li>Tuesday 5 Feb 2018</li>
+                                                                <li>4:00pm</li>
+                                                                <li>Tresco House</li>
+                                                              </ul>
+              
+                                                             
+    
+                                                          {% endif%}
+                                                </div>    
+                                        {% include path+"/includes/appointmentsTypeAhead.html" %}  
+                                        </div>
+                                        
+                                            
+                                    </div>
+                                   {% if customer.name.first == 'Mcconnell' %} 
 								<div class="multiple-choice">
 									<input type="radio" name="appointments" id="available-appointments-1" value="no"  {{checked('appointments', 'no') }}>
-									<label for="available-appointments-1">No</label>
-								</div>
-								
-								<div class="panel js-hidden" id="other-info2" >
-
-                                    <div class="form-group">
-                                            <div class="panel panel-info"> <h2 class="heading-small">{{customer.name.first}}'s current appointment</h2>
-
-                                                {% if customer.name.first == 'Lowery' %}
-                                                <ul class="list-bullet mt10 mb10">
-                                                  <li>Tuesday 5 Feb 2018</li>
-                                                  <li>4:00pm</li>
-                                                  <li>Tresco House</li>
-                                                </ul>
-                                                <details>
-
-                                                        <summary><span class="summary">Appointment preferences</span></summary>
-                                                
-                                                        <h3 class="heading-small">Days {{customer.name.first}} is unavailable:</h3>            
-                                                  
-                                                        <ul class="list-bullet pref-list">
-                
-                                                            <li>Monday <span>afternoons</span>
-                                                            </li>
-                                                    
-                                                            <li>Tuesday's</li>
-                                                    
-                                                            </ul>
-                                                       
-                                                        <h3 class="heading-small">Dates {{customer.name.first}} is unavailable:</h3>
-                                                        <ul class="list-bullet pref-list">
-                                                  
-                                                            <li>11 Febuary 2019 – 17 Febuary 2019</li>
-                                
-                                                        </ul>
-                                                      </details>
-                                                  
-                                               
-                                                {% elif customer.name.first == 'Mcconnell' %}
-                                                <ul class="list-bullet mt10 mb10">
-                                                  <li>Tuesday 5 Feb 2018</li>
-                                                  <li>4:00pm</li>
-                                                  <li>Tresco House</li>
-                                                </ul>
-
-                                                      {% else %}
-                                                      <ul class="list-bullet mt10 mb10">
-                                                            <li>Tuesday 5 Feb 2018</li>
-                                                            <li>4:00pm</li>
-                                                            <li>Tresco House</li>
-                                                          </ul>
-          
-                                                         
-
-                                                      {% endif%}
-                                            </div>    
-                                    {% include path+"/includes/appointmentsTypeAhead.html" %}  
-                                    </div>
-                                    
-										
+									<label for="available-appointments-1">Add request reason for decision maker</label>
                                 </div>
+                                {% endif %}
+
+                                <div class="multiple-choice" data-target="Cancel-appointment">
+                                        <input type="radio" name="appointments" id="available-appointments-1" value="no"  {{checked('appointments', 'no') }}>
+                                        <label for="available-appointments-1">Cancel appointment {% if customer.name.first == 'Mcconnell' %} {% else %}  - no appropriate appointments available{% endif %}</label>
+                                    </div>
+                                    {% if customer.name.first == 'Mcconnell' %} 
+                                    <div class="panel js-hidden" id="Cancel-appointment" >
+                                            <div class="form-group">
+                                                    <fieldset>
+                                                        <legend class="heading-small">
+                                                            Why do you want to cancel this appointment?
+                                                          </legend>
+                                                          
+                                                          
+                                                          <div class="multiple-choice">
+                                                              <input type="radio" name="reason" id="reason-condition" value="Customers condition has changed">
+                                                              <label for="reason-condition">No appropriate appointments available</label>
+                                                          </div>
+                                                          <div class="multiple-choice" data-target="dm-reason">
+                                                              <input type="radio" name="reason" id="reason-terminal" value="Customer is now terminally ill">
+                                                              <label for="reason-terminal">Request a rearrangement from a desicion maker</label>
+                                                          </div>
+                                                    
+                                            
+                                                       </fieldset>
+                                                      </div>
+                                    </div>   
+                                    {% endif %} 
+                                
+                                
+							
                             </div>
                             {% if customer.name.first == 'Lowery' %}
                             {% else %}
                                     <div class="form-group">
-                                            <label class="form-label-bold">What is the reason for this request or rearrangement? </label>
+                                            <label class="form-label-bold">What is the reason for this rearrangement {% if customer.name.first == 'Mcconnell' %} , request {% endif %}  or cancelation ? </label>
                                             <textarea name="changedByCustomerComments" class="form-control " style="height: 150px; width:100%; max-width:650px;"></textarea>
                                     </div>        
                              {% endif %}

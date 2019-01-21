@@ -10,7 +10,14 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <div class="timeline">
-          {% if customer.name.first == 'Mcconnell'%}
+
+          {% if customer.name.first == 'Deena' and data['changedByCustomer']==="yes"%}
+          <span class="line"></span>
+          <div class="timeline__event">
+            <h3 class="timeline__heading">Appointment canceled</h3>
+            <p class="timeline_datetime">{{customer | formatDate("D MMMM YYYY") }}</p>
+          </div>
+          {% elif customer.name.first == 'Mcconnell'%}
           <span class="line"></span>
           <div class="timeline__event">
             <h3 class="timeline__heading">Rearranged appointment</h3>

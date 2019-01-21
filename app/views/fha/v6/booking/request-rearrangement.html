@@ -14,12 +14,12 @@
     <div class="grid-row">
         <div class="column-full">
         <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
-            <h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Rearrange appointment or request one</h1>
+            <h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Rearrange {% if customer.name.first == 'Mcconnell' %} , request {% endif %} or cancel appointment</h1>
             
            <form action="request-rearrangement-book" method="post">
                 <fieldset class="form-group">
                     <legend class="heading-medium mb5">
-                        Reason for rearrangement:
+                        Reason for rearrangement or cancelation:
                     </legend>
                     <div class="multiple-choice" data-target="customer-request-box">
                         <input type="radio" name="changedByCustomer" id="changedByCustomer-yes" value="yes">

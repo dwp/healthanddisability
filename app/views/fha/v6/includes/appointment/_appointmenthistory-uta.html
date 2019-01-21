@@ -18,6 +18,16 @@
       </p>
       {% endif %}
 
+ 
+      {% if customer.name.first == 'Deena' and data['changedByCustomer']==="yes"%}
+
+      <h2 class="heading-medium">Appointment cancelled</h2>
+      <h3 class="heading-small">Unable to attend</h3>
+      <p>{{changedByCustomerComments}}
+        <span class="date block mt10 text-secondary">{{customer | formatDate("D MMMM YYYY") }}</span>
+      </p>
+      {% endif %}      
+
 
 
 {% if customer.name.first == 'Dominguez' and data['changedByCustomer']==="yes"%}
