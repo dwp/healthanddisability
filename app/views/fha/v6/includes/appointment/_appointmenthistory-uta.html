@@ -18,6 +18,8 @@
       </p>
       {% endif %}
 
+
+
 {% if customer.name.first == 'Dominguez' and data['changedByCustomer']==="yes"%}
 
       <h2 class="heading-medium">Rearranged appointment</h2>
@@ -28,7 +30,6 @@
            <li>11am</li>  
            <li>Tresco House</li> 
             </ul>
-        
    
       
       <h3 class="heading-small">Unable to attend</h3>
@@ -47,13 +48,21 @@
            <li>4:00pm</li>  
            <li>Tresco House</li> 
           </ul>
+
+          {% if customer.name.first == 'Mcconnell' and data['appointments']==="no" %}
+          <h3 class="heading-small">Customer request</h3>
+          <p class="small">{{changedByCustomerComments}}
+                    </p>
+                    <span class="date block mt10 text-secondary">{{customer | formatDate("D MMMM YYYY") }} 10:05 am</span>      
+      {% endif %}    
         
    
       
       <h3 class="heading-small">Unable to attend</h3>
       <p>Customer rearranged because they have another appointment with there specialist on the same day
-        <span class="date block mt10 text-secondary">{{customer | formatDate("D MMMM YYYY") }}</span>
+        <span class="date block mt10 text-secondary">2 January 2019 3:30pm</span>
       </p>
+      <hr />
       <h2 class="heading-medium">Appointment booked</h2>
 
       <ul class="list-bullet">
@@ -62,9 +71,10 @@
           <li>Tresco House</li> 
            </ul>
 
-        <span class="date block mt10 text-secondary">2 January 2019 1:30pm</span>
+        <span class="date block mt10 text-secondary">2 January 2019 11:30am</span>
       </p> 
       {% else %}
+      <hr />
       <h2 class="heading-medium">Appointment booked</h2>
 
       <ul class="list-bullet">
