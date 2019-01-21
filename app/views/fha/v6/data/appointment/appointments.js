@@ -1367,22 +1367,37 @@ module.exports = [
     ],
     "illnesses": [
       {
-        "name": "",
-        "source": "",
-        "date": ""
+        "name": "Stroke",
+        "source": "Claimant",
+        "date": "July 2017"
       }
     ],
     "medication": [
       {
-        "name": "",
-        "dose": "",
+        "name": "Atorvastatin",
+        "dose": "80mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Clopidogrel",
+        "dose": "75mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Senna",
+        "dose": "7.5mg",
+        "sideEffects": ""
+      },
+      {
+        "name": "Docusate",
+        "dose": "75mg",
         "sideEffects": ""
       }
     ],
-   "status": "Booked",
+   "status": "Security booked",
     "dateOfBirth": "1958-07-11T03:08:43+00:00",
     "mobile": "07971 577 303",
-    "NINO": "QQ 12 68 26 C",
+    "NINO": "EE 12 68 26 C",
     "email": "christie.wallace@fakemail.com",
     "phone": "0121 818 493",
     "referredDate": "2018-10-19T13:00:31+00:00",

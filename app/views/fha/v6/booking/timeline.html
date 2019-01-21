@@ -10,56 +10,64 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <div class="timeline">
+          {% if customer.name.first == 'Mcconnell'%}
+          <span class="line"></span>
+          <div class="timeline__event">
+            <h3 class="timeline__heading">Rearranged appointment</h3>
+            <p class="timeline_datetime">2 January</p>
+          </div>
+
+          {% elif customer.name.first == 'Lowery' and data['changedByCustomer']==="no" %}
+          <span class="line"></span>
+          <div class="timeline__event">
+            <h3 class="timeline__heading">Rearranged appointment</h3>
+            <p class="timeline_datetime">{{customer | formatDate("D MMMM YYYY") }}</p>
+          </div>
+
+          {% elif customer.name.first == 'Dominguez' and data['changedByCustomer']==="yes" %}
+          <span class="line"></span>
+          <div class="timeline__event">
+            <h3 class="timeline__heading">Rearranged appointment</h3>
+            <p class="timeline_datetime">{{customer | formatDate("D MMMM YYYY") }}</p>
+          </div>
+          {% endif %}
+
+          <span class="line"></span>
+          <div class="timeline__event">
+            <h3 class="timeline__heading">Appointment booked</h3>
+            <p class="timeline_datetime">2 January 2019</p>
+          </div>
+
         <span class="line"></span>
         <div class="timeline__event">
           <h3 class="timeline__heading">Referred for appointment</h3>
           <p class="timeline_datetime">30 January 2018</p>
         </div>
 
-       
-
-<span class="line"></span>
-  <div class="timeline__event">
-    <h3 class="timeline__heading">Factual report - medical evidence recorded</h3>
-    <p class="timeline_datetime">{{customer.fmeRequestedDate | formatDate("D MMMM YYYY") }}</p>
-  </div>
-
-<span class="line"></span>
-  <div class="timeline__event">
-    <h3 class="timeline__heading"> Factual report - medical evidence requested</h3>
-    <p class="timeline_datetime">{{customer.fmeRequestedDate | formatDate("D MMMM YYYY") }}</p>
-  </div>
-
 
 <span class="line"></span>
   <div class="timeline__event">
     <h3 class="timeline__heading">GP report - medical evidence recieved</h3>
-    <p class="timeline_datetime">{{customer.fmeRequestedDate | formatDate("D MMMM YYYY") }}</p>
+    <p class="timeline_datetime">4 December 2018</p>
   </div>
 
 
 <span class="line"></span>
   <div class="timeline__event">
     <h3 class="timeline__heading">GP Report - medical evidence requested</h3>
-    <p class="timeline_datetime">{{customer.fmeRequestedDate | formatDate("D MMMM YYYY") }}</p>
+    <p class="timeline_datetime">28 November 2018</p>
   </div>
 
-        
-        <span class="line"></span>
-        <div class="timeline__event">
-          <h3 class="timeline__heading">Med 3 - medical evidence recieved </h3>
-          <p class="timeline_datetime">10 August 2018</p>
-        </div>
         <span class="line"></span>
         <div class="timeline__event">
           <h3 class="timeline__heading">UC50 form received</h3>
-          <p class="timeline_datetime">10 August 2018</p>
+          <p class="timeline_datetime">23 November 2018</p>
         </div>
 
         <span class="line"></span>
         <div class="timeline__event">
           <h3 class="timeline__heading">UC50 form sent out to {{customer.name.first}}</h3>
-          <p class="timeline_datetime">19 July 2018</p>
+          <p class="timeline_datetime">14 November 2018</p>
         </div>
 
    
@@ -67,7 +75,7 @@
         <span class="line"></span>
         <div class="timeline__event">
           <h3 class="timeline__heading">New referral created</h3>
-          <p class="timeline_datetime">17 July 2018</p>
+          <p class="timeline_datetime">12 November 2018</p>
         </div>
         <div style="clear:both"></div>
 

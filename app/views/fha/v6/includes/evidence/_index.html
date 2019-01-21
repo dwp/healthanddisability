@@ -7,7 +7,39 @@
 
 <h1 class="heading-large mt10">Recorded evidence</h1>
 <!--<p class="mt10"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/record-evidence" class="button secondary">Record evidence recieved</a></p> -->
-<!-- <table class="evidence-list">
+
+{% if customer.status == 'Security booked'%}
+
+<table class="evidence-list">
+
+		<thead>
+				<tr>
+					<th>Evidence type</th>
+					<th>Source</th>
+					<th>Received</th>
+					<th class="numeric">Recorded</th>
+				</tr>
+			</thead>
+			
+
+		
+
+
+		
+	<tr>
+				<td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing">GP report</a></td>
+				<td>GP: Dr.{{customer.address.gpName.fullName}}</td>
+				<td><span class="secondary-text">4 December 2018</span></td>
+				<td class="numeric"><span>6 December 2018</span></td>
+			</tr>
+			
+	
+
+	
+	</table> 
+
+{% else%}
+<table class="evidence-list">
 
                 <thead>
 	                  <tr>
@@ -74,16 +106,9 @@
 									</tr>
 									{% endif %}
 
-									<tr>
-	                  <td>MED 3 </td>
-										<td>GP: Dr.{{customer.address.gpName.fullName}}</td>
-										<td ><span class="text-secondary">{{ 'Do MMMM YYYY' | randDaysAgo(5)}}</span></td>
-	                  <td class="numeric"><span>{{ 'Do MMMM YYYY' | randDaysAgo(5)}}</span></td>
-	                </tr>
-
-							</table>  -->
+							</table> 
 						
-						
+						{% endif %}
 
 {% endblock %}
 
