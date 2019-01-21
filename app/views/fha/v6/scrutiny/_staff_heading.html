@@ -2,13 +2,20 @@
   <div class="staff__centred">
     <div class="grid-row">
       <div class="column-half">
-        <h2 class="heading-xlarge mt10 mb30">{{customer.name.fullName}} </h2>
+      	<div class="badges">
+      		<ul>
+      			<li class="badge">UC</li>
+      			<li class="badge support-item">UCB</li>
+      		</ul>
+      	</div>
+      	
+        <h1 class="heading-xlarge">{{customer.name.fullName}}</h1>
        
       </div><!-- column -->
-      <div class="column-quarter">
-        <p><span class="font-xsmall">National Insurance Number</span><br /><span class="bold-medium">{{customer.NINO}}</span></p>
+      <div class="column-quarter mt10">
+        <p><span class="font-xsmall">National Insurance number</span><br /><span class="bold-medium">{{customer.NINO}}</span></p>
       </div>
-      <div class="column-quarter">
+      <div class="column-quarter mt10">
         <p><span class="font-xsmall">Date of birth</span><br /><span class="bold-medium">{{customer.dateOfBirth |formatDate('D MMMM YYYY') }}</span></p>
       </div>
     </div>
