@@ -4,8 +4,10 @@
       <div class="column-half">
       	<div class="badges">
       		<ul>
-      			<li class="badge">UC</li>
-      			<li class="badge support-item">UCB</li>
+            <li class="badge">UC</li>
+            {% if customer.name.first == 'Lowery' %}
+            <li class="badge support-item">Unacceptable customer behaviour</li>
+            {% endif %}
       		</ul>
       	</div>
       	
