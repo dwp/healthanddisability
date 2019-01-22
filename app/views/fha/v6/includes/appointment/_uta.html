@@ -4,8 +4,8 @@
 <div class="column-one-third">
     {% if customer.name.first == 'Mcconnell'%}
     <div class="panel panel-warning">
-        <h3 class="heading-small">Previous rearangement</h3>
-          <p>Mcconnell has previously re-arranged their appointment and earlier appointments are available
+        <h3 class="heading-small">Previous rearrangement</h3>
+          <p>Mcconnell has previously rearranged their appointment and earlier appointments are available
           </p>
 
         </div> 
@@ -70,7 +70,7 @@
       <summary><span class="summary">Appointment preferences</span></summary>
     
     
-      <h3 class="heading-small">Days {{customer.name.first}} is unavailable:</h3>
+      <h3 class="heading-small">When {{customer.name.first}} is unavailable:</h3>
     
       <ul class="list-bullet pref-list">
     
@@ -79,19 +79,9 @@
         </li>
     
     
-        <li>Tuesday's</li>
+        <li>Tuesdays</li>
     
-    
-    
-    
-      </ul>
-    
-    
-      <h3 class="heading-small">Dates {{customer.name.first}} is unavailable:</h3>
-      <ul class="list-bullet pref-list">
-    
-        <li>11 Febuary 2019 – 17 Febuary 2019</li>
-    
+        <li>11 February 2019 – 17 February 2019</li>
     
     
       </ul>
@@ -110,7 +100,7 @@
   </ul>
   {% else %}
   <ul class="list-bullet mt10 mb10">
-    <li>Tuesday 5 Feb 2018</li>
+    <li>Tuesday 5 February 2019</li>
     <li>4:00pm</li>
     <li>Tresco House</li>
   </ul>
@@ -120,7 +110,7 @@
     <summary><span class="summary">Appointment preferences</span></summary>
   
   
-    <h3 class="heading-small">Days {{customer.name.first}} is unavailable:</h3>
+    <h3 class="heading-small">When {{customer.name.first}} is unavailable:</h3>
   
     <ul class="list-bullet pref-list">
   
@@ -129,22 +119,15 @@
       </li>
   
   
-      <li>Tuesday's</li>
+      <li>Tuesdays</li>
   
-  
-  
-  
-    </ul>
-  
-  
-    <h3 class="heading-small">Dates {{customer.name.first}} is unavailable:</h3>
-    <ul class="list-bullet pref-list">
-  
-      <li>11 Febuary 2019 – 17 Febuary 2019</li>
-  
+      <li>11 February 2019 – 17 February 2019</li>
   
   
     </ul>
+  
+  
+    
   
   
   
@@ -154,7 +137,7 @@
   {% if customer.name.first == 'Deena' and data['changedByCustomer']==="yes" %}
   <p><a href="/{{path1}}/{{customer._id}}/request-rearrangement" class="button-secondary">Book appointment</a></p>
   {% else %}
-  <p><a href="/{{path1}}/{{customer._id}}/request-rearrangement" class="button-secondary">Rearrange {% if customer.name.first == 'Mcconnell' %} , request {% endif %} or cancel appointment</a></p>
+  <p><a href="/{{path1}}/{{customer._id}}/request-rearrangement" class="button-secondary">Rearrange{% if customer.name.first == 'Mcconnell' %}, request {% endif %} or cancel appointment</a></p>
   {% endif %}
   <p><a href="/{{path1}}/{{customer._id}}/appointment-changeofcircumstances" class="">Record change of circumstances</a></p>
 
@@ -225,7 +208,7 @@
             
 
             <span class="badge alt mt10">Unable to attend</span>
-            <p class="small">Customer rearranged because they have another appointment with there specialist on the same day
+            <p class="small">Customer rearranged because they have another appointment with their specialist on the same day
             </p>
           </li>
 
@@ -235,7 +218,7 @@
 
 
             <span class="badge alt">Unable to attend</span>
-            <p class="small">Customer rearranged because they have another appointment with there specialist on the same day
+            <p class="small">Customer rearranged because they have another appointment with their specialist on the same day
             </p>
           </li>
           {% else %}

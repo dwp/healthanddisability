@@ -6,14 +6,14 @@
 <div class="column-one-third">
     {% if customer.name.first == 'Valerie' %}
     <div class="panel panel-warning">
-      <p>{{customer.name.first}} has previously re-arranged their appointment</p>
+      <p>{{customer.name.first}} has previously rearranged their appointment</p>
     </div>
     {% endif %}  
 
     <!--<div class="panel panel-info">{{customer.name.first}} contacted us and provided us with a reason</div> -->
     {% if customer.name.first == 'Sarah' %}
     <div class="panel panel-warning">
-        <p>{{customer.name.first}} missed there appointment</p>
+        <p>{{customer.name.first}} missed their appointment</p>
       </div>
     <p><a href="/{{path1}}/booked/{{customer._id}}/request-rearrangement" class="button-secondary">Did not attend</a></p>
     {% endif %}  
@@ -91,7 +91,7 @@
               {% if customer.name.first == 'Arnaq'%} 
               <li>
                   <h3 class="bold mt0 small">Reason</h3>
-                  <p class="small">Arnaq was having a bad day with his arthritis and was struggling to get out of the house, he asked for a rearrangement but we couldnt because he had previously re-arranged
+                  <p class="small">Arnaq was having a bad day with his arthritis and was struggling to get out of the house, he asked for a rearrangement but we could not provide it because he had previously rearranged
                     his appointment.
                   </p></li>
 

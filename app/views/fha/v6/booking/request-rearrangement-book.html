@@ -17,12 +17,12 @@
            
         <div class="grid-row">
             <div class="column-two-thirds">
-        <h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Rearrange  {% if customer.name.first == 'Mcconnell' %} , request {% endif %} or cancel appointment</h1>
+        <h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Rearrange{% if customer.name.first == 'Mcconnell' %}, request {% endif %} or cancel appointment</h1>
 
             {% if customer.name.first == 'Mcconnell' %}
             <div class="panel panel-warning">
-                    <h3 class="heading-small">Previous rearangement</h3>
-                      <p>Mcconnell has previously re-arranged their appointment and earlier appointments are available
+                    <h3 class="heading-small">Previous rearrangement</h3>
+                      <p>Mcconnell has previously rearranged their appointment and earlier appointments are available
                       </p>
            
                     </div> 
@@ -58,23 +58,19 @@
     
                                                             <summary><span class="summary">Appointment preferences</span></summary>
                                                     
-                                                            <h3 class="heading-small">Days {{customer.name.first}} is unavailable:</h3>            
+                                                            <h3 class="heading-small">When {{customer.name.first}} is unavailable:</h3>            
                                                       
                                                             <ul class="list-bullet pref-list">
                     
                                                                 <li>Monday <span>afternoons</span>
                                                                 </li>
                                                         
-                                                                <li>Tuesday's</li>
+                                                                <li>Tuesdays</li>
+                                                                <li>11 Febuary 2019 – 17 Febuary 2019</li>
                                                         
                                                                 </ul>
                                                            
-                                                            <h3 class="heading-small">Dates {{customer.name.first}} is unavailable:</h3>
-                                                            <ul class="list-bullet pref-list">
-                                                      
-                                                                <li>11 Febuary 2019 – 17 Febuary 2019</li>
-                                    
-                                                            </ul>
+                                                            
                                                           </details>
                                                       
                                                    
@@ -110,7 +106,7 @@
 
                                 <div class="multiple-choice" data-target="Cancel-appointment">
                                         <input type="radio" name="appointments" id="available-appointments-1" value="no"  {{checked('appointments', 'no') }}>
-                                        <label for="available-appointments-1">Cancel appointment {% if customer.name.first == 'Mcconnell' %} {% else %}  - no appropriate appointments available{% endif %}</label>
+                                        <label for="available-appointments-1">Cancel appointment {% if customer.name.first == 'Mcconnell' %} {% else %}  &ndash; no appropriate appointments available{% endif %}</label>
                                     </div>
                                   <!-- {% if customer.name.first == 'Mcconnell' %} 
                                     <div class="panel js-hidden" id="Cancel-appointment" >
@@ -142,7 +138,7 @@
                             {% if customer.name.first == 'Lowery' %}
                             {% else %}
                                     <div class="form-group">
-                                            <label class="form-label-bold">What is the reason for this rearrangement {% if customer.name.first == 'Mcconnell' %} , request {% endif %}  or cancelation ? </label>
+                                            <label class="form-label-bold">What is the reason for this rearrangement{% if customer.name.first == 'Mcconnell' %}, request {% endif %}  or cancellation? </label>
                                             <textarea name="changedByCustomerComments" class="form-control " style="height: 150px; width:100%; max-width:650px;"></textarea>
                                     </div>        
                              {% endif %}

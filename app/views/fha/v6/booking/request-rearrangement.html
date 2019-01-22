@@ -14,12 +14,12 @@
     <div class="grid-row">
         <div class="column-full">
         <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
-            <h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Rearrange {% if customer.name.first == 'Mcconnell' %} , request {% endif %} or cancel appointment</h1>
+            <h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Rearrange{% if customer.name.first == 'Mcconnell' %}, request {% endif %} or cancel appointment</h1>
             
            <form action="request-rearrangement-book" method="post">
                 <fieldset class="form-group">
                     <legend class="heading-medium mb5">
-                        Reason for rearrangement or cancelation:
+                        Reason for rearrangement or cancellation:
                     </legend>
                     <div class="multiple-choice" data-target="customer-request-box">
                         <input type="radio" name="changedByCustomer" id="changedByCustomer-yes" value="yes">
@@ -31,7 +31,7 @@
                         <div class="multiple-choice">
                             
                             <input type="radio" name="changedByCustomer-visited" id="changedByCustomer-no" value="no" checked>
-                            <label for="changedByCustomer-no">We have had to change the appointment</label>
+                            <label for="changedByCustomer-no">We've had to change the appointment</label>
                         </div>
                     </div>
                     
@@ -48,7 +48,7 @@
 
                     <div class="multiple-choice" data-target="we-changed">
                         <input type="radio" name="changedByCustomer" id="changedByCustomer-no" value="no">
-                        <label for="changedByCustomer-no">We have had to change the appointment</label>
+                        <label for="changedByCustomer-no">We've had to change the appointment</label>
                     </div>
                     
                     
@@ -61,7 +61,7 @@
                         
 	                    <div class="multiple-choice">
 	                        <input type="radio" name="changes" id="changedBy1" value="yes">
-	                        <label for="changedBy1">Appointment conflicts with a appointment preference or special requirement</label>
+	                        <label for="changedBy1">Appointment conflicts with an appointment preference or special requirement</label>
 	                    </div>
 	                    <div class="multiple-choice">
 	                        <input type="radio" name="changes" id="changedBy2" value="yes">
