@@ -70,6 +70,20 @@ module.exports = function (env) {
       else return ''
   }
 
+  filters.baseDate = function(format,num) {
+    var num = Math.ceil(num);
+    var d = moment().subtract(num,"days").format(format)
+    if (d !== 'Invalid date') return d
+    else return ''
+}
+
+  filters.baseDateAdd = function(format,num) {
+    var num = Math.ceil(num);
+    var d = moment().add(num,"days").format(format)
+    if (d !== 'Invalid date') return d
+    else return ''
+}
+
   filters.formatInPast = function(date){
     var today = moment(new Date()).hours(0).minutes(0).seconds(0).milliseconds(0);
     var testDate = moment(date).hours(0).minutes(0).seconds(0).milliseconds(0);

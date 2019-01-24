@@ -73,7 +73,7 @@
 
 					&.active_child{
 						color:$text-colour;
-						//background:$grey-4;
+						background:$grey-4;
 						cursor:default;
 					}
 
@@ -82,6 +82,17 @@
 
 				li:last-of-type{
 					border-bottom: none;
+				}
+
+				ul li { 
+					
+                
+					a {
+						padding:10px 5px;
+						background:transparent;
+
+					}
+				
 				}
 
 			}

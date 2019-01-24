@@ -23,18 +23,24 @@
 		
 			
 		<h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Rearrange appointment</h1>
-		
+		{% if customer.name.first == 'Elvia' %}
 		<div class="panel panel-info mb30">
-					
-			
 								<ul class="list-bullet">
 										<li>{{customer.name.first}} has been waiting less  than 30 minutes</li>
 										<li>{{customer.name.first}}  arrived on time</li>
 										<li>Longest wait time is currently over 30 minutes</li>
 									</ul>
-							
-						
 					</div>
+					{% endif%}
+
+					{% if customer.name.first == 'Sherry' %}
+					<div class="panel panel-warning mb30">
+											<ul class="list-bullet">
+													<li>{{customer.name.first}}  arrived 35mins late and has been waiting 20mins</li>
+
+												</ul>
+								</div>
+								{% endif%}
 	
 		   <form  method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/send-home">
 

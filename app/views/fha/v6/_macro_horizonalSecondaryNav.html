@@ -18,7 +18,8 @@
 	    			<a href="{{subItem.url}}" 
 	    			{% if subItem.url == subSection %}
 	    				class="active_child"
-	    			{% endif %}>{{subItem.label}} ({{subItem.quantity}})</a>
+						{% endif %}>{{subItem.label}} ({{subItem.quantity}})</a>
+
 	    		</li>
 
 	    	{% endfor %}

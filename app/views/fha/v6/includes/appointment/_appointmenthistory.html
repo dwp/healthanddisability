@@ -1,8 +1,11 @@
 {% if customer.name.first == 'Dominguez'%}
-  {% if customer.name.first == 'Dominguez' and data['appointments-dom']==="yes" %}
+  {% if customer.name.first == 'Dominguez' and data['Reason']==="unable" %}
       <hr />
   
-      <h2 class="heading-medium">Rearranged appointment</h2>
+      <h2 class="heading-medium">Rearranged: Complex neuro appointment</h2>
+      <li>{{ 'Do MMMM YYYY' | baseDateAdd(1) }}</li>
+      <li>10:00am</li>
+      <li>Tresco House</li>
       <h3 class="heading-small">Sent home</h3>
       <p class="small">Healthcare professional is unable to continue (for example, a specialist is required)
         <span class="date block mt10 text-secondary">{{customer | formatDate("D MMMM YYYY") }}</span>
@@ -11,18 +14,25 @@
 
   <hr />
   
-      <h2 class="heading-medium">Rearranged appointment</h2>
-      <h3 class="heading-small">Assessment centre</h3>
+      <h2 class="heading-medium">Rearranged: Standard appointment</h2>
+      <li>{{ 'Do MMMM YYYY' | baseDate(0) }}</li>
+      <li>11:00am</li>
+      <li>Tresco House</li>
+      <h3 class="heading-small">We have had to change the appointment</h3>
       <p class="small">Accommodation problem (for example, power failure or evacuation)
-        <span class="date block mt10 text-secondary">07 November 2018 | 10:15 am</span>
+        <span class="date block mt10 text-secondary">{{ 'Do MMMM YYYY' | baseDate(12) }} | 1:30pm</span>
       </p>
 
       <hr />
   
-      <h2 class="heading-medium">Rearranged appointment</h2>
+      <h2 class="heading-medium">Rearranged: Standard appointment</h2>
+      <li>{{ 'Do MMMM YYYY' | baseDate(12) }}</li>
+      <li>11:00am</li>
+      <li>Tresco House</li>
+    </ul>
       <h3 class="heading-small">Unable to attend</h3>
       <p class="small">Dominguez requested to rearrange apointment because original appointment clashed with another appointment
-        <span class="date block mt10 text-secondary">23 October 2018 | 11:15 am</span>
+        <span class="date block mt10 text-secondary">{{ 'Do MMMM YYYY' | baseDate(17) }} | 11:15 am</span>
       </p>
 
       {% elif customer.name.first == 'Dillon'%}
@@ -48,8 +58,13 @@
       <hr />
       
       <h2 class="heading-medium">Rearranged appointment</h2>
-      <h3 class="heading-small">Sent home</h3>
-      <p class="small">{{ customer.name.first }} did not want to wait any longer
+      <ul class="list-bullet mt10 mb10">
+            <li>{{ 'Do MMMM YYYY' | baseDateAdd(15) }}</li>
+            <li>11:00am</li>
+            <li>Tresco House</li>
+          </ul>
+      <h3 class="heading-small">Customer request</h3>
+      <p class="small">{{ customer.name.first }} had waited less than 30 mins and did not want to wait any longer
       <span class="date block mt10 text-secondary">{{customer | formatDate("D MMMM YYYY") }}</span>
       </p>   
       
@@ -58,7 +73,7 @@
       
       <h2 class="heading-medium">Rearranged appointment</h2>
       <h3 class="heading-small">Sent home</h3>
-      <p class="small">{{ customer.name.first }} arrived late
+      <p class="small">{{customer.name.first}}  arrived 35mins late and been waiting 20mins
       <span class="date block mt10 text-secondary">{{customer | formatDate("D MMMM YYYY") }}</span>
       </p>   
 
@@ -66,6 +81,11 @@
       <hr />
       
       <h2 class="heading-medium">Rearranged appointment</h2>
+      <ul class="list-bullet mt10 mb10">
+            <li>{{ 'Do MMMM YYYY' | baseDateAdd(15) }}</li>
+            <li>11:00am</li>
+            <li>Tresco House</li>
+          </ul>
       <h3 class="heading-small">Sent home</h3>
       <p class="small">Number of claimants in attendance exceeds medical capacity
       <span class="date block mt10 text-secondary">{{customer | formatDate("D MMMM YYYY") }}</span>
@@ -99,4 +119,18 @@
 
          {% endif %}
 
-  {% endif %}
+         {% endif %}
+   
+                  
+
+         <hr />
+         <h2 class="heading-medium">Booked: Standard appointment</h2>
+   
+         <ul class="list-bullet">
+             <li>{{ 'Do MMMM YYYY' | baseDate(15) }}</li> 
+             <li>11:00am</li>  
+             <li>Tresco House</li> 
+              </ul>
+   
+           <span class="date block mt10 text-secondary">{{ 'Do MMMM YYYY' | baseDate(25)}}</span>
+         </p> 

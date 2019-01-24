@@ -23,7 +23,7 @@
     	<h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Rearrange appointment</h1>
     	
     	{% if checked('stoppassess','unfit') or customer.name.first == 'Dillon'%}
-								<div class="panel panel-info m10">
+								<div class="panel panel-info">
 										<p>
 								{{customer.name.first}} is unfit to be examined
 						    	</p>
@@ -55,7 +55,7 @@
 									<label for="available-appointments-unable">Yes</label>
 								</div>
 
-								<div class="multiple-choice">
+								<div class="multiple-choice" data-target="no-reason">
 									<input type="radio" name="appointments" id="available-appointments-1" value="no"  {{checked('appointments', 'no') }}>
 									<label for="available-appointments-1">No</label>
 								</div>
@@ -65,6 +65,15 @@
 									{% include path+"/includes/appointmentsTypeAhead.html" %}  
 										
 								</div>
+
+								<div class="panel js-hidden" id="no-reason">
+
+										<div class="form-group">
+												<label class="form-label-bold">Reason for not rearranging </label>
+												<textarea name="changedByCustomerComments" class="form-control " style="height: 150px; width:100%; max-width:650px;"></textarea>
+										</div>        
+											
+									</div>
 					
 								
 								</fieldset>

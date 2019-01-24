@@ -1,0 +1,441 @@
+{% extends path+"/_layout-case-action-required.html" %}
+
+{% block citizen_content %}
+
+
+
+ <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+  
+<h1 class="heading-large">Work capability report</h1>
+
+
+<div class="review-wrapper">
+
+
+<table class="report-view-table">
+<caption class="heading-small">Assessment overview</caption>
+
+	<tbody>
+		<tr>
+			<th>Date of assessment</th>
+			<td>{{ "Do MMM YYYY" | daysAgo }}</td>
+		</tr>
+		<tr>
+			<th>Assessment centre</th>
+			<td>Fiveways, Birmingham</td>
+		</tr>
+		<tr>
+			<th>Assessor</th>
+			<td>Heather Harrison</td>
+		</tr>
+		<tr>
+			<th>Assessment start</th>
+			<td>{{ last_one.time | formatDate("H:mma") }}</td>
+		</tr>
+		<tr>
+			<th>Assessment finish</th>
+			<td>{{ first_one.time | formatDate("H:mma") }}</td>
+		</tr>
+	</tbody>
+</table>
+
+ 
+	
+
+	<div class="report-item">	
+	
+	
+	<h2 class="heading-large mt0">Physical assessments</h2>    
+
+	
+	<p>Consent was given by {{customer.name.first}} to start the physical assessment.</p>
+	
+			
+		<h3 class="heading-medium mt30 mb0">Lower back and legs</h3>
+			
+		<table class="report-view-table">
+				<caption class="heading-small">Left leg</caption>
+
+				<tbody>
+					{% if checked('issueswith', 'Issue 1') %}
+					<tr>
+						<th>Straight Leg raising</th>
+						<td>
+								{% if data['issue1opencomments'] %}
+							
+							  {{ issue1opencomments }}
+								{% else %}
+								Normal (more than 70˚)
+								{% endif %}
+							
+							
+						</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswith', 'Issue 2') %}
+					<tr>
+						<th>Hip flexion</th>
+						<td>	{% if data['issue2opencomments']  %}
+							
+							  {{ issue2opencomments }}
+								{% else %}
+								Normal (more than 130˚)
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswith', 'Issue 3') %}
+					<tr>
+						<th>Knee flexion</th>
+						<td>	{% if data['issue3opencomments']  %}
+							
+							  {{ issue3opencomments }}
+								{% else %}
+								Normal (more than 120˚)
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswith', 'Issue 4') %}
+					<tr>
+						<th>Knee extension</th>
+						<td>	{% if data['issue4opencomments']  %}
+							
+							  {{ issue4opencomments }}
+								{% else %}
+								Full
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswith', 'Issue 5') %}
+					<tr>
+						<th>External hip rotation</th>
+						<td>	{% if data['issue5opencomments'] %}
+							
+							  {{ issue5opencomments }}
+								{% else %}
+								Normal (more than 45˚)
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswith', 'Issue 6') %}
+					<tr>
+						<th>Ankle Plantarflexion</th>
+						<td>	{% if data['issue6opencomments'] %}
+							
+							  {{ issue6opencomments }}
+								{% else %}
+								Normal (more than 50˚)
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswith', 'Issue 7') %}
+					<tr>
+						<th>Ankle dorsiflexion</th>
+						<td>	{% if data['issue7opencomments'] %}
+							
+							  {{ issue7opencomments }}
+								{% else %}
+								Normal (more than 20˚)
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswith', 'Issue 8') %}
+					<tr>
+						<th>Hallux dorsiflexion</th>
+						<td>	{% if data['issue8opencomments'] %}
+							
+							  {{ issue8opencomments }}
+								{% else %}
+								Normal (more than 60˚)
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswith', 'Issue 9') %}
+					<tr>
+						<th>Hallux plantarflexion</th>
+						<td>	{% if data['issue9opencomments']  %}
+							
+							  {{ issue9opencomments }}
+								{% else %}
+								Normal (more than 40˚)
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswith', 'Issue 10') %}
+					<tr>
+						<th>Power</th>
+						<td>	{% if data['issue10opencomments'] %}
+							
+							  {{ issue10opencomments }}
+								{% else %}
+								Normal
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswith', 'Issue 11') %}
+					<tr>
+						<th>Tone</th>
+						<td>	{% if data['issue11opencomments'] %}
+							
+							  {{ issue11opencomments }}
+								{% else %}
+								Normal 
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswith', 'Issue 12') %}
+					<tr>
+						<th>Knee reflexes</th>
+						<td>	{% if data['issue12opencomments']%}
+							
+							  {{ issue12opencomments }}
+								{% else %}
+								Normal 
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswith', 'Issue 13') %}
+					<tr>
+						<th>Ankle reflexes</th>
+						<td>	{% if data['issue13opencomments'] %}
+							
+							  {{ issue13opencomments }}
+								{% else %}
+								Normal 
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswith', 'Issue 14') %}
+					<tr>
+						<th>Plantar reflexes</th>
+						<td>	{% if data['issue14opencomments'] %}
+							
+							  {{ issue14opencomments }}
+								{% else %}
+								Normal 
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if data['issue15opencomments'] %}
+					<tr>
+						<th>Other examination findings </th>
+						<td>
+							
+							  {{ issue15opencomments }}
+						
+							</td>
+					</tr>
+					{% endif %}
+				</tbody>
+			</table>
+			<form action="lower-limbs2" method="Post">
+			<p><button class="button-secondary">Edit left leg</button></p>
+           <div class="visually-hidden">
+			<div class="multiple-choice">
+					<input id="issue15" name="physicalvisited" type="checkbox" value="yes" checked>
+					<label for="issue15"> Observations</label>
+				  </div>
+			</div>		  
+            </form>
+		<table class="report-view-table">
+				<caption class="heading-small">Right leg</caption>
+		
+				<tbody>
+					{% if checked('issueswithRight', 'Issue 1') %}
+					<tr>
+						<th>Straight Leg raising</th>
+						<td>
+								{% if data['rightlegissue1opencomments'] %}
+							
+							  {{ rightlegissue1opencomments }}
+								{% else %}
+								Normal (more than 70˚)
+								{% endif %}
+							
+							
+						</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswithRight', 'Issue 2') %}
+					<tr>
+						<th>Hip flexion</th>
+						<td>	{% if data['rightlegissue2opencomments']  %}
+							
+							  {{ rightlegissue2opencomments }}
+								{% else %}
+								Normal (more than 130˚)
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswithRight', 'Issue 3') %}
+					<tr>
+						<th>Knee flexion</th>
+						<td>	{% if data['rightlegissue3opencomments']  %}
+							
+							  {{ rightlegissue3opencomments }}
+								{% else %}
+								Normal (more than 120˚)
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswithRight', 'Issue 4') %}
+					<tr>
+						<th>Knee extension</th>
+						<td>	{% if data['rightlegissue4opencomments']  %}
+							
+							  {{ rightlegissue4opencomments }}
+								{% else %}
+								Full
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswithRight', 'Issue 5') %}
+					<tr>
+						<th>External hip rotation</th>
+						<td>	{% if data['rightlegissue5opencomments'] %}
+							
+							  {{ rightlegissue5opencomments }}
+								{% else %}
+								Normal (more than 45˚)
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswithRight', 'Issue 6') %}
+					<tr>
+						<th>Ankle Plantarflexion</th>
+						<td>	{% if data['rightlegissue6opencomments'] %}
+							
+							  {{ rightlegissue6opencomments }}
+								{% else %}
+								Normal (more than 50˚)
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswithRight', 'Issue 7') %}
+					<tr>
+						<th>Ankle dorsiflexion</th>
+						<td>	{% if data['rightlegissue7opencomments'] %}
+							
+							  {{ rightlegissue7opencomments }}
+								{% else %}
+								Normal (more than 20˚)
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswithRight', 'Issue 8') %}
+					<tr>
+						<th>Hallux dorsiflexion</th>
+						<td>	{% if data['rightlegissue8opencomments'] %}
+							
+							  {{ rightlegissue8opencomments }}
+								{% else %}
+								Normal (more than 60˚)
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswithRight', 'Issue 9') %}
+					<tr>
+						<th>Hallux plantarflexion</th>
+						<td>	{% if data['rightlegissue9opencomments']  %}
+							
+							  {{ rightlegissue9opencomments }}
+								{% else %}
+								Normal (more than 40˚)
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswithRight', 'Issue 10') %}
+					<tr>
+						<th>Power</th>
+						<td>	{% if data['rightlegissue10opencomments'] %}
+							
+							  {{ rightlegissue10opencomments }}
+								{% else %}
+								Normal
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswithRight', 'Issue 11') %}
+					<tr>
+						<th>Tone</th>
+						<td>	{% if data['rightlegissue11opencomments'] %}
+							
+							  {{ rightlegissue11opencomments }}
+								{% else %}
+								Normal 
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswithRight', 'Issue 12') %}
+					<tr>
+						<th>Knee reflexes</th>
+						<td>	{% if data['rightlegissue12opencomments']%}
+							
+							  {{ rightlegissue12opencomments }}
+								{% else %}
+								Normal 
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswithRight', 'Issue 13') %}
+					<tr>
+						<th>Ankle reflexes</th>
+						<td>	{% if data['rightlegissue13opencomments'] %}
+							
+							  {{ rightlegissue13opencomments }}
+								{% else %}
+								Normal 
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if checked('issueswithRight', 'Issue 14') %}
+					<tr>
+						<th>Plantar reflexes</th>
+						<td>	{% if data['rightlegissue14opencomments'] %}
+							
+							  {{ rightlegissue14opencomments }}
+								{% else %}
+								Normal 
+								{% endif %}</td>
+					</tr>
+					{% endif %}
+					{% if data['rightlegissue15opencomments'] %}
+					<tr>
+						<th>Other examination findings</th>
+						<td>
+							
+							  {{ rightlegissue15opencomments }}
+						
+							</td>
+					</tr>
+					{% endif %}
+				</tbody>
+			</table>
+			<form action="lower-limbs3" method="Post">
+					<p><button class="button-secondary">Edit right leg</button></p>
+				   <div class="visually-hidden">
+					<div class="multiple-choice">
+							<input id="issue15" name="physicalvisited" type="checkbox" value="yes" checked>
+							<label for="issue15"> Observations</label>
+						  </div>
+					</div>		  
+					</form>
+			
+		</div>
+		<!-- / iteem end -->
+
+	
+	
+  
+  
+   </div>
+ <!-- / wrapper -->
+  
+
+ <form class="mt30" method="post" action="/{{path}}/assessment/{{customer._id}}/completed-assessment">
+	<p class="mt30"><button class="button">Finish &ndash; sign off report</button></p>
+	</form>
+
+
+{% endblock %}
+
