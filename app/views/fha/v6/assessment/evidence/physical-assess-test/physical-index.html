@@ -1,4 +1,4 @@
-{% extends path+"/_layout-case-action.html" %}
+{% extends path+"/_layout-case-misc.html" %}
 
 {% block citizen_content %}
 
@@ -19,7 +19,7 @@
               <li class="task-list-item"><a href="general">General health</a></li>
 						<li class="task-list-item"><a href="lower-limbs">Lower back and legs {% if data['lowerlimbs'] %}<span class="task-completed">Assessed</span>{% endif %}</a></li>
 						<li class="task-list-item"><a href="#">Neck and arms{% if data['neckwhatcando']==='Yes' or data['neckwhatcando']==='No'%}<span class="task-completed">Assessed</span>{% endif %}</a></li>
-						<li class="task-list-item"><a href="cardiac">Cardiac vascular and respiratory</a></li>
+						<li class="task-list-item"><a href="cardiac">Cardio vascular and respiratory</a></li>
 						<li class="task-list-item"><a href="vision">Vision hearing and speech</a></li>
             <li class="task-list-item"><a href="#">Central nervous system</a></li>
          </ul>
