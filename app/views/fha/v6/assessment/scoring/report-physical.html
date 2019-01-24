@@ -125,24 +125,7 @@
 								Normal (more than 20˚)
 								{% endif %}</td>
 					</tr>
-					<tr>
-						<th>Hallux dorsiflexion</th>
-						<td>	{% if data['issue8opencomments'] and data['leftegfinding']==='Yes' %}
-							
-							  {{ issue8opencomments }}
-								{% else %}
-								Normal (more than 60˚)
-								{% endif %}</td>
-					</tr>
-					<tr>
-						<th>Hallux plantarflexion</th>
-						<td>	{% if data['issue9opencomments'] and data['leftegfinding']==='Yes' %}
-							
-							  {{ issue9opencomments }}
-								{% else %}
-								Normal (more than 40˚)
-								{% endif %}</td>
-					</tr>
+					
 					<tr>
 						<th>Power</th>
 						<td>	{% if data['issue10opencomments'] and data['leftegfinding']==='Yes' %}
@@ -152,42 +135,7 @@
 								Normal
 								{% endif %}</td>
 					</tr>
-					<tr>
-						<th>Tone</th>
-						<td>	{% if data['issue11opencomments'] and data['leftegfinding']==='Yes' %}
-							
-							  {{ issue11opencomments }}
-								{% else %}
-								Normal 
-								{% endif %}</td>
-					</tr>
-					<tr>
-						<th>Knee reflexes</th>
-						<td>	{% if data['issue12opencomments'] and data['leftegfinding']==='Yes' %}
-							
-							  {{ issue12opencomments }}
-								{% else %}
-								Normal 
-								{% endif %}</td>
-					</tr>
-					<tr>
-						<th>Ankle reflexes</th>
-						<td>	{% if data['issue13opencomments'] and data['leftegfinding']==='Yes' %}
-							
-							  {{ issue13opencomments }}
-								{% else %}
-								Normal 
-								{% endif %}</td>
-					</tr>
-					<tr>
-						<th>Plantar reflexes</th>
-						<td>	{% if data['issue14opencomments'] and data['leftegfinding']==='Yes' %}
-							
-							  {{ issue14opencomments }}
-								{% else %}
-								Normal 
-								{% endif %}</td>
-					</tr>
+					
 					{% if data['leftegfinding']==='Yes' and data['issue15opencomments'] %}
 					<tr>
 						<th>Observations</th>
@@ -282,24 +230,7 @@
 								Normal (more than 20˚)
 								{% endif %}</td>
 					</tr>
-					<tr>
-						<th>Hallux dorsiflexion</th>
-						<td>	{% if data['rightlegissue8opencomments'] and data['rightlegfinding']==='Yes' %}
-							
-								{{ rightlegissue8opencomments }}
-								{% else %}
-								Normal (more than 60˚)
-								{% endif %}</td>
-					</tr>
-					<tr>
-						<th>Hallux plantarflexion</th>
-						<td>	{% if data['rightlegissue9opencomments'] and data['rightlegfinding']==='Yes' %}
-							
-								{{ rightlegissue9opencomments }}
-								{% else %}
-								Normal (more than 40˚)
-								{% endif %}</td>
-					</tr>
+					
 					<tr>
 						<th>Power</th>
 						<td>	{% if data['rightlegissue10opencomments'] and data['rightlegfinding']==='Yes' %}
@@ -309,42 +240,7 @@
 								Normal
 								{% endif %}</td>
 					</tr>
-					<tr>
-						<th>Tone</th>
-						<td>	{% if data['rightlegissue11opencomments'] and data['rightlegfinding']==='Yes' %}
-							
-								{{ rightlegissue11opencomments }}
-								{% else %}
-								Normal 
-								{% endif %}</td>
-					</tr>
-					<tr>
-						<th>Knee reflexes</th>
-						<td>	{% if data['rightlegissue12opencomments'] and data['rightlegfinding']==='Yes' %}
-							
-								{{ rightlegissue12opencomments }}
-								{% else %}
-								Normal 
-								{% endif %}</td>
-					</tr>
-					<tr>
-						<th>Ankle reflexes</th>
-						<td>	{% if data['rightlegissue13opencomments'] and data['rightlegfinding']==='Yes' %}
-							
-								{{ rightlegissue13opencomments }}
-								{% else %}
-								Normal 
-								{% endif %}</td>
-					</tr>
-					<tr>
-						<th>Plantar reflexes</th>
-						<td>	{% if data['rightlegissue14opencomments'] and data['rightlegfinding']==='Yes' %}
-							
-								{{ rightlegissue14opencomments }}
-								{% else %}
-								Normal 
-								{% endif %}</td>
-					</tr>
+					
 					{% if data['rightlegfinding']==='Yes' and data['rightlegissue15opencomments'] %}
 					<tr>
 						<th>Observations</th>

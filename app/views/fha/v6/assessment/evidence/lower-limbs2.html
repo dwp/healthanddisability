@@ -32,162 +32,108 @@
 																	
 																	
 																		 
-																		 
-																	<div class="panel js-hidden" id="leftleg-yes">
 
-									
-																	
-																			
-																			<fieldset>
+<div class="panel js-hidden" id="leftleg-yes">
+
+
+
+
+<fieldset>
+
+  <legend class="form-label-bold mb5">Select the areas were {{customer.name.first}} has issues:</legend>																		
+
+	
+		    <div class="multiple-choice" data-target="issue1open">
+		      <input id="issue1" name="issueswith" type="checkbox" value="Issue 1" >
+		      <label for="issue1">Straight Leg raising</label>
+		    </div>
+		     <div class="panel js-hidden" id="issue1open">
+				 <label class="form-label" for="issue1open-comments">Comments</label>
+				 <textarea class="form-control form-control-3-4" name="issue1opencomments" id="issue1opencomments" rows="2">{{issue1opencomments}}</textarea>
+			</div>
 		
-																				  <legend class="form-label-bold mb5">Select the areas were {{customer.name.first}} has issues:</legend>																		
-																		
-																					
-																						    <div class="multiple-choice" data-target="issue1open">
-																						      <input id="issue1" name="issueswith" type="checkbox" value="Issue 1" >
-																						      <label for="issue1">Straight Leg raising</label>
-																						    </div>
-																						     <div class="panel js-hidden" id="issue1open">
-																								 <label class="form-label" for="issue1open-comments">Comments</label>
-																								 <textarea class="form-control form-control-3-4" name="issue1opencomments" id="issue1opencomments" rows="2">{{issue1opencomments}}</textarea>
-																							</div>
-																						
-																						    <div class="multiple-choice" data-target="issue2open">
-																						      <input id="issue2" name="issueswith" type="checkbox" value="Issue 2">
-																						      <label for="issue2"> Hip flexion</label>
-																						    </div>
-																						    <div class="panel js-hidden" id="issue2open">
-																								 <label class="form-label" for="issue2open-comments">Comments</label>
-																								 <textarea class="form-control form-control-3-4" name="issue2opencomments" id="issue2opencomments" rows="2">{{issue2opencomments}}</textarea>
-																							</div>
-																						    
-																						    <div class="multiple-choice" data-target="issue3open">
-																						      <input id="issue3" name="issueswith" type="checkbox" value="Issue 3" >
-																						      <label for="issue3"> Knee flexion</label>
-																						    </div>
-																						    <div class="panel js-hidden" id="issue3open">
-																								 <label class="form-label" for="issue3open-comments">Comments</label>
-																								 <textarea class="form-control form-control-3-4" name="issue3opencomments" id="issue3opencomments" rows="2">{{issue3opencomments}}</textarea>
-																							</div>
-																						    
-																						    <div class="multiple-choice" data-target="issue4open">
-																						      <input id="issue4" name="issueswith" type="checkbox" value="Issue 4" >
-																						      <label for="issue4"> Knee extension</label>
-																						    </div>
-																						    <div class="panel js-hidden" id="issue4open">
-																								 <label class="form-label" for="issue4open-comments">Comments</label>
-																								 <textarea class="form-control form-control-3-4" name="issue4opencomments" id="issue4opencomments" rows="2">{{issue4opencomments}}</textarea>
-																							</div>
-																						    
-																						    <div class="multiple-choice" data-target="issue5open">
-																						      <input id="issue5" name="issueswith" type="checkbox" value="Issue 5">
-																						      <label for="issue5"> External hip rotation</label>
-																						    </div>
-																						    <div class="panel js-hidden" id="issue5open">
-																								 <label class="form-label" for="issue5open-comments">Comments</label>
-																								 <textarea class="form-control form-control-3-4" name="issue5opencomments" id="issue5opencomments" rows="2">{{issue5opencomments}}</textarea>
-																							</div>
-																						    
-																						    <div class="multiple-choice" data-target="issue6open">
-																						      <input id="issue6" name="issueswith" type="checkbox" value="Issue 6" >
-																						      <label for="issue6"> Ankle Plantarflexion</label>
-																						    </div>
-																						    <div class="panel js-hidden" id="issue6open">
-																								 <label class="form-label" for="issue6open-comments">Comments</label>
-																								 <textarea class="form-control form-control-3-4" name="issue6opencomments" id="issue6opencomments" rows="2">{{issue6opencomments}}</textarea>
-																							</div>
-																						    
-																						    <div class="multiple-choice" data-target="issue7open">
-																						      <input id="issue7" name="issueswith" type="checkbox" value="Issue 7" >
-																						      <label for="issue7"> Ankle dorsiflexion</label>
-																						    </div>
-																						    <div class="panel js-hidden" id="issue7open">
-																								 <label class="form-label" for="issue7open-comments">Comments</label>
-																								 <textarea class="form-control form-control-3-4" name="issue7opencomments" id="issue7opencomments" rows="2">{{issue7opencomments}}</textarea>
-																							</div>
-																						    
-																						    <div class="multiple-choice" data-target="issue8open">
-																						      <input id="issue8" name="issueswith" type="checkbox" value="Issue 8" >
-																						      <label for="issue8"> Hallux dorsiflexion</label>
-																						    </div>
-																						    <div class="panel js-hidden" id="issue8open">
-																								 <label class="form-label" for="issue8open-comments">Comments</label>
-																								 <textarea class="form-control form-control-3-4" name="issue8opencomments" id="issue8opencomments" rows="2">{{issue8opencomments}}</textarea>
-																							</div>
-																						    
-																						    <div class="multiple-choice" data-target="issue9open">
-																						      <input id="issue9" name="issueswith" type="checkbox" value="Issue 9" >
-																						      <label for="issue9"> Hallux plantarflexion</label>
-																						    </div>
-																						    <div class="panel js-hidden" id="issue9open">
-																								 <label class="form-label" for="issue9open-comments">Comments</label>
-																								 <textarea class="form-control form-control-3-4" name="issue9opencomments" id="issue9opencomments" rows="2">{{issue9opencomments}}</textarea>
-																							</div>
-																						    
-																						    <div class="multiple-choice" data-target="issue10open">
-																						      <input id="issue10" name="issueswith" type="checkbox" value="Issue 10">
-																						      <label for="issue10"> Power</label>
-																						    </div>
-																						    <div class="panel js-hidden" id="issue10open">
-																								 <label class="form-label" for="issue10open-comments">Comments</label>
-																								 <textarea class="form-control form-control-3-4" name="issue10opencomments" id="issue10opencomments" rows="2">{{issue10opencomments}}</textarea>
-																							</div>
-																						    
-																						    <div class="multiple-choice" data-target="issue11open">
-																						      <input id="issue11" name="issueswith" type="checkbox" value="Issue 11" >
-																						      <label for="issue11"> Tone</label>
-																						    </div>
-																						    <div class="panel js-hidden" id="issue11open">
-																								 <label class="form-label" for="issue11open-comments">Comments</label>
-																								 <textarea class="form-control form-control-3-4" name="issue11opencomments" id="issue11opencomments" rows="2">{{issue11opencomments}}</textarea>
-																							</div>
-																						    
-																						    <div class="multiple-choice" data-target="issue12open">
-																						      <input id="issue12" name="issueswith" type="checkbox" value="Issue 12" >
-																						      <label for="issue12"> Knee reflexes</label>
-																						    </div>
-																						    <div class="panel js-hidden" id="issue12open">
-																								 <label class="form-label" for="issue12open-comments">Comments</label>
-																								 <textarea class="form-control form-control-3-4" name="issue12opencomments" id="issue12opencomments" rows="2">{{issue12opencomments}}</textarea>
-																							</div>
-																						    
-																						    <div class="multiple-choice" data-target="issue13open">
-																						      <input id="issue13" name="issueswith" type="checkbox" value="Issue 13" >
-																						      <label for="issue13"> Ankle reflexes</label>
-																						    </div>
-																						    <div class="panel js-hidden" id="issue13open">
-																								 <label class="form-label" for="issue13open-comments">Comments</label>
-																								 <textarea class="form-control form-control-3-4" name="issue13opencomments" id="issue13opencomments" rows="2">{{issue13opencomments}}</textarea>
-																							</div>
-																						    
-																						    <div class="multiple-choice" data-target="issue14open">
-																						      <input id="issue14" name="issueswith" type="checkbox" value="Issue 14" >
-																						      <label for="issue14"> Plantar reflexes</label>
-																						    </div>
-																						    <div class="panel js-hidden" id="issue14open">
-																								 <label class="form-label" for="issue14open-comments">Comments</label>
-																								 <textarea class="form-control form-control-3-4" name="issue14opencomments" id="issue14opencomments" rows="2">{{issue14opencomments}}</textarea>
-																							</div>
-																						    
-																						    <div class="multiple-choice" data-target="issue15open">
-																						      <input id="issue15" name="issueswith" type="checkbox" value="Issue 15">
-																						      <label for="issue15"> Observations</label>
-																						    </div>
-																						    <div class="panel js-hidden" id="issue15open">
-																								 <label class="form-label" for="issue15open-comments">Comments</label>
-																								 <textarea class="form-control form-control-3-4" name="issue15opencomments" id="issue15opencomments" rows="2">{{issue15opencomments}}</textarea>
-																							</div>
-																						    
-																						    
-																						    
-																						    
-																						    
-																						    
-																						    
-																			</fieldset>
-																			
-			
-																	 </div>
+		    <div class="multiple-choice" data-target="issue2open">
+		      <input id="issue2" name="issueswith" type="checkbox" value="Issue 2">
+		      <label for="issue2"> Hip flexion</label>
+		    </div>
+		    <div class="panel js-hidden" id="issue2open">
+				 <label class="form-label" for="issue2open-comments">Comments</label>
+				 <textarea class="form-control form-control-3-4" name="issue2opencomments" id="issue2opencomments" rows="2">{{issue2opencomments}}</textarea>
+			</div>
+		    
+		    <div class="multiple-choice" data-target="issue3open">
+		      <input id="issue3" name="issueswith" type="checkbox" value="Issue 3" >
+		      <label for="issue3"> Knee flexion</label>
+		    </div>
+		    <div class="panel js-hidden" id="issue3open">
+				 <label class="form-label" for="issue3open-comments">Comments</label>
+				 <textarea class="form-control form-control-3-4" name="issue3opencomments" id="issue3opencomments" rows="2">{{issue3opencomments}}</textarea>
+			</div>
+		    
+		    <div class="multiple-choice" data-target="issue4open">
+		      <input id="issue4" name="issueswith" type="checkbox" value="Issue 4" >
+		      <label for="issue4"> Knee extension</label>
+		    </div>
+		    <div class="panel js-hidden" id="issue4open">
+				 <label class="form-label" for="issue4open-comments">Comments</label>
+				 <textarea class="form-control form-control-3-4" name="issue4opencomments" id="issue4opencomments" rows="2">{{issue4opencomments}}</textarea>
+			</div>
+		    
+		    <div class="multiple-choice" data-target="issue5open">
+		      <input id="issue5" name="issueswith" type="checkbox" value="Issue 5">
+		      <label for="issue5"> External hip rotation</label>
+		    </div>
+		    <div class="panel js-hidden" id="issue5open">
+				 <label class="form-label" for="issue5open-comments">Comments</label>
+				 <textarea class="form-control form-control-3-4" name="issue5opencomments" id="issue5opencomments" rows="2">{{issue5opencomments}}</textarea>
+			</div>
+		    
+		    <div class="multiple-choice" data-target="issue6open">
+		      <input id="issue6" name="issueswith" type="checkbox" value="Issue 6" >
+		      <label for="issue6"> Ankle Plantarflexion</label>
+		    </div>
+		    <div class="panel js-hidden" id="issue6open">
+				 <label class="form-label" for="issue6open-comments">Comments</label>
+				 <textarea class="form-control form-control-3-4" name="issue6opencomments" id="issue6opencomments" rows="2">{{issue6opencomments}}</textarea>
+			</div>
+		    
+		    <div class="multiple-choice" data-target="issue7open">
+		      <input id="issue7" name="issueswith" type="checkbox" value="Issue 7" >
+		      <label for="issue7"> Ankle dorsiflexion</label>
+		    </div>
+		    <div class="panel js-hidden" id="issue7open">
+				 <label class="form-label" for="issue7open-comments">Comments</label>
+				 <textarea class="form-control form-control-3-4" name="issue7opencomments" id="issue7opencomments" rows="2">{{issue7opencomments}}</textarea>
+			</div>
+		    
+		   <div class="multiple-choice" data-target="issue10open">
+		      <input id="issue10" name="issueswith" type="checkbox" value="Issue 10">
+		      <label for="issue10"> Power</label>
+		    </div>
+		    <div class="panel js-hidden" id="issue10open">
+				 <label class="form-label" for="issue10open-comments">Comments</label>
+				 <textarea class="form-control form-control-3-4" name="issue10opencomments" id="issue10opencomments" rows="2">{{issue10opencomments}}</textarea>
+			</div>
+		    
+		    		    <div class="multiple-choice" data-target="issue15open">
+		      <input id="issue15" name="issueswith" type="checkbox" value="Issue 15">
+		      <label for="issue15"> Observations</label>
+		    </div>
+		    <div class="panel js-hidden" id="issue15open">
+				 <label class="form-label" for="issue15open-comments">Comments</label>
+				 <textarea class="form-control form-control-3-4" name="issue15opencomments" id="issue15opencomments" rows="2">{{issue15opencomments}}</textarea>
+			</div>
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+</fieldset>
+
+
+</div>
 															    
 															    
 															    <div class="panel js-hidden" id="leftleg-no">

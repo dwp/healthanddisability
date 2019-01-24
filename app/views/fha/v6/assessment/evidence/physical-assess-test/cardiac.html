@@ -5,29 +5,44 @@
 
 
 <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
-<h1 class="heading-large">Lower back and legs</h1>
+<h1 class="heading-large">Cardio vascular and respiratory</h1>
 
 
 
-				<form action="lower-limbs1" method="Post">
+				<form action="cardiac1" method="Post">
 
 										     	<fieldset>
 		
 													  <legend class="mb10">Select all of the areas you have assessed:</legend>
 													  
 															    <div class="multiple-choice">
-															      <input id="lowerback" name="lowerlimbs" type="checkbox" value="Lower" {{ checked('lowerlimbs', 'Lower') }}>
-															      <label for="lowerback"> Lower back</label>
+															      <input id="general" name="cardiac" type="checkbox" value="General" {{ checked('cardiac', 'general') }}>
+															      <label for="general"> Respiratory rate</label>
 															    </div>
 
-															    <div class="multiple-choice" data-target="leftleg-guard">
-															      <input id="leftleg" name="lowerlimbs" type="checkbox" value="leftleg" {{ checked('lowerlimbs', 'leftleg') }} >
-															      <label for="leftleg"> Left leg</label>
+															    <div class="multiple-choice" data-target="pulse-guard">
+															      <input id="pulse" name="cardiac" type="checkbox" value="Radial" {{ checked('cardiac', 'pulse') }} >
+															      <label for="pulse">Radial pulse</label>
 															    </div>
 
-															    <div class="multiple-choice" data-target="rightleg-guard">
-															      <input id="rightleg" name="lowerlimbs" type="checkbox" value="rightleg" {{ checked('lowerlimbs', 'rightleg') }}>
-															      <label for="rightleg"> Right leg</label>
+															    <div class="multiple-choice" data-target="peripheral-guard">
+															      <input id="peripheral" name="cardiac" type="checkbox" value="peripheral" {{ checked('cardiac', 'peripheral') }}>
+															      <label for="peripheral"> Left leg peripheral circulation</label>
+															    </div>
+															    
+															    <div class="multiple-choice" data-target="peripheral2-guard">
+															      <input id="peripheral2" name="cardiac" type="checkbox" value="peripheral2" {{ checked('cardiac', 'peripheral2') }}>
+															      <label for="peripheral2"> Right leg peripheral circulation</label>
+															    </div>
+															    
+															    <div class="multiple-choice" data-target="peripheral-Blood">
+															      <input id="Blood" name="cardiac" type="checkbox" value="Blood" {{ checked('cardiac', 'Blood') }}>
+															      <label for="Blood"> Blood pressure</label>
+															    </div>
+															    
+															    <div class="multiple-choice" data-target="peripheral-Peak">
+															      <input id="Peak" name="cardiac" type="checkbox" value="Peak" {{ checked('cardiac', 'Peak') }}>
+															      <label for="Peak"> Peak expiry flow rate</label>
 															    </div>
 	
 														   

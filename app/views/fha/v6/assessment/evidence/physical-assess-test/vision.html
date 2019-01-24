@@ -5,14 +5,14 @@
 
 
 <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
-<h1 class="heading-large"><span class="heading-secondary">Step 2 of 3</span>Left leg</h1>
+<h1 class="heading-large">Vision, speech and hearing</h1>
 
 		
 		
  {% if checked('physicalvisited', 'yes') %}
 				<form action="report-physical" method="Post">
 	{% else %}	
-	       <form action="lower-limbs3" method="Post">	
+	       <form action="physical-updated" method="Post">	
 	{% endif%}		
 
 																	
@@ -30,7 +30,7 @@
 	
 		    <div class="multiple-choice" data-target="issue1open">
 		      <input id="issue1" name="issueswith" type="checkbox" value="Issue 1" {{ checked('issueswith', 'Issue 1') }} >
-		      <label for="issue1">Straight Leg raising</label>
+		      <label for="issue1">Vision</label>
 		    </div>
 		     <div class="panel js-hidden" id="issue1open">
 				 <label class="form-label" for="issue1open-comments">If you find abnormalities, describe them here</label>
@@ -39,72 +39,23 @@
 		
 		    <div class="multiple-choice" data-target="issue2open">
 		      <input id="issue2" name="issueswith" type="checkbox" value="Issue 2" {{ checked('issueswith', 'Issue 2') }}>
-		      <label for="issue2"> Hip flexion</label>
+		      <label for="issue2"> Speech</label>
 		    </div>
 		    <div class="panel js-hidden" id="issue2open">
 				 <label class="form-label" for="issue2open-comments">If you find abnormalities, describe them here</label>
 				 <textarea class="form-control form-control-3-4" name="issue2opencomments" id="issue2opencomments" rows="2">{{issue2opencomments}}</textarea>
 			</div>
-		    
+			
+			
 		    <div class="multiple-choice" data-target="issue3open">
-		      <input id="issue3" name="issueswith" type="checkbox" value="Issue 3" {{ checked('issueswith', 'Issue 3') }} >
-		      <label for="issue3"> Knee flexion</label>
+		      <input id="issue2" name="issueswith" type="checkbox" value="Issue 3" {{ checked('issueswith', 'Issue 3') }}>
+		      <label for="issue2"> Hearing</label>
 		    </div>
 		    <div class="panel js-hidden" id="issue3open">
 				 <label class="form-label" for="issue3open-comments">If you find abnormalities, describe them here</label>
 				 <textarea class="form-control form-control-3-4" name="issue3opencomments" id="issue3opencomments" rows="2">{{issue3opencomments}}</textarea>
 			</div>
-		    
-		    <div class="multiple-choice" data-target="issue4open">
-		      <input id="issue4" name="issueswith" type="checkbox" value="Issue 4" {{ checked('issueswith', 'Issue 4') }} >
-		      <label for="issue4"> Knee extension</label>
-		    </div>
-		    <div class="panel js-hidden" id="issue4open">
-				 <label class="form-label" for="issue4open-comments">If you find abnormalities, describe them here</label>
-				 <textarea class="form-control form-control-3-4" name="issue4opencomments" id="issue4opencomments" rows="2">{{issue4opencomments}}</textarea>
-			</div>
-		    
-		    <div class="multiple-choice" data-target="issue5open">
-		      <input id="issue5" name="issueswith" type="checkbox" value="Issue 5" {{ checked('issueswith', 'Issue 5') }}>
-		      <label for="issue5"> External hip rotation</label>
-		    </div>
-		    <div class="panel js-hidden" id="issue5open">
-				 <label class="form-label" for="issue5open-comments">If you find abnormalities, describe them here</label>
-				 <textarea class="form-control form-control-3-4" name="issue5opencomments" id="issue5opencomments" rows="2">{{issue5opencomments}}</textarea>
-			</div>
-		    
-		    <div class="multiple-choice" data-target="issue6open">
-		      <input id="issue6" name="issueswith" type="checkbox" value="Issue 6"  {{ checked('issueswith', 'Issue 6') }}>
-		      <label for="issue6"> Ankle Plantarflexion</label>
-		    </div>
-		    <div class="panel js-hidden" id="issue6open">
-				 <label class="form-label" for="issue6open-comments">If you find abnormalities, describe them here</label>
-				 <textarea class="form-control form-control-3-4" name="issue6opencomments" id="issue6opencomments" rows="2">{{issue6opencomments}}</textarea>
-			</div>
-		    
-		    <div class="multiple-choice" data-target="issue7open">
-		      <input id="issue7" name="issueswith" type="checkbox" value="Issue 7" {{ checked('issueswith', 'Issue 7') }} >
-		      <label for="issue7"> Ankle dorsiflexion</label>
-		    </div>
-		    <div class="panel js-hidden" id="issue7open">
-				 <label class="form-label" for="issue7open-comments">If you find abnormalities, describe them here</label>
-				 <textarea class="form-control form-control-3-4" name="issue7opencomments" id="issue7opencomments" rows="2">{{issue7opencomments}}</textarea>
-			</div>
 		  		    
-		 			
-			 <div class="multiple-choice" data-target="issue10open">
-		      <input id="issue10" name="issueswith" type="checkbox" value="Issue 10" {{ checked('issueswith', 'Issue 10') }}>
-		      <label for="issue10"> Power</label>
-		    </div>
-		    <div class="panel js-hidden" id="issue10open">
-				 <label class="form-label" for="issue10open-comments">If you find abnormalities, describe them here</label>
-				 <textarea class="form-control form-control-3-4" name="issue10opencomments" id="issue10opencomments" rows="2">{{issue10opencomments}}</textarea>
-			</div>
-
-		    
-
-		    
-		    
 		    
 </fieldset>			    
 </div>									    
