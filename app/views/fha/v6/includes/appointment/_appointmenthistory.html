@@ -57,7 +57,7 @@
       {% elif customer.name.first == 'Elvia' and data['scenario']==="know-1" %}
       <hr />
       
-      <h2 class="heading-medium">Rearranged appointment</h2>
+      <h2 class="heading-medium">Rearranged: Standard appointment</h2>
       <ul class="list-bullet mt10 mb10">
             <li>{{ 'Do MMMM YYYY' | baseDateAdd(15) }}</li>
             <li>11:00am</li>
@@ -71,7 +71,7 @@
       {% elif customer.name.first == 'Sherry' and data['scenario']==="know-2" %}
       <hr />
       
-      <h2 class="heading-medium">Rearranged appointment</h2>
+      <h2 class="heading-medium">Rearranged: Standard appointment</h2>
       <h3 class="heading-small">Sent home</h3>
       <p class="small">{{customer.name.first}}  arrived 35mins late and been waiting 20mins
       <span class="date block mt10 text-secondary">{{customer | formatDate("D MMMM YYYY") }}</span>
@@ -80,7 +80,7 @@
       {% elif customer.name.first == 'Pacheco' and data['scenario']==="know-3" %}
       <hr />
       
-      <h2 class="heading-medium">Rearranged appointment</h2>
+      <h2 class="heading-medium">Rearranged: Standard appointment</h2>
       <ul class="list-bullet mt10 mb10">
             <li>{{ 'Do MMMM YYYY' | baseDateAdd(15) }}</li>
             <li>11:00am</li>

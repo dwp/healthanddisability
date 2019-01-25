@@ -47,7 +47,7 @@
 				
 
 					    	<fieldset>
-							      <legend class="heading-medium mb5">
+							      <legend class="heading-medium mb10">
 							       Why do we need to rearrange this appointment?
 							      </legend>
 							       
@@ -61,7 +61,22 @@
 										      <input id="know-2" name="scenario" type="radio" value="know-2"  {{checked('scenario', 'know-2') }}>
 										      <label for="know-2">{{customer.name.first}} arrived late</label>
 												</div>
-						
+
+																						
+												<div class="multiple-choice">
+														<input id="know-2" name="scenario" type="radio" value="unfit"  {{checked('scenario', 'unfit') }}>
+														<label for="know-2">{{customer.name.first}} is unfit to be examined
+
+															</label>
+													</div>
+												<div class="multiple-choice">
+													<input id="know-3" name="scenario" type="radio" value="hcp"  {{checked('scenario', 'special') }}>
+													<label for="know-3">{{customer.name.first}}  has a special need they've not previously disclosed
+
+														</label>
+												</div>
+
+												<p class="form-block">or</p>
 												<div class="multiple-choice">
 														<input id="know-3" name="scenario" type="radio" value="know-3"  {{checked('scenario', 'know-3') }}>
 														<label for="know-3">We cannot carry out or complete the assesment</label>

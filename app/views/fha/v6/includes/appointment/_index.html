@@ -56,7 +56,7 @@
     {% if customer.name.first == 'Dominguez' and data['Reason']==="unable"  %} 
     <h2 class="heading-small"><span style="font-weight:normal" class="text-secondary">{{customer.name.first}}'s current </span><br />Complex neuro appointment</h2> 
      {% else %}  
-     <h2 class="heading-small">Standard appointment</h2>  
+     <h2 class="heading-small"><span style="font-weight:normal" class="text-secondary">{{customer.name.first}}'s current </span><br />Standard appointment</h2>  
      {% endif %}
           {% if data['changedByCustomer']==="yes"or data['changedByCustomer']==="no" 
           or customer.name.first == 'Dillon' and data['book-next']==="yes" 
