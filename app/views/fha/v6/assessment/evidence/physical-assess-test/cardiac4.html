@@ -29,7 +29,7 @@
 		<fieldset>
 		
 		  <legend class="heading-medium mb10">Select the examinations you want to complete</legend>																		
-		<p class="form-hint mb10" style="max-width:650px">Only add comments if you find abnormalities.</p>
+
 			
 				    <div class="multiple-choice" data-target="issue1open">
 				      <input id="issue1" name="issueswithcardiacright" type="checkbox" value="Issue 1" {{ checked('issueswithcardiacright', 'Issue 1') }} >
@@ -37,7 +37,7 @@
 				    </div>
 				     <div class="panel js-hidden" id="issue1open">
 						 <label class="form-label" for="issue1open-comments">If you find abnormalities, describe them here</label>
-						 <textarea class="form-control form-control-3-4" name="issuewithcardiacright2" id="issuewithcardiacright2" rows="2">{{issuewithcardiacright}}</textarea>
+						 <textarea class="form-control form-control-3-4" name="issuewithcardiacright1" id="issuewithcardiacright1" rows="2">{{issuewithcardiacright1}}</textarea>
 					</div>
 				
 				    <div class="multiple-choice" data-target="issue2open">
@@ -50,7 +50,7 @@
 					</div>
 					
 					<div class="multiple-choice" data-target="issue3open">
-				      <input id="veins" name="issueswithcardiacright" type="checkbox" value="veins" {{ checked('issueswithcardiacright', 'Issue 3') }}>
+				      <input id="veins" name="issueswithcardiacright" type="checkbox" value="Issue 3" {{ checked('issueswithcardiacright', 'Issue 3') }}>
 				      <label for="veins"> Varicose veins</label>
 				    </div>
 				    <div class="panel js-hidden" id="issue3open">
@@ -66,7 +66,7 @@
 	
 	<div class="form-group">
 		<label class="heading-small" for="issue15open-comments">Other examination findings</label>
-		<textarea class="form-control form-control-2-4" name="withcardiacright4" id="withcardiacright4" rows="4">{{withcardiacright4}}</textarea>
+		<textarea class="form-control form-control-2-4" name="issuewithcardiacright4" id="issuewithcardiacright4" rows="4">{{issuewithcardiacright4}}</textarea>
 	</div>
 		  		  		    
 		    

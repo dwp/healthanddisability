@@ -52,7 +52,7 @@
 	<p>Consent was given by Bobby to start the physical assessment.</p>
 
 	{% if data['general'] %}
-	<h3 class="heading-medium mt30 mb0">General</h3>
+	<h3 class="heading-medium mt30 mb0">General health</h3>
 
 	<table class="report-view-table">
 		
@@ -605,6 +605,178 @@
 					</tbody>
 				</table>
 				{% endif %}
+
+				{% if checked('cardiac', 'peripheral') %}
+				<table class="report-view-table">
+						<caption class="heading-small">Left leg peripheral circulation</caption>
+			
+						<tbody>
+			
+							{% if data['issuewithcardiac1opencomments'] %}
+							<tr>
+								<th>Oedema</th>
+								<td>
+									  {{ issuewithcardiac1opencomments }}
+								</td>
+							</tr>
+							{% endif %}
+							{% if data['issuewithcardiac2opencomments'] %}
+							<tr>
+								<th>Doesalis pedis pulse</th>
+								<td>
+									
+									  {{ issuewithcardiac3opencomments }}
+								
+									</td>
+							</tr>
+							{% endif %}
+							{% if data['issuewithcardiac3opencomments'] %}
+							<tr>
+								<th>Varicose veins</th>
+								<td>
+									
+									  {{ issuewithcardiac3opencomments }}
+								
+									</td>
+							</tr>
+							{% endif %}
+							{% if data['cardiaccomments'] %}
+							<tr>
+								<th>Other examination findings</th>
+								<td>
+									
+									  {{ cardiaccomments }}
+								
+									</td>
+							</tr>
+							{% endif %}
+						</tbody>
+					</table>
+					{% endif %}
+
+					{% if checked('cardiac', 'peripheral2') %}
+					<table class="report-view-table">
+							<caption class="heading-small">Right leg peripheral circulation</caption>
+				
+							<tbody>
+				
+								{% if data['issuewithcardiacright1'] %}
+								<tr>
+									<th>Oedema</th>
+									<td>
+										  {{ issuewithcardiacright1 }}
+									</td>
+								</tr>
+								{% endif %}
+								{% if data['issuewithcardiacright2'] %}
+								<tr>
+									<th>Doesalis pedis pulse</th>
+									<td>
+										
+										  {{ issuewithcardiacright2 }}
+									
+										</td>
+								</tr>
+								{% endif %}
+								{% if data['issuewithcardiacright3'] %}
+								<tr>
+									<th>Varicose veins</th>
+									<td>
+										
+										  {{ issuewithcardiacright3 }}
+									
+										</td>
+								</tr>
+								{% endif %}
+								{% if data['issuewithcardiacright4'] %}
+								<tr>
+									<th>Other examination findings</th>
+									<td>
+										
+										  {{ issuewithcardiacright4 }}
+									
+										</td>
+								</tr>
+								{% endif %}
+							</tbody>
+						</table>
+						{% endif %}
+
+						{% if checked('cardiac', 'Blood') %}
+						<table class="report-view-table">
+								<caption class="heading-small">Blood pressure</caption>
+					
+								<tbody>
+					
+									{% if data['bloodpressure'] %}
+									<tr>
+										<th>What is Bobby's blood pressure?</th>
+										<td>
+											  {{ bloodpressure }}
+										</td>
+									</tr>
+									{% endif %}
+									{% if data['bloodpressurecomments'] %}
+									<tr>
+										<th>Other examination findings</th>
+										<td>
+											
+											  {{ bloodpressurecomments }}
+										
+											</td>
+									</tr>
+									{% endif %}
+								</tbody>
+							</table>
+							{% endif %}
+
+							{% if checked('cardiac', 'Peak') %}
+							<table class="report-view-table">
+									<caption class="heading-small">Peak expiry flow rate</caption>
+						
+									<tbody>
+						
+										{% if data['issueswithflowrate1'] %}
+										<tr>
+											<th>Technique</th>
+											<td>
+												  {{issueswithflowrate1 }}
+											</td>
+										</tr>
+										{% endif %}
+										{% if data['issueswithflowrate2'] %}
+										<tr>
+											<th>Value</th>
+											<td>
+												
+												  {{ issueswithflowrate2 }}
+											
+												</td>
+										</tr>
+										{% endif %}
+										{% if data['issueswithflowrate3'] %}
+										<tr>
+											<th>Meter type</th>
+											<td>
+												
+												  {{ issueswithflowrate3 }}
+											
+												</td>
+										</tr>
+										{% endif %}
+										{% if data['issueswithflowrate4'] %}
+										<tr>
+											<th>Other examination findings</th>
+											<td>
+												
+												  {{ issueswithflowrate4 }}
+											
+												</td>
+										</tr>
+										{% endif %}
+									</tbody>
+								</table>
+								{% endif %}
 	
 		{% endif %}
 
