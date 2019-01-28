@@ -22,22 +22,22 @@
 	
 	<div class="form-group">
 		<label class="form-label-bold" for="height">Height:</label>
-		<input type="text" id="height" class="form-control form-control-1-4">
+		<input type="text" id="height" name="height" class="form-control form-control-1-4" value="{{height}}">
 	</div>
 	
 	<div class="form-group">
 		<label class="form-label-bold" for="Weight">Weight:</label>
-		<input type="text" id="Weight" class="form-control form-control-1-4">
+		<input type="text" id="Weight" name="weight" class="form-control form-control-1-4" value="{{weight}}">
 	</div>
 	
 	<div class="form-group">
 		<label class="form-label-bold" for="bmi">BMI:</label>
-		<input type="text" id="bmi" class="form-control form-control-1-4">
+		<input type="text" id="bmi" name="bmi" class="form-control form-control-1-4" value="{{bmi}}">
 	</div>
 	
 	<div class="form-group">
 		<label class="heading-small" for="issue15open-comments">Other examination findings</label>
-		<textarea class="form-control form-control-2-4" name="issue15opencomments" id="issue15opencomments" rows="4">{{issue15opencomments}}</textarea>
+		<textarea class="form-control form-control-2-4" name="generalcomments" id="generalcomments" rows="4">{{generalcomments}}</textarea>
 	</div>
 		  		  		    
 		    
@@ -52,7 +52,12 @@
 										
 																		 
 																		 
-																				    
+<div class="visually-hidden">												
+<div class="multiple-choice">
+		<input id="general" name="general" type="checkbox" value="Lower" checked>
+		<label for="general"> Lower back</label>
+	  </div>
+	</div>		  							    
 														
 												 
 												 

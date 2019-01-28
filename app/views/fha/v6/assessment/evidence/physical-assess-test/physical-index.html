@@ -16,30 +16,20 @@
 
 		  <div class="task-list">
 					<ul class="task-list-itmes">
-              <li class="task-list-item"><a href="general">General health</a></li>
+              <li class="task-list-item"><a href="general">General health {% if data['general'] %}<span class="task-completed">Assessed</span>{% endif %}</a></li>
 						<li class="task-list-item"><a href="lower-limbs">Lower back and legs {% if data['lowerlimbs'] %}<span class="task-completed">Assessed</span>{% endif %}</a></li>
 						<li class="task-list-item"><a href="#">Neck and arms{% if data['neckwhatcando']==='Yes' or data['neckwhatcando']==='No'%}<span class="task-completed">Assessed</span>{% endif %}</a></li>
-						<li class="task-list-item"><a href="cardiac">Cardio vascular and respiratory</a></li>
+						<li class="task-list-item"><a href="cardiac">Cardio vascular and respiratory {% if data['cardiac'] %}<span class="task-completed">Assessed</span>{% endif %}</a></li>
 						<li class="task-list-item"><a href="vision">Vision hearing and speech</a></li>
             <li class="task-list-item"><a href="#">Central nervous system</a></li>
          </ul>
          </div>
 
 	
- 
-    {% if customer.status == 'Ready for recommendation' %}
-    <form class="mt30" method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/medical_assessment_dashboard">
-    <p class="mt30"><button class="button">Finish review</button></p>
-		 
-				<div class="multiple-choice" style="display:none">
-						<input id="radio-inline-4" type="radio" name="physicalVisited" value="physicalVisited" checked>
-				
-						<label for="radio-4">hidden radio one</label>
-          </div>
-          {% else %}
-          <form class="mt30" method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/wca-index">
+
+          <form class="mt30" method="post" action="report-physical">
           <p class="mt30"><button class="button">Save and continue</button></p>
-          {% endif %}
+
           
           <div class="multiple-choice" style="display:none">
               <input id="radio-inline-4" type="radio" name="physicalAssessed" value="physicalAssessed" checked>

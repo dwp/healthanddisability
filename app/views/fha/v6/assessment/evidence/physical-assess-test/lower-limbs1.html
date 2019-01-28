@@ -29,21 +29,21 @@
 <p class="form-hint mb10" style="max-width:650px">Only add comments if you find abnormalities. If you choose an examination and leave the text box blank, it will be marked as normal.</p>
 	
 		    <div class="multiple-choice" data-target="issue1open">
-		      <input id="issue1" name="issueswith" type="checkbox" value="Issue 1" {{ checked('issueswith', 'Issue 1') }} >
+		      <input id="issue1" name="issueswithback" type="checkbox" value="Issue 1" {{ checked('issueswithback', 'Issue 1') }} >
 		      <label for="issue1">Forward flexion</label>
 		    </div>
 		     <div class="panel js-hidden" id="issue1open">
 				 <label class="form-label" for="issue1open-comments">If you find abnormalities, describe them here</label>
-				 <textarea class="form-control form-control-3-4" name="issue1opencomments" id="issue1opencomments" rows="2">{{issue1opencomments}}</textarea>
+				 <textarea class="form-control form-control-3-4" name="issuewithback1opencomments" id="issuewithback1opencomments" rows="2">{{issuewithback1opencomments}}</textarea>
 			</div>
 		
 		    <div class="multiple-choice" data-target="issue2open">
-		      <input id="issue2" name="issueswith" type="checkbox" value="Issue 2" {{ checked('issueswith', 'Issue 2') }}>
+		      <input id="issue2" name="issueswithback" type="checkbox" value="Issue 2" {{ checked('issueswithback', 'Issue 2') }}>
 		      <label for="issue2"> Squat and rise</label>
 		    </div>
 		    <div class="panel js-hidden" id="issue2open">
 				 <label class="form-label" for="issue2open-comments">If you find abnormalities, describe them here</label>
-				 <textarea class="form-control form-control-3-4" name="issue2opencomments" id="issue2opencomments" rows="2">{{issue2opencomments}}</textarea>
+				 <textarea class="form-control form-control-3-4" name="issuewithback2opencomments" id="issuewithback2opencomments" rows="2">{{issuewithback2opencomments}}</textarea>
 			</div>
 		  		    
 		    
@@ -53,7 +53,7 @@
 		    
 <div class="form-group">
 	<label class="heading-small" for="issue15open-comments">Other examination findings</label>
-	<textarea class="form-control form-control-2-4" name="issue15opencomments" id="issue15opencomments" rows="4">{{issue15opencomments}}</textarea>
+	<textarea class="form-control form-control-2-4" name="issuewithbackcomments" id="issue15opencomments" rows="4">{{issuewithbackcomments}}</textarea>
 </div>
 																			
 			
