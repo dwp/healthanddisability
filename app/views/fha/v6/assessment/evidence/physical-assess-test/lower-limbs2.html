@@ -33,8 +33,26 @@
 		      <label for="issue1">Straight Leg raising</label>
 		    </div>
 		     <div class="panel js-hidden" id="issue1open">
-				 <label class="form-label" for="issue1open-comments">If you find abnormalities, describe them here</label>
-				 <textarea class="form-control form-control-3-4" name="issue1opencomments" id="issue1opencomments" rows="2">{{issue1opencomments}}</textarea>
+				 
+				 
+				 <fieldset>
+				 	<legend class="heading-small mb5">Choose:</legend>
+					 	<div class="multiple-choice">
+					      <input id="test1" name="testingthis" type="radio" value="test1" {{ checked('testingthis', 'test1') }}>
+					      <label for="test1"> Normal</label>
+					    </div>
+					    <div class="multiple-choice">
+					      <input id="test2" name="testingthis" type="radio" value="test2" {{ checked('testingthis', 'test2') }}>
+					      <label for="test2"> Slightly reduced</label>
+					    </div>
+					    <div class="multiple-choice">
+					      <input id="test3" name="testingthis" type="radio" value="Test3" {{ checked('testingthis', 'test3') }}>
+					      <label for="test3"> Significantly reduced</label>
+					    </div>
+				 </fieldset>
+				 	
+				 
+				 
 			</div>
 		
 		    <div class="multiple-choice" data-target="issue2open">

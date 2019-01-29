@@ -185,11 +185,12 @@
 					<tr>
 						<th>Straight Leg raising</th>
 						<td>
-								{% if data['issue1opencomments'] %}
-							
-							  {{ issue1opencomments }}
-								{% else %}
-								Normal (more than 70˚)
+								{% if data['testingthis']==="test1" %}
+								Normal
+								{% elif data['testingthis']==="test2" %}
+								 Slightly reduced
+								{% else %} 
+								Significantly reduced
 								{% endif %}
 							
 							
