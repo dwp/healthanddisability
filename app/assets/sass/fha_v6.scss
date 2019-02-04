@@ -1177,11 +1177,16 @@ span.status {
 }
 
 .report-item {
-	padding-top: 20px;
+	padding: 20px 0;
+	border-bottom: 2px solid #000;
+	overflow: hidden;
+	&:first-child {
+		padding-top: 0;
 	}
+}
 
 	.report-view-table {
-		margin-bottom: 20px;
+		margin-bottom: 30px;
 	
 		.heading-medium {
 			margin: 0!important;
@@ -1191,11 +1196,14 @@ span.status {
 			background: $grey-4;
 		}
 		th {
-			font-weight: normal!important;
 			padding-left: 10px;
 			width: 36%!important;
 			vertical-align: top;
 		}
+		td, th {
+			padding-left: 10px;
+		}
+		
 	}
 
 .pref-list {
@@ -1213,4 +1221,27 @@ span.status {
 	strong {
 		padding-top: 5px;
 	}
+}
+
+
+.full-report {
+	h3 {
+		margin: 0;
+		padding: 10px;
+		background: #000;
+		color: #fff;
+		margin-top: 30px;
+		margin-bottom: 10px;
+	}
+	.edit-report {
+		padding-bottom: 20px;
+	}
+}
+
+.depart {
+	padding-top: 40px;
+}
+
+.inner-focus {
+	padding-bottom: 5px;
 }
