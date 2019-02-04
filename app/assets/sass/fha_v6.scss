@@ -77,25 +77,7 @@ a:visited {
   }
 }
 
-.staff__heading {
-  padding: 14px 0 10px 0;
-  	
-  	h1 {
-	  	margin: 0;
-	  	padding: 0;
-  	}
-  	
-  	.badges {
-	  	ul {
-		  	margin: -14px 0 12px 0;
-		  	position: relative;
-		  	li {
-			  	margin: 0;
-		  	}
-	  	}
-  	}
 
-}
 
 .list .date {
   // font-size:16px;
@@ -1245,3 +1227,131 @@ span.status {
 .inner-focus {
 	padding-bottom: 5px;
 }
+
+
+/******** Customer deatils bar ***********/
+
+
+.staff__heading {
+  padding: 10px 0 20px 0;
+
+  	.badges {
+	  	ul {
+		  	margin: -14px 0 12px 0;
+		  	position: relative;
+		  	li {
+			  	margin: 0;
+		  	}
+	  	}
+  	}
+
+}
+
+.head-customer-details {
+
+	h1 {
+		margin: 0;
+		padding: 0;
+		span {
+			display: block;
+			font-size: 17px;
+			font-weight: normal;
+			padding-bottom: 5px;
+		}
+	}
+	p {
+		margin: 0;
+		color: $grey-1;
+		font-size: 24px;
+		font-weight: 100;
+	}
+}
+
+.head-customer-extended {
+
+	overflow: hidden;
+	h2 {
+		padding: 0;
+		margin: 0;
+		font-size: 17px;
+		font-weight: normal;
+	}
+
+
+		.header-left-col {
+			float: left; 
+			width: 50%;
+			padding-bottom: 10px;
+			p {
+				margin: 0;
+				font-weight: bold;
+				font-size: 20px;
+			}
+		}
+		
+		.header-right-col {
+			float: left; 
+			width: 50%;
+			padding-bottom: 10px;
+			p {
+				margin: 0;
+				font-weight: bold;
+				font-size: 20px;
+			}
+		}
+		
+		.header-spread-right {
+			clear: both;
+			.govuk-details {
+				margin: 5px 0 10px 0;
+				summary {
+					margin-bottom: 0!important;
+				}
+			}
+			.govuk-details__summary-text {
+				font-size: 17px;
+			}
+			.details-drop {
+	
+				h3 {
+					margin: 0;
+					display: inline-block;
+					margin-left: 20px;
+					font-size: 18px; 
+					font-weight: bold;
+					padding: 5px 0;
+					&:first-child {
+						margin-left: 4px;
+						border-left: 5px solid $govuk-blue;
+						padding-left: 15px;
+					}
+					span {
+						display: block;
+						font-size: 16px;
+						font-weight: 100;
+					}
+				}
+			}
+			
+		}
+		
+		
+		
+		.header-identifiers {
+			background: $grey-4;
+			padding: 10px;
+			left: -10px;
+			position: relative;
+			p {
+				padding: 6px 8px 5px 8px;
+				margin: 0;
+				font-size: 15px;
+				display: inline-block;
+				margin-right: 3px;
+			}
+		}
+	
+}
+
+
+
