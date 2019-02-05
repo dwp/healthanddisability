@@ -54,7 +54,7 @@
           <p class="small">Accommodation problem (for example, power failure or evacuation)
             <span class="date block mt10 text-secondary">07 November 2018 | 10:15 am</span>
           </p>
-      {% elif customer.name.first == 'Elvia' and data['scenario']==="know-1" %}
+      {% elif customer.name.first == 'Elvia' and data['scenario']==="wait" %}
       <hr />
       
       <h2 class="heading-medium">Rearranged: Standard appointment</h2>
@@ -68,16 +68,21 @@
       <span class="date block mt10 text-secondary">{{customer | formatDate("D MMMM YYYY") }}</span>
       </p>   
       
-      {% elif customer.name.first == 'Sherry' and data['scenario']==="know-2" %}
+      {% elif customer.name.first == 'Sherry' and data['scenario']==="late" %}
       <hr />
       
       <h2 class="heading-medium">Rearranged: Standard appointment</h2>
+      <ul class="list-bullet mt10 mb10">
+            <li>{{ 'Do MMMM YYYY' | baseDateAdd(15) }}</li>
+            <li>11:00am</li>
+            <li>Tresco House</li>
+          </ul>
       <h3 class="heading-small">Sent home</h3>
       <p class="small">{{customer.name.first}}  arrived 35mins late and been waiting 20mins
       <span class="date block mt10 text-secondary">{{customer | formatDate("D MMMM YYYY") }}</span>
       </p>   
 
-      {% elif customer.name.first == 'Pacheco' and data['scenario']==="know-3" %}
+      {% elif customer.name.first == 'Pacheco' and data['scenario']==="know-2" %}
       <hr />
       
       <h2 class="heading-medium">Rearranged: Standard appointment</h2>

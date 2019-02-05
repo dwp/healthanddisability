@@ -8,6 +8,7 @@
 {% endblock %}  
 
 {% block caselist_content %}
+
 <h2 class="heading-medium mt0"><span class="heading-xlarge">{{customers.length}}</span><br/>Today's appointments </h2>
 <table class="zebra">
 
@@ -15,6 +16,7 @@
     <tr>
       <th>Details</th>
       <th>Status</th>
+      <th>Appointment details</th>
      
     </tr>
   </thead>
@@ -32,9 +34,28 @@
 {{ 'Assessment completed' if customer.status == 'Assessment completed'}}
 {{ 'Assessment stopped' if customer.status == 'Assessment stopped'}}
 {{ 'Appointment today' if customer.status == 'Appointment today'}}
+
 </span> </td>
+
+<td>
+  <p  class="mb0"><span class="bold block">{{ customer.appointment.time }}</span> {{ customer.appointment.type }}</p>
+
+  {% if customer.appointment.gender 
+    or customer.appointment.accessible
+    or customer.appointment.interpreter 
+    or customer.appointment.audio
+    or customer.appointment.taxi   %}
+  <div class="panel panel-info mt10 appointment-details">
+    <span class="block">{{ customer.appointment.gender }}</span>
+    <span class="block">{{ customer.appointment.accessible }} </span>
+    <span class="block">{{ customer.appointment.interpreter }}</span>
+    <span class="block">{{ customer.appointment.audio }}</span>
+    <span class="block">{{ customer.appointment.taxi }} </span>
+  </div>
+  {% endif %}
+</td>
 </tr>
-</tr>
+
 
 {% endfor %}
 
