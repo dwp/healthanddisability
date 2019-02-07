@@ -137,7 +137,7 @@
   {% if customer.name.first == 'Deena' and data['changedByCustomer']==="yes" %}
   <p><a href="/{{path1}}/{{customer._id}}/request-rearrangement" class="button-secondary">Book appointment</a></p>
   {% else %}
-  <p><a href="/{{path1}}/{{customer._id}}/request-rearrangement" class="button-secondary">Rearrange{% if customer.name.first == 'Mcconnell' %}, request {% endif %} or cancel appointment</a></p>
+  <p><a href="/{{path1}}/{{customer._id}}/request-rearrangement-book" class="button-secondary"><!--Rearrange{% if customer.name.first == 'Mcconnell' %}, request {% endif %} or cancel appointment-->Update appointment</a></p>
   {% endif %}
   <p><a href="/{{path1}}/{{customer._id}}/appointment-changeofcircumstances" class="">Record change of circumstances</a></p>
 

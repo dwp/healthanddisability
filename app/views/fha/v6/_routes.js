@@ -1758,6 +1758,12 @@ router.get('/booked', function(req, res, next){
   next()
 })
 
+router.get('/decision-maker', function(req, res, next){
+  res.locals.customers = assessmentCustomers
+                            .filter(customer => customer.status === "dm");
+  next()
+})
+
 
 
 
