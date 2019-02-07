@@ -1,0 +1,221 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+		
+		
+			
+		
+	
+		   <form  method="post" action="/{{path}}/assessment/{{customer._id}}/appointment">
+			
+	
+		<h1 class="heading-large">Appointment preferences</h1>
+		
+		
+
+				
+				
+				<div class="form-group">
+
+					    	<fieldset>
+							      <legend class="heading-medium mb5">
+							       Select the days {{customer.name.first}} is unavailable:
+							      </legend>
+							       
+							       
+							       <div class="multiple-choice" data-target="monday-panel">
+										      <input id="know-1" name="scenario" type="checkbox" value="pref-1"  {{checked('scenario', 'pref-1') }}>
+										      <label for="know-1">Monday</label>
+										    </div>
+										    
+										   <div class="panel js-hidden" id="monday-panel">
+												<fieldset>
+												      <legend class="form-label-bold mb5">
+												      {{customer.name.first}} is unavailable:
+												      </legend>
+												      <div class="multiple-choice">
+													      <input id="available1" name="available" type="radio" value="available1">
+													      <label for="available1">Morning</label>
+													    </div>
+													    <div class="multiple-choice">
+													      <input id="available2" name="available" type="radio" value="available2">
+													      <label for="available2">Afternoon</label>
+													    </div>
+													    <div class="multiple-choice">
+													      <input id="available3" name="available" type="radio" value="available3">
+													      <label for="available3">All day</label>
+													    </div>
+												</fieldset>
+											</div>
+										
+										    <div class="multiple-choice">
+										      <input id="know-2" name="scenario" type="checkbox" value="pref-2"  {{checked('scenario', 'pref-2') }}>
+										      <label for="know-2">Tuesday</label>
+												</div>
+						
+												<div class="multiple-choice">
+														<input id="know-3" name="scenario" type="checkbox" value="pref-3"  {{checked('scenario', 'pref-3') }}>
+														<label for="know-3">Wednesday</label>
+													</div>
+													
+													<div class="multiple-choice">
+														<input id="know-4" name="scenario" type="checkbox" value="pref-4"  {{checked('scenario', 'pref-4') }}>
+														<label for="know-4">Thursday</label>
+													</div>
+													
+													<div class="multiple-choice">
+														<input id="know-5" name="scenario" type="checkbox" value="pref-5"  {{checked('scenario', 'pref-5') }}>
+														<label for="know-5">Friday</label>
+													</div>
+										    
+								    
+								    
+								    
+						    </fieldset>
+						    
+					</div>
+					
+					
+					<div class="form-group">
+					 <fieldset>
+                    <legend>
+                        <span class="heading-medium">
+                            Enter any dates {{customer.name.first}} is unavailable:</span>
+                        </span>
+                    </legend>
+                    
+                    
+                    <div class="form-group mt10">
+				    <fieldset>
+				      <legen>
+				          <span class="form-label-bold">Date from:</span>
+				        <span class="form-hint">For example, 31 3 1980</span>
+				      </legend>
+				      <div class="form-date">
+				        <div class="form-group form-group-day">
+				          <label class="form-label" for="dob-day">Day</label>
+				          <input class="form-control" id="dob-day" name="from" type="number" pattern="[0-9]*">
+				        </div>
+				        <div class="form-group form-group-month">
+				          <label class="form-label" for="dob-month">Month</label>
+				          <input class="form-control" id="dob-month" name="fromMonth" type="number" pattern="[0-9]*">
+				        </div>
+				        <div class="form-group form-group-year">
+				          <label class="form-label" for="dob-year">Year</label>
+				          <input class="form-control" id="dob-year" name="fromYear" type="number" pattern="[0-9]*">
+				        </div>
+				      </div>
+				    </fieldset>
+				  </div>
+				  
+				  <div class="">
+				    <fieldset>
+				      <legend>
+				          <span class="form-label-bold">Date to:</span>
+				        <span class="form-hint">For example, 31 3 1980</span>
+				      </legend>
+				      <div class="form-date">
+				        <div class="form-group form-group-day">
+				          <label class="form-label" for="dob-day">Day</label>
+				          <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
+				        </div>
+				        <div class="form-group form-group-month">
+				          <label class="form-label" for="dob-month">Month</label>
+				          <input class="form-control" id="dob-month" name="toMonth" type="number" pattern="[0-9]*">
+				        </div>
+				        <div class="form-group form-group-year">
+				          <label class="form-label" for="dob-year">Year</label>
+				          <input class="form-control" id="dob-year" name="toYear" type="number" pattern="[0-9]*">
+				        </div>
+				      </div>
+				    </fieldset>
+				  </div>
+                    
+                    
+                </fieldset>
+                <hr>
+                <p><a href="#" class="secondary button">Add another date range</a></p>
+   
+						</div>
+						
+						<div class="form-group">
+								<fieldset>
+						
+									<legend class="heading-medium">Special requirements</legend>
+						
+									<div class="multiple-choice">
+										<input id="accessible" type="checkbox" name="scenario" value="accessible"  {% if customer.appointment.accessible or checked('scenario', 'accessible') %} checked {%endif%}>
+										<label for="accessible">Ground floor access</label>
+									</div>
+
+									<div class="multiple-choice">
+											<input id="taxi" type="checkbox" name="scenario" value="taxi" {% if customer.appointment.taxi or checked('scenario', 'taxi') %} checked {%endif%} >
+											<label for="taxi">Taxi required</label>
+										</div>
+										
+										 <div class="multiple-choice" data-target="language-required" >
+											<input id="interpreter" type="checkbox" name="scenario" value="interpreter"  data-target="language-required"   {% if customer.appointment.interpreter or checked('scenario', 'interpreter') %} checked {%endif%} >
+											<label for="interpreter">Interpreter required</label>		        
+										</div>
+										<div class="js-hidden panel" id="language-required">
+												<label for="l-required" class="form-label">Language</label>
+												<input type="text" id="l-required" class="form-control form-control-3-4">
+							    	</div>
+								 
+									
+									<div class="multiple-choice">
+										<input id="gender" type="checkbox" name="scenario" value="gender"  {% if customer.appointment.gender or checked('scenario', 'gender') %} checked {%endif%}>
+										<label for="gender">Same gender HCP</label>
+									</div>
+
+									<div class="multiple-choice">
+											<input id="audio" type="checkbox" name="scenario" value="audio"  {% if customer.appointment.audio or checked('scenario', 'audio') %} checked {%endif%}>
+											<label for="audio">Audio recording required</label>
+										</div>
+
+								</fieldset>
+						</div>
+
+				<p class="mt30"><button class="button">Save and continue</button></p>
+
+			</form>
+
+
+
+
+    
+
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

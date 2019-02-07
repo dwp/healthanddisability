@@ -14,8 +14,9 @@
   <thead>
     <tr>
       <th>Details</th>
-     
-    </tr>
+        <th>Appointment details</th>
+        <th>Waiting time</th>
+      </tr>
   </thead>
   
   {% for customer in customers %}
@@ -25,7 +26,27 @@
 <a href="assessment/{{customer._id}}/appointment"><span class="visually-hidden">Name</span>{{customer.name.fullName}}</a>
 <span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span>
 </td>
-</tr>
+
+<td>
+    <p  class="mb0"><span class="bold block">{{ customer.appointment.time }}</span> {{ customer.appointment.type }}</p>
+
+    {% if customer.appointment.gender 
+      or customer.appointment.accessible
+      or customer.appointment.interpreter 
+      or customer.appointment.audio
+      or customer.appointment.taxi   %}
+    <div class="panel panel-info mt10 appointment-details">
+      <span class="block">{{ customer.appointment.gender }}</span>
+      <span class="block">{{ customer.appointment.accessible }} </span>
+      <span class="block">{{ customer.appointment.interpreter }}</span>
+      <span class="block">{{ customer.appointment.audio }}</span>
+      <span class="block">{{ customer.appointment.taxi }} </span>
+    </div>
+    {% endif %}
+
+</td>
+<td>
+<p  class="mb0"><span class="bold block mb5">Arrived {% if customer.appointment.arrival %}<span class="badge">{{ customer.appointment.arrival }}</span>{% else %}<span class="badge warning">{{ customer.appointment.arrivallate }}</span>{% endif %}</span> {{ customer.appointment.waiting }}</p></td>
 </tr>
 
 {% endfor %}
