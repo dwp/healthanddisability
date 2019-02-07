@@ -1,0 +1,50 @@
+{% extends path1+"/decision/_layoutAction.html" %}
+
+
+{% block case_content %}
+
+ <p class="no-kdBar"> <a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+ 
+<form class="form" action="/{{path}}/decisionmaker" method="post">
+
+<h1 class="heading-large">Failed to attend appointment</h1>
+
+<div class="panel panel-warning mb30">
+		   <h2 class="heading-small">What we know:</h2>
+			<ul class="list-bullet">	
+					<li>Request from customer to change original appointment</li>
+					<li>Request from customer for an interpreter to be present</li>
+					<li>New appointment date issued - interpreter booked</li>
+					<li>Failed to attend appointment</li>
+				</ul>
+</div>
+
+<fieldset>
+	<legend class="heading-medium mb5">What do you want to do?</legend>
+	
+  <div class="form-group">
+
+    <div class="multiple-choice" data-target="scorenow">
+      <input id="decide_now" name="whatcando" type="radio" value="Yes">
+      <label for="decide_now">Book Bobby another appointment</label>
+    </div>
+
+    <div class="multiple-choice" data-target="closeThis">
+      <input id="face2face" name="whatcando" type="radio" value="No">
+      <label for="face2face"> Close Bobbys case</label>
+    </div>
+    <div class="panel js-hidden" id="closeThis">
+    	<label class="form-label" for="closeReason">Reason:</label>
+		<textarea class="form-control form-control-3-4" name="closeReason" id="closeReason" rows="2"></textarea>
+    </div>
+
+  </div><!-- form-group -->
+  <div class="form-group">
+    <button class="button">Confirm</button>
+  </div><!-- form-group -->
+  
+</fieldset>
+
+</form>
+
+{% endblock %}
