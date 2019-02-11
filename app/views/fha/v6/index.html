@@ -141,17 +141,17 @@
                                     <a href="/{{path}}/decision-maker.html">
                                   
                                       <h2 class="heading-xlarge">
-                                          10
-                                        <span class="heading-small">Decision maker</span>
+                                          {{dmNumbers.total}}
+                                        <span class="heading-small">Decision's to be made</span>
                                        </h2>
                                   
                                     </a>
                                     <ul>
-                                        <li><a href="/{{path}}/todays-appointments.html">Assessements ({{assessNumbers.appointmentToday}})</a></li>
-                                        <li><a href="/{{path}}/ready-for-assessment.html">Failer to attend ({{assessNumbers.readyForAssessment}})</a></li>
-                                        <li><a href="/{{path}}/assessment-stopped">Good cause ({{assessNumbers.assesmentStopped}})</a></li>
+                                        <li><a href="/{{path}}/assessment-reports.html">Assessement reports ({{dmNumbers.assessmentReports}})</a></li>
+                                        <li><a href="/{{path}}/failed-to-attend.html">Failed to attend  appointment ({{dmNumbers.failedToAttend}})</a></li>
+                                        <li><a href="/{{path}}/good-cause">Questionnaire not returned  ({{dmNumbers.questionnaireNotReturned}})</a></li>
                                       
-                                        
+  
                                 
                                         
                                        </ul>

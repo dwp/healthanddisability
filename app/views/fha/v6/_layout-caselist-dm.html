@@ -15,17 +15,23 @@
                 
                 
                         <li class="active_detail">
-                            <a href="{{item.url}}"> Decision maker</a>
+                            <a href="/{{path}}/decision-maker.html"> Decision maker</a>
                 
                             <ul>
+
+                                    <li>
+                                            <a href="/{{path}}/assessment-reports.html">Asssessment report ({{dmNumbers.failedToAttend}})</a>
+                        
+                        
+                                        </li>
                 
                                 <li>
-                                    <a href="{{subItem.url}}">Failure to attend</a>
+                                    <a href="/{{path}}/failed-to-attend.html">Failure to attend ({{dmNumbers.failedToAttend}})</a>
                 
                 
                                 </li>
                                 <li>
-                                    <a href="{{subItem.url}}">Good cause</a>
+                                    <a href="/{{path}}/good-cause.html">Questionnaire not returned ({{dmNumbers.questionnaireNotReturned}})</a>
                 
                 
                                 </li>

@@ -46,7 +46,7 @@ router.get('*', function (req, res, next) {
     req.session.data.observations = [];
   }
 
-  res.locals.menuItems = require(filePath +'/caselist/_navItems.js')(versionNumber, reviewCustomers, assessmentCustomers, appointmentCustomers );
+  res.locals.menuItems = require(filePath +'/caselist/_navItems.js')(versionNumber, reviewCustomers, assessmentCustomers, appointmentCustomers, dmCustomers );
 
   next()
 })
@@ -87,6 +87,19 @@ router.get('/', function (req, res, next) {
   next()
 })
 
+
+router.get('/', function (req, res, next) {
+  
+  res.locals.dmNumbers = {
+    total: dmCustomers.length,
+    assessmentReports: dmCustomers.filter(customer => customer.status === "Assessment reports").length,
+    failedToAttend: dmCustomers.filter(customer => customer.status === "Failed to attend appointment").length,
+    questionnaireNotReturned: dmCustomers.filter(customer => customer.status === "Questionnaire not returned").length,
+
+  }
+  next()
+})
+
 router.post('*', function (req, res, next) {
   // path is only available with the proper value within this sub-module/router.
   res.locals.path = req.baseUrl.substr(1)
@@ -116,7 +129,7 @@ router.post('*', function (req, res, next) {
   if(!req.session.data.observations){
     req.session.data.observations = [];
   }
-  res.locals.menuItems = require(filePath +'/caselist/_navItems.js')(versionNumber, reviewCustomers, assessmentCustomers, appointmentCustomers);
+  res.locals.menuItems = require(filePath +'/caselist/_navItems.js')(versionNumber, reviewCustomers, assessmentCustomers, appointmentCustomers, dmCustomers);
   
   next()
 })
@@ -657,6 +670,8 @@ router.get('/booking/:customerId/*', function(req, res, next){
   next()
 
 })
+
+
 
 router.get('/assessment/:customerId/*', function(req, res, next){
   res.locals.customer = assessmentCustomers
@@ -1710,6 +1725,96 @@ router.post("/scrutiny/:customerId/fme-confirm", function(req, res, next){
 });
 
 
+/// Decision maker routes ------------------------------------------------------------------------//
+var dmCustomers = require(filePath +'/data/dm/dm.js');
+
+router.get('/decision-maker', function(req, res, next){
+  res.locals.customers = dmCustomers;
+ 
+  next()
+})
+
+router.get('/decisionmaker/:customerId/*', function(req, res, next){
+  res.locals.customer = dmCustomers
+                          .filter(customer => customer._id === req.params.customerId)[0];
+
+  console.log(res.locals.customer)
+  next()
+
+})
+
+router.get('/decisionmaker/:customerId/timeline', function(req, res, next){
+  
+  res.render(viewPath +'/decisionmaker/timeline');
+
+
+})
+
+
+router.get('/decisionmaker/:customerId/appointment', function(req, res, next){
+  
+  res.render(viewPath +'/decisionmaker/appointment');
+
+
+})
+
+
+router.get('/decisionmaker/:customerId/evidence', function(req, res, next){
+  
+  res.render(viewPath +'/decisionmaker/evidence/index');
+
+
+})
+
+router.get('/decisionmaker/:customerId/decision', function(req, res, next){
+  
+  res.render(viewPath +'/decisionmaker/decision/index');
+
+
+})
+
+router.get('/decisionmaker/:customerId/decision/:pageName', function(req, res, next){
+  
+  res.render(viewPath +'/decisionmaker/decision/' + req.params.pageName);
+
+
+})
+
+router.get('/decisionmaker/:customerId/details', function(req, res, next){
+  
+  res.render(viewPath +'/decisionmaker/details/index');
+
+
+})
+
+
+router.get('/decisionmaker/:customerId/details/:pageName', function(req, res, next){
+  
+  res.render(viewPath +'/decisionmaker/details/' + req.params.pageName);
+
+
+})
+
+/// END decision maker routes ------------------------------------------------------------------------//
+
+
+router.get('/assessment-reports', function(req, res, next){
+  res.locals.customers = dmCustomers
+  .filter(customer => customer.status === "Assessment reports");
+  next()
+})
+
+router.get('/failed-to-attend', function(req, res, next){
+  res.locals.customers = dmCustomers
+  .filter(customer => customer.status === "Failed to attend appointment");
+  next()
+})
+
+router.get('/good-cause', function(req, res, next){
+  res.locals.customers = dmCustomers
+  .filter(customer => customer.status === "Questionnaire not returned");
+  next()
+})
 
 
 
@@ -1758,11 +1863,7 @@ router.get('/booked', function(req, res, next){
   next()
 })
 
-router.get('/decision-maker', function(req, res, next){
-  res.locals.customers = assessmentCustomers
-                            .filter(customer => customer.status === "dm");
-  next()
-})
+
 
 
 
@@ -2243,6 +2344,7 @@ router.get('/booking/:customerId/details/:pageName', function(req, res, next){
 
 
 })
+
 
 
 

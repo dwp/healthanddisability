@@ -1,0 +1,95 @@
+<div class="timeline">
+
+        {% if customer.status == 'Questionnaire not returned'  %}
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Questionnaire not returned</h3>
+          <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0)}}</p>
+        </div>
+        {% else %}
+    
+
+        {% if customer.status == 'Assessment reports'  %}
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Assessment completed</h3>
+          <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(4)}}</p>
+        </div>
+        {% endif %}
+
+        {% if customer.status == 'Failed to attend appointment'  %}
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Failed to attend appointment</h3>
+          <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(4)}}</p>
+        </div>
+        {% endif %}
+       
+
+
+
+
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Appointment booked</h3>
+          <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(5)}}</p>
+        </div>
+      
+      <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Referred for appointment</h3>
+          <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(6) }}</p>
+        </div>
+
+
+
+
+
+<span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">GP report - medical evidence received</h3>
+  <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(7) }}</p>
+</div>
+
+
+<span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">GP Report - medical evidence requested</h3>
+  <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(10) }}</p>
+</div>
+
+
+
+
+      
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">Med 3 - medical evidence received </h3>
+        <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(11) }}</p>
+      </div>
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">UC50 form received</h3>
+        <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(15) }}</p>
+      </div>
+
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">UC50 form sent out to {{customer.name.first}}</h3>
+        <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(25) }}</p>
+      </div>
+      {% endif %}
+ 
+
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">New referral created</h3>
+        <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(30) }}</p>
+      </div>
+
+
+
+      <div style="clear:both"></div>
+
+    </div><!-- timeline -->
