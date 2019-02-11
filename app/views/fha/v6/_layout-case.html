@@ -7,13 +7,17 @@
   <main id="content" role="main" class="main-content-inner">
 
     <div class="container">
-    
       <div class="grid-row main-row">
     
       <div class="column-one-quarter left-area">
       
       	<div class="left-panel">
             {% if customer.status == 'Assessment started' or customer.status == 'Ready for recommendation'%}
+            {% elif customer.status == 'Assessment reports' 
+            or customer.status == 'Failed to attend appointment' 
+            or customer.status == 'Questionnaire not returned' %}
+            <p class="returnRef"><a href="/{{path}}/decision-maker">Return to case list</a></p>
+            <hr>
             {% elif customer.status == 'Ready for assessment' or customer.status == 'Assessment completed' or customer.status == 'Assessment stopped' or customer.status == 'Appointment today' or customer.status == 'Booked' %}
             <p class="returnRef"><a href="/{{path}}/assessment">Return to case list</a></p>
             <hr>
@@ -53,9 +57,16 @@
 {{ 'Booked' if customer.status == 'Security booked'  }} 
 {% endif %}
 {{ 'Ready to book' if customer.status == 'Security booked' and customer.name.first == 'Deena' and data['changedByCustomer']==="yes" }}
+{{ 'Assessment report available' if customer.status == 'Assessment reports' }}
+{{ 'Failed to attend appointment' if customer.status == 'Failed to attend appointment' }}
+{{ 'Questionnaire not returned' if customer.status == 'Questionnaire not returned' }}
 
  </p>
      {% if customer.status == 'Assessment started' or customer.status == 'Booked' or customer.status == 'Security booked'%}
+     {% elif customer.status == 'Assessment reports' 
+     or customer.status == 'Failed to attend appointment' 
+     or customer.status == 'Questionnaire not returned' %}
+     <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/index" class="button">Make a decision</a></p>  
      {% elif customer.status == 'Assessment completed' %}
      <p><a href="/{{path}}/assessment/{{customer._id}}/scoring/report-view" class="button">Rework report</a></p>   
    

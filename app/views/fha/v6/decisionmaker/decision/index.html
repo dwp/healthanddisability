@@ -1,7 +1,7 @@
-{% extends path1+"/decision/_layoutAction.html" %}
+{% extends path+"/_layout-case-action.html" %}
 
 
-{% block case_content %}
+{% block citizen_content %}
 
  <p class="no-kdBar"> <a href="javascript: history.go(-1)" class="link-back">Back</a></p>
  
@@ -26,12 +26,12 @@
 
     <div class="multiple-choice" data-target="scorenow">
       <input id="decide_now" name="whatcando" type="radio" value="Yes">
-      <label for="decide_now">Book Bobby another appointment</label>
+      <label for="decide_now">Book {{customer.name.first}} another appointment</label>
     </div>
 
     <div class="multiple-choice" data-target="closeThis">
       <input id="face2face" name="whatcando" type="radio" value="No">
-      <label for="face2face"> Close Bobbys case</label>
+      <label for="face2face"> Close {{customer.name.first}}'s' case</label>
     </div>
     <div class="panel js-hidden" id="closeThis">
     	<label class="form-label" for="closeReason">Reason:</label>
