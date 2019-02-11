@@ -1355,4 +1355,67 @@ span.status {
 }
 
 
+.descriptor-nav {
+	position: relative;
+	margin: 0;
+	ul {
+		list-style: none;
+		li {
+			border-bottom: 1px solid $grey-3;
+			&:first-child {
+				border-top: 1px solid $grey-3;
+			}
+			a {
+				display: block;
+				background: $grey-4;
+				padding: 15px 20px;
+				&.open-item {
+					background: #fff;
+					color: #000;
+					text-decoration: none!important;
+					border-left: 6px solid $govuk-blue;
+				}
+				&:hover {
+					background: #fff;
+				}
+			}
+		
+			
+		}
+	}
+}
 
+
+.descriptor-focused {
+	width: 77%;
+	float: left;
+}
+
+.descriptor-scored {
+	width: 20%;
+	float: right;
+	
+	p {
+		display: block;
+		margin-top: 20px;
+	}
+	
+	.score-display {
+		background: $govuk-blue;
+		text-align: center;
+		border-radius: 5px;
+		margin-top: 30px;
+		h2 {
+			padding: 20px 0 10px 0;
+			color: #fff;
+			font-size: 100px;
+			font-weight: bold;
+			margin: 0;
+			span {
+				display: block;
+				font-size: 22px;
+			}
+		}
+	}
+	
+}
