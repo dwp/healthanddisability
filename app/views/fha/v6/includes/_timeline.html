@@ -17,7 +17,7 @@
         </div>
         {% endif %}
 
-        {% if customer.status == 'Failed to attend appointment'  %}
+        {% if customer.status == 'Failed to attend appointment' or checked('confirmfta', 'Yes') %}
         <span class="line"></span>
         <div class="timeline__event">
           <h3 class="timeline__heading">Failed to attend appointment</h3>
