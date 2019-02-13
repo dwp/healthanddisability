@@ -186,11 +186,15 @@
 						<th>Straight Leg raising</th>
 						<td>
 								{% if data['testingthis']==="test1" %}
-								Normal
+								Normal (more than 70°)
 								{% elif data['testingthis']==="test2" %}
-								 Slightly reduced
-								{% else %} 
-								Significantly reduced
+								Able to lift straight leg when lying down is reduced by muscle tightness at the back of the leg: reduced by hamstring tightness
+								{% elif data['testingthis']==="test3" %}
+								Ability to lift straight leg when lying down reduced due to hip pain
+								{% elif data['testingthis']==="test4" %}
+								Ability to lift straight leg when lying down reduced due to low back pain
+								{% elif data['testingthis']==="test5" %}
+								Straight leg raising is reduced by weakness
 								{% endif %}
 							
 							

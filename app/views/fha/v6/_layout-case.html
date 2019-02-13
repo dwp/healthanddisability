@@ -48,7 +48,7 @@
 {{ 'Assessment completed' if customer.status == 'Assessment completed' }}
 {{ 'Assessment stopped' if customer.status == 'Assessment stopped' }}
 {{ 'Ready to Book' if customer.status == 'Ready to Book' }}
-{{ 'Did not attend' if customer.status == 'Did not attend' }}
+{{ 'Did not attend appointment' if customer.status == 'Did not attend' }}
 {{ 'Ready to book' if customer.status == 'Booked' and customer.name.first == 'Dillon' and data['book-next']!=="yes" }}
 {{ 'Booked' if customer.status == 'Booked' and customer.name.first !== 'Dillon' }}
 {{ 'Booked' if customer.status == 'Booked' and customer.name.first == 'Dillon' and data['book-next']==="yes" }}
@@ -92,7 +92,7 @@
     </form>
 
     {% elif customer.status == 'Did not attend' %}
-    <p class="mt10"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/rec" class="button">Refer to decision maker</a></p>
+    <p class="mt10"><a href="/{{path}}/booking/{{customer._id}}/evidence/rec" class="button">Confirm</a></p>
       {% else %}
       <p class="mt10"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/rec" class="button">Make a recommendation</a></p>
       {% endif%}
