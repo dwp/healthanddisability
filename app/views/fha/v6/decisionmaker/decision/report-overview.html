@@ -2,11 +2,12 @@
 
 {% block citizen_content %}
 
- <p class="no-kdBar"> <a href="javascript: history.go(-1)" class="link-back">Back</a></p>
- 
+
+{# macro #}
+  {{ nav.case_tabs("reportoverview",1,path1, customer._id) }}
 
 
-<h1 class="heading-large">Overview</h1>
+  {% include path+"/includes/_reportoverview.html" %}
 
 
 {% endblock %}

@@ -492,7 +492,7 @@ hr {
 
 
 .no-kdBar {
-	border-top: 1px solid #bfc1c3;
+	border-top: 1px solid $grey-2;
 	margin-top: 0;
 	padding-top: 0px;
 	margin-bottom:0px;
@@ -1368,7 +1368,7 @@ span.status {
 			a {
 				display: block;
 				background: $grey-4;
-				padding: 15px 20px;
+				padding: 15px 100px 15px 20px;
 				&.open-item {
 					background: #fff;
 					color: #000;
@@ -1386,14 +1386,10 @@ span.status {
 }
 
 
-.descriptor-focused {
-	width: 77%;
-	float: left;
-}
 
 .descriptor-scored {
-	width: 20%;
-	float: right;
+position: fixed;
+	top: 250px;
 	
 	p {
 		display: block;
@@ -1401,21 +1397,35 @@ span.status {
 	}
 	
 	.score-display {
-		background: $govuk-blue;
+		background: $grey-4;
 		text-align: center;
-		border-radius: 5px;
 		margin-top: 30px;
+		border-radius: 3px;
+		border: 1px solid $grey-2;
+
 		h2 {
-			padding: 20px 0 10px 0;
-			color: #fff;
+			padding: 30px 0 10px 0;
 			font-size: 100px;
 			font-weight: bold;
 			margin: 0;
 			span {
 				display: block;
-				font-size: 22px;
+				font-size: 20px;
 			}
 		}
+		&.scored-display {
+			background: $govuk-blue;
+			h2 {
+				color: #fff;
+			}
+		}	
 	}
 	
 }
+
+
+.decision-mode {
+	margin-top: 20px;
+}
+
+
