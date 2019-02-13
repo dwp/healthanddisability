@@ -608,7 +608,7 @@ module.exports = [
         "sideEffects": ""
       }
     ],
-    "status": "Appointment today",
+    "status": "Ready for assessment",
     "dateOfBirth": "1952-04-24T02:55:01+00:00",
     "mobile": "07918 463 245",
     "NINO": "QQ 69 73 59 C",
@@ -679,7 +679,7 @@ module.exports = [
         "sideEffects": ""
       }
     ],
-   "status": "Appointment today",
+   "status": "Ready for assessment",
     "dateOfBirth": "1956-09-01T01:44:30+00:00",
     "mobile": "07835 476 385",
     "NINO": "QQ 74 57 26 C",
@@ -814,7 +814,7 @@ module.exports = [
       "type":"Standard appointment",
       "interpreter":"portuguese interpreter required",
       "arrival":"on time",
-      "waiting":"waiting 25mins"
+      "Ready for assessment":"Ready for assessment 25mins"
     },
   },
   {
@@ -902,7 +902,7 @@ module.exports = [
       "type":"Standard appointment",
       "time":"11.00am",
       "arrival":"on time",
-      "waiting":"waiting 18 minutes"
+      "Ready for assessment":"Ready for assessment 18 minutes"
     },
   },
   
@@ -1126,6 +1126,7 @@ module.exports = [
       "time":"10.30am",
       "type":"Standard",
       "accessible":'Ground floor access',
+     
     },
   },
   {
@@ -1153,7 +1154,7 @@ module.exports = [
         "sideEffects": ""
       }
     ],
-   "status": "Assessment completed",
+   "status": "Ready for assessment",
     "dateOfBirth": "1958-07-11T03:08:43+00:00",
     "mobile": "07971 577 303",
     "NINO": "QQ 12 68 26 C",
@@ -1197,6 +1198,8 @@ module.exports = [
     "appointment": {
       "time":"10.00am",
       "type":"Standard appointment",
+      "arrival":"on time",
+      "waiting":"waiting 1 hour 25mins"
     },
   },
   {
@@ -1224,7 +1227,7 @@ module.exports = [
         "sideEffects": ""
       }
     ],
-   "status": "Assessment completed",
+   "status": "Ready for assessment",
     "dateOfBirth": "1977-12-11T13:55:53+00:00",
     "mobile": "07849 519 363",
     "NINO": "QQ 57 83 89 C",
@@ -1268,7 +1271,9 @@ module.exports = [
     "appointment": {
       "time":"10.00am",
       "type":"Standard appointent",
-      "gender": "Female HCP requested"
+      "gender": "Female HCP requested",
+      "arrivallate":"30 mins late",
+      "waiting":"waiting 55 minutes"
     },
   },
 
@@ -1297,7 +1302,7 @@ module.exports = [
         "sideEffects": ""
       }
     ],
-   "status": "Assessment completed",
+   "status": "Ready for assessment",
     "dateOfBirth": "1986-03-06T11:21:14+00:00",
     "mobile": "07903 419 345",
     "NINO": "QQ 64 58 82 C",
@@ -1342,6 +1347,8 @@ module.exports = [
       "time":"9.30am",
       "type":"Complex neuro appointment",
       "accessible": "Ground floor access",
+      "arrival":"on time",
+      "waiting":"2 hours 25mins"
     },
   },
   {
@@ -1480,7 +1487,7 @@ module.exports = [
         "sideEffects": ""
       }
     ],
-   "status": "Assessment completed",
+   "status": "Ready for assessment",
     "dateOfBirth": "1987-01-17T08:04:51+00:00",
     "mobile": "07804 599 259",
     "NINO": "QQ 16 35 33 C",
@@ -1524,6 +1531,8 @@ module.exports = [
       "time":"9:00am",
       "type":"Complex neuro appointment",
       "taxi":"Taxi required",
+      "arrival":"On time",
+      "waiting":"2 hours 35mins "
     },
   },{
     "_id": "5bbf32d5d2fbb02cbc074c0a",
@@ -1584,7 +1593,7 @@ module.exports = [
         "sideEffects": ""
       }
     ],
-    "status": "Assessment completed",
+    "status": "Ready for assessment",
     "dateOfBirth": "1968-03-18T17:36:39+00:00",
     "mobile": "07826 492 326",
     "NINO": "QQ 37 50 73 C",
@@ -1628,7 +1637,8 @@ module.exports = [
     "appointment": {
       "time":"9:00am",
       "type":"Standard appointment",
-     
+      "arrival":"on time",
+      "waiting":"Waiting 2 hours 45 mins"
     },
   },
    

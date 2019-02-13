@@ -220,7 +220,7 @@ module.exports = [
         "sideEffects": ""
       }
     ],
-    "status": "Assessment completed",
+    "status": "Ready for assessment",
     "dateOfBirth": "1997-04-21T14:13:04+00:00",
     "mobile": "07881 438 200",
     "NINO": "QQ 36 36 56 C",
@@ -360,7 +360,7 @@ module.exports = [
         "sideEffects": ""
       }
     ],
-   "status": "Assessment completed",
+   "status": "Ready for assessment",
     "dateOfBirth": "1966-04-19T11:48:53+00:00",
     "mobile": "07977 416 302",
     "NINO": "QQ 47 36 71 C",
@@ -427,7 +427,7 @@ module.exports = [
         "sideEffects": ""
       }
     ],
-   "status": "Assessment completed",
+   "status": "Ready for assessment",
     "dateOfBirth": "1987-01-17T08:04:51+00:00",
     "mobile": "07804 599 259",
     "NINO": "QQ 16 35 33 C",
@@ -509,7 +509,7 @@ module.exports = [
       }
 
     ],
-    "status": "Assessment completed",
+    "status": "Ready for assessment",
     "dateOfBirth": "1956-02-13T23:13:32+00:00",
     "mobile": "07961 542 293",
     "NINO": "QQ 78 13 92 C",
@@ -576,7 +576,7 @@ module.exports = [
         "sideEffects": ""
       }
     ],
-   "status": "Assessment completed",
+   "status": "Ready for assessment",
     "dateOfBirth": "1985-11-23T18:47:31+00:00",
     "mobile": "07809 462 367",
     "NINO": "QQ 81 55 93 C",
@@ -643,7 +643,7 @@ module.exports = [
         "sideEffects": ""
       }
     ],
-    "status": "Assessment completed",
+    "status": "Ready for assessment",
     "dateOfBirth": "1971-01-10T22:53:59+00:00",
     "mobile": "07823 427 394",
     "NINO": "QQ 29 61 64 C",
@@ -735,7 +735,7 @@ module.exports = [
         "sideEffects": ""
       }
     ],
-    "status": "Assessment completed",
+    "status": "Ready for assessment",
     "dateOfBirth": "1963-03-21T02:07:51+00:00",
     "mobile": "07887 561 302",
     "NINO": "QQ 84 52 37 C",
@@ -802,7 +802,7 @@ module.exports = [
         "sideEffects": ""
       }
     ],
-   "status": "Assessment completed",
+   "status": "Ready for assessment",
     "dateOfBirth": "1952-11-03T09:07:41+00:00",
     "mobile": "07906 407 310",
     "NINO": "QQ 37 36 57 C",

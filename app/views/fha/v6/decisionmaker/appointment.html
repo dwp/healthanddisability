@@ -22,53 +22,11 @@
   {{ nav.case_tabs("appointment",1,path1, customer._id) }}
     
 <div class="grid-row">
-    <div class="column-one-third">
-          
-            <h2 class="heading-medium mt10">Appointment preferences</h2> 
-            
-            {% if data['scenario'] %}
-            
-            
-            
-            <h3 class="heading-small">Days {{customer.name.first}} is unavailable:</h3>            
-            
-            <ul class="list-bullet pref-list">
-  
-                {% if checked('scenario', 'pref-1')%}
-                <li>Monday <span>afternoon</span>
-                </li>
-                {% endif %}
-                {% if checked('scenario', 'pref-2')%}
-                <li>Tuesday</li>
-                {% endif %}
-                {% if checked('scenario', 'pref-3')%}
-                <li>Wednesday</li> 
-                {% endif %}
-                {% if checked('scenario', 'pref-4')%}
-                <li>Thursday</li> 
-                {% endif %}
-                {% if checked('scenario', 'pref-5')%}
-                <li>Friday</li> 
-                {% endif %}
-                </ul>
-            {% endif %}  
-                     
-            <h3 class="heading-small">Dates {{customer.name.first}} is unavailable:</h3>
-            <ul class="list-bullet pref-list">
-  
-                <li>26 June 2019 &ndash; 14 July 2019</li>
-                
-  
-               
-            </ul>
-            
-            <hr>
-            
-              <p><a href="/{{path}}/scrutiny/{{customer._id}}/appointment-preferences"  class="button-secondary">Add preferences</a></p>
-           
-        
-          
-    </div>
+    {% if customer.status == 'Security booked' %}
+    {% include path+"/includes/appointment/_uta.html" %}
+{% else %}
+{% include path+"/includes/appointment/_fta.html" %}
+{% endif%}
 </div>
 
     </div><!-- column -->
