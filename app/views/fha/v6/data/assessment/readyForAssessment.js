@@ -652,6 +652,8 @@ module.exports = [
     "appointment": {
       "time":"11.30am", 
       "type":"Standard appointment",
+      "arrival":"On time",
+      "waiting":"waiting 15 Mins"
     },
   },
   {
@@ -724,6 +726,8 @@ module.exports = [
       "time":"11.30am", 
       "type":"Complex neuro appointment",
       "accessible": "Ground floor access",
+      "arrival":"On time",
+      "waiting":" waiting 20 Mins"
     },
   },
   {
