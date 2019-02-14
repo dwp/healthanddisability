@@ -48,7 +48,12 @@
 {{ 'Assessment completed' if customer.status == 'Assessment completed' }}
 {{ 'Assessment stopped' if customer.status == 'Assessment stopped' }}
 {{ 'Ready to Book' if customer.status == 'Ready to Book' }}
-{{ 'Did not attend appointment' if customer.status == 'Did not attend' }}
+
+{{ 'Did not attend appointment' if customer.status == 'Did not attend' and data['confirmfta']!=="Arnaq" and customer.name.first == 'Arnaq'
+ or customer.status == 'Did not attend' and data['confirmfta']!=="Sarah" and customer.name.first == 'Sarah'
+ or customer.status == 'Did not attend' and data['confirmfta']!=="Johannes" and customer.name.first == 'Johannes' 
+ }}
+
 {{ 'Ready to book' if customer.status == 'Booked' and customer.name.first == 'Dillon' and data['book-next']!=="yes" }}
 {{ 'Booked' if customer.status == 'Booked' and customer.name.first !== 'Dillon' }}
 {{ 'Booked' if customer.status == 'Booked' and customer.name.first == 'Dillon' and data['book-next']==="yes" }}
@@ -58,15 +63,27 @@
 {% endif %}
 {{ 'Ready to book' if customer.status == 'Security booked' and customer.name.first == 'Deena' and data['changedByCustomer']==="yes" }}
 {{ 'Assessment report available' if customer.status == 'Assessment reports' }}
-{{ 'Failed to attend appointment' if customer.status == 'Failed to attend appointment' }}
+{{ 'Failed to attend appointment' if customer.status == 'Failed to attend appointment' 
+or data['confirmfta']=="Arnaq" and customer.name.first == 'Arnaq'
+or data['confirmfta']=="Sarah"  and customer.name.first == 'Sarah' 
+or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes' 
+
+}}
 {{ 'Questionnaire not returned' if customer.status == 'Questionnaire not returned' }}
 
  </p>
-     {% if customer.status == 'Assessment started' or customer.status == 'Booked' or customer.status == 'Security booked'%}
+     {% if customer.status == 'Assessment started' or customer.status == 'Booked' 
+     or customer.status == 'Security booked' %}
+  
      {% elif customer.status == 'Assessment reports' 
-     or customer.status == 'Failed to attend appointment' 
+     or customer.status == 'Failed to attend appointment'
      or customer.status == 'Questionnaire not returned' %}
      <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/index" class="button">Make a decision</a></p>  
+
+     {% elif data['confirmfta']=="Arnaq" and customer.name.first == 'Arnaq'
+     or data['confirmfta']=="Sarah"  and customer.name.first == 'Sarah' 
+     or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes' %}
+
      {% elif customer.status == 'Assessment completed' %}
      <p><a href="/{{path}}/assessment/{{customer._id}}/scoring/report-view" class="button">Rework report</a></p>   
    
@@ -101,7 +118,11 @@
 		  
 		  
 		  <ul class="secondary-actions">
+     
+          {% if customer.status !== 'Failed to attend appointment' %}
+
           <li><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/record-evidence" class="">Record evidence</a></li>
+       {% endif %}
           {% if customer.status == 'fme' or customer.status == 'review' %}
           <li><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/request-evidence" class="">Request evidence</a></li>
           {% endif %}
@@ -115,16 +136,6 @@
             <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/stopAssess">Abandon assessment</a></li>
             {% endif %}
 
-         <!--  {% if customer.status == 'Assessment stopped' or customer.status == 'Ready for assessment'%}
-            {% if data['stoppassess']==='unfit' or data['stoppassess']==='specialreq'%}
-            <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/send-home-book">Rearrange this appointment</a></li>
-            {% elif data['stoppassess']==='other'%}
-            <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/send-home-asses-not-comp">Rearrange this appointment</a></li>
-            {% else %}
-            <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/send-home">Rearrange this appointment</a></li>
-            {% endif %}
-            {% endif %} -->
-           <!-- <li><a href="#">Close case</a></li> -->
           </ul>
           
 		  </div>

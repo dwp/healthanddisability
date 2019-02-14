@@ -19,14 +19,16 @@
     <li>11:00am</li>
     <li>Tresco House</li>
   </ul>
+  {% if customer.name.first == 'Arnaq' %}
   <h3 class="heading-small">Customer contact</h3>
- <p>Arnaq was having a bad day with his arthritis and was struggling to get out of the house, he asked for a rearrangement but we could not provide it because he had previously rearranged
+ <p>{{customer.name.first}} was having a bad day with his arthritis and was struggling to get out of the house, he asked for a rearrangement but we could not provide it because he had previously rearranged
           his appointment. <span class="date">{{ 'Do MMMM YYYY' | baseDateAdd(1) }}</span></p>
+   {% endif %}       
     </div>
 <form class="form" action="/{{path}}/booking/{{customer._id}}/timeline" method="post">
   <div class="form-group  mt20">
       <label class="heading-medium" for="">Add more detail if we have it</label>
-    <textarea name="dmreason" class="form-control" rows="6">{{dmreason}}</textarea>
+    <textarea name="dmreason" class="form-control" rows="6"></textarea>
   </div><!-- form-group -->
   <div class="form-group">
     <button class="button">Save and continue</button>
@@ -34,7 +36,7 @@
 
   <div class="visually-hidden">
       <div class="multiple-choice">
-          <input id="radio-inline-1" type="radio" name="confirmfta" value="Yes" checked>
+          <input id="radio-inline-1" type="radio" name="confirmfta" value="{{customer.name.first}}" checked>
           <label for="radio-inline-1">Yes</label>
         </div>
   </div>
