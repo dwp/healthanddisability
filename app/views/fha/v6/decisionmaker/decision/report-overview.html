@@ -1,0 +1,13 @@
+{% extends path+"/_layout-decision2.html" %}
+
+{% block citizen_content %}
+
+
+{# macro #}
+  {{ nav.case_tabs("reportoverview",1,path1, customer._id) }}
+
+
+  {% include path+"/includes/_reportoverview.html" %}
+
+
+{% endblock %}
