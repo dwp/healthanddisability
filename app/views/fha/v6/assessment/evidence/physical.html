@@ -28,8 +28,8 @@
 	
  
     {% if customer.status == 'Ready for recommendation' %}
-    <form class="mt30" method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/medical_assessment_dashboard">
-    <p class="mt30"><button class="button">Finish review</button></p>
+    <form class="mt30" method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/wca-index">
+    <p class="mt30"><button class="button">Save and continue</button></p>
 		 
 				<div class="multiple-choice" style="display:none">
 						<input id="radio-inline-4" type="radio" name="physicalVisited" value="physicalVisited" checked>
