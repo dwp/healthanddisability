@@ -377,35 +377,6 @@ $(document).ready(function () {
 });
 
 
-$(document).ready(function(){
-  $("#nextLink").hide();
-    $("#confirmButton").hide();
-    
-  $("[name='changedByCustomer']").change(function(){
-
-    if(this.value == 'yes'){
-      $("#confirmButton").show();
-      $("#nextLink").hide();
-    } else {
-      $("#confirmButton").hide();
-      $("#nextLink").show();
-    }
-  })
-});
-
-
-
-
-  $(document).ready(function(){
-  accessibleAutocomplete.enhanceSelectElement({
-    selectElement: document.querySelector('government-organisations')
-  })
-});
-
-
-
-
-
 
 
 

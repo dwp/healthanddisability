@@ -69,7 +69,14 @@
 {% endblock %}
 
 {% block page_scripts %}
-
+<script type="text/javascript">
+  $( document ).ready(function() {
+         $( ".panel-switch" ).click(function() {
+             $( ".inner-panel" ).toggleClass( "panel-open" );
+         });
+     }); 
+   
+ </script>
 
 {% endblock %}
 
