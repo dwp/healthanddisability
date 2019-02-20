@@ -35,11 +35,9 @@
 																
 					
 								<div class="multiple-choice" data-target="other-info2">
-										{% if customer.name.first == 'Dominguez' %}
-									<input type="radio" name="appointments" id="available-appointments-unable" value="yes" {{checked('appointments-dom', 'yes') }}>
-									{% else %}
+								
 									<input type="radio" name="appointments" id="available-appointments-unable" value="yes" {{checked('appointments', 'yes') }}>
-									{% endif%}
+									
 									<label for="available-appointments-unable">Rearrange appointment</label>
                                 </div>
                                 
@@ -76,14 +74,14 @@
                                                    
                                                     {% elif customer.name.first == 'Mcconnell' %}
                                                     <ul class="list-bullet mt10 mb10">
-                                                      <li>Tuesday 5 Feb 2018</li>
+                                                            <li>Tuesday {{ 'Do MMMM YYYY' | baseDateAdd(5) }}</li>
                                                       <li>4:00pm</li>
                                                       <li>Tresco House</li>
                                                     </ul>
     
                                                           {% else %}
                                                           <ul class="list-bullet mt10 mb10">
-                                                                <li>Tuesday 5 Feb 2018</li>
+                                                                <li>Tuesday {{ 'Do MMMM YYYY' | baseDateAdd(5) }}</li>
                                                                 <li>4:00pm</li>
                                                                 <li>Tresco House</li>
                                                               </ul>
@@ -97,12 +95,12 @@
                                         
                                             
                                     </div>
-                                   {% if customer.name.first == 'Mcconnell' %} 
+                            
 								<div class="multiple-choice">
 									<input type="radio" name="appointments" id="available-appointments-1" value="no"  {{checked('appointments', 'no') }}>
 									<label for="available-appointments-1">Keep the current appointment</label>
                                 </div>
-                                {% endif %}
+                               
 
                                 <div class="multiple-choice" data-target="Cancel-appointment">
                                         <input type="radio" name="appointments" id="available-appointments-1" value="no"  {{checked('appointments', 'no') }}>
@@ -135,13 +133,12 @@
                                 
 							
                             </div>
-                            {% if customer.name.first == 'Lowery' %}
-                            {% else %}
+                         
                                     <div class="form-group">
-                                            <label class="form-label-bold">What is the reason for this rearrangement{% if customer.name.first == 'Mcconnell' %}, request {% endif %}  or cancellation? </label>
-                                            <textarea name="changedByCustomerComments" class="form-control " style="height: 150px; width:100%; max-width:650px;"></textarea>
+                                            <label class="form-label-bold">Reason</label>
+                                            <textarea name="changedByCustomerComments" class="form-control " style="height: 150px; width:100%; max-width:650px;">{{changedByCustomerComments}}</textarea>
                                     </div>        
-                             {% endif %}
+                           
 					
 								
 								</fieldset>

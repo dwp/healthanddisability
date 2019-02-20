@@ -35,6 +35,7 @@ module.exports = [
       }
     ],
     "status": "Failed to attend appointment",
+    "substatus":"Ready for decision",
     "dateOfBirth": "1966-11-25T05:50:41+00:00",
     "mobile": "07815 526 315",
     "NINO": "QQ 69 25 34 C",
@@ -329,6 +330,8 @@ module.exports = [
       }
     ],
     "status": "Failed to attend appointment",
+    "substatus":"Ready for decision",
+    "reason":"Overdue",
     "dateOfBirth": "1971-01-10T22:53:59+00:00",
     "mobile": "07823 427 394",
     "NINO": "QQ 29 61 64 C",
@@ -727,7 +730,7 @@ module.exports = [
     },
   },
   {
-    "_id": "5bbf32d5043f00fdd9b4a8b6",
+    "_id": "5bbf32d5043f00fdd9b4a8b8",
     "name": {
       "first": "Elvia",
       "last": "Fuentes",
@@ -769,6 +772,8 @@ module.exports = [
       }
     ],
     "status": "Failed to attend appointment",
+    "substatus":"Request a reason",
+    "reason":"No",
     "dateOfBirth": "1968-08-23T17:51:24+00:00",
     "mobile": "07941 494 390",
     "NINO": "QQ 16 14 61 C",
@@ -1011,6 +1016,8 @@ module.exports = [
       }
     ],
    "status": "Failed to attend appointment",
+   "substatus":"Record a reason",
+   "reason":"Requested",
     "dateOfBirth": "1952-11-03T09:07:41+00:00",
     "mobile": "07906 407 310",
     "NINO": "QQ 37 36 57 C",
@@ -1154,6 +1161,7 @@ module.exports = [
       }
     ],
    "status": "Failed to attend appointment",
+   "substatus":"Record a reason",
     "dateOfBirth": "1958-07-11T03:08:43+00:00",
     "mobile": "07971 577 303",
     "NINO": "QQ 12 68 26 C",
@@ -1298,6 +1306,7 @@ module.exports = [
       }
     ],
    "status": "Failed to attend appointment",
+   "substatus":"Ready for decision",
     "dateOfBirth": "1986-03-06T11:21:14+00:00",
     "mobile": "07903 419 345",
     "NINO": "QQ 64 58 82 C",
@@ -1481,6 +1490,7 @@ module.exports = [
       }
     ],
    "status": "Failed to attend appointment",
+   "substatus":"Request a reason",
     "dateOfBirth": "1987-01-17T08:04:51+00:00",
     "mobile": "07804 599 259",
     "NINO": "QQ 16 35 33 C",
@@ -1658,6 +1668,7 @@ module.exports = [
       }
     ],
    "status": "Failed to attend appointment",
+   "substatus":"Record a reason",
     "dateOfBirth": "1973-12-04T06:07:39+00:00",
     "mobile": "07856 423 226",
     "NINO": "QQ 49 51 87 C",

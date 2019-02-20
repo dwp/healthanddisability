@@ -1,18 +1,5 @@
 <div class="timeline">
 
-    {% if data['whatcando']=='requestreason'  %}
-    <span class="line"></span>
-    <div class="timeline__event">
-      <h3 class="timeline__heading">Requested a failed to attend reason</span></h3>
-      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0)}}</p>
-    </div>
-
-    <span class="line"></span>
-    <div class="timeline__event">
-      <h3 class="timeline__heading">Failed to attend appointment</h3>
-      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0)}}</p>
-    </div>
-    {% endif %}
 
     {% if data['whatcando']=='newappointment'  %}
     <span class="line"></span>
@@ -20,13 +7,80 @@
       <h3 class="timeline__heading">Good cause decision: Referred for appointment</span></h3>
       <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0)}}</p>
     </div>
+    {% endif %} 
 
+    {% if data['whatcando']=='closereason'  %}
+    <span class="line"></span>
+    <div class="timeline__event">
+      <h3 class="timeline__heading">Closed case</span></h3>
+      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0)}}</p>
+    </div>
+    {% endif %} 
+  
+  
+    {% if customer.reason =='Overdue' %}
+    <span class="line"></span>
+    <div class="timeline__event">
+      <h3 class="timeline__heading">Requested a failed to attend reason - overdue</h3>
+      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(6)}}</p>
+    </div>
+
+    <span class="line"></span>
+    <div class="timeline__event">
+      <h3 class="timeline__heading">Failed to attend appointment</h3>
+      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(7)}}</p>
+    </div>
+  {% elif data['dmreason'] and customer.substatus == 'Record a reason' or data['dmreason'] and customer.substatus == 'Request a reason'%}
+    <span class="line"></span>
+    <div class="timeline__event">
+      <h3 class="timeline__heading">Received a failed to attend reason</span></h3>
+      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0)}}</p>
+    </div>
+
+    <span class="line"></span>
+    <div class="timeline__event">
+      <h3 class="timeline__heading">Requested a failed to attend reason</span></h3>
+      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(1)}}</p>
+    </div>
+
+    <span class="line"></span>
+    <div class="timeline__event">
+      <h3 class="timeline__heading">Failed to attend appointment</h3>
+      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(2)}}</p>
+    </div>
+   
+
+    {% elif customer.substatus =='Record a reason' or data['whatcando']=='requestreason'  %}
+    <span class="line"></span>
+    <div class="timeline__event">
+      <h3 class="timeline__heading">Requested a failed to attend reason</span></h3>
+      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(1)}}</p>
+    </div>
+
+    <span class="line"></span>
+    <div class="timeline__event">
+      <h3 class="timeline__heading">Failed to attend appointment</h3>
+      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(2)}}</p>
+    </div>
+    {% elif customer.substatus == 'Ready for decision' %}
+    <span class="line"></span>
+    <div class="timeline__event">
+      <h3 class="timeline__heading">Failed to attend appointment</h3>
+      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(2)}}</p>
+    </div>
+    {% endif %}
+
+    {% if customer.status == 'Did not attend' and data['confirmfta']=='Arnaq'
+    or customer.status == 'Did not attend' and data['confirmfta']=='Sarah'
+    or customer.status == 'Did not attend' and data['confirmfta']=='Johannes'
+    %}
     <span class="line"></span>
     <div class="timeline__event">
       <h3 class="timeline__heading">Failed to attend appointment</h3>
       <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0)}}</p>
     </div>
-    {% endif %}
+    {% endif%}
+ 
 
 
         {% if customer.status == 'Questionnaire not returned'  %}
@@ -46,16 +100,7 @@
         </div>
         {% endif %}
 
-        {% if customer.status == 'Failed to attend appointment' 
-        or data['confirmfta']=="Arnaq" and customer.name.first == 'Arnaq'
-        or data['confirmfta']=="Sarah"  and customer.name.first == 'Sarah'
-        or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes' %}
-        <span class="line"></span>
-        <div class="timeline__event">
-          <h3 class="timeline__heading">Failed to attend appointment</h3>
-          <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0)}}</p>
-        </div>
-        {% endif %}
+    
        
 
 

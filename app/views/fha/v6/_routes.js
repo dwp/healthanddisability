@@ -1743,6 +1743,8 @@ router.get('/decisionmaker/:customerId/*', function(req, res, next){
 
 })
 
+
+
 router.get('/decisionmaker/:customerId/timeline', function(req, res, next){
   
   res.render(viewPath +'/decisionmaker/timeline');
@@ -1795,6 +1797,8 @@ router.get('/decisionmaker/:customerId/details/:pageName', function(req, res, ne
 
 })
 
+
+
 /// END decision maker routes ------------------------------------------------------------------------//
 
 
@@ -1807,6 +1811,25 @@ router.get('/assessment-reports', function(req, res, next){
 router.get('/failed-to-attend', function(req, res, next){
   res.locals.customers = dmCustomers
   .filter(customer => customer.status === "Failed to attend appointment");
+  next()
+})
+
+router.get('/fta-ready-for-decision', function(req, res, next){
+  res.locals.customers = dmCustomers
+  .filter(customer => customer.substatus === "Ready for decision");
+  next()
+})
+
+router.get('/fta-request-reason', function(req, res, next){
+  res.locals.customers = dmCustomers
+  .filter(customer => customer.substatus === "Request a reason");
+  next()
+})
+
+
+router.get('/fta-record-reason', function(req, res, next){
+  res.locals.customers = dmCustomers
+  .filter(customer => customer.substatus === "Record a reason");
   next()
 })
 
@@ -2283,6 +2306,28 @@ router.post('/assessment/:customerId/evidence/send-home',function (req, res) {
   }
 
 }) 
+
+
+router.post('/decisionmaker/:customerId/decision/timeline',function (req, res) {
+
+  var balls = req.session.data['whatcando']
+
+  if(balls == "newappointment"){
+    res.redirect('/fha/v' + versionNumber + '/decisionmaker/' + req.params.customerId + '/timeline')
+  }
+
+  else {
+    res.redirect('/fha/v' + versionNumber + '/decisionmaker/' + req.params.customerId + '/decision/close-reason')
+  }
+
+})
+
+
+
+
+
+
+
 
 
 

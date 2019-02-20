@@ -3,32 +3,41 @@
 {% block citizen_content %}
 
  <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+ <div class="grid-row">
+  <div class="column-two-thirds">
 <h1 class="heading-large">Customer failed to attend appointment</h1>
-<style>
-.date{
-  font-size:16px;
-  display:block;
-  margin:10px 0 !important;
-}
-</style>
-<div class="panel panel-warning">
-<h2 class="heading-medium">What we know</h2>
-<h3>Appointment details</h3>
-<ul class="list-bullet mt10 mb10">
-    <li>{{ 'Do MMMM YYYY' | baseDateAdd(1) }}</li>
-    <li>11:00am</li>
-    <li>Tresco House</li>
-  </ul>
-  {% if customer.name.first == 'Arnaq' %}
-  <h3 class="heading-small">Customer contact</h3>
- <p>{{customer.name.first}} was having a bad day with his arthritis and was struggling to get out of the house, he asked for a rearrangement but we could not provide it because he had previously rearranged
-          his appointment. <span class="date">{{ 'Do MMMM YYYY' | baseDateAdd(1) }}</span></p>
-   {% endif %}       
+
+<div class="latest_version">
+    <h2 class="heading-medium">Did not attend: Standard appointment</h2>
+    <p>Appointment details</p>
+    <ul class="list-bullet">
+        <li>{{ 'Do MMMM YYYY' | baseDate(1) }}</li> 
+        <li>11:00am</li>  
+        <li>Tresco House</li> 
+         </ul>
+       {% if customer.name.first == 'Arnaq'%}
+         <h3 class="heading-small">Customer contacted us</h3>
+         <p class="small">Arnaq was having a bad day with his arthritis and was struggling to get out of the house, he asked for a rearrangement but we could not provide it because he had previously rearranged
+             his appointment.
+           
+    </p>  
+    <p class="date mb0">Recorded date: {{ 'Do MMMM YYYY' | baseDate(1) }}</p>
+    {% endif %} 
+
+    {% if  customer.name.first =='Sarah' and data['dmreason'] %}
+    <h3 class="heading-small">Customer contacted us</h3>
+    <p class="small">Reason: {{dmreason}}
+     <span class="date mt10">Recorded date: {{ 'Do MMMM YYYY' | baseDate(0) }}</span>
+    </p>
+   
+    {% endif %} 
     </div>
+
+
 <form class="form" action="/{{path}}/booking/{{customer._id}}/timeline" method="post">
   <div class="form-group  mt20">
       <label class="heading-medium" for="">Add more detail if we have it</label>
-    <textarea name="dmreason" class="form-control" rows="6"></textarea>
+    <textarea name="dmreason" class="form-control form-control-3-4" rows="6"></textarea>
   </div><!-- form-group -->
   <div class="form-group">
     <button class="button">Save and continue</button>
@@ -41,5 +50,7 @@
         </div>
   </div>
 </form>
+</div>
+</div>
 
 {% endblock %}

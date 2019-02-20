@@ -37,14 +37,67 @@
 </div>
 {% endif %}
 <div class="column-two-thirds">
-    <div class="card-container">
-        <div class="card alt">
-            <a href="/fha/v6/booking/{{customer._id}}/appointment-history">
-          <h2 class="heading-small">
-            View appointment history
-          </h2>
-         
+  <div class="grid-row">
+    <div class="column-half">
+        <div class="card-single">  
+            <h2 class="heading-small">
+             Appointment preferences
+       
+            </h2>
+            <div class="inner">
+               {% if customer.appointment.taxi or checked('scenario', 'taxi')
+                  or customer.appointment.interpreter  or checked('scenario', 'interpreter')
+                  or customer.appointment.accessible or checked('scenario', 'accessible')
+                  or customer.appointment.gender or checked('scenario', 'gender')
+                  or customer.appointment.audio or checked('scenario', 'audio')
+               %}
+               <h3 class="heading-small">Requirements</h3>
+               {% endif %}
+          <ul>
+            {% if customer.appointment.taxi or checked('scenario', 'taxi')%}
+            <li> Taxi<a href="" class="pull-right">booked</a></li>
+            {% endif %}
+            {% if customer.appointment.interpreter  or checked('scenario', 'interpreter')%}
+            <li>Interpreter<a href="" class="pull-right">booked</a></li>
+            {% endif %}
+            {% if customer.appointment.accessible or checked('scenario', 'accessible')%}
+            <li>Ground floor access</li>
+            {% endif %}
+            {% if customer.appointment.gender or checked('scenario', 'gender')%}
+            <li>Same gender HCP</li>
+            {% endif %}
+            {% if customer.appointment.audio or checked('scenario', 'audio')%}
+            <li>Audio recording </li>
+            {% endif %}
+     
+          </ul>
+     
+          <h3 class="heading-small">Unavailable on</h3>
+          <ul>
+              <li>Monday <span>afternoons</span>
+              </li>
+              <li>Tuesdays</li>
+              {% if customer.name.first == 'Lowery' %}
+              <li>11 February 2019 – 17 February 2019
+               </li>
+              {% endif%}
+            </ul>
+     
+          <p class="mt20"> <a href="/fha/v6/assessment/{{customer._id}}/appointment-preferences" class="">Add or edit preferences</a></p>
+          </div>
+          </div>
 
+    </div>
+    <div class="column-half"> 
+        <div class="card-single">
+           
+          <h2 class="heading-small link">
+              <a href="/fha/v6/booking/{{customer._id}}/appointment-history">
+            View appointment history
+          </a>
+          </h2>
+      
+            <div class="inner">
               {% if customer.name.first == 'Arnaq'%}
              
                   <h3 class="heading-small mb10">
@@ -62,7 +115,7 @@
                     his appointment.
                   </p>
 
-                  {% elif data['dmreason']%}
+                  {% elif customer.name.first == 'Sarah' and data['dmreason']%}
                   <h3 class="heading-small mb10">
                    Failed to attend: Standard appointment</span></h3>
                  <p class="small">{{ dmreason }}  </p>
@@ -77,15 +130,11 @@
               </p>
 
               {% endif %}
+              </div>
 
-        
-         
-          
-
-        
-          </a>
-      
-      
-        </div>
     </div>
+  </div>
+  </div>
+
+
   </div>

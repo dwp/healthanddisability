@@ -1,6 +1,6 @@
 {% extends path+"/_layout.html" %}
-{% import path+"/scrutiny/_macros_nav.html" as nav %}
-
+{% import path+"/scrutiny/_macros_nav.html" as nav %} 
+{% import path+"/decisionmaker/_macros_nav_fta.html" as nav2 %}
 {% block assess_content %}
 
 
@@ -14,9 +14,11 @@
       	<div class="left-panel">
             {% if customer.status == 'Assessment started' or customer.status == 'Ready for recommendation'%}
             {% elif customer.status == 'Assessment reports' 
-            or customer.status == 'Failed to attend appointment' 
             or customer.status == 'Questionnaire not returned' %}
             <p class="returnRef"><a href="/{{path}}/decision-maker">Return to case list</a></p>
+            <hr>
+            {% elif customer.status == 'Failed to attend appointment' %}
+            <p class="returnRef"><a href="/{{path}}/failed-to-attend">Return to case list</a></p>
             <hr>
             {% elif customer.status == 'Ready for assessment' or customer.status == 'Assessment completed' or customer.status == 'Assessment stopped' or customer.status == 'Appointment today' or customer.status == 'Booked' %}
             <p class="returnRef"><a href="/{{path}}/assessment">Return to case list</a></p>
@@ -63,22 +65,39 @@
 {% endif %}
 {{ 'Ready to book' if customer.status == 'Security booked' and customer.name.first == 'Deena' and data['changedByCustomer']==="yes" }}
 {{ 'Assessment report available' if customer.status == 'Assessment reports' }}
-{{ 'Failed to attend appointment' if customer.status == 'Failed to attend appointment' 
+
+
+{{ 'Failed to attend appointment' if customer.status == 'Failed to attend appointment' and data['whatcando']!=='newappointment'
 or data['confirmfta']=="Arnaq" and customer.name.first == 'Arnaq'
 or data['confirmfta']=="Sarah"  and customer.name.first == 'Sarah' 
 or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes' 
 
 }}
+{{ '' if customer.status == 'Failed to attend appointment' and data['whatcando']=='newappointment' }}
+
 {{ 'Questionnaire not returned' if customer.status == 'Questionnaire not returned' }}
 
  </p>
      {% if customer.status == 'Assessment started' or customer.status == 'Booked' 
-     or customer.status == 'Security booked' %}
+     or customer.status == 'Security booked' or
+     customer.status == 'Failed to attend appointment' and data['whatcando']=='newappointment' %}
+
+     {% elif customer.status == 'Failed to attend appointment' and customer.substatus == 'Record a reason' and data['dmreason'] or customer.substatus == 'Request a reason' and data['dmreason'] %}
+     <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/index" class="button">Make a decision</a></p>
+
+     {% elif customer.status == 'Failed to attend appointment' and customer.substatus == 'Record a reason' or customer.substatus == 'Request a reason' and data['whatcando']=='requestreason'  %}
+     <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/record-fta-reason" class="button">Record a reason</a></p> 
+
+     {% elif customer.status == 'Failed to attend appointment' and customer.substatus == 'Request a reason'  %}
+     <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/request-fta-reason" class="button">Request a reason</a></p> 
   
      {% elif customer.status == 'Assessment reports' 
      or customer.status == 'Failed to attend appointment'
-     or customer.status == 'Questionnaire not returned' %}
-     <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/index" class="button">Make a decision</a></p>  
+     or customer.status == 'Questionnaire not returned'
+     or customer.status == 'Failed to attend appointment' %}
+     <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/index" class="button">Make a decision</a></p>
+     
+     
 
      {% elif data['confirmfta']=="Arnaq" and customer.name.first == 'Arnaq'
      or data['confirmfta']=="Sarah"  and customer.name.first == 'Sarah' 
@@ -113,10 +132,10 @@ or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes'
       {% else %}
       <p class="mt10"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/rec" class="button">Make a recommendation</a></p>
       {% endif%}
-      <hr>
+      
 		  
 		  
-		  
+		  <hr>
 		  <ul class="secondary-actions">
      
           {% if customer.status !== 'Failed to attend appointment' %}

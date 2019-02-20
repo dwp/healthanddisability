@@ -1433,9 +1433,65 @@ position: fixed;
     background: #dee0e2;
     padding: 1em 1.5em;
     margin-bottom: 30px;
-    clear: both;
+	clear: both;
+
+	:first-child {
+		margin-top:10px;
+	}
+
+	:last-child {
+		margin-bottom:10px;
+	}
+	
 }
 
 .decision-form{
 	margin-top:110px;
   }
+
+
+
+.date{
+	font-size:16px;
+	display:block;
+}
+
+
+
+.filter{
+  
+  padding:20px 0;
+  border-top:1px solid #dee0e2;
+
+  h2{
+	margin-top:0px;
+ }
+
+ ul li {
+	display:inline-block;
+	margin:0 10px 0px 0px;
+
+	a{
+		display:block;
+		padding:15px 25px;
+		border-bottom:2px solid #BFC1C3;
+		background: #DEE0E2;
+		font-weight:bold;
+
+		&:hover{
+			border-bottom:2px solid #BFC1C3;
+			background: darken(#DEE0E2,5%);
+	   
+		 }
+	 }
+
+	 &.active a{
+		background: #005EA5;
+		border-bottom:2px solid darken(#005EA5,10%);
+		cursor:default;
+		color:#fff;
+		text-decoration: none;
+	 }
+ 
+   }
+}

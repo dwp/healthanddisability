@@ -1,19 +1,5 @@
 
-.actions {
-		background: rgba($orange, 0.1);
-		border-left: 4px solid $orange;
-		padding: .8em 1em;
-		h2 {
-			margin: 0;
-			span {
-				display: block;
-				margin: 0 0 5px 0;
-			}
-		}
-		a {
-			color: #000;
-		}
-	}
+
 
 
 
@@ -35,17 +21,16 @@
 
 	&.alt {
 
-		border-bottom:3px solid $grey-2;
-
-		a{
-			padding-bottom:15px;
-		}
+		//border-bottom:3px solid $grey-2;
+		padding-bottom:15px;
+		
 		
 		h2 {
 		color:$link-colour;
 		border-bottom:1px solid $border-colour;
 		padding-bottom:15px;
 		margin-bottom:15px;
+		text-decoration:underline;
 	}
 }
 
@@ -136,6 +121,7 @@
     h2 {
         margin:0px;
 		padding:20px 20px 10px 20px;
+		border-bottom:none;
 	}
 	h3{
         margin:0px;
@@ -244,9 +230,88 @@ ul.content li{
 }
 }
 
-.date{
-	font-size:16px;
-	display:block;
-	padding-top:10px;
+
+
+
+// card single
+
+.card-single {
+		position:relative;	
+		background:$grey-3;
+		margin:0 0 30px 0;
+
+		&:first-child {
+			margin-top:0px;
+		}
+		
+		
+		&:last-child {
+			margin-bottom:0px;
+		}
+		
+		h2 {
+			padding:20px;
+			border-bottom:1px solid $border-colour;
+			&.link{
+				padding:0px;
+			}
+
+					
+		a {
+
+			padding:20px;
+			display:block;
+	
+			&:hover{
+				background:$grey-2;
+			}
+		
+		}
+		}
+
+
+	
+
+    .inner{
+		padding:0 20px 5px 20px;
+		a{
+			display:inline;
+		}
+
+		ul li {
+			padding: 4px 0;
+		}
+	}
+
+			
+	 
 }
 
+.pull-right{
+	float:right;
+}
+
+
+.actions {
+	background: rgba($orange, 0.1);
+	border-left: 4px solid $orange;
+	padding: .8em 1em;
+	h2 {
+		border-bottom:none;
+		margin-top:0px;
+		span {
+			display: block;
+			margin: 0 0 5px 0;
+		
+		}
+	}
+	a {
+		color: #000;
+	}
+
+	p:last-of-type{
+	  margin-bottom:0px;	
+	}
+
+
+}
