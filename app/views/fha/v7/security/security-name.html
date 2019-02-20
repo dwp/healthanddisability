@@ -1,0 +1,99 @@
+{% extends path+"/_layout-security.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    	
+		<h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Security check</h1>
+
+			<form action="/{{path}}/booking/{{customer._id}}/appointment" method="post">
+
+				
+			           
+			          <p class="mt30">The caller must confirm the following details.</p>
+			          
+			          <div class="grid-row">
+			          	<div class="column-two-thirds">
+			         
+			            <dl class="govuk-check-your-answers cya-questions-short">
+			
+			                <div>
+			                    <dt class="cya-question">Name</dt>
+			                    <dd class="cya-answer">{{customer.name.fullName}}</dd>
+			                </div>
+			                <div>
+			                    <dt class="cya-question">Date of birth</dt>
+			                    <dd class="cya-answer">{{customer.dateOfBirth | formatDate("D MMMM YYYY") }}</dd>
+			                </div>
+			                <div>
+			                    <dt class="cya-question">Address</dt>
+			                    <dd class="cya-answer">{{customer.address.street}}
+			                        <br> {{customer.address.city}}
+			                        <br> {{customer.address.postcode}}
+			                        </dd>
+			                </div>
+			            </dl>
+			            
+			          	</div>
+			          </div>
+
+			            <div class="mt30">
+
+				                <fieldset class="inline">
+				                    <legend>
+				                        <span class="form-label-bold">
+				                            Has the caller passed the security check?
+				                          </span>
+				                    </legend>
+				                    <div class="multiple-choice" data-target="check-passed">
+				                        <input id="confirmed-yes" type="radio" name="confirmed" value="true" >
+				                        <label for="confirmed-yes">Yes</label>
+				                    </div>
+				                    <div class="multiple-choice" data-target="check-failed">
+				                        <input id="confirmed-no" type="radio" name="confirmed" value="false" >
+				                        <label for="confirmed-no">No</label>
+				                    </div>
+				                </fieldset>
+
+							
+							<div class="panel js-hidden" id="check-passed">
+								<button class="button">Access case details</button>
+							</div>
+								
+			            
+							<div class="panel js-hidden" id="check-failed">
+								<a href="/{{path}}/search" class="button">Close</a>
+							</div>
+							
+			             </div>
+
+			            
+			            
+			            
+			            
+			        </form>
+		
+		
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+

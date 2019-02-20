@@ -288,7 +288,8 @@ if (typeof (routes) !== 'function') {
   app.use('/fha/v3', require('./app/views/fha/v3/_routes.js')) 
   app.use('/fha/v4', require('./app/views/fha/v4/_routes.js')) 
   app.use('/fha/v5', require('./app/views/fha/v5/_routes.js'))
-  app.use('/fha/v6', require('./app/views/fha/v6/_routes.js')) 
+  app.use('/fha/v6', require('./app/views/fha/v6/_routes.js'))
+  app.use('/fha/v7', require('./app/views/fha/v7/_routes.js'))  
   app.use('/', routes)
 
   

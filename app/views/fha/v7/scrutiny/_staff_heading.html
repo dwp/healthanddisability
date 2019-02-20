@@ -1,0 +1,68 @@
+<div class="staff__heading">
+
+    <div class="grid-row">
+      <div class="column-half head-customer-details">
+      	<!--<div class="badges">
+      		<ul>
+            <li class="badge">UC</li>
+            {% if customer.name.first == 'Lowery' %}
+            <li class="badge support-item">Unacceptable customer behaviour</li>
+            {% endif %}
+      		</ul>
+      	</div> -->
+      	
+        <h1 class="heading-xlarge"><span>Customer details</span>{{customer.name.fullName}}</h1>
+        <p><span class="visually-hidden">National insurance number</span>{{customer.NINO}}</p>
+       
+      </div><!-- column -->
+      
+      
+      
+      
+      <div class="column-half head-customer-extended">
+      
+      	<div class="header-left-col">
+     	  <h2>Date of birth</h2>
+     	  <p>{{customer.dateOfBirth |formatDate('D MMMM YYYY') }}</p>
+      	</div>
+
+		  <div class="header-right-col">
+	         <h2>Benefit</h2>
+     	  <p>Universal credit</p>
+		  </div>
+		  
+		  <div class="header-spread-right">
+		  
+		  
+		 <!--<details class="govuk-details">
+			  <summary class="govuk-details__summary">
+			    <span class="govuk-details__summary-text">
+			     View contact details
+			    </span>
+			  </summary>
+			  <div class="govuk-details__text">
+			  		<div class="details-drop">
+				    	<h3><span>Number</span>01704 521900</h3>
+				    	<h3><span>Email</span>bobby.hendo@gmail.com</h3>
+			  		</div>
+			  </div>
+			</details> -->
+		  		
+		  
+			<div class="header-identifiers">
+	      		<p class="badge">Unacceptable customer behaviour</p>
+	      		<p class="badge support-item">Terminally ill</p>
+		  	  </div>
+		  	  
+		  </div>
+		  
+		  
+        	
+      </div><!-- / column half -->
+      
+      
+    
+      
+    </div><!-- / grid row -->
+
+</div>

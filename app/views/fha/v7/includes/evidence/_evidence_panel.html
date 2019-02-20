@@ -1,0 +1,67 @@
+<div class="inner-panel">
+   
+   
+        <div class="panel-switch">
+                 <a href="#" class="panel-closed heading-small">Review evidence</a>
+             </div>
+        
+        
+             <div class="inner-panel-content">
+                 <h2 class="heading-large mt20">Review evidence</h2>
+
+		  
+		
+                 <h3 class="heading-medium">Recorded Illnesses and disabilities</h3>
+    
+                 <div class="table-layout">
+                 <table>
+                     <caption class="visually-hidden">List of illnesses and disabilities</caption>
+                     <thead>
+                         <tr>
+                             <th>Name</th>
+                             <th>Source</th>
+                             <th>Since</th>
+                         
+                         </tr>
+                     </thead>
+                     <tbody>
+                         {% for illness in customer.illnesses %}
+                         <tr>
+                             <td>{{illness.name}}</td>
+                             <td>{{illness.source}}</td>
+                             <td class="text-secondary">{{illness.date |formatDate('MMMM YYYY')}}</td>
+                         
+                         </tr>
+                         {% endfor %}
+                         
+                     </tbody>
+                 </table>
+                 </div>
+
+
+							<h3 class="heading-medium"> Descriptors you should cover</h3>
+							<p>test</p>
+<details>
+
+		<summary><span class="summary">Moving around and climbing steps without someone’s help</span></summary>
+	
+		 <ul>
+			 <li>Shopping</li>
+			 <li>Mobility</li>
+			 <li>Another</li>
+			 <li>Another</li>
+		 </ul>
+	
+		</div>
+	
+	</details>
+
+	
+
+	
+             
+         </div>
+
+         </div> 
+
+  

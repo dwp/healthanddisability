@@ -1,0 +1,61 @@
+{% extends path+"/_layout.html" %} 
+
+{% import path+"/_macro_horizonalSecondaryNav.html" as secondaryNav %} 
+{% block assess_content %}
+<main id="content" role="main" class="main-content">
+    <div class="container mt30">
+   
+        <div class="grid-row">
+          
+            <div class="column-one-quarter">
+                {% include path+"/caselist/_search-box.html" %}
+                
+                <nav class="details-nav v2 mb30">
+                    <ul>
+                
+                
+                        <li class="active_detail">
+                            <a href="/{{path}}/decision-maker.html"> Decision maker</a>
+                
+                            <ul>
+
+                                    <li>
+                                            <a href="/{{path}}/assessment-reports.html">Outcomes available ({{dmNumbers.failedToAttend}})</a>
+                        
+                        
+                                        </li>
+                
+                                <li >
+                                    <a href="/{{path}}/failed-to-attend.html"class="active_child" >Failure to attend ({{dmNumbers.failedToAttend}})</a>
+                
+                
+                                </li>
+                                <li>
+                                    <a href="/{{path}}/good-cause.html">Questionnaire not returned ({{dmNumbers.questionnaireNotReturned}})</a>
+                
+                
+                                </li>
+                
+                            </ul>
+                
+                
+                        </li>
+                
+                    </ul>
+                </nav>
+                
+
+ 
+            </div>
+            <div class="column-three-quarters">
+                {% block caselist_content %}
+
+                {% endblock %}
+            </div>
+            <!-- column -->
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+</main>
+{% endblock %}

@@ -1,0 +1,191 @@
+
+{% extends path+"/_layout-case-action.html" %} 
+{% block citizen_content %} {{ data.nuggets | log }}
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+<h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Left leg</h1>
+
+		
+		
+ {% if checked('physicalvisited', 'yes') %}
+				<form action="report-physical" method="Post">
+	{% else %}	
+	       <form action="lower-limbs3" method="Post">	
+	{% endif%}		
+
+																	
+																		 
+																		 
+
+
+									
+	<div class="form-group">
+																			
+<fieldset>
+
+  <legend class="heading-medium mb10">Select the examinations you want to complete</legend>																		
+<!-- <p class="form-hint mb10" style="max-width:650px">Only add comments if you find abnormalities. If you choose an examination and leave the text box blank, it will be marked as normal.</p> -->
+	
+		    <div class="multiple-choice" data-target="issue1open">
+		      <input id="issue1" name="issueswith" type="checkbox" value="Issue 1" {{ checked('issueswith', 'Issue 1') }} >
+		      <label for="issue1">Straight Leg raising</label>
+		    </div>
+		     <div class="panel js-hidden" id="issue1open">
+				 
+				 
+				 <fieldset>
+				 	<legend class="heading-small mb5">Choose:</legend>
+					 	<div class="multiple-choice">
+					      <input id="test1" name="testingthis" type="radio" value="test1" {{ checked('testingthis', 'test1') }}>
+					      <label for="test1">Normal (more than 70°)</label>
+					    </div>
+					    <div class="multiple-choice">
+					      <input id="test2" name="testingthis" type="radio" value="test2" {{ checked('testingthis', 'test2') }}>
+					      <label for="test2">Able to lift straight leg when lying down is reduced by muscle tightness at the back of the leg: reduced by hamstring tightness</label>
+					    </div>
+					    <div class="multiple-choice">
+					      <input id="test3" name="testingthis" type="radio" value="test3" {{ checked('testingthis', 'test3') }}>
+					      <label for="test3">Ability to lift straight leg when lying down reduced due to hip pain</label>
+							</div>
+							<div class="multiple-choice">
+									<input id="test4" name="testingthis" type="radio" value="test4" {{ checked('testingthis', 'test4') }}>
+									<label for="test4">Ability to lift straight leg when lying down reduced due to low back pain</label>
+								</div>
+								<div class="multiple-choice">
+										<input id="test5" name="testingthis" type="radio" value="test5" {{ checked('testingthis', 'test5') }}>
+										<label for="test5">Straight leg raising is reduced by weakness</label>
+									</div>
+
+				 </fieldset>
+				 	
+				 
+				 
+			</div>
+		
+		    <div class="multiple-choice" data-target="issue2open">
+		      <input id="issue2" name="issueswith" type="checkbox" value="Issue 2" {{ checked('issueswith', 'Issue 2') }}>
+		      <label for="issue2"> Hip flexion</label>
+		    </div>
+		    <div class="panel js-hidden" id="issue2open">
+				 <label class="form-label" for="issue2open-comments">If you find abnormalities, describe them here</label>
+				 <textarea class="form-control form-control-3-4" name="issue2opencomments" id="issue2opencomments" rows="2">{{issue2opencomments}}</textarea>
+			</div>
+		    
+		    <div class="multiple-choice" data-target="issue3open">
+		      <input id="issue3" name="issueswith" type="checkbox" value="Issue 3" {{ checked('issueswith', 'Issue 3') }} >
+		      <label for="issue3"> Knee flexion</label>
+		    </div>
+		    <div class="panel js-hidden" id="issue3open">
+				 <label class="form-label" for="issue3open-comments">If you find abnormalities, describe them here</label>
+				 <textarea class="form-control form-control-3-4" name="issue3opencomments" id="issue3opencomments" rows="2">{{issue3opencomments}}</textarea>
+			</div>
+		    
+		    <div class="multiple-choice" data-target="issue4open">
+		      <input id="issue4" name="issueswith" type="checkbox" value="Issue 4" {{ checked('issueswith', 'Issue 4') }} >
+		      <label for="issue4"> Knee extension</label>
+		    </div>
+		    <div class="panel js-hidden" id="issue4open">
+				 <label class="form-label" for="issue4open-comments">If you find abnormalities, describe them here</label>
+				 <textarea class="form-control form-control-3-4" name="issue4opencomments" id="issue4opencomments" rows="2">{{issue4opencomments}}</textarea>
+			</div>
+		    
+		    <div class="multiple-choice" data-target="issue5open">
+		      <input id="issue5" name="issueswith" type="checkbox" value="Issue 5" {{ checked('issueswith', 'Issue 5') }}>
+		      <label for="issue5"> External hip rotation</label>
+		    </div>
+		    <div class="panel js-hidden" id="issue5open">
+				 <label class="form-label" for="issue5open-comments">If you find abnormalities, describe them here</label>
+				 <textarea class="form-control form-control-3-4" name="issue5opencomments" id="issue5opencomments" rows="2">{{issue5opencomments}}</textarea>
+			</div>
+		    
+		    <div class="multiple-choice" data-target="issue6open">
+		      <input id="issue6" name="issueswith" type="checkbox" value="Issue 6"  {{ checked('issueswith', 'Issue 6') }}>
+		      <label for="issue6"> Ankle Plantarflexion</label>
+		    </div>
+		    <div class="panel js-hidden" id="issue6open">
+				 <label class="form-label" for="issue6open-comments">If you find abnormalities, describe them here</label>
+				 <textarea class="form-control form-control-3-4" name="issue6opencomments" id="issue6opencomments" rows="2">{{issue6opencomments}}</textarea>
+			</div>
+		    
+		    <div class="multiple-choice" data-target="issue7open">
+		      <input id="issue7" name="issueswith" type="checkbox" value="Issue 7" {{ checked('issueswith', 'Issue 7') }} >
+		      <label for="issue7"> Ankle dorsiflexion</label>
+		    </div>
+		    <div class="panel js-hidden" id="issue7open">
+				 <label class="form-label" for="issue7open-comments">If you find abnormalities, describe them here</label>
+				 <textarea class="form-control form-control-3-4" name="issue7opencomments" id="issue7opencomments" rows="2">{{issue7opencomments}}</textarea>
+			</div>
+		  		    
+		 			
+			 <div class="multiple-choice" data-target="issue10open">
+		      <input id="issue10" name="issueswith" type="checkbox" value="Issue 10" {{ checked('issueswith', 'Issue 10') }}>
+		      <label for="issue10"> Power</label>
+		    </div>
+		    <div class="panel js-hidden" id="issue10open">
+				 <label class="form-label" for="issue10open-comments">If you find abnormalities, describe them here</label>
+				 <textarea class="form-control form-control-3-4" name="issue10opencomments" id="issue10opencomments" rows="2">{{issue10opencomments}}</textarea>
+			</div>
+
+		    
+
+		    
+		    
+		    
+</fieldset>			    
+</div>									    
+		    
+		    
+<div class="form-group">
+	<label class="heading-small" for="issue15open-comments">Other examination findings</label>
+	<textarea class="form-control form-control-2-4" name="issue15opencomments" id="issue15opencomments" rows="4">{{issue15opencomments}}</textarea>
+</div>
+																			
+			
+												
+															    
+										
+																		 
+																		 
+																				    
+														
+												 
+												 
+												  <p class="mt30"><button class="button">Save and continue</button></p>
+												 
+		
+				</form>
+
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+{% macro physGroup(name,sel) %}
+  {% set s = name | slug %}
+  <!-- GROUP -->
+  <div class="multiple-choice" data-target="group_{{s}}_yes">
+    <input id="group_{{s}}" type="checkbox" name="group_{{s}}" sue="group_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="group_{{s}}">{{name}}</label>
+</div>
+{% endmacro %} 
+
+{% macro physObs(name, displayname ,sel) %} {% set s = name | slug %}
+<div class="multiple-choice" data-target="phys_{{s}}_yes">
+    <input id="phys_{{s}}" type="checkbox" name="phys_{{s}}" value="phys_{{s}}" {% if sel %} checked="checked" {% endif %}>
+    <label for="phys_{{s}}">{{displayname}}</label>
+</div>
+<div class="form-group panel js-hidden mt0 mb20" id="phys_{{s}}_yes">
+    <p>
+        <label class="form-label" for="phys_{{s}}_obs">Comments</label>
+        <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4">
+				</textarea>
+    </p>
+</div>
+{% endmacro %} {% block footer_top %} {{ super() }}
+<p class="font-xsmall">
+    <a href="/{{ path2 }}/phys_exam_1">exam v1</a> |
+    <a href="/{{ path2 }}/phys_exam_2">exam v2</a>
+</p>
+{% endblock %} {% block page_scripts %} {{ super() }} {% endblock %}

@@ -1,0 +1,173 @@
+{% extends path1+"/_layoutChat.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<div class="grid-row no-kdBar">
+
+ 
+
+
+    <div class="full">
+    
+    <p class="mt0"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    <h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Illnesses disabilties and medication</h1>
+  
+
+  
+  <div class="chat-layout">
+    <div class="grid-row">
+      <div class="column-one-third">
+          <h2 class="heading-medium">Illnesses and disabilties</h2>
+          <p><a href="/fha/v5/scrutiny/5bbf32d5ed63a198101d1d2b/evidence/not-testing" class="button secondary">Add another illnesses or disability</a></p>
+          <form method="post" action="conditionHistoryNew">
+          <div class="form-group">
+              <fieldset>
+            
+                <legend>
+                  <h3 class="heading-small">
+                      What we already know:
+                  </h3>
+                  <span class="form-hint mb10">Choose the illness's you would like to cover, you can select single or group multiple conditions or just cover all conditions at once</span>
+                </legend>
+
+                <div class="multiple-choice">
+                    <input id="" name="illness-check" type="checkbox" value="depression" {{ checked('illness-check', 'depression') }}>
+                    <label for="depression">Depression</label>
+                  </div> 
+
+                  <div class="multiple-choice">
+                      <input id="" name="illness-check" type="checkbox" value="fasciotomy" {{checked('illness-check', 'fasciotomy') }}>
+                      <label for="Depression">Emergency fasciotomy </label>
+                    </div> 
+                    <div class="multiple-choice">
+                        <input id="" name="illness-check" type="checkbox" value="compartment" {{checked('illness-check', 'compartment') }}>
+                        <label for="Depression">Acute compartment syndrome</label>
+                      </div> 
+                      <div class="multiple-choice">
+                          <input id="" name="illness-check" type="checkbox" value="fracture" {{checked('illness-check', 'fracture') }}>
+                          <label for="Depression">Compound fracture - shinbone</label>
+                        </div> 
+
+            
+                {% if data['newillness']==='meds1' %}
+                  <div class="multiple-choice">
+                      <input id="" name="illness-check" type="checkbox" value="{{newillneesname}}">
+                      <label for="{{newillneesname}}">{{newillneesname}}</label>
+                    </div> 
+                {% endif %}
+        
+              </fieldset>
+            </div>
+            
+            <p><button class="button secondary">Confirm selection</button></p>
+            </form>
+            
+        
+      </div>
+      <div class="column-two-thirds">
+        
+<h2 class="heading-medium">Condition history</h2>
+
+	 <div class="chat-window">
+     {% if data['illness-check'] %}<p>You have selected the following conditions to cover</p>{% endif %}
+      <h3 class="heading-medium mt10"> 
+         
+          {% if checked('illness-check', 'depression') %}
+          Depression <br>
+          {% endif %}
+          {% if checked('illness-check', 'fasciotomy') %}
+          Emergency fasciotomy  <br>
+          {% endif %}
+          {% if checked('illness-check', 'compartment') %}
+          Acute compartment syndrome <br>
+          {% endif %}
+          {% if checked('illness-check', 'fracture') %}
+          Compound fracture - shinbone <br>
+          {% endif %}
+        </h3>
+  
+    {% if comments.length < 1 %}
+	 <p class="comments-window">You haven't added any comments yet</p>
+    {% endif %}
+    {% for item in comments | sortBy("time",false) %}
+  
+      <div class="tag-box">
+      
+        <div class="tag-text">{{ item.comment}}</div>
+        
+        <div class="edit-item">
+          <form action="conditionHistoryNew/{{item.id}}" method="post">
+            <input type="hidden" name="id" value="{{item.id}}">
+            <input type="hidden" name="delete" value="true">
+         		<button class="remove-link" >Edit</button>
+          </form>
+       </div>
+       
+      </div>
+
+    {% endfor %}
+	 </div>
+   <div class="chat-capture-save-container">
+    <form class="form" id="add_ev"
+      action="conditionHistoryNew"
+      method="post">
+
+      <div class="form-group chat-capture">
+          <textarea id="nugget" class="form-control" name="comments"></textarea>
+          <input class="button secondary mt20" type="submit" value="Add" id="submitButton">
+      </div><!-- form-group -->
+
+      
+    </form>
+
+
+  <form action="wca-index" method="POST" class="form">
+      <input type="submit" class="button" value="Save progress">
+
+      <div class="multiple-choice" style="display:none">
+          <input id="radio-inline-4" type="radio" name="conditionHistory" value="conditionHistory" checked>
+            
+          <label for="radio-4">hidden radio one</label>
+        </div>
+    </form>
+    </div>
+
+  </div>
+</div>
+    
+    
+  </div><!-- column -->
+</div><!-- row -->
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+
+
+<script type="text/javascript">
+  $(document).on('ready',function()
+  
+  {
+    $('#nugget').focus();
+    
+    $("#nugget").keydown(function (event) {
+      if ((event.keyCode == 13))
+      {
+        $('#submitButton').trigger('click');
+      }
+    });
+  
+  
+  });
+  
+  
+  
+  </script>
+
+{% endblock %}

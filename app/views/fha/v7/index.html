@@ -1,0 +1,138 @@
+{% extends path+"/_layout.html" %}
+{% import path+"/caselist/_nav.html" as mainNav %}
+{% block mainNav %}
+{{ mainNav.nav("case", path) }}
+  
+{% endblock %}
+{% block assess_content %}
+
+<main id="content" role="main" class="main-content">
+  
+
+      <div class="container">
+          <div class="grid-row">
+              <div class="column-one-quarter">
+             
+                  {% include path+"/caselist/_search-box.html" %}
+      
+              </div>
+              <div class="column-three-quarters">
+                 
+                    <div class="grid-row">
+                      <div class="column-full">
+                          <a href="#" class="button mt25">Create new referral</a>
+                          <hr />
+                        <h1 class="heading-xlarge mt0 mb20">
+                            {% if checked('Choose-centre','Tresco') %}
+                            <span class="heading-secondary">Tresco House</span>
+      {% elif checked('Choose-centre','Fiveways') %}
+      <span class="heading-secondary">Birmingham Fiveways</span>
+      {% endif%}
+                         
+                          450 cases
+                            </h1>
+                          </div>
+                          </div>
+                          <div class="grid-row">   
+                      <div class="card-container">
+
+                        <div class="card">
+                          <a href="/{{path}}/referrals.html">
+                        
+
+                              <h2 class="heading-xlarge">
+            
+                                49
+                                <span class="heading-small">Referrals</span>
+                               </h2>
+                        
+                          </a>
+                          <ul>
+                          <li><a href="/{{path}}/new-referrals.html">New referrals (35)</a></li>
+                          <li><a href="/{{path}}/uc50-posted.html">In progress</a></li>
+                    
+                         </ul>
+                        </div>
+    
+                        <div class="card">
+                            <a href="/{{path}}/review.html">
+                          
+                          
+
+                                <h2 class="heading-xlarge">
+                                   {{reviewNumbers.total}}
+                                  <span class="heading-small">Reviews</span>
+                                 </h2>
+                          
+                            </a>
+                           <ul>
+                             <li><a href="/{{path}}/ready-for-review.html">Ready for review ({{reviewNumbers.readyForReview}})</a></li>
+                            <li><a href="/{{path}}/requested-medical-evidence.html">Requested medical evidence ({{reviewNumbers.fme}})</a></li>
+                      
+                          </ul> 
+                        </div>
+    
+                          <div class="card">
+                              <a href="/{{path}}/appointments.html">
+                            
+                             
+                            
+                                  <h2 class="heading-xlarge">
+                                      {{appointmentNumbers.total}}
+                                    <span class="heading-small">Appointments</span>
+                                   </h2>
+                              </a>
+                              <ul>
+                                  <li><a href="/{{path}}/ready-to-book">Ready to book ({{ appointmentNumbers.readyToBook}})</a></li>
+                                 <li><a href="/{{path}}/booked-appointments">Booked appointments({{ appointmentNumbers.booked}})</a></li>
+                                 <li><a href="/{{path}}/did-not-attend">Did not attend ({{ appointmentNumbers.didNotAttend}})</a></li>
+                               </ul> 
+                            
+                              </div>
+                            <div class="card">
+                                <a href="/{{path}}/assessment.html">
+                              
+                                  <h2 class="heading-xlarge">
+                                      {{assessNumbers.total}}
+                                    <span class="heading-small">Today's appointments</span>
+                                   </h2>
+                              
+                                </a>
+                                <ul>
+                                  <li><a href="/{{path}}/todays-appointments.html">Confirm arrival ({{assessNumbers.appointmentToday}})</a></li>
+                                  <li><a href="/{{path}}/ready-for-assessment.html">Ready for assessment ({{assessNumbers.readyForAssessment}})</a></li>
+                                  <li><a href="/{{path}}/assessment-stopped">Assessments stopped ({{assessNumbers.assesmentStopped}})</a></li>
+                                  <li><a href="/{{path}}/completed-assessments">Assessments completed ({{assessNumbers.assesmentComplete}})</a></li>
+                                  
+                          
+                                  
+                                 </ul>
+                              
+                                </div>
+                                 
+                               <div class="card">
+                                    <a href="/{{path}}/decision-maker.html">
+                                  
+                                      <h2 class="heading-xlarge">
+                                          {{dmNumbers.total}}
+                                        <span class="heading-small">Decisions to be made</span>
+                                       </h2>
+                                  
+                                    </a>
+                                    <ul>
+                                        <li><a href="/{{path}}/assessment-reports.html">Outcomes available ({{dmNumbers.assessmentReports}})</a></li>
+                                        <li><a href="/{{path}}/failed-to-attend.html">Failed to attend  appointment ({{dmNumbers.failedToAttend}})</a></li>
+                                        <li><a href="/{{path}}/good-cause">Questionnaire not returned  ({{dmNumbers.questionnaireNotReturned}})</a></li>
+                                    </ul>
+                                    </div>
+                        </div>
+                    </div>
+              </div><!-- column -->
+            </div>
+     
+        <!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

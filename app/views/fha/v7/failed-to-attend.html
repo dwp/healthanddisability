@@ -1,0 +1,52 @@
+{% extends path+"/_layout-caselist-dm.html" %}
+
+{% block horizontal_secondary_nav %}
+              
+{{ secondaryNav.nav("assessment", false, menuItems ) }}
+
+
+{% endblock %}  
+
+{% block caselist_content %}
+<h2 class="heading-medium mt0"><span class="heading-xlarge">{{customers.length}}</span><br/>Failed to attend appointment</h2>
+
+<div class="filter">
+<ul>
+    <li class="active"><a href="/{{path}}/failed-to-attend.html">All</a></li>
+    <li><a href="/{{path}}/fta-request-reason.html">Request a reason</a></li>
+    <li><a href="/{{path}}/fta-record-reason.html">Record a reason</a></li>
+    <li><a href="/{{path}}/fta-ready-for-decision.html">Ready for decision</a></li>
+  </ul>
+</div>
+
+<table class="styled">
+
+  <thead>
+    <tr>
+      <th>Details</th>
+      <th>Sub status</th>
+    </tr>
+  </thead>
+  
+  {% for customer in customers %}
+<tr>
+
+<td>
+<a href="decisionmaker/{{customer._id}}/timeline"><span class="visually-hidden">Name</span>{{customer.name.fullName}}</a>
+<span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span>
+</td>
+    <td>
+        <span class="block">
+        {{ 'Ready for decision'  if customer.substatus == 'Ready for decision'}}
+        {{ 'Request a reason'  if customer.substatus == 'Request a reason'}}
+        {{ 'Record a reason'  if customer.substatus == 'Record a reason'}}
+       
+        </span> </td>
+</tr>
+</tr>
+
+{% endfor %}
+
+</table>   
+      
+{% endblock %}

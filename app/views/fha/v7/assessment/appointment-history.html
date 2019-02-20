@@ -1,0 +1,52 @@
+{% extends path+"/_layout-case.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.case_tabs("appointment",1,path1, customer._id) }}
+    
+    
+    <p class="yes-kdBar"> <a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+  <h1 class="heading-large mb0">Appointment history</h1>
+    
+    
+  <div class="grid-row">
+    <div class="column-two-thirds">
+ 
+        {% include path+"/includes/appointment/_appointmenthistory.html" %}
+</div> 
+</div>
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

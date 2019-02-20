@@ -1,0 +1,58 @@
+
+{% if data['appointments']==="yes" or data['appointments']==="no" %}
+<div class="latest_version">
+    <h2 class="heading-medium mt0">Current: Standard appointment</h2>
+        <p>Appointment details</p>
+        <ul class="list-bullet">
+         <li>Tuseday {{ 'Do MMMM YYYY' | baseDateAdd(12) }}</li> 
+         <li>4:00pm</li>  
+         <li>Tresco House</li> 
+        </ul>
+
+        {% if data['appointments']==="no" %}
+        <h3 class="heading-small">Customer contacted us</h3>
+        <p class="small">{{changedByCustomerComments}}
+            <span class="date">Recorded date {{customer | formatDate("D MMMM YYYY") }} 10:05 am</span> 
+                  </p>
+                      
+        {% endif %}
+       
+      
+                </div>
+
+
+    <h2 class="heading-medium">Canceled: Standard appointment</h2>
+    <p>Appointment details</p>
+    <ul class="list-bullet">
+        <li>Tuesday {{ 'Do MMMM YYYY' | baseDateAdd(5) }}</li> 
+        <li>11:00am</li>  
+        <li>Tresco House</li> 
+         </ul>
+
+         <h3 class="heading-small">Customer contacted us</h3>
+         <p class="small">     <p class="small">{{changedByCustomerComments}}
+           
+
+      <span class="date block mt10 text-secondary">Recorded date: {{ 'Do MMMM YYYY' | baseDate(25)}}</span>
+    </p> 
+
+{% else %}
+<div class="latest_version">
+    <h2 class="heading-medium mt0">Current: Standard appointment</h2>
+        <p>Appointment details</p>
+        <ul class="list-bullet">
+         <li>{{ 'Do MMMM YYYY' | baseDateAdd(5) }}</li> 
+         <li>4:00pm</li>  
+         <li>Tresco House</li> 
+        </ul>
+</div>
+{% endif %}
+      
+    
+
+  
+
+
+     
+
+

@@ -1,0 +1,29 @@
+{% extends path+"/_layout-case-action.html" %}
+
+
+{% block citizen_content %}
+
+ <p class="no-kdBar"> <a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+ 
+<form class="form" action="/{{path}}/decisionmaker/{{customer._id}}/timeline" method="post">
+<div class="grid-row">
+  <div class="column-two-thirds">
+<h1 class="heading-large">Record a reason for the missed appointment</h1>
+
+<div class="form-group  mt20">
+    <label class="heading-medium" for="">Reason</label>
+  <textarea name="dmreason" class="form-control form-control-3-4" rows="6"></textarea>
+</div><!-- form-group -->
+
+  <p class="mt30">
+      <button class="button">Confirm</button>
+  </p>
+</div>
+<div class="column-third">
+    <div class="decision-form">
+  <fieldset>
+</div>
+</div>
+</form>
+
+{% endblock %}

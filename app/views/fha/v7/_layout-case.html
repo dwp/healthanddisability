@@ -1,0 +1,208 @@
+{% extends path+"/_layout.html" %}
+{% import path+"/scrutiny/_macros_nav.html" as nav %} 
+{% import path+"/decisionmaker/_macros_nav_fta.html" as nav2 %}
+{% block assess_content %}
+
+
+  <main id="content" role="main" class="main-content-inner">
+
+    <div class="container">
+      <div class="grid-row main-row">
+    
+      <div class="column-one-quarter left-area">
+      
+      	<div class="left-panel">
+            {% if customer.status == 'Assessment started' or customer.status == 'Ready for recommendation'%}
+            {% elif customer.status == 'Assessment reports' 
+            or customer.status == 'Questionnaire not returned' %}
+            <p class="returnRef"><a href="/{{path}}/decision-maker">Return to case list</a></p>
+            <hr>
+            {% elif customer.status == 'Failed to attend appointment' %}
+            <p class="returnRef"><a href="/{{path}}/failed-to-attend">Return to case list</a></p>
+            <hr>
+            {% elif customer.status == 'Ready for assessment' or customer.status == 'Assessment completed' or customer.status == 'Assessment stopped' or customer.status == 'Appointment today' or customer.status == 'Booked' %}
+            <p class="returnRef"><a href="/{{path}}/assessment">Return to case list</a></p>
+            <hr>
+            {% elif customer.status == 'Ready to book' or customer.status == 'Booked' or customer.status == 'Did not attend'%}
+            <p class="returnRef"><a href="/{{path}}/appointments">Return to case list</a></p>
+            <hr>
+            {% elif customer.status == 'Security booked'%}
+            <p class="returnRef"><a href="/{{path}}/search-results-id">Return to search</a></p>
+            <hr>
+            {% else %}
+      		<p class="returnRef"><a href="/{{path}}/ready-for-review">Return to case list</a></p>
+          <hr>
+          {% endif %}
+      	
+      	
+      	
+      	 <div class="case-status">
+      	     	 
+      	 
+		 
+ <p class="mt10 mb0 bold-small">
+{{ 'Ready for review' if customer.status == 'review' }}
+{{ 'Requested further medical evidence' if customer.status == 'fme' }}
+{{ 'Appointment today' if customer.status == 'Appointment today'}}
+{{ 'Ready for assessment' if customer.status == 'Ready for assessment'}}
+{{ 'Assessment started' if customer.status == 'Assessment started' }}
+{{ 'Ready for recommendation' if customer.status == 'Ready for recommendation' }}
+{{ 'Assessment completed' if customer.status == 'Assessment completed' }}
+{{ 'Assessment stopped' if customer.status == 'Assessment stopped' }}
+{{ 'Ready to Book' if customer.status == 'Ready to Book' }}
+
+{{ 'Did not attend appointment' if customer.status == 'Did not attend' and data['confirmfta']!=="Arnaq" and customer.name.first == 'Arnaq'
+ or customer.status == 'Did not attend' and data['confirmfta']!=="Sarah" and customer.name.first == 'Sarah'
+ or customer.status == 'Did not attend' and data['confirmfta']!=="Johannes" and customer.name.first == 'Johannes' 
+ }}
+
+{{ 'Ready to book' if customer.status == 'Booked' and customer.name.first == 'Dillon' and data['book-next']!=="yes" }}
+{{ 'Booked' if customer.status == 'Booked' and customer.name.first !== 'Dillon' }}
+{{ 'Booked' if customer.status == 'Booked' and customer.name.first == 'Dillon' and data['book-next']==="yes" }}
+{% if customer.name.first == 'Deena' and data['changedByCustomer']==="yes" %}
+{% else %}
+{{ 'Booked' if customer.status == 'Security booked'  }} 
+{% endif %}
+{{ 'Ready to book' if customer.status == 'Security booked' and customer.name.first == 'Deena' and data['changedByCustomer']==="yes" }}
+{{ 'Assessment report available' if customer.status == 'Assessment reports' }}
+
+
+{{ 'Failed to attend appointment' if customer.status == 'Failed to attend appointment' and data['whatcando']!=='newappointment'
+or data['confirmfta']=="Arnaq" and customer.name.first == 'Arnaq'
+or data['confirmfta']=="Sarah"  and customer.name.first == 'Sarah' 
+or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes' 
+
+}}
+{{ '' if customer.status == 'Failed to attend appointment' and data['whatcando']=='newappointment' }}
+
+{{ 'Questionnaire not returned' if customer.status == 'Questionnaire not returned' }}
+
+ </p>
+     {% if customer.status == 'Assessment started' or customer.status == 'Booked' 
+     or customer.status == 'Security booked' or
+     customer.status == 'Failed to attend appointment' and data['whatcando']=='newappointment' %}
+
+     {% elif customer.status == 'Failed to attend appointment' and customer.substatus == 'Record a reason' and data['dmreason'] or customer.substatus == 'Request a reason' and data['dmreason'] %}
+     <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/index" class="button">Make a decision</a></p>
+
+     {% elif customer.status == 'Failed to attend appointment' and customer.substatus == 'Record a reason' or customer.substatus == 'Request a reason' and data['whatcando']=='requestreason'  %}
+     <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/record-fta-reason" class="button">Record a reason</a></p> 
+
+     {% elif customer.status == 'Failed to attend appointment' and customer.substatus == 'Request a reason'  %}
+     <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/request-fta-reason" class="button">Request a reason</a></p> 
+  
+     {% elif customer.status == 'Assessment reports' 
+     or customer.status == 'Failed to attend appointment'
+     or customer.status == 'Questionnaire not returned'
+     or customer.status == 'Failed to attend appointment' %}
+     <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/index" class="button">Make a decision</a></p>
+     
+     
+
+     {% elif data['confirmfta']=="Arnaq" and customer.name.first == 'Arnaq'
+     or data['confirmfta']=="Sarah"  and customer.name.first == 'Sarah' 
+     or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes' %}
+
+     {% elif customer.status == 'Assessment completed' %}
+     <p><a href="/{{path}}/assessment/{{customer._id}}/scoring/report-view" class="button">Rework report</a></p>   
+   
+     {% elif customer.status == 'Assessment stopped' %}
+     <form class="" method="post" action="/{{path}}/assessment/{{customer._id}}/start-assessment">
+      <p><button  class="button">Restart assessment</button></p>
+    </form>
+     {% elif customer.status == 'Ready for recommendation' %}
+     <p><a href="/{{path}}/assessment/{{customer._id}}/scoring/" class="button">Make your recommendation</a></p>   
+      {% elif customer.status == 'Ready for assessment'%}
+     
+      <form class="" method="post" action="/{{path}}/assessment/{{customer._id}}/start-assessment">
+		  <p><button  class="button">Start assessment</button></p>
+      <div class="multiple-choice" style="display:none">
+          <input id="radio-inline-4" type="radio" name="wca" value="yes" checked>
+          <label for="radio-4">hidden radio one</label>
+        </div>
+    </form>
+
+    {% elif customer.status == 'Appointment today' %}
+    <form class="" method="post" action="/{{path}}/assessment/{{customer._id}}/ready-for-assessment">
+		  <p><button  class="button">Confirm arrival</button></p>
+    </form>
+
+    {% elif customer.status == 'Did not attend' %}
+    <p class="mt10"><a href="/{{path}}/booking/{{customer._id}}/evidence/rec" class="button">Confirm</a></p>
+      {% else %}
+      <p class="mt10"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/rec" class="button">Make a recommendation</a></p>
+      {% endif%}
+      
+		  
+		  
+		  <hr>
+		  <ul class="secondary-actions">
+     
+          {% if customer.status !== 'Failed to attend appointment' %}
+
+          <li><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/record-evidence" class="">Record evidence</a></li>
+       {% endif %}
+          {% if customer.status == 'fme' or customer.status == 'review' %}
+          <li><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/request-evidence" class="">Request evidence</a></li>
+          {% endif %}
+         
+
+            {% if customer.status == 'Assessment started' or customer.status == 'Ready for recommendation'%}  
+            <li><a href="/{{path}}/assessment/{{customer._id}}/general-observations">General observations {% if data['general-observations-post']==='posted' %}({{ observations.length }}){% endif%}</a></li>
+            <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/addAttendee" class="">Additional attendee</a></li>
+           
+            
+            <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/stopAssess">Abandon assessment</a></li>
+            {% endif %}
+
+          </ul>
+          
+		  </div>
+      	
+      	
+      	</div>
+      
+      </div>
+     
+   
+        <div class="column-three-quarters main-area">
+        
+
+  {% include path+"/includes/_staff_heading.html" %}
+          <div nunj-block="citizen_content">
+            {% block citizen_content %}{% endblock %}
+          </div>
+
+        </div><!-- column -->
+        
+        
+      </div><!-- row -->
+    </div><!-- container -->
+
+  </main>
+  {%if customer.status == 'Assessment started' or customer.status == 'Assessment completed' or customer.status == 'Ready for recommendation'%}
+  {% include path+"/includes/evidence/_evidence_panel.html" %}
+  {% endif %}
+{% endblock %}
+
+{% block page_scripts %}
+{{ super }}
+
+<script type="text/javascript">
+  $( document ).ready(function() {
+         $( ".panel-switch" ).click(function() {
+             $( ".inner-panel" ).toggleClass( "panel-open" );
+         });
+     }); 
+   
+ </script>
+
+
+
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+
+{% endblock %}

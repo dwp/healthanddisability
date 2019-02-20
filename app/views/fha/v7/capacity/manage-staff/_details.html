@@ -1,0 +1,14 @@
+<div class="{{ 'hidden' if not (query.tab === 'details') }}">
+    <dl>
+        <dt class="heading-small">Name</dt>
+        <dd>{{person.name}}</dd>
+        <dt class="heading-small">Phone</dt>
+        <dd>{{person.phone}}</dd>
+        <dt class="heading-small">Mobile</dt>
+        <dd>{{person.mobile}}</dd>
+        <dt class="heading-small">Email</dt>
+        <dd>{{person.email}}</dd>
+    </dl>
+
+    <p class="mt30"><a class="button-secondary" href="{{person.id}}/edit-staff">Edit details</a></p>
+</div>      
