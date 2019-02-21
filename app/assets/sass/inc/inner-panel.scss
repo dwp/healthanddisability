@@ -2,32 +2,32 @@
 .inner-panel {
 	background: $grey-4;
 	position: absolute;
-	width: 76%;
+	width:30%;
 	padding: 0;
 	top: 0;
 	right: 0;
 	
 	.panel-switch {
 		position: absolute;
-		top: 230px;
-		width: 50px;
+		top: 280px;
+		width: 100px;
 		right: 0;
 		padding: 20px 0;
 		text-align: center;
 		cursor: pointer;
-		background: $grey-1;
-		border: 2px solid $grey-1;
+		background: #fff;
+		border: 3px solid $govuk-blue;
 		border-right: 0;
+
 	
 
 
 		a {
 			padding: 0;
 			margin: 0;
-			writing-mode: vertical-lr;
-			text-orientation: vertical;
+			
 			text-decoration: none;
-			color: #fff;
+			color: #000;
 		}
 		
 		.support {
@@ -42,7 +42,7 @@
 		background: #fff;
 		padding: 3% 5% 10% 5%;
 		border: 1px solid $grey-2;
-		border-left: 4px solid $grey-1;
+		border-left: 3px solid $govuk-blue;
 		min-height: 1200px;
 		display: none;
 	}
@@ -58,7 +58,7 @@
 		}
 		.panel-switch {
 			right: auto;
-			left: -50px;
+			left: -100px;
 		}
 	}
 
