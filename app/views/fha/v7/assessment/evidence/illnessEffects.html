@@ -12,7 +12,7 @@
 
 
 
-<h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Illnesses, disabilities and medication</h1>
+<h1 class="heading-large"><span class="heading-secondary">Step 1 of 3</span>Illnesses, disabilities and medication</h1>
 
 
 
@@ -75,7 +75,7 @@
 	
 			<div class="form-group">
 			<fieldset class="inline">
-					<legend class="heading-medium mb5">Are there any other illnesses or conditions to add?</legend>
+					<legend class="heading-medium mb5">Are there any other illnesses or disabilities to add?</legend>
 					
 			
 					
@@ -137,7 +137,7 @@
 						
 					
 								
-				          <button class="button-secondary">Confirm new illness or condition</button>  
+				          <button class="button-secondary">Confirm new illness or disability</button>  
 				            
 				          </fieldset>
 				   		
@@ -151,26 +151,8 @@
 			</div>
 
 		</form>
-    <form method="post" action="illnessEffects2">
-    <div class="form-group">
-		<fieldset>
-			<legend class="visually-hidden">Condition details</legend>
-			
-			<div class="form-group">
-				<label class="heading-medium" for="field-8">How do these conditions affect {{customer.name.first}}?</label>
-				<p class="form-hint mb5 mt5">This should cover all conditions</p>
-				<textarea class="form-control form-control-3-4" id="field-8" name="conditionHistory1" style="height:250px;">{{conditionHistory1}}</textarea>
-			</div>
-			
-			
-			
-			
-		</fieldset>	
-	</div>
-		
-		
-		
-		
+    <form method="post" action="illnessEffects2a">
+    
 		<p class="mt30"><button class="button">Save and continue</button></p>
 
 	</form>
@@ -180,7 +162,7 @@
 </div><!-- row -->
 
 
-{% include path+"/includes/help/_help_panel_conditionhistory.html" %}
+
 {% endblock %}
 
 
