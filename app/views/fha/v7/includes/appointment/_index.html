@@ -93,15 +93,15 @@
           or customer.name.first == 'Sherry' and data['scenario']==="late" 
           or customer.name.first == 'Pacheco' and data['scenario']==="know-2"
           or customer.name.first == 'Valerie' %}
-            <p><a href="/{{path1}}/booked/{{customer._id}}/request-rearrangement" class="button-secondary">Cancel or rearrange this appointment</a></p>
+            <p><a href="/{{path1}}/booked/{{customer._id}}/request-rearrangement" class="button-secondary">Cancel or rearrange appointment</a></p>
            
           {% elif customer.status == 'Assessment stopped' or customer.status == 'Ready for assessment' or  customer.status == 'Appointment today'%}
           {% if data['stoppassess']==='unfit' or data['stoppassess']==='specialreq' or customer.name.first == 'Dillon' %}
-          <p><a href="/{{path}}/assessment/{{customer._id}}/evidence/send-home-book"  class="button-secondary">Cancel or rearrange this appointment</a></p>
+          <p><a href="/{{path}}/assessment/{{customer._id}}/evidence/send-home-book"  class="button-secondary">Cancel or rearrange appointment</a></p>
           {% elif data['stoppassess']==='other' %}
-          <p><a href="/{{path}}/assessment/{{customer._id}}/evidence/send-home-asses-not-comp"  class="button-secondary">Cancel or rearrange this appointment</a></p>
+          <p><a href="/{{path}}/assessment/{{customer._id}}/evidence/send-home-asses-not-comp"  class="button-secondary">Cancel or rearrange appointment</a></p>
           {% else %}
-          <p><a href="/{{path}}/assessment/{{customer._id}}/evidence/send-home"  class="button-secondary">Cancel or rearrange this appointment</a></p>
+          <p><a href="/{{path}}/assessment/{{customer._id}}/evidence/send-home"  class="button-secondary">Cancel or rearrange appointment</a></p>
           {% endif %}
           {% endif %}
           <hr />
@@ -277,7 +277,7 @@
             {% endif %}    
             
             <li>
-                <a href="/fha/v6/assessment/{{customer._id}}/appointment-history">View all appointment history</a>
+                <a href="/fha/v6/assessment/{{customer._id}}/appointment-history">View all</a>
               </li>
         </ul>
 
