@@ -16,8 +16,10 @@
 		text-align: center;
 		cursor: pointer;
 		background: #fff;
-		border: 3px solid $govuk-blue;
+		border: 3px solid $black; //$govuk-blue;
 		border-right: 0;
+	
+
 
 	
 
@@ -27,7 +29,7 @@
 			margin: 0;
 			
 			text-decoration: none;
-			color: #000;
+			//color: #000;
 		}
 		
 		.support {
@@ -41,10 +43,13 @@
 		overflow-y: scroll!important;
 		background: #fff;
 		padding: 3% 5% 10% 5%;
-		border: 1px solid $grey-2;
-		border-left: 3px solid $govuk-blue;
+		border-left: 3px solid $black;
+		//border-left: 3px solid $govuk-blue;
 		min-height: 1200px;
 		display: none;
+	//	-webkit-box-shadow: 2px 1px 28px 8px rgba(0,0,0,0.23);
+     //   -moz-box-shadow: 2px 1px 28px 8px rgba(0,0,0,0.23);
+     //   box-shadow: 2px 1px 28px 8px rgba(0,0,0,0.23);
 	}
 
 	&.panel-open {

@@ -15,14 +15,13 @@
 		
                  <h3 class="heading-medium">Recorded Illnesses and disabilities</h3>
     
-                 <div class="table-layout">
+                 <div class="">
                  <table>
                      <caption class="visually-hidden">List of illnesses and disabilities</caption>
                      <thead>
                          <tr>
                              <th>Name</th>
-                             <th>Source</th>
-                             <th>Since</th>
+
                          
                          </tr>
                      </thead>
@@ -30,9 +29,6 @@
                          {% for illness in customer.illnesses %}
                          <tr>
                              <td>{{illness.name}}</td>
-                             <td>{{illness.source}}</td>
-                             <td class="text-secondary">{{illness.date |formatDate('MMMM YYYY')}}</td>
-                         
                          </tr>
                          {% endfor %}
                          
@@ -41,21 +37,8 @@
                  </div>
 
 
-							<h3 class="heading-medium"> Descriptors you should cover</h3>
-<details>
+							<h3 class="heading-medium"> Descriptors</h3>
 
-		<summary><span class="summary">Moving around and climbing steps without someone’s help</span></summary>
-	
-		 <ul>
-			 <li>Shopping</li>
-			 <li>Mobility</li>
-			 <li>Another</li>
-			 <li>Another</li>
-		 </ul>
-	
-	
-	
-    </details>
     
 <ul class="list-bullet">
     <li>Moving around and climbing steps without someone’s help</li>
@@ -78,47 +61,34 @@
     <li>Eating and drinking</li>
 </ul>
 
+	<details class="mt10">
 
-<table>
-        <caption class="visually-hidden">List of illnesses and disabilities</caption>
-        <thead>
-            <tr>
-                <th>Descriptors</th>
-                <th>Prompts</th>
-
-            
-            </tr>
-        </thead>
-        <tbody>
-     
-            <tr>
-                <td>
-                        <li>Moving around and climbing steps without someone’s help</li>
-    <li>Standing, sitting and moving between the two</li>
-    <li>Reaching</li>
-    <li>Picking things up and moving them</li>
-    <li>Using your hands</li>
-    <li>Speaking, writing and typing</li>
-    <li>Hearing and reading</li>
-    <li>Seeing well enough to get around safely</li>
-                </td>
-                <td>
-                        <ul>
-                                <li>Shopping</li>
-                                <li>Mobility</li>
-                                <li>Another</li>
-                                <li>Another</li>
-                            </ul>
-                </td>
-
-            
-            </tr>
-
-            
-        </tbody>
-    </table>
-
-	
+            <summary><span class="summary">Prompts</span></summary>
+          
+        
+          
+                    <ul class="list-bullet">
+                            <li>Bedtime sleeping and getting up</li>
+                            <li>Washing and dressing</li>
+                            <li>Housework</li>
+                            <li>Shopping</li>
+                            <li>Food preperation</li>
+                            <li>Leisure activities</li>
+                            <li>Mobile phone and computer use</li>
+                            <li>Driving and use of public transport</li>
+                            <li>Socialising</li>
+                            <li>Getting out and about</li>
+                            <li>Hobbies</li>
+                            <li>Childcare responsabilities</li>
+                            <li>Day to day admin</li>
+                            <li>Pets</li>
+                            <li>Holiday</li>
+                            <li>Alcohol or drug abuse</li>
+                        </ul>
+          
+         
+          
+          </details>
              
          </div>
 
