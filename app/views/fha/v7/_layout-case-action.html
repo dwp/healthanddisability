@@ -61,11 +61,11 @@
         
       </div><!-- row -->
     </div><!-- container -->
-
+    {%if customer.status == 'Assessment started' or customer.status == 'Assessment completed' or customer.status == 'Ready for recommendation'%}
+    {% include path+"/includes/evidence/_evidence_panel.html"%}
+    {% endif %}
   </main>
-  {%if customer.status == 'Assessment started' or customer.status == 'Assessment completed' or customer.status == 'Ready for recommendation'%}
-  {% include path+"/includes/evidence/_evidence_panel.html"%}
-  {% endif %}
+
 {% endblock %}
 
 {% block page_scripts %}

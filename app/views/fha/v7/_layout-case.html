@@ -179,10 +179,10 @@ or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes'
       </div><!-- row -->
     </div><!-- container -->
 
+    {% block help_prompts%}
+    {% endblock %}
   </main>
-  {%if customer.status == 'Assessment started' or customer.status == 'Assessment completed' or customer.status == 'Ready for recommendation'%}
-  {% include path+"/includes/evidence/_evidence_panel.html" %}
-  {% endif %}
+
 {% endblock %}
 
 {% block page_scripts %}

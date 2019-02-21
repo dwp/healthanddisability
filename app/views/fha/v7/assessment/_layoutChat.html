@@ -12,7 +12,7 @@
         <div class="column-full">
         
         {#  This is the BIG BLUE BAR at the top - #jussayin #}
-  {% include path+"/includes/_staff_heading.html" %}
+        {% include path+"/includes/_staff_heading.html" %}
 
           <div nunj-block="citizen_content">
             {% block citizen_content %}{% endblock %}
@@ -21,16 +21,13 @@
         </div><!-- column -->
       </div><!-- row -->
     </div><!-- container -->
-
   </main>
   
-	{% include path+"/includes/evidence/_evidence_panel.html" %}
+  {% endblock %}
    
 	
 	
 
-
-{% endblock %}
 
 {% block page_scripts %}
 {{ super }}

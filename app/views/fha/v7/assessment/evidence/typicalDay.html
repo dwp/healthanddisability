@@ -9,14 +9,12 @@
 
 <div class="grid-row no-kdBar">
 
- 
-
   <div class="column-two-thirds">
   
  <p class="mt0"><a href="wca-index" class="link-back">Back</a></p>
   <h1 class="heading-large">Typical day</h1>
 
-  
+
   <div class="chat-layout">
 
 
@@ -39,7 +37,6 @@
        </div>
        
       </div>
-
     {% endfor %}
    </div>
     
@@ -75,7 +72,11 @@
   </div><!-- column -->
 </div><!-- row -->
 
+{% include path+"/includes/evidence/_evidence_panel.html" %}
+
 {% endblock %}
+
+
 
 {% block page_scripts %}
 {{ super() }}
