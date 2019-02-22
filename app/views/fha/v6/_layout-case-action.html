@@ -32,7 +32,7 @@
 {{ 'Booked' if customer.status == 'Booked' or customer.status == 'Security booked' }}
 {{ 'Ready to Book' if customer.status == 'Ready to Book' }}
 {{ 'Did not attend' if customer.status == 'Did not attend' }}
-{{ 'Assessment report available' if customer.status == 'Assessment reports' }}
+{{ 'Desicion in progress' if customer.status == 'Assessment reports' }}
 {{ 'Failed to attend appointment' if customer.status == 'Failed to attend appointment' }}
 {{ 'Questionnaire not returned' if customer.status == 'Questionnaire not returned' }}
  </p>

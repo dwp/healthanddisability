@@ -19,8 +19,12 @@
     
     
     {# macro #}
-  {{ nav2.case_tabs("timeline",1,path1, customer._id) }}
 
+    {% if customer.status == 'Assessment reports'%}
+    {{ navreport.case_tabs("timeline",1,path1, customer._id) }}
+    {% else %}
+    {{ navfta.case_tabs("timeline",1,path1, customer._id) }}
+    {% endif%}
 
   {% include path+"/includes/_timeline.html" %}
 

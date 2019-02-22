@@ -4,7 +4,15 @@
 
   <div class="container">
 
+      {% if customer.status == 'Assessment reports'%}
+      {{ navreport.case_tabs("details",1,path1, customer._id) }}
+      {% elif customer.status == 'Failed to attend appointment' %}
+      {{ navfta.case_tabs("details",1,path1, customer._id) }}
+      {% else %}
       {{ nav.case_tabs("details",1,path1, customer._id) }}{# macro #}
+      {% endif%}
+
+     
 
     <div class="grid-row">
       <div class="column-third">

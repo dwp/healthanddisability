@@ -1,4 +1,4 @@
-{% extends path1+"/_layoutDM.html" %}
+{% extends path+"/_layout-case-action.html" %}
 
 {% block citizen_content %}
 
@@ -20,10 +20,10 @@
   		
   
   				<div class="inner-focus">
-						<h4 class="heading-small">How far can Bobby walk or move on level ground without help from someone, and without stopping due to severe pain or tiredness?</h4>
+						<h4 class="heading-small">How far can {{customer.name.first}} walk or move on level ground without help from someone, and without stopping due to severe pain or tiredness?</h4>
 						<p>No more than 50 metres</p>
 						
-						<h4 class="heading-small">Can Bobby go up or down 2 steps without help, if they use a handrail?</h4>
+						<h4 class="heading-small">Can {{customer.name.first}} go up or down 2 steps without help, if they use a handrail?</h4>
 						<p>No</p>
 						
 						<h4 class="heading-small">Justification:</h4>
@@ -36,7 +36,7 @@
 					
 						<tbody>
 							<tr>
-								<td>Bobby goes to the shop each morning, he goes alone.</td>
+								<td>{{customer.name.first}} goes to the shop each morning, he goes alone.</td>
 							</tr>
 							<tr>
 								<td>Lives in a top floor flat without access to a lift.</td>

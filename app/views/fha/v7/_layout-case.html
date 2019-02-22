@@ -1,6 +1,7 @@
 {% extends path+"/_layout.html" %}
 {% import path+"/scrutiny/_macros_nav.html" as nav %} 
-{% import path+"/decisionmaker/_macros_nav_fta.html" as nav2 %}
+{% import path+"/decisionmaker/_macros_nav_fta.html" as navfta %}
+{% import path+"/decisionmaker/_macros_nav_report.html" as navreport %}
 {% block assess_content %}
 
 
@@ -64,7 +65,7 @@
 {{ 'Booked' if customer.status == 'Security booked'  }} 
 {% endif %}
 {{ 'Ready to book' if customer.status == 'Security booked' and customer.name.first == 'Deena' and data['changedByCustomer']==="yes" }}
-{{ 'Assessment report available' if customer.status == 'Assessment reports' }}
+{{ 'Ready to score' if customer.status == 'Assessment reports' }}
 
 
 {{ 'Failed to attend appointment' if customer.status == 'Failed to attend appointment' and data['whatcando']!=='newappointment'
@@ -91,10 +92,12 @@ or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes'
      {% elif customer.status == 'Failed to attend appointment' and customer.substatus == 'Request a reason'  %}
      <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/request-fta-reason" class="button">Request a reason</a></p> 
   
-     {% elif customer.status == 'Assessment reports' 
-     or customer.status == 'Failed to attend appointment'
+     {% elif customer.status == 'Assessment reports' %}
+     <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/report-test" class="button">Make a decision</a></p>
+     
+     {% elif customer.status == 'Failed to attend appointment'
      or customer.status == 'Questionnaire not returned'
-     or customer.status == 'Failed to attend appointment' %}
+     %}
      <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/index" class="button">Make a decision</a></p>
      
      
@@ -179,8 +182,6 @@ or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes'
       </div><!-- row -->
     </div><!-- container -->
 
-    {% block help_prompts%}
-    {% endblock %}
   </main>
 
 {% endblock %}

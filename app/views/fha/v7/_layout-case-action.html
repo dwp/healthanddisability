@@ -1,6 +1,5 @@
 {% extends path+"/_layout.html" %}
-{% import path+"/scrutiny/_macros_nav.html" as nav %}
-{% import path+"/decisionmaker/_macros_nav_fta.html" as nav2 %}
+
 
 {% block assess_content %}
 
@@ -32,7 +31,7 @@
 {{ 'Booked' if customer.status == 'Booked' or customer.status == 'Security booked' }}
 {{ 'Ready to Book' if customer.status == 'Ready to Book' }}
 {{ 'Did not attend' if customer.status == 'Did not attend' }}
-{{ 'Assessment report available' if customer.status == 'Assessment reports' }}
+{{ 'Decision in progress' if customer.status == 'Assessment reports' }}
 {{ 'Failed to attend appointment' if customer.status == 'Failed to attend appointment' }}
 {{ 'Questionnaire not returned' if customer.status == 'Questionnaire not returned' }}
  </p>
@@ -62,14 +61,12 @@
         
       </div><!-- row -->
     </div><!-- container -->
-    {%if customer.status == 'Assessment started' or customer.status == 'Assessment completed' or customer.status == 'Ready for recommendation'%}
-    {% include path+"/includes/evidence/_evidence_panel.html"%}
-    {% endif %}
   </main>
 
 {% endblock %}
 
 {% block page_scripts %}
+{{ super }}
 <script type="text/javascript">
   $( document ).ready(function() {
          $( ".panel-switch" ).click(function() {
