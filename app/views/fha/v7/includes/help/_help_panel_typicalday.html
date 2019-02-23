@@ -28,9 +28,25 @@
                      <tbody>
                          {% for illness in customer.illnesses %}
                          <tr>
-                             <td>{{illness.name}}</td>
+                             <td>
+                                    <details>
+                                     <summary><span class="summary">{{illness.dataname}}</span></summary>
+                                            <p class="mb0">{{illness.dataname}}</p>
+                                    </details>
+                             </td>
                          </tr>
                          {% endfor %}
+
+                         {% if data['newillness']=='meds1' %}
+                         <tr>
+                                <td>
+                                       <details>
+                                        <summary><span class="summary">{{newillneesname}}</span></summary>
+                                               <p class="mb0">{{newillnesscondition}}</p>
+                                       </details>
+                                </td>
+                            </tr>
+                         {% endif %}
                          
                      </tbody>
                  </table>
@@ -61,7 +77,9 @@
     <li>Eating and drinking</li>
 </ul>
 
-	<details class="mt10">
+
+
+	<!-- <details class="mt10">
 
             <summary><span class="summary">Prompts</span></summary>
           
@@ -88,7 +106,7 @@
           
          
           
-          </details>
+          </details> -->
              
          </div>
 

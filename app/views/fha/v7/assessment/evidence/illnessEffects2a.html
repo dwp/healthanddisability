@@ -32,99 +32,74 @@
 	
 	<fieldset>
 
-  <legend class="heading-medium mt0 mb10">Choose what you want to talk about:</legend>																		
+  <legend class="heading-medium mt0 mb10">Choose what you want to talk about:</legend>	
+  
+  
+  {% for illness in customer.illnesses %}
+  <div class="multiple-choice" data-target="{{illness.dataname}}">
+		<input id="issue1" name="issueswith" type="checkbox" value="{{illness.name}}" {{ checked('issueswith', '{{illness.name}}') }} >
+		<label for="issue1">{{illness.name}}</label>
+	  </div>
+	   <div class="panel js-hidden" id="{{illness.dataname}}">
+					
+		   <div class="whatweknow2">	
+			   <table>
+				  <caption class="visually-hidden">What we already know:</caption>
+				  <thead>
+					  <tr>
+						  <th>Since</th>
+						  <th>Source</th>
+					  </tr>
+				  </thead>
+				  <tbody>
+					  <tr>
+						  <td>{{illness.date |formatDate('MMMM YYYY')}}</td>							
+						  <td>{{illness.source}}</td>
+					  </tr>
+				  </tbody>
+			  </table>
+		   </div>
+		   
+		   <div class="form-group">
+			   <label class="form-label" for="conditionHistory">{{illness.name}} &ndash; condition history</label> 
+			   <textarea class="form-control form-control-3-4" id="field-8" name="{{illness.dataname}}" rows="6" style="width: 100%;">{{illness.dataname}}</textarea>
+		   </div>
+
+	  </div>
+
+
+  {% endfor %}
+			{% if data['newillness']=='meds1' %}
+			  
+		    <div class="multiple-choice" data-target="newillness">
+					<input id="issue3" name="issueswith" type="checkbox" value="Issue 4" {{ checked('issueswith', '{{newillneesname}}') }} >
+					<label for="issue3">{{newillneesname}}</label>
+				  </div>
+			<div class="panel js-hidden" id="newillness">
+					<div class="whatweknow2">	
+						 <table>
+							<caption class="visually-hidden" >What we already know:</caption>
+							<thead>
+								<tr>
+									<th>Since</th>
+									<th>Source</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>{{newillnessmonth | formatDate('MMMM')}} {{newillnessyear}}</td>							
+									<td>{{newillnesssource}}</td>
+								</tr>
+							</tbody>
+						</table>
+					 </div>
+					 <div class="form-group">
+						 <label class="form-label" for="conditionHistory">{{newillneesname}} &ndash; condition history</label> 
+						 <textarea class="form-control form-control-3-4" id="field-8" name="newillnesscondition" rows="6" style="width: 100%;">{{newillnesscondition}}</textarea>
+					 </div>
 	
-		    <div class="multiple-choice" data-target="issue1open">
-		      <input id="issue1" name="issueswith" type="checkbox" value="Issue 1" {{ checked('issueswith', 'Issue 1') }} >
-		      <label for="issue1">Diabetes</label>
-		    </div>
-		     <div class="panel js-hidden" id="issue1open">
-		     		     
-		     	<div class="whatweknow2">	
-		     		<table>
-						<caption class="visually-hidden">What we already know:</caption>
-						<thead>
-							<tr>
-								<th>Since</th>
-								<th>Source</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>12 July 2018</td>							
-								<td>Claimant</td>
-							</tr>
-						</tbody>
-					</table>
-		     	</div>
-		     	
-				 <div class="form-group">
-				 	<label class="form-label" for="conditionHistory">Diabetes &ndash; condition history</label> 
-				 	<textarea class="form-control form-control-3-4" id="field-8" name="conditionHistory" rows="6" style="width: 100%;">{{conditionHistory1}}</textarea>
-				 </div>
-
-			</div>
-			
-			<div class="multiple-choice" data-target="issue2open">
-		      <input id="issue2" name="issueswith" type="checkbox" value="Issue 2" {{ checked('issueswith', 'Issue 2') }} >
-		      <label for="issue2">Liver disease</label>
-		    </div>
-		    <div class="panel js-hidden" id="issue2open">
-		    
-		    	<div class="whatweknow2">	
-		     		<table>
-						<caption class="visually-hidden" >What we already know:</caption>
-						<thead>
-							<tr>
-								<th>Since</th>
-								<th>Source</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>12 July 2018</td>							
-								<td>Claimant</td>
-							</tr>
-						</tbody>
-					</table>
-		     	</div>
-		    	
-				 <div class="form-group">
-				 	<label class="form-label" for="conditionHistory">Liver disease &ndash; condition history</label> 
-				 	<textarea class="form-control form-control-3-4" id="field-8" name="conditionHistory" rows="6" style="width: 100%;">{{conditionHistory1}}</textarea>
-				 </div>
-
-			</div>
-		    
-		    <div class="multiple-choice" data-target="issue3open">
-		      <input id="issue3" name="issueswith" type="checkbox" value="Issue 3" {{ checked('issueswith', 'Issue 3') }} >
-		      <label for="issue3">Arthritis</label>
-		    </div>
-		    <div class="panel js-hidden" id="issue3open">
-		    	<div class="whatweknow2">	
-		     		<table>
-						<caption class="visually-hidden" >What we already know:</caption>
-						<thead>
-							<tr>
-								<th>Since</th>
-								<th>Source</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>12 July 2018</td>							
-								<td>Claimant</td>
-							</tr>
-						</tbody>
-					</table>
-		     	</div>
-				 <div class="form-group">
-				 	<label class="form-label" for="conditionHistory">Arthritis &ndash; condition history</label> 
-				 	<textarea class="form-control form-control-3-4" id="field-8" name="conditionHistory" rows="6" style="width: 100%;">{{conditionHistory1}}</textarea>
-				 </div>
-
-			</div>
-			
+				</div>
+				{% endif %}
 			
 			
 			

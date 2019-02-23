@@ -12,11 +12,13 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "Depression",
         "name": "Depression",
         "source": "Claimant",
         "date": "2014"
       },
       {
+        "dataname": "Back-spasms",
         "name": "Back spasms",
         "source": "Claimant",
         "date": "2014"
@@ -93,11 +95,13 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "Speech-impediment",
         "name": "Arthritis",
         "source": "Claimant",
         "date": "July 2016"
       },
       {
+        "dataname": "Speech-impediment", 
         "name": "Prolapsed uterus",
         "source": "Claimant",
         "date": "August 2018"
@@ -174,9 +178,10 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "", 
         "name": "",
         "source": "",
-        "date": ""
+        "date": "06 2017"
       }
     ],
     "medication": [
@@ -245,9 +250,10 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "",
         "name": "",
         "source": "",
-        "date": ""
+        "date": "06 2017"
       }
     ],
     "medication": [
@@ -316,6 +322,7 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "Anxiety",
         "name": "Anxiety",
         "source": "claimant",
         "date": "2011"
@@ -387,16 +394,19 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "Poland-Syndrome",
         "name": "Poland Syndrome",
         "source": "Claimant",
         "date": "1986"
       },
       {
+        "dataname": "",
         "name": "Depression",
         "source": "Claimant",
         "date": "2017"
       },
       {
+        "dataname": "",
         "name": "Asthma",
         "source": "Claimant",
         "date": "2012"
@@ -485,6 +495,7 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "Stroke",
         "name": "Stroke",
         "source": "Claimant",
         "date": "July 2017"
@@ -492,6 +503,7 @@ module.exports = [
     ],
     "medication": [
       {
+        
         "name": "Atorvastatin",
         "dose": "80mg",
         "sideEffects": ""
@@ -571,11 +583,13 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "Depression",
         "name": "Depression",
         "source": "Claimant",
         "date": "2003"
       },
       {
+        "dataname": "Anxiety",
         "name": "Anxiety",
         "source": "Claimant",
         "date": "2015"
@@ -669,9 +683,10 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "",
         "name": "",
         "source": "",
-        "date": ""
+        "date": "06 2017"
       }
     ],
     "medication": [
@@ -743,24 +758,28 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "Diabetes",
         "name": "Diabetes",
         "source": "Claimant",
-        "date": ""
+        "date": "June 2017"
       },
       {
+        "dataname": "Arthritis",
         "name": "Arthritis",
         "source": "Claimant",
-        "date": ""
+        "date": "October 2015"
       },
       {
+        "dataname": "Liver-disease",
         "name": "Liver disease",
         "source": "Claimant",
-        "date": ""
+        "date": "January 2017"
       },
       {
+        "dataname": "Urine-problems",
         "name": "Urine problems",
         "source": "Claimant",
-        "date": ""
+        "date": "September 2017"
       }
 
 
@@ -834,15 +853,18 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "Speech-impediment",
         "name": "Speech impediment",
         "source": "Claimant",
         "date": "1997"
       },
       {
+        "dataname": "Social-anxiety",
         "name": "Social anxiety",
         "source": "Claimant",
         "date": "2011"
       },  {
+        "dataname": "Depression",
         "name": "Depression",
         "source": "Claimant",
         "date": "2018"
@@ -923,11 +945,13 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "Depression",
         "name": "Depression",
         "source": "Claimant",
         "date": "January 2018"
       },
       {
+        "dataname": "Anxiety",
         "name": "Anxiety",
         "source": "Claimant",
         "date": "January 2018"
@@ -1002,9 +1026,10 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "",
         "name": "",
         "source": "",
-        "date": ""
+        "date": "06 2017"
       }
     ],
     "medication": [
@@ -1073,9 +1098,10 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "",
         "name": "",
         "source": "",
-        "date": ""
+        "date": "06 2017"
       }
     ],
     "medication": [
@@ -1146,9 +1172,10 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "",
         "name": "",
         "source": "",
-        "date": ""
+        "date": "06 2017"
       }
     ],
     "medication": [
@@ -1219,9 +1246,10 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "",
         "name": "",
         "source": "",
-        "date": ""
+        "date": "06 2017"
       }
     ],
     "medication": [
@@ -1294,9 +1322,10 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "",
         "name": "",
         "source": "",
-        "date": ""
+        "date": "06 2017"
       }
     ],
     "medication": [
@@ -1368,17 +1397,20 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "Depression",
         "name": "Depression",
         "source": "Claimant",
         "date": "January 2018"
       },
 
       {
+        "dataname": "Psychosis", 
         "name": "Psychosis",
         "source": "Claimant",
         "date": "January 2018"
       },
       {
+        "dataname": "Severe-back-pain",
         "name": "Severe back pain",
         "source": "Claimant",
         "date": "June 2018"
@@ -1479,9 +1511,10 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "",
         "name": "",
         "source": "",
-        "date": ""
+        "date": "06 2017"
       }
     ],
     "medication": [
@@ -1551,26 +1584,31 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "Depression",
         "name": "Depression",
         "source": "Claimant",
         "date": "82"
       },
       {
+        "dataname": "Anxiety",
         "name": "Anxiety",
         "source": "Claimant",
         "date": "82"
       },
       {
+        "dataname": "Gallstones",
         "name": "Gallstones",
         "source": "Claimant",
         "date": "2009"
       },
       {
+        "dataname": "Tinnitus",
         "name": "Tinnitus",
         "source": "Claimant",
         "date": "2013"
       },
       {
+        "dataname": "Arthritus",
         "name": "Arthritus",
         "source": "Claimant",
         "date": "03"
@@ -1659,9 +1697,10 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "",
         "name": "",
         "source": "",
-        "date": ""
+        "date": "06 2017"
       }
     ],
     "medication": [
