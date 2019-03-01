@@ -1399,8 +1399,8 @@ span.status {
 
 
 .descriptor-scored {
-position: fixed;
-	top: 250px;
+
+padding-left: 20px;
 	
 	p {
 		display: block;
@@ -1529,4 +1529,29 @@ position: fixed;
 }
 
 
+.decision-list {
+	th, td {
+		width: 15%;
+		&:first-child {
+			width: 34%;
+		}
+		&:last-child {
+			text-align: right;
+			width: 34%;
+		}
+		.agree {
+			font-weight: bold;
+		}
+	}
+	.reasons {
+		color: $grey-1;
+	}
+}
 
+.decision-evidence {
+	margin: 50px 0 30px 0;
+}
+
+.wrapper-third {
+
+}

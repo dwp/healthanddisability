@@ -1,0 +1,149 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+<div class="grid-row">
+
+  <div class="column-three-quarters">
+  	
+  		<div class="full-report descriptor-focused">
+  		
+  		<h1 class="heading-large mb30">Decision overview</h1>
+  		
+
+				
+					<table class="decision-list">
+					<caption class="visually-hidden">Outcome of review</caption>
+					
+						<thead>
+							<tr>
+								<th>Descriptor</th>
+								<th>HCP</th>
+								<th>Decision</th>
+								<th>Justification</th>
+							</tr>
+								
+					
+						<tbody>
+							<tr>
+								<td>Moving around and using steps without help</td>
+								<td>9</td>
+								<td><span class="agree">9</span></td>
+								<td class="reasons"></td>
+							</tr>
+							<tr>
+								<td>Standing and sitting</td>
+								<td>9</td>
+								<td><span class="badge">3</span></td>
+								<td class="reasons">Reason for rescore captured earlier would appear here.</td>
+							</tr>
+							<tr>
+								<td>Eating and drinking</td>
+								<td>3</td>
+								<td><span class="badge warning">Rework</span></td>
+								<td class="reasons">Insufficient detail to back up the recommended points.</td>
+							</tr>
+														
+						</tbody>
+					</table>
+					
+					 
+					
+										
+		</div>
+		
+		
+		<div class="wrapper-third">
+		<div class="decision-evidence">
+
+			<fieldset>
+					
+			    <legend class="heading-medium">What evidence did you take into account whilst making your decision?</legend>
+			    
+			    
+			    
+			    <div class="multiple-choice">
+			      <input id="des1" type="checkbox" name="evidence" value="gp">
+			      <label for="des1">GP report</label>
+			    </div>
+		
+				<div class="multiple-choice">
+			      <input id="des2" type="checkbox" name="evidence" value="uc50">
+			      <label for="des2">Factual report</label>
+			    </div>
+			    
+			    <div class="multiple-choice">
+			      <input id="des3" type="checkbox" name="evidence" value="report">
+			      <label for="des3">Assessment report</label>
+			    </div>
+			    
+			</fieldset>
+			
+			
+		</div>
+		
+		<hr> 
+		<div class="notice">
+		<i class="icon icon-important">
+			<span class="visually-hidden">Warning</span>
+		</i>
+		<strong class="bold-small">
+			You have requested that rework be undertaken,<br>this will be sent back to the relevant HCP for review.
+		</strong>
+	</div>
+		
+		
+		<p class="mt30"><a href="#" class="button">Finish &ndash; request rework</a></p>
+		
+		<p class="mt30">or</p>
+		
+		<p class="mt30"><a href="#" class="button">Finish &ndash; confirm decision</a></p>
+		
+		</div>
+	
+		
+  </div><!-- column -->
+  
+  
+  
+
+  
+  
+  
+</div><!-- row -->
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+$(document).on('ready',function()
+
+{
+  $('#nugget').focus();
+  
+  $("#nugget").keydown(function (event) {
+    if ((event.keyCode == 13))
+    {
+      $('#submitButton').trigger('click');
+    }
+  });
+
+
+});
+
+
+
+</script>
+
+
+
+
+{% endblock %}
