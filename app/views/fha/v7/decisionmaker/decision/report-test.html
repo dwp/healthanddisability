@@ -15,7 +15,7 @@
   	
   		<div class="full-report descriptor-focused">
   		
-  		<h1 class="heading-large mb30"><span class="heading-secondary">Step 1 of 2</span>Moving around and using steps without help</h1>
+  		<h1 class="heading-large mb30"><span class="heading-secondary">Step 1 of 3</span>Moving around and using steps without help</h1>
   		
   		
   
@@ -44,6 +44,24 @@
 							<tr>
 								<td>Walks up and down 4 flights of stairs when going outside.</td>
 							</tr>
+							<tr>
+								<td>{{customer.name.first}} goes to the shop each morning, he goes alone.</td>
+							</tr>
+							<tr>
+								<td>Lives in a top floor flat without access to a lift.</td>
+							</tr>
+							<tr>
+								<td>Walks up and down 4 flights of stairs when going outside.</td>
+							</tr>
+							<tr>
+								<td>{{customer.name.first}} goes to the shop each morning, he goes alone.</td>
+							</tr>
+							<tr>
+								<td>Lives in a top floor flat without access to a lift.</td>
+							</tr>
+							<tr>
+								<td>Walks up and down 4 flights of stairs when going outside.</td>
+							</tr>
 							
 						</tbody>
 					</table>
@@ -62,30 +80,52 @@
   	<div class="descriptor-scored">
 		
 			<div class="score-display">
-				<h2><span>Recommended points</span>10</h2>
+				<h2><span>Recommended points</span>9</h2>
 			</div>
 			
 			<form class="decision-mode">
 			<fieldset>
-				<legend class="visually-hidden">Make your decision</legend>
+				<legend class="form-label-bold mb10">Make your decision:</legend>
 				
 			  <div class="form-group">
 			
-			    <div class="multiple-choice" data-target="scorenow">
+			    <div class="multiple-choice">
 			      <input id="decide_now" name="whatcando" type="radio" value="Yes">
-			      <label for="decide_now">Agree</label>
+			      <label for="decide_now">Agree with score</label>
 			    </div>
 			
-			    <div class="multiple-choice" data-target="closeThis">
+			    <div class="multiple-choice" data-target="scorenow">
+			      <input id="Override" name="whatcando" type="radio" value="No">
+			      <label for="Override">Change score</label>
+			    </div>
+			    
+			    <!-- Re-score -->
+			    <div class="panel js-hidden" id="scorenow">		    
+			    	<div class="form-group">
+			    		<label class="form-label" for="rescore">Enter your score:</label>
+						<input type="text" class="form-control" id="rescore">	
+			    	</div>	
+			    	<div>
+			    		<label class="form-label" for="dmreasonrescore">Reason:</label>
+						<textarea name="dmreasonrescore" class="form-control form-control-3-4" rows="3" style="width: 98%;"></textarea>	
+			    	</div>
+			    </div>
+			    <!-- // Re-score -->
+			    
+			    <div class="multiple-choice" data-target="rework">
 			      <input id="face2face" name="whatcando" type="radio" value="No">
-			      <label for="face2face">Disagree</label>
+			      <label for="face2face">Rework required</label>
 			    </div>
 			    
-			    <div class="panel js-hidden" id="closeThis">
-			    	<label class="form-label" for="rescore">Score:</label>
-					<input type="text" class="form-control" id="rescore">			
+			    <!-- Re-score -->
+			    <div class="panel js-hidden" id="rework">		    
+			    	<label class="form-label" for="dmreasonrescore">Reason:</label>
+					<textarea name="dmreasonrescore" class="form-control form-control-3-4" rows="3" style="width: 98%;"></textarea>	
 			    </div>
+			    <!-- // Re-score -->
 			    
+			    
+			   
 			
 			  </div><!-- form-group -->
 			  <div class="form-group">
