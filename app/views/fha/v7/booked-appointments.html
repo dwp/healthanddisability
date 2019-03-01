@@ -9,32 +9,8 @@
 
 {% block caselist_content %}
 
-<style>
-ul.filter {
-  display:inline-block;
-  margin:30px 0 ;
-}
-
-.filter li{
-display:inline;
-padding:0 10px;
-margin:10px;
-border-right:1px solid gray;
-}
-
-.filter li.active{
-display:inline;
-padding:0 10px;
-border-bottom:5px solid gray;
-}
-</style>
-
             <h2 class="heading-medium mt0"><span class="heading-xlarge">{{customers.length}}</span><br/>Booked appointments</h2>
-            <ul class="filter">
-              <li  class="active">All</li>
-              <li><a href="">Communication to be sent</a></li>
-              <li><a href="">Sms to be sent</a></li>
-            </ul>
+       
               <table class="zebra">
 
                 <thead>

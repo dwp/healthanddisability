@@ -44,7 +44,7 @@
                                 <div class="panel js-hidden" id="other-info2" >
 
                                         <div class="form-group">
-                                                <div class="panel panel-info"> <h2 class="heading-small">{{customer.name.first}}'s current appointment</h2>
+                                                <h2 class="heading-small">{{customer.name.first}}'s current appointment</h2>
     
                                                     {% if customer.name.first == 'Lowery' %}
                                                     <ul class="list-bullet mt10 mb10">
@@ -89,7 +89,7 @@
                                                              
     
                                                           {% endif%}
-                                                </div>    
+                                                   
                                         {% include path+"/includes/appointmentsTypeAhead.html" %}  
                                         </div>
                                         

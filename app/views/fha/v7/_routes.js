@@ -317,27 +317,8 @@ router.get('/assessment-centres', function(req, res, next){
   next()
 })
 
-router.get('/ready-to-book', function(req, res, next){
-  var customers = require(filePath +'/data/referrals.js')
-  if(req.query.booked){
-    customers = customers.filter(customer => customer._id !== req.query.booked);
-  }
-  res.locals.customers = customers;
-  res.locals.customersTotal = customers.length;
-  next()
-})
 
-router.get('/booked-appointments', function(req, res, next){
-  var customers = require(filePath +'/data/booked.js');
-  res.locals.customers = customers.map(customer => {
 
-    var arrivedTime = moment(customer.appointmentTime, "h:mma");
-    customer.timeArrived = arrivedTime.add(customer.arrivedTime, "minutes").format("h:mma");
-
-    return customer;
-  })
-  next()
-})
 
 router.get('/booking/history', function(req, res, next){
     res.locals.comments = commentsData
@@ -405,28 +386,9 @@ router.get('/decision_maker', function(req, res, next){
   next()
 })
 
-router.get('/todays-appointments-*', function(req, res, next){
-  var customers = require(filePath +'/data/todaysAppointments.js');
-  res.locals.customers = customers.map(customer => {
 
-    var arrivedTime = moment(customer.appointmentTime, "h:mma");
-    customer.timeArrived = arrivedTime.add(customer.arrivedTime, "minutes").format("h:mma");
-    
-    return customer;
-  })
 
- 
-  next()
-})
 
-router.get('/booking/referrals/:customerId*', function(req, res, next){
-  var customers = require(filePath +'/data/referrals.js');
-
-  res.locals.section = "referrals";
-  res.locals.templatePath = res.locals.path+"/booking/_layout.html";
-  res.locals.customer = customers.filter(customer => customer._id === req.params.customerId)[0];
-  next()
-})
 
 
 
@@ -438,16 +400,6 @@ router.get('*/:customerId/appointment-details', function(req, res, next){
 
 router.get('/booking/referrals/:customerId', function(req, res, next){
   res.render(viewPath +'/booking/customer-referral');
-})
-
-router.get('/booking/:customerId*', function(req, res, next){
-  var customers = require(filePath +'/data/booked.js').concat(require(filePath +'/data/todaysAppointments.js'));
-
-  res.locals.section = "booked";
-  res.locals.templatePath = res.locals.path+"/booking/_layout-booking.html";
-
-  res.locals.customer = customers.filter(customer => customer._id === req.params.customerId)[0];
-  next()
 })
 
 
@@ -464,42 +416,12 @@ router.get('/booking/decision/:customerId/appointment-details', function(req, re
 
 
 
-router.post('/booking/:customerId*', function(req, res, next){
-  var customers = require(filePath +'/data/booked.js');
-  var todaysCustomers = require(filePath +'/data/todaysAppointments.js');
-  var allCustomers = customers.concat(todaysCustomers);
-
-  res.locals.section = "booked";
-  res.locals.templatePath = res.locals.path+"/booking/_layout-booking.html";
-
-  res.locals.customer = allCustomers.filter(customer => customer._id === req.params.customerId)[0];
-  next()
-})
-
 router.get('/booking/:customerId', function(req, res, next){
   res.render(viewPath +'/booking/customer-booked');
 })
 
 
 
-
-router.get('/booking/decision/:customerId*', function(req, res, next){
-  var customers = require(filePath +'/data/decisionMaker.js');
-
-  res.locals.section = "decision";
-  res.locals.templatePath = res.locals.path+"/booking/_layout-decision.html";
-  res.locals.customer = customers.filter(customer => customer._id === req.params.customerId)[0];
-  next()
-})
-
-router.post('/booking/decision/:customerId*', function(req, res, next){
-  var customers = require(filePath +'/data/decisionMaker.js');
-
-  res.locals.section = "decision";
-  res.locals.templatePath = res.locals.path+"/booking/_layout-decision.html";
-  res.locals.customer = customers.filter(customer => customer._id === req.params.customerId)[0];
-  next()
-})
 
 router.get('/booking/decision/:customerId', function(req, res, next){
   res.render(viewPath +'/booking/customer-booked');
@@ -532,76 +454,6 @@ router.get('/booking/decision/:customerId/evidence', function(req, res, next){
 
 router.get('/booking/decision/:customerId/evidence/:page', function(req, res, next){
   res.render(viewPath +'/booking/evidence/' + req.params.page);
-})
-
-router.get('/booking/arrived/:customerId*', function(req, res, next){
-  var customers = require(filePath +'/data/todaysAppointments.js');
-  
-  res.locals.section = "arrived";
-  res.locals.templatePath = res.locals.path+"/booking/_layout-arrived.html";
-  res.locals.customer = customers.filter(customer => customer._id === req.params.customerId)[0];
-  console.log(res.locals.customer);
-  res.locals.customer.appointmentDate = moment().hours(14).minutes(0).format();
-  res.locals.customer.originalAppointmentDate = res.locals.customer.appointmentDate;
-  res.locals.customer.receivedDate = moment(res.locals.customer.originalAppointmentDate).subtract(14, "days");
-  var appointmentTime = moment(res.locals.customer.appointmentTime, "h:mma");
-  res.locals.customer.timeArrived = appointmentTime.add(res.locals.customer.arrivedTime, "minutes").format("h:mma");
-
-  next()
-})
-
-router.post('/booking/arrived/:customerId*', function(req, res, next){
-  var customers = require(filePath +'/data/todaysAppointments.js');
-  
-  res.locals.section = "arrived";
-  res.locals.templatePath = res.locals.path+"/booking/_layout-arrived.html";
-  res.locals.customer = customers.filter(customer => customer._id === req.params.customerId)[0];
-  console.log(res.locals.customer);
-  var appointmentTime = moment(res.locals.customer.appointmentTime, "h:mma");
-  res.locals.customer.timeArrived = appointmentTime.add(res.locals.customer.arrivedTime, "minutes").format("h:mma");
-
-  next()
-})
-
-router.get('*/timepicker', function(req, res, next){
-  var getAppointemnts = require(filePath +'/data/availableAppointments.js');
-  var showAppointmentsAfter = 15;
-
-  var showAppointmentsBefore = 0 - moment(res.locals.customer.appointmentDate).diff(moment(), "days");
-  if(res.locals.query.changedBy == 'customer' && !res.locals.customer.ableToRearrange ){
-    showAppointmentsAfter = 0;
-  }
-  var date = res.locals.customer.appointmentDate;
-
-  if(res.locals.query.cshu == 'true') {
-    date = moment().format();
-    showAppointmentsBefore = 1;
-  }
-  console.log(res.locals.customer.ableToRearrange)
-  console.log("diff: " + moment(res.locals.customer.appointmentDate).diff(moment(), "days"))
-  console.log('showAppointmentsBefore: ' + showAppointmentsBefore)
-  console.log('showAppointmentsAfter: ' + showAppointmentsAfter)
-  console.log(date)
-
-  var availableAppointments = getAppointemnts.generateAppointmentDates(date, showAppointmentsBefore, showAppointmentsAfter);
-  
-  if(!res.locals.query.number){
-    res.locals.query.number = 4;
-  }
-  res.locals.availableAppointments = availableAppointments.filter(appointment => moment(appointment.appointmentDate).day() > 0 && moment(appointment.appointmentDate).day() < 6);
-  res.locals.newNumber = parseInt(res.locals.query.number) + 4;
-  next()
-})
-
-router.get('*/send-home-2', function(req, res, next){
-  var availableAppointments = require(filePath +'/data/availableAppointments.js');
-  
-  if(!res.locals.query.number){
-    res.locals.query.number = 4;
-  }
-  res.locals.availableAppointments = availableAppointments.filter(appointment => moment(appointment.appointmentDate).day() > 0 && moment(appointment.appointmentDate).day() < 6);
-  res.locals.newNumber = parseInt(res.locals.query.number) + 4;
-  next()
 })
 
 
@@ -838,138 +690,6 @@ router.post('/assessment/evidence/medical_assessment_dashboard', function(req, r
   req.session.data.assessmentEndTime = moment().format();
   next()
 });
-
-router.post('/booking/:customerId/request-rearrangement-post', function(req, res, next){  
-  
-  var changedByCustomer = req.body.changedByCustomer === 'yes' || false;
-  req.session.apointmentHistory = {
-      _id: req.params.customerId,
-      entryDate: moment(new Date()).format(),
-      comments: req.body.comments,
-      changedByCustomer: changedByCustomer
-    }
-    
-  if(req.body.changedByCustomer === 'no'){
-    req.session.apointmentHistory.title = "Appointment cancelled by assessment centre";
-    res.redirect(301, 'timepicker?changedBy=dwp');
-  } else { 
-    req.session.apointmentHistory.title = "Unable to attend";
-    req.session.apointmentHistory.code = 'UTA';
-    res.redirect(301, 'timepicker?changedBy=customer');
-  }
-});
-
-
-
-
-router.post('/booking/decision/:customerId/decision-post', function(req, res, next){
-  var title = `${res.locals.customer.decisionType} ${req.body.decision}`;
-  appointmentHistory.push({
-      _id: req.params.customerId,
-      title: title,
-      entryDate: moment(new Date()).format(),
-    });
-
-  res.locals.customer.decisionMade = req.body.decision;
-  res.redirect(307, 'appointment-details');
-
-});
-
-
-router.post('/booking/arrived/:customerId/send-home-post', function(req, res, next){
-  var comments = req.body.otherReason || req.body.reason;
-  
-  req.session.apointmentHistory = {
-      _id: req.params.customerId,
-      title: "Sent home unseen",
-      entryDate: moment(new Date()).format(),
-      comments: comments,
-      appointmentDate: req.body.appointment,
-      code: 'CSHU'
-    }
-
-  res.redirect(301, 'timepicker?reasonNeeded=false&cshu=true');
-
-});
-
-router.post('/booking/:customerId/arrived-post', function(req, res, next){
-  var comments = req.body.otherReason || req.body.reason;
-  
-  res.locals.arrivedTimeMoment = moment(new Date());
-  arrivedTime = res.locals.arrivedTimeMoment.format("h:mm a");
-  res.locals.customer.timeArrived = arrivedTime;
-  res.locals.customer.arrivedTime = 1;
-  res.locals.customer.waitTime = 1;
-  res.locals.customer.arrived = true;
-
-  appointmentHistory.push({
-      _id: req.params.customerId,
-      title: "Arrived at assessment centre at " + arrivedTime,
-      entryDate: res.locals.arrivedTimeMoment.format(),
-    })
-
-  res.redirect(301, '/' + res.locals.path + '/booking/arrived/' + req.params.customerId + '/appointment-details');
-
-});
-
-router.post('*/:customerId/timepicker-post', function(req, res, next){
-    if(req.body.appointment === "unableToBook"){
-      var referrals = require(filePath +'/data/referrals.js');
-      res.locals.customer.cshu = true;
-      referrals.push(res.locals.customer);
-      appointmentHistory.push(req.session.apointmentHistory);
-      
-      delete req.session.apointmentHistory;
-
-      res.locals.customer.appointmentDate = undefined;
-
-      res.redirect(302, '/' + res.locals.path + '/booking/referrals/' + req.params.customerId + '/appointment-details');
-
-    } else if(req.body.appointment === "noAppointmentAvailable"){
-        req.session.apointmentHistory.title = "Requested rearrangement";
-        appointmentHistory.push(req.session.apointmentHistory);
-        
-        res.redirect(302, '/' + res.locals.path + '/booking/' + req.params.customerId + '/appointment-details');
-  
-
-    } else {
-
-    if(req.session.apointmentHistory.code === "UTA"){
-      res.locals.customer.ableToRearrange = false;
-      res.locals.customer.numberOfUta ++;
-    } else if(req.session.apointmentHistory.code === "CSHU"){
-      res.locals.customer.cshuNumber = res.locals.customer.cshuNumber ++ || 1;
-    }
-
-    appointmentHistory.push(req.session.apointmentHistory);
-
-    
-    appointmentHistory.push({
-      _id: req.params.customerId,
-      title: "Appointment Booked",
-      entryDate: moment(new Date()).format(),
-      appointmentDate: req.body.appointment
-    })
-
-    res.locals.customer.appointmentDate = req.body.appointment;
-    delete req.session.apointmentHistory;
-
-    var customers = require(filePath +'/data/booked.js');
-
-    var inBooked = customers.filter(customer => customer._id === req.params.customerId).length > 0;
-    console.log("in booked: " + inBooked)
-    if(!inBooked){
-      customers.push(res.locals.customer);
-    }
-    res.redirect(302, '/' + res.locals.path + '/booking/' + req.params.customerId + '/appointment-details');
-    }
-  })
-
-
-router.post('*/:customerId/timepicker-cancel', function(req, res, next){
-  
-
-})
 
 
 
@@ -2370,6 +2090,12 @@ router.get('/ready-to-book', function(req, res, next){
 })
 
 router.get('/booked-appointments', function(req, res, next){
+  res.locals.customers = appointmentCustomers
+                            .filter(customer => customer.status === "Booked");
+  next()
+})
+
+router.get('/"date": "06 2017"', function(req, res, next){
   res.locals.customers = appointmentCustomers
                             .filter(customer => customer.status === "Ready to book");
   next()
