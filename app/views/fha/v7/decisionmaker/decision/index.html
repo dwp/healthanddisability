@@ -8,7 +8,7 @@
 <form class="form" action="timeline" method="post">
 <div class="grid-row">
   <div class="column-two-thirds">
-<h1 class="heading-large">Failed to attend appointment</h1>
+<h1 class="heading-large">Failure to attend</h1>
    
          <div class="latest_version">
          <h2 class="heading-medium mt0">What we know</h2>
@@ -39,7 +39,7 @@
         </div>
         
       <hr >
-         <h2 class="heading-medium mt0">Canceled: Standard appointment</h2>
+         <h2 class="heading-medium mt0">Cancelled: non-neuro appointment</h2>
          <p>Appointment details</p>
          <ul class="list-bullet">
              <li>{{ 'Do MMMM YYYY' | baseDate(15) }}</li> 
@@ -48,7 +48,7 @@
               </ul>
 
               <h3 class="heading-small">Customer contacted us</h3>
-              <p class="small">Reason: Original appointment clashed with another
+              <p class="small">Reason: original appointment clashed with another
                 
    
            <span class="date block mt10 text-secondary">Recorded date: {{ 'Do MMMM YYYY' | baseDate(25)}}</span>
@@ -74,7 +74,7 @@
   
       <div class="multiple-choice" data-target="closeThis">
         <input id="face2face" name="whatcando" type="radio" value="close">
-        <label for="face2face"> Close {{customer.name.first}}'s' case</label>
+        <label for="face2face"> Close {{customer.name.first}}'s case</label>
       </div>
       <div class="panel js-hidden" id="closeThis">
         <label class="form-label" for="closeReason">Reason:</label>
