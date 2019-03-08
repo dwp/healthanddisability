@@ -25,9 +25,7 @@
 						
 						<h4 class="heading-small">Can {{customer.name.first}} go up or down 2 steps without help, if they use a handrail?</h4>
 						<p>No</p>
-						
-						<h4 class="heading-small">Justification:</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
 					</div>   
 
 				
@@ -36,37 +34,35 @@
 					
 						<tbody>
 							<tr>
-								<td>{{customer.name.first}} goes to the shop each morning, he goes alone.</td>
+								<td>{{customer.name.first}}'s bedroom is upstairs</td>
 							</tr>
 							<tr>
-								<td>Lives in a top floor flat without access to a lift.</td>
+								<td>She does not sleep due to stress, restless legs, pain</td>
 							</tr>
 							<tr>
-								<td>Walks up and down 4 flights of stairs when going outside.</td>
+								<td>She has to sit wash due to the pain in her legs</td>
 							</tr>
 							<tr>
-								<td>{{customer.name.first}} goes to the shop each morning, he goes alone.</td>
+								<td>In the winter she needs assistance to put socks on</td>
 							</tr>
 							<tr>
-								<td>Lives in a top floor flat without access to a lift.</td>
+								<td>She mobilises with her electric scooter</td>
 							</tr>
 							<tr>
-								<td>Walks up and down 4 flights of stairs when going outside.</td>
+								<td>She is able to walk for around 5 minutes at a slow pace with the aid of a walking stick</td>
 							</tr>
 							<tr>
-								<td>{{customer.name.first}} goes to the shop each morning, he goes alone.</td>
+								<td>She is able to use the stairs doing one step at a time, she will not need to stop. She will use a stair lift at home but when she is out will use a walking stick</td>
 							</tr>
 							<tr>
-								<td>Lives in a top floor flat without access to a lift.</td>
+								<td>She will go shopping with her sister. Once every 2 weeks</td>
 							</tr>
 							<tr>
-								<td>Walks up and down 4 flights of stairs when going outside.</td>
+								<td>Able to cross the road independently and safely</td>
 							</tr>
 							
 						</tbody>
 					</table>
-					
-					 
 					
 
 					
@@ -102,8 +98,24 @@
 			    <!-- Re-score -->
 			    <div class="panel js-hidden" id="scorenow">		    
 			    	<div class="form-group">
-			    		<label class="form-label" for="rescore">Enter your score:</label>
-						<input type="text" class="form-control" id="rescore">	
+			    		 <div class="multiple-choice">
+					      <input id="score1" name="scoring" type="radio" value="0">
+					      <label for="score1">0</label>
+					    </div>
+			
+					    <div class="multiple-choice">
+					      <input id="score2" name="scoring" type="radio" value="3">
+					      <label for="score2">3</label>
+					    </div>	
+					    <div class="multiple-choice">
+					      <input id="score3" name="scoring" type="radio" value="9" checked="checked">
+					      <label for="score3">9</label>
+					    </div>
+			
+					    <div class="multiple-choice">
+					      <input id="score4" name="scoring" type="radio" value="15">
+					      <label for="score4">15</label>
+					    </div>
 			    	</div>	
 			    	<div>
 			    		<label class="form-label" for="dmreasonrescore">Reason:</label>

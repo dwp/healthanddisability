@@ -41,7 +41,7 @@
 	    	<section class="card">
 						<a href="/{{path}}/assessment/{{customer._id}}/evidence/illnessEffects">
 	    		<h2 class="heading-small">
-						<span class="font-small card-header">Review </span>Illnesses and conditions 
+						<span class="font-small card-header">Review </span>Medical conditions 
 						{% if data['illnessVisited']==='illnessVisited'%}
 						<span class="badge">Reviewed</span>
 						{% endif %}	
@@ -124,7 +124,7 @@
 	    	<section class="card">
 					<a href="mentalHealthAssessment">
 	    		<h2 class="heading-small">
-							<span class="font-small card-header">Review </span>Mental health
+							<span class="font-small card-header">Review </span>Mental state examination
 							{% if data['mentalVisited']==='mentalVisited'%}
 							<span class="badge">Reviewed</span>
 							{% endif %}	
@@ -134,6 +134,25 @@
 	    		<span class="heading-xlarge">
 	    			{{mentalHealthCount}}
             {{ '0' if not mentalHealthCount }}
+	    		</span>
+	    		</p>
+	    		</a>
+	    	</section>
+	    	
+	    	
+	    	<section class="card">
+						<a href="observedBehaviourEdit">
+	    		<h2 class="heading-small">
+						<span class="font-small card-header">Review </span>Observed behaviour	 
+						{% if data['observedVisited']==='observedVisited'%}
+						<span class="badge">Reviewed</span>
+						{% endif %}	
+	    		</h2>
+	    		<p>Statements:
+	    		<span class="heading-xlarge">
+            {{observedBehaviourComments.length}}
+            {{ '0' if not observedBehaviourComments }}
+	    			
 	    		</span>
 	    		</p>
 	    		</a>

@@ -41,6 +41,10 @@ router.get('*', function (req, res, next) {
   if(!req.session.data.typicalDayComments){
     req.session.data.typicalDayComments = [];
   }
+  if(!req.session.data.observedBehaviourComments){
+    req.session.data.observedBehaviourComments = [];
+  }
+ 
 
   if(!req.session.data.observations){
     req.session.data.observations = [];
@@ -120,6 +124,10 @@ router.post('*', function (req, res, next) {
   if(!req.session.data.typicalDayComments){
     req.session.data.typicalDayComments = [];
   }
+  
+  if(!req.session.data.observedBehaviourComments){
+    req.session.data.observedBehaviourComments = [];
+  }
 
 
   if(!req.session.data.conditionComments){
@@ -183,6 +191,7 @@ router.get('/clearSession',function(req, res, next) {
   observations = [];
   req.session.data.socialWorkComments = [];
   req.session.data.typicalDayComments = [];
+  req.session.data.observedBehaviourComments = [];
   req.session.data.conditionComments = [];
   nug_id = 0;
   res.send("success");
@@ -691,6 +700,14 @@ router.get('/assessment/:customerId/evidence/typicalDayEdit/:commentId', functio
   
 });
 
+router.get('/assessment/:customerId/evidence/observedBehaviourEdit/:commentId', function(req, res, next){  
+  res.locals.comment = req.session.data.observedBehaviourComments.filter(item => item.id === req.params.commentId)[0];
+
+
+  res.render(viewPath +'/assessment/evidence/contentEditDay');
+  
+});
+
 
 
 router.post('/assessment/:customerId/evidence/typicalDayEdit', function(req, res, next){  
@@ -705,6 +722,20 @@ router.post('/assessment/:customerId/evidence/typicalDayEdit', function(req, res
   next()
   
 });
+
+router.post('/assessment/:customerId/evidence/observedBehaviourEdit', function(req, res, next){  
+  
+  req.session.data.observedBehaviourComments.map(function(item){
+    if(item.id === req.body.id){
+      item.comment = req.body.comment;
+    }
+  })
+  console.log(req.session.data.observedBehaviourComments);
+  
+  next()
+  
+});
+
 
 
 router.get('/assessment/:customerId/evidence/socialWorkHistoryEdit/:commentId', function(req, res, next){  
@@ -789,6 +820,27 @@ router.post('/assessment/:customerId/evidence/typicalDay', function(req, res, ne
 
 });
 
+router.post('/assessment/:customerId/evidence/observedBehaviour', function(req, res, next){  
+  if(req.body.delete == "true"){
+     req.session.data.observedBehaviourComments = req.session.data.observedBehaviourComments.filter(item => item.id != req.body.id);
+
+  } else {
+
+    req.session.data.observedBehaviourComments.push({
+      id: crypto.randomBytes(16).toString("hex"),
+      comment: req.body.comments,
+      time: moment().format()
+    });
+
+    res.locals.comments = req.session.data.observedBehaviourComments;
+  }
+  next()
+
+});
+
+
+
+
 
 router.post('/assessment/:customerId/evidence/conditionHistoryNew', function(req, res, next){  
   if(req.body.delete == "true"){
@@ -818,6 +870,12 @@ router.get('/assessment/:customerId/evidence/typicalDay', function(req, res, nex
   res.locals.comments = req.session.data.typicalDayComments;
   next()
 });
+
+router.get('/assessment/:customerId/evidence/observedBehaviour', function(req, res, next){  
+  res.locals.comments = req.session.data.observedBehaviourComments;
+  next()
+});
+
 
 router.get('/assessment/:customerId/evidence/conditionHistoryNew', function(req, res, next){  
   res.locals.comments = req.session.data.conditionComments;

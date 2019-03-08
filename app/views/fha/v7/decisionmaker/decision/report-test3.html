@@ -85,12 +85,45 @@
   <div class="column-third">
 
   	<div class="descriptor-scored">
+  	
+  	       {% if data['scoring3'] %}
+  	       
+  	       <div class="score-display scored-display">
+				<h2><span>Scored</span>
+				{% if data['scoring3']=='0' %}
+				0
+				{% elif data['scoring3']=='3' %}
+				3
+				{% elif data['scoring3']=='9' %}
+				9
+				{% elif data['scoring3']=='15' %}
+				15
+				{% else %}
+				9
+				{% endif %}
+				</h2>
+			</div>
+  	       
+  	       {% else %}
 		
 			<div class="score-display">
-				<h2><span>Recommended points</span>3</h2>
+				<h2><span>Recommended points</span>
+				{% if data['scoring3']=='0' %}
+				0
+				{% elif data['scoring3']=='3' %}
+				3
+				{% elif data['scoring3']=='9' %}
+				9
+				{% elif data['scoring3']=='15' %}
+				15
+				{% else %}
+				9
+				{% endif %}
+				</h2>
 			</div>
+			{% endif %}
 			
-			<form class="decision-mode">
+			<form class="decision-mode" action="/{{path}}/decisionmaker/{{customer._id}}/decision/report-test-overview" method="post">
 			<fieldset>
 				<legend class="form-label-bold mb10">Make your decision:</legend>
 				
@@ -109,25 +142,41 @@
 			    <!-- Re-score -->
 			    <div class="panel js-hidden" id="scorenow">		    
 			    	<div class="form-group">
-			    		<label class="form-label" for="rescore">Enter your score:</label>
-						<input type="text" class="form-control" id="rescore">	
+			    		 <div class="multiple-choice">
+					      <input id="score1" name="scoring3" type="radio" value="0">
+					      <label for="score1">0</label>
+					    </div>
+			
+					    <div class="multiple-choice">
+					      <input id="score2" name="scoring3" type="radio" value="3"  checked="checked">
+					      <label for="score2">3</label>
+					    </div>	
+					    <div class="multiple-choice">
+					      <input id="score3" name="scoring3" type="radio" value="9">
+					      <label for="score3">9</label>
+					    </div>
+			
+					    <div class="multiple-choice">
+					      <input id="score4" name="scoring3" type="radio" value="15">
+					      <label for="score4">15</label>
+					    </div>
 			    	</div>	
 			    	<div>
 			    		<label class="form-label" for="dmreasonrescore">Reason:</label>
-						<textarea name="dmreasonrescore" class="form-control form-control-3-4" rows="3" style="width: 98%;"></textarea>	
+						<textarea name="dmreasonrescore3" class="form-control form-control-3-4" rows="3" style="width: 98%;"></textarea>	
 			    	</div>
 			    </div>
 			    <!-- // Re-score -->
 			    
 			    <div class="multiple-choice" data-target="rework">
-			      <input id="face2face" name="whatcando" type="radio" value="No">
-			      <label for="face2face">Rework required</label>
-			    </div>
+					      <input id="score5" name="whatcando" type="radio" value="rework">
+					      <label for="score5">Rework required</label>
+					    </div>
 			    
 			    <!-- Re-score -->
 			    <div class="panel js-hidden" id="rework">		    
 			    	<label class="form-label" for="dmreasonrescore">Reason:</label>
-					<textarea name="dmreasonrescore" class="form-control form-control-3-4" rows="3" style="width: 98%;"></textarea>	
+					<textarea name="dmreasonrescore3" class="form-control form-control-3-4" rows="3" style="width: 98%;"></textarea>	
 			    </div>
 			    <!-- // Re-score -->
 			    
@@ -136,7 +185,7 @@
 			
 			  </div><!-- form-group -->
 			  <div class="form-group">
-			    <a href="report-test-overview" class="button">Save and continue</a>
+			    <button class="button">Save and continue</button>
 			  </div><!-- form-group -->
 			  
 			</fieldset>
