@@ -41,14 +41,53 @@
 							<tr>
 								<td>Standing and sitting</td>
 								<td>9</td>
-								<td><span class="badge">3</span></td>
+								<td><span class="badge">{% if data['scoring']=='0' %}
+															0
+															{% elif data['scoring']=='3' %}
+															3
+															{% elif data['scoring']=='9' %}
+															9
+															{% elif data['scoring']=='15' %}
+															15
+															{% else %}
+															9
+															{% endif %}
+							</span>
+					</td>
 								<td class="reasons">Reason for rescore captured earlier would appear here.</td>
 							</tr>
 							<tr>
-								<td>Eating and drinking</td>
+								<td><a href="report-test3">Eating and drinking</a></td>
 								<td>3</td>
-								<td><span class="badge warning">Rework</span></td>
-								<td class="reasons">Insufficient detail to back up the recommended points.</td>
+								<td> 
+								
+								
+							   
+								
+															{% if data['whatcando']=='rework' %}
+															<span class="badge warning">Rework</span></td>
+															{% elif data['whatcando']=='Yes' %}
+															3
+								                            {% elif data['scoring3']=='0' %}
+															<span class="badge">0</span>
+															{% elif data['scoring3']=='3' %}
+															<span class="badge">3</span>
+															{% elif data['scoring3']=='9' %}
+															<span class="badge">9</span>
+															{% elif data['scoring3']=='15' %}
+															<span class="badge">15</span>
+												
+															{% endif %}
+															
+														
+															
+															
+															
+															
+								<td class="reasons">
+								
+								
+								Insufficient detail to back up the recommended points.</td>
 							</tr>
 														
 						</tbody>

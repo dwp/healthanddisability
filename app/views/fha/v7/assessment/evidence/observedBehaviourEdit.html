@@ -17,11 +17,11 @@
   <div class="column-full">
   
   
-<p class="no-kdBar"><a href="medical_assessment_dashboard" class="link-back">Back</a></p>
+<p class=""><a href="medical_assessment_dashboard" class="link-back">Back</a></p>
   
   
   
-  <h1 class="heading-large mt20"><span class="heading-secondary">Review</span>Social and work history</h1>
+  <h1 class="heading-large mt20"><span class="heading-secondary">Review</span>Observed behaviour</h1>
     <form class="form" id="add_ev">
 
 
@@ -29,44 +29,39 @@
         <div class="chat-layout">
 
 
-    {% for item in socialWorkComments | sortBy("time",true) %}
+    {% for item in observedBehaviourComments | sortBy("time",true) %}
   
       <div class="tag-box">
       
         <div class="tag-text">{{ item.comment }}</div>
         
         <div class="edit-item">
-       		<a href="socialWorkHistoryEdit/{{item.id}}" class="button secondary">Edit</a>
-       		
-       	
+          <a href="observedBehaviourEdit/{{item.id}}" class="button secondary">Edit</a>
+          
+        
        </div>
        
       </div>
         
     {% endfor %}
-
     
   </div>
     </form>
     
     
-   
+    <form action="medical_assessment_dashboard" method="POST" class="form">
 
 
-		 
-		<form action="medical_assessment_dashboard" method="POST" class="form">
-
-
-	<p class="mt30"><button class="button">Finish reviewing</button></p>
-	
-  {% if customer.status == 'Ready for recommendation' %}
-	<div class="multiple-choice" style="display:none">
-						        <input id="radio-inline-4" type="radio" name="socialVisited" value="socialVisited" checked>
-						          
-						        <label for="radio-4">hidden radio one</label>
-						      </div>
-  {% endif %}
-	</form>
+        <p class="mt30"><button class="button">Finish reviewing</button></p>
+        
+        {% if customer.status == 'Ready for recommendation' %}
+        <div class="multiple-choice" style="display:none">
+                          <input id="radio-inline-4" type="radio" name="observedVisited" value="observedVisited" checked>
+                            
+                          <label for="radio-4">hidden radio one</label>
+                        </div>
+        {% endif %}
+        </form>
    
   </div><!-- column -->
 

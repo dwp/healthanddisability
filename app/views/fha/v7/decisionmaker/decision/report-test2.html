@@ -109,8 +109,24 @@
 			    <!-- Re-score -->
 			    <div class="panel js-hidden" id="scorenow">		    
 			    	<div class="form-group">
-			    		<label class="form-label" for="rescore">Enter your score:</label>
-						<input type="text" class="form-control" id="rescore">	
+			    		 <div class="multiple-choice">
+					      <input id="score1" name="scoring" type="radio" value="0">
+					      <label for="score1">0</label>
+					    </div>
+			
+					    <div class="multiple-choice">
+					      <input id="score2" name="scoring" type="radio" value="3">
+					      <label for="score2">3</label>
+					    </div>	
+					    <div class="multiple-choice">
+					      <input id="score3" name="scoring" type="radio" value="9" checked="checked">
+					      <label for="score3">9</label>
+					    </div>
+			
+					    <div class="multiple-choice">
+					      <input id="score4" name="scoring" type="radio" value="15">
+					      <label for="score4">15</label>
+					    </div>
 			    	</div>	
 			    	<div>
 			    		<label class="form-label" for="dmreasonrescore">Reason:</label>
