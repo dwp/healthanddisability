@@ -33,7 +33,7 @@
 			                    </legend>
 			                    <div class="multiple-choice">
 			                        <input id="caller-customer" type="radio" name="caller" value="customer" >
-			                        <label for="caller-customer">{{customer.name.fullName}}</label>
+			                        <label for="caller-customer">{% if customer.name.first == 'Deena' %} Richard Smith {% else %}{{customer.name.fullName}} {% endif %}</label>
 			                    </div>
 			                  <!--  <div class="multiple-choice">
 			                        <input id="caller-appointee" type="radio" name="caller" value="appointee" >

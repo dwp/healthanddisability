@@ -28,7 +28,26 @@
 			          
 			          <div class="grid-row">
 			          	<div class="column-two-thirds">
-			         
+										{% if customer.name.first == 'Deena' %}
+                     <h2 class="heading-medium">Appointee details</h2>
+											<dl class="govuk-check-your-answers cya-questions-short">
+			
+													<div>
+															<dt class="cya-question">Name</dt>
+															<dd class="cya-answer">Richard Smith</dd>
+													</div>
+									
+													<div>
+															<dt class="cya-question">Address</dt>
+															<dd class="cya-answer">{{customer.address.street}}
+																	<br> {{customer.address.city}}
+																	<br> {{customer.address.postcode}}
+																	</dd>
+													</div>
+											</dl>
+
+									<h2 class="heading-medium">Claimant details</h2>
+									{% endif %}
 			            <dl class="govuk-check-your-answers cya-questions-short">
 			
 			                <div>

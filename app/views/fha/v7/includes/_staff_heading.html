@@ -12,7 +12,7 @@
       	</div> -->
       	
         <h1 class="heading-xlarge"><span>Customer details</span>{{customer.name.fullName}}</h1>
-        <p><span class="visually-hidden">National insurance number</span>{{customer.NINO}}</p>
+        <p class="mb20"><span class="visually-hidden">National insurance number</span>{{customer.NINO}}</p>
        
       </div><!-- column -->
       
@@ -47,15 +47,18 @@
 			  		</div>
 			  </div>
 			</details> -->
-		  		
-		  
+			{% if customer.name.first == 'Deena' %}
+		  	<div class="header-identifiers">
+					<p class="badge">Has appointee</p>
+					<!--<p class="badge support-item">Terminally ill</p>-->
+				</div>
+			{% elif customer.status == 'Security booked' %} 		
+			{% else %}
 			<div class="header-identifiers">
 	      		<p class="badge">Control measures in place</p>
 	      		<!--<p class="badge support-item">Terminally ill</p>-->
 		  	  </div>
-		  	  
-		  </div>
-		  
+		  {% endif %}
 		  
         	
       </div><!-- / column half -->

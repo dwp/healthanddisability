@@ -91,22 +91,18 @@
     <div class="column-half"> 
         <div class="card-single">
            
-          <h2 class="heading-small link">
-              <a href="/fha/v6/booking/{{customer._id}}/appointment-history">
-            View appointment history
-          </a>
+          <h2 class="heading-small">
+          
+            Appointment history
+          
           </h2>
       
             <div class="inner">
               {% if customer.name.first == 'Arnaq'%}
              
                   <h3 class="heading-small mb10">
-                    {% if data['confirmfta']=="Arnaq" and customer.name.first == 'Arnaq' %}
-                   
-                    Failed to attend:
-                    {% else %}
-                    Did not attend:
-                    {% endif %} Standard appointment</h3>
+                    Contact reason
+                  </h3>
                     
             
                   
@@ -130,6 +126,11 @@
               </p>
 
               {% endif %}
+              <p>  
+                <a href="/fha/v7/booking/{{customer._id}}/appointment-history">
+                View appointment history
+              </a>
+            </p>
               </div>
 
     </div>

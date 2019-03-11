@@ -20,12 +20,15 @@
     
     	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
 		
-		
 			
+		{% if customer.status == 'Ready for assesment'%}
+	   	<form  method="post" action="/{{path}}/assessment/{{customer._id}}/appointment">
+	{% else%}
 		
-	
-		   <form  method="post" action="/{{path}}/assessment/{{customer._id}}/appointment">
-			
+				<form  method="post" action="/{{path}}/booking/{{customer._id}}/appointment">
+	{% endif %}		
+
+
 	
 		<h1 class="heading-large">Appointment preferences</h1>
 		

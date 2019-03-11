@@ -1,13 +1,15 @@
 					  <!-- Location picker -->
             <div class="">
-                <label class="form-label-bold" for="location-select-dropdown">
-                    {% if customer.name.first == 'Dominguez'%}
-                    Choose a new complex neuro appointment 
-                     {% else%}
-                     Choose a none neuro appointment 
-                     {% endif%}
+                <label class="form-label-bold mt20" for="location-select-dropdown">
+                    
+                     Search for an appropriate appointment 
+                  
                   <span class="form-hint mt5 mb5">
-                      For example Monday {{ 'Do MMMM' | baseDateAdd(1) }} 1pm
+                      {% if customer.name.first == 'Mcconnell' %}
+                        For example Thursday 14th March 1pm
+                      {% else %}
+                      For example type {{ 'dddd Do MMMM' | baseDateAdd(8) }} 1pm
+                      {% endif %}
                       </span>
                 </label>
                 <div class="form-control-1-2">
