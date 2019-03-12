@@ -52,6 +52,11 @@
 					<p class="badge">Has appointee</p>
 					<!--<p class="badge support-item">Terminally ill</p>-->
 				</div>
+				{% elif customer.name.first == 'Dominguez' %} 	
+				<div class="header-identifiers">
+					<p class="badge">Control measures in place</p>
+					<!--<p class="badge support-item">Terminally ill</p>-->
+				</div>
 			{% elif customer.status == 'Security booked' %} 		
 			{% else %}
 			<div class="header-identifiers">

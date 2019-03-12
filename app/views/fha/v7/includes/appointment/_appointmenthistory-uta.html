@@ -3,7 +3,7 @@
     {% if customer.name.first == 'Lowery' and data['appointments']==="yes" %}   
 
     <div class="latest_version">
-            <h2 class="heading-medium mt0">Current: None neuro appointment</h2>
+            <h2 class="heading-medium mt0">Current: Non neuro appointment</h2>
                 <p>Appointment details</p>
                 <ul class="list-bullet">
                  <li>{{ 'dddd Do MMMM' | baseDateAdd(14) }}</li> 
@@ -15,7 +15,7 @@
                         </div>
         
         
-            <h2 class="heading-medium">Cancelled: None neuro appointment</h2>
+            <h2 class="heading-medium">Cancelled: Non neuro appointment</h2>
             <p>Appointment details</p>
             <ul class="list-bullet">
                 <li>Tuesday 19th March</li> 
@@ -33,7 +33,7 @@
 
 {% elif data['appointments']==="yes" %}
 <div class="latest_version">
-    <h2 class="heading-medium mt0">Current: None neuro appointment</h2>
+    <h2 class="heading-medium mt0">Current: Non neuro appointment</h2>
         <p>Appointment details</p>
         <ul class="list-bullet">
          <li>{{ 'dddd Do MMMM' | baseDateAdd(14) }}</li> 
@@ -45,7 +45,7 @@
                 </div>
 
 
-    <h2 class="heading-medium">Cancelled: None neuro appointment</h2>
+    <h2 class="heading-medium">Cancelled: Non neuro appointment</h2>
     <p>Appointment details</p>
     <ul class="list-bullet">
         <li>{{ 'dddd Do MMMM' | baseDateAdd(7) }}</li> 
@@ -64,7 +64,7 @@
 
 {% else %}
 <div class="latest_version">
-    <h2 class="heading-medium mt0">Current: None neuro appointment</h2>
+    <h2 class="heading-medium mt0">Current: Non neuro appointment</h2>
         <p>Appointment details</p>
         <ul class="list-bullet">
          <li>{% if customer.name.first == 'Mcconnell' %} Friday 15th March
@@ -81,7 +81,7 @@
 </div>
 {% if customer.name.first =='Dominguez' or customer.name.first =='Lowery' or customer.name.first =='Christie'  %}
 {% else %}
-<h2 class="heading-medium">Cancelled: None neuro appointment</h2>
+<h2 class="heading-medium">Cancelled: Non neuro appointment</h2>
 <p>Appointment details</p>
 <ul class="list-bullet">
     <li>{{ 'dddd Do MMMM' | baseDate(5) }}</li> 

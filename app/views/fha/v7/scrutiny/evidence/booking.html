@@ -4,21 +4,97 @@
 {% block case_content %}
 
    <p class="no-kdBar"> <a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+<div class="grid-row">
+<div class="column-two-thirds">
 
 <h1 class="heading-large">Appointment referral</h1>
 <form class="form" action="/{{ path }}/scrutiny/{{customer._id}}/booking-post" method="post">
-  
-  <fieldset>
-  <legend class="heading-small mb5">Reason for a face to face appointment:</legend>
-  
-  <div class="form-group">
-	  <label class="visually-hidden" for="reason">
-	  	Appointment needed because:
-	  </label>
-	  <textarea class="form-control form-control-2-4" name="reason" rows="6"></textarea>
-	  
-	 
-  </div> 
+	
+	<h2 class="heading-medium mb0">Recorded evidence</h2>
+
+	<table>
+		<tr>
+			<td>UC 50</td>
+		</tr>
+		<tr>
+			<td>GP Report</td>
+		</tr>
+		<tr>
+			<td>MED 3</td>
+		</tr>
+	</table>
+
+
+	<div class="form-group mt30">
+		<fieldset class="inline">
+
+			<legend class="heading-medium">Have you considered all the evidence above to make your recomendation?</legend>
+
+	
+
+			<div class="multiple-choice">
+				<input id="radio-neuro1" type="radio" name="radio-evidence" value="standard">
+				<label for="radio-neuro1">Yes</label>
+			</div>
+			<div class="multiple-choice" data-target="evidence-no" >
+				<input id="radio-neuro2" type="radio" name="radio-evidence" value="neuro">
+				<label for="radio-neuro2">No</label>
+			</div>
+
+			<div class="panel js-hidden" id="evidence-no" aria-hidden="false">
+			  
+	<fieldset class="block">
+					
+			<legend class="heading-small">Choose the evidence you have considered</legend>
+	
+			<div class="multiple-choice">
+				<input id="des1" type="checkbox" name="evidence" value="gp">
+				<label for="des1">UC 50</label>
+			</div>
+	
+		<div class="multiple-choice">
+				<input id="des2" type="checkbox" name="evidence" value="uc50">
+				<label for="des2">Factual report</label>
+			</div>
+			
+			<div class="multiple-choice">
+				<input id="des3" type="checkbox" name="evidence" value="report">
+				<label for="des3">MED 3</label>
+			</div>
+			
+	</fieldset>
+		 </div>
+
+		</fieldset>
+</div>
+
+
+<div class="form-group">
+	<fieldset>
+					
+		<legend class="heading-medium">Why does {{customer.name.first}} need a  physical examination?</legend>
+
+		<div class="multiple-choice">
+			<input id="des1" type="radio" name="evidence" value="gp">
+			<label for="des1">The evidence we already have is not enough to determine the level of disability</label>
+		</div>
+
+	<div class="multiple-choice">
+			<input id="des2" type="radio" name="evidence" value="uc50">
+			<label for="des2">We need an assessment to determine the level of function</label>
+		</div>
+		
+		<div class="multiple-choice">
+			<input id="des3" type="radio" name="evidence" value="report">
+			<label for="des3">We requested further medical evidence  but it has not been returned</label>
+		</div>
+		
+</fieldset>
+
+</div>
+
+
+
 		  
 
 		  
@@ -26,20 +102,28 @@
 		     <div class="form-group">
 			    <fieldset>
 			
-			      <legend class="heading-small mb5">Type of appointment</legend>
+			      <legend class="heading-medium">Type of appointment</legend>
 			
 			      <div class="multiple-choice">
 			        <input id="radio-neuro1" type="radio" name="radio-types-skill" value="standard">
 			        <label for="radio-neuro1">Standard</label>
 			      </div>
-			      <div class="multiple-choice">
+			      <div class="multiple-choice" data-target="neuro" >
 			        <input id="radio-neuro2" type="radio" name="radio-types-skill" value="neuro">
 			        <label for="radio-neuro2">Neuro</label>
-			      </div>
-			      <div class="multiple-choice">
+						</div>
+						<div class="panel js-hidden" id="neuro" aria-hidden="false">
+							<label class="form-label" for="issue2open-comments">Justification</label>
+							<textarea class="form-control form-control-3-4" name="issue2opencomments" id="issue2opencomments" rows="2"></textarea>
+					 </div>
+			      <div class="multiple-choice" data-target="complex">
 			        <input id="radio-neuro3" type="radio" name="radio-types-skill" value="complex">
 			        <label for="radio-neuro3">Complex neuro</label>
-			      </div>
+						</div>
+						<div class="panel js-hidden" id="complex" aria-hidden="false">
+							<label class="form-label" for="issue2open-comments">Justification</label>
+							<textarea class="form-control form-control-3-4" name="issue2opencomments" id="issue2opencomments" rows="2"></textarea>
+					 </div>
 			
 			    </fieldset>
 		  </div>
@@ -50,7 +134,8 @@
     <p class="mt20"> <a href="../timeline">Cancel</a></p>
   </div><!-- form-group -->
   
-  </fieldset>
-</form>
 
+</form>
+</div>
+</div>
 {% endblock %}
