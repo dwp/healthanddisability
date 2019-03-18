@@ -1,88 +1,10 @@
-{% if customer.name.first == 'Dominguez'%}
-  {% if customer.name.first == 'Dominguez' and data['Reason']==="unable" %}
-      <hr />
-  
-      <h2 class="heading-medium">Rearranged: Complex neuro appointment</h2>
-      <li>{{ 'Do MMMM YYYY' | baseDateAdd(1) }}</li>
-      <li>10:00am</li>
-      <li>Tresco House</li>
-      <h3 class="heading-small">Sent home</h3>
-      <p class="small">Healthcare professional is unable to continue (for example, a specialist is required)
-        <span class="date block mt10 text-secondary">{{customer | formatDate("D MMMM YYYY") }}</span>
-      </p>
-  {% endif %}
 
-  <hr />
-  
-      <h2 class="heading-medium">Rearranged: Standard appointment</h2>
-      <li>{{ 'Do MMMM YYYY' | baseDate(0) }}</li>
-      <li>11:00am</li>
-      <li>Tresco House</li>
-      <h3 class="heading-small">We have had to change the appointment</h3>
-      <p class="small">Accommodation problem (for example, power failure or evacuation)
-        <span class="date block mt10 text-secondary">{{ 'Do MMMM YYYY' | baseDate(12) }} | 1:30pm</span>
-      </p>
 
-      <hr />
-  
-      <h2 class="heading-medium">Rearranged: Standard appointment</h2>
-      <li>{{ 'Do MMMM YYYY' | baseDate(12) }}</li>
-      <li>11:00am</li>
-      <li>Tresco House</li>
-    </ul>
-      <h3 class="heading-small">Unable to attend</h3>
-      <p class="small">Dominguez requested to rearrange apointment because original appointment clashed with another appointment
-        <span class="date block mt10 text-secondary">{{ 'Do MMMM YYYY' | baseDate(17) }} | 11:15 am</span>
-      </p>
 
-      {% elif customer.name.first == 'Dillon'%}
+      
+      
     
-
-      {% if customer.name.first == 'Dillon' and data['book-next']==="yes" %}
-          <hr />
-      
-          <h2 class="heading-medium">Rearranged appointment</h2>
-          <h3 class="heading-small">Sent home</h3>
-          <p class="small">Dillon was unfit to be examined
-          <span class="date block mt10 text-secondary">{{customer | formatDate("D MMMM YYYY") }}</span>
-          </p>
-      {% endif %}
-      <hr />
-      
-          <h2 class="heading-medium">Rearranged appointment</h2>
-          <h3 class="heading-small">Assessment centre</h3>
-          <p class="small">Accommodation problem (for example, power failure or evacuation)
-            <span class="date block mt10 text-secondary">07 November 2018 | 10:15 am</span>
-          </p>
-      {% elif customer.name.first == 'Elvia' and data['scenario']==="wait" %}
-      <hr />
-      
-      <h2 class="heading-medium">Rearranged: Standard appointment</h2>
-      <ul class="list-bullet mt10 mb10">
-            <li>{{ 'Do MMMM YYYY' | baseDateAdd(15) }}</li>
-            <li>11:00am</li>
-            <li>Tresco House</li>
-          </ul>
-      <h3 class="heading-small">Customer request</h3>
-      <p class="small">{{ customer.name.first }} had waited less than 30 mins and did not want to wait any longer
-      <span class="date block mt10 text-secondary">{{customer | formatDate("D MMMM YYYY") }}</span>
-      </p>   
-      
-      {% elif customer.name.first == 'Sherry' and data['scenario']==="late" %}
-      <hr />
-      
-      <h2 class="heading-medium">Rearranged: Standard appointment</h2>
-      <ul class="list-bullet mt10 mb10">
-            <li>{{ 'Do MMMM YYYY' | baseDateAdd(15) }}</li>
-            <li>11:00am</li>
-            <li>Tresco House</li>
-          </ul>
-      <h3 class="heading-small">Sent home</h3>
-      <p class="small">{{customer.name.first}}  arrived 35mins late and been waiting 20mins
-      <span class="date block mt10 text-secondary">{{customer | formatDate("D MMMM YYYY") }}</span>
-      </p>   
-
-      {% elif customer.name.first == 'Pacheco' and data['scenario']==="know-2" %}
+      {% if customer.name.first == 'Pacheco' and data['scenario']==="know-2" %}
       <hr />
       
       <h2 class="heading-medium">Rearranged: Standard appointment</h2>
@@ -154,20 +76,84 @@
          </div>
        
          {% endif %}
+
+
+            <div class="latest_version">
+            <h2 class="heading-medium mt0">Current: 
+                {% if data['Reason']==="complex"%}
+                Complex neuro
+                {% elif data['Reason']==="neuro"%}
+                Neuro
+                {% else%}
+                Non neuro
+                {% endif %} appointment</h2>
+                <p>Appointment details</p>
+                <ul class="list-bullet">
+                 <li>
+                   
+                    {% if data['scenario'] %}
+                  
+                    {{ 'dddd Do MMMM YYYY' | baseDateAdd(14) }}
+                    {% else%}
+                       
+                    {{ 'dddd Do MMMM YYYY' | baseDate(0) }}
+                  {% endif %}
+                 </li> 
+                 <li>11:00am</li>  
+                 <li>Tresco House</li> 
+                </ul>
+        
+          
+              </div>
+
+     {% if data['scenario'] %}
+      <hr />
       
-         <h2 class="heading-medium">Cancelled: Standard appointment</h2>
+      <h2 class="heading-medium">Cancelled: Non neuro appointment</h2>
+      <p>Appointment details</p>
+      <ul class="list-bullet mt10 mb10">
+            <li>{{ 'dddd Do MMMM YYYY' | baseDateAdd(0) }}</li>
+            <li>11:00am</li>
+            <li>Tresco House</li>
+          </ul>
+      <h3 class="heading-small">Cancellation reason</h3>
+      <p class="small">
+    
+        {% if data['scenario']==="wait"%}
+        {{ customer.name.first }} had waited less than 30 mins and did not want to wait any longer
+        {% elif data['scenario']==="late" %}
+        {{customer.name.first}} arrived 15mins late and waited 10mins
+        {% elif data['scenario']==="unfit" %}
+        {{customer.name.first}} was unfit to be examined <span class="mt10 block"> {{unfitdetail}} </span>
+        {% elif data['scenario']==="special" %}
+        {{customer.name.first}} has a new special need
+        {% elif data['scenario']==="know-2" %}
+        Number of claimants in attendance exceeds medical capacity
+        {% elif data['scenario']==="know-3" %}
+        A specialist healthcare professional is required and must be booked
+        {% else %}
+        {{reason}}
+        {% endif%}
+      <span class="date block mt10 text-secondary">Recorded date: {{customer | formatDate("D MMMM YYYY") }} - 11:25 am / Joan Baker / Tresco house assessment centre</span>
+      </p>   
+      <hr />
+      {% endif%}
+
+
+      
+         <h2 class="heading-medium">Cancelled: Non neuro appointment</h2>
          <p>Appointment details</p>
          <ul class="list-bullet">
-             <li>{{ 'Do MMMM YYYY' | baseDate(15) }}</li> 
+             <li>{{ 'dddd Do MMMM YYYY' | baseDate(15) }}</li> 
              <li>11:00am</li>  
              <li>Tresco House</li> 
               </ul>
 
               <h3 class="heading-small">Cancellation reason</h3>
-              <p class="small">Reason: Original appointment clashed with another
+              <p class="small">Original appointment clashed with another
                 
    
-           <span class="date block mt10 text-secondary">Recorded date: {{ 'Do MMMM YYYY' | baseDate(25)}}</span>
+           <span class="date block mt10 text-secondary">Recorded date: {{ 'Do MMMM YYYY' | baseDate(25)}} - 2:56pm | Paul Smith | Cardiff contact centre</span>
          </p> 
 
 

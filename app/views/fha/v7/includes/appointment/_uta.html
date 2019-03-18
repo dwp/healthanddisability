@@ -20,7 +20,7 @@
     </div>
     {% endif%}
 
-    {% if customer.name.first == 'Christie' and data['reason']%}
+    {% if customer.name.first == 'Christie' and data['reasoncirc']%}
     <div class="panel panel-warning mt20">
         <h3 class="heading-small">Change of circumstances</h3>
 
@@ -62,6 +62,15 @@
 
   <ul class="list-bullet mt10 mb10">
     <li>{{ 'dddd Do MMMM' | baseDateAdd(12) }}</li>
+    <li>11:00am</li>
+    <li>Tresco House</li>
+  </ul>
+
+  {% elif customer.name.first == 'Christie' and data['appointments']==="yes" %}
+  <!--<span class="badge">Updated</span>-->
+
+  <ul class="list-bullet mt10 mb10">
+    <li>Friday 12th April</li>
     <li>11:00am</li>
     <li>Tresco House</li>
   </ul>
@@ -170,7 +179,7 @@
       </h2>
      
 <div class="inner">
-            {% if customer.name.first == 'Deena' and data['changedByCustomer']==="yes" %}
+            {% if customer.name.first == 'Deena' and data['changedByCustomer']==="yes"  %}
        
               <h3 class="heading-small">Appointment cancelled</h3>
               <p class="small">{{changedByCustomerComments}}
@@ -186,7 +195,7 @@
                 </p>
            
            
-          {% elif customer.name.first == 'Dominguez' and data['appointments']==="yes" %}
+          {% elif customer.name.first == 'Dominguez' and data['appointments']==="yes" or customer.name.first == 'Christie' and data['appointments']==="yes" %}
         
             <h3 class="heading-small mb10">Cancelled appointment reason</h3>
             <p class="small">{{reason}}

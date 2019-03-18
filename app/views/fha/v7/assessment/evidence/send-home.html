@@ -1,174 +1,136 @@
-{% extends path+"/_layout-case-action.html" %}
+{% extends path1+"/_layout.html" %}
 
-{% block citizen_content %}
+{% block left_content %}
+ <p class="mt10 mb0 bold-small">Booked</p>
 
 
+ <hr>
+{% endblock %}
 
 
+{% block citizen_content %}	
+
+<form method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/send-home">
 <div class="container">
+    <div class="grid-row">
+        <div class="column-full">
+        <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+           
+        <div class="grid-row">
+            <div class="column-two-thirds">
+        <h1 class="heading-large">Cancel or rearrange appointment</h1>
 
+		{% if customer.name.first == 'Elvia' %}
+		<div class="panel panel-warning mb30">
+			<ul class="list-bullet">
+				<li>{{customer.name.first}} has been waiting less than 30 minutes</li>
+				<li>{{customer.name.first}} arrived on time</li>
+				<li>Longest wait time is currently over 30 minutes</li>
+			</ul>
+		</div>
+		{% endif%}
 
-	<div class="grid-row">
+		{% if customer.name.first == 'Sherry' %}
+		<div class="panel panel-warning mb30">
+			<p class="mb0">
+				{{customer.name.first}} arrived 15mins late and has been waiting 10mins
 
-
-
-
-
-
-		<div class="column-full">
-
-
-			<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
-
-
-
-			<h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Rearrange appointment</h1>
-			{% if customer.name.first == 'Elvia' %}
-			<div class="panel panel-info mb30">
-				<ul class="list-bullet">
-					<li>{{customer.name.first}} has been waiting less than 30 minutes</li>
-					<li>{{customer.name.first}} arrived on time</li>
-					<li>Longest wait time is currently over 30 minutes</li>
-				</ul>
-			</div>
-			{% endif%}
-
-			{% if customer.name.first == 'Sherry' %}
-			<div class="panel panel-info mb30">
-				<p class="mb0">
-					{{customer.name.first}} arrived 15mins late and has been waiting 10mins
-
-					<p>
-			</div>
-			{% endif%}
-
-			<form method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/send-home">
-
-
+				<p>
+		</div>
+		{% endif%}  
+							
+							<div class="form-group">
 
 				<fieldset>
-					<legend class="heading-medium mb10">
-						Why do we need to rearrange this appointment?
-					</legend>
-
-
-					<div class="multiple-choice">
-						<input id="wait" name="scenario" type="radio" value="wait" {{checked('scenario', 'wait') }}>
-						<label for="wait">{{customer.name.first}} does not want to wait any longer</label>
-					</div>
-
-					<div class="multiple-choice">
-						<input id="late" name="scenario" type="radio" value="late" {{checked('scenario', 'late') }}>
-						<label for="late">{{customer.name.first}} arrived late</label>
-					</div>
-
-
-					<div class="multiple-choice">
-						<input id="unfit" name="scenario" type="radio" value="unfit" {{checked('scenario', 'unfit') }}>
-						<label for="unfit">{{customer.name.first}} is unfit to be examined
-
-						</label>
-					</div>
-					<div class="multiple-choice">
-						<input id="know-3" name="scenario" type="radio" value="hcp" {{checked('scenario', 'special') }}>
-						<label for="know-3">{{customer.name.first}} has a new special need
-
-						</label>
-					</div>
-
-					<p class="form-block bold mt10 mb10">Or the healthcare professional cannot carry out the assessment</p>
-
-					<div class="multiple-choice">
-						<input id="know-3" name="scenario" type="radio" value="know-2" {{checked('scenario', 'know-2') }}>
-						<label for="know-3">More claimants waiting to be seen than available health care professionals</label>
-					</div>
-					<div class="multiple-choice">
-						<input id="know-3" name="scenario" type="radio" value="know-3" {{checked('scenario', 'know-3') }}>
-						<label for="know-3">A specialist healthcare professional is required and must be booked</label>
-					</div>
-
-					<div class="multiple-choice">
-						<input id="know-3" name="scenario" type="radio" value="know-8" {{checked('scenario', 'know-8') }}>
-						<label for="know-3">Inappropriate for health care professional to see claimant (for example they know them)</label>
-					</div>
-					<div class="multiple-choice">
-						<input id="know-3" name="scenario" type="radio" value="know-9" {{checked('scenario', 'know-9') }}>
-						<label for="know-3">Healthcare professional ill or called away</label>
-					</div>
-					<div class="multiple-choice">
-						<input id="know-3" name="scenario" type="radio" value="know-10" {{checked('scenario', 'know-10') }}>
-						<label for="know-3">Healthcare professional did not attend</label>
-					</div>
-					<div class="multiple-choice">
-							<input id="know-3" name="scenario" type="radio" value="know-14" {{checked('scenario', 'know-14') }}>
-							<label for="know-3">The claimant’s file was not available</label>
+						<legend class="heading-medium mb10">
+							Why do we need to cancel or rearrange this appointment?
+						</legend>
+	
+	
+						<div class="multiple-choice">
+							<input id="wait" name="scenario" type="radio" value="wait" {{checked('scenario', 'wait') }}>
+							<label for="wait">{{customer.name.first}} does not want to wait any longer</label>
+						</div>
+	
+						<div class="multiple-choice">
+							<input id="late" name="scenario" type="radio" value="late" {{checked('scenario', 'late') }}>
+							<label for="late">{{customer.name.first}} arrived late</label>
 						</div>
 
-					<p class="form-block bold mt10 mb10">Or building or Technology problems</p>	
-					<div class="multiple-choice">
-							<input id="know-3" name="scenario" type="radio" value="know-13" {{checked('scenario', 'know-13') }}>
-							<label for="know-3">Technology performance issues (for example, system down or too slow)</label>
-						</div>
-					<div class="multiple-choice">
-						<input id="know-3" name="scenario" type="radio" value="know-11" {{checked('scenario', 'know-11') }}>
-						<label for="know-3">Health and safety issues (for example, claimant unable to use emergency exits)</label>
-					</div>
-					<div class="multiple-choice">
-						<input id="know-3" name="scenario" type="radio" value="know-12" {{checked('scenario', 'know-12') }}>
-						<label for="know-3">Building problem (for example, evacuation)</label>
-					</div>
-				
+						<div class="multiple-choice"data-target="unfitreason">
+								<input id="unfit" name="scenario" type="radio" value="unfit" {{checked('scenario', 'unfit') }}>
+								<label for="unfit">{{customer.name.first}} is unfit to be examined
+		
+								</label>
+							</div>
 
-				
-                    <p class="form-block bold mt10 mb10">Or claimant requests not met</p>	
-					<div class="multiple-choice">
-						<input id="know-3" name="scenario" type="radio" value="know-4" {{checked('scenario', 'know-4') }}>
-						<label for="know-3">Claiment called in in error </label>
-					</div>
+							<div class="panel js-hidden" id="unfitreason" >	
+									<div class="form-group">
+											<label class="form-label-bold">Add more detail</label>
+											<textarea name="unfitdetail" class="form-control " style="height: 80px; width:100%; max-width:650px;">{{unfitdetail}}</textarea>
+									</div>        
+						   
+							 </div>
+							<div class="multiple-choice">
+								<input id="know-3" name="scenario" type="radio" value="special" {{checked('scenario', 'special') }}>
+								<label for="know-3">{{customer.name.first}} has a new special need
+		
+								</label>
+							</div>
 
-					<div class="multiple-choice">
-						<input id="know-3" name="scenario" type="radio" value="know-5" {{checked('scenario', 'know-5') }}>
-						<label for="know-3">Interpreter not provided</label>
-					</div>
-					<div class="multiple-choice">
-						<input id="know-3" name="scenario" type="radio" value="know-6" {{checked('scenario', 'know-6') }}>
-						<label for="know-3">Healthcare practitioner of same gender not provided</label>
-					</div>
-					<div class="multiple-choice">
-						<input id="know-3" name="scenario" type="radio" value="know-7" {{checked('scenario', 'know-7') }}>
-						<label for="know-3"> Audio recording equipment not provided</label>
-					</div>
+							<div class="multiple-choice">
+									<input id="know-3" name="scenario" type="radio" value="know-2" {{checked('scenario', 'know-2') }}>
+									<label for="know-3">More claimants waiting to be seen than available health care professionals</label>
+								</div>
+								<div class="multiple-choice">
+									<input id="know-3" name="scenario" type="radio" value="know-3" {{checked('scenario', 'know-3') }}>
+									<label for="know-3">A specialist healthcare professional is required and must be booked</label>
+								</div>
 
+								<div class="multiple-choice" data-target="anotherreason" >
+										<input id="know-4" name="scenario" type="radio" value="know-4" {{checked('scenario', 'know-4') }}>
+										<label for="know-4">Another reason</label>
+									</div>
 
-
-
-
-
-
+									<div class="panel js-hidden" id="anotherreason" >	
+											<div class="form-group">
+													<label class="form-label-bold">Add reason</label>
+													<textarea name="reason" class="form-control " style="height: 80px; width:100%; max-width:650px;">{{reason}}</textarea>
+											</div>        
+								   
+                                     </div>
+						
 				</fieldset>
+	
+							</div>
+                         
+                                    
+					
+								
+								</fieldset>
+				
 
+            <p class="mt30"><button class="button">Save and continue</button></p>
+        </div>
 
+    </div>
+</div>
+</div>
+</form>
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %}
 
-				<p class="mt30"><button class="button">Save and continue</button></p>
+{% block page_scripts %}
 
-			</form>
+{% include path+"/includes/appointment/_typaheadscript.html" %}
+  
 
+ 
+{% endblock %} 
 
-
-
-
-
-		</div><!-- row -->
-	</div><!-- container -->
-
-	{% endblock %}
-
-	{# {% block page_script %}
-	<script type="text/javascript">
-		$(document).ready(function () {
-			$('#status_status').combobox();
-			$('#app_adviser').combobox();
-			$('#app_team').combobox();
-		});
-	</script>
-	{% endblock %} #}
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}
