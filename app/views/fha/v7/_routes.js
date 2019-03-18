@@ -1737,23 +1737,6 @@ router.get('/assessment/:customerId/scoring/:pageName', function(req, res, next)
 
 
 
-
- router.post("/assessment/:customerId/start-assessment", function(req, res, next){
-  assessmentCustomers.map(customer => {
-    if(customer._id === req.params.customerId){
-
-      customer.status = "Assessment started";
-
-      delete req.session.data.type;
-
-      console.log(customer);
-    }
-  })
-
-  res.redirect(301, '/fha/v' + versionNumber +'/assessment/' + req.params.customerId + '/evidence/wca-index');
-
-}); 
-
 router.post("/assessment/:customerId/ready-for-recommendation", function(req, res, next){
   assessmentCustomers.map(customer => {
     if(customer._id === req.params.customerId){

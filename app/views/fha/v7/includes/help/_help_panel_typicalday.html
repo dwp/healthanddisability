@@ -55,28 +55,89 @@
 
 							<h3 class="heading-medium">Relevant descriptors</h3>
 
-    
-<ul class="list-bullet">
-    <li>Moving around and climbing steps without someone’s help</li>
-    <li>Standing, sitting and moving between the two</li>
-    <li>Reaching</li>
-    <li>Picking things up and moving them</li>
-    <li>Using your hands</li>
-    <li>Speaking, writing and typing</li>
-    <li>Hearing and reading</li>
-    <li>Seeing well enough to get around safely</li>
-    <li>Controlling your bowels and bladder</li>
-    <li>Staying conscious without fainting, seizures, or blackouts</li>
-    <li>Learning to do new tasks</li>
-    <li>Being aware of hazards and danger </li>
-    <li>Planning, starting and finishing everyday tasks</li>
-    <li>Coping with changes to your daily routine</li>
-    <li>Going out on your own</li>
-    <li>Meeting and being with people</li>
-    <li>Behaving appropriately around other people</li>
-    <li>Eating and drinking</li>
-</ul>
-
+                            {% if data['moving']==='moving' or data['standing']==='standing' or data['reaching']==='reaching' or data['picking']==='picking' or data['using']==='using'
+                            or data['speaking']==='speaking' or data['hearing']==='hearing' or data['seeing']==='seeing' or data['controlling']==='controlling' or data['staying']==='staying' %}
+                      
+                                <h4 class="heading-small">
+                                    Physical descriptors
+                                  </h4>
+                                <ul class="list-bullet">
+                                {% if data['moving']==='moving' %}
+                                  <li class="">Moving around and climbing steps without someone’s help</li>
+                                {% endif %}
+                                {% if data['standing']==='standing' %}
+                                  <li class="">Standing, sitting and moving between the two</li>
+                                {% endif %}
+                                {% if data['reaching']==='reaching' %}
+                                  <li class="">Reaching</li>
+                                {% endif %}
+                                {% if data['picking']==='picking' %}
+                                <li class="">Picking things up and moving them</li>
+                              {% endif %}
+                                {% if data['using']==='using' %}
+                                <li class="">Using your hands</li>
+                              {% endif %}
+                                {% if data['speaking']==='speaking' %}
+                                <li class="">Speaking, writing and typing</li>
+                              {% endif %}
+                              {% if data['hearing']==='hearing' %}
+                              <li class="">Hearing and reading</li>
+                            {% endif %}
+                            {% if data['seeing']==='seeing' %}
+                              <li class="">Seeing well enough to get around safely</li>
+                            {% endif %}
+                            {% if data['controlling']==='controlling' %}
+                              <li class="">Controlling your bowels and bladder</li>
+                            {% endif %}
+                            {% if data['staying']==='staying' %}
+                            <li class="">Staying conscious without fainting, seizures, or blackouts</li>
+                          {% endif %}
+                                </ul>
+                      
+                              {% endif %}
+                              {% if data['learning']==='learning' or data['being']==='being' or data['planning']==='planning' or data['coping']==='coping' or  data['going']==='going' or data['meeting']==='meeting' 
+                              or data['behaving']==='behaving' %}
+                      
+                                  <h4 class="heading-small">
+                                      Mental health descriptors
+                                    </h4>
+                                  <ul class="list-bullet">
+                                  {% if data['learning']==='learning' %}
+                                    <li class="">Learning to do new tasks</li>
+                                  {% endif %}
+                                  {% if data['being']==='being' %}
+                                    <li class="">Being aware of hazards and danger</li>
+                                  {% endif %}
+                                  {% if data['planning']==='planning' %}
+                                    <li class="">Planning, starting and finishing everyday tasks</li>
+                                  {% endif %}
+                                  {% if data['coping']==='coping' %}
+                                  <li class="">Coping with changes to your daily routine</li>
+                                {% endif %}
+                                {% if data['going']==='going' %}
+                                <li class="">Going out on your own</li>
+                              {% endif %}
+                              {% if data['meeting']==='meeting' %}
+                              <li class="">Meeting and being with people</li>
+                            {% endif %}
+                            {% if data['behaving']==='behaving' %}
+                              <li class="">Behaving appropriately around other people</li>
+                            {% endif %}
+                                  
+                                  </ul>
+                              
+                                {% endif %}
+                            
+                                {% if data['eating']==='eating' %}
+                             
+                                    <h4 class="heading-small">
+                                        Eating or drinking descriptor
+                                      </h4>
+                                    <ul class="list-bullet">
+                                      <li class="">Eating or drinking</li>
+                                    </ul>
+                           
+                                  {% endif %}
 
 
 	<!-- <details class="mt10">

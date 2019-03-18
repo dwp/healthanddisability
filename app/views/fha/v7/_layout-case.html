@@ -45,8 +45,8 @@
 {{ 'Ready for review' if customer.status == 'review' }}
 {{ 'Requested further medical evidence' if customer.status == 'fme' }}
 {{ 'Appointment today' if customer.status == 'Appointment today'}}
-{{ 'Ready for assessment' if customer.status == 'Ready for assessment'}}
-{{ 'Assessment started' if customer.status == 'Assessment started' }}
+{{ 'Ready for assessment' if customer.status == 'Ready for assessment' and data['wca']!=='start'}}
+{{ 'Assessment started' if customer.status == 'Ready for assessment' and data['wca']==='start' }}
 {{ 'Ready for recommendation' if customer.status == 'Ready for recommendation' }}
 {{ 'Assessment completed' if customer.status == 'Assessment completed' }}
 {{ 'Assessment stopped' if customer.status == 'Assessment stopped' }}
@@ -115,15 +115,31 @@ or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes'
     </form>
      {% elif customer.status == 'Ready for recommendation' %}
      <p><a href="/{{path}}/assessment/{{customer._id}}/scoring/" class="button">Make your recommendation</a></p>   
-      {% elif customer.status == 'Ready for assessment'%}
+ 
      
-      <form class="" method="post" action="/{{path}}/assessment/{{customer._id}}/start-assessment">
-		  <p><button  class="button">Start assessment</button></p>
+
+
+     {% elif customer.status == 'Ready for assessment' and data['wca']==='start'%}
+   
+
+      {% elif customer.status == 'Ready for assessment' and data['wca']==='yes'%}
+      <form class="" method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/wca-index">
+        <p><button  class="button">Start assessment</button></p>
+        <div class="multiple-choice" style="display:none">
+            <input id="radio-inline-4" type="radio" name="wca" value="start" checked>
+            <label for="radio-4">hidden radio one</label>
+          </div>
+      </form>
+
+      {% elif customer.status == 'Ready for assessment' %}
+      <form class="" method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/descriptorchoice">
+		  <p><button  class="button">Start assessment review</button></p>
       <div class="multiple-choice" style="display:none">
           <input id="radio-inline-4" type="radio" name="wca" value="yes" checked>
           <label for="radio-4">hidden radio one</label>
         </div>
     </form>
+
 
     {% elif customer.status == 'Appointment today' %}
     <form class="" method="post" action="/{{path}}/assessment/{{customer._id}}/ready-for-assessment">
@@ -150,7 +166,7 @@ or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes'
           {% endif %}
          
 
-            {% if customer.status == 'Assessment started' or customer.status == 'Ready for recommendation'%}  
+            {% if customer.status == 'Ready for assessment' and data['wca']==='start' or customer.status == 'Ready for recommendation'%}  
             <!--<li><a href="/{{path}}/assessment/{{customer._id}}/general-observations">General observations {% if data['general-observations-post']==='posted' %}({{ observations.length }}){% endif%}</a></li>-->
             <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/addAttendee" class="">Additional attendee</a></li>
            
@@ -160,7 +176,9 @@ or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes'
 
           </ul>
           
-		  </div>
+      </div>
+      
+
       	
       	
       	</div>
