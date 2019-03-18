@@ -1,0 +1,152 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+<h1 class="heading-large">Special circumstances</h1>
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	
+	
+	
+	
+	
+	<form method="post" action="">
+	
+	<div class="form-group">
+		 <fieldset>
+		    
+				    	<legend class="heading-medium mb10">What circumstances are relevant to {{customer.name.first}}?</legend>
+		
+					    <div class="multiple-choice" data-target="reasons1">
+					      <input id="decide_now" name="LcwAndLcwra" type="radio" value="yes">
+					      <label for="decide_now">{{customer.name.first}} should be treated as LCWRA</label>
+					    </div>
+					    <!-- Start -->
+					    <div class="panel js-hidden" id="reasons1">	
+					    	<fieldset>
+								<legend class="form-label-bold mb5">Choose a reason:</legend>
+								
+						
+								
+								<div class="multiple-choice" data-target="justify1">
+							      <input id="lcwra1" name="lcwra" type="radio" value="lcwra1">
+							      <label for="lcwra1">Cancer treatment</label>			      
+							    </div>
+			
+							    <div class="multiple-choice" data-target="justify2">
+							      <input id="lcwra2" name="lcwra" type="radio" value="lcwra2">
+							      <label for="lcwra2">Risk in pregnancy</label>
+							    </div>	
+							    
+							    <div class="multiple-choice" data-target="justify3">
+							      <input id="lcwra3" name="lcwra" type="radio" value="lcwra3">
+							      <label for="lcwra3">Risk LCWRA</label>
+							    </div>	
+							    
+							    <div class="multiple-choice" data-target="justify4">
+							      <input id="lcwra4" name="lcwra" type="radio" value="lcwra4">
+							      <label for="lcwra4">Terminally ill</label>
+							    </div>
+					    	</fieldset>
+					    </div>
+					    <!-- / end panel -->
+		  
+					    <div class="multiple-choice" data-target="justify5">
+					      <input id="face2face" name="LcwAndLcwra" type="radio" value="no">
+					      <label for="face2face"> {{customer.name.first}} has met threshold</label>
+					    </div>	
+					    
+					    
+					    
+					    
+					    
+					    
+					    <div class="panel js-hidden" id="justify5">	    
+				    
+					    <fieldset>
+							<legend class="form-label-bold mb5">Against what descriptor(s) was the threshold met?</legend>				
+							
+							<div class="multiple-choice">
+						      <input id="lcwra1" name="lcwra" type="checkbox" value="lcwra1">
+						      <label for="lcwra1">Moving around and using steps without help</label>			      
+						    </div>
+		
+						    <div class="multiple-choice">
+						      <input id="lcwra2" name="lcwra" type="checkbox" value="lcwra2">
+						      <label for="lcwra2">Standing and sitting</label>
+						    </div>
+						    
+						    <div class="multiple-choice">
+						      <input id="lcwra3" name="lcwra" type="checkbox" value="lcwra3">
+						      <label for="lcwra3">Eating and drinking</label>
+						    </div>	
+						    
+						    <div class="multiple-choice">
+						      <input id="lcwra4" name="lcwra" type="checkbox" value="lcwra4">
+						      <label for="lcwra4">Hearing and reading</label>
+						    </div>
+						    
+						    <div class="multiple-choice">
+						      <input id="lcwra5" name="lcwra" type="checkbox" value="lcwra5">
+						      <label for="lcwra5">Reaching</label>
+						    </div>
+					    
+					    </fieldset>
+   	
+				    </div>
+					    
+					    
+					    
+					    
+					    
+				    </fieldset>
+	</div>
+	
+	
+	
+			
+			
+		<div class="form-group">
+			<label class="form-label-bold" for="justify">Justification:</label>
+			<textarea class="form-control form-control-3-4" name="justify" id="justify" rows="6"></textarea>
+		</div>
+			
+
+		</form>
+
+
+	   <form action="wca-index" method="POST" class="form">
+	      <input type="submit" class="button" value="Save and continue" id="submitButton">
+	
+	      <div class="multiple-choice" style="display:none">
+	          <input id="radio-inline-4" type="radio" name="exceptionalCircumstances" value="exceptionalCircumstances" checked>
+	            
+	          <label for="radio-4">hidden radio one</label>
+	        </div>
+	    </form>
+
+	
+
+  </div><!-- column -->
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+

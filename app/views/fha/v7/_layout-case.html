@@ -151,7 +151,7 @@ or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes'
          
 
             {% if customer.status == 'Assessment started' or customer.status == 'Ready for recommendation'%}  
-            <li><a href="/{{path}}/assessment/{{customer._id}}/general-observations">General observations {% if data['general-observations-post']==='posted' %}({{ observations.length }}){% endif%}</a></li>
+            <!--<li><a href="/{{path}}/assessment/{{customer._id}}/general-observations">General observations {% if data['general-observations-post']==='posted' %}({{ observations.length }}){% endif%}</a></li>-->
             <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/addAttendee" class="">Additional attendee</a></li>
            
             
