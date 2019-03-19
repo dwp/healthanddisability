@@ -128,10 +128,19 @@
 		
 		
 		<h4 class="heading-small">Reason:</h4>
-		<p>Cancer treatment</p>
+
+		{% if data['lcwra']==='lcwra1'%}
+		<p>Cancer treatment underway</p>
+		{% elif data['lcwra']==='lcwra2'%}
+		<p>Risks associated with pregnancy</p>
+		{% elif data['lcwra']==='lcwra3'%}
+		<p>Substantial risk to the health of {{customer.name.first}} or others</p>
+		{% elif data['lcwra']==='lcwra4'%}
+		<p>Terminal illness</p>
+		{% endif %}
 		
 		<h4 class="heading-small">Justification:</h4>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p>{{ justify }}</p>
 	</div>
 	
 	<p class="edit-report"><a href="#" class="button-secondary">Edit special circumstances</a></p>
