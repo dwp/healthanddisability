@@ -593,6 +593,18 @@ module.exports = [
         "name": "Anxiety",
         "source": "Claimant",
         "date": "2015"
+      },
+      {
+        "dataname": "Gout",
+        "name": "Gout",
+        "source": "Claimant",
+        "date": "2017"
+      },
+      {
+        "dataname": "Tremours",
+        "name": "Tremours",
+        "source": "Claimant",
+        "date": "2017"
       }
     ],
     "medication": [
