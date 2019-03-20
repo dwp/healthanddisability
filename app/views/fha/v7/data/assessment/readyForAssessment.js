@@ -583,26 +583,26 @@ module.exports = [
     ],
     "illnesses": [
       {
-        "dataname": "Depression",
+        "dataname": "Depression data would be here",
         "name": "Depression",
         "source": "Claimant",
         "date": "2003"
       },
       {
-        "dataname": "Anxiety",
+        "dataname": "Anxiety data would be here",
         "name": "Anxiety",
         "source": "Claimant",
         "date": "2015"
       },
       {
-        "dataname": "Gout",
+        "dataname": "Gout data would be here",
         "name": "Gout",
         "source": "Claimant",
         "date": "2017"
       },
       {
-        "dataname": "Tremours",
-        "name": "Tremours",
+        "dataname": "Tremors data would be here",
+        "name": "Tremors",
         "source": "Claimant",
         "date": "2017"
       }
