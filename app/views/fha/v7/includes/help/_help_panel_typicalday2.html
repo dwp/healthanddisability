@@ -1,0 +1,141 @@
+
+
+<div class="help">
+                 
+  
+    <a href="exceptionalCircumstances" class="button button-secondary">Cut short this assessment</a>
+  
+  <hr>
+               <h2 class="heading-large">Help</h2>
+		     
+		
+                 <h3 class="heading-medium">Recorded illnesses and disabilities</h3>
+    
+                 <div class="">
+                 <table>
+                     <caption class="visually-hidden">List of illnesses and disabilities</caption>
+                     <thead>
+                         <tr>
+                             <th>Name</th>
+
+                         
+                         </tr>
+                     </thead>
+                     <tbody>
+                         {% for illness in customer.illnesses %}
+                         <tr>
+                             <td>
+                                    <details>
+                                     <summary><span class="summary">{{illness.name}}</span></summary>
+                                            <p class="mb0">Condition detail would be pulled through from medical conditions</p>
+                                    </details>
+                             </td>
+                         </tr>
+                         {% endfor %}
+
+                         {% if data['newillness']=='meds1' %}
+                         <tr>
+                                <td>
+                                       <details>
+                                        <summary><span class="summary">{{newillneesname}}</span></summary>
+                                               <p class="mb0">{{newillnesscondition}}</p>
+                                       </details>
+                                </td>
+                            </tr>
+                         {% endif %}
+                         
+                     </tbody>
+                 </table>
+                 </div>
+
+
+							<h3 class="heading-medium">Relevant activities</h3>
+
+                            {% if data['moving']==='moving' or data['standing']==='standing' or data['reaching']==='reaching' or data['picking']==='picking' or data['using']==='using'
+                            or data['speaking']==='speaking' or data['hearing']==='hearing' or data['seeing']==='seeing' or data['controlling']==='controlling' or data['staying']==='staying' %}
+                      
+                                <h4 class="heading-small">
+                                    Physical activities
+                                  </h4>
+                                <ul class="list-bullet">
+                                {% if data['moving']==='moving' %}
+                                  <li class="">Moving around and using steps</li>
+                                {% endif %}
+                                {% if data['standing']==='standing' %}
+                                  <li class="">Standing and sitting</li>
+                                {% endif %}
+                                {% if data['reaching']==='reaching' %}
+                                  <li class="">Reaching</li>
+                                {% endif %}
+                                {% if data['picking']==='picking' %}
+                                <li class="">Picking up and moving things – using your upper body and either arm</li>
+                              {% endif %}
+                                {% if data['using']==='using' %}
+                                <li class="">Manual dexterity (using your hands)</li>
+                              {% endif %}
+                                {% if data['speaking']==='speaking' %}
+                                <li class="">Communicating – speaking, writing and typing</li>
+                              {% endif %}
+                              {% if data['hearing']==='hearing' %}
+                              <li class="">Communicating – hearing and reading</li>
+                            {% endif %}
+                            {% if data['seeing']==='seeing' %}
+                              <li class="">Getting around safely</li>
+                            {% endif %}
+                            {% if data['controlling']==='controlling' %}
+                              <li class="">Controlling your bowels and bladder and using a collecting device</li>
+                            {% endif %}
+                            {% if data['staying']==='staying' %}
+                            <li class="">Staying conscious when awake</li>
+                          {% endif %}
+                                </ul>
+                      
+                              {% endif %}
+                              {% if data['learning']==='learning' or data['being']==='being' or data['planning']==='planning' or data['coping']==='coping' or  data['going']==='going' or data['meeting']==='meeting' 
+                              or data['behaving']==='behaving' %}
+                      
+                                  <h4 class="heading-small">
+                                      Mental health activities
+                                    </h4>
+                                  <ul class="list-bullet">
+                                  {% if data['learning']==='learning' %}
+                                    <li class="">Learning how to do tasks</li>
+                                  {% endif %}
+                                  {% if data['being']==='being' %}
+                                    <li class="">Awareness of hazards or danger</li>
+                                  {% endif %}
+                                  {% if data['planning']==='planning' %}
+                                    <li class="">Starting and finishing tasks</li>
+                                  {% endif %}
+                                  {% if data['coping']==='coping' %}
+                                  <li class="">Coping with changes</li>
+                                {% endif %}
+                                {% if data['going']==='going' %}
+                                <li class="">Going out</li>
+                              {% endif %}
+                              {% if data['meeting']==='meeting' %}
+                              <li class="">Coping with social situations</li>
+                            {% endif %}
+                            {% if data['behaving']==='behaving' %}
+                              <li class="">Behaving appropriately</li>
+                            {% endif %}
+                                  
+                                  </ul>
+                              
+                                {% endif %}
+                            
+                                {% if data['eating']==='eating' %}
+                             
+                                    <h4 class="heading-small">
+                                        Eating or drinking descriptor
+                                      </h4>
+                                    <ul class="list-bullet">
+                                      <li class="">Eating or drinking</li>
+                                    </ul>
+                           
+                                  {% endif %}
+
+                                </div>                             
+
+
+  
