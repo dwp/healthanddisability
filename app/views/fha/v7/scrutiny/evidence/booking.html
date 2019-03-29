@@ -72,7 +72,7 @@
 <div class="form-group">
 	<fieldset>
 					
-		<legend class="heading-medium">Why does {{customer.name.first}} need a  physical examination?</legend>
+		<legend class="heading-medium">Why does {{customer.name.first}} need a  face to face examination?</legend>
 
 		<div class="multiple-choice">
 			<input id="des1" type="radio" name="evidence" value="gp">
@@ -91,7 +91,13 @@
 		
 </fieldset>
 
+<label for="113-reason" class="heading-small block">
+		Do you want to add further details?
+	</label>
+	<textarea class="form-control form-control-3-4" name="reason-113" id="113-reason" rows="4"></textarea>
+
 </div>
+
 
 
 
@@ -106,7 +112,7 @@
 			
 			      <div class="multiple-choice">
 			        <input id="radio-neuro1" type="radio" name="radio-types-skill" value="standard">
-			        <label for="radio-neuro1">Standard</label>
+			        <label for="radio-neuro1">Non neuro</label>
 			      </div>
 			      <div class="multiple-choice" data-target="neuro" >
 			        <input id="radio-neuro2" type="radio" name="radio-types-skill" value="neuro">

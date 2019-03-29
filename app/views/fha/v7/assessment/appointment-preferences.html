@@ -23,10 +23,12 @@
 			
 		{% if customer.status == 'Ready for assesment'%}
 	   	<form  method="post" action="/{{path}}/assessment/{{customer._id}}/appointment">
-	{% else%}
-		
+	
+				{% elif customer.status == 'Ready for review'%}
+				<form  method="post" action="/{{path}}/scrutiny/{{customer._id}}/appointment">
+				{% else%}
 				<form  method="post" action="/{{path}}/booking/{{customer._id}}/appointment">
-	{% endif %}		
+	      {% endif %}		
 
 
 	
