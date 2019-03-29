@@ -18,9 +18,44 @@
     <div class="column-full">
     	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
     	
-		<h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Security check</h1>
+		<h1 class="heading-large">Security check</h1>
 
 			<form action="/{{path}}/booking/{{customer._id}}/appointment" method="post">
+
+					
+			<div class="form-group">
+					<fieldset>
+							<legend>
+									<span class="heading-medium">
+										 Who is on the phone?
+										</span>
+							</legend>
+							<div class="multiple-choice">
+									<input id="caller-customer" type="radio" name="caller" value="customer" >
+									<label for="caller-customer">{% if customer.name.first == 'Deena' %} Richard Smith {% else %}{{customer.name.fullName}} {% endif %}</label>
+							</div>
+						<!--  <div class="multiple-choice">
+									<input id="caller-appointee" type="radio" name="caller" value="appointee" >
+									<label for="caller-appointee">Appointee</label>
+							</div> -->
+
+						 <div class="multiple-choice" data-target="caller-other">
+									<input id="caller-other" type="radio" name="caller" value="other" >
+									<label for="caller-other">Other</label>
+							</div>
+							<div class="panel" id="caller-other-content">
+									<div class="form-group">
+										<label class="form-label" for="other-caller-details">Name</label>
+				<input class="form-control form-control-2-4" name="other-caller-details" type="text" id="other-caller-details">
+									</div>
+									<div>
+										<label class="form-label" for="other-caller-details">Relationship to {{customer.name.first}}</label>
+				<input class="form-control form-control-2-4" name="other-caller-details" type="text" id="other-caller-details">
+									</div>
+							</div>  
+
+					</fieldset>
+			</div>
 
 				
 			           
@@ -66,7 +101,20 @@
 			                        <br> {{customer.address.city}}
 			                        <br> {{customer.address.postcode}}
 			                        </dd>
-			                </div>
+											</div>
+											<div>
+			                    <dt class="cya-question">Telephone</dt>
+			                    <dd class="cya-answer">07654543432
+			                       
+			                        </dd>
+											</div>
+											<div>
+			                    <dt class="cya-question">Appointment details</dt>
+			                    <dd class="cya-answer">{{ 'dddd Do MMMM' | baseDateAdd(12) }}
+			                        <br> 4:00pm
+			                        <br> Tresco house
+			                        </dd>
+											</div>
 			            </dl>
 			            
 			          	</div>
