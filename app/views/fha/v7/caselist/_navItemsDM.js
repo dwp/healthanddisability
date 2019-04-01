@@ -11,7 +11,7 @@ module.exports = function(versionNumber, dmCustomers){
 			label: "Completed assessment",
 			quantity:dmCustomers.filter(customer => customer.status === "Assessment reports").length
 		},{
-			url: "Failed-to-attend",
+			url: "failed-to-attend",
 			label: "Failure to attend",
 			quantity: dmCustomers.filter(customer => customer.status === "Failed to attend appointment").length
 		}
