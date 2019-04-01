@@ -4,10 +4,6 @@
 
 
 {# macro #}
-  {{ navreport.case_tabs("/decision/report-overview",1,path1, customer._id) }}
-
-
+  {{ navreport.case_tabs("decision/report-overview",1,path1, customer._id) }}
   {% include path+"/includes/_reportoverview.html" %}
-
-
 {% endblock %}
