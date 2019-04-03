@@ -3,137 +3,231 @@
 
 
 {% block assess_content %}
+
+
+
 <style>
-
-
-table.profile-table td, table.profile-table th {
- 
-  border:5px solid white;
-  text-align:center;
-  width:20%;
-  padding:0px;
-}
-
-table.profile-table th.col {
-  background:#d8dde0;
-  font-size: 24px;
-  color:#425563;
-}
-
-table.profile-table input{
-
-  width:100%;
-  border-color:#d8dde0;
-  text-align:center;
-  font-size:40px;
-  font-weight:bold;
-}
-
-table.profile-table input::placeholder{
-
-font-size:20px;
-font-weight:normal;
-}
-
-
-
-
-
+	.time-group {
+		overflow: hidden;
+		margin: .5em 0;
+		border-top: 1px solid #bbb;
+		padding-top: .5em;
+	}
+	.time-top {
+		border-top: 0;
+	}
+	.time-choice {
+		float: left;
+		width: 30%;
+	}
+	
+	label {
+		padding: 1em;
+		display: block;
+		background: #fff;
+		margin-right: .5em;
+		text-align: center;
+		font-weight: bold;
+		border: 4px solid #fff;
+	}
+	label:hover {
+		border-color: #005ea5;
+	}
+	
+	input {
+		position: absolute;
+		left: -9999px;
+	}
+	
+	input[type=checkbox]:checked + label {
+	  background: #005ea5;
+	  color: #fff;
+	  border-color: #005ea5;
+	} 
+	
+	.pickslots {
+		background: #eee;
+		padding: 0.1em 1em.5em 1em;
+	}
 </style>
+
+
+
 <main id="content" role="main" class="main-content">
 
       <div class="container">
           <div class="grid-row">
-              <div class="column-full">
+              <div class="column-half">
   <a href="javascript: history.go(-1)" class="link-back">Back</a>   
-   <h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Create a profile</h1>
+   <h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Create a capacity plan</h1>
+   
+   <h2 class="heading-medium">Monday 8 April</h2>
+   
+   <h3 class="heading-small">Choose appointment times</h3>
    <form class="form" action="/{{ path }}/create-profile2" method="post">
-   <div class="form-group">
-      <fieldset>
+   
+   
+   <div class="pickslots">
+   
+   
+   <div class="time-group time-top">
+      <fieldset class="timeslot-picker">
     
         <legend>
           <h3 class="heading-medium">Choose times </h3>
        
         </legend>
     
-        <div class="multiple-choice">
-          <input id="" name="times" type="checkbox" value="9">
-          <label for="">9:00 am</label>
+    
+    
+    
+        <div class="time-choice">
+          <input id="time1" name="times" type="checkbox" value="9">
+          <label for="time1">9:00 am</label>
         </div>
-        <div class="multiple-choice">
-            <input id="" name="times" type="checkbox" value="915">
-            <label for="">9:15 am</label>
+        <div class="time-choice">
+            <input id="time2" name="times" type="checkbox" value="915">
+            <label for="time2">9:15 am</label>
           </div>
-          <div class="multiple-choice">
-              <input id="" name="times" type="checkbox" value="930">
-              <label for="">9:30 am</label>
+          <div class="time-choice">
+              <input id="time3" name="times" type="checkbox" value="930">
+              <label for="time3">9:30 am</label>
           </div>
+          
+      </fieldset>
+   </div>
+   
+   <div class="time-group">
+      <fieldset class="timeslot-picker">
+    
+        <legend>
+          <h3 class="heading-medium">Choose times </h3>
+       
+        </legend>
+
            
-        <div class="multiple-choice">
-            <input id="" name="times" type="checkbox" value="10">
-            <label for="">10:00 am</label>
+        <div class="time-choice">
+            <input id="time4" name="times" type="checkbox" value="10">
+            <label for="time4">10:00 am</label>
           </div>
-          <div class="multiple-choice">
-              <input id="" name="times" type="checkbox" value="1015">
-              <label for="">10:15 am</label>
+          <div class="time-choice">
+              <input id="time5" name="times" type="checkbox" value="1015">
+              <label for="time5">10:15 am</label>
             </div>
-            <div class="multiple-choice">
-                <input id="" name="times" type="checkbox" value="1030">
-                <label for="">10:30 am</label>
+            <div class="time-choice">
+                <input id="time6" name="times" type="checkbox" value="1030">
+                <label for="time6">10:30 am</label>
             </div>
+            
+      </fieldset>
+   </div>
+   
+   <div class="time-group">
+      <fieldset class="timeslot-picker">
+    
+        <legend>
+          <h3 class="heading-medium">Choose times </h3>
+       
+        </legend>
+
               
-        <div class="multiple-choice">
-            <input id="" name="times" type="checkbox" value="11">
-            <label for="">11:00 am</label>
+        <div class="time-choice">
+            <input id="time7" name="times" type="checkbox" value="11">
+            <label for="time7">11:00 am</label>
           </div>
-          <div class="multiple-choice">
-              <input id="" name="times" type="checkbox" value="1115">
-              <label for="">11:15 am</label>
+          <div class="time-choice">
+              <input id="time8" name="times" type="checkbox" value="1115">
+              <label for="time8">11:15 am</label>
             </div>
-            <div class="multiple-choice">
-                <input id="" name="times" type="checkbox" value="1130">
-                <label for="">11:30 am</label>
+            <div class="time-choice">
+                <input id="time9" name="times" type="checkbox" value="1130">
+                <label for="time9">11:30 am</label>
             </div>
+            
+      </fieldset>
+   </div>
+   
+   
+   
+   
+   
+   <div class="time-group">
+      <fieldset class="timeslot-picker">
+    
+        <legend>
+          <h3 class="heading-medium">Choose times </h3>
+       
+        </legend>
+
 
                           
-        <div class="multiple-choice">
-            <input id="" name="times" type="checkbox" value="1">
-            <label for="">1:00 pm</label>
+        <div class="time-choice">
+            <input id="time10" name="times" type="checkbox" value="1">
+            <label for="time10">1:00 pm</label>
           </div>
-          <div class="multiple-choice">
-              <input id="" name="times" type="checkbox" value="115">
-              <label for="">1:15 pm</label>
+          <div class="time-choice">
+              <input id="time11" name="times" type="checkbox" value="115">
+              <label for="time11">1:15 pm</label>
             </div>
-            <div class="multiple-choice">
-                <input id="" name="times" type="checkbox" value="130">
-                <label for="">1:30 am</label>
+            <div class="time-choice">
+                <input id="time12" name="times" type="checkbox" value="130">
+                <label for="time12">1:30 am</label>
             </div>
+            
+      </fieldset>
+   </div>
+   
+   
+   
+   
+   <div class="time-group">
+      <fieldset class="timeslot-picker">
+    
+        <legend>
+          <h3 class="heading-medium">Choose times </h3>
+       
+        </legend>
+
 
                                       
-        <div class="multiple-choice">
-            <input id="" name="times" type="checkbox" value="2">
-            <label for="">2:00 pm</label>
+        <div class="time-choice">
+            <input id="time13" name="times" type="checkbox" value="2">
+            <label for="time13">2:00 pm</label>
           </div>
-          <div class="multiple-choice">
-              <input id="" name="times" type="checkbox" value="215">
-              <label for="">2:15 pm</label>
+          <div class="time-choice">
+              <input id="time14" name="times" type="checkbox" value="215">
+              <label for="time14">2:15 pm</label>
             </div>
-            <div class="multiple-choice">
-                <input id="" name="times" type="checkbox" value="230">
-                <label for="">2:30 am</label>
+            <div class="time-choice">
+                <input id="time15" name="times" type="checkbox" value="230">
+                <label for="time15">2:30 am</label>
             </div>
+            
+      </fieldset>
+   </div>
+   
+   
+   
+   <div class="time-group">
+      <fieldset class="timeslot-picker">
+    
+        <legend>
+          <h3 class="heading-medium">Choose times </h3>
+       
+        </legend>
 
-            <div class="multiple-choice">
-                <input id="" name="times" type="checkbox" value="3">
-                <label for="">3:00 pm</label>
+
+            <div class="time-choice">
+                <input id="time16" name="times" type="checkbox" value="3">
+                <label for="time16">3:00 pm</label>
               </div>
-              <div class="multiple-choice">
-                  <input id="" name="times" type="checkbox" value="315">
-                  <label for="">3:15 pm</label>
+              <div class="time-choice">
+                  <input id="time17" name="times" type="checkbox" value="315">
+                  <label for="time17">3:15 pm</label>
                 </div>
-                <div class="multiple-choice">
-                    <input id="" name="times" type="checkbox" value="330">
-                    <label for="">3:30 am</label>
+                <div class="time-choice">
+                    <input id="time18" name="times" type="checkbox" value="330">
+                    <label for="time18">3:30 am</label>
                 </div>
     
 
@@ -144,6 +238,7 @@ font-weight:normal;
               </div>
           </div>
       
+      </div>
  
 
               <p><button class="button mt25">Save and continue</button></p>
