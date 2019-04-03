@@ -25,7 +25,7 @@
   <h1 class="heading-large">Appointment history</h1>
   <div class="grid-row">
     <div class="column-two-thirds">
-        {% if customer.status == 'Security booked' %}
+        {% if customer.status == 'Security booked' or customer.status == 'Booked' %}
         {% include path+"/includes/appointment/_appointmenthistory-uta.html" %}
     {% else %}
     {% include path+"/includes/appointment/_appointmenthistory.html" %}

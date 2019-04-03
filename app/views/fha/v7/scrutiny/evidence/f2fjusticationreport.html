@@ -1,0 +1,45 @@
+{% extends path1+"/evidence/_layoutAction.html" %}
+
+
+{% block case_content %}
+
+   <p class="no-kdBar"> <a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+<div class="grid-row">
+<div class="column-two-thirds">
+
+<h1 class="heading-large">Appointment referral justification</h1>
+<form class="form" action="/{{ path }}/scrutiny/{{customer._id}}/booking-post" method="post">
+	
+	
+	
+	<h2 class="heading-medium mb0">Evidence considered</h2>
+
+	<table>
+		<tr>
+			<td>UC 50</td>
+		</tr>
+		<tr>
+			<td>GP Report</td>
+		</tr>
+		<tr>
+			<td>MED 3</td>
+		</tr>
+	</table>
+
+<h2 class="heading-medium">Reason</h2>
+<p>{{customer.name.first}} needs a face to face examination because the evidence we already have is not enough to determine the level of disability</p>
+
+<h2 class="heading-medium">Further details</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt nec mi volutpat egestas. Aliquam malesuada erat magna, sed commodo risus commodo eu.</p>
+
+
+<h2 class="heading-medium">Appointment</h2>
+<p>Complex neuro</p>
+<h3>Justification</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt nec mi volutpat egestas. Aliquam malesuada erat magna, sed commodo risus commodo eu.</p>
+
+
+</form>
+</div>
+</div>
+{% endblock %}

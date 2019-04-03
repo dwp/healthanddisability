@@ -20,7 +20,7 @@
     
     	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
     	
-    	<h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Request evidence</h1>
+    	<h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Request further medical evidence (FME)</h1>
 		
 		
 		<div class="evidence-requests">
@@ -54,15 +54,67 @@
 						  
 							  <legend class="bold">
 							
-									Reason for requesting this evidence
+										We need FME to determine if the claimant:
 							
 							  </legend>
+			
+								
+						
+
+										<div class="multiple-choice" data-target="insufficient-3" >
+												<input id="insufficient-113" type="radio" name="scenario" value="insufficient-3" {{ 'checked' if data[ 'scenario']==='insufficient-3'
+												else ''}}>
+												<label for="insufficient-113">has LCWRA because of</label>
+												</div>
+
+												<div class="panel js-hidden" id="insufficient-3">
+														<fieldset>
 						  
-							  <div class="multiple-choice" >
-								<input id="insufficient-113" type="radio" name="scenario" value="insufficient-113" {{ 'checked' if data[ 'scenario']==='insufficient-113'
-								else ''}}>
-								<label for="insufficient-113">Insufficient evidence to support claimants statements</label>
-							  </div>
+																<legend class="bold">
+															
+																	Choose:
+															
+																</legend>
+																<div class="multiple-choice" >
+																<input id="insufficient-113" type="radio" name="scenarioinner" value="inner1" {{ 'checked' if data[ 'scenarioinner']==='inner1'
+																else ''}}>
+																<label for="insufficient-113"> severe functional condition</label>
+																</div>
+																<div class="multiple-choice" >
+																		<input id="insufficient-113" type="radio" name="scenarioinner" value="inner2" {{ 'checked' if data[ 'scenarioinner']==='inner2'
+																		else ''}}>
+																		<label for="insufficient-113">substantial mental risk</label>
+																		</div>
+																		<div class="multiple-choice" >
+																				<input id="insufficient-113" type="radio" name="scenarioinner" value="inner3" {{ 'checked' if data[ 'scenarioinner']==='inner3'
+																				else ''}}>
+																				<label for="insufficient-113">substantial physical risk</label>
+																				</div>
+																				<div class="multiple-choice" >
+																						<input id="insufficient-113" type="radio" name="scenarioinner" value="inner4" {{ 'checked' if data[ 'scenarioinner']==='inner3'
+																						else ''}}>
+																						<label for="insufficient-113">high-risk pregnancy</label>
+																						</div>
+														</div>
+
+														<div class="multiple-choice" >
+																<input id="insufficient-113" type="radio" name="scenario" value="insufficient-2" {{ 'checked' if data[ 'scenario']==='insufficient-2'
+																else ''}}>
+																<label for="insufficient-113">should be treated as LCW</label>
+																</div>
+
+
+												<div class="multiple-choice" >
+														<input id="insufficient-113" type="radio" name="scenario" value="insufficient-4" {{ 'checked' if data[ 'scenario']==='insufficient-4'
+														else ''}}>
+														<label for="insufficient-113">has a severe disability or medical condition as the file is unavailable</label>
+														</div>
+
+														<div class="multiple-choice" >
+																<input id="insufficient-113" type="radio" name="scenario" value="insufficient-113" {{ 'checked' if data[ 'scenario']==='insufficient-113'
+																else ''}}>
+																<label for="insufficient-113">is terminally ill</label>
+																</div>
 
 						  
 							  <div class="multiple-choice" data-target="113-reason">

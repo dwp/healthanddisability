@@ -1,0 +1,157 @@
+{% extends path+"/_layout.html" %}
+
+
+
+{% block assess_content %}
+<style>
+
+
+table.profile-table td, table.profile-table th {
+ 
+  border:5px solid white;
+  text-align:center;
+  width:20%;
+  padding:0px;
+}
+
+table.profile-table th.col {
+  background:#d8dde0;
+  font-size: 24px;
+  color:#425563;
+}
+
+table.profile-table input{
+
+  width:100%;
+  border-color:#d8dde0;
+  text-align:center;
+  font-size:40px;
+  font-weight:bold;
+}
+
+table.profile-table input::placeholder{
+
+font-size:20px;
+font-weight:normal;
+}
+
+
+
+
+
+</style>
+<main id="content" role="main" class="main-content">
+
+      <div class="container">
+          <div class="grid-row">
+              <div class="column-full">
+  <a href="javascript: history.go(-1)" class="link-back">Back</a>   
+   <h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Create a profile</h1>
+   <form class="form" action="/{{ path }}/create-profile" method="post">
+   <div class="form-group">
+      <fieldset>
+    
+        <legend>
+          <h3 class="heading-medium">Choose times </h3>
+       
+        </legend>
+    
+        <div class="multiple-choice">
+          <input id="" name="times" type="checkbox" value="9">
+          <label for="">9:00 am</label>
+        </div>
+        <div class="multiple-choice">
+            <input id="" name="times" type="checkbox" value="915">
+            <label for="">9:15 am</label>
+          </div>
+          <div class="multiple-choice">
+              <input id="" name="times" type="checkbox" value="930">
+              <label for="">9:30 am</label>
+          </div>
+           
+        <div class="multiple-choice">
+            <input id="" name="times" type="checkbox" value="10">
+            <label for="">10:00 am</label>
+          </div>
+          <div class="multiple-choice">
+              <input id="" name="times" type="checkbox" value="1015">
+              <label for="">10:15 am</label>
+            </div>
+            <div class="multiple-choice">
+                <input id="" name="times" type="checkbox" value="1030">
+                <label for="">10:30 am</label>
+            </div>
+              
+        <div class="multiple-choice">
+            <input id="" name="times" type="checkbox" value="11">
+            <label for="">11:00 am</label>
+          </div>
+          <div class="multiple-choice">
+              <input id="" name="times" type="checkbox" value="1115">
+              <label for="">11:15 am</label>
+            </div>
+            <div class="multiple-choice">
+                <input id="" name="times" type="checkbox" value="1130">
+                <label for="">11:30 am</label>
+            </div>
+
+                          
+        <div class="multiple-choice">
+            <input id="" name="times" type="checkbox" value="1">
+            <label for="">1:00 pm</label>
+          </div>
+          <div class="multiple-choice">
+              <input id="" name="times" type="checkbox" value="115">
+              <label for="">1:15 pm</label>
+            </div>
+            <div class="multiple-choice">
+                <input id="" name="times" type="checkbox" value="130">
+                <label for="">1:30 am</label>
+            </div>
+
+                                      
+        <div class="multiple-choice">
+            <input id="" name="times" type="checkbox" value="2">
+            <label for="">2:00 pm</label>
+          </div>
+          <div class="multiple-choice">
+              <input id="" name="times" type="checkbox" value="215">
+              <label for="">2:15 pm</label>
+            </div>
+            <div class="multiple-choice">
+                <input id="" name="times" type="checkbox" value="230">
+                <label for="">2:30 am</label>
+            </div>
+
+            <div class="multiple-choice">
+                <input id="" name="times" type="checkbox" value="3">
+                <label for="">3:00 pm</label>
+              </div>
+              <div class="multiple-choice">
+                  <input id="" name="times" type="checkbox" value="315">
+                  <label for="">3:15 pm</label>
+                </div>
+                <div class="multiple-choice">
+                    <input id="" name="times" type="checkbox" value="330">
+                    <label for="">3:30 am</label>
+                </div>
+    
+
+
+    
+      </fieldset>
+    </div>
+              </div>
+          </div>
+      
+ 
+
+              <p><button class="button mt25">Save and continue</button></p>
+        </form>
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

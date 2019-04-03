@@ -8,8 +8,9 @@
 	right: 0;
 	
 	.panel-switch {
-		position: absolute;
-		top: 250px;
+		position: fixed;
+		margin-top:170px;
+		top: 10%;
 		width: 100px;
 		right: 0;
 		padding: 20px 0;
@@ -62,8 +63,10 @@
 			}
 		}
 		.panel-switch {
+			position:absolute;
 			right: auto;
-			left: -100px;
+			left:-100px;
+			margin-top:120px;
 		}
 	}
 

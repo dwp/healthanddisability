@@ -9,40 +9,14 @@
           
             <div class="column-one-quarter">
                 {% include path+"/caselist/_search-box.html" %}
-                
-                <nav class="details-nav v2 mb30">
-                    <ul>
-                
-                
-                        <li class="active_detail">
-                            <a href="/{{path}}/decision-maker.html">Make a decision</a>
-                
-                            <ul>
 
-                                    <li>
-                                            <a href="/{{path}}/assessment-reports.html">Completed assessments ({{dmNumbers.failedToAttend}})</a>
-                        
-                        
-                                        </li>
+
+                {% block horizontal_secondary_nav %}
                 
-                                <li >
-                                    <a href="/{{path}}/failed-to-attend.html"class="active_child" >Failure to attend ({{dmNumbers.failedToAttend}})</a>
-                
-                
-                                </li>
-                                <li>
-                                    <a href="/{{path}}/good-cause.html">Questionnaire not returned ({{dmNumbers.questionnaireNotReturned}})</a>
-                
-                
-                                </li>
-                
-                            </ul>
-                
-                
-                        </li>
-                
-                    </ul>
-                </nav>
+              
+
+          
+                {% endblock %}  
                 
 
  

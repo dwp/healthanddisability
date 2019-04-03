@@ -16,7 +16,8 @@
 	    	{% for subItem in item.subItems %}
 	    		<li>
 	    			<a href="{{subItem.url}}" 
-	    			{% if subItem.url == subSection %}
+						{% if subItem.url == subSection %}
+					
 	    				class="active_child"
 						{% endif %}>{{subItem.label}} ({{subItem.quantity}})</a>
 
@@ -31,22 +32,6 @@
 	</ul>
 </nav>
 
-
-<!-- <div class="card actions">
-                              
-                              
-                                  <h2 class="heading-xlarge">
-                                      2
-                                    <span class="heading-small">Action required</span>
-                                   </h2>
-                              
-                               
-                                <ul>
-                                  <li><a href="action-list">View actions</a></li>
-   
-                                 </ul>
-                              
-                                </div> -->
 
 
 {% endmacro %}

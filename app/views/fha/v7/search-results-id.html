@@ -18,7 +18,7 @@
     </thead>
     {% for customer in customers %}
     <tr>
-        <td><a href="security/{{customer._id}}/index"><span class="visually-hidden">Name</span>{{customer.name.fullName}} </a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span>
+        <td><a href="security/{{customer._id}}/security-name"><span class="visually-hidden">Name</span>{{customer.name.fullName}} </a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span>
         </td>
         <td>	<span class="block">
                 {{ 'Requested medical evidence'  if customer.status == 'fme'}}
