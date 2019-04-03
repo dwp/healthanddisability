@@ -39,10 +39,10 @@ table.profile-table input{
           <div class="grid-row">
               <div class="column-full">
   <a href="javascript: history.go(-1)" class="link-back">Back</a>   
-   <h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Create a profile</h1>
-   
-              </div>
-          </div>
+
+   <h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Create a capacity plan</h1>
+   <h2 class="heading-medium">Monday 8th April</h2>
+   <form class="form" action="/{{ path }}/create-profile-start" method="post">
       
   
               <table class="profile-table">
@@ -52,9 +52,9 @@ table.profile-table input{
                     <th></th>
                     <!-- <th>Assessment Centre</th> -->
                     <th>Total appointments</th>
-                    <th>Non neuro</th>
-                    <th>Neuro</th>
                     <th>Complex neuro</th>
+                    <th>Neuro</th>
+                    <th>Non neuro</th>
                   </tr>
                 </thead>
 
@@ -309,7 +309,8 @@ table.profile-table input{
                
               </table>
 
-              <p><a href="#" class="button mt25">Finish profile</a></p>
+              <p><button class="button mt25">Finish profile</button></p>
+              </form>
           </div><!-- column -->
         </div><!-- row -->
       </div><!-- container -->
