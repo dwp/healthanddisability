@@ -22,7 +22,7 @@
                 {% if data['times'] %}
                 48
                 {% else %}
-               0
+               
                {% endif %}
                 <span class="heading-small">Monday</span>
                </h2>
@@ -43,7 +43,7 @@
           
   
                 <h2 class="heading-xlarge">
-                 0
+                 
                   <span class="heading-small">Tuesday</span>
                  </h2>
           
@@ -54,7 +54,7 @@
             
     
                   <h2 class="heading-xlarge">
-                   0
+                   
                     <span class="heading-small">Wednesday</span>
                    </h2>
             
@@ -66,7 +66,7 @@
               
       
                     <h2 class="heading-xlarge">
-                     0
+                     
                       <span class="heading-small">Thursday</span>
                      </h2>
               
@@ -77,7 +77,7 @@
                 
         
                       <h2 class="heading-xlarge">
-                       0
+                       
                         <span class="heading-small">Friday</span>
                        </h2>
                 
@@ -88,7 +88,7 @@
                   
           
                         <h2 class="heading-xlarge">
-                         0
+                         
                           <span class="heading-small">Saturday</span>
                          </h2>
                   
@@ -96,6 +96,12 @@
                   </div>
                   </div>
         </div>
+        
+        {% if data['times'] %}
+        <p><button class="button mt25">Submit capacity plan</button></p>
+        {% endif %}
+        
+        
           </div><!-- column -->
         </div><!-- row -->
       </div><!-- container -->
