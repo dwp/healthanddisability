@@ -610,27 +610,27 @@ module.exports = [
     "medication": [
       {
         "name": "Naproxen",
-        "dose": "500mg",
+        "dose": "500mg once a day",
         "sideEffects": ""
       },
       {
         "name": "Venlafaxine",
-        "dose": "150mg",
+        "dose": "150mg once a day",
         "sideEffects": ""
       },
       {
         "name": "Mirtazine",
-        "dose": "15mg",
+        "dose": "15mg once a day",
         "sideEffects": ""
       },
       {
         "name": "Diazepam",
-        "dose": "10mg",
+        "dose": "10mg twice a day",
         "sideEffects": ""
       },
       {
         "name": "Co-codamol",
-        "dose": "30/500 mg",
+        "dose": "30/500 mg three times a day",
         "sideEffects": ""
       }
     ],
@@ -865,18 +865,18 @@ module.exports = [
     ],
     "illnesses": [
       {
-        "dataname": "Speech-impediment",
+        "dataname": "conditionone",
         "name": "Speech impediment",
         "source": "Claimant",
         "date": "1997"
       },
       {
-        "dataname": "Social-anxiety",
+        "dataname": "condition2",
         "name": "Social anxiety",
         "source": "Claimant",
         "date": "2011"
       },  {
-        "dataname": "Depression",
+        "dataname": "condition3",
         "name": "Depression",
         "source": "Claimant",
         "date": "2018"
@@ -885,12 +885,12 @@ module.exports = [
     "medication": [
       {
         "name": "Ventoline inhaler",
-        "dose": "",
+        "dose": "Twice a day",
         "sideEffects": ""
       },
       {
         "name": "Beclometasone inhaler ",
-        "dose": "",
+        "dose": "Twice a day",
         "sideEffects": ""
       }
 

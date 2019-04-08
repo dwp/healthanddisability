@@ -29,11 +29,11 @@
 					<div class="multiple-choice">
 				      <input id="meds1" type="checkbox" name="{{medication.name}}" value="{{medication.name}}" {{checked('{{medication.name}}', '{{medication.name}}') }}>
 				      <label for="meds1">
-									{{medication.name}}<br />
+									{{medication.name}} 
 								
-					  	<div class="meds-block">
-					      	<span>	{{medication.dose}}</span>
-					  	</div>
+				
+					      	<span class="">	{{medication.dose}}</span>
+					  
 				      </label>
 				    </div>
 				    
@@ -42,11 +42,11 @@
 				<div class="multiple-choice">
 						<input id="meds1" type="checkbox" name="{{otherMedName}}" value="{{otherMedName}}" {{checked('{{otherMedName}}', '{{otherMedName}}') }}>
 						<label for="meds1">
-								{{otherMedName}}<br />
+								{{otherMedName}}
 							
-						<div class="meds-block">
+	
 								<span>	{{otherMedDose}}</span>
-						</div>
+			
 						</label>
 					</div>
 
@@ -77,7 +77,7 @@
 								 
 								 <div class="form-group">
 						        
-									<label class="form-label form-label-large" for="dose">Dose</label>
+									<label class="form-label form-label-large" for="dose">Dose and frequency</label>
 									 <input type="text" name="otherMedDose" value="" class="form-control form-control-1-4" id="dose">
 									 
 								 </div>
@@ -85,7 +85,7 @@
 						
 								 
 								 
-								 <div class="form-group">
+							<!-- <div class="form-group">
 								 
 								 	<fieldset>
 								      <legend class="form-label">
@@ -108,7 +108,7 @@
 								      </div>
 								    </fieldset>
 								    
-								 </div>
+								 </div> -->
 								 
 								 
 								<div>

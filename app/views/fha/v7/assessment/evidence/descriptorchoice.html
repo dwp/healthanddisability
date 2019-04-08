@@ -6,9 +6,32 @@
 <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
 
 <h1 class="heading-large">Choose activities</h1>
-<h2 class="heading-medium">Refer to the '50 that {{customer.name.first}} completed. Which activities do they say they find difficult?</h2>
 
 <form class="" method="post" action="/{{path}}/assessment/{{customer._id}}/appointment">
+<div class="form-group">
+		<fieldset class="inline">
+	
+			<legend>
+				<h1 class="heading-medium">
+					Has {{ customer.name.first }} returned the questionnaire?
+				</h1>
+			</legend>
+	
+			<div class="multiple-choice" data-target="descriptor-choice">
+				<input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+				<label for="radio-inline-1">Yes</label>
+			</div>
+			<div class="multiple-choice">
+				<input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+				<label for="radio-inline-2">No</label>
+			</div>
+	
+		</fieldset>
+	</div>
+
+<div class="panel js-hidden" id="descriptor-choice">
+<h2 class="heading-medium">Refer to the '50 that {{customer.name.first}} completed. Which activities do they say they find difficult?</h2>
+
 	
 	
 	<h3 class="heading-small">Physical functions</h3>
@@ -124,7 +147,7 @@
 
 
 	</fieldset>
-	
+	</div>
 	
 	<p class="mt30"><button class="button">Save and continue</button></p>
   
