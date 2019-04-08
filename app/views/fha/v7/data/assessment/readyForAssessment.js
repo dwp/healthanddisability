@@ -12,13 +12,13 @@ module.exports = [
     ],
     "illnesses": [
       {
-        "dataname": "Depression",
+        "dataname": "condition1",
         "name": "Depression",
         "source": "Claimant",
         "date": "2014"
       },
       {
-        "dataname": "Back-spasms",
+        "dataname": "condition2",
         "name": "Back spasms",
         "source": "Claimant",
         "date": "2014"
@@ -95,13 +95,13 @@ module.exports = [
     ],
     "illnesses": [
       {
-        "dataname": "Speech-impediment",
+        "dataname": "condition1",
         "name": "Arthritis",
         "source": "Claimant",
         "date": "July 2016"
       },
       {
-        "dataname": "Speech-impediment", 
+        "dataname": "condition2", 
         "name": "Prolapsed uterus",
         "source": "Claimant",
         "date": "August 2018"
@@ -322,7 +322,7 @@ module.exports = [
     ],
     "illnesses": [
       {
-        "dataname": "Anxiety",
+        "dataname": "condition1",
         "name": "Anxiety",
         "source": "claimant",
         "date": "2011"
@@ -394,19 +394,19 @@ module.exports = [
     ],
     "illnesses": [
       {
-        "dataname": "Poland-Syndrome",
+        "dataname": "condition1",
         "name": "Poland Syndrome",
         "source": "Claimant",
         "date": "1986"
       },
       {
-        "dataname": "",
+        "dataname": "condition2",
         "name": "Depression",
         "source": "Claimant",
         "date": "2017"
       },
       {
-        "dataname": "",
+        "dataname": "condition3",
         "name": "Asthma",
         "source": "Claimant",
         "date": "2012"
@@ -495,7 +495,7 @@ module.exports = [
     ],
     "illnesses": [
       {
-        "dataname": "Stroke",
+        "dataname": "condition1",
         "name": "Stroke",
         "source": "Claimant",
         "date": "July 2017"
@@ -583,25 +583,25 @@ module.exports = [
     ],
     "illnesses": [
       {
-        "dataname": "Depression",
+        "dataname": "condition1",
         "name": "Depression",
         "source": "Claimant",
         "date": "2003"
       },
       {
-        "dataname": "Anxiety",
+        "dataname": "condition2",
         "name": "Anxiety",
         "source": "Claimant",
         "date": "2015"
       },
       {
-        "dataname": "Gout",
+        "dataname": "condition3",
         "name": "Gout",
         "source": "Claimant",
         "date": "2017"
       },
       {
-        "dataname": "Tremors",
+        "dataname": "condition4",
         "name": "Tremors",
         "source": "Claimant",
         "date": "2017"
@@ -770,25 +770,25 @@ module.exports = [
     ],
     "illnesses": [
       {
-        "dataname": "Diabetes",
+        "dataname": "condition1",
         "name": "Diabetes",
         "source": "Claimant",
         "date": "June 2017"
       },
       {
-        "dataname": "Arthritis",
+        "dataname": "condition2",
         "name": "Arthritis",
         "source": "Claimant",
         "date": "October 2015"
       },
       {
-        "dataname": "Liver-disease",
+        "dataname": "condition3",
         "name": "Liver disease",
         "source": "Claimant",
         "date": "January 2017"
       },
       {
-        "dataname": "Urine-problems",
+        "dataname": "condition4",
         "name": "Urine problems",
         "source": "Claimant",
         "date": "September 2017"
@@ -865,7 +865,7 @@ module.exports = [
     ],
     "illnesses": [
       {
-        "dataname": "conditionone",
+        "dataname": "condition1",
         "name": "Speech impediment",
         "source": "Claimant",
         "date": "1997"
@@ -957,13 +957,13 @@ module.exports = [
     ],
     "illnesses": [
       {
-        "dataname": "Depression",
+        "dataname": "condition1",
         "name": "Depression",
         "source": "Claimant",
         "date": "January 2018"
       },
       {
-        "dataname": "Anxiety",
+        "dataname": "condition2",
         "name": "Anxiety",
         "source": "Claimant",
         "date": "January 2018"
@@ -1409,20 +1409,20 @@ module.exports = [
     ],
     "illnesses": [
       {
-        "dataname": "Depression",
+        "dataname": "condition1",
         "name": "Depression",
         "source": "Claimant",
         "date": "January 2018"
       },
 
       {
-        "dataname": "Psychosis", 
+        "dataname": "condition2", 
         "name": "Psychosis",
         "source": "Claimant",
         "date": "January 2018"
       },
       {
-        "dataname": "Severe-back-pain",
+        "dataname": "condition3",
         "name": "Severe back pain",
         "source": "Claimant",
         "date": "June 2018"
@@ -1596,31 +1596,31 @@ module.exports = [
     ],
     "illnesses": [
       {
-        "dataname": "Depression",
+        "dataname": "condition1",
         "name": "Depression",
         "source": "Claimant",
         "date": "82"
       },
       {
-        "dataname": "Anxiety",
+        "dataname": "condition2",
         "name": "Anxiety",
         "source": "Claimant",
         "date": "82"
       },
       {
-        "dataname": "Gallstones",
+        "dataname": "condition3",
         "name": "Gallstones",
         "source": "Claimant",
         "date": "2009"
       },
       {
-        "dataname": "Tinnitus",
+        "dataname": "condition4",
         "name": "Tinnitus",
         "source": "Claimant",
         "date": "2013"
       },
       {
-        "dataname": "Arthritus",
+        "dataname": "condition5",
         "name": "Arthritus",
         "source": "Claimant",
         "date": "03"
