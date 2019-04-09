@@ -54,7 +54,7 @@
                  </table>
                  </div>
 
-
+              {% if data['50recieved']=="Yes"%}
 							<h3 class="heading-medium">Relevant activities</h3>
 
                             {% if data['moving']==='moving' or data['standing']==='standing' or data['reaching']==='reaching' or data['picking']==='picking' or data['using']==='using'
@@ -138,8 +138,36 @@
                                     <ul class="list-bullet">
                                       <li class="">Eating or drinking</li>
                                     </ul>
-                           
                                   {% endif %}
+
+                            
+                                  {% elif data['50recieved']=="No" %}
+
+                                  <h4 class="heading-small">
+                                      Mental health activities
+                                    </h4>
+                                  <ul class="list-bullet">
+                              
+                                    <li class="">Learning how to do tasks</li>
+                               
+                                    <li class="">Awareness of hazards or danger</li>
+                                
+                                    <li class="">Starting and finishing tasks</li>
+                              
+                                  <li class="">Coping with changes</li>
+                             
+                                <li class="">Going out</li>
+                           
+                              <li class="">Coping with social situations</li>
+                       
+                              <li class="">Behaving appropriately</li>
+                            
+                                  
+                                  </ul>
+                         
+                                {% endif %}
+
+                           
 
 
 	<!-- <details class="mt10">
