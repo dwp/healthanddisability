@@ -18,7 +18,7 @@
            
         <div class="grid-row">
             <div class="column-two-thirds">
-        <h1 class="heading-large">Cancel or rearrange appointment</h1>
+        <h1 class="heading-large"> <span class="heading-secondary">Step 1 of 2</span>Cancel or rearrange appointment</h1>
 
 		{% if customer.name.first == 'Elvia' %}
 		<div class="panel panel-warning mb30">
@@ -42,7 +42,7 @@
 							<div class="form-group">
 
 				<fieldset>
-						<legend class="heading-medium mb10">
+						<legend class="heading-small mb10">
 							Why do we need to cancel or rearrange this appointment?
 						</legend>
 	
@@ -71,21 +71,104 @@
 									</div>        
 						   
 							 </div>
-							<div class="multiple-choice">
+							<div class="multiple-choice" data-target="new-appointment-requirements">
 								<input id="know-3" name="scenario" type="radio" value="special" {{checked('scenario', 'special') }}>
 								<label for="know-3">{{customer.name.first}} has a new special need
 		
 								</label>
 							</div>
 
+							<div class="panel js-hidden" id="new-appointment-requirements">
+									<fieldset>
+											<legend class="heading-small mb10">
+												What is the new requirment
+											</legend>
+
+											<div class="multiple-choice">
+													<input id="know-3" name="requirment" type="radio" value="one" {{checked('requirment', 'one') }}>
+													<label for="know-3">Accessible room</label>
+												</div>		
+									<div class="multiple-choice" data-target="interpreter">
+											<input id="know-3" name="requirment" type="radio" value="two" {{checked('requirment', 'two') }}>
+											<label for="know-3">Interpreter</label>
+										</div>
+										<div class="panel js-hidden" id="interpreter">
+												<div class="form-group">
+														<label class="">What language is required?</label>
+														<input name="interpreter" class="form-control "  />
+												</div> 
+
+										</div>
+										<div class="multiple-choice">
+											<input id="know-3" name="requirment" type="radio" value="three" {{checked('requirment', 'three') }}>
+											<label for="know-3">Healthcare practitioner of same gender</label>
+										</div>
+										<div class="multiple-choice">
+											<input id="know-3" name="requirment" type="radio" value="four" {{checked('requirment', 'four') }}>
+											<label for="know-3"> Audio recording equipment</label>
+										</div>
+
+
+									</fieldset>
+							</div>
+                            <p class="form-block bold mt10 mb10">Or the healthcare professional cannot carry out the assessment</p>
 							<div class="multiple-choice">
 									<input id="know-3" name="scenario" type="radio" value="know-2" {{checked('scenario', 'know-2') }}>
 									<label for="know-3">More claimants waiting to be seen than available health care professionals</label>
 								</div>
-								<div class="multiple-choice">
+								<div class="multiple-choice" data-target="hcp-skillset-chioce">
 									<input id="know-3" name="scenario" type="radio" value="know-3" {{checked('scenario', 'know-3') }}>
 									<label for="know-3">A specialist healthcare professional is required and must be booked</label>
 								</div>
+								<div class="panel js-hidden" id="hcp-skillset-chioce">
+								
+										<fieldset>
+												<legend class="heading-small mb10">
+													Choose healthcare professional's skill level
+												</legend>
+													   <div class="form-group">
+														<div class="multiple-choice">
+																<input id="know-2" name="Reason" type="radio" value="non" checked="">
+																<label for="know-2">Standard
+																</label>
+															</div>
+													
+														<div class="multiple-choice">
+															<input id="know-2" name="Reason" type="radio" value="neuro">
+															<label for="know-2">Neuro
+															</label>
+														</div>
+							
+														<div class="multiple-choice">
+																<input id="know-2" name="Reason" type="radio" value="complex">
+																<label for="know-2">Complex neuro
+																</label>
+															</div>
+													
+													
+													</div>
+			
+														</fieldset>
+													
+								</div>
+								<div class="multiple-choice">
+										<input id="know-3" name="scenario" type="radio" value="know-9" {{checked('scenario', 'know-9') }}>
+										<label for="know-3">Healthcare professional ill or called away</label>
+							</div>
+
+					<div class="multiple-choice">
+							<input id="know-3" name="scenario" type="radio" value="know-8" {{checked('scenario', 'know-8') }}>
+							<label for="know-3">Inappropriate for health care professional to see claimant (for example they know them)</label>
+						</div>
+		
+						<div class="multiple-choice">
+							<input id="know-3" name="scenario" type="radio" value="know-10" {{checked('scenario', 'know-10') }}>
+							<label for="know-3">Healthcare professional did not attend</label>
+						</div>
+						<div class="multiple-choice">
+								<input id="know-3" name="scenario" type="radio" value="know-14" {{checked('scenario', 'know-14') }}>
+								<label for="know-3">The claimant’s file was not available</label>
+							</div>
 
 								<div class="multiple-choice" data-target="anotherreason" >
 										<input id="know-4" name="scenario" type="radio" value="know-4" {{checked('scenario', 'know-4') }}>
