@@ -33,7 +33,7 @@
                              <td>
                                     <details>
                                      <summary><span class="summary">{{illness.name}}</span></summary>
-                                            <p class="mb0">{{ illness.dataname + '-condition' }}</p>
+                                            <p class="mb0">{% if illness.dataname == 'condition1'%}{{ condition1 }}{% elif illness.dataname == 'condition2' %}{{ condition2 }}{% elif illness.dataname == 'condition3' %}{{ condition3 }}{% elif illness.dataname == 'condition4' %}{{ condition4 }}{% elif illness.dataname == 'condition5' %}{{ condition5 }}{% endif %}</p>
                                     </details>
                              </td>
                          </tr>
