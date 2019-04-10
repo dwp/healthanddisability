@@ -1,0 +1,496 @@
+
+  
+<h1 class="heading-large mb0">Work capability report</h1>
+
+
+<div class="review-wrapper full-report">
+
+
+
+
+<div class="report-item">
+
+	<table class="report-view-table">
+	<caption class="heading-small">Assessment overview</caption>
+	
+		<tbody>
+			<tr>
+				<th>Date of assessment</th>
+				<td>{{ "Do MMM YYYY" | daysAgo }}</td>
+			</tr>
+			<tr>
+				<th>Assessment centre</th>
+				<td>Fiveways, Birmingham</td>
+			</tr>
+			<tr>
+				<th>Assessor</th>
+				<td>Details from TC0219012</td>
+			</tr>
+			<tr>
+				<th>Assessment start</th>
+				<td>{{ last_one.time | formatDate("H:mma") }}</td>
+			</tr>
+			<tr>
+				<th>Assessment finish</th>
+				<td>{{ first_one.time | formatDate("H:mma") }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+<!-- / report item -->
+
+
+<div class="report-item">
+
+	<h2 class="heading-large">Illnesses, disabilities and medication</h2>  
+	
+	
+	<h2 class="heading-medium">Condition history</h2>
+	
+	<p>[Recorded like 'tagging' objects in LIMA report]<br /><br />
+		*Leg Problem*<br />
+Has intermittent claudication caused by narrowing of blood vessels in his legs.<br />
+First noticed pain and cramping to lower legs about 5 months ago. Started after walking short distances and then got worse.<br />
+Went to see GP.<br />
+Was referred to a specialist 3 months ago.<br />
+Has had ultrasounds which confirmed this.<br />
+Was told blockages are too long for stents. Has been told surgery is too risky.<br />
+Has been advised to walk and carry on through the pain as they may help with blood flow.<br />
+Takes cardiac medication but is not sure whether this helps. He has no heart issues<br />
+No pain medications.<br />
+Is due to see specialist in a few weeks.<br />
+Reports pain to legs after walking less than 50 metres. Will start after walking about 20 metres.<br />
+Can get left arm pain. No pattern to this. Does not know if this is connected. Has no treatment for this,
+Tries to walk every day.<br />
+Is mainly affected by right leg. No cramp to left leg.<br />
+Reports pain in his legs on walking. Gets pins and needles to both feet if sits for long periods.<br />
+Limps when walking.<br />
+No mobility aids.<br />
+Can feel a little short of breath when walking. Doesn't pant but just feels a little breathless. Has no respiratory conditions.<br /><br />
+*Dizziness*<br />
+Has had dizzy spells for a few months.<br />
+Has eyesight checks which showed no issues.<br />
+Vision is corrected by glasses.<br />
+Has no issues with speech or hearing.<br />
+These happen less lately. No pattern but they can be caused by bending down.<br />
+No loss of consciousness.<br />
+No hospital admissions due to this.<br />
+Is not prescribed medication. Has not been referred to a specialist.<br />
+	</p>
+	
+
+	<table class="report-view-table">
+	<caption class="heading-small">Illnesses and disabilities</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Source</th>
+			</tr>
+		</thead>
+	
+		<tbody>
+			<tr>
+				<td>Leg Problem</td>
+				<td>Claimant</td>
+			</tr>
+			<tr>
+				<td>Dizziness</td>
+				<td>Claimant</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	
+	<table class="report-view-table">
+	<caption class="heading-small">Medication and side effects</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Dose</th>
+				<th>Side effects</th>
+			</tr>
+		</thead>
+	
+		<tbody>
+			<tr>
+				<td>Atorvastatin (for cholesterol)</td>
+				<td>Not stated</td>
+				<td>None</td>
+			</tr>
+			<tr>
+				<td>Aspirin (for blood thinning)</td>
+				<td>Not stated</td>
+				<td>None</td>
+			</tr>
+		</tbody>
+	</table>
+	
+
+	
+	
+
+</div>
+<!-- / report item -->
+
+		
+		
+<div class="report-item">
+
+<h2 class="heading-large">Descriptors:</h2>
+
+<h3 class="heading-medium">Moving around and using steps without help</h3>
+
+	<table class="report-view-table">
+	<caption class="heading-small">Relevant statements</caption>
+	
+		<tbody>
+				<tr>
+						<td>Walks to the local shop which is 1 km away. This takes him 30 minutes stops about 6 times till pins and needles resolve. No set pattern to how long he rest for. Does this 3 times a day.</td>
+					</tr>
+					<tr>
+						<td>Can walk to his dad's 200 metres. Stops once but could not say for how long. This takes about 6 minutes.</td>
+					</tr>
+					<tr>
+						<td>Can walk about at home.</td>
+					</tr>
+					<tr>
+						<td>Can manage stairs and takes his time.</td>
+					</tr>
+			
+		</tbody>
+	</table>
+	
+	<div class="inner-focus">
+		<h4 class="heading-small">How far can {{customer.name.first}} walk or move on level ground without help from someone, and without stopping due to severe pain or tiredness?</h4>
+		<p>More than 200 metres</p>
+		
+		<h4 class="heading-small">Can {{customer.name.first}} go up or down 2 steps without help, if they use a handrail?</h4>
+		<p>Yes</p>
+		
+		<h4 class="heading-small">Justification:</h4>
+		<p>[LIMA report contains descriptor option 'E' for 'none of the above apply'. This following text is extracted from PSS]<br />He has been advised to walk and will walk 1 km o the shop 3 times each day. This takes 30 minutes and he stops 6
+			times to rest. He can walk to his dad's house with 1 stop. He could not say how long he stops for when walking. He
+			walks slowly about at home.</p>
+	</div>
+	
+	
+	<!-- / moving around and using steps -->
+	
+	<h3 class="heading-medium">Standing, sitting and moving between the two</h3>
+
+	<table class="report-view-table">
+	<caption class="heading-small">Relevant statements</caption>
+	
+		<tbody>
+			<tr>
+				<td>Can get on and off the toilet.</td>
+			</tr>
+			<tr>
+				<td>Can stand for 10 minutes when cooking then walks about due to leg pain.</td>
+			</tr>
+			<tr>
+				<td>Sits to watch TV. Will move feet to relieve pain. Gets up after varying times. Can be as little as 10 minutes. Will stand and walk about to relieve pain.</td>
+			</tr>
+			<tr>
+				<td>The client walked 15 metres normally to the examination room.</td>
+			</tr>
+			<tr>
+				<td>Appeared to have slight difficulty sitting for 35 minutes due to Leg Problem, however, did not need to get up from the chair.</td>
+			</tr>
+			<tr>
+				<td>The client rose once from sitting in a chair without physical assistance from another person.</td>
+			</tr>
+			<tr>
+				<td>Stood independently for 2 minutes without difficulty.</td>
+			</tr>
+			<tr>
+				<td>Did not appear to have any difficulty using a step to get onto the couch.</td>
+			</tr>
+			
+		</tbody>
+	</table>
+	
+	<div class="inner-focus">
+		
+		<h4 class="heading-small">Can {{customer.name.first}} move from one seat to another right next to it without help from another person</h4>
+		<p>No</p>
+		
+		<h4 class="heading-small">Justification:</h4>
+		<p>[LIMA report contains descriptor option 'C' as captured phrase. This following text is extracted from PSS]<br />He takes his time on stairs and can get on and off the toilet. He can stand for 10 minutes
+			then will sit due to leg pain. He sits for varying times, which can be as little as 10 minutes before needing to walk
+			and relieve pain. He can wash and dress, makes meals and can eat and drink. He does light house work and can
+			carry light shopping. He takes medication independently and uses a tablet computer. He came to the assessment
+			today by taxi which took 25 minutes and then walked a short distance to the centre. He walked at a normal pace to
+			the assessment room where he sat with slight discomfort for 35 minute but did not need to stand. He was able to
+			stand up unaided and stepped up to the couch.</p>
+	</div>
+	
+	
+	<!-- /Standing, sitting and moving between the two -->
+	
+	
+	
+	
+	<h3 class="heading-medium">Statements not attached to a descriptor</h3>
+
+	<table class="report-view-table">
+	<caption class="heading-small">Relevant statements</caption>
+	
+		<tbody>
+				<tr><td>Evidence reviewed includes the Questionnaire, Med 3 and POID1.</td></tr>
+				<tr><td>Came by taxi here today which took about 25 minutes.</td></tr>
+				<tr><td>Walked 2 minutes to the building.</td></tr>
+				<tr><td>Came to the assessment centre alone.</td></tr>
+				<tr><td>Lives alone.</td></tr>
+				<tr><td>Lives in a house with 1 flight of stairs.</td></tr>
+				<tr><td>Last worked 2 months ago. Stopped due to leg pain.</td></tr>
+				<tr><td>Usually gets up at about 6 am.</td></tr>
+				<tr><td>Gets out of bed each day,</td></tr>
+				<tr><td>Can wash and dress himself.</td></tr>
+				<tr><td>Has baths most days at home.</td></tr>
+				<tr><td>Can make meals and eats and drinks.</td></tr>
+				<tr><td>Can carry light shopping,</td></tr>
+				<tr><td>Gets taxis to appointments on his own.</td></tr>
+				<tr><td>Takes medications independently.</td></tr>
+				<tr><td>Can manage to do light housework for 10 minutes at a time.</td></tr>
+				<tr><td>Can use a tablet computer.</td></tr>
+				<tr><td>Gets a lift to the bookmaker each week.</td></tr>
+				<tr><td>Can wash and dress himself.</td></tr>
+				<tr><td>Can make meals and eats and drinks.</td></tr>
+				<tr><td>Can carry light shopping,</td></tr>
+				<tr><td>Takes medications independently.</td></tr>
+				<tr><td>Can manage to do light housework for 10 minutes at a time.</td></tr>
+				<tr><td>Can use a tablet computer.</td></tr>			
+			
+		</tbody>
+	</table>
+
+
+</div>
+<!-- / report item -->
+
+
+<div class="report-item">
+
+	<h2 class="heading-large">General observations</h2> 
+	
+	<table class="report-view-table">
+	<caption class="heading-small">Relevant statements</caption>
+	
+		<tbody>
+				<tr><td>All upper limb movements appeared fluid and pain-free.</td></tr>
+				<tr><td>Carried papers in either hand.</td></tr>
+				<tr><td>Rolled up trousers.</td></tr>
+				<tr><td>Appeared to have no difficulty with putting on jacket and removing shoes.</td></tr>
+			
+		</tbody>
+	</table>
+	
+	
+	
+</div>
+<!-- / report item -->
+
+
+
+<div class="report-item">
+
+	<h2 class="heading-large">Exceptional circumstances</h2> 
+	
+	<div class="inner-focus">
+		
+		<h4 class="heading-small">Circumstances why {{customer.name.first}} should be treated as LCW and LCWRA:</h4>
+		<p>None</p>
+		
+		<h4 class="heading-small">Circumstances why {{customer.name.first}} should be treated as LCW:</h4>
+		<p>None</p>
+	</div>
+	
+	
+	
+</div>
+<!-- / report item -->
+
+
+<div class="report-item">
+
+	<h2 class="heading-large">Prognosis</h2> 
+	
+	<div class="inner-focus">
+		
+		<h4 class="heading-small">Time until {{customer.name.first}}'s case needs reviewing:</h4>
+		<p>[None given]</p>
+		
+		<h4 class="heading-small">Reason:</h4>
+		<p>[None given]</p>
+	</div>
+	
+	
+	
+</div>
+<!-- / report item -->
+
+
+
+<div class="report-item">	
+	
+	
+				<h2 class="heading-large">Physical assessments</h2>    
+			
+				
+				<p>Consent was given by {{customer.name.first}} to start the physical assessment.</p>
+			
+			
+				<h3 class="heading-medium">General health</h3>
+			
+				<table class="report-view-table">
+						<caption class="heading-small">Recordings</caption>
+			
+						<tbody>
+							<tr>
+								<th>Stated height</th>
+								<td>
+									[Not given]
+								</td>
+							</tr>
+			
+							<tr>
+								<th>Stated weight</th>
+								<td>
+									[Not given]
+								</td>
+							</tr>
+			
+							<tr>
+								<th>Bmi</th>
+								<td>
+									[Not given]
+								</td>
+							</tr>
+			
+							<tr>
+								<th>Other examination findings </th>
+								<td>
+									
+									[Not given]
+								
+									</td>
+							</tr>
+			
+						</tbody>
+					</table>
+			
+			
+						
+					<h3 class="heading-medium">Lower back and legs</h3>
+			
+			
+				
+					<table class="report-view-table">
+							<caption class="heading-small">Lower back</caption>
+				
+							<tbody>
+									
+									<tr>
+										<th>Forward flexion</th>
+										<td>
+												
+												Mid shin
+			
+										</td>
+									</tr>
+			
+								<tr>
+									<th>Other examination findings </th>
+									<td>
+										
+										[None]
+									
+										</td>
+								</tr>
+			
+							</tbody>
+						</table>
+			
+					
+						
+					<table class="report-view-table">
+							<caption class="heading-small">Left leg</caption>
+			
+							<tbody>
+								
+								
+								<tr>
+									<th>Other examination findings </th>
+									<td>
+										No evidence of muscle wasting in the legs. No abnormalities noted to either leg. Legs were normal temperature.</td>
+								</tr>
+				
+							</tbody>
+						</table>
+						
+		
+			           
+			           
+					
+					<table class="report-view-table">
+							<caption class="heading-small">Right leg</caption>
+			
+							<tbody>
+							
+								
+								<tr>
+									<th>Other examination findings </th>
+									<td>
+											Some reduced sensation to top of right foot. Was normal elsewhere.</td>
+								</tr>
+				
+							</tbody>
+						</table>
+		
+							
+			
+			
+			
+					<h3 class="heading-medium">Cardiovascular and respiratory</h3>
+			
+					<table class="report-view-table">
+							<caption class="heading-small">Respiratory rate</caption>
+				
+							<tbody>
+				
+								
+								<tr>
+									<th>Respiratory at rest</th>
+									<td>
+											10 X/min
+									</td>
+								</tr>
+								
+								<tr>
+									<th>Other examination findings </th>
+									<td>
+										
+										Was not breathless during the assessment.
+									
+										</td>
+								</tr>
+						
+							</tbody>
+						</table>
+				
+						
+		
+											
+											
+											
+			</div>
+		<!-- / item end -->
+		
+		
+
+  
+   </div>
+ <!-- / wrapper -->
+

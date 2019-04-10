@@ -1,0 +1,217 @@
+{% extends path+"/_layout-case.html" %}
+
+{% block citizen_content %}
+
+	{{ data.nuggets | log }}
+	
+	<hr class="no-kdBar" />
+
+  <h2 class="heading-large">Assessment review</h2>
+
+
+    <table class="dashboard-table">
+    <caption class="visually-hidden">Assessment details</caption>
+
+    <tbody>
+    	<tr>
+    		<th>Date</th>
+    		<td>{{ "Do MMM YYYY" | daysAgo }}</td>
+    	</tr>
+    	<tr>
+    		<th>Time</th>
+    		<td>{{ assessmentStartTime | formatDate("H:mma") }} to 
+            {{ assessmentEndTime | formatDate("H:mma") }}</td>
+    	</tr>
+    	<tr>
+    		<th>Assessor</th>
+    		<td>Heather Harrison</td>
+    	</tr>
+    	<tr>
+    		<th>Assessment centre</th>
+    		<td>Tresco house</td>
+    	</tr>
+    </tbody>
+    </table>
+
+
+  <div class="grid-row mt30">
+  <div class="card-container">
+    	
+   
+	    	<section class="card">
+						<a href="/{{path}}/assessment/{{customer._id}}/evidence/illnessEffects">
+	    		<h2 class="heading-small">
+						<span class="font-small card-header">Review </span>Medical conditions 
+						{% if data['illnessVisited']==='illnessVisited'%}
+						<span class="badge">Reviewed</span>
+						{% endif %}	
+	    		</h2>
+	    		<p>Assessed:
+	    		<span class="heading-xlarge">
+							{% if data['newillness']==='meds1'%}
+							{{customer.illnesses.length + 1}}
+							{% else %}
+							{{customer.illnesses.length}}
+							{% endif %}
+					</span></p>
+			    </a>
+	    
+	    
+	    	</section>
+	    	
+	    	<section class="card">
+						<a href="socialWorkHistoryEdit">	<h2 class="heading-small">
+								<span class="font-small card-header">Review </span>Social and work history 	
+								{% if data['socialVisited']==='socialVisited'%}
+								<span class="badge">Reviewed</span>
+								{% endif %}	
+	    		</h2>
+	    		<p>Statements:
+	    		<span class="heading-xlarge">
+            {{ '0' if not socialWorkComments }}
+	    			{{socialWorkComments.length}}
+            
+	    		</span>
+	    		</p>
+	    		 </a>
+	    	<!--	<p><a href="socialWorkHistoryEdit">Review</a></p> -->
+	    	</section>
+	    		
+	    	<section class="card">
+						<a href="typicalDayEdit">
+	    		<h2 class="heading-small">
+						<span class="font-small card-header">Review </span>Typical day	 
+						{% if data['typicalVisited']==='typicalVisited'%}
+						<span class="badge">Reviewed</span>
+						{% endif %}	
+	    		</h2>
+	    		<p>Statements:
+	    		<span class="heading-xlarge">
+            {{typicalDayComments.length}}
+            {{ '0' if not typicalDayComments }}
+	    			
+	    		</span>
+	    		</p>
+	    		</a>
+	    	</section>
+    	
+    	
+    	
+	    	
+	    	<section class="physicalAssessment card">
+					<a href="physical">
+					<h2 class="heading-small">
+							<span class="font-small card-header">Review </span>Physical assessment
+							{% if data['physicalVisited']==='physicalVisited'%}
+							<span class="badge">Reviewed</span>
+							{% endif %}
+					
+	    		</h2>
+	    		<p>Assessed:
+	    		<span class="heading-xlarge">
+							{% if data['whatcando'] and data['neckwhatcando'] %}
+							2
+							{% elif data['whatcando'] or data['neckwhatcando'] %}
+							1
+						 {% else %}
+						 0
+						 {% endif %}
+	    		</span>
+	    		</p>
+	    	</a>
+	    	</section>
+	    		
+	    	<section class="card">
+					<a href="mentalHealthAssessment">
+	    		<h2 class="heading-small">
+							<span class="font-small card-header">Review </span>Mental state examination
+							{% if data['mentalVisited']==='mentalVisited'%}
+							<span class="badge">Reviewed</span>
+							{% endif %}	
+						
+	    		</h2>
+	    		<p>Assessed:
+	    		<span class="heading-xlarge">
+	    			{{mentalHealthCount}}
+            {{ '0' if not mentalHealthCount }}
+	    		</span>
+	    		</p>
+	    		</a>
+	    	</section>
+	    	
+	    	
+	    	<section class="card">
+						<a href="observedBehaviourEdit">
+	    		<h2 class="heading-small">
+						<span class="font-small card-header">Review </span>Observed behaviour	 
+						{% if data['observedVisited']==='observedVisited'%}
+						<span class="badge">Reviewed</span>
+						{% endif %}	
+	    		</h2>
+	    		<p>Statements:
+	    		<span class="heading-xlarge">
+            {{observedBehaviourComments.length}}
+            {{ '0' if not observedBehaviourComments }}
+	    			
+	    		</span>
+	    		</p>
+	    		</a>
+	    	</section>
+    
+    	
+    	
+		</div>
+    </div>		
+
+
+{% endblock %}
+
+
+
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.evidence__leftnav')
+      .children(":nth-child(1)")
+      .addClass('active')
+
+    $('#des_submit').on('click',function(e)
+    {
+      e.preventDefault();
+      var t = $('#des_form').serializeArray();
+      var des = [], id;
+      $.each(t,function(i,e)
+      {
+        if (e.name == "des_id") id = e.value;
+        if (e.name == "descriptors") des.push(e.value);
+      });
+      var data = {
+        id: id,
+        descriptors: des,
+      }
+      console.log('got here1 ')
+      $.ajax({
+        url: '/{{ path }}/updateEvidence',
+        method: "POST",
+        contentType: 'application/json',
+        data: JSON.stringify(data),
+        dataType: 'json',
+        complete:  function(data,status,xhr) {
+          console.log('got here')
+          document.location.reload(true);
+        }
+      })
+    })
+
+    $('.des_trigger').on('click',function(e)
+    {
+      var id = $(this).data('id');
+      console.log(id)
+      $('#des_id').val(id);
+    });
+  });
+</script>
+{% endblock %}

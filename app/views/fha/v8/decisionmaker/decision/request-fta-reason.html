@@ -1,0 +1,45 @@
+{% extends path+"/_layout-case-action.html" %}
+
+
+{% block citizen_content %}
+
+ <p class="no-kdBar"> <a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+ 
+<form class="form" action="/{{path}}/decisionmaker/{{customer._id}}/timeline" method="post">
+<div class="grid-row">
+  <div class="column-two-thirds">
+<h1 class="heading-large">Request a reason for the missed appointment</h1>
+
+<div class="card actions">                
+    <h2 class="heading-medium">
+      Action required
+     </h2>
+     <p>
+      Contact the claimant to ask why they missed their appointment. Add a "to do" task to their UC journal.
+     </p>
+  </div>
+
+  <p class="mt30">
+      <button class="button">Confirm</button>
+  </p>
+
+  <div class="visually-hidden">
+      <div class="multiple-choice">
+          <input id="radio-inline-1" type="radio" name="whatcando" value="requestreason" checked>
+          <label for="radio-inline-1">Yes</label>
+        </div>
+  </div>
+
+      
+
+
+
+</div>
+<div class="column-third">
+    <div class="decision-form">
+  <fieldset>
+</div>
+</div>
+</form>
+
+{% endblock %}

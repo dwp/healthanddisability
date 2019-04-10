@@ -1,0 +1,35 @@
+{% extends path+"/_layout.html" %} 
+
+{% import path+"/_macro_horizonalSecondaryNav.html" as secondaryNav %} 
+{% block assess_content %}
+<main id="content" role="main" class="main-content">
+    <div class="container mt30">
+   
+        <div class="grid-row">
+          
+            <div class="column-one-quarter">
+                {% include path+"/caselist/_search-box.html" %}
+
+
+                {% block horizontal_secondary_nav %}
+                
+              
+
+          
+                {% endblock %}  
+                
+
+ 
+            </div>
+            <div class="column-three-quarters">
+                {% block caselist_content %}
+
+                {% endblock %}
+            </div>
+            <!-- column -->
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+</main>
+{% endblock %}

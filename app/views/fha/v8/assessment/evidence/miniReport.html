@@ -1,0 +1,166 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+  
+<h1 class="heading-large mb0">Work capability report</h1>
+
+
+<div class="review-wrapper full-report">
+
+
+
+
+<div class="report-item">
+
+	<table class="report-view-table">
+	<caption class="heading-small">Assessment overview</caption>
+	
+		<tbody>
+			<tr>
+				<th>Date of assessment</th>
+				<td>{{ "Do MMM YYYY" | daysAgo }}</td>
+			</tr>
+			<tr>
+				<th>Assessment centre</th>
+				<td>Fiveways, Birmingham</td>
+			</tr>
+			<tr>
+				<th>Assessor</th>
+				<td>Heather Harrison</td>
+			</tr>
+			<tr>
+				<th>Assessment start</th>
+				<td>{{ last_one.time | formatDate("H:mma") }}</td>
+			</tr>
+			<tr>
+				<th>Assessment finish</th>
+				<td>{{ first_one.time | formatDate("H:mma") }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+<!-- / report item -->
+
+
+<div class="report-item">
+
+	<h2 class="heading-large">Illnesses, disabilities and medication</h2>  
+
+	<table class="report-view-table">
+	<caption class="heading-small">Illnesses and disabilities</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Source</th>
+			</tr>
+		</thead>
+	
+		<tbody>
+			<tr>
+				<td>Diabetes</td>
+				<td>Claimant</td>
+			</tr>
+			<tr>
+				<td>Arthritis</td>
+				<td>Claimant</td>
+			</tr>
+			<tr>
+				<td>Liver disease</td>
+				<td>Claimant</td>
+			</tr>
+			<tr>
+				<td>Urine problems</td>
+				<td>Claimant</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	
+	<table class="report-view-table">
+	<caption class="heading-small">Medication and side effects</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Dose</th>
+				<th>Side effects</th>
+			</tr>
+		</thead>
+	
+		<tbody>
+			<tr>
+				<td>Ibuprofen</td>
+				<td>Twice daily</td>
+				<td>None</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	
+	
+	
+	
+	<p class="edit-report"><a href="#" class="button-secondary">Edit illnesses, disabilities and medication</a></p>
+	
+	
+
+</div>
+<!-- / report item -->
+
+
+
+
+
+<div class="report-item">
+
+	<h2 class="heading-large">Special circumstances</h2> 
+	
+	<div class="inner-focus">
+		
+		<h2 class="heading-medium">LCWRA</h2>
+		
+		
+		<h4 class="heading-small">Reason:</h4>
+
+		{% if data['lcwra']==='lcwra1'%}
+		<p>Cancer treatment underway</p>
+		{% elif data['lcwra']==='lcwra2'%}
+		<p>Risks associated with pregnancy</p>
+		{% elif data['lcwra']==='lcwra3'%}
+		<p>Substantial risk to the health of {{customer.name.first}} or others</p>
+		{% elif data['lcwra']==='lcwra4'%}
+		<p>Terminal illness</p>
+		{% endif %}
+		
+		<h4 class="heading-small">Justification:</h4>
+		<p>{{ justify }}</p>
+	</div>
+	
+	<p class="edit-report"><a href="#" class="button-secondary">Edit special circumstances</a></p>
+	
+</div>
+<!-- / report item -->
+
+
+		
+
+  
+   </div>
+ <!-- / wrapper -->
+  
+
+
+	<p class="depart"><a href="/{{path}}/" class="button">Finish &ndash; sign off report</a></p>
+
+
+
+{% endblock %}
+
+

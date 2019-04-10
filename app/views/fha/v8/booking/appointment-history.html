@@ -1,0 +1,51 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+  
+    
+    
+  <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+  <h1 class="heading-large">Appointment history</h1>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+        {% if customer.status == 'Security booked' or customer.status == 'Booked' %}
+        {% include path+"/includes/appointment/_appointmenthistory-uta.html" %}
+    {% else %}
+    {% include path+"/includes/appointment/_appointmenthistory.html" %}
+    {% endif%}
+
+
+  
+</div> 
+</div>
+    </div><!-- column -->
+
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

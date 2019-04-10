@@ -1,0 +1,92 @@
+{% extends path+"/_layout-case.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.case_tabs("appointment",1,path1, customer._id) }}
+    
+<div class="grid-row">
+    <div class="column-one-third">
+            <div class="card-single">  
+              <h2 class="heading-small">
+               Appointment preferences
+         
+              </h2>
+              <div class="inner">
+                 {% if customer.appointment.taxi or checked('scenario', 'taxi')
+                    or customer.appointment.interpreter  or checked('scenario', 'interpreter')
+                    or customer.appointment.accessible or checked('scenario', 'accessible')
+                    or customer.appointment.gender or checked('scenario', 'gender')
+                    or customer.appointment.audio or checked('scenario', 'audio')
+                 %}
+                 <h3 class="heading-small">Requirements</h3>
+                 {% endif %}
+            <ul>
+              {% if customer.appointment.taxi or checked('scenario', 'taxi')%}
+              <li> Taxi<a href="" class="pull-right">booked</a></li>
+              {% endif %}
+              {% if customer.appointment.interpreter  or checked('scenario', 'interpreter')%}
+              <li>Interpreter<a href="" class="pull-right">booked</a></li>
+              {% endif %}
+              {% if customer.appointment.accessible or checked('scenario', 'accessible')%}
+              <li>Ground floor access</li>
+              {% endif %}
+              {% if customer.appointment.gender or checked('scenario', 'gender')%}
+              <li>Same gender HCP</li>
+              {% endif %}
+              {% if customer.appointment.audio or checked('scenario', 'audio')%}
+              <li>Audio recording </li>
+              {% endif %}
+       
+            </ul>
+            {% if customer.name.first == 'Lowery' %}
+            <h3 class="heading-small">Unavailable on</h3>
+            <ul>
+                
+        
+                <li>Monday <span>afternoons</span>
+                </li>
+                <li>Tuesdays</li>
+              </ul>
+              {% endif%}
+       
+            <p class="mt20"> <a href="/fha/v7/assessment/{{customer._id}}/appointment-preferences" class="">Add or edit preferences</a></p>
+            </div>
+            </div>
+          
+    </div>
+</div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

@@ -1,0 +1,160 @@
+
+
+
+      
+      
+    
+      {% if customer.name.first == 'Pacheco' and data['scenario']==="know-2" %}
+      <hr />
+      
+      <h2 class="heading-medium">Rearranged: Standard appointment</h2>
+      <ul class="list-bullet mt10 mb10">
+            <li>{{ 'Do MMMM YYYY' | baseDateAdd(15) }}</li>
+            <li>11:00am</li>
+            <li>Tresco House</li>
+          </ul>
+      <h3 class="heading-small">Sent home</h3>
+      <p class="small">Number of claimants in attendance exceeds medical capacity
+      <span class="date block mt10 text-secondary">{{customer | formatDate("D MMMM YYYY") }}</span>
+      </p>   
+
+      {% else %}
+  
+              {% if  data['changedByCustomer']==="yes"%}
+                  <h2 class="heading-medium">Rearranged appointment - unable to attend </h2>
+                  <p class="small">{{changedByCustomerComments}}
+                    <span class="date block mt10 text-secondary">07 November 2018 | 10:15 am</span>
+                  </p>
+                  <hr />
+                 
+              {% endif %}
+              
+              {% if data['changedByCustomerComments2'] %}
+      <h2 class="heading-medium">Rearranged appointment - unable to attend </h2>
+      <p class="small">{{changedByCustomerComments2}}
+        <span class="date block mt10 text-secondary">07 November 2018 | 10:15 am</span>
+      </p>
+      <hr />
+              {% endif %}
+
+              {% if data['changedByCustomer']==="no"%}
+               
+                  <h2 class="heading-medium">Rearranged appointment - assessment centre</h2>
+                  <p class="small">Reason for the change is..
+                    <span class="date block mt10 text-secondary">01 November 2018 | 11:15 am</span>
+                  </p>
+
+         {% endif %}
+
+         {% endif %}
+         {% if customer.status == 'Did not attend'%}
+         <div class="latest_version">
+ 
+         <h2 class="heading-medium"> Did not attend: Standard appointment</h2>
+         <p>Appointment details</p>
+         <ul class="list-bullet">
+             <li>{{ 'Do MMMM YYYY' | baseDate(1) }}</li> 
+             <li>11:00am</li>  
+             <li>Tresco House</li> 
+              </ul>
+            {% if customer.name.first == 'Arnaq'%}
+         <h3 class="heading-small">Contact reason</h3>
+         <p class="small">Arnaq was having a bad day with his arthritis and was struggling to get out of the house, he asked for a rearrangement but we could not provide it because he had previously rearranged
+             his appointment.
+           
+    </p>  
+    <p class="date mb0">Recorded date: {{ 'Do MMMM YYYY' | baseDate(1) }}</p>
+         {% endif %} 
+
+         {% if  customer.name.first =='Sarah' and data['dmreason'] %}
+         <h3 class="heading-small">Contact reason</h3>
+         <p class="small">Reason: {{dmreason}}
+          <span class="date mt10">Recorded date: {{ 'Do MMMM YYYY' | baseDate(0) }}</span>
+         </p>
+        
+         {% endif %} 
+         </div>
+       
+         {% endif %}
+
+
+            <div class="latest_version">
+            <h2 class="heading-medium mt0">Current: 
+                {% if data['Reason']==="complex"%}
+                Complex neuro
+                {% elif data['Reason']==="neuro"%}
+                Neuro
+                {% else%}
+                Non neuro
+                {% endif %} appointment</h2>
+                <p>Appointment details</p>
+                <ul class="list-bullet">
+                 <li>
+                   
+                    {% if data['scenario'] %}
+                  
+                    {{ 'dddd Do MMMM YYYY' | baseDateAdd(14) }}
+                    {% else%}
+                       
+                    {{ 'dddd Do MMMM YYYY' | baseDate(0) }}
+                  {% endif %}
+                 </li> 
+                 <li>11:00am</li>  
+                 <li>Tresco House</li> 
+                </ul>
+        
+          
+              </div>
+
+     {% if data['scenario'] %}
+      <hr />
+      
+      <h2 class="heading-medium">Cancelled: Non neuro appointment</h2>
+      <p>Appointment details</p>
+      <ul class="list-bullet mt10 mb10">
+            <li>{{ 'dddd Do MMMM YYYY' | baseDateAdd(0) }}</li>
+            <li>11:00am</li>
+            <li>Tresco House</li>
+          </ul>
+      <h3 class="heading-small">Cancellation reason</h3>
+      <p class="small">
+    
+        {% if data['scenario']==="wait"%}
+        {{ customer.name.first }} had waited less than 30 mins and did not want to wait any longer
+        {% elif data['scenario']==="late" %}
+        {{customer.name.first}} arrived 15mins late and waited 10mins
+        {% elif data['scenario']==="unfit" %}
+        {{customer.name.first}} was unfit to be examined <span class="mt10 block"> {{unfitdetail}} </span>
+        {% elif data['scenario']==="special" %}
+        {{customer.name.first}} has a new special need
+        {% elif data['scenario']==="know-2" %}
+        Number of claimants in attendance exceeds medical capacity
+        {% elif data['scenario']==="know-3" %}
+        A specialist healthcare professional is required and must be booked
+        {% else %}
+        {{reason}}
+        {% endif%}
+      <span class="date block mt10 text-secondary">Recorded date: {{customer | formatDate("D MMMM YYYY") }} - 11:25 am / Joan Baker / Tresco house assessment centre</span>
+      </p>   
+      <hr />
+      {% endif%}
+
+
+      
+         <h2 class="heading-medium">Cancelled: Non neuro appointment</h2>
+         <p>Appointment details</p>
+         <ul class="list-bullet">
+             <li>{{ 'dddd Do MMMM YYYY' | baseDate(15) }}</li> 
+             <li>11:00am</li>  
+             <li>Tresco House</li> 
+              </ul>
+
+              <h3 class="heading-small">Cancellation reason</h3>
+              <p class="small">Original appointment clashed with another
+                
+   
+           <span class="date block mt10 text-secondary">Recorded date: {{ 'Do MMMM YYYY' | baseDate(25)}} - 2:56pm | Paul Smith | Cardiff contact centre</span>
+         </p> 
+
+
+ 

@@ -1,0 +1,42 @@
+{% extends path+"/_layout-caselist.html" %}
+
+{% block horizontal_secondary_nav %}
+              
+{{ secondaryNav.nav("appointments", false, menuItems ) }}
+
+
+{% endblock %}  
+
+{% block caselist_content %}
+<h2 class="heading-medium mt0"><span class="heading-xlarge">{{customers.length}}</span><br/>Today's appointments </h2>
+<table class="zebra">
+
+  <thead>
+    <tr>
+      <th>Details</th>
+      <th>Status</th>
+     
+    </tr>
+  </thead>
+  
+  {% for customer in customers %}
+<tr>
+
+<td>
+<a href="booking/{{customer._id}}/timeline"><span class="visually-hidden">Name</span>{{customer.name.fullName}}</a>
+<span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span>
+</td>
+<td>
+<span class="block">
+{{ 'Ready to book'  if customer.status == 'Ready to book'}}
+{{ 'Booked appointments' if customer.status == 'Booked' or customer.status == 'Security booked'}}
+
+{{ 'Did not attend' if customer.status == 'Did not attend'}}
+</span> </td>
+</tr>
+</tr>
+
+{% endfor %}
+
+</table>  
+{% endblock %}

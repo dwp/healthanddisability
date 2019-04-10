@@ -1,0 +1,193 @@
+{% extends path1+"/_layout-underway.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+{{ nav.case_tabs("evidence",1,path1) }}{# macro #}
+
+<a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+
+<h2 class="heading-large mt10 mb0">Lower back and legs</h2>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+  <div class="form-group mt30">
+	  <fieldset class="inline">
+	
+		  <legend class="heading-medium mb10">Have you examined Tomas's lower back and legs?</legend>
+		  
+		
+			  <div class="form-group">
+			
+				    <div class="multiple-choice" data-target="exam-yes">
+				      <input id="decide_now" name="whatcando" type="radio" value="Yes">
+				      <label for="decide_now"> Yes</label>
+				    </div>
+				
+				    <div class="multiple-choice" data-target="">
+				      <input id="face2face" name="whatcando" type="radio" value="No, redirect({{ path1 }}/support/rejected)">
+				      <label for="face2face"> No</label>
+				    </div>
+				    
+				    
+				    
+				    <div class="form-group panel panel-indent js-hidden mt10" id="exam-yes">
+				    
+					    	<fieldset class="inline">
+		
+								  <legend class="heading-medium mb10">Does Tomas have difficulties in any of these areas?</legend>
+								
+									  <div class="form-group">
+									
+										    <div class="multiple-choice" data-target="findings-yes">
+										      <input id="findyes" name="findings" type="radio" value="Yes">
+										      <label for="findyes"> Yes</label>
+										    </div>
+										
+										    <div class="multiple-choice">
+										      <input id="findno" name="findings" type="radio" value="No">
+										      <label for="findno"> No</label>
+										    </div>
+										    
+										     <div class="form-group panel panel-indent js-hidden mt10" id="findings-yes">
+										     	
+										     	<fieldset class="stacked">
+		
+													  <legend class="mb10">Select all of the affected areas:</legend>
+													
+														  <div class="form-group">
+														
+															    <div class="multiple-choice" data-target="lowerback-checked">
+															      <input id="lowerback" name="lowerlimbs" type="checkbox" value="Lower">
+															      <label for="lowerback"> Lower back</label>
+															    </div>
+															    
+															    <div class="form-group panel panel-indent js-hidden mt0 mb20" id="lowerback-checked">
+																      <label class="form-label" for="phys_lowerback_obs">Observation, palpation, movement</label>
+																      <textarea class="form-control form-control-3-4" name="phys_lowerback_obs" id="phys_lowerback_obs" rows="4"></textarea>
+															    </div>
+															
+															    <div class="multiple-choice" data-target="leftleg-checked">
+															      <input id="leftleg" name="lowerlimbs" type="checkbox" value="Left">
+															      <label for="leftleg"> Left leg</label>
+															    </div>
+															    
+															    <div class="form-group panel panel-indent js-hidden mt0 mb20" id="leftleg-checked">
+																      <label class="form-label" for="left_lowerback_obs">Observation, palpation, movement</label>
+																      <textarea class="form-control form-control-3-4" name="left_lowerback_obs" id="left_lowerback_obs" rows="4"></textarea>
+															    </div>
+															    
+															    
+															    <div class="multiple-choice" data-target="rightleg-checked">
+															      <input id="rightleg" name="lowerlimbs" type="checkbox" value="Right">
+															      <label for="rightleg"> Right leg</label>
+															    </div>
+															    
+															    <div class="form-group panel panel-indent js-hidden mt0 mb20" id="rightleg-checked">
+																      <label class="form-label" for="right_lowerback_obs">Observation, palpation, movement</label>
+																      <textarea class="form-control form-control-3-4" name="right_lowerback_obs" id="nugget" rows="4"></textarea>
+															    </div>
+															    
+															    
+															    
+														  </div><!-- form-group -->
+												  
+												  </fieldset>
+										     	
+										     </div>
+										    
+									  </div><!-- form-group -->
+							  
+							  </fieldset>
+				    	
+				    </div>
+			
+			  </div><!-- form-group -->
+	  
+	  </fieldset>
+  </div>
+
+
+
+
+    <p class="mt30"><input class="button" type="submit" value="Save and continue" id="submitButton"/></p>
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+{% macro physGroup(name,sel) %}
+  {% set s = name | slug %}
+  <!-- GROUP -->
+  <div class="multiple-choice" data-target="group_{{s}}_yes">
+    <input id="group_{{s}}" type="checkbox" name="group_{{s}}" sue="group_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="group_{{s}}">{{name}}</label>
+  </div>
+{% endmacro %}
+
+{% macro physObs(name,sel) %}
+  {% set s = name | slug %}
+  <div class="multiple-choice" data-target="phys_{{s}}_yes">
+    <input id="phys_{{s}}" type="checkbox" name="mobility" value="phys_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="phys_{{s}}">{{name}}</label>
+  </div>
+  <div class="form-group panel panel-indent js-hidden mt0 mb20" id="phys_{{s}}_yes">
+    <p>
+      <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
+      <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
+    </p>
+  </div>
+{% endmacro %}
+
+{% block footer_top %}
+{{ super() }}
+<p class="font-xsmall">
+  <a href="/{{ path2 }}/phys_exam_1">exam v1</a> |
+  <a href="/{{ path2 }}/phys_exam_2">exam v2</a>
+</p>
+{% endblock %}
+
+
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+$(document).on('ready',function()
+{
+
+
+  $('#submitButton').on('click',function(e)
+  {
+    e.preventDefault();
+    // get values from the form you're submitting.
+    var nugget = $('#nugget').val();
+    console.log(nugget)
+
+    // gather values into a data object.
+    var formdata = JSON.stringify({"nugget":nugget});
+    console.log(formdata)
+    console.log({url: '/{{ path }}/saveText'})
+
+    // send data object off to node route for saving.
+    $.ajax({
+      url: '/{{ path }}/saveText',
+      method: "POST",
+      contentType: 'application/json',
+      data: formdata,
+      dataType: 'json',
+      complete:  function(data,status,xhr) {
+        // sort out the page after data is successfully saved.
+        // $('#status_form').hide();
+        // $('#status_button').show();
+        window.location.href = '/{{path2}}/physical-updated';
+      }
+    });
+  });
+  
+});
+</script>
+
+{% endblock %}

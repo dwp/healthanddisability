@@ -1,0 +1,284 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+
+
+ <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+  
+<h1 class="heading-large">Work capability report</h1>
+
+
+<div class="review-wrapper">
+
+
+<table class="report-view-table">
+<caption class="heading-small">Assessment overview</caption>
+
+	<tbody>
+		<tr>
+			<th>Date of assessment</th>
+			<td>{{ "Do MMM YYYY" | daysAgo }}</td>
+		</tr>
+		<tr>
+			<th>Assessment centre</th>
+			<td>Fiveways, Birmingham</td>
+		</tr>
+		<tr>
+			<th>Assessor</th>
+			<td>Heather Harrison</td>
+		</tr>
+		<tr>
+			<th>Assessment start</th>
+			<td>{{ last_one.time | formatDate("H:mma") }}</td>
+		</tr>
+		<tr>
+			<th>Assessment finish</th>
+			<td>{{ first_one.time | formatDate("H:mma") }}</td>
+		</tr>
+	</tbody>
+</table>
+
+ 
+	
+
+	<div class="report-item">	
+	
+	
+	<h2 class="heading-large mt0">Physical assessments</h2>    
+
+	
+	<p>Consent was given by {{customer.name.first}} to start the physical assessment.</p>
+	
+			
+		<h3 class="heading-medium mt30 mb0">Lower back and legs</h3>
+			
+		<table class="report-view-table">
+				<caption class="heading-small">Left leg</caption>
+
+				<tbody>
+					<tr>
+						<th>Straight Leg raising</th>
+						<td>
+								{% if data['issue1opencomments'] and data['leftegfinding']==='Yes' %}
+							
+							  {{ issue1opencomments }}
+								{% else %}
+								Normal (more than 70˚)
+								{% endif %}
+							
+							
+						</td>
+					</tr>
+					<tr>
+						<th>Hip flexion</th>
+						<td>	{% if data['issue2opencomments'] and data['leftegfinding']==='Yes' %}
+							
+							  {{ issue2opencomments }}
+								{% else %}
+								Normal (more than 130˚)
+								{% endif %}</td>
+					</tr>
+					<tr>
+						<th>Knee flexion</th>
+						<td>	{% if data['issue3opencomments'] and data['leftegfinding']==='Yes' %}
+							
+							  {{ issue3opencomments }}
+								{% else %}
+								Normal (more than 120˚)
+								{% endif %}</td>
+					</tr>
+					<tr>
+						<th>Knee extension</th>
+						<td>	{% if data['issue4opencomments'] and data['leftegfinding']==='Yes' %}
+							
+							  {{ issue4opencomments }}
+								{% else %}
+								Full
+								{% endif %}</td>
+					</tr>
+					<tr>
+						<th>External hip rotation</th>
+						<td>	{% if data['issue5opencomments'] and data['leftegfinding']==='Yes'%}
+							
+							  {{ issue5opencomments }}
+								{% else %}
+								Normal (more than 45˚)
+								{% endif %}</td>
+					</tr>
+					<tr>
+						<th>Ankle Plantarflexion</th>
+						<td>	{% if data['issue6opencomments']and data['leftegfinding']==='Yes' %}
+							
+							  {{ issue6opencomments }}
+								{% else %}
+								Normal (more than 50˚)
+								{% endif %}</td>
+					</tr>
+					<tr>
+						<th>Ankle dorsiflexion</th>
+						<td>	{% if data['issue7opencomments'] and data['leftegfinding']==='Yes' %}
+							
+							  {{ issue7opencomments }}
+								{% else %}
+								Normal (more than 20˚)
+								{% endif %}</td>
+					</tr>
+					
+					<tr>
+						<th>Power</th>
+						<td>	{% if data['issue10opencomments'] and data['leftegfinding']==='Yes' %}
+							
+							  {{ issue10opencomments }}
+								{% else %}
+								Normal
+								{% endif %}</td>
+					</tr>
+					
+					{% if data['leftegfinding']==='Yes' and data['issue15opencomments'] %}
+					<tr>
+						<th>Observations</th>
+						<td>
+							
+							  {{ issue15opencomments }}
+						
+							</td>
+					</tr>
+					{% endif %}
+					{% if data['leftegfinding']==='No' and data['optionalcomments'] %}
+					<tr>
+						<th>Observations</th>
+						<td>
+							
+							  {{ optionalcomments }}
+						
+							</td>
+					</tr>
+					{% endif %}
+				</tbody>
+			</table>
+
+		<table class="report-view-table">
+				<caption class="heading-small">Right leg</caption>
+		
+				<tbody>
+					<tr>
+						<th>Straight Leg raising</th>
+						<td>
+								{% if data['rightlegissue1opencomments'] and data['rightlegfinding']==='Yes' %}
+							
+								{{ rightlegissue1opencomments }}
+								{% else %}
+								Normal (more than 70˚)
+								{% endif %}
+							
+							
+						</td>
+					</tr>
+					<tr>
+						<th>Hip flexion</th>
+						<td>	{% if data['rightlegissue2opencomments'] and data['rightlegfinding']==='Yes' %}
+							
+								{{ rightlegissue2opencomments }}
+								{% else %}
+								Normal (more than 130˚)
+								{% endif %}</td>
+					</tr>
+					<tr>
+						<th>Knee flexion</th>
+						<td>	{% if data['rightlegissue3opencomments'] and data['rightlegfinding']==='Yes' %}
+							
+								{{ rightlegissue3opencomments }}
+								{% else %}
+								Normal (more than 120˚)
+								{% endif %}</td>
+					</tr>
+					<tr>
+						<th>Knee extension</th>
+						<td>	{% if data['rightlegissue4opencomments'] and data['rightlegfinding']==='Yes' %}
+							
+								{{ rightlegissue4opencomments }}
+								{% else %}
+								Full
+								{% endif %}</td>
+					</tr>
+					<tr>
+						<th>External hip rotation</th>
+						<td>	{% if data['rightlegissue5opencomments'] and data['rightlegfinding']==='Yes'%}
+							
+								{{ rightlegissue5opencomments }}
+								{% else %}
+								Normal (more than 45˚)
+								{% endif %}</td>
+					</tr>
+					<tr>
+						<th>Ankle Plantarflexion</th>
+						<td>	{% if data['rightlegissue6opencomments']and data['rightlegfinding']==='Yes' %}
+							
+								{{ rightlegissue6opencomments }}
+								{% else %}
+								Normal (more than 50˚)
+								{% endif %}</td>
+					</tr>
+					<tr>
+						<th>Ankle dorsiflexion</th>
+						<td>	{% if data['rightlegissue7opencomments'] and data['rightlegfinding']==='Yes' %}
+							
+								{{ rightlegissue7opencomments }}
+								{% else %}
+								Normal (more than 20˚)
+								{% endif %}</td>
+					</tr>
+					
+					<tr>
+						<th>Power</th>
+						<td>	{% if data['rightlegissue10opencomments'] and data['rightlegfinding']==='Yes' %}
+							
+								{{ rightlegissue10opencomments }}
+								{% else %}
+								Normal
+								{% endif %}</td>
+					</tr>
+					
+					{% if data['rightlegfinding']==='Yes' and data['rightlegissue15opencomments'] %}
+					<tr>
+						<th>Observations</th>
+						<td>
+							
+								{{ rightlegissue15opencomments }}
+						
+							</td>
+					</tr>
+					{% endif %}
+					{% if data['rightlegfinding']==='No' and data['rightlegoptionalcomments'] %}
+					<tr>
+						<th>Observations</th>
+						<td>
+							
+								{{ rightlegoptionalcomments }}
+						
+							</td>
+					</tr>
+					{% endif %}
+				</tbody>
+			</table>
+			
+		</div>
+		<!-- / iteem end -->
+
+	
+	
+  
+  
+   </div>
+ <!-- / wrapper -->
+  
+
+ <form class="mt30" method="post" action="/{{path}}/assessment/{{customer._id}}/completed-assessment">
+	<p class="mt30"><button class="button">Finish - sign off report</button></p>
+	</form>
+
+
+{% endblock %}
+

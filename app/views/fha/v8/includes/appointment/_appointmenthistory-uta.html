@@ -1,0 +1,115 @@
+
+
+    {% if customer.name.first == 'Lowery' and data['appointments']==="yes" %}   
+
+    <div class="latest_version">
+            <h2 class="heading-medium mt0">Current: Non neuro appointment</h2>
+                <p>Appointment details</p>
+                <ul class="list-bullet">
+                 <li>{{ 'dddd Do MMMM' | baseDateAdd(14) }}</li> 
+                 <li>11:00am</li>  
+                 <li>Tresco House</li> 
+                </ul>
+        
+          
+                        </div>
+        
+        
+            <h2 class="heading-medium">Cancelled: Non neuro appointment</h2>
+            <p>Appointment details</p>
+            <ul class="list-bullet">
+                <li>Tuesday 19th March</li> 
+                <li>11:00am</li>  
+                <li>Tresco House</li> 
+                 </ul>
+        
+                 <h3 class="heading-small">Cancellation reason</h3>
+                 <p class="small">{{reason}}
+                   
+        
+              <span class="date block mt10 text-secondary">Recorded date: {{ 'dddd Do MMMM YYYY' | baseDate(0)}}</span>
+            </p> 
+        
+
+{% elif data['appointments']==="yes" %}
+<div class="latest_version">
+    <h2 class="heading-medium mt0">Current: Non neuro appointment</h2>
+        <p>Appointment details</p>
+        <ul class="list-bullet">
+         <li>
+             
+                {% if customer.name.first == 'Christie' and data['appointments']==="yes" %}
+
+                 Friday 12th April
+                  {% else%}
+             
+            {{ 'dddd Do MMMM' | baseDateAdd(14) }}</li> 
+            {% endif %}
+         <li>11:00am</li>  
+         <li>Tresco House</li> 
+        </ul>
+
+  
+                </div>
+
+
+    <h2 class="heading-medium">Cancelled: Non neuro appointment</h2>
+    <p>Appointment details</p>
+    <ul class="list-bullet">
+        <li>{{ 'dddd Do MMMM' | baseDateAdd(7) }}</li> 
+        <li>11:00am</li>  
+        <li>Tresco House</li> 
+         </ul>
+
+         <h3 class="heading-small">Cancellation reason</h3>
+         <p class="small">{{reason}}
+           
+
+      <span class="date block mt10 text-secondary">Recorded date: {{ 'dddd Do MMMM YYYY' | baseDate(0)}}</span>
+    </p> 
+
+ 
+
+{% else %}
+<div class="latest_version">
+    <h2 class="heading-medium mt0">Current: Non neuro appointment</h2>
+        <p>Appointment details</p>
+        <ul class="list-bullet">
+         <li>{% if customer.name.first == 'Mcconnell' %} Friday 15th March
+             {% elif customer.name.first == 'Lowery' %} Tuesday 19th March {% else %}{{ 'dddd Do MMMM' | baseDateAdd(7) }} {% endif%}</li> 
+         <li>4:00pm</li>  
+         <li>Tresco House</li> 
+        </ul>
+        {% if data['appointments']==="no" %}
+        <h3 class="heading-small">Contact reason</h3>
+        <p class="small">{{reason}}
+            <span class="date">Recorded date: {{customer | formatDate("D MMMM YYYY") }} 10:05 am</span> 
+         </p>       
+        {% endif %}
+</div>
+{% if customer.name.first =='Dominguez' or customer.name.first =='Lowery' or customer.name.first =='Christie'  %}
+{% else %}
+<h2 class="heading-medium">Cancelled: Non neuro appointment</h2>
+<p>Appointment details</p>
+<ul class="list-bullet">
+    <li>{{ 'dddd Do MMMM' | baseDate(5) }}</li> 
+    <li>11:00am</li>  
+    <li>Tresco House</li> 
+     </ul>
+
+     <h3 class="heading-small">Cancellation reason</h3>
+     <p class="small">Customer cancelled because they have another appointment with their specialist on the same day
+       
+
+  <span class="date block mt10 text-secondary">Recorded date: {{ 'dddd Do MMMM YYYY' | baseDate(10)}}</span>
+</p> 
+{% endif %}
+{% endif %}
+
+
+  
+
+
+     
+
+

@@ -1,0 +1,80 @@
+{% extends path1+"/_layout.html" %} 
+{% block mainNav %}
+{% endblock %}
+{% block leftNav %}
+
+{% endblock %}
+
+{% block main_content %}
+<a href="/{{path}}/planning/centre/{{centre.name}}" class="link-back">Back</a>
+
+<h1 class="heading-large mt0">Reassign {{staff.name}}</h1>
+<h2 class="heading-small"><span class="lede">Monday 10 December 2018</span></h2>
+
+<form class="mt30" action="/{{path}}/planning/centre/{{centre.name}}" method="post">
+    <fieldset class="form-group">
+        <legend>
+          <span class="form-label-bold">
+            Location
+          </span>
+        </legend>
+
+        {% for centreKey, centre in staff.otherCentres %}
+            <div class="multiple-choice">
+              <input id="location-{{loop.index}}" type="radio" name="location" value="{{centreKey}}"
+              {{'checked' if centreKey == staff.allocatedCentre }}>
+              <label for="location-{{loop.index}}">{{centreKey}}</label>
+            </div>
+        {% endfor %}
+
+    </fieldset>
+
+    {% if staff.reviews %}
+    <fieldset class="form-group">
+        <legend>
+          <span class="form-label-bold">
+            Morning task
+          </span>
+        </legend>
+        
+        <div class="multiple-choice">
+          <input id="morning-assessments" type="radio" name="morning" value="assessments"
+          {{'checked' if staff.morning == 'assessments'}} >
+          <label for="morning-assessments">Assessments</label>
+        </div>
+        <div class="multiple-choice">
+          <input id="morning-reviews" type="radio" name="morning" value="reviews"
+          {{'checked' if staff.morning == 'reviews'}}>
+          <label for="morning-reviews">reviews</label>
+        </div>
+        
+
+    </fieldset>
+    
+    <fieldset class="form-group">
+        <legend>
+          <span class="form-label-bold">
+            Afternoon task
+          </span>
+        </legend>
+        <div class="multiple-choice">
+          <input id="afternoon-assessments" type="radio" name="afternoon" value="assessments"
+          {{'checked' if staff.afternoon == 'assessments'}}>
+          <label for="afternoon-assessments">Assessments</label>
+        </div>
+        <div class="multiple-choice">
+          <input id="afternoon-reviews" type="radio" name="afternoon" value="reviews"
+          {{'checked' if staff.afternoon == 'reviews'}}>
+          <label for="afternoon-reviews">reviews</label>
+        </div>
+
+    </fieldset>
+    {% else  %}
+    <input type="hidden" name="morning" value="assessments">
+    <input type="hidden" name="afternoon" value="assessments">
+    {% endif %}
+    <input type="hidden" name="staffId" value="{{staff.id}}">
+    <button class="button">Confirm</button>
+</form>
+                  
+{% endblock %}
