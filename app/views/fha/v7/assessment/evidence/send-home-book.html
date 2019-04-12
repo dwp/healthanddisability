@@ -22,24 +22,9 @@
     	
     	<h1 class="heading-large"> <span class="heading-secondary">Step 2 of 2</span>Cancel or rearrange appointment</h1>
     	
-    	{% if checked('stoppassess','unfit') or customer.name.first == 'Dillon'%}
-								<div class="panel panel-info">
-										<p>
-								{{customer.name.first}} is unfit to be examined
-						    	</p>
-					        	</div>
-								{% elif checked('stoppassess','specialreq') %}
-									
-				<div class="panel panel-info mt10">
-						<p>
-							
-								{{customer.name.first}} has a special need they've not previously disclosed
-							</p>
-						</div>
-								{% endif%}
 		
 
-		<form method="post" action="/{{path}}/assessment/{{customer._id}}/booked">
+		<form method="post" action="/{{path}}/assessment/{{customer._id}}/appointment">
 
 		
 						<div class="form-group">
