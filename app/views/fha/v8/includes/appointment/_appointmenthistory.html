@@ -1,52 +1,4 @@
 
-
-
-      
-      
-    
-      {% if customer.name.first == 'Pacheco' and data['scenario']==="know-2" %}
-      <hr />
-      
-      <h2 class="heading-medium">Rearranged: Standard appointment</h2>
-      <ul class="list-bullet mt10 mb10">
-            <li>{{ 'Do MMMM YYYY' | baseDateAdd(15) }}</li>
-            <li>11:00am</li>
-            <li>Tresco House</li>
-          </ul>
-      <h3 class="heading-small">Sent home</h3>
-      <p class="small">Number of claimants in attendance exceeds medical capacity
-      <span class="date block mt10 text-secondary">{{customer | formatDate("D MMMM YYYY") }}</span>
-      </p>   
-
-      {% else %}
-  
-              {% if  data['changedByCustomer']==="yes"%}
-                  <h2 class="heading-medium">Rearranged appointment - unable to attend </h2>
-                  <p class="small">{{changedByCustomerComments}}
-                    <span class="date block mt10 text-secondary">07 November 2018 | 10:15 am</span>
-                  </p>
-                  <hr />
-                 
-              {% endif %}
-              
-              {% if data['changedByCustomerComments2'] %}
-      <h2 class="heading-medium">Rearranged appointment - unable to attend </h2>
-      <p class="small">{{changedByCustomerComments2}}
-        <span class="date block mt10 text-secondary">07 November 2018 | 10:15 am</span>
-      </p>
-      <hr />
-              {% endif %}
-
-              {% if data['changedByCustomer']==="no"%}
-               
-                  <h2 class="heading-medium">Rearranged appointment - assessment centre</h2>
-                  <p class="small">Reason for the change is..
-                    <span class="date block mt10 text-secondary">01 November 2018 | 11:15 am</span>
-                  </p>
-
-         {% endif %}
-
-         {% endif %}
          {% if customer.status == 'Did not attend'%}
          <div class="latest_version">
  
@@ -77,7 +29,8 @@
        
          {% endif %}
 
-
+           {% if data['appointments']=='no' %}
+           {% else %}
             <div class="latest_version">
             <h2 class="heading-medium mt0">Current: 
                 {% if data['Reason']==="complex"%}
@@ -105,7 +58,7 @@
         
           
               </div>
-
+              {% endif %}
      {% if data['scenario'] %}
       <hr />
       
@@ -119,18 +72,50 @@
       <h3 class="heading-small">Cancellation reason</h3>
       <p class="small">
     
-        {% if data['scenario']==="wait"%}
-        {{ customer.name.first }} had waited less than 30 mins and did not want to wait any longer
-        {% elif data['scenario']==="late" %}
-        {{customer.name.first}} arrived 15mins late and waited 10mins
-        {% elif data['scenario']==="unfit" %}
-        {{customer.name.first}} was unfit to be examined <span class="mt10 block"> {{unfitdetail}} </span>
-        {% elif data['scenario']==="special" %}
-        {{customer.name.first}} has a new special need
-        {% elif data['scenario']==="know-2" %}
-        Number of claimants in attendance exceeds medical capacity
-        {% elif data['scenario']==="know-3" %}
-        A specialist healthcare professional is required and must be booked
+          {% if data['scenario']==="know-2" %}
+          Number of claimants in attendance exceeds medical capacity
+          {% elif data['scenario']==="wait"  %}
+           {{customer.name.first}} had waited less than 30 mins and did not want to wait any longer
+          {% elif data['scenario']==="late"  %}
+          {{customer.name.first}} arrived 15mins late and waited 10mins
+          {% elif data['scenario']==="unfit" %}
+          {{customer.name.first}} was unfit to be examined <br>
+          {{ unfitdetail }}
+
+          {% elif data['scenario']==="special" %}
+          {{customer.name.first}} has a new special need <br>
+          {% if data['requirment']=='one'%}
+          Accessible room required
+          {% elif data['requirment']=='two' %}
+          Interpreter required
+          {% elif data['requirment']=='three' %}
+          Healthcare practitioner of same gender required
+          {% elif data['requirment']=='four' %}
+          Audio recording equipment required
+          {% endif %}
+          {% elif data['scenario']==="know-3" %}
+A specialist healthcare professional is required and must be booked
+
+{% elif data['scenario']==="know-4" %}
+The claimant’s file was not available
+{% elif data['scenario']==="know-5" %}
+Interpreter not provided
+{% elif data['scenario']==="know-6" %}
+Healthcare practitioner of same gender not provided
+{% elif data['scenario']==="know-7" %}
+Audio recording equipment not provided
+{% elif data['scenario']==="know-8" %}
+Inappropriate for health care professional to see claimant (for example they know them)
+{% elif data['scenario']==="know-9" %}
+Healthcare professional ill or called away
+{% elif data['scenario']==="know-10" %}
+Healthcare professional did not attend
+{% elif data['scenario']==="know-12" %}
+Building problem (for example, evacuation)
+{% elif data['scenario']==="know-13" %}
+Technology performance issues (for example, system down or too slow)
+{% elif data['scenario']==="know-14" %}
+The claimant’s file was not available
         {% else %}
         {{reason}}
         {% endif%}
