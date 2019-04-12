@@ -10,21 +10,11 @@
 <main id="content" role="main" class="main-content">
 <div class="container">
 	<div class="grid-row">
-		<div class="column-one-quarter">
-		{% block leftNav %}
-              
-		{{ leftNav.nav("/planning" ) }}
 
-
-		{% endblock %}
-	</div>
-
-
-		<div class="column-three-quarters">
+		<div class="column-two-thirds">
 			{% block main_content %}
 			{% endblock %}
 		</div>
-	</div>
 </div>
 </main>
 {% endblock %}

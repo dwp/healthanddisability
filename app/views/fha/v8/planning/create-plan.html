@@ -1,0 +1,115 @@
+{% extends path1+"/_layout-index.html" %} 
+
+
+{% block assess_content %}
+<main id="content" role="main" class="main-content">
+
+      <div class="container">
+          <div class="grid-row">
+              <div class="column-full">
+  <a href="javascript: history.go(-1)" class="link-back">Back</a>   
+   <h1 class="heading-large mt10"><span class="heading-secondary">Tresco house</span>Create capacity plan</h1>
+   
+   
+   <p>Week commencing: <b>Monday 8 April</b></p>
+
+   
+ 
+   <div class="grid-row">
+    <div class="card-container">
+
+        <div class="card  {% if data['times'] %}reviewed  {% endif %} ">
+          <a href="/{{path}}/planning/create-plan-times">
+        
+
+              <h2 class="heading-xlarge">
+                {% if data['times'] %}
+                48
+                {% else %}
+               
+               {% endif %}
+                <span class="heading-small">Monday</span>
+               </h2>
+
+               {% if data['times'] %}
+
+               <ul class="content">
+                  <li><h3 class="heading-small">Hcp skillsets available</h3></li>
+                 <li>2 complex neuro</li>
+                 <li>4 non-neuro</li>
+               </ul>
+              {% endif %}
+        
+          </a>
+        </div>
+        <div class="card">
+            <a href="/{{path}}/create-plan-times">
+          
+  
+                <h2 class="heading-xlarge">
+                 
+                  <span class="heading-small">Tuesday</span>
+                 </h2>
+          
+            </a>
+          </div>
+          <div class="card">
+              <a href="/{{path}}/create-plan-times">
+            
+    
+                  <h2 class="heading-xlarge">
+                   
+                    <span class="heading-small">Wednesday</span>
+                   </h2>
+            
+              </a>
+            </div>
+
+            <div class="card">
+                <a href="/{{path}}/create-plan-times">
+              
+      
+                    <h2 class="heading-xlarge">
+                     
+                      <span class="heading-small">Thursday</span>
+                     </h2>
+              
+                </a>
+              </div>
+              <div class="card">
+                  <a href="/{{path}}/create-plan-times.html">
+                
+        
+                      <h2 class="heading-xlarge">
+                       
+                        <span class="heading-small">Friday</span>
+                       </h2>
+                
+                  </a>
+                </div>
+                <div class="card">
+                    <a href="/{{path}}/create-plan-times">
+                  
+          
+                        <h2 class="heading-xlarge">
+                         
+                          <span class="heading-small">Saturday</span>
+                         </h2>
+                  
+                    </a>
+                  </div>
+                  </div>
+        </div>
+        
+        {% if data['times'] %}
+        <p><button class="button mt25">Submit capacity plan</button></p>
+        {% endif %}
+        
+        
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}
