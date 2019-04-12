@@ -1,0 +1,86 @@
+{% extends path+"/_layout-details.html" %}
+
+
+{% block case_content %}
+
+		   <h1 class="heading-large mt10">Illnesses, disabilities and medication </h1>
+
+		  
+		
+		<h2 class="heading-medium">Recorded illnesses and disabilities</h2>
+		<p class=""><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Add or edit illnesses and disabilities</a></p>
+		<div class="table-layout">
+		<table>
+			<caption class="visually-hidden">List of illnesses and disabilities</caption>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Source</th>
+					<th>Since</th>
+				
+				</tr>
+			</thead>
+			<tbody>
+				{% for illness in customer.illnesses %}
+				<tr>
+					<td>{{illness.name}}</td>
+					<td>{{illness.source}}</td>
+					<td class="text-secondary">{{illness.date |formatDate('MMMM YYYY')}}</td>
+				
+				</tr>
+				{% endfor %}
+				
+			</tbody>
+		</table>
+		</div>
+		
+		<h2 class="heading-medium">Medication and side effects</h2>
+		<p class=""><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Add or edit medication or side effects</a></p>			
+	
+		
+			{% if customer.medication.length > 0 %}
+				<table>
+					<caption class="visually-hidden">List of medication and side effects</caption>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Dose</th>
+							<th>Side effects</th>
+						
+						</tr>
+					</thead>
+					<tbody>
+
+						{% for medication in customer.medication %}
+							<tr>
+								<td>{{medication.name}}</td>
+								<td>{{medication.dose}}</td>
+								<td>{{medication.sideEffects}}</td>
+							
+							</tr>
+						{% endfor %}
+						
+						
+					</tbody>
+				</table>
+				{% endif %}
+			
+		
+		
+		
+
+      
+           
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.details-nav ul')
+      .children(":nth-child(1)")
+      .addClass('active_detail')
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends path+"/_layout-case.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+
+    {% if customer.status == 'Assessment reports'%}
+    {{ navreport.case_tabs("timeline",1,path1, customer._id) }}
+    {% else %}
+    {{ navfta.case_tabs("timeline",1,path1, customer._id) }}
+    {% endif%}
+
+  {% include path+"/includes/_timeline.html" %}
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

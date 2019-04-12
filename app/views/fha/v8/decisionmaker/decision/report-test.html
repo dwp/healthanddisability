@@ -1,0 +1,185 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+<div class="grid-row">
+
+  <div class="column-two-thirds">
+  	
+  		<div class="full-report descriptor-focused">
+  		
+  		<h1 class="heading-large mb30"><span class="heading-secondary">Step 1 of 3</span>Moving around and using steps without help</h1>
+  		
+  		
+  
+  				<div class="inner-focus">
+						<h4 class="heading-small">How far can {{customer.name.first}} walk or move on level ground without help from someone, and without stopping due to severe pain or tiredness?</h4>
+						<p>No more than 50 metres</p>
+						
+						<h4 class="heading-small">Can {{customer.name.first}} go up or down 2 steps without help, if they use a handrail?</h4>
+						<p>No</p>
+
+					</div>   
+
+				
+					<table class="report-view-table">
+					<caption class="heading-small">Relevant statements</caption>
+					
+						<tbody>
+							<tr>
+								<td>{{customer.name.first}}'s bedroom is upstairs</td>
+							</tr>
+							<tr>
+								<td>She does not sleep due to stress, restless legs, pain</td>
+							</tr>
+							<tr>
+								<td>She has to sit wash due to the pain in her legs</td>
+							</tr>
+							<tr>
+								<td>In the winter she needs assistance to put socks on</td>
+							</tr>
+							<tr>
+								<td>She mobilises with her electric scooter</td>
+							</tr>
+							<tr>
+								<td>She is able to walk for around 5 minutes at a slow pace with the aid of a walking stick</td>
+							</tr>
+							<tr>
+								<td>She is able to use the stairs doing one step at a time, she will not need to stop. She will use a stair lift at home but when she is out will use a walking stick</td>
+							</tr>
+							<tr>
+								<td>She will go shopping with her sister. Once every 2 weeks</td>
+							</tr>
+							<tr>
+								<td>Able to cross the road independently and safely</td>
+							</tr>
+							
+						</tbody>
+					</table>
+					
+
+					
+		</div>
+	
+		
+  </div><!-- column -->
+  
+  <div class="column-third">
+
+  	<div class="descriptor-scored">
+		
+			<div class="score-display">
+				<h2><span>Recommended points</span>9</h2>
+			</div>
+			
+			<form class="decision-mode">
+			<fieldset>
+				<legend class="form-label-bold mb10">Make your decision:</legend>
+				
+			  <div class="form-group">
+			
+			    <div class="multiple-choice">
+			      <input id="decide_now" name="whatcando" type="radio" value="Yes">
+			      <label for="decide_now">Agree with score</label>
+			    </div>
+			
+			    <div class="multiple-choice" data-target="scorenow">
+			      <input id="Override" name="whatcando" type="radio" value="No">
+			      <label for="Override">Change score</label>
+			    </div>
+			    
+			    <!-- Re-score -->
+			    <div class="panel js-hidden" id="scorenow">		    
+			    	<div class="form-group">
+			    		 <div class="multiple-choice">
+					      <input id="score1" name="scoring" type="radio" value="0">
+					      <label for="score1">0</label>
+					    </div>
+			
+					    <div class="multiple-choice">
+					      <input id="score2" name="scoring" type="radio" value="3">
+					      <label for="score2">3</label>
+					    </div>	
+					    <div class="multiple-choice">
+					      <input id="score3" name="scoring" type="radio" value="9" checked="checked">
+					      <label for="score3">9</label>
+					    </div>
+			
+					    <div class="multiple-choice">
+					      <input id="score4" name="scoring" type="radio" value="15">
+					      <label for="score4">15</label>
+					    </div>
+			    	</div>	
+			    	<div>
+			    		<label class="form-label" for="dmreasonrescore">Reason:</label>
+						<textarea name="dmreasonrescore" class="form-control form-control-3-4" rows="3" style="width: 98%;"></textarea>	
+			    	</div>
+			    </div>
+			    <!-- // Re-score -->
+			    
+			    <div class="multiple-choice" data-target="rework">
+			      <input id="face2face" name="whatcando" type="radio" value="No">
+			      <label for="face2face">Rework required</label>
+			    </div>
+			    
+			    <!-- Re-score -->
+			    <div class="panel js-hidden" id="rework">		    
+			    	<label class="form-label" for="dmreasonrescore">Reason:</label>
+					<textarea name="dmreasonrescore" class="form-control form-control-3-4" rows="3" style="width: 98%;"></textarea>	
+			    </div>
+			    <!-- // Re-score -->
+			    
+			    
+			   
+			
+			  </div><!-- form-group -->
+			  <div class="form-group">
+			    <a href="report-test2" class="button">Save and continue</a>
+			  </div><!-- form-group -->
+			  
+			</fieldset>
+			</form>
+
+			
+		</div>
+  </div><!-- column -->
+  
+  
+  
+</div><!-- row -->
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+$(document).on('ready',function()
+
+{
+  $('#nugget').focus();
+  
+  $("#nugget").keydown(function (event) {
+    if ((event.keyCode == 13))
+    {
+      $('#submitButton').trigger('click');
+    }
+  });
+
+
+});
+
+
+
+</script>
+
+
+
+
+{% endblock %}

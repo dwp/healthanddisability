@@ -1,0 +1,211 @@
+
+  <div class="full">
+   
+</div>
+
+<div class="column-one-third">
+
+    {% if customer.name.first == 'Dillon' and data['book-next']==="yes" %}
+    {% elif  customer.name.first == 'Dillon' and data['appointments']==="no"  %}
+    <div class="panel panel-warning mt20">
+        <h2 class="heading-small">Action required</h2>
+        <p>  {{customer.name.first}} attened his appointment but was unfit to be examined </p>
+        <p>{{changedByCustomerComments}}</p>
+        <ul class="list-bullet">
+          <li>Wellfair call required</li>
+          <li>Rearrange appointment</li>
+        </ul>
+    </div>
+    {% elif  customer.name.first == 'Dillon'%}
+    
+    <div class="panel panel-warning mt20">
+      <h2 class="heading-small">Assessment stopped</h2>
+      <p>{{customer.name.first}} is unfit to be examined</p>
+    </div>
+    {% endif%}
+
+    {% if customer.name.first == 'Dominguez' and data['scenario']==="know-3" %}
+    {% elif  customer.name.first == 'Dominguez'%}
+    <div class="panel panel-warning mt20">
+      <h2 class="heading-small">Assessement stopped</h2>
+      {{customer.name.first}} needs to see a doctor because a new condition has been identified</div>
+    {% endif%}
+    {% if  customer.name.first == 'Dillon' and data['book-next']==="yes" %}
+    <h2 class="heading-small">{{customer.name.first}}'s current appointment</h2> 
+    <span class="badge">Updated</span>
+    <p>Monday 14 Jan 2018 <br> 4:00pm</p>
+    {% elif  customer.name.first == 'Dillon' and data['appointments']==="no"  %}
+    <h2 class="heading-small"><span style="font-weight:normal" class="text-secondary">Next available</span><br />Standard appointment</h4> 
+      <p>Monday 14 Jan 2018 <br> 4:00pm</p> 
+      <form method="post" action="/{{path}}/assessment/{{customer._id}}/booked">
+      <p><button  class="button-secondary">Book this appointment</button></p>
+      <div class="multiple-choice" style="display:none">
+          <input id="radio-inline-4" type="radio" name="book-next" value="yes" checked>
+          <label for="radio-4">hidden radio one</label>
+        </div>
+    </form>
+      <p><a href="/{{path}}/assessment/{{customer._id}}/evidence/send-home-book" >Choose another date</a></p>
+    
+    {% else %}
+
+     <h2 class="heading-small"><span style="font-weight:normal" class="text-secondary">Appointment details</span><br />{% if data['Reason']==="complex"%}
+      Complex neuro
+      {% elif data['Reason']==="neuro"%}
+      Neuro
+      {% else%}
+      Non neuro
+      {% endif %} appointment</h2>  
+
+          {% if data['book-next']==="yes" 
+          or data['scenario'] %}
+          <span class="badge">Updated</span>
+          <ul class="list-bullet mt10 mb10">
+              <li>{{ 'dddd Do MMMM YYYY' | baseDateAdd(14) }}</li>
+              <li>{{ customer.appointment.time }}</li>
+              <li>Tresco House</li>
+            </ul>
+           {% elif customer.name.first == 'Dominguez' and data['Reason']==="unable"  %} 
+           <ul class="list-bullet mt10 mb10">
+          
+              <li>{{ 'Do MMMM YYYY' | baseDateAdd(1) }}</li>
+              <li>{{ customer.appointment.time }}</li>
+              <li>Tresco House</li>
+            </ul>
+          
+          {% else %}
+          <ul class="list-bullet mt10 mb10">
+              <li>{{ 'Do MMMM YYYY' | baseDateAdd(0) }}</li>
+              <li>{{ customer.appointment.time }}</li>
+              <li>Tresco House</li>
+            </ul>
+          {% endif %}
+          {% endif %}
+
+
+
+     
+          <p><a href="/{{path}}/assessment/{{customer._id}}/evidence/send-home"  class="button-secondary">Cancel or rearrange appointment</a></p>
+        
+          <hr />
+      
+</div>
+
+<div class="column-two-thirds">
+  <div class="grid-row">
+    <div class="column-half"> 
+      <div class="card-single">  
+        <h2 class="heading-small">
+         Appointment preferences
+   
+        </h2>
+        <div class="inner">
+           {% if customer.appointment.taxi or checked('scenario', 'taxi')
+              or customer.appointment.interpreter  or checked('scenario', 'interpreter')
+              or customer.appointment.accessible or checked('scenario', 'accessible')
+              or customer.appointment.gender or checked('scenario', 'gender')
+              or customer.appointment.audio or checked('scenario', 'audio')
+           %}
+           <h3 class="heading-small">Requirements</h3>
+           {% endif %}
+      <ul>
+        {% if customer.appointment.taxi or checked('scenario', 'taxi')%}
+        <li> Taxi<a href="" class="pull-right">booked</a></li>
+        {% endif %}
+        {% if customer.appointment.interpreter  or checked('scenario', 'interpreter')%}
+        <li>Interpreter<a href="" class="pull-right">booked</a></li>
+        {% endif %}
+        {% if customer.appointment.accessible or checked('scenario', 'accessible')%}
+        <li>Ground floor access</li>
+        {% endif %}
+        {% if customer.appointment.gender or checked('scenario', 'gender')%}
+        <li>Same gender HCP</li>
+        {% endif %}
+        {% if customer.appointment.audio or checked('scenario', 'audio')%}
+        <li>Audio recording </li>
+        {% endif %}
+ 
+      </ul>
+      {% if customer.name.first == 'Lowery' %}
+      <h3 class="heading-small">Unavailable on</h3>
+      <ul>
+          
+  
+          <li>Monday <span>afternoons</span>
+          </li>
+          <li>Tuesdays</li>
+        </ul>
+        {% endif%}
+ 
+      <p class="mt20"> <a href="/fha/v7/assessment/{{customer._id}}/appointment-preferences" class="">Add or edit preferences</a></p>
+      </div>
+      </div> 
+      
+    </div>
+    <div class="column-half">
+      <div class="card-single">
+        <h2 class="heading-small">Appointment history</h2>
+
+
+        <div class="inner">
+         
+
+           
+
+
+           
+
+           
+               
+
+               
+            
+
+           
+            
+
+               
+          
+
+            {% if data['scenario'] %}
+            
+                <h3 class="heading-small">Cancelled appointment reason</h3>
+  
+                <p class="small">
+                  
+                    {% if data['scenario']==="know-2" %}
+                  Number of claimants in attendance exceeds medical capacity
+                  {% elif data['scenario']==="wait"  %}
+                   {{customer.name.first}} had waited less than 30 mins and did not want to wait any longer
+                  {% elif data['scenario']==="late"  %}
+                  {{customer.name.first}} arrived 15mins late and waited 10mins
+                  {% elif data['scenario']==="unfit" %}
+                  {{customer.name.first}} was unfit to be examined
+                  {% elif data['scenario']==="special" %}
+                  {{customer.name.first}} has a new special need
+                  {% elif data['scenario']==="know-3" %}
+        A specialist healthcare professional is required and must be booked
+                  {% else %}
+                  {{reason}}
+                  {% endif %}
+                  <span class="date block mt10">Date recorded:{{ 'Do MMMM YYYY' | baseDate(0)}} | 10:15 am</span>
+                </p>
+             
+            {% else %}
+           
+                <h3 class="heading-small">Cancelled appointment reason</h3>
+                  <p>Original appointment clashed with another</p>
+                <span class="date block mt10">Date recorded: {{ 'Do MMMM YYYY' | baseDate(25)}}</span>
+             
+               
+            {% endif %}    
+
+                
+               <p class="mt20"><a  href="/fha/v7/assessment/{{customer._id}}/appointment-history">View history</a></p> 
+             
+            </div>
+
+
+
+            
+    </div>
+    </div>

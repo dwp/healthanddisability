@@ -1,0 +1,94 @@
+{% extends path+"/_layout-case-action.html" %}
+
+
+{% block citizen_content %}
+
+ <p class="no-kdBar"> <a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+ 
+<form class="form" action="timeline" method="post">
+<div class="grid-row">
+  <div class="column-two-thirds">
+<h1 class="heading-large">Failure to attend</h1>
+   
+         <div class="latest_version">
+         <h2 class="heading-medium mt0">What we know</h2>
+         <p>Appointment details</p>
+         <ul class="list-bullet">
+             <li>{{ 'Do MMMM YYYY' | baseDate(1) }}</li> 
+             <li>11:00am</li>  
+             <li>Tresco House</li> 
+              </ul>
+              {% if customer.substatus == 'Ready for decision' and customer.reason == 'Overdue' %}
+              <p>We requested a reason on {{ 'Do MMMM YYYY' | baseDate(7) }}, {{ customer.name.first }} has not provided us with the reason for missing the appointent</p>
+              {% elif customer.substatus == 'Ready for decision' %}
+              <h3 class="heading-small">Customer contacted us</h3>
+            
+              <p class="small">{{ customer.name.first }} was having a bad day with his arthritis and was struggling to get out of the house, he asked for a rearrangement but we could not provide it because he had previously rearranged
+                  his appointment.
+                <span class="date block mt10">Recorded date: {{ 'Do MMMM YYYY' | baseDate(1) }}</span>
+              </p>  
+              {% elif customer.substatus == 'Record a reason' or customer.substatus == 'Request a reason' and data['dmreason'] %}
+              <h3 class="heading-small">Customer contacted us</h3>
+            
+              <p class="small">{{ dmreason }}
+                <span class="date block mt10">Recorded date: {{ 'Do MMMM YYYY' | baseDate(1) }}</span>
+              </p> 
+
+         {% endif %}
+        
+        </div>
+        
+      <hr >
+         <h2 class="heading-medium mt0">Cancelled: non-neuro appointment</h2>
+         <p>Appointment details</p>
+         <ul class="list-bullet">
+             <li>{{ 'Do MMMM YYYY' | baseDate(15) }}</li> 
+             <li>11:00am</li>  
+             <li>Tresco House</li> 
+              </ul>
+
+              <h3 class="heading-small">Customer contacted us</h3>
+              <p class="small">Reason: original appointment clashed with another
+                
+   
+           <span class="date block mt10 text-secondary">Recorded date: {{ 'Do MMMM YYYY' | baseDate(25)}}</span>
+         </p> 
+
+      
+
+
+
+</div>
+<div class="column-third">
+    <div class="decision-form">
+  <fieldset>
+
+    <legend class="heading-medium mb5">What do you want to do?</legend>
+    
+    <div class="form-group">
+  
+      <div class="multiple-choice" data-target="scorenow">
+        <input id="decide_now" name="whatcando" type="radio" value="newappointment">
+        <label for="decide_now">Book {{customer.name.first}} another appointment</label>
+      </div>
+  
+      <div class="multiple-choice" data-target="closeThis">
+        <input id="face2face" name="whatcando" type="radio" value="close">
+        <label for="face2face"> Close {{customer.name.first}}'s case</label>
+      </div>
+      <div class="panel js-hidden" id="closeThis">
+        <label class="form-label" for="closeReason">Reason:</label>
+      <textarea class="form-control form-control-3-4" name="closeReason" id="closeReason" rows="2"></textarea>
+      </div>
+  
+    </div><!-- form-group -->
+    <div class="form-group">
+      <button class="button">Confirm</button>
+    </div><!-- form-group -->
+    
+  </fieldset></div>
+</div>
+</div>
+</form>
+
+{% endblock %}

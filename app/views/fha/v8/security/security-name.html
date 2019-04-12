@@ -1,0 +1,168 @@
+{% extends path+"/_layout-security.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    	
+		<h1 class="heading-large">Security check</h1>
+
+			<form action="/{{path}}/booking/{{customer._id}}/appointment" method="post">
+
+					
+			<div class="form-group">
+					<fieldset>
+							<legend>
+									<span class="heading-medium">
+										 Who is on the phone?
+										</span>
+							</legend>
+							<div class="multiple-choice">
+									<input id="caller-customer" type="radio" name="caller" value="customer" >
+									<label for="caller-customer">{% if customer.name.first == 'Deena' %} Richard Smith {% else %}{{customer.name.fullName}} {% endif %}</label>
+							</div>
+						<!--  <div class="multiple-choice">
+									<input id="caller-appointee" type="radio" name="caller" value="appointee" >
+									<label for="caller-appointee">Appointee</label>
+							</div> -->
+
+						 <div class="multiple-choice" data-target="caller-other">
+									<input id="caller-other" type="radio" name="caller" value="other" >
+									<label for="caller-other">Other</label>
+							</div>
+							<div class="panel" id="caller-other-content">
+									<div class="form-group">
+										<label class="form-label" for="other-caller-details">Name</label>
+				<input class="form-control form-control-2-4" name="other-caller-details" type="text" id="other-caller-details">
+									</div>
+									<div>
+										<label class="form-label" for="other-caller-details">Relationship to {{customer.name.first}}</label>
+				<input class="form-control form-control-2-4" name="other-caller-details" type="text" id="other-caller-details">
+									</div>
+							</div>  
+
+					</fieldset>
+			</div>
+
+				
+			           
+			          <p class="mt30">The caller must confirm the following details.</p>
+			          
+			          <div class="grid-row">
+			          	<div class="column-two-thirds">
+										{% if customer.name.first == 'Deena' %}
+                     <h2 class="heading-medium">Appointee details</h2>
+											<dl class="govuk-check-your-answers cya-questions-short">
+			
+													<div>
+															<dt class="cya-question">Name</dt>
+															<dd class="cya-answer">Richard Smith</dd>
+													</div>
+									
+													<div>
+															<dt class="cya-question">Address</dt>
+															<dd class="cya-answer">2 Monmouth street 
+																	<br>
+																	Birmingham 
+																	<br> 
+																	B10 2LL
+																	</dd>
+													</div>
+											</dl>
+
+									<h2 class="heading-medium">Claimant details</h2>
+									{% endif %}
+			            <dl class="govuk-check-your-answers cya-questions-short">
+			
+			                <div>
+			                    <dt class="cya-question">Name</dt>
+			                    <dd class="cya-answer">{{customer.name.fullName}}</dd>
+			                </div>
+			                <div>
+			                    <dt class="cya-question">Date of birth</dt>
+			                    <dd class="cya-answer">{{customer.dateOfBirth | formatDate("D MMMM YYYY") }}</dd>
+			                </div>
+			                <div>
+			                    <dt class="cya-question">Address</dt>
+			                    <dd class="cya-answer">{{customer.address.street}}
+			                        <br> {{customer.address.city}}
+			                        <br> {{customer.address.postcode}}
+			                        </dd>
+											</div>
+											<div>
+			                    <dt class="cya-question">Telephone</dt>
+			                    <dd class="cya-answer">07654543432
+			                       
+			                        </dd>
+											</div>
+											<div>
+			                    <dt class="cya-question">Appointment details</dt>
+			                    <dd class="cya-answer">{{ 'dddd Do MMMM' | baseDateAdd(12) }}
+			                        <br> 4:00pm
+			                        <br> Tresco house
+			                        </dd>
+											</div>
+			            </dl>
+			            
+			          	</div>
+			          </div>
+
+			            <div class="mt30">
+
+				                <fieldset class="inline">
+				                    <legend>
+				                        <span class="form-label-bold">
+				                            Has the caller passed the security check?
+				                          </span>
+				                    </legend>
+				                    <div class="multiple-choice" data-target="check-passed">
+				                        <input id="confirmed-yes" type="radio" name="confirmed" value="true" >
+				                        <label for="confirmed-yes">Yes</label>
+				                    </div>
+				                    <div class="multiple-choice" data-target="check-failed">
+				                        <input id="confirmed-no" type="radio" name="confirmed" value="false" >
+				                        <label for="confirmed-no">No</label>
+				                    </div>
+				                </fieldset>
+
+							
+							<div class="panel js-hidden" id="check-passed">
+								<button class="button">Access case details</button>
+							</div>
+								
+			            
+							<div class="panel js-hidden" id="check-failed">
+								<a href="/{{path}}/search" class="button">Close</a>
+							</div>
+							
+			             </div>
+
+			            
+			            
+			            
+			            
+			        </form>
+		
+		
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+

@@ -1,0 +1,1711 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+
+
+ <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+  
+<h1 class="heading-large">Assessment review</h1>
+  
+ <div class="review-wrapper full-report">
+
+		<div class="report-item">
+
+				<table class="report-view-table">
+				<caption class="heading-small">Assessment overview</caption>
+  
+  	<tr>
+  	<th>Date of assessment</th>
+  	<td>{{ "Do MMM YYYY" | daysAgo }}</td>
+		</tr>
+		<tr>
+  	<th>Assessment centre</th>
+  	<td>Fiveways, Birmingham</td>
+		</tr>
+		<tr>
+  	<th>Assessor</th>
+  	<td>Heather Harrison</td>
+		</tr>
+		<tr>
+  	<th>Assessment start</th>
+  	<td>{{ last_one.time | formatDate("H:mma") }}</td>
+		</tr>
+		<tr>
+  	<th>Assessment finish</th>
+  	<td>{{ first_one.time | formatDate("H:mma") }}</td>
+  	</tr>
+
+
+</table>
+   
+
+ 
+		</div>
+    
+    
+    
+		<div class="report-item">
+				<h2 class="heading-large">Illnesses, disabilities and medication</h2>
+			
+				<table class="report-view-table">
+					<caption>Illnesses and disabilities</caption>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Source</th>
+							<th>Since</th>
+						
+						</tr>
+					</thead>
+					<tbody>
+						{% for illness in customer.illnesses %}
+						<tr>
+							<td>{{illness.name}}</td>
+							<td>{{illness.source}}</td>
+							<td class="text-secondary">{{illness.date |formatDate('MMMM YYYY')}}</td>
+						
+						</tr>
+						{% endfor %}
+						{% if data['newillness']==='meds1' %}
+						<tr>
+								<td>{{newillneesname}}</td>
+								<td>{{newillnesssource}}</td>
+								<td class="text-secondary">{{newillnessmonth | formatDate('MMMM')}} {{newillnessyear}}</td>
+							
+							</tr>
+						{% endif %}
+						
+					</tbody>
+				</table>
+
+
+	
+						
+			
+				
+					{% if customer.medication.length > 0 %}
+						<table class="report-view-table">
+							<caption >Medication and side effects</caption>
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Dose</th>
+									<th>Side effects</th>
+								
+								</tr>
+							</thead>
+							<tbody>
+		
+								{% for medication in customer.medication %}
+									<tr>
+										<td>{{medication.name}}</td>
+										<td>{{medication.dose}}</td>
+										<td>{{medication.sideEffects}}</td>
+									
+									</tr>
+								{% endfor %}
+								{% if data['illnessMedication']==="other" %}  	
+								<tr>
+										<td>{{otherMedName}}</td>
+										<td>{{otherMedDose}}</td>
+										<td>{{otherMedSideEffects}}</td>
+									
+									</tr>
+								{% endif %}
+								
+							</tbody>
+						</table>
+						{% endif %}
+			 
+				
+			    <h2 class="heading-medium">Condition history</h2>
+				<p>{{conditionHistory1}}</p>
+	<p><a href="#" class="button secondary">Edit Illnesses and their effects</a></p>
+</div> 
+
+
+<div class="report-item">	
+	
+	
+		<h2 class="heading-large ">Physical assessments</h2>    
+	
+		
+		<p>Consent was given by Bobby to start the physical assessment.</p>
+	
+		{% if data['general'] %}
+		<h3 class="heading-medium">General health</h3>
+	
+		<table class="report-view-table">
+			
+	
+				<tbody>
+					{% if data['height'] %}
+					<tr>
+						<th>Stated height</th>
+						<td>
+								{{ height }}
+						</td>
+					</tr>
+					{% endif %}
+	
+					{% if data['weight'] %}
+					<tr>
+						<th>Stated weight</th>
+						<td>
+								{{ weight }}
+						</td>
+					</tr>
+					{% endif %}
+	
+					{% if data['bmi'] %}
+					<tr>
+						<th>Bmi</th>
+						<td>
+								{{ bmi }}
+						</td>
+					</tr>
+					{% endif %}
+				
+					{% if data['generalcomments'] %}
+					<tr>
+						<th>Other examination findings </th>
+						<td>
+							
+								{{ generalcomments }}
+						
+							</td>
+					</tr>
+					{% endif %}
+				</tbody>
+			</table>
+	
+		{% endif %}
+		
+				
+			<h3 class="heading-medium">Lower back and legs</h3>
+	
+	
+			{% if checked('lowerlimbs', 'Lower') %}
+	
+		
+			<table class="report-view-table">
+					<caption class="heading-small">Lower back</caption>
+		
+					<tbody>
+							{% if checked('issueswithback', 'Issue 1') %}
+							<tr>
+								<th>Forward flexion</th>
+								<td>
+										{% if data['issuewithback1opencomments'] %}
+									
+										{{ issuewithback1opencomments }}
+										{% else %}
+										Unrestricted
+										{% endif %}
+									
+									
+								</td>
+							</tr>
+							{% endif %}
+							{% if checked('issueswithback', 'Issue 2') %}
+							<tr>
+								<th>Forward flexion</th>
+								<td>
+										{% if data['issuewithback2opencomments'] %}
+									
+										{{ issuewithback2opencomments }}
+										{% else %}
+										Full
+										{% endif %}
+									
+									
+								</td>
+							</tr>
+							{% endif %}
+		
+						{% if data['weight'] %}
+						<tr>
+							<th>Weight</th>
+							<td>
+									{{ weight }}
+							</td>
+						</tr>
+						{% endif %}
+		
+						{% if data['bmi'] %}
+						<tr>
+							<th>Bmi</th>
+							<td>
+									{{ bmi }}
+							</td>
+						</tr>
+						{% endif %}
+					
+						{% if data['issuewithbackcomments'] %}
+						<tr>
+							<th>Other examination findings </th>
+							<td>
+								
+									{{ issuewithbackcomments}}
+							
+								</td>
+						</tr>
+						{% endif %}
+					</tbody>
+				</table>
+		
+			{% endif %}
+	
+			
+				
+			<table class="report-view-table">
+					<caption class="heading-small">Left leg</caption>
+	
+					<tbody>
+						{% if checked('issueswith', 'Issue 1') %}
+						<tr>
+							<th>Straight Leg raising</th>
+							<td>
+									{% if data['testingthis']==="test1" %}
+									Normal (more than 70°)
+									{% elif data['testingthis']==="test2" %}
+									Able to lift straight leg when lying down is reduced by muscle tightness at the back of the leg: reduced by hamstring tightness
+									{% elif data['testingthis']==="test3" %}
+									Ability to lift straight leg when lying down reduced due to hip pain
+									{% elif data['testingthis']==="test4" %}
+									Ability to lift straight leg when lying down reduced due to low back pain
+									{% elif data['testingthis']==="test5" %}
+									Straight leg raising is reduced by weakness
+									{% endif %}
+								
+								
+							</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswith', 'Issue 2') %}
+						<tr>
+							<th>Hip flexion</th>
+							<td>	{% if data['issue2opencomments']  %}
+								
+									{{ issue2opencomments }}
+									{% else %}
+									Normal (more than 130˚)
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswith', 'Issue 3') %}
+						<tr>
+							<th>Knee flexion</th>
+							<td>	{% if data['issue3opencomments']  %}
+								
+									{{ issue3opencomments }}
+									{% else %}
+									Normal (more than 120˚)
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswith', 'Issue 4') %}
+						<tr>
+							<th>Knee extension</th>
+							<td>	{% if data['issue4opencomments']  %}
+								
+									{{ issue4opencomments }}
+									{% else %}
+									Full
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswith', 'Issue 5') %}
+						<tr>
+							<th>External hip rotation</th>
+							<td>	{% if data['issue5opencomments'] %}
+								
+									{{ issue5opencomments }}
+									{% else %}
+									Normal (more than 45˚)
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswith', 'Issue 6') %}
+						<tr>
+							<th>Ankle Plantarflexion</th>
+							<td>	{% if data['issue6opencomments'] %}
+								
+									{{ issue6opencomments }}
+									{% else %}
+									Normal (more than 50˚)
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswith', 'Issue 7') %}
+						<tr>
+							<th>Ankle dorsiflexion</th>
+							<td>	{% if data['issue7opencomments'] %}
+								
+									{{ issue7opencomments }}
+									{% else %}
+									Normal (more than 20˚)
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswith', 'Issue 8') %}
+						<tr>
+							<th>Hallux dorsiflexion</th>
+							<td>	{% if data['issue8opencomments'] %}
+								
+									{{ issue8opencomments }}
+									{% else %}
+									Normal (more than 60˚)
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswith', 'Issue 9') %}
+						<tr>
+							<th>Hallux plantarflexion</th>
+							<td>	{% if data['issue9opencomments']  %}
+								
+									{{ issue9opencomments }}
+									{% else %}
+									Normal (more than 40˚)
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswith', 'Issue 10') %}
+						<tr>
+							<th>Power</th>
+							<td>	{% if data['issue10opencomments'] %}
+								
+									{{ issue10opencomments }}
+									{% else %}
+									Normal
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswith', 'Issue 11') %}
+						<tr>
+							<th>Tone</th>
+							<td>	{% if data['issue11opencomments'] %}
+								
+									{{ issue11opencomments }}
+									{% else %}
+									Normal 
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswith', 'Issue 12') %}
+						<tr>
+							<th>Knee reflexes</th>
+							<td>	{% if data['issue12opencomments']%}
+								
+									{{ issue12opencomments }}
+									{% else %}
+									Normal 
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswith', 'Issue 13') %}
+						<tr>
+							<th>Ankle reflexes</th>
+							<td>	{% if data['issue13opencomments'] %}
+								
+									{{ issue13opencomments }}
+									{% else %}
+									Normal 
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswith', 'Issue 14') %}
+						<tr>
+							<th>Plantar reflexes</th>
+							<td>	{% if data['issue14opencomments'] %}
+								
+									{{ issue14opencomments }}
+									{% else %}
+									Normal 
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if data['issue15opencomments'] %}
+						<tr>
+							<th>Other examination findings </th>
+							<td>
+								
+									{{ issue15opencomments }}
+							
+								</td>
+						</tr>
+						{% endif %}
+					</tbody>
+				</table>
+				<form action="lower-limbs2" method="Post">
+				<p><button class="button-secondary">Edit left leg</button></p>
+						 <div class="visually-hidden">
+				<div class="multiple-choice">
+						<input id="issue15" name="physicalvisited" type="checkbox" value="yes" checked>
+						<label for="issue15"> Observations</label>
+						</div>
+				</div>		  
+							</form>
+			<table class="report-view-table">
+					<caption class="heading-small">Right leg</caption>
+			
+					<tbody>
+						{% if checked('issueswithRight', 'Issue 1') %}
+						<tr>
+							<th>Straight Leg raising</th>
+							<td>
+									{% if data['rightlegissue1opencomments'] %}
+								
+									{{ rightlegissue1opencomments }}
+									{% else %}
+									Normal (more than 70˚)
+									{% endif %}
+								
+								
+							</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswithRight', 'Issue 2') %}
+						<tr>
+							<th>Hip flexion</th>
+							<td>	{% if data['rightlegissue2opencomments']  %}
+								
+									{{ rightlegissue2opencomments }}
+									{% else %}
+									Normal (more than 130˚)
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswithRight', 'Issue 3') %}
+						<tr>
+							<th>Knee flexion</th>
+							<td>	{% if data['rightlegissue3opencomments']  %}
+								
+									{{ rightlegissue3opencomments }}
+									{% else %}
+									Normal (more than 120˚)
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswithRight', 'Issue 4') %}
+						<tr>
+							<th>Knee extension</th>
+							<td>	{% if data['rightlegissue4opencomments']  %}
+								
+									{{ rightlegissue4opencomments }}
+									{% else %}
+									Full
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswithRight', 'Issue 5') %}
+						<tr>
+							<th>External hip rotation</th>
+							<td>	{% if data['rightlegissue5opencomments'] %}
+								
+									{{ rightlegissue5opencomments }}
+									{% else %}
+									Normal (more than 45˚)
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswithRight', 'Issue 6') %}
+						<tr>
+							<th>Ankle Plantarflexion</th>
+							<td>	{% if data['rightlegissue6opencomments'] %}
+								
+									{{ rightlegissue6opencomments }}
+									{% else %}
+									Normal (more than 50˚)
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswithRight', 'Issue 7') %}
+						<tr>
+							<th>Ankle dorsiflexion</th>
+							<td>	{% if data['rightlegissue7opencomments'] %}
+								
+									{{ rightlegissue7opencomments }}
+									{% else %}
+									Normal (more than 20˚)
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswithRight', 'Issue 8') %}
+						<tr>
+							<th>Hallux dorsiflexion</th>
+							<td>	{% if data['rightlegissue8opencomments'] %}
+								
+									{{ rightlegissue8opencomments }}
+									{% else %}
+									Normal (more than 60˚)
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswithRight', 'Issue 9') %}
+						<tr>
+							<th>Hallux plantarflexion</th>
+							<td>	{% if data['rightlegissue9opencomments']  %}
+								
+									{{ rightlegissue9opencomments }}
+									{% else %}
+									Normal (more than 40˚)
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswithRight', 'Issue 10') %}
+						<tr>
+							<th>Power</th>
+							<td>	{% if data['rightlegissue10opencomments'] %}
+								
+									{{ rightlegissue10opencomments }}
+									{% else %}
+									Normal
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswithRight', 'Issue 11') %}
+						<tr>
+							<th>Tone</th>
+							<td>	{% if data['rightlegissue11opencomments'] %}
+								
+									{{ rightlegissue11opencomments }}
+									{% else %}
+									Normal 
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswithRight', 'Issue 12') %}
+						<tr>
+							<th>Knee reflexes</th>
+							<td>	{% if data['rightlegissue12opencomments']%}
+								
+									{{ rightlegissue12opencomments }}
+									{% else %}
+									Normal 
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswithRight', 'Issue 13') %}
+						<tr>
+							<th>Ankle reflexes</th>
+							<td>	{% if data['rightlegissue13opencomments'] %}
+								
+									{{ rightlegissue13opencomments }}
+									{% else %}
+									Normal 
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswithRight', 'Issue 14') %}
+						<tr>
+							<th>Plantar reflexes</th>
+							<td>	{% if data['rightlegissue14opencomments'] %}
+								
+									{{ rightlegissue14opencomments }}
+									{% else %}
+									Normal 
+									{% endif %}</td>
+						</tr>
+						{% endif %}
+						{% if data['rightlegissue15opencomments'] %}
+						<tr>
+							<th>Other examination findings</th>
+							<td>
+								
+									{{ rightlegissue15opencomments }}
+							
+								</td>
+						</tr>
+						{% endif %}
+					</tbody>
+				</table>
+				<form action="lower-limbs3" method="Post">
+						<p><button class="button-secondary">Edit right leg</button></p>
+						 <div class="visually-hidden">
+						<div class="multiple-choice">
+								<input id="issue15" name="physicalvisited" type="checkbox" value="yes" checked>
+								<label for="issue15"> Observations</label>
+								</div>
+						</div>		  
+						</form>
+				
+	
+			<!-- / iteem end -->
+	
+	
+			{% if data['cardiac'] %}
+			<h3 class="heading-medium">Cardio vascular and respiratory</h3>
+			{% if checked('cardiac', 'general') %}
+			<table class="report-view-table">
+					<caption class="heading-small">Respiratory rate</caption>
+		
+					<tbody>
+		
+						{% if data['respiratory'] %}
+						<tr>
+							<th>What is Bobby's respiratory at rest?</th>
+							<td>
+									{{ respiratory }}
+							</td>
+						</tr>
+						{% endif %}
+						{% if data['respiratorycomments'] %}
+						<tr>
+							<th>Other examination findings </th>
+							<td>
+								
+									{{ respiratorycomments }}
+							
+								</td>
+						</tr>
+						{% endif %}
+					</tbody>
+				</table>
+				{% endif %}
+	
+				{% if checked('cardiac', 'pulse') %}
+				<table class="report-view-table">
+						<caption class="heading-small">Radial pulse</caption>
+			
+						<tbody>
+			
+							{% if data['radialcomments'] %}
+							<tr>
+								<th>Radial pulse – rate, rhythm, character</th>
+								<td>
+										{{ radialcomments }}
+								</td>
+							</tr>
+							{% endif %}
+							{% if data['radialcomments2'] %}
+							<tr>
+								<th>Other examination findings </th>
+								<td>
+									
+										{{ radialcomments2 }}
+								
+									</td>
+							</tr>
+							{% endif %}
+						</tbody>
+					</table>
+					{% endif %}
+	
+					{% if checked('cardiac', 'peripheral') %}
+					<table class="report-view-table">
+							<caption class="heading-small">Left leg peripheral circulation</caption>
+				
+							<tbody>
+				
+								{% if data['issuewithcardiac1opencomments'] %}
+								<tr>
+									<th>Oedema</th>
+									<td>
+											{{ issuewithcardiac1opencomments }}
+									</td>
+								</tr>
+								{% endif %}
+								{% if data['issuewithcardiac2opencomments'] %}
+								<tr>
+									<th>Doesalis pedis pulse</th>
+									<td>
+										
+											{{ issuewithcardiac3opencomments }}
+									
+										</td>
+								</tr>
+								{% endif %}
+								{% if data['issuewithcardiac3opencomments'] %}
+								<tr>
+									<th>Varicose veins</th>
+									<td>
+										
+											{{ issuewithcardiac3opencomments }}
+									
+										</td>
+								</tr>
+								{% endif %}
+								{% if data['cardiaccomments'] %}
+								<tr>
+									<th>Other examination findings</th>
+									<td>
+										
+											{{ cardiaccomments }}
+									
+										</td>
+								</tr>
+								{% endif %}
+							</tbody>
+						</table>
+						{% endif %}
+	
+						{% if checked('cardiac', 'peripheral2') %}
+						<table class="report-view-table">
+								<caption class="heading-small">Right leg peripheral circulation</caption>
+					
+								<tbody>
+					
+									{% if data['issuewithcardiacright1'] %}
+									<tr>
+										<th>Oedema</th>
+										<td>
+												{{ issuewithcardiacright1 }}
+										</td>
+									</tr>
+									{% endif %}
+									{% if data['issuewithcardiacright2'] %}
+									<tr>
+										<th>Doesalis pedis pulse</th>
+										<td>
+											
+												{{ issuewithcardiacright2 }}
+										
+											</td>
+									</tr>
+									{% endif %}
+									{% if data['issuewithcardiacright3'] %}
+									<tr>
+										<th>Varicose veins</th>
+										<td>
+											
+												{{ issuewithcardiacright3 }}
+										
+											</td>
+									</tr>
+									{% endif %}
+									{% if data['issuewithcardiacright4'] %}
+									<tr>
+										<th>Other examination findings</th>
+										<td>
+											
+												{{ issuewithcardiacright4 }}
+										
+											</td>
+									</tr>
+									{% endif %}
+								</tbody>
+							</table>
+							{% endif %}
+	
+							{% if checked('cardiac', 'Blood') %}
+							<table class="report-view-table">
+									<caption class="heading-small">Blood pressure</caption>
+						
+									<tbody>
+						
+										{% if data['bloodpressure'] %}
+										<tr>
+											<th>What is Bobby's blood pressure?</th>
+											<td>
+													{{ bloodpressure }}
+											</td>
+										</tr>
+										{% endif %}
+										{% if data['bloodpressurecomments'] %}
+										<tr>
+											<th>Other examination findings</th>
+											<td>
+												
+													{{ bloodpressurecomments }}
+											
+												</td>
+										</tr>
+										{% endif %}
+									</tbody>
+								</table>
+								{% endif %}
+	
+								{% if checked('cardiac', 'Peak') %}
+								<table class="report-view-table">
+										<caption class="heading-small">Peak expiry flow rate</caption>
+							
+										<tbody>
+							
+											{% if data['issueswithflowrate1'] %}
+											<tr>
+												<th>Technique</th>
+												<td>
+														{{issueswithflowrate1 }}
+												</td>
+											</tr>
+											{% endif %}
+											{% if data['issueswithflowrate2'] %}
+											<tr>
+												<th>Value</th>
+												<td>
+													
+														{{ issueswithflowrate2 }}
+												
+													</td>
+											</tr>
+											{% endif %}
+											{% if data['issueswithflowrate3'] %}
+											<tr>
+												<th>Meter type</th>
+												<td>
+													
+														{{ issueswithflowrate3 }}
+												
+													</td>
+											</tr>
+											{% endif %}
+											{% if data['issueswithflowrate4'] %}
+											<tr>
+												<th>Other examination findings</th>
+												<td>
+													
+														{{ issueswithflowrate4 }}
+												
+													</td>
+											</tr>
+											{% endif %}
+										</tbody>
+									</table>
+									{% endif %}
+		
+			{% endif %}
+	
+		
+		
+		
+		
+		 </div>
+
+
+
+
+{% if checked('mental-health', 'mental-health')%}
+ <div class="report-item">
+	<h2 class="heading-large">Mental health</h2>
+{% if data['Appearance'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium ">Appearance <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhappearance}}</p>
+	
+	<p><a href="#" class="button secondary">Edit appearance</a></p>
+</div>
+{% endif %}
+
+{% if data['Behaviour'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium ">Behaviour <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhbehaviour}}</p>
+	
+	<p><a href="#" class="button secondary">Edit Behaviour</a></p>
+</div>
+{% endif %}
+
+{% if data['Speech'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium ">Speech <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhspeech}}</p>
+	
+	<p><a href="#" class="button secondary">Edit Speech</a></p>
+</div>
+{% endif %}
+
+{% if data['Mood'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium ">Mood <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhmood}}</p>
+	
+	<p><a href="#" class="button secondary">Edit Mood</a></p>
+</div>
+{% endif %}
+
+{% if data['Cognition'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium ">Cognition <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhcognition}}</p>
+	
+	<p><a href="#" class="button secondary">Edit Cognition</a></p>
+</div>
+{% endif %}
+
+{% if data['General'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium ">General <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhgeneral}}</p>
+	
+	<p><a href="#" class="button secondary">Edit General</a></p>
+</div>
+{% endif %}
+
+
+
+{% if data['Insight'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium ">Insight <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhinsight}}</p>
+	
+	<p><a href="#" class="button secondary">Edit Insight</a></p>
+</div>
+{% endif %}
+
+{% if data['Thoughts'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Thoughts <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhthoughts}}</p>
+	
+	<p><a href="#" class="button secondary">Edit Thoughts</a></p>
+</div>
+{% endif %}
+
+
+{% if data['Perceptions'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium ">Perceptions <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhperceptions}}</p>
+	
+	<p><a href="#" class="button secondary">Edit Perceptions</a></p>
+</div>
+{% endif %}
+
+{% if data['Addiction'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium ">Addiction <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhaddiction}}</p>
+	
+	<p><a href="#" class="button secondary">Edit Addiction</a></p>
+</div>
+{% endif %}
+
+{% if data['Involentry-movements'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium ">Involuntary movements <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhinvolentry}}</p>
+	
+	<p><a href="#" class="button secondary">Edit Involuntary movements</a></p>
+</div>
+{% endif %}
+
+
+{% if data['Cognative-test'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium ">Cognitive tests <!-- <span class="edited">Edited</span> --></h3>
+	<h4 class="heading-small">Serial sevens</h4>
+<p>{{serialSeven}}</p>
+<h4 class="heading-small">Calculating change</h4>
+<p>{{Calculating}}</p>
+<h4 class="heading-small">Follow commands</h4>
+<p>{{follow}}</p>
+<h4 class="heading-small">Attention</h4>
+<p>{{attention}}</p>
+<h4 class="heading-small">Registration</h4>
+<p>{{registration}}</p>
+<h4 class="heading-small">Recall</h4>
+<p>{{recall}}</p>
+<h4 class="heading-small">Informal tests</h4>
+<p>{{mhcognativetests}}</p>
+	
+	<p><a href="#" class="button secondary">Edit appearance</a></p>
+</div>
+{% endif %}
+
+	
+
+	
+</div>  
+{% endif %}
+
+<div class="report-item">
+	<h2 class="heading-large">Descriptors:</h2>	
+{% if data['moving']==='moving' %}
+ 
+<h3 class="heading-medium">Moving around and using steps without help</h3>
+
+		<table class="report-view-table">
+				<caption class="heading-small">Relevant statements</caption>
+				
+					<tbody>
+			{% for descriptor in movingDescriptors %}
+
+				<tr><td>{{descriptor}}</td></tr>
+			{% endfor %}
+	
+</tbody>
+</table>
+		<div class="inner-focus">	
+		<h4 class="heading-small">How far can {{customer.name.first}} walk or move on level ground without help from someone, and without stopping due to severe pain or tiredness?</h4>
+		
+		{% if checked('mobilityDistance', 'morethan_200') %}
+		<p>More than 200 metres</p>
+		{% else %}
+		<p>No more than {{mobilityDistance}} metres.</p>
+		{% endif %}
+		
+		<h4 class="heading-small">Can {{customer.name.first}} go up or down 2 steps without help, if they use a handrail?</h4>
+		
+		{% if checked('mobilitySteps', 'yes') %}
+		<p>Yes</p>
+		{% else %}
+		<p>No</p>
+		{% endif %}
+		
+		<h4 class="heading-small">Justification:</h4>
+		
+		<p>{{mobilityDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit moving around and using steps</a></p>
+
+	
+	
+
+</div>	
+{% endif %} 
+
+
+
+{% if data['standing']==='standing' %}	
+		<h3 class="heading-medium"> Standing, sitting and moving between the two</h3>
+		<table class="report-view-table">
+				<caption class="heading-small">Relevant statements</caption>
+				
+					<tbody>
+		
+				{% for descriptor in standingDescriptors %}
+				<tr><td>{{descriptor}}</td></tr>
+			{% endfor %}
+		
+
+		</tbody>
+	</table>
+			<div class="inner-focus">			
+		<h4 class="heading-small">Can  {{customer.name.first}} move from one seat to another right next to it without help from another person</h4>
+		
+		{% if checked('standing-sitting', 'yes') %}
+		<p>Yes</p>
+		{% else %}
+		<p>No </p>
+		{% endif %}
+		
+		
+		<h4 class="heading-small">Justification:</h4>
+		
+		<p>{{standingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit standing, sitting and moving between the two</a></p>
+
+	
+	
+</div>
+{% endif %}
+{% if data['reaching']==='reaching' %}
+
+
+	
+		<h3 class="heading-medium">Reaching</h3>
+		<table class="report-view-table">
+				<caption class="heading-small">Relevant statements</caption>
+				
+					<tbody>
+			{% for descriptor in reachingDescriptors %}
+			<tr><td>{{descriptor}}</td></tr>
+		{% endfor %}
+	</tbody>
+</table>
+		<div class="inner-focus">	
+				
+		<h3 class="heading-small">	Which of these options describes how {{customer.name.first}} can reach for thing?</h3>
+		
+		{% if checked('mobilityDistance', 'pocket') %}
+		<p>{{customer.name.first}} cannot raise either arm as if to put something in their top pocket</p>
+		{% elif checked('mobilityDistance', 'hat') %}
+		<p>{{customer.name.first}} cannot raise either arm to the top of there head to put a hat on </p>
+		{% elif checked('mobilityDistance', 'reach') %}
+		<p>{{customer.name.first}} cannot raise either arm above their head to reach for something</p>
+		{% else %}
+		<p>{{customer.name.first}} doesn't have problems when reaching for things</label>
+		</p>
+		{% endif %}
+		
+		
+		<h4 class="heading-small">Justification:</h4>
+		
+		<p>{{reachingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit reaching</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+{% if data['picking']==='picking' %}
+
+		<h3 class="heading-medium">Picking things up and moving them</h3>
+			<table class="report-view-table">
+				<caption class="heading-small">Relevant statements</caption>
+				
+					<tbody>
+			{% for descriptor in pickingDescriptors %}
+			<tr><td>{{descriptor}}</td></tr>
+		{% endfor %}
+	</tbody>
+</table>
+		<div class="inner-focus">	
+
+        <div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+
+		<h4 class="heading-small">Justification:</h4>
+		
+		<p>{{pickingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit picking things up and moving them</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+{% if data['using']==='using' %}
+
+		<h3 class="heading-medium">Using your hands</h3>
+		<table class="report-view-table">
+				<caption class="heading-small">Relevant statements</caption>
+				
+					<tbody>
+			{% for descriptor in usingDescriptors %}
+			<tr><td>{{descriptor}}</td></tr>
+		{% endfor %}
+	</tbody>
+</table>
+		<div class="inner-focus">	
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h4 class="heading-small">Justification:</h4>
+		
+		<p>{{usingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit using your hands</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+{% if data['speaking']==='speaking' %}
+
+		<h3 class="heading-medium"> Speaking, writing and typing</h3>
+		<table class="report-view-table">
+				<caption class="heading-small">Relevant statements</caption>
+				
+					<tbody>
+			{% for descriptor in speakingDescriptors %}
+			<tr><td>{{descriptor}}</td></tr>
+		{% endfor %}
+	</tbody>
+</table>
+		<div class="inner-focus">	
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h4 class="heading-small">Justification:</h4>
+		
+		<p>{{speakingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit speaking, writing and typing</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+{% if data['hearing']==='hearing' %}
+
+		<h3 class="heading-medium">Hearing and reading</h3>
+		<table class="report-view-table">
+				<caption class="heading-small">Relevant statements</caption>
+				
+					<tbody>
+			{% for descriptor in hearingDescriptors %}
+			<tr><td>{{descriptor}}</td></tr>
+		{% endfor %}
+	</tbody>
+</table>
+		<div class="inner-focus">	
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h4 class="heading-small">Justification:</h4>
+		
+		<p>{{hearingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit hearing and reading</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+{% if data['seeing']==='seeing' %}
+		<h3 class="heading-medium">Seeing well enough to get around safely</h3>
+		<table class="report-view-table">
+				<caption class="heading-small">Relevant statements</caption>
+				
+					<tbody>
+			{% for descriptor in seeingDescriptors %}
+			<tr><td>{{descriptor}}</td></tr>
+		{% endfor %}
+	</tbody>
+</table>
+		<div class="inner-focus">	
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h4 class="heading-small">Justification:</h4>
+		
+		<p>{{seeingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit seeing well enough to get around safely</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+{% if data['controlling']==='controlling' %}
+		<h3 class="heading-medium">Controlling your bowels and bladder</h3>
+		<table class="report-view-table">
+				<caption class="heading-small">Relevant statements</caption>
+				
+					<tbody>
+			{% for descriptor in controllingDescriptors %}
+			<tr><td>{{descriptor}}</td></tr>
+		{% endfor %}
+		<</tbody>
+	</table>
+			<div class="inner-focus">	
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h4 class="heading-small">Justification:</h4>
+		
+		<p>{{controllingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit controlling your bowels and bladder</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+{% if data['staying']==='staying' %}
+		<h3 class="heading-medium">Staying conscious without fainting, seizures, or blackouts</h3>
+		<table class="report-view-table">
+				<caption class="heading-small">Relevant statements</caption>
+				
+					<tbody>
+			{% for descriptor in stayingDescriptors %}
+			<tr><td>{{descriptor}}</td></tr>
+		{% endfor %}
+	</tbody>
+</table>
+		<div class="inner-focus">	
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h4 class="heading-small">Justification:</h4>
+		
+		<p>{{stayingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit staying conscious without fainting, seizures, or blackouts</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+{% if data['learning']==='learning' %}
+
+		<h3 class="heading-medium">Learning to do new tasks</h3>
+		<table class="report-view-table">
+				<caption class="heading-small">Relevant statements</caption>
+				
+					<tbody>
+			{% for descriptor in learningDescriptors %}
+			<tr><td>{{descriptor}}</td></tr>
+		{% endfor %}
+	</tbody>
+</table>
+		<div class="inner-focus">	
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h4 class="heading-small">Justification:</h4>
+		
+		<p>{{learningDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit learning to do new tasks</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+
+{% if data['being']==='being' %}
+		<h3 class="heading-medium">Being aware of hazards and danger</h3>
+		<table class="report-view-table">
+				<caption class="heading-small">Relevant statements</caption>
+				
+					<tbody>
+			{% for descriptor in beingDescriptors %}
+			<tr><td>{{descriptor}}</td></tr>
+		{% endfor %}
+	</tbody>
+</table>
+		<div class="inner-focus">	
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h4 class="heading-small">Justification:</h4>
+		
+		<p>{{beingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit being aware of hazards and danger</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+{% if data['planning']==='planning' %}
+
+		<h3 class="heading-medium">Planning, starting and finishing everyday tasks</h3>
+		<table class="report-view-table">
+				<caption class="heading-small">Relevant statements</caption>
+				
+					<tbody>
+			{% for descriptor in planningDescriptors %}
+			<tr><td>{{descriptor}}</td></tr>
+		{% endfor %}
+	</tbody>
+</table>
+		<div class="inner-focus">	
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h4 class="heading-small">Justification:</h4>
+		
+		<p>{{planningDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit planning, starting and finishing everyday tasks</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+{% if data['coping']==='coping' %}
+
+		<h3 class="heading-medium">Coping with changes to your daily routine</h3>
+		<table class="report-view-table">
+				<caption class="heading-small">Relevant statements</caption>
+				
+					<tbody>
+			{% for descriptor in copingDescriptors %}
+			<tr><td>{{descriptor}}</td></tr>
+		{% endfor %}
+	</tbody>
+</table>
+		<div class="inner-focus">	
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h4 class="heading-small">Justification:</h4>
+		
+		<p>{{copingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit coping with changes to your daily routine</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+{% if data['going']==='going' %}
+		<h3 class="heading-medium">Going out on your own</h3>
+		<table class="report-view-table">
+				<caption class="heading-small">Relevant statements</caption>
+				
+					<tbody>
+			{% for descriptor in goingDescriptors %}
+			<tr><td>{{descriptor}}</td></tr>
+		{% endfor %}
+	</tbody>
+</table>
+		<div class="inner-focus">	
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h4 class="heading-small">Justification:</h4>
+		
+		<p>{{goingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit going out on your own</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+{% if data['meeting']==='meeting' %}
+		<h3 class="heading-medium">Meeting and being with people</h3>
+		<table class="report-view-table">
+				<caption class="heading-small">Relevant statements</caption>
+				
+					<tbody>
+			{% for descriptor in meetingDescriptors %}
+			<tr><td>{{descriptor}}</td></tr>
+		{% endfor %}
+	</tbody>
+</table>
+		<div class="inner-focus">	
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h4 class="heading-small">Justification:</h4>
+		
+		<p>{{meetingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit meeting and being with people</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+
+{% if data['behaving']==='behaving' %}
+		<h3 class="heading-medium">Behaving appropriately around other people</h3>
+		<table class="report-view-table">
+				<caption class="heading-small">Relevant statements</caption>
+				
+					<tbody>
+			{% for descriptor in behavingDescriptors %}
+			<tr><td>{{descriptor}}</td></tr>
+		{% endfor %}
+	</tbody>
+</table>
+		<div class="inner-focus">	
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h4 class="heading-small">Justification:</h4>
+		
+		<p>{{behavingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit behaving appropriately around other people</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+
+{% if data['eating']==='eating' %}
+
+		<h3 class="heading-medium">Eating or drinking</h3>
+		<table class="report-view-table">
+				<caption class="heading-small">Relevant statements</caption>
+				
+					<tbody>
+			{% for descriptor in eatingDescriptors %}
+			<tr><td>{{descriptor}}</td></tr>
+		{% endfor %}
+	</tbody>
+</table>
+		<div class="inner-focus">	
+
+		<div class="panel panel-border-wide mt30">
+				<p>
+				  Were not testing this descriptor fully today, so a few things may be missing, but there would be more detail here!
+				</p>
+			  </div>
+		
+		<h4 class="heading-small">Justification:</h4>
+		
+		<p>{{eatingDetails}}</p>
+		
+		<p><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit eating or drinking</a></p>
+
+	
+	
+</div>
+
+{% endif %}
+</div>
+
+{% if data['general-observations-post']==='posted' %}
+<h2 class="heading-medium">General Observations</h2>
+
+			{% for comment in comments|sort(attribute='timestamp', reverse=true) %}
+			
+			<div class="review-inner">	
+				
+							<p>{{comment.comment}}</p>
+	
+				
+				
+				<p class="namedate">{{comment.name}} /  <span class="text-secondary"> {{comment.dateFormatted}}</span></p>
+				{% if comment.hasComment %}
+		
+			{% endif %}
+
+		
+
+			</div>
+		{% endfor %}
+
+		<p class="mt30"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing" class="button secondary">Edit general obsevations</a></p>
+
+			</div>
+	{% endif %}		
+
+
+
+
+
+<div class="report-item">
+	<h2 class="heading-large">Exceptional circumstances</h2>
+
+		<h4 class="heading-small">Circumstances why {{customer.name.first}} should be treated as LCW and LCWRA:</h4>
+		{% if checked("LcwAndLcwra", "yes") %}
+		<ul class="list-bullet">
+			{% for reason in LcwAndLcwraReasons %}
+				<li>{{reason}}</li>
+			{% endfor %}
+		</ul>
+		<p class="mt30">{{LcwAndLcwraTests}}</p>
+		{% else %}
+		<p>None</p>
+		{% endif %}
+
+		<h4 class="heading-small">Circumstances why {{customer.name.first}} should be treated as LCW:</h4>
+		{% if checked("lcw", "yes") %}
+		<ul class="list-bullet">
+			{% for reason in lcwReasons %}
+				<li>{{reason}}</li>
+			{% endfor %}
+		</ul>
+		<p class="mt30">{{lcwTests}}</p>
+		{% else %}
+		<p>None</p>
+		{% endif %}
+		
+		<p><a href="#" class="button secondary">Edit exceptional circumstances</a></p>
+</div>  
+
+<div class="report-item">
+	<h2 class="heading-large">Prognosis</h2>
+
+		<h4 class="heading-small">Time until {{customer.name.first}}'s case needs reviewing:</h4>
+		<p>{{caseReviewTime}}</p>
+
+		<h4 class="heading-small">Reason</h4>
+		<p>{{caseReviewTimeReason}}</p>		
+		<p><a href="#" class="button secondary">Edit prognosis</a></p>
+</div> 
+
+
+
+  
+  
+	
+
+ <!-- / wrapper -->
+  
+
+ <!-- <form class="mt30" method="post" action="/{{path}}/assessment/{{customer._id}}/completed-assessment">
+	<p class="mt30"><button class="button">Finish - sign off report</button></p>
+	</form> -->
+	
+	<p class="mt30"><a href="#" class="button">Finish - sign off report</a></p>
+
+
+{% endblock %}
+

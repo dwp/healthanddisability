@@ -1,0 +1,37 @@
+{% macro nav(section, subSection, sections) %}
+
+
+<nav class="details-nav v2 mb30">
+	<ul>
+	  
+	  {% for item in sections %}
+	    <li {% if item.url == section %} 
+	    	class="active_detail"{% endif %}>
+				<a href="{{item.url}}"
+			
+					>
+				{{ item.label }} ({{ item.quantity }})</a>
+	    {% if item.url == section %}
+	    	<ul>
+	    	{% for subItem in item.subItems %}
+	    		<li>
+	    			<a href="{{subItem.url}}" 
+						{% if subItem.url == subSection %}
+					
+	    				class="active_child"
+						{% endif %}>{{subItem.label}} ({{subItem.quantity}})</a>
+
+	    		</li>
+
+	    	{% endfor %}
+	    	</ul>
+	    {% endif %}
+
+	    </li>
+	  {% endfor %}
+	</ul>
+</nav>
+
+
+
+{% endmacro %}

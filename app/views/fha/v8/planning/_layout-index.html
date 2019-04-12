@@ -1,0 +1,20 @@
+{% extends path+"/_layout.html" %} 
+{% import path1+"/_macro_nav.html" as leftNav %}
+
+
+{% block mainNav %}
+{{ mainNav.nav("planning", path) }}  
+{% endblock %}
+
+{% block assess_content %}
+<main id="content" role="main" class="main-content">
+<div class="container">
+	<div class="grid-row">
+
+		<div class="column-two-thirds">
+			{% block main_content %}
+			{% endblock %}
+		</div>
+</div>
+</main>
+{% endblock %}

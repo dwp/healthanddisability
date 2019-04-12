@@ -1,0 +1,152 @@
+{% extends path+"/_layout-evidence.html" %}
+
+
+{% block case_content %}
+
+
+
+<h1 class="heading-large mt10">Recorded evidence</h1>
+<!--<p class="mt10"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/record-evidence" class="button secondary">Record evidence recieved</a></p> -->
+
+{% if customer.status == 'Security booked' 
+	 or  customer.status == 'review'
+	 or  customer.status == 'Ready to book'
+	 or  customer.status == 'Booked'
+	 or  customer.status == 'Did not attend'
+	 or  customer.status == 'Appointment today'
+	 or  customer.status == 'Ready for assessment'
+	 or  customer.status == 'Assessment stopped'
+	 or  customer.status == 'Assessment completed'
+	 %}
+
+<table class="evidence-list">
+
+		<thead>
+				<tr>
+					<th>Evidence type</th>
+					<th>Source</th>
+					<th>Received</th>
+					<th class="numeric">Recorded</th>
+				</tr>
+			</thead>
+
+			{% if customer.status == 'Ready to book'
+	 or  customer.status == 'Booked'
+	 or  customer.status == 'Did not attend'
+	 or  customer.status == 'Appointment today'
+	 or  customer.status == 'Ready for assessment'
+	 or  customer.status == 'Assessment stopped'
+	 or  customer.status == 'Assessment completed'
+	 %}
+
+	 <tr>
+			<td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/f2fjusticationreport">Appointment referral justification</a></td>
+			<td>HCP</td>
+			<td></span></td>
+			<td class="numeric"><span>{{ 'Do MMMM YYYY' | baseDate(10) }}</span></td>
+		</tr>
+
+	 {% endif %}
+			
+			<tr>
+					<td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing">GP report</a></td>
+					<td>GP: Dr.{{customer.address.gpName.fullName}}</td>
+					<td><span class="secondary-text">{{ 'Do MMMM YYYY' | baseDate(12) }}</span></td>
+					<td class="numeric"><span>{{ 'Do MMMM YYYY' | baseDate(11) }}</span></td>
+				</tr>
+				
+		
+
+			<tr>
+					<td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing">UC 50 </a></td>
+					<td>Claimant</td>
+					<td><span class="secondary-text">{{ 'Do MMMM YYYY' | baseDate(25) }}</span></td>
+					<td class="numeric"><span>{{ 'Do MMMM YYYY' | baseDate(25) }}</span></td>
+				</tr>
+	</table> 
+
+{% else%}
+<table class="evidence-list">
+
+                <thead>
+	                  <tr>
+	                    <th>Evidence type</th>
+											<th>Source</th>
+											<th>Received</th>
+	                    <th class="numeric">Recorded</th>
+	                  </tr>
+	                </thead>
+	                
+	          
+								
+								{% if  data['recordevidencegp']==='gp' %}
+
+		            
+		          <tr>
+	                  <td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/gp_report">GP report</a></td>
+										<td>GP: Dr.{{customer.address.gpName.fullName}}</td>
+										<td><span class="secondary-text">{{ 'Do MMMM YYYY' | randDaysAgo(0)}}</span></td>
+	                  <td class="numeric"><span>{{ 'Do MMMM YYYY' | randDaysAgo(0)}}</span></td>
+	                </tr>
+	                
+									{% endif %}
+
+									{% if data['recordevidencefrr']==='frr'%}
+	                <tr>
+	                  <td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/factual_report">Factual report</a></td>
+										<td>Consultant: Dr. {{customer.otherHcp.name.fullName}}</td>
+										<td><span class="secondary-text">{{ 'Do MMMM YYYY' | randDaysAgo(-1)}}</span></td>
+	                  <td class="numeric"><span>{{ 'Do MMMM YYYY' | randDaysAgo(0)}}</span></td>
+									</tr>
+									{% endif %}
+
+									{% if data['newevidencename'] %}
+	                <tr>
+	                  <td>{{ data['newevidencename'] }}</td>
+										<td>{{ data['newevidencesource'] }}</td>
+										<td><span class="secondary-text">{{ 'Do MMMM YYYY' | randDaysAgo(-1)}}</span></td>
+	                  <td class="numeric"><span class="secondary-text">{{ 'Do MMMM YYYY' | randDaysAgo(-1)}}</span></td>
+									</tr>
+									{% endif %}
+
+									{% if data['newevidencenamevisited']%}
+	                <tr>
+	                  <td>{{ data['newevidencenamevisited'] }}</td>
+										<td>{{ data['newevidencesourcevisited'] }}</td>
+										<td>{{ 'Do MMMM YYYY' | randDaysAgo(-1)}}</td>
+	                  <td class="numeric"></td>
+									</tr>
+									{% endif %}
+
+									{% if data['telephonecontactreport']%}
+	                <tr>
+	                  <td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/telephone_report">Telephone coversation</a></td>
+										<td>	{% if checked('hcp-type','client') %}
+											Client: {{customer.name.fullName}}
+											{% elif checked('hcp-type','gp') %}
+											GP: Dr.{{customer.address.gpName.fullName}}
+											{% elif checked('hcp-type','consultant')%}
+											Consultant: Dr. {{customer.otherHcp.name.fullName}}
+											{% endif %}</td>
+										<td>{{ 'Do MMMM YYYY' | randDaysAgo(-1)}}</td>
+	                  <td class="numeric"></td>
+									</tr>
+									{% endif %}
+
+							</table> 
+						
+						{% endif %}
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.details-nav ul')
+      .children(":nth-child(1)")
+      .addClass('active_detail')
+  });
+</script>
+{% endblock %}

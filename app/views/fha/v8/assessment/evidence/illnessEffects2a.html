@@ -1,0 +1,126 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+<form method="post" action="illnessEffects2">
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+<h1 class="heading-large mb30"><span class="heading-secondary">Step 2 of 3</span>Medical conditions</h1>
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+
+	
+	
+
+    
+   	
+
+	
+	<fieldset>
+
+  <legend class="heading-medium mt0 mb10">Choose what you want to talk about:</legend>	
+
+  
+  {% for illness in customer.illnesses %}
+  <div class="multiple-choice" data-target="{{illness.dataname}}">
+		<input id="issue1" name="issueswith" type="checkbox" value="{{illness.name}}" {{ checked('issueswith', '{{illness.name}}') }} >
+		<label for="issue1">{{illness.name}}</label>
+	  </div>
+	   <div class="panel js-hidden" id="{{illness.dataname}}">
+					
+		   <div class="whatweknow2">	
+			   <table>
+				  <caption class="visually-hidden">What we already know:</caption>
+				  <thead>
+					  <tr>
+						  <th>Since</th>
+						  <th>Source</th>
+					  </tr>
+				  </thead>
+				  <tbody>
+					  <tr>
+						  <td>{{illness.date |formatDate('MMMM YYYY')}}</td>							
+						  <td>{{illness.source}}</td>
+					  </tr>
+				  </tbody>
+			  </table>
+		   </div>
+		   
+		   <div class="form-group">
+			   <label class="form-label" for="conditionHistory">{{illness.name}} &ndash; condition history</label> 
+				 <textarea class="form-control form-control-3-4" id="{{ illness.dataname }}" name="{{ illness.dataname }}" rows="6" style="width: 100%;">{% if illness.dataname == 'condition1'%}{{ condition1 }}{% elif illness.dataname == 'condition2' %}{{ condition2 }}{% elif illness.dataname == 'condition3' %}{{ condition3 }}{% elif illness.dataname == 'condition4' %}{{ condition4 }}{% elif illness.dataname == 'condition5' %}{{ condition5 }}{% endif %}
+					</textarea>
+		   </div>
+	  </div>
+
+
+  {% endfor %}
+			{% if data['newillness']=='meds1' %}
+			  
+		    <div class="multiple-choice" data-target="newillness">
+					<input id="issue3" name="issueswith" type="checkbox" value="Issue 4" {{ checked('issueswith', '{{newillneesname}}') }} >
+					<label for="issue3">{{newillneesname}}</label>
+				  </div>
+			<div class="panel js-hidden" id="newillness">
+					<div class="whatweknow2">	
+						 <table>
+							<caption class="visually-hidden" >What we already know:</caption>
+							<thead>
+								<tr>
+									<th>Since</th>
+									<th>Source</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>{{newillnessmonth | formatDate('MMMM')}} {{newillnessyear}}</td>							
+									<td>{{newillnesssource}}</td>
+								</tr>
+							</tbody>
+						</table>
+					 </div>
+					 <div class="form-group">
+						 <label class="form-label" for="conditionHistory">{{newillneesname}} &ndash; condition history</label> 
+						 <textarea class="form-control form-control-3-4" id="field-8" name="newillnesscondition" rows="6" style="width: 100%;"></textarea>
+					 </div>
+	
+				</div>
+				{% endif %}
+			
+			
+			
+	</fieldset>
+
+	
+	
+	
+	
+	<p class="mt30"><button class="button">Save and continue</button></p>
+	
+	</form>
+	
+	
+	
+	
+
+
+  </div><!-- column -->
+</div><!-- row -->
+
+
+{% include path+"/includes/help/_help_panel_conditionhistory.html" %}
+{% endblock %}
+
+

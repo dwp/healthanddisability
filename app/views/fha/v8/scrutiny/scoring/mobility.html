@@ -1,0 +1,127 @@
+{% extends path2+"/_layout.html" %}
+
+{% block scoring_content %}
+
+{{ nav.case_tabs("scoring",1,path1) }}{# macro #}
+
+<a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+
+  <h2 class="heading-large mt20">Moving around and using steps</h2>
+  
+  
+  <div class="grid-row">
+  
+  
+    <div class="column-half">
+
+  {# <div id="been_scored">
+    <hr />
+    <h2 class="heading-large">Moving around and using steps score: 9</h2>
+    <p class="form-hint">You can change this is if you need to.</p>
+    <button class="button" id="change_score">Change score</button>
+  </div> #}
+
+  {% include path2 + "/_mobility_score.html" %}
+  <div class="form-group">
+    <p><label class="form-label" for="justificaiton">Justification</label>
+    <textarea class="form-control form-control-3-4" name="justificaiton" id="justificaiton" rows="5"></textarea></p>
+  </div><!-- .form-group -->
+  <div class="form-group">
+    <a href="index-scored" class="button">Save and continue</a>
+  </div><!-- form-group -->
+
+  {# <div class="" id="rescore">
+    <h3 class="heading-large">Can you make a recommendation now?</h3>
+    <form class="form" action="/{{path2}}/" method="get">
+      {% block case_form %} {% include path2+"/_form_ask.html" %} {% endblock %}
+      <div class="js-hidden panel panel-indent mt20" id="scorenow">
+        {% include path2 + "/_mobility_score.html" %}
+      </div><!-- #scorenow -->
+      <div class="form-group">
+        <a href="index" class="button">Save and continue</a>
+      </div><!-- form-group -->
+    </form>
+  </div> #}
+
+
+  </div>
+  
+  
+  <div class="column-half">
+  
+
+  <div class="evidence__box citizen mt0">
+    <div class="evidence__label">Tomas's statements</div>
+    <div class="evidence__content">
+      <p>Tomas says he can move safely and repeatedly on level ground without needing to stop for:
+        <span class="bold-small">100 metres</span>
+      </p>
+      <h3 class="heading-small mt5 mb0">Moving around and using steps</h3>
+      {# <p class="mb0"><span class="bold-small">Tony says:</span></p> #}
+      <p class="mt0 quote">“I had an accident in July - I was run over and it damaged my left leg. On a good day I can walk 100m slowly with crutches on the flat - I'd have to rest a couple of times though, as I'd be in pain. On a bad day, I can just about get around my flat but would usually stay in bed so I don't have to move much”</p>
+      <h3 class="heading-small mt5 mb0">Going up or down 2 steps</h3>
+      {# <p class="mb0"><span class="bold-small">Tony says:</span></p> #}
+      <p class="mt0 quote mb0"> “I’d find it hard to get up or down 2 steps on my own. My leg is damaged and I’m in constant pain, I can’t put any weight on it. I can use crutches. ” </p>
+    </div>
+  </div>
+
+  <div class="evidence__box med_records">
+    <div class="evidence__label">MED3 (sick notes)</div>
+    <div class="evidence__content">
+      MED3 (sick notes) confirm that Tomas has: <span class="bold-small">Emergency faciotomy</span>, <span class="bold-small">Acute compartment syndrome</span> and <span class="bold-small">Compound fracture - shinbone</span>.
+    </div>
+  </div>
+
+  <div class="evidence__box gp_report">
+    <div class="evidence__label">GP Report</div>
+    <div class="evidence__content">
+      <h4 class="heading-small mt5">Dr. Sheila Turner</h4>
+      <p>Brixton Medical Centre</p>
+      <p class="mt0 quote mb0"> “I don’t know how far Tomas can walk. He uses crutches.” </p>
+    </div>
+  </div>
+
+  {{ data | log }}
+
+  {% if data.withdesc %}
+  <div class="evidence__box assessment">
+    <div class="evidence__label">Medical assessment</div>
+    <div class="evidence__content">
+      <h4 class="heading-small mt5 mb20">Heather Harrison(Tresco House Assessment Centre )</h4>
+      {% set nuggets = data.nuggets | pickDescriptor('Moving around and using steps') %}
+      <p>{% for item in nuggets | sortBy("time",false) %}
+        {{ item.text }}.<br><br>
+      {% endfor %}</p>
+    </div>
+  </div>
+  {% endif %}
+  
+  
+  </div>
+  
+
+
+  </div>
+
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('#change_score').on('click',function(e)
+    {
+      e.preventDefault();
+      console.log('got here')
+      $('#been_scored').addClass('js-hidden');
+      $('#rescore').removeClass('js-hidden');
+    });
+
+    // highlight the right left nav link.
+    $($(".nav")[0]).children(":nth-child(1)").addClass('active')
+  });
+</script>
+{% endblock %}

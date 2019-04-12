@@ -1,0 +1,127 @@
+{% extends path1+"/_layoutRecording.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+		
+		
+			
+		
+		
+		<h1 class="heading-large mt0">Record GP report</h1>
+				
+				<div class="grid-row">
+					<div class="column-full">
+							<div class="form-group">
+									<fieldset>
+										<legend>
+												Tomas last sore a Gp on
+											<span class="form-hint">For example, 31 3 2018</span>
+										</legend>
+										<div class="form-date">
+											<div class="form-group form-group-day">
+												<label class="form-label" for="dob-day">Day</label>
+												<input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
+											</div>
+											<div class="form-group form-group-month">
+												<label class="form-label" for="dob-month">Month</label>
+												<input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
+											</div>
+											<div class="form-group form-group-year">
+												<label class="form-label" for="dob-year">Year</label>
+												<input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
+											</div>
+										</div>
+									</fieldset>
+								</div>
+						<div class="form-group mt30">
+								<label for="type" class="form-label">
+										Current conditions not affecting ability to work
+										<span class="form-hint">Please list any other relevant conditions that do not affect the ability to work.
+											</span>
+								</label>
+								<textarea type="text" id="type" class="form-control form-control-1-3" rows="8"></textarea>
+							</div>
+
+							<div class="form-group">
+									<fieldset>
+								
+										<legend>
+											<h1 class="">
+													provide a brief explanation if your patient has difficulties with any of the following activities
+											</h1>
+								
+										</legend>
+								
+	
+										<div class="multiple-choice" data-target="walking-or-moving">
+											<input id="walking" name="walking" type="checkbox" value="Walking or moving">
+											<label for="nationalities-other">Walking or moving</label>
+										</div>
+										<div class="panel panel-border-narrow js-hidden" id="walking-or-moving">
+											<label class="form-label" for="nationalities-other-country">Explanation</label>
+											<textarea class="form-control" type="text" id="" name=""  ></textarea>
+										</div>
+								
+									</fieldset>
+								</div>
+							
+							<div class="form-group">
+								<label for="source" class="form-label">
+									Source
+								</label>
+								<input type="text" id="source" class="form-control form-control-1-3">
+							</div>
+							
+	
+							</div>
+		
+						
+						
+						
+				
+					
+					
+					<p><a href="index" class="button mt20">Save and continue</a></p>
+					
+				</form>
+	
+					</div>
+				
+       
+					
+	
+		
+    
+    
+    
+     
+    
+    
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+
+{% endblock %} #}

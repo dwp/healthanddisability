@@ -1,0 +1,83 @@
+
+{% extends path+"/_layout-case-misc.html" %} 
+{% block citizen_content %} {{ data.nuggets | log }}
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+<h1 class="heading-large">Cardio vascular and respiratory</h1>
+
+
+
+				<form action="cardiac1" method="Post">
+
+										     	<fieldset>
+		
+													  <legend class="mb10">Select all of the areas you have assessed:</legend>
+													  
+															    <div class="multiple-choice">
+															      <input id="general" name="cardiac" type="checkbox" value="general" {{ checked('cardiac', 'general') }}>
+															      <label for="general"> Respiratory rate</label>
+															    </div>
+
+															    <div class="multiple-choice" data-target="pulse-guard">
+															      <input id="pulse" name="cardiac" type="checkbox" value="pulse" {{ checked('cardiac', 'pulse') }} >
+															      <label for="pulse">Radial pulse</label>
+															    </div>
+
+															    <div class="multiple-choice" data-target="peripheral-guard">
+															      <input id="peripheral" name="cardiac" type="checkbox" value="peripheral" {{ checked('cardiac', 'peripheral') }}>
+															      <label for="peripheral"> Left leg peripheral circulation</label>
+															    </div>
+															    
+															    <div class="multiple-choice" data-target="peripheral2-guard">
+															      <input id="peripheral2" name="cardiac" type="checkbox" value="peripheral2" {{ checked('cardiac', 'peripheral2') }}>
+															      <label for="peripheral2"> Right leg peripheral circulation</label>
+															    </div>
+															    
+															    <div class="multiple-choice" data-target="peripheral-Blood">
+															      <input id="Blood" name="cardiac" type="checkbox" value="Blood" {{ checked('cardiac', 'Blood') }}>
+															      <label for="Blood"> Blood pressure</label>
+															    </div>
+															    
+															    <div class="multiple-choice" data-target="peripheral-Peak">
+															      <input id="Peak" name="cardiac" type="checkbox" value="Peak" {{ checked('cardiac', 'Peak') }}>
+															      <label for="Peak"> Peak expiry flow rate</label>
+															    </div>
+	
+														   
+													 </fieldset>			 
+												  <p class="mt30"><button class="button">Save and continue</button></p>
+												 
+		
+				</form>
+
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+{% macro physGroup(name,sel) %}
+  {% set s = name | slug %}
+  <!-- GROUP -->
+  <div class="multiple-choice" data-target="group_{{s}}_yes">
+    <input id="group_{{s}}" type="checkbox" name="group_{{s}}" sue="group_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="group_{{s}}">{{name}}</label>
+</div>
+{% endmacro %} {% macro physObs(name,sel) %} {% set s = name | slug %}
+<div class="multiple-choice" data-target="phys_{{s}}_yes">
+    <input id="phys_{{s}}" type="checkbox" name="mobility" value="phys_{{s}}" {% if sel %} checked="checked" {% endif %}>
+    <label for="phys_{{s}}">{{name}}</label>
+</div>
+<div class="form-group panel js-hidden mt0 mb20" id="phys_{{s}}_yes">
+    <p>
+        <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
+        <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
+    </p>
+</div>
+{% endmacro %} {% block footer_top %} {{ super() }}
+<p class="font-xsmall">
+    <a href="/{{ path2 }}/phys_exam_1">exam v1</a> |
+    <a href="/{{ path2 }}/phys_exam_2">exam v2</a>
+</p>
+{% endblock %} {% block page_scripts %} {{ super() }} {% endblock %}
