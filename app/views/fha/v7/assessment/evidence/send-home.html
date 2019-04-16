@@ -42,24 +42,26 @@
 							<div class="form-group">
 
 				<fieldset>
-						<legend class="heading-small mb10">
-							Why do we need to cancel or rearrange this appointment?
+
+						
+						<legend class="govuk-body-l">
+							Choose a reason why this appointment cannot go ahead.<br><br>
 						</legend>
 	
-	
+						<p class="form-block bold mt10 mb10">{{customer.name.first}} is unable or unwilling to continue</p>
 						<div class="multiple-choice">
 							<input id="wait" name="scenario" type="radio" value="wait" {{checked('scenario', 'wait') }}>
-							<label for="wait">{{customer.name.first}} does not want to wait any longer</label>
+							<label for="wait">They do not want to wait any longer</label>
 						</div>
 	
 						<div class="multiple-choice">
 							<input id="late" name="scenario" type="radio" value="late" {{checked('scenario', 'late') }}>
-							<label for="late">{{customer.name.first}} arrived late</label>
+							<label for="late">They arrived late</label>
 						</div>
 
 						<div class="multiple-choice"data-target="unfitreason">
 								<input id="unfit" name="scenario" type="radio" value="unfit" {{checked('scenario', 'unfit') }}>
-								<label for="unfit">{{customer.name.first}} is unfit to be examined
+								<label for="unfit">They're unfit to be examined
 		
 								</label>
 							</div>
@@ -73,7 +75,7 @@
 							 </div>
 							<div class="multiple-choice" data-target="new-appointment-requirements">
 								<input id="know-3" name="scenario" type="radio" value="special" {{checked('scenario', 'special') }}>
-								<label for="know-3">{{customer.name.first}} has a new special need
+								<label for="know-3">They have a new request
 		
 								</label>
 							</div>
@@ -81,7 +83,7 @@
 							<div class="panel js-hidden" id="new-appointment-requirements">
 									<fieldset>
 											<legend class="heading-small mb10">
-												What is the new requirment?
+												What is the new request?
 											</legend>
 
 											<div class="multiple-choice">
@@ -100,7 +102,7 @@
 										</div>
 										<div class="multiple-choice">
 											<input id="know-3" name="requirment" type="radio" value="three" {{checked('requirment', 'three') }}>
-											<label for="know-3">Healthcare practitioner of same gender</label>
+											<label for="know-3">Healthcare professional of same gender</label>
 										</div>
 										<div class="multiple-choice">
 											<input id="know-3" name="requirment" type="radio" value="four" {{checked('requirment', 'four') }}>
@@ -110,10 +112,10 @@
 
 									</fieldset>
 							</div>
-                            <p class="form-block bold mt10 mb10">Or the healthcare professional cannot carry out the assessment</p>
+                            <p class="form-block bold mt10 mb10">The healthcare professional cannot carry out the assessment</p>
 							<div class="multiple-choice">
 									<input id="know-3" name="scenario" type="radio" value="know-2" {{checked('scenario', 'know-2') }}>
-									<label for="know-3">More claimants waiting to be seen than available health care professionals</label>
+									<label for="know-3">More claimants are waiting to be seen than available healthcare professionals</label>
 								</div>
 								<div class="multiple-choice" data-target="hcp-skillset-chioce">
 									<input id="know-3" name="scenario" type="radio" value="know-3" {{checked('scenario', 'know-3') }}>
@@ -123,7 +125,7 @@
 								
 										<fieldset>
 												<legend class="heading-small mb10">
-													Choose healthcare professional's skill level
+														Choose the required skill level
 												</legend>
 													   <div class="form-group">
 
@@ -148,28 +150,28 @@
 								</div>
 								<div class="multiple-choice">
 										<input id="know-3" name="scenario" type="radio" value="know-9" {{checked('scenario', 'know-9') }}>
-										<label for="know-3">Healthcare professional ill or called away</label>
+										<label for="know-3">Healthcare professional is ill or called away</label>
 							</div>
 
 					<div class="multiple-choice">
 							<input id="know-3" name="scenario" type="radio" value="know-8" {{checked('scenario', 'know-8') }}>
-							<label for="know-3">Inappropriate for health care professional to see claimant (for example they know them)</label>
+							<label for="know-3">Inappropriate for healthcare professional to see claimant (for example, they know them)</label>
 						</div>
 		
 						<div class="multiple-choice">
 							<input id="know-3" name="scenario" type="radio" value="know-10" {{checked('scenario', 'know-10') }}>
-							<label for="know-3">Healthcare professional did not attend</label>
+							<label for="know-3">Healthcare professional did not attend, unexpectedly</label>
 						</div>
 						<div class="multiple-choice">
 								<input id="know-3" name="scenario" type="radio" value="know-14" {{checked('scenario', 'know-14') }}>
-								<label for="know-3">The claimant’s file was not available</label>
+								<label for="know-3">Claimant’s file is not available</label>
 						</div>
 
 
-						<p class="form-block bold mt10 mb10">Or claimant requests not met</p>	
+						<p class="form-block bold mt10 mb10">{{customer.name.first}}'s requests were not met</p>	
 						<div class="multiple-choice">
 							<input id="know-3" name="scenario" type="radio" value="know-4" {{checked('scenario', 'know-4') }}>
-							<label for="know-3">Claiment called in in error </label>
+							<label for="know-3">They were called in error </label>
 						</div>
 	
 						<div class="multiple-choice">
@@ -178,23 +180,23 @@
 						</div>
 						<div class="multiple-choice">
 							<input id="know-3" name="scenario" type="radio" value="know-6" {{checked('scenario', 'know-6') }}>
-							<label for="know-3">Healthcare practitioner of same gender not provided</label>
+							<label for="know-3">Healthcare professional of same gender not provided</label>
 						</div>
 						<div class="multiple-choice">
 							<input id="know-3" name="scenario" type="radio" value="know-7" {{checked('scenario', 'know-7') }}>
 							<label for="know-3"> Audio recording equipment not provided</label>
 						</div>
-									 <p class="form-block bold mt10 mb10">Or building or Technology problems</p>	
+									 <p class="form-block bold mt10 mb10">Building or technology problems</p>	
 									 <div class="multiple-choice">
 											 <input id="know-3" name="scenario" type="radio" value="know-13" {{checked('scenario', 'know-13') }}>
 											 <label for="know-3">Technology performance issues (for example, system down or too slow)</label>
 										 </div>
 
 										 
-									<!-- <div class="multiple-choice">
+									<div class="multiple-choice">
 										 <input id="know-3" name="scenario" type="radio" value="know-11" {{checked('scenario', 'know-11') }}>
 										 <label for="know-3">Health and safety issues (for example, claimant unable to use emergency exits)</label>
-									 </div> -->
+									 </div>
 									 <div class="multiple-choice">
 										 <input id="know-3" name="scenario" type="radio" value="know-12" {{checked('scenario', 'know-12') }}>
 										 <label for="know-3">Building problem (for example, evacuation)</label>
