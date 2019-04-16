@@ -51,7 +51,7 @@
 {{ 'Ready for recommendation' if customer.status == 'Ready for recommendation' }}
 {{ 'Assessment completed' if customer.status == 'Assessment completed' }}
 {{ 'Assessment stopped' if customer.status == 'Assessment stopped' and data['appointments']!=='no' and data['appointments']!=='yes' }}
-{{ 'Referred for appointment - welfare call required' if data['appointments']=='no' and customer.status == 'Assessment stopped' }}
+{{ 'Referred for appointment – welfare call required' if data['appointments']=='no' and customer.status == 'Assessment stopped' }}
 
 
 {{ 'Did not attend appointment' if customer.status == 'Did not attend' and data['confirmfta']!=="Arnaq" and customer.name.first == 'Arnaq'

@@ -9,10 +9,10 @@
     {% elif  customer.name.first == 'Dillon' and data['appointments']==="no"  %}
     <div class="panel panel-warning mt20">
         <h2 class="heading-small">Action required</h2>
-        <p>  {{customer.name.first}} attened his appointment but was unfit to be examined </p>
+        <p>  {{customer.name.first}} attended their appointment but was unfit to be examined.</p>
         <p>{{changedByCustomerComments}}</p>
        
-          <p>Wellfair call required</p>
+          <p>Welfare call required.</p>
        
     </div>
     {% elif  customer.name.first == 'Dillon'%}
@@ -43,7 +43,7 @@
       {% elif data['Reason']==="neuro"%}
       Neuro
       {% else%}
-      Non neuro
+      Non-neuro
       {% endif %} appointment</h2>  
 
           {% if data['book-next']==="yes" 
