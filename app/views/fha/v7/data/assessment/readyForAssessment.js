@@ -678,7 +678,7 @@ module.exports = [
     "appointment": {
       "time":"11.30am", 
       "type":"Non neuro appointment",
-      "arrival":"On time",
+      "arrival":"on time",
       "waiting":"waiting 15 Mins"
     },
   },
@@ -753,7 +753,7 @@ module.exports = [
       "time":"11.30am", 
       "type":"Complex neuro appointment",
       "accessible": "Ground floor access",
-      "arrival":"On time",
+      "arrival":"on time",
       "waiting":" waiting 20 Mins"
     },
   },
@@ -1580,7 +1580,7 @@ module.exports = [
       "time":"9:00am",
       "type":"Complex neuro appointment",
       "taxi":"Taxi required",
-      "arrival":"On time",
+      "arrival":"on time",
       "waiting":"2 hours 35mins "
     },
   },{
