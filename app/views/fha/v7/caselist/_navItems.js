@@ -62,7 +62,7 @@ module.exports = function(versionNumber, reviewCustomers, assessmentCustomers, a
 		},
 		{
 			url: "ready-for-assessment",
-			label: "Ready for Assessment",
+			label: "Ready for assessment",
 			quantity: assessmentCustomers.filter(customer => customer.status === "Ready for assessment").length
 		},
 		{

@@ -157,7 +157,7 @@ module.exports = [
     },
     "appointment": {
       "time":"1:30pm", 
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
       "audio":"Audio recording required",
       "gender" :"Female HCP requested"
     },
@@ -234,7 +234,7 @@ module.exports = [
     },
     "appointment": {
       "time":"1:30pm", 
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
     },
   },
   {
@@ -306,7 +306,7 @@ module.exports = [
     },
     "appointment": {
       "time":"1.00pm", 
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
     },
   },
   {
@@ -378,7 +378,7 @@ module.exports = [
     },
     "appointment": {
       "time":"1.00pm", 
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
     },
   },
   {
@@ -567,7 +567,7 @@ module.exports = [
     },
     "appointment": {
       "time":"11.30am", 
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
     },
   },
   {
@@ -677,8 +677,8 @@ module.exports = [
     },
     "appointment": {
       "time":"11.30am", 
-      "type":"Standard appointment",
-      "arrival":"On time",
+      "type":"Non-neuro appointment",
+      "arrival":"on time",
       "waiting":"waiting 15 Mins"
     },
   },
@@ -753,7 +753,7 @@ module.exports = [
       "time":"11.30am", 
       "type":"Complex neuro appointment",
       "accessible": "Ground floor access",
-      "arrival":"On time",
+      "arrival":"on time",
       "waiting":" waiting 20 Mins"
     },
   },
@@ -846,10 +846,10 @@ module.exports = [
     },
     "appointment": {
       "time":"11.00am",
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
       "interpreter":"portuguese interpreter required",
       "arrival":"on time",
-      "Ready for assessment":"Ready for assessment 25mins"
+      "waiting":"waiting 25mins"
     },
   },
   {
@@ -937,10 +937,10 @@ module.exports = [
       }
     },
     "appointment": {
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
       "time":"11.00am",
       "arrival":"on time",
-      "Ready for assessment":"Ready for assessment 18 minutes"
+      "waiting":"waiting 2 minutes"
     },
   },
   
@@ -1020,7 +1020,7 @@ module.exports = [
     },
     "appointment": {
       "time":"11.00am",
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
       "arrivallate":"15 mins late",
       "waiting":"waiting 10 minutes"
     },
@@ -1094,7 +1094,7 @@ module.exports = [
     },
     "appointment": {
       "time":"10.30pm",
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
     },
   },
   {
@@ -1240,7 +1240,7 @@ module.exports = [
     },
     "appointment": {
       "time":"10.00am",
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
       "arrival":"on time",
       "waiting":"waiting 1 hour 25mins"
     },
@@ -1507,7 +1507,7 @@ module.exports = [
     },
     "appointment": {
       "time":"9:30am",
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
     },
   },
   {
@@ -1580,7 +1580,7 @@ module.exports = [
       "time":"9:00am",
       "type":"Complex neuro appointment",
       "taxi":"Taxi required",
-      "arrival":"On time",
+      "arrival":"on time",
       "waiting":"2 hours 35mins "
     },
   },{
@@ -1690,7 +1690,7 @@ module.exports = [
     },
     "appointment": {
       "time":"9:00am",
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
       "arrival":"on time",
       "waiting":"Waiting 2 hours 45 mins"
     },
@@ -1764,7 +1764,7 @@ module.exports = [
       },
     },
     "appointment": {
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
       "time":"9.00am",
     },
   }

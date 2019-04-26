@@ -1771,21 +1771,7 @@ router.post("/assessment/:customerId/completed-assessment", function(req, res, n
 });
 
 
-router.post("/assessment/:customerId/assessment-stopped", function(req, res, next){
-  assessmentCustomers.map(customer => {
-    if(customer._id === req.params.customerId){
 
-      customer.status = "Assessment stopped";
-
-      delete req.session.data.type;
-
-      console.log(customer);
-    }
-  })
-
-  res.redirect(301, '/fha/v' + versionNumber +'/assessment/' + req.params.customerId + '/timeline');
-
-});
 
 router.post("/assessment/:customerId/ready-for-assessment", function(req, res, next){
   assessmentCustomers.map(customer => {
@@ -2052,22 +2038,7 @@ router.post('/assessment/:customerId/evidence/mentalHealthAssessment', function(
 
 
 
-router.post('/assessment/:customerId/evidence/send-home',function (req, res) {
-      
-  var scenariopicker = req.session.data['scenario']
 
-
-  if(scenariopicker == 'know-3'){
-    res.redirect('/fha/v' + versionNumber + '/assessment/' + req.params.customerId + '/evidence/send-home-asses-not-comp')
-  }
-
- 
-
-  else{
-    res.redirect('/fha/v' + versionNumber + '/assessment/' + req.params.customerId + '/evidence/send-home-book')
-  }
-
-}) 
 
 
 router.post('/decisionmaker/:customerId/decision/timeline',function (req, res) {
@@ -2156,6 +2127,20 @@ router.get('/booking/:customerId/details/:pageName', function(req, res, next){
   res.render(viewPath +'/booking/details/' + req.params.pageName);
 
 
+})
+
+
+router.get('/priority-booking', function(req, res, next){
+  res.locals.customers = appointmentCustomers
+  .filter(customer => customer.substatus === "Priority booking");
+  next()
+})
+
+
+router.get('/welfare-call-required', function(req, res, next){
+  res.locals.customers = appointmentCustomers
+  .filter(customer => customer.substatus === "Wellfair call required");
+  next()
 })
 
 

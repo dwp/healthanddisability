@@ -22,24 +22,9 @@
     	
     	<h1 class="heading-large"> <span class="heading-secondary">Step 2 of 2</span>Cancel or rearrange appointment</h1>
     	
-    	{% if checked('stoppassess','unfit') or customer.name.first == 'Dillon'%}
-								<div class="panel panel-info">
-										<p>
-								{{customer.name.first}} is unfit to be examined
-						    	</p>
-					        	</div>
-								{% elif checked('stoppassess','specialreq') %}
-									
-				<div class="panel panel-info mt10">
-						<p>
-							
-								{{customer.name.first}} has a special need they've not previously disclosed
-							</p>
-						</div>
-								{% endif%}
 		
 
-		<form method="post" action="/{{path}}/assessment/{{customer._id}}/booked">
+		<form method="post" action="/{{path}}/assessment/{{customer._id}}/appointment">
 
 		
 						<div class="form-group">
@@ -57,7 +42,7 @@
                                 <div class="panel js-hidden" id="other-info2" >
 
                                         <div class="form-group">
-                                                <h2 class="heading-small"><span style="font-weight:normal" class="">Appointment details</span><br>None neuro appointment</h2>
+                                                <h2 class="heading-small"><span style="font-weight:normal" class="">Appointment details</span><br>Non-neuro appointment</h2>
     
                                                     {% if customer.name.first == 'Lowery' %}
                                                     <ul class="list-bullet mt10 mb10">
@@ -87,7 +72,7 @@
                                                    
                                                     {% elif customer.name.first == 'Mcconnell' %}
                                                     <ul class="list-bullet mt10 mb10">
-                                                            <li>Friday 15th March</li>
+                                                            <li>Friday 15 March</li>
                                                       <li>4:00pm</li>
                                                       <li>Tresco House</li>
                                                     </ul>

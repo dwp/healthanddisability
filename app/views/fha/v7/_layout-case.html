@@ -46,11 +46,12 @@
 {{ 'Ready for review' if customer.status == 'review' }}
 {{ 'Requested further medical evidence' if customer.status == 'fme' }}
 {{ 'Appointment today' if customer.status == 'Appointment today'}}
-{{ 'Ready for assessment' if customer.status == 'Ready for assessment' and data['wca']!=='start'}}
+{{ 'Ready for assessment' if customer.status == 'Ready for assessment' and data['wca']!=='start' and data['appointments']!=='yes' }}
 {{ 'Assessment started' if customer.status == 'Ready for assessment' and data['wca']==='start' }}
 {{ 'Ready for recommendation' if customer.status == 'Ready for recommendation' }}
 {{ 'Assessment completed' if customer.status == 'Assessment completed' }}
-{{ 'Assessment stopped' if customer.status == 'Assessment stopped' }}
+{{ 'Assessment stopped' if customer.status == 'Assessment stopped' and data['appointments']!=='no' and data['appointments']!=='yes' }}
+{{ 'Referred for appointment – welfare call required' if data['appointments']=='no' and customer.status == 'Assessment stopped' }}
 
 
 {{ 'Did not attend appointment' if customer.status == 'Did not attend' and data['confirmfta']!=="Arnaq" and customer.name.first == 'Arnaq'
@@ -62,7 +63,7 @@
 {{ 'Booked' if customer.status == 'Booked' and customer.name.first == 'Dillon' and data['book-next']==="yes" }}
 {% if customer.name.first == 'Deena' and data['changedByCustomer']==="yes" %}
 {% else %}
-{{ 'Booked' if customer.status == 'Security booked'  }} 
+{{ 'Booked' if customer.status == 'Security booked' or data['appointments']=='yes' }} 
 {% endif %}
 {{ 'Ready to book' if customer.status == 'Security booked' and customer.name.first == 'Deena' and data['changedByCustomer']==="yes" }}
 {{ 'Ready to score' if customer.status == 'Assessment reports' }}
@@ -83,7 +84,9 @@ or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes'
      or customer.status == 'Booked' 
      or customer.status == 'Security booked' 
      or customer.status == 'Failed to attend appointment' and data['whatcando']=='newappointment' 
-     or customer.status == 'Ready to book'  %}
+     or customer.status == 'Ready to book' 
+     or data['appointments']=='no' 
+     or data['appointments']=='yes'  %}
 
      {% elif customer.status == 'Failed to attend appointment' and customer.substatus == 'Record a reason' and data['dmreason'] or customer.substatus == 'Request a reason' and data['dmreason'] %}
      <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/index" class="button">Make a decision</a></p>
