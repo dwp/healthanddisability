@@ -23,18 +23,37 @@
               {% elif customer.substatus == 'Ready for decision' %}
               <h3 class="heading-small">Customer contacted us</h3>
             
-              <p class="small">{{ customer.name.first }} was having a bad day with his arthritis and was struggling to get out of the house, he asked for a rearrangement but we could not provide it because he had previously rearranged
+              <p class="">{{ customer.name.first }} was having a bad day with his arthritis and was struggling to get out of the house, he asked for a rearrangement but we could not provide it because he had previously rearranged
                   his appointment.
-                <span class="date block mt10">Recorded date: {{ 'Do MMMM YYYY' | baseDate(1) }}</span>
+                <span class="mt10 block">On {{ 'Do MMMM YYYY' | baseDate(1) }}</span>
               </p>  
               {% elif customer.substatus == 'Record a reason' or customer.substatus == 'Request a reason' and data['dmreason'] %}
               <h3 class="heading-small">Customer contacted us</h3>
             
-              <p class="small">{{ dmreason }}
-                <span class="date block mt10">Recorded date: {{ 'Do MMMM YYYY' | baseDate(1) }}</span>
+              <p class="">{{ dmreason }}
+                <span class="date block mt10">On {{ 'Do MMMM YYYY' | baseDate(1) }}</span>
               </p> 
 
          {% endif %}
+
+         <h3 class="heading-small mb10">Appointment sms sent to</h3>
+   
+         <h4 class="">Phone number</h4>
+         <p class="address-stack">
+             <span>{{customer.mobile}}</span>
+             <span class="mt10">On {{ 'dddd Do MMMM YYYY' | baseDate(1)}}</span>
+         </p>
+ 
+         <h3 class="heading-small mb10">Appointment letter sent to</h3>
+    
+                 <h4 class="">Address</h4>
+                 <p class="address-stack">
+                     <span>{{customer.address.street}}</span>
+                     <span>{{customer.address.city}}</span>
+                     <span>{{customer.address.postcode}}</span>
+                     <span class="mt10">On {{ 'dddd Do MMMM YYYY' | baseDate(10)}}</span>
+                 </p>
+ 
         
         </div>
         
@@ -48,12 +67,23 @@
               </ul>
 
               <h3 class="heading-small">Customer contacted us</h3>
-              <p class="small">Reason: original appointment clashed with another
+              <p class="">Reason: original appointment clashed with another
                 
    
-           <span class="date block mt10 text-secondary">Recorded date: {{ 'Do MMMM YYYY' | baseDate(25)}}</span>
+           <span class="mt10 block">On {{ 'Do MMMM YYYY' | baseDate(25)}}</span>
          </p> 
 
+         <h3 class="heading-small mb10">Appointment letter sent to</h3>
+    
+         <h4 class="">Address</h4>
+         <p class="address-stack">
+             <span>{{customer.address.street}}</span>
+             <span>{{customer.address.city}}</span>
+             <span>{{customer.address.postcode}}</span>
+             <span class="mt10">On {{ 'dddd Do MMMM YYYY' | baseDate(32)}}</span>
+         </p>
+
+  <hr >
       
 
 

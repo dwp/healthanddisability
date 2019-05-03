@@ -1,5 +1,6 @@
-{% extends path+"/_layout.html" %}
+{% extends path1+"/_layout.html" %}
 {% import path1+"/_macros_nav.html" as nav %}
+{% import path1+"/_macros_nav_fta.html" as navfta %}
 
 {% block assess_content %}
 
@@ -16,15 +17,9 @@
       	<div class="left-panel">
       
       	
-      	
-      	
-      	 <div class="case-status">
-		 
- <p class="mt10 mb0 bold-small">Decision in progress</p>
-		 <hr>
-
-		 		  </div>
-      	
+            <p class="returnRef"><a href="">Return to case list</a></p>
+            <hr>
+            <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/index" class="button">Make a decision</a></p>
       	
       	</div>
       
@@ -32,7 +27,6 @@
       
         <div class="column-three-quarters main-area">
         
-          {#  This is the BIG BLUE BAR at the top - #jussayin #}
  {% include path+"/includes/_staff_headingAlone.html" %}
 
           <div nunj-block="citizen_content">

@@ -1,0 +1,100 @@
+{% extends path1+"/_layoutDm.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+    {{ navfta.case_tabs("evidence",1,path1, customer._id) }}{# macro #}
+  
+    <div class="grid-row">
+            <div class="column-third">
+              {% block app_nav %}
+                <div class="details-nav">
+      
+              <ul>
+              <li class="active_detail"><a href="">Recorded evidence</a></li>
+              <li><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing">Requested evidence</a></li>
+              </ul>
+                  
+                </div>
+              {% endblock %}
+            </div><!-- column -->
+            <div class="column-two-thirds">
+                    <h1 class="heading-large mt10">Recorded evidence</h1>
+                    <table class="evidence-list">
+
+                            <thead>
+                                    <tr>
+                                        <th>Evidence type</th>
+                                        <th>Source</th>
+                                        <th>Received</th>
+                                        <th class="numeric">Recorded</th>
+                                    </tr>
+                                </thead>
+                    
+                         <tr>
+                                <td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing">Appointment referral justification</a></td>
+                                <td>HCP</td>
+                                <td></span></td>
+                                <td class="numeric"><span>{{ 'Do MMMM YYYY' | baseDate(10) }}</span></td>
+                            </tr>
+                    
+                                
+                                <tr>
+                                        <td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing">GP report</a></td>
+                                        <td>GP: Dr.{{customer.address.gpName.fullName}}</td>
+                                        <td><span class="secondary-text">{{ 'Do MMMM YYYY' | baseDate(12) }}</span></td>
+                                        <td class="numeric"><span>{{ 'Do MMMM YYYY' | baseDate(11) }}</span></td>
+                                    </tr>
+                                    
+
+
+                                    <tr>
+                                            <td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing">Med 3</a></td>
+                                            <td>Claimant</td>
+                                            <td><span class="secondary-text">{{ 'Do MMMM YYYY' | baseDate(20) }}</span></td>
+                                            <td class="numeric"><span>{{ 'Do MMMM YYYY' | baseDate(20) }}</span></td>
+                                        </tr>
+                    
+                                <tr>
+                                        <td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing">UC 50 </a></td>
+                                        <td>Claimant</td>
+                                        <td><span class="secondary-text">{{ 'Do MMMM YYYY' | baseDate(25) }}</span></td>
+                                        <td class="numeric"><span>{{ 'Do MMMM YYYY' | baseDate(25) }}</span></td>
+                                    </tr>
+                        </table> 
+            </div><!-- column-full -->
+          </div><!-- grid-row -->
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
