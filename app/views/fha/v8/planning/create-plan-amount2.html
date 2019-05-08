@@ -11,7 +11,7 @@ table.profile-table td, table.profile-table th {
   border:5px solid white;
   text-align:center;
   width:auto;
-  padding:0px;
+  padding:0;
 }
 
 table.profile-table th span {
@@ -24,6 +24,8 @@ table.profile-table th span {
 table.profile-table th.col {
   background:#eee;
   width: 12%;
+  text-align: center;
+  padding-left: 0;
 }
 
 table.profile-table input{
@@ -33,6 +35,12 @@ table.profile-table input{
   text-align:center;
   font-size:36px;
   font-weight:bold;
+}
+
+.total td input {
+	background: #005ea5;
+	border-color: #005ea5;
+	color: #fff;
 }
 
 
@@ -837,6 +845,21 @@ table.profile-table input{
   
 
                               {% endif %}
+                              
+                              
+                              <tr class="total">
+                              	<th class="col">Total</th>
+                              	<td><label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id=""  type="text" name=""  type="text" value=""></td>
+                              	<td><label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id=""  type="text" name=""  type="text" value="" ></td>
+                              	<td><label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id=""  type="text" name=""  type="text" value="" ></td>
+                                  <td><label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id=""  type="text" name=""  type="text" value="" ></td>
+                              	<td><label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id=""  type="text" name=""  type="text" value="" ></td>
+                              </tr>
 
 
                
