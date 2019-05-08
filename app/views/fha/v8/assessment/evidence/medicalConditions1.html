@@ -7,146 +7,184 @@
 
 
 
-<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+<p class="no-kdBar"><a href="#" class="link-back">Back</a></p>
 
 
 
 
-<h1 class="heading-large"><span class="heading-secondary">Step 1 of 3</span>Medical conditions</h1>
-
-
+<h1 class="heading-large mt30 mb20"><span class="heading-secondary">Step 1 of 3</span>Medical conditions</h1>
 
 
 <div class="grid-row">
   <div class="column-two-thirds">
+
+	<form class="form">
+	
+	
+	<div class="list-item-wrapper-vertical">
+      <div class="list-row">
+      
   
-  
-   <div class="whatweknow">
-
-	
-
-
-	<table>
-			<caption  class="heading-medium mt10 mb10" >What we already know:</caption>
-			<thead>
-				<tr>
-					<th>Name</th>
-					<th>Source</th>
-					<th>Since</th>
-				
-				</tr>
-			</thead>
-			<tbody>
-				{% for illness in customer.illnesses %}
-				<tr>
-					<td>{{illness.name}}</td>
-					<td>{{illness.source}}</td>
-					<td class="text-secondary">{{illness.date |formatDate('MMMM YYYY')}}</td>
-				
-				</tr>
-				{% endfor %}
-				{% if data['newillness']==='meds1' %}
-				<tr>
-						<td>{{newillneesname}}</td>
-						<td>{{newillnesssource}}</td>
-						<td class="text-secondary">{{newillnesssdate}}</td>
-					
-					</tr>
-				{% endif %}
-			</tbody>
-		</table>
-    
-    <!-- <p><a href="#" class="button secondary mt20">Add illness or condition</a></p> -->
-    
-  
-        
-        
-	    
-	</div> 
-	
-	
-	
-	
-	
-	
-	
-	
-	<form method="post" action="illnessEffects">
-	
-			<div class="form-group">
-			<fieldset class="inline">
-					<legend class="heading-medium mb5">Are there any other medical conditions to add?</legend>
-					
-			
-					
-					<div class="multiple-choice" data-target="finishAdd">
-				      <input id="meds1" name="newillness" type="radio" value="meds1">
-				      <label for="meds1">Yes</label>
-				      
-				    </div>
-
-				    <div class="multiple-choice" data-target="finishHistory">
-				      <input id="meds2" name="newillness" type="radio" value="meds2">
-				      <label for="meds2">No</label>
-				    </div>	
-				    
-				    
-				     <div class="panel js-hidden form-group" id="finishAdd">
-				   		
-				   		
-				   		<fieldset class="item-compound">
+          <fieldset class="item-compound">
                  
             
-				            <legend class="visuallyhidden">Add condition</legend>
-							
-							<div class="form-group">
-				                <label class="form-label" for="field-2">
-				                  Name of medical condition 
-				                </label>
-				                <input type="text" class="form-control" id="field-2" name="newillneesname" autofocus="autofocus">
-											</div>
-											<div class="form-group">
-												<label class="form-label" for="field-3">
-													When was it diagnosed? 
-												</label>
-												<input type="text" class="form-control" id="field-3" name="newillnesssdate" autofocus="autofocus">
-											</div>
-				         
-								<div class="form-group">
-					                <label class="form-label" for="field-3">
-					                  Source 
-					                </label>
-					                <input type="text" class="form-control" id="field-3" name="newillnesssource" autofocus="autofocus">
-					              </div>
-						
-					
-								
-				          <button class="button-secondary">Confirm new medical condition</button>  
-				            
-				          </fieldset>
-				   		
-				   		
-				   		
-				   </div>
+            <legend class="visuallyhidden">Condition details</legend>
+
+
 		
-	 
-				</fieldset>
- 
-			</div>
+		      	<div class="form-group">
+		        
+					<label class="form-label form-label-large" for="illnessname">Name of medical condition</label>
+					 <input type="text" class="form-control" id="illnessname">
+					 
+				 </div>
+				 
+				 <div class="form-group">
+		        
+					<label class="form-label form-label-large" for="illnesssource">Source</label>
+					 <input type="text" class="form-control" id="illnesssource">
+					 
+				 </div>
 
-		</form>
-    <form method="post" action="illnessEffects2a">
+				 <div class="form-group">
+							<label class="form-label" for="diagnosed">
+								When was it diagnosed? 
+							</label>
+							<input type="text" class="form-control" id="diagnosed" name="diagnosed" autofocus="autofocus">
+						</div>
+						
+				 <div>
+					<label class="form-label" for="medication">
+						Medication
+					</label>
+					<textarea id="medication" cols="5" rows="5" class="form-control" autofocus="autofocus"></textarea>
+				</div>
+
+            
+            
+          </fieldset>
+          
+          <hr />
+          
+        </div>
+
+
+      
+
+      <div class="list-row">
+          <div class="form-group">
+            <button id="add-button" class="button secondary button-add-another-vertical">Add another</button>
+          </div>
+      </div>
+
+      
+    </div>
+    <!-- pattern end -->
     
-		<p class="mt30"><button class="button">Save and continue</button></p>
-
+    <p class="mt30"><a href="medicalConditions2" class="button">Save and continue</a></p>
+	
 	</form>
-
+	
+	
+	    
 
   </div><!-- column -->
 </div><!-- row -->
 
-
-
 {% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+
+$(document).on('click', '.button-add-another-vertical', function (e) {
+      e.preventDefault();
+      var beforeThis = $(this).parents('.list-item-wrapper-vertical').find('.list-row').last();
+      $(beforeThis).before(
+        '<div class="list-row">' +
+            '<fieldset class="item-group-compound">' +
+              '<legend class="visuallyhidden">Director details</legend>' +  
+              '<div class="form-group">' +
+                '<label class="form-label" for="field-2">' +
+                  'Name of illness or disability' +
+                '</label>' +
+                '<input type="text" class="form-control" id="field-2" name="field-2" autofocus="autofocus">' +
+              '</div>' +
+              '<div class="form-group">' +
+                '<label class="form-label" for="field-2a">' +
+                  'Source' +
+                '</label>' +
+                '<input type="text" class="form-control" id="field-2a" name="field-2a">' +
+              '</div>' +              
+             '<div class="form-group">' +
+                '<label class="form-label" for="field-3">' +
+                  'When was it diagnosed?' +
+                '</label>' +
+                '<input type="text" class="form-control" id="field-3" name="field-3">' +
+              '</div>' +
+              '<div>' +
+                '<label class="form-label" for="field-4">' +
+                  'Medication' +
+                '</label>' +
+                '<textarea id="field-4" cols="5" rows="5" class="form-control"></textarea>' +
+              '</div>' +
+             
+                '</fieldset>' +
+				'<hr />' +
+				'</div>'
+
+				                  
+      );
+      sortFieldsVertical();
+    });
+
+    function sortFieldsVertical() {
+      var listCounter = 1;
+      var inputCounter = 1;
+
+      $(document).find('.list-item-wrapper-vertical .list-row').each(function () {
+
+
+        if ($(this).find('.remove-list-item-vertical').length === 0) {
+          $(this).find('.item-group-compound:last').append('<a id="remove-item-vertical-' + listCounter + '" class="remove-list-item-vertical" href="#">Remove</a>');
+        } else {
+          $(this).find('.remove-list-item-vertical').attr('id', 'remove-item-vertical-' + listCounter);
+        }
+
+        $(this).find('label').each(function () {
+          $(this).attr('for', 'field-' + inputCounter);
+          inputCounter++;
+        });
+
+        $(this).find('input').each(function () {
+          var labelNo = $(this).parent().find('label').attr('for').split('-').pop();
+          $(this).attr('id', 'field-' + labelNo);
+          $(this).attr('name', 'field-' + labelNo);
+        });
+
+        listCounter++;
+      });
+
+      if ($(document).find('.list-item-wrapper-vertical .list-row').length === 2) {
+        $('.remove-list-item-vertical').remove();
+      }
+    }
+
+    $(document).on('click', '.remove-list-item-vertical', function (e) {
+      e.preventDefault();
+      $(this).parents('.list-row').prev('hr').remove();
+      $(this).parents('.list-row').remove();
+      sortFieldsVertical();
+    });
+    
+    
+
+    
+    
+</script>
+
+{% endblock %}  
+
+
 
 

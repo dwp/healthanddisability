@@ -1,0 +1,71 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+<h1 class="heading-large mt30 mb20"><span class="heading-secondary">Step 3 of 3</span>Medical conditions</h1>
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+  <form>
+
+<fieldset>
+
+  <legend class="heading-medium mt0 mb10">Choose what you want to talk about:</legend>	
+
+  
+  <div class="multiple-choice" data-target="open1">
+		<input id="condition1" name="conditions" type="checkbox" value="1">
+		<label for="condition1">Depression and Anxiety</label>
+	  </div>
+	  <div class="panel js-hidden" id="open1">
+				
+					 <div class="form-group">
+						 <label class="form-label" for="conditionHistory">Condition history</label> 
+						 <textarea class="form-control form-control-3-4" id="field-8" name="newillnesscondition" rows="6" style="width: 100%;"></textarea>
+					 </div>
+	
+				</div>
+	  
+  <div class="multiple-choice">
+		<input id="condition3" name="conditions" type="checkbox" value="3">
+		<label for="condition3">Gout</label>
+	  </div>
+	  
+	<div class="multiple-choice">
+		<input id="condition4" name="conditions" type="checkbox" value="4">
+		<label for="condition4">Tremors</label>
+	  </div>
+	  
+
+			
+	</fieldset>
+	
+	
+	  <p class="mt30"><a href="#" class="button">Save and continue</a></p>	
+	  
+	</form>
+	  
+	  
+	    
+
+  </div><!-- column -->
+</div><!-- row -->
+
+{% include path+"/includes/help/_help_panel_conditionhistory.html" %}
+
+{% endblock %}
+
+
+

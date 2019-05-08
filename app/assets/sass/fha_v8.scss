@@ -1597,3 +1597,23 @@ padding-left: 20px;
 		td { background: $govuk-blue;}
 	}
 }
+
+
+.grouped-conditions {
+	padding: 1em;
+	background: $grey-3;
+	margin-bottom: 20px;
+	li {
+		border-top: 1px solid $grey-2;
+		padding: .4em 3em .5em 0;
+		position: relative;
+		&:first-child {
+			border: 0;
+		}
+		a {
+			position: absolute;
+			top: .5em;
+			right: 0;
+		}
+	}
+}
