@@ -46,7 +46,16 @@
                                         <th class="numeric">Recorded</th>
                                     </tr>
                                 </thead>
-                    
+                                {% if data['whatcando']=='newappointment' %}
+                                <tr>
+                                        <td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing">Good cause decision justification - upheld</a></td>
+                                        <td>Decision maker</td>
+                                        <td></span></td>
+                                        <td class="numeric"><span>{{ 'Do MMMM YYYY' | baseDate(0) }}</span></td>
+                                    </tr>
+
+                                {% endif %}    
+                            
                          <tr>
                                 <td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing">Appointment referral justification</a></td>
                                 <td>HCP</td>

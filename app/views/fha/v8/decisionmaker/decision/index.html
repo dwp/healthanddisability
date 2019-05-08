@@ -1,4 +1,4 @@
-{% extends path+"/_layout-case-action.html" %}
+{% extends path1+"/_layoutDMAction.html" %}
 
 
 {% block citizen_content %}
@@ -9,84 +9,41 @@
 <div class="grid-row">
   <div class="column-two-thirds">
 <h1 class="heading-large">Failure to attend</h1>
-   
-         <div class="latest_version">
-         <h2 class="heading-medium mt0">What we know</h2>
-         <p>Appointment details</p>
-         <ul class="list-bullet">
-             <li>{{ 'Do MMMM YYYY' | baseDate(1) }}</li> 
-             <li>11:00am</li>  
-             <li>Tresco House</li> 
-              </ul>
-              {% if customer.substatus == 'Ready for decision' and customer.reason == 'Overdue' %}
-              <p>We requested a reason on {{ 'Do MMMM YYYY' | baseDate(7) }}, {{ customer.name.first }} has not provided us with the reason for missing the appointent</p>
-              {% elif customer.substatus == 'Ready for decision' %}
-              <h3 class="heading-small">Customer contacted us</h3>
             
-              <p class="">{{ customer.name.first }} was having a bad day with his arthritis and was struggling to get out of the house, he asked for a rearrangement but we could not provide it because he had previously rearranged
-                  his appointment.
-                <span class="mt10 block">On {{ 'Do MMMM YYYY' | baseDate(1) }}</span>
-              </p>  
-              {% elif customer.substatus == 'Record a reason' or customer.substatus == 'Request a reason' and data['dmreason'] %}
-              <h3 class="heading-small">Customer contacted us</h3>
-            
-              <p class="">{{ dmreason }}
-                <span class="date block mt10">On {{ 'Do MMMM YYYY' | baseDate(1) }}</span>
-              </p> 
-
-         {% endif %}
-
-         <h3 class="heading-small mb10">Appointment sms sent to</h3>
+<div class="latest_version">
+    <h2 class="heading-medium mt0">What we know</h2>
+    <p>Appointment details</p>
+    <ul class="list-bullet">
+        <li>2nd May 2019</li> 
+        <li>11:00am</li>  
+        <li>Tresco House</li> 
+         </ul>
+         
+         <h3 class="heading-small">Reason</h3>
+       
+         <p class="">Claimant was having a bad day with his depression and was struggling to get out of the house, he asked for a rearrangement but we could not provide it because he had previously rearranged
+             his appointment.
+           <span class="mt10 block">On 2nd May 2019</span>
+         </p>               
    
-         <h4 class="">Phone number</h4>
-         <p class="address-stack">
-             <span>{{customer.mobile}}</span>
-             <span class="mt10">On {{ 'dddd Do MMMM YYYY' | baseDate(1)}}</span>
-         </p>
- 
-         <h3 class="heading-small mb10">Appointment letter sent to</h3>
-    
-                 <h4 class="">Address</h4>
-                 <p class="address-stack">
-                     <span>{{customer.address.street}}</span>
-                     <span>{{customer.address.city}}</span>
-                     <span>{{customer.address.postcode}}</span>
-                     <span class="mt10">On {{ 'dddd Do MMMM YYYY' | baseDate(10)}}</span>
-                 </p>
- 
-        
-        </div>
-        
-      <hr >
-         <h2 class="heading-medium mt0">Cancelled: non-neuro appointment</h2>
-         <p>Appointment details</p>
-         <ul class="list-bullet">
-             <li>{{ 'Do MMMM YYYY' | baseDate(15) }}</li> 
-             <li>11:00am</li>  
-             <li>Tresco House</li> 
-              </ul>
-
-              <h3 class="heading-small">Customer contacted us</h3>
-              <p class="">Reason: original appointment clashed with another
-                
+   </div>
    
-           <span class="mt10 block">On {{ 'Do MMMM YYYY' | baseDate(25)}}</span>
-         </p> 
+ <hr>
+    <h2 class="heading-medium mt0">Cancelled: non-neuro appointment</h2>
+    <p>Appointment details</p>
+    <ul class="list-bullet">
+        <li>18th April 2019</li> 
+        <li>11:00am</li>  
+        <li>Tresco House</li> 
+         </ul>
 
-         <h3 class="heading-small mb10">Appointment letter sent to</h3>
-    
-         <h4 class="">Address</h4>
-         <p class="address-stack">
-             <span>{{customer.address.street}}</span>
-             <span>{{customer.address.city}}</span>
-             <span>{{customer.address.postcode}}</span>
-             <span class="mt10">On {{ 'dddd Do MMMM YYYY' | baseDate(32)}}</span>
-         </p>
+         <h3 class="heading-small">Assessment centre</h3>
+         <p class="">We have cancelled this appointment because there wasn't a hcp available to fullfill the appointment
+           
 
-  <hr >
-      
-
-
+      <span class="mt10 block">On 8th April 2019</span>
+    </p> 
+<hr>
 
 </div>
 <div class="column-third">
@@ -106,12 +63,13 @@
         <input id="face2face" name="whatcando" type="radio" value="close">
         <label for="face2face"> Close {{customer.name.first}}'s case</label>
       </div>
-      <div class="panel js-hidden" id="closeThis">
-        <label class="form-label" for="closeReason">Reason:</label>
-      <textarea class="form-control form-control-3-4" name="closeReason" id="closeReason" rows="2"></textarea>
-      </div>
   
     </div><!-- form-group -->
+
+    <div class="form-group">
+          <label class="form-label" for="reason">Justification:</label>
+          <textarea class="form-control form-control-3-4" name="reason" id="reason" rows="6"></textarea>
+    </div>
     <div class="form-group">
       <button class="button">Confirm</button>
     </div><!-- form-group -->

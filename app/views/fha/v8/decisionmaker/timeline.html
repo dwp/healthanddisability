@@ -42,8 +42,23 @@
                 </p>
               </div>
               {% endif %}
+
+
+              {% if data['whatcando']=='newappointment' %}
+              <span class="line"></span>
+              <div class="timeline__event">
+                <h3 class="timeline__heading">Good cause decision - referred for appointment</h3>
+                <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0) }} / Robert Weston/ Wimbledon BSC </p>
+
+                <p class="address-stack">
+                      
+                  
+                    <span>{{ reason }}</span>
+                </p>
+              </div>
+              {% endif %}
   
-  
+             {% if data['timelinefilter']%}
               {% if checked('timelinefilter', 'all') or checked('timelinefilter', 'appointment') %}
               <span class="line"></span>
               <div class="timeline__event">
@@ -240,6 +255,185 @@
                   <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(36) }}</p>
                 </div>
           
+                {% endif %}
+
+                {% else %}
+
+
+                <span class="line"></span>
+                <div class="timeline__event">
+                  <h3 class="timeline__heading">Failed to attend appointment</h3>
+                  <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0) }}</p>
+  
+                  <p class="address-stack">  
+                      <span class="mt10">Appointment details:</span>
+                      <span>Non-neuro appointment</span>
+                      <span>{{ 'Do MMMM YYYY' | baseDate(1) }}</span>
+                      <span>11:00am</span>
+                      <span>Tresco House</span>
+                  </p>
+                </div>
+  
+                <span class="line"></span>
+                <div class="timeline__event">
+                  <h3 class="timeline__heading">Note</h3>
+                  <p class="timeline_datetime">1st May 2019 / Sheila Jones / Cardiff Call Centre</p>
+  
+                  <p class="address-stack">
+                        
+                    
+                      <span>Claimant was having a bad day with his depression and was struggling to get out of the house, he asked for a rearrangement but we could not provide it because he had previously rearranged his appointment.</span>
+                  </p>
+                </div>
+
+                    <span class="line"></span>
+                    <div class="timeline__event">
+                      <h3 class="timeline__heading">Appointment sms sent</h3>
+                      <p class="timeline_datetime">2nd May 2019</p>
+                     
+                      <p class="address-stack">
+                        
+                          <span class="mt10">Phone number:</span>
+                          <span>07815 526 315</span>
+                      </p>
+                    </div>
+       
+                    <span class="line"></span>
+                    <div class="timeline__event">
+                      <h3 class="timeline__heading">Appointment letter sent</h3>
+                      <p class="timeline_datetime">22nd April 2019</p>
+             
+                      <p class="address-stack">
+                          <span class="mt10">Address:</span>
+                          <span>158 Merit Court</span>
+                          <span>Birmingham</span>
+                          <span>B9 9IP</span>
+                      </p>
+                 
+                    </div>
+
+  
+                    <span class="line"></span>
+                    <div class="timeline__event">
+                      <h3 class="timeline__heading">Appointment booked</h3>
+                      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(1) }}</p>
+                      <p class="address-stack">  
+                          <span class="mt10">Appointment details:</span>
+                          <span>Non-neuro appointment</span>
+                          <span>{{ 'Do MMMM YYYY' | baseDate(10) }}</span>
+                          <span>11:00am</span>
+                          <span>Tresco House</span>
+                      </p>
+                    </div>
+
+                    <span class="line"></span>
+                    <div class="timeline__event">
+                      <h3 class="timeline__heading">Cancelled appointment</h3>
+                      <p class="timeline_datetime">22nd April 2019 / Barry Gallager / Tresco assessment centre</p>
+                      <p class="address-stack">  
+                          <span class="mt10">Assessment centre:</span>
+                          <span>We have cancelled this appointment because there wasn't a hcp available to fullfill the appointment</span>
+                      </p>
+                    </div>
+
+  
+                    <span class="line"></span>
+                    <div class="timeline__event">
+                      <h3 class="timeline__heading">Appointment booked</h3>
+                      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(10) }}</p>
+                      <p class="address-stack">  
+                          <span class="mt10">Appointment details:</span>
+                          <span>Non-neuro appointment</span>
+                          <span>{{ 'Do MMMM YYYY' | baseDate(10) }}</span>
+                          <span>11:00am</span>
+                          <span>Tresco House</span>
+                      
+                      </p>
+                    </div>
+  
+                  
+                  <span class="line"></span>
+                    <div class="timeline__event">
+                      <h3 class="timeline__heading">Referred for appointment</h3>
+                      <p class="timeline_datetime">21st April 2019</p>
+                    </div>
+
+            
+            
+            <span class="line"></span>
+            <div class="timeline__event">
+              <h3 class="timeline__heading">GP report - medical evidence received</h3>
+              <p class="timeline_datetime">20th April 2019</p>
+            </div>
+  
+
+            
+            
+            <span class="line"></span>
+            <div class="timeline__event">
+              <h3 class="timeline__heading">GP Report - medical evidence requested</h3>
+              <p class="timeline_datetime">13th April 2019</p>
+            </div>
+            
+ 
+            
+                  
+                  <span class="line"></span>
+                  <div class="timeline__event">
+                    <h3 class="timeline__heading">Med 3 - medical evidence received </h3>
+                    <p class="timeline_datetime">11th April 2019</p>
+                  </div>
+   
+                  <span class="line"></span>
+                  <div class="timeline__event">
+                    <h3 class="timeline__heading">UC50 form received</h3>
+                    <p class="timeline_datetime">10th April 2019</p>
+                  </div>
+
+                  <span class="line"></span>
+                  <div class="timeline__event">
+                    <h3 class="timeline__heading">Note</h3>
+                    <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(28) }} / John Grith / Cardiff Call Centre</p>
+    
+                    <p class="address-stack">
+                        <span>Claiment called again saying no one could help him to fill in the questionaire, provided him with the questionaire helpline number (000 000 0000) or to approach a healthworker or CAB for advice</span>
+                    </p>
+                  </div>
+
+  
+                  <span class="line"></span>
+                  <div class="timeline__event">
+                    <h3 class="timeline__heading">Note</h3>
+                    <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(28) }} / John Grith / Cardiff Call Centre</p>
+    
+                    <p class="address-stack">
+                        <span>Claiment called for advice on filling in his uc50, advised him to get one of his family to help him</span>
+                    </p>
+                  </div>
+
+            
+                  <span class="line"></span>
+                  <div class="timeline__event">
+                    <h3 class="timeline__heading">UC50 form sent out</h3>
+                    <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(35) }}</p>
+                    <p class="address-stack">
+                        <span class="mt10">Address:</span>
+                        <span>158 Merit Court</span>
+                        <span>Birmingham</span>
+                        <span>B9 9IP</span>
+                    </p>
+                  </div>
+  
+            
+                  <span class="line"></span>
+                  <div class="timeline__event">
+                    <h3 class="timeline__heading">New referral created</h3>
+                    <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(36) }}</p>
+                  </div>
+            
+
+
+
                 {% endif %}
         
           
