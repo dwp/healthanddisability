@@ -15,6 +15,7 @@
     <tr>
       <th>Details</th>
       <th>Status</th>
+      <th>Referred date</th>
     </tr>
   </thead>
   
@@ -32,6 +33,7 @@
     {{ 'Questionnaire not returned' if customer.status == 'Questionnaire not returned'}}
     
     </span> </td>
+  <td> {{ customer.refereddate }}</td>  
 </tr>
 </tr>
 

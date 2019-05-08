@@ -1,3 +1,6 @@
+	
+
+
 <div class="staff__heading">
 
     <div class="grid-row">
@@ -21,12 +24,12 @@
       
       <div class="column-half head-customer-extended">
       
-      	<div class="header-left-col">
+      	<div class="header-left-col mt20">
      	  <h2>Date of birth</h2>
      	  <p>{{customer.dateOfBirth |formatDate('D MMMM YYYY') }}</p>
       	</div>
 
-		  <div class="header-right-col">
+		  <div class="header-right-col mt20">
 	         <h2>Benefit</h2>
      	  <p>Universal credit</p>
 		  </div>
@@ -47,30 +50,33 @@
 			  		</div>
 			  </div>
 			</details> -->
-			{% if customer.name.first == 'Deena' %}
+	{% if customer.name.first == 'Deena' %}
 		  	<div class="header-identifiers">
 					<p class="badge">Has appointee</p>
-					<!--<p class="badge support-item">Terminally ill</p>-->
+					
 				</div>
 				{% elif customer.name.first == 'Dominguez' %} 	
 				<div class="header-identifiers">
 					<p class="badge">Unacceptable client behaviour</p>
-					<!--<p class="badge support-item">Terminally ill</p>-->
+					
 				</div>
 			{% elif customer.status == 'Security booked' %} 		
 			{% else %}
 			<div class="header-identifiers">
 	      		<p class="badge">Unacceptable claimant behaviour</p>
-	      		<!--<p class="badge support-item">Terminally ill</p>-->
+	      	
 		  	  </div>
 		  {% endif %}
 		  
         	
       </div><!-- / column half -->
-      
-      
+
+ 
+			 
+				 
     
       
-    </div><!-- / grid row -->
+		</div><!-- / grid row -->
 
+			</div>	 
 </div>

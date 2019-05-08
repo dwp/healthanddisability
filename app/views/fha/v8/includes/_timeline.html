@@ -100,7 +100,15 @@
         </div>
         {% endif %}
 
-    
+
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Appointment sms sent</h3>
+          <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(1)}}</p>
+        </div>
+
+
         {% if data['appointments']=='yes'  %}
         <span class="line"></span>
         <div class="timeline__event">
@@ -113,12 +121,19 @@
         <span class="line"></span>
         <div class="timeline__event">
           <h3 class="timeline__heading">Rearranged appointment</h3>
-          <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(10)}}</p>
+          <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(6)}}</p>
         </div>
         {% endif %}
 
+    
 
 
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Appointment letter sent</h3>
+          <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(11)}}</p>
+        </div>
+      
 
         <span class="line"></span>
         <div class="timeline__event">

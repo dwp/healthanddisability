@@ -8,7 +8,7 @@ var calendar = require('node-calendar');
 var moment = require('moment')
 const crypto = require("crypto");
 
-var versionNumber = "7";
+var versionNumber = "8";
 var filePath = '../../../../app/views/fha/v' + versionNumber;
 var viewPath = 'fha/v' + versionNumber;
 

@@ -80,12 +80,35 @@
          <li>4:00pm</li>  
          <li>Tresco House</li> 
         </ul>
+
+
+
         {% if data['appointments']==="no" %}
         <h3 class="heading-small">Contact reason</h3>
         <p class="small">{{reason}}
             <span class="date">Recorded date: {{customer | formatDate("D MMMM YYYY") }} 10:05 am</span> 
          </p>       
         {% endif %}
+
+
+        <h3 class="heading-small mb10">Appointment sms sent to</h3>
+   
+        <h4 class="">Phone number</h4>
+        <p class="address-stack">
+            <span>{{customer.mobile}}</span>
+            <span class="mt10">On {{ 'dddd Do MMMM YYYY' | baseDate(10)}}</span>
+        </p>
+
+        <h3 class="heading-small mb10">Appointment letter sent to</h3>
+   
+                <h4 class="">Address</h4>
+                <p class="address-stack">
+                    <span>{{customer.address.street}}</span>
+                    <span>{{customer.address.city}}</span>
+                    <span>{{customer.address.postcode}}</span>
+                    <span class="mt10">On {{ 'dddd Do MMMM YYYY' | baseDate(10)}}</span>
+                </p>
+
 </div>
 {% if customer.name.first =='Dominguez' or customer.name.first =='Lowery' or customer.name.first =='Christie'  %}
 {% else %}
@@ -98,11 +121,22 @@
      </ul>
 
      <h3 class="heading-small">Cancellation reason</h3>
-     <p class="small">Customer cancelled because they have another appointment with their specialist on the same day
+     <p>Customer cancelled because they have another appointment with their specialist on the same day
        
 
-  <span class="date block mt10 text-secondary">Recorded date: {{ 'dddd Do MMMM YYYY' | baseDate(10)}}</span>
-</p> 
+  <p>Recorded date: {{ 'dddd Do MMMM YYYY' | baseDate(10)}}</p>
+
+  <h3 class="heading-small mb10 mt30">Appointment letter sent to</h3>
+   
+  <h4 class="">Address</h4>
+  <p class="address-stack">
+      <span>{{customer.address.street}}</span>
+      <span>{{customer.address.city}}</span>
+      <span>{{customer.address.postcode}}</span>
+      <span class="mt10">On {{ 'dddd Do MMMM YYYY' | baseDate(10)}}</span>
+  </p>
+  <hr>
+
 {% endif %}
 {% endif %}
 
