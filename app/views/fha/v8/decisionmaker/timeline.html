@@ -168,7 +168,7 @@
           
           
                   {% endif %}
-                  {% if checked('timelinefilter', 'all') or checked('timelinefilter', 'review') %}
+                  {% if checked('timelinefilter', 'all') or checked('timelinefilter', 'review') or checked('timelinefilter', 'evidence') %}
           
           
           <span class="line"></span>
@@ -189,7 +189,7 @@
           
           
           {% endif %}
-              {% if checked('timelinefilter', 'all') or checked('timelinefilter', 'review') %}
+              {% if checked('timelinefilter', 'all') or checked('timelinefilter', 'review') or checked('timelinefilter', 'evidence') %}
           
                 
                 <span class="line"></span>
@@ -274,17 +274,7 @@
                   </p>
                 </div>
   
-                <span class="line"></span>
-                <div class="timeline__event">
-                  <h3 class="timeline__heading">Note</h3>
-                  <p class="timeline_datetime">1st May 2019 / Sheila Jones / Cardiff Call Centre</p>
-  
-                  <p class="address-stack">
-                        
-                    
-                      <span>Claimant was having a bad day with his depression and was struggling to get out of the house, he asked for a rearrangement but we could not provide it because he had previously rearranged his appointment.</span>
-                  </p>
-                </div>
+
 
                     <span class="line"></span>
                     <div class="timeline__event">
@@ -390,27 +380,6 @@
                     <p class="timeline_datetime">10th April 2019</p>
                   </div>
 
-                  <span class="line"></span>
-                  <div class="timeline__event">
-                    <h3 class="timeline__heading">Note</h3>
-                    <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(28) }} / John Grith / Cardiff Call Centre</p>
-    
-                    <p class="address-stack">
-                        <span>Claiment called again saying no one could help him to fill in the questionaire, provided him with the questionaire helpline number (000 000 0000) or to approach a healthworker or CAB for advice</span>
-                    </p>
-                  </div>
-
-  
-                  <span class="line"></span>
-                  <div class="timeline__event">
-                    <h3 class="timeline__heading">Note</h3>
-                    <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(28) }} / John Grith / Cardiff Call Centre</p>
-    
-                    <p class="address-stack">
-                        <span>Claiment called for advice on filling in his uc50, advised him to get one of his family to help him</span>
-                    </p>
-                  </div>
-
             
                   <span class="line"></span>
                   <div class="timeline__event">
@@ -449,43 +418,85 @@
               <textarea class="form-control " name="notetext" id="textarea" rows="5" style="width:100%"></textarea>
               <p><button class="button button-secondary mt10">Add note</button></p>
             </div>
+            {% if data['timelinefilter']%}
             <div class="form-group">
                 <fieldset>
               
                   <legend>
                     <h3 class="heading-medium mt0">Filter timeline</h3>
                   </legend>
-
-                  <div class="multiple-choice">
-                      <input id="timline-1" name="timelinefilter" type="checkbox" value="all" {{ checked('timelinefilter', 'all') }}>
-                      <label for="timline-1">all</label>
-                    </div>
               
                   <div class="multiple-choice">
                     <input id="timline-2" name="timelinefilter" type="checkbox" value="note"  {{ checked('timelinefilter', 'note') }}>
                     <label for="timline-2">Notes</label>
                   </div>
+                 
                   <div class="multiple-choice">
-                    <input id="timline-3" name="timelinefilter" type="checkbox" value="appointment"  {{ checked('timelinefilter', 'appointment') }}>
-                    <label for="timline-3">Appointment</label>
-                  </div>
-                
-
-                  <div class="multiple-choice">
-                    <input id="timline-4" name="timelinefilter" type="checkbox" value="review"  {{ checked('timelinefilter', 'review') }}>
-                    <label for="timline-4">Medical review (scrutiny)</label>
-                  </div>
-
+                      <input id="timline-2" name="timelinefilter" type="checkbox" value="evidence"  {{ checked('timelinefilter', 'evidence') }}>
+                      <label for="timline-2">Evidence</label>
+                    </div>
 
                   <div class="multiple-choice">
                       <input id="timline-5" name="timelinefilter" type="checkbox" value="referral"  {{ checked('timelinefilter', 'referral') }}>
-                      <label for="timline-5">referral</label>
+                      <label for="timline-5">Referral</label>
+                    </div>
+
+
+                  <div class="multiple-choice">
+                      <input id="timline-4" name="timelinefilter" type="checkbox" value="review"  {{ checked('timelinefilter', 'review') }}>
+                      <label for="timline-4">Review</label>
+                    </div>
+
+                    <div class="multiple-choice">
+                        <input id="timline-3" name="timelinefilter" type="checkbox" value="appointment"  {{ checked('timelinefilter', 'appointment') }}>
+                        <label for="timline-3">Appointment</label>
                     </div>
               
                 </fieldset>
                 <p><button class="button button-secondary mt10">Filter timeline results</button></p>
               </div>
+              {% else %}
+
+              <div class="form-group">
+                  <fieldset>
+                
+                    <legend>
+                      <h3 class="heading-medium mt0">Filter timeline</h3>
+                    </legend>
+                
+                    <div class="multiple-choice">
+                      <input id="timline-2" name="timelinefilter" type="checkbox" value="note"  {{ checked('timelinefilter', 'note') }}>
+                      <label for="timline-2">Notes</label>
+                    </div>
+
+
+                    <div class="multiple-choice">
+                        <input id="timline-2" name="timelinefilter" type="checkbox" value="evidence"  {{ checked('timelinefilter', 'evidence') }}>
+                        <label for="timline-2">Evidence</label>
+                      </div>
+  
+                    <div class="multiple-choice">
+                        <input id="timline-5" name="timelinefilter" type="checkbox" value="referral" checked  {{ checked('timelinefilter', 'referral') }}>
+                        <label for="timline-5">Referral</label>
+                      </div>
               
+  
+                    <div class="multiple-choice">
+                      <input id="timline-4" name="timelinefilter" type="checkbox" value="review" checked {{ checked('timelinefilter', 'review') }}>
+                      <label for="timline-4">Review</label>
+                    </div>
+
+                      <div class="multiple-choice">
+                          <input id="timline-3" name="timelinefilter" type="checkbox" value="appointment" checked {{ checked('timelinefilter', 'appointment') }}>
+                          <label for="timline-3">Appointment</label>
+                        </div>
+                      
+                
+                  </fieldset>
+                  <p><button class="button button-secondary mt10">Filter timeline results</button></p>
+                </div>
+
+              {% endif%}
            
        </div>
      </div>
