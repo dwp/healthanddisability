@@ -33,15 +33,37 @@
 				
 					 <div class="form-group">
 						 <label class="form-label" for="conditionHistory">Condition history</label> 
-						 <textarea class="form-control form-control-3-4" id="field-8" name="newillnesscondition" rows="6" style="width: 100%;"></textarea>
+						 <textarea class="form-control form-control-3-4" id="conditionHistory" name="newillnesscondition" rows="6"></textarea>
 					 </div>
-	
+					 
+					 <div>
+						<label class="form-label" for="medication">
+							Medication
+						</label>
+						 <textarea class="form-control form-control-3-4" id="medication" name="newillnesscondition" rows="6"></textarea>
+					</div>
+
 				</div>
 	  
-  <div class="multiple-choice">
+  <div class="multiple-choice" data-target="open2">
 		<input id="condition3" name="conditions" type="checkbox" value="3">
 		<label for="condition3">Gout</label>
 	  </div>
+	  <div class="panel js-hidden" id="open2">
+				
+					 <div class="form-group">
+						 <label class="form-label" for="conditionHistory2">Condition history</label> 
+						 <textarea class="form-control form-control-3-4" id="conditionHistory2" name="newillnesscondition2" rows="6"></textarea>
+					 </div>
+					 
+					 <div>
+						<label class="form-label" for="medication2">
+							Medication
+						</label>
+						 <textarea class="form-control form-control-3-4" id="medication2" name="newillnesscondition2" rows="6"></textarea>
+					</div>
+	
+				</div>
 	  
 	<div class="multiple-choice">
 		<input id="condition4" name="conditions" type="checkbox" value="4">
@@ -53,7 +75,7 @@
 	</fieldset>
 	
 	
-	  <p class="mt30"><a href="#" class="button">Save and continue</a></p>	
+	  <p class="mt30"><a href="wca-index-conditions" class="button">Save and continue</a></p>	
 	  
 	</form>
 	  
