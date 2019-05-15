@@ -30,6 +30,16 @@
 				</tr>
 			</thead>
 
+			{% if customer.substatus == 'Priority booking' %}
+			<tr>
+							<td><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing">Good cause decision justification - upheld</a></td>
+							<td>Decision maker</td>
+							<td></span></td>
+							<td class="numeric"><span>{{ 'Do MMMM YYYY' | baseDate(0) }}</span></td>
+					</tr>
+
+			{% endif %} 
+
 			{% if customer.status == 'Ready to book'
 	 or  customer.status == 'Booked'
 	 or  customer.status == 'Did not attend'

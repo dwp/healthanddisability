@@ -1490,14 +1490,14 @@ padding-left: 20px;
 
  ul li {
 	display:inline-block;
-	margin:0 10px 0px 0px;
+	margin:0 5px 0px 0px;
 
 	a{
 		display:block;
-		padding:1em;
+		padding:0.8em;
 		background: #eee;
 		font-weight:bold;
-		border:4px solid #eee;
+		border:4px solid #fff;
 		color:$text-colour;
 		text-decoration:none;
 		&:hover{
@@ -1507,14 +1507,14 @@ padding-left: 20px;
 	 }
 
 	 &.active a{
-		border-color:$govuk-blue;
-		border-left-color:darken($govuk-blue,5%);
-		border-right-color:darken($govuk-blue,5%);
-		border-bottom-color:darken($govuk-blue,5%);
 		background: #005EA5;
 		cursor:default;
 		color:#fff;
 		text-decoration: none;
+
+		&:hover{
+			border-color:#fff;
+		 }
 	 }
  
    }

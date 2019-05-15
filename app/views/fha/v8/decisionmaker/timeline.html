@@ -34,11 +34,21 @@
               <div class="timeline__event">
                 <h3 class="timeline__heading">Note</h3>
                 <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0) }} / Robert Weston/ Wimbledon BSC </p>
+              </div>
+              {% endif %}
+
+
+
+              {% if data['whatcando']=='close' %}
+              <span class="line"></span>
+              <div class="timeline__event">
+                <h3 class="timeline__heading">Good cause decision - Closed case</h3>
+                <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0) }} / Robert Weston/ Wimbledon BSC </p>
 
                 <p class="address-stack">
                       
                   
-                    <span>{{ notetext }}</span>
+                    <span>{{ reason }}</span>
                 </p>
               </div>
               {% endif %}
@@ -62,7 +72,7 @@
               {% if checked('timelinefilter', 'all') or checked('timelinefilter', 'appointment') %}
               <span class="line"></span>
               <div class="timeline__event">
-                <h3 class="timeline__heading">Failed to attend appointment</h3>
+                <h3 class="timeline__heading">Did not attend appointment</h3>
                 <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0) }}</p>
 
                 <p class="address-stack">  
@@ -262,7 +272,7 @@
 
                 <span class="line"></span>
                 <div class="timeline__event">
-                  <h3 class="timeline__heading">Failed to attend appointment</h3>
+                  <h3 class="timeline__heading">Did not attend appointment</h3>
                   <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0) }}</p>
   
                   <p class="address-stack">  

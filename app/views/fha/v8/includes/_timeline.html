@@ -1,11 +1,27 @@
 <div class="timeline">
 
 
-    {% if data['whatcando']=='newappointment'  %}
+    {% if data['bookedAppointment']=="yes"  %}
+    <span class="line"></span>
+    <div class="timeline__event">
+      <h3 class="timeline__heading">Appointment booked</span></h3>
+      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0)}}</p>
+    </div>
+
+    {% endif %} 
+
+
+    {% if data['whatcando']=='newappointment' or customer.substatus == 'Priority booking' %}
     <span class="line"></span>
     <div class="timeline__event">
       <h3 class="timeline__heading">Good cause decision: Referred for appointment</span></h3>
       <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0)}}</p>
+    </div>
+
+    <span class="line"></span>
+    <div class="timeline__event">
+      <h3 class="timeline__heading">Failed to attend appointment</h3>
+      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0) }}</p>
     </div>
     {% endif %} 
 
