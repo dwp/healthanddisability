@@ -31,6 +31,7 @@ module.exports = [
     ],
     "status": "Ready to book",
     "substatus":"Priority booking",
+    "sla":"7 Days remaining",
     "dateOfBirth": "1966-08-05T14:41:40+00:00",
     "mobile": "07857 438 301",
     "NINO": "QQ 39 18 21 C",
@@ -294,7 +295,9 @@ module.exports = [
         "sideEffects": ""
       }
     ],
-    "status": "Did not attend",
+    "status": "Ready to book",
+    "substatus":"Priority booking",
+    "sla":"8 Days remaining",
     "dateOfBirth": "1982-08-15T14:32:38+00:00",
     "mobile": "07825 447 216",
     "NINO": "QQ 69 17 54 C",
@@ -511,7 +514,9 @@ module.exports = [
       }
 
     ],
-    "status": "Did not attend",
+    "status": "Ready to book",
+    "substatus":"Priority booking",
+    "sla":"10 Days remaining",
     "dateOfBirth": "1956-02-13T23:13:32+00:00",
     "mobile": "07961 542 293",
     "NINO": "QQ 78 13 92 C",

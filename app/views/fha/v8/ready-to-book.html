@@ -14,7 +14,8 @@
             <div class="filter">
                 <ul>
                     <li class="active" ><a href="/{{path}}/ready-to-book.html">All</a></li>
-                    <li><a href="/{{path}}/priority-booking.html">Priority bookings</a></li>
+                    <li><a href="/{{path}}/priority-booking.html">Previously did not attend
+                    </a></li>
                     <!--<li><a href="/{{path}}/welfare-call-required.html">Welfare call required</a></li>-->
                   </ul>
                 </div>
@@ -24,12 +25,14 @@
                 <thead>
                   <tr>
                     <th>Details</th>
+  
                   </tr>
                 </thead>
                 {% for customer in customers %}
                 <tr>
                     <td><a href="booking/{{customer._id}}/timeline"><span class="visually-hidden">Name</span>{{customer.name.fullName}} </a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span>
                     </td>
+             
                 </tr>
             
                 {% endfor %}

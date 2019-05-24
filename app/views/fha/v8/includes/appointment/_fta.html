@@ -30,13 +30,13 @@
     {% elif customer.status == 'Ready to book' or customer.status == 'Did not attend'%}
     <h2 class="heading-small"><span style="font-weight:normal" class="text-secondary">Next available</span><br />Standard appointment</h4> 
       <ul class="list-bullet mt10 mb10">
-          <li>{{ 'Do MMMM YYYY' | baseDateAdd(15) }}</li>
+          <li>{{ 'Do MMMM YYYY' | baseDateAdd(8) }}</li>
           <li>10:30am</li>
           <li>Tresco House</li>
       </ul>
       <p><button class="button-secondary">Book this appointment</button></p>
 
-      <p><a href="/{{path}}/assessment/{{customer._id}}/evidence/send-home-book" >Choose another date</a></p>
+      <p><a href="" >Choose another date</a></p>
 
 
       
@@ -98,8 +98,11 @@
                </li>
               {% endif%}
             </ul>
-     
+            {% if customer.status == 'Ready to book' %}
+          <p class="mt20"> <a href="" class="">Add or edit preferences</a></p>
+          {% else %}
           <p class="mt20"> <a href="/fha/v6/assessment/{{customer._id}}/appointment-preferences" class="">Add or edit preferences</a></p>
+          {% endif %}
           </div>
           </div>
 
@@ -131,6 +134,12 @@
                   <h3 class="heading-small mb10">
                    Failed to attend: Standard appointment</span></h3>
                  <p class="small">{{ dmreason }}  </p>
+
+                 {% elif customer.status == 'Ready to book' %}
+
+                 <h3 class="heading-small mb10">
+                   Did not attend: Standard appointment</span></h3>
+                 
               
               {% else%}
 
@@ -142,10 +151,17 @@
               </p>
 
               {% endif %}
+      
               <p>  
-                <a href="/fha/v7/booking/{{customer._id}}/appointment-history">
+                  {% if customer.status == 'Ready to book' %}
+                <a href="#">
                 View appointment history
               </a>
+                 {% else %}
+                 <a href="/fha/v7/booking/{{customer._id}}/appointment-history">
+                  View appointment history
+                </a>
+                 {% endif %}
             </p>
               </div>
 
