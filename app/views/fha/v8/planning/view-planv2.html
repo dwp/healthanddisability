@@ -19,12 +19,12 @@
     <div class="card-container">
 
         <div class="card alt">
-          <a href="#">
+          <a href="edit-plan-amount">
         
               <h2>
                 View and edit
                 <span class="heading-small" >Mondays appointments</span>
-                
+                {% if data['times'] %}<span class="badge">Updated</span>{% endif %}
                </h2>
                </a>
                <div class="inner">
@@ -33,13 +33,17 @@
                     <tr>
                       <th scope="col"></th>
                       <th class="numeric" scope="col"> <span class="heading-xlarge">
-                          42
+                          {% if data['times'] %}
+                          {{ sum }}
+                          {% else %}
+                          34
+                         {% endif %} 
                           <span class="block"><span class="visually-hidden">appointents</span>Opened</span>
                       </span></th>
                       <th class="numeric" scope="col">
                           <span class="visually-hidden">of which</span>
                           <span class="heading-xlarge">
-                              30
+                              23
                               <span class="block"><span class="visually-hidden">appointents are</span>Booked</span>
                           </span>
                       </th>
@@ -48,17 +52,17 @@
                   <tbody>
                     <tr>
                       <th scope="row">Complex neuro</th>
-                      <td class="numeric">12</td>
-                      <td class="numeric">8</td>
+                      <td class="numeric">{% if data['complexsum'] %}{{ complexsum }}  {% else %} 5 {% endif%}</td>
+                      <td class="numeric">3</td>
                     </tr>
                     <tr>
                       <th scope="row">Neuro</th>
-                      <td class="numeric">38</td>
-                      <td class="numeric">20</td>
+                      <td class="numeric">{% if data['neurosum'] %}{{ neurosum }}  {% else %}27 {% endif%}</td>
+                      <td class="numeric">18</td>
                     </tr>
                     <tr>
                       <th scope="row">Non neuro</th>
-                      <td class="numeric">2</td>
+                      <td class="numeric">{% if data['nonesum'] %}{{ nonesum }}  {% else %}2 {% endif%}</td>
                       <td class="numeric">2</td>
                     </tr>
                   </tbody>
@@ -215,7 +219,7 @@
               </div>
 
               <div class="card alt">
-                  <a href="#">
+                  <a href="">
                 
                       <h2>
                         View and edit
