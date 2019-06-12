@@ -1,0 +1,231 @@
+{% extends path1+"/_layout-index.html" %} 
+
+
+{% block assess_content %}
+<main id="content" role="main" class="main-content">
+
+      <div class="container">
+          <div class="grid-row">
+              <div class="column-full">
+  <a href="javascript: history.go(-1)" class="link-back">Back</a>   
+   <h1 class="heading-large mt10"><span class="heading-secondary">Tresco house</span>Create capacity plan</h1>
+   
+   
+   <p>Week commencing: <b>Monday 24 June</b></p>
+
+   
+ 
+   <div class="grid-row">
+    <div class="card-container">
+
+        <div class="card  alt {% if data['times'] %}reviewed  {% endif %} ">
+          <a href="/{{path}}/planning/create-plan-times2">
+        
+    
+              <h2 class="heading-xlarge">
+            
+                {{ sum }}
+             
+               
+                <span class="heading-small">Monday</span>
+               </h2>
+              </a>
+
+               {% if data['times'] %}
+             
+               <div class="inner">
+                <table>
+                   <thead>
+                     <tr>
+                       <th scope="col"></th>
+                       <th class="numeric" scope="col"> <span class="heading-xlarge">
+                         
+                           {{ sum }}
+                     
+                           <span class="block"><span class="visually-hidden">appointents</span>Opened</span>
+                       </span></th>
+                       <th class="numeric" scope="col">
+                           <span class="visually-hidden">of which</span>
+                           <span class="heading-xlarge">
+                              0
+                               <span class="block"><span class="visually-hidden">appointents are</span>Booked</span>
+                           </span>
+                       </th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <tr>
+                       <th scope="row">Complex neuro</th>
+                       <td class="numeric">{{ complexsum }}</td>
+                       <td class="numeric">0</td>
+                     </tr>
+                     <tr>
+                       <th scope="row">Neuro</th>
+                       <td class="numeric">{{ neurosum }} </td>
+                       <td class="numeric">0</td>
+                     </tr>
+                     <tr>
+                       <th scope="row">Non neuro</th>
+                       <td class="numeric">{{ nonesum }}</td>
+                       <td class="numeric">0</td>
+                     </tr>
+                   </tbody>
+                 </table>
+               </div>
+              {% endif %}
+        
+          
+        </div>
+        <div class="card  {% if data['times2'] %}reviewed  {% endif %}">
+            <a href="/{{path}}/planning/create-plan-times3">
+          
+  
+                <h2 class="heading-xlarge">
+
+                    {% if data['times2'] %}
+                    {{ tuesum }}
+                    {% else %}
+                   
+                   {% endif %}
+                 
+                  <span class="heading-small">Tuesday</span>
+                 </h2>
+
+
+               {% if data['times2'] %}
+
+               <ul class="content">
+                  <li><h3 class="heading-small">Hcp skillsets</h3></li>
+                 <li>{{ tuecomplexsum }} complex neuro</li>
+                 <li>{{ tuenonesum }} non-neuro</li>
+                 {% if checked('benefits','ben2') %}
+                 <li>{{ tueIIDBsum }} IIDB</li>
+                 {% endif %}
+
+               </ul>
+              {% endif %}
+          
+            </a>
+          </div>
+          <div class="card  {% if data['times3'] %}reviewed  {% endif %}">
+              <a href="/{{path}}/planning/create-plan-times4">
+            
+    
+                  <h2 class="heading-xlarge">
+                      {% if data['times3'] %}
+                      {{ wedsum }}
+                      {% else %}
+                     
+                     {% endif %}
+                   
+                    <span class="heading-small">Wednesday</span>
+                   </h2>
+
+                   {% if data['times3'] %}
+
+                   <ul class="content">
+                      <li><h3 class="heading-small">Hcp skillsets</h3></li>
+                     <li>{{ wedcomplexsum }} complex neuro</li>
+                     <li>{{ wednonesum }} non-neuro</li>
+                     {% if checked('benefits','ben2') %}
+                     <li>{{ wedIIDBsum }} IIDB</li>
+                     {% endif %}
+    
+                   </ul>
+                  {% endif %}
+            
+              </a>
+            </div>
+
+            <div class="card {% if data['times3'] %}reviewed  {% endif %}">
+                <a href="/{{path}}/create-plan-times2">
+              
+      
+                    <h2 class="heading-xlarge">
+
+                        {% if data['times3'] %}
+                        {{sum}}
+                        {% else %}
+                       
+                       {% endif %}
+                     
+                      <span class="heading-small">Thursday</span>
+                     </h2>
+
+                     {% if data['times3'] %}
+
+                     <ul class="content">
+                        <li><h3 class="heading-small">Hcp skillsets</h3></li>
+                       <li>8 complex neuro</li>
+                       <li>4 non-neuro</li>
+                     </ul>
+                    {% endif %}
+              
+                </a>
+              </div>
+              <div class="card {% if data['times3'] %}reviewed  {% endif %}">
+                  <a href="/{{path}}/create-plan-times.html">
+                
+        
+                      <h2 class="heading-xlarge">
+
+                          {% if data['times3'] %}
+                        {{ wedsum }}
+                        {% else %}
+                       
+                       {% endif %}
+                       
+                        <span class="heading-small">Friday</span>
+                       </h2>
+                       {% if data['times3'] %}
+
+                       <ul class="content">
+                          <li><h3 class="heading-small">Hcp skillsets</h3></li>
+                         <li>12 complex neuro</li>
+                         <li>3 non-neuro</li>
+                     
+        
+                       </ul>
+                      {% endif %}
+                
+                  </a>
+                </div>
+                <div class="card">
+                    <a href="/{{path}}/create-plan-times2">
+                  
+          
+                        <h2 class="heading-xlarge">
+                         
+                          <span class="heading-small">Saturday</span>
+                         </h2>
+                  
+                    </a>
+                  </div>
+                  <div class="card">
+                    <a href="/{{path}}/create-plan-times2">
+                  
+          
+                        <h2 class="heading-xlarge">
+                         
+                          <span class="heading-small">Sunday</span>
+                         </h2>
+
+                         
+                  
+                    </a>
+                  </div>
+                  </div>
+        </div>
+        
+        {% if data['times'] %}
+        <p><a href="/{{path}}/planning/index" class="button mt25">Submit capacity plan</a></p>
+        {% endif %}
+        
+        
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}
