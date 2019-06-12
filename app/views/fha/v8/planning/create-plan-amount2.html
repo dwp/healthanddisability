@@ -33,7 +33,7 @@ table.profile-table input{
   width:100%;
   border-color:#ccc;
   text-align:center;
-  font-size:36px;
+  font-size:30px;
   font-weight:bold;
 }
 
@@ -44,26 +44,24 @@ table.profile-table input{
 }
 
 .total-container{
-  padding:20px 20px 10px 20px;
-  background:#f6f6f6;
-  margin-bottom:20px;
+  height:12vh;
+  margin-bottom:15px;
 
 }
 
 .total-container h2{
 margin:0px;
-text-align: center;
 }
 
 .total-container input{
   width:100%;
-  border-color:#f6f6f6;
+  border-color:#DEE0E2;
   padding:0;
   margin:0;
   text-align: center;
-  font-size:40px;
+  font-size:35px;
   font-weight:bold;
-  background:transparent;
+  background:#DEE0E2;
 }
 
 
@@ -74,7 +72,9 @@ text-align: center;
   border-left:2px solid #000;
 }
 
-
+.column-three-quarters{
+  width:79.5%;
+}
 
 
 </style>
@@ -103,10 +103,12 @@ text-align: center;
                     <th><span>Skill required</span>Complex neuro</th>
                     <th><span>Skill required</span>Neuro</th>
                     <th><span>Skill required</span>Non neuro</th>
+                  
                 
                      {% if checked('benefits','ben2') %}
                      <th><span>Benefit type</span>IIDB</th>
                      {% endif %}
+                     <th><span>Required</span>UCB</th>
                   </tr>
                 </thead>
 
@@ -121,13 +123,16 @@ text-align: center;
                     <input class="form-control" id="neuro1" type="text" name=""  value=""></td>
                   <td><label class="visually-hidden" for=""></label>
                     <input class="form-control" id="none1" type="text" name=""  value=""></td>
+                 
    
 					{% if checked('benefits','ben2') %}
                     <td>
                     	<label class="visually-hidden" for=""></label>
 						<input class="form-control" id="IIDB1" type="text" name=""  value="">
 					</td>
-					{% endif %}
+          {% endif %}
+          <td><label class="visually-hidden" for=""></label>
+            <input class="form-control" id="cap1" type="text" name=""  value=""></td>
                 </tr>
 
                 {% endif %}
@@ -149,6 +154,9 @@ text-align: center;
               <input class="form-control" id="IIDB2" type="text" name=""  value="">
             </td>
             {% endif %}
+
+            <td><label class="visually-hidden" for=""></label>
+              <input class="form-control" id="cap2" type="text" name=""  value=""></td>
                   </tr>
 
                   {% endif %}
@@ -170,6 +178,9 @@ text-align: center;
                 <input class="form-control" id="IIDB3" type="text" name=""  value="">
               </td>
               {% endif %}
+
+              <td><label class="visually-hidden" for=""></label>
+                <input class="form-control" id="cap3" type="text" name=""  value=""></td>
                     </tr>
 
                     {% endif %}
@@ -192,6 +203,8 @@ text-align: center;
                 <input class="form-control" id="IIDB4" type="text" name=""  value="">
               </td>
               {% endif %}
+              <td><label class="visually-hidden" for=""></label>
+                <input class="form-control" id="cap4" type="text" name=""  value=""></td>
                     </tr>
 
                     {% endif %}
@@ -214,6 +227,9 @@ text-align: center;
                   <input class="form-control" id="IIDB5" type="text" name=""  value="">
                 </td>
                 {% endif %}
+
+                <td><label class="visually-hidden" for=""></label>
+                  <input class="form-control" id="cap5" type="text" name=""  value=""></td>
                       </tr>
                       {% endif %}
 
@@ -235,6 +251,9 @@ text-align: center;
                     <input class="form-control" id="IIDB6" type="text" name=""  value="">
                   </td>
                   {% endif %}
+                       
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="cap6" type="text" name=""  value=""></td>
                         </tr>
                         {% endif %}
                       {% if checked('times','1030')  %}
@@ -256,6 +275,8 @@ text-align: center;
                     <input class="form-control" id="IIDB7" type="text" name=""  value="">
                   </td>
                   {% endif %}
+                  <td><label class="visually-hidden" for=""></label>
+                    <input class="form-control" id="cap7" type="text" name=""  value=""></td>
                         </tr>
 
                         {% endif %}
@@ -279,8 +300,10 @@ text-align: center;
                     <input class="form-control" id="IIDB8" type="text" name=""  value="">
                   </td>
                   {% endif %}
+                       
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="cap8" type="text" name=""  value=""></td>
                         </tr>
-
                         {% endif %}
                         
                         {% if checked('times','11')  %}
@@ -302,6 +325,8 @@ text-align: center;
                       <input class="form-control" id="IIDB9" type="text" name=""  value="">
                     </td>
                     {% endif %}
+                    <td><label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="cap9" type="text" name=""  value=""></td>
                           </tr>
 
                           {% endif %}
@@ -324,6 +349,9 @@ text-align: center;
                         <input class="form-control" id="IIDB10" type="text" name=""  value="">
                       </td>
                       {% endif %}
+
+                      <td><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="cap10" type="text" name=""  value=""></td>
                             </tr>
 
                             {% endif %}
@@ -347,10 +375,13 @@ text-align: center;
                         <input class="form-control" id="IIDB11" type="text" name=""  value="">
                       </td>
                       {% endif %}
+                  
+
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="cap11" type="text" name=""  value=""></td>
                             </tr>
 
                             {% endif %}
-                            
                             {% if checked('times','1145')  %}
 
                           <tr>
@@ -370,11 +401,14 @@ text-align: center;
                         <input class="form-control" id="IIDB12" type="text" name=""  value="">
                       </td>
                       {% endif %}
+                          
+
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="cap12" type="text" name=""  value=""></td>
+                            
                             </tr>
 
                             {% endif %}
-                            
-                            
                             {% if checked('times','1')  %}
 
                 <tr>
@@ -394,6 +428,9 @@ text-align: center;
               <input class="form-control" id="IIDB13" type="text" name=""  value="">
             </td>
             {% endif %}
+                 
+                  <td><label class="visually-hidden" for=""></label>
+                    <input class="form-control" id="cap13" type="text" name=""  value=""></td>
                   </tr>
                   {% endif %}
                   {% if checked('times','115')  %}
@@ -414,6 +451,8 @@ text-align: center;
                 <input class="form-control" id="IIDB14" type="text" name=""  value="">
               </td>
               {% endif %}
+              <td><label class="visually-hidden" for=""></label>
+                <input class="form-control" id="cap14" type="text" name=""  value=""></td>
                     </tr>
                     {% endif %}
                     {% if checked('times','130')  %}
@@ -434,6 +473,8 @@ text-align: center;
                   <input class="form-control" id="IIDB15" type="text" name=""  value="">
                 </td>
                 {% endif %}
+                <td><label class="visually-hidden" for=""></label>
+                  <input class="form-control" id="cap15" type="text" name=""  value=""></td>
                       </tr>
                       {% endif %}
                       {% if checked('times','145')  %}
@@ -454,6 +495,8 @@ text-align: center;
                   <input class="form-control" id="IIDB16" type="text" name=""  value="">
                 </td>
                 {% endif %}
+                <td><label class="visually-hidden" for=""></label>
+                  <input class="form-control" id="cap16" type="text" name=""  value=""></td>
                       </tr>
                       {% endif %}
                       {% if checked('times','2')  %}
@@ -475,6 +518,8 @@ text-align: center;
                     <input class="form-control" id="IIDB17" type="text" name=""  value="">
                   </td>
                   {% endif %}
+                  <td><label class="visually-hidden" for=""></label>
+                    <input class="form-control" id="cap17" type="text" name=""  value=""></td>
                         </tr>
                         {% endif %}
 
@@ -497,6 +542,8 @@ text-align: center;
                       <input class="form-control" id="IIDB18" type="text" name=""  value="">
                     </td>
                     {% endif %}
+                    <td><label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="cap18" type="text" name=""  value=""></td>
                           </tr>
                           {% endif %}
                         {% if checked('times','230')  %}
@@ -518,6 +565,8 @@ text-align: center;
                       <input class="form-control" id="IIDB19" type="text" name=""  value="">
                     </td>
                     {% endif %}
+                    <td><label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="cap19" type="text" name=""  value=""></td>
                           </tr>
                           {% endif %}
                           
@@ -540,6 +589,8 @@ text-align: center;
                       <input class="form-control" id="IIDB20" type="text" name=""  value="">
                     </td>
                     {% endif %}
+                    <td><label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="cap20" type="text" name=""  value=""></td>
                           </tr>
                           {% endif %}
                           
@@ -562,6 +613,8 @@ text-align: center;
                         <input class="form-control" id="IIDB21" type="text" name=""  value="">
                       </td>
                       {% endif %}
+                      <td><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="cap21" type="text" name=""  value=""></td>
                             </tr>
 
                             {% endif %}
@@ -584,6 +637,8 @@ text-align: center;
                           <input class="form-control" id="IIDB22" type="text" name=""  value="">
                         </td>
                         {% endif %}
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="cap22" type="text" name=""  value=""></td>
                               </tr>
   
 
@@ -608,6 +663,8 @@ text-align: center;
                           <input class="form-control" id="IIDB23" type="text" name=""  value="">
                         </td>
                         {% endif %}
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="cap23" type="text" name=""  value=""></td>
                               </tr>
   
 
@@ -632,6 +689,8 @@ text-align: center;
                           <input class="form-control" id="IIDB24" type="text" name=""  value="">
                         </td>
                         {% endif %}
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="cap24" type="text" name=""  value=""></td>
                               </tr>
   
 
@@ -657,9 +716,10 @@ text-align: center;
                           <input class="form-control" id="IIDB25" type="text" name=""  value="">
                         </td>
                         {% endif %}
+                      
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="cap25" type="text" name=""  value=""></td>
                               </tr>
-  
-
                               {% endif %}
                               {% if checked('times','415')  %}
 
@@ -681,6 +741,9 @@ text-align: center;
                           <input class="form-control" id="IIDB26" type="text" name=""  value="">
                         </td>
                         {% endif %}
+
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="cap26" type="text" name=""  value=""></td>
                               </tr>
   
 
@@ -705,6 +768,9 @@ text-align: center;
                           <input class="form-control" id="IIDB27" type="text" name=""  value="">
                         </td>
                         {% endif %}
+
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="cap27" type="text" name=""  value=""></td>
                               </tr>
   
 
@@ -729,13 +795,15 @@ text-align: center;
                           <input class="form-control" id="IIDB28" type="text" name=""  value="">
                         </td>
                         {% endif %}
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="cap28" type="text" name=""  value=""></td>
                               </tr>
   
 
                               {% endif %}
                               
                               
-                              <tr class="total">
+                           <!--   <tr class="total">
                               	<th class="col">Total</th>
                               	<td><label class="visually-hidden" for="" ></label>
                                   <input type="number" name="sum2" id="sum2" class="form-control" readonly /></td>
@@ -749,7 +817,9 @@ text-align: center;
                                   <td><label class="visually-hidden" for="" ></label>
                                   <input class="form-control" id="IIDBsum"  type="text" name="IIDBsum2"  type="text" value="" ></td>
                                   {% endif %}
-                                </tr>
+                                  <td><label class="visually-hidden" for="" ></label>
+                                    <input class="form-control" id="capsum"  type="text" name="capsum"  type="text" value="" ></td>
+                                </tr> -->
 
 
                
@@ -943,6 +1013,41 @@ $(function(){
      var comvalue27 = parseFloat($('#IIDB27').val()) || 0;
      var comvalue28 = parseFloat($('#IIDB28').val()) || 0;
      $('#IIDBsum').val(comvalue1 + comvalue2 + comvalue3+ comvalue4+ comvalue5+ comvalue6+ comvalue7+ comvalue8+ comvalue9+ comvalue10+ comvalue11+ comvalue12+ comvalue13+ comvalue14+  comvalue15+ comvalue16+ comvalue17+ comvalue18+ comvalue19+ comvalue20+ comvalue21+ comvalue22+ comvalue23+ comvalue24+ comvalue25+ comvalue26+ comvalue27+ comvalue28);
+  });
+});
+
+
+$(function(){
+  $('#cap1, #cap2, #cap3, #cap4, #cap5, #cap6, #cap7, #cap8, #cap9, #cap10, #cap11, #cap12, #cap13, #cap14, #cap15, #cap16, #cap17, #cap18, #cap19, #cap20, #cap21, #cap22, #cap23, #cap24, #cap25, #cap26, #cap27, #cap28').keyup(function(){
+     var comvalue1 = parseFloat($('#cap1').val()) || 0;
+     var comvalue2 = parseFloat($('#cap2').val()) || 0;
+     var comvalue3 = parseFloat($('#cap3').val()) || 0;
+     var comvalue4 = parseFloat($('#cap4').val()) || 0;
+     var comvalue5 = parseFloat($('#cap5').val()) || 0;
+     var comvalue6 = parseFloat($('#cap6').val()) || 0;
+     var comvalue7 = parseFloat($('#cap7').val()) || 0;
+     var comvalue8 = parseFloat($('#cap8').val()) || 0;
+     var comvalue9 = parseFloat($('#cap9').val()) || 0;
+     var comvalue10 = parseFloat($('#cap10').val()) || 0;
+     var comvalue11 = parseFloat($('#cap11').val()) || 0;
+     var comvalue12 = parseFloat($('#cap12').val()) || 0;
+     var comvalue13 = parseFloat($('#cap13').val()) || 0;
+     var comvalue14 = parseFloat($('#cap14').val()) || 0;
+     var comvalue15 = parseFloat($('#cap15').val()) || 0;
+     var comvalue16 = parseFloat($('#cap16').val()) || 0;
+     var comvalue17 = parseFloat($('#cap17').val()) || 0;
+     var comvalue18 = parseFloat($('#cap18').val()) || 0;
+     var comvalue19 = parseFloat($('#cap19').val()) || 0;
+     var comvalue20 = parseFloat($('#cap20').val()) || 0;
+     var comvalue21 = parseFloat($('#cap21').val()) || 0;
+     var comvalue22 = parseFloat($('#cap22').val()) || 0;
+     var comvalue23 = parseFloat($('#cap23').val()) || 0;
+     var comvalue24 = parseFloat($('#cap24').val()) || 0;
+     var comvalue25 = parseFloat($('#cap25').val()) || 0;
+     var comvalue26 = parseFloat($('#cap26').val()) || 0;
+     var comvalue27 = parseFloat($('#cap27').val()) || 0;
+     var comvalue28 = parseFloat($('#cap28').val()) || 0;
+     $('#capsum').val(comvalue1 + comvalue2 + comvalue3+ comvalue4+ comvalue5+ comvalue6+ comvalue7+ comvalue8+ comvalue9+ comvalue10+ comvalue11+ comvalue12+ comvalue13+ comvalue14+  comvalue15+ comvalue16+ comvalue17+ comvalue18+ comvalue19+ comvalue20+ comvalue21+ comvalue22+ comvalue23+ comvalue24+ comvalue25+ comvalue26+ comvalue27+ comvalue28);
   });
 });
 
