@@ -13,14 +13,9 @@
  }
 	.time-group {
 		overflow: hidden;
-		margin: 0 0 30px 0;
-
+		margin: 0 0 2em 0;
+		border-top: 1px solid #eee;
 		padding-top: .5em;
-	}
-	.time-group p {
-		float: left;
-		margin: -8px 0 0 0!important;
-		padding: 0;
 	}
 	.time-top {
 		border-top: 0;
@@ -32,14 +27,14 @@
 	}
 	
 	.time-group label {
-		padding: .6em 20px .5em 20px;
+		padding: 1em;
 		display: inline-block;
-		background: #f8f8f8;
+		background: #eee;
 		margin-right: .2em;
 		text-align: center;
 		font-weight: bold;
-		border: 1px solid #f8f8f8;
-		font-size: 18px;
+		border: 4px solid #eee;
+		font-size: 17px;
 	}
 	.time-group label:hover {
 		border-color: #005ea5;
@@ -82,10 +77,20 @@
     
     {# macro #}
     {{ navfta.case_tabs("timeline",1,path1, customer._id) }}{# macro #}
-    <form class="" method="post" action="/{{path}}/decisionmaker/{{customer._id}}/timeline2">
     
     
-    <h3 class="filter-status">Filter timeline by:</h3>
+    
+   
+    
+      
+    
+ 
+    <form class="" method="post" action="/{{path}}/decisionmaker/{{customer._id}}/timeline">
+     <div class="grid-row">
+     
+     
+     <div class="column-quarter">
+     	 <h3 class="filter-status">Filter timeline by:</h3>
     
     
     <div class="time-group time-top timeline-break">
@@ -99,42 +104,46 @@
 				    
 				    
 				        <div class="time-choice">
-				         <input id="notes" name="timelinefilter" type="checkbox" value="note"  {{ checked('timelinefilter', 'note') }}>
+				         <input id="timline-2" name="filters" type="checkbox" value="note"  {{ checked('timelinefilter', 'note') }}>
 				          <label for="notes">Notes</label>
 				        </div>
 				        <div class="time-choice">
-				            <input id="evidence" name="timelinefilter" type="checkbox" value="evidence"  {{ checked('timelinefilter', 'evidence') }}>
+				            <input id="timline-2" name="timelinefilter" type="checkbox" value="evidence"  {{ checked('timelinefilter', 'evidence') }}>
 				            <label for="evidence">Evidence</label>
 				          </div>
 				          <div class="time-choice">
-				              <input id="referral" name="timelinefilter" type="checkbox" value="referral"  {{ checked('timelinefilter', 'referral') }}>
+				              <input id="timline-5" name="timelinefilter" type="checkbox" value="referral"  {{ checked('timelinefilter', 'referral') }}>
 				              <label for="referral">Referral</label>
 				          </div>
 				          <div class="time-choice">
-				              <input id="review" name="timelinefilter" type="checkbox" value="review"  {{ checked('timelinefilter', 'review') }}>
+				              <input id="timline-4" name="timelinefilter" type="checkbox" value="review"  {{ checked('timelinefilter', 'review') }}>
 				              <label for="review">Review</label>
 				          </div>
 				          <div class="time-choice">
-				              <input id="appointment" name="timelinefilter" type="checkbox" value="appointment"  {{ checked('timelinefilter', 'appointment') }}>
+				              <input id="timline-3" name="timelinefilter" type="checkbox" value="appointment"  {{ checked('timelinefilter', 'appointment') }}>
 				              <label for="appointment">Appointment</label>
 				          </div>
-				          <p><button class="button button-secondary mt10">Apply filter</button></p>
+				          
 				          
 				      </fieldset>
 				   </div>
-				   
-				   
-				   <h3 class="filter-showing">Currently showing: <span>all entries</span></h3>
-    
-      
-    
-    
-
-    
-     <div class="grid-row">
-       <div class="column-two-thirds">
+     </div>
+     
+     
+       <div class="column-half">
        
-
+       
+       
+        
+				   
+				
+   
+				   
+        <h3 class="filter-showing">Currently showing: <span>all entries</span></h3>
+         
+           
+         
+         
        
           <div class="timeline">
 
@@ -536,7 +545,7 @@
           
               </div>
        </div>
-       <div class="column-third">
+       <div class="column-quarter">
        
        
        
