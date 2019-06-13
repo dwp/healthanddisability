@@ -1,0 +1,580 @@
+
+
+
+{% extends path1+"/_layoutDM.html" %}
+
+{% block citizen_content %}
+
+
+
+ <style>
+ .timeslot-picker {
+	 margin-top: 0;
+ }
+	.time-group {
+		overflow: hidden;
+		margin: 0 0 30px 0;
+
+		padding-top: .5em;
+	}
+	.time-group p {
+		float: left;
+		margin: -8px 0 0 0!important;
+		padding: 0;
+	}
+	.time-top {
+		border-top: 0;
+	}
+	.time-choice {
+		width: auto;
+		margin-right: 4px;
+		float: left;
+	}
+	
+	.time-group label {
+		padding: .6em 20px .5em 20px;
+		display: inline-block;
+		background: #f8f8f8;
+		margin-right: .2em;
+		text-align: center;
+		font-weight: bold;
+		border: 1px solid #f8f8f8;
+		font-size: 18px;
+	}
+	.time-group label:hover {
+		border-color: #005ea5;
+	}
+	
+	.time-group input {
+		position: absolute;
+		left: -9999px;
+	}
+	
+	.time-group input[type=checkbox]:checked + label {
+	  background: #005ea5;
+	  color: #fff;
+	  border-color: #005ea5;
+	} 
+
+</style>
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+  
+  
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    
+    
+    {# macro #}
+    {{ navfta.case_tabs("timeline",1,path1, customer._id) }}{# macro #}
+    <form class="" method="post" action="/{{path}}/decisionmaker/{{customer._id}}/timeline2">
+    
+    
+    <h3 class="filter-status">Filter timeline by:</h3>
+    
+    
+    <div class="time-group time-top timeline-break">
+			
+       
+				      <fieldset>
+				    
+				        <legend class="visually-hidden">Filter by:</legend>
+				    
+				    
+				    
+				    
+				        <div class="time-choice">
+				         <input id="notes" name="timelinefilter" type="checkbox" value="note"  {{ checked('timelinefilter', 'note') }}>
+				          <label for="notes">Notes</label>
+				        </div>
+				        <div class="time-choice">
+				            <input id="evidence" name="timelinefilter" type="checkbox" value="evidence"  {{ checked('timelinefilter', 'evidence') }}>
+				            <label for="evidence">Evidence</label>
+				          </div>
+				          <div class="time-choice">
+				              <input id="referral" name="timelinefilter" type="checkbox" value="referral"  {{ checked('timelinefilter', 'referral') }}>
+				              <label for="referral">Referral</label>
+				          </div>
+				          <div class="time-choice">
+				              <input id="review" name="timelinefilter" type="checkbox" value="review"  {{ checked('timelinefilter', 'review') }}>
+				              <label for="review">Review</label>
+				          </div>
+				          <div class="time-choice">
+				              <input id="appointment" name="timelinefilter" type="checkbox" value="appointment"  {{ checked('timelinefilter', 'appointment') }}>
+				              <label for="appointment">Appointment</label>
+				          </div>
+				          <p><button class="button button-secondary mt10">Apply filter</button></p>
+				          
+				      </fieldset>
+				   </div>
+				   
+				   
+				   <h3 class="filter-showing">Currently showing: <span>all entries</span></h3>
+    
+      
+    
+    
+
+    
+     <div class="grid-row">
+       <div class="column-two-thirds">
+       
+
+       
+          <div class="timeline">
+
+
+              {% if data['notetext'] %}
+              <span class="line"></span>
+              <div class="timeline__event">
+                <h3 class="timeline__heading">Note</h3>
+                <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0) }} / Robert Weston/ Wimbledon BSC </p>
+                
+                <p class="address-stack">
+                      
+                  
+                    <span>{{ notetext }}</span>
+                </p>
+              </div>
+              {% endif %}
+
+
+
+              {% if data['whatcando']=='close' %}
+              <span class="line"></span>
+              <div class="timeline__event">
+                <h3 class="timeline__heading">Good cause decision - Closed case</h3>
+                <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0) }} / Robert Weston/ Wimbledon BSC </p>
+
+                <p class="address-stack">
+                      
+                  
+                    <span>{{ reason }}</span>
+                </p>
+              </div>
+              {% endif %}
+
+
+              {% if data['whatcando']=='newappointment' %}
+              <span class="line"></span>
+              <div class="timeline__event">
+                <h3 class="timeline__heading">Good cause decision - referred for appointment</h3>
+                <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0) }} / Robert Weston/ Wimbledon BSC </p>
+
+                <p class="address-stack">
+                      
+                  
+                    <span>{{ reason }}</span>
+                </p>
+              </div>
+              {% endif %}
+  
+             {% if data['timelinefilter']%}
+              {% if checked('timelinefilter', 'all') or checked('timelinefilter', 'appointment') %}
+              <span class="line"></span>
+              <div class="timeline__event">
+                <h3 class="timeline__heading">Did not attend appointment</h3>
+                <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0) }}</p>
+
+                <p class="address-stack">  
+                    <span class="mt10">Appointment details:</span>
+                    <span>Non-neuro appointment</span>
+                    <span>{{ 'Do MMMM YYYY' | baseDate(1) }}</span>
+                    <span>11:00am</span>
+                    <span>Tresco House</span>
+                </p>
+              </div>
+
+              {% endif %}
+              {% if checked('timelinefilter', 'all') or checked('timelinefilter', 'note') %}
+              <span class="line"></span>
+              <div class="timeline__event">
+                <h3 class="timeline__heading">Note</h3>
+                <p class="timeline_datetime">1st May 2019 / Sheila Jones / Cardiff Call Centre</p>
+
+                <p class="address-stack">
+                      
+                  
+                    <span>Claimant was having a bad day with his depression and was struggling to get out of the house, he asked for a rearrangement but we could not provide it because he had previously rearranged his appointment.</span>
+                </p>
+              </div>
+              {% endif %}
+              {% if checked('timelinefilter', 'all') or checked('timelinefilter', 'appointment') %}
+                  <span class="line"></span>
+                  <div class="timeline__event">
+                    <h3 class="timeline__heading">Appointment sms sent</h3>
+                    <p class="timeline_datetime">2nd May 2019</p>
+                   
+                    <p class="address-stack">
+                      
+                        <span class="mt10">Phone number:</span>
+                        <span>07815 526 315</span>
+                    </p>
+                  </div>
+                  {% endif %}
+                  {% if checked('timelinefilter', 'all') or checked('timelinefilter', 'appointment') %}       
+                  <span class="line"></span>
+                  <div class="timeline__event">
+                    <h3 class="timeline__heading">Appointment letter sent</h3>
+                    <p class="timeline_datetime">22nd April 2019</p>
+           
+                    <p class="address-stack">
+                        <span class="mt10">Address:</span>
+                        <span>158 Merit Court</span>
+                        <span>Birmingham</span>
+                        <span>B9 9IP</span>
+                    </p>
+               
+                  </div>
+                  {% endif %}
+                  {% if checked('timelinefilter', 'all') or checked('timelinefilter', 'appointment') %}
+
+                  <span class="line"></span>
+                  <div class="timeline__event">
+                    <h3 class="timeline__heading">Appointment booked</h3>
+                    <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(1) }}</p>
+                    <p class="address-stack">  
+                        <span class="mt10">Appointment details:</span>
+                        <span>Non-neuro appointment</span>
+                        <span>{{ 'Do MMMM YYYY' | baseDate(10) }}</span>
+                        <span>11:00am</span>
+                        <span>Tresco House</span>
+                    </p>
+                  </div>
+                  {% endif %}
+              {% if checked('timelinefilter', 'all') or checked('timelinefilter', 'appointment') %}
+                  <span class="line"></span>
+                  <div class="timeline__event">
+                    <h3 class="timeline__heading">Cancelled appointment</h3>
+                    <p class="timeline_datetime">22nd April 2019 / Barry Gallager / Tresco assessment centre</p>
+                    <p class="address-stack">  
+                        <span class="mt10">Assessment centre:</span>
+                        <span>We have cancelled this appointment because there wasn't a hcp available to fullfill the appointment</span>
+                    </p>
+                  </div>
+                  {% endif %}
+                  {% if checked('timelinefilter', 'all') or checked('timelinefilter', 'appointment') %}
+
+                  <span class="line"></span>
+                  <div class="timeline__event">
+                    <h3 class="timeline__heading">Appointment booked</h3>
+                    <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(10) }}</p>
+                    <p class="address-stack">  
+                        <span class="mt10">Appointment details:</span>
+                        <span>Non-neuro appointment</span>
+                        <span>{{ 'Do MMMM YYYY' | baseDate(10) }}</span>
+                        <span>11:00am</span>
+                        <span>Tresco House</span>
+                    
+                    </p>
+                  </div>
+                  {% endif %}
+              {% if checked('timelinefilter', 'all') or checked('timelinefilter', 'appointment')%}
+                
+                <span class="line"></span>
+                  <div class="timeline__event">
+                    <h3 class="timeline__heading">Referred for appointment</h3>
+                    <p class="timeline_datetime">21st April 2019</p>
+                  </div>
+          
+          
+                  {% endif %}
+                  {% if checked('timelinefilter', 'all') or checked('timelinefilter', 'review') or checked('timelinefilter', 'evidence') %}
+          
+          
+          <span class="line"></span>
+          <div class="timeline__event">
+            <h3 class="timeline__heading">GP report - medical evidence received</h3>
+            <p class="timeline_datetime">20th April 2019</p>
+          </div>
+
+          {% endif %}
+              {% if checked('timelinefilter', 'all') or checked('timelinefilter', 'review') %}
+          
+          
+          <span class="line"></span>
+          <div class="timeline__event">
+            <h3 class="timeline__heading">GP Report - medical evidence requested</h3>
+            <p class="timeline_datetime">13th April 2019</p>
+          </div>
+          
+          
+          {% endif %}
+              {% if checked('timelinefilter', 'all') or checked('timelinefilter', 'review') or checked('timelinefilter', 'evidence') %}
+          
+                
+                <span class="line"></span>
+                <div class="timeline__event">
+                  <h3 class="timeline__heading">Med 3 - medical evidence received </h3>
+                  <p class="timeline_datetime">11th April 2019</p>
+                </div>
+                {% endif %}
+                {% if checked('timelinefilter', 'all') or checked('timelinefilter', 'referral') %}     
+                <span class="line"></span>
+                <div class="timeline__event">
+                  <h3 class="timeline__heading">UC50 form received</h3>
+                  <p class="timeline_datetime">10th April 2019</p>
+                </div>
+                {% endif %}
+                {% if checked('timelinefilter', 'all') or checked('timelinefilter', 'note') %}
+                <span class="line"></span>
+                <div class="timeline__event">
+                  <h3 class="timeline__heading">Note</h3>
+                  <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(28) }} / John Grith / Cardiff Call Centre</p>
+  
+                  <p class="address-stack">
+                      <span>Claiment called again saying no one could help him to fill in the questionaire, provided him with the questionaire helpline number (000 000 0000) or to approach a healthworker or CAB for advice</span>
+                  </p>
+                </div>
+
+                {% endif %}
+              {% if checked('timelinefilter', 'all') or checked('timelinefilter', 'note') %}
+
+                <span class="line"></span>
+                <div class="timeline__event">
+                  <h3 class="timeline__heading">Note</h3>
+                  <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(28) }} / John Grith / Cardiff Call Centre</p>
+  
+                  <p class="address-stack">
+                      <span>Claiment called for advice on filling in his uc50, advised him to get one of his family to help him</span>
+                  </p>
+                </div>
+
+                {% endif %}
+              {% if checked('timelinefilter', 'all') or checked('timelinefilter', 'referral') %}
+          
+                <span class="line"></span>
+                <div class="timeline__event">
+                  <h3 class="timeline__heading">UC50 form sent out</h3>
+                  <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(35) }}</p>
+                  <p class="address-stack">
+                      <span class="mt10">Address:</span>
+                      <span>158 Merit Court</span>
+                      <span>Birmingham</span>
+                      <span>B9 9IP</span>
+                  </p>
+                </div>
+
+                {% endif %}
+              {% if checked('timelinefilter', 'all') or checked('timelinefilter', 'referral')%}
+                
+           
+          
+                <span class="line"></span>
+                <div class="timeline__event">
+                  <h3 class="timeline__heading">New referral created</h3>
+                  <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(36) }}</p>
+                </div>
+          
+                {% endif %}
+
+                {% else %}
+
+
+                <span class="line"></span>
+                <div class="timeline__event">
+                  <h3 class="timeline__heading">Did not attend appointment</h3>
+                  <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0) }}</p>
+  
+                  <p class="address-stack">  
+                      <span class="mt10">Appointment details:</span>
+                      <span>Non-neuro appointment</span>
+                      <span>{{ 'Do MMMM YYYY' | baseDate(1) }}</span>
+                      <span>11:00am</span>
+                      <span>Tresco House</span>
+                  </p>
+                </div>
+  
+
+
+                    <span class="line"></span>
+                    <div class="timeline__event">
+                      <h3 class="timeline__heading">Appointment sms sent</h3>
+                      <p class="timeline_datetime">2nd May 2019</p>
+                     
+                      <p class="address-stack">
+                        
+                          <span class="mt10">Phone number:</span>
+                          <span>07815 526 315</span>
+                      </p>
+                    </div>
+       
+                    <span class="line"></span>
+                    <div class="timeline__event">
+                      <h3 class="timeline__heading">Appointment letter sent</h3>
+                      <p class="timeline_datetime">22nd April 2019</p>
+             
+                      <p class="address-stack">
+                          <span class="mt10">Address:</span>
+                          <span>158 Merit Court</span>
+                          <span>Birmingham</span>
+                          <span>B9 9IP</span>
+                      </p>
+                 
+                    </div>
+
+  
+                    <span class="line"></span>
+                    <div class="timeline__event">
+                      <h3 class="timeline__heading">Appointment booked</h3>
+                      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(1) }}</p>
+                      <p class="address-stack">  
+                          <span class="mt10">Appointment details:</span>
+                          <span>Non-neuro appointment</span>
+                          <span>{{ 'Do MMMM YYYY' | baseDate(10) }}</span>
+                          <span>11:00am</span>
+                          <span>Tresco House</span>
+                      </p>
+                    </div>
+
+                    <span class="line"></span>
+                    <div class="timeline__event">
+                      <h3 class="timeline__heading">Cancelled appointment</h3>
+                      <p class="timeline_datetime">22nd April 2019 / Barry Gallager / Tresco assessment centre</p>
+                      <p class="address-stack">  
+                          <span class="mt10">Assessment centre:</span>
+                          <span>We have cancelled this appointment because there wasn't a hcp available to fullfill the appointment</span>
+                      </p>
+                    </div>
+
+  
+                    <span class="line"></span>
+                    <div class="timeline__event">
+                      <h3 class="timeline__heading">Appointment booked</h3>
+                      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(10) }}</p>
+                      <p class="address-stack">  
+                          <span class="mt10">Appointment details:</span>
+                          <span>Non-neuro appointment</span>
+                          <span>{{ 'Do MMMM YYYY' | baseDate(10) }}</span>
+                          <span>11:00am</span>
+                          <span>Tresco House</span>
+                      
+                      </p>
+                    </div>
+  
+                  
+                  <span class="line"></span>
+                    <div class="timeline__event">
+                      <h3 class="timeline__heading">Referred for appointment</h3>
+                      <p class="timeline_datetime">21st April 2019</p>
+                    </div>
+
+            
+            
+            <span class="line"></span>
+            <div class="timeline__event">
+              <h3 class="timeline__heading">GP report - medical evidence received</h3>
+              <p class="timeline_datetime">20th April 2019</p>
+            </div>
+  
+
+            
+            
+            <span class="line"></span>
+            <div class="timeline__event">
+              <h3 class="timeline__heading">GP Report - medical evidence requested</h3>
+              <p class="timeline_datetime">13th April 2019</p>
+            </div>
+            
+ 
+            
+                  
+                  <span class="line"></span>
+                  <div class="timeline__event">
+                    <h3 class="timeline__heading">Med 3 - medical evidence received </h3>
+                    <p class="timeline_datetime">11th April 2019</p>
+                  </div>
+   
+                  <span class="line"></span>
+                  <div class="timeline__event">
+                    <h3 class="timeline__heading">UC50 form received</h3>
+                    <p class="timeline_datetime">10th April 2019</p>
+                  </div>
+
+            
+                  <span class="line"></span>
+                  <div class="timeline__event">
+                    <h3 class="timeline__heading">UC50 form sent out</h3>
+                    <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(35) }}</p>
+                    <p class="address-stack">
+                        <span class="mt10">Address:</span>
+                        <span>158 Merit Court</span>
+                        <span>Birmingham</span>
+                        <span>B9 9IP</span>
+                    </p>
+                  </div>
+  
+            
+                  <span class="line"></span>
+                  <div class="timeline__event">
+                    <h3 class="timeline__heading">New referral created</h3>
+                    <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(36) }}</p>
+                  </div>
+            
+
+
+
+                {% endif %}
+        
+          
+                <div style="clear:both"></div>
+          
+              </div>
+       </div>
+       <div class="column-third">
+       
+       
+       
+      
+       
+       <div class="form-group">
+              <label class="heading-medium" for="textarea">
+                Add a note
+              </label>
+              <textarea class="form-control " name="notetext" id="textarea" rows="5" style="width:100%"></textarea>
+              <p><button class="button button-secondary mt10">Add note</button></p>
+            </div>
+
+				   
+
+              
+              
+              
+              
+           
+       </div>
+     </div>
+     </form>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
