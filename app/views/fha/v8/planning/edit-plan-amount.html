@@ -5,6 +5,11 @@
 {% block assess_content %}
 <style>
 
+table.profile-table{
+  border-top:1px solid #ddd;
+  border-bottom:1px solid #ddd;
+}  
+
 table.profile-table td, table.profile-table th {
  
   border:5px solid white;
@@ -38,9 +43,10 @@ table.profile-table input{
   width:100%;
   border-color:#ccc;
   text-align:center;
-  font-size:36px;
+  font-size:30px;
   font-weight:bold;
   height:45px;
+  line-height:30px;
 }
 
 table.profile-table.edit input{
@@ -72,10 +78,12 @@ input:disabled{
 
 .profile-table .total td input:disabled{
   background: #1b6dbd;
+  color: #fff !important;
 }
 
 .profile-table .total td  {
-	background: #1b6dbd;
+  background: #1b6dbd;
+  
 }
 
 
