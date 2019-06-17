@@ -18,196 +18,67 @@
    <div class="grid-row">
     <div class="card-container">
 
-        <div class="card  alt">
+        <div class="card  {% if data['times'] %}reviewed  {% endif %} ">
           <a href="/{{path}}/planning/create-plan-times2">
-            <h2>
-            {% if data['times'] %}
-            
-              View and edit
-              <span class="heading-small" >Mondays appointments</span>
-             <span class="badge">Updated</span>
-             
-             {% else %}
-             <span class="heading-small" >Monday</span>
-             {% endif %}
-            </h2>
-              </a>
+        
+    
+              <h2 class="heading-xlarge">
+                
+                {% if data['times'] %}
+                {{ sum }}
+                {% else %}
+               
+               {% endif %}
+               
+                <span class="heading-small">Monday</span>
+               </h2>
 
                {% if data['times'] %}
-             
-               <div class="inner">
-                <table>
-                   <thead>
-                     <tr>
-                       <th scope="col"></th>
-                       <th class="numeric" scope="col"> <span class="heading-xlarge">
-                         
-                           {{ sum }}
-                     
-                           <span class="block"><span class="visually-hidden">appointents</span>Opened</span>
-                       </span></th>
-                     </tr>
-                   </thead>
-                   <tbody>
-                     <tr>
-                       <th scope="row">Complex neuro</th>
-                       <td class="numeric">{{ complexsum }}</td>
-                  
-                     </tr>
-                     <tr>
-                       <th scope="row">Neuro</th>
-                       <td class="numeric">{{ neurosum }} </td>
-                     
-                     </tr>
-                     <tr>
-                       <th scope="row">Non neuro</th>
-                       <td class="numeric">{{ nonesum }}</td>
-                    
-                     </tr>
-                     {% if data['IIDBsum']  %}
-                     <tr>
-                        <th scope="row">IIDB</th>
-                        <td class="numeric">{{ IIDBsum }}</td>
-                     
-                      </tr>
-                     {% endif %}
-                     {% if data['ucbsum']  %}
-                     <tr>
-                        <th scope="row">UCB</th>
-                        <td class="numeric">{{ ucbsum }}</td>
-                    
-                      </tr>
-                     {% endif %}
-                   </tbody>
-                 </table>
-               </div>
+
+               <ul class="content">
+                  <li><h3 class="heading-small">Hcp skillsets</h3></li>
+                 <li>{{ complexsum }} complex neuro</li>
+                 <li>{{ nonesum }} non-neuro</li>
+                 {% if checked('benefits','ben2') %}
+                 <li>{{ IIDBsum }} IIDB</li>
+                 {% endif %}
+
+               </ul>
               {% endif %}
         
-          
+          </a>
         </div>
+        <div class="card  {% if data['times2'] %}reviewed  {% endif %}">
+            <a href="/{{path}}/planning/create-plan-times3">
+          
+  
+                <h2 class="heading-xlarge">
 
-        <div class="card  alt">
-          <a href="/{{path}}/planning/create-plan-times3">
-            <h2>
-            {% if data['times2'] %}
-         
-              View and edit
-              <span class="heading-small" >Tuesdays appointments</span>
-             <span class="badge">Updated</span>
-            
-             {% else %}
-             <span class="heading-small" >Tuesday</span>
-             {% endif %}
-            </h2>
-              </a>
+                    {% if data['times2'] %}
+                    {{ tuesum }}
+                    {% else %}
+                   
+                   {% endif %}
+                 
+                  <span class="heading-small">Tuesday</span>
+                 </h2>
+
 
                {% if data['times2'] %}
-             
-               <div class="inner">
-                <table>
-                   <thead>
-                     <tr>
-                       <th scope="col"></th>
-                       <th class="numeric" scope="col"> <span class="heading-xlarge">
-                         
-                           {{ tuesum }}
-                     
-                           <span class="block"><span class="visually-hidden">appointents</span>Opened</span>
-                       </span></th>
-                       <th class="numeric" scope="col">
-                           <span class="visually-hidden">of which</span>
-                           <span class="heading-xlarge">
-                              0
-                               <span class="block"><span class="visually-hidden">appointents are</span>Booked</span>
-                           </span>
-                       </th>
-                     </tr>
-                   </thead>
-                   <tbody>
-                     <tr>
-                       <th scope="row">Complex neuro</th>
-                       <td class="numeric">{{ tuecomplexsum }}</td>
-                       <td class="numeric">0</td>
-                     </tr>
-                     <tr>
-                       <th scope="row">Neuro</th>
-                       <td class="numeric">{{ tuenonesum }} </td>
-                       <td class="numeric">0</td>
-                     </tr>
-                     <tr>
-                       <th scope="row">Non neuro</th>
-                       <td class="numeric">{{ tuenonesum }}</td>
-                       <td class="numeric">0</td>
-                     </tr>
-                   </tbody>
-                 </table>
-               </div>
-              {% endif %}
-        
-          
-        </div>
 
-        <div class="card  alt">
-          <a href="/{{path}}/planning/create-plan-times4">
-           
-            <h2>
-                {% if data['times3'] %}
-              View and edit
-              <span class="heading-small" >Wednesday's appointments</span>
-             <span class="badge">Updated</span>
-             
-             {% else %}
-             <span class="heading-small" >Wednesday</span>
-             {% endif %}
-            </h2>
-              </a>
+               <ul class="content">
+                  <li><h3 class="heading-small">Hcp skillsets</h3></li>
+                 <li>{{ tuecomplexsum }} complex neuro</li>
+                 <li>{{ tuenonesum }} non-neuro</li>
+                 {% if checked('benefits','ben2') %}
+                 <li>{{ tueIIDBsum }} IIDB</li>
+                 {% endif %}
 
-               {% if data['times3'] %}
-             
-               <div class="inner">
-                <table>
-                   <thead>
-                     <tr>
-                       <th scope="col"></th>
-                       <th class="numeric" scope="col"> <span class="heading-xlarge">
-                         
-                           {{ sum }}
-                     
-                           <span class="block"><span class="visually-hidden">appointents</span>Opened</span>
-                       </span></th>
-                       <th class="numeric" scope="col">
-                           <span class="visually-hidden">of which</span>
-                           <span class="heading-xlarge">
-                              0
-                               <span class="block"><span class="visually-hidden">appointents are</span>Booked</span>
-                           </span>
-                       </th>
-                     </tr>
-                   </thead>
-                   <tbody>
-                     <tr>
-                       <th scope="row">Complex neuro</th>
-                       <td class="numeric">{{ wedcomplexsum }}</td>
-                       <td class="numeric">0</td>
-                     </tr>
-                     <tr>
-                       <th scope="row">Neuro</th>
-                       <td class="numeric">{{ wedneurosum }} </td>
-                       <td class="numeric">0</td>
-                     </tr>
-                     <tr>
-                       <th scope="row">Non neuro</th>
-                       <td class="numeric">{{ wednonesum }}</td>
-                       <td class="numeric">0</td>
-                     </tr>
-                   </tbody>
-                 </table>
-               </div>
+               </ul>
               {% endif %}
-        
           
-        </div>
-    
+            </a>
+          </div>
           <div class="card  {% if data['times3'] %}reviewed  {% endif %}">
               <a href="/{{path}}/planning/create-plan-times4">
             

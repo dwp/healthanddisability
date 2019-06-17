@@ -5,13 +5,18 @@
 {% block assess_content %}
 <style>
 
-
+table.profile-table{
+  border-bottom:1px solid #ddd;
+  border-top:1px solid #ddd;
+}
 table.profile-table td, table.profile-table th {
  
-  border:5px solid white;
+  padding:5px;
   text-align:center;
   width:auto;
-  padding:0;
+  border:none;
+  border-top:1px solid #ddd;
+
 }
 
 table.profile-table th span {
@@ -22,16 +27,21 @@ table.profile-table th span {
 }
 
 table.profile-table th.col {
+
   background:#eee;
   width: 12%;
   text-align: center;
   padding-left: 0;
 }
 
+table.profile-table td.col2 input{
+  border-color:#888;
+}
+
 table.profile-table input{
 
   width:100%;
-  border-color:#ccc;
+  border-color:#bbb;
   text-align:center;
   font-size:30px;
   font-weight:bold;
@@ -85,7 +95,7 @@ margin:0px;
               <div class="column-three-quarters">
   <a href="javascript: history.go(-1)" class="link-back">Back</a>   
 
-   <h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Create a ucbacity plan</h1>
+   <h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Create a capacity plan</h1>
 
    <h2 class="heading-medium">Monday 24 June</h2>
 
@@ -99,15 +109,15 @@ margin:0px;
                   <tr>
                     <th></th>
                     <!-- <th>Assessment Centre</th> -->
-                    <th><span>Required</span>Appointments</th>
-                    <th><span>Required</span>UCB</th>
-                    <th><span>Skill required</span>Complex neuro</th>
-                    <th><span>Skill required</span>Neuro</th>
-                    <th><span>Skill required</span>Non neuro</th>
+                    <th><span></span>Appointments</th>
+                    <th><span></span>UCB</th>
+                    <th><span></span>Complex neuro</th>
+                    <th><span></span>Neuro</th>
+                    <th><span></span>Non neuro</th>
                   
                 
                      {% if checked('benefits','ben2') %}
-                     <th><span>Skill required</span>IIDB</th>
+                     <th><span></span>IIDB</th>
                      {% endif %}
                     
                   </tr>
@@ -116,9 +126,9 @@ margin:0px;
                 {% if checked('times','9') %}
                 <tr>
                   <th class="col">9:00am</th>
-                  <td> <label class="visually-hidden" for="" ></label>
+                  <td class='col2'> <label class="visually-hidden" for="" ></label>
                     <input class="form-control" id="appoint1"  type="text" name="appoint1"  type="text" value="{{appoint1}}" ></td> 
-                    <td><label class="visually-hidden" for=""></label>
+                    <td class='col2'><label class="visually-hidden" for=""></label>
                       <input class="form-control" id="ucb1" type="text" name="ucb1"  value="{{ucb1}}"></td>
                   <td><label class="visually-hidden" for=""></label>
                     <input class="form-control" id="complex1" type="text" name="complex1"  value="{{complex1}}"></td>
@@ -141,9 +151,9 @@ margin:0px;
                 {% if  checked('times','915') %}
                 <tr>
                     <th class="col">9:15am</th>
-                    <td> <label class="visually-hidden" for="" ></label>
+                    <td class='col2'> <label class="visually-hidden" for="" ></label>
                       <input class="form-control" id="appoint2"  type="text" name="appoint2"  type="text" value="{{appoint2}}" ></td> 
-                      <td><label class="visually-hidden" for=""></label>
+                      <td class='col2'><label class="visually-hidden" for=""></label>
                         <input class="form-control" id="ucb2" type="text" name="ucb2"  value="{{ucb2}}"></td>
                     <td><label class="visually-hidden" for=""></label>
                       <input class="form-control" id="complex2" type="text" name="complex2"  value="{{complex2}}"></td>
