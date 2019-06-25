@@ -18,7 +18,12 @@ module.exports = function(versionNumber, reviewCustomers, assessmentCustomers, a
 			url: "uc50-received",
 			label: "UC50 received",
 			quantity: 8
-		}]
+		},{
+			url: "ed-referrals",
+			label: "ED referrals",
+			quantity: 2
+		}
+	]
 	},{
 		url:"review",
 		label:"Reviews", 

@@ -1,0 +1,86 @@
+{% extends path+"/_layout-case-simple.html" %}
+
+{% block actioncolumn %}
+ <div class="case-status">
+<p class="mt10 mb0 bold-small">
+Re referral
+</p>
+
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Bobby Henderson
+{% endblock %}
+
+{% block citizen_content %}
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+      <p class="no-kdBar"> <a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form class="form" action="timeline-referral" method="post">
+
+        <h2 class="heading-large">Who do you want to refer this case to?</h2>
+        
+        <fieldset>
+          <legend class="visually-hidden">Refer this case to</legend>
+          
+          <div class="form-group">
+        
+            <div class="multiple-choice" data-target="scorenow">
+              <input id="decide_now" name="whatcando" type="radio" value="Yes">
+              <label for="decide_now"> Refer to review</label>
+            </div>
+        
+            <div class="multiple-choice" data-target="">
+              <input id="face2face" name="whatcando" type="radio" value="No">
+              <label for="face2face"> Refer for appointment</label>
+            </div>
+        
+          </div><!-- form-group -->
+          <div class="form-group">
+            <button class="button">Save and continue</button>
+          </div><!-- form-group -->
+          
+        </fieldset>
+        
+        </form>
+
+
+
+   
+      </div>
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

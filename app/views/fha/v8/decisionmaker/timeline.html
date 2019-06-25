@@ -1,6 +1,64 @@
+
+
+
 {% extends path1+"/_layoutDM.html" %}
 
 {% block citizen_content %}
+
+
+
+ <style>
+ .timeslot-picker {
+	 margin-top: 0;
+ }
+	.time-group {
+		overflow: hidden;
+		margin: 0 0 30px 0;
+
+		padding-top: .5em;
+	}
+	.time-group p {
+		float: left;
+		margin: -8px 0 0 0!important;
+		padding: 0;
+	}
+	.time-top {
+		border-top: 0;
+	}
+	.time-choice {
+		width: auto;
+		margin-right: 4px;
+		float: left;
+	}
+	
+	.time-group label {
+		padding: .6em 20px .5em 20px;
+		display: inline-block;
+		background: #f8f8f8;
+		margin-right: .2em;
+		text-align: center;
+		font-weight: bold;
+		border: 1px solid #f8f8f8;
+		font-size: 18px;
+		cursor: pointer;
+	}
+	.time-group label:hover {
+		border-color: #dee0e2;
+		background: #dee0e2;
+	}
+	
+	.time-group input {
+		position: absolute;
+		left: -9999px;
+	}
+	
+	.time-group input[type=checkbox]:checked + label {
+	  background: #005ea5;
+	  color: #fff;
+	  border-color: #005ea5;
+	} 
+
+</style>
 
 
 
@@ -11,6 +69,10 @@
   <div class="grid-row">
   
   
+  
+  
+  
+  
  
   
   	
@@ -18,16 +80,64 @@
     <div class="column-full">
     
     
+    
+    
     {# macro #}
     {{ navfta.case_tabs("timeline",1,path1, customer._id) }}{# macro #}
-
     <form class="" method="post" action="/{{path}}/decisionmaker/{{customer._id}}/timeline">
+    
+    
+    
+    <h3 class="filter-status">Filter timeline by:</h3>
+    
+    
+    <div class="time-group time-top timeline-break">
+			
+       
+				      <fieldset>
+				    
+				        <legend class="visually-hidden">Filter by:</legend>
+				    
+				    
+				    
+				    
+				        <div class="time-choice">
+				         <input id="notes" name="timelinefilter" type="checkbox" value="note"  {{ checked('timelinefilter', 'note') }}>
+				          <label for="notes">Notes</label>
+				        </div>
+				        <div class="time-choice">
+				            <input id="evidence" name="timelinefilter" type="checkbox" value="evidence"  {{ checked('timelinefilter', 'evidence') }}>
+				            <label for="evidence">Evidence</label>
+				          </div>
+				          <div class="time-choice">
+				              <input id="referral" name="timelinefilter" type="checkbox" value="referral"  {{ checked('timelinefilter', 'referral') }}>
+				              <label for="referral">Referral</label>
+				          </div>
+				          <div class="time-choice">
+				              <input id="review" name="timelinefilter" type="checkbox" value="review"  {{ checked('timelinefilter', 'review') }}>
+				              <label for="review">Review</label>
+				          </div>
+				          <div class="time-choice">
+				              <input id="appointment" name="timelinefilter" type="checkbox" value="appointment"  {{ checked('timelinefilter', 'appointment') }}>
+				              <label for="appointment">Appointment</label>
+				          </div>
+				          <p><button class="button button-secondary mt10">Apply filter</button></p>
+				          
+				      </fieldset>
+				   </div>
+				   
+				   
+				 
+    
+
+    
      <div class="grid-row">
        <div class="column-two-thirds">
+       
+
+       
           <div class="timeline">
 
-
-     
 
               {% if data['notetext'] %}
               <span class="line"></span>
@@ -63,7 +173,7 @@
               {% if data['whatcando']=='newappointment' %}
               <span class="line"></span>
               <div class="timeline__event">
-                <h3 class="timeline__heading">Good cause decision - referred for appointment</h3>
+                <h3 class="timeline__heading">Good cause decision: reason accepted</h3>
                 <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0) }} / Robert Weston/ Wimbledon BSC </p>
 
                 <p class="address-stack">
@@ -426,93 +536,26 @@
           
               </div>
        </div>
-       <div class="column-one-third">
-          <div class="form-group">
+       <div class="column-third">
+       
+       
+       
+      
+       
+       <div class="form-group">
               <label class="heading-medium" for="textarea">
                 Add a note
               </label>
               <textarea class="form-control " name="notetext" id="textarea" rows="5" style="width:100%"></textarea>
               <p><button class="button button-secondary mt10">Add note</button></p>
             </div>
-            {% if data['timelinefilter']%}
-            <div class="form-group">
-                <fieldset>
+
+				   
+
               
-                  <legend>
-                    <h3 class="heading-medium mt0">Filter timeline</h3>
-                  </legend>
               
-                  <div class="multiple-choice">
-                    <input id="timline-2" name="timelinefilter" type="checkbox" value="note"  {{ checked('timelinefilter', 'note') }}>
-                    <label for="timline-2">Notes</label>
-                  </div>
-                 
-                  <div class="multiple-choice">
-                      <input id="timline-2" name="timelinefilter" type="checkbox" value="evidence"  {{ checked('timelinefilter', 'evidence') }}>
-                      <label for="timline-2">Evidence</label>
-                    </div>
-
-                  <div class="multiple-choice">
-                      <input id="timline-5" name="timelinefilter" type="checkbox" value="referral"  {{ checked('timelinefilter', 'referral') }}>
-                      <label for="timline-5">Referral</label>
-                    </div>
-
-
-                  <div class="multiple-choice">
-                      <input id="timline-4" name="timelinefilter" type="checkbox" value="review"  {{ checked('timelinefilter', 'review') }}>
-                      <label for="timline-4">Review</label>
-                    </div>
-
-                    <div class="multiple-choice">
-                        <input id="timline-3" name="timelinefilter" type="checkbox" value="appointment"  {{ checked('timelinefilter', 'appointment') }}>
-                        <label for="timline-3">Appointment</label>
-                    </div>
               
-                </fieldset>
-                <p><button class="button button-secondary mt10">Filter timeline results</button></p>
-              </div>
-              {% else %}
-
-              <div class="form-group">
-                  <fieldset>
-                
-                    <legend>
-                      <h3 class="heading-medium mt0">Filter timeline</h3>
-                    </legend>
-                
-                    <div class="multiple-choice">
-                      <input id="timline-2" name="timelinefilter" type="checkbox" value="note"  {{ checked('timelinefilter', 'note') }}>
-                      <label for="timline-2">Notes</label>
-                    </div>
-
-
-                    <div class="multiple-choice">
-                        <input id="timline-2" name="timelinefilter" type="checkbox" value="evidence"  {{ checked('timelinefilter', 'evidence') }}>
-                        <label for="timline-2">Evidence</label>
-                      </div>
-  
-                    <div class="multiple-choice">
-                        <input id="timline-5" name="timelinefilter" type="checkbox" value="referral" checked  {{ checked('timelinefilter', 'referral') }}>
-                        <label for="timline-5">Referral</label>
-                      </div>
               
-  
-                    <div class="multiple-choice">
-                      <input id="timline-4" name="timelinefilter" type="checkbox" value="review" checked {{ checked('timelinefilter', 'review') }}>
-                      <label for="timline-4">Review</label>
-                    </div>
-
-                      <div class="multiple-choice">
-                          <input id="timline-3" name="timelinefilter" type="checkbox" value="appointment" checked {{ checked('timelinefilter', 'appointment') }}>
-                          <label for="timline-3">Appointment</label>
-                        </div>
-                      
-                
-                  </fieldset>
-                  <p><button class="button button-secondary mt10">Filter timeline results</button></p>
-                </div>
-
-              {% endif%}
            
        </div>
      </div>

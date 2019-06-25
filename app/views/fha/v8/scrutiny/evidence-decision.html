@@ -1,0 +1,70 @@
+{% extends path+"/_layout-case-simple.html" %}
+
+{% block actioncolumn %}
+ <div class="case-status">
+<p class="mt10 mb0 bold-small">
+Re referral
+</p>
+
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Bobby Henderson
+{% endblock %}
+
+{% block citizen_content %}
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+      <p class="no-kdBar"> <a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">Good cause decision</h1>
+      <form class="form" action="/fha/v8/scrutiny/5bbf32d5ed63a198101d1d2b/booking-post" method="post">
+        
+        
+      
+      <h2 class="heading-medium">Reason the claimant didn't attend the appointment</h2>
+      <p>Claimant was having a bad day with his depression and was struggling to get out of the house, he asked for a rearrangement but we could not provide it because he had previously rearranged his appointment.</p>
+      
+      <h3 class="heading-small">Further details</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt nec mi volutpat egestas. Aliquam malesuada erat magna, sed commodo risus commodo eu.</p>
+      
+      
+      
+      
+      </form>
+      </div>
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

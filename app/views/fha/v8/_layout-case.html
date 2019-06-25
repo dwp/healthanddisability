@@ -58,7 +58,7 @@
 {{ 'Referred for appointment - welfare call required' if data['appointments']=='no' and customer.status == 'Assessment stopped' }}
 
 
-{{ 'Did not attend appointment' if customer.status == 'Did not attend' and data['confirmfta']!=="Arnaq" and customer.name.first == 'Arnaq'
+{{ 'Did not attend' if customer.status == 'Did not attend' and data['confirmfta']!=="Arnaq" and customer.name.first == 'Arnaq'
  or customer.status == 'Did not attend' and data['confirmfta']!=="Sarah" and customer.name.first == 'Sarah'
  or customer.status == 'Did not attend' and data['confirmfta']!=="Johannes" and customer.name.first == 'Johannes' 
  }}
@@ -73,7 +73,7 @@
 {{ 'Ready to score' if customer.status == 'Assessment reports' }}
 
 
-{{ 'Failure to attend' if customer.status == 'Failed to attend appointment' and data['whatcando']!=='newappointment'
+{{ 'Did not attend' if customer.status == 'Failed to attend appointment' and data['whatcando']!=='newappointment'
 or data['confirmfta']=="Arnaq" and customer.name.first == 'Arnaq'
 or data['confirmfta']=="Sarah"  and customer.name.first == 'Sarah' 
 or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes' 

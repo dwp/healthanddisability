@@ -1,0 +1,125 @@
+{% extends path+"/_layout-case-simple.html" %}
+
+{% block actioncolumn %}
+ <div class="case-status">
+<p class="mt10 mb0 bold-small">
+Re referral
+</p>
+
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Bobby Henderson
+{% endblock %}
+
+{% block citizen_content %}
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+      <p class="no-kdBar"> <a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">Appointment history</h1>
+     
+      <div class="latest_version">
+ 
+        <h2 class="heading-medium"> Did not attend: Standard appointment</h2>
+        <p>Appointment details</p>
+        <ul class="list-bullet">
+            <li>23rd June 2019</li> 
+            <li>11:00am</li>  
+            <li>Tresco House</li> 
+             </ul>
+           
+        <h3 class="heading-small">Contact reason</h3>
+        <p class="small">Claimant was having a bad day with his arthritis and was struggling to get out of the house, he asked for a rearrangement but we could not provide it because he had previously rearranged
+            his appointment.
+          
+   </p>  
+   <p class="date mb0">Recorded date: 23rd June 2019</p>
+         
+
+         
+        </div>
+      
+        
+
+          
+           <div class="latest_version">
+           <h2 class="heading-medium mt0">Current: 
+               
+               Non neuro
+                appointment</h2>
+               <p>Appointment details</p>
+               <ul class="list-bullet">
+                <li>
+                  
+                   
+                      
+                   Monday 24th June 2019
+                 
+                </li> 
+                <li>11:00am</li>  
+                <li>Tresco House</li> 
+               </ul>
+       
+         
+             </div>
+             
+    
+
+
+     
+        <h2 class="heading-medium">Cancelled: Non neuro appointment</h2>
+        <p>Appointment details</p>
+        <ul class="list-bullet">
+            <li>Sunday 9th June 2019</li> 
+            <li>11:00am</li>  
+            <li>Tresco House</li> 
+             </ul>
+
+             <h3 class="heading-small">Cancellation reason</h3>
+             <p class="small">Original appointment clashed with another
+               
+  
+          <span class="date block mt10 text-secondary">Recorded date: 30th May 2019 - 2:56pm | Paul Smith | Cardiff contact centre</span>
+        </p> 
+
+
+
+
+   
+      </div>
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

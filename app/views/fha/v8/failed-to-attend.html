@@ -8,23 +8,12 @@
 {% endblock %}  
 
 {% block caselist_content %}
-<h2 class="heading-medium mt0"><span class="heading-xlarge">{{customers.length}}</span><br/>Failure to attend</h2>
-
-<div class="filter">
-<ul>
-    <li class="active"><a href="/{{path}}/failed-to-attend.html">All</a></li>
-    <li><a href="/{{path}}/fta-request-reason.html">Request a reason</a></li>
-    <li><a href="/{{path}}/fta-record-reason.html">Record a reason</a></li>
-    <li><a href="/{{path}}/fta-ready-for-decision.html">Ready for decision</a></li>
-  </ul>
-</div>
-
+<h2 class="heading-medium mt0"><span class="heading-xlarge">{{customers.length}}</span><br/>Did not attend</h2>
 <table class="styled">
 
   <thead>
     <tr>
       <th>Details</th>
-      <th>Sub status</th>
       <th>Referred date</th>
     </tr>
   </thead>
@@ -36,13 +25,6 @@
 <a href="decisionmaker/{{customer._id}}/timeline"><span class="visually-hidden">Name</span>{{customer.name.fullName}}</a>
 <span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span>
 </td>
-    <td>
-        <span class="block">
-        {{ 'Ready for decision'  if customer.substatus == 'Ready for decision'}}
-        {{ 'Request a reason'  if customer.substatus == 'Request a reason'}}
-        {{ 'Record a reason'  if customer.substatus == 'Record a reason'}}
-       
-        </span> </td>
         <td>{{ customer.refereddate }}</td>
 </tr>
 </tr>
