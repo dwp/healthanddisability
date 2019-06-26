@@ -9,7 +9,26 @@
 
 {% block caselist_content %}
 
+
+
 <h2 class="heading-medium mt0"><span class="heading-xlarge">{{customers.length}}</span><br/>Ready for review</h2>
+<hr />
+<h3 class="filter-status">Filter list by:</h3>
+<div class=" filter time-group time-top">
+       
+        <fieldset>
+      
+          <legend class="visually-hidden">Filter by:</legend>
+          <div class="time-choice">
+              <input id="evidence" name="filter" type="checkbox" value="evidence"  {{ checked('timelinefilter', 'evidence') }}>
+              <label for="evidence">DNA re-referals</label>
+            </div>
+            <p><button class="button button-secondary mt10">Apply filter</button></p>
+            
+        </fieldset>
+     </div>
+
+
 <table class="zebra">
     <thead>
         <tr>

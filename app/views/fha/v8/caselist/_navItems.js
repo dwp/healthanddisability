@@ -20,7 +20,7 @@ module.exports = function(versionNumber, reviewCustomers, assessmentCustomers, a
 			quantity: 8
 		},{
 			url: "ed-referrals",
-			label: "ED referrals",
+			label: "DNA Re-referrals",
 			quantity: 2
 		}
 	]

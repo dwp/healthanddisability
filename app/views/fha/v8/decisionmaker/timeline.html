@@ -175,13 +175,29 @@
               <div class="timeline__event">
                 <h3 class="timeline__heading">Good cause decision: reason accepted</h3>
                 <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0) }} / Robert Weston/ Wimbledon BSC </p>
-
+                <p class="address-stack">
+                   <span class="mt10">Reason:</span> 
+                   {% if data['goodcause']=="Did not receive appointment invitation" %}
+                   <span>Did not receive appointment invitation</span>
+                   {% elif data['goodcause']=="Client issues"%}
+                   <span>Client issues</span>
+                   {% elif data['goodcause']=="Mental health"%}
+                   <span>Mental health</span>
+                   {% elif data['goodcause']=="Other reason"%}
+                   <span>{{otherreason}}</span>
+                   {% else %}
+                   another
+                   {% endif %}
+                </p>
+                {% if data['reason'] %}
                 <p class="address-stack">
                       
-                  
+                    <span class="mt10">Additional information:</span>
                     <span>{{ reason }}</span>
                 </p>
-              </div>
+              
+              {% endif %}
+            </div>
               {% endif %}
   
              {% if data['timelinefilter']%}
@@ -205,7 +221,7 @@
               <span class="line"></span>
               <div class="timeline__event">
                 <h3 class="timeline__heading">Note</h3>
-                <p class="timeline_datetime">1st May 2019 / Sheila Jones / Cardiff Call Centre</p>
+                <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(1) }}  / Sheila Jones / Cardiff Call Centre</p>
 
                 <p class="address-stack">
                       
@@ -218,7 +234,7 @@
                   <span class="line"></span>
                   <div class="timeline__event">
                     <h3 class="timeline__heading">Appointment sms sent</h3>
-                    <p class="timeline_datetime">2nd May 2019</p>
+                    <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(1) }} </p>
                    
                     <p class="address-stack">
                       
@@ -231,7 +247,7 @@
                   <span class="line"></span>
                   <div class="timeline__event">
                     <h3 class="timeline__heading">Appointment letter sent</h3>
-                    <p class="timeline_datetime">22nd April 2019</p>
+                    <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(7) }} </p>
            
                     <p class="address-stack">
                         <span class="mt10">Address:</span>
@@ -247,11 +263,11 @@
                   <span class="line"></span>
                   <div class="timeline__event">
                     <h3 class="timeline__heading">Appointment booked</h3>
-                    <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(1) }}</p>
+                    <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0) }}</p>
                     <p class="address-stack">  
                         <span class="mt10">Appointment details:</span>
                         <span>Non-neuro appointment</span>
-                        <span>{{ 'Do MMMM YYYY' | baseDate(10) }}</span>
+                        <span>{{ 'Do MMMM YYYY' | baseDate(1) }}</span>
                         <span>11:00am</span>
                         <span>Tresco House</span>
                     </p>
@@ -261,7 +277,7 @@
                   <span class="line"></span>
                   <div class="timeline__event">
                     <h3 class="timeline__heading">Cancelled appointment</h3>
-                    <p class="timeline_datetime">22nd April 2019 / Barry Gallager / Tresco assessment centre</p>
+                    <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(9) }}  / Barry Gallager / Tresco assessment centre</p>
                     <p class="address-stack">  
                         <span class="mt10">Assessment centre:</span>
                         <span>We have cancelled this appointment because there wasn't a hcp available to fullfill the appointment</span>
@@ -289,7 +305,7 @@
                 <span class="line"></span>
                   <div class="timeline__event">
                     <h3 class="timeline__heading">Referred for appointment</h3>
-                    <p class="timeline_datetime">21st April 2019</p>
+                    <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(13) }} </p>
                   </div>
           
           
@@ -300,7 +316,7 @@
           <span class="line"></span>
           <div class="timeline__event">
             <h3 class="timeline__heading">GP report - medical evidence received</h3>
-            <p class="timeline_datetime">20th April 2019</p>
+            <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(14) }} </p>
           </div>
 
           {% endif %}
@@ -310,7 +326,7 @@
           <span class="line"></span>
           <div class="timeline__event">
             <h3 class="timeline__heading">GP Report - medical evidence requested</h3>
-            <p class="timeline_datetime">13th April 2019</p>
+            <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(20) }} </p>
           </div>
           
           
@@ -321,14 +337,14 @@
                 <span class="line"></span>
                 <div class="timeline__event">
                   <h3 class="timeline__heading">Med 3 - medical evidence received </h3>
-                  <p class="timeline_datetime">11th April 2019</p>
+                  <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(20) }} </p>
                 </div>
                 {% endif %}
                 {% if checked('timelinefilter', 'all') or checked('timelinefilter', 'referral') %}     
                 <span class="line"></span>
                 <div class="timeline__event">
                   <h3 class="timeline__heading">UC50 form received</h3>
-                  <p class="timeline_datetime">10th April 2019</p>
+                  <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(20) }} </p>
                 </div>
                 {% endif %}
                 {% if checked('timelinefilter', 'all') or checked('timelinefilter', 'note') %}
@@ -405,7 +421,7 @@
                     <span class="line"></span>
                     <div class="timeline__event">
                       <h3 class="timeline__heading">Appointment sms sent</h3>
-                      <p class="timeline_datetime">2nd May 2019</p>
+                      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(1) }}</p>
                      
                       <p class="address-stack">
                         
@@ -417,7 +433,7 @@
                     <span class="line"></span>
                     <div class="timeline__event">
                       <h3 class="timeline__heading">Appointment letter sent</h3>
-                      <p class="timeline_datetime">22nd April 2019</p>
+                      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(7) }}</p>
              
                       <p class="address-stack">
                           <span class="mt10">Address:</span>
@@ -432,11 +448,11 @@
                     <span class="line"></span>
                     <div class="timeline__event">
                       <h3 class="timeline__heading">Appointment booked</h3>
-                      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(1) }}</p>
+                      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(9) }}</p>
                       <p class="address-stack">  
                           <span class="mt10">Appointment details:</span>
                           <span>Non-neuro appointment</span>
-                          <span>{{ 'Do MMMM YYYY' | baseDate(10) }}</span>
+                          <span>{{ 'Do MMMM YYYY' | baseDate(1) }}</span>
                           <span>11:00am</span>
                           <span>Tresco House</span>
                       </p>
@@ -445,7 +461,7 @@
                     <span class="line"></span>
                     <div class="timeline__event">
                       <h3 class="timeline__heading">Cancelled appointment</h3>
-                      <p class="timeline_datetime">22nd April 2019 / Barry Gallager / Tresco assessment centre</p>
+                      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(9) }} / Barry Gallager / Tresco assessment centre</p>
                       <p class="address-stack">  
                           <span class="mt10">Assessment centre:</span>
                           <span>We have cancelled this appointment because there wasn't a hcp available to fullfill the appointment</span>
@@ -479,7 +495,7 @@
             <span class="line"></span>
             <div class="timeline__event">
               <h3 class="timeline__heading">GP report - medical evidence received</h3>
-              <p class="timeline_datetime">20th April 2019</p>
+              <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(14) }}</p>
             </div>
   
 
@@ -488,7 +504,7 @@
             <span class="line"></span>
             <div class="timeline__event">
               <h3 class="timeline__heading">GP Report - medical evidence requested</h3>
-              <p class="timeline_datetime">13th April 2019</p>
+              <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(20) }}</p>
             </div>
             
  
@@ -497,13 +513,13 @@
                   <span class="line"></span>
                   <div class="timeline__event">
                     <h3 class="timeline__heading">Med 3 - medical evidence received </h3>
-                    <p class="timeline_datetime">11th April 2019</p>
+                    <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(25) }}</p>
                   </div>
    
                   <span class="line"></span>
                   <div class="timeline__event">
                     <h3 class="timeline__heading">UC50 form received</h3>
-                    <p class="timeline_datetime">10th April 2019</p>
+                    <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(25) }}</p>
                   </div>
 
             

@@ -21,7 +21,7 @@
             <hr>
             <p class="mt10 mb0 bold-small">{{ 'Did not attend' if customer.status == 'Failed to attend appointment' }}</p> 
             {% if data['whatcando']%}
-            <p class="mt10 mb0 bold-small">Re referral</p> 
+            <p class="mt10 mb0 bold-small">DNA Re-referral</p> 
             {% else %}
             <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/index" class="button">Record a decision</a></p>
       	    {% endif %}
