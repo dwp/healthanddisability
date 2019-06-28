@@ -871,7 +871,7 @@ module.exports = [
       }
 
     ],
-    "status": "Questionnaire not returned",
+    "status": "good cause not accepted",
     "dateOfBirth": "1956-02-13T23:13:32+00:00",
     "mobile": "07961 542 293",
     "NINO": "QQ 78 13 92 C",

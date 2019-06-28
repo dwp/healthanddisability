@@ -63,16 +63,20 @@
     <div class="decision-form">
   <fieldset>
 
-    <legend class="heading-medium mb5">What do you want to do?</legend>
+    <legend class="heading-medium mb5">Do you want to accept good cause?</legend>
     
     <div class="form-group">
   
       <div class="multiple-choice" data-target="goodcauseaccepted">
         <input id="decide_now" name="whatcando" type="radio" value="newappointment">
-        <label for="decide_now">Accept good cause</label>
+        <label for="decide_now">Yes</label>
       </div>
 
       <div class="panel js-hidden" id="goodcauseaccepted">
+
+
+
+
           <div class="form-group">
               <fieldset>
             
@@ -113,7 +117,7 @@
   
       <div class="multiple-choice" data-target="closeThis">
         <input id="face2face" name="whatcando" type="radio" value="close">
-        <label for="face2face"> Close {{customer.name.first}}'s case</label>
+        <label for="face2face"> No </label>
       </div>
   
     </div><!-- form-group -->

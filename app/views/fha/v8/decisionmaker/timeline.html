@@ -155,16 +155,16 @@
 
 
 
-              {% if data['whatcando']=='close' %}
+              {% if data['whatcando']=='close' or customer.status == 'good cause not accepted' %}
               <span class="line"></span>
               <div class="timeline__event">
-                <h3 class="timeline__heading">Good cause decision - Closed case</h3>
+                <h3 class="timeline__heading">Good cause decision - not accepted</h3>
                 <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0) }} / Robert Weston/ Wimbledon BSC </p>
 
                 <p class="address-stack">
                       
                   
-                    <span>{{ reason }}</span>
+                    <span>We didn't except the reason of having a bad day a justification for missing the appointment</span>
                 </p>
               </div>
               {% endif %}

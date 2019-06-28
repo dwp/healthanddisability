@@ -19,7 +19,11 @@ module.exports = function(versionNumber, dmCustomers){
 			url: "good-cause",
 			label: "Questionnaire not returned",
 			quantity: dmCustomers.filter(customer => customer.status === "Questionnaire not returned").length
-		}]
+		},{
+			url: "good-cause-not-accepted",
+			label: "Good cause not accepted",
+			quantity: 2
+		},]
 	}
 ]
 }
