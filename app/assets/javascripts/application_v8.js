@@ -29,7 +29,7 @@ $(document).on('ready',function()
 });
 
 
- 
+
 
 $("input[type='checkbox'][class='mon-fil']").on("change",function(){
   if($(this).is(':checked')){
@@ -156,16 +156,16 @@ $("input[type='checkbox']").on("change",function(){
 
 
 
-  
+
 // Own functionality
 
 $(document).ready(function() {
-  
+
   $("tr").each(function() {
     var $name = $(this).find('.col-heading').text();
     $(this).before( "<tr class='done' style='display:none'><td colspan='6'>" + $name + " added to &lsquo;my referrals&rsquo;&nbsp;&nbsp;<a href='#' class='undo'>Undo</a></td></tr>" );
   });
-  
+
   var $ownButtons = $(".add a");
   var $undoButtons = $(".undo");
 
@@ -254,14 +254,14 @@ $(document).ready(function(){
    $("[data-click-add-more]").click(function(event){
       var input = document.getElementById('centre-new-detail-input');
       var template = '<li>' +
-          input.value + 
+          input.value +
           ' (<a href="#" data-click-to-remove>remove</a>)' +
           '</li>';
 
       var list = document.getElementById('details-list');
       var x;
       $(list).append(template);
-      
+
       var hiddenInput = document.createElement('input');
       hiddenInput.type="hidden";
       hiddenInput.value = input.value;
@@ -294,7 +294,7 @@ $(document).ready(function(){
     });
 
   $(document).on("click", "[data-add-appointment-time]", function(event){
-      
+
       var list = document.getElementById('edit-times-list'),
           input = document.getElementById('new-time-input');
 
@@ -303,12 +303,12 @@ $(document).ready(function(){
                         <a href="#" data-click-to-remove>remove</a>
                     </li>`;
       $(list).append(template);
-      
+
       input.value = "";
     });
-  
 
-    
+
+
 });
 
 
@@ -376,8 +376,14 @@ $(document).ready(function () {
   })
 });
 
-
-
+$(document).ready(function () {
+  $('#selectAll').on('click', function (event) {
+    var btn = $(event.target);
+    var chkd = btn.text() === 'Select all';
+    btn.text(chkd ? 'De-Select all' : 'Select all');
+    $('.pickslots [type="checkbox"]').prop('checked', chkd);
+  })
+});
 
 
 
