@@ -13,7 +13,7 @@
 
    <h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Create a capacity plan</h1>
 
-   <h2 class="heading-medium">Monday 24 June</h2>
+   <h2 class="heading-medium">Monday 22 July</h2>
 
 
    <form class="form" action="/{{ path }}/planning/create-plan" method="post">
@@ -22,10 +22,21 @@
               <table class="profile-table">
 
                 <thead>
+                    <tr>
+                        <th></th>
+                        <!-- <th>Assessment Centre</th> -->
+                        <th class="col2"><span>Total required</span></th>
+                        {% if checked('benefits','ben2') %}
+                        <th colspan="5"><span>How many can be</span></th>
+                        {% else %}
+                        <th colspan="4"><span>How many can be</span></th>
+                         {% endif %}
+                        
+                      </tr>
                   <tr>
                     <th></th>
                     <!-- <th>Assessment Centre</th> -->
-                    <th><span></span>Appointments</th>
+                    <th class="col2"><span></span>Appointments</th>
                     <th><span></span>UCB</th>
                     <th><span></span>Complex neuro</th>
                     <th><span></span>Neuro</th>
@@ -44,7 +55,7 @@
                   <th class="col">9:00am</th>
                   <td class='col2'> <label class="visually-hidden" for="" ></label>
                     <input class="form-control" id="appoint1"  type="text" name="appoint1"  type="text" value="{{appoint1}}" ></td> 
-                    <td class='col2'><label class="visually-hidden" for=""></label>
+                    <td class='col3'><label class="visually-hidden" for=""></label>
                       <input class="form-control" id="ucb1" type="text" name="ucb1"  value="{{ucb1}}"></td>
                   <td><label class="visually-hidden" for=""></label>
                     <input class="form-control" id="complex1" type="text" name="complex1"  value="{{complex1}}"></td>
@@ -69,7 +80,7 @@
                     <th class="col">9:15am</th>
                     <td class='col2'> <label class="visually-hidden" for="" ></label>
                       <input class="form-control" id="appoint2"  type="text" name="appoint2"  type="text" value="{{appoint2}}" ></td> 
-                      <td class='col2'><label class="visually-hidden" for=""></label>
+                      <td class='col3'><label class="visually-hidden" for=""></label>
                         <input class="form-control" id="ucb2" type="text" name="ucb2"  value="{{ucb2}}"></td>
                     <td><label class="visually-hidden" for=""></label>
                       <input class="form-control" id="complex2" type="text" name="complex2"  value="{{complex2}}"></td>
@@ -90,9 +101,9 @@
                   {% if checked('times','930')  %}
                   <tr>
                       <th class="col">9:30am</th>
-                      <td> <label class="visually-hidden" for="" ></label>
+                      <td class="col2"> <label class="visually-hidden" for="" ></label>
                         <input class="form-control" id="appoint3"  type="text" name="appoint3"  type="text" value="{{appoint3}}" ></td> 
-                        <td><label class="visually-hidden" for=""></label>
+                        <td class="col3"><label class="visually-hidden" for=""></label>
                           <input class="form-control" id="ucb3" type="text" name="ucb3"  value="{{ucb3}}"></td>
                       <td><label class="visually-hidden" for=""></label>
                         <input class="form-control" id="complex3" type="text" name="complex3"  value="{{complex3}}"></td>
@@ -115,9 +126,9 @@
                     {% if checked('times','945')  %}
                   <tr>
                       <th class="col">9:45am</th>
-                      <td> <label class="visually-hidden" for="" ></label>
+                      <td class="col2"> <label class="visually-hidden" for="" ></label>
                         <input class="form-control" id="appoint4"  type="text" name="appoint4"  type="text" value="{{appoint4}}" ></td> 
-                        <td><label class="visually-hidden" for=""></label>
+                        <td class="col3"><label class="visually-hidden" for=""></label>
                           <input class="form-control" id="ucb4" type="text" name="ucb4"  value="{{ucb4}}"></td>
                       <td><label class="visually-hidden" for=""></label>
                         <input class="form-control" id="complex4" type="text" name="complex4"  value="{{complex4}}"></td>
@@ -140,9 +151,9 @@
                     {% if checked('times','10')  %}
                     <tr>
                         <th class="col">10:00am</th>
-                        <td> <label class="visually-hidden" for="" ></label>
+                        <td class="col2"> <label class="visually-hidden" for="" ></label>
                           <input class="form-control" id="appoint5"  type="text" name="appoint5"  type="text" value="{{appoint5}}" ></td> 
-                          <td><label class="visually-hidden" for=""></label>
+                          <td class="col3"><label class="visually-hidden" for=""></label>
                             <input class="form-control" id="ucb5" type="text" name="ucb5"  value="{{ucb5}}"></td>
                         <td><label class="visually-hidden" for=""></label>
                           <input class="form-control" id="complex5" type="text" name="complex5"  value="{{complex5}}"></td>
@@ -163,20 +174,20 @@
                       {% if checked('times','1015')  %}
                       <tr>
                           <th class="col">10:15am</th>
-                          <td> <label class="visually-hidden" for="" ></label>
+                          <td class="col2" class="col2"> <label class="visually-hidden" for="" ></label>
                             <input class="form-control" id="appoint6"  type="text" name="appoint6"  type="text" value="{{appoint6}}" ></td> 
-                            <td><label class="visually-hidden" for=""></label>
+                            <td class="col2" class="col3"><label class="visually-hidden" for=""></label>
                               <input class="form-control" id="ucb6" type="text" name="ucb6"  value="{{ucb6}}"></td>
-                          <td><label class="visually-hidden" for=""></label>
+                          <td class="col2"><label class="visually-hidden" for=""></label>
                             <input class="form-control" id="complex6" type="text" name="complex6"  value="{{complex6}}"></td>
-                          <td><label class="visually-hidden" for=""></label>
+                          <td class="col2"><label class="visually-hidden" for=""></label>
                             <input class="form-control" id="neuro6" type="text" name="neuro6"  value="{{neuro6}}"></td>
-                          <td><label class="visually-hidden" for=""></label>
+                          <td class="col2"><label class="visually-hidden" for=""></label>
                             <input class="form-control" id="none6" type="text" name="none6"  value="{{none6}}"></td>
                          
            
                   {% if checked('benefits','ben2') %}
-                            <td>
+                            <td class="col2">
                               <label class="visually-hidden" for=""></label>
                     <input class="form-control" id="IIDB6" type="text" name="IIDB6"  value="{{IIDB6}}">
                   </td>
@@ -186,9 +197,9 @@
 
                       <tr>
                           <th class="col">10:30am</th>
-                          <td> <label class="visually-hidden" for="" ></label>
+                          <td class="col2"> <label class="visually-hidden" for="" ></label>
                             <input class="form-control" id="appoint7"  type="text" name="appoint7"  type="text" value="{{appoint7}}" ></td> 
-                            <td><label class="visually-hidden" for=""></label>
+                            <td class="col3"><label class="visually-hidden" for=""></label>
                               <input class="form-control" id="ucb7" type="text" name="ucb7"  value="{{ucb7}}"></td>
                           <td><label class="visually-hidden" for=""></label>
                             <input class="form-control" id="complex7" type="text" name="complex7"  value="{{complex7}}"></td>
@@ -211,9 +222,9 @@
 
                       <tr>
                           <th class="col">10:45am</th>
-                          <td> <label class="visually-hidden" for="" ></label>
+                          <td class="col2"> <label class="visually-hidden" for="" ></label>
                             <input class="form-control" id="appoint8"  type="text" name="appoint8"  type="text" value="{{appoint8}}" ></td> 
-                            <td><label class="visually-hidden" for=""></label>
+                            <td class="col3"><label class="visually-hidden" for=""></label>
                               <input class="form-control" id="ucb8" type="text" name="ucb8"  value="{{ucb8}}"></td>
                           <td><label class="visually-hidden" for=""></label>
                             <input class="form-control" id="complex8" type="text" name="complex8"  value="{{complex8}}"></td>
@@ -235,9 +246,9 @@
 
                         <tr>
                             <th class="col">11:00am</th>
-                            <td> <label class="visually-hidden" for="" ></label>
+                            <td class="col2"> <label class="visually-hidden" for="" ></label>
                               <input class="form-control" id="appoint9"  type="text" name="appoint9"  type="text" value="{{appoint9}}" ></td> 
-                              <td><label class="visually-hidden" for=""></label>
+                              <td class="col3"><label class="visually-hidden" for=""></label>
                                 <input class="form-control" id="ucb9" type="text" name="ucb9"  value="{{ucb9}}"></td>
                             <td><label class="visually-hidden" for=""></label>
                               <input class="form-control" id="complex9" type="text" name="complex9"  value="{{complex9}}"></td>
@@ -260,9 +271,9 @@
 
                           <tr>
                               <th class="col">11:15am</th>
-                              <td> <label class="visually-hidden" for="" ></label>
+                              <td class="col2"> <label class="visually-hidden" for="" ></label>
                                 <input class="form-control" id="appoint10"  type="text" name="appoint10"  type="text" value="{{appoint10}}" ></td> 
-                                <td><label class="visually-hidden" for=""></label>
+                                <td class="col3"><label class="visually-hidden" for=""></label>
                                   <input class="form-control" id="ucb10" type="text" name="ucb10"  value="{{ucb10}}"></td>
                               <td><label class="visually-hidden" for=""></label>
                                 <input class="form-control" id="complex10" type="text" name="complex10"  value="{{complex10}}"></td>
@@ -286,9 +297,9 @@
 
                           <tr>
                               <th class="col">11:30am</th>
-                              <td> <label class="visually-hidden" for="" ></label>
+                              <td class="col2"> <label class="visually-hidden" for="" ></label>
                                 <input class="form-control" id="appoint11"  type="text" name="appoint11"  type="text" value="{{appoint11}}" ></td> 
-                                <td><label class="visually-hidden" for=""></label>
+                                <td class="col3"><label class="visually-hidden" for=""></label>
                                   <input class="form-control" id="ucb11" type="text" name="ucb11"  value="{{ucb11}}"></td>
                               <td><label class="visually-hidden" for=""></label>
                                 <input class="form-control" id="complex11" type="text" name="complex11"  value="{{complex11}}"></td>
@@ -311,9 +322,9 @@
 
                           <tr>
                               <th class="col">11:45am</th>
-                              <td> <label class="visually-hidden" for="" ></label>
+                              <td class="col2"> <label class="visually-hidden" for="" ></label>
                                 <input class="form-control" id="appoint12"  type="text" name="appoint12"  type="text" value="{{appoint12}}" ></td> 
-                                <td><label class="visually-hidden" for=""></label>
+                                <td class="col3"><label class="visually-hidden" for=""></label>
                                   <input class="form-control" id="ucb12" type="text" name="ucb12"  value="{{ucb12}}"></td>
                               <td><label class="visually-hidden" for=""></label>
                                 <input class="form-control" id="complex12" type="text" name="complex12"  value="{{complex12}}"></td>
@@ -338,9 +349,9 @@
 
                             <tr>
                                 <th class="col">12:00pm</th>
-                                <td> <label class="visually-hidden" for="" ></label>
+                                <td class="col2"> <label class="visually-hidden" for="" ></label>
                                   <input class="form-control" id="appoint13"  type="text" name="appoint13"  type="text" value="{{appoint13}}" ></td> 
-                                  <td><label class="visually-hidden" for=""></label>
+                                  <td class="col3"><label class="visually-hidden" for=""></label>
                                     <input class="form-control" id="ucb13" type="text" name="ucb13"  value="{{ucb13}}"></td>
                                 <td><label class="visually-hidden" for=""></label>
                                   <input class="form-control" id="complex13" type="text" name="complex13"  value="{{complex13}}"></td>
@@ -364,9 +375,9 @@
 
                               <tr>
                                   <th class="col">12:15pm</th>
-                                  <td> <label class="visually-hidden" for="" ></label>
+                                  <td class="col2"> <label class="visually-hidden" for="" ></label>
                                     <input class="form-control" id="appoint14"  type="text" name="appoint14"  type="text" value="{{appoint14}}" ></td> 
-                                    <td><label class="visually-hidden" for=""></label>
+                                    <td class="col3"><label class="visually-hidden" for=""></label>
                                       <input class="form-control" id="ucb14" type="text" name="ucb14"  value="{{ucb14}}"></td>
                                   <td><label class="visually-hidden" for=""></label>
                                     <input class="form-control" id="complex14" type="text" name="complex14"  value="{{complex14}}"></td>
@@ -391,9 +402,9 @@
 
                                 <tr>
                                     <th class="col">12:30pm</th>
-                                    <td> <label class="visually-hidden" for="" ></label>
+                                    <td class="col2"> <label class="visually-hidden" for="" ></label>
                                       <input class="form-control" id="appoint15"  type="text" name="appoint15"  type="text" value="{{appoint15}}" ></td> 
-                                      <td><label class="visually-hidden" for=""></label>
+                                      <td class="col3"><label class="visually-hidden" for=""></label>
                                         <input class="form-control" id="ucb15" type="text" name="ucb15"  value="{{ucb15}}"></td>
                                     <td><label class="visually-hidden" for=""></label>
                                       <input class="form-control" id="complex15" type="text" name="complex15"  value="{{complex15}}"></td>
@@ -418,9 +429,9 @@
 
                                   <tr>
                                       <th class="col">12:45pm</th>
-                                      <td> <label class="visually-hidden" for="" ></label>
+                                      <td class="col2"> <label class="visually-hidden" for="" ></label>
                                         <input class="form-control" id="appoint16"  type="text" name="appoint16"  type="text" value="{{appoint16}}" ></td> 
-                                        <td><label class="visually-hidden" for=""></label>
+                                        <td class="col3"><label class="visually-hidden" for=""></label>
                                           <input class="form-control" id="ucb16" type="text" name="ucb16"  value="{{ucb16}}"></td>
                                       <td><label class="visually-hidden" for=""></label>
                                         <input class="form-control" id="complex16" type="text" name="complex16"  value="{{complex16}}"></td>
@@ -444,9 +455,9 @@
 
                 <tr>
                     <th class="col">1:00pm</th>
-                    <td> <label class="visually-hidden" for="" ></label>
+                    <td class="col2"> <label class="visually-hidden" for="" ></label>
                       <input class="form-control" id="appoint17"  type="text" name="appoint17"  type="text" value="{{appoint17}}" ></td> 
-                      <td><label class="visually-hidden" for=""></label>
+                      <td class="col3"><label class="visually-hidden" for=""></label>
                         <input class="form-control" id="ucb17" type="text" name="ucb17"  value="{{ucb17}}"></td>
                     <td><label class="visually-hidden" for=""></label>
                       <input class="form-control" id="complex17" type="text" name="complex17"  value="{{complex17}}"></td>
@@ -467,9 +478,9 @@
                   {% if checked('times','115')  %}
                   <tr>
                       <th class="col">1:15pm</th>
-                      <td> <label class="visually-hidden" for="" ></label>
+                      <td class="col2"> <label class="visually-hidden" for="" ></label>
                         <input class="form-control" id="appoint18"  type="text" name="appoint18"  type="text" value="{{appoint18}}" ></td> 
-                        <td><label class="visually-hidden" for=""></label>
+                        <td class="col3"><label class="visually-hidden" for=""></label>
                           <input class="form-control" id="ucb18" type="text" name="ucb18"  value="{{ucb18}}"></td>
                       <td><label class="visually-hidden" for=""></label>
                         <input class="form-control" id="complex18" type="text" name="complex18"  value="{{complex18}}"></td>
@@ -490,9 +501,9 @@
                     {% if checked('times','130')  %}
                     <tr>
                         <th class="col">1:30pm</th>
-                        <td> <label class="visually-hidden" for="" ></label>
+                        <td class="col2"> <label class="visually-hidden" for="" ></label>
                           <input class="form-control" id="appoint19"  type="text" name="appoint19"  type="text" value="{{appoint19}}" ></td> 
-                          <td><label class="visually-hidden" for=""></label>
+                          <td class="col3"><label class="visually-hidden" for=""></label>
                             <input class="form-control" id="ucb19" type="text" name="ucb19"  value="{{ucb19}}"></td>
                         <td><label class="visually-hidden" for=""></label>
                           <input class="form-control" id="complex19" type="text" name="complex19"  value="{{complex19}}"></td>
@@ -513,9 +524,9 @@
                       {% if checked('times','145')  %}
                     <tr>
                         <th class="col">1:45pm</th>
-                        <td> <label class="visually-hidden" for="" ></label>
+                        <td class="col2"> <label class="visually-hidden" for="" ></label>
                           <input class="form-control" id="appoint20"  type="text" name="appoint20"  type="text" value="{{appoint20}}" ></td> 
-                          <td><label class="visually-hidden" for=""></label>
+                          <td class="col3"><label class="visually-hidden" for=""></label>
                             <input class="form-control" id="ucb20" type="text" name="ucb20"  value="{{ucb20}}"></td>
                         <td><label class="visually-hidden" for=""></label>
                           <input class="form-control" id="complex20" type="text" name="complex20"  value="{{complex20}}"></td>
@@ -537,9 +548,9 @@
 
                       <tr>
                           <th class="col">2:00pm</th>
-                          <td> <label class="visually-hidden" for="" ></label>
+                          <td class="col2"> <label class="visually-hidden" for="" ></label>
                             <input class="form-control" id="appoint21"  type="text" name="appoint21"  type="text" value="{{appoint21}}" ></td> 
-                            <td><label class="visually-hidden" for=""></label>
+                            <td class="col3"><label class="visually-hidden" for=""></label>
                               <input class="form-control" id="ucb21" type="text" name="ucb21"  value="{{ucb21}}"></td>
                           <td><label class="visually-hidden" for=""></label>
                             <input class="form-control" id="complex21" type="text" name="complex21"  value="{{complex21}}"></td>
@@ -562,9 +573,9 @@
 
                         <tr>
                             <th class="col">2:15pm</th>
-                            <td> <label class="visually-hidden" for="" ></label>
+                            <td class="col2"> <label class="visually-hidden" for="" ></label>
                               <input class="form-control" id="appoint22"  type="text" name="appoint22"  type="text" value="{{appoint22}}" ></td> 
-                              <td><label class="visually-hidden" for=""></label>
+                              <td class="col3"><label class="visually-hidden" for=""></label>
                                 <input class="form-control" id="ucb22" type="text" name="ucb22"  value="{{ucb22}}"></td>
                             <td><label class="visually-hidden" for=""></label>
                               <input class="form-control" id="complex22" type="text" name="complex22"  value="{{complex22}}"></td>
@@ -586,9 +597,9 @@
   
                         <tr>
                             <th class="col">2:30pm</th>
-                            <td> <label class="visually-hidden" for="" ></label>
+                            <td class="col2"> <label class="visually-hidden" for="" ></label>
                               <input class="form-control" id="appoint23"  type="text" name="appoint23"  type="text" value="{{appoint23}}" ></td> 
-                              <td><label class="visually-hidden" for=""></label>
+                              <td class="col3"><label class="visually-hidden" for=""></label>
                                 <input class="form-control" id="ucb23" type="text" name="ucb23"  value="{{ucb23}}"></td>
                             <td><label class="visually-hidden" for=""></label>
                               <input class="form-control" id="complex23" type="text" name="complex23"  value="{{complex23}}"></td>
@@ -611,9 +622,9 @@
   
                         <tr>
                             <th class="col">2:45pm</th>
-                            <td> <label class="visually-hidden" for="" ></label>
+                            <td class="col2"> <label class="visually-hidden" for="" ></label>
                               <input class="form-control" id="appoint24"  type="text" name="appoint24"  type="text" value="{{appoint24}}" ></td> 
-                              <td><label class="visually-hidden" for=""></label>
+                              <td class="col3"><label class="visually-hidden" for=""></label>
                                 <input class="form-control" id="ucb24" type="text" name="ucb24"  value="{{ucb24}}"></td>
                             <td><label class="visually-hidden" for=""></label>
                               <input class="form-control" id="complex24" type="text" name="complex24"  value="{{complex24}}"></td>
@@ -636,9 +647,9 @@
   
                           <tr>
                               <th class="col">3:00pm</th>
-                              <td> <label class="visually-hidden" for="" ></label>
+                              <td class="col2"> <label class="visually-hidden" for="" ></label>
                                 <input class="form-control" id="appoint25"  type="text" name="appoint25"  type="text" value="{{appoint25}}" ></td> 
-                                <td><label class="visually-hidden" for=""></label>
+                                <td class="col3"><label class="visually-hidden" for=""></label>
                                   <input class="form-control" id="ucb25" type="text" name="ucb25"  value="{{ucb25}}"></td>
                               <td><label class="visually-hidden" for=""></label>
                                 <input class="form-control" id="complex25" type="text" name="complex25"  value="{{complex25}}"></td>
@@ -661,9 +672,9 @@
   
                             <tr>
                                 <th class="col">3:255pm</th>
-                                <td> <label class="visually-hidden" for="" ></label>
+                                <td class="col2"> <label class="visually-hidden" for="" ></label>
                                   <input class="form-control" id="appoint26"  type="text" name="appoint26"  type="text" value="{{appoint26}}" ></td> 
-                                  <td><label class="visually-hidden" for=""></label>
+                                  <td class="col3"><label class="visually-hidden" for=""></label>
                                     <input class="form-control" id="ucb26" type="text" name="ucb26"  value="{{ucb26}}"></td>
                                 <td><label class="visually-hidden" for=""></label>
                                   <input class="form-control" id="complex26" type="text" name="complex26"  value="{{complex26}}"></td>
@@ -688,9 +699,9 @@
 
                             <tr>
                                 <th class="col">3:30pm</th>
-                                <td> <label class="visually-hidden" for="" ></label>
+                                <td class="col2"> <label class="visually-hidden" for="" ></label>
                                   <input class="form-control" id="appoint27"  type="text" name="appoint27"  type="text" value="{{appoint27}}" ></td> 
-                                  <td><label class="visually-hidden" for=""></label>
+                                  <td class="col3"><label class="visually-hidden" for=""></label>
                                     <input class="form-control" id="ucb27" type="text" name="ucb27"  value="{{ucb27}}"></td>
                                 <td><label class="visually-hidden" for=""></label>
                                   <input class="form-control" id="complex27" type="text" name="complex27"  value="{{complex27}}"></td>
@@ -715,9 +726,9 @@
 
                             <tr>
                                 <th class="col">3:45pm</th>
-                                <td> <label class="visually-hidden" for="" ></label>
+                                <td class="col2"> <label class="visually-hidden" for="" ></label>
                                   <input class="form-control" id="appoint28"  type="text" name="appoint28"  type="text" value="{{appoint28}}" ></td> 
-                                  <td><label class="visually-hidden" for=""></label>
+                                  <td class="col3"><label class="visually-hidden" for=""></label>
                                     <input class="form-control" id="ucb28" type="text" name="ucb28"  value="{{ucb28}}"></td>
                                 <td><label class="visually-hidden" for=""></label>
                                   <input class="form-control" id="complex28" type="text" name="complex28"  value="{{complex28}}"></td>
@@ -743,9 +754,9 @@
 
                             <tr>
                                 <th class="col">4:00pm</th>
-                                <td> <label class="visually-hidden" for="" ></label>
+                                <td class="col2"> <label class="visually-hidden" for="" ></label>
                                   <input class="form-control" id="appoint29"  type="text" name="appoint29"  type="text" value="{{appoint29}}" ></td> 
-                                  <td><label class="visually-hidden" for=""></label>
+                                  <td class="col3"><label class="visually-hidden" for=""></label>
                                     <input class="form-control" id="ucb29" type="text" name="ucb29"  value="{{ucb29}}"></td>
                                 <td><label class="visually-hidden" for=""></label>
                                   <input class="form-control" id="complex29" type="text" name="complex29"  value="{{complex29}}"></td>
@@ -767,9 +778,9 @@
 
                             <tr>
                                 <th class="col">4:15pm</th>
-                                <td> <label class="visually-hidden" for="" ></label>
+                                <td class="col2"> <label class="visually-hidden" for="" ></label>
                                   <input class="form-control" id="appoint30"  type="text" name="appoint30"  type="text" value="{{appoint30}}" ></td> 
-                                  <td><label class="visually-hidden" for=""></label>
+                                  <td class="col3"><label class="visually-hidden" for=""></label>
                                     <input class="form-control" id="ucb30" type="text" name="ucb30"  value="{{ucb30}}"></td>
                                 <td><label class="visually-hidden" for=""></label>
                                   <input class="form-control" id="complex30" type="text" name="complex30"  value="{{complex30}}"></td>
@@ -794,9 +805,9 @@
 
                             <tr>
                                 <th class="col">4:30pm</th>
-                                <td> <label class="visually-hidden" for="" ></label>
+                                <td class="col2"> <label class="visually-hidden" for="" ></label>
                                   <input class="form-control" id="appoint31"  type="text" name="appoint31"  type="text" value="{{appoint31}}" ></td> 
-                                  <td><label class="visually-hidden" for=""></label>
+                                  <td class="col3"><label class="visually-hidden" for=""></label>
                                     <input class="form-control" id="ucb31" type="text" name="ucb31"  value="{{ucb31}}"></td>
                                 <td><label class="visually-hidden" for=""></label>
                                   <input class="form-control" id="complex31" type="text" name="complex31"  value="{{complex31}}"></td>
@@ -821,9 +832,9 @@
 
                             <tr>
                                 <th class="col">4:45pm</th>
-                                <td> <label class="visually-hidden" for="" ></label>
+                                <td class="col2"> <label class="visually-hidden" for="" ></label>
                                   <input class="form-control" id="appoint32"  type="text" name="appoint32"  type="text" value="{{appoint32}}" ></td> 
-                                  <td><label class="visually-hidden" for=""></label>
+                                  <td class="col3"><label class="visually-hidden" for=""></label>
                                     <input class="form-control" id="ucb32" type="text" name="ucb32"  value="{{ucb32}}"></td>
                                 <td><label class="visually-hidden" for=""></label>
                                   <input class="form-control" id="complex32" type="text" name="complex32"  value="{{complex32}}"></td>
