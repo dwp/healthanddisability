@@ -377,11 +377,12 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
+  $('#selectAll').show();
   $('#selectAll').on('click', function (event) {
     var btn = $(event.target);
     var chkd = btn.text() === 'Select all';
     btn.text(chkd ? 'De-Select all' : 'Select all');
-    $('.pickslots [type="checkbox"]').prop('checked', chkd);
+    $('.timeslot-picker [type="checkbox"]').prop('checked', chkd);
   })
 });
 
