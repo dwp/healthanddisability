@@ -780,7 +780,7 @@ module.exports = [
       }
     ],
     "status": "Failed to attend appointment",
-    "substatus":"Request a reason",
+    "substatus":"Ready for decision",
     "reason":"No",
     "dateOfBirth": "1968-08-23T17:51:24+00:00",
     "mobile": "07941 494 390",
@@ -871,7 +871,7 @@ module.exports = [
       }
 
     ],
-    "status": "Questionnaire not returned",
+    "status": "good cause not accepted",
     "dateOfBirth": "1956-02-13T23:13:32+00:00",
     "mobile": "07961 542 293",
     "NINO": "QQ 78 13 92 C",
@@ -1027,7 +1027,7 @@ module.exports = [
       }
     ],
    "status": "Failed to attend appointment",
-   "substatus":"Record a reason",
+   "substatus":"Ready for decision",
    "reason":"Requested",
     "dateOfBirth": "1952-11-03T09:07:41+00:00",
     "mobile": "07906 407 310",
@@ -1174,7 +1174,7 @@ module.exports = [
       }
     ],
    "status": "Failed to attend appointment",
-   "substatus":"Record a reason",
+   "substatus":"Ready for decision",
     "dateOfBirth": "1958-07-11T03:08:43+00:00",
     "mobile": "07971 577 303",
     "NINO": "QQ 12 68 26 C",
@@ -1507,7 +1507,7 @@ module.exports = [
       }
     ],
    "status": "Failed to attend appointment",
-   "substatus":"Request a reason",
+   "substatus":"Ready for decision",
     "dateOfBirth": "1987-01-17T08:04:51+00:00",
     "mobile": "07804 599 259",
     "NINO": "QQ 16 35 33 C",
@@ -1687,7 +1687,7 @@ module.exports = [
       }
     ],
    "status": "Failed to attend appointment",
-   "substatus":"Record a reason",
+   "substatus":"Ready for decision",
     "dateOfBirth": "1973-12-04T06:07:39+00:00",
     "mobile": "07856 423 226",
     "NINO": "QQ 49 51 87 C",

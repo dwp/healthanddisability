@@ -16,14 +16,22 @@
       
       	<div class="left-panel">
       
-      	
+      
             <p class="returnRef"><a href="">Return to case list</a></p>
             <hr>
-            <p class="mt10 mb0 bold-small">{{ 'Failed to attend appointment' if customer.status == 'Failed to attend appointment' }}</p> 
+            <p class="mt10 mb0 bold-small">{{ 'Did not attend' if customer.status == 'Failed to attend appointment' }}</p> 
+           
             {% if data['whatcando']%}
+            <p class="mt10 mb0 bold-small">DNA Re-referral</p> 
+            {% endif %}
+            {% if customer.status == 'good cause not accepted' %}
+            <p class="mt10 mb0 bold-small">Good cause not accepted</p>
+            <p><a href="" class="button">Do something maybe</a></p>
             {% else %}
-            <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/index" class="button">Make a decision</a></p>
-      	    {% endif %}
+          
+            <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/index" class="button">Record a decision</a></p>
+             {% endif %}
+      	    
       	</div>
       
       </div>

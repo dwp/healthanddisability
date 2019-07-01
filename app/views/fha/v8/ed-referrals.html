@@ -1,0 +1,40 @@
+{% extends path+"/_layout-caselist.html" %}
+
+{% block horizontal_secondary_nav %}
+              
+{{ secondaryNav.nav("referrals", "ed-referrals", menuItems) }}
+
+
+{% endblock %}  
+
+{% block caselist_content %}
+
+  <h2 class="heading-medium mt0"><span class="heading-xlarge">2</span><br/>DNA re-referrals</h2>          
+<table class="zebra">
+
+                <thead>
+                  <tr>
+                    <th >Details</th>
+                    <th> 10 day target</th>
+                  </tr>
+                </thead>
+
+    
+    <tr>
+      <td ><a href="scrutiny/timeline-referral"><span class="visually-hidden">Name</span>Bobby Henderson</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>AA 12 34 56 B</span></td>
+      <td>10 days remaining</td>
+    </tr>
+
+
+    <tr>
+      <td><a href="#"><span class="visually-hidden">Name</span>Tony Johnson</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>BB 12 34 56 C</span></td>
+      <td>10 days remaining</td>
+    </tr>
+
+   
+
+                
+
+              </table> 
+{% endblock %}
+

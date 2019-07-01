@@ -1,0 +1,156 @@
+{% extends path+"/_layout-case-simple.html" %}
+
+
+{% block actioncolumn %}
+<p class="returnRef"><a href="/fha/v8/ed-referrals">Return to case list</a></p>
+<hr>
+<div class="case-status">
+<p class="mt10 mb0 bold-small">
+  {% if data['whatcando']=='Yes'%}
+  Ready for review
+  {% elif data['whatcando']=='No'%}
+  Ready to book
+  
+  {% else %}
+  DNA re-referral
+  {% endif %}
+  
+
+</p>
+{% if data['whatcando']=='Yes'%}
+<p class="mt10"><a href="/{{path }}/scrutiny/review-or-appointment" class="button">Make a recommendation</a></p>
+{% elif data['whatcando']=='No'%}
+
+
+{% else %}
+<p class="mt10"><a href="/{{path }}/scrutiny/review-or-appointment" class="button">Refer to review or appointment</a></p>
+{% endif %}
+
+<hr>
+<ul class="secondary-actions">
+<li><a href="/fha/v8/scrutiny/5bbf32d57bd22e18e6266974/evidence/request-evidence" class="">Request evidence</a></li>
+<li><a href="/fha/v8/scrutiny/5bbf32d57bd22e18e6266974/evidence/request-evidence" class="">Record evidence</a></li>
+</ul>
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Bobby Henderson
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.case_tabs("evidence-referral",1,path1, customer._id) }}
+  <div class="grid-row">
+    <div class="column-third">
+      
+        <div class="details-nav">
+
+      <ul>
+      <li class="active_detail"><a href="index">Recorded evidence</a></li>
+      <li><a href="requested-evidence">Requested evidence</a></li>
+      </ul>
+          
+        </div>
+      
+    </div><!-- column -->
+    <div class="column-two-thirds">
+        
+
+
+
+<h1 class="heading-large mt10">Recorded evidence</h1>
+<!--<p class="mt10"><a href="/fha/v8/scrutiny/5bbf32d5ed63a198101d1d2b/evidence/record-evidence" class="button secondary">Record evidence recieved</a></p> -->
+
+
+
+<table class="evidence-list">
+
+<thead>
+<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+  <th>Evidence type</th>
+  <th>Source</th>
+  <th>Received</th>
+  <th class="numeric">Recorded</th>
+</tr>
+</thead>
+
+
+<tbody><tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+      <td><a href="/fha/v8/scrutiny/evidence-decision">Good cause decision</a></td>
+      <td>Decision maker</td>
+      <td></td>
+      <td class="numeric"><span>24th June 2019</span></td>
+  </tr>
+
+
+
+
+
+<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+<td><a href="/fha/v8/scrutiny/5bbf32d5ed63a198101d1d2b/evidence/not-testing">Appointment referral justification</a></td>
+<td>HCP</td>
+<td></td>
+<td class="numeric"><span>14th June 2019</span></td>
+</tr>
+
+
+
+<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+  <td><a href="/fha/v8/scrutiny/5bbf32d5ed63a198101d1d2b/evidence/not-testing">GP report</a></td>
+  <td>GP: Dr.Margaret Zamora</td>
+  <td><span class="secondary-text">12th June 2019</span></td>
+  <td class="numeric"><span>13th June 2019</span></td>
+</tr>
+
+
+
+<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+  <td><a href="/fha/v8/scrutiny/5bbf32d5ed63a198101d1d2b/evidence/not-testing">UC 50 </a></td>
+  <td>Claimant</td>
+  <td><span class="secondary-text">30th May 2019</span></td>
+  <td class="numeric"><span>30th May 2019</span></td>
+</tr>
+</tbody></table> 
+
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

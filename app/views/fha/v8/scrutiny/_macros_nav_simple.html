@@ -1,0 +1,18 @@
+{% macro case_tabs(selected,num,path, id) %}
+  <div class="section-tabs js-tabs clearfix mb20">
+    <ul>
+
+      {% set navs = [
+        {url:"timeline-referral",label:"Timeline"},
+        {url:"details-referral",label:"Details"},
+        {url:"appointment-referral",label:"Appointment"},
+        {url:"evidence-referral",label:"Evidence"}
+      
+        ] %} 
+   
+      {% for item in navs %}
+        <li {% if item.url == selected %} class="active"{% endif %}><a href="/{{path }}/{{id}}/{{ item.url }}/">{{ item.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endmacro %}

@@ -184,23 +184,23 @@
                      <tbody>
                        <tr>
                          <th scope="row">Complex neuro</th>
-                         <td class="numeric">{{ complexWedsum }}</td>
+                         <td class="numeric">{% if data['complexWedsum'] %}{{ complexWedsum }}  {% else %} 0 {% endif %}</td>
                     
                        </tr>
                        <tr>
                          <th scope="row">Neuro</th>
-                         <td class="numeric">{{ neuroWedsum }} </td>
+                         <td class="numeric">{% if data['complexWedsum'] %} {{ neuroWedsum }}  {% else %} 0 {% endif %} </td>
                        
                        </tr>
                        <tr>
                          <th scope="row">Non neuro</th>
-                         <td class="numeric">{{ noneWedsum }}</td>
+                         <td class="numeric">{% if data['complexWedsum'] %} {{ noneWedsum }}  {% else %} 0 {% endif %}</td>
                       
                        </tr>
                        {% if data['IIDBWedsum']  %}
                        <tr>
                           <th scope="row">IIDB</th>
-                          <td class="numeric">{{ IIDBWedsum }}</td>
+                          <td class="numeric">{% if data['complexWedsum'] %} {{ IIDBWedsum }}  {% else %} 0 {% endif %}</td>
                        
                         </tr>
                        {% endif %}
@@ -252,7 +252,7 @@
                        <tbody>
                          <tr>
                            <th scope="row">Complex neuro</th>
-                           <td class="numeric">{{ complexTuesum }}</td>
+                           <td class="numeric">{% if data['complexTuesum'] %} {{ complexTuesum }}  {% else %} 0 {% endif %} </td>
                       
                          </tr>
                          <tr>

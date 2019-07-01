@@ -5,27 +5,29 @@
 {% block assess_content %}
 <style>
 
-.half{
-  width:50%;
-  float:left;
+.profile-table.edit td {
+  width:14.2%;
 }
 
-
-.profile-table.edit td span.info
+.profile-table.edit td span
 {
-  background:#eee;
-  height:47px;
-  margin:0px;
-  line-height:48px;
-  border:2px solid #ccc;
-  display:block;
+  background:#efefef;
+  display:inline-block;
+}
+
+.profile-table.edit td span span
+{
+  display:inline-block;
+  line-height:50px;
+  padding:0 10px;
+
 }
 
 .profile-table.edit input 
 {
+  float:left;
   width:100px;
 }
-
 
 
 
@@ -90,13 +92,13 @@
            
                 <tr>
                   <th class="col">9:00am</th>
-                  <td class="col1"> 
-                  
+                  <td> 
+                  <span>
                     <label class="visually-hidden" for="" >Opened</label>
                     <input class="form-control" id="appoint1"  type="text" name=""  type="text" value="6" >
                  
-                        <span class="info">1 Booked</span>
-                   
+                        <span>1 Booked</span>
+                  </span>
                   
                   
                   </td> 
@@ -104,47 +106,52 @@
                   <td>
                       
                   
-                          <label class="visually-hidden" for="" >Opened</label>
-                          <input class="form-control" id="appoint1"  type="text" name=""  type="text" value="6" >
-                      
-                       
-                              <span class="info">1 Booked</span>
-                         
+                    <span>
+                      <label class="visually-hidden" for="" >Opened</label>
+                      <input class="form-control" id="appoint1"  type="text" name=""  type="text" value="6" >
+                   
+                          <span>1 Booked</span>
+                    </span>
                      
                     </td>
                     <td>
-                      
-                            <label class="visually-hidden" for="" >Opened</label>
-                            <input class="form-control" id="appoint1"  type="text" name=""  type="text" value="6" >
+                      <span>
+                        <label class="visually-hidden" for="" >Opened</label>
+                        <input class="form-control" id="appoint1"  type="text" name=""  type="text" value="6" >
                      
-                                <span class="info">1 Booked</span>
-                         
+                            <span>1 Booked</span>
+                      </span>
                      
                     </td>
                   <td>
-               
-                      <label class="visually-hidden" for="">Opened</label>
-                    <input class="form-control" id="complex1" type="text" name=""  value="1">
-                  
-                      <span class="info">1 Booked</span>
+                    <span>
+                      <label class="visually-hidden" for="" >Opened</label>
+                      <input class="form-control" id="appoint1"  type="text" name=""  type="text" value="6" >
+                   
+                          <span>1 Booked</span>
+                    </span>
                    
                   </td>
                   <td>
                       
-                        <label class="visually-hidden" for="">Opened</label>
-                    <input class="form-control" id="neuro1" type="text" name=""  value="4" >
-                 
-                        <span class="info">1 Booked</span>
-                
+                    <span>
+                      <label class="visually-hidden" for="" >Opened</label>
+                      <input class="form-control" id="appoint1"  type="text" name=""  type="text" value="6" >
+                   
+                          <span>1 Booked</span>
+                    </span>
                    
                   </td>
                   <td>
                    
-                    <label class="visually-hidden" for="">Opened</label>
-                    <input class="form-control" id="none1" type="text" name=""  value="1"  >
-              
-                        <span class="info">1 Booked</span>
-              
+                             
+                    <span>
+                      <label class="visually-hidden" for="" >Opened</label>
+                      <input class="form-control" id="appoint1"  type="text" name=""  type="text" value="6" >
+                   
+                          <span>1 Booked</span>
+                    </span>
+                   
                 
                   </td>
   
@@ -152,701 +159,7 @@
                 </tr>
 
           
-             
-                <tr>
-                    <th class="col">9:15am</th>
-                    <td class="col1"> <label class="visually-hidden" for="" >Opened</label>
-                      <input class="form-control" id="appoint2"  type="text" name="capinput"  type="text" value="3" >
-                      <p><span>2</span> Booked</p>
-                    
-                    
-                    </td> 
-                    <td><label class="visually-hidden" for="">Opened</label>
-                      <input class="form-control" id="complex2" type="text" name=""  value="1">
-                      <label class="visually-hidden" for="">Booked</label>
-                      <input class="form-control" id="complex2" type="text" name=""  value="1" disabled="disabled">
-                    </td>
-                    <td><label class="visually-hidden" for="">Opened</label>
-                      <input class="form-control" id="neuro2" type="text" name=""  value="2" >
-                      <label class="visually-hidden" for="">Booked</label>
-                      <input class="form-control" id="neuro2" type="text" name=""  value="1" disabled="disabled">
-                    </td>
-                    <td><label class="visually-hidden" for="">Opened</label>
-                      <input class="form-control" id="none2" type="text" name=""  value=""  >
-                      <label class="visually-hidden" for="">Booked</label>
-                      <input class="form-control" id="none2" type="text" name=""  value="" disabled="disabled">
-                    </td>
-     
-       
-          
-                  </tr>
-
-                  <tr>
-                      <th class="col">9:30am</th>
-                      <td> <label class="visually-hidden" for="" >Opened</label>
-                        <input class="form-control" id="appoint1"  type="text" name=""  type="text" value="1" >
-                        <label class="visually-hidden" for="" >Booked</label>
-                        <input class="form-control" id="appoint1"  type="text" name=""  type="text" value="1"  disabled="disabled">
-                      
-                      
-                      </td> 
-                      <td><label class="visually-hidden" for="">Opened</label>
-                        <input class="form-control" id="complex3" type="text" name=""  value="">
-                        <label class="visually-hidden" for="">Booked</label>
-                        <input class="form-control" id="complex3" type="text" name=""  value="" disabled="disabled">
-                      </td>
-                      <td><label class="visually-hidden" for="">Opened</label>
-                        <input class="form-control" id="neuro3" type="text" name=""  value="1" >
-                        <label class="visually-hidden" for="">Booked</label>
-                        <input class="form-control" id="neuro3" type="text" name=""  value="1" disabled="disabled">
-                      </td>
-                      <td><label class="visually-hidden" for="">Opened</label>
-                        <input class="form-control" id="none23" type="text" name=""  value=""  >
-                        <label class="visually-hidden" for="">Booked</label>
-                        <input class="form-control" id="none3" type="text" name=""  value="" disabled="disabled">
-                      </td>
-       
-         
-          
-                    </tr>
-
-             
-                    
-                    {% if checked('times','945')  %}
-                  <tr>
-                      <th class="col">9:45am</th>
-                      <td> <label class="visually-hidden" for="" ></label>
-                        <input class="form-control" id="appoint4"  type="text" name=""  type="text" value="" ></td> 
-                      <td><label class="visually-hidden" for=""></label>
-                        <input class="form-control" id="complex4" type="text" name=""  value=""></td>
-                      <td><label class="visually-hidden" for=""></label>
-                        <input class="form-control" id="neuro4" type="text" name=""  value=""></td>
-                      <td><label class="visually-hidden" for=""></label>
-                        <input class="form-control" id="none4" type="text" name=""  value=""></td>
-       
-              {% if checked('benefits','ben2') %}
-                        <td>
-                          <label class="visually-hidden" for=""></label>
-                <input class="form-control" id="IIDB4" type="text" name=""  value="">
-              </td>
-              {% endif %}
-                    </tr>
-
-                    {% endif %}
-                    
-                
-                    <tr>
-                        <th class="col">10:00am</th>
-                        <td> <label class="visually-hidden" for="" >Opened</label>
-                          <input class="form-control" id="appoint5"  type="text" name=""  type="text" value="6" >
-                          <label class="visually-hidden" for="" >Booked</label>
-                          <input class="form-control" id="appoint5"  type="text" name=""  type="text" value="4"  disabled="disabled">
-                        
-                        
-                        </td> 
-                        <td><label class="visually-hidden" for="">Opened</label>
-                          <input class="form-control" id="complex25" type="text" name=""  value="1">
-                          <label class="visually-hidden" for="">Booked</label>
-                          <input class="form-control" id="complex5" type="text" name=""  value="0" disabled="disabled">
-                        </td>
-                        <td><label class="visually-hidden" for="">Opened</label>
-                          <input class="form-control" id="neuro5" type="text" name=""  value="4" >
-                          <label class="visually-hidden" for="">Booked</label>
-                          <input class="form-control" id="neuro5" type="text" name=""  value="3" disabled="disabled">
-                        </td>
-                        <td><label class="visually-hidden" for="">Opened</label>
-                          <input class="form-control" id="none25" type="text" name=""  value="1"  >
-                          <label class="visually-hidden" for="">Booked</label>
-                          <input class="form-control" id="none5" type="text" name=""  value="1" disabled="disabled">
-                        </td>
-         
-           
-            
-                      </tr>
-                    
-
-                      {% if checked('times','1015')  %}
-                      <tr>
-                          <th class="col">10:15am</th>
-                          <td> <label class="visually-hidden" for="" ></label>
-                            <input class="form-control" id="appoint6"  type="text" name=""  type="text" value="" ></td> 
-                          <td><label class="visually-hidden" for=""></label>
-                            <input class="form-control" id="complex6" type="text" name=""  value=""></td>
-                          <td><label class="visually-hidden" for=""></label>
-                            <input class="form-control" id="neuro6" type="text" name=""  value=""></td>
-                          <td><label class="visually-hidden" for=""></label>
-                            <input class="form-control" id="none6" type="text" name=""  value=""></td>
-           
-                  {% if checked('benefits','ben2') %}
-                            <td>
-                              <label class="visually-hidden" for=""></label>
-                    <input class="form-control" id="IIDB6" type="text" name=""  value="">
-                  </td>
-                  {% endif %}
-                        </tr>
-                        {% endif %}
-                    
-
-                      <tr>
-                          <th class="col">10:30am</th>
-                          <td> <label class="visually-hidden" for="" >Opened</label>
-                            <input class="form-control" id="appoint7"  type="text" name=""  type="text" value="3" >
-                            <label class="visually-hidden" for="" >Booked</label>
-                            <input class="form-control" id="appoint7"  type="text" name=""  type="text" value="2"  disabled="disabled">
-                          
-                          
-                          </td> 
-                          <td><label class="visually-hidden" for="">Opened</label>
-                            <input class="form-control" id="complex7" type="text" name=""  value="">
-                            <label class="visually-hidden" for="">Booked</label>
-                            <input class="form-control" id="complex7" type="text" name=""  value="" disabled="disabled">
-                          </td>
-                          <td><label class="visually-hidden" for="">Opened</label>
-                            <input class="form-control" id="neuro7" type="text" name=""  value="3" >
-                            <label class="visually-hidden" for="">Booked</label>
-                            <input class="form-control" id="neuro7" type="text" name=""  value="2" disabled="disabled">
-                          </td>
-                          <td><label class="visually-hidden" for="">Opened</label>
-                            <input class="form-control" id="none7" type="text" name=""  value=""  >
-                            <label class="visually-hidden" for="">Booked</label>
-                            <input class="form-control" id="none7" type="text" name=""  value="" disabled="disabled">
-                          </td>
-           
-              
-               
-                        </tr>
-
-                        
-                        {% if checked('times','1045')  %}
-
-                      <tr>
-                          <th class="col">10:45am</th>
-                          <td> <label class="visually-hidden" for="" ></label>
-                            <input class="form-control" id="appoint8"  type="text" name=""  type="text" value="" ></td> 
-                          <td><label class="visually-hidden" for=""></label>
-                            <input class="form-control" id="complex8" type="text" name=""  value=""></td>
-                          <td><label class="visually-hidden" for=""></label>
-                            <input class="form-control" id="neuro8" type="text" name=""  value=""></td>
-                          <td><label class="visually-hidden" for=""></label>
-                            <input class="form-control" id="none8" type="text" name=""  value=""></td>
-           
-                  {% if checked('benefits','ben2') %}
-                            <td>
-                              <label class="visually-hidden" for=""></label>
-                    <input class="form-control" id="IIDB8" type="text" name=""  value="">
-                  </td>
-                  {% endif %}
-                        </tr>
-
-                        {% endif %}
-                        
-                      
-
-                        <tr>
-                            <th class="col">11:00am</th>
-                            <td> <label class="visually-hidden" for="" >Opened</label>
-                              <input class="form-control" id="appoint9"  type="text" name=""  type="text" value="6" >
-                              <label class="visually-hidden" for="" >Booked</label>
-                              <input class="form-control" id="appoint9"  type="text" name=""  type="text" value="4"  disabled="disabled">
-                            
-                            
-                            </td> 
-                            <td><label class="visually-hidden" for="">Opened</label>
-                              <input class="form-control" id="complex9" type="text" name=""  value="1">
-                              <label class="visually-hidden" for="">Booked</label>
-                              <input class="form-control" id="complex1" type="text" name=""  value="1" disabled="disabled">
-                            </td>
-                            <td><label class="visually-hidden" for="">Opened</label>
-                              <input class="form-control" id="neuro9" type="text" name=""  value="5" >
-                              <label class="visually-hidden" for="">Booked</label>
-                              <input class="form-control" id="neuro1" type="text" name=""  value="3" disabled="disabled">
-                            </td>
-                            <td><label class="visually-hidden" for="">Opened</label>
-                              <input class="form-control" id="none9" type="text" name=""  value=""  >
-                              <label class="visually-hidden" for="">Booked</label>
-                              <input class="form-control" id="none1" type="text" name=""  value="" disabled="disabled">
-                            </td>
-             
       
-               
-                          </tr>
-
-                         
-                          {% if checked('times','1115')  %}
-
-                          <tr>
-                              <th class="col">11:15am</th>
-                              <td> <label class="visually-hidden" for="" ></label>
-                                <input class="form-control" id="appoint10"  type="text" name=""  type="text" value="" ></td> 
-                              <td><label class="visually-hidden" for=""></label>
-                                <input class="form-control" id="complex10" type="text" name=""  value=""></td>
-                              <td><label class="visually-hidden" for=""></label>
-                                <input class="form-control" id="neuro10" type="text" name=""  value=""></td>
-                              <td><label class="visually-hidden" for=""></label>
-                                <input class="form-control" id="none10" type="text" name=""  value=""></td>
-               
-                      {% if checked('benefits','ben2') %}
-                                <td>
-                                  <label class="visually-hidden" for=""></label>
-                        <input class="form-control" id="IIDB10" type="text" name=""  value="">
-                      </td>
-                      {% endif %}
-                            </tr>
-
-                            {% endif %}
-                            
-                          
-
-                          <tr>
-                              <th class="col">11:30am</th>
-                              <td> <label class="visually-hidden" for="" >Opened</label>
-                                <input class="form-control" id="appoint11"  type="text" name=""  type="text" value="3" >
-                                <label class="visually-hidden" for="" >Booked</label>
-                                <input class="form-control" id="appoint1"  type="text" name=""  type="text" value="2"  disabled="disabled">
-                              
-                              
-                              </td> 
-                              <td><label class="visually-hidden" for="">Opened</label>
-                                <input class="form-control" id="complex11" type="text" name=""  value="">
-                                <label class="visually-hidden" for="">Booked</label>
-                                <input class="form-control" id="complex11" type="text" name=""  value="" disabled="disabled">
-                              </td>
-                              <td><label class="visually-hidden" for="">Opened</label>
-                                <input class="form-control" id="neuro11" type="text" name=""  value="3" >
-                                <label class="visually-hidden" for="">Booked</label>
-                                <input class="form-control" id="neuro1" type="text" name=""  value="2" disabled="disabled">
-                              </td>
-                              <td><label class="visually-hidden" for="">Opened</label>
-                                <input class="form-control" id="none11" type="text" name=""  value=""  >
-                                <label class="visually-hidden" for="">Booked</label>
-                                <input class="form-control" id="none1" type="text" name=""  value="" disabled="disabled">
-                              </td>
-            
-                            </tr>
-
-                       
-                            
-                    
-
-                          <tr>
-                              <th class="col">12:00pm</th>
-                              <td> <label class="visually-hidden" for="" >Opened</label>
-                                <input class="form-control" id="appoint12"  type="text" name=""  type="text" value="6" >
-                                <label class="visually-hidden" for="" >Booked</label>
-                                <input class="form-control" id="appoint1"  type="text" name=""  type="text" value="2"  disabled="disabled">
-                              
-                              
-                              </td> 
-                              <td><label class="visually-hidden" for="">Opened</label>
-                                <input class="form-control" id="complex12" type="text" name=""  value="1">
-                                <label class="visually-hidden" for="">Booked</label>
-                                <input class="form-control" id="complex1" type="text" name=""  value="0" disabled="disabled">
-                              </td>
-                              <td><label class="visually-hidden" for="">Opened</label>
-                                <input class="form-control" id="neuro12" type="text" name=""  value="5" >
-                                <label class="visually-hidden" for="">Booked</label>
-                                <input class="form-control" id="neuro1" type="text" name=""  value="2" disabled="disabled">
-                              </td>
-                              <td><label class="visually-hidden" for="">Opened</label>
-                                <input class="form-control" id="none12" type="text" name=""  value=""  >
-                                <label class="visually-hidden" for="">Booked</label>
-                                <input class="form-control" id="none1" type="text" name=""  value="" disabled="disabled">
-                              </td>
-               
-          
-                    
-                            </tr>
-
-                        
-                            
-                            
-                            {% if checked('times','1')  %}
-
-                <tr>
-                    <th class="col">1:00pm</th>
-                    <td> <label class="visually-hidden" for="" ></label>
-                      <input class="form-control" id="appoint13"  type="text" name=""  type="text" value="" ></td> 
-                    <td><label class="visually-hidden" for=""></label>
-                      <input class="form-control" id="complex13" type="text" name=""  value=""></td>
-                    <td><label class="visually-hidden" for=""></label>
-                      <input class="form-control" id="neuro13" type="text" name=""  value=""></td>
-                    <td><label class="visually-hidden" for=""></label>
-                      <input class="form-control" id="none13" type="text" name=""  value=""></td>
-     
-            {% if checked('benefits','ben2') %}
-                      <td>
-                        <label class="visually-hidden" for=""></label>
-              <input class="form-control" id="IIDB13" type="text" name=""  value="">
-            </td>
-            {% endif %}
-                  </tr>
-                  {% endif %}
-                  {% if checked('times','115')  %}
-                  <tr>
-                      <th class="col">1:15pm</th>
-                      <td> <label class="visually-hidden" for="" ></label>
-                        <input class="form-control" id="appoint14"  type="text" name=""  type="text" value="" ></td> 
-                      <td><label class="visually-hidden" for=""></label>
-                        <input class="form-control" id="complex14" type="text" name=""  value=""></td>
-                      <td><label class="visually-hidden" for=""></label>
-                        <input class="form-control" id="neuro14" type="text" name=""  value=""></td>
-                      <td><label class="visually-hidden" for=""></label>
-                        <input class="form-control" id="none14" type="text" name=""  value=""></td>
-       
-              {% if checked('benefits','ben2') %}
-                        <td>
-                          <label class="visually-hidden" for=""></label>
-                <input class="form-control" id="IIDB14" type="text" name=""  value="">
-              </td>
-              {% endif %}
-                    </tr>
-                    {% endif %}
-                    {% if checked('times','130')  %}
-                    <tr>
-                        <th class="col">1:30pm</th>
-                        <td> <label class="visually-hidden" for="" ></label>
-                          <input class="form-control" id="appoint15"  type="text" name=""  type="text" value="" ></td> 
-                        <td><label class="visually-hidden" for=""></label>
-                          <input class="form-control" id="complex15" type="text" name=""  value=""></td>
-                        <td><label class="visually-hidden" for=""></label>
-                          <input class="form-control" id="neuro15" type="text" name=""  value=""></td>
-                        <td><label class="visually-hidden" for=""></label>
-                          <input class="form-control" id="none15" type="text" name=""  value=""></td>
-         
-                {% if checked('benefits','ben2') %}
-                          <td>
-                            <label class="visually-hidden" for=""></label>
-                  <input class="form-control" id="IIDB15" type="text" name=""  value="">
-                </td>
-                {% endif %}
-                      </tr>
-                      {% endif %}
-                      {% if checked('times','145')  %}
-                    <tr>
-                        <th class="col">1:45pm</th>
-                        <td> <label class="visually-hidden" for="" ></label>
-                          <input class="form-control" id="appoint16"  type="text" name=""  type="text" value="" ></td> 
-                        <td><label class="visually-hidden" for=""></label>
-                          <input class="form-control" id="complex16" type="text" name=""  value=""></td>
-                        <td><label class="visually-hidden" for=""></label>
-                          <input class="form-control" id="neuro16" type="text" name=""  value=""></td>
-                        <td><label class="visually-hidden" for=""></label>
-                          <input class="form-control" id="none16" type="text" name=""  value=""></td>
-         
-                {% if checked('benefits','ben2') %}
-                          <td>
-                            <label class="visually-hidden" for=""></label>
-                  <input class="form-control" id="IIDB16" type="text" name=""  value="">
-                </td>
-                {% endif %}
-                      </tr>
-                      {% endif %}
-                      {% if checked('times','2')  %}
-
-                      <tr>
-                          <th class="col">2:00pm</th>
-                          <td> <label class="visually-hidden" for="" ></label>
-                            <input class="form-control" id="appoint17"  type="text" name=""  type="text" value="" ></td> 
-                          <td><label class="visually-hidden" for=""></label>
-                            <input class="form-control" id="complex17" type="text" name=""  value=""></td>
-                          <td><label class="visually-hidden" for=""></label>
-                            <input class="form-control" id="neuro17" type="text" name=""  value=""></td>
-                          <td><label class="visually-hidden" for=""></label>
-                            <input class="form-control" id="none17" type="text" name=""  value=""></td>
-           
-                  {% if checked('benefits','ben2') %}
-                            <td>
-                              <label class="visually-hidden" for=""></label>
-                    <input class="form-control" id="IIDB17" type="text" name=""  value="">
-                  </td>
-                  {% endif %}
-                        </tr>
-                        {% endif %}
-
-                        {% if checked('times','215')  %}
-
-                        <tr>
-                            <th class="col">2:15pm</th>
-                            <td> <label class="visually-hidden" for="" ></label>
-                              <input class="form-control" id="appoint18"  type="text" name=""  type="text" value="" ></td> 
-                            <td><label class="visually-hidden" for=""></label>
-                              <input class="form-control" id="complex18" type="text" name=""  value=""></td>
-                            <td><label class="visually-hidden" for=""></label>
-                              <input class="form-control" id="neuro18" type="text" name=""  value=""></td>
-                            <td><label class="visually-hidden" for=""></label>
-                              <input class="form-control" id="none18" type="text" name=""  value=""></td>
-             
-                    {% if checked('benefits','ben2') %}
-                              <td>
-                                <label class="visually-hidden" for=""></label>
-                      <input class="form-control" id="IIDB18" type="text" name=""  value="">
-                    </td>
-                    {% endif %}
-                          </tr>
-                          {% endif %}
-                        {% if checked('times','230')  %}
-  
-                        <tr>
-                            <th class="col">2:30pm</th>
-                            <td> <label class="visually-hidden" for="" ></label>
-                              <input class="form-control" id="appoint19"  type="text" name=""  type="text" value="" ></td> 
-                            <td><label class="visually-hidden" for=""></label>
-                              <input class="form-control" id="complex19" type="text" name=""  value=""></td>
-                            <td><label class="visually-hidden" for=""></label>
-                              <input class="form-control" id="neuro19" type="text" name=""  value=""></td>
-                            <td><label class="visually-hidden" for=""></label>
-                              <input class="form-control" id="none19" type="text" name=""  value=""></td>
-             
-                    {% if checked('benefits','ben2') %}
-                              <td>
-                                <label class="visually-hidden" for=""></label>
-                      <input class="form-control" id="IIDB19" type="text" name=""  value="">
-                    </td>
-                    {% endif %}
-                          </tr>
-                          {% endif %}
-                          
-                          {% if checked('times','245')  %}
-  
-                        <tr>
-                            <th class="col">2:45pm</th>
-                            <td> <label class="visually-hidden" for="" ></label>
-                              <input class="form-control" id="appoint20"  type="text" name=""  type="text" value="" ></td> 
-                            <td><label class="visually-hidden" for=""></label>
-                              <input class="form-control" id="complex20" type="text" name=""  value=""></td>
-                            <td><label class="visually-hidden" for=""></label>
-                              <input class="form-control" id="neuro20" type="text" name=""  value=""></td>
-                            <td><label class="visually-hidden" for=""></label>
-                              <input class="form-control" id="none20" type="text" name=""  value=""></td>
-             
-                    {% if checked('benefits','ben2') %}
-                              <td>
-                                <label class="visually-hidden" for=""></label>
-                      <input class="form-control" id="IIDB20" type="text" name=""  value="">
-                    </td>
-                    {% endif %}
-                          </tr>
-                          {% endif %}
-                          
-                          {% if checked('times','3')  %}
-  
-                          <tr>
-                              <th class="col">3:00pm</th>
-                              <td> <label class="visually-hidden" for="" ></label>
-                                <input class="form-control" id="appoint21"  type="text" name=""  type="text" value="" ></td> 
-                              <td><label class="visually-hidden" for=""></label>
-                                <input class="form-control" id="complex21" type="text" name=""  value=""></td>
-                              <td><label class="visually-hidden" for=""></label>
-                                <input class="form-control" id="neuro21" type="text" name=""  value=""></td>
-                              <td><label class="visually-hidden" for=""></label>
-                                <input class="form-control" id="none21" type="text" name=""  value=""></td>
-               
-                      {% if checked('benefits','ben2') %}
-                                <td>
-                                  <label class="visually-hidden" for=""></label>
-                        <input class="form-control" id="IIDB21" type="text" name=""  value="">
-                      </td>
-                      {% endif %}
-                            </tr>
-
-                            {% endif %}
-                            {% if checked('times','315')  %}
-  
-                            <tr>
-                                <th class="col">3:15pm</th>
-                                <td> <label class="visually-hidden" for="" ></label>
-                                  <input class="form-control" id="appoint22"  type="text" name=""  type="text" value="" ></td> 
-                                <td><label class="visually-hidden" for=""></label>
-                                  <input class="form-control" id="complex22" type="text" name=""  value=""></td>
-                                <td><label class="visually-hidden" for=""></label>
-                                  <input class="form-control" id="neuro22" type="text" name=""  value=""></td>
-                                <td><label class="visually-hidden" for=""></label>
-                                  <input class="form-control" id="none22" type="text" name=""  value=""></td>
-                 
-                        {% if checked('benefits','ben2') %}
-                                  <td>
-                                    <label class="visually-hidden" for=""></label>
-                          <input class="form-control" id="IIDB22" type="text" name=""  value="">
-                        </td>
-                        {% endif %}
-                              </tr>
-  
-
-                              {% endif %}
-                              {% if checked('times','330')  %}
-
-
-                            <tr>
-                                <th class="col">3:30pm</th>
-                                <td> <label class="visually-hidden" for="" ></label>
-                                  <input class="form-control" id="appoint23"  type="text" name=""  type="text" value="" ></td> 
-                                <td><label class="visually-hidden" for=""></label>
-                                  <input class="form-control" id="complex23" type="text" name=""  value=""></td>
-                                <td><label class="visually-hidden" for=""></label>
-                                  <input class="form-control" id="neuro23" type="text" name=""  value=""></td>
-                                <td><label class="visually-hidden" for=""></label>
-                                  <input class="form-control" id="none23" type="text" name=""  value=""></td>
-                 
-                        {% if checked('benefits','ben2') %}
-                                  <td>
-                                    <label class="visually-hidden" for=""></label>
-                          <input class="form-control" id="IIDB23" type="text" name=""  value="">
-                        </td>
-                        {% endif %}
-                              </tr>
-  
-
-                              {% endif %}
-                              {% if checked('times','345')  %}
-
-
-                            <tr>
-                                <th class="col">3:45pm</th>
-                                <td> <label class="visually-hidden" for="" ></label>
-                                  <input class="form-control" id="appoint24"  type="text" name=""  type="text" value="" ></td> 
-                                <td><label class="visually-hidden" for=""></label>
-                                  <input class="form-control" id="complex24" type="text" name=""  value=""></td>
-                                <td><label class="visually-hidden" for=""></label>
-                                  <input class="form-control" id="neuro24" type="text" name=""  value=""></td>
-                                <td><label class="visually-hidden" for=""></label>
-                                  <input class="form-control" id="none24" type="text" name=""  value=""></td>
-                 
-                        {% if checked('benefits','ben2') %}
-                                  <td>
-                                    <label class="visually-hidden" for=""></label>
-                          <input class="form-control" id="IIDB24" type="text" name=""  value="">
-                        </td>
-                        {% endif %}
-                              </tr>
-  
-
-                              {% endif %}
-                              
-                              {% if checked('times','4')  %}
-
-
-                            <tr>
-                                <th class="col">4:00pm</th>
-                                <td> <label class="visually-hidden" for="" ></label>
-                                  <input class="form-control" id="appoint25"  type="text" name=""  type="text" value="" ></td> 
-                                <td><label class="visually-hidden" for=""></label>
-                                  <input class="form-control" id="complex25" type="text" name=""  value=""></td>
-                                <td><label class="visually-hidden" for=""></label>
-                                  <input class="form-control" id="neuro25" type="text" name=""  value=""></td>
-                                <td><label class="visually-hidden" for=""></label>
-                                  <input class="form-control" id="none25" type="text" name=""  value=""></td>
-                 
-                        {% if checked('benefits','ben2') %}
-                                  <td>
-                                    <label class="visually-hidden" for=""></label>
-                          <input class="form-control" id="IIDB25" type="text" name=""  value="">
-                        </td>
-                        {% endif %}
-                              </tr>
-  
-
-                              {% endif %}
-                              {% if checked('times','415')  %}
-
-
-                            <tr>
-                                <th class="col">4:15pm</th>
-                                <td> <label class="visually-hidden" for="" ></label>
-                                  <input class="form-control" id="appoint26"  type="text" name=""  type="text" value="" ></td> 
-                                <td><label class="visually-hidden" for=""></label>
-                                  <input class="form-control" id="complex26" type="text" name=""  value=""></td>
-                                <td><label class="visually-hidden" for=""></label>
-                                  <input class="form-control" id="neuro26" type="text" name=""  value=""></td>
-                                <td><label class="visually-hidden" for=""></label>
-                                  <input class="form-control" id="none26" type="text" name=""  value=""></td>
-                 
-                        {% if checked('benefits','ben2') %}
-                                  <td>
-                                    <label class="visually-hidden" for=""></label>
-                          <input class="form-control" id="IIDB26" type="text" name=""  value="">
-                        </td>
-                        {% endif %}
-                              </tr>
-  
-
-                              {% endif %}
-                              {% if checked('times','430')  %}
-
-
-                            <tr>
-                                <th class="col">4:30pm</th>
-                                <td> <label class="visually-hidden" for="" ></label>
-                                  <input class="form-control" id="appoint27"  type="text" name=""  type="text" value="" ></td> 
-                                <td><label class="visually-hidden" for=""></label>
-                                  <input class="form-control" id="complex27" type="text" name=""  value=""></td>
-                                <td><label class="visually-hidden" for=""></label>
-                                  <input class="form-control" id="neuro27" type="text" name=""  value=""></td>
-                                <td><label class="visually-hidden" for=""></label>
-                                  <input class="form-control" id="none27" type="text" name=""  value=""></td>
-                 
-                        {% if checked('benefits','ben2') %}
-                                  <td>
-                                    <label class="visually-hidden" for=""></label>
-                          <input class="form-control" id="IIDB27" type="text" name=""  value="">
-                        </td>
-                        {% endif %}
-                              </tr>
-  
-
-                              {% endif %}
-                              {% if checked('times','445')  %}
-
-
-                            <tr>
-                                <th class="col">4:45pm</th>
-                                <td> <label class="visually-hidden" for="" ></label>
-                                  <input class="form-control" id="appoint28"  type="text" name=""  type="text" value="" ></td> 
-                                <td><label class="visually-hidden" for=""></label>
-                                  <input class="form-control" id="complex28" type="text" name=""  value=""></td>
-                                <td><label class="visually-hidden" for=""></label>
-                                  <input class="form-control" id="neuro28" type="text" name=""  value=""></td>
-                                <td><label class="visually-hidden" for=""></label>
-                                  <input class="form-control" id="none28" type="text" name=""  value=""></td>
-                 
-                        {% if checked('benefits','ben2') %}
-                                  <td>
-                                    <label class="visually-hidden" for=""></label>
-                          <input class="form-control" id="IIDB28" type="text" name=""  value="">
-                        </td>
-                        {% endif %}
-                              </tr>
-  
-
-                              {% endif %}
-                              
-                              
-                              <tr class="total">
-                              	<th class="col">Total</th>
-                              	<td>
-                                  <label class="visually-hidden" for="" ></label>
-                                  <input type="number" name="sum" id="sum" class="form-control" value="34" readonly />
-                                  <label class="visually-hidden" for="" ></label>
-                                  <input type="number" name="sum" id="sum" class="form-control" value="23" disabled="disabled" />
-                                </td>
-                              	<td><label class="visually-hidden" for="" ></label>
-                                  <input type="number" name="complexsum" id="complexsum" class="form-control" value="5" readonly />
-                                  <label class="visually-hidden" for="" ></label>
-                                  <input type="number" name="sum" id="sum" class="form-control" value="3" disabled="disabled" />
-                                </td>
-                              	<td><label class="visually-hidden" for="" ></label>
-                                  <input class="form-control" id="neurosum"  type="text" name="neurosum"  type="text" value="27" >
-                                  <label class="visually-hidden" for="" ></label>
-                                  <input type="number" name="sum" id="sum" class="form-control" value="18" disabled="disabled" />
-                                </td>
-                                  <td><label class="visually-hidden" for="" ></label>
-                                  <input class="form-control" id="nonesum"  type="text" name="nonesum"  type="text" value="2" >
-                                  <label class="visually-hidden" for="" ></label>
-                                  <input type="number" name="sum" id="sum" class="form-control" value="2" disabled="disabled" />
-                                </td>
-                                
-                         
-                               
-                                </tr>
 
 
                
