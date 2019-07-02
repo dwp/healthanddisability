@@ -58,7 +58,7 @@
 {{ 'Referred for appointment - welfare call required' if data['appointments']=='no' and customer.status == 'Assessment stopped' }}
 
 
-{{ 'Did not attend' if customer.status == 'Did not attend' or customer.status == 'Did not attend' and data['dna']=="Yes"  
+{{ 'Did not attend' if customer.status == 'Did not attend' and data['dna']!=="No" or customer.status == 'Did not attend' and data['dna']=="Yes"  
  }}
 
 {{ 'Booked' if customer.status == 'Booked' and customer.name.first !== 'Dillon' }}
