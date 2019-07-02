@@ -30,13 +30,13 @@
                         <label class="visually-hidden" for="" ></label>
                         <input class="form-control" id="noneWedsum"  type="text" name="noneWedsum"  type="text" value="{{noneWedsum}}" >
              </div>
-
+             {% if checked('benefitsWed','ben2') %}
              <div class="total-container">
                 <h2 class="heading-small">IIDB</h2>
                 <label class="visually-hidden" for="" ></label>
                 <input class="form-control" id="IIDBWedsum"  type="text" name="IIDBWedsum"  type="text" value="{{IIDBWedsum}}" >
      </div>
-
+   {% endif %}
 
 
 		

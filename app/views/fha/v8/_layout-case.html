@@ -156,7 +156,7 @@ or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes'
     </form>
 
     {% elif customer.status == 'Did not attend' %}
-    <p class="mt10"><a href="/{{path}}/booking/{{customer._id}}/evidence/rec" class="button">Confirm</a></p>
+    <p class="mt10"><a href="/{{path}}/booking/{{customer._id}}/evidence/rec" class="button">Confirm DNA or refer to appointment</a></p>
       {% else %}
       <p class="mt10"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/rec" class="button">Make a recommendation</a></p>
       {% endif%}

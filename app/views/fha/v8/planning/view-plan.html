@@ -13,7 +13,12 @@
    
    <p>Week commencing: <b>Monday 24 April</b></p>
 
-  
+  <style>
+    .card span.panel{
+      display:inline-block;
+      font-size:16px;
+    }
+  </style>
  
    <div class="grid-row">
     <div class="card-container">
@@ -24,19 +29,18 @@
               <h2>
                 View and edit
                 <span class="heading-small" >Mondays appointments</span>
-                {% if data['times'] %}<span class="badge">Updated</span>{% endif %}
                </h2>
                </a>
                <div class="inner">
                <table>
                   <thead>
                     <tr>
-                      <th scope="col"></th>
+                      <th scope="col"><span class="panel panel-info"><span class="block" style="font-weight:normal">Based on </span>6 FTE's</span></th>
                       <th class="numeric" scope="col"> <span class="heading-xlarge">
-                          {% if data['times'] %}
+                          {% if data['timesEdit'] %}
                           {{ sum }}
                           {% else %}
-                          34
+                          48
                          {% endif %} 
                           <span class="block"><span class="visually-hidden">appointents</span>Opened</span>
                       </span></th>
@@ -52,18 +56,18 @@
                   <tbody>
                     <tr>
                       <th scope="row">Complex neuro</th>
-                      <td class="numeric">{% if data['complexsum'] %}{{ complexsum }}  {% else %} 5 {% endif%}</td>
+                      <td class="numeric">{% if data['complexsumedit'] %}{{ complexsumedit }}  {% else %} 6 {% endif%}</td>
                       <td class="numeric">3</td>
                     </tr>
                     <tr>
                       <th scope="row">Neuro</th>
-                      <td class="numeric">{% if data['neurosum'] %}{{ neurosum }}  {% else %}27 {% endif%}</td>
+                      <td class="numeric">{% if data['neurosumedit'] %}{{ neurosumedit }}  {% else %}42 {% endif%}</td>
                       <td class="numeric">18</td>
                     </tr>
                     <tr>
                       <th scope="row">Non neuro</th>
-                      <td class="numeric">{% if data['nonesum'] %}{{ nonesum }}  {% else %}2 {% endif%}</td>
-                      <td class="numeric">2</td>
+                      <td class="numeric">{% if data['nonesumedit'] %}{{ nonesumedit }}  {% else %}0 {% endif%}</td>
+                      <td class="numeric">0</td>
                     </tr>
                   </tbody>
                 </table>

@@ -101,7 +101,7 @@
             {% if customer.status == 'Ready to book' %}
           <p class="mt20"> <a href="" class="">Add or edit preferences</a></p>
           {% else %}
-          <p class="mt20"> <a href="/fha/v6/assessment/{{customer._id}}/appointment-preferences" class="">Add or edit preferences</a></p>
+          <p class="mt20"> <a href="/{{path1}}/assessment/{{customer._id}}/appointment-preferences" class="">Add or edit preferences</a></p>
           {% endif %}
           </div>
           </div>
@@ -158,7 +158,7 @@
                 View appointment history
               </a>
                  {% else %}
-                 <a href="/fha/v7/booking/{{customer._id}}/appointment-history">
+                 <a href="/{{path1}}/{{customer._id}}/appointment-history">
                   View appointment history
                 </a>
                  {% endif %}

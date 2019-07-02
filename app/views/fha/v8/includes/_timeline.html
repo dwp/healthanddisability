@@ -32,6 +32,8 @@
       <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0)}}</p>
     </div>
     {% endif %} 
+
+
   
   
     {% if customer.reason =='Overdue' %}
@@ -86,16 +88,22 @@
     </div>
     {% endif %}
 
-    {% if customer.status == 'Did not attend' and data['confirmfta']=='Arnaq'
-    or customer.status == 'Did not attend' and data['confirmfta']=='Sarah'
-    or customer.status == 'Did not attend' and data['confirmfta']=='Johannes'
+    {% if data['dna']=='Yes'
     %}
     <span class="line"></span>
     <div class="timeline__event">
-      <h3 class="timeline__heading">Did not attend appointment</h3>
+      <h3 class="timeline__heading">Did not attend appointment - referred for good cause decision</h3>
       <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0)}}</p>
     </div>
     {% endif%}
+
+    {% if data['dna']=='No'  %}s
+    <span class="line"></span>
+    <div class="timeline__event">
+      <h3 class="timeline__heading">Did not attend appointment - referred for appointment</span></h3>
+      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0)}}</p>
+    </div>
+    {% endif %} 
  
 
 

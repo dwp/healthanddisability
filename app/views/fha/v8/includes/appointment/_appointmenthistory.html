@@ -15,9 +15,9 @@
          <h3 class="heading-small">Contact reason</h3>
          <p class="small">Arnaq was having a bad day with his arthritis and was struggling to get out of the house, he asked for a rearrangement but we could not provide it because he had previously rearranged
              his appointment.
-           
+             <span class="date block mt10">Recorded date:{{ 'Do MMMM YYYY' | baseDate(3) }} - 11:25 am / Joan Baker / Tresco house assessment centre</span>
     </p>  
-    <p class="date mb0">Recorded date: {{ 'Do MMMM YYYY' | baseDate(1) }}</p>
+
          {% endif %} 
 
          {% if  customer.name.first =='Sarah' and data['dmreason'] %}
@@ -28,40 +28,40 @@
         
          {% endif %} 
          </div>
+         {% elif data['appointments']=='no' %}
+         {% else %}
+          <div class="latest_version">
+          <h2 class="heading-medium mt0">Current: 
+              {% if data['Reason']==="complex"%}
+              Complex neuro
+              {% elif data['Reason']==="neuro"%}
+              Neuro
+              {% else%}
+              Non neuro
+              {% endif %} appointment</h2>
+              <p>Appointment details</p>
+              <ul class="list-bullet">
+               <li>
+                 
+                  {% if data['scenario'] %}
+                
+                  {{ 'dddd Do MMMM YYYY' | baseDateAdd(14) }}
+                  {% else%}
+                     
+                  {{ 'dddd Do MMMM YYYY' | baseDate(0) }}
+                {% endif %}
+               </li> 
+               <li>11:00am</li>  
+               <li>Tresco House</li> 
+              </ul>
+          
+           
+        
+            </div>
        
          {% endif %}
 
-           {% if data['appointments']=='no' %}
-           {% else %}
-            <div class="latest_version">
-            <h2 class="heading-medium mt0">Current: 
-                {% if data['Reason']==="complex"%}
-                Complex neuro
-                {% elif data['Reason']==="neuro"%}
-                Neuro
-                {% else%}
-                Non neuro
-                {% endif %} appointment</h2>
-                <p>Appointment details</p>
-                <ul class="list-bullet">
-                 <li>
-                   
-                    {% if data['scenario'] %}
-                  
-                    {{ 'dddd Do MMMM YYYY' | baseDateAdd(14) }}
-                    {% else%}
-                       
-                    {{ 'dddd Do MMMM YYYY' | baseDate(0) }}
-                  {% endif %}
-                 </li> 
-                 <li>11:00am</li>  
-                 <li>Tresco House</li> 
-                </ul>
-            
-             
           
-              </div>
-              {% endif %}
      {% if data['scenario'] %}
       <hr />
       
