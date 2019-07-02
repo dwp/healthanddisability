@@ -1942,6 +1942,10 @@ table.profile-table td, table.profile-table th {
 
 }
 
+table.profile-table th {
+	border-top:0;
+}
+
 table.profile-table th span {
 	font-size: 16px;
 	color: #6f777b;
@@ -1955,7 +1959,19 @@ table.profile-table th.col {
   width: 12%;
   text-align: center;
   padding-left: 0;
+  border-top:1px solid #ddd;
 }
+
+table.profile-table .col2{
+	border-right:1px solid  #ddd;
+	padding-right:10px;
+}
+
+table.profile-table .col3{
+	padding-left:10px;
+}
+
+
 
 
 table.profile-table input{
