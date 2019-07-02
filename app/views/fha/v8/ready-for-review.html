@@ -1,11 +1,11 @@
 {% extends path+"/_layout-caselist.html" %}
 
 {% block horizontal_secondary_nav %}
-              
+
 {{ secondaryNav.nav("review", "ready-for-review", menuItems ) }}
 
 
-{% endblock %}  
+{% endblock %}
 
 {% block caselist_content %}
 
@@ -16,25 +16,25 @@
 <form class="" method="post" action="/{{path}}/ready-for-review">
 <h3 class="filter-status">Filter list by:</h3>
 <div class=" filter time-group time-top">
-       
+
         <fieldset>
-      
+
           <legend class="visually-hidden">Filter by:</legend>
 
           <div class="time-choice">
-                <input id="all" name="filter" type="checkbox" value="all"  {{ checked('filter', 'all') }}>
-                <label for="all">All <span>(18)</span></label>
+                <input id="all" name="filter" type="checkbox" value="referral" class="facet" {{ checked('filter', 'referral') }}>
+                <label for="all">New Referrals <span>(16)</span></label>
               </div>
           <div class="time-choice">
-              <input id="dna" name="filter" type="checkbox" value="dna"  {{ checked('filter', 'dna') }}>
+              <input id="dna" name="filter" type="checkbox" value="dna-referral" class="facet" {{ checked('filter', 'dna-referral') }}>
               <label for="dna">DNA re-referals <span>(2)</span></label>
             </div>
-            <p><button class="button button-secondary mt10">Apply filter</button></p>
-            
+            <p><button id="facetFilterBtn" class="button button-secondary mt10">Apply filter</button></p>
+
         </fieldset>
      </div>
 </form>
-{% if checked('filter', 'dna')%}
+{% if checked('filter', 'dna-referral') and not checked('filter', 'referral') %}
 <table class="zebra">
         <thead>
             <tr>
@@ -42,21 +42,15 @@
                 <th>10 day target</th>
             </tr>
         </thead>
-       
+
+        {% for customer in customers %}
         <tr>
-            <td><a href=""><span class="visually-hidden">Name</span>Davenport Petty
-               </a><span class="text-secondary block"><span class="visually-hidden">Nino</span>QQ 84 52 37 C</span>
-            </td>
-            <td>7 Days remaining</td>
+          <td><a href="scrutiny/{{customer._id}}/timeline"><span class="visually-hidden">Name</span>{{customer.name.fullName}} </a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span>
+          </td>
+          <td>{{customer.target}} Days remaining</td>
         </tr>
-         
-        <tr>
-                <td><a href=""><span class="visually-hidden">Name</span>Elvia Fuentes
-                   </a><span class="text-secondary block"><span class="visually-hidden">Nino</span>QQ 16 14 61 C</span>
-                </td>
-                <td>8 Days remaining</td>
-            </tr>
-    
+
+        {% endfor %}
 
     </table>
 {% else%}
@@ -73,7 +67,7 @@
     </tr>
 
     {% endfor %}
-  
+
 </table>
 {% endif %}
 {% endblock %}
