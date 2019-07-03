@@ -13,7 +13,17 @@
    
    <p>Week commencing: <b>Monday 22 July</b></p>
 
-   
+   <style>
+     .card-container .card .ucb span{
+       display:inline;
+     }
+
+     .card-container .card .ucb {
+       background:#f6f6f6;
+    
+     }
+
+   </style>
  
    <div class="grid-row">
     <div class="card-container">
@@ -50,11 +60,7 @@
                    </thead>
                    <tbody>
                       
-                      <tr>
-                         <th scope="row">UCB</th>
-                         <td class="numeric">{% if data['ucbsum']  %}{{ ucbsum }} {% else %} 0 {% endif %}</td>
-                     
-                       </tr>
+                
                      <tr>
                        <th scope="row">Complex neuro</th>
                        <td class="numeric">{% if data['complexsum']  %} {{ complexsum }} {% else %} 0 {% endif %}</td>
@@ -77,6 +83,12 @@
                      
                       </tr>
                      {% endif %}
+
+                     <tr>
+
+                        <td class="ucb" colspan='2'> <span class="bold">{% if data['ucbsum']  %}{{ ucbsum }} {% else %} 0 {% endif %}</span> appiontments can be <span class="bold">UCB</span></td>
+                    
+                      </tr>
                   
                    </tbody>
                  </table>
@@ -118,11 +130,7 @@
                      </thead>
                      <tbody>
                        
-                        <tr>
-                           <th scope="row">UCB</th>
-                           <td class="numeric">{% if data['ucbTuesum']  %}{{ ucbTuesum }} {% else %} 0 {% endif %}</td>
-                       
-                         </tr>
+      
                         
                        <tr>
                          <th scope="row">Complex neuro</th>
@@ -146,6 +154,12 @@
                        
                         </tr>
                        {% endif %}
+
+                       <tr>
+
+                          <td class="ucb" colspan='2'> <span class="bold">{% if data['ucbTuesum']  %}{{ ucbTuesum }} {% else %} 0 {% endif %}</span> appiontments can be <span class="bold">UCB</span></td>
+                      
+                        </tr>
                     
                      </tbody>
                    </table>
@@ -184,11 +198,6 @@
                      </thead>
                      <tbody>
          
-                        <tr>
-                           <th scope="row">UCB</th>
-                           <td class="numeric">{% if data['ucbWedsum']  %}{{ ucbWedsum }} {% else %} 0 {% endif %}</td>
-                       
-                         </tr>
                   
                        <tr>
                          <th scope="row">Complex neuro</th>
@@ -197,12 +206,12 @@
                        </tr>
                        <tr>
                          <th scope="row">Neuro</th>
-                         <td class="numeric">{% if data['complexWedsum'] %} {{ neuroWedsum }}  {% else %} 0 {% endif %} </td>
+                         <td class="numeric">{% if data[' neuroWedsum'] %} {{ neuroWedsum }}  {% else %} 0 {% endif %} </td>
                        
                        </tr>
                        <tr>
                          <th scope="row">Non neuro</th>
-                         <td class="numeric">{% if data['complexWedsum'] %} {{ noneWedsum }}  {% else %} 0 {% endif %}</td>
+                         <td class="numeric">{% if data['noneWedsum'] %} {{ noneWedsum }}  {% else %} 0 {% endif %}</td>
                       
                        </tr>
                        {% if data['IIDBWedsum']  %}
@@ -212,6 +221,12 @@
                        
                         </tr>
                        {% endif %}
+
+                       <tr>
+
+                          <td class="ucb" colspan='2'> <span class="bold">{% if data['ucbWedsum']  %}{{ ucbWedsum }} {% else %} 0 {% endif %}</span> appiontments can be <span class="bold">UCB</span></td>
+                      
+                        </tr>
                     
                      </tbody>
                    </table>
@@ -253,11 +268,7 @@
                        </thead>
                        <tbody>
                        
-                          <tr>
-                             <th scope="row">UCB</th>
-                             <td class="numeric">{% if data['ucbTuesum']  %}{{ ucbTuesum }} {% else %} 0 {% endif %}</td>
-                         
-                           </tr>
+                  
                           
                          <tr>
                            <th scope="row">Complex neuro</th>
@@ -281,6 +292,12 @@
                          
                           </tr>
                          {% endif %}
+
+                         <tr>
+
+                            <td class="ucb" colspan='2'> <span class="bold">{% if data['ucbTuesum']  %}{{ ucbTuesum }} {% else %} 0 {% endif %}</span> appiontments can be <span class="bold">UCB</span></td>
+                        
+                          </tr>
                       
                        </tbody>
                      </table>
@@ -321,12 +338,7 @@
                            </tr>
                          </thead>
                          <tbody>
-                      
-                            <tr>
-                               <th scope="row">UCB</th>
-                               <td class="numeric">{% if data['ucbsum']  %}{{ ucbsum }} {% else %} 0 {% endif %}</td>
-                           
-                             </tr>
+  
                            <tr>
                              <th scope="row">Complex neuro</th>
                              <td class="numeric">{% if data['complexsum']  %} {{ complexsum }} {% else %} 0 {% endif %}</td>
@@ -349,6 +361,12 @@
                            
                             </tr>
                            {% endif %}
+
+                           <tr>
+
+                              <td class="ucb" colspan='2'> <span class="bold">{% if data['ucbsum']  %}{{ ucbsum }} {% else %} 0 {% endif %}</span> appiontments can be <span class="bold">UCB</span></td>
+                          
+                            </tr>
                         
                          </tbody>
                        </table>
