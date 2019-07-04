@@ -2141,3 +2141,54 @@ margin:0px;
 }
 
 
+
+.feature-teams {
+	overflow: hidden;
+	.feature-card {
+		float: left;
+		width: 23%;
+		margin-left: 2%;
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+	a {
+		display: block;
+		padding: 5em 0;
+		text-align: center;
+		background: $grey-4;
+		text-decoration: none;
+		color: $grey-1;
+		font-size: 18px;
+		span {
+			display: block;
+			font-weight: bold;
+			font-size: 20px;
+			color: #000;
+		}
+		&:hover {
+			background: $grey-3;
+		}
+	}
+}
+
+
+
+.scenario {
+	background: $grey-4;
+	padding: 1.2em 1.4em;
+	margin-top: 1.4em;
+
+	h2 {
+		margin: 0;
+	}
+	&:first-child {
+		margin-top: 0;
+	}
+	p {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
