@@ -1,6 +1,10 @@
 module.exports = [
   {
     "_id": "5bbf32d5043f00fdd9b4a8b6",
+    'tags': [
+      'rec-decision'
+    ],
+    
     "name": {
       "first": "Arnaq",
       "last": "Kichirou",
@@ -309,6 +313,9 @@ module.exports = [
   },
   {
     "_id": "5bbf32d534a51a1072744d21",
+    'tags': [
+      'rec-reason'
+    ],
     "name": {
       "first": "Sarah",
       "last": "Hall",
@@ -739,6 +746,9 @@ module.exports = [
   },
   {
     "_id": "5bbf32d5043f00fdd9b4a8b8",
+    'tags': [
+      'rec-decision'
+    ],
     "name": {
       "first": "Elvia",
       "last": "Fuentes",
@@ -1003,6 +1013,9 @@ module.exports = [
   },
   {
     "_id": "5bbf32d5df0f467e96d9d278",
+    'tags': [
+      'rec-decision'
+    ],
     "name": {
       "first": "Dominguez",
       "last": "Flynn",
@@ -1150,6 +1163,9 @@ module.exports = [
   },
   {
     "_id": "5bbf32d585d9f42faf27ed13",
+    'tags': [
+      'rec-reason'
+    ],
     "name": {
       "first": "Christie",
       "last": "Wallace",
@@ -1297,6 +1313,9 @@ module.exports = [
 
   {
     "_id": "5bbf32d51c55768d3bafdea0",
+    'tags': [
+      'rec-decision'
+    ],
     "name": {
       "first": "Mitzi",
       "last": "Roberson",
@@ -1483,6 +1502,9 @@ module.exports = [
   },
   {
     "_id": "5bbf32d5872f9e9bda62db92",
+    'tags': [
+      'rec-decision'
+    ],
     "name": {
       "first": "Shelia",
       "last": "Patton",
@@ -1663,6 +1685,9 @@ module.exports = [
    
   {
     "_id": "5bbf32d5f4cc1e2233cf2292",
+    'tags': [
+      'rec-decision'
+    ],
     "name": {
       "first": "Kaye",
       "last": "Guy",

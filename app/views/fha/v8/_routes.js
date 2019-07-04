@@ -1368,6 +1368,27 @@ router.get('/failed-to-attend', function (req, res, next) {
   next()
 })
 
+router.post('/failed-to-attend', function (req, res, next) {
+  var body = req.body
+  req.session.data['filter'] = '';
+  res.locals.customers = dmCustomers
+    .filter(customer => customer.status === 'Failed to attend appointment')
+  if (body.filter) {
+    req.session.data['filter'] = body.filter;
+    let filters = Array.isArray(body.filter) ? body.filter : [ body.filter ];
+
+    res.locals.customers = res.locals.customers.filter(function (e) {
+      for (let i = 0; i < filters.length; i++) {
+        if (e.tags.includes(filters[i])) {
+          return true
+        }
+      }
+      return false
+    })
+  }
+  res.render(viewPath + '/failed-to-attend')
+})
+
 router.get('/fta-ready-for-decision', function (req, res, next) {
   res.locals.customers = dmCustomers
   .filter(customer => customer.substatus === 'Ready for decision')
