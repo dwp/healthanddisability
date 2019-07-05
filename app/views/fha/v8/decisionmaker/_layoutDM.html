@@ -22,18 +22,18 @@
             {% if data['whatcando']=='requestreason'%}
             <p class="mt10 mb0 bold-small">{{ 'Did not attend' if customer.status == 'Failed to attend appointment' }}</p> 
             <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/index" class="button">Record a decision</a></p>
-            {% elif customer.status == 'Failed to attend appointment' and customer.tags == "rec-reason" %}
-            <p class="mt10 mb0 bold-small">{{ 'Did not attend' if customer.status == 'Failed to attend appointment' }}</p> 
-            <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/request-fta-reason" class="button">Request a reason</a></p>
-            {% elif customer.status == 'Failed to attend appointment' %}
-            <p class="mt10 mb0 bold-small">{{ 'Did not attend' if customer.status == 'Failed to attend appointment' }}</p> 
-            <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/index" class="button">Record a decision</a></p>
             {% elif data['whatcando']=='newappointment'%}
             <p class="mt10 mb0 bold-small">DNA Re-referral</p> 
            
             {% elif data['whatcando']=='close' %}
             <p class="mt10 mb0 bold-small">Good cause not accepted</p>
             <p><a href="" class="button">Do something maybe</a></p>
+            {% elif customer.status == 'Failed to attend appointment' and customer.tags == "rec-reason" %}
+            <p class="mt10 mb0 bold-small">{{ 'Did not attend' if customer.status == 'Failed to attend appointment' }}</p> 
+            <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/request-fta-reason" class="button">Request a reason</a></p>
+            {% elif customer.status == 'Failed to attend appointment' %}
+            <p class="mt10 mb0 bold-small">{{ 'Did not attend' if customer.status == 'Failed to attend appointment' }}</p> 
+            <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/index" class="button">Record a decision</a></p>
              {% endif %}
       	    
       	</div>
