@@ -340,7 +340,7 @@ module.exports = [
       }
     ],
     "status": "Failed to attend appointment",
-    "substatus":"Ready for decision",
+    "substatus":"Request a reason",
     "reason":"Overdue",
     "dateOfBirth": "1971-01-10T22:53:59+00:00",
     "mobile": "07823 427 394",
@@ -1190,7 +1190,7 @@ module.exports = [
       }
     ],
    "status": "Failed to attend appointment",
-   "substatus":"Ready for decision",
+   "substatus":"Request a reason",
     "dateOfBirth": "1958-07-11T03:08:43+00:00",
     "mobile": "07971 577 303",
     "NINO": "QQ 12 68 26 C",

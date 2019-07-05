@@ -129,7 +129,7 @@ router.post('*', function (req, res, next) {
     req.session.data.observations = []
   }
   res.locals.menuItems = require(filePath + '/caselist/_navItems.js')(versionNumber, reviewCustomers, assessmentCustomers, appointmentCustomers)
-
+  res.locals.menuItemsDm = require(filePath + '/caselist/_navItemsDm.js')(versionNumber, dmCustomers)
   next()
 })
 
