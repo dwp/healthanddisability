@@ -129,8 +129,8 @@ router.post('*', function (req, res, next) {
   if (!req.session.data.observations) {
     req.session.data.observations = []
   }
-  res.locals.menuItems = require(filePath + '/caselist/_navItems.js')(versionNumber, reviewCustomers, assessmentCustomers, appointmentCustomers)
-  res.locals.menuItemsDm = require(filePath + '/caselist/_navItemsDm.js')(versionNumber, dmCustomers)
+  res.locals.menuItems = require(filePath + '/caselist/_navItems.js')(versionNumber, reviewCustomers, assessmentCustomers, appointmentCustomers);
+  res.locals.menuItemsDm = require(filePath +'/caselist/_navItemsDM.js')(versionNumber, dmCustomers );
   next()
 })
 
