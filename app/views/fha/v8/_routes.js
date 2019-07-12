@@ -47,14 +47,9 @@ router.get('*', function (req, res, next) {
     req.session.data.observations = []
   }
 
-<<<<<<< HEAD
-  res.locals.menuItems = require(filePath + '/caselist/_navItems.js')(versionNumber, reviewCustomers, assessmentCustomers, appointmentCustomers)
-  res.locals.menuItemsDm = require(filePath + '/caselist/_navItemsDM.js')(versionNumber, dmCustomers)
-=======
-
   res.locals.menuItems = require(filePath +'/caselist/_navItems.js')(versionNumber, reviewCustomers, assessmentCustomers, appointmentCustomers );
   res.locals.menuItemsDm = require(filePath +'/caselist/_navItemsDM.js')(versionNumber, dmCustomers );
->>>>>>> b6bc5d9c9fbc85ba160a31fb31fc2e3d4a38c026
+
   next()
 })
 
@@ -134,13 +129,10 @@ router.post('*', function (req, res, next) {
   if (!req.session.data.observations) {
     req.session.data.observations = []
   }
-<<<<<<< HEAD
-  res.locals.menuItems = require(filePath + '/caselist/_navItems.js')(versionNumber, reviewCustomers, assessmentCustomers, appointmentCustomers)
 
-=======
   res.locals.menuItems = require(filePath + '/caselist/_navItems.js')(versionNumber, reviewCustomers, assessmentCustomers, appointmentCustomers);
   res.locals.menuItemsDm = require(filePath +'/caselist/_navItemsDM.js')(versionNumber, dmCustomers );
->>>>>>> b6bc5d9c9fbc85ba160a31fb31fc2e3d4a38c026
+
   next()
 })
 
@@ -1379,8 +1371,7 @@ router.get('/failed-to-attend', function (req, res, next) {
   next()
 })
 
-<<<<<<< HEAD
-=======
+
 router.post('/failed-to-attend', function (req, res, next) {
   var body = req.body
   req.session.data['filter'] = '';
@@ -1402,7 +1393,6 @@ router.post('/failed-to-attend', function (req, res, next) {
   res.render(viewPath + '/failed-to-attend')
 })
 
->>>>>>> b6bc5d9c9fbc85ba160a31fb31fc2e3d4a38c026
 router.get('/fta-ready-for-decision', function (req, res, next) {
   res.locals.customers = dmCustomers
   .filter(customer => customer.substatus === 'Ready for decision')
