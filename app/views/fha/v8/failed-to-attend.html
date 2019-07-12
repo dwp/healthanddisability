@@ -1,0 +1,36 @@
+{% extends path+"/_layout-caselist-dm.html" %}
+
+{% block horizontal_secondary_nav %}
+              
+{{ secondaryNav.nav("decision-maker","failed-to-attend", menuItemsDm ) }}
+
+
+{% endblock %}  
+
+{% block caselist_content %}
+<h2 class="heading-medium mt0"><span class="heading-xlarge">{{customers.length}}</span><br/>Did not attend</h2>
+<table class="styled">
+
+  <thead>
+    <tr>
+      <th>Details</th>
+      <th>Referred date</th>
+    </tr>
+  </thead>
+  
+  {% for customer in customers %}
+<tr>
+
+<td>
+<a href="decisionmaker/{{customer._id}}/timeline"><span class="visually-hidden">Name</span>{{customer.name.fullName}}</a>
+<span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span>
+</td>
+        <td>{{ customer.refereddate }}</td>
+</tr>
+</tr>
+
+{% endfor %}
+
+</table>   
+      
+{% endblock %}

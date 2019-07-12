@@ -1,0 +1,32 @@
+{% extends path+"/_layout-case.html" %}
+
+{% block citizen_content %}
+
+<div class="container">
+
+  {# macro #}
+  {{ nav.case_tabs("timeline",1,path1, customer._id) }}{# macro #}
+  
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+        {% include path+"/includes/_timeline.html" %}
+
+    </div><!-- column -->
+
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

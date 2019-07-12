@@ -1,0 +1,42 @@
+{% extends path2+"/_layout-review.html" %}
+
+{% block case_content %}
+
+
+
+  <h1 class="heading-large mt10 no-kdBar">Assessment complete</h1>
+  
+  <p>{{conditionHistory1}}</p>
+  <dl class="assessment-overview">
+  	<dt>Date</dt>
+  	<dd>{{ "D MMMM YYYY" | daysAgo }}</dd>
+  	
+  	<dt>Time</dt>
+  	<dd>{{ last_one.time | formatDate("H:mma") }} - {{ first_one.time | formatDate("H:mma") }}</dd>
+  	
+  	<dt>Assessor</dt>
+  	<dd>Heather Harrison</dd>
+  	
+  	<dt>Assessment centre</dt>
+  	<dd>Fiveways Birmingham</dd>
+  </dl>
+
+    
+
+  
+  
+  
+  
+  
+  
+ <!-- <p class="mt30"><a href="#" class="button">Next</a></p> -->
+
+{% endblock %}
+
+
+
+
+{% block page_scripts %}
+{{ super() }}
+
+{% endblock %}

@@ -22,15 +22,79 @@
 	&.alt {
 
 		//border-bottom:3px solid $grey-2;
-		padding-bottom:15px;
+		padding-bottom:0px;
+		border:2px solid $border-colour;
+		background:$white;
+
+		.inner{
+			padding: 0 20px 10px 20px;
+		}
 		
+		table {
+
+			td, th {
+				font-size:18px;
+				padding:0.5em;
+
+				@media only screen and (max-width: 400px) {
+					font-size:16px;
+				}
+			}
+
+			thead th {
+        padding:15px 0;
+			}
+
+			tbody tr:last-of-type td, tbody tr:last-of-type th{
+        border-bottom:none;
+			}
+
+			.numeric{
+				text-align: center;
+			}
+		}
+
+		a{
+			background:$grey-3;
+
+			&:hover{
+				background:$grey-2;
+			}
+
+		}
+		
+		.heading-xlarge {
+			font-size:42px;
+
+			@media only screen and (max-width: 400px) {
+				font-size:30px;
+			}
+
+	  	span{
+				font-size:18px;
+				font-weight:bold;
+
+				@media only screen and (max-width: 400px) {
+					font-size:16px;
+				}
+			}
+		}
+
+
+		span{
+			text-decoration:none;
+
+	
+		}
+
 		
 		h2 {
 		color:$link-colour;
-		border-bottom:1px solid $border-colour;
 		padding-bottom:15px;
-		margin-bottom:15px;
-		text-decoration:underline;
+
+	  &:hover{
+			color:$text-colour;
+		}
 	}
 }
 
@@ -237,8 +301,9 @@ ul.content li{
 
 .card-single {
 		position:relative;	
-		background:$grey-3;
+		background:$grey-4;
 		margin:0 0 30px 0;
+		min-height:190px;
 
 		&:first-child {
 			margin-top:0px;
@@ -251,7 +316,7 @@ ul.content li{
 		
 		h2 {
 			padding:20px;
-			border-bottom:1px solid $border-colour;
+			border-bottom:1px solid $grey-3;
 			&.link{
 				padding:0px;
 			}
@@ -314,4 +379,15 @@ ul.content li{
 	}
 
 
+}
+
+
+
+.capacity-cards {
+
+	.card {
+		&:first-child {
+			margin-left: 0;
+		}
+	}
 }

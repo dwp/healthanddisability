@@ -6,10 +6,19 @@
 	padding: 0;
 	top: 0;
 	right: 0;
+
+
+
+
+	&.total-panel  {
+		width:20%;
+	}
+
 	
 	.panel-switch {
-		position: absolute;
-		top: 250px;
+		position: fixed;
+		margin-top:170px;
+		top: 10%;
 		width: 100px;
 		right: 0;
 		padding: 20px 0;
@@ -62,10 +71,23 @@
 			}
 		}
 		.panel-switch {
+			position:absolute;
 			right: auto;
-			left: -100px;
+			left:-100px;
+			margin-top:120px;
 		}
 	}
 
 	
 }
+
+
+.inner-panel .inner-panel-content.sticky{
+	position:fixed;
+	padding:20px;
+
+	h2{
+		margin:0;
+	 }
+}
+

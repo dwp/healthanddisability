@@ -42,33 +42,34 @@
       	 
 		 
  <p class="mt10 mb0 bold-small">
+{{ 'Ready to book' if customer.status == 'Ready to book' }}   
 {{ 'Ready for review' if customer.status == 'review' }}
 {{ 'Requested further medical evidence' if customer.status == 'fme' }}
 {{ 'Appointment today' if customer.status == 'Appointment today'}}
-{{ 'Ready for assessment' if customer.status == 'Ready for assessment'}}
-{{ 'Assessment started' if customer.status == 'Assessment started' }}
+{{ 'Ready for assessment' if customer.status == 'Ready for assessment' and data['wca']!=='start' and data['appointments']!=='yes' }}
+{{ 'Assessment started' if customer.status == 'Ready for assessment' and data['wca']==='start' }}
 {{ 'Ready for recommendation' if customer.status == 'Ready for recommendation' }}
 {{ 'Assessment completed' if customer.status == 'Assessment completed' }}
-{{ 'Assessment stopped' if customer.status == 'Assessment stopped' }}
-{{ 'Ready to Book' if customer.status == 'Ready to Book' }}
+{{ 'Assessment stopped' if customer.status == 'Assessment stopped' and data['appointments']!=='no' and data['appointments']!=='yes' }}
+{{ 'Referred for appointment – welfare call required' if data['appointments']=='no' and customer.status == 'Assessment stopped' }}
+
 
 {{ 'Did not attend appointment' if customer.status == 'Did not attend' and data['confirmfta']!=="Arnaq" and customer.name.first == 'Arnaq'
  or customer.status == 'Did not attend' and data['confirmfta']!=="Sarah" and customer.name.first == 'Sarah'
  or customer.status == 'Did not attend' and data['confirmfta']!=="Johannes" and customer.name.first == 'Johannes' 
  }}
 
-{{ 'Ready to book' if customer.status == 'Booked' and customer.name.first == 'Dillon' and data['book-next']!=="yes" }}
 {{ 'Booked' if customer.status == 'Booked' and customer.name.first !== 'Dillon' }}
 {{ 'Booked' if customer.status == 'Booked' and customer.name.first == 'Dillon' and data['book-next']==="yes" }}
 {% if customer.name.first == 'Deena' and data['changedByCustomer']==="yes" %}
 {% else %}
-{{ 'Booked' if customer.status == 'Security booked'  }} 
+{{ 'Booked' if customer.status == 'Security booked' or data['appointments']=='yes' }} 
 {% endif %}
 {{ 'Ready to book' if customer.status == 'Security booked' and customer.name.first == 'Deena' and data['changedByCustomer']==="yes" }}
 {{ 'Ready to score' if customer.status == 'Assessment reports' }}
 
 
-{{ 'Failed to attend appointment' if customer.status == 'Failed to attend appointment' and data['whatcando']!=='newappointment'
+{{ 'Failure to attend' if customer.status == 'Failed to attend appointment' and data['whatcando']!=='newappointment'
 or data['confirmfta']=="Arnaq" and customer.name.first == 'Arnaq'
 or data['confirmfta']=="Sarah"  and customer.name.first == 'Sarah' 
 or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes' 
@@ -79,9 +80,13 @@ or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes'
 {{ 'Questionnaire not returned' if customer.status == 'Questionnaire not returned' }}
 
  </p>
-     {% if customer.status == 'Assessment started' or customer.status == 'Booked' 
-     or customer.status == 'Security booked' or
-     customer.status == 'Failed to attend appointment' and data['whatcando']=='newappointment' %}
+     {% if customer.status == 'Assessment started' 
+     or customer.status == 'Booked' 
+     or customer.status == 'Security booked' 
+     or customer.status == 'Failed to attend appointment' and data['whatcando']=='newappointment' 
+     or customer.status == 'Ready to book' 
+     or data['appointments']=='no' 
+     or data['appointments']=='yes'  %}
 
      {% elif customer.status == 'Failed to attend appointment' and customer.substatus == 'Record a reason' and data['dmreason'] or customer.substatus == 'Request a reason' and data['dmreason'] %}
      <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/index" class="button">Make a decision</a></p>
@@ -115,15 +120,31 @@ or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes'
     </form>
      {% elif customer.status == 'Ready for recommendation' %}
      <p><a href="/{{path}}/assessment/{{customer._id}}/scoring/" class="button">Make your recommendation</a></p>   
-      {% elif customer.status == 'Ready for assessment'%}
+ 
      
-      <form class="" method="post" action="/{{path}}/assessment/{{customer._id}}/start-assessment">
-		  <p><button  class="button">Start assessment</button></p>
+
+
+     {% elif customer.status == 'Ready for assessment' and data['wca']==='start'%}
+   
+
+      {% elif customer.status == 'Ready for assessment' and data['wca']==='yes'%}
+      <form class="" method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/wca-index">
+        <p><button  class="button">Start assessment</button></p>
+        <div class="multiple-choice" style="display:none">
+            <input id="radio-inline-4" type="radio" name="wca" value="start" checked>
+            <label for="radio-4">hidden radio one</label>
+          </div>
+      </form>
+
+      {% elif customer.status == 'Ready for assessment' %}
+      <form class="" method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/descriptorchoice">
+		  <p><button  class="button">Start assessment review</button></p>
       <div class="multiple-choice" style="display:none">
           <input id="radio-inline-4" type="radio" name="wca" value="yes" checked>
           <label for="radio-4">hidden radio one</label>
         </div>
     </form>
+
 
     {% elif customer.status == 'Appointment today' %}
     <form class="" method="post" action="/{{path}}/assessment/{{customer._id}}/ready-for-assessment">
@@ -150,8 +171,8 @@ or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes'
           {% endif %}
          
 
-            {% if customer.status == 'Assessment started' or customer.status == 'Ready for recommendation'%}  
-            <li><a href="/{{path}}/assessment/{{customer._id}}/general-observations">General observations {% if data['general-observations-post']==='posted' %}({{ observations.length }}){% endif%}</a></li>
+            {% if customer.status == 'Ready for assessment' and data['wca']==='start' or customer.status == 'Ready for recommendation'%}  
+            <!--<li><a href="/{{path}}/assessment/{{customer._id}}/general-observations">General observations {% if data['general-observations-post']==='posted' %}({{ observations.length }}){% endif%}</a></li>-->
             <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/addAttendee" class="">Additional attendee</a></li>
            
             
@@ -160,7 +181,9 @@ or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes'
 
           </ul>
           
-		  </div>
+      </div>
+      
+
       	
       	
       	</div>

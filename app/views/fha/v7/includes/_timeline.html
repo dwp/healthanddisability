@@ -101,8 +101,21 @@
         {% endif %}
 
     
-       
+        {% if data['appointments']=='yes'  %}
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Rearranged appointment</h3>
+          <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0)}}</p>
+        </div>
+        {% endif %}
 
+        {% if customer.name.first == 'Mcconnell'  %}
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Rearranged appointment</h3>
+          <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(10)}}</p>
+        </div>
+        {% endif %}
 
 
 

@@ -1,0 +1,18 @@
+{% extends path1+"/_layout.html" %}
+
+
+{% block left_content %}
+{% if customer.decisionMade == 'accepted' %}
+<p class="mt10 mb0 bold-small">Ready to book</p>
+
+{% elseif customer.decisionMade == 'declined' %}
+<p class="mt10 mb0 bold-small">Appointment booked</p>
+{% else %}
+
+<p class="mt10 mb0 bold-small">{{customer.decisionType}}</p>
+<p class="mt20"><a href="/{{path2}}/{{customer._id}}/decision" class="button">Make Decision</a></p>
+{% endif %}
+
+<hr>
+
+{% endblock %}

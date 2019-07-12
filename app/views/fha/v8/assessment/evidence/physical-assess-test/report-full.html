@@ -1,0 +1,712 @@
+{% extends path+"/_layout-case-misc.html" %}
+
+{% block citizen_content %}
+
+
+
+ <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+  
+<h1 class="heading-large mb0">Work capability report</h1>
+
+
+<div class="review-wrapper full-report">
+
+
+
+
+<div class="report-item">
+
+	<table class="report-view-table">
+	<caption class="heading-small">Assessment overview</caption>
+	
+		<tbody>
+			<tr>
+				<th>Date of assessment</th>
+				<td>{{ "Do MMM YYYY" | daysAgo }}</td>
+			</tr>
+			<tr>
+				<th>Assessment centre</th>
+				<td>Fiveways, Birmingham</td>
+			</tr>
+			<tr>
+				<th>Assessor</th>
+				<td>Heather Harrison</td>
+			</tr>
+			<tr>
+				<th>Assessment start</th>
+				<td>{{ last_one.time | formatDate("H:mma") }}</td>
+			</tr>
+			<tr>
+				<th>Assessment finish</th>
+				<td>{{ first_one.time | formatDate("H:mma") }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+<!-- / report item -->
+
+
+<div class="report-item">
+
+	<h2 class="heading-large">Illnesses, disabilities and medication</h2>  
+	
+	
+	<h2 class="heading-medium">Condition history</h2>
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	
+
+	<table class="report-view-table">
+	<caption class="heading-small">Illnesses and disabilities</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Source</th>
+			</tr>
+		</thead>
+	
+		<tbody>
+			<tr>
+				<td>Diabetes</td>
+				<td>Claimant</td>
+			</tr>
+			<tr>
+				<td>Arthritis</td>
+				<td>Claimant</td>
+			</tr>
+			<tr>
+				<td>Liver disease</td>
+				<td>Claimant</td>
+			</tr>
+			<tr>
+				<td>Urine problems</td>
+				<td>Claimant</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	
+	<table class="report-view-table">
+	<caption class="heading-small">Medication and side effects</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Dose</th>
+				<th>Side effects</th>
+			</tr>
+		</thead>
+	
+		<tbody>
+			<tr>
+				<td>Ibuprofen</td>
+				<td>Twice daily</td>
+				<td>None</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	
+	
+	
+	
+	<p class="edit-report"><a href="#" class="button-secondary">Edit illnesses, disabilities and medication</a></p>
+	
+	
+
+</div>
+<!-- / report item -->
+
+
+
+
+
+
+
+ 
+	
+<div class="report-item">	
+	
+	
+				<h2 class="heading-large">Physical assessments</h2>    
+			
+				
+				<p>Consent was given by Bobby to start the physical assessment.</p>
+			
+			
+				<h3 class="heading-medium">General health</h3>
+			
+				<table class="report-view-table">
+						<caption class="heading-small">Recordings</caption>
+			
+						<tbody>
+							<tr>
+								<th>Stated height</th>
+								<td>
+									  6ft
+								</td>
+							</tr>
+			
+							<tr>
+								<th>Stated weight</th>
+								<td>
+									 14st
+								</td>
+							</tr>
+			
+							<tr>
+								<th>Bmi</th>
+								<td>
+									  555
+								</td>
+							</tr>
+			
+							<tr>
+								<th>Other examination findings </th>
+								<td>
+									
+									 Slight swelling on face
+								
+									</td>
+							</tr>
+			
+						</tbody>
+					</table>
+					<p class="edit-report"><a href="#" class="button-secondary">Edit general health</a></p>
+			
+						
+					<h3 class="heading-medium">Lower back and legs</h3>
+			
+			
+				
+					<table class="report-view-table">
+							<caption class="heading-small">Lower back</caption>
+				
+							<tbody>
+									
+									<tr>
+										<th>Forward flexion</th>
+										<td>
+												
+												Unrestricted
+			
+										</td>
+									</tr>
+			
+								<tr>
+									<th>Other examination findings </th>
+									<td>
+										
+										Comments here
+									
+										</td>
+								</tr>
+			
+							</tbody>
+						</table>
+						<p class="edit-report"><a href="#" class="button-secondary">Edit lower back</a></p>
+				
+			
+			
+					
+						
+					<table class="report-view-table">
+							<caption class="heading-small">Left leg</caption>
+			
+							<tbody>
+								<tr>
+									<th>Straight Leg raising</th>
+									<td>
+										Normal
+									</td>
+								</tr>
+			
+								<tr>
+									<th>Hip flexion</th>
+									<td>	
+											Normal (more than 130˚)
+				</td>
+								</tr>
+			
+								<tr>
+									<th>Knee flexion</th>
+									<td>
+											Normal (more than 120˚)
+			</td>
+								</tr>
+			
+								<tr>
+									<th>Knee extension</th>
+									<td>	
+											Full
+							</td>
+								</tr>
+			
+								<tr>
+									<th>External hip rotation</th>
+									<td>	
+											Normal (more than 45˚)
+											</td>
+								</tr>
+			
+			
+								<tr>
+									<th>Power</th>
+									<td>	
+											Normal
+										</td>
+								</tr>
+								
+								
+								<tr>
+									<th>Other examination findings </th>
+									<td>
+										Comments added</td>
+								</tr>
+				
+							</tbody>
+						</table>
+						
+						<p class="edit-report"><a href="#" class="button-secondary">Edit left leg</a></p>
+			           
+			           
+					
+					<table class="report-view-table">
+							<caption class="heading-small">Right leg</caption>
+			
+							<tbody>
+								<tr>
+									<th>Straight Leg raising</th>
+									<td>
+										Normal
+									</td>
+								</tr>
+			
+								<tr>
+									<th>Hip flexion</th>
+									<td>	
+											Normal (more than 130˚)
+				</td>
+								</tr>
+			
+								<tr>
+									<th>Knee flexion</th>
+									<td>
+											Normal (more than 120˚)
+			</td>
+								</tr>
+			
+								<tr>
+									<th>Knee extension</th>
+									<td>	
+											Full
+							</td>
+								</tr>
+			
+								<tr>
+									<th>External hip rotation</th>
+									<td>	
+											Normal (more than 45˚)
+											</td>
+								</tr>
+			
+			
+								<tr>
+									<th>Power</th>
+									<td>	
+											Normal
+										</td>
+								</tr>
+								
+								
+								<tr>
+									<th>Other examination findings </th>
+									<td>
+										Comments added</td>
+								</tr>
+				
+							</tbody>
+						</table>
+					
+					
+								<p class="edit-report"><a href="#" class="button-secondary">Edit right leg</a></p>
+							
+			
+			
+			
+					<h3 class="heading-medium">Cardio vascular and respiratory</h3>
+			
+					<table class="report-view-table">
+							<caption class="heading-small">Respiratory rate</caption>
+				
+							<tbody>
+				
+								
+								<tr>
+									<th>Respiratory at rest</th>
+									<td>
+										  9
+									</td>
+								</tr>
+								
+								<tr>
+									<th>Other examination findings </th>
+									<td>
+										
+										  Comments added
+									
+										</td>
+								</tr>
+						
+							</tbody>
+						</table>
+						<p class="edit-report"><a href="#" class="button-secondary">Edit respiratory rate</a></p>
+						
+						
+			
+						<table class="report-view-table">
+								<caption class="heading-small">Radial pulse</caption>
+					
+								<tbody>
+					
+									<tr>
+										<th>Radial pulse – rate, rhythm, character</th>
+										<td>
+											  Regular pulse
+										</td>
+									</tr>
+			
+									<tr>
+										<th>Other examination findings </th>
+										<td>
+											
+											  No other findings
+										
+											</td>
+									</tr>
+								</tbody>
+							</table>
+							<p class="edit-report"><a href="#" class="button-secondary">Edit radial pulse</a></p>
+			
+							<table class="report-view-table">
+									<caption class="heading-small">Left leg peripheral circulation</caption>
+						
+									<tbody>
+			
+										<tr>
+											<th>Oedema</th>
+											<td>
+												 Comments on this...
+											</td>
+										</tr>
+										<tr>
+											<th>Doesalis pedis pulse</th>
+											<td>
+												Comments on this...
+												</td>
+										</tr>
+										<tr>
+											<th>Varicose veins</th>
+											<td>
+												Comments on this...
+											
+												</td>
+										</tr>
+										<tr>
+											<th>Other examination findings</th>
+											<td>
+												
+												  Comments on this...
+											
+												</td>
+										</tr>
+									</tbody>
+								</table>
+								
+								<p class="edit-report"><a href="#" class="button-secondary">Edit left leg</a></p>
+								
+			
+								<table class="report-view-table">
+									<caption class="heading-small">Right leg peripheral circulation</caption>
+						
+									<tbody>
+			
+										<tr>
+											<th>Oedema</th>
+											<td>
+												 Comments on this...
+											</td>
+										</tr>
+										<tr>
+											<th>Doesalis pedis pulse</th>
+											<td>
+												Comments on this...
+												</td>
+										</tr>
+										<tr>
+											<th>Varicose veins</th>
+											<td>
+												Comments on this...
+											
+												</td>
+										</tr>
+										<tr>
+											<th>Other examination findings</th>
+											<td>
+												
+												  Comments on this...
+											
+												</td>
+										</tr>
+									</tbody>
+								</table>
+								
+								<p class="edit-report"><a href="#" class="button-secondary">Edit right leg</a></p>
+								
+			
+									<table class="report-view-table">
+											<caption class="heading-small">Blood pressure</caption>
+								
+											<tbody>
+			
+												<tr>
+													<th>Blood pressure</th>
+													<td>
+														 333
+													</td>
+												</tr>
+			
+												<tr>
+													<th>Other examination findings</th>
+													<td>
+														
+														  Comments added...
+													
+														</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<p class="edit-report"><a href="#" class="button-secondary">Edit blood pressure</a></p>
+			
+										<table class="report-view-table">
+												<caption class="heading-small">Peak expiry flow rate</caption>
+									
+												<tbody>
+			
+													<tr>
+														<th>Technique</th>
+														<td>
+															  Comments here...
+														</td>
+													</tr>
+													<tr>
+														<th>Value</th>
+														<td>
+															
+															  Comments here...
+														
+															</td>
+													</tr>
+			
+													<tr>
+														<th>Meter type</th>
+														<td>
+															
+															 Comments here...
+														
+															</td>
+													</tr>
+			
+													<tr>
+														<th>Other examination findings</th>
+														<td>
+															
+															  Comments here...
+														
+															</td>
+													</tr>
+			
+												</tbody>
+											</table>
+											
+											<p class="edit-report"><a href="#" class="button-secondary">Edit peak expiry flow rate</a></p>
+											
+			</div>
+		<!-- / item end -->
+		
+		
+<div class="report-item">
+
+<h2 class="heading-large">Descriptors:</h2>
+
+<h3 class="heading-medium">Moving around and using steps without help</h3>
+
+	<table class="report-view-table">
+	<caption class="heading-small">Relevant statements</caption>
+	
+		<tbody>
+			<tr>
+				<td>Bobby goes to the shop each morning, he goes alone.</td>
+			</tr>
+			<tr>
+				<td>Lives in a top floor flat without access to a lift.</td>
+			</tr>
+			<tr>
+				<td>Walks up and down 4 flights of stairs when going outside.</td>
+			</tr>
+			
+		</tbody>
+	</table>
+	
+	<div class="inner-focus">
+		<h4 class="heading-small">How far can Bobby walk or move on level ground without help from someone, and without stopping due to severe pain or tiredness?</h4>
+		<p>No more than 50 metres</p>
+		
+		<h4 class="heading-small">Can Bobby go up or down 2 steps without help, if they use a handrail?</h4>
+		<p>No</p>
+		
+		<h4 class="heading-small">Justification:</h4>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+	</div>
+	
+	<p class="edit-report"><a href="#" class="button-secondary">Edit moving around and using steps</a></p>
+	<!-- / moving around and using steps -->
+	
+	
+	
+	<h3 class="heading-medium">Standing, sitting and moving between the two</h3>
+
+	<table class="report-view-table">
+	<caption class="heading-small">Relevant statements</caption>
+	
+		<tbody>
+			<tr>
+				<td>Statement about Bobby and his ability to sit.</td>
+			</tr>
+			<tr>
+				<td>Statement about Bobby and his ability to stand.</td>
+			</tr>
+			
+		</tbody>
+	</table>
+	
+	<div class="inner-focus">
+		
+		<h4 class="heading-small">Can Bobby move from one seat to another right next to it without help from another person</h4>
+		<p>No</p>
+		
+		<h4 class="heading-small">Justification:</h4>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+	</div>
+	
+	<p class="edit-report"><a href="#" class="button-secondary">Edit standing, sitting and moving between the two</a></p>
+	<!-- /Standing, sitting and moving between the two -->
+	
+	
+	
+	
+	<h3 class="heading-medium">Statements not attached to a descriptor</h3>
+
+	<table class="report-view-table">
+	<caption class="heading-small">Relevant statements</caption>
+	
+		<tbody>
+			<tr>
+				<td>Statement which doesn't fit into a descriptor.</td>
+			</tr>
+			<tr>
+				<td>Statement which doesn't fit into a descriptor.</td>
+			</tr>
+			<tr>
+				<td>Statement which doesn't fit into a descriptor.</td>
+			</tr>
+			<tr>
+				<td>Statement which doesn't fit into a descriptor.</td>
+			</tr>
+			<tr>
+				<td>Statement which doesn't fit into a descriptor.</td>
+			</tr>
+			
+		</tbody>
+	</table>
+
+
+</div>
+<!-- / report item -->
+
+
+<div class="report-item">
+
+	<h2 class="heading-large">General observations</h2> 
+	
+	<table class="report-view-table">
+	<caption class="heading-small">Relevant statements</caption>
+	
+		<tbody>
+			<tr>
+				<td>A statement which was captured as a general observation.</td>
+			</tr>
+			
+		</tbody>
+	</table>
+	
+	<p class="edit-report"><a href="#" class="button-secondary">Edit general observations</a></p>
+	
+</div>
+<!-- / report item -->
+
+
+
+<div class="report-item">
+
+	<h2 class="heading-large">Exceptional circumstances</h2> 
+	
+	<div class="inner-focus">
+		
+		<h4 class="heading-small">Circumstances why Bobby should be treated as LCW and LCWRA:</h4>
+		<p>None</p>
+		
+		<h4 class="heading-small">Circumstances why Bobby should be treated as LCW:</h4>
+		<p>None</p>
+	</div>
+	
+	<p class="edit-report"><a href="#" class="button-secondary">Edit exceptional circumstances</a></p>
+	
+</div>
+<!-- / report item -->
+
+
+<div class="report-item">
+
+	<h2 class="heading-large">Prognosis</h2> 
+	
+	<div class="inner-focus">
+		
+		<h4 class="heading-small">Time until Bobbys case needs reviewing:</h4>
+		<p>Within 2 years</p>
+		
+		<h4 class="heading-small">Reason:</h4>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+	</div>
+	
+	<p class="edit-report"><a href="#" class="button-secondary">Edit prognosis</a></p>
+	
+</div>
+<!-- / report item -->
+		
+		
+
+  
+   </div>
+ <!-- / wrapper -->
+  
+
+
+	<p class="depart"><a href="#" class="button">Finish &ndash; sign off report</a></p>
+
+
+
+{% endblock %}
+

@@ -1,0 +1,42 @@
+
+    <div></div>
+    <form>
+        <div class="form-group">
+            <label class="form-label" for="room-name">Room Name</label>
+            <input class="form-control" id="room-name" type="text" name="room-name" value="{{room.name}}">
+        </div>
+        <fieldset class="inline">
+        <legend>
+          <span class="form-label">
+            Is the room on the ground floor?
+          </span>
+        </legend>
+        <div class="multiple-choice">
+          <input id="ground-floor-yes" type="radio" name="ground-floor" value="Yes" {{ "checked" if room.groundFloor }}>
+          <label for="ground-floor-yes">Yes</label>
+        </div>
+        <div class="multiple-choice">
+          <input id="ground-floor-no" type="radio" name="ground-floor" value="No" {{ "checked" if not room.groundFloor and room.name }}>
+          <label for="ground-floor-no">No</label>
+        </div>
+      </fieldset>
+      <fieldset class="inline mt30">
+        <legend>
+          <span class="form-label">
+            Does the room have telephone?
+          </span>
+          <span class="form-hint">This may be needed for a third party interpreter</span>
+        </legend>
+        <div class="multiple-choice">
+          <input id="phone-yes" type="radio" name="phone" value="Yes" {{ "checked" if room.telephone }}>
+          <label for="phone-yes">Yes</label>
+        </div>
+        <div class="multiple-choice">
+          <input id="phone-no" type="radio" name="phone" value="No" {{ "checked" if not room.telephone and room.name }}>
+          <label for="phone-no">No</label>
+        </div>
+      </fieldset>
+      <p class="mt30"><a href="/{{path2}}?tab=rooms" class="button">Save</a></p>
+    </form>
+
+    <!-- row -->

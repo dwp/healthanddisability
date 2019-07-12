@@ -1,0 +1,1137 @@
+{% extends path+"/_layout.html" %}
+
+
+
+{% block assess_content %}
+
+<main id="content" role="main" class="main-content">
+
+      <div class="container">
+          <div class="grid-row">
+              <div class="column-three-quarters capacity">
+  <a href="javascript: history.go(-1)" class="link-back">Back</a>   
+
+   <h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Create a capacity plan</h1>
+
+   <h2 class="heading-medium">Tuesday 23 July</h2>
+
+
+   <form class="form" action="/{{ path }}/planning/create-plan" method="post">
+      
+
+              <table class="profile-table">
+
+                <thead>
+                    <tr>
+                        <th></th>
+                        <!-- <th>Assessment Centre</th> -->
+                        <th class="col2"><span>Total required</span></th>
+                        {% if checked('benefits','ben2') %}
+                        <th colspan="5"><span>How many can be</span></th>
+                        {% else %}
+                        <th colspan="4"><span>How many can be</span></th>
+                         {% endif %}
+                        
+                      </tr>
+                  <tr>
+                    <th></th>
+                    <!-- <th>Assessment Centre</th> -->
+                    <th class="col2"><span></span>Appointments</th>
+                    <th class="col3"><span></span>UCB</th>
+                    <th><span></span>Complex neuro</th>
+                    <th><span></span>Neuro</th>
+                    <th><span></span>Non neuro</th>
+                  
+                
+                     {% if checked('benefitsTue','ben2') %}
+                     <th><span></span>IIDB</th>
+                     {% endif %}
+                    
+                  </tr>
+                </thead>
+
+                {% if checked('tuestimes','9') %}
+                <tr>
+                  <th class="col">9:00am</th>
+                  <td class='col2'> <label class="visually-hidden" for="" ></label>
+                    <input class="form-control" id="appointTue1"  type="text" name="appointTue1"  type="text" value="{{appointTue1}}" ></td> 
+                    <td class='col3'><label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="ucbTue1" type="text" name="ucbTue1"  value="{{ucbTue1}}"></td>
+                  <td><label class="visually-hidden" for=""></label>
+                    <input class="form-control" id="complexTue1" type="text" name="complexTue1"  value="{{complexTue1}}"></td>
+                  <td><label class="visually-hidden" for=""></label>
+                    <input class="form-control" id="neuroTue1" type="text" name="neuroTue1"  value="{{neuroTue1}}"></td>
+                  <td><label class="visually-hidden" for=""></label>
+                    <input class="form-control" id="noneTue1" type="text" name="noneTue1"  value="{{noneTue1}}"></td>
+                 
+   
+					{% if checked('benefitsTue','ben2') %}
+                    <td>
+                    	<label class="visually-hidden" for=""></label>
+						<input class="form-control" id="IIDBTue1" type="text" name="IIDBTue1"  value="{{IIDBTue1}}">
+					</td>
+          {% endif %}
+
+                </tr>
+
+                {% endif %}
+                {% if  checked('tuestimes','915') %}
+                <tr>
+                    <th class="col">9:15am</th>
+                    <td class='col2'> <label class="visually-hidden" for="" ></label>
+                      <input class="form-control" id="appointTue2"  type="text" name="appointTue2"  type="text" value="{{appointTue2}}" ></td> 
+                      <td class='col3'><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="ucbTue2" type="text" name="ucbTue2"  value="{{ucbTue2}}"></td>
+                    <td><label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="complexTue2" type="text" name="complexTue2"  value="{{complexTue2}}"></td>
+                    <td><label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="neuroTue2" type="text" name="neuroTue2"  value="{{neuroTue2}}"></td>
+                    <td><label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="noneTue2" type="text" name="noneTue2"  value="{{noneTue2}}"></td>
+                   
+     
+            {% if checked('benefitsTue','ben2') %}
+                      <td>
+                        <label class="visually-hidden" for=""></label>
+              <input class="form-control" id="IIDBTue2" type="text" name="IIDBTue2"  value="{{IIDBTue2}}">
+            </td>
+            {% endif %}
+
+                  {% endif %}
+                  {% if checked('tuestimes','930')  %}
+                  <tr>
+                      <th class="col">9:30am</th>
+                      <td class="col2"> <label class="visually-hidden" for="" ></label>
+                        <input class="form-control" id="appointTue3"  type="text" name="appointTue3"  type="text" value="{{appointTue3}}" ></td> 
+                        <td class="col3"><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="ucbTue3" type="text" name="ucbTue3"  value="{{ucbTue3}}"></td>
+                      <td><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="complexTue3" type="text" name="complexTue3"  value="{{complexTue3}}"></td>
+                      <td><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="neuroTue3" type="text" name="neuroTue3"  value="{{neuroTue3}}"></td>
+                      <td><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="noneTue3" type="text" name="noneTue3"  value="{{noneTue3}}"></td>
+                     
+       
+              {% if checked('benefitsTue','ben2') %}
+                        <td>
+                          <label class="visually-hidden" for=""></label>
+                <input class="form-control" id="IIDBTue3" type="text" name="IIDBTue3"  value="{{IIDBTue3}}">
+              </td>
+              {% endif %}
+                    </tr>
+
+                    {% endif %}
+                    
+                    {% if checked('tuestimes','945')  %}
+                  <tr>
+                      <th class="col">9:45am</th>
+                      <td class="col2"> <label class="visually-hidden" for="" ></label>
+                        <input class="form-control" id="appointTue4"  type="text" name="appointTue4"  type="text" value="{{appointTue4}}" ></td> 
+                        <td class="col3"><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="ucbTue4" type="text" name="ucbTue4"  value="{{ucbTue4}}"></td>
+                      <td><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="complexTue4" type="text" name="complexTue4"  value="{{complexTue4}}"></td>
+                      <td><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="neuroTue4" type="text" name="neuroTue4"  value="{{neuroTue4}}"></td>
+                      <td><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="noneTue4" type="text" name="noneTue4"  value="{{noneTue4}}"></td>
+                     
+       
+              {% if checked('benefitsTue','ben2') %}
+                        <td>
+                          <label class="visually-hidden" for=""></label>
+                <input class="form-control" id="IIDBTue4" type="text" name="IIDBTue4"  value="{{IIDBTue4}}">
+              </td>
+              {% endif %}
+                    </tr>
+
+                    {% endif %}
+                    
+                    {% if checked('tuestimes','10')  %}
+                    <tr>
+                        <th class="col">10:00am</th>
+                        <td class="col2"> <label class="visually-hidden" for="" ></label>
+                          <input class="form-control" id="appointTue5"  type="text" name="appointTue5"  type="text" value="{{appointTue5}}" ></td> 
+                          <td class="col3"><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="ucbTue5" type="text" name="ucbTue5"  value="{{ucbTue5}}"></td>
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="complexTue5" type="text" name="complexTue5"  value="{{complexTue5}}"></td>
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="neuroTue5" type="text" name="neuroTue5"  value="{{neuroTue5}}"></td>
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="noneTue5" type="text" name="noneTue5"  value="{{noneTue5}}"></td>
+                       
+         
+                {% if checked('benefitsTue','ben2') %}
+                          <td>
+                            <label class="visually-hidden" for=""></label>
+                  <input class="form-control" id="IIDBTue5" type="text" name="IIDBTue5"  value="{{IIDBTue5}}">
+                </td>
+                {% endif %}
+                      {% endif %}
+
+                      {% if checked('tuestimes','1015')  %}
+                      <tr>
+                          <th class="col">10:15am</th>
+                          <td class="col2"> <label class="visually-hidden" for="" ></label>
+                            <input class="form-control" id="appointTue6"  type="text" name="appointTue6"  type="text" value="{{appointTue6}}" ></td> 
+                            <td class="col3"><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="ucbTue6" type="text" name="ucbTue6"  value="{{ucbTue6}}"></td>
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="complexTue6" type="text" name="complexTue6"  value="{{complexTue6}}"></td>
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="neuroTue6" type="text" name="neuroTue6"  value="{{neuroTue6}}"></td>
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="noneTue6" type="text" name="noneTue6"  value="{{noneTue6}}"></td>
+                         
+           
+                  {% if checked('benefitsTue','ben2') %}
+                            <td>
+                              <label class="visually-hidden" for=""></label>
+                    <input class="form-control" id="IIDBTue6" type="text" name="IIDBTue6"  value="{{IIDBTue6}}">
+                  </td>
+                  {% endif %}
+                        {% endif %}
+                      {% if checked('tuestimes','1030')  %}
+
+                      <tr>
+                          <th class="col">10:30am</th>
+                          <td class="col2"> <label class="visually-hidden" for="" ></label>
+                            <input class="form-control" id="appointTue7"  type="text" name="appointTue7"  type="text" value="{{appointTue7}}" ></td> 
+                            <td class="col3"><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="ucbTue7" type="text" name="ucbTue7"  value="{{ucbTue7}}"></td>
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="complexTue7" type="text" name="complexTue7"  value="{{complexTue7}}"></td>
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="neuroTue7" type="text" name="neuroTue7"  value="{{neuroTue7}}"></td>
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="noneTue7" type="text" name="noneTue7"  value="{{noneTue7}}"></td>
+                         
+           
+                  {% if checked('benefitsTue','ben2') %}
+                            <td>
+                              <label class="visually-hidden" for=""></label>
+                    <input class="form-control" id="IIDBTue7" type="text" name="IIDBTue7"  value="{{IIDBTue7}}">
+                  </td>
+                  {% endif %}
+
+                        {% endif %}
+                        
+                        {% if checked('tuestimes','1045')  %}
+
+                      <tr>
+                          <th class="col">10:45am</th>
+                          <td class="col2"> <label class="visually-hidden" for="" ></label>
+                            <input class="form-control" id="appointTue8"  type="text" name="appointTue8"  type="text" value="{{appointTue8}}" ></td> 
+                            <td class="col3"><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="ucbTue8" type="text" name="ucbTue8"  value="{{ucbTue8}}"></td>
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="complexTue8" type="text" name="complexTue8"  value="{{complexTue8}}"></td>
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="neuroTue8" type="text" name="neuroTue8"  value="{{neuroTue8}}"></td>
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="noneTue8" type="text" name="noneTue8"  value="{{noneTue8}}"></td>
+                         
+           
+                  {% if checked('benefitsTue','ben2') %}
+                            <td>
+                              <label class="visually-hidden" for=""></label>
+                    <input class="form-control" id="IIDBTue8" type="text" name="IIDBTue8"  value="{{IIDBTue8}}">
+                  </td>
+                  {% endif %}
+                        {% endif %}
+                        
+                        {% if checked('tuestimes','11')  %}
+
+                        <tr>
+                            <th class="col">11:00am</th>
+                            <td class="col2"> <label class="visually-hidden" for="" ></label>
+                              <input class="form-control" id="appointTue9"  type="text" name="appointTue9"  type="text" value="{{appointTue9}}" ></td> 
+                              <td class="col3"><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="ucbTue9" type="text" name="ucbTue9"  value="{{ucbTue9}}"></td>
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="complexTue9" type="text" name="complexTue9"  value="{{complexTue9}}"></td>
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="neuroTue9" type="text" name="neuroTue9"  value="{{neuroTue9}}"></td>
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="noneTue9" type="text" name="noneTue9"  value="{{noneTue9}}"></td>
+                           
+             
+                    {% if checked('benefitsTue','ben2') %}
+                              <td>
+                                <label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="IIDBTue9" type="text" name="IIDBTue9"  value="{{IIDBTue9}}">
+                    </td>
+                    {% endif %}
+                          </tr>
+
+                          {% endif %}
+                          {% if checked('tuestimes','1115')  %}
+
+                          <tr>
+                              <th class="col">11:15am</th>
+                              <td class="col2"> <label class="visually-hidden" for="" ></label>
+                                <input class="form-control" id="appointTue10"  type="text" name="appointTue10"  type="text" value="{{appointTue10}}" ></td> 
+                                <td class="col3"><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="ucbTue10" type="text" name="ucbTue10"  value="{{ucbTue10}}"></td>
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="complexTue10" type="text" name="complexTue10"  value="{{complexTue10}}"></td>
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="neuroTue10" type="text" name="neuroTue10"  value="{{neuroTue10}}"></td>
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="noneTue10" type="text" name="noneTue10"  value="{{noneTue10}}"></td>
+                             
+               
+                      {% if checked('benefitsTue','ben2') %}
+                                <td>
+                                  <label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="IIDBTue10" type="text" name="IIDBTue10"  value="{{IIDBTue10}}">
+                      </td>
+                      {% endif %}
+                            </tr>
+
+                            {% endif %}
+                            
+                            {% if checked('tuestimes','1130')  %}
+
+                          <tr>
+                              <th class="col">11:30am</th>
+                              <td class="col2"> <label class="visually-hidden" for="" ></label>
+                                <input class="form-control" id="appointTue11"  type="text" name="appointTue11"  type="text" value="{{appointTue11}}" ></td> 
+                                <td class="col3"><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="ucbTue11" type="text" name="ucbTue11"  value="{{ucbTue11}}"></td>
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="complexTue11" type="text" name="complexTue11"  value="{{complexTue11}}"></td>
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="neuroTue11" type="text" name="neuroTue11"  value="{{neuroTue11}}"></td>
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="noneTue11" type="text" name="noneTue11"  value="{{noneTue11}}"></td>
+                             
+               
+                      {% if checked('benefitsTue','ben2') %}
+                                <td>
+                                  <label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="IIDBTue11" type="text" name="IIDBTue11"  value="{{IIDBTue11}}">
+                      </td>
+                      {% endif %}
+                            </tr>
+
+                            {% endif %}
+                            {% if checked('tuestimes','1145')  %}
+
+                          <tr>
+                              <th class="col">11:45am</th>
+                              <td class="col2"> <label class="visually-hidden" for="" ></label>
+                                <input class="form-control" id="appointTue12"  type="text" name="appointTue12"  type="text" value="{{appointTue12}}" ></td> 
+                                <td class="col3"><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="ucbTue12" type="text" name="ucbTue12"  value="{{ucbTue12}}"></td>
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="complexTue12" type="text" name="complexTue12"  value="{{complexTue12}}"></td>
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="neuroTue12" type="text" name="neuroTue12"  value="{{neuroTue12}}"></td>
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="noneTue12" type="text" name="noneTue12"  value="{{noneTue12}}"></td>
+                             
+               
+                      {% if checked('benefitsTue','ben2') %}
+                                <td>
+                                  <label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="IIDBTue12" type="text" name="IIDBTue12"  value="{{IIDBTue12}}">
+                      </td>
+                      {% endif %}
+                            
+                            </tr>
+
+                            {% endif %}
+
+                            {% if checked('tuestimes','12')  %}
+
+                            <tr>
+                                <th class="col">12:00pm</th>
+                                <td class="col2"> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="appointTue13"  type="text" name="appointTue13"  type="text" value="{{appointTue13}}" ></td> 
+                                  <td class="col3"><label class="visually-hidden" for=""></label>
+                                    <input class="form-control" id="ucbTue13" type="text" name="ucbTue13"  value="{{ucbTue13}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="complexTue13" type="text" name="complexTue13"  value="{{complexTue13}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="neuroTue13" type="text" name="neuroTue13"  value="{{neuroTue13}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="noneTue13" type="text" name="noneTue13"  value="{{noneTue13}}"></td>
+                               
+                 
+                        {% if checked('benefitsTue','ben2') %}
+                                  <td>
+                                    <label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="IIDBTue13" type="text" name="IIDBTue13"  value="{{IIDBTue13}}">
+                        </td>
+                        {% endif %}
+                              
+                              </tr>
+  
+                              {% endif %}
+                              {% if checked('tuestimes','1215')  %}
+
+                              <tr>
+                                  <th class="col">12:15pm</th>
+                                  <td class="col2"> <label class="visually-hidden" for="" ></label>
+                                    <input class="form-control" id="appointTue14"  type="text" name="appointTue14"  type="text" value="{{appointTue14}}" ></td> 
+                                    <td class="col3"><label class="visually-hidden" for=""></label>
+                                      <input class="form-control" id="ucbTue14" type="text" name="ucbTue14"  value="{{ucbTue14}}"></td>
+                                  <td><label class="visually-hidden" for=""></label>
+                                    <input class="form-control" id="complexTue14" type="text" name="complexTue14"  value="{{complexTue14}}"></td>
+                                  <td><label class="visually-hidden" for=""></label>
+                                    <input class="form-control" id="neuroTue14" type="text" name="neuroTue14"  value="{{neuroTue14}}"></td>
+                                  <td><label class="visually-hidden" for=""></label>
+                                    <input class="form-control" id="noneTue14" type="text" name="noneTue14"  value="{{noneTue14}}"></td>
+                                 
+                   
+                          {% if checked('benefitsTue','ben2') %}
+                                    <td>
+                                      <label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="IIDBTue14" type="text" name="IIDBTue14"  value="{{IIDBTue14}}">
+                          </td>
+                          {% endif %}
+                                
+                                </tr>
+    
+                                {% endif %}
+
+                                {% if checked('tuestimes','1230')  %}
+
+                                <tr>
+                                    <th class="col">12:30pm</th>
+                                    <td class="col2"> <label class="visually-hidden" for="" ></label>
+                                      <input class="form-control" id="appointTue15"  type="text" name="appointTue15"  type="text" value="{{appointTue15}}" ></td> 
+                                      <td class="col3"><label class="visually-hidden" for=""></label>
+                                        <input class="form-control" id="ucbTue15" type="text" name="ucbTue15"  value="{{ucbTue15}}"></td>
+                                    <td><label class="visually-hidden" for=""></label>
+                                      <input class="form-control" id="complexTue15" type="text" name="complexTue15"  value="{{complexTue15}}"></td>
+                                    <td><label class="visually-hidden" for=""></label>
+                                      <input class="form-control" id="neuroTue15" type="text" name="neuroTue15"  value="{{neuroTue15}}"></td>
+                                    <td><label class="visually-hidden" for=""></label>
+                                      <input class="form-control" id="noneTue15" type="text" name="noneTue15"  value="{{noneTue15}}"></td>
+                                   
+                     
+                            {% if checked('benefitsTue','ben2') %}
+                                      <td>
+                                        <label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="IIDBTue15" type="text" name="IIDBTue15"  value="{{IIDBTue15}}">
+                            </td>
+                            {% endif %}
+                                  
+                                  </tr>
+      
+                                  {% endif %}
+
+                                  {% if checked('tuestimes','1245')  %}
+
+                                  <tr>
+                                      <th class="col">12:45pm</th>
+                                      <td class="col2"> <label class="visually-hidden" for="" ></label>
+                                        <input class="form-control" id="appointTue16"  type="text" name="appointTue16"  type="text" value="{{appointTue16}}" ></td> 
+                                        <td class="col3"><label class="visually-hidden" for=""></label>
+                                          <input class="form-control" id="ucbTue16" type="text" name="ucbTue16"  value="{{ucbTue16}}"></td>
+                                      <td><label class="visually-hidden" for=""></label>
+                                        <input class="form-control" id="complexTue16" type="text" name="complexTue16"  value="{{complexTue16}}"></td>
+                                      <td><label class="visually-hidden" for=""></label>
+                                        <input class="form-control" id="neuroTue16" type="text" name="neuroTue16"  value="{{neuroTue16}}"></td>
+                                      <td><label class="visually-hidden" for=""></label>
+                                        <input class="form-control" id="noneTue16" type="text" name="noneTue16"  value="{{noneTue16}}"></td>
+                                     
+                       
+                              {% if checked('benefitsTue','ben2') %}
+                                        <td>
+                                          <label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="IIDBTue16" type="text" name="IIDBTue16"  value="{{IIDBTue16}}">
+                              </td>
+                              {% endif %}
+                                    
+                                    </tr>
+        
+                                    {% endif %}
+                            {% if checked('tuestimes','1')  %}
+
+                <tr>
+                    <th class="col">1:00pm</th>
+                    <td class="col2"> <label class="visually-hidden" for="" ></label>
+                      <input class="form-control" id="appointTue17"  type="text" name="appointTue17"  type="text" value="{{appointTue17}}" ></td> 
+                      <td class="col3"><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="ucbTue17" type="text" name="ucbTue17"  value="{{ucbTue17}}"></td>
+                    <td><label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="complexTue17" type="text" name="complexTue17"  value="{{complexTue17}}"></td>
+                    <td><label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="neuroTue17" type="text" name="neuroTue17"  value="{{neuroTue17}}"></td>
+                    <td><label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="noneTue17" type="text" name="noneTue17"  value="{{noneTue17}}"></td>
+                   
+     
+            {% if checked('benefitsTue','ben2') %}
+                      <td>
+                        <label class="visually-hidden" for=""></label>
+              <input class="form-control" id="IIDBTue17" type="text" name="IIDBTue17"  value="{{IIDBTue17}}">
+            </td>
+            {% endif %}
+                  </tr>
+                  {% endif %}
+                  {% if checked('tuestimes','115')  %}
+                  <tr>
+                      <th class="col">1:15pm</th>
+                      <td class="col2"> <label class="visually-hidden" for="" ></label>
+                        <input class="form-control" id="appointTue18"  type="text" name="appointTue18"  type="text" value="{{appointTue18}}" ></td> 
+                        <td class="col3"><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="ucbTue18" type="text" name="ucbTue18"  value="{{ucbTue18}}"></td>
+                      <td><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="complexTue18" type="text" name="complexTue18"  value="{{complexTue18}}"></td>
+                      <td><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="neuroTue18" type="text" name="neuroTue18"  value="{{neuroTue18}}"></td>
+                      <td><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="noneTue18" type="text" name="noneTue18"  value="{{noneTue18}}"></td>
+                     
+       
+              {% if checked('benefitsTue','ben2') %}
+                        <td>
+                          <label class="visually-hidden" for=""></label>
+                <input class="form-control" id="IIDBTue18" type="text" name="IIDBTue18"  value="{{IIDBTue18}}">
+              </td>
+              {% endif %}
+                    </tr>
+                    {% endif %}
+                    {% if checked('tuestimes','130')  %}
+                    <tr>
+                        <th class="col">1:30pm</th>
+                        <td class="col2"> <label class="visually-hidden" for="" ></label>
+                          <input class="form-control" id="appointTue19"  type="text" name="appointTue19"  type="text" value="{{appointTue19}}" ></td> 
+                          <td class="col3"><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="ucbTue19" type="text" name="ucbTue19"  value="{{ucbTue19}}"></td>
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="complexTue19" type="text" name="complexTue19"  value="{{complexTue19}}"></td>
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="neuroTue19" type="text" name="neuroTue19"  value="{{neuroTue19}}"></td>
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="noneTue19" type="text" name="noneTue19"  value="{{noneTue19}}"></td>
+                       
+         
+                {% if checked('benefitsTue','ben2') %}
+                          <td>
+                            <label class="visually-hidden" for=""></label>
+                  <input class="form-control" id="IIDBTue19" type="text" name="IIDBTue19"  value="{{IIDBTue19}}">
+                </td>
+                {% endif %}
+                      </tr>
+                      {% endif %}
+                      {% if checked('tuestimes','145')  %}
+                    <tr>
+                        <th class="col">1:45pm</th>
+                        <td class="col2"> <label class="visually-hidden" for="" ></label>
+                          <input class="form-control" id="appointTue20"  type="text" name="appointTue20"  type="text" value="{{appointTue20}}" ></td> 
+                          <td class="col3"><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="ucbTue20" type="text" name="ucbTue20"  value="{{ucbTue20}}"></td>
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="complexTue20" type="text" name="complexTue20"  value="{{complexTue20}}"></td>
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="neuroTue20" type="text" name="neuroTue20"  value="{{neuroTue20}}"></td>
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="noneTue20" type="text" name="noneTue20"  value="{{noneTue20}}"></td>
+                       
+         
+                {% if checked('benefitsTue','ben2') %}
+                          <td>
+                            <label class="visually-hidden" for=""></label>
+                  <input class="form-control" id="IIDBTue20" type="text" name="IIDBTue20"  value="{{IIDBTue20}}">
+                </td>
+                {% endif %}
+                      </tr>
+                      {% endif %}
+                      {% if checked('tuestimes','2')  %}
+
+                      <tr>
+                          <th class="col">2:00pm</th>
+                          <td class="col2"> <label class="visually-hidden" for="" ></label>
+                            <input class="form-control" id="appointTue21"  type="text" name="appointTue21"  type="text" value="{{appointTue21}}" ></td> 
+                            <td class="col3"><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="ucbTue21" type="text" name="ucbTue21"  value="{{ucbTue21}}"></td>
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="complexTue21" type="text" name="complexTue21"  value="{{complexTue21}}"></td>
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="neuroTue21" type="text" name="neuroTue21"  value="{{neuroTue21}}"></td>
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="noneTue21" type="text" name="noneTue21"  value="{{noneTue21}}"></td>
+                         
+           
+                  {% if checked('benefitsTue','ben2') %}
+                            <td>
+                              <label class="visually-hidden" for=""></label>
+                    <input class="form-control" id="IIDBTue21" type="text" name="IIDBTue21"  value="{{IIDBTue21}}">
+                  </td>
+                  {% endif %}
+                        </tr>
+                        {% endif %}
+
+                        {% if checked('tuestimes','215')  %}
+
+                        <tr>
+                            <th class="col">2:15pm</th>
+                            <td class="col2"> <label class="visually-hidden" for="" ></label>
+                              <input class="form-control" id="appointTue22"  type="text" name="appointTue22"  type="text" value="{{appointTue22}}" ></td> 
+                              <td class="col3"><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="ucbTue22" type="text" name="ucbTue22"  value="{{ucbTue22}}"></td>
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="complexTue22" type="text" name="complexTue22"  value="{{complexTue22}}"></td>
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="neuroTue22" type="text" name="neuroTue22"  value="{{neuroTue22}}"></td>
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="noneTue22" type="text" name="noneTue22"  value="{{noneTue22}}"></td>
+                           
+             
+                    {% if checked('benefitsTue','ben2') %}
+                              <td>
+                                <label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="IIDBTue22" type="text" name="IIDBTue22"  value="{{IIDBTue22}}">
+                    </td>
+                    {% endif %}
+                          </tr>
+                          {% endif %}
+                        {% if checked('tuestimes','230')  %}
+  
+                        <tr>
+                            <th class="col">2:30pm</th>
+                            <td class="col2"> <label class="visually-hidden" for="" ></label>
+                              <input class="form-control" id="appointTue23"  type="text" name="appointTue23"  type="text" value="{{appointTue23}}" ></td> 
+                              <td class="col3"><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="ucbTue23" type="text" name="ucbTue23"  value="{{ucbTue23}}"></td>
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="complexTue23" type="text" name="complexTue23"  value="{{complexTue23}}"></td>
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="neuroTue23" type="text" name="neuroTue23"  value="{{neuroTue23}}"></td>
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="noneTue23" type="text" name="noneTue23"  value="{{noneTue23}}"></td>
+                           
+             
+                    {% if checked('benefitsTue','ben2') %}
+                              <td>
+                                <label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="IIDBTue23" type="text" name="IIDBTue23"  value="{{IIDBTue23}}">
+                    </td>
+                    {% endif %}
+                          </tr>
+                          {% endif %}
+                          
+                          {% if checked('tuestimes','245')  %}
+  
+                        <tr>
+                            <th class="col">2:45pm</th>
+                            <td class="col2"> <label class="visually-hidden" for="" ></label>
+                              <input class="form-control" id="appointTue24"  type="text" name="appointTue24"  type="text" value="{{appointTue24}}" ></td> 
+                              <td class="col3"><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="ucbTue24" type="text" name="ucbTue24"  value="{{ucbTue24}}"></td>
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="complexTue24" type="text" name="complexTue24"  value="{{complexTue24}}"></td>
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="neuroTue24" type="text" name="neuroTue24"  value="{{neuroTue24}}"></td>
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="noneTue24" type="text" name="noneTue24"  value="{{noneTue24}}"></td>
+                           
+             
+                    {% if checked('benefitsTue','ben2') %}
+                              <td>
+                                <label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="IIDBTue24" type="text" name="IIDBTue24"  value="{{IIDBTue24}}">
+                    </td>
+                    {% endif %}
+                          </tr>
+                          {% endif %}
+                          
+                          {% if checked('tuestimes','3')  %}
+  
+                          <tr>
+                              <th class="col">3:00pm</th>
+                              <td class="col2"> <label class="visually-hidden" for="" ></label>
+                                <input class="form-control" id="appointTue25"  type="text" name="appointTue25"  type="text" value="{{appointTue25}}" ></td> 
+                                <td class="col3"><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="ucbTue25" type="text" name="ucbTue25"  value="{{ucbTue25}}"></td>
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="complexTue25" type="text" name="complexTue25"  value="{{complexTue25}}"></td>
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="neuroTue25" type="text" name="neuroTue25"  value="{{neuroTue25}}"></td>
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="noneTue25" type="text" name="noneTue25"  value="{{noneTue25}}"></td>
+                             
+               
+                      {% if checked('benefitsTue','ben2') %}
+                                <td>
+                                  <label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="IIDBTue25" type="text" name="IIDBTue25"  value="{{IIDBTue25}}">
+                      </td>
+                      {% endif %}
+                            </tr>
+
+                            {% endif %}
+                            {% if checked('tuestimes','315')  %}
+  
+                            <tr>
+                                <th class="col">3:15pm</th>
+                                <td class="col2"> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="appointTue26"  type="text" name="appointTue26"  type="text" value="{{appointTue26}}" ></td> 
+                                  <td class="col3"><label class="visually-hidden" for=""></label>
+                                    <input class="form-control" id="ucbTue26" type="text" name="ucbTue26"  value="{{ucbTue26}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="complexTue26" type="text" name="complexTue26"  value="{{complexTue26}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="neuroTue26" type="text" name="neuroTue26"  value="{{neuroTue26}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="noneTue26" type="text" name="noneTue26"  value="{{noneTue26}}"></td>
+                               
+                 
+                        {% if checked('benefitsTue','ben2') %}
+                                  <td>
+                                    <label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="IIDBTue26" type="text" name="IIDBTue26"  value="{{IIDBTue26}}">
+                        </td>
+                        {% endif %}
+                              </tr>
+  
+
+                              {% endif %}
+                              {% if checked('tuestimes','330')  %}
+
+
+                            <tr>
+                                <th class="col">3:30pm</th>
+                                <td class="col2"> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="appointTue27"  type="text" name="appointTue27"  type="text" value="{{appointTue27}}" ></td> 
+                                  <td class="col3"><label class="visually-hidden" for=""></label>
+                                    <input class="form-control" id="ucbTue27" type="text" name="ucbTue27"  value="{{ucbTue27}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="complexTue27" type="text" name="complexTue27"  value="{{complexTue27}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="neuroTue27" type="text" name="neuroTue27"  value="{{neuroTue27}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="noneTue27" type="text" name="noneTue27"  value="{{noneTue27}}"></td>
+                               
+                 
+                        {% if checked('benefitsTue','ben2') %}
+                                  <td>
+                                    <label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="IIDBTue27" type="text" name="IIDBTue27"  value="{{IIDBTue27}}">
+                        </td>
+                        {% endif %}
+                              </tr>
+  
+
+                              {% endif %}
+                              {% if checked('tuestimes','345')  %}
+
+
+                            <tr>
+                                <th class="col">3:45pm</th>
+                                <td class="col2"> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="appointTue28"  type="text" name="appointTue28"  type="text" value="{{appointTue28}}" ></td> 
+                                  <td class="col3"><label class="visually-hidden" for=""></label>
+                                    <input class="form-control" id="ucbTue28" type="text" name="ucbTue28"  value="{{ucbTue28}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="complexTue28" type="text" name="complexTue28"  value="{{complexTue28}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="neuroTue28" type="text" name="neuroTue28"  value="{{neuroTue28}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="noneTue28" type="text" name="noneTue28"  value="{{noneTue28}}"></td>
+                               
+                 
+                        {% if checked('benefitsTue','ben2') %}
+                                  <td>
+                                    <label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="IIDBTue28" type="text" name="IIDBTue28"  value="{{IIDBTue28}}">
+                        </td>
+                        {% endif %}
+                              </tr>
+  
+
+                              {% endif %}
+                              
+                              {% if checked('tuestimes','4')  %}
+
+
+                            <tr>
+                                <th class="col">4:00pm</th>
+                                <td class="col2"> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="appointTue29"  type="text" name="appointTue29"  type="text" value="{{appointTue29}}" ></td> 
+                                  <td class="col3"><label class="visually-hidden" for=""></label>
+                                    <input class="form-control" id="ucbTue29" type="text" name="ucbTue29"  value="{{ucbTue29}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="complexTue29" type="text" name="complexTue29"  value="{{complexTue29}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="neuroTue29" type="text" name="neuroTue29"  value="{{neuroTue29}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="noneTue29" type="text" name="noneTue29"  value="{{noneTue29}}"></td>
+                               
+                 
+                        {% if checked('benefitsTue','ben2') %}
+                                  <td>
+                                    <label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="IIDBTue29" type="text" name="IIDBTue29"  value="{{IIDBTue29}}">
+                        </td>
+                        {% endif %}
+                              {% endif %}
+                              {% if checked('tuestimes','415')  %}
+
+
+                            <tr>
+                                <th class="col">4:15pm</th>
+                                <td class="col2"> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="appointTue30"  type="text" name="appointTue30"  type="text" value="{{appointTue30}}" ></td> 
+                                  <td class="col3"><label class="visually-hidden" for=""></label>
+                                    <input class="form-control" id="ucbTue30" type="text" name="ucbTue30"  value="{{ucbTue30}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="complexTue30" type="text" name="complexTue30"  value="{{complexTue30}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="neuroTue30" type="text" name="neuroTue30"  value="{{neuroTue30}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="noneTue30" type="text" name="noneTue30"  value="{{noneTue30}}"></td>
+                               
+                 
+                        {% if checked('benefitsTue','ben2') %}
+                                  <td>
+                                    <label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="IIDBTue30" type="text" name="IIDBTue30"  value="{{IIDBTue30}}">
+                        </td>
+                        {% endif %}
+                              </tr>
+  
+
+                              {% endif %}
+                              {% if checked('tuestimes','430')  %}
+
+
+                            <tr>
+                                <th class="col">4:30pm</th>
+                                <td class="col2"> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="appointTue31"  type="text" name="appointTue31"  type="text" value="{{appointTue31}}" ></td> 
+                                  <td class="col3"><label class="visually-hidden" for=""></label>
+                                    <input class="form-control" id="ucbTue31" type="text" name="ucbTue31"  value="{{ucbTue31}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="complexTue31" type="text" name="complexTue31"  value="{{complexTue31}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="neuroTue31" type="text" name="neuroTue31"  value="{{neuroTue31}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="noneTue31" type="text" name="noneTue31"  value="{{noneTue31}}"></td>
+                               
+                 
+                        {% if checked('benefitsTue','ben2') %}
+                                  <td>
+                                    <label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="IIDBTue31" type="text" name="IIDBTue31"  value="{{IIDBTue31}}">
+                        </td>
+                        {% endif %}
+                              </tr>
+  
+
+                              {% endif %}
+                              {% if checked('tuestimes','445')  %}
+
+
+                            <tr>
+                                <th class="col">4:45pm</th>
+                                <td class="col2"> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="appointTue32"  type="text" name="appointTue32"  type="text" value="{{appointTue32}}" ></td> 
+                                  <td class="col3"><label class="visually-hidden" for=""></label>
+                                    <input class="form-control" id="ucbTue32" type="text" name="ucbTue32"  value="{{ucbTue32}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="complexTue32" type="text" name="complexTue32"  value="{{complexTue32}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="neuroTue32" type="text" name="neuroTue32"  value="{{neuroTue32}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="noneTue32" type="text" name="noneTue32"  value="{{noneTue32}}"></td>
+                               
+                 
+                        {% if checked('benefitsTue','ben2') %}
+                                  <td>
+                                    <label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="IIDBTue32" type="text" name="IIDBTue32"  value="{{IIDBTue32}}">
+                        </td>
+                        {% endif %}
+                              </tr>
+  
+
+                              {% endif %}
+                              
+                              
+                           <!--   <tr class="total">
+                              	<th class="col">Total</th>
+                              	<td><label class="visually-hidden" for="" ></label>
+                                  <input type="number" name="sum2" id="sum2" class="form-control" readonly /></td>
+                              	<td><label class="visually-hidden" for="" ></label>
+                                  <input type="number" name="complexTuesum2" id="complexTuesum2" class="form-control" readonly /></td>
+                              	<td><label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="neuroTuesum2"  type="text" name="neuroTuesum2"  type="text" value="" ></td>
+                                  <td><label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="noneTuesum2"  type="text" name="noneTuesum2"  type="text" value="" ></td>
+                                	{% if checked('benefitsTue','ben2') %}
+                                  <td><label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="IIDBTuesum"  type="text" name="IIDBTuesum2"  type="text" value="" ></td>
+                                  {% endif %}
+                                  <td><label class="visually-hidden" for="" ></label>
+                                    <input class="form-control" id="ucbTuesum"  type="text" name="ucbTuesum"  type="text" value="" ></td>
+                                </tr> -->
+
+
+               
+              </table>
+
+              <p><button class="button mt25">Save and continue</button></p>
+              {% include path+"/includes/help/_help_totalsTue.html" %}
+              </form>
+            </div>
+         
+   
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+
+
+
+
+
+{% endblock %}
+
+
+{% block page_scripts %}
+<script>
+$(function(){
+  $('#appointTue1, #appointTue2, #appointTue3, #appointTue4, #appointTue5, #appointTue6, #appointTue7, #appointTue8, #appointTue9, #appointTue10, #appointTue11, #appointTue12, #appointTue13, #appointTue14, #appointTue15, #appointTue16, #appointTue17, #appointTue18, #appointTue19, #appointTue20, #appointTue21, #appointTue23, #appointTue23, #appointTue24, #appointTue25, #appointTue26, #appointTue27, #appointTue28, #appointTue29, #appointTue30, #appointTue31, #appointTue32').keyup(function(){
+     var value1 = parseFloat($('#appointTue1').val()) || 0;
+     var value2 = parseFloat($('#appointTue2').val()) || 0;
+     var value3 = parseFloat($('#appointTue3').val()) || 0;
+     var value4 = parseFloat($('#appointTue4').val()) || 0;
+     var value5 = parseFloat($('#appointTue5').val()) || 0;
+     var value6 = parseFloat($('#appointTue6').val()) || 0;
+     var value7 = parseFloat($('#appointTue7').val()) || 0;
+     var value8 = parseFloat($('#appointTue8').val()) || 0;
+     var value9 = parseFloat($('#appointTue9').val()) || 0;
+     var value10 = parseFloat($('#appointTue10').val()) || 0;
+     var value11 = parseFloat($('#appointTue11').val()) || 0;
+     var value12 = parseFloat($('#appointTue12').val()) || 0;
+     var value13 = parseFloat($('#appointTue13').val()) || 0;
+     var value14 = parseFloat($('#appointTue14').val()) || 0;
+     var value15 = parseFloat($('#appointTue15').val()) || 0;
+     var value16 = parseFloat($('#appointTue16').val()) || 0;
+     var value17 = parseFloat($('#appointTue17').val()) || 0;
+     var value18 = parseFloat($('#appointTue18').val()) || 0;
+     var value19 = parseFloat($('#appointTue19').val()) || 0;
+     var value20 = parseFloat($('#appointTue20').val()) || 0;
+     var value21 = parseFloat($('#appointTue21').val()) || 0;
+     var value22 = parseFloat($('#appointTue22').val()) || 0;
+     var value23 = parseFloat($('#appointTue23').val()) || 0;
+     var value24 = parseFloat($('#appointTue24').val()) || 0;
+     var value25 = parseFloat($('#appointTue25').val()) || 0;
+     var value26 = parseFloat($('#appointTue26').val()) || 0;
+     var value27 = parseFloat($('#appointTue27').val()) || 0;
+     var value28 = parseFloat($('#appointTue28').val()) || 0;
+     var value29 = parseFloat($('#appointTue29').val()) || 0;
+     var value30 = parseFloat($('#appointTue30').val()) || 0;
+     var value31 = parseFloat($('#appointTue31').val()) || 0;
+     var value32 = parseFloat($('#appointTue32').val()) || 0;
+     $('#Tuesum').val(value1 + value2 + value3+ value4+ value5+ value6+ value7+ value8+ value9+ value10+ value11+ value12+ value13+ value14+  value15+ value16+ value17+ value18+ value19+ value20+ value21+ value22+ value23+ value24+ value25+ value26+ value27+ value28+ value29+ value30+ value31+ value32);
+  });
+});
+$(function(){
+  $('#complexTue1, #complexTue2, #complexTue3, #complexTue4, #complexTue5, #complexTue6, #complexTue7, #complexTue8, #complexTue9, #complexTue10, #complexTue11, #complexTue12, #complexTue13, #complexTue14, #complexTue15, #complexTue16, #complexTue17, #complexTue18, #complexTue19, #complexTue20, #complexTue21, #complexTue22, #complexTue23, #complexTue24, #complexTue25, #complexTue26, #complexTue27, #complexTue28, #complexTue29, #complexTue30, #complexTue31, #complexTue32').keyup(function(){
+     var comvalue1 = parseFloat($('#complexTue1').val()) || 0;
+     var comvalue2 = parseFloat($('#complexTue2').val()) || 0;
+     var comvalue3 = parseFloat($('#complexTue3').val()) || 0;
+     var comvalue4 = parseFloat($('#complexTue4').val()) || 0;
+     var comvalue5 = parseFloat($('#complexTue5').val()) || 0;
+     var comvalue6 = parseFloat($('#complexTue6').val()) || 0;
+     var comvalue7 = parseFloat($('#complexTue7').val()) || 0;
+     var comvalue8 = parseFloat($('#complexTue8').val()) || 0;
+     var comvalue9 = parseFloat($('#complexTue9').val()) || 0;
+     var comvalue10 = parseFloat($('#complexTue10').val()) || 0;
+     var comvalue11 = parseFloat($('#complexTue11').val()) || 0;
+     var comvalue12 = parseFloat($('#complexTue12').val()) || 0;
+     var comvalue13 = parseFloat($('#complexTue13').val()) || 0;
+     var comvalue14 = parseFloat($('#complexTue14').val()) || 0;
+     var comvalue15 = parseFloat($('#complexTue15').val()) || 0;
+     var comvalue16 = parseFloat($('#complexTue16').val()) || 0;
+     var comvalue17 = parseFloat($('#complexTue17').val()) || 0;
+     var comvalue18 = parseFloat($('#complexTue18').val()) || 0;
+     var comvalue19 = parseFloat($('#complexTue19').val()) || 0;
+     var comvalue20 = parseFloat($('#complexTue20').val()) || 0;
+     var comvalue21 = parseFloat($('#complexTue21').val()) || 0;
+     var comvalue22 = parseFloat($('#complexTue22').val()) || 0;
+     var comvalue23 = parseFloat($('#complexTue23').val()) || 0;
+     var comvalue24 = parseFloat($('#complexTue24').val()) || 0;
+     var comvalue25 = parseFloat($('#complexTue25').val()) || 0;
+     var comvalue26 = parseFloat($('#complexTue26').val()) || 0;
+     var comvalue27 = parseFloat($('#complexTue27').val()) || 0;
+     var comvalue28 = parseFloat($('#complexTue28').val()) || 0;
+     var comvalue29 = parseFloat($('#complexTue29').val()) || 0;
+     var comvalue30 = parseFloat($('#complexTue30').val()) || 0;
+     var comvalue31 = parseFloat($('#complexTue31').val()) || 0;
+     var comvalue32 = parseFloat($('#complexTue32').val()) || 0;
+     $('#complexTuesum').val(comvalue1 + comvalue2 + comvalue3+ comvalue4+ comvalue5+ comvalue6+ comvalue7+ comvalue8+ comvalue9+ comvalue10+ comvalue11+ comvalue12+ comvalue13+ comvalue14+  comvalue15+ comvalue16+ comvalue17+ comvalue18+ comvalue19+ comvalue20+ comvalue21+ comvalue22+ comvalue23+ comvalue24+ comvalue25+ comvalue26+ comvalue27+ comvalue28+ comvalue29+ comvalue30+ comvalue31+ comvalue32);
+  });
+});
+
+$(function(){
+  $('#neuroTue1, #neuroTue2, #neuroTue3, #neuroTue4, #neuroTue5, #neuroTue6, #neuroTue7, #neuroTue8, #neuroTue9, #neuroTue10, #neuroTue11, #neuroTue12, #neuroTue13, #neuroTue14, #neuroTue15, #neuroTue16, #neuroTue17, #neuroTue18, #neuroTue19, #neuroTue20, #neuroTue21, #neuroTue22, #neuroTue23, #neuroTue24, #neuroTue25, #neuroTue26, #neuroTue27, #neuroTue28, #neuroTue29, #neuroTue30, #neuroTue31, #neuroTue32').keyup(function(){
+     var comvalue1 = parseFloat($('#neuroTue1').val()) || 0;
+     var comvalue2 = parseFloat($('#neuroTue2').val()) || 0;
+     var comvalue3 = parseFloat($('#neuroTue3').val()) || 0;
+     var comvalue4 = parseFloat($('#neuroTue4').val()) || 0;
+     var comvalue5 = parseFloat($('#neuroTue5').val()) || 0;
+     var comvalue6 = parseFloat($('#neuroTue6').val()) || 0;
+     var comvalue7 = parseFloat($('#neuroTue7').val()) || 0;
+     var comvalue8 = parseFloat($('#neuroTue8').val()) || 0;
+     var comvalue9 = parseFloat($('#neuroTue9').val()) || 0;
+     var comvalue10 = parseFloat($('#neuroTue10').val()) || 0;
+     var comvalue11 = parseFloat($('#neuroTue11').val()) || 0;
+     var comvalue12 = parseFloat($('#neuroTue12').val()) || 0;
+     var comvalue13 = parseFloat($('#neuroTue13').val()) || 0;
+     var comvalue14 = parseFloat($('#neuroTue14').val()) || 0;
+     var comvalue15 = parseFloat($('#neuroTue15').val()) || 0;
+     var comvalue16 = parseFloat($('#neuroTue16').val()) || 0;
+     var comvalue17 = parseFloat($('#neuroTue17').val()) || 0;
+     var comvalue18 = parseFloat($('#neuroTue18').val()) || 0;
+     var comvalue19 = parseFloat($('#neuroTue19').val()) || 0;
+     var comvalue20 = parseFloat($('#neuroTue20').val()) || 0;
+     var comvalue21 = parseFloat($('#neuroTue21').val()) || 0;
+     var comvalue22 = parseFloat($('#neuroTue22').val()) || 0;
+     var comvalue23 = parseFloat($('#neuroTue23').val()) || 0;
+     var comvalue24 = parseFloat($('#neuroTue24').val()) || 0;
+     var comvalue25 = parseFloat($('#neuroTue25').val()) || 0;
+     var comvalue26 = parseFloat($('#neuroTue26').val()) || 0;
+     var comvalue27 = parseFloat($('#neuroTue27').val()) || 0;
+     var comvalue28 = parseFloat($('#neuroTue28').val()) || 0;
+     var comvalue29 = parseFloat($('#neuroTue29').val()) || 0;
+     var comvalue30 = parseFloat($('#neuroTue30').val()) || 0;
+     var comvalue31 = parseFloat($('#neuroTue31').val()) || 0;
+     var comvalue32 = parseFloat($('#neuroTue32').val()) || 0;
+     $('#neuroTuesum').val(comvalue1 + comvalue2 + comvalue3+ comvalue4+ comvalue5+ comvalue6+ comvalue7+ comvalue8+ comvalue9+ comvalue10+ comvalue11+ comvalue12+ comvalue13+ comvalue14+  comvalue15+ comvalue16+ comvalue17+ comvalue18+ comvalue19+ comvalue20+ comvalue21+ comvalue22+ comvalue23+ comvalue24+ comvalue25+ comvalue26+ comvalue27+ comvalue28+ comvalue29+ comvalue30+ comvalue31+ comvalue32);
+  });
+});
+
+$(function(){
+  $('#noneTue1, #noneTue2, #noneTue3, #noneTue4, #noneTue5, #noneTue6, #noneTue7, #noneTue8, #noneTue9, #noneTue10, #noneTue11, #noneTue12, #noneTue13, #noneTue14, #noneTue15, #noneTue16, #noneTue17, #noneTue18, #noneTue19, #noneTue20, #noneTue21, #noneTue22, #noneTue23, #noneTue24, #noneTue25, #noneTue26, #noneTue27, #noneTue28, #noneTue29, #noneTue30, #noneTue31, #noneTue32').keyup(function(){
+     var comvalue1 = parseFloat($('#noneTue1').val()) || 0;
+     var comvalue2 = parseFloat($('#noneTue2').val()) || 0;
+     var comvalue3 = parseFloat($('#noneTue3').val()) || 0;
+     var comvalue4 = parseFloat($('#noneTue4').val()) || 0;
+     var comvalue5 = parseFloat($('#noneTue5').val()) || 0;
+     var comvalue6 = parseFloat($('#noneTue6').val()) || 0;
+     var comvalue7 = parseFloat($('#noneTue7').val()) || 0;
+     var comvalue8 = parseFloat($('#noneTue8').val()) || 0;
+     var comvalue9 = parseFloat($('#noneTue9').val()) || 0;
+     var comvalue10 = parseFloat($('#noneTue10').val()) || 0;
+     var comvalue11 = parseFloat($('#noneTue11').val()) || 0;
+     var comvalue12 = parseFloat($('#noneTue12').val()) || 0;
+     var comvalue13 = parseFloat($('#noneTue13').val()) || 0;
+     var comvalue14 = parseFloat($('#noneTue14').val()) || 0;
+     var comvalue15 = parseFloat($('#noneTue15').val()) || 0;
+     var comvalue16 = parseFloat($('#noneTue16').val()) || 0;
+     var comvalue17 = parseFloat($('#noneTue17').val()) || 0;
+     var comvalue18 = parseFloat($('#noneTue18').val()) || 0;
+     var comvalue19 = parseFloat($('#noneTue19').val()) || 0;
+     var comvalue20 = parseFloat($('#noneTue20').val()) || 0;
+     var comvalue21 = parseFloat($('#noneTue21').val()) || 0;
+     var comvalue22 = parseFloat($('#noneTue22').val()) || 0;
+     var comvalue23 = parseFloat($('#noneTue23').val()) || 0;
+     var comvalue24 = parseFloat($('#noneTue24').val()) || 0;
+     var comvalue25 = parseFloat($('#noneTue25').val()) || 0;
+     var comvalue26 = parseFloat($('#noneTue26').val()) || 0;
+     var comvalue27 = parseFloat($('#noneTue27').val()) || 0;
+     var comvalue28 = parseFloat($('#noneTue28').val()) || 0;
+     var comvalue29 = parseFloat($('#noneTue29').val()) || 0;
+     var comvalue30 = parseFloat($('#noneTue30').val()) || 0;
+     var comvalue31 = parseFloat($('#noneTue31').val()) || 0;
+     var comvalue32 = parseFloat($('#noneTue32').val()) || 0;
+     $('#noneTuesum').val(comvalue1 + comvalue2 + comvalue3+ comvalue4+ comvalue5+ comvalue6+ comvalue7+ comvalue8+ comvalue9+ comvalue10+ comvalue11+ comvalue12+ comvalue13+ comvalue14+  comvalue15+ comvalue16+ comvalue17+ comvalue18+ comvalue19+ comvalue20+ comvalue21+ comvalue22+ comvalue23+ comvalue24+ comvalue25+ comvalue26+ comvalue27+ comvalue28+ comvalue29+ comvalue30+ comvalue31+ comvalue32);
+  });
+});
+
+
+$(function(){
+  $('#IIDBTue1, #IIDBTue2, #IIDBTue3, #IIDBTue4, #IIDBTue5, #IIDBTue6, #IIDBTue7, #IIDBTue8, #IIDBTue9, #IIDBTue10, #IIDBTue11, #IIDBTue12, #IIDBTue13, #IIDBTue14, #IIDBTue15, #IIDBTue16, #IIDBTue17, #IIDBTue18, #IIDBTue19, #IIDBTue20, #IIDBTue21, #IIDBTue22, #IIDBTue23, #IIDBTue24, #IIDBTue25, #IIDBTue26, #IIDBTue27, #IIDBTue28, #IIDBTue29, #IIDBTue30, #IIDBTue31, #IIDBTue32').keyup(function(){
+     var comvalue1 = parseFloat($('#IIDBTue1').val()) || 0;
+     var comvalue2 = parseFloat($('#IIDBTue2').val()) || 0;
+     var comvalue3 = parseFloat($('#IIDBTue3').val()) || 0;
+     var comvalue4 = parseFloat($('#IIDBTue4').val()) || 0;
+     var comvalue5 = parseFloat($('#IIDBTue5').val()) || 0;
+     var comvalue6 = parseFloat($('#IIDBTue6').val()) || 0;
+     var comvalue7 = parseFloat($('#IIDBTue7').val()) || 0;
+     var comvalue8 = parseFloat($('#IIDBTue8').val()) || 0;
+     var comvalue9 = parseFloat($('#IIDBTue9').val()) || 0;
+     var comvalue10 = parseFloat($('#IIDBTue10').val()) || 0;
+     var comvalue11 = parseFloat($('#IIDBTue11').val()) || 0;
+     var comvalue12 = parseFloat($('#IIDBTue12').val()) || 0;
+     var comvalue13 = parseFloat($('#IIDBTue13').val()) || 0;
+     var comvalue14 = parseFloat($('#IIDBTue14').val()) || 0;
+     var comvalue15 = parseFloat($('#IIDBTue15').val()) || 0;
+     var comvalue16 = parseFloat($('#IIDBTue16').val()) || 0;
+     var comvalue17 = parseFloat($('#IIDBTue17').val()) || 0;
+     var comvalue18 = parseFloat($('#IIDBTue18').val()) || 0;
+     var comvalue19 = parseFloat($('#IIDBTue19').val()) || 0;
+     var comvalue20 = parseFloat($('#IIDBTue20').val()) || 0;
+     var comvalue21 = parseFloat($('#IIDBTue21').val()) || 0;
+     var comvalue22 = parseFloat($('#IIDBTue22').val()) || 0;
+     var comvalue23 = parseFloat($('#IIDBTue23').val()) || 0;
+     var comvalue24 = parseFloat($('#IIDBTue24').val()) || 0;
+     var comvalue25 = parseFloat($('#IIDBTue25').val()) || 0;
+     var comvalue26 = parseFloat($('#IIDBTue26').val()) || 0;
+     var comvalue27 = parseFloat($('#IIDBTue27').val()) || 0;
+     var comvalue28 = parseFloat($('#IIDBTue28').val()) || 0;
+     var comvalue29 = parseFloat($('#IIDBTue29').val()) || 0;
+     var comvalue30 = parseFloat($('#IIDBTue30').val()) || 0;
+     var comvalue31 = parseFloat($('#IIDBTue31').val()) || 0;
+     var comvalue32 = parseFloat($('#IIDBTue32').val()) || 0;
+     $('#IIDBTuesum').val(comvalue1 + comvalue2 + comvalue3+ comvalue4+ comvalue5+ comvalue6+ comvalue7+ comvalue8+ comvalue9+ comvalue10+ comvalue11+ comvalue12+ comvalue13+ comvalue14+  comvalue15+ comvalue16+ comvalue17+ comvalue18+ comvalue19+ comvalue20+ comvalue21+ comvalue22+ comvalue23+ comvalue24+ comvalue25+ comvalue26+ comvalue27+ comvalue28+ comvalue29+ comvalue30+ comvalue31+ comvalue32);
+  });
+});
+
+
+$(function(){
+  $('#ucbTue1, #ucbTue2, #ucbTue3, #ucbTue4, #ucbTue5, #ucbTue6, #ucbTue7, #ucbTue8, #ucbTue9, #ucbTue10, #ucbTue11, #ucbTue12, #ucbTue13, #ucbTue14, #ucbTue15, #ucbTue16, #ucbTue17, #ucbTue18, #ucbTue19, #ucbTue20, #ucbTue21, #ucbTue22, #ucbTue23, #ucbTue24, #ucbTue25, #ucbTue26, #ucbTue27, #ucbTue28, #ucbTue29, #ucbTue30, #ucbTue31, #ucbTue32').keyup(function(){
+     var comvalue1 = parseFloat($('#ucbTue1').val()) || 0;
+     var comvalue2 = parseFloat($('#ucbTue2').val()) || 0;
+     var comvalue3 = parseFloat($('#ucbTue3').val()) || 0;
+     var comvalue4 = parseFloat($('#ucbTue4').val()) || 0;
+     var comvalue5 = parseFloat($('#ucbTue5').val()) || 0;
+     var comvalue6 = parseFloat($('#ucbTue6').val()) || 0;
+     var comvalue7 = parseFloat($('#ucbTue7').val()) || 0;
+     var comvalue8 = parseFloat($('#ucbTue8').val()) || 0;
+     var comvalue9 = parseFloat($('#ucbTue9').val()) || 0;
+     var comvalue10 = parseFloat($('#ucbTue10').val()) || 0;
+     var comvalue11 = parseFloat($('#ucbTue11').val()) || 0;
+     var comvalue12 = parseFloat($('#ucbTue12').val()) || 0;
+     var comvalue13 = parseFloat($('#ucbTue13').val()) || 0;
+     var comvalue14 = parseFloat($('#ucbTue14').val()) || 0;
+     var comvalue15 = parseFloat($('#ucbTue15').val()) || 0;
+     var comvalue16 = parseFloat($('#ucbTue16').val()) || 0;
+     var comvalue17 = parseFloat($('#ucbTue17').val()) || 0;
+     var comvalue18 = parseFloat($('#ucbTue18').val()) || 0;
+     var comvalue19 = parseFloat($('#ucbTue19').val()) || 0;
+     var comvalue20 = parseFloat($('#ucbTue20').val()) || 0;
+     var comvalue21 = parseFloat($('#ucbTue21').val()) || 0;
+     var comvalue22 = parseFloat($('#ucbTue22').val()) || 0;
+     var comvalue23 = parseFloat($('#ucbTue23').val()) || 0;
+     var comvalue24 = parseFloat($('#ucbTue24').val()) || 0;
+     var comvalue25 = parseFloat($('#ucbTue25').val()) || 0;
+     var comvalue26 = parseFloat($('#ucbTue26').val()) || 0;
+     var comvalue27 = parseFloat($('#ucbTue27').val()) || 0;
+     var comvalue28 = parseFloat($('#ucbTue28').val()) || 0;
+     var comvalue29 = parseFloat($('#ucbTue29').val()) || 0;
+     var comvalue30 = parseFloat($('#ucbTue30').val()) || 0;
+     var comvalue31 = parseFloat($('#ucbTue31').val()) || 0;
+     var comvalue32 = parseFloat($('#ucbTue31').val()) || 0;
+     $('#ucbTuesum').val(comvalue1 + comvalue2 + comvalue3+ comvalue4+ comvalue5+ comvalue6+ comvalue7+ comvalue8+ comvalue9+ comvalue10+ comvalue11+ comvalue12+ comvalue13+ comvalue14+  comvalue15+ comvalue16+ comvalue17+ comvalue18+ comvalue19+ comvalue20+ comvalue21+ comvalue22+ comvalue23+ comvalue24+ comvalue25+ comvalue26+ comvalue27+ comvalue28+ comvalue29+ comvalue30+ comvalue31+ comvalue32);
+  });
+});
+
+
+
+
+
+</script>
+{% endblock %}

@@ -1,0 +1,206 @@
+{% extends path+"/_layout-case-simple.html" %}
+
+
+{% block actioncolumn %}
+   
+  <p class="returnRef"><a href="/fha/v8/referrals-fme">Return to case list</a></p>
+  <hr>
+ <div class="case-status">
+ 
+ 
+ {% if data['pbachoice']=='yes'%}
+<p class="mt10 mb0 bold-small">
+Ready for paper based assessment  
+</p>
+<p><a href="/{{path }}/scrutiny/not-testing" class="button">Start assessment</a></p>
+{% else %}
+<p class="mt10 mb0 bold-small">
+Booked
+</p>
+{% endif %}
+
+    
+
+    
+
+</p>
+
+
+<hr>
+<!--<ul class="secondary-actions">
+
+  <li><a href="/{{path }}/scrutiny/recordFME" class="">Record evidence</a></li>
+  
+
+  </ul>-->
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Bobby Henderson
+{% endblock %}
+
+{% block citizen_content %}
+
+
+{% if data['pbachoice'] %}
+	 
+
+{% else %}
+
+	<div class="panel panel-warning fme-warning">
+		<h3 class="heading-small">New evidence recorded</h3>
+		<p>Bobby's case should be reviewed before making a recommendation</p>
+		<p><a href="/{{path }}/scrutiny/recordFMEdecision">Make recommendation</a></p>
+	</div>
+	
+
+	
+{% endif %}
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.case_tabs("timeline-fme",1,path1, customer._id) }}
+
+    
+  <div class="timeline">
+
+
+     
+{% if data['pbachoice']=='yes'%}
+ <span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">Referred for paper based assessment</h3>
+  <p class="timeline_datetime">24th June 2019</p>
+</div>
+ <span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">Appointment cancelled</h3>
+  <p class="timeline_datetime">24th June 2019</p>
+</div>
+ <span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">GP Report - evidence reviewed</h3>
+  <p class="timeline_datetime">24th June 2019</p>
+</div>
+
+{% elif data['pbachoice']=='no'%}
+ <span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">GP Report - evidence reviewed</h3>
+  <p class="timeline_datetime">24th June 2019</p>
+</div>
+
+{% endif %}
+
+
+
+
+		 <span class="line"></span>
+			<div class="timeline__event">
+			  <h3 class="timeline__heading">GP Report - medical evidence recorded</h3>
+			  <p class="timeline_datetime">24th June 2019</p>
+			</div>
+
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Appointment letter sent</h3>
+          <p class="timeline_datetime">20th June 2019</p>
+        </div>
+        
+        <span class="line"></span>
+		<div class="timeline__event">
+		  <h3 class="timeline__heading">GP Report - medical evidence overdue</h3>
+		  <p class="timeline_datetime">19th June 2019</p>
+		</div>
+      
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Appointment booked</h3>
+          <p class="timeline_datetime">8th June 2019</p>
+        </div>
+      
+      <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Referred for appointment</h3>
+          <p class="timeline_datetime">4th June 2019</p>
+        </div>
+
+
+
+
+<span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">GP Report - medical evidence requested</h3>
+  <p class="timeline_datetime">4th June 2019</p>
+</div>
+
+
+
+
+      
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">Med 3 - medical evidence recorded </h3>
+        <p class="timeline_datetime">2nd June 2019</p>
+      </div>
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">UC50 form recorded</h3>
+        <p class="timeline_datetime">1st June 2019</p>
+      </div>
+
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">UC50 form posted</h3>
+        <p class="timeline_datetime">25th May 2019</p>
+      </div>
+      
+ 
+
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">New referral created</h3>
+        <p class="timeline_datetime">25th May 2019</p>
+      </div>
+
+
+
+      <div style="clear:both"></div>
+
+    </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

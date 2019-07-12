@@ -12,11 +12,13 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "condition1",
         "name": "Depression",
         "source": "Claimant",
         "date": "2014"
       },
       {
+        "dataname": "condition2",
         "name": "Back spasms",
         "source": "Claimant",
         "date": "2014"
@@ -93,11 +95,13 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "condition1",
         "name": "Arthritis",
         "source": "Claimant",
         "date": "July 2016"
       },
       {
+        "dataname": "condition2", 
         "name": "Prolapsed uterus",
         "source": "Claimant",
         "date": "August 2018"
@@ -153,7 +157,7 @@ module.exports = [
     },
     "appointment": {
       "time":"1:30pm", 
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
       "audio":"Audio recording required",
       "gender" :"Female HCP requested"
     },
@@ -174,9 +178,10 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "", 
         "name": "",
         "source": "",
-        "date": ""
+        "date": "06 2017"
       }
     ],
     "medication": [
@@ -229,7 +234,7 @@ module.exports = [
     },
     "appointment": {
       "time":"1:30pm", 
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
     },
   },
   {
@@ -245,9 +250,10 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "",
         "name": "",
         "source": "",
-        "date": ""
+        "date": "06 2017"
       }
     ],
     "medication": [
@@ -300,7 +306,7 @@ module.exports = [
     },
     "appointment": {
       "time":"1.00pm", 
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
     },
   },
   {
@@ -316,6 +322,7 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "condition1",
         "name": "Anxiety",
         "source": "claimant",
         "date": "2011"
@@ -371,7 +378,7 @@ module.exports = [
     },
     "appointment": {
       "time":"1.00pm", 
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
     },
   },
   {
@@ -387,16 +394,19 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "condition1",
         "name": "Poland Syndrome",
         "source": "Claimant",
         "date": "1986"
       },
       {
+        "dataname": "condition2",
         "name": "Depression",
         "source": "Claimant",
         "date": "2017"
       },
       {
+        "dataname": "condition3",
         "name": "Asthma",
         "source": "Claimant",
         "date": "2012"
@@ -485,6 +495,7 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "condition1",
         "name": "Stroke",
         "source": "Claimant",
         "date": "July 2017"
@@ -492,6 +503,7 @@ module.exports = [
     ],
     "medication": [
       {
+        
         "name": "Atorvastatin",
         "dose": "80mg",
         "sideEffects": ""
@@ -555,7 +567,7 @@ module.exports = [
     },
     "appointment": {
       "time":"11.30am", 
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
     },
   },
   {
@@ -571,45 +583,59 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "condition1",
         "name": "Depression",
         "source": "Claimant",
         "date": "2003"
       },
       {
+        "dataname": "condition2",
         "name": "Anxiety",
         "source": "Claimant",
         "date": "2015"
+      },
+      {
+        "dataname": "condition3",
+        "name": "Gout",
+        "source": "Claimant",
+        "date": "2017"
+      },
+      {
+        "dataname": "condition4",
+        "name": "Tremors",
+        "source": "Claimant",
+        "date": "2017"
       }
     ],
     "medication": [
       {
         "name": "Naproxen",
-        "dose": "500mg",
+        "dose": "500mg once a day",
         "sideEffects": ""
       },
       {
         "name": "Venlafaxine",
-        "dose": "150mg",
+        "dose": "150mg once a day",
         "sideEffects": ""
       },
       {
         "name": "Mirtazine",
-        "dose": "15mg",
+        "dose": "15mg once a day",
         "sideEffects": ""
       },
       {
         "name": "Diazepam",
-        "dose": "10mg",
+        "dose": "10mg twice a day",
         "sideEffects": ""
       },
       {
         "name": "Co-codamol",
-        "dose": "30/500 mg",
+        "dose": "30/500 mg three times a day",
         "sideEffects": ""
       }
     ],
     "status": "Ready for assessment",
-    "dateOfBirth": "1952-04-24T02:55:01+00:00",
+    "dateOfBirth": "1995-04-24T02:55:01+00:00",
     "mobile": "07918 463 245",
     "NINO": "QQ 69 73 59 C",
     "email": "mullins.steele@fakemail.com",
@@ -651,8 +677,8 @@ module.exports = [
     },
     "appointment": {
       "time":"11.30am", 
-      "type":"Standard appointment",
-      "arrival":"On time",
+      "type":"Non-neuro appointment",
+      "arrival":"on time",
       "waiting":"waiting 15 Mins"
     },
   },
@@ -669,9 +695,10 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "",
         "name": "",
         "source": "",
-        "date": ""
+        "date": "06 2017"
       }
     ],
     "medication": [
@@ -726,7 +753,7 @@ module.exports = [
       "time":"11.30am", 
       "type":"Complex neuro appointment",
       "accessible": "Ground floor access",
-      "arrival":"On time",
+      "arrival":"on time",
       "waiting":" waiting 20 Mins"
     },
   },
@@ -743,24 +770,28 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "condition1",
         "name": "Diabetes",
         "source": "Claimant",
-        "date": ""
+        "date": "June 2017"
       },
       {
+        "dataname": "condition2",
         "name": "Arthritis",
         "source": "Claimant",
-        "date": ""
+        "date": "October 2015"
       },
       {
+        "dataname": "condition3",
         "name": "Liver disease",
         "source": "Claimant",
-        "date": ""
+        "date": "January 2017"
       },
       {
+        "dataname": "condition4",
         "name": "Urine problems",
         "source": "Claimant",
-        "date": ""
+        "date": "September 2017"
       }
 
 
@@ -815,10 +846,10 @@ module.exports = [
     },
     "appointment": {
       "time":"11.00am",
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
       "interpreter":"portuguese interpreter required",
       "arrival":"on time",
-      "Ready for assessment":"Ready for assessment 25mins"
+      "waiting":"waiting 25mins"
     },
   },
   {
@@ -834,15 +865,18 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "condition1",
         "name": "Speech impediment",
         "source": "Claimant",
         "date": "1997"
       },
       {
+        "dataname": "condition2",
         "name": "Social anxiety",
         "source": "Claimant",
         "date": "2011"
       },  {
+        "dataname": "condition3",
         "name": "Depression",
         "source": "Claimant",
         "date": "2018"
@@ -851,12 +885,12 @@ module.exports = [
     "medication": [
       {
         "name": "Ventoline inhaler",
-        "dose": "",
+        "dose": "Twice a day",
         "sideEffects": ""
       },
       {
         "name": "Beclometasone inhaler ",
-        "dose": "",
+        "dose": "Twice a day",
         "sideEffects": ""
       }
 
@@ -903,10 +937,10 @@ module.exports = [
       }
     },
     "appointment": {
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
       "time":"11.00am",
       "arrival":"on time",
-      "Ready for assessment":"Ready for assessment 18 minutes"
+      "waiting":"waiting 2 minutes"
     },
   },
   
@@ -923,11 +957,13 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "condition1",
         "name": "Depression",
         "source": "Claimant",
         "date": "January 2018"
       },
       {
+        "dataname": "condition2",
         "name": "Anxiety",
         "source": "Claimant",
         "date": "January 2018"
@@ -984,7 +1020,7 @@ module.exports = [
     },
     "appointment": {
       "time":"11.00am",
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
       "arrivallate":"15 mins late",
       "waiting":"waiting 10 minutes"
     },
@@ -1002,9 +1038,10 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "",
         "name": "",
         "source": "",
-        "date": ""
+        "date": "06 2017"
       }
     ],
     "medication": [
@@ -1057,7 +1094,7 @@ module.exports = [
     },
     "appointment": {
       "time":"10.30pm",
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
     },
   },
   {
@@ -1073,9 +1110,10 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "",
         "name": "",
         "source": "",
-        "date": ""
+        "date": "06 2017"
       }
     ],
     "medication": [
@@ -1146,9 +1184,10 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "",
         "name": "",
         "source": "",
-        "date": ""
+        "date": "06 2017"
       }
     ],
     "medication": [
@@ -1201,7 +1240,7 @@ module.exports = [
     },
     "appointment": {
       "time":"10.00am",
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
       "arrival":"on time",
       "waiting":"waiting 1 hour 25mins"
     },
@@ -1219,9 +1258,10 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "",
         "name": "",
         "source": "",
-        "date": ""
+        "date": "06 2017"
       }
     ],
     "medication": [
@@ -1294,9 +1334,10 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "",
         "name": "",
         "source": "",
-        "date": ""
+        "date": "06 2017"
       }
     ],
     "medication": [
@@ -1368,17 +1409,20 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "condition1",
         "name": "Depression",
         "source": "Claimant",
         "date": "January 2018"
       },
 
       {
+        "dataname": "condition2", 
         "name": "Psychosis",
         "source": "Claimant",
         "date": "January 2018"
       },
       {
+        "dataname": "condition3",
         "name": "Severe back pain",
         "source": "Claimant",
         "date": "June 2018"
@@ -1463,7 +1507,7 @@ module.exports = [
     },
     "appointment": {
       "time":"9:30am",
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
     },
   },
   {
@@ -1479,9 +1523,10 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "",
         "name": "",
         "source": "",
-        "date": ""
+        "date": "06 2017"
       }
     ],
     "medication": [
@@ -1535,7 +1580,7 @@ module.exports = [
       "time":"9:00am",
       "type":"Complex neuro appointment",
       "taxi":"Taxi required",
-      "arrival":"On time",
+      "arrival":"on time",
       "waiting":"2 hours 35mins "
     },
   },{
@@ -1551,26 +1596,31 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "condition1",
         "name": "Depression",
         "source": "Claimant",
         "date": "82"
       },
       {
+        "dataname": "condition2",
         "name": "Anxiety",
         "source": "Claimant",
         "date": "82"
       },
       {
+        "dataname": "condition3",
         "name": "Gallstones",
         "source": "Claimant",
         "date": "2009"
       },
       {
+        "dataname": "condition4",
         "name": "Tinnitus",
         "source": "Claimant",
         "date": "2013"
       },
       {
+        "dataname": "condition5",
         "name": "Arthritus",
         "source": "Claimant",
         "date": "03"
@@ -1640,7 +1690,7 @@ module.exports = [
     },
     "appointment": {
       "time":"9:00am",
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
       "arrival":"on time",
       "waiting":"Waiting 2 hours 45 mins"
     },
@@ -1659,9 +1709,10 @@ module.exports = [
     ],
     "illnesses": [
       {
+        "dataname": "",
         "name": "",
         "source": "",
-        "date": ""
+        "date": "06 2017"
       }
     ],
     "medication": [
@@ -1713,7 +1764,7 @@ module.exports = [
       },
     },
     "appointment": {
-      "type":"Standard appointment",
+      "type":"Non-neuro appointment",
       "time":"9.00am",
     },
   }

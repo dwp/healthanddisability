@@ -1,0 +1,44 @@
+{% extends path+"/_layout-caselist-dm.html" %}
+
+{% block horizontal_secondary_nav %}
+              
+{{ secondaryNav.nav("decision-maker", false, menuItemsDm ) }}
+
+
+{% endblock %}  
+
+{% block caselist_content %}
+<h2 class="heading-medium mt0"><span class="heading-xlarge">{{customers.length}}</span><br/>Make a decision</h2>
+<table class="zebra">
+
+  <thead>
+    <tr>
+      <th>Details</th>
+      <th>Status</th>
+      <th>Referred date</th>
+    </tr>
+  </thead>
+  
+  {% for customer in customers %}
+<tr>
+
+<td>
+<a href="decisionmaker/{{customer._id}}/timeline"><span class="visually-hidden">Name</span>{{customer.name.fullName}}</a>
+<span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span>
+</td>
+<td>
+    <span class="block">
+    {{ 'Assessment reports'  if customer.status == 'Assessment reports'}}
+    {{ 'Failed to attend appointment' if customer.status == 'Failed to attend appointment'}}
+    {{ 'Questionnaire not returned' if customer.status == 'Questionnaire not returned'}}
+    
+    </span> </td>
+  <td> {{ customer.refereddate }}</td>  
+</tr>
+</tr>
+
+{% endfor %}
+
+</table>   
+      
+{% endblock %}

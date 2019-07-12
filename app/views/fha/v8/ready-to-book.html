@@ -1,0 +1,95 @@
+{% extends path+"/_layout-caselist.html" %}
+
+{% block horizontal_secondary_nav %}
+              
+{{ secondaryNav.nav("appointments", "ready-to-book", menuItems ) }}
+
+
+{% endblock %}  
+
+{% block caselist_content %}
+
+
+            <h2 class="heading-medium mt0"><span class="heading-xlarge">{{customers.length}}</span><br/>Ready to book</h2>
+                <form class="" method="post" action="/{{path}}/ready-to-book">
+                  <h3 class="filter-status">Filter list by:</h3>
+                  <div class=" filter time-group time-top">
+                         
+                          <fieldset>
+                        
+                            <legend class="visually-hidden">Filter by:</legend>
+                  
+                            <div class="time-choice">
+                                  <input id="all" name="filter" type="checkbox" value="all"  {{ checked('filter', 'all') }}>
+                                  <label for="all">All <span>(18)</span></label>
+                                </div>
+                            <div class="time-choice">
+                                <input id="dna" name="filter" type="checkbox" value="dna"  {{ checked('filter', 'dna') }}>
+                                <label for="dna">DNA re-referals <span>(3)</span></label>
+                              </div>
+                              <p><button class="button button-secondary mt10">Apply filter</button></p>
+                              
+                          </fieldset>
+                       </div>
+                  </form>
+                  {% if checked('filter', 'dna')%}
+                  <table class="zebra">
+                      <thead>
+                          <tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+                            <th>Details</th>
+                            <th>10 day target</th>
+                          </tr>
+                        </thead>
+                    <tbody>
+                      <tr>
+                      <td><a href="booking/5bbf32d5ed63a198101d1d2b/appointment"><span class="visually-hidden">Name</span>Valarie Tucker </a><span class="text-secondary block"><span class="visually-hidden">Nino</span>QQ 39 18 21 C</span>
+                      </td>
+                      <td>7 Days remaining
+                      </td>
+                  </tr>
+              
+                  
+                  <tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+                      <td><a href="booking/5bbf32d534a51a1072744d21/appointment"><span class="visually-hidden">Name</span>Sarah Hall </a><span class="text-secondary block"><span class="visually-hidden">Nino</span>QQ 69 17 54 C</span>
+                      </td>
+                      <td>8 Days remaining
+                      </td>
+                  </tr>
+              
+                  
+                  <tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+                      <td><a href="booking/5bbf32d5f8883e74e03e6f44/appointment"><span class="visually-hidden">Name</span>Johannes Yussel </a><span class="text-secondary block"><span class="visually-hidden">Nino</span>QQ 78 13 92 C</span>
+                      </td>
+                      <td>10 Days remaining
+                      </td>
+                  </tr>
+              
+                  
+  
+                </tbody>
+                      
+                  
+                      </table>
+                  {% else%}
+            <table>
+
+                <thead>
+                  <tr>
+                    <th>Details</th>
+  
+                  </tr>
+                </thead>
+                {% for customer in customers %}
+                <tr>
+                    <td><a href="booking/{{customer._id}}/timeline"><span class="visually-hidden">Name</span>{{customer.name.fullName}} </a><span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span>
+                    </td>
+             
+                </tr>
+            
+                {% endfor %}
+
+              </table>
+              {% endif %}
+
+
+{% endblock %}

@@ -17,7 +17,7 @@
            
         <div class="grid-row">
             <div class="column-two-thirds">
-        <h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span><!--Rearrange{% if customer.name.first == 'Mcconnell' %}, request {% endif %} or cancel appointment -->Update appointment</h1>
+        <h1 class="heading-large"><!--<span class="heading-secondary">Step 2 of 2</span>--><!--Rearrange{% if customer.name.first == 'Mcconnell' %}, request {% endif %} or cancel appointment -->Update appointment</h1>
 
             {% if customer.name.first == 'Mcconnell' %}
             <div class="panel panel-warning">
@@ -44,11 +44,11 @@
                                 <div class="panel js-hidden" id="other-info2" >
 
                                         <div class="form-group">
-                                                <div class="panel panel-info"> <h2 class="heading-small">{{customer.name.first}}'s current appointment</h2>
+                                                <h2 class="heading-small"><span style="font-weight:normal" class="">Appointment details</span><br>Non-neuro appointment</h2>
     
                                                     {% if customer.name.first == 'Lowery' %}
                                                     <ul class="list-bullet mt10 mb10">
-                                                      <li>Tuesday 5 Feb 2018</li>
+                                                      <li>Tuesday 19 March</li>
                                                       <li>4:00pm</li>
                                                       <li>Tresco House</li>
                                                     </ul>
@@ -64,7 +64,7 @@
                                                                 </li>
                                                         
                                                                 <li>Tuesdays</li>
-                                                                <li>11 Febuary 2019 – 17 Febuary 2019</li>
+                                                               
                                                         
                                                                 </ul>
                                                            
@@ -74,14 +74,14 @@
                                                    
                                                     {% elif customer.name.first == 'Mcconnell' %}
                                                     <ul class="list-bullet mt10 mb10">
-                                                            <li>Tuesday {{ 'Do MMMM YYYY' | baseDateAdd(5) }}</li>
+                                                            <li>Friday 15th March</li>
                                                       <li>4:00pm</li>
                                                       <li>Tresco House</li>
                                                     </ul>
     
                                                           {% else %}
                                                           <ul class="list-bullet mt10 mb10">
-                                                                <li>Tuesday {{ 'Do MMMM YYYY' | baseDateAdd(5) }}</li>
+                                                                <li>Tuesday {{ 'Do MMMM YYYY' | baseDateAdd(7) }}</li>
                                                                 <li>4:00pm</li>
                                                                 <li>Tresco House</li>
                                                               </ul>
@@ -89,9 +89,30 @@
                                                              
     
                                                           {% endif%}
-                                                </div>    
+                                                   
                                         {% include path+"/includes/appointmentsTypeAhead.html" %}  
                                         </div>
+
+                                        <div class="form-group">
+                                                <fieldset class="inline">
+                                              
+                                                  <legend>
+                                                    <h2 class="heading-small mb10">
+                                                      Who is changing this appointment?
+                                                    </h2>
+                                                  </legend>
+                                              
+                                                  <div class="multiple-choice">
+                                                    <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+                                                    <label for="radio-inline-1">Claimant</label>
+                                                  </div>
+                                                  <div class="multiple-choice">
+                                                    <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+                                                    <label for="radio-inline-2">Assessment centre </label>
+                                                  </div>
+                                              
+                                                </fieldset>
+                                              </div>
                                         
                                             
                                     </div>
@@ -136,7 +157,7 @@
                          
                                     <div class="form-group">
                                             <label class="form-label-bold">Reason</label>
-                                            <textarea name="changedByCustomerComments" class="form-control " style="height: 150px; width:100%; max-width:650px;">{{changedByCustomerComments}}</textarea>
+                                            <textarea name="reason" class="form-control " style="height: 150px; width:100%; max-width:650px;">{{reason}}</textarea>
                                     </div>        
                            
 					

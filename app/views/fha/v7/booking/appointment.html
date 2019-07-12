@@ -10,10 +10,10 @@
   
   <div class="grid-row">
 
-{% if customer.status == 'Security booked' %}
-      {% include path+"/includes/appointment/_uta.html" %}
+{% if customer.status == 'Did not attend' %}
+ {% include path+"/includes/appointment/_fta.html" %}
 {% else %}
-{% include path+"/includes/appointment/_fta.html" %}
+{% include path+"/includes/appointment/_uta.html" %}
 {% endif%}
 
 

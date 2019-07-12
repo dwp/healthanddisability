@@ -1,0 +1,69 @@
+{% extends path2+"/_layoutStripped.html" %}
+
+{% block case_content %}
+
+ <a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+<h3 class="heading-large mt20">Appointment referral</h3>
+<form class="form" action="/{{ path2 }}" method="get">
+  
+  <div class="form-group">
+	  <label class="form-label" for="reason">
+	  	Reason for face to face appointment
+	  </label>
+	  <textarea class="form-control" name="reason" style="height:200px"></textarea>
+	  
+	  
+	   
+  </div> 
+		  
+
+		  
+		  
+		     <div class="form-group">
+			    <fieldset>
+			
+			      <legend class="heading-medium">Skill required</legend>
+			
+			      <div class="multiple-choice">
+			        <input id="radio-neuro1" type="radio" name="radio-neuro" value="neuro">
+			        <label for="radio-neuro1">Standard</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-neuro2" type="radio" name="radio-neuro" value="neuro">
+			        <label for="radio-neuro2">Neuro</label>
+			      </div>
+			      <div class="multiple-choice">
+			        <input id="radio-neuro3" type="radio" name="radio-neuro" value="complex">
+			        <label for="radio-neuro3">Complex neuro</label>
+			      </div>
+			
+			    </fieldset>
+		  </div>
+  
+  
+    <div class="form-group">
+    <a href="booking-confirm" class="button">Continue</a>
+  </div><!-- form-group -->
+</form>
+
+
+
+ <div class="modal">
+	
+		<div class="inner-modal">
+		<h3 class="heading-medium">Are you sure you want to refer Tomas for an appointment?</h3>
+		
+		<ul class="mt20">
+			<li>To assess<br><span class="info-display">Moving around and using steps</span><br><span class="info-display">Standing and sitting</span></li>
+			<li class="mt20">Skill<br><span class="info-display">Standard</span></li>
+		</ul>
+	
+		<p class="mt30"><a href="/appoint/v10/index" class="button">Yes, refer to appointment booking</a></p>
+		<p><a href="booking">Cancel</a></p>
+		</div>
+		
+	</div>
+
+
+{% endblock %}

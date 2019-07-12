@@ -1,0 +1,284 @@
+{% extends path1+"/_layout-index.html" %} 
+
+
+{% block assess_content %}
+<main id="content" role="main" class="main-content">
+
+      <div class="container">
+          <div class="grid-row">
+              <div class="column-full">
+  <a href="javascript: history.go(-1)" class="link-back">Back</a>   
+   <h1 class="heading-large mt10"><span class="heading-secondary">Tresco house</span>View and edit a capacity plan</h1>
+   
+   
+   <p>Week commencing: <b>Monday 24 April</b></p>
+
+  <style>
+    .card span.panel{
+      display:inline-block;
+      font-size:16px;
+    }
+  </style>
+ 
+   <div class="grid-row">
+    <div class="card-container">
+
+        <div class="card alt">
+          <a href="edit-plan-amount">
+        
+              <h2>
+                View and edit
+                <span class="heading-small" >Mondays appointments</span>
+               </h2>
+               </a>
+               <div class="inner">
+               <table>
+                  <thead>
+                    <tr>
+                      <th scope="col"><span class="panel panel-info"><span class="block" style="font-weight:normal">Based on </span>6 FTE's</span></th>
+                      <th class="numeric" scope="col"> <span class="heading-xlarge">
+                          {% if data['timesEdit'] %}
+                          {{ sum }}
+                          {% else %}
+                          48
+                         {% endif %} 
+                          <span class="block"><span class="visually-hidden">appointents</span>Opened</span>
+                      </span></th>
+                      <th class="numeric" scope="col">
+                          <span class="visually-hidden">of which</span>
+                          <span class="heading-xlarge">
+                              23
+                              <span class="block"><span class="visually-hidden">appointents are</span>Booked</span>
+                          </span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Complex neuro</th>
+                      <td class="numeric">{% if data['complexsumedit'] %}{{ complexsumedit }}  {% else %} 6 {% endif%}</td>
+                      <td class="numeric">3</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Neuro</th>
+                      <td class="numeric">{% if data['neurosumedit'] %}{{ neurosumedit }}  {% else %}42 {% endif%}</td>
+                      <td class="numeric">18</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Non neuro</th>
+                      <td class="numeric">{% if data['nonesumedit'] %}{{ nonesumedit }}  {% else %}0 {% endif%}</td>
+                      <td class="numeric">0</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+        
+        </div>
+
+        <div class="card alt">
+            <a href="#">
+          
+                <h2>
+                  View and edit
+                  <span class="heading-small" >Tuesdays appointments</span>
+                  
+                 </h2>
+                 </a>
+                 <div class="inner">
+                 <table>
+                    <thead>
+                      <tr>
+                        <th scope="col"></th>
+                        <th class="numeric" scope="col"> <span class="heading-xlarge">
+                            64
+                            <span class="block"><span class="visually-hidden">appointents</span>Opened</span>
+                        </span></th>
+                        <th class="numeric" scope="col">
+                            <span class="visually-hidden">of which</span>
+                            <span class="heading-xlarge">
+                                45
+                                <span class="block"><span class="visually-hidden">appointents are</span>Booked</span>
+                            </span>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Complex neuro</th>
+                        <td class="numeric">12</td>
+                        <td class="numeric">8</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Neuro</th>
+                        <td class="numeric">38</td>
+                        <td class="numeric">20</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Non neuro</th>
+                        <td class="numeric">2</td>
+                        <td class="numeric">2</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+          
+          </div>
+
+          <div class="card alt">
+              <a href="#">
+            
+                  <h2>
+                    View and edit
+                    <span class="heading-small" >Wednesdays appointments</span>
+                    
+                   </h2>
+                   </a>
+                   <div class="inner">
+                   <table>
+                      <thead>
+                        <tr>
+                          <th scope="col"></th>
+                          <th class="numeric" scope="col"> <span class="heading-xlarge">
+                             54
+                              <span class="block"><span class="visually-hidden">appointents</span>Opened</span>
+                          </span></th>
+                          <th class="numeric" scope="col">
+                              <span class="visually-hidden">of which</span>
+                              <span class="heading-xlarge">
+                                  44
+                                  <span class="block"><span class="visually-hidden">appointents are</span>Booked</span>
+                              </span>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">Complex neuro</th>
+                          <td class="numeric">12</td>
+                          <td class="numeric">8</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Neuro</th>
+                          <td class="numeric">38</td>
+                          <td class="numeric">20</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Non neuro</th>
+                          <td class="numeric">2</td>
+                          <td class="numeric">2</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+            
+            </div>
+
+            <div class="card alt">
+                <a href="#">
+              
+                    <h2>
+                      View and edit
+                      <span class="heading-small" >Thursdays Appointments</span>
+                      
+                     </h2>
+                     </a>
+                     <div class="inner">
+                     <table>
+                        <thead>
+                          <tr>
+                            <th scope="col"></th>
+                            <th class="numeric" scope="col"> <span class="heading-xlarge">
+                               76
+                                <span class="block"><span class="visually-hidden">appointents</span>Opened</span>
+                            </span></th>
+                            <th class="numeric" scope="col">
+                                <span class="visually-hidden">of which</span>
+                                <span class="heading-xlarge">
+                                    50
+                                    <span class="block"><span class="visually-hidden">appointents are</span>Booked</span>
+                                </span>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Complex neuro</th>
+                            <td class="numeric">12</td>
+                            <td class="numeric">8</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Neuro</th>
+                            <td class="numeric">38</td>
+                            <td class="numeric">20</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Non neuro</th>
+                            <td class="numeric">2</td>
+                            <td class="numeric">2</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+              
+              </div>
+
+              <div class="card alt">
+                  <a href="">
+                
+                      <h2>
+                        View and edit
+                        <span class="heading-small" >Fridays Appointments</span>
+                        
+                       </h2>
+                       </a>
+                       <div class="inner">
+                       <table>
+                          <thead>
+                            <tr>
+                              <th scope="col"></th>
+                              <th class="numeric" scope="col"> <span class="heading-xlarge">
+                                  63
+                                  <span class="block"><span class="visually-hidden">appointents</span>Opened</span>
+                              </span></th>
+                              <th class="numeric" scope="col">
+                                  <span class="visually-hidden">of which</span>
+                                  <span class="heading-xlarge">
+                                      50
+                                      <span class="block"><span class="visually-hidden">appointents are</span>Booked</span>
+                                  </span>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">Complex neuro</th>
+                              <td class="numeric">12</td>
+                              <td class="numeric">8</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Neuro</th>
+                              <td class="numeric">38</td>
+                              <td class="numeric">20</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Non neuro</th>
+                              <td class="numeric">2</td>
+                              <td class="numeric">2</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                
+                </div>
+       </div>
+      </div>
+
+        
+        
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

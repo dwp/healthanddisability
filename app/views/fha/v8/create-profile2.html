@@ -1,0 +1,320 @@
+{% extends path+"/_layout.html" %}
+
+
+
+{% block assess_content %}
+<style>
+
+
+table.profile-table td, table.profile-table th {
+ 
+  border:5px solid white;
+  text-align:center;
+  width:20%;
+  padding:0px;
+}
+
+table.profile-table th.col {
+  background:#d8dde0;
+  font-size: 24px;
+  color:#425563;
+}
+
+table.profile-table input{
+
+  width:100%;
+  border-color:#d8dde0;
+  text-align:center;
+  font-size:40px;
+  font-weight:bold;
+}
+
+
+
+
+</style>
+<main id="content" role="main" class="main-content">
+
+      <div class="container">
+          <div class="grid-row">
+              <div class="column-full">
+  <a href="javascript: history.go(-1)" class="link-back">Back</a>   
+
+   <h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Create a capacity plan</h1>
+   <h2 class="heading-medium">Monday 8th April</h2>
+   <form class="form" action="/{{ path }}/create-profile-start" method="post">
+      
+  
+              <table class="profile-table">
+
+                <thead>
+                  <tr>
+                    <th></th>
+                    <!-- <th>Assessment Centre</th> -->
+                    <th>Total appointments</th>
+                    <th>Complex neuro</th>
+                    <th>Neuro</th>
+                    <th>Non neuro</th>
+                  </tr>
+                </thead>
+
+                {% if checked('times','9') %}
+                <tr>
+                  <th class="col">9:00am</th>
+                  <td> <label class="visually-hidden" for="" ></label>
+                    <input class="form-control" id=""  type="text" name=""  type="text" value="" ></td> 
+                  <td><label class="visually-hidden" for=""></label>
+                    <input class="form-control" id="" type="text" name=""  value=""></td>
+                  <td><label class="visually-hidden" for=""></label>
+                    <input class="form-control" id="" type="text" name=""  value=""></td>
+                  <td><label class="visually-hidden" for=""></label>
+                    <input class="form-control" id="" type="text" name=""  value=""></td>
+                </tr>
+
+                {% endif %}
+                {% if  checked('times','915') %}
+
+                <tr>
+                    <th class="col">9:15am</th>
+                    <td> <label class="visually-hidden" for="" ></label>
+                      <input class="form-control" id=""  type="text" name=""  type="text" value="" ></td> 
+                    <td><label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="" type="text" name=""  value=""></td>
+                    <td><label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="" type="text" name=""  value=""></td>
+                    <td><label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="" type="text" name=""  value=""></td>
+                  </tr>
+
+                  {% endif %}
+                  {% if checked('times','930')  %}
+                  <tr>
+                      <th class="col">9:30am</th>
+                      <td> <label class="visually-hidden" for="" ></label>
+                        <input class="form-control" id=""  type="text" name=""  type="text" value="" ></td> 
+                      <td><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="" type="text" name=""  value=""></td>
+                      <td><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="" type="text" name=""  value=""></td>
+                      <td><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="" type="text" name=""  value=""></td>
+                    </tr>
+
+                    {% endif %}
+                    {% if checked('times','10')  %}
+                    <tr>
+                        <th class="col">10:00am</th>
+                        <td> <label class="visually-hidden" for="" ></label>
+                          <input class="form-control" id=""  type="text" name=""  type="text" value="" ></td> 
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="" type="text" name=""  value=""></td>
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="" type="text" name=""  value=""></td>
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="" type="text" name=""  value=""></td>
+                      </tr>
+                      {% endif %}
+
+                      {% if checked('times','1015')  %}
+                      <tr>
+                          <th class="col">10:15am</th>
+                          <td> <label class="visually-hidden" for="" ></label>
+                            <input class="form-control" id=""  type="text" name=""  type="text" value="" ></td> 
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="" type="text" name=""  value=""></td>
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="" type="text" name=""  value=""></td>
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="" type="text" name=""  value=""></td>
+                        </tr>
+                        {% endif %}
+                      {% if checked('times','1030')  %}
+
+                      <tr>
+                          <th class="col">10:30am</th>
+                          <td> <label class="visually-hidden" for="" ></label>
+                            <input class="form-control" id=""  type="text" name=""  type="text" value="" ></td> 
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="" type="text" name=""  value=""></td>
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="" type="text" name=""  value=""></td>
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="" type="text" name=""  value=""></td>
+                        </tr>
+
+                        {% endif %}
+                        {% if checked('times','11')  %}
+
+                        <tr>
+                            <th class="col">11:00am</th>
+                            <td> <label class="visually-hidden" for="" ></label>
+                              <input class="form-control" id=""  type="text" name=""  type="text" value="" ></td> 
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="" type="text" name=""  value=""></td>
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="" type="text" name=""  value=""></td>
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="" type="text" name=""  value=""></td>
+                          </tr>
+
+                          {% endif %}
+                          {% if checked('times','1115')  %}
+
+                          <tr>
+                              <th class="col">11:15am</th>
+                              <td> <label class="visually-hidden" for="" ></label>
+                                <input class="form-control" id=""  type="text" name=""  type="text" value="" ></td> 
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="" type="text" name=""  value=""></td>
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="" type="text" name=""  value=""></td>
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="" type="text" name=""  value=""></td>
+                            </tr>
+
+                            {% endif %}
+                            {% if checked('times','1')  %}
+
+                <tr>
+                    <th class="col">1:00pm</th>
+                    <td> <label class="visually-hidden" for="" ></label>
+                      <input class="form-control" id=""  type="text" name=""  type="text" value="" ></td> 
+                    <td><label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="" type="text" name=""  value=""></td>
+                    <td><label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="" type="text" name=""  value=""></td>
+                    <td><label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="" type="text" name=""  value=""></td>
+                  </tr>
+                  {% endif %}
+                  {% if checked('times','115')  %}
+                  <tr>
+                      <th class="col">1:15pm</th>
+                      <td> <label class="visually-hidden" for="" ></label>
+                        <input class="form-control" id=""  type="text" name=""  type="text" value="" ></td> 
+                      <td><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="" type="text" name=""  value=""></td>
+                      <td><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="" type="text" name=""  value=""></td>
+                      <td><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="" type="text" name=""  value=""></td>
+                    </tr>
+                    {% endif %}
+                    {% if checked('times','130')  %}
+                    <tr>
+                        <th class="col">1:30pm</th>
+                        <td> <label class="visually-hidden" for="" ></label>
+                          <input class="form-control" id=""  type="text" name=""  type="text" value="" ></td> 
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="" type="text" name=""  value=""></td>
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="" type="text" name=""  value=""></td>
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="" type="text" name=""  value=""></td>
+                      </tr>
+                      {% endif %}
+                      {% if checked('times','2')  %}
+
+                      <tr>
+                          <th class="col">2:00pm</th>
+                          <td> <label class="visually-hidden" for="" ></label>
+                            <input class="form-control" id=""  type="text" name=""  type="text" value="" ></td> 
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="" type="text" name=""  value=""></td>
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="" type="text" name=""  value=""></td>
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="" type="text" name=""  value=""></td>
+                        </tr>
+                        {% endif %}
+
+                        {% if checked('times','215')  %}
+
+                        <tr>
+                            <th class="col">2:15pm</th>
+                            <td> <label class="visually-hidden" for="" ></label>
+                              <input class="form-control" id=""  type="text" name=""  type="text" value="" ></td> 
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="" type="text" name=""  value=""></td>
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="" type="text" name=""  value=""></td>
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="" type="text" name=""  value=""></td>
+                          </tr>
+                          {% endif %}
+                        {% if checked('times','230')  %}
+  
+                        <tr>
+                            <th class="col">2:30pm</th>
+                            <td> <label class="visually-hidden" for="" ></label>
+                              <input class="form-control" id=""  type="text" name=""  type="text" value="" ></td> 
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="" type="text" name=""  value=""></td>
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="" type="text" name=""  value=""></td>
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="" type="text" name=""  value=""></td>
+                          </tr>
+                          {% endif %}
+                          {% if checked('times','3')  %}
+  
+                          <tr>
+                              <th class="col">3:00pm</th>
+                              <td> <label class="visually-hidden" for="" ></label>
+                                <input class="form-control" id=""  type="text" name=""  type="text" value="" ></td> 
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="" type="text" name=""  value=""></td>
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="" type="text" name=""  value=""></td>
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="" type="text" name=""  value=""></td>
+                            </tr>
+
+                            {% endif %}
+                            {% if checked('times','315')  %}
+  
+                            <tr>
+                                <th class="col">3:15pm</th>
+                                <td> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id=""  type="text" name=""  type="text" value="" ></td> 
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="" type="text" name=""  value=""></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="" type="text" name=""  value=""></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="" type="text" name=""  value=""></td>
+                              </tr>
+  
+
+                              {% endif %}
+                              {% if checked('times','330')  %}
+
+
+                            <tr>
+                                <th class="col">3:30pm</th>
+                                <td> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id=""  type="text" name=""  type="text" value="" ></td> 
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="" type="text" name=""  value=""></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="" type="text" name=""  value=""></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="" type="text" name=""  value=""></td>
+                              </tr>
+  
+
+                              {% endif %}
+
+
+               
+              </table>
+
+              <p><button class="button mt25">Save and continue</button></p>
+              </form>
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

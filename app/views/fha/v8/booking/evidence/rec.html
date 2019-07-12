@@ -1,0 +1,74 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+ <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+ <div class="grid-row">
+  <div class="column-two-thirds">
+<h1 class="heading-large">Claimant did to attend appointment</h1>
+
+<div class="latest_version">
+    <h2 class="heading-medium">Did not attend: Standard appointment</h2>
+    <p>Appointment details</p>
+    <ul class="list-bullet">
+        <li>{{ 'Do MMMM YYYY' | baseDate(1) }}</li> 
+        <li>11:00am</li>  
+        <li>Tresco House</li> 
+         </ul>
+       {% if customer.name.first == 'Arnaq'%}
+         <h3 class="heading-small">Contact reason</h3>
+         <p class="small">Arnaq was having a bad day with his arthritis and was struggling to get out of the house, he asked for a rearrangement but we could not provide it because he had previously rearranged
+             his appointment.
+           
+    </p>  
+    <p class="date mb0">Recorded date: {{ 'Do MMMM YYYY' | baseDate(1) }}</p>
+    {% endif %} 
+
+    {% if  customer.name.first =='Sarah' and data['dmreason'] %}
+    <h3 class="heading-small">Contact reason</h3>
+    <p class="small">Reason: {{dmreason}}
+     <span class="date mt10">Recorded date: {{ 'Do MMMM YYYY' | baseDate(0) }}</span>
+    </p>
+   
+    {% endif %} 
+    </div>
+
+
+<form class="form" action="/{{path}}/booking/{{customer._id}}/timeline" method="post">
+
+      <h2 class="heading-medium">Do you want to confirm that the claimant did not attend appointment?</h2>
+      
+      <fieldset>
+        <legend class="visually-hidden">confirm that the claimant did not attend</legend>
+        
+        <div class="form-group">
+      
+          <div class="multiple-choice" data-target="scorenow">
+            <input id="decide_now" name="dna" type="radio" value="Yes">
+            <label for="decide_now">Yes</label>
+          </div>
+      
+          <div class="multiple-choice" data-target="">
+            <input id="face2face" name="dna" type="radio" value="No">
+            <label for="face2face"> No, refer for appointment</label>
+          </div>
+      
+        </div><!-- form-group -->
+      </fieldset>
+      
+     
+
+  <div class="form-group">
+      <label class="heading-small" for="">Additional information</label>
+    <textarea name="dmreason" class="form-control form-control-3-4" rows="6"></textarea>
+  </div><!-- form-group -->
+  <div class="form-group">
+    <button class="button">Save and continue</button>
+  </div><!-- form-group -->
+
+
+</form>
+</div>
+</div>
+
+{% endblock %}

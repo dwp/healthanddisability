@@ -1,0 +1,372 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+<h1 class="heading-large mb30">Social and work history</h1>
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+	
+	
+	
+   <form action="wca-index" method="POST" class="form">
+   
+  
+   
+   <fieldset>
+   	<legend class="heading-medium">Assessment details</legend>
+	
+			
+			<div class="form-group">
+			<fieldset>
+					<legend class="form-label-bold mb5">Where is the assessment taking place?</legend>
+					
+			
+					
+					<div class="multiple-choice">
+				      <input id="q1" name="venue" type="radio" value="q1">
+				      <label for="q1">Tresco house</label>
+				      
+				    </div>
+
+				    <div class="multiple-choice">
+				      <input id="meds2" name="venue" type="radio" value="meds2">
+				      <label for="meds2">Other</label>
+				    </div>	
+
+	 
+				</fieldset>
+ 
+			</div>
+			
+			
+			<div>
+				<fieldset>
+					<legend class="form-label-bold mb5">Assessment observations</legend>
+					<p class="form-hint mb5">Choose all that apply:</p>
+			
+					
+					<div class="multiple-choice">
+				      <input id="specifics1" name="specifics" type="checkbox" value="specifics1">
+				      <label for="specifics1">Assessment is being recorded</label>		      
+				    </div>		 
+				   
+
+				    <div class="multiple-choice">
+				      <input id="specifics2" name="specifics" type="checkbox" value="specifics2">
+				      <label for="specifics2">Interpreter present</label>
+				    </div>
+				    
+				    <div class="multiple-choice" data-target="attendee">
+				      <input id="specifics3" name="specifics" type="checkbox" value="specifics3">
+				      <label for="specifics3">Additional attendee present</label>
+				    </div>
+				    
+				    <div class="panel js-hidden" id="attendee">
+				    	<div class="form-group">
+					    	<label for="nameattendee" class="form-label">
+								Name:
+							</label>
+							<input type="text" id="nameattendee" class="form-control form-control-2-4">
+					    </div>
+					    <div>
+					    	<label for="relationshipattendee" class="form-label">
+								Relationship to {{customer.name.first}}
+							</label>
+							<input type="text" id="relationshipattendee" class="form-control form-control-2-4">
+					    </div>
+				    </div>
+				    
+				    <div class="multiple-choice">
+				      <input id="specifics4" name="specifics" type="checkbox" value="specifics4">
+				      <label for="specifics4">Notes are being taken</label>
+				    </div>
+				    
+				</fieldset>
+				
+			</div>
+			
+			
+   </fieldset>
+		
+	<hr>
+	
+	<fieldset>
+   	<legend class="heading-medium">Travel</legend>
+
+	
+	
+			<div class="form-group">
+				<fieldset>
+					<legend class="form-label-bold mb5">How did {{customer.name.first}} get here?</legend>
+					
+			
+					
+					<div class="multiple-choice">
+				      <input id="q2" name="gethere" type="radio" value="q2">
+				      <label for="q2">Car</label>
+				    </div>
+				 
+
+				    <div class="multiple-choice">
+				      <input id="q3" name="gethere" type="radio" value="q3">
+				      <label for="q3">Public transport</label>
+				    </div>
+				    
+				    <div class="multiple-choice">
+				      <input id="q4" name="gethere" type="radio" value="q4">
+				      <label for="q4">Walked</label>
+				    </div>	
+
+	 
+				</fieldset>
+			
+ 
+			</div>
+			
+			<div>
+						<fieldset class="inline">
+							<legend class="form-label-bold mb5">Did {{customer.name.first}} travel alone?</legend>
+							
+					
+							
+							<div class="multiple-choice">
+						      <input id="camealone1" name="camealone" type="radio" value="camealone1">
+						      <label for="camealone1">Yes</label>
+						    </div>
+		
+						    <div class="multiple-choice" data-target="travelledwithhere">
+						      <input id="camealone2" name="camealone" type="radio" value="camealone2">
+						      <label for="camealone2">No</label>
+						    </div>
+			 
+						</fieldset>
+						<div class="panel js-hidden" id="travelledwithhere">
+							    <label for="travelledwith" class="form-label">
+									Who did {{customer.name.first}} travel with? 
+								</label>
+								<input type="text" id="travelledwith" class="form-control form-control-2-4">
+						    </div>
+					</div>
+			
+			
+	</fieldset>
+	
+	<hr>
+			
+		
+			
+			
+			
+			
+	<fieldset>
+   	 <legend class="heading-medium">Accommodation</legend>
+			
+			
+			<div class="form-group">
+			<fieldset>
+					<legend class="form-label-bold mb5">What type of accommodation does {{customer.name.first}} live in?</legend>
+					
+			
+					
+					<div class="multiple-choice" data-target="livingwith">
+				      <input id="accom1" name="accom" type="radio" value="accom1">
+				      <label for="accom1">Two storey house</label>
+				      
+				    </div>
+				  
+
+				    <div class="multiple-choice">
+				      <input id="accom2" name="accom" type="radio" value="accom2">
+				      <label for="accom2">Flat</label>
+				    </div>	
+				    
+				     <div class="multiple-choice">
+				      <input id="accom3" name="accom" type="radio" value="accom3">
+				      <label for="accom3">Bungalow</label>
+				    </div>	
+
+	 
+				</fieldset>
+ 
+			</div>
+			
+			
+			<div>
+				    
+				    
+					    <fieldset class="inline">
+							<legend class="form-label-bold mb5">Does {{customer.name.first}} live alone?</legend>
+							
+					
+							
+							<div class="multiple-choice">
+						      <input id="alone1" name="alone" type="radio" value="alone1">
+						      <label for="alone1">Yes</label>
+						      
+						    </div>
+		
+						    <div class="multiple-choice" data-target="livesalone">
+						      <input id="alone2" name="alone" type="radio" value="alone2">
+						      <label for="alone2">No</label>
+						    </div>	
+			 
+						</fieldset>
+						 <div class="panel js-hidden" id="livesalone">
+							    <label for="source" class="form-label">
+									Who does {{customer.name.first}} live with? 
+								</label>
+								<input type="text" id="source" class="form-control form-control-2-4">
+						    </div>
+				    
+				   
+				    </div>
+				    
+	</fieldset>
+	
+	<hr>
+	
+	
+	<fieldset>
+   	<legend class="heading-medium">Work history</legend>
+	
+			
+			
+			
+			<div class="form-group">
+				<fieldset class="inline">
+					<legend class="form-label-bold mb5">Has {{customer.name.first}} worked in the past?</legend>
+					
+			
+					
+					<div class="multiple-choice" data-target="hadjob">
+				      <input id="job1" name="jobs" type="radio" value="job1">
+				      <label for="job1">Yes</label>		      
+				    </div>
+				    
+				 
+				   
+
+				    <div class="multiple-choice">
+				      <input id="job2" name="jobs" type="radio" value="job2">
+				      <label for="job2">No</label>
+				    </div>	
+				    
+				    <div class="panel js-hidden" id="hadjob">
+				    	<div class="form-group">
+					    	<label for="jobtitle" class="form-label">
+								Date job ended:
+							</label>
+							<input type="text" id="jobtitle" class="form-control form-control-2-4">
+					    </div>
+					    <div class="form-group">
+					    	<label for="jobtitle" class="form-label">
+								Job title
+							</label>
+							<input type="text" id="jobtitle" class="form-control form-control-2-4">
+					    </div>
+					    <div>
+					    	<label for="jobend" class="form-label">
+								Why did the job end?
+							</label>
+							<textarea class="form-control form-control-3-4" name="jobend" id="jobend" rows="3"></textarea>
+						</div>
+				    </div>
+
+
+	 
+				</fieldset>
+				
+ 
+			</div>
+			
+			
+			<div class="form-group">
+				<fieldset class="inline">
+					<legend class="form-label-bold mb5">Is {{customer.name.first}} currently studying?</legend>
+					
+			
+					
+					<div class="multiple-choice">
+				      <input id="study1" name="study" type="radio" value="study1">
+				      <label for="study1">Yes</label>		      
+				    </div>
+				    
+				 
+				   
+
+				    <div class="multiple-choice">
+				      <input id="study2" name="study" type="radio" value="study2">
+				      <label for="study2">No</label>
+				    </div>
+				    
+				</fieldset>
+				
+			</div>
+			
+			<div>
+				<fieldset class="inline">
+					<legend class="form-label-bold mb5">Is {{customer.name.first}} doing any voluntary work or any other form of work-related activity?</legend>
+					
+			
+					
+					<div class="multiple-choice">
+				      <input id="activity1" name="activity" type="radio" value="activity1">
+				      <label for="activity1">Yes</label>		      
+				    </div>
+				    
+				 
+				   
+
+				    <div class="multiple-choice">
+				      <input id="activity2" name="activity" type="radio" value="activity2">
+				      <label for="activity2">No</label>
+				    </div>
+				    
+				</fieldset>
+				
+			</div>
+			
+			
+	</fieldset>
+	
+	<hr>
+
+			
+			
+			<p class="mt30"><input type="submit" class="button" value="Save and continue"></p>
+
+      <div class="multiple-choice" style="display:none">
+          <input id="radio-inline-4" type="radio" name="socialWorkHistory" value="socialWorkHistory" checked>
+            
+          <label for="radio-4">hidden radio one</label>
+        </div>
+			
+			
+			
+
+		</form>
+   
+
+  </div><!-- column -->
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+
