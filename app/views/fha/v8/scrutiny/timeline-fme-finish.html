@@ -3,38 +3,24 @@
 
 {% block actioncolumn %}
    
-  <p class="returnRef"><a href="/fha/v8/ed-referrals">Return to case list</a></p>
+  <p class="returnRef"><a href="/fha/v8/booked-appointments-fme">Return to case list</a></p>
   <hr>
  <div class="case-status">
 <p class="mt10 mb0 bold-small">
-    {% if data['whatcando']=='Yes'%}
-    Ready for review
-    {% elif data['whatcando']=='No'%}
-    Ready to book
-    
-    {% else %}
-    DNA re-referral
-    {% endif %}
+
+    Booked
+
     
 
 </p>
-{% if data['whatcando']=='Yes'%}
-<p class="mt10"><a href="/{{path }}/scrutiny/review-or-appointment" class="button">Make a recommendation</a></p>
-{% elif data['whatcando']=='No'%}
 
-
-{% else %}
-<<<<<<< HEAD
-<p class="mt10"><a href="/{{path }}/scrutiny/review-or-appointment" class="button">Refer to review or appointment</a></p>
-=======
-<p class="mt10"><a href="/{{path }}/scrutiny/review-or-appointment" class="button">Make referral choice</a></p>
->>>>>>> b6bc5d9c9fbc85ba160a31fb31fc2e3d4a38c026
-{% endif %}
 
 <hr>
 <ul class="secondary-actions">
-  <li><a href="/fha/v8/scrutiny/5bbf32d57bd22e18e6266974/evidence/request-evidence" class="">Request evidence</a></li>
-  <li><a href="/fha/v8/scrutiny/5bbf32d57bd22e18e6266974/evidence/request-evidence" class="">Record evidence</a></li>
+
+  <li><a href="/{{path }}/scrutiny/recordFME" class="">Record evidence</a></li>
+  
+
   </ul>
 </div>
 
@@ -63,7 +49,8 @@ Bobby Henderson
     
     
     {# macro #}
-  {{ nav.case_tabs("timeline-referral",1,path1, customer._id) }}
+  {{ nav.case_tabs("timeline-fme",1,path1, customer._id) }}
+
     
   <div class="timeline">
 
@@ -84,79 +71,40 @@ Bobby Henderson
 
      
 
+		<span class="line"></span>
+		<div class="timeline__event">
+		  <h3 class="timeline__heading">GP Report - medical evidence received</h3>
+		  <p class="timeline_datetime">21st June 2019</p>
+		</div>
 
-    
-    <span class="line"></span>
-    <div class="timeline__event">
-      <h3 class="timeline__heading">Good cause decision: reason accepted</h3>
-      <p class="timeline_datetime">24th June 2019</p>
-    </div>
-
-    <span class="line"></span>
-    <div class="timeline__event">
-      <h3 class="timeline__heading">Did not attend appointment</h3>
-      <p class="timeline_datetime">24th June 2019</p>
-    </div>
-     
-
-     
-  
-  
-    
-
-    
- 
-
-
-        
-    
-
-        
-
-
-
-        <span class="line"></span>
-        <div class="timeline__event">
-          <h3 class="timeline__heading">Appointment sms sent</h3>
-          <p class="timeline_datetime">23rd June 2019</p>
-        </div>
-
-
-        
-
-        
-
-    
 
 
         <span class="line"></span>
         <div class="timeline__event">
           <h3 class="timeline__heading">Appointment letter sent</h3>
-          <p class="timeline_datetime">13th June 2019</p>
+          <p class="timeline_datetime">20th June 2019</p>
         </div>
+        
+        <span class="line"></span>
+		<div class="timeline__event">
+		  <h3 class="timeline__heading">GP Report - medical evidence overdue</h3>
+		  <p class="timeline_datetime">19th June 2019</p>
+		</div>
       
 
         <span class="line"></span>
         <div class="timeline__event">
           <h3 class="timeline__heading">Appointment booked</h3>
-          <p class="timeline_datetime">13th June 2019</p>
+          <p class="timeline_datetime">8th June 2019</p>
         </div>
       
       <span class="line"></span>
         <div class="timeline__event">
           <h3 class="timeline__heading">Referred for appointment</h3>
-          <p class="timeline_datetime">12th June 2019</p>
+          <p class="timeline_datetime">4th June 2019</p>
         </div>
 
 
-
-
-
-<span class="line"></span>
-<div class="timeline__event">
-  <h3 class="timeline__heading">GP report - medical evidence received</h3>
-  <p class="timeline_datetime">11th June 2019</p>
-</div>
 
 
 <span class="line"></span>

@@ -1,14 +1,22 @@
 {% extends path+"/_layout-caselist-dm.html" %}
 
 {% block horizontal_secondary_nav %}
+<<<<<<< HEAD
+              
+{{ secondaryNav.nav("decision-maker","failed-to-attend", menuItemsDm ) }}
+=======
 {{ secondaryNav.nav("decision-maker","failed-to-attend", menuItemsDm ) }}           
 
+>>>>>>> b6bc5d9c9fbc85ba160a31fb31fc2e3d4a38c026
 
 
 {% endblock %}  
 
 {% block caselist_content %}
 <h2 class="heading-medium mt0"><span class="heading-xlarge">{{customers.length}}</span><br/>Did not attend</h2>
+<<<<<<< HEAD
+<table class="styled">
+=======
 <hr />
 <form class="" method="post" action="/{{path}}/failed-to-attend">
 <h3 class="filter-status">Filter list by:</h3>
@@ -34,6 +42,7 @@
 
 {% if checked('filter', 'dna-referral') and not checked('filter', 'referral') %}
 <table>
+>>>>>>> b6bc5d9c9fbc85ba160a31fb31fc2e3d4a38c026
 
   <thead>
     <tr>
@@ -56,6 +65,8 @@
 {% endfor %}
 
 </table>   
+<<<<<<< HEAD
+=======
 {% else %}
 <table>
 
@@ -86,5 +97,6 @@
 
 </table>   
 {% endif %}
+>>>>>>> b6bc5d9c9fbc85ba160a31fb31fc2e3d4a38c026
       
 {% endblock %}

@@ -47,9 +47,9 @@ router.get('*', function (req, res, next) {
     req.session.data.observations = []
   }
 
-
   res.locals.menuItems = require(filePath +'/caselist/_navItems.js')(versionNumber, reviewCustomers, assessmentCustomers, appointmentCustomers );
   res.locals.menuItemsDm = require(filePath +'/caselist/_navItemsDM.js')(versionNumber, dmCustomers );
+
   next()
 })
 
@@ -129,8 +129,10 @@ router.post('*', function (req, res, next) {
   if (!req.session.data.observations) {
     req.session.data.observations = []
   }
+
   res.locals.menuItems = require(filePath + '/caselist/_navItems.js')(versionNumber, reviewCustomers, assessmentCustomers, appointmentCustomers);
   res.locals.menuItemsDm = require(filePath +'/caselist/_navItemsDM.js')(versionNumber, dmCustomers );
+
   next()
 })
 
@@ -1368,6 +1370,7 @@ router.get('/failed-to-attend', function (req, res, next) {
   .filter(customer => customer.status === 'Failed to attend appointment')
   next()
 })
+
 
 router.post('/failed-to-attend', function (req, res, next) {
   var body = req.body

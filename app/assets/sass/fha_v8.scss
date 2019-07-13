@@ -1695,7 +1695,7 @@ padding-left: 20px;
 					padding: 0;
 					float: left;
 					width: 68%;
-					color: #000;
+
 					
 					.nino {
 						color: #000;
@@ -2067,7 +2067,6 @@ margin:0px;
 	text-align: center;
 	font-weight: bold;
 	border: 4px solid #fff;
-	border-left:0px;
 	font-size: 16px;
 	cursor: pointer;
 }
@@ -2194,6 +2193,121 @@ margin:0px;
 }
 
 
+
+.fme-warning {
+	margin-top: -24px;
+	margin-bottom: 22px;
+	max-width: auto;
+
+}
+
+
+
+.filter-mimic {
+	overflow: hidden;
+	margin-bottom: 20px;
+	.filter-choice {
+		float: left;
+		width: auto;
+		margin-right: .4em;
+		a {
+			display: block;
+			background: $grey-4;
+			padding: .6em 20px .5em 20px;
+			font-weight: bold;
+			text-decoration: none;
+			color: #000;
+			font-size: 18px;
+			&:hover {
+				background: $grey-3;
+			}
+			&.selected {
+				background: $govuk-blue;
+				color: #fff;
+			}
+		}
+	}
+}
+
+
+
+
+
+.portal-display {
+	margin-top: 30px;
+	
+	.portal-card {
+		background: #fff;
+		border: 2px solid $grey-2;
+			
+		.portal-head {
+			overflow: hidden;
+			a {			
+				padding: 1em 1em .7em 1em;
+				display: block;
+				font-weight: bold;
+				background: $grey-4;
+				&:hover {
+					background: $grey-3;
+					color: #000;
+				}
+			}
+			h3 {
+				padding: .8em 1em .6em 1em;
+				display: block;
+				font-weight: bold;
+				background: $grey-4;
+				font-size: 24px;
+			}
+		}
+		
+		.portal-inner {
+			padding: .7em 1em;
+			
+			h4 {
+				padding: .4em 0;
+			}
+			
+			table {
+				caption {
+					font-size: .1em;
+					visibility: hidden;
+				}
+				th {
+					width: 40%;
+				}
+			}
+			
+			.action-list {
+				li {
+					border-top: 1px solid $grey-3;
+					padding: .7em 0;
+					p {
+						margin: 0 0 .5em 0;
+						color: $grey-1;
+					}
+					&:first-child {
+						border-top: 0;
+						padding-top: 0;
+					}
+				}
+			}
+			
+			.requested-evidence {
+				border-top: 1px solid $grey-2;
+				margin-top: 1em;
+				padding-top: .8em;
+				h4 {
+					font-weight: bold;
+				}
+			}
+			
+		}
+		
+	}
+	
+}
+
 .flash-card {
 	margin-top: 1em;
 	padding: 30px;
@@ -2279,4 +2393,5 @@ margin:0px;
 	font-weight: bold;
 	text-align: center;
   }
+
 

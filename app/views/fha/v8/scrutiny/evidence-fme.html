@@ -1,0 +1,168 @@
+{% extends path+"/_layout-case-simple.html" %}
+
+
+{% block actioncolumn %}
+   
+  <p class="returnRef"><a href="/fha/v8/referrals-fme">Return to case list</a></p>
+  <hr>
+ <div class="case-status">
+<p class="mt10 mb0 bold-small">
+
+   {% if data['pbachoice']=='yes'%}
+<p class="mt10 mb0 bold-small">
+Ready for paper based assessment  
+</p>
+<p><a href="/{{path }}/scrutiny/not-testing" class="button">Start assessment</a></p>
+{% else %}
+<p class="mt10 mb0 bold-small">
+Booked
+</p>
+{% endif %}
+
+    
+
+</p>
+
+
+<hr>
+<!--<ul class="secondary-actions">
+ <li><a href="/{{path }}/scrutiny/recordFME" class="">Record evidence</a></li>
+  
+  </ul>-->
+</div>
+{% endblock %}
+
+{% block citizen_detail %}
+Bobby Henderson
+{% endblock %}
+
+{% block citizen_content %}
+
+
+{% if data['pbachoice'] %}
+	 
+
+{% else %}
+
+	<div class="panel panel-warning fme-warning">
+		<h3 class="heading-small">New evidence recorded</h3>
+		<p>Bobby's case should be reviewed before making a recommendation</p>
+		<p><a href="/{{path }}/scrutiny/recordFMEdecision">Make recommendation</a></p>
+	</div>
+
+	
+{% endif %}
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.case_tabs("evidence-fme",1,path1, customer._id) }}
+  <div class="grid-row">
+
+    <div class="column-full">
+        
+
+
+
+<h1 class="heading-large mt10">Recorded evidence</h1>
+<!--<p class="mt10"><a href="/fha/v8/scrutiny/5bbf32d5ed63a198101d1d2b/evidence/record-evidence" class="button secondary">Record evidence recieved</a></p> -->
+
+
+
+<table class="evidence-list">
+
+<thead>
+<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+  <th>Evidence type</th>
+  <th>Source</th>
+  <th>Received</th>
+  <th class="numeric">Recorded</th>
+</tr>
+</thead>
+
+
+<tbody>
+
+
+	
+   <tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+		<td><a href="/{{path }}/scrutiny/not-testing">GP report</a></td>
+		<td>GP</td>
+		<td><span class="secondary-text">24 June 2019</span></td>
+		<td class="numeric"><span>24 June 2019</span></td>
+	</tr>  
+
+
+
+<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+<td><a href="/{{path }}/scrutiny/fme-justify">Appointment referral justification</a></td>
+<td>HCP</td>
+<td></td>
+<td class="numeric"><span>4 June 2019</span></td>
+</tr>
+
+
+
+<!--<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+  <td><a href="/{{path }}/scrutiny/not-testing">GP report</a></td>
+  <td>GP: Dr.Margaret Zamora</td>
+  <td><span class="secondary-text">12th June 2019</span></td>
+  <td class="numeric"><span>13th June 2019</span></td>
+</tr>-->
+
+
+<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+  <td><a href="/{{path }}/scrutiny/not-testing">Med 3</a></td>
+  <td>GP</td>
+  <td><span class="secondary-text">2 June 2019</span></td>
+  <td class="numeric"><span>2 June 2019</span></td>
+</tr>
+
+
+
+
+<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+  <td><a href="/{{path }}/scrutiny/not-testing">UC 50 </a></td>
+  <td>Claimant</td>
+  <td><span class="secondary-text">1 June 2019</span></td>
+  <td class="numeric"><span>1 June 2019</span></td>
+</tr>
+</tbody></table> 
+
+
+<p class="mt30"><a href="/{{path }}/scrutiny/not-testing" class="secondary-invert">Record evidence</a></p>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

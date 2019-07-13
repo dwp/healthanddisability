@@ -1,0 +1,129 @@
+{% extends path+"/_layout-case-simple.html" %}
+
+
+{% block actioncolumn %}
+   
+ <p class="returnRef"><a href="/fha/v8/referrals-fme">Return to case list</a></p>
+  <hr>
+ <div class="case-status">
+<p class="mt10 mb0 bold-small">
+
+   {% if data['pbachoice']=='yes'%}
+<p class="mt10 mb0 bold-small">
+Ready for paper based assessment  
+</p>
+<p><a href="/{{path }}/scrutiny/not-testing" class="button">Start assessment</a></p>
+{% else %}
+<p class="mt10 mb0 bold-small">
+Booked
+</p>
+{% endif %}
+
+    
+
+</p>
+
+
+<hr>
+<!--<ul class="secondary-actions">
+ <li><a href="/{{path }}/scrutiny/recordFME" class="">Record evidence</a></li>
+  
+  </ul>-->
+</div>
+{% endblock %}
+
+{% block citizen_detail %}
+Bobby Henderson
+{% endblock %}
+
+{% block citizen_content %}
+
+
+{% if data['pbachoice'] %}
+	 
+
+{% else %}
+
+	<div class="panel panel-warning fme-warning">
+		<h3 class="heading-small">New evidence recorded</h3>
+		<p>Bobby's case should be reviewed before making a recommendation</p>
+		<p><a href="/{{path }}/scrutiny/recordFMEdecision">Make recommendation</a></p>
+	</div>
+
+	
+{% endif %}
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.case_tabs("evidence-portal",1,path1, customer._id) }}
+  <div class="grid-row">
+
+    <div class="column-full">
+        
+
+
+
+
+<p><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    	
+    	<h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Request GP report (113)</h1>
+		
+
+						<h3 class="heading-small">Reason for request:</h3>
+
+						<p class="reason">Insufficient evidence to support claimants statements</p>
+
+					<p><a href="letter-113" target="_blank" class="button secondary">Print GP report (113 form)</a></p>
+					<hr />
+
+
+		   	
+<div class="notice">
+		<i class="icon icon-important">
+			<span class="visually-hidden">Warning</span>
+		</i>
+		<strong class="bold-small">
+			To complete the evidence request process:<br>you need to print off the report and send it to the GP
+		</strong>
+	</div>
+		
+
+		    <form class="mt30" method="post" action="/{{path}}/scrutiny/evidence-portal">
+		    <button class="button">Confirm - evidence has been requested</button>
+		</form>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
