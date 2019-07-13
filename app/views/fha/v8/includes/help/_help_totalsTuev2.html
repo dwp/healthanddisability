@@ -1,0 +1,47 @@
+<div class="inner-panel  panel-open total-panel">
+             <div class="inner-panel-content sticky">
+
+
+                 <h2 class="heading-large">Totals</h2>
+
+                 <div class="total-container">
+                        <h2 class="heading-small mt30">Appointments</h2>
+                        <label class="visually-hidden" for="" ></label>
+                        <input type="number" name="Tuesum" id="Tuesum" class="form-control" readonly value="{{Tuesum}}" />
+                      </div>
+
+                      <div class="total-container">
+                            <h2 class="heading-small">UCB</h2>
+                            <label class="visually-hidden" for="" ></label>
+                            <input class="form-control" id="ucbTuesum"  type="text" name="ucbTuesum"  type="text" value="{{ucbTuesum}}" >
+                 </div>
+                      <div class="total-container">
+                          <h2 class="heading-small">Complex neuro</h2>
+                          <label class="visually-hidden" for="" ></label>
+                          <input type="number" name="complexTuesum" id="complexTuesum" class="form-control" readonly  value="{{complexTuesum}}" />
+                        </div>
+                        <div class="total-container">
+                            <h2 class="heading-small">Neuro</h2>
+                            <label class="visually-hidden" for="" ></label>
+                            <input class="form-control" id="neuroTuesum"  type="text" name="neuroTuesum"  type="text" value="{{neuroTuesum}}" >
+                    </div>
+                    <div class="total-container">
+                        <h2 class="heading-small">Non neuro</h2>
+                        <label class="visually-hidden" for="" ></label>
+                        <input class="form-control" id="noneTuesum"  type="text" name="noneTuesum"  type="text" value="{{noneTuesum}}" >
+             </div>
+             {% if checked('benefitsTue','ben2') %}
+             <div class="total-container">
+                <h2 class="heading-small">IIDB</h2>
+                <label class="visually-hidden" for="" ></label>
+                <input class="form-control" id="IIDBTuesum"  type="text" name="IIDBTuesum"  type="text" value="{{IIDBTuesum}}" >
+            </div>
+             {% endif %}
+
+
+		
+         </div>
+
+         </div> 
+
+  
