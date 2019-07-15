@@ -107,69 +107,71 @@ Bobby Henderson
 								
 						
 
-										<div class="multiple-choice" data-target="insufficient-3" >
-												<input id="gpreason1" type="radio" name="gpscenarios" value="lcwra-gp">
-												<label for="gpreason1">has LCWRA because of</label>
+										<div class="multiple-choice" data-target="lcwra-reasons" >
+											<input id="gpreason1" type="radio" name="gpscenarios" value="gp-lcwra">
+											<label for="gpreason1">has LCWRA because of</label>
+										</div>
+										
+										<div class="panel js-hidden" id="lcwra-reasons">
+
+											<fieldset>
+											
+												<legend class="bold">Choose:</legend>
+												
+												<div class="multiple-choice">
+													<input id="gpreason1a" type="radio" name="gpscenarios-inner" value="SFC">
+													<label for="gpreason1a"> severe functional condition</label>
 												</div>
+										
+												<div class="multiple-choice">
+													<input id="gpreason1b" type="radio" name="gpscenarios-inner" value="SMR">
+													<label for="gpreason1b">substantial mental risk</label>
+												</div>
+										
+												<div class="multiple-choice">
+													<input id="gpreason1c" type="radio" name="gpscenarios-inner" value="SPR">
+													<label for="gpreason1c">substantial physical risk</label>
+												</div>
+										
+												<div class="multiple-choice">
+													<input id="gpreason1d" type="radio" name="gpscenarios-inner" value="HRP">
+													<label for="gpreason1d">high-risk pregnancy</label>
+												</div>
+									
+											</fieldset>
 
-												<div class="panel js-hidden" id="insufficient-3">
-														<fieldset>
-						  
-																<legend class="bold">
-															
-																	Choose:
-															
-																</legend>
-																<div class="multiple-choice" >
-																	<input id="gpreason1a" type="radio" name="gpscenarios" value="inner1">
-																	<label for="gpreason1a"> severe functional condition</label>
-																</div>
-																<div class="multiple-choice" >
-																		<input id="gpreason2" type="radio" name="gpscenarios" value="inner2">
-																		<label for="gpreason2">substantial mental risk</label>
-																		</div>
-																		<div class="multiple-choice" >
-																				<input id="insufficient-113" type="radio" name="scenarioinner" value="inner3" {{ 'checked' if data[ 'scenarioinner']==='inner3'
-																				else ''}}>
-																				<label for="insufficient-113">substantial physical risk</label>
-																				</div>
-																				<div class="multiple-choice" >
-																						<input id="insufficient-113" type="radio" name="scenarioinner" value="inner4" {{ 'checked' if data[ 'scenarioinner']==='inner3'
-																						else ''}}>
-																						<label for="insufficient-113">high-risk pregnancy</label>
-																						</div>
-														</div>
+										</div>
 
-														<div class="multiple-choice" >
-																<input id="insufficient-113" type="radio" name="scenario" value="insufficient-2" {{ 'checked' if data[ 'scenario']==='insufficient-2'
-																else ''}}>
-																<label for="insufficient-113">should be treated as LCW</label>
-																</div>
+											
+
+										<div class="multiple-choice" >
+											<input id="gpreason2" type="radio" name="gpscenarios" value="gp-lcw">
+											<label for="gpreason2">should be treated as LCW</label>
+										</div>
 
 
-												<div class="multiple-choice" >
-														<input id="insufficient-113" type="radio" name="scenario" value="insufficient-4" {{ 'checked' if data[ 'scenario']==='insufficient-4'
-														else ''}}>
-														<label for="insufficient-113">has a severe disability or medical condition as the file is unavailable</label>
-														</div>
+										<div class="multiple-choice" >
+											<input id="gpreason3" type="radio" name="gpscenarios" value="gp-severe">
+											<label for="gpreason3">has a severe disability or medical condition as the file is unavailable</label>
+										</div>
 
-														<div class="multiple-choice" >
-																<input id="insufficient-113" type="radio" name="scenario" value="insufficient-113" {{ 'checked' if data[ 'scenario']==='insufficient-113'
-																else ''}}>
-																<label for="insufficient-113">is terminally ill</label>
-																</div>
+														
+										<div class="multiple-choice" >
+											<input id="gpreason4" type="radio" name="gpscenarios" value="gp-ill">
+											<label for="gpreason4">is terminally ill</label>
+										</div>
 
 						  
-							  <div class="multiple-choice" data-target="113-reason">
-								<input id="example-contact-by-phone" type="radio" name="scenario" value="No">
-								<label for="example-contact-by-phone">Other reason</label>
-							  </div>
-							  <div class="panel js-hidden" id="113-reason">
-								<label for="113-reason" class="bold">
-									Add a reason for requesting this evidence
-								</label>
-								<textarea class="form-control form-control-3-4" name="reason-113" id="113-reason" rows="4"></textarea>
-							  </div>
+									    <div class="multiple-choice" data-target="other-reason">
+											<input id="gpreason5" type="radio" name="gpscenarios" value="gp-other">
+											<label for="gpreason5">Other reason</label>
+									    </div>
+											<div class="panel js-hidden" id="other-reason">
+												<label for="other-reason1" class="bold">
+													Add a reason for requesting this evidence
+												</label>
+												<textarea class="form-control form-control-3-4" name="other-stuff" id="other-reason1" rows="4"></textarea>
+										    </div>
 	
 						  
 							</fieldset>

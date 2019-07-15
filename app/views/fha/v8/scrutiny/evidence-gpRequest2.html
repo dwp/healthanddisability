@@ -91,8 +91,25 @@ Bobby Henderson
 		
 
 						<h3 class="heading-small">Reason for request:</h3>
+						
+						<p>
+						We need FME to determine if the claimant
+						{% if data['gpscenarios']=='gp-lcwra'%}has LCWRA because of
+							{% if data['gpscenarios-inner']=='SFC'%}severe functional condition{% endif %}
+							{% if data['gpscenarios-inner']=='SMR'%}substantial mental risk{% endif %}
+							{% if data['gpscenarios-inner']=='SPR'%}substantial physical risk{% endif %}
+							{% if data['gpscenarios-inner']=='HRP'%}high-risk pregnancy{% endif %}
+						{% endif %}
+						
+						{% if data['gpscenarios']=='gp-lcw'%}should be treated as LCW{% endif %}
+						{% if data['gpscenarios']=='gp-severe'%}has a severe disability or medical condition as the file is unavailable{% endif %}
+						{% if data['gpscenarios']=='gp-ill'%}is terminally ill{% endif %}
+				
 
-						<p class="reason">Insufficient evidence to support claimants statements</p>
+						</p>
+		
+						
+							
 
 					<p><a href="letter-113" target="_blank" class="button secondary">Print GP report (113 form)</a></p>
 					<hr />
