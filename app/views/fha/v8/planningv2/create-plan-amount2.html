@@ -17,54 +17,10 @@
 
    <h2 class="heading-medium">Monday 22 July</h2>
 
-   <div class="panel panel-info panel-instruction" ><h2 class="heading-small">Creating a capacity plan</h2>
-    <ul class="numeric" data-id="">
-        <li>
-          <span class="circle circle-step circle-white">1</span>
-          <h2 class="govuk-heading-m">Add the  hcp skillsets you have available</h2>
-        </li>
-
-        <li>
-          <span class="circle circle-step circle-white">2</span>
-          <h2 class="govuk-heading-m">If you have capacity to take UCB cases, add this to the relevant timeslot</h2>
-        </li>
-
-
-      </ul>
-
-</div>
-
+   {% include path+"/planningv2/_info-panel-amount.html" %}
 
    <form class="form" action="create-plan" method="post">
 
-      
-<style>
-table.profile-table input[readonly]{
-  background:#DEE0E2;
-  border-color:#DEE0E2;
-}
-
-table.profile-table .col5, table.profile-table .col6 {
-  background:#f8f8f8;
- 
-}
-
-table.profile-table .col5{
-   padding-left:15px;
-}
-
-
-
-
-.total-container.alt
-{
-  border-top:3px solid #000;
-  padding-top:30px;
-}
-
-
-
-</style>
               <table class="profile-table">
 
             
@@ -962,24 +918,7 @@ table.profile-table .col5{
   
 
                         
-                              
-                           <!--   <tr class="total">
-                              	<th class="col">Total</th>
-                              	<td><label class="visually-hidden" for="" ></label>
-                                  <input type="number" name="sum2" id="sum2" class="form-control" readonly /></td>
-                              	<td><label class="visually-hidden" for="" ></label>
-                                  <input type="number" name="col_3_sum2" id="col_3_sum2" class="form-control" readonly /></td>
-                              	<td><label class="visually-hidden" for="" ></label>
-                                  <input class="form-control" id="col_4_sum2"  type="text" name="col_4_sum2"  type="text" value="" ></td>
-                                  <td><label class="visually-hidden" for="" ></label>
-                                  <input class="form-control" id="col_5_sum2"  type="text" name="col_5_sum2"  type="text" value="" ></td>
-                                	{% if checked('benefits','ben2') %}
-                                  <td><label class="visually-hidden" for="" ></label>
-                                  <input class="form-control" id="col_6_sum"  type="text" name="col_6_sum2"  type="text" value="" ></td>
-                                  {% endif %}
-                                  <td><label class="visually-hidden" for="" ></label>
-                                    <input class="form-control" id="col_2_sum"  type="text" name="col_2_sum"  type="text" value="" ></td>
-                                </tr> -->
+      
 
 
                
