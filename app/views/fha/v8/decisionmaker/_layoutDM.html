@@ -16,21 +16,7 @@
       
       	<div class="left-panel">
       
-      
-<<<<<<< HEAD
-            <p class="returnRef"><a href="">Return to case list</a></p>
-            <hr>
-            <p class="mt10 mb0 bold-small">{{ 'Did not attend' if customer.status == 'Failed to attend appointment' }}</p> 
-           
-            {% if data['whatcando']%}
-            <p class="mt10 mb0 bold-small">DNA Re-referral</p> 
-            {% endif %}
-            {% if customer.status == 'good cause not accepted' %}
-            <p class="mt10 mb0 bold-small">Good cause not accepted</p>
-            <p><a href="" class="button">Do something maybe</a></p>
-            {% else %}
-          
-=======
+
             <p class="returnRef"><a href="/{{path}}/failed-to-attend">Return to case list</a></p>
             <hr>
             {% if data['whatcando']=='requestreason'%}
@@ -47,7 +33,7 @@
             <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/request-fta-reason" class="button">Request a reason</a></p>
             {% elif customer.status == 'Failed to attend appointment' %}
             <p class="mt10 mb0 bold-small">{{ 'Did not attend' if customer.status == 'Failed to attend appointment' }}</p> 
->>>>>>> b6bc5d9c9fbc85ba160a31fb31fc2e3d4a38c026
+
             <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/index" class="button">Record a decision</a></p>
              {% endif %}
       	    
@@ -57,11 +43,9 @@
       
         <div class="column-three-quarters main-area">
         
-<<<<<<< HEAD
+
  {% include path+"/includes/_staff_headingAlone.html" %}
-=======
- {% include path+"/includes/_staff_headingv2.html" %}
->>>>>>> b6bc5d9c9fbc85ba160a31fb31fc2e3d4a38c026
+
 
           <div nunj-block="citizen_content">
             {% block citizen_content %}{% endblock %}
