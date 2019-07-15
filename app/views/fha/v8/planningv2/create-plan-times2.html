@@ -16,15 +16,59 @@
 <main id="content" role="main" class="main-content">
       <div class="container">
           <div class="grid-row">
-              <div class="column-half">
+              <div class="column-three-quarters">
   <a href="javascript: history.go(-1)" class="link-back">Back</a>
-   <h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Create a capacity plan</h1>
+   <h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Create a capacity plan - {% include path+"/planningv2/_ACname.html" %} </h1>
+</div>
+    <div class="column-half">
 
   
-  <h2 class="heading-medium">Monday 22 July</h2>
-   
+  <h2 class="heading-medium mt30">Monday 22 July</h2>
+<style>
+
+ul.numeric{
+  margin:20px 0 30px ;
+}
+ul.numeric li {
+
+  padding-left:40px;
+  margin-bottom:10px;
+  font-size:20px;
+
+}
+ul.numeric li span{
+  margin-left:-40px;
+  
+}
+
+.panel-info{
+  padding:30px;
+}
+
+.panel-info .circle{
+  background:#005ea5;
+  color:#fff;
+}
+</style>
+
+   <div class="panel panel-info"><h2 class="heading-small">How to create a capacity plan</h2>
+    <ul class="numeric" data-id="">
+        <li>
+          <span class="circle circle-step circle-white">1</span>
+          <h2 class="govuk-heading-m">Select the spread of appointments times required throughout the day for all available hcps</h2>
+        </li>
+
+        <li>
+          <span class="circle circle-step circle-white">2</span>
+          <h2 class="govuk-heading-m">Choose what benefits you want to open capacity for  </h2>
+        </li>
+
+
+      </ul>
+
+</div>
    <h3 class="heading-small mt20">Choose appointment times</h3>
-   <button id="selectAll" class="button button-secondary mb10 mt10" hidden>Select all</button>
+   <button id="selectAll" class="button secondary-invert mb10 mt10" hidden>Select all</button>
    <form class="form" action="create-plan-amount2" method="post">
 
 
