@@ -1165,6 +1165,11 @@ span.status {
 
 	background: rgba($govuk-blue, 0.05);
 	border-color:$govuk-blue;
+
+        .circle{
+		background:#005ea5;
+		color:#fff;
+	  }
 }
 
 &.panel-warning{
@@ -1191,6 +1196,34 @@ span.status {
 }
 
 }
+
+.panel-instruction
+{
+	padding:30px;
+	margin-bottom:30px;
+	max-width:100%;
+}
+
+ul.numeric{
+	margin:20px 0 30px ;
+
+    li {
+  
+		padding-left:40px;
+		margin-bottom:10px;
+		font-size:20px;
+
+		span{
+			margin-left:-40px;
+			
+		  }
+	  
+	  }
+
+  }
+
+ 
+
 
 .report-item {
 	padding: 20px 0;
@@ -2308,67 +2341,6 @@ margin:0px;
 	
 }
 
-.flash-card {
-	margin-top: 1em;
-	padding: 30px;
-	background: #005EA5;
-	color: #FFF;
-  
-	header {
-	  background-color: inherit;
-	}
-  
-	p {
-	  margin-left: 32px;
-	}
-  
-	ul.how-to-renew {
-	  padding-left: 0;
-	  list-style: none;
-  
-	  h2 {
-		margin: 0;
-		margin-bottom: 0;
-		padding: 0;
-		color: #FFF;
-		font-size: 22px;
-	  }
-  
-	  li {
-		margin-bottom: 15px;
-	  }
-	}
-  
-	h1 {
-	  color: #FFF;
-	  &:first-of-type {
-		margin-top: 0 !important;
-	  }
-	}
-  
-	a {
-	  color: #FFF;
-	  &:visited, &:hover, &:active {
-		color: #FFF; }
-	  }
-	  details {
-		// margin-bottom: 1em;
-		summary {
-		  color: #FFF;
-		}
-		.panel {
-		  border-left-color: #FFF;
-		}
-	  }
-	}
-  
-	@media (min-width: 769px) {
-	  .flash-card {
-		margin-top: 1.25em;
-		padding: 35px 50px;
-	  }
-	}
-  
   .circle-white {
 	color: #005ea5;
 	background: #fff;
