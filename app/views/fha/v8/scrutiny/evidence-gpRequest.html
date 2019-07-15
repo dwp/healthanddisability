@@ -44,10 +44,18 @@ Bobby Henderson
 
 {% else %}
 
-	<div class="panel panel-warning fme-warning">
-		<h3 class="heading-small">New evidence recorded</h3>
-		<p>Bobby's case should be reviewed before making a recommendation</p>
-		<p><a href="/{{path }}/scrutiny/recordFMEdecision">Make recommendation</a></p>
+<div class="panel panel-info panel-instruction fme-warning"><h2 class="heading-small">New evidence recorded</h2>
+	   <ul class="numeric" data-id="">
+	       <li>
+	         <span class="circle circle-step circle-white">1</span>
+	         <h2 class="govuk-heading-m">Bobby's case should be reviewed before making a recommendation</h2>
+	       </li>
+	
+	       <li>
+	         <span class="circle circle-step circle-white">2</span>
+	         <h2 class="govuk-heading-m"><a href="/{{path }}/scrutiny/recordFMEdecision">Make recommendation</a></h2>
+	       </li>
+	     </ul>
 	</div>
 
 	
@@ -100,9 +108,8 @@ Bobby Henderson
 						
 
 										<div class="multiple-choice" data-target="insufficient-3" >
-												<input id="insufficient-113" type="radio" name="scenario" value="insufficient-3" {{ 'checked' if data[ 'scenario']==='insufficient-3'
-												else ''}}>
-												<label for="insufficient-113">has LCWRA because of</label>
+												<input id="gpreason1" type="radio" name="gpscenarios" value="lcwra-gp">
+												<label for="gpreason1">has LCWRA because of</label>
 												</div>
 
 												<div class="panel js-hidden" id="insufficient-3">
@@ -114,14 +121,12 @@ Bobby Henderson
 															
 																</legend>
 																<div class="multiple-choice" >
-																<input id="insufficient-113" type="radio" name="scenarioinner" value="inner1" {{ 'checked' if data[ 'scenarioinner']==='inner1'
-																else ''}}>
-																<label for="insufficient-113"> severe functional condition</label>
+																	<input id="gpreason1a" type="radio" name="gpscenarios" value="inner1">
+																	<label for="gpreason1a"> severe functional condition</label>
 																</div>
 																<div class="multiple-choice" >
-																		<input id="insufficient-113" type="radio" name="scenarioinner" value="inner2" {{ 'checked' if data[ 'scenarioinner']==='inner2'
-																		else ''}}>
-																		<label for="insufficient-113">substantial mental risk</label>
+																		<input id="gpreason2" type="radio" name="gpscenarios" value="inner2">
+																		<label for="gpreason2">substantial mental risk</label>
 																		</div>
 																		<div class="multiple-choice" >
 																				<input id="insufficient-113" type="radio" name="scenarioinner" value="inner3" {{ 'checked' if data[ 'scenarioinner']==='inner3'
