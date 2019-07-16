@@ -15,7 +15,7 @@ Ready for paper based assessment
 <p><a href="/{{path }}/scrutiny/not-testing" class="button">Start assessment</a></p>
 {% else %}
 <p class="mt10 mb0 bold-small">
-Booked
+Appointment booked
 </p>
 {% endif %}
 
@@ -45,10 +45,18 @@ Bobby Henderson
 
 {% else %}
 
-	<div class="panel panel-warning fme-warning">
-		<h3 class="heading-small">New evidence recorded</h3>
-		<p>Bobby's case should be reviewed before making a recommendation</p>
-		<p><a href="/{{path }}/scrutiny/recordFMEdecision">Make recommendation</a></p>
+<div class="panel panel-info panel-instruction fme-warning"><h2 class="heading-small">New evidence recorded</h2>
+	   <ul class="numeric" data-id="">
+	       <li>
+	         <span class="circle circle-step circle-white">1</span>
+	         <h2 class="govuk-heading-m">Bobby's case should be reviewed before making a recommendation</h2>
+	       </li>
+	
+	       <li>
+	         <span class="circle circle-step circle-white">2</span>
+	         <h2 class="govuk-heading-m"><a href="/{{path }}/scrutiny/recordFMEdecision">Make recommendation</a></h2>
+	       </li>
+	     </ul>
 	</div>
 
 	

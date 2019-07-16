@@ -2253,11 +2253,6 @@ table.profile-table .col5{
 
 .fme-warning {
 	margin-top: -24px;
-	margin-bottom: 22px;
-	max-width: auto;
-	a {
-		font-weight: bold;
-	}
 
 }
 
@@ -2392,5 +2387,12 @@ table.profile-table .col5{
 	font-weight: bold;
 	text-align: center;
   }
-
+  
+  
+  /* Table specific stuff */
+.referrals-layout {
+	th {
+		width: 35%;
+	}
+}
 
