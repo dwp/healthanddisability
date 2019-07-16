@@ -5,38 +5,42 @@
                  <h2 class="heading-large">Totals</h2>
 
                  <div class="total-container">
-                        <h2 class="heading-small mt30">Appointments</h2>
+                        <h2 class="heading-small mt30">Complex neuro</h2>
                         <label class="visually-hidden" for="" ></label>
-                        <input type="number" name="Wedsum" id="Wedsum" class="form-control" readonly value="{{Wedsum}}" />
+                        <input type="number" name="sum_wed" id="sum_wed" class="form-control" readonly value="{{sum_wed}}" />
                       </div>
 
                       <div class="total-container">
-                            <h2 class="heading-small">UCB</h2>
-                            <label class="visually-hidden" for="" ></label>
-                            <input class="form-control" id="ucbWedsum"  type="text" name="ucbWedsum"  type="text" value="{{ucbWedsum}}" >
-                 </div>
-                      <div class="total-container">
-                          <h2 class="heading-small">Complex neuro</h2>
-                          <label class="visually-hidden" for="" ></label>
-                          <input type="number" name="complexWedsum" id="complexWedsum" class="form-control" readonly  value="{{complexWedsum}}" />
-                        </div>
-                        <div class="total-container">
                             <h2 class="heading-small">Neuro</h2>
                             <label class="visually-hidden" for="" ></label>
-                            <input class="form-control" id="neuroWedsum"  type="text" name="neuroWedsum"  type="text" value="{{neuroWedsum}}" >
+                            <input class="form-control" id="col_wed_2_sum"  type="text" name="col_wed_2_sum"  type="text" value="{{col_wed_2_sum}}" >
+                 </div>
+                      <div class="total-container">
+                          <h2 class="heading-small">None neuro</h2>
+                          <label class="visually-hidden" for="" ></label>
+                          <input type="number" name="col_wed_3_sum" id="col_wed_3_sum" class="form-control" readonly  value="{{col_wed_3_sum}}" />
+                        </div>
+                         {% if checked('benefitsWed','ben2') %}
+                        <div class="total-container">
+                            <h2 class="heading-small">IIDB</h2>
+                            <label class="visually-hidden" for="" ></label>
+                            <input class="form-control" id="col_wed_4_sum"  type="text" name="col_wed_4_sum"  type="text" value="{{col_wed_4_sum}}" >
                     </div>
-                    <div class="total-container">
-                        <h2 class="heading-small">Non neuro</h2>
+                    {% endif %}
+                    
+                    <div class="total-container alt">
+                        <h2 class="heading-small">Total appointments</h2>
                         <label class="visually-hidden" for="" ></label>
-                        <input class="form-control" id="noneWedsum"  type="text" name="noneWedsum"  type="text" value="{{noneWedsum}}" >
+                        <input class="form-control" id="rowsum_wed_sum"  type="text" name="rowsum_wed_sum"  type="text" value="{{rowsum_wed_sum}}" >
              </div>
-             {% if checked('benefitsWed','ben2') %}
+          
              <div class="total-container">
-                <h2 class="heading-small">IIDB</h2>
+                <h2 class="heading-small">UCB</h2>
                 <label class="visually-hidden" for="" ></label>
-                <input class="form-control" id="IIDBWedsum"  type="text" name="IIDBWedsum"  type="text" value="{{IIDBWedsum}}" >
+                <input class="form-control" id="col_wed_6_sum"  type="text" name="col_wed_6_sum"  type="text" value="{{col_wed_6_sum}}" >
      </div>
-   {% endif %}
+
+
 
 
 		

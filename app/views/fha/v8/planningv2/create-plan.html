@@ -8,11 +8,10 @@
           <div class="grid-row">
               <div class="column-full">
   <a href="javascript: history.go(-1)" class="link-back">Back</a>   
-   <h1 class="heading-large mt10"><span class="heading-secondary">Tresco house</span>Create capacity plan</h1>
+   <h1 class="heading-large mt10">Create a capacity plan - {% include path+"/planningv2/_ACname.html" %}</h1>
    
-   
-   <p>Week commencing: <b>Monday 22 July</b></p>
 
+   <h2 class="heading-medium mt30"><span style="font-weight:normal">Week commencing:</span> Monday 10 September</h2>
    <style>
      .card-container .card .ucb span{
        display:inline;
@@ -76,7 +75,7 @@
                        <td class="numeric">{% if data['col_3_sum']  %} {{ col_3_sum }} {% else %} 0 {% endif %}</td>
                     
                      </tr>
-                     {% if data['IIDBsum']  %}
+                     {% if checked('benefits','ben2')   %}
                      <tr>
                         <th scope="row">IIDB</th>
                         <td class="numeric">{% if data['col_4_sum'] %} {{ col_4_sum }}  {% else %} 0 {% endif %}</td>
@@ -86,7 +85,7 @@
 
                      <tr>
 
-                        <td class="ucb" colspan='2'> <span class="bold">{% if data['col_4_sum']  %}{{ col_4_sum }} {% else %} 0 {% endif %}</span> appointments can be <span class="bold">UCB</span></td>
+                        <td class="ucb" colspan='2'> <span class="bold">{% if data['col_6_sum']  %}{{ col_4_sum }} {% else %} 0 {% endif %}</span>of these appointments can be <span class="bold">UCB</span></td>
                     
                       </tr>
                   
@@ -115,55 +114,54 @@
 
                {% if data['tuestimes'] %}
              
-               <div class="inner">
-                  <table>
-                     <thead>
-                       <tr>
-                         <th scope="col"></th>
-                         <th class="numeric" scope="col"> <span class="heading-xlarge">
-                           
-                             {{ Tuesum }}
-                       
-                             <span class="block"><span class="visually-hidden">appointents</span>Opened</span>
-                         </span></th>
-                       </tr>
-                     </thead>
-                     <tbody>
-                       
-      
-                        
-                       <tr>
-                         <th scope="row">Complex neuro</th>
-                         <td class="numeric">{% if data['complexTuesum']  %}{{ complexTuesum }} {% else %} 0 {% endif %}</td>
-                    
-                       </tr>
-                       <tr>
-                         <th scope="row">Neuro</th>
-                         <td class="numeric">{% if data['neuroTuesum']  %}{{ neuroTuesum }} {% else %} 0 {% endif %}</td>
-                       
-                       </tr>
-                       <tr>
-                         <th scope="row">Non neuro</th>
-                         <td class="numeric">{% if data['noneTuesum']  %}{{ noneTuesum }} {% else %} 0 {% endif %}</td>
+              <div class="inner">
+                <table>
+                   <thead>
+                     <tr>
+                       <th scope="col"></th>
+                       <th class="numeric" scope="col"> <span class="heading-xlarge">
+                         
+                           {{ rowsum_tue_sum }}
+                     
+                           <span class="block"><span class="visually-hidden">appointents</span>Opened</span>
+                       </span></th>
+                     </tr>
+                   </thead>
+                   <tbody>
                       
-                       </tr>
-                       {% if data['IIDBTuesum']  %}
-                       <tr>
-                          <th scope="row">IIDB</th>
-                          <td class="numeric">{% if data['IIDBTuesum'] %} {{ IIDBTuesum }}  {% else %} 0 {% endif %}</td>
-                       
-                        </tr>
-                       {% endif %}
-
-                       <tr>
-
-                          <td class="ucb" colspan='2'> <span class="bold">{% if data['ucbTuesum']  %}{{ ucbTuesum }} {% else %} 0 {% endif %}</span> appointments can be <span class="bold">UCB</span></td>
-                      
-                        </tr>
+                
+                     <tr>
+                       <th scope="row">Complex neuro</th>
+                       <td class="numeric">{% if data['sum_tue']  %} {{ sum_tue }} {% else %} 0 {% endif %}</td>
+                  
+                     </tr>
+                     <tr>
+                       <th scope="row">Neuro</th>
+                       <td class="numeric">{% if data['col_2_sum']  %} {{ col_tue_2_sum }} {% else %} 0 {% endif %}</td>
+                     
+                     </tr>
+                     <tr>
+                       <th scope="row">Non neuro</th>
+                       <td class="numeric">{% if data['col_3_sum']  %} {{ col_tue_3_sum }} {% else %} 0 {% endif %}</td>
                     
-                     </tbody>
-                   </table>
-                 </div>
+                     </tr>
+                     {% if checked('benefitsTue','ben2')   %}
+                     <tr>
+                        <th scope="row">IIDB</th>
+                        <td class="numeric">{% if data['col_4_sum'] %} {{ col_tue_4_sum }}  {% else %} 0 {% endif %}</td>
+                     
+                      </tr>
+                     {% endif %}
+
+                     <tr>
+
+                        <td class="ucb" colspan='2'> <span class="bold">{% if data['col_tue_4_sum']  %}{{ col_tue_4_sum }} {% else %} 0 {% endif %}</span>of these appointments can be <span class="bold">UCB</span></td>
+                    
+                      </tr>
+                  
+                   </tbody>
+                 </table>
+               </div>
                 {% endif %}
                </div>
         <div class="card  alt">
@@ -182,55 +180,56 @@
               </a>
 
                {% if data['wedstimes'] %}
-             
-               <div class="inner">
-                  <table>
-                     <thead>
-                       <tr>
-                         <th scope="col"></th>
-                         <th class="numeric" scope="col"> <span class="heading-xlarge">
-                           
-                             {{ Wedsum }}
-                       
-                             <span class="block"><span class="visually-hidden">appointents</span>Opened</span>
-                         </span></th>
-                       </tr>
-                     </thead>
-                     <tbody>
-         
+               
+                         <div class="inner">
+                <table>
+                   <thead>
+                     <tr>
+                       <th scope="col"></th>
+                       <th class="numeric" scope="col"> <span class="heading-xlarge">
+                         
+                           {{ rowsum_wed_sum }}
+                     
+                           <span class="block"><span class="visually-hidden">appointents</span>Opened</span>
+                       </span></th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                      
+                
+                     <tr>
+                       <th scope="row">Complex neuro</th>
+                       <td class="numeric">{% if data['sum_wed']  %} {{ sum_wed }} {% else %} 0 {% endif %}</td>
                   
-                       <tr>
-                         <th scope="row">Complex neuro</th>
-                         <td class="numeric">{% if data['complexWedsum'] %}{{ complexWedsum }}  {% else %} 0 {% endif %}</td>
+                     </tr>
+                     <tr>
+                       <th scope="row">Neuro</th>
+                       <td class="numeric">{% if data['col_2_sum']  %} {{ col_wed_2_sum }} {% else %} 0 {% endif %}</td>
+                     
+                     </tr>
+                     <tr>
+                       <th scope="row">Non neuro</th>
+                       <td class="numeric">{% if data['col_3_sum']  %} {{ col_wed_3_sum }} {% else %} 0 {% endif %}</td>
                     
-                       </tr>
-                       <tr>
-                         <th scope="row">Neuro</th>
-                         <td class="numeric">{% if data[' neuroWedsum'] %} {{ neuroWedsum }}  {% else %} 0 {% endif %} </td>
-                       
-                       </tr>
-                       <tr>
-                         <th scope="row">Non neuro</th>
-                         <td class="numeric">{% if data['noneWedsum'] %} {{ noneWedsum }}  {% else %} 0 {% endif %}</td>
-                      
-                       </tr>
-                       {% if data['IIDBWedsum']  %}
-                       <tr>
-                          <th scope="row">IIDB</th>
-                          <td class="numeric">{% if data['complexWedsum'] %} {{ IIDBWedsum }}  {% else %} 0 {% endif %}</td>
-                       
-                        </tr>
-                       {% endif %}
+                     </tr>
+                     {% if checked('benefitsWed','ben2')%}
+                     <tr>
+                        <th scope="row">IIDB</th>
+                        <td class="numeric">{% if data['col_4_sum'] %} {{ col_wed_4_sum }}  {% else %} 0 {% endif %}</td>
+                     
+                      </tr>
+                     {% endif %}
 
-                       <tr>
+                     <tr>
 
-                          <td class="ucb" colspan='2'> <span class="bold">{% if data['ucbWedsum']  %}{{ ucbWedsum }} {% else %} 0 {% endif %}</span> appointments can be <span class="bold">UCB</span></td>
-                      
-                        </tr>
+                        <td class="ucb" colspan='2'> <span class="bold">{% if data['col_wed_4_sum']  %}{{ col_wed_4_sum }} {% else %} 0 {% endif %}</span>of these appointments can be <span class="bold">UCB</span></td>
                     
-                     </tbody>
-                   </table>
-                 </div>
+                      </tr>
+                  
+                   </tbody>
+                 </table>
+               </div>
+              
               {% endif %}
         
           
@@ -260,7 +259,7 @@
                            <th scope="col"></th>
                            <th class="numeric" scope="col"> <span class="heading-xlarge">
                              
-                               {{ Tuesum }}
+                               69
                          
                                <span class="block"><span class="visually-hidden">appointents</span>Opened</span>
                            </span></th>
@@ -272,30 +271,30 @@
                           
                          <tr>
                            <th scope="row">Complex neuro</th>
-                           <td class="numeric">{% if data['complexTuesum']  %}{{ complexTuesum }} {% else %} 0 {% endif %}</td>
+                           <td class="numeric"> 0 </td>
                       
                          </tr>
                          <tr>
                            <th scope="row">Neuro</th>
-                           <td class="numeric">{% if data['neuroTuesum']  %}{{ neuroTuesum }} {% else %} 0 {% endif %}</td>
+                           <td class="numeric">37</td>
                          
                          </tr>
                          <tr>
                            <th scope="row">Non neuro</th>
-                           <td class="numeric">{% if data['noneTuesum']  %}{{ noneTuesum }} {% else %} 0 {% endif %}</td>
+                           <td class="numeric">30</td>
                         
                          </tr>
-                         {% if data['IIDBTuesum']  %}
+                    
                          <tr>
                             <th scope="row">IIDB</th>
-                            <td class="numeric">{% if data['IIDBTuesum'] %} {{ IIDBTuesum }}  {% else %} 0 {% endif %}</td>
+                            <td class="numeric">2</td>
                          
                           </tr>
-                         {% endif %}
+                    
 
                          <tr>
 
-                            <td class="ucb" colspan='2'> <span class="bold">{% if data['ucbTuesum']  %}{{ ucbTuesum }} {% else %} 0 {% endif %}</span> appointments can be <span class="bold">UCB</span></td>
+                            <td class="ucb" colspan='2'> <span class="bold">2</span> of these appointments can be <span class="bold">UCB</span></td>
                         
                           </tr>
                       
@@ -331,7 +330,7 @@
                              <th scope="col"></th>
                              <th class="numeric" scope="col"> <span class="heading-xlarge">
                                
-                                 {{ sum }}
+                                89
                            
                                  <span class="block"><span class="visually-hidden">appointents</span>Opened</span>
                              </span></th>
@@ -341,30 +340,30 @@
   
                            <tr>
                              <th scope="row">Complex neuro</th>
-                             <td class="numeric">{% if data['complexsum']  %} {{ complexsum }} {% else %} 0 {% endif %}</td>
+                             <td class="numeric">0</td>
                         
                            </tr>
                            <tr>
                              <th scope="row">Neuro</th>
-                             <td class="numeric">{% if data['neurosum']  %} {{ neurosum }} {% else %} 0 {% endif %}</td>
+                             <td class="numeric">57</td>
                            
                            </tr>
                            <tr>
                              <th scope="row">Non neuro</th>
-                             <td class="numeric">{% if data['nonesum']  %} {{ nonesum }} {% else %} 0 {% endif %}</td>
+                             <td class="numeric">30</td>
                           
                            </tr>
-                           {% if data['IIDBsum']  %}
+                          
                            <tr>
                               <th scope="row">IIDB</th>
-                              <td class="numeric">{% if data['IIDBsum'] %} {{ IIDBsum }}  {% else %} 0 {% endif %}</td>
+                              <td class="numeric">2</td>
                            
                             </tr>
-                           {% endif %}
+                        
 
                            <tr>
 
-                              <td class="ucb" colspan='2'> <span class="bold">{% if data['ucbsum']  %}{{ ucbsum }} {% else %} 0 {% endif %}</span> appointments can be <span class="bold">UCB</span></td>
+                              <td class="ucb" colspan='2'> <span class="bold">2</span> of these appointments can be <span class="bold">UCB</span></td>
                           
                             </tr>
                         

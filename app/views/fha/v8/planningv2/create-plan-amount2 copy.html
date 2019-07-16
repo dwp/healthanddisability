@@ -1,4 +1,3 @@
-
 {% extends path+"/_layout.html" %}
 
 
@@ -16,56 +15,12 @@
 
    <h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Create a capacity plan - {% include path+"/planningv2/_ACname.html" %} </h1>
 
-   <h2 class="heading-medium">Monday 10 September</h2>
+   <h2 class="heading-medium">Monday 22 July</h2>
 
-   <div class="panel panel-info panel-instruction" ><h2 class="heading-small">Creating a capacity plan</h2>
-    <ul class="numeric" data-id="">
-        <li>
-          <span class="circle circle-step circle-white">1</span>
-          <h2 class="govuk-heading-m">Add the  hcp skillsets you have available</h2>
-        </li>
-
-        <li>
-          <span class="circle circle-step circle-white">2</span>
-          <h2 class="govuk-heading-m">If you have capacity to take UCB cases, add this to the relevant timeslot</h2>
-        </li>
-
-
-      </ul>
-
-</div>
-
+   {% include path+"/planningv2/_info-panel-amount.html" %}
 
    <form class="form" action="create-plan" method="post">
 
-      
-<style>
-table.profile-table input[readonly]{
-  background:#DEE0E2;
-  border-color:#DEE0E2;
-}
-
-table.profile-table .col5, table.profile-table .col6 {
-  background:#f8f8f8;
- 
-}
-
-table.profile-table .col5{
-   padding-left:15px;
-}
-
-
-
-
-.total-container.alt
-{
-  border-top:3px solid #000;
-  padding-top:30px;
-}
-
-
-
-</style>
               <table class="profile-table">
 
             
@@ -963,24 +918,7 @@ table.profile-table .col5{
   
 
                         
-                              
-                           <!--   <tr class="total">
-                              	<th class="col">Total</th>
-                              	<td><label class="visually-hidden" for="" ></label>
-                                  <input type="number" name="sum2" id="sum2" class="form-control" readonly /></td>
-                              	<td><label class="visually-hidden" for="" ></label>
-                                  <input type="number" name="col_3_sum2" id="col_3_sum2" class="form-control" readonly /></td>
-                              	<td><label class="visually-hidden" for="" ></label>
-                                  <input class="form-control" id="col_4_sum2"  type="text" name="col_4_sum2"  type="text" value="" ></td>
-                                  <td><label class="visually-hidden" for="" ></label>
-                                  <input class="form-control" id="col_5_sum2"  type="text" name="col_5_sum2"  type="text" value="" ></td>
-                                	{% if checked('benefits','ben2') %}
-                                  <td><label class="visually-hidden" for="" ></label>
-                                  <input class="form-control" id="col_6_sum"  type="text" name="col_6_sum2"  type="text" value="" ></td>
-                                  {% endif %}
-                                  <td><label class="visually-hidden" for="" ></label>
-                                    <input class="form-control" id="col_2_sum"  type="text" name="col_2_sum"  type="text" value="" ></td>
-                                </tr> -->
+      
 
 
                
@@ -1012,15 +950,6 @@ table.profile-table .col5{
 
 
 
-$(function(){
-  $('#sum, #col_2_sum, #col_3_sum, #col_4_sum').change(function(){
-     var value1 = parseFloat($('#sum').val()) || 0;
-     var value2 = parseFloat($('#col_2_sum').val()) || 0;
-     var value3 = parseFloat($('#col_3_sum').val()) || 0;
-     var value4 = parseFloat($('#col_4_sum').val()) || 0;
-     $('#rowsum_sum').val(value1 + value2 + value3+ value4);
-  });
-});
 $(function(){
   $('#col_1_1, #col_1_2, #col_1_3, #col_1_4, #col_1_5, #col_1_6, #col_1_7, #col_1_8, #col_1_9, #col_1_10, #col_1_11, #col_1_12, #col_1_13, #col_1_14, #col_1_15, #col_1_16, #col_1_17, #col_1_18, #col_1_19, #col_1_20, #col_1_21, #col_1_23, #col_1_23, #col_1_24, #col_1_25, #col_1_26, #col_1_27, #col_1_28, #col_1_29, #col_1_30, #col_1_31, #col_1_32').keyup(function(){
      var value1 = parseFloat($('#col_1_1').val()) || 0;
@@ -1055,7 +984,7 @@ $(function(){
      var value30 = parseFloat($('#col_1_30').val()) || 0;
      var value31 = parseFloat($('#col_1_31').val()) || 0;
      var value32 = parseFloat($('#col_1_32').val()) || 0;
-     $('#sum').val(value1 + value2 + value3+ value4+ value5+ value6+ value7+ value8+ value9+ value10+ value11+ value12+ value13+ value14+  value15+ value16+ value17+ value18+ value19+ value20+ value21+ value22+ value23+ value24+ value25+ value26+ value27+ value28+ value29+ value30+ value31+ value32).triggerHandler('change');
+     $('#sum').val(value1 + value2 + value3+ value4+ value5+ value6+ value7+ value8+ value9+ value10+ value11+ value12+ value13+ value14+  value15+ value16+ value17+ value18+ value19+ value20+ value21+ value22+ value23+ value24+ value25+ value26+ value27+ value28+ value29+ value30+ value31+ value32);
   });
 });
 $(function(){
@@ -1092,7 +1021,7 @@ $(function(){
      var comvalue30 = parseFloat($('#col_3_30').val()) || 0;
      var comvalue31 = parseFloat($('#col_3_31').val()) || 0;
      var comvalue32 = parseFloat($('#col_3_32').val()) || 0;
-     $('#col_3_sum').val(comvalue1 + comvalue2 + comvalue3+ comvalue4+ comvalue5+ comvalue6+ comvalue7+ comvalue8+ comvalue9+ comvalue10+ comvalue11+ comvalue12+ comvalue13+ comvalue14+  comvalue15+ comvalue16+ comvalue17+ comvalue18+ comvalue19+ comvalue20+ comvalue21+ comvalue22+ comvalue23+ comvalue24+ comvalue25+ comvalue26+ comvalue27+ comvalue28+ comvalue29+ comvalue30+ comvalue31+ comvalue32).triggerHandler('change');
+     $('#col_3_sum').val(comvalue1 + comvalue2 + comvalue3+ comvalue4+ comvalue5+ comvalue6+ comvalue7+ comvalue8+ comvalue9+ comvalue10+ comvalue11+ comvalue12+ comvalue13+ comvalue14+  comvalue15+ comvalue16+ comvalue17+ comvalue18+ comvalue19+ comvalue20+ comvalue21+ comvalue22+ comvalue23+ comvalue24+ comvalue25+ comvalue26+ comvalue27+ comvalue28+ comvalue29+ comvalue30+ comvalue31+ comvalue32);
   });
 });
 
@@ -1130,7 +1059,7 @@ $(function(){
      var comvalue30 = parseFloat($('#col_4_30').val()) || 0;
      var comvalue31 = parseFloat($('#col_4_31').val()) || 0;
      var comvalue32 = parseFloat($('#col_4_32').val()) || 0;
-     $('#col_4_sum').val(comvalue1 + comvalue2 + comvalue3+ comvalue4+ comvalue5+ comvalue6+ comvalue7+ comvalue8+ comvalue9+ comvalue10+ comvalue11+ comvalue12+ comvalue13+ comvalue14+  comvalue15+ comvalue16+ comvalue17+ comvalue18+ comvalue19+ comvalue20+ comvalue21+ comvalue22+ comvalue23+ comvalue24+ comvalue25+ comvalue26+ comvalue27+ comvalue28+ comvalue29+ comvalue30+ comvalue31+ comvalue32).triggerHandler('change');
+     $('#col_4_sum').val(comvalue1 + comvalue2 + comvalue3+ comvalue4+ comvalue5+ comvalue6+ comvalue7+ comvalue8+ comvalue9+ comvalue10+ comvalue11+ comvalue12+ comvalue13+ comvalue14+  comvalue15+ comvalue16+ comvalue17+ comvalue18+ comvalue19+ comvalue20+ comvalue21+ comvalue22+ comvalue23+ comvalue24+ comvalue25+ comvalue26+ comvalue27+ comvalue28+ comvalue29+ comvalue30+ comvalue31+ comvalue32);
   });
 });
 
@@ -1565,7 +1494,7 @@ $(function(){
      var comvalue30 = parseFloat($('#col_2_30').val()) || 0;
      var comvalue31 = parseFloat($('#col_2_31').val()) || 0;
      var comvalue32 = parseFloat($('#col_2_31').val()) || 0;
-     $('#col_2_sum').val(comvalue1 + comvalue2 + comvalue3+ comvalue4+ comvalue5+ comvalue6+ comvalue7+ comvalue8+ comvalue9+ comvalue10+ comvalue11+ comvalue12+ comvalue13+ comvalue14+  comvalue15+ comvalue16+ comvalue17+ comvalue18+ comvalue19+ comvalue20+ comvalue21+ comvalue22+ comvalue23+ comvalue24+ comvalue25+ comvalue26+ comvalue27+ comvalue28+ comvalue29+ comvalue30+ comvalue31+ comvalue32).triggerHandler('change');
+     $('#col_2_sum').val(comvalue1 + comvalue2 + comvalue3+ comvalue4+ comvalue5+ comvalue6+ comvalue7+ comvalue8+ comvalue9+ comvalue10+ comvalue11+ comvalue12+ comvalue13+ comvalue14+  comvalue15+ comvalue16+ comvalue17+ comvalue18+ comvalue19+ comvalue20+ comvalue21+ comvalue22+ comvalue23+ comvalue24+ comvalue25+ comvalue26+ comvalue27+ comvalue28+ comvalue29+ comvalue30+ comvalue31+ comvalue32);
   });
 });
 
