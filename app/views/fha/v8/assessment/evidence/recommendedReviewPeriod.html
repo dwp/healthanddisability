@@ -1,0 +1,71 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+<h1 class="heading-large">Curtail this assessment</h1>
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	
+	
+	
+	
+	
+	<form method="post" action="personalSummaryStatement">
+	
+	<div class="form-group">
+		 <fieldset>
+		    
+				    	<legend class="heading-medium mb10">When should this case be reviewed?</legend>
+		
+					    <div class="multiple-choice" id="reviewPeriod">
+					      <input id="decide_now" name="LcwAndLcwra" type="radio" value="yes">
+					      <label for="decide_now">3 months</label>
+					    </div>
+							<div class="multiple-choice" data-target="reasons1">
+					      <input id="decide_now" name="LcwAndLcwra" type="radio" value="yes">
+					      <label for="decide_now">6 months</label>
+					    </div>
+							<div class="multiple-choice" data-target="reasons1">
+					      <input id="decide_now" name="LcwAndLcwra" type="radio" value="yes">
+					      <label for="decide_now">9 months</label>
+					    </div>
+							<div class="multiple-choice" data-target="reasons1">
+					      <input id="decide_now" name="LcwAndLcwra" type="radio" value="yes">
+					      <label for="decide_now">12 months</label>
+					    </div>
+							<div class="multiple-choice" data-target="reasons1">
+					      <input id="decide_now" name="LcwAndLcwra" type="radio" value="yes">
+					      <label for="decide_now">18 months</label>
+					    </div>
+					    
+				    </fieldset>
+	</div>
+	
+	
+
+    <p><input type="submit" class="button" value="Continue" id="submitButton"></p>
+		</form>	
+
+  </div><!-- column -->
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+
