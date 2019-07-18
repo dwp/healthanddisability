@@ -8,7 +8,6 @@
 
 <h1 class="heading-large">Work capability assessment</h1>
 
-<p class="mt30 mb20">Step 1 of 2</p>
 
 <p class="mt30 mb20">Assessment started: {{ last_one.time | formatDate("H:mma D MMMM YYYY") }}</p>
 
@@ -20,23 +19,19 @@
 					<ul class="task-list-itmes">
           <li class="task-list-item"><a href="medicalConditions1">Medical conditions {% if data['illnessEffectsVisited'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
            <li class="task-list-item"><a href="socialWorkHistory">Social and work history {% if data['socialWorkHistory'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
-           <li class="task-list-item"><a href="typicalDay">Typical day {% if data['typicalDay'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+            <li class="task-list-item"><a href="typicalDay">Typical day {% if data['typicalDay'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+           <li class="task-list-item"><a href="phys_consent">Physical assessments{% if data['physicalAssessed'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+           <li class="task-list-item"><a href="mentalHealthAssessment">Mental state examination {% if data['mental-health'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+            <li class="task-list-item"><a href="observedBehaviour">Observations{% if data['observedBehaviour'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+            <li class="task-list-item"><a href="exceptionalCircumstances">Curtail this assessment {% if data['exceptionalCircumstances'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
           </ul>
         </div>
   </div><!-- column here -->
 </div><!-- row -->
 
-<div class="primary-cta-button">
-{% if data['socialWorkHistory'] and data['typicalDay'] %}
 <form class="mt30" method="post" action="/{{path}}/assessment/{{customer._id}}/ready-for-recommendation">
   <p class="mt30"><button class="button">Finish and review</button></p>
 </form>
-<form class="mt30" method="post" action="curtailAssessmentDecision">
-  <p class="mt30"><button class="button-secondary">Curtail assement</button></p>
-</form>
-{% else %}
-{% endif %}
-</div>
 
 {% endblock %}
 

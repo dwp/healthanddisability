@@ -1,0 +1,61 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+<h1 class="heading-large">Curtail assessment</h1>
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	
+	
+	
+	<form method="post" action="exceptionalCircumstances">
+	
+
+<div class="form-group">
+  <fieldset class="inline">
+
+
+<legend class="heading-medium mb10">Do you have sufficient evidence to make your recommendation?</legend>
+
+    <div class="multiple-choice">
+      <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+      <label for="radio-inline-1">Yes</label>
+    </div>
+    <div class="multiple-choice" data-target="curtail-decision-no">
+      <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+      <label for="radio-inline-2">No</label>
+    </div>
+    <div class="panel panel-border-narrow js-hidden" id="curtail-decision-no">
+		<p>Continue with the assessment until you have adequate evidence to support your decision</p>
+    </div>
+
+  </fieldset>
+</div>
+	
+
+    <p><input type="submit" class="button" value="Continue" id="submitButton"></p>
+		</form>	
+
+  </div><!-- column -->
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+
