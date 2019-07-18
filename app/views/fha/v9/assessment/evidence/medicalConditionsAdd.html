@@ -1,0 +1,82 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="#" class="link-back">Back</a></p>
+
+
+
+
+<h1 class="heading-large mt30 mb20">Add medical condition</h1>
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	<form class="form">
+	
+	
+	      
+  
+          <fieldset>
+                 
+            
+            <legend class="visuallyhidden">Condition details</legend>
+
+
+		
+		      	<div class="form-group">
+		        
+					<label class="form-label form-label-large" for="illnessname">Name of medical condition</label>
+					 <input type="text" class="form-control" id="illnessname">
+					 
+				 </div>
+				 
+				 <div class="form-group">
+		        
+					<label class="form-label form-label-large" for="illnesssource">Source</label>
+					 <input type="text" class="form-control" id="illnesssource">
+					 
+				 </div>
+
+				 <div class="form-group">
+					<label class="form-label" for="diagnosed">
+						When was it diagnosed? 
+					</label>
+					<input type="text" class="form-control" id="diagnosed" name="diagnosed">
+				</div>
+				
+				<div class="form-group">
+						 <label class="form-label" for="conditionHistory">Condition history</label> 
+						 <textarea class="form-control form-control-3-4" id="conditionHistory" name="newillnesscondition" rows="6"></textarea>
+					 </div>
+					 
+					 <div class="form-group">
+						<label class="form-label" for="medication">
+							Medication
+						</label>
+						 <textarea class="form-control form-control-3-4" id="medication" name="newillnesscondition" rows="6"></textarea>
+					</div>
+				
+				
+          </fieldset>
+
+
+    
+    <p class="mt30"><a href="medicalConditionsEditUpdated" class="button">Save and continue</a></p>
+	
+	</form>
+	
+	
+	    
+
+  </div><!-- column -->
+</div><!-- row -->
+
+{% endblock %}
+

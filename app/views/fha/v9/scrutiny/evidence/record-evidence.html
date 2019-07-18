@@ -1,0 +1,225 @@
+{% extends path1+"/_layoutRecording.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    	
+    	<h1 class="heading-large">Record evidence</h1>
+		
+		<form action="/{{path}}/scrutiny/{{customer._id}}/timeline" method="POST" class="form">
+			<div class="form-group">
+					<fieldset>
+				
+						<legend class="form-label-bold mb10">
+							Select the evidence you would like to record
+						</legend>
+						
+				{% if  data['recordevidencegp']==='gp' %}
+						<div class="visually-hidden">
+						<div class="multiple-choice">
+							<input id="gpreport" name="recordEvidence" type="checkbox" value="gpvisited" checked>
+							<label for="gpreport" class="form-label-bold">GP report </label>
+						</div>
+				</div>
+					
+				    {% elif customer.fmeType.indexOf("113") > -1 or data['type']==='113visited' or  customer.fmeType == 'GP Report'%}
+				
+					
+					<div class="multiple-choice">
+						<input id="Gp" name="recordevidencegp" type="checkbox" value="gp">
+						<label for="Gp" class="form-label">GP report <span class="text-secondary"> (requested on {{ 'Do MMMM YYYY' | randDaysAgo(0)}})</span></label>
+					</div>
+					
+						{% endif %}
+
+
+						{% if data['recordevidencefrr']==='frr'%}
+						<div class="visually-hidden">
+						<div class="multiple-choice">
+							<input id="factualreportvisited" name="recordevidence" type="checkbox" value="FRRvisisted" checked>
+							<label for="factualreportvisited" class="form-label">Factual report hidden (FRR)</label>
+						</div>
+					</div>
+					
+				    {% elif customer.fmeType.indexOf("FRR") > -1  or customer.fmeType == 'Factual report'%}
+						<div class="multiple-choice">
+							<input id="factualreport" name="recordevidencefrr" type="checkbox" value="frr">
+							<label for="factualreport" class="form-label">Factual report requested - <span class="text-secondary"> {{ 'Do MMMM YYYY' | randDaysAgo(0)}}</span></label>
+					</div>
+						{% endif %}
+
+						<div class="multiple-choice" data-target="evidence">
+							<input id="nationalities-other" name="evidenceType" type="checkbox" value="evidence">
+							<label for="nationalities-other" class="form-label">Record new evidence</label>
+						</div>
+						<div class="panel js-hidden" id="evidence">
+								<div class="form-group">
+										<label for="type" class="form-label">
+											Evidence type
+										</label>
+										<input type="text" id="type" name="newevidencename"class="form-control form-control-2-4">
+									</div>
+									
+									<div class="form-group">
+										<label for="source" class="form-label">
+											Source
+										</label>
+										<input type="text" id="source" name="newevidencesource" class="form-control form-control-2-4">
+									</div>
+									{% if data['newevidencename']%}
+									<div class="visually-hidden">
+										<input type="text" id="source" name="newevidencenamevisited" class="form-control form-control-1-3" value="{{ data['newevidencename'] }}">
+										<input type="text" id="source" name="newevidencesourcevisited" class="form-control form-control-1-3" value="{{ data['newevidencesource'] }}">
+								</div>
+								{% endif %}	
+						</div>
+						<div class="multiple-choice" data-target="telephone">
+								<input id="nationalities-other" name="telephonecontactreport" type="checkbox" value="evidence">
+								<label for="nationalities-other" class="form-label">Telephone conversation</label>
+							</div>
+							<div class="panel js-hidden" id="telephone">
+									<div class="form-group">	
+											<label for="telephoneReport" class="bold">
+											Information sought
+
+											</label>
+											<textarea class="form-control form-control-3-4" name="telephoneReport" id="telephoneReport" rows="5"></textarea>
+											 </div>	
+											 <div class="form-group">
+													<fieldset>
+	
+															<legend class="bold">
+																
+																	Source of information
+																
+															</legend>
+
+															<div class="multiple-choice" data-target="client">
+																	<input id="example-contact-by-email" type="radio" name="hcp-type" value="client">
+																	<label for="example-contact-by-email">Client: {{customer.name.fullName}}</label>
+																</div>
+																<div class="panel js-hidden" id="client">
+																	  <fieldset class="inline">
+
+																				<legend>
+																					<h2 class="form-label-bold">
+																					Does {{customer.name.first}} agree to answer questions?
+																					</h2>
+																				</legend>
+																		
+																				<div class="multiple-choice">
+																					<input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+																					<label for="radio-inline-1">Yes</label>
+																				</div>
+																				<div class="multiple-choice">
+																					<input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+																					<label for="radio-inline-2">No</label>
+																				</div>
+																		
+																			</fieldset>
+																		</div>
+
+														
+													
+															<div class="multiple-choice">
+																<input id="example-contact-by-email" type="radio" name="hcp-type" value="gp">
+																<label for="example-contact-by-email">GP: {{customer.address.gpName.fullName}}</label>
+															</div>
+															{% if  customer.otherHcp.hasOtherHcp %}
+															<div class="multiple-choice" >
+																	<input id="example-contact-by-email" type="radio" name="hcp-type" value="consultant">
+																	<label for="example-contact-by-email">Consultant: Dr. {{customer.otherHcp.name.fullName}}</label>
+																</div>
+													         {% endif %}
+	
+										
+														
+													
+														</fieldset>
+	
+											 </div>
+											 <div class="form-group">	
+													<label for="telephoneReport" class="bold">
+													Information gathered
+													</label>
+													<textarea class="form-control form-control-3-4" name="telephoneReportGathered" id="telephoneReport" rows="15"></textarea>
+													 </div>	
+							</div>
+				
+					</fieldset>
+				</div>
+		
+		
+	
+				
+				<!--<div class="form-group mt30">
+
+					    	<fieldset>
+							      <legend class="heading-small mb10">
+							        Evidence type: 
+							      </legend>
+							       
+							       
+							       <div class="multiple-choice">
+								      <input id="terminally" name="reasons" type="radio" value="terminally ill">
+								      <label for="terminally">Evidence type 1</label>
+								    </div>
+					  
+								    <div class="multiple-choice">
+								      <input id="preg" name="reasons" type="radio" value="Pregnancy">
+								      <label for="preg">Evidence type 2</label>
+								    </div>
+								    
+								    <div class="multiple-choice">
+								      <input id="disease" name="reasons" type="radio" value="Disease">
+								      <label for="disease">Evidence type 3</label>
+								    </div>
+					  
+								    <div class="multiple-choice">
+								      <input id="substantial" name="reasons" type="radio" value="Substantial">
+								      <label for="substantial">Evidence type 4</label>
+								    </div>
+								    
+								    <div class="multiple-choice" data-target="other-evidence">
+								      <input id="other" name="reasons" type="radio" value="other">
+								      <label for="other">Other</label>
+								    </div>	       
+						    </fieldset>
+						    
+					</div>-->
+					
+	
+		
+    
+    
+    <p><input type="submit" class="button" value="Save and continue"></p>
+     
+				</form>
+    
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+
+{% endblock %} #}

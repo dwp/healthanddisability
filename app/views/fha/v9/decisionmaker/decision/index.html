@@ -1,0 +1,148 @@
+{% extends path1+"/_layoutDMAction.html" %}
+
+
+{% block citizen_content %}
+
+
+ <p class="no-kdBar"> <a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+ 
+<<<<<<< HEAD
+<form class="form" action="/{{path }}/decisionmaker/timeline" method="post">
+=======
+<form class="form" action="/{{path }}/decisionmaker/{{customer._id}}/timeline" method="post">
+>>>>>>> b6bc5d9c9fbc85ba160a31fb31fc2e3d4a38c026
+<div class="grid-row">
+  <div class="column-two-thirds">
+<h1 class="heading-large">Did not attend</h1>
+            
+<div class="latest_version">
+    <h2 class="heading-medium mt0">What we know</h2>
+    <p>Appointment details</p>
+    <ul class="list-bullet">
+        <li>2nd May 2019</li> 
+        <li>11:00am</li>  
+        <li>Tresco House</li> 
+         </ul>
+
+         <p class="mt30">Appointment requirements</p>
+         <ul class="list-bullet">
+             <li>Audio equipment required</li> 
+             <li>Taxi</li> 
+        </ul>
+         
+         <h3 class="heading-small">Contact reason</h3>
+       
+         <p class="">Claimant was having a bad day with his depression and was struggling to get out of the house, he asked for a rearrangement but we could not provide it because he had previously rearranged
+             his appointment.
+             <span class="date block mt10">Recorded date:{{ 'Do MMMM YYYY' | baseDate(3) }} - 10:08am / Robert Weston/ Cardiff Contact Centre </span>
+         </p>   
+         
+         <h3 class="heading-small">Additional information</h3>
+       
+         <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in sagittis sem. In eget condimentum ante, vel porttitor nisl. In id pulvinar mauris. Donec ut urna venenatis lacus gravida condimentum
+            <span class="date block mt10">Recorded date: {{ 'Do MMMM YYYY' | baseDate(0) }} - 2:56pm | Paul Smith | Wimbledon BSC</span>
+         </p>    
+   
+   </div>
+   
+ <hr>
+    <h2 class="heading-medium mt0">Cancelled: non-neuro appointment</h2>
+    <p>Appointment details</p>
+    <ul class="list-bullet">
+        <li>18th April 2019</li> 
+        <li>11:00am</li>  
+        <li>Tresco House</li> 
+         </ul>
+
+         <p class="mt30">Appointment requirements</p>
+         <ul class="list-bullet">
+             <li>Audio equipment required</li> 
+             <li>Taxi</li> 
+        </ul>  
+
+         <h3 class="heading-small">Assessment centre</h3>
+         <p class="">We have cancelled this appointment because there wasn't a hcp available to fullfill the appointment
+           
+
+      <span class="date block mt10 text-secondary">Recorded date: {{ 'Do MMMM YYYY' | baseDate(15) }} - 2:56pm | Paul Smith | Wimbledon BSC</span>
+    </p> 
+<hr>
+
+</div>
+<div class="column-third">
+    <div class="decision-form">
+  <fieldset>
+
+    <legend class="heading-medium mb5">Do you want to accept good cause?</legend>
+    
+    <div class="form-group">
+  
+      <div class="multiple-choice" data-target="goodcauseaccepted">
+        <input id="decide_now" name="whatcando" type="radio" value="newappointment">
+        <label for="decide_now">Yes</label>
+      </div>
+
+      <div class="panel js-hidden" id="goodcauseaccepted">
+
+
+
+
+          <div class="form-group">
+              <fieldset>
+            
+                <legend>
+                  <h1 class="heading-small">What is the reason ?</h1>
+                </legend>
+            
+                <div class="multiple-choice">
+                  <input id="radio-1" type="radio" name="goodcause" value="Did not receive appointment invitation">
+                  <label for="radio-1">Did not receive appointment invitation</label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="radio-2" type="radio" name="goodcause" value="Client issues">
+                  <label for="radio-2">Client issues</label>
+                </div>
+               
+                <div class="multiple-choice">
+                  <input id="radio-3" type="radio" name="goodcause" value="Mental health">
+                  <label for="radio-3">Mental health case</label>
+                </div>
+
+                <div class="multiple-choice block" data-target="otherreason">
+                    <input id="radio-3" type="radio" name="goodcause" value="Other reason">
+                    <label for="radio-3">Other reason</label>
+                  </div>
+              
+            
+              </fieldset>
+              <div class="panel js-hidden" id="otherreason">
+                
+                      <label class="form-label" for="reason">Add a reason</label>
+                      <textarea class="form-control form-control-1" name="otherreason" id="otherreason" rows="2"></textarea>
+                
+                </div>
+            </div>
+           
+        </div>
+  
+      <div class="multiple-choice" data-target="closeThis">
+        <input id="face2face" name="whatcando" type="radio" value="close">
+        <label for="face2face"> No </label>
+      </div>
+  
+    </div><!-- form-group -->
+
+    <div class="form-group">
+          <label class="form-label-bold" for="reason">Additional information</label>
+          <textarea class="form-control form-control-1" name="reason" id="reason" rows="6"></textarea>
+    </div>
+    <div class="form-group">
+      <button class="button">Confirm</button>
+    </div><!-- form-group -->
+    
+  </fieldset></div>
+</div>
+</div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,250 @@
+{% extends path+"/_layout-case-simple.html" %}
+
+
+{% block actioncolumn %}
+   
+ <p class="returnRef"><a href="/fha/v8/referrals-fme">Return to case list</a></p>
+  <hr>
+ <div class="case-status">
+<p class="mt10 mb0 bold-small">
+
+   {% if data['pbachoice']=='yes'%}
+<p class="mt10 mb0 bold-small">
+Ready for paper based assessment  
+</p>
+<p><a href="/{{path }}/scrutiny/not-testing" class="button">Start assessment</a></p>
+{% else %}
+<p class="mt10 mb0 bold-small">
+Appointment booked
+</p>
+{% endif %}
+
+    
+
+</p>
+
+
+
+<hr>
+<!--<ul class="secondary-actions">
+ <li><a href="/{{path }}/scrutiny/recordFME" class="">Record evidence</a></li>
+  
+  </ul>-->
+</div>
+{% endblock %}
+
+{% block citizen_detail %}
+Bobby Henderson
+{% endblock %}
+
+{% block citizen_content %}
+
+
+{% if data['pbachoice'] %}
+	 
+
+{% else %}
+
+<div class="panel panel-info panel-instruction fme-warning"><h2 class="heading-small">New evidence recorded</h2>
+	   <ul class="numeric" data-id="">
+	       <li>
+	         <span class="circle circle-step circle-white">1</span>
+	         <h2 class="govuk-heading-m">Bobby's case should be reviewed before making a recommendation</h2>
+	       </li>
+	
+	       <li>
+	         <span class="circle circle-step circle-white">2</span>
+	         <h2 class="govuk-heading-m"><a href="/{{path }}/scrutiny/recordFMEdecision">Make recommendation</a></h2>
+	       </li>
+	     </ul>
+	</div>
+
+	
+{% endif %}
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.case_tabs("evidence-portal",1,path1, customer._id) }}
+  <div class="grid-row">
+
+    <div class="column-full">
+        
+
+
+
+<h1 class="heading-large mt10">Evidence</h1>
+
+
+
+<!-------- row/time slot start --------->
+
+<div class="portal-display">
+		
+	
+	
+	<!------ ROW START ------>
+	<div class="grid-row">
+		
+		
+		<!---------------------------------- Card ---------------------------------->
+		<div class="column-third">
+		
+			<div class="portal-card">
+				<div class="portal-head">
+					<h3>What we have</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+				
+				<h4>Last recorded evidence</h4>
+
+					<table>
+						<caption>Evidence item</caption>
+						
+						<tbody>
+							<tr>
+								<th>Type</th>
+								<td><a href="/{{path }}/scrutiny/not-testing">GP report</a></td>
+							</tr>
+							<tr>
+								<th>Date</th>
+								<td>24 June 2019</td>
+							</tr>
+							<tr>
+								<th>Source</th>
+								<td>GP</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<p class="mt30"><a href="evidence-full" class="secondary-invert">View all recorded evidence</a></p>
+					
+				</div>
+				<!-- / inner card -->
+			</div>
+			<!-- / portal card -->
+			
+		</div>
+		<!---------------------------------- / Card ---------------------------------->
+		
+		
+		
+		<!---------------------------------- Card ---------------------------------->
+		<div class="column-third">
+		
+			<div class="portal-card">
+				<div class="portal-head">
+					<h3>Request</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+					<p>Choose the evidence you want to request:</p>
+					<ul class="action-list">
+						<li><a href="/{{path }}/scrutiny/evidence-gpRequest" class="secondary-invert">GP report</a></li>
+						<li><a href="/{{path }}/scrutiny/not-testing" class="secondary-invert">Factual report</a></li>
+						<!-- <li><a href="#" class="secondary-invert">Other evidence</a></li> -->
+					</ul>
+				</div>
+				<!-- / inner card -->
+			</div>
+			<!-- / portal card -->
+			
+		</div>
+		<!---------------------------------- / Card ---------------------------------->
+		
+		
+		
+		<!---------------------------------- Card ---------------------------------->
+		<div class="column-third">
+		
+			<div class="portal-card">
+				<div class="portal-head">
+					<h3>Record</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+					<p>Choose the evidence type you want to record:</p>
+					<ul class="action-list">
+						<li><a href="/{{path }}/scrutiny/not-testing" class="secondary-invert">Record a telephone conversation</a></li>
+						<li><a href="/{{path }}/scrutiny/not-testing" class="secondary-invert">Record other evidence</a></li>
+					</ul>
+					
+					
+			
+						<!--<div class="requested-evidence">
+							<h4>Requested evidence</h4>
+							<ul class="action-list">
+								<li><p>GP report requested on 26 July 2019</p>
+								<a href="/{{path }}/scrutiny/not-testing" class="secondary-invert">Record GP report</a></li>
+							</ul>
+						</div>-->
+						
+				
+					
+					
+					
+					
+		
+					
+				</div>
+				<!-- / inner card -->
+			</div>
+			<!-- / portal card -->
+			
+		</div>
+		<!---------------------------------- / Card ---------------------------------->
+		
+		
+		
+		
+		
+				
+	</div>
+	<!------ ROW END ------->
+	
+	
+</div>
+
+<!------- / PORTAL END ------->
+
+
+
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

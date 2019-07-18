@@ -1,0 +1,194 @@
+{% extends path+"/_layout-case.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.case_tabs("timeline",1,path1, customer._id) }}
+    
+
+
+      <div class="timeline">
+
+          {% if checked('appointments', 'yes') %}
+          <span class="line"></span>
+          <div class="timeline__event">
+            <h3 class="timeline__heading">Appointment booked</h3>
+            <p class="timeline_datetime">{{customer | formatDate("D MMMM YYYY") }}</p>
+          </div>
+
+          <span class="line"></span>
+          <div class="timeline__event">
+            <h3 class="timeline__heading">Rearranged appointment</h3>
+            <p class="timeline_datetime">{{customer | formatDate("D MMMM YYYY") }}</p>
+          </div>
+          {% endif %}
+
+          {% if checked('book-next', 'yes') %}
+          <span class="line"></span>
+          <div class="timeline__event">
+            <h3 class="timeline__heading">Appointment booked</h3>
+            <p class="timeline_datetime">{{customer | formatDate("D MMMM YYYY") }}</p>
+          </div>
+
+          {% endif %}
+        {% if checked('appointments', 'no') %}
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading"> Referred for appointment - wellfair call required</h3>
+          <p class="timeline_datetime">{{customer | formatDate("D MMMM YYYY") }}</p>
+        </div>
+        {% endif %}
+
+        {% if customer.status == 'Assessment stopped' %}
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Assessment stopped</h3>
+          <p class="timeline_datetime">30 August 2018</p>
+        </div>
+        {% endif %}
+
+          <span class="line"></span>
+          <div class="timeline__event">
+            <h3 class="timeline__heading">Appointment booked</h3>
+            <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(5)}}</p>
+          </div>
+        
+        <span class="line"></span>
+          <div class="timeline__event">
+            <h3 class="timeline__heading">Referred for appointment</h3>
+            <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(6) }}</p>
+          </div>
+
+
+
+          {% if data['newevidencename'] %}
+      <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">{{ data['newevidencename'] }} - medical evidence recorded</h3>
+          <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(11) }}</p>
+        </div>
+      {% endif %}
+
+
+{% if customer.status == "fme" %}
+
+{% if data['telephonecontactreport']%}
+<span class="line"></span>
+  <div class="timeline__event">
+    <h3 class="timeline__heading">Telephone conversation - medical evidence recorded</h3>
+    <p class="timeline_datetime">{{customer.fmeRequestedDate | formatDate("D MMMM YYYY") }}</p>
+  </div>
+{% endif %}
+
+{% if customer.fmeType.indexOf("FRR") > -1 or customer.fmeType == 'Factual report'%}
+{% if data['recordevidencefrr']==='frr'%}
+<span class="line"></span>
+  <div class="timeline__event">
+    <h3 class="timeline__heading">Factual report - medical evidence recorded</h3>
+    <p class="timeline_datetime">{{customer.fmeRequestedDate | formatDate("D MMMM YYYY") }}</p>
+  </div>
+{% endif %}
+<span class="line"></span>
+  <div class="timeline__event">
+    <h3 class="timeline__heading"> Factual report - medical evidence requested</h3>
+    <p class="timeline_datetime">{{customer.fmeRequestedDate | formatDate("D MMMM YYYY") }}</p>
+  </div>
+{% endif %}
+
+{% if customer.fmeType.indexOf("113") > -1 or  customer.fmeType.indexOf("113visited") > -1 or customer.fmeType == 'GP Report'%}
+{% if data['recordevidencegp']==='gp'%}
+<span class="line"></span>
+  <div class="timeline__event">
+    <h3 class="timeline__heading">GP report - medical evidence received</h3>
+    <p class="timeline_datetime">{{customer.fmeRequestedDate | formatDate("D MMMM YYYY") }}</p>
+  </div>
+  {% endif %}
+
+<span class="line"></span>
+  <div class="timeline__event">
+    <h3 class="timeline__heading">GP Report - medical evidence requested</h3>
+    <p class="timeline_datetime">{{customer.fmeRequestedDate | formatDate("D MMMM YYYY") }}</p>
+  </div>
+{% endif %}
+
+{% endif %}
+
+
+
+
+      <!--           <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">GP statement received (UC113)</h3>
+          <p class="timeline_datetime">26 August 2018</p>
+        </div>
+        
+          <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Request for GP statement sent (UC113)</h3>
+          <p class="timeline_datetime">17 August 2018</p>
+        </div> -->
+        
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">Med 3 - medical evidence received </h3>
+          <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(11) }}</p>
+        </div>
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">UC50 form received</h3>
+          <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(11) }}</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">UC50 form sent out to {{customer.name.first}}</h3>
+          <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(20) }}</p>
+        </div>
+
+   
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading">New referral created</h3>
+          <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(20) }}</p>
+        </div>
+
+
+
+        <div style="clear:both"></div>
+
+      </div><!-- timeline -->
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

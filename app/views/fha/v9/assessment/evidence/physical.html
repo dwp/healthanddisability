@@ -1,0 +1,85 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+<hr class="no-kdBar" />
+
+<h1 class="heading-large">Physical assessments</h1>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+
+
+		  <div class="task-list">
+					<ul class="task-list-itmes">
+              <li class="task-list-item"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing">General</a></li>
+						<li class="task-list-item"><a href="lower-limbs">Lower back and legs {% if data['lowerlimbs'] %}<span class="task-completed">Assessed</span>{% endif %}</a></li>
+						<li class="task-list-item"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing">Neck and arms{% if data['neckwhatcando']==='Yes' or data['neckwhatcando']==='No'%}<span class="task-completed">Assessed</span>{% endif %}</a></li>
+						<li class="task-list-item"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing">Cardiac vascular and respiratory systems</a></li>
+						<li class="task-list-item"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing">Vision hearing and speech</a></li>
+            <li class="task-list-item"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing">Central nervous system</a></li>
+         </ul>
+         </div>
+
+	
+ 
+    {% if customer.status == 'Ready for recommendation' %}
+    <form class="mt30" method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/wca-index">
+    <p class="mt30"><button class="button">Save and continue</button></p>
+		 
+				<div class="multiple-choice" style="display:none">
+						<input id="radio-inline-4" type="radio" name="physicalVisited" value="physicalVisited" checked>
+				
+						<label for="radio-4">hidden radio one</label>
+          </div>
+          {% else %}
+          <form class="mt30" method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/wca-index">
+          <p class="mt30"><button class="button">Save and continue</button></p>
+          {% endif %}
+          
+          <div class="multiple-choice" style="display:none">
+              <input id="radio-inline-4" type="radio" name="physicalAssessed" value="physicalAssessed" checked>
+          
+              <label for="radio-4">hidden radio one</label>
+            </div>
+		</form>
+
+
+
+  
+
+
+
+
+  <!-- <p class="mt30"><a href="medical_assessment_stripped" class="button">Finish assessment</a></p> -->
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+
+
+{% macro physObs(name,sel) %}
+  {% set s = name | slug %}
+  <div class="multiple-choice" data-target="phys_{{s}}_yes">
+    <input id="phys_{{s}}" type="checkbox" name="mobility" value="phys_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="phys_{{s}}">{{name}}</label>
+  </div>
+  <div class="form-group panel panel-indent js-hidden mt0 mb20" id="phys_{{s}}_yes">
+    <p>
+      <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
+      <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
+    </p>
+  </div>
+{% endmacro %}
+
+{% block footer_top %}
+{{ super() }}
+<p class="font-xsmall">
+  <a href="/{{ path2 }}/phys_exam_1">exam v1</a> |
+  <a href="/{{ path2 }}/phys_exam_2">exam v2</a>
+</p>
+{% endblock %}

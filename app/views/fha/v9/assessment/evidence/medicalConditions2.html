@@ -1,0 +1,99 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+<h1 class="heading-large mt30 mb20"><span class="heading-secondary">Step 2 of 3</span>Medical conditions</h1>
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	 <div class="whatweknow">
+
+	
+
+
+	<table>
+			<caption  class="heading-medium mt10 mb10 visually-hidden">Added medical conditions:</caption>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Source</th>
+					<th>Since</th>
+				
+				</tr>
+			</thead>
+			<tbody>
+				{% for illness in customer.illnesses %}
+				<tr>
+					<td>{{illness.name}}</td>
+					<td>{{illness.source}}</td>
+					<td class="text-secondary">{{illness.date |formatDate('MMMM YYYY')}}</td>
+				
+				</tr>
+				{% endfor %}
+				{% if data['newillness']==='meds1' %}
+				<tr>
+						<td>{{newillneesname}}</td>
+						<td>{{newillnesssource}}</td>
+						<td class="text-secondary">{{newillnesssdate}}</td>
+					
+					</tr>
+				{% endif %}
+			</tbody>
+		</table>
+    
+    <!-- <p><a href="#" class="button secondary mt20">Add illness or condition</a></p> -->
+    
+  
+        
+        
+	    
+	</div> 
+	
+	<form>
+	
+	<div class="form-group">
+			<fieldset class="inline">
+					<legend class="heading-medium mb5">Do you want to group any of these conditions?</legend>
+					
+					<p class="form-hint mb5">You may want to talk about multiple conditions together</p>
+					
+					<div class="multiple-choice">
+				      <input id="meds1" name="newillness" type="radio" value="meds1">
+				      <label for="meds1">Yes</label>
+				      
+				    </div>
+
+				    <div class="multiple-choice" data-target="finishHistory">
+				      <input id="meds2" name="newillness" type="radio" value="meds2">
+				      <label for="meds2">No</label>
+				    </div>	
+			</fieldset>
+	</div>
+	
+	
+	  <p class="mt30"><a href="medicalConditions3a" class="button">Save and continue</a></p>	
+	  
+	</form>
+	  
+	  
+	    
+
+  </div><!-- column -->
+</div><!-- row -->
+
+{% endblock %}
+
+
+

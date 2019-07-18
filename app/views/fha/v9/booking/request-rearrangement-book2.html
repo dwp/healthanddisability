@@ -1,0 +1,215 @@
+{% extends path1+"/_layout.html" %}
+
+{% block left_content %}
+ <p class="mt10 mb0 bold-small">Booked</p>
+
+
+ <hr>
+{% endblock %}
+
+
+{% block citizen_content %}
+<form method="post" action="/{{path}}/booking/{{customer._id}}/appointment">
+<div class="container">
+    <div class="grid-row">
+        <div class="column-full">
+        <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+           
+        <div class="grid-row">
+            <div class="column-two-thirds">
+        <h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span><!--Rearrange{% if customer.name.first == 'Mcconnell' %}, request {% endif %} or cancel appointment -->Update appointment</h1>
+
+            {% if customer.name.first == 'Mcconnell' %}
+            <div class="panel panel-warning">
+                    <h3 class="heading-small">Previous rearrangement</h3>
+                      <p>Mcconnell has previously rearranged their appointment and earlier appointments are available
+                      </p>
+           
+                    </div> 
+     
+            {% endif%}    
+
+		<div class="form-group">
+						<fieldset class="mt20">
+								<legend class="heading-medium mb5">What do you want to do?</legend>
+																
+					
+								<div class="multiple-choice" data-target="other-info2">
+								
+									<input type="radio" name="appointments" id="available-appointments-unable" value="yes" {{checked('appointments', 'yes') }}>
+									
+									<label for="available-appointments-unable">Rearrange appointment</label>
+                                </div>
+                                
+                                <div class="panel js-hidden" id="other-info2" >
+
+                                        <div class="form-group">
+                                    
+
+                                           <fieldset>
+                                                <legend class="form-label-bold">Choose next available appointment</legend>
+                                                <div class="multiple-choice">
+                                                        <input type="radio" name="appointment" id="available-appointments-1" value="2018-07-05T13:00:13+00:00">
+                                                        <label for="available-appointments-1">{{ 'dddd Do MMMM' | baseDateAdd(8) }} 1pm</label>
+                                                    </div>
+                                                    <div class="multiple-choice">
+                                                            <input type="radio" name="appointment" id="available-appointments-1" value="2018-07-05T13:00:13+00:00">
+                                                            <label for="available-appointments-1">{{ 'dddd Do MMMM' | baseDateAdd(8) }} 2pm</label>
+                                                        </div> 
+                                                        <p class="form-block">or </p>
+
+                                                        <div class="multiple-choice" data-target="appoint-search">
+                                                                <input type="radio" name="appointment" id="available-appointments-1" value="2018-07-05T13:00:13+00:00">
+                                                                <label for="available-appointments-1">Search for an more appropriate appointment </label>
+                                                            </div> 
+
+
+                                <div class="panel js-hidden" id="appoint-search" >
+                                        <div class="form-group">
+                                                {% include path+"/includes/appointmentsTypeAhead.html" %}  
+                                        </div>  
+                                </div>
+                                                    <div class="form-group">
+                                                            <label class="form-label-bold">Reason</label>
+                                                            <textarea name="rearrangecomment" class="form-control " style="height: 150px; width:100%; max-width:650px;">{{rearrangecomment}}</textarea>
+                                                    </div>  
+
+                                           </fieldset>               
+                                                   
+                                   
+                                        </div>
+                                        
+                                            
+                                    </div>
+                            
+								<div class="multiple-choice" data-target="keep-reason">
+									<input type="radio" name="appointments" id="available-appointments-1" value="no"  {{checked('appointments', 'no') }}>
+									<label for="available-appointments-1">Keep the current appointment</label>
+                                </div>
+
+                                <div class="panel js-hidden" id="keep-reason" >
+
+                                        <div class="form-group">
+                                                <label class="form-label-bold">Reason</label>
+                                                <textarea name="keepcomment" class="form-control " style="height: 150px; width:100%; max-width:650px;">{{keepcomment}}</textarea>
+                                        </div>  
+                                
+                                </div>
+                               
+
+                                <div class="multiple-choice" data-target="cancel-reason">
+                                        <input type="radio" name="appointments" id="available-appointments-1" value="no"  {{checked('appointments', 'no') }}>
+                                        <label for="available-appointments-1">Cancel appointment</label>
+                                    </div>
+
+                                    <div class="panel js-hidden" id="cancel-reason" >
+
+                                            <div class="form-group">
+                                                    <label class="form-label-bold">Reason</label>
+                                                    <textarea name="cancelcomment" class="form-control " style="height: 150px; width:100%; max-width:650px;">{{cancelcomment}}</textarea>
+                                            </div>  
+                                    
+                                    </div>
+                            </div>
+                         
+                                
+					
+								
+								</fieldset>
+				
+
+            <p class="mt30"><button class="button">Save and continue</button></p>
+        </div>
+        <div class="column-third">
+            <div class="card-single">
+                <h2 class="heading-small" style="margin-top:130px"><span style="font-weight:normal" class="">Appointment details</span><br>None neuro appointment</h2>
+                <div class="inner">
+                {% if customer.name.first == 'Mcconnell' %}
+                <ul class="list-bullet mt10 mb10">
+                        <li>{{ 'dddd Do MMMM' | baseDateAdd(7) }} </li>
+                  <li>4:00pm</li>
+                  <li>Tresco House</li>
+                </ul>
+
+                      {% else %}
+                      <ul class="list-bullet mt10 mb10">
+                            <li>{{ 'dddd Do MMMM' | baseDateAdd(7) }} </li>
+                            <li>4:00pm</li>
+                            <li>Tresco House</li>
+                          </ul>
+
+                         
+
+                      {% endif%}
+                    </div>
+                </div>
+                <div class="card-single">  
+                        <h2 class="heading-small">
+                         Appointment preferences
+                   
+                        </h2>
+                        <div class="inner">
+                           {% if customer.appointment.taxi or checked('scenario', 'taxi')
+                              or customer.appointment.interpreter  or checked('scenario', 'interpreter')
+                              or customer.appointment.accessible or checked('scenario', 'accessible')
+                              or customer.appointment.gender or checked('scenario', 'gender')
+                              or customer.appointment.audio or checked('scenario', 'audio')
+                           %}
+                           <h3 class="heading-small">Requirements</h3>
+                           {% endif %}
+                      <ul>
+                        {% if customer.appointment.taxi or checked('scenario', 'taxi')%}
+                        <li> Taxi<a href="" class="pull-right">booked</a></li>
+                        {% endif %}
+                        {% if customer.appointment.interpreter  or checked('scenario', 'interpreter')%}
+                        <li>Interpreter<a href="" class="pull-right">booked</a></li>
+                        {% endif %}
+                        {% if customer.appointment.accessible or checked('scenario', 'accessible')%}
+                        <li>Ground floor access</li>
+                        {% endif %}
+                        {% if customer.appointment.gender or checked('scenario', 'gender')%}
+                        <li>Same gender HCP</li>
+                        {% endif %}
+                        {% if customer.appointment.audio or checked('scenario', 'audio')%}
+                        <li>Audio recording </li>
+                        {% endif %}
+                 
+                      </ul>
+                 
+                      <h3 class="heading-small">Unavailable on</h3>
+                      <ul>
+                          <li>Monday <span>afternoons</span>
+                          </li>
+                          <li>Tuesdays</li>
+                          {% if customer.name.first == 'Lowery' %}
+                          <li>11 February 2019 – 17 February 2019
+                           </li>
+                          {% endif%}
+                        </ul>
+                 
+                      <p class="mt20"> <a href="/fha/v6/assessment/{{customer._id}}/appointment-preferences" class="">Add or edit preferences</a></p>
+                      </div>
+                      </div>
+        </div>
+
+    </div>
+</div>
+</div>
+</form>
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %}
+
+{% block page_scripts %}
+
+{% include path+"/includes/appointment/_typaheadscript.html" %}
+  
+
+ 
+{% endblock %} 
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

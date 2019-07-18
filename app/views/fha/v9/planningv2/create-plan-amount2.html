@@ -1,0 +1,1380 @@
+
+{% extends path+"/_layout.html" %}
+
+
+
+{% block assess_content %}
+
+<main id="content" role="main" class="main-content">
+
+
+
+      <div class="container">
+          <div class="grid-row">
+              <div class="column-three-quarters capacity">
+  <a href="javascript: history.go(-1)" class="link-back">Back</a>   
+
+   <h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Create a capacity plan for {% include path+"/planningv2/_ACname.html" %} </h1>
+
+   <h2 class="heading-medium">Monday 22 July</h2>
+{% include path+"/planningv2/_info-panel-amount.html" %} 
+
+
+   <form class="form" action="create-plan" method="post">
+
+      
+<style>
+table.profile-table input[readonly]{
+  background:#DEE0E2;
+  border-color:#DEE0E2;
+}
+
+table.profile-table .col5, table.profile-table .col6 {
+  background:#f8f8f8;
+ 
+}
+
+table.profile-table .col5{
+   padding-left:15px;
+}
+
+
+
+
+.total-container.alt
+{
+  border-top:3px solid #000;
+  padding-top:30px;
+}
+
+
+
+</style>
+              <table class="profile-table">
+
+            
+                <thead>
+                    <tr>
+                        <th></th>
+                        <!-- <th>Assessment Centre</th> -->
+                       
+                        {% if checked('benefits','ben2') %}
+                        <th colspan="4"><span>Skillsets</span></th>
+                        {% else %}
+                        <th colspan="3"><span>Skillsets</span></th>
+                         {% endif %}
+                          <th class="col5"><span>Total</span></th>
+                          <th class="col6"><span>How many can be</span></th>
+                      </tr>
+                  <tr>
+                    <th></th>
+                    <!-- <th>Assessment Centre</th> -->
+                    <th><span></span>Complex neuro</th>
+                    <th><span></span>Neuro</th>
+                    <th><span></span>Non neuro</th>
+                     {% if checked('benefits','ben2') %}
+                    <th><span></span>IIDB</th>
+                    {% endif %}
+                    <th class="col5"><span></span>Appointments</th>
+                  
+                
+                     <th class="col6"><span></span>UCB</th>
+               
+                    
+                  </tr>
+                </thead>
+
+                {% if checked('times','9') %}
+                <tr>
+                  <th class="col">9:00am</th>
+                  <td > <label class="visually-hidden" for="" ></label>
+                    <input class="form-control" id="col_1_1"  type="text" name="col_1_1"  type="text" value="{{col_1_1}}" ></td> 
+                    <td ><label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="col_2_1" type="text" name="col_2_1"  value="{{col_2_1}}"></td>
+                  <td><label class="visually-hidden" for=""></label>
+                    <input class="form-control" id="col_3_1" type="text" name="col_3_1"  value="{{col_3_1}}"></td>
+                  {% if checked('benefits','ben2') %}
+                  <td><label class="visually-hidden" for=""></label>
+                    <input class="form-control" id="col_4_1" type="text" name="col_4_1"  value="{{col_4_1}}"></td>
+                  {% endif %}
+          <td class="col5">
+                    	<label class="visually-hidden" for=""></label>
+						<input class="form-control" id="rowsum_1" type="text" name="rowsum_1" readonly  value="{{ rowsum_1 }}">
+					</td>
+
+                  <td class="col6"><label class="visually-hidden" for=""></label>
+                    <input class="form-control" id="col_6_1" type="text" name="col_6_1"  value="{{col_6_1}}"></td>
+                </tr>
+
+                {% endif %}
+                {% if  checked('times','915') %}
+                <tr>
+                    <th class="col">9:15am</th>
+                    <td > <label class="visually-hidden" for="" ></label>
+                      <input class="form-control" id="col_1_2"  type="text" name="col_1_2"  type="text" value="{{col_1_2}}" ></td> 
+                      <td ><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="col_2_2" type="text" name="col_2_2"  value="{{col_2_2}}"></td>
+                    <td><label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="col_3_2" type="text" name="col_3_2"  value="{{col_3_2}}"></td>
+                    {% if checked('benefits','ben2') %}
+                    <td><label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="col_4_2" type="text" name="col_4_2"  value="{{col_4_2}}"></td>
+                     {% endif %}
+                    <td class="col5"><label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="rowsum_2" type="text" name="rowsum_2"  readonly value="{{rowsum_2}}"></td>
+                   
+     
+                      <td class="col6">
+                        <label class="visually-hidden" for=""></label>
+              <input class="form-control" id="col_6_2" type="text" name="col_6_2"  value="{{col_6_2}}">
+            </td>
+            
+
+                  {% endif %}
+                  {% if checked('times','930')  %}
+                  <tr>
+                      <th class="col">9:30am</th>
+                      <td> <label class="visually-hidden" for="" ></label>
+                        <input class="form-control" id="col_1_3"  type="text" name="col_1_3"  type="text" value="{{col_1_3}}" ></td> 
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="col_2_3" type="text" name="col_2_3"  value="{{col_2_3}}"></td>
+                      <td><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="col_3_3" type="text" name="col_3_3"  value="{{col_3_3}}"></td>
+                      {% if checked('benefits','ben2') %}
+                      <td><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="col_4_3" type="text" name="col_4_3"  value="{{col_4_3}}"></td>
+                       {% endif %}
+                      <td class="col5"><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="rowsum_3" type="text" name="rowsum_3"  readonly value="{{rowsum_3}}"></td>
+                     
+       
+           
+                        <td class="col6">
+                          <label class="visually-hidden" for=""></label>
+                <input class="form-control" id="col_6_3" type="text" name="col_6_3"  value="{{col_6_3}}">
+              </td>
+           
+                    </tr>
+
+                    {% endif %}
+                    
+                    {% if checked('times','945')  %}
+                  <tr>
+                      <th class="col">9:45am</th>
+                      <td> <label class="visually-hidden" for="" ></label>
+                        <input class="form-control" id="col_1_4"  type="text" name="col_1_4"  type="text" value="{{col_1_4}}" ></td> 
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="col_2_4" type="text" name="col_2_4"  value="{{col_2_4}}"></td>
+                      <td><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="col_3_4" type="text" name="col_3_4"  value="{{col_3_4}}"></td>
+                      {% if checked('benefits','ben2') %}
+                      <td><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="col_4_4" type="text" name="col_4_4"  value="{{col_4_4}}"></td>
+                       {% endif %}
+                      <td class="col5"><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="rowsum_4" type="text" name="rowsum_4"  readonly value="{{rowsum_4}}"></td>
+               
+                        <td class="col6">
+                          <label class="visually-hidden" for=""></label>
+                <input class="form-control" id="col_6_4" type="text" name="col_6_4"  value="{{col_6_4}}">
+              </td>
+            
+                    </tr>
+
+                    {% endif %}
+                    
+                    {% if checked('times','10')  %}
+                    <tr>
+                        <th class="col">10:00am</th>
+                        <td> <label class="visually-hidden" for="" ></label>
+                          <input class="form-control" id="col_1_5"  type="text" name="col_1_5"  type="text" value="{{col_1_5}}" ></td> 
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="col_2_5" type="text" name="col_2_5"  value="{{col_2_5}}"></td>
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="col_3_5" type="text" name="col_3_5"  value="{{col_3_5}}"></td>
+                        {% if checked('benefits','ben2') %}
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="col_4_5" type="text" name="col_4_5"  value="{{col_4_5}}"></td>
+                         {% endif %}
+                        <td class="col5"><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="rowsum_5" type="text" name="rowsum_5"  readonly value="{{rowsum_5}}"></td>
+                       
+         
+             
+                          <td class="col6">
+                            <label class="visually-hidden" for=""></label>
+                  <input class="form-control" id="col_6_5" type="text" name="col_6_5"  value="{{col_6_5}}">
+                </td>
+               
+                      {% endif %}
+
+                      {% if checked('times','1015')  %}
+                      <tr>
+                          <th class="col">10:15am</th>
+                          <td> <label class="visually-hidden" for="" ></label>
+                            <input class="form-control" id="col_1_6"  type="text" name="col_1_6"  type="text" value="{{col_1_6}}" ></td> 
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="col_2_6" type="text" name="col_2_6"  value="{{col_2_6}}"></td>
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="col_3_6" type="text" name="col_3_6"  value="{{col_3_6}}"></td>
+                         {% if checked('benefits','ben2') %}
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="col_4_6" type="text" name="col_4_6"  value="{{col_4_6}}"></td>
+                           {% endif %}
+                          <td class="col5"><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="rowsum_6" type="text" name="rowsum_6"  readonly value="{{rowsum_6}}"></td>
+                         
+           
+               
+                            <td class="col6">
+                              <label class="visually-hidden" for=""></label>
+                    <input class="form-control" id="col_6_6" type="text" name="col_6_6"  value="{{col_6_6}}">
+                  </td>
+                
+                        {% endif %}
+                      {% if checked('times','1030')  %}
+
+                      <tr>
+                          <th class="col">10:30am</th>
+                          <td> <label class="visually-hidden" for="" ></label>
+                            <input class="form-control" id="col_1_7"  type="text" name="col_1_7"  type="text" value="{{col_1_7}}" ></td> 
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="col_2_7" type="text" name="col_2_7"  value="{{col_2_7}}"></td>
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="col_3_7" type="text" name="col_3_7"  value="{{col_3_7}}"></td>
+                          {% if checked('benefits','ben2') %}
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="col_4_7" type="text" name="col_4_7"  value="{{col_4_7}}"></td>
+                          {% endif %}
+                          <td class="col5"><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="rowsum_7" type="text" name="rowsum_7"  readonly value="{{rowsum_7}}"></td>
+                         
+           
+                 
+                            <td class="col6">
+                              <label class="visually-hidden" for=""></label>
+                    <input class="form-control" id="col_6_7" type="text" name="col_6_7"  value="{{col_6_7}}">
+                  </td>
+                
+
+                        {% endif %}
+                        
+                        {% if checked('times','1045')  %}
+
+                      <tr>
+                          <th class="col">10:45am</th>
+                          <td> <label class="visually-hidden" for="" ></label>
+                            <input class="form-control" id="col_1_8"  type="text" name="col_1_8"  type="text" value="{{col_1_8}}" ></td> 
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="col_2_8" type="text" name="col_2_8"  value="{{col_2_8}}"></td>
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="col_3_8" type="text" name="col_3_8"  value="{{col_3_8}}"></td>
+                         {% if checked('benefits','ben2') %}
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="col_4_8" type="text" name="col_4_8"  value="{{col_4_8}}"></td>
+                           {% endif %}
+                          <td class="col5"><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="rowsum_8" type="text" name="rowsum_8"  readonly value="{{rowsum_8}}"></td>
+                         
+           
+                
+                            <td class="col6">
+                              <label class="visually-hidden" for=""></label>
+                    <input class="form-control" id="col_6_8" type="text" name="col_6_8"  value="{{col_6_8}}">
+                  </td>
+                 
+                        {% endif %}
+                        
+                        {% if checked('times','11')  %}
+
+                        <tr>
+                            <th class="col">11:00am</th>
+                            <td> <label class="visually-hidden" for="" ></label>
+                              <input class="form-control" id="col_1_9"  type="text" name="col_1_9"  type="text" value="{{col_1_9}}" ></td> 
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="col_2_9" type="text" name="col_2_9"  value="{{col_2_9}}"></td>
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="col_3_9" type="text" name="col_3_9"  value="{{col_3_9}}"></td>
+                           {% if checked('benefits','ben2') %}
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="col_4_9" type="text" name="col_4_9"  value="{{col_4_9}}"></td>
+                             {% endif %}
+                            <td class="col5"><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="rowsum_9" type="text" name="rowsum_9"  readonly value="{{rowsum_9}}"></td>
+                           
+             
+                  
+                              <td class="col6">
+                                <label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="col_6_9" type="text" name="col_6_9"  value="{{col_6_9}}">
+                    </td>
+                  
+                          </tr>
+
+                          {% endif %}
+                          {% if checked('times','1115')  %}
+
+                          <tr>
+                              <th class="col">11:15am</th>
+                              <td> <label class="visually-hidden" for="" ></label>
+                                <input class="form-control" id="col_1_10"  type="text" name="col_1_10"  type="text" value="{{col_1_10}}" ></td> 
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="col_2_10" type="text" name="col_2_10"  value="{{col_2_10}}"></td>
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="col_3_10" type="text" name="col_3_10"  value="{{col_3_10}}"></td>
+                             {% if checked('benefits','ben2') %}
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="col_4_10" type="text" name="col_4_10"  value="{{col_4_10}}"></td>
+                               {% endif %}
+                              <td class="col5"><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="rowsum_10" type="text" name="rowsum_10"  readonly value="{{rowsum_10}}"></td>
+               
+                                <td class="col6">
+                                  <label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="col_6_10" type="text" name="col_6_10"  value="{{col_6_10}}">
+                      </td>
+                  
+                            </tr>
+
+                            {% endif %}
+                            
+                            {% if checked('times','1130')  %}
+
+                          <tr>
+                              <th class="col">11:30am</th>
+                              <td> <label class="visually-hidden" for="" ></label>
+                                <input class="form-control" id="col_1_11"  type="text" name="col_1_11"  type="text" value="{{col_1_11}}" ></td> 
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="col_2_11" type="text" name="col_2_11"  value="{{col_2_11}}"></td>
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="col_3_11" type="text" name="col_3_11"  value="{{col_3_11}}"></td>
+                              {% if checked('benefits','ben2') %}
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="col_4_11" type="text" name="col_4_11"  value="{{col_4_11}}"></td>
+                               {% endif %}
+                              
+                              <td class="col5"><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="rowsum_11" type="text" name="rowsum_11"  readonly value="{{rowsum_11}}"></td>
+                             
+               
+                    
+                                <td class="col6">
+                                  <label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="col_6_11" type="text" name="col_6_11"  value="{{col_6_11}}">
+                      </td>
+                     
+                            </tr>
+
+                            {% endif %}
+                            {% if checked('times','1145')  %}
+
+                          <tr>
+                              <th class="col">11:45am</th>
+                              <td> <label class="visually-hidden" for="" ></label>
+                                <input class="form-control" id="col_1_12"  type="text" name="col_1_12"  type="text" value="{{col_1_12}}" ></td> 
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="col_2_12" type="text" name="col_2_12"  value="{{col_2_12}}"></td>
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="col_3_12" type="text" name="col_3_12"  value="{{col_3_12}}"></td>
+                              {% if checked('benefits','ben2') %}
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="col_4_12" type="text" name="col_4_12"  value="{{col_4_12}}"></td>
+                               {% endif %}
+                              <td class="col5"><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="rowsum_12" type="text" name="rowsum_12"  readonly value="{{rowsum_12}}"></td>
+                             
+               
+                                <td class="col6">
+                                  <label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="col_6_12" type="text" name="col_6_12"  value="{{col_6_12}}">
+                      </td>
+                      
+                            
+                            </tr>
+
+                            {% endif %}
+
+                            {% if checked('times','12')  %}
+
+                            <tr>
+                                <th class="col">12:00pm</th>
+                                <td> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="col_1_13"  type="text" name="col_1_13"  type="text" value="{{col_1_13}}" ></td> 
+                                  <td><label class="visually-hidden" for=""></label>
+                                    <input class="form-control" id="col_2_13" type="text" name="col_2_13"  value="{{col_2_13}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="col_3_13" type="text" name="col_3_13"  value="{{col_3_13}}"></td>
+                               
+                               {% if checked('benefits','ben2') %}
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="col_4_13" type="text" name="col_4_13"  value="{{col_4_13}}"></td>
+                                {% endif %}
+                               
+                                <td class="col5"><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="rowsum_13" type="text" name="rowsum_13"  readonly value="{{rowsum_13}}"></td>
+                               
+                 
+                                  <td class="col6">
+                                    <label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="col_6_13" type="text" name="col_6_13"  value="{{col_6_13}}">
+                        </td>
+                       
+                              
+                              </tr>
+  
+                              {% endif %}
+                              {% if checked('times','1215')  %}
+
+                              <tr>
+                                  <th class="col">12:15pm</th>
+                                  <td> <label class="visually-hidden" for="" ></label>
+                                    <input class="form-control" id="col_1_14"  type="text" name="col_1_14"  type="text" value="{{col_1_14}}" ></td> 
+                                    <td><label class="visually-hidden" for=""></label>
+                                      <input class="form-control" id="col_2_14" type="text" name="col_2_14"  value="{{col_2_14}}"></td>
+                                  <td><label class="visually-hidden" for=""></label>
+                                    <input class="form-control" id="col_3_14" type="text" name="col_3_14"  value="{{col_3_14}}"></td>
+                                  {% if checked('benefits','ben2') %}
+                                  <td><label class="visually-hidden" for=""></label>
+                                    <input class="form-control" id="col_4_14" type="text" name="col_4_14"  value="{{col_4_14}}"></td>
+                                  {% endif %}
+                                  <td class="col5"><label class="visually-hidden" for=""></label>
+                                    <input class="form-control" id="rowsum_14" type="text" name="rowsum_14"  readonly value="{{rowsum_14}}"></td>
+                                 
+                  
+                                    <td class="col6">
+                                      <label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="col_6_14" type="text" name="col_6_14"  value="{{col_6_14}}">
+                          </td>
+                      
+                                
+                                </tr>
+    
+                                {% endif %}
+
+                                {% if checked('times','1230')  %}
+
+                                <tr>
+                                    <th class="col">12:30pm</th>
+                                    <td> <label class="visually-hidden" for="" ></label>
+                                      <input class="form-control" id="col_1_15"  type="text" name="col_1_15"  type="text" value="{{col_1_15}}" ></td> 
+                                      <td><label class="visually-hidden" for=""></label>
+                                        <input class="form-control" id="col_2_15" type="text" name="col_2_15"  value="{{col_2_15}}"></td>
+                                    <td><label class="visually-hidden" for=""></label>
+                                      <input class="form-control" id="col_3_15" type="text" name="col_3_15"  value="{{col_3_15}}"></td>
+                                    {% if checked('benefits','ben2') %}
+                                    <td><label class="visually-hidden" for=""></label>
+                                      <input class="form-control" id="col_4_15" type="text" name="col_4_15"  value="{{col_4_15}}"></td>
+                                     {% endif %}
+                                    <td class="col5"><label class="visually-hidden" for=""></label>
+                                      <input class="form-control" id="rowsum_15" type="text" name="rowsum_15"  readonly value="{{rowsum_15}}"></td>
+                                   
+                     
+                                      <td class="col6">
+                                        <label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="col_6_15" type="text" name="col_6_15"  value="{{col_6_15}}">
+                            </td>
+                           
+                                  
+                                  </tr>
+      
+                                  {% endif %}
+
+                                  {% if checked('times','1245')  %}
+
+                                  <tr>
+                                      <th class="col">12:45pm</th>
+                                      <td> <label class="visually-hidden" for="" ></label>
+                                        <input class="form-control" id="col_1_16"  type="text" name="col_1_16"  type="text" value="{{col_1_16}}" ></td> 
+                                        <td><label class="visually-hidden" for=""></label>
+                                          <input class="form-control" id="col_2_16" type="text" name="col_2_16"  value="{{col_2_16}}"></td>
+                                      <td><label class="visually-hidden" for=""></label>
+                                        <input class="form-control" id="col_3_16" type="text" name="col_3_16"  value="{{col_3_16}}"></td>
+                                      {% if checked('benefits','ben2') %}
+                                      <td><label class="visually-hidden" for=""></label>
+                                        <input class="form-control" id="col_4_16" type="text" name="col_4_16"  value="{{col_4_16}}"></td>
+                                       {% endif %}
+                                      <td class="col5"><label class="visually-hidden" for=""></label>
+                                        <input class="form-control" id="rowsum_16" type="text" name="rowsum_16"  readonly value="{{rowsum_16}}"></td>
+                                     
+                       
+                            
+                                        <td class="col6">
+                                          <label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="col_6_16" type="text" name="col_6_16"  value="{{col_6_16}}">
+                              </td>
+                             
+                                    
+                                    </tr>
+        
+                                    {% endif %}
+                            {% if checked('times','1')  %}
+
+                <tr>
+                    <th class="col">1:00pm</th>
+                    <td> <label class="visually-hidden" for="" ></label>
+                      <input class="form-control" id="col_1_17"  type="text" name="col_1_17"  type="text" value="{{col_1_17}}" ></td> 
+                      <td><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="col_2_17" type="text" name="col_2_17"  value="{{col_2_17}}"></td>
+                    <td><label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="col_3_17" type="text" name="col_3_17"  value="{{col_3_17}}"></td>
+                    {% if checked('benefits','ben2') %}
+                    <td><label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="col_4_17" type="text" name="col_4_17"  value="{{col_4_17}}"></td>
+                     {% endif %}
+                    <td class="col5"><label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="rowsum_17" type="text" name="rowsum_17"  readonly value="{{rowsum_17}}"></td>
+                   
+     
+            
+                      <td class="col6">
+                        <label class="visually-hidden" for=""></label>
+              <input class="form-control" id="col_6_17" type="text" name="col_6_17"  value="{{col_6_17}}">
+            </td>
+          
+                  </tr>
+                  {% endif %}
+                  {% if checked('times','115')  %}
+                  <tr>
+                      <th class="col">1:15pm</th>
+                      <td> <label class="visually-hidden" for="" ></label>
+                        <input class="form-control" id="col_1_18"  type="text" name="col_1_18"  type="text" value="{{col_1_18}}" ></td> 
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="col_2_18" type="text" name="col_2_18"  value="{{col_2_18}}"></td>
+                      <td><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="col_3_18" type="text" name="col_3_18"  value="{{col_3_18}}"></td>
+                      {% if checked('benefits','ben2') %}
+                      <td><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="col_4_18" type="text" name="col_4_18"  value="{{col_4_18}}"></td>
+                       {% endif %}
+                      <td class="col5"><label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="rowsum_18" type="text" name="rowsum_18"  readonly value="{{rowsum_18}}"></td>
+                   
+                        <td class="col6">
+                          <label class="visually-hidden" for=""></label>
+                <input class="form-control" id="col_6_18" type="text" name="col_6_18"  value="{{col_6_18}}">
+              </td>
+           
+                    </tr>
+                    {% endif %}
+                    {% if checked('times','130')  %}
+                    <tr>
+                        <th class="col">1:30pm</th>
+                        <td> <label class="visually-hidden" for="" ></label>
+                          <input class="form-control" id="col_1_19"  type="text" name="col_1_19"  type="text" value="{{col_1_19}}" ></td> 
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="col_2_19" type="text" name="col_2_19"  value="{{col_2_19}}"></td>
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="col_3_19" type="text" name="col_3_19"  value="{{col_3_19}}"></td>
+                       
+                       {% if checked('benefits','ben2') %}
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="col_4_19" type="text" name="col_4_19"  value="{{col_4_19}}"></td>
+                         {% endif %}
+                        
+                        <td class="col5"><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="rowsum_19" type="text" name="rowsum_19"  readonly value="{{rowsum_19}}"></td>
+                       
+         
+           
+                          <td class="col6">
+                            <label class="visually-hidden" for=""></label>
+                  <input class="form-control" id="col_6_19" type="text" name="col_6_19"  value="{{col_6_19}}">
+                </td>
+               
+                      </tr>
+                      {% endif %}
+                      {% if checked('times','145')  %}
+                    <tr>
+                        <th class="col">1:45pm</th>
+                        <td> <label class="visually-hidden" for="" ></label>
+                          <input class="form-control" id="col_1_20"  type="text" name="col_1_20"  type="text" value="{{col_1_20}}" ></td> 
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="col_2_20" type="text" name="col_2_20"  value="{{col_2_20}}"></td>
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="col_3_20" type="text" name="col_3_20"  value="{{col_3_20}}"></td>
+                        {% if checked('benefits','ben2') %}
+                        <td><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="col_4_20" type="text" name="col_4_20"  value="{{col_4_20}}"></td>
+                         {% endif %}
+                        <td class="col5"><label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="rowsum_20" type="text" name="rowsum_20"  readonly value="{{rowsum_20}}"></td>
+                       
+         
+          
+                          <td class="col6">
+                            <label class="visually-hidden" for=""></label>
+                  <input class="form-control" id="col_6_20" type="text" name="col_6_20"  value="{{col_6_20}}">
+                </td>
+            
+                      </tr>
+                      {% endif %}
+                      {% if checked('times','2')  %}
+
+                      <tr>
+                          <th class="col">2:00pm</th>
+                          <td> <label class="visually-hidden" for="" ></label>
+                            <input class="form-control" id="col_1_21"  type="text" name="col_1_21"  type="text" value="{{col_1_21}}" ></td> 
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="col_2_21" type="text" name="col_2_21"  value="{{col_2_21}}"></td>
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="col_3_21" type="text" name="col_3_21"  value="{{col_3_21}}"></td>
+                          {% if checked('benefits','ben2') %}
+                          <td><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="col_4_21" type="text" name="col_4_21"  value="{{col_4_21}}"></td>
+                          {% endif %}
+                          <td class="col5"><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="rowsum_21" type="text" name="rowsum_21"  readonly value="{{rowsum_21}}"></td>
+                         
+           
+                
+                            <td class="col6">
+                              <label class="visually-hidden" for=""></label>
+                    <input class="form-control" id="col_6_21" type="text" name="col_6_21"  value="{{col_6_21}}">
+                  </td>
+                
+                        </tr>
+                        {% endif %}
+
+                        {% if checked('times','215')  %}
+
+                        <tr>
+                            <th class="col">2:15pm</th>
+                            <td> <label class="visually-hidden" for="" ></label>
+                              <input class="form-control" id="col_1_22"  type="text" name="col_1_22"  type="text" value="{{col_1_22}}" ></td> 
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="col_2_22" type="text" name="col_2_22"  value="{{col_2_22}}"></td>
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="col_3_22" type="text" name="col_3_22"  value="{{col_3_22}}"></td>
+                            {% if checked('benefits','ben2') %}
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="col_4_22" type="text" name="col_4_22"  value="{{col_4_22}}"></td>
+                            {% endif %}
+                            <td class="col5"><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="rowsum_22" type="text" name="rowsum_22"  readonly value="{{rowsum_22}}"></td>
+                           
+             
+                   
+                              <td class="col6">
+                                <label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="col_6_22" type="text" name="col_6_22"  value="{{col_6_22}}">
+                    </td>
+                   
+                          </tr>
+                          {% endif %}
+                        {% if checked('times','230')  %}
+  
+                        <tr>
+                            <th class="col">2:30pm</th>
+                            <td> <label class="visually-hidden" for="" ></label>
+                              <input class="form-control" id="col_1_23"  type="text" name="col_1_23"  type="text" value="{{col_1_23}}" ></td> 
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="col_2_23" type="text" name="col_2_23"  value="{{col_2_23}}"></td>
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="col_3_23" type="text" name="col_3_23"  value="{{col_3_23}}"></td>
+                            {% if checked('benefits','ben2') %}
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="col_4_23" type="text" name="col_4_23"  value="{{col_4_23}}"></td>
+                             {% endif %}
+                            <td class="col5"><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="rowsum_23" type="text" name="rowsum_23"  readonly value="{{rowsum_23}}"></td>
+                           
+             
+                    
+                              <td class="col6">
+                                <label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="col_6_23" type="text" name="col_6_23"  value="{{col_6_23}}">
+                    </td>
+               
+                          </tr>
+                          {% endif %}
+                          
+                          {% if checked('times','245')  %}
+  
+                        <tr>
+                            <th class="col">2:45pm</th>
+                            <td> <label class="visually-hidden" for="" ></label>
+                              <input class="form-control" id="col_1_24"  type="text" name="col_1_24"  type="text" value="{{col_1_24}}" ></td> 
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="col_2_24" type="text" name="col_2_24"  value="{{col_2_24}}"></td>
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="col_3_24" type="text" name="col_3_24"  value="{{col_3_24}}"></td>
+                            {% if checked('benefits','ben2') %}
+                            <td><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="col_4_24" type="text" name="col_4_24"  value="{{col_4_24}}"></td>
+                             {% endif %}
+                            <td class="col5"><label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="rowsum_24" type="text" name="rowsum_24"  readonly value="{{rowsum_24}}"></td>
+                           
+             
+                   
+                              <td class="col6">
+                                <label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="col_6_24" type="text" name="col_6_24"  value="{{col_6_24}}">
+                    </td>
+                   
+                          </tr>
+                          {% endif %}
+                          
+                          {% if checked('times','3')  %}
+  
+                          <tr>
+                              <th class="col">3:00pm</th>
+                              <td> <label class="visually-hidden" for="" ></label>
+                                <input class="form-control" id="col_1_25"  type="text" name="col_1_25"  type="text" value="{{col_1_25}}" ></td> 
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="col_2_25" type="text" name="col_2_25"  value="{{col_2_25}}"></td>
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="col_3_25" type="text" name="col_3_25"  value="{{col_3_25}}"></td>
+                             {% if checked('benefits','ben2') %}
+                              <td><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="col_4_25" type="text" name="col_4_25"  value="{{col_4_25}}"></td>
+                               {% endif %}
+                              <td class="col5"><label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="rowsum_25" type="text" name="rowsum_25"  readonly value="{{rowsum_25}}"></td>
+                             
+               
+                                <td class="col6">
+                                  <label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="col_6_25" type="text" name="col_6_25"  value="{{col_6_25}}">
+                      </td>
+                     
+                            </tr>
+
+                            {% endif %}
+                            {% if checked('times','315')  %}
+  
+                            <tr>
+                                <th class="col">3:15pm</th>
+                                <td> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="col_1_26"  type="text" name="col_1_26"  type="text" value="{{col_1_26}}" ></td> 
+                                  <td><label class="visually-hidden" for=""></label>
+                                    <input class="form-control" id="col_2_26" type="text" name="col_2_26"  value="{{col_2_26}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="col_3_26" type="text" name="col_3_26"  value="{{col_3_26}}"></td>
+                                {% if checked('benefits','ben2') %}
+                                <td><label class="visually-hidden" for=""></label>
+                               
+                                  <input class="form-control" id="col_4_26" type="text" name="col_4_26"  value="{{col_4_26}}"></td>
+                                   {% endif %}
+                                <td class="col5"><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="rowsum_26" type="text" name="rowsum_26"  readonly value="{{rowsum_26}}"></td>
+                               
+                 
+                     
+                                  <td class="col6">
+                                    <label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="col_6_26" type="text" name="col_6_26"  value="{{col_6_26}}">
+                        </td>
+                       
+                              </tr>
+  
+
+                              {% endif %}
+                              {% if checked('times','330')  %}
+
+
+                            <tr>
+                                <th class="col">3:30pm</th>
+                                <td> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="col_1_27"  type="text" name="col_1_27"  type="text" value="{{col_1_27}}" ></td> 
+                                  <td><label class="visually-hidden" for=""></label>
+                                    <input class="form-control" id="col_2_27" type="text" name="col_2_27"  value="{{col_2_27}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="col_3_27" type="text" name="col_3_27"  value="{{col_3_27}}"></td>
+                                {% if checked('benefits','ben2') %}
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="col_4_27" type="text" name="col_4_27"  value="{{col_4_27}}"></td>
+                               {% endif%}
+                                <td class="col5"><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="rowsum_27" type="text" name="rowsum_27"  readonly value="{{rowsum_27}}"></td>
+                               
+                 
+                   
+                                  <td class="col6">
+                                    <label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="col_6_27" type="text" name="col_6_27"  value="{{col_6_27}}">
+                        </td>
+                     
+                              </tr>
+  
+
+                              {% endif %}
+                              {% if checked('times','345')  %}
+
+
+                            <tr>
+                                <th class="col">3:45pm</th>
+                                <td> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="col_1_28"  type="text" name="col_1_28"  type="text" value="{{col_1_28}}" ></td> 
+                                  <td><label class="visually-hidden" for=""></label>
+                                    <input class="form-control" id="col_2_28" type="text" name="col_2_28"  value="{{col_2_28}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="col_3_28" type="text" name="col_3_28"  value="{{col_3_28}}"></td>
+                                {% if checked('benefits','ben2') %}
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="col_4_28" type="text" name="col_4_28"  value="{{col_4_28}}"></td>
+                               {% endif %}
+                                <td class="col5"><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="rowsum_28" type="text" name="rowsum_28"  readonly value="{{rowsum_28}}"></td>
+                               
+                 
+                      
+                                  <td class="col6">
+                                    <label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="col_6_28" type="text" name="col_6_28"  value="{{col_6_28}}">
+                        </td>
+                   
+                              </tr>
+  
+
+                              {% endif %}
+                              
+                              {% if checked('times','4')  %}
+
+
+                            <tr>
+                                <th class="col">4:00pm</th>
+                                <td> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="col_1_29"  type="text" name="col_1_29"  type="text" value="{{col_1_29}}" ></td> 
+                                  <td><label class="visually-hidden" for=""></label>
+                                    <input class="form-control" id="col_2_29" type="text" name="col_2_29"  value="{{col_2_29}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="col_3_29" type="text" name="col_3_29"  value="{{col_3_29}}"></td>
+                               {% if checked('benefits','ben2') %}
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="col_4_29" type="text" name="col_4_29"  value="{{col_4_29}}"></td>
+                               {% endif %}
+                                <td class="col5"><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="rowsum_29" type="text" name="rowsum_29"  readonly value="{{rowsum_29}}"></td>
+                               
+                 
+                  
+                                  <td class="col6">
+                                    <label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="col_6_29" type="text" name="col_6_29"  value="{{col_6_29}}">
+                        </td>
+                    
+                              {% endif %}
+                              {% if checked('times','415')  %}
+
+
+                            <tr>
+                                <th class="col">4:15pm</th>
+                                <td> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="col_1_30"  type="text" name="col_1_30"  type="text" value="{{col_1_30}}" ></td> 
+                                  <td><label class="visually-hidden" for=""></label>
+                                    <input class="form-control" id="col_2_30" type="text" name="col_2_30"  value="{{col_2_30}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="col_3_30" type="text" name="col_3_30"  value="{{col_3_30}}"></td>
+                               
+                               {% if checked('benefits','ben2') %}
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="col_4_30" type="text" name="col_4_30"  value="{{col_4_30}}"></td>
+                              {% endif %}
+                              
+                                <td class="col5"><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="rowsum_30" type="text" name="rowsum_30"  readonly value="{{rowsum_30}}"></td>
+                               
+                 
+                   
+                                  <td class="col6">
+                                    <label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="col_6_30" type="text" name="col_6_30"  value="{{col_6_30}}">
+                        </td>
+                    
+                              </tr>
+  
+
+                              {% endif %}
+                              {% if checked('times','430')  %}
+
+
+                            <tr>
+                                <th class="col">4:30pm</th>
+                                <td> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="col_1_31"  type="text" name="col_1_31"  type="text" value="{{col_1_31}}" ></td> 
+                                  <td><label class="visually-hidden" for=""></label>
+                                    <input class="form-control" id="col_2_31" type="text" name="col_2_31"  value="{{col_2_31}}"></td>
+                               
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="col_3_31" type="text" name="col_3_31"  value="{{col_3_31}}"></td>
+                                
+                                {% if checked('benefits','ben2') %}
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="col_4_31" type="text" name="col_4_31"  value="{{col_4_31}}"></td>
+                                {% endif %}
+                                
+                                <td class="col5"><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="rowsum_31" type="text" name="rowsum_31"  readonly value="{{rowsum_31}}"></td>
+                               
+                 
+                    
+                                  <td class="col6">
+                                    <label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="col_6_31" type="text" name="col_6_31"  value="{{col_6_31}}">
+                        </td>
+                  
+                              </tr>
+  
+
+                              {% endif %}
+                              {% if checked('times','445')  %}
+
+
+                            <tr>
+                                <th class="col">4:45pm</th>
+                                <td> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="col_1_32"  type="text" name="col_1_32"  type="text" value="{{col_1_32}}" ></td> 
+                                  <td><label class="visually-hidden" for=""></label>
+                                    <input class="form-control" id="col_2_32" type="text" name="col_2_32"  value="{{col_2_32}}"></td>
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="col_3_32" type="text" name="col_3_32"  value="{{col_3_32}}"></td>
+                               {% if checked('benefits','ben2') %}
+                                <td><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="col_4_32" type="text" name="col_4_32"  value="{{col_4_32}}"></td>
+                                {% endif %}
+                                <td class="col5"><label class="visually-hidden" for=""></label>
+                                  <input class="form-control" id="rowsum_32" type="text" name="rowsum_32"  readonly value="{{rowsum_32}}"></td>
+                               
+                 
+                        
+                                  <td class="col6">
+                                    <label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="col_6_32" type="text" name="col_6_32"  value="{{col_6_32}}">
+                        </td>
+                        {% endif %}
+                              </tr>
+  
+
+                        
+                              
+                           <!--   <tr class="total">
+                              	<th class="col">Total</th>
+                              	<td><label class="visually-hidden" for="" ></label>
+                                  <input type="number" name="sum2" id="sum2" class="form-control" readonly /></td>
+                              	<td><label class="visually-hidden" for="" ></label>
+                                  <input type="number" name="col_3_sum2" id="col_3_sum2" class="form-control" readonly /></td>
+                              	<td><label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="col_4_sum2"  type="text" name="col_4_sum2"  type="text" value="" ></td>
+                                  <td><label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="col_5_sum2"  type="text" name="col_5_sum2"  type="text" value="" ></td>
+                                	{% if checked('benefits','ben2') %}
+                                  <td><label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="col_6_sum"  type="text" name="col_6_sum2"  type="text" value="" ></td>
+                                  {% endif %}
+                                  <td><label class="visually-hidden" for="" ></label>
+                                    <input class="form-control" id="col_2_sum"  type="text" name="col_2_sum"  type="text" value="" ></td>
+                                </tr> -->
+
+
+               
+              </table>
+
+              <p><button class="button mt25">Save and continue</button></p>
+              {% include path+"/includes/help/_help_totalsv2.html" %}
+              </form>
+            </div>
+         
+   
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+
+
+
+
+
+{% endblock %}
+
+
+{% block page_scripts %}
+<script>
+
+
+
+function total(inputFields, totalField) {
+  var sumValues = 0;
+  $(inputFields).each(function() { 
+      if (this.value.length!=0 && !isNaN(this.value)) {
+          sumValues += parseFloat(this.value);
+      }
+  });
+  $(totalField).val(sumValues).triggerHandler('change');
+}
+
+$(function() {
+  $('#sum, #col_2_sum, #col_3_sum, #col_4_sum').change(function() { 
+    total('#sum, #col_2_sum, #col_3_sum, #col_4_sum','#rowsum_sum');
+  });
+});
+
+$(function() { 
+  $('#col_1_1, #col_1_2, #col_1_3, #col_1_4, #col_1_5, #col_1_6, #col_1_7, #col_1_8, #col_1_9, #col_1_10, #col_1_11, #col_1_12, #col_1_13, #col_1_14, #col_1_15, #col_1_16, #col_1_17, #col_1_18, #col_1_19, #col_1_20, #col_1_21, #col_1_23, #col_1_23, #col_1_24, #col_1_25, #col_1_26, #col_1_27, #col_1_28, #col_1_29, #col_1_30, #col_1_31, #col_1_32').change(function(){
+    total('#col_1_1, #col_1_2, #col_1_3, #col_1_4, #col_1_5, #col_1_6, #col_1_7, #col_1_8, #col_1_9, #col_1_10, #col_1_11, #col_1_12, #col_1_13, #col_1_14, #col_1_15, #col_1_16, #col_1_17, #col_1_18, #col_1_19, #col_1_20, #col_1_21, #col_1_23, #col_1_23, #col_1_24, #col_1_25, #col_1_26, #col_1_27, #col_1_28, #col_1_29, #col_1_30, #col_1_31, #col_1_32','#sum');
+  });
+});
+
+$(function(){
+  $('#col_2_1, #col_2_2, #col_2_3, #col_2_4, #col_2_5, #col_2_6, #col_2_7, #col_2_8, #col_2_9, #col_2_10, #col_2_11, #col_2_12, #col_2_13, #col_2_14, #col_2_15, #col_2_16, #col_2_17, #col_2_18, #col_2_19, #col_2_20, #col_2_21, #col_2_22, #col_2_23, #col_2_24, #col_2_25, #col_2_26, #col_2_27, #col_2_28, #col_2_29, #col_2_30, #col_2_31, #col_2_32').change(function(){
+     total('#col_2_1, #col_2_2, #col_2_3, #col_2_4, #col_2_5, #col_2_6, #col_2_7, #col_2_8, #col_2_9, #col_2_10, #col_2_11, #col_2_12, #col_2_13, #col_2_14, #col_2_15, #col_2_16, #col_2_17, #col_2_18, #col_2_19, #col_2_20, #col_2_21, #col_2_22, #col_2_23, #col_2_24, #col_2_25, #col_2_26, #col_2_27, #col_2_28, #col_2_29, #col_2_30, #col_2_31, #col_2_32','#col_2_sum');
+  });
+});
+
+
+
+$(function(){
+  $('#col_3_1, #col_3_2, #col_3_3, #col_3_4, #col_3_5, #col_3_6, #col_3_7, #col_3_8, #col_3_9, #col_3_10, #col_3_11, #col_3_12, #col_3_13, #col_3_14, #col_3_15, #col_3_16, #col_3_17, #col_3_18, #col_3_19, #col_3_20, #col_3_21, #col_3_22, #col_3_23, #col_3_24, #col_3_25, #col_3_26, #col_3_27, #col_3_28, #col_3_29, #col_3_30, #col_3_31, #col_3_32').change(function(){
+       total('#col_3_1, #col_3_2, #col_3_3, #col_3_4, #col_3_5, #col_3_6, #col_3_7, #col_3_8, #col_3_9, #col_3_10, #col_3_11, #col_3_12, #col_3_13, #col_3_14, #col_3_15, #col_3_16, #col_3_17, #col_3_18, #col_3_19, #col_3_20, #col_3_21, #col_3_22, #col_3_23, #col_3_24, #col_3_25, #col_3_26, #col_3_27, #col_3_28, #col_3_29, #col_3_30, #col_3_31, #col_3_32','#col_3_sum');
+  });
+});
+
+$(function(){
+  $('#col_4_1, #col_4_2, #col_4_3, #col_4_4, #col_4_5, #col_4_6, #col_4_7, #col_4_8, #col_4_9, #col_4_10, #col_4_11, #col_4_12, #col_4_13, #col_4_14, #col_4_15, #col_4_16, #col_4_17, #col_4_18, #col_4_19, #col_4_20, #col_4_21, #col_4_22, #col_4_23, #col_4_24, #col_4_25, #col_4_26, #col_4_27, #col_4_28, #col_4_29, #col_4_30, #col_4_31, #col_4_32').change(function(){
+total('#col_4_1, #col_4_2, #col_4_3, #col_4_4, #col_4_5, #col_4_6, #col_4_7, #col_4_8, #col_4_9, #col_4_10, #col_4_11, #col_4_12, #col_4_13, #col_4_14, #col_4_15, #col_4_16, #col_4_17, #col_4_18, #col_4_19, #col_4_20, #col_4_21, #col_4_22, #col_4_23, #col_4_24, #col_4_25, #col_4_26, #col_4_27, #col_4_28, #col_4_29, #col_4_30, #col_4_31, #col_4_32','#col_4_sum');
+  });
+});
+
+$(function(){
+  $('#col_1_1, #col_2_1, #col_3_1, #col_4_1').keyup(function(){
+     var value1 = parseFloat($('#col_1_1').val()) || 0;
+     var value2 = parseFloat($('#col_2_1').val()) || 0;
+     var value3 = parseFloat($('#col_3_1').val()) || 0;
+     var value4 = parseFloat($('#col_4_1').val()) || 0;
+          $('#rowsum_1').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+  $(function(){
+  $('#col_1_2, #col_2_2, #col_3_2, #col_4_2').keyup(function(){
+     var value1 = parseFloat($('#col_1_2').val()) || 0;
+     var value2 = parseFloat($('#col_2_2').val()) || 0;
+     var value3 = parseFloat($('#col_3_2').val()) || 0;
+     var value4 = parseFloat($('#col_4_2').val()) || 0;
+          $('#rowsum_2').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+    $(function(){
+  $('#col_1_3, #col_2_3, #col_3_3, #col_4_3').keyup(function(){
+     var value1 = parseFloat($('#col_1_3').val()) || 0;
+     var value2 = parseFloat($('#col_2_3').val()) || 0;
+     var value3 = parseFloat($('#col_3_3').val()) || 0;
+     var value4 = parseFloat($('#col_4_3').val()) || 0;
+          $('#rowsum_3').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+      $(function(){
+  $('#col_1_4, #col_2_4, #col_3_4, #col_4_4').keyup(function(){
+     var value1 = parseFloat($('#col_1_4').val()) || 0;
+     var value2 = parseFloat($('#col_2_4').val()) || 0;
+     var value3 = parseFloat($('#col_3_4').val()) || 0;
+     var value4 = parseFloat($('#col_4_4').val()) || 0;
+          $('#rowsum_4').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+      $(function(){
+  $('#col_1_5, #col_2_5, #col_3_5, #col_4_5').keyup(function(){
+     var value1 = parseFloat($('#col_1_5').val()) || 0;
+     var value2 = parseFloat($('#col_2_5').val()) || 0;
+     var value3 = parseFloat($('#col_3_5').val()) || 0;
+     var value4 = parseFloat($('#col_4_5').val()) || 0;
+          $('#rowsum_5').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+        $(function(){
+  $('#col_1_6, #col_2_6, #col_3_6, #col_4_6').keyup(function(){
+     var value1 = parseFloat($('#col_1_6').val()) || 0;
+     var value2 = parseFloat($('#col_2_6').val()) || 0;
+     var value3 = parseFloat($('#col_3_6').val()) || 0;
+     var value4 = parseFloat($('#col_4_6').val()) || 0;
+          $('#rowsum_6').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+          $(function(){
+  $('#col_1_7, #col_2_7, #col_3_7, #col_4_7').keyup(function(){
+     var value1 = parseFloat($('#col_1_7').val()) || 0;
+     var value2 = parseFloat($('#col_2_7').val()) || 0;
+     var value3 = parseFloat($('#col_3_7').val()) || 0;
+     var value4 = parseFloat($('#col_4_7').val()) || 0;
+          $('#rowsum_7').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+          $(function(){
+  $('#col_1_8, #col_2_8, #col_3_8, #col_4_8').keyup(function(){
+     var value1 = parseFloat($('#col_1_8').val()) || 0;
+     var value2 = parseFloat($('#col_2_8').val()) || 0;
+     var value3 = parseFloat($('#col_3_8').val()) || 0;
+     var value4 = parseFloat($('#col_4_8').val()) || 0;
+          $('#rowsum_8').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+          $(function(){
+  $('#col_1_9, #col_2_9, #col_3_9, #col_4_9').keyup(function(){
+     var value1 = parseFloat($('#col_1_9').val()) || 0;
+     var value2 = parseFloat($('#col_2_9').val()) || 0;
+     var value3 = parseFloat($('#col_3_9').val()) || 0;
+     var value4 = parseFloat($('#col_4_9').val()) || 0;
+          $('#rowsum_9').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+          $(function(){
+  $('#col_1_10, #col_2_10, #col_3_10, #col_4_10').keyup(function(){
+     var value1 = parseFloat($('#col_1_10').val()) || 0;
+     var value2 = parseFloat($('#col_2_10').val()) || 0;
+     var value3 = parseFloat($('#col_3_10').val()) || 0;
+     var value4 = parseFloat($('#col_4_10').val()) || 0;
+          $('#rowsum_10').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+          $(function(){
+  $('#col_1_11, #col_2_11, #col_3_11, #col_4_11').keyup(function(){
+     var value1 = parseFloat($('#col_1_11').val()) || 0;
+     var value2 = parseFloat($('#col_2_11').val()) || 0;
+     var value3 = parseFloat($('#col_3_11').val()) || 0;
+     var value4 = parseFloat($('#col_4_11').val()) || 0;
+          $('#rowsum_11').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+          $(function(){
+  $('#col_1_12, #col_2_12, #col_3_12, #col_4_12').keyup(function(){
+     var value1 = parseFloat($('#col_1_12').val()) || 0;
+     var value2 = parseFloat($('#col_2_12').val()) || 0;
+     var value3 = parseFloat($('#col_3_12').val()) || 0;
+     var value4 = parseFloat($('#col_4_12').val()) || 0;
+          $('#rowsum_12').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+          $(function(){
+  $('#col_1_13, #col_2_13, #col_3_13, #col_4_13').keyup(function(){
+     var value1 = parseFloat($('#col_1_13').val()) || 0;
+     var value2 = parseFloat($('#col_2_13').val()) || 0;
+     var value3 = parseFloat($('#col_3_13').val()) || 0;
+     var value4 = parseFloat($('#col_4_13').val()) || 0;
+          $('#rowsum_13').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+          $(function(){
+  $('#col_1_14, #col_2_14, #col_3_14, #col_4_14').keyup(function(){
+     var value1 = parseFloat($('#col_1_14').val()) || 0;
+     var value2 = parseFloat($('#col_2_14').val()) || 0;
+     var value3 = parseFloat($('#col_3_14').val()) || 0;
+     var value4 = parseFloat($('#col_4_14').val()) || 0;
+          $('#rowsum_14').val(value1 + value2 + value3 + value4);
+  });
+  });
+        $(function(){
+  $('#col_1_15, #col_2_15, #col_3_15, #col_4_15').keyup(function(){
+     var value1 = parseFloat($('#col_1_15').val()) || 0;
+     var value2 = parseFloat($('#col_2_15').val()) || 0;
+     var value3 = parseFloat($('#col_3_15').val()) || 0;
+     var value4 = parseFloat($('#col_4_15').val()) || 0;
+          $('#rowsum_15').val(value1 + value2 + value3 + value4);
+  });
+  });
+          $(function(){
+  $('#col_1_16, #col_2_16, #col_3_16, #col_4_16').keyup(function(){
+     var value1 = parseFloat($('#col_1_16').val()) || 0;
+     var value2 = parseFloat($('#col_2_16').val()) || 0;
+     var value3 = parseFloat($('#col_3_16').val()) || 0;
+     var value4 = parseFloat($('#col_4_16').val()) || 0;
+          $('#rowsum_16').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+          $(function(){
+  $('#col_1_17, #col_2_17, #col_3_17, #col_4_17').keyup(function(){
+     var value1 = parseFloat($('#col_1_17').val()) || 0;
+     var value2 = parseFloat($('#col_2_17').val()) || 0;
+     var value3 = parseFloat($('#col_3_17').val()) || 0;
+     var value4 = parseFloat($('#col_4_17').val()) || 0;
+          $('#rowsum_17').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+          $(function(){
+  $('#col_1_18, #col_2_18, #col_3_18, #col_4_18').keyup(function(){
+     var value1 = parseFloat($('#col_1_18').val()) || 0;
+     var value2 = parseFloat($('#col_2_18').val()) || 0;
+     var value3 = parseFloat($('#col_3_18').val()) || 0;
+     var value4 = parseFloat($('#col_4_18').val()) || 0;
+          $('#rowsum_18').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+          $(function(){
+  $('#col_1_19, #col_2_19, #col_3_19, #col_4_19').keyup(function(){
+     var value1 = parseFloat($('#col_1_19').val()) || 0;
+     var value2 = parseFloat($('#col_2_19').val()) || 0;
+     var value3 = parseFloat($('#col_3_19').val()) || 0;
+     var value4 = parseFloat($('#col_4_19').val()) || 0;
+          $('#rowsum_19').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+          $(function(){
+  $('#col_1_20, #col_2_20, #col_3_20, #col_4_20').keyup(function(){
+     var value1 = parseFloat($('#col_1_20').val()) || 0;
+     var value2 = parseFloat($('#col_2_20').val()) || 0;
+     var value3 = parseFloat($('#col_3_20').val()) || 0;
+     var value4 = parseFloat($('#col_4_20').val()) || 0;
+          $('#rowsum_20').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+          $(function(){
+  $('#col_1_21, #col_2_21, #col_3_21, #col_4_21').keyup(function(){
+     var value1 = parseFloat($('#col_1_21').val()) || 0;
+     var value2 = parseFloat($('#col_2_21').val()) || 0;
+     var value3 = parseFloat($('#col_3_21').val()) || 0;
+     var value4 = parseFloat($('#col_4_21').val()) || 0;
+          $('#rowsum_21').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+          $(function(){
+  $('#col_1_22, #col_2_22, #col_3_22, #col_4_22').keyup(function(){
+     var value1 = parseFloat($('#col_1_22').val()) || 0;
+     var value2 = parseFloat($('#col_2_22').val()) || 0;
+     var value3 = parseFloat($('#col_3_22').val()) || 0;
+     var value4 = parseFloat($('#col_4_22').val()) || 0;
+          $('#rowsum_22').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+          $(function(){
+  $('#col_1_23, #col_2_23, #col_3_23, #col_4_23').keyup(function(){
+     var value1 = parseFloat($('#col_1_23').val()) || 0;
+     var value2 = parseFloat($('#col_2_23').val()) || 0;
+     var value3 = parseFloat($('#col_3_23').val()) || 0;
+     var value4 = parseFloat($('#col_4_23').val()) || 0;
+          $('#rowsum_23').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+          $(function(){
+  $('#col_1_24, #col_2_24, #col_3_24, #col_4_24').keyup(function(){
+     var value1 = parseFloat($('#col_1_24').val()) || 0;
+     var value2 = parseFloat($('#col_2_24').val()) || 0;
+     var value3 = parseFloat($('#col_3_24').val()) || 0;
+     var value4 = parseFloat($('#col_4_24').val()) || 0;
+          $('#rowsum_24').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+
+          $(function(){
+  $('#col_1_25, #col_2_25, #col_3_25, #col_4_25').keyup(function(){
+     var value1 = parseFloat($('#col_1_25').val()) || 0;
+     var value2 = parseFloat($('#col_2_25').val()) || 0;
+     var value3 = parseFloat($('#col_3_25').val()) || 0;
+     var value4 = parseFloat($('#col_4_25').val()) || 0;
+          $('#rowsum_25').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+          $(function(){
+  $('#col_1_26, #col_2_26, #col_3_26, #col_4_26').keyup(function(){
+     var value1 = parseFloat($('#col_1_26').val()) || 0;
+     var value2 = parseFloat($('#col_2_26').val()) || 0;
+     var value3 = parseFloat($('#col_3_26').val()) || 0;
+     var value4 = parseFloat($('#col_4_26').val()) || 0;
+          $('#rowsum_26').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+          $(function(){
+  $('#col_1_27, #col_2_27, #col_3_27, #col_4_27').keyup(function(){
+     var value1 = parseFloat($('#col_1_27').val()) || 0;
+     var value2 = parseFloat($('#col_2_27').val()) || 0;
+     var value3 = parseFloat($('#col_3_27').val()) || 0;
+     var value4 = parseFloat($('#col_4_27').val()) || 0;
+          $('#rowsum_27').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+          $(function(){
+  $('#col_1_28, #col_2_28, #col_3_28, #col_4_28').keyup(function(){
+     var value1 = parseFloat($('#col_1_28').val()) || 0;
+     var value2 = parseFloat($('#col_2_28').val()) || 0;
+     var value3 = parseFloat($('#col_3_28').val()) || 0;
+     var value4 = parseFloat($('#col_4_28').val()) || 0;
+          $('#rowsum_28').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+          $(function(){
+  $('#col_1_29, #col_2_29, #col_3_29, #col_4_29').keyup(function(){
+     var value1 = parseFloat($('#col_1_29').val()) || 0;
+     var value2 = parseFloat($('#col_2_29').val()) || 0;
+     var value3 = parseFloat($('#col_3_29').val()) || 0;
+     var value4 = parseFloat($('#col_4_29').val()) || 0;
+          $('#rowsum_29').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+          $(function(){
+  $('#col_1_30, #col_2_30, #col_3_30, #col_4_30').keyup(function(){
+     var value1 = parseFloat($('#col_1_30').val()) || 0;
+     var value2 = parseFloat($('#col_2_30').val()) || 0;
+     var value3 = parseFloat($('#col_3_30').val()) || 0;
+     var value4 = parseFloat($('#col_4_30').val()) || 0;
+          $('#rowsum_30').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+          $(function(){
+  $('#col_1_31, #col_2_31, #col_3_31, #col_4_31').keyup(function(){
+     var value1 = parseFloat($('#col_1_31').val()) || 0;
+     var value2 = parseFloat($('#col_2_31').val()) || 0;
+     var value3 = parseFloat($('#col_3_31').val()) || 0;
+     var value4 = parseFloat($('#col_4_31').val()) || 0;
+          $('#rowsum_31').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+          $(function(){
+  $('#col_1_32, #col_2_32, #col_3_32, #col_4_32').keyup(function(){
+     var value1 = parseFloat($('#col_1_32').val()) || 0;
+     var value2 = parseFloat($('#col_2_32').val()) || 0;
+     var value3 = parseFloat($('#col_3_32').val()) || 0;
+     var value4 = parseFloat($('#col_4_32').val()) || 0;
+          $('#rowsum_32').val(value1 + value2 + value3 + value4);
+  });
+  });
+
+$(function(){
+  $('#rowsum_1, #rowsum_2, #rowsum_3, #rowsum_4, #rowsum_5, #rowsum_6, #rowsum_7, #rowsum_8, #rowsum_9, #rowsum_10, #rowsum_11, #rowsum_12, #rowsum_13, #rowsum_14, #rowsum_15, #rowsum_16, #rowsum_17, #rowsum_18, #rowsum_19, #rowsum_20, #rowsum_21, #rowsum_22, #rowsum_23, #rowsum_24, #rowsum_25, #rowsum_26, #rowsum_27, #rowsum_28, #rowsum_29, #rowsum_30, #rowsum_31, #rowsum_32').change(function(){
+    total('#rowsum_1, #rowsum_2, #rowsum_3, #rowsum_4, #rowsum_5, #rowsum_6, #rowsum_7, #rowsum_8, #rowsum_9, #rowsum_10, #rowsum_11, #rowsum_12, #rowsum_13, #rowsum_14, #rowsum_15, #rowsum_16, #rowsum_17, #rowsum_18, #rowsum_19, #rowsum_20, #rowsum_21, #rowsum_22, #rowsum_23, #rowsum_24, #rowsum_25, #rowsum_26, #rowsum_27, #rowsum_28, #rowsum_29, #rowsum_30, #rowsum_31, #rowsum_32','#rowsum_sum');
+  });
+});
+
+
+$(function(){
+  $('#col_6_1, #col_6_2, #col_6_3, #col_6_4, #col_6_5, #col_6_6, #col_6_7, #col_6_8, #col_6_9, #col_6_10, #col_6_11, #col_6_12, #col_6_13, #col_6_14, #col_6_15, #col_6_16, #col_6_17, #col_6_18, #col_6_19, #col_6_20, #col_6_21, #col_6_22, #col_6_23, #col_6_24, #col_6_25, #col_6_26, #col_6_27, #col_6_28, #col_6_29, #col_6_30, #col_6_31, #col_6_32').change(function(){
+  total('#col_6_1, #col_6_2, #col_6_3, #col_6_4, #col_6_5, #col_6_6, #col_6_7, #col_6_8, #col_6_9, #col_6_10, #col_6_11, #col_6_12, #col_6_13, #col_6_14, #col_6_15, #col_6_16, #col_6_17, #col_6_18, #col_6_19, #col_6_20, #col_6_21, #col_6_22, #col_6_23, #col_6_24, #col_6_25, #col_6_26, #col_6_27, #col_6_28, #col_6_29, #col_6_30, #col_6_31, #col_6_32','#col_6_sum');
+  });
+});
+
+
+
+
+
+
+
+
+</script>
+{% endblock %}

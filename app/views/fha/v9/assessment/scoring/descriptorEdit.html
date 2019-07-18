@@ -1,0 +1,137 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+
+
+  <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+<h1 class="heading-large mb30"><span class="heading-secondary">Edit</span>Moving around and using steps without help</h1>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+  
+  <form action="report-view" method="post">
+  
+    	<fieldset>
+		      <legend class="heading-medium">
+		        Relevant statements:
+		      </legend>
+		      
+		      {% for descriptor in movingDescriptors %}
+		      <div class="form-group">
+		      	<label class="form-label visually-hidden" for="reason">Statement one:</label>
+			  	<textarea class="form-control form-control-3-4" name="caseReviewTimeReason" rows="5">{{descriptor}}</textarea>
+		      </div>
+		      {% endfor %}		       
+			    
+	    </fieldset>
+	    
+	    
+	    <hr>
+	    
+	    <fieldset>
+	<legend class="heading-medium">How far can Tomas walk or move on level ground without help from someone, and without stopping due to severe pain or tiredness?</legend>
+	
+	<p class="mb5">Moving includes:</p>
+    <ul class="list list-bullet">
+      <li>walking with a stick</li>
+      <li>using crutches</li>
+      <li>using a manual wheelchair by themself</li>
+    </ul>
+    
+    
+    <div class="multiple-choice">
+      <input id="nomore_50" type="radio" name="mobilityDistance" value="50" {{checked('mobilityDistance', '50')}}>
+      <label for="nomore_50">No more than 50 metres</label>
+    </div>
+    <div class="multiple-choice" data-target="the_rest">
+      <input id="nomore_100" type="radio" name="mobilityDistance" value="100" {{checked('mobilityDistance', '100')}}>
+      <label for="nomore_100">No more than 100 metres</label>
+    </div>
+    <div class="multiple-choice" data-target="the_rest">
+      <input id="nomore_200" type="radio" name="mobilityDistance" value="200" {{checked('mobilityDistance', '200')}}>
+      <label for="nomore_200">No more than 200 metres</label>
+    </div>
+    <div class="multiple-choice" data-target="the_rest">
+      <input id="morethan_200" type="radio" name="mobilityDistance" value="morethan_200" {{checked('mobilityDistance', 'morethan_200')}}>
+      <label for="morethan_200">More than 200 metres</label>
+    </div>
+    
+    
+ <div class="panel js-hidden" id="the_rest">
+  
+  	<fieldset class="inline">
+  		<legend class="mb5">Can Tomas go up or down 2 steps without help, if they use a handrail?</legend>
+  		<div class="multiple-choice">
+        <input id="steps_yes" type="radio" name="mobilitySteps" value="yes" {{checked('mobilitySteps', 'yes')}}>
+        <label for="steps_yes">Yes</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="steps_no" type="radio" name="mobilitySteps" value="no" {{checked('mobilitySteps', 'no')}}>
+        <label for="steps_no">No</label>
+      </div>
+  	</fieldset>
+  	
+  </div>
+  
+  <div class="form-group mt20">
+    <label class="form-label-bold" for="justificaiton">Give details</label>
+    {% if customer.descriptor == "moving" %}
+    <textarea class="form-control form-control-3-4" name="mobilityDetails" id="justificaiton" rows="5">{{mobilityDetails}}</textarea>
+    {% elif customer.descriptor == "standing" %}
+    <textarea class="form-control form-control-3-4" name="standingDetails" id="justificaiton" rows="5">{{standingDetails}}</textarea>
+    {% elif customer.descriptor == "reaching" %}
+    <textarea class="form-control form-control-3-4" name="reachingDetails" id="justificaiton" rows="5">{{reachingDetails}}</textarea>
+    {% elif customer.descriptor == "picking" %}
+    <textarea class="form-control form-control-3-4" name="pickingDetails" id="justificaiton" rows="5">{{pickingDetails}}</textarea> 
+    {% elif customer.descriptor == "using" %}
+    <textarea class="form-control form-control-3-4" name="usingDetails" id="justificaiton" rows="5">{{usingDetails}}</textarea> 
+    {% elif customer.descriptor == "speaking" %}
+    <textarea class="form-control form-control-3-4" name="speakingDetails" id="justificaiton" rows="5">{{speakingDetails}}</textarea> 
+    {% elif customer.descriptor == "hearing" %}
+    <textarea class="form-control form-control-3-4" name="hearingDetails" id="justificaiton" rows="5">{{hearingDetails}}</textarea> 
+    {% elif customer.descriptor == "seeing" %}
+    <textarea class="form-control form-control-3-4" name="seeingDetails" id="justificaiton" rows="5">{{seeingDetails}}</textarea> 
+    {% elif customer.descriptor == "controlling" %}
+    <textarea class="form-control form-control-3-4" name="controllingDetails" id="justificaiton" rows="5">{{controllingDetails}}</textarea> 
+    {% elif customer.descriptor == "staying" %}
+    <textarea class="form-control form-control-3-4" name="stayingDetails" id="justificaiton" rows="5">{{stayingDetails}}</textarea> 
+    {% elif customer.descriptor == "learning" %}
+    <textarea class="form-control form-control-3-4" name="learningDetails" id="justificaiton" rows="5">{{learningDetails}}</textarea> 
+    {% elif customer.descriptor == "being" %}
+    <textarea class="form-control form-control-3-4" name="beingDetails" id="justificaiton" rows="5">{{beingDetails}}</textarea> 
+    {% elif customer.descriptor == "planning" %}
+    <textarea class="form-control form-control-3-4" name="planningDetails" id="justificaiton" rows="5">{{planningDetails}}</textarea> 
+    {% elif customer.descriptor == "coping" %}
+    <textarea class="form-control form-control-3-4" name="copingDetails" id="justificaiton" rows="5">{{copingDetails}}</textarea> 
+    {% elif customer.descriptor == "going" %}
+    <textarea class="form-control form-control-3-4" name="goingDetails" id="justificaiton" rows="5">{{goingDetails}}</textarea> 
+    {% elif customer.descriptor == "meeting" %}
+    <textarea class="form-control form-control-3-4" name="meetingDetails" id="justificaiton" rows="5">{{meetingDetails}}</textarea> 
+    {% elif customer.descriptor == "behaving" %}
+    <textarea class="form-control form-control-3-4" name="behavingDetails" id="justificaiton" rows="5">{{behavingDetails}}</textarea> 
+    {% elif customer.descriptor == "eating" %}
+    <textarea class="form-control form-control-3-4" name="eatingDetails" id="justificaiton" rows="5">{{eatingDetails}}</textarea>
+    {% endif %}
+  </div><!-- .form-group -->
+    
+</fieldset>
+
+  	
+  	<hr>
+  	
+
+  <p class="mt30"><button class="button">Save and return</button></p>
+
+
+					    
+  </form>
+  
+
+
+
+{% endblock %}
+

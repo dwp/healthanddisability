@@ -1,0 +1,94 @@
+{% extends path+"/_layout-caselist-dm.html" %}
+
+{% block horizontal_secondary_nav %}
+
+{{ secondaryNav.nav("decision-maker","failed-to-attend", menuItemsDm ) }}           
+
+{% endblock %}  
+
+{% block caselist_content %}
+<h2 class="heading-medium mt0"><span class="heading-xlarge">{{customers.length}}</span><br/>Did not attend</h2>
+
+<table class="styled">
+
+<hr />
+<form class="" method="post" action="/{{path}}/failed-to-attend">
+<h3 class="filter-status">Filter list by:</h3>
+<div class=" filter time-group time-top">
+
+        <fieldset>
+
+          <legend class="visually-hidden">Filter by:</legend>
+
+          <div class="time-choice">
+                <input id="all" name="filter" type="checkbox" value="rec-reason" class="facet" {{ checked('filter', 'rec-reason') }}>
+                <label for="all">Request a reason<span>(2)</span></label>
+              </div>
+          <div class="time-choice">
+              <input id="dna" name="filter" type="checkbox" value="rec-decision" class="facet" {{ checked('filter', 'rec-decision') }}>
+              <label for="dna">Record a decision <span>(6)</span></label>
+            </div>
+            <p><button id="facetFilterBtn" class="button button-secondary mt10" style="border:none; background:#fff, font-">Apply filter</button></p>
+
+        </fieldset>
+     </div>
+</form>
+
+{% if checked('filter', 'dna-referral') and not checked('filter', 'referral') %}
+<table>
+
+  <thead>
+    <tr>
+      <th>Details</th>
+      <th>Referred date</th>
+    </tr>
+  </thead>
+  
+  {% for customer in customers %}
+<tr>
+
+<td>
+<a href="decisionmaker/{{customer._id}}/timeline"><span class="visually-hidden">Name</span>{{customer.name.fullName}}</a>
+<span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span>
+</td>
+        <td>{{ customer.refereddate }}</td>
+</tr>
+</tr>
+
+{% endfor %}
+
+</table>   
+
+{% else %}
+<table>
+
+  <thead>
+    <tr>
+      <th>Details</th>
+      <th>Sub status</th>
+    </tr>
+  </thead>
+  
+  {% for customer in customers %}
+<tr>
+
+<td>
+<a href="decisionmaker/{{customer._id}}/timeline"><span class="visually-hidden">Name</span>{{customer.name.fullName}}</a>
+<span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.NINO}}</span>
+</td>
+<td>
+  <span class="block">
+  {{ 'Ready for decision'  if customer.substatus == 'Ready for decision'}}
+  {{ 'Request a reason'  if customer.substatus == 'Request a reason'}}
+  </span> </td>
+
+</tr>
+</tr>
+
+{% endfor %}
+
+</table>   
+{% endif %}
+
+      
+{% endblock %}

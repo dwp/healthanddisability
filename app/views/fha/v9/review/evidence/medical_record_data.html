@@ -1,0 +1,27 @@
+{% extends path2+"/_layout.html" %}
+
+{% block case_content %}
+
+<a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+  <h2 class="heading-large mt20 mb30">Fit note (MED3) information</h2>
+  
+
+  <h3 class="heading-medium">Fit notes (MED3) confirm these conditions:</h3>
+  <ul class="list list-bullet">
+    <li>Emergency fasciotomy <span class="date">(August 2017)</span></li>
+    <li>Acute compartment syndrome <span class="date">(August 2017)</span></li>
+    <li>Compound fracture - shinbone <span class="date">(July 2017)</span></li>
+  </ul>
+  <div class="given_descriptors pb30">{% include path2+"/_descriptors.html" %}</div>
+
+ <!-- <h3 class="heading-medium">Sick notes:</h3>
+  <ul class="list list-bullet">
+    <li><a href="">{{ "Do MMMM YYYY" | daysAgo(86) }} - {{ "Do MMMM YYYY" | daysAgo(100) }}</a></li>
+    <li><a href="">{{ "Do MMMM YYYY" | daysAgo(114) }} - {{ "Do MMMM YYYY" | daysAgo(165) }}</a></li>
+    <li><a href="">{{ "Do MMMM YYYY" | daysAgo(179) }} - {{ "Do MMMM YYYY" | daysAgo(100) }}</a></li>
+  </ul>
+  <div class="given_descriptors pb30">{% include path2+"/_descriptors.html" %}</div> -->
+
+{% endblock %}
+

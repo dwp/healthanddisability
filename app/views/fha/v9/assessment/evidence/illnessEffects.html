@@ -1,0 +1,152 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+<h1 class="heading-large"><span class="heading-secondary">Step 1 of 3</span>Medical conditions</h1>
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+  
+   <div class="whatweknow">
+
+	
+
+
+	<table>
+			<caption  class="heading-medium mt10 mb10" >What we already know:</caption>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Source</th>
+					<th>Since</th>
+				
+				</tr>
+			</thead>
+			<tbody>
+				{% for illness in customer.illnesses %}
+				<tr>
+					<td>{{illness.name}}</td>
+					<td>{{illness.source}}</td>
+					<td class="text-secondary">{{illness.date |formatDate('MMMM YYYY')}}</td>
+				
+				</tr>
+				{% endfor %}
+				{% if data['newillness']==='meds1' %}
+				<tr>
+						<td>{{newillneesname}}</td>
+						<td>{{newillnesssource}}</td>
+						<td class="text-secondary">{{newillnesssdate}}</td>
+					
+					</tr>
+				{% endif %}
+			</tbody>
+		</table>
+    
+    <!-- <p><a href="#" class="button secondary mt20">Add illness or condition</a></p> -->
+    
+  
+        
+        
+	    
+	</div> 
+	
+	
+	
+	
+	
+	
+	
+	
+	<form method="post" action="illnessEffects">
+	
+			<div class="form-group">
+			<fieldset class="inline">
+					<legend class="heading-medium mb5">Are there any other medical conditions to add?</legend>
+					
+			
+					
+					<div class="multiple-choice" data-target="finishAdd">
+				      <input id="meds1" name="newillness" type="radio" value="meds1">
+				      <label for="meds1">Yes</label>
+				      
+				    </div>
+
+				    <div class="multiple-choice" data-target="finishHistory">
+				      <input id="meds2" name="newillness" type="radio" value="meds2">
+				      <label for="meds2">No</label>
+				    </div>	
+				    
+				    
+				     <div class="panel js-hidden form-group" id="finishAdd">
+				   		
+				   		
+				   		<fieldset class="item-compound">
+                 
+            
+				            <legend class="visuallyhidden">Add condition</legend>
+							
+							<div class="form-group">
+				                <label class="form-label" for="field-2">
+				                  Name of medical condition 
+				                </label>
+				                <input type="text" class="form-control" id="field-2" name="newillneesname" autofocus="autofocus">
+											</div>
+											<div class="form-group">
+												<label class="form-label" for="field-3">
+													When was it diagnosed? 
+												</label>
+												<input type="text" class="form-control" id="field-3" name="newillnesssdate" autofocus="autofocus">
+											</div>
+				         
+								<div class="form-group">
+					                <label class="form-label" for="field-3">
+					                  Source 
+					                </label>
+					                <input type="text" class="form-control" id="field-3" name="newillnesssource" autofocus="autofocus">
+					              </div>
+						
+					
+								
+				          <button class="button-secondary">Confirm new medical condition</button>  
+				            
+				          </fieldset>
+				   		
+				   		
+				   		
+				   </div>
+		
+	 
+				</fieldset>
+ 
+			</div>
+
+		</form>
+    <form method="post" action="illnessEffects2a">
+    
+		<p class="mt30"><button class="button">Save and continue</button></p>
+
+	</form>
+
+
+  </div><!-- column -->
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+

@@ -1,0 +1,51 @@
+{% extends path+"/_layout-caselist-search.html" %}
+
+{% block horizontal_secondary_nav %}
+            
+
+
+{% endblock %} 
+{% block assess_content %}
+
+<main id="content" role="main" class="main-content">
+  
+
+      <div class="container">
+      
+      
+          <div class="grid-row">
+              <div class="column-quarter">
+               
+               
+               
+               		<!-- <form action="search-results" method="post">
+			                 <fieldset>
+			                 	<h1 class="heading-medium mt0"><legend>Customer search</legend></h1>
+			                 	
+			                 	<div class="form-group">
+			                 		<label class="form-label" for="search">Enter an NI number</label>
+							 		<input class="form-control form-control-3-4" id="search" type="text" name="NINO">
+			                 	</div>
+			                
+			                
+		
+							 	<p><a href="search-results" class="button">Search</a></p>
+			                 </fieldset>
+			        </form> -->
+			        
+			        
+			{% include path+"/caselist/_search-box-id.html" %}
+               
+               
+               
+              </div><!-- column -->
+              <div class="column-three-quarters">
+              </div>
+            </div>
+     
+        <!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

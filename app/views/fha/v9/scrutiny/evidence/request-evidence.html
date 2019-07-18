@@ -1,0 +1,257 @@
+{% extends path1+"/_layoutRecording.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    	
+    	<h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Request further medical evidence (FME)</h1>
+		
+		
+		<div class="evidence-requests">
+				
+				
+			<form action="request-evidence2" method="POST" class="form">
+			<fieldset>
+				<legend class="form-label-bold mb10">Select the evidence you would like to request</legend>
+				
+				
+				
+				<div class="form-group">
+							       
+							      <div class="multiple-choice" data-target="113-view">
+								      <input id="113" name="type" type="checkbox" value="113"  >
+								      <label for="113">GP report (113)</label>
+										</div>
+
+										{% if customer.fmeType.indexOf("113") > -1 %}
+										<div class="visually-hidden">
+										<div class="multiple-choice">
+								      <input id="113-revisited" name="type" type="checkbox" value="113visited" checked >
+								      <label for="113-revisited">GP report (113)</label>
+										</div>
+									</div>
+										{% endif %}
+										
+
+						 <div class="panel js-hidden" id="113-view">
+							<fieldset>
+						  
+							  <legend class="bold">
+							
+										We need FME to determine if the claimant:
+							
+							  </legend>
+			
+								
+						
+
+										<div class="multiple-choice" data-target="insufficient-3" >
+												<input id="insufficient-113" type="radio" name="scenario" value="insufficient-3" {{ 'checked' if data[ 'scenario']==='insufficient-3'
+												else ''}}>
+												<label for="insufficient-113">has LCWRA because of</label>
+												</div>
+
+												<div class="panel js-hidden" id="insufficient-3">
+														<fieldset>
+						  
+																<legend class="bold">
+															
+																	Choose:
+															
+																</legend>
+																<div class="multiple-choice" >
+																<input id="insufficient-113" type="radio" name="scenarioinner" value="inner1" {{ 'checked' if data[ 'scenarioinner']==='inner1'
+																else ''}}>
+																<label for="insufficient-113"> severe functional condition</label>
+																</div>
+																<div class="multiple-choice" >
+																		<input id="insufficient-113" type="radio" name="scenarioinner" value="inner2" {{ 'checked' if data[ 'scenarioinner']==='inner2'
+																		else ''}}>
+																		<label for="insufficient-113">substantial mental risk</label>
+																		</div>
+																		<div class="multiple-choice" >
+																				<input id="insufficient-113" type="radio" name="scenarioinner" value="inner3" {{ 'checked' if data[ 'scenarioinner']==='inner3'
+																				else ''}}>
+																				<label for="insufficient-113">substantial physical risk</label>
+																				</div>
+																				<div class="multiple-choice" >
+																						<input id="insufficient-113" type="radio" name="scenarioinner" value="inner4" {{ 'checked' if data[ 'scenarioinner']==='inner3'
+																						else ''}}>
+																						<label for="insufficient-113">high-risk pregnancy</label>
+																						</div>
+														</div>
+
+														<div class="multiple-choice" >
+																<input id="insufficient-113" type="radio" name="scenario" value="insufficient-2" {{ 'checked' if data[ 'scenario']==='insufficient-2'
+																else ''}}>
+																<label for="insufficient-113">should be treated as LCW</label>
+																</div>
+
+
+												<div class="multiple-choice" >
+														<input id="insufficient-113" type="radio" name="scenario" value="insufficient-4" {{ 'checked' if data[ 'scenario']==='insufficient-4'
+														else ''}}>
+														<label for="insufficient-113">has a severe disability or medical condition as the file is unavailable</label>
+														</div>
+
+														<div class="multiple-choice" >
+																<input id="insufficient-113" type="radio" name="scenario" value="insufficient-113" {{ 'checked' if data[ 'scenario']==='insufficient-113'
+																else ''}}>
+																<label for="insufficient-113">is terminally ill</label>
+																</div>
+
+						  
+							  <div class="multiple-choice" data-target="113-reason">
+								<input id="example-contact-by-phone" type="radio" name="scenario" value="No">
+								<label for="example-contact-by-phone">Other reason</label>
+							  </div>
+							  <div class="panel js-hidden" id="113-reason">
+								<label for="113-reason" class="bold">
+									Add a reason for requesting this evidence
+								</label>
+								<textarea class="form-control form-control-3-4" name="reason-113" id="113-reason" rows="4"></textarea>
+							  </div>
+	
+						  
+							</fieldset>
+						  </div>
+								    
+								    
+
+					  
+								    <div class="multiple-choice" data-target="frr-view">
+								      <input id="FRR" name="type" type="checkbox" value="FRR"  >
+								      <label for="frr">Factual report (FRR)</label>
+										</div>	
+										
+
+										{% if customer.fmeType.indexOf("FRR") > -1 %}
+										<div class="visually-hidden">
+										<div class="multiple-choice">
+								      <input id="113-revisited" name="type" type="checkbox" value="FRRvisited" checked >
+								      <label for="113-revisited">GP report (113)</label>
+										</div>
+									</div>
+										{% endif %}
+								    
+								    <div class="panel js-hidden" id="frr-view">
+									  <div class="form-group mb0">	
+										<label for="frr-evidence" class="bold">
+										What information do you require?
+										</label>
+										<textarea class="form-control form-control-3-4" name="frrinformation" id="frr-info" rows="10"></textarea>
+										 </div>	
+										 {% if  customer.otherHcp.hasOtherHcp %}
+										 <div class="form-group">
+												<fieldset>
+
+														<legend class="bold">
+															
+																Who are you requesting this evidence off?
+															
+														</legend>
+												
+														<div class="multiple-choice">
+															<input id="example-contact-by-email" type="radio" name="hcp-type" value="gp">
+															<label for="example-contact-by-email">GP: Dr.{{customer.address.gpName.fullName}}</label>
+														</div>
+										
+														<div class="multiple-choice" >
+																<input id="example-contact-by-email" type="radio" name="hcp-type" value="consultant">
+																<label for="example-contact-by-email">Consultant: Dr.{{customer.otherHcp.name.fullName}}</label>
+															</div>
+												
+
+									
+													
+												
+													</fieldset>
+
+										 </div>
+										 {% else %}
+										 <div class="multiple-choice visually-hidden">
+												<input id="example-contact-by-email" type="radio" name="hcp-type" value="gp" checked>
+												<label for="example-contact-by-email">GP: Dr.{{customer.address.gpName.fullName}}</label>
+											</div>
+										 {% endif %}
+										 <div class="form-group">
+											<fieldset>
+						  
+												<legend class="bold">
+											
+													Reason for requesting this evidence
+											
+												</legend>
+											
+												<div class="multiple-choice" >
+												<input id="insufficient-frr" type="radio" name="scenario-frr" value="insufficient-frr" {{ 'checked' if data[ 'scenario-frr']==='insufficient-frr'
+												else ''}}>
+												<label for="insufficient-frr">Insufficient evidence to support claimants statements</label>
+												</div>
+				
+											
+												<div class="multiple-choice" data-target="frr-reason-view">
+												<input id="example-contact-by-phone" type="radio" name="scenario-frr" value="No">
+												<label for="example-contact-by-phone">Other reason</label>
+												</div>
+												<div class="panel js-hidden" id="frr-reason-view">
+												<label for="FRR-reason">
+													Add a reason for requesting this evidence
+												</label>
+												<textarea class="form-control form-control-3-4" name="reason-frr" id="reason-frr" rows="4"></textarea>
+												</div>
+					
+											
+											</fieldset>
+										 </div>
+								    </div>	
+						    
+					</div>
+
+				
+
+
+				
+				
+			</fieldset>
+				
+
+				
+		
+					
+				
+				<p class="request"><input type="submit" class="button" value="Save and continue"></p>
+				</form>
+		</div>
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

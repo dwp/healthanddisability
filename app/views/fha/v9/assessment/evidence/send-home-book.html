@@ -1,0 +1,128 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    	
+    	<h1 class="heading-large"> <span class="heading-secondary">Step 2 of 2</span>Cancel or rearrange appointment</h1>
+    	
+		
+
+		<form method="post" action="/{{path}}/assessment/{{customer._id}}/appointment">
+
+		
+						<div class="form-group">
+						<fieldset class="mt20">
+								<legend class="heading-medium mb5">What do you want to do?</legend>
+																
+					
+								<div class="multiple-choice" data-target="other-info2">
+								
+									<input type="radio" name="appointments" id="available-appointments-unable" value="yes" {{checked('appointments', 'yes') }}>
+									
+									<label for="available-appointments-unable">Rearrange appointment</label>
+                                </div>
+                                
+                                <div class="panel js-hidden" id="other-info2" >
+
+                                        <div class="form-group">
+                                                <h2 class="heading-small"><span style="font-weight:normal" class="">Appointment details</span><br>None neuro appointment</h2>
+    
+                                                    {% if customer.name.first == 'Lowery' %}
+                                                    <ul class="list-bullet mt10 mb10">
+                                                      <li>Tuesday 19 March</li>
+                                                      <li>4:00pm</li>
+                                                      <li>Tresco House</li>
+                                                    </ul>
+                                                    <details>
+    
+                                                            <summary><span class="summary">Appointment preferences</span></summary>
+                                                    
+                                                            <h3 class="heading-small">When {{customer.name.first}} is unavailable:</h3>            
+                                                      
+                                                            <ul class="list-bullet pref-list">
+                    
+                                                                <li>Monday <span>afternoons</span>
+                                                                </li>
+                                                        
+                                                                <li>Tuesdays</li>
+                                                               
+                                                        
+                                                                </ul>
+                                                           
+                                                            
+                                                          </details>
+                                                      
+                                                   
+                                                    {% elif customer.name.first == 'Mcconnell' %}
+                                                    <ul class="list-bullet mt10 mb10">
+                                                            <li>Friday 15th March</li>
+                                                      <li>4:00pm</li>
+                                                      <li>Tresco House</li>
+                                                    </ul>
+    
+                                                          {% else %}
+                                                          <ul class="list-bullet mt10 mb10">
+                                                                <li>Tuesday {{ 'Do MMMM YYYY' | baseDateAdd(7) }}</li>
+                                                                <li>4:00pm</li>
+                                                                <li>Tresco House</li>
+                                                              </ul>
+              
+                                                             
+    
+                                                          {% endif%}
+                                                   
+                                        {% include path+"/includes/appointmentsTypeAhead.html" %}  
+                                        </div>
+                                        
+                                            
+                                    </div>
+                                <div class="multiple-choice" data-target="Cancel-appointment">
+                                        <input type="radio" name="appointments" id="available-appointments-1" value="no"  {{checked('appointments', 'no') }}>
+                                        <label for="available-appointments-1">Cancel appointment</label>
+                                    </div>
+                         
+                                
+                                
+							
+							</div>
+								
+							<p class="mt30"><button class="button">Save and continue</button></p>
+
+				</form>
+			
+
+		
+    
+
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+
+{% endblock %}
+
+ {% block page_scripts %}
+
+{% include path+"/includes/appointment/_typaheadscript.html" %}
+  
+
+ 
+{% endblock %} 

@@ -1,0 +1,254 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+<h1 class="heading-large mt10
+">
+		<span class="heading-secondary">Mental Health</span>
+	Cognitive tests</h1>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+<form action="mentalHealthAssessment" method="POST" class="form">
+<div class="form-group">
+		<fieldset>
+	  
+		  <legend>
+			<h3 class="heading-medium">Serial sevens</h3>
+		  </legend>
+
+		  <div class="multiple-choice">
+				<input id="radio-3" type="radio" name="serialSeven" value="Not assessed">
+				<label for="radio-3">Not assessed</label>
+			  </div>
+	  
+		  <div class="multiple-choice">
+			<input id="radio-1" type="radio" name="serialSeven" value="Able to complete five rounds">
+			<label for="radio-1">Able to complete five rounds</label>
+		  </div>
+		  <div class="multiple-choice">
+			<input id="radio-2" type="radio" name="serialSeven" value="Unable to complete five rounds">
+			<label for="radio-2">Unable to complete five rounds</label>
+		  </div>
+		  <div class="multiple-choice">
+				<input id="radio-3" type="radio" name="serialSeven" value="Client declined">
+				<label for="radio-3">Client declined</label>
+			  </div>
+	  
+		</fieldset>
+	  </div>
+
+
+<div class="form-group">
+		<fieldset>
+	  
+		  <legend>
+			<h3 class="heading-medium">Calculating change</h3>
+		  </legend>
+
+		  <div class="multiple-choice">
+				<input id="radio-3" type="radio" name="Calculating" value="Not assessed">
+				<label for="radio-3">Not assessed</label>
+			  </div>
+	  
+		  <div class="multiple-choice">
+			<input id="radio-1" type="radio" name="Calculating" value="Able to calculate £1 minus 75p">
+			<label for="radio-1">Able to calculate £1 minus 75p</label>
+			</div>
+			
+		  <div class="multiple-choice">
+					<input id="radio-1" type="radio" name="Calculating" value="Unable to calculate £1 minus 75p">
+					<label for="radio-1">Unable to calculate £1 minus 75p</label>
+					</div>
+		  <div class="multiple-choice">
+				<input id="radio-3" type="radio" name="Calculating" value="Client declined">
+				<label for="radio-3">Client declined</label>
+			  </div>
+	  
+		</fieldset>
+	  </div>
+
+	  <div class="form-group">
+			<fieldset>
+		  
+			  <legend>
+				<h3 class="heading-medium">Follow commands</h3>
+			  </legend>
+	
+			  <div class="multiple-choice">
+					<input id="radio-3" type="radio" name="follow" value="Not assessed">
+					<label for="radio-3">Not assessed</label>
+				  </div>
+		  
+			  <div class="multiple-choice">
+				<input id="radio-1" type="radio" name="follow" value="Able to follow three stage commands">
+				<label for="radio-1">Able to follow three stage commands</label>
+			  </div>
+
+
+			  <div class="multiple-choice">
+					<input id="radio-1" type="radio" name="follow" value="Able to follow two stage commands">
+					<label for="radio-1">Able to follow two stage commands</label>
+				  </div>
+
+			  <div class="multiple-choice">
+					<input id="radio-1" type="radio" name="follow" value="Able to follow one stage commands">
+					<label for="radio-1">Able to follow one stage commands</label>
+				  </div>
+				  <div class="multiple-choice">
+						<input id="radio-1" type="radio" name="follow" value="Unable to follow commands">
+						<label for="radio-1">Unable to follow commands</label>
+					  </div>
+			  <div class="multiple-choice">
+					<input id="radio-3" type="radio" name="follow" value="Client declined">
+					<label for="radio-3">Client declined</label>
+				  </div>
+		  
+			</fieldset>
+		  </div>
+
+		  <div class="form-group">
+				<fieldset>
+			  
+				  <legend>
+					<h3 class="heading-medium">Attention</h3>
+				  </legend>
+		
+				  <div class="multiple-choice">
+						<input id="radio-3" type="radio" name="attention" value="Not assessed">
+						<label for="radio-3">Not assessed</label>
+					  </div>
+			  
+				  <div class="multiple-choice">
+					<input id="radio-1" type="radio" name="attention" value="Able to spell world backwards">
+					<label for="radio-1">Able to spell world backwards</label>
+				  </div>
+	
+	
+				  <div class="multiple-choice">
+						<input id="radio-1" type="radio" name="attention" value="Unable to spell world backwards">
+						<label for="radio-1">Unable to spell world backwards</label>
+					  </div>
+				  <div class="multiple-choice">
+						<input id="radio-3" type="radio" name="attention" value="Client declined">
+						<label for="radio-3">Client declined</label>
+					  </div>
+			  
+				</fieldset>
+			  </div>
+
+			  <div class="form-group">
+					<fieldset>
+				  
+					  <legend>
+						<h3 class="heading-medium">Registration</h3>
+					  </legend>
+			
+					  <div class="multiple-choice">
+							<input id="radio-3" type="radio" name="registration" value="Not assessed">
+							<label for="radio-3">Not assessed</label>
+						  </div>
+				  
+					  <div class="multiple-choice">
+						<input id="radio-1" type="radio" name="registration" value="Able to remember 3 objects first time">
+						<label for="radio-1">Able to remember 3 objects first time</label>
+					  </div>
+		
+		
+					  <div class="multiple-choice">
+							<input id="radio-1" type="radio" name="registration" value="Unable to remember 3 objects first time">
+							<label for="radio-1">Unable to remember 3 objects first time</label>
+						  </div>
+					  <div class="multiple-choice">
+							<input id="radio-3" type="radio" name="registration" value="Client declined">
+							<label for="radio-3">Client declined</label>
+						  </div>
+				  
+					</fieldset>
+				  </div>
+
+				  <div class="form-group">
+						<fieldset>
+					  
+						  <legend>
+							<h3 class="heading-medium">Recall</h3>
+						  </legend>
+				
+						  <div class="multiple-choice">
+								<input id="radio-3" type="radio" name="recall" value="Not assessed">
+								<label for="radio-3">Not assessed</label>
+							  </div>
+					  
+						  <div class="multiple-choice">
+							<input id="radio-1" type="radio" name="recall" value="Able to remember three objects named at registration">
+							<label for="radio-1">Able to remember three objects named at registration</label>
+						  </div>
+			
+			
+						  <div class="multiple-choice">
+								<input id="radio-1" type="radio" name="recall" value="Unable to remember three objects named at registration">
+								<label for="radio-1">Unable to remember three objects named at registration</label>
+							  </div>
+						  <div class="multiple-choice">
+								<input id="radio-3" type="radio" name="recall" value="Client declined">
+								<label for="radio-3">Client declined</label>
+							  </div>
+					  
+						</fieldset>
+					  </div>
+
+<div class='form-group'>					  
+
+	  <h2 class="heading-medium">Informal tests</h2>
+  
+  <p>Things you should be assessing</p>
+
+			<ul class="list list-bullet">
+					<li>Long term memory</li>
+					<li>Short term recall</li>	
+        </ul>
+        
+   
+
+				<div class="form-group">
+						<label class="form-label-bold" for="mh-cognative-tests">Observation</label>
+						<textarea class="form-control form-control-3-4" name="mhcognativetests" id="mh-cognative-tests" rows="8">{{mhcognativetests}}</textarea>
+				</div>
+		
+		
+
+						<input type="submit" class="button" value="Save">
+				
+						<div class="multiple-choice" style="display:none">
+								<input id="radio-inline-4" type="radio" name="Cognative-test" value="Cognative-test" checked>
+
+								<label for="radio-4">hidden radio one</label>
+							</div>
+								
+					</form>
+</div>
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+
+
+{% block footer_top %}
+
+{% endblock %}
+
+
+
+{% block page_scripts %}
+
+
+
+{% endblock %}

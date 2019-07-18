@@ -1,0 +1,67 @@
+{% extends path1+"/_layout-index.html" %}
+
+
+
+{% block assess_content %}
+
+
+
+
+<style>
+
+</style>
+
+
+
+<main id="content" role="main" class="main-content">
+      <div class="container">
+          <div class="grid-row">
+              <div class="column-half">
+  <a href="javascript: history.go(-1)" class="link-back">Back</a>
+   <h1 class="heading-large"><span class="heading-secondary">Step 2 of 3</span>Create a capacity plan</h1>
+
+  
+  <h2 class="heading-medium">Monday 22 July</h2>
+   <form class="form" action="/{{ path }}/planning/create-plan-amount-test" method="post">
+
+     <h2 class="heading-small mb20"> Number of healthcare professionals available for face to face assessments and their skill levels</h2>
+    <div class="form-group">
+      <label class="form-label" for="">Total amount of Hcp's available for  face to face assessments</label>
+      <input class="form-control" id="" type="text" name="totalhcp"  value="">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="">How many are trained to Complex neuro level</label>
+      <input class="form-control" id="" type="text" name="totalcomplex"  value="">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="">How many are trained to Neuro level</label>
+      <input class="form-control" id="" type="text" name="totalneuro"  value="">
+    </div>
+     
+    <div class="form-group">
+      <label class="form-label" for="">How many are trained to Non neuro level </label>
+      <input class="form-control" id="" type="text" name="totalnon"  value="">
+    </div>
+
+
+
+
+
+
+              </div>
+          </div>
+
+      </div>
+
+
+              <p><button class="button mt25">Save and continue</button></p>
+        </form>
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

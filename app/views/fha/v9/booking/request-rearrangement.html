@@ -1,0 +1,94 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block left_content %}
+ <p class="mt10 mb0 bold-small">Booked</p>
+
+
+ <hr>
+{% endblock %}
+
+
+{% block citizen_content %}
+
+<div class="container">
+    <div class="grid-row">
+        <div class="column-full">
+        <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+            <h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Rearrange{% if customer.name.first == 'Mcconnell' %}, request {% endif %} or cancel appointment</h1>
+            
+           <form action="request-rearrangement-book" method="post">
+                <fieldset class="form-group">
+                    <legend class="heading-medium mb5">
+                        Reason for rearrangement or cancellation:
+                    </legend>
+                    <div class="multiple-choice" data-target="customer-request-box">
+                        <input type="radio" name="changedByCustomer" id="changedByCustomer-yes" value="yes">
+                        <label for="changedByCustomer-yes">Request from {{customer.name.first}}</label>
+                    </div>
+                    {% if data['changedByCustomer']==="no"%}
+                    <div class="visually-hidden">
+
+                        <div class="multiple-choice">
+                            
+                            <input type="radio" name="changedByCustomer-visited" id="changedByCustomer-no" value="no" checked>
+                            <label for="changedByCustomer-no">We've had to change the appointment</label>
+                        </div>
+                    </div>
+                    
+                    {% endif%}
+
+                  
+
+                    
+                 <!--  <div class="panel js-hidden" id="customer-request-box">
+                    <label class="form-label-bold">What is the request?</label>
+                    <textarea name="changedByCustomerComments" class="form-control" style="height: 150px; width: 90%;"></textarea>
+
+                </div> -->
+
+                    <div class="multiple-choice" data-target="we-changed">
+                        <input type="radio" name="changedByCustomer" id="changedByCustomer-no" value="no">
+                        <label for="changedByCustomer-no">We've had to change the appointment</label>
+                    </div>
+                    
+                    
+                    <div class="panel js-hidden" id="we-changed">
+                     <fieldset>
+	                    <legend class="form-label-bold">
+	                        Reason:
+                        </legend>
+                        
+                        
+	                    <div class="multiple-choice">
+	                        <input type="radio" name="changes" id="changedBy1" value="yes">
+	                        <label for="changedBy1">Appointment conflicts with an appointment preference or special requirement</label>
+	                    </div>
+	                    <div class="multiple-choice">
+	                        <input type="radio" name="changes" id="changedBy2" value="yes">
+	                        <label for="changedBy2">Healthcare professional is unavailable (for example, they're ill or called away urgently)</label>
+                        </div>
+                        <div class="multiple-choice">
+                                <input type="radio" name="changes" id="changedBy3" value="yes">
+                                <label for="changedBy3">Building problem (for example, power failure or evacuation)</label>
+                            </div>
+
+                     </fieldset>
+                    </div>
+
+                </fieldset>
+               
+                <p>
+                    <button class="button">Save and continue</button>
+                </p>
+            </form>
+        </div>
+    </div>
+    <!-- row -->
+</div>
+<!-- container -->
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{# {% include path1+"/footer_links.html" %} #}
+{% endblock %}

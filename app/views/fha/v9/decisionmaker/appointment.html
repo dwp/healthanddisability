@@ -1,0 +1,96 @@
+{% extends path1+"/_layoutDM.html" %}
+
+{% block citizen_content %}
+
+<div class="container">
+
+    {# macro #}
+    {{ navfta.case_tabs("appointment",1,path1, customer._id) }}{# macro #}
+    <div class="grid-row">
+
+          <div class="column-full">
+              <h1 class="heading-large">Appointment history</h1>
+          </div>
+
+          <div class="column-two-thirds">
+              
+             
+                       <div class="latest_version">
+                       <h2 class="heading-medium mt0">What we know</h2>
+                       <p>Appointment details</p>
+                       <ul class="list-bullet">
+                           <li>2nd May 2019</li> 
+                           <li>11:00am</li>  
+                           <li>Tresco House</li> 
+                            </ul>
+                            
+                            <h3 class="heading-small">Reason</h3>
+                          
+                            <p class="">Claimant was having a bad day with his depression and was struggling to get out of the house, he asked for a rearrangement but we could not provide it because he had previously rearranged
+                                his appointment.
+                              <span class="mt10 block">On 2nd May 2019</span>
+                            </p>               
+                      
+                      </div>
+                      
+                    <hr>
+                       <h2 class="heading-medium mt0">Cancelled: non-neuro appointment</h2>
+                       <p>Appointment details</p>
+                       <ul class="list-bullet">
+                           <li>18th April 2019</li> 
+                           <li>11:00am</li>  
+                           <li>Tresco House</li> 
+                            </ul>
+              
+                            <h3 class="heading-small">Assessment centre</h3>
+                            <p class="">We have cancelled this appointment because there wasn't a hcp available to fullfill the appointment
+                              
+                 
+                         <span class="mt10 block">On 8th April 2019</span>
+                       </p> 
+              
+              
+                <hr>
+                    
+              
+              
+              
+              </div>
+
+              <div class="column-one-third">
+                  <div class="card-single">  
+                     <h2 class="heading-small mt0">
+                      Appointment preferences
+                
+                     </h2>
+                     <div class="inner">
+                        <h3 class="heading-small">Requirements</h3>
+                        <ul>
+                            <li>Ground floor access</li>
+                            <li>Audio recording </li>
+                        </ul>
+                   
+      
+                   </div>
+                   </div>
+                </div>
+
+        
+        
+        
+            
+        
+          </div>
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

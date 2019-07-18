@@ -1,0 +1,63 @@
+{% extends path+"/_layoutScenarioStart.html" %}
+
+{% block citizen_content %}
+
+<div class="container">
+
+    <div class="grid-row">
+
+          <div class="column-full">
+          
+          <p><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+          
+          
+              <h1 class="heading-large"><span class="heading-secondary">Feature team: Appointment</span>Scenario home</h1>
+
+          
+			  <hr>
+			  
+			  
+			  <div class="grid-row">
+			  <div class="column-three-quarters">
+          
+					  <div class="scenario">
+					    <h2 class="heading-medium">Create a capacity plan</h2>
+		                <p>Create a capacity plan using HCP's availability for face to face assessments and what skillsets they have.</p>
+		                <p><a href="/{{path }}/planningv2" class="button secondary-invert">Start scenario</a></p> 
+					  </div>
+					  
+					  <hr>
+		
+					  <div class="scenario">
+		                <h2 class="heading-medium">Previous did not attend</h2>
+		                <p>Filter and book an appointment on a priority</p>
+		                <p><a href="/{{path }}/ready-to-book" class="button secondary-invert">Start scenario</a></p> 
+					  </div>
+					  
+					  <hr>
+					  
+					  <div class="scenario">      
+			             <h2 class="heading-medium">Failed to attend</h2>
+			             <p>Decision to be made reason provided</p>
+			             <p><a href="/{{path }}/decisionmaker/timeline" class="button secondary-invert">Start scenario</a></p>  
+		              </div>
+		
+		               		
+		                    
+		             
+         
+			  </div>
+			  </div>
+         
+         
+         
+          
+          
+          </div>
+    </div>  
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+{% endblock %} #}

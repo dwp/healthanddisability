@@ -1,0 +1,85 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+<h1 class="heading-large mt30 mb20">Medical conditions</h1>
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	 <div class="whatweknow whatweknowEdit">
+
+	
+
+
+	<table>
+			<caption  class="heading-medium mt10 mb10 visually-hidden">Added medical conditions:</caption>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Source</th>
+					<th>Since</th>
+					<th><span class="visually-hidden">Edit condition</span></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>New illness</td>
+					<td>Claimant</td>
+					<td class="text-secondary">Today</td>
+					<td><a href="#">Edit</a></td>
+				</tr>
+				{% for illness in customer.illnesses %}
+				<tr>
+					<td>{{illness.name}}</td>
+					<td>{{illness.source}}</td>
+					<td class="text-secondary">{{illness.date |formatDate('MMMM YYYY')}}</td>
+					<td><a href="#">Edit</a></td>
+				</tr>
+				{% endfor %}
+				{% if data['newillness']==='meds1' %}
+				<tr>
+						<td>{{newillneesname}}</td>
+						<td>{{newillnesssource}}</td>
+						<td class="text-secondary">{{newillnesssdate}}</td>
+						<td><a href="#">Edit</a></td>
+					</tr>
+				{% endif %}
+			</tbody>
+		</table>
+    
+    <!-- <p><a href="#" class="button secondary mt20">Add illness or condition</a></p> -->
+    
+  
+        
+        
+	    
+	</div> 
+
+	<div class="form-group">
+		<p><a href="medicalConditionsAdd" class="button secondary">Add another condition</a></p>
+	</div>
+
+	
+	<p class="mt30"><a href="wca-index" class="button">Save and continue</a></p>	
+
+	    
+
+  </div><!-- column -->
+</div><!-- row -->
+
+{% endblock %}
+
+
+
