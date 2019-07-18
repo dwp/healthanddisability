@@ -14,26 +14,10 @@
               <div class="column-three-quarters capacity">
   <a href="javascript: history.go(-1)" class="link-back">Back</a>   
 
-   <h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Create a capacity plan - {% include path+"/planningv2/_ACname.html" %} </h1>
+   <h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Create a capacity plan for {% include path+"/planningv2/_ACname.html" %} </h1>
 
-   <h2 class="heading-medium">Monday 10 September</h2>
-
-   <div class="panel panel-info panel-instruction" ><h2 class="heading-small">Creating a capacity plan</h2>
-    <ul class="numeric" data-id="">
-        <li>
-          <span class="circle circle-step circle-white">1</span>
-          <h2 class="govuk-heading-m">Add the  hcp skillsets you have available</h2>
-        </li>
-
-        <li>
-          <span class="circle circle-step circle-white">2</span>
-          <h2 class="govuk-heading-m">If you have capacity to take UCB cases, add this to the relevant timeslot</h2>
-        </li>
-
-
-      </ul>
-
-</div>
+   <h2 class="heading-medium">Monday 22 July</h2>
+{% include path+"/planningv2/_info-panel-amount.html" %} 
 
 
    <form class="form" action="create-plan" method="post">
@@ -75,9 +59,9 @@ table.profile-table .col5{
                         <!-- <th>Assessment Centre</th> -->
                        
                         {% if checked('benefits','ben2') %}
-                        <th colspan="4"><span>How many are trained to </span></th>
+                        <th colspan="4"><span>Skillsets</span></th>
                         {% else %}
-                        <th colspan="3"><span>How many are trained to </span></th>
+                        <th colspan="3"><span>Skillsets</span></th>
                          {% endif %}
                           <th class="col5"><span>Total</span></th>
                           <th class="col6"><span>How many can be</span></th>
@@ -1011,126 +995,45 @@ table.profile-table .col5{
 
 
 
+function total(inputFields, totalField) {
+  var sumValues = 0;
+  $(inputFields).each(function() { 
+      if (this.value.length!=0 && !isNaN(this.value)) {
+          sumValues += parseFloat(this.value);
+      }
+  });
+  $(totalField).val(sumValues).triggerHandler('change');
+}
 
-$(function(){
-  $('#sum, #col_2_sum, #col_3_sum, #col_4_sum').change(function(){
-     var value1 = parseFloat($('#sum').val()) || 0;
-     var value2 = parseFloat($('#col_2_sum').val()) || 0;
-     var value3 = parseFloat($('#col_3_sum').val()) || 0;
-     var value4 = parseFloat($('#col_4_sum').val()) || 0;
-     $('#rowsum_sum').val(value1 + value2 + value3+ value4);
+$(function() {
+  $('#sum, #col_2_sum, #col_3_sum, #col_4_sum').change(function() { 
+    total('#sum, #col_2_sum, #col_3_sum, #col_4_sum','#rowsum_sum');
   });
 });
-$(function(){
-  $('#col_1_1, #col_1_2, #col_1_3, #col_1_4, #col_1_5, #col_1_6, #col_1_7, #col_1_8, #col_1_9, #col_1_10, #col_1_11, #col_1_12, #col_1_13, #col_1_14, #col_1_15, #col_1_16, #col_1_17, #col_1_18, #col_1_19, #col_1_20, #col_1_21, #col_1_23, #col_1_23, #col_1_24, #col_1_25, #col_1_26, #col_1_27, #col_1_28, #col_1_29, #col_1_30, #col_1_31, #col_1_32').keyup(function(){
-     var value1 = parseFloat($('#col_1_1').val()) || 0;
-     var value2 = parseFloat($('#col_1_2').val()) || 0;
-     var value3 = parseFloat($('#col_1_3').val()) || 0;
-     var value4 = parseFloat($('#col_1_4').val()) || 0;
-     var value5 = parseFloat($('#col_1_5').val()) || 0;
-     var value6 = parseFloat($('#col_1_6').val()) || 0;
-     var value7 = parseFloat($('#col_1_7').val()) || 0;
-     var value8 = parseFloat($('#col_1_8').val()) || 0;
-     var value9 = parseFloat($('#col_1_9').val()) || 0;
-     var value10 = parseFloat($('#col_1_10').val()) || 0;
-     var value11 = parseFloat($('#col_1_11').val()) || 0;
-     var value12 = parseFloat($('#col_1_12').val()) || 0;
-     var value13 = parseFloat($('#col_1_13').val()) || 0;
-     var value14 = parseFloat($('#col_1_14').val()) || 0;
-     var value15 = parseFloat($('#col_1_15').val()) || 0;
-     var value16 = parseFloat($('#col_1_16').val()) || 0;
-     var value17 = parseFloat($('#col_1_17').val()) || 0;
-     var value18 = parseFloat($('#col_1_18').val()) || 0;
-     var value19 = parseFloat($('#col_1_19').val()) || 0;
-     var value20 = parseFloat($('#col_1_20').val()) || 0;
-     var value21 = parseFloat($('#col_1_21').val()) || 0;
-     var value22 = parseFloat($('#col_1_22').val()) || 0;
-     var value23 = parseFloat($('#col_1_23').val()) || 0;
-     var value24 = parseFloat($('#col_1_24').val()) || 0;
-     var value25 = parseFloat($('#col_1_25').val()) || 0;
-     var value26 = parseFloat($('#col_1_26').val()) || 0;
-     var value27 = parseFloat($('#col_1_27').val()) || 0;
-     var value28 = parseFloat($('#col_1_28').val()) || 0;
-     var value29 = parseFloat($('#col_1_29').val()) || 0;
-     var value30 = parseFloat($('#col_1_30').val()) || 0;
-     var value31 = parseFloat($('#col_1_31').val()) || 0;
-     var value32 = parseFloat($('#col_1_32').val()) || 0;
-     $('#sum').val(value1 + value2 + value3+ value4+ value5+ value6+ value7+ value8+ value9+ value10+ value11+ value12+ value13+ value14+  value15+ value16+ value17+ value18+ value19+ value20+ value21+ value22+ value23+ value24+ value25+ value26+ value27+ value28+ value29+ value30+ value31+ value32).triggerHandler('change');
-  });
-});
-$(function(){
-  $('#col_3_1, #col_3_2, #col_3_3, #col_3_4, #col_3_5, #col_3_6, #col_3_7, #col_3_8, #col_3_9, #col_3_10, #col_3_11, #col_3_12, #col_3_13, #col_3_14, #col_3_15, #col_3_16, #col_3_17, #col_3_18, #col_3_19, #col_3_20, #col_3_21, #col_3_22, #col_3_23, #col_3_24, #col_3_25, #col_3_26, #col_3_27, #col_3_28, #col_3_29, #col_3_30, #col_3_31, #col_3_32').keyup(function(){
-     var comvalue1 = parseFloat($('#col_3_1').val()) || 0;
-     var comvalue2 = parseFloat($('#col_3_2').val()) || 0;
-     var comvalue3 = parseFloat($('#col_3_3').val()) || 0;
-     var comvalue4 = parseFloat($('#col_3_4').val()) || 0;
-     var comvalue5 = parseFloat($('#col_3_5').val()) || 0;
-     var comvalue6 = parseFloat($('#col_3_6').val()) || 0;
-     var comvalue7 = parseFloat($('#col_3_7').val()) || 0;
-     var comvalue8 = parseFloat($('#col_3_8').val()) || 0;
-     var comvalue9 = parseFloat($('#col_3_9').val()) || 0;
-     var comvalue10 = parseFloat($('#col_3_10').val()) || 0;
-     var comvalue11 = parseFloat($('#col_3_11').val()) || 0;
-     var comvalue12 = parseFloat($('#col_3_12').val()) || 0;
-     var comvalue13 = parseFloat($('#col_3_13').val()) || 0;
-     var comvalue14 = parseFloat($('#col_3_14').val()) || 0;
-     var comvalue15 = parseFloat($('#col_3_15').val()) || 0;
-     var comvalue16 = parseFloat($('#col_3_16').val()) || 0;
-     var comvalue17 = parseFloat($('#col_3_17').val()) || 0;
-     var comvalue18 = parseFloat($('#col_3_18').val()) || 0;
-     var comvalue19 = parseFloat($('#col_3_19').val()) || 0;
-     var comvalue20 = parseFloat($('#col_3_20').val()) || 0;
-     var comvalue21 = parseFloat($('#col_3_21').val()) || 0;
-     var comvalue22 = parseFloat($('#col_3_22').val()) || 0;
-     var comvalue23 = parseFloat($('#col_3_23').val()) || 0;
-     var comvalue24 = parseFloat($('#col_3_24').val()) || 0;
-     var comvalue25 = parseFloat($('#col_3_25').val()) || 0;
-     var comvalue26 = parseFloat($('#col_3_26').val()) || 0;
-     var comvalue27 = parseFloat($('#col_3_27').val()) || 0;
-     var comvalue28 = parseFloat($('#col_3_28').val()) || 0;
-     var comvalue29 = parseFloat($('#col_3_29').val()) || 0;
-     var comvalue30 = parseFloat($('#col_3_30').val()) || 0;
-     var comvalue31 = parseFloat($('#col_3_31').val()) || 0;
-     var comvalue32 = parseFloat($('#col_3_32').val()) || 0;
-     $('#col_3_sum').val(comvalue1 + comvalue2 + comvalue3+ comvalue4+ comvalue5+ comvalue6+ comvalue7+ comvalue8+ comvalue9+ comvalue10+ comvalue11+ comvalue12+ comvalue13+ comvalue14+  comvalue15+ comvalue16+ comvalue17+ comvalue18+ comvalue19+ comvalue20+ comvalue21+ comvalue22+ comvalue23+ comvalue24+ comvalue25+ comvalue26+ comvalue27+ comvalue28+ comvalue29+ comvalue30+ comvalue31+ comvalue32).triggerHandler('change');
+
+$(function() { 
+  $('#col_1_1, #col_1_2, #col_1_3, #col_1_4, #col_1_5, #col_1_6, #col_1_7, #col_1_8, #col_1_9, #col_1_10, #col_1_11, #col_1_12, #col_1_13, #col_1_14, #col_1_15, #col_1_16, #col_1_17, #col_1_18, #col_1_19, #col_1_20, #col_1_21, #col_1_23, #col_1_23, #col_1_24, #col_1_25, #col_1_26, #col_1_27, #col_1_28, #col_1_29, #col_1_30, #col_1_31, #col_1_32').change(function(){
+    total('#col_1_1, #col_1_2, #col_1_3, #col_1_4, #col_1_5, #col_1_6, #col_1_7, #col_1_8, #col_1_9, #col_1_10, #col_1_11, #col_1_12, #col_1_13, #col_1_14, #col_1_15, #col_1_16, #col_1_17, #col_1_18, #col_1_19, #col_1_20, #col_1_21, #col_1_23, #col_1_23, #col_1_24, #col_1_25, #col_1_26, #col_1_27, #col_1_28, #col_1_29, #col_1_30, #col_1_31, #col_1_32','#sum');
   });
 });
 
 $(function(){
-  $('#col_4_1, #col_4_2, #col_4_3, #col_4_4, #col_4_5, #col_4_6, #col_4_7, #col_4_8, #col_4_9, #col_4_10, #col_4_11, #col_4_12, #col_4_13, #col_4_14, #col_4_15, #col_4_16, #col_4_17, #col_4_18, #col_4_19, #col_4_20, #col_4_21, #col_4_22, #col_4_23, #col_4_24, #col_4_25, #col_4_26, #col_4_27, #col_4_28, #col_4_29, #col_4_30, #col_4_31, #col_4_32').keyup(function(){
-     var comvalue1 = parseFloat($('#col_4_1').val()) || 0;
-     var comvalue2 = parseFloat($('#col_4_2').val()) || 0;
-     var comvalue3 = parseFloat($('#col_4_3').val()) || 0;
-     var comvalue4 = parseFloat($('#col_4_4').val()) || 0;
-     var comvalue5 = parseFloat($('#col_4_5').val()) || 0;
-     var comvalue6 = parseFloat($('#col_4_6').val()) || 0;
-     var comvalue7 = parseFloat($('#col_4_7').val()) || 0;
-     var comvalue8 = parseFloat($('#col_4_8').val()) || 0;
-     var comvalue9 = parseFloat($('#col_4_9').val()) || 0;
-     var comvalue10 = parseFloat($('#col_4_10').val()) || 0;
-     var comvalue11 = parseFloat($('#col_4_11').val()) || 0;
-     var comvalue12 = parseFloat($('#col_4_12').val()) || 0;
-     var comvalue13 = parseFloat($('#col_4_13').val()) || 0;
-     var comvalue14 = parseFloat($('#col_4_14').val()) || 0;
-     var comvalue15 = parseFloat($('#col_4_15').val()) || 0;
-     var comvalue16 = parseFloat($('#col_4_16').val()) || 0;
-     var comvalue17 = parseFloat($('#col_4_17').val()) || 0;
-     var comvalue18 = parseFloat($('#col_4_18').val()) || 0;
-     var comvalue19 = parseFloat($('#col_4_19').val()) || 0;
-     var comvalue20 = parseFloat($('#col_4_20').val()) || 0;
-     var comvalue21 = parseFloat($('#col_4_21').val()) || 0;
-     var comvalue22 = parseFloat($('#col_4_22').val()) || 0;
-     var comvalue23 = parseFloat($('#col_4_23').val()) || 0;
-     var comvalue24 = parseFloat($('#col_4_24').val()) || 0;
-     var comvalue25 = parseFloat($('#col_4_25').val()) || 0;
-     var comvalue26 = parseFloat($('#col_4_26').val()) || 0;
-     var comvalue27 = parseFloat($('#col_4_27').val()) || 0;
-     var comvalue28 = parseFloat($('#col_4_28').val()) || 0;
-     var comvalue29 = parseFloat($('#col_4_29').val()) || 0;
-     var comvalue30 = parseFloat($('#col_4_30').val()) || 0;
-     var comvalue31 = parseFloat($('#col_4_31').val()) || 0;
-     var comvalue32 = parseFloat($('#col_4_32').val()) || 0;
-     $('#col_4_sum').val(comvalue1 + comvalue2 + comvalue3+ comvalue4+ comvalue5+ comvalue6+ comvalue7+ comvalue8+ comvalue9+ comvalue10+ comvalue11+ comvalue12+ comvalue13+ comvalue14+  comvalue15+ comvalue16+ comvalue17+ comvalue18+ comvalue19+ comvalue20+ comvalue21+ comvalue22+ comvalue23+ comvalue24+ comvalue25+ comvalue26+ comvalue27+ comvalue28+ comvalue29+ comvalue30+ comvalue31+ comvalue32).triggerHandler('change');
+  $('#col_2_1, #col_2_2, #col_2_3, #col_2_4, #col_2_5, #col_2_6, #col_2_7, #col_2_8, #col_2_9, #col_2_10, #col_2_11, #col_2_12, #col_2_13, #col_2_14, #col_2_15, #col_2_16, #col_2_17, #col_2_18, #col_2_19, #col_2_20, #col_2_21, #col_2_22, #col_2_23, #col_2_24, #col_2_25, #col_2_26, #col_2_27, #col_2_28, #col_2_29, #col_2_30, #col_2_31, #col_2_32').change(function(){
+     total('#col_2_1, #col_2_2, #col_2_3, #col_2_4, #col_2_5, #col_2_6, #col_2_7, #col_2_8, #col_2_9, #col_2_10, #col_2_11, #col_2_12, #col_2_13, #col_2_14, #col_2_15, #col_2_16, #col_2_17, #col_2_18, #col_2_19, #col_2_20, #col_2_21, #col_2_22, #col_2_23, #col_2_24, #col_2_25, #col_2_26, #col_2_27, #col_2_28, #col_2_29, #col_2_30, #col_2_31, #col_2_32','#col_2_sum');
+  });
+});
+
+
+
+$(function(){
+  $('#col_3_1, #col_3_2, #col_3_3, #col_3_4, #col_3_5, #col_3_6, #col_3_7, #col_3_8, #col_3_9, #col_3_10, #col_3_11, #col_3_12, #col_3_13, #col_3_14, #col_3_15, #col_3_16, #col_3_17, #col_3_18, #col_3_19, #col_3_20, #col_3_21, #col_3_22, #col_3_23, #col_3_24, #col_3_25, #col_3_26, #col_3_27, #col_3_28, #col_3_29, #col_3_30, #col_3_31, #col_3_32').change(function(){
+       total('#col_3_1, #col_3_2, #col_3_3, #col_3_4, #col_3_5, #col_3_6, #col_3_7, #col_3_8, #col_3_9, #col_3_10, #col_3_11, #col_3_12, #col_3_13, #col_3_14, #col_3_15, #col_3_16, #col_3_17, #col_3_18, #col_3_19, #col_3_20, #col_3_21, #col_3_22, #col_3_23, #col_3_24, #col_3_25, #col_3_26, #col_3_27, #col_3_28, #col_3_29, #col_3_30, #col_3_31, #col_3_32','#col_3_sum');
+  });
+});
+
+$(function(){
+  $('#col_4_1, #col_4_2, #col_4_3, #col_4_4, #col_4_5, #col_4_6, #col_4_7, #col_4_8, #col_4_9, #col_4_10, #col_4_11, #col_4_12, #col_4_13, #col_4_14, #col_4_15, #col_4_16, #col_4_17, #col_4_18, #col_4_19, #col_4_20, #col_4_21, #col_4_22, #col_4_23, #col_4_24, #col_4_25, #col_4_26, #col_4_27, #col_4_28, #col_4_29, #col_4_30, #col_4_31, #col_4_32').change(function(){
+total('#col_4_1, #col_4_2, #col_4_3, #col_4_4, #col_4_5, #col_4_6, #col_4_7, #col_4_8, #col_4_9, #col_4_10, #col_4_11, #col_4_12, #col_4_13, #col_4_14, #col_4_15, #col_4_16, #col_4_17, #col_4_18, #col_4_19, #col_4_20, #col_4_21, #col_4_22, #col_4_23, #col_4_24, #col_4_25, #col_4_26, #col_4_27, #col_4_28, #col_4_29, #col_4_30, #col_4_31, #col_4_32','#col_4_sum');
   });
 });
 
@@ -1454,120 +1357,18 @@ $(function(){
   });
 
 $(function(){
-  $('#rowsum_1, #rowsum_2, #rowsum_3, #rowsum_4, #rowsum_5, #rowsum_6, #rowsum_7, #rowsum_8, #rowsum_9, #rowsum_10, #rowsum_11, #rowsum_12, #rowsum_13, #rowsum_14, #rowsum_15, #rowsum_16, #rowsum_17, #rowsum_18, #rowsum_19, #rowsum_20, #rowsum_21, #rowsum_22, #rowsum_23, #rowsum_24, #rowsum_25, #rowsum_26, #rowsum_27, #rowsum_28, #rowsum_29, #rowsum_30, #rowsum_31, #rowsum_32').keyup(function(){
-     var comvalue1 = parseFloat($('#rowsum_1').val()) || 0;
-     var comvalue2 = parseFloat($('#rowsum_2').val()) || 0;
-     var comvalue3 = parseFloat($('#rowsum_3').val()) || 0;
-     var comvalue4 = parseFloat($('#rowsum_4').val()) || 0;
-     var comvalue5 = parseFloat($('#rowsum_5').val()) || 0;
-     var comvalue6 = parseFloat($('#rowsum_6').val()) || 0;
-     var comvalue7 = parseFloat($('#rowsum_7').val()) || 0;
-     var comvalue8 = parseFloat($('#rowsum_8').val()) || 0;
-     var comvalue9 = parseFloat($('#rowsum_9').val()) || 0;
-     var comvalue10 = parseFloat($('#rowsum_10').val()) || 0;
-     var comvalue11 = parseFloat($('#rowsum_11').val()) || 0;
-     var comvalue12 = parseFloat($('#rowsum_12').val()) || 0;
-     var comvalue13 = parseFloat($('#rowsum_13').val()) || 0;
-     var comvalue14 = parseFloat($('#rowsum_14').val()) || 0;
-     var comvalue15 = parseFloat($('#rowsum_15').val()) || 0;
-     var comvalue16 = parseFloat($('#rowsum_16').val()) || 0;
-     var comvalue17 = parseFloat($('#rowsum_17').val()) || 0;
-     var comvalue18 = parseFloat($('#rowsum_18').val()) || 0;
-     var comvalue19 = parseFloat($('#rowsum_19').val()) || 0;
-     var comvalue20 = parseFloat($('#rowsum_20').val()) || 0;
-     var comvalue21 = parseFloat($('#rowsum_21').val()) || 0;
-     var comvalue22 = parseFloat($('#rowsum_22').val()) || 0;
-     var comvalue23 = parseFloat($('#rowsum_23').val()) || 0;
-     var comvalue24 = parseFloat($('#rowsum_24').val()) || 0;
-     var comvalue25 = parseFloat($('#rowsum_25').val()) || 0;
-     var comvalue26 = parseFloat($('#rowsum_26').val()) || 0;
-     var comvalue27 = parseFloat($('#rowsum_27').val()) || 0;
-     var comvalue28 = parseFloat($('#rowsum_28').val()) || 0;
-     var comvalue29 = parseFloat($('#rowsum_29').val()) || 0;
-     var comvalue30 = parseFloat($('#rowsum_30').val()) || 0;
-     var comvalue31 = parseFloat($('#rowsum_31').val()) || 0;
-     var comvalue32 = parseFloat($('#rowsum_32').val()) || 0;
-     $('#rowsum_sum').val(comvalue1 + comvalue2 + comvalue3+ comvalue4+ comvalue5+ comvalue6+ comvalue7+ comvalue8+ comvalue9+ comvalue10+ comvalue11+ comvalue12+ comvalue13+ comvalue14+  comvalue15+ comvalue16+ comvalue17+ comvalue18+ comvalue19+ comvalue20+ comvalue21+ comvalue22+ comvalue23+ comvalue24+ comvalue25+ comvalue26+ comvalue27+ comvalue28+ comvalue29+ comvalue30+ comvalue31+ comvalue32);
+  $('#rowsum_1, #rowsum_2, #rowsum_3, #rowsum_4, #rowsum_5, #rowsum_6, #rowsum_7, #rowsum_8, #rowsum_9, #rowsum_10, #rowsum_11, #rowsum_12, #rowsum_13, #rowsum_14, #rowsum_15, #rowsum_16, #rowsum_17, #rowsum_18, #rowsum_19, #rowsum_20, #rowsum_21, #rowsum_22, #rowsum_23, #rowsum_24, #rowsum_25, #rowsum_26, #rowsum_27, #rowsum_28, #rowsum_29, #rowsum_30, #rowsum_31, #rowsum_32').change(function(){
+    total('#rowsum_1, #rowsum_2, #rowsum_3, #rowsum_4, #rowsum_5, #rowsum_6, #rowsum_7, #rowsum_8, #rowsum_9, #rowsum_10, #rowsum_11, #rowsum_12, #rowsum_13, #rowsum_14, #rowsum_15, #rowsum_16, #rowsum_17, #rowsum_18, #rowsum_19, #rowsum_20, #rowsum_21, #rowsum_22, #rowsum_23, #rowsum_24, #rowsum_25, #rowsum_26, #rowsum_27, #rowsum_28, #rowsum_29, #rowsum_30, #rowsum_31, #rowsum_32','#rowsum_sum');
   });
 });
 
 
 $(function(){
-  $('#col_6_1, #col_6_2, #col_6_3, #col_6_4, #col_6_5, #col_6_6, #col_6_7, #col_6_8, #col_6_9, #col_6_10, #col_6_11, #col_6_12, #col_6_13, #col_6_14, #col_6_15, #col_6_16, #col_6_17, #col_6_18, #col_6_19, #col_6_20, #col_6_21, #col_6_22, #col_6_23, #col_6_24, #col_6_25, #col_6_26, #col_6_27, #col_6_28, #col_6_29, #col_6_30, #col_6_31, #col_6_32').keyup(function(){
-     var comvalue1 = parseFloat($('#col_6_1').val()) || 0;
-     var comvalue2 = parseFloat($('#col_6_2').val()) || 0;
-     var comvalue3 = parseFloat($('#col_6_3').val()) || 0;
-     var comvalue4 = parseFloat($('#col_6_4').val()) || 0;
-     var comvalue5 = parseFloat($('#col_6_5').val()) || 0;
-     var comvalue6 = parseFloat($('#col_6_6').val()) || 0;
-     var comvalue7 = parseFloat($('#col_6_7').val()) || 0;
-     var comvalue8 = parseFloat($('#col_6_8').val()) || 0;
-     var comvalue9 = parseFloat($('#col_6_9').val()) || 0;
-     var comvalue10 = parseFloat($('#col_6_10').val()) || 0;
-     var comvalue11 = parseFloat($('#col_6_11').val()) || 0;
-     var comvalue12 = parseFloat($('#col_6_12').val()) || 0;
-     var comvalue13 = parseFloat($('#col_6_13').val()) || 0;
-     var comvalue14 = parseFloat($('#col_6_14').val()) || 0;
-     var comvalue15 = parseFloat($('#col_6_15').val()) || 0;
-     var comvalue16 = parseFloat($('#col_6_16').val()) || 0;
-     var comvalue17 = parseFloat($('#col_6_17').val()) || 0;
-     var comvalue18 = parseFloat($('#col_6_18').val()) || 0;
-     var comvalue19 = parseFloat($('#col_6_19').val()) || 0;
-     var comvalue20 = parseFloat($('#col_6_20').val()) || 0;
-     var comvalue21 = parseFloat($('#col_6_21').val()) || 0;
-     var comvalue22 = parseFloat($('#col_6_22').val()) || 0;
-     var comvalue23 = parseFloat($('#col_6_23').val()) || 0;
-     var comvalue24 = parseFloat($('#col_6_24').val()) || 0;
-     var comvalue25 = parseFloat($('#col_6_25').val()) || 0;
-     var comvalue26 = parseFloat($('#col_6_26').val()) || 0;
-     var comvalue27 = parseFloat($('#col_6_27').val()) || 0;
-     var comvalue28 = parseFloat($('#col_6_28').val()) || 0;
-     var comvalue29 = parseFloat($('#col_6_29').val()) || 0;
-     var comvalue30 = parseFloat($('#col_6_30').val()) || 0;
-     var comvalue31 = parseFloat($('#col_6_31').val()) || 0;
-     var comvalue32 = parseFloat($('#col_6_32').val()) || 0;
-     $('#col_6_sum').val(comvalue1 + comvalue2 + comvalue3+ comvalue4+ comvalue5+ comvalue6+ comvalue7+ comvalue8+ comvalue9+ comvalue10+ comvalue11+ comvalue12+ comvalue13+ comvalue14+  comvalue15+ comvalue16+ comvalue17+ comvalue18+ comvalue19+ comvalue20+ comvalue21+ comvalue22+ comvalue23+ comvalue24+ comvalue25+ comvalue26+ comvalue27+ comvalue28+ comvalue29+ comvalue30+ comvalue31+ comvalue32);
+  $('#col_6_1, #col_6_2, #col_6_3, #col_6_4, #col_6_5, #col_6_6, #col_6_7, #col_6_8, #col_6_9, #col_6_10, #col_6_11, #col_6_12, #col_6_13, #col_6_14, #col_6_15, #col_6_16, #col_6_17, #col_6_18, #col_6_19, #col_6_20, #col_6_21, #col_6_22, #col_6_23, #col_6_24, #col_6_25, #col_6_26, #col_6_27, #col_6_28, #col_6_29, #col_6_30, #col_6_31, #col_6_32').change(function(){
+  total('#col_6_1, #col_6_2, #col_6_3, #col_6_4, #col_6_5, #col_6_6, #col_6_7, #col_6_8, #col_6_9, #col_6_10, #col_6_11, #col_6_12, #col_6_13, #col_6_14, #col_6_15, #col_6_16, #col_6_17, #col_6_18, #col_6_19, #col_6_20, #col_6_21, #col_6_22, #col_6_23, #col_6_24, #col_6_25, #col_6_26, #col_6_27, #col_6_28, #col_6_29, #col_6_30, #col_6_31, #col_6_32','#col_6_sum');
   });
 });
 
-
-$(function(){
-  $('#col_2_1, #col_2_2, #col_2_3, #col_2_4, #col_2_5, #col_2_6, #col_2_7, #col_2_8, #col_2_9, #col_2_10, #col_2_11, #col_2_12, #col_2_13, #col_2_14, #col_2_15, #col_2_16, #col_2_17, #col_2_18, #col_2_19, #col_2_20, #col_2_21, #col_2_22, #col_2_23, #col_2_24, #col_2_25, #col_2_26, #col_2_27, #col_2_28, #col_2_29, #col_2_30, #col_2_31, #col_2_32').keyup(function(){
-     var comvalue1 = parseFloat($('#col_2_1').val()) || 0;
-     var comvalue2 = parseFloat($('#col_2_2').val()) || 0;
-     var comvalue3 = parseFloat($('#col_2_3').val()) || 0;
-     var comvalue4 = parseFloat($('#col_2_4').val()) || 0;
-     var comvalue5 = parseFloat($('#col_2_5').val()) || 0;
-     var comvalue6 = parseFloat($('#col_2_6').val()) || 0;
-     var comvalue7 = parseFloat($('#col_2_7').val()) || 0;
-     var comvalue8 = parseFloat($('#col_2_8').val()) || 0;
-     var comvalue9 = parseFloat($('#col_2_9').val()) || 0;
-     var comvalue10 = parseFloat($('#col_2_10').val()) || 0;
-     var comvalue11 = parseFloat($('#col_2_11').val()) || 0;
-     var comvalue12 = parseFloat($('#col_2_12').val()) || 0;
-     var comvalue13 = parseFloat($('#col_2_13').val()) || 0;
-     var comvalue14 = parseFloat($('#col_2_14').val()) || 0;
-     var comvalue15 = parseFloat($('#col_2_15').val()) || 0;
-     var comvalue16 = parseFloat($('#col_2_16').val()) || 0;
-     var comvalue17 = parseFloat($('#col_2_17').val()) || 0;
-     var comvalue18 = parseFloat($('#col_2_18').val()) || 0;
-     var comvalue19 = parseFloat($('#col_2_19').val()) || 0;
-     var comvalue20 = parseFloat($('#col_2_20').val()) || 0;
-     var comvalue21 = parseFloat($('#col_2_21').val()) || 0;
-     var comvalue22 = parseFloat($('#col_2_22').val()) || 0;
-     var comvalue23 = parseFloat($('#col_2_23').val()) || 0;
-     var comvalue24 = parseFloat($('#col_2_24').val()) || 0;
-     var comvalue25 = parseFloat($('#col_2_25').val()) || 0;
-     var comvalue26 = parseFloat($('#col_2_26').val()) || 0;
-     var comvalue27 = parseFloat($('#col_2_27').val()) || 0;
-     var comvalue28 = parseFloat($('#col_2_28').val()) || 0;
-     var comvalue29 = parseFloat($('#col_2_29').val()) || 0;
-     var comvalue30 = parseFloat($('#col_2_30').val()) || 0;
-     var comvalue31 = parseFloat($('#col_2_31').val()) || 0;
-     var comvalue32 = parseFloat($('#col_2_31').val()) || 0;
-     $('#col_2_sum').val(comvalue1 + comvalue2 + comvalue3+ comvalue4+ comvalue5+ comvalue6+ comvalue7+ comvalue8+ comvalue9+ comvalue10+ comvalue11+ comvalue12+ comvalue13+ comvalue14+  comvalue15+ comvalue16+ comvalue17+ comvalue18+ comvalue19+ comvalue20+ comvalue21+ comvalue22+ comvalue23+ comvalue24+ comvalue25+ comvalue26+ comvalue27+ comvalue28+ comvalue29+ comvalue30+ comvalue31+ comvalue32).triggerHandler('change');
-  });
-});
 
 
 
