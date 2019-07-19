@@ -3,7 +3,7 @@
 
 {% block actioncolumn %}
    
- <p class="returnRef"><a href="/fha/v8/referrals-fme">Return to case list</a></p>
+ <p class="returnRef"><a href="/{{path }}/scenario1/referrals-fme">Return to case list</a></p>
   <hr>
  <div class="case-status">
 <p class="mt10 mb0 bold-small">
@@ -12,7 +12,7 @@
 <p class="mt10 mb0 bold-small">
 Ready for paper based assessment  
 </p>
-<p><a href="/{{path }}/scrutiny-scenarios/scenario1/not-testing" class="button">Start assessment</a></p>
+<p><a href="/{{path }}/scenario1/not-testing" class="button">Start assessment</a></p>
 {% else %}
 <p class="mt10 mb0 bold-small">
 Appointment booked
@@ -27,7 +27,7 @@ Appointment booked
 
 <hr>
 <!--<ul class="secondary-actions">
- <li><a href="/{{path }}/scrutiny-scenarios/scenario1/scenario/recordFME" class="">Record evidence</a></li>
+ <li><a href="/{{path }}/scenario1/scenario/recordFME" class="">Record evidence</a></li>
   
   </ul>-->
 </div>
@@ -54,7 +54,7 @@ Bobby Henderson
 	
 	       <li>
 	         <span class="circle circle-step circle-white">2</span>
-	         <h2 class="govuk-heading-m"><a href="/{{path }}/scrutiny-scenarios/scenario1/recordFMEdecision">Make recommendation</a></h2>
+	         <h2 class="govuk-heading-m"><a href="/{{path }}/scenario1/recordFMEdecision">Make recommendation</a></h2>
 	       </li>
 	     </ul>
 	</div>
@@ -118,7 +118,7 @@ Bobby Henderson
 						<tbody>
 							<tr>
 								<th>Type</th>
-								<td><a href="/{{path }}/scrutiny-scenarios/scenario1/not-testing">GP report</a></td>
+								<td><a href="/{{path }}/scenario1/not-testing">GP report</a></td>
 							</tr>
 							<tr>
 								<th>Date</th>
@@ -131,7 +131,7 @@ Bobby Henderson
 						</tbody>
 					</table>
 					
-					<p class="mt30"><a href="/{{path }}/scrutiny-scenarios/scenario1/evidence-full" class="secondary-invert">View all recorded evidence</a></p>
+					<p class="mt30"><a href="/{{path }}/scenario1/evidence-full" class="secondary-invert">View all recorded evidence</a></p>
 					
 				</div>
 				<!-- / inner card -->
@@ -155,8 +155,8 @@ Bobby Henderson
 				<div class="portal-inner">
 					<p>Choose the evidence you want to request:</p>
 					<ul class="action-list">
-						<li><a href="/{{path }}/scrutiny-scenarios/scenario1/evidence-gpRequest" class="secondary-invert">GP report</a></li>
-						<li><a href="/{{path }}/scrutiny-scenarios/scenario1/not-testing" class="secondary-invert">Factual report</a></li>
+						<li><a href="/{{path }}/scenario1/evidence-gpRequest" class="secondary-invert">GP report</a></li>
+						<li><a href="/{{path }}/scenario1/not-testing" class="secondary-invert">Factual report</a></li>
 						<!-- <li><a href="#" class="secondary-invert">Other evidence</a></li> -->
 					</ul>
 				</div>
@@ -181,8 +181,8 @@ Bobby Henderson
 				<div class="portal-inner">
 					<p>Choose the evidence type you want to record:</p>
 					<ul class="action-list">
-						<li><a href="/{{path }}/scrutiny-scenarios/scenario1/not-testing" class="secondary-invert">Record a telephone conversation</a></li>
-						<li><a href="/{{path }}/scrutiny-scenarios/scenario1/not-testing" class="secondary-invert">Record other evidence</a></li>
+						<li><a href="/{{path }}/scenario1/not-testing" class="secondary-invert">Record a telephone conversation</a></li>
+						<li><a href="/{{path }}/scenario1/not-testing" class="secondary-invert">Record other evidence</a></li>
 					</ul>
 					
 					
@@ -196,7 +196,7 @@ Bobby Henderson
 							<h4>Requested evidence</h4>
 							<ul class="action-list">
 								<li><p>GP report requested on 26 July 2019</p>
-								<a href="/{{path }}/scrutiny-scenarios/scenario1/not-testing" class="secondary-invert">Record GP report</a></li>
+								<a href="/{{path }}/scenario1/not-testing" class="secondary-invert">Record GP report</a></li>
 							</ul>
 						</div>
 	{% endif %}

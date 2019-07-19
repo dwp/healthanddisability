@@ -2,7 +2,7 @@
 
 
 {% block actioncolumn %}
-<p class="returnRef"><a href="/{{path }}/scrutiny-scenarios/scenario2/referrals-fme">Return to case list</a></p>
+<p class="returnRef"><a href="/{{path }}/scenario2/referrals-fme">Return to case list</a></p>
   <hr>
  <div class="case-status">
 <p class="mt10 mb0 bold-small">
@@ -11,26 +11,23 @@
 <p class="mt10 mb0 bold-small">
 Ready for paper based assessment  
 </p>
-<p><a href="/{{path }}/scrutiny-scenarios/scenario2/not-testing" class="button">Start assessment</a></p>
+<p><a href="/{{path }}/scenario2/not-testing" class="button">Start assessment</a></p>
 {% else %}
 <p class="mt10 mb0 bold-small">
 Ready for review
-<p><a href="/{{path }}/scrutiny-scenarios/scenario2/not-testing" class="button">Make recommendation</a></p>
+<p><a href="/{{path }}/scenario2/not-testing" class="button">Make recommendation</a></p>
 </p>
 {% endif %}
 </p>
 
 
 <hr>
-<!--<ul class="secondary-actions">
- <li><a href="/{{path }}/scrutiny-scenarios/scenario1/recordFME" class="">Record evidence</a></li>
-  
-  </ul>-->
+
 </div>
 {% endblock %}
 
 {% block citizen_detail %}
-Bobby Henderson
+Roberto Crisp
 {% endblock %}
 
 {% block citizen_content %}
@@ -44,7 +41,7 @@ Bobby Henderson
     <div class="column-full">
     
     {# macro #}
-  {{ nav.case_tabs("details-fme",1,path1, customer._id) }}
+  {{ nav.scenario_tabs("details-fme",1,path1, customer._id) }}
     
   <div class="grid-row">
     <div class="column-third">
@@ -64,7 +61,7 @@ Bobby Henderson
 
            <h1 class="heading-large mt10">Illnesses, disabilities and medication </h1>
           <h2 class="heading-medium">Recorded illnesses and disabilities</h2>
-          <p class=""><a href="/{{path }}/scrutiny-scenarios/scenario1/not-testing" class="secondary-invert">Add or edit illnesses and disabilities</a></p>
+          <p class=""><a href="/{{path }}/scenario1/not-testing" class="secondary-invert">Add or edit illnesses and disabilities</a></p>
           <div class="table-layout">
           <table>
               <caption class="visually-hidden">List of illnesses and disabilities</caption>
@@ -98,7 +95,7 @@ Bobby Henderson
           </div>
           
           <h2 class="heading-medium">Medication and side effects</h2>
-          <p class=""><a href="/{{path }}/scrutiny-scenarios/scenario1/not-testing" class="secondary-invert">Add or edit medication or side effects</a></p>			
+          <p class=""><a href="/{{path }}/scenario1/not-testing" class="secondary-invert">Add or edit medication or side effects</a></p>			
       
           
               

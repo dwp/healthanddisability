@@ -1,0 +1,31 @@
+{% extends path+"/_layout.html" %} 
+
+
+
+{% block assess_content %}
+<main id="content" role="main" class="main-content">
+    <div class="container">
+       
+        <div class="grid-row">
+             
+            <div class="column-one-quarter">
+
+                {% block horizontal_secondary_nav %}
+                
+              
+
+          
+                {% endblock %}  
+            </div>
+            <div class="column-three-quarters">
+                {% block caselist_content %}
+
+                {% endblock %}
+            </div>
+            <!-- column -->
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+</main>
+{% endblock %}
