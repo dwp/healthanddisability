@@ -22,10 +22,9 @@
 
 	
 	
-	
-	<form method="post" action="exceptionalCircumstances">
-	
 
+<form method="post" action="exceptionalCircumstances" id="sufficient-evidence">
+	
 <div class="form-group">
   <fieldset class="inline">
 
@@ -33,11 +32,11 @@
 <legend class="heading-medium mb10">Do you have sufficient evidence to make your recommendation?</legend>
 
     <div class="multiple-choice">
-      <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+      <input id="radio-inline-1" type="radio" name="radio-inline-group" value="yes">
       <label for="radio-inline-1">Yes</label>
     </div>
     <div class="multiple-choice" data-target="curtail-decision-no">
-      <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+      <input id="radio-inline-2" type="radio" name="radio-inline-group" value="no">
       <label for="radio-inline-2">No</label>
     </div>
     <div class="panel panel-border-narrow js-hidden" id="curtail-decision-no">
@@ -46,15 +45,28 @@
 
   </fieldset>
 </div>
-	
 
-    <p><input type="submit" class="button" value="Continue" id="submitButton"></p>
+<p><input type="submit" class="button" value="Continue" id="submitButton"></p>
+
 		</form>	
 
   </div><!-- column -->
 </div><!-- row -->
 
 
+
+<script type="text/javascript">
+
+$("radio-inline-group").change(function(){
+if ($("radio-inline-group").val() == 'yes'){
+   $("#sufficient-evidence").attr("action","exceptionalCircumstances");
+}
+else
+{
+   $("#sufficient-evidence").attr("action","wca-index");
+}
+});
+</script>
 
 {% endblock %}
 
