@@ -1,4 +1,4 @@
-{% extends path+"/_layout-case-simple.html" %}
+{% extends path+"/_layout-stripped.html" %}
 
 
 {% block actioncolumn %}
@@ -6,20 +6,17 @@
  <!-- <p class="returnRef"><a href="/fha/v8/referrals-fme">Return to case list</a></p> 
   <hr>-->
  <div class="case-status">
-<p class="mt10 mb0 bold-small">
 
-    Not testing
-</p>
+<h2 class="heading-small mb5">Other scenarios</h2>
 
-
-<hr>
+<ul class="scenario-nav">
+	<li><a href="#" class="secondary-invert">Appointment</a></li>
+	<li><a href="#" class="secondary-invert">Capacity management</a></li>
+	<li><a href="#" class="secondary-invert">Assessment</a></li>
+</ul>
 
 </div>
 
-{% endblock %}
-
-{% block citizen_detail %}
-Bobby Henderson
 {% endblock %}
 
 {% block citizen_content %}
@@ -40,18 +37,50 @@ Bobby Henderson
        <div class="column-full">
     
     
-    	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    	<p><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
 		
 		
 	
 				
+			<h1 class="heading-large"><span class="heading-secondary">Scenarios</span>Scrutiny</h1>
+
+          
+			  <hr>
+			  
+			  
+			  <div class="grid-row">
+			  <div class="column-three-quarters">
+			  
+					  <div class="scenario">
+						 <h2 class="heading-medium">Making a recommendation</h2>
+			             <p>&ndash; FME request and appointment referral combined at first scrutiny<br>
+			             	&ndash; Evidence being recorded after an appointment has been booked leading to second scrutiny</p>
+			             <p><a href="/{{path }}/scenario2/referrals-fme" class="button secondary-invert">Start scenario</a></p> 
+					 </div>
+					 
+					 <hr>
+
+			  
+			  		<div class="scenario">
+						 <h2 class="heading-medium">Further medical evidence</h2>
+			             <p>Scenario to cover FME arriving late in the processs</p>
+			             <p><a href="/{{path }}/scenario1/referrals-fme" class="button secondary-invert">Start scenario</a></p> 
+					 </div>
+					 
+					 <hr>
+          
+          
+					  <div class="scenario">
+						 <h2 class="heading-medium">Timeline</h2>
+			             <p>Extended timeline to include extra detail filtering and add a note feature</p>
+			             <p><a href="/{{path }}/decisionmaker/timeline" class="button secondary-invert">Start scenario</a></p> 
+					 </div>
+		             
+         
+			  </div>
+			  </div>
 				
-	
-				<h1 class="heading-large">OOPS! We're not testing this functionality today</h1></legend>
-				
-				<p class="lede">Don't worry, just use the back button above and we'll carry on with the test.</p>
-				
-				</div>
+	</div>
 
 
   </div><!-- row -->

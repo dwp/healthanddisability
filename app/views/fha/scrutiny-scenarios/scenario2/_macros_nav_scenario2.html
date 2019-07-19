@@ -1,4 +1,4 @@
-{% macro case_tabs(selected,num,path, id) %}
+{% macro scenario_tabs(selected,num,path, id) %}
   <div class="section-tabs js-tabs clearfix mb20">
     <ul>
 
@@ -11,7 +11,7 @@
         ] %} 
    
       {% for item in navs %}
-        <li {% if item.url == selected %} class="active"{% endif %}><a href="/{{path }}/scenario2/{{ item.url }}/">{{ item.label }}</a></li>
+        <li {% if item.url == selected %} class="active"{% endif %}><a href="/fha/scrutiny-scenarios/scenario2/{{ item.url }}/">{{ item.label }}</a></li>
       {% endfor %}
     </ul>
   </div>
