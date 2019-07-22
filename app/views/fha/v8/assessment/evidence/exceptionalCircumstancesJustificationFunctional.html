@@ -1,0 +1,75 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+<h1 class="heading-large">Functional LCRWA</h1>
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+	
+	<form method="post" action="recommendedReviewPeriod">
+	
+
+
+	<p>Activity: 
+		{% if data['lcwra']==='lcwra1'%}
+		{% elif data['lcwra']==='lcwra6'%}
+		Moving around and climbing steps without someone’s help
+		{% elif data['lcwra']==='lcwra7'%}
+		Standing, sitting and moving between the two
+		{% elif data['lcwra']==='lcwra8'%}
+		Reaching
+		{% elif data['lcwra']==='lcwra9'%}
+		Picking things up and moving them
+		{% elif data['lcwra']==='lcwra10'%}
+		Using your hands
+		{% elif data['lcwra']==='lcwra11'%}
+		Speaking, writing and typing
+		{% elif data['lcwra']==='lcwra12'%}
+		Hearing and reading
+		{% elif data['lcwra']==='lcwra13'%}
+		Controlling your bowels and bladder
+		{% elif data['lcwra']==='lcwra14'%}
+		Learning to do new tasks
+		{% elif data['lcwra']==='lcwra15'%}
+		Being aware of hazards and danger
+		{% elif data['lcwra']==='lcwra16'%}
+		Planning, starting and finishing everyday tasks
+		{% elif data['lcwra']==='lcwra17'%}
+		Coping with changes to your daily routine
+		{% elif data['lcwra']==='lcwra18'%}
+		Meeting and being with people
+		{% elif data['lcwra']==='lcwra19'%}
+		Behaving appropriately around other people
+		{% elif data['lcwra']==='lcwra20'%}
+		Eating and drinking
+		{% endif %}
+		</p>
+
+		<div class="form-group">
+			<label class="form-label-bold" for="justify">Give reasons</label>
+			<textarea class="form-control form-control-3-4" name="justify" id="justify" rows="8"></textarea>
+		</div>
+
+    <p><input type="submit" class="button" value="Continue" id="submitButton"></p>
+		</form>	
+
+  </div><!-- column -->
+</div><!-- row -->
+
+
+
+{% endblock %}

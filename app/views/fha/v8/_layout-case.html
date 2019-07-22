@@ -139,6 +139,7 @@ or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes'
           </div>
       </form>
 
+
       {% elif customer.status == 'Ready for assessment' %}
       <form class="" method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/descriptorchoice">
 		  <p><button  class="button">Start assessment review</button></p>
