@@ -11,7 +11,7 @@
 
 <p class="mt30 mb20">Assessment started: {{ last_one.time | formatDate("H:mma D MMMM YYYY") }}</p>
 
-<!-- START -->
+
 <div class="grid-row">
   <div class="column-two-thirds">
 
@@ -20,6 +20,10 @@
           <li class="task-list-item"><a href="medicalConditionsEdit">Medical conditions {% if data['illnessEffectsVisited'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
            <li class="task-list-item"><a href="#">Social and work history {% if data['socialWorkHistory'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
             <li class="task-list-item"><a href="#">Typical day {% if data['typicalDay'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+           <li class="task-list-item"><a href="#">Physical assessments{% if data['physicalAssessed'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+           <li class="task-list-item"><a href="#">Mental state examination {% if data['mental-health'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+            <li class="task-list-item"><a href="#">Observations{% if data['observedBehaviour'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+            <li class="task-list-item"><a href="#">Curtail this assessment {% if data['exceptionalCircumstances'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
           </ul>
         </div>
   </div><!-- column here -->

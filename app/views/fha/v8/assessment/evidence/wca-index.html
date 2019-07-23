@@ -18,7 +18,7 @@
 
       <div class="task-list">
 					<ul class="task-list-itmes">
-          <li class="task-list-item"><a href="medicalConditions1">Medical conditions {% if data['illnessEffectsVisited'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+          <li class="task-list-item"><a href="medicalConditions1">Medical conditions {% if data['illnessEffectsFinished'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
            <li class="task-list-item"><a href="socialWorkHistory">Social and work history {% if data['socialWorkHistory'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
            <li class="task-list-item"><a href="typicalDay">Typical day {% if data['typicalDay'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
           </ul>
@@ -31,9 +31,9 @@
 <form class="mt30" method="post" action="wca-index_step2">
   <p class="mt30"><button class="button">Save and continue</button></p>
 </form>
-<form class="mt30" method="post" action="curtailAssessmentDecision">
+<!--<form class="mt30" method="post" action="curtailAssessmentDecision">
   <p class="mt30"><button class="button-secondary">Curtail assessment</button></p>
-</form>
+</form>-->
 {% else %}
 {% endif %}
 </div>
