@@ -180,6 +180,59 @@
 <!-- / report item -->
 
 
+<!-- Shows / Hides content based on user having visited page
+{% if data['socialWorkHistory'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}
+-->
+
+<!-- Displays report item based on selection from LCWRA page -->
+{% if data['lcwra']==='lcwra1'%}
+{% elif data['lcwra']==='lcwra2' or data['lcwra']==='lcwra3' or data['lcwra']==='lcwra4'%}
+<div class="report-item">
+
+	<h2 class="heading-large">Exceptional Circumstances</h2> 
+	
+	<div class="inner-focus">
+		
+		<h2 class="heading-medium">Treat as LCWRA</h2>
+
+		<p><span style="font-weight:bold;">Reason:</span>
+		{% if data['lcwra']==='lcwra1'%}
+		{% elif data['lcwra']==='lcwra2'%}
+		Risks associated with pregnancy
+		{% elif data['lcwra']==='lcwra3'%}
+		Cancer treatment underway
+		{% elif data['lcwra']==='lcwra4'%}
+		Terminal illness
+		{% endif %}
+		</p>
+
+		<h4 class="heading-small">Justification:</h4>
+		<p>{{ justifyTreatLCWRA }}</p>
+
+		<h4 class="heading-small">Recommended review period:</h4>
+		{% if data['reviewPeriod']==='reviewPeriod1'%}
+		{% elif data['reviewPeriod']==='3months'%}
+		3 months
+		{% elif data['reviewPeriod']==='6months'%}
+		6 months
+		{% elif data['reviewPeriod']==='12months'%}
+		12 months
+		{% elif data['reviewPeriod']==='18months'%}
+		18 months
+		{% elif data['reviewPeriod']==='2years'%}
+		2 years
+		{% elif data['reviewPeriod']==='longerterm'%}
+		longer term
+		{% elif data['reviewPeriod']==='notrequired'%}
+		not required
+		{% endif %}
+	</div>
+	
+	<p class="edit-report"><a href="exceptionalCircumstances" class="button-secondary">Edit exceptional circumstances</a></p>
+	
+</div>
+
+{% elif data['lcwra']==='lcwra6' or data['lcwra']==='lcwra7' or data['lcwra']==='lcwra8' or data['lcwra']==='lcwra9' or data['lcwra']==='lcwra10' or data['lcwra']==='lcwra11' or data['lcwra']==='lcwra12' or data['lcwra']==='lcwra13' or data['lcwra']==='lcwra14' or data['lcwra']==='lcwra15' or data['lcwra']==='lcwra16' or data['lcwra']==='lcwra17' or data['lcwra']==='lcwra18' or data['lcwra']==='lcwra19' or data['lcwra']==='lcwra20'%}
 <div class="report-item">
 
 	<h2 class="heading-large">Medical opinion</h2> 
@@ -188,15 +241,8 @@
 		
 		<h2 class="heading-medium">Functional LCWRA</h2>
 		
-		
 		<p><span style="font-weight:bold;">Activity:</span>
 		{% if data['lcwra']==='lcwra1'%}
-		{% elif data['lcwra']==='lcwra2'%}
-		Risks associated with pregnancy
-		{% elif data['lcwra']==='lcwra3'%}
-		Cancer treatment underway
-		{% elif data['lcwra']==='lcwra4'%}
-		Terminal illness
 		{% elif data['lcwra']==='lcwra6'%}
 		Moving around and climbing steps without someone’s help
 		{% elif data['lcwra']==='lcwra7'%}
@@ -229,58 +275,124 @@
 		Eating and drinking
 		{% endif %}
 		</p>
-		<!--
 
-		<h4 class="heading-small">Activity:</h4>
+		<h4 class="heading-small">Justification:</h4>
+		<p>{{ justifyFunctionalLCWRA }}</p>
 
-		{% if data['lcwra']==='lcwra1'%}
-		{% elif data['lcwra']==='lcwra2'%}
-		<p>Risks associated with pregnancy</p>
-		{% elif data['lcwra']==='lcwra3'%}
-		<p>Cancer treatment underway</p>
-		{% elif data['lcwra']==='lcwra4'%}
-		<p>Terminal illness</p>
-		{% elif data['lcwra']==='lcwra6'%}
-		<p>Moving around and climbing steps without someone’s help</p>
-		{% elif data['lcwra']==='lcwra7'%}
-		<p>Standing, sitting and moving between the two</p>
-		{% elif data['lcwra']==='lcwra8'%}
-		<p>Reaching</p>
-		{% elif data['lcwra']==='lcwra9'%}
-		<p>Picking things up and moving them</p>
-		{% elif data['lcwra']==='lcwra10'%}
-		<p>Using your hands</p>
-		{% elif data['lcwra']==='lcwra11'%}
-		<p>Speaking, writing and typing</p>
-		{% elif data['lcwra']==='lcwra12'%}
-		<p>Hearing and reading</p>
-		{% elif data['lcwra']==='lcwra13'%}
-		<p>Controlling your bowels and bladder</p>
-		{% elif data['lcwra']==='lcwra14'%}
-		<p>Learning to do new tasks</p>
-		{% elif data['lcwra']==='lcwra14'%}
-		<p>Being aware of hazards and danger</p>
-		{% elif data['lcwra']==='lcwra16'%}
-		<p>Planning, starting and finishing everyday tasks</p>
-		{% elif data['lcwra']==='lcwra17'%}
-		<p>Coping with changes to your daily routine</p>
-		{% elif data['lcwra']==='lcwra18'%}
-		<p>Meeting and being with people</p>
-		{% elif data['lcwra']==='lcwra19'%}
-		<p>Behaving appropriately around other people</p>
-		{% elif data['lcwra']==='lcwra20'%}
-		<p>Eating and drinking</p>
+		<h4 class="heading-small">Recommended review period:</h4>
+		{% if data['reviewPeriod']==='reviewPeriod1'%}
+		{% elif data['reviewPeriod']==='3months'%}
+		3 months
+		{% elif data['reviewPeriod']==='6months'%}
+		6 months
+		{% elif data['reviewPeriod']==='12months'%}
+		12 months
+		{% elif data['reviewPeriod']==='18months'%}
+		18 months
+		{% elif data['reviewPeriod']==='2years'%}
+		2 years
+		{% elif data['reviewPeriod']==='longerterm'%}
+		longer term
+		{% elif data['reviewPeriod']==='notrequired'%}
+		not required
 		{% endif %}
-		-->
-
-		<h4 class="heading-small">Reason:</h4>
-		<p>{{ justify }}</p>
 	</div>
 	
 	<p class="edit-report"><a href="exceptionalCircumstances" class="button-secondary">Edit medical opinion</a></p>
 	
 </div>
+
+{% endif %}		
+
+
+
+<!-- Treat as LCWRA Content Block -->
+<!--
+<div class="report-item">
+
+	<h2 class="heading-large">Exceptional Circumstances</h2> 
+	
+	<div class="inner-focus">
+		
+		<h2 class="heading-medium">Treat as LCWRA</h2>
+
+		<p><span style="font-weight:bold;">Reason:</span>
+		{% if data['lcwra']==='lcwra1'%}
+		{% elif data['lcwra']==='lcwra2'%}
+		Risks associated with pregnancy
+		{% elif data['lcwra']==='lcwra3'%}
+		Cancer treatment underway
+		{% elif data['lcwra']==='lcwra4'%}
+		Terminal illness
+		{% endif %}
+		</p>
+
+		<h4 class="heading-small">Justification:</h4>
+		<p>{{ justifyTreatLCWRA }}</p>
+	</div>
+	
+	<p class="edit-report"><a href="exceptionalCircumstances" class="button-secondary">Edit exceptional circumstances</a></p>
+	
+</div>-->
+
 <!-- / report item -->
+
+
+
+<!-- Functional LCWRA Activity Content Block -->
+<!--
+<div class="report-item">
+
+	<h2 class="heading-large">Medical opinion</h2> 
+	
+	<div class="inner-focus">
+		
+		<h2 class="heading-medium">Functional LCWRA</h2>
+		
+		<p><span style="font-weight:bold;">Activity:</span>
+		{% if data['lcwra']==='lcwra1'%}
+		{% elif data['lcwra']==='lcwra6'%}
+		Moving around and climbing steps without someone’s help
+		{% elif data['lcwra']==='lcwra7'%}
+		Standing, sitting and moving between the two
+		{% elif data['lcwra']==='lcwra8'%}
+		Reaching
+		{% elif data['lcwra']==='lcwra9'%}
+		Picking things up and moving them
+		{% elif data['lcwra']==='lcwra10'%}
+		Using your hands
+		{% elif data['lcwra']==='lcwra11'%}
+		Speaking, writing and typing
+		{% elif data['lcwra']==='lcwra12'%}
+		Hearing and reading
+		{% elif data['lcwra']==='lcwra13'%}
+		Controlling your bowels and bladder
+		{% elif data['lcwra']==='lcwra14'%}
+		Learning to do new tasks
+		{% elif data['lcwra']==='lcwra15'%}
+		Being aware of hazards and danger
+		{% elif data['lcwra']==='lcwra16'%}
+		Planning, starting and finishing everyday tasks
+		{% elif data['lcwra']==='lcwra17'%}
+		Coping with changes to your daily routine
+		{% elif data['lcwra']==='lcwra18'%}
+		Meeting and being with people
+		{% elif data['lcwra']==='lcwra19'%}
+		Behaving appropriately around other people
+		{% elif data['lcwra']==='lcwra20'%}
+		Eating and drinking
+		{% endif %}
+		</p>
+
+		<h4 class="heading-small">Reason:</h4>
+		<p>{{ justifyFunctionalLCWRA }}</p>
+	</div>
+	
+	<p class="edit-report"><a href="exceptionalCircumstances" class="button-secondary">Edit medical opinion</a></p>
+	
+</div>-->
+<!-- / report item -->
+
 
 
 <div class="report-item">
