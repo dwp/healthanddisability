@@ -12,7 +12,7 @@
 
 
 
-<h1 class="heading-large">Are you sure you want to curtail the assessment?</h1>
+<h1 class="heading-large">Do you need to complete a mental state examination?</h1>
 
 
 
@@ -23,25 +23,21 @@
 	
 	
 
-<form method="post" action="exceptionalCircumstances" id="sufficient-evidence">
+<form method="post" action="exceptionalCircumstances" id="mental-health-decision">
 	
 <div class="form-group">
   <fieldset class="inline">
 
 
-<!--<legend class="heading-medium mb10">Do you have sufficient evidence to make your recommendation?</legend>-->
-<legend class="heading-medium mb10">You will need to have sufficient evidence to support your decision</legend>
+<!--<legend class="heading-medium mb10">Do you need to complete a mental health assessment?</legend>-->
 
     <div class="multiple-choice">
-      <input id="radio-inline-1" type="radio" name="radio-inline-group" value="yes~/{{path}}/assessment/{{customer._id}}/evidence/exceptionalCircumstances">
+      <input id="radio-inline-1" type="radio" name="radio-inline-group" value="yes~/{{path}}/assessment/{{customer._id}}/evidence/mentalHealthAssessmentCurtail">
       <label for="radio-inline-1">Yes</label>
     </div>
     <div class="multiple-choice">
-      <input id="radio-inline-2" type="radio" name="radio-inline-group" value="no~/{{path}}/assessment/{{customer._id}}/evidence/wca-index">
+      <input id="radio-inline-2" type="radio" name="radio-inline-group" value="no~/{{path}}/assessment/{{customer._id}}/evidence/personalSummaryStatement">
       <label for="radio-inline-2">No</label>
-    </div>
-    <div class="panel panel-border-narrow js-hidden" id="curtail-decision-no">
-		<p>Continue with the assessment until you have adequate evidence to support your decision</p>
     </div>
 
   </fieldset>

@@ -23,9 +23,13 @@
 	
 	
 	
-	
-	
+
+{% if data['mental-health'] %}
 	<form method="post" action="personalSummaryStatement">
+{% else %}
+	<form method="post" action="mentalHealthAssessmentDecision">
+{% endif %}
+
 	
 	<div class="form-group">
 		 <fieldset>
@@ -54,7 +58,7 @@
 					    </div>
 							<div class="multiple-choice">
 					      <input id="longerterm" name="reviewPeriod" type="radio" value="longerterm">
-					      <label for="longerterm">in the longer terms</label>
+					      <label for="longerterm">in the longer term</label>
 					    </div>
 							<div class="multiple-choice">
 					      <input id="notrequired" name="reviewPeriod" type="radio" value="notrequired">

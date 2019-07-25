@@ -27,7 +27,12 @@
 					<li>Dress general</li>
 					<li>Increased sweating</li>			
 				</ul>
-        <form action="mentalHealthAssessment" method="POST" class="form">
+
+
+{% if data['lcwra']==='lcwra1'%}
+{% elif data['lcwra']==='lcwra2' or data['lcwra']==='lcwra3' or data['lcwra']==='lcwra4' or data['lcwra']==='lcwra6' or data['lcwra']==='lcwra7' or data['lcwra']==='lcwra8' or data['lcwra']==='lcwra9' or data['lcwra']==='lcwra10' or data['lcwra']==='lcwra11' or data['lcwra']==='lcwra12' or data['lcwra']==='lcwra13' or data['lcwra']==='lcwra14' or data['lcwra']==='lcwra15' or data['lcwra']==='lcwra16' or data['lcwra']==='lcwra17' or data['lcwra']==='lcwra18' or data['lcwra']==='lcwra19' or data['lcwra']==='lcwra20'%}
+<form action="mentalHealthAssessmentCurtail" method="POST" class="form">
+{% else %}<form action="mentalHealthAssessment" method="POST" class="form">{% endif %}
 				<div class="form-group">
 						<label class="form-label-bold" for="mh-appearance-id">Observation</label>
 						<textarea class="form-control form-control-3-4" name="mhappearance" id="mh-appearance-id" rows="8">{{mhappearance}}</textarea>
