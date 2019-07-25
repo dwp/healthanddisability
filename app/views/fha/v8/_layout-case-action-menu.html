@@ -40,7 +40,8 @@
 	<hr />	  
 	            {% if customer.status == 'Ready for assessment' and data['wca']==='start' or customer.status == 'Ready for recommendation'%}  
             <ul class="secondary-actions">
-            <li><a href="/{{path}}/assessment/{{customer._id}}/general-observations">General observations {% if data['general-observations-post']==='posted' %}({{ observations.length }}){% endif%}</a></li>
+            <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/observedBehaviour">Informal observations</a></li>
+            <!--<li><a href="/{{path}}/assessment/{{customer._id}}/general-observations">General observations {% if data['general-observations-post']==='posted' %}({{ observations.length }}){% endif%}</a></li>-->
             <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/stopAssess">Abandon assessment</a></li>
             <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/curtailAssessmentDecision">Curtail assessment</a></li>
             </ul>
