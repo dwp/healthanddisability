@@ -18,9 +18,11 @@
 
       <div class="task-list">
 					<ul class="task-list-itmes">
-          <li class="task-list-item"><a href="medicalConditions1">Medical conditions {% if data['illnessEffectsFinished'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+            <li class="task-list-item"><a href="conditionHistory">Condition history {% if data['conditionHistoryFinished'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+            <!--<li class="task-list-item"><a href="medicalConditions1">Medical conditions {% if data['illnessEffectsFinished'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>-->
            <li class="task-list-item"><a href="socialWorkHistory">Social and work history {% if data['socialWorkHistory'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
            <li class="task-list-item"><a href="typicalDay">Typical day {% if data['typicalDay'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+           <li class="task-list-item"><a href="medicationSideEffects">Medication and side effects {% if data['medicationSideEffectsFinished'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
           </ul>
         </div>
   </div><!-- column here -->
