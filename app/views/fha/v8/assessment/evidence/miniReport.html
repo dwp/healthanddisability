@@ -165,7 +165,7 @@
 		</p>
 	</div>
 	
-	<p class="edit-report"><a href="personalSummaryStatement" class="button-secondary">Edit recommended review period</a></p>
+	<p class="edit-report"><a href="recommendedReviewPeriod" class="button-secondary">Edit recommended review period</a></p>
 	
 </div>
 <!-- / report item -->	
@@ -305,7 +305,7 @@
 
 <div class="report-item">
 
-	<h2 class="heading-large">Informal observations</h2> 
+	<h2 class="heading-large">Observations</h2> 
 	
 	<div class="inner-focus">
 		{% for item in observedBehaviourComments | sortBy("time",true) %}
@@ -331,7 +331,7 @@
   
 	
 		
-		<p>Consent was given by Bobby to start the physical assessment.</p>
+		<p>Consent was given by {{customer.name.first}} to start the physical assessment.</p>
 	
 		{% if data['general'] %}
 		<h3 class="heading-medium">General health</h3>
@@ -1079,7 +1079,7 @@
 	<div class="inner-focus">
 
 {% if checked('mental-health', 'mental-health')%}
-	<h2 class="heading-large">Mental health assessment</h2> 
+	<h2 class="heading-large">Mental state examination</h2> 
 {% endif %}
 
 {% if data['Appearance'] %}    
