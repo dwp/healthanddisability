@@ -9,3 +9,72 @@
 		}
 	}
 }
+
+
+.rec-portal {
+	margin-top: 30px;
+	
+	.rec-slot {
+		a {
+			display: block;
+			background: #fff;
+			padding: 1.4em;
+			color: #10813e;
+			text-decoration: none;
+			font-size: 18px;
+			border: 2px solid #10813e;
+			span {
+				font-weight: bold;
+				font-size: 20px;
+				display: block;
+				padding-bottom: .5em;
+			}
+			&:hover {
+				background: $grey-4;
+				border: 2px solid #0b6831;
+				color: #0b6831;
+			}
+		}
+	}
+	
+}
+
+
+
+.make-rec {
+	label {
+		span {
+			display: block;
+			font-weight: bold;
+			&.second-action {
+				color: red;
+				font-weight: normal;
+			}
+		}
+	}
+}
+
+.case-status {
+	.main-status {
+		margin: 10px 0 0 0;
+		font-weight: bold;
+	}
+	.pending {
+		font-weight: bold;
+		color: #fff;
+		font-size: 16px;
+		display: inline-block;
+		background: $govuk-blue;
+		border-radius: 2px;
+		padding: 4px 6px 2px 6px;
+		margin-top: 3px;
+	}
+}
+
+
+
+
+
+
+
+

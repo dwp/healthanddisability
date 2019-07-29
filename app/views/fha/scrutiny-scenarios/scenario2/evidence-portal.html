@@ -1,42 +1,106 @@
-{% extends path+"/_layout-case-simple.html" %}
+{% extends path+"/_layout-case-simple2.html" %}
 
 
 {% block actioncolumn %}
    
- <p class="returnRef"><a href="/{{path }}/scenario2/referrals-fme">Return to case list</a></p>
+  <p class="returnRef"><a href="/{{path }}/scenario2/referrals-fme">Return to case list</a></p>
   <hr>
  <div class="case-status">
-<p class="mt10 mb0 bold-small">
+ 
+ 
+{% if data['pbachoice']=='no'%}
+ 
+	 <p class="main-status">Appointment booked</p>
+	 
+	 
+	 {% elif data['pbachoice']=='yes'%}
+	 
+	 <p class="main-status">Ready for paper based assessment</p>
+	 <p><a href="/{{path }}/scenario2/not-testing" class="button">Start assessment</a></p>
+	 
+	 
+	 {% else %}
+	 
+ 
 
- {% if data['pbachoice']=='yes'%}
-<p class="mt10 mb0 bold-small">
-Ready for paper based assessment  
-</p>
-<p><a href="/{{path }}/scenario2/not-testing" class="button">Start assessment</a></p>
-{% else %}
-<p class="mt10 mb0 bold-small">
-Ready for review
-<p><a href="/{{path }}/scenario2/not-testing" class="button">Make recommendation</a></p>
-</p>
-{% endif %}    
+{% if data['evidencePath']=='ev-ftf'%}
 
-</p>
+	<p class="main-status">Ready to book</p>
+	<span class="pending">Pending evidence review</span>
 
+	{% if data['evidenceRecorded']=='record-yes'%}
+		
+	{% endif %}
+	
+	
+	{% elif data['evidencePath']=='ev-pba'%}
+	
+	{% if data['evidenceRecorded']=='record-yes'%}
+		<p class="main-status">Ready for review</p>
+		<p><a href="/{{path }}/scenario2/rec-portal" class="button">Make recommendation</a></p>
+		{% else %}
+		<p class="main-status">Medical evidence requested</p>
+	{% endif %}
+	
+	
+	{% else %}
+	
+	<p class="main-status">Ready for review</p>
+	<p><a href="/{{path }}/scenario2/rec-portal" class="button">Make recommendation</a></p>
+	
+	
+
+{% endif %}
+
+
+{% endif %}
+</p>
 
 
 <hr>
-<!--<ul class="secondary-actions">
- <li><a href="/{{path }}/scenario1/scenario/recordFME" class="">Record evidence</a></li>
-  
-  </ul>-->
+
 </div>
+
 {% endblock %}
 
 {% block citizen_detail %}
-Roberto Crisp
+Roberto Clyne
 {% endblock %}
 
 {% block citizen_content %}
+
+{% if data['evidencePath']=='ev-ftf'%}
+
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+	
+	
+		{% if data['pbachoice']%}
+	
+		
+	{% else %}
+	<div class="panel panel-info panel-instruction fme-warning"><h2 class="heading-small">New evidence recorded</h2>
+	   <ul class="numeric" data-id="">
+	       <li>
+	         <span class="circle circle-step circle-white">1</span>
+	         <h2 class="govuk-heading-m">Roberto's case should be reviewed before making a recommendation</h2>
+	       </li>
+	
+	       <li>
+	         <span class="circle circle-step circle-white">2</span>
+	         <h2 class="govuk-heading-m"><a href="/{{path }}/scenario2/recordFMEdecision">Make recommendation</a></h2>
+	       </li>
+	     </ul>
+	</div>
+	{% endif %}
+	
+	
+	
+		
+	{% endif %}
+	
+	
+	{% endif %}
 
 
 
@@ -68,7 +132,7 @@ Roberto Crisp
 
 
 
-<!-------- row/time slot start --------->
+<!-------- Portal --------->
 
 <div class="portal-display">
 		
@@ -79,7 +143,7 @@ Roberto Crisp
 		
 		
 		<!---------------------------------- Card ---------------------------------->
-		<div class="column-third">
+		<div class="column-half">
 		
 			<div class="portal-card">
 				<div class="portal-head">
@@ -89,28 +153,122 @@ Roberto Crisp
 
 				<div class="portal-inner">
 				
-				<h4>Last recorded evidence</h4>
+				<h4>Latest recorded evidence</h4>
 
 					<table>
 						<caption>Evidence item</caption>
 						
-						<tbody>
+						<thead>
 							<tr>
 								<th>Type</th>
-								<td><a href="/{{path }}/scenario1/not-testing">GP report</a></td>
-							</tr>
-							<tr>
 								<th>Date</th>
-								<td>24 June 2019</td>
 							</tr>
-							<tr>
-								<th>Source</th>
-								<td>GP</td>
-							</tr>
+						
+						
+						
+						
+						
+		
+						
+						
+							
+						
+						
+						
+						<tbody>
+						
+						
+						{% if data['pbachoice']=='yes'%}
+						
+									<tr>
+										<td><a href="/{{path }}/scenario1/not-testing">Paper based assessment justification</a></td>
+										<td>11 August 2019</td>
+									</tr>
+						
+						{% endif %}
+						
+						
+						
+							{% if data['evidenceChoice']=='ev-gp'%}
+	  	
+	  	
+						  		{% if data['evidenceRecorded']=='record-yes'%}
+						  		
+						  		
+						  			<tr>
+										<td><a href="/{{path }}/scenario1/not-testing">GP report</a></td>
+										<td>10 August 2019</td>
+									</tr> 		
+						  		
+						  		{% endif %}
+						  		
+						  		
+						  		
+						  	{% elif data['evidenceChoice']=='ev-fr'%}
+						  		
+						  		
+						  		 {% if data['evidenceRecorded']=='record-yes'%}
+						  		
+						  		
+						  			<tr>
+										<td><a href="/{{path }}/scenario1/not-testing">Factual report</a></td>
+										<td>10 August 2019</td>
+									</tr> 		
+						  		
+						  		{% endif %}
+	
+						  		  	
+						  	{% endif %}
+						  	
+						  	
+						  	
+						  	{% if data['evidenceRecorded']=='record-yes'%}
+						  	
+						  	
+						  		{% if data['appointmentReferral']%}
+								  		<tr>
+											<td><a href="/{{path }}/scenario1/not-testing">Appointment referral justification</a></td>
+											<td>3 August 2019</td>
+										</tr>
+										{% else %}
+										
+										<tr>
+											<td><a href="/{{path }}/scenario1/not-testing">Med 3</a></td>
+											<td>1 August 2019</td>
+										</tr>
+								  	
+								  	{% endif %}
+								
+								
+								{% else %}
+								
+								
+								{% if data['appointmentReferral']%}
+								  		<tr>
+											<td><a href="/{{path }}/scenario1/not-testing">Appointment referral justification</a></td>
+											<td>3 August 2019</td>
+										</tr>
+										<tr>
+											<td><a href="/{{path }}/scenario1/not-testing">Med 3</a></td>
+											<td>1 August 2019</td>
+										</tr>
+										{% else %}
+								
+										<tr>
+											<td><a href="/{{path }}/scenario1/not-testing">Med 3</a></td>
+											<td>1 August 2019</td>
+										</tr>
+										<tr>
+											<td><a href="/{{path }}/scenario1/not-testing">UC50</a></td>
+											<td>21 July 2019</td>
+										</tr>
+										
+										{% endif %}
+							{% endif %}
 						</tbody>
 					</table>
 					
-					<p class="mt30"><a href="/{{path }}/scenario2/evidence-full" class="secondary-invert">View all recorded evidence</a></p>
+					<p class="view-all"><a href="/{{path }}/scenario2/evidence-full" class="secondary-invert">View all recorded evidence</a></p>
 					
 				</div>
 				<!-- / inner card -->
@@ -120,36 +278,11 @@ Roberto Crisp
 		</div>
 		<!---------------------------------- / Card ---------------------------------->
 		
-		
-		
-		<!---------------------------------- Card ---------------------------------->
-		<div class="column-third">
-		
-			<div class="portal-card">
-				<div class="portal-head">
-					<h3>Request</h3>
-				</div>
-				<!-- / title -->
 
-				<div class="portal-inner">
-					<p>Choose the evidence you want to request:</p>
-					<ul class="action-list">
-						<li><a href="/{{path }}/scenario1/evidence-gpRequest" class="secondary-invert">GP report</a></li>
-						<li><a href="/{{path }}/scenario1/not-testing" class="secondary-invert">Factual report</a></li>
-						<!-- <li><a href="#" class="secondary-invert">Other evidence</a></li> -->
-					</ul>
-				</div>
-				<!-- / inner card -->
-			</div>
-			<!-- / portal card -->
-			
-		</div>
-		<!---------------------------------- / Card ---------------------------------->
-		
 		
 		
 		<!---------------------------------- Card ---------------------------------->
-		<div class="column-third">
+		<div class="column-half">
 		
 			<div class="portal-card">
 				<div class="portal-head">
@@ -160,29 +293,36 @@ Roberto Crisp
 				<div class="portal-inner">
 					<p>Choose the evidence type you want to record:</p>
 					<ul class="action-list">
-						<li><a href="/{{path }}/scenario1/not-testing" class="secondary-invert">Record a telephone conversation</a></li>
-						<li><a href="/{{path }}/scenario1/not-testing" class="secondary-invert">Record other evidence</a></li>
+						<li><a href="/{{path }}/scenario2/not-testing" class="secondary-invert">Record a telephone conversation</a></li>
+						<li><a href="/{{path }}/scenario2/not-testing" class="secondary-invert">Record other evidence</a></li>
 					</ul>
 					
 					
+					
+					
+					{% if data['evidenceRecorded']=='record-yes'%}
+					
+					{% else %}
+					
 			
-						
-						
-						
-
-   {% if data['gpscenarios']%}
-		<div class="requested-evidence">
-							<h4>Requested evidence</h4>
-							<ul class="action-list">
-								<li><p>GP report requested on 26 July 2019</p>
-								<a href="/{{path }}/scenario1/not-testing" class="secondary-invert">Record GP report</a></li>
+					{% if data['evidenceChoice'] %}		
+					<div class="requested-evidence">
+		
+							<ul class="action-list req-list">
+								{% if data['evidenceChoice']=='ev-gp'%}
+								<li><p>GP report<span>Requested on 3 August 2019</span></p>
+								<a href="/{{path }}/scenario2/record-evidence" class="secondary-invert">Record GP report</a></li>
+								{% elif data['evidenceChoice']=='ev-fr'%}
+								<li><p>Factual report<span>Requested on 3 August 2019</span></p>
+								<a href="/{{path }}/scenario2/record-evidence" class="secondary-invert">Record factual report</a></li>
+								{% endif %}
 							</ul>
 						</div>
-	{% endif %}
-						
-				
-					
-					
+						{% else %}
+						{% endif %}
+
+					{% endif %}
+		
 					
 					
 		

@@ -1,4 +1,4 @@
-{% extends path+"/_layout-case-simple.html" %}
+{% extends path+"/_layout-case-simple2.html" %}
 
 
 {% block actioncolumn %}
@@ -27,7 +27,7 @@
 {% endblock %}
 
 {% block citizen_detail %}
-Roberto Crisp
+Roberto Clyne
 {% endblock %}
 
 {% block citizen_content %}
@@ -58,9 +58,9 @@ Roberto Crisp
     
     <form class="form" action="/{{path }}/scenario2/timeline-review" method="post">
     	 <div class="form-group mt10">
-							<fieldset>
+							<fieldset class="make-rec">
 
-									<legend class="heading-medium mb10">
+									<legend class="visually-hidden">
 										
 										What do you want to do?
 										
@@ -70,19 +70,19 @@ Roberto Crisp
 																							
 									<div class="multiple-choice">
 										<input id="rec-pba" type="radio" name="rec-choice" value="PBA">
-										<label for="rec-pba">Refer for a paper based assessment</label>
+										<label for="rec-pba">I have enough evidence to recommend a paper based assessment</label>
 										
 									</div>
 									
 									
 									<div class="multiple-choice">
 											<input id="rec-appoint" type="radio" name="rec-choice" value="APP">
-											<label for="rec-appoint">Refer for an appointment</label>
+											<label for="rec-appoint">I would like to call Bobby in for a face to face assessment</label>
 										</div>
 										
 										<div class="multiple-choice">
 											<input id="rec-evidence" type="radio" name="rec-choice" value="EVIDENCE">
-											<label for="rec-evidence">Request evidence</label>
+											<label for="rec-evidence">I would like to call Bobby in for a face to face assessment pending the request of new evidence</label>
 										</div>
 										
 										

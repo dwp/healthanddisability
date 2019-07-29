@@ -2086,9 +2086,9 @@ table.profile-table .col5{
 
 .secondary-invert {
 	  background: #fff!important;
-	  color: #00823b!important;
+	  color: #10813e!important;
 	  box-shadow: none!important;
-	  border: 2px solid #00823b!important;
+	  border: 2px solid #10813e!important;
 	  padding: .526315em .789473em .263157em;
 	  display: inline-block!important;
 	  text-decoration: none;
@@ -2096,9 +2096,10 @@ table.profile-table .col5{
 	  }
 
 	  .secondary-invert:hover {
-		  background: #00823b!important;
+		  background: $grey-4!important;
 		  box-shadow: none!important;
-		  color: #fff!important;
+		  border: 2px solid #0b6831!important;
+		  color: #0b6831!important;
 	  }
 
 
@@ -2247,12 +2248,25 @@ table.profile-table .col5{
 			margin-bottom: 0;
 		}
 	}
+	ul {
+		margin: 20px 0;
+		li {
+			margin: 5px 0;
+			b {
+				font-weight: bold;
+				color: $govuk-blue;
+			}
+		}
+	}
+
+
 }
 
 
 
 .fme-warning {
 	margin-top: -24px;
+
 
 }
 
@@ -2293,7 +2307,7 @@ table.profile-table .col5{
 	
 	.portal-card {
 		background: #fff;
-		border: 2px solid $grey-2;
+		border: 1px solid $grey-3;
 			
 		.portal-head {
 			overflow: hidden;
@@ -2324,18 +2338,27 @@ table.profile-table .col5{
 			}
 			
 			table {
+				margin: 0;
 				caption {
 					font-size: .1em;
 					visibility: hidden;
 				}
 				th {
 					width: 40%;
+					border-bottom: 1px solid $grey-2;
 				}
+				td {
+					border-bottom: 1px solid $grey-2;
+				}
+			}
+			
+			.view-all {
+				margin: 30px 0 .7em 0;
 			}
 			
 			.action-list {
 				li {
-					border-top: 1px solid $grey-3;
+					border-top: 1px solid $grey-2;
 					padding: .7em 0;
 					p {
 						margin: 0 0 .5em 0;
@@ -2346,14 +2369,21 @@ table.profile-table .col5{
 						padding-top: 0;
 					}
 				}
+
 			}
 			
 			.requested-evidence {
-				border-top: 1px solid $grey-2;
-				margin-top: 1em;
-				padding-top: .8em;
-				h4 {
+				border-top: 1px solid $grey-3;
+				padding-top: 1.6em;
+				p {
 					font-weight: bold;
+					font-size: 19px;
+					color: #000!important;
+					span {
+						display: block;
+						font-weight: normal;
+						color: $grey-1;
+					}
 				}
 			}
 			

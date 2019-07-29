@@ -1,4 +1,4 @@
-{% extends path+"/_layout-case-simple.html" %}
+{% extends path+"/_layout-case-simple2.html" %}
 
 
 {% block actioncolumn %}
@@ -6,38 +6,101 @@
   <p class="returnRef"><a href="/{{path }}/scenario2/referrals-fme">Return to case list</a></p>
   <hr>
  <div class="case-status">
-<p class="mt10 mb0 bold-small">
+ 
+ 
+{% if data['pbachoice']=='no'%}
+ 
+	 <p class="main-status">Appointment booked</p>
+	 
+	 
+	 {% elif data['pbachoice']=='yes'%}
+	 
+	 <p class="main-status">Ready for paper based assessment</p>
+	 <p><a href="/{{path }}/scenario2/not-testing" class="button">Start assessment</a></p>
+	 
+	 
+	 {% else %}
+	 
+ 
 
- {% if data['pbachoice']=='yes'%}
-<p class="mt10 mb0 bold-small">
-Ready for paper based assessment  
-</p>
-<p><a href="/{{path }}/scenario2/not-testing" class="button">Start assessment</a></p>
-{% else %}
-<p class="mt10 mb0 bold-small">
-Ready for review
-<p><a href="/{{path }}/scenario2/not-testing" class="button">Make recommendation</a></p>
-</p>
-{% endif %}    
+{% if data['evidencePath']=='ev-ftf'%}
 
+	<p class="main-status">Ready to book</p>
+	<span class="pending">Pending evidence review</span>
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+		
+	{% endif %}
+	
+	
+	{% elif data['evidencePath']=='ev-pba'%}
+	
+	{% if data['evidenceRecorded']=='record-yes'%}
+		<p class="main-status">Ready for review</p>
+		<p><a href="/{{path }}/scenario2/rec-portal" class="button">Make recommendation</a></p>
+		{% else %}
+		<p class="main-status">Medical evidence requested</p>
+	{% endif %}
+	
+	
+	{% else %}
+	
+	<p class="main-status">Ready for review</p>
+	<p><a href="/{{path }}/scenario2/rec-portal" class="button">Make recommendation</a></p>
+	
+	
+
+{% endif %}
+
+
+{% endif %}
 </p>
 
 
 <hr>
-<!--<ul class="secondary-actions">
-<li><a href="/{{path }}/scenario2/recordFME" class="">Record evidence</a></li>
-  
-  </ul>-->
+
 </div>
+
 {% endblock %}
 
 {% block citizen_detail %}
-Roberto Crisp
+Roberto Clyne
 {% endblock %}
 
 {% block citizen_content %}
 
+{% if data['evidencePath']=='ev-ftf'%}
 
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+	
+	
+		{% if data['pbachoice']%}
+	
+		
+	{% else %}
+	<div class="panel panel-info panel-instruction fme-warning"><h2 class="heading-small">New evidence recorded</h2>
+	   <ul class="numeric" data-id="">
+	       <li>
+	         <span class="circle circle-step circle-white">1</span>
+	         <h2 class="govuk-heading-m">Roberto's case should be reviewed before making a recommendation</h2>
+	       </li>
+	
+	       <li>
+	         <span class="circle circle-step circle-white">2</span>
+	         <h2 class="govuk-heading-m"><a href="/{{path }}/scenario2/recordFMEdecision">Make recommendation</a></h2>
+	       </li>
+	     </ul>
+	</div>
+	{% endif %}
+	
+	
+	
+		
+	{% endif %}
+	
+	
+	{% endif %}
 
 
 <div class="container">
@@ -83,48 +146,87 @@ Roberto Crisp
 <tbody>
 
 
-	
-   <tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
-		<td><a href="/{{path }}/scenario2/not-testing">GP report</a></td>
-		<td>GP</td>
-		<td><span class="secondary-text">24 June 2019</span></td>
-		<td class="numeric"><span>24 June 2019</span></td>
-	</tr>  
-
-
+{% if data['pbachoice']=='yes'%}
 
 <tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
-<td><a href="/{{path }}/scenario2/fme-justify">Appointment referral justification</a></td>
-<td>HCP</td>
-<td></td>
-<td class="numeric"><span>4 June 2019</span></td>
-</tr>
+		  <td><a href="/{{path }}/scenario2/not-testing">Paper based assessment justification</a></td>
+		  <td>HCP</td>
+		  <td></td>
+		  <td class="numeric"><span>11 August 2019</span></td>
+		</tr>
+
+{% endif %}
 
 
 
-<!--<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
-  <td><a href="/{{path }}/scrutiny/not-testing">GP report</a></td>
-  <td>GP: Dr.Margaret Zamora</td>
-  <td><span class="secondary-text">12th June 2019</span></td>
-  <td class="numeric"><span>13th June 2019</span></td>
-</tr>-->
+{% if data['evidenceChoice']=='ev-gp'%}
+	  	
+	  	
+		{% if data['evidenceRecorded']=='record-yes'%}
+		
+
+		<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+		  <td><a href="/{{path }}/scenario2/not-testing">GP report</a></td>
+		  <td>GP</td>
+		  <td><span class="secondary-text">9 August 2019</span></td>
+		  <td class="numeric"><span>10 August 2019</span></td>
+		</tr>
+
+		{% endif %}
+		
+		
+		
+	{% elif data['evidenceChoice']=='ev-fr'%}
+		
+		
+		 {% if data['evidenceRecorded']=='record-yes'%}
+		
+		
+		<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+		  <td><a href="/{{path }}/scenario2/not-testing">Factual report</a></td>
+		  <td>GP</td>
+		  <td><span class="secondary-text">9 August 2019</span></td>
+		  <td class="numeric"><span>10 August 2019</span></td>
+		</tr>		
+		
+		{% endif %}
+
+		  	
+	{% endif %}
+	
+	
+	
+	{% if data['appointmentReferral']%}
+	
+	
+		<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+		  <td><a href="/{{path }}/scenario2/not-testing">Appointment referral justification</a></td>
+		  <td>HCP</td>
+		  <td></td>
+		  <td class="numeric"><span>3 August 2019</span></td>
+		</tr>
+	
+	
+	{% endif %}
+
+
 
 
 <tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
   <td><a href="/{{path }}/scenario2/not-testing">Med 3</a></td>
   <td>GP</td>
-  <td><span class="secondary-text">2 June 2019</span></td>
-  <td class="numeric"><span>2 June 2019</span></td>
+  <td><span class="secondary-text">1 August 2019</span></td>
+  <td class="numeric"><span>1 August 2019</span></td>
 </tr>
 
 
 
 
 <tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
-  <td><a href="/{{path }}/scenario2/not-testing">UC 50 </a></td>
+  <td><a href="/{{path }}/scenario2/not-testing">UC50 </a></td>
   <td>Claimant</td>
-  <td><span class="secondary-text">1 June 2019</span></td>
-  <td class="numeric"><span>1 June 2019</span></td>
+  <td><span class="secondary-text">21 July 2019</span></td>
+  <td class="numeric"><span>21 July 2019</span></td>
 </tr>
 </tbody>
 
