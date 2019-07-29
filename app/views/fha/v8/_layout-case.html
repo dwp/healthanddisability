@@ -139,6 +139,7 @@ or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes'
           </div>
       </form>
 
+
       {% elif customer.status == 'Ready for assessment' %}
       <form class="" method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/descriptorchoice">
 		  <p><button  class="button">Start assessment review</button></p>
@@ -174,11 +175,14 @@ or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes'
          
 
             {% if customer.status == 'Ready for assessment' and data['wca']==='start' or customer.status == 'Ready for recommendation'%}  
-            <li><a href="/{{path}}/assessment/{{customer._id}}/general-observations">General observations {% if data['general-observations-post']==='posted' %}({{ observations.length }}){% endif%}</a></li>
+            <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/observedBehaviour">Informal observations</a></li>
+<!--        <li><a href="/{{path}}/assessment/{{customer._id}}/general-observations">General observations {% if data['general-observations-post']==='posted' %}({{ observations.length }}){% endif%}</a></li>-->
             <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/addAttendee" class="">Additional attendee</a></li>
-           
-            
             <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/stopAssess">Abandon assessment</a></li>
+            <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/curtailAssessmentDecision">Curtail assessment</a></li>
+            <!--{% if data['socialWorkHistory'] and data['typicalDay'] %}<li><a href="/{{path}}/assessment/{{customer._id}}/evidence/curtailAssessmentDecision">Curtail assessment</a></li>{% else %}
+{% endif %}-->
+
             {% endif %}
 
           </ul>

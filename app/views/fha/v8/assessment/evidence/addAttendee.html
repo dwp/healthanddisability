@@ -22,35 +22,21 @@
 		
 		
 			<h1 class="heading-large">Additional attendee</h1>
-		
-		<form>
-			<fieldset>
-				<legend class="visually-hidden">Add attendee details</legend>
-				
 
-							       
-							      <div class="form-group">
-							      	<label for="name" class="form-label">Name</label>
-							      	 <input class="form-control form-control-1-3" name="name" type="text" id="name">
-							      </div>
-							      
-							      <div class="form-group">
-							      	<label for="name" class="form-label">Relationship to {{customer.name.first}}</label>
-							      	 <input class="form-control form-control-1-3" name="name" type="text" id="name">
-							      </div>
-								
-								
-							      
-			</fieldset>   
 
-							
-		</form>
-			
-			<form method="post" action="/{{path}}/assessment/{{customer._id}}/assessment-stopped">
-				<p><a href="javascript: history.go(-1)" class="button">Confirm – resume assessment</a></p>
-				</form>
-			
 
+<form method="post" action="miniReport">
+		<div class="form-group">
+			<label class="form-label" for="attendeename">Name</label>
+			<input class="form-control form-control-1-3" name="additionalAttendeeName" type="text" id="attendeename">
+		</div>
+		<div class="form-group">
+			<label class="form-label" for="attendeerelationship">Relationship</label>
+			<input class="form-control form-control-1-3" name="additionalAttendeeRelationship" type="text" id="attendeerelationship">
+		</div>
+
+    <p><input type="submit" class="button" value="Confirm - resume assessment" id="submitButton"></p>
+		</form>	
 		
     
 

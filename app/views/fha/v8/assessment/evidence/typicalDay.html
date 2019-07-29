@@ -1,4 +1,5 @@
-{% extends path1+"/_layoutChat.html" %}
+{% extends path+"/_layout-case-action.html" %}
+<!--{% extends path1+"/_layoutChat.html" %}-->
 
 {% block citizen_content %}
 
@@ -8,7 +9,8 @@
 
 
 <div class="grid-row no-kdBar">
-  <div class="column-two-thirds">
+  <div>
+  <!--<div class="column-two-thirds">-->
   
  <p class="mt0"><a href="" class="link-back">Back</a></p>
   <h1 class="heading-large">Typical day</h1>
@@ -52,7 +54,7 @@
     </form>
 
 
-  <form action="typicalDay" method="POST" class="form">
+  <form action="wca-index" method="POST" class="form">
       <input type="submit" class="button mb30" value="Save progress" id="submitButton">
       
 

@@ -1,0 +1,51 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+<h1 class="heading-large">Treat as LCWRA</h1>
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+	
+	<form method="post" action="recommendedReviewPeriod">
+	
+
+
+	<p>Special circumstance: 
+		{% if data['lcwra']==='lcwra1'%}
+		{% elif data['lcwra']==='lcwra2'%}
+		Risks associated with pregnancy
+		{% elif data['lcwra']==='lcwra3'%}
+		Chemotherapy or radiotherapy in progress
+		{% elif data['lcwra']==='lcwra4'%}
+		Terminally ill
+		{% endif %}
+		</p>
+
+		<div class="form-group">
+			<label class="form-label-bold" for="justify">Give reasons</label>
+			<textarea class="form-control form-control-3-4" name="justifyTreatLCWRA" id="justify" rows="8"></textarea>
+		</div>
+
+    <p><input type="submit" class="button" value="Continue" id="submitButton"></p>
+		</form>	
+
+  </div><!-- column -->
+</div><!-- row -->
+
+
+
+{% endblock %}

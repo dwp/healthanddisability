@@ -1,0 +1,44 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+	
+<h1 class="heading-large">Declaration</h1>
+<p>This form has been completed by a healthcare professional approved by the Secretary of State for Work and Pensions.</p>
+<p>I have completed this form in accordance with the current guidance to UC examining healthcare professionals as issued by the Department for Work and Pensions.</p>
+<p>I can confirm that there is no harmful information in the report.</p>
+
+
+	<table class="report-view-table">
+		<tbody>
+			<tr>
+				<td><span style="font-weight:bold;">Healthcare professional's name:</span></td>
+				<td>Peter Roberts<br>(Registered Medical Practioner)</td>
+			</tr>
+			<tr>
+				<td><span style="font-weight:bold;">Date:</span></td>
+				<td>{{ "Do MMM YYYY" | daysAgo }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+  </div><!-- column -->
+</div><!-- row -->
+
+<p class="depart"><a href="#" class="button">Print</a></p>
+
+{% endblock %}
+
+
