@@ -1,0 +1,251 @@
+{% extends path+"/_layout-case-simple.html" %}
+
+
+{% block actioncolumn %}
+   
+  <p class="returnRef"><a href="/{{path }}/scenario1/referrals-fme">Return to case list</a></p>
+  <hr>
+ <div class="case-status">
+<p class="mt10 mb0 bold-small">
+
+{% if data['pbachoice']=='yes'%}
+<p class="mt10 mb0 bold-small">
+Ready for paper based assessment  
+</p>
+<p><a href="/{{path }}/scenario1/not-testing" class="button">Start assessment</a></p>
+{% else %}
+<p class="mt10 mb0 bold-small">
+Appointment booked
+</p>
+{% endif %}
+
+    
+
+</p>
+
+
+<hr>
+<!--<ul class="secondary-actions">
+<li><a href="/{{path }}/scenario1/recordFME" class="">Record evidence</a></li>
+  
+  </ul>-->
+</div>
+{% endblock %}
+
+{% block citizen_detail %}
+Bobby Henderson
+{% endblock %}
+
+{% block citizen_content %}
+
+
+{% if data['pbachoice'] %}
+	 
+
+{% else %}
+
+<div class="panel panel-info panel-instruction fme-warning"><h2 class="heading-small">New evidence recorded</h2>
+	   <ul class="numeric" data-id="">
+	       <li>
+	         <span class="circle circle-step circle-white">1</span>
+	         <h2 class="govuk-heading-m">Bobby's case should be reviewed before making a recommendation</h2>
+	       </li>
+	
+	       <li>
+	         <span class="circle circle-step circle-white">2</span>
+	         <h2 class="govuk-heading-m"><a href="/{{path }}/scenario1/recordFMEdecision">Make recommendation</a></h2>
+	       </li>
+	     </ul>
+	</div>
+
+	
+{% endif %}
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.case_tabs("appointment-fme",1,path1, customer._id) }}
+  
+  
+  
+  {% if data['pbachoice']=='yes'%}
+
+ <div class="column-two-thirds">
+    <div class="grid-row">
+
+      <div class="column-half"  style="padding-left:0px;">
+          <div class="card-single">  
+              <h2 class="heading-small">
+               Appointment preferences
+         
+              </h2>
+              <div class="inner">
+                 
+            <ul>
+              
+              
+              
+              
+              
+       
+            </ul>
+       
+            <h3 class="heading-small">Unavailable on</h3>
+            <ul>
+                <li>Monday <span>afternoons</span>
+                </li>
+                <li>Tuesdays</li>
+                
+              </ul>
+              
+            <p class="mt20"> <a href="/{{path }}/scenario1/not-testing" class="">Add or edit preferences</a></p>
+            
+            </div>
+            </div>
+  
+      </div>
+      
+      
+      
+      <div class="column-half"> 
+        <div class="card-single">
+           
+          <h2 class="heading-small">
+          
+            Appointment history
+          
+          </h2>
+      
+            <div class="inner">
+
+
+              <h3 class="heading-small mb10">Cancelled appointment</h3>
+                  
+          
+              <p class="small">Referred for paper based assessment after review of new evidence.
+              </p>
+
+    
+      
+              <p>  
+                  {% if customer.status == 'Ready to book' %}
+                <a href="#">
+                View appointment history
+              </a>
+                 {% else %}
+                 <a href="/{{path }}/scenario1/not-testing">
+                  View appointment history
+                </a>
+                 {% endif %}
+            </p>
+              </div>
+
+    </div>
+      
+    </div>
+    </div>  
+      
+    
+    {% else %}
+  <div class="column-one-third">
+
+    <h2 class="heading-small"><span style="font-weight:normal" class="text-secondary">Appointment details</span><br>Non neuro appointment</h2>
+
+  <ul class="list-bullet mt10 mb10">
+    <li>Thursday 11th July </li>
+    <li>4:00pm</li>
+    <li>Tresco House</li>
+  </ul>
+  
+  
+  <p><a href="/{{path }}/scenario1/not-testing" class="secondary-invert"><!--Rearrange or cancel appointment-->Update appointment</a></p>
+  
+  <p><a href="/{{path }}/scenario1/not-testing" class="">Record change of circumstances</a></p>
+
+
+</div>
+
+
+
+<div class="column-two-thirds">
+    <div class="grid-row">
+
+      <div class="column-half"  style="padding-left:0px;">
+          <div class="card-single">  
+              <h2 class="heading-small">
+               Appointment preferences
+         
+              </h2>
+              <div class="inner">
+                 
+            <ul>
+              
+              
+              
+              
+              
+       
+            </ul>
+       
+            <h3 class="heading-small">Unavailable on</h3>
+            <ul>
+                <li>Monday <span>afternoons</span>
+                </li>
+                <li>Tuesdays</li>
+                
+              </ul>
+              
+            <p class="mt20"> <a href="/{{path }}/scenario1/not-testing" class="">Add or edit preferences</a></p>
+            
+            </div>
+            </div>
+  
+      </div>
+      
+    </div>
+    </div>
+{% endif %}
+  
+
+    
+  
+  
+    <div class="visually-hidden">
+        <div class="multiple-choice">
+            <input id="radio-inline-1" type="radio" name="bookedAppointment" value="yes" checked="">
+            <label for="radio-inline-1">Yes</label>
+          </div>
+        </div>
+    
+  
+    </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
