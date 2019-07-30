@@ -1,0 +1,193 @@
+{% extends path+"/_layout-case-simple2.html" %}
+
+
+{% block actioncolumn %}
+   
+  <p class="returnRef"><a href="/{{path }}/scenario2/referrals-fme">Return to case list</a></p>
+  <hr>
+ <div class="case-status">
+ 
+ 
+{% if data['pbachoice']=='no'%}
+ 
+	 <p class="main-status">Appointment booked</p>
+	 
+	 
+	 {% elif data['pbachoice']=='yes'%}
+	 
+	 <p class="main-status">Ready for paper based assessment</p>
+	 <p><a href="/{{path }}/scenario2/not-testing" class="button">Start assessment</a></p>
+	 
+	 
+	 {% else %}
+	 
+ 
+
+{% if data['evidencePath']=='ev-ftf'%}
+
+	<p class="main-status">Ready to book</p>
+	<span class="pending">Pending evidence review</span>
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+		
+	{% endif %}
+	
+	
+	{% elif data['evidencePath']=='ev-pba'%}
+	
+	{% if data['evidenceRecorded']=='record-yes'%}
+		<p class="main-status">Ready for review</p>
+		<p><a href="/{{path }}/scenario2/rec-portal" class="button">Make recommendation</a></p>
+		{% else %}
+		<p class="main-status">Medical evidence requested</p>
+	{% endif %}
+	
+	
+	{% else %}
+	
+	<p class="main-status">Ready for review</p>
+	<p><a href="/{{path }}/scenario2/rec-portal" class="button">Make recommendation</a></p>
+	
+	
+
+{% endif %}
+
+
+{% endif %}
+</p>
+
+
+<hr>
+
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Roberto Clyne
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+    
+   
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+        
+
+    	
+    	<h1 class="heading-large">Appointment referral justification</h1>
+    	
+    	
+   
+		
+		
+		<div class="evidence-requests mt30">
+		
+		
+
+						  
+						 <div> 
+							<h2 class="heading-medium mb10">Reason Roberto needs a face to face assessment:</h2>
+							
+							
+							{% if data['justifyF2Fa']=='f2f-reason1'%}
+							<p>The evidence we have available is not enough to determine the level of disability</p>
+							{% elif data['justifyF2Fa']=='f2f-reason2'%}
+							<p>An assessment is needed to determine the level of function</p>
+							{% endif %}
+
+												
+							{% if data['further']=='further-yes'%}			
+							<h3 class="heading-small mb5">Further information:</h3>
+							
+							
+							<p>{{supportInfo}}</p>
+							
+						
+							
+							
+							{% else %}
+							{% endif %}
+
+						</div>
+						
+						<hr>
+						
+						<div>
+							<h2 class="heading-medium mt0 mb10">Type of appointment:</h2>
+									
+									{% if data['types']=='nonNeuro'%}
+									<p>Non neuro</p>
+									{% elif data['types']=='Neuro'%}
+									<p>Neuro</p>
+									{% elif data['types']=='complexNeuro'%}
+									<p>Complex neuro</p>
+									{% endif %}
+
+							<h3 class="heading-small mb5">Justification:</h3>
+								<p>{{typeReasonJustify}}</p>			
+						</div>	
+						
+						<hr>									
+										
+						<div>
+							<h2 class="heading-medium mt0 mb10">Evidence that was considered:</h2>
+
+				  			<ul class="list-bullet">
+				  				<li>GP report</li>
+				  				<li>Factual report</li>
+				  				<li>Med 3</li>
+				  				<li>UC50</li>
+				  			</ul>
+						</div>
+						
+						
+						
+						
+						
+						
+					
+
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

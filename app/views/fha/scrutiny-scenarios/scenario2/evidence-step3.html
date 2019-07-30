@@ -103,10 +103,11 @@ Roberto Clyne
 													<input id="furtherNo" type="radio" name="further" value="further-no">
 													<label for="furtherNo">No</label>
 												</div>
+
 												
 												<div class="panel js-hidden" id="furtherWithin">	
 													<label for="furtherReason" class="form-label">Supporting information:</label>
-													<textarea id="furtherReason" class="form-control form-control-3-4" rows="5"></textarea>
+													<textarea id="furtherReason" name="supportInfo" class="form-control form-control-3-4" rows="5"></textarea>
 												</div>
 												
 												
@@ -118,62 +119,7 @@ Roberto Clyne
 						</div>
 			
 			
-					<div class="form-group">
-						<fieldset>
-						  
-							  <legend class="heading-medium mb5">What evidence did you consider?</legend>
-
-							  			<div class="multiple-choice">
-											<input id="justify1" type="checkbox" name="justifyF2F" value="f2f-reason1">
-											<label for="justify1">All available evidence</label>
-										</div>
-										
-										
-										
-										{% if data['evidenceChoice']=='ev-gp'%}
-	  	
-	  	
-											{% if data['evidenceRecorded']=='record-yes'%}
-											
-									
-											<div class="multiple-choice">
-												<input id="justify-gp" type="checkbox" name="justify-F2F" value="f2f-reason-gp">
-												<label for="justify-gp">GP report</label>
-											</div>
-									
-											{% endif %}
-											
-											
-											
-										{% elif data['evidenceChoice']=='ev-fr'%}
-											
-											
-											 {% if data['evidenceRecorded']=='record-yes'%}
-											
-											
-											<div class="multiple-choice">
-												<input id="justify-fact" type="checkbox" name="justify-F2F" value="f2f-reason-fact">
-												<label for="justify-fact">Factual report</label>
-											</div>		
-											
-											{% endif %}
-									
-											  	
-										{% endif %}
-
-
-										<div class="multiple-choice">
-											<input id="justify3" type="checkbox" name="justifyF2F" value="f2f-reason3">
-											<label for="justify3">Med 3</label>
-										</div>
-										
-										<div class="multiple-choice">
-											<input id="justify2" type="checkbox" name="justifyF2F" value="f2f-reason2">
-											<label for="justify2">UC50</label>
-										</div>
-
-							</fieldset>
-						</div>
+					
 
 						<div class="form-group">
 						<fieldset>
@@ -202,8 +148,66 @@ Roberto Clyne
 										<div class="panel js-hidden" id="justify-type">		
 	
 											<label for="typeReason" class="form-label">Reason:</label>
-											<textarea id="typeReason" class="form-control form-control-3-4" rows="5"></textarea>
+											<textarea id="typeReason" class="form-control form-control-3-4" rows="5" name="typeReasonJustify"></textarea>
 
+										</div>
+
+							</fieldset>
+						</div>
+						
+						
+						<div class="form-group">
+						<fieldset>
+						  
+							  <legend class="heading-medium mb5">What evidence did you consider?</legend>
+
+							  			<div class="multiple-choice">
+											<input id="justify1" type="checkbox" name="justifyF2F" value="f2f-reason1">
+											<label for="justify1">All available evidence</label>
+										</div>
+										
+										
+										
+										{% if data['evidenceChoice']=='ev-gp'%}
+	  	
+	  	
+											{% if data['evidenceRecorded']=='record-yes'%}
+											
+									
+											<div class="multiple-choice">
+												<input id="justify-gp" type="checkbox" name="justifyF2F" value="f2f-reason-gp">
+												<label for="justify-gp">GP report</label>
+											</div>
+									
+											{% endif %}
+											
+											
+											
+										{% elif data['evidenceChoice']=='ev-fr'%}
+											
+											
+											 {% if data['evidenceRecorded']=='record-yes'%}
+											
+											
+											<div class="multiple-choice">
+												<input id="justify-fact" type="checkbox" name="justifyF2F" value="f2f-reason-fact">
+												<label for="justify-fact">Factual report</label>
+											</div>		
+											
+											{% endif %}
+									
+											  	
+										{% endif %}
+
+
+										<div class="multiple-choice">
+											<input id="justify3" type="checkbox" name="justifyF2F" value="f2f-reason3">
+											<label for="justify3">Med 3</label>
+										</div>
+										
+										<div class="multiple-choice">
+											<input id="justify2" type="checkbox" name="justifyF2F" value="f2f-reason2">
+											<label for="justify2">UC50</label>
 										</div>
 
 							</fieldset>
