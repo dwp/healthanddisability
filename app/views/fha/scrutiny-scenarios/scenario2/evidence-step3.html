@@ -119,7 +119,44 @@ Roberto Clyne
 						</div>
 			
 			
-					<div class="form-group">
+					
+
+						<div class="form-group">
+						<fieldset>
+						  
+							  <legend class="heading-medium mb5">Type of appointment needed:</legend>
+
+
+										<div class="multiple-choice" data-target="justify-type">
+											<input id="type1" type="radio" name="types" value="nonNeuro">
+											<label for="type1">Non neuro</label>
+										</div>
+										
+
+										<div class="multiple-choice" data-target="justify-type">
+											<input id="type2" type="radio" name="types" value="Neuro">
+											<label for="type2">Neuro</label>
+										</div>
+										
+										<div class="multiple-choice" data-target="justify-type">
+											<input id="type3" type="radio" name="types" value="complexNeuro">
+											<label for="type3">Complex neuro</label>
+										</div>
+										
+										
+										
+										<div class="panel js-hidden" id="justify-type">		
+	
+											<label for="typeReason" class="form-label">Reason:</label>
+											<textarea id="typeReason" class="form-control form-control-3-4" rows="5" name="typeReasonJustify"></textarea>
+
+										</div>
+
+							</fieldset>
+						</div>
+						
+						
+						<div class="form-group">
 						<fieldset>
 						  
 							  <legend class="heading-medium mb5">What evidence did you consider?</legend>
@@ -171,40 +208,6 @@ Roberto Clyne
 										<div class="multiple-choice">
 											<input id="justify2" type="checkbox" name="justifyF2F" value="f2f-reason2">
 											<label for="justify2">UC50</label>
-										</div>
-
-							</fieldset>
-						</div>
-
-						<div class="form-group">
-						<fieldset>
-						  
-							  <legend class="heading-medium mb5">Type of appointment needed:</legend>
-
-
-										<div class="multiple-choice" data-target="justify-type">
-											<input id="type1" type="radio" name="types" value="nonNeuro">
-											<label for="type1">Non neuro</label>
-										</div>
-										
-
-										<div class="multiple-choice" data-target="justify-type">
-											<input id="type2" type="radio" name="types" value="Neuro">
-											<label for="type2">Neuro</label>
-										</div>
-										
-										<div class="multiple-choice" data-target="justify-type">
-											<input id="type3" type="radio" name="types" value="complexNeuro">
-											<label for="type3">Complex neuro</label>
-										</div>
-										
-										
-										
-										<div class="panel js-hidden" id="justify-type">		
-	
-											<label for="typeReason" class="form-label">Reason:</label>
-											<textarea id="typeReason" class="form-control form-control-3-4" rows="5" name="typeReasonJustify"></textarea>
-
 										</div>
 
 							</fieldset>
