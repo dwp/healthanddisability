@@ -1,0 +1,206 @@
+{% extends path+"/_layout-case-simple2.html" %}
+
+
+{% block actioncolumn %}
+   
+ <p class="returnRef"><a href="/{{path }}/scenario1/referrals-fme">Return to case list</a></p>
+  <hr>
+ <div class="case-status">
+<p class="mt10 mb0 bold-small">
+
+   {% if data['pbachoice']=='yes'%}
+<p class="mt10 mb0 bold-small">
+Ready for paper based assessment  
+</p>
+<p><a href="/{{path }}/scenario1/not-testing" class="button">Start assessment</a></p>
+{% else %}
+<p class="mt10 mb0 bold-small">
+Appointment booked
+</p>
+{% endif %}
+
+    
+
+</p>
+
+
+<hr>
+<!--<ul class="secondary-actions">
+ <li><a href="/{{path }}/scrutiny/recordFME" class="">Record evidence</a></li>
+  
+  </ul>-->
+</div>
+{% endblock %}
+
+{% block citizen_detail %}
+Roberto Clyne
+{% endblock %}
+
+{% block citizen_content %}
+
+
+{% if data['pbachoice'] %}
+	 
+
+{% else %}
+
+<div class="panel panel-info panel-instruction fme-warning"><h2 class="heading-small">New evidence recorded</h2>
+	   <ul class="numeric" data-id="">
+	       <li>
+	         <span class="circle circle-step circle-white">1</span>
+	         <h2 class="govuk-heading-m">Bobby's case should be reviewed before making a recommendation</h2>
+	       </li>
+	
+	       <li>
+	         <span class="circle circle-step circle-white">2</span>
+	         <h2 class="govuk-heading-m"><a href="/{{path }}/scenario1/recordFMEdecision">Make recommendation</a></h2>
+	       </li>
+	     </ul>
+	</div>
+
+	
+{% endif %}
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.scenario_tabs("evidence-portal",1,path1, customer._id) }}
+  <div class="grid-row">
+
+    <div class="column-full">
+        
+
+
+
+
+<p><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    	
+    	<h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Request GP report (113)</h1>
+		
+		
+		<div class="evidence-requests">
+				
+				
+			<form action="/{{path }}/scenario1/evidence-gpRequest2" method="POST" class="form">
+			
+			
+			<fieldset>
+						  
+							  <legend class="heading-small mb10">
+							
+										We need FME to determine if the claimant:
+							
+							  </legend>
+			
+								
+						
+
+										<div class="multiple-choice" data-target="lcwra-reasons" >
+											<input id="gpreason1" type="radio" name="gpscenarios" value="gp-lcwra">
+											<label for="gpreason1">has LCWRA because of</label>
+										</div>
+										
+										<div class="panel js-hidden" id="lcwra-reasons">
+
+											<fieldset>
+											
+												<legend class="bold">Choose:</legend>
+												
+												<div class="multiple-choice">
+													<input id="gpreason1a" type="radio" name="gpscenarios-inner" value="SFC">
+													<label for="gpreason1a"> severe functional condition</label>
+												</div>
+										
+												<div class="multiple-choice">
+													<input id="gpreason1b" type="radio" name="gpscenarios-inner" value="SMR">
+													<label for="gpreason1b">substantial mental risk</label>
+												</div>
+										
+												<div class="multiple-choice">
+													<input id="gpreason1c" type="radio" name="gpscenarios-inner" value="SPR">
+													<label for="gpreason1c">substantial physical risk</label>
+												</div>
+										
+												<div class="multiple-choice">
+													<input id="gpreason1d" type="radio" name="gpscenarios-inner" value="HRP">
+													<label for="gpreason1d">high-risk pregnancy</label>
+												</div>
+									
+											</fieldset>
+
+										</div>
+
+											
+
+										<div class="multiple-choice" >
+											<input id="gpreason2" type="radio" name="gpscenarios" value="gp-lcw">
+											<label for="gpreason2">should be treated as LCW</label>
+										</div>
+
+
+										<div class="multiple-choice" >
+											<input id="gpreason3" type="radio" name="gpscenarios" value="gp-severe">
+											<label for="gpreason3">has a severe disability or medical condition as the file is unavailable</label>
+										</div>
+
+														
+										<div class="multiple-choice" >
+											<input id="gpreason4" type="radio" name="gpscenarios" value="gp-ill">
+											<label for="gpreason4">is terminally ill</label>
+										</div>
+
+						  
+									    <div class="multiple-choice" data-target="other-reason">
+											<input id="gpreason5" type="radio" name="gpscenarios" value="gp-other">
+											<label for="gpreason5">Other reason</label>
+									    </div>
+											<div class="panel js-hidden" id="other-reason">
+												<label for="other-reason1" class="bold">
+													Add a reason for requesting this evidence
+												</label>
+												<textarea class="form-control form-control-3-4" name="other-stuff" id="other-reason1" rows="4"></textarea>
+										    </div>
+	
+						  
+							</fieldset>
+		
+					
+				
+				<p class="mt30"><input type="submit" class="button" value="Save and continue"></p>
+				</form>
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

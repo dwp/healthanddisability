@@ -1,4 +1,4 @@
-{% import path+"/caselist/_nav.html" as mainNav %}
+
 
 {% extends "admin_layout.html" %}
 
@@ -7,7 +7,7 @@
 {% block head %}
 
 
-  <link href="/public/stylesheets/fha_v9.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="{{cssPath}}" media="screen" rel="stylesheet" type="text/css" />
  <!-- <link href="/public/stylesheets/printletter.css" media="print" rel="stylesheet" type="text/css" /> -->
 {% endblock %}
 
@@ -96,6 +96,6 @@
 	<ul class="footer-links">
 		<li><a href="/">back to index page</a></li>
 		<li><a href="/{{ path }}/clearSession" id="clear_data" class="function_link">clear data</a></li>
-		<li><a href="/fha/scrutiny-scenarios/index" id="clear_data" class="function_link">scrutiny scenarios</a></li>
+		<li><a href="/{{ path }}/index" id="clear_data" class="function_link">scenario home</a></li>
 	</ul>
 {% endblock %}

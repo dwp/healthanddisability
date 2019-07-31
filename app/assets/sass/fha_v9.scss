@@ -2132,6 +2132,7 @@ table.profile-table .col5{
 	background: #dee0e2;
 }
 
+
 .time-group input {
 	position: absolute;
 	left: -9999px;
@@ -2142,6 +2143,12 @@ table.profile-table .col5{
 	color: #fff;
 
 } 
+
+
+.time-group input[type=checkbox]:focus + label {
+	border: solid 3px #FFBF47;
+} 
+
 
 
    

@@ -1,0 +1,216 @@
+{% extends path+"/_layout-case-simple2.html" %}
+
+
+{% block actioncolumn %}
+   
+  <p class="returnRef"><a href="/{{path }}/scenario2/referrals-fme">Return to case list</a></p>
+  <hr>
+ <div class="case-status">
+ 
+ 
+{% if data['pbachoice']=='no'%}
+ 
+	 <p class="main-status">Appointment booked</p>
+	 
+	 
+	 {% elif data['pbachoice']=='yes'%}
+	 
+	 <p class="main-status">Ready for paper based assessment</p>
+	 <p><a href="/{{path }}/scenario2/not-testing" class="button">Start assessment</a></p>
+	 
+	 
+	 {% else %}
+	 
+ 
+
+{% if data['evidencePath']=='ev-ftf'%}
+
+	<p class="main-status">Ready to book</p>
+	<span class="pending">Pending evidence review</span>
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+		
+	{% endif %}
+	
+	
+	{% elif data['evidencePath']=='ev-pba'%}
+	
+	{% if data['evidenceRecorded']=='record-yes'%}
+		<p class="main-status">Ready for review</p>
+		<p><a href="/{{path }}/scenario2/rec-portal" class="button">Make recommendation</a></p>
+		{% else %}
+		<p class="main-status">Medical evidence requested</p>
+	{% endif %}
+	
+	
+	{% else %}
+	
+	<p class="main-status">Ready for review</p>
+	<p><a href="/{{path }}/scenario2/rec-portal" class="button">Make recommendation</a></p>
+	
+	
+
+{% endif %}
+
+
+{% endif %}
+</p>
+
+
+<hr>
+
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Roberto Clyne
+{% endblock %}
+
+{% block citizen_content %}
+
+
+{% if data['evidencePath']=='ev-ftf'%}
+
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+	
+	
+		{% if data['pbachoice']%}
+	
+		
+	{% else %}
+	<div class="panel panel-info panel-instruction fme-warning"><h2 class="heading-small">New evidence recorded</h2>
+	   <ul class="numeric" data-id="">
+	       <li>
+	         <span class="circle circle-step circle-white">1</span>
+	         <h2 class="govuk-heading-m">Roberto's case should be reviewed before making a recommendation</h2>
+	       </li>
+	
+	       <li>
+	         <span class="circle circle-step circle-white">2</span>
+	         <h2 class="govuk-heading-m"><a href="/{{path }}/scenario2/recordFMEdecision">Make recommendation</a></h2>
+	       </li>
+	     </ul>
+	</div>
+	{% endif %}
+	
+	
+	
+		
+	{% endif %}
+	
+	
+	{% endif %}
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.scenario_tabs("appointment-fme",1,path1, customer._id) }}
+  
+  
+
+    {% if data['evidencePath']=='ev-ftf'%}
+ <div class="column-one-third">
+
+    <h2 class="heading-small"><span style="font-weight:normal" class="text-secondary">Next available</span><br />Standard appointment</h4> 
+      <ul class="list-bullet mt10 mb10">
+          <li>{{ 'Do MMMM YYYY' | baseDateAdd(8) }}</li>
+          <li>10:30am</li>
+          <li>Tresco House</li>
+      </ul>
+      <p><a href="/{{path }}/scenario2/not-testing" class="secondary-invert">Book this appointment</a></p>
+
+      <p><a href="/{{path }}/scenario2/not-testing" >Choose another date</a></p>
+
+</div>
+
+{% endif %}
+
+<div class="column-two-thirds">
+    <div class="grid-row">
+
+      <div class="column-half"  style="padding-left:0px;">
+          <div class="card-single">  
+              <h2 class="heading-small">
+               Appointment preferences
+         
+              </h2>
+              <div class="inner">
+                 
+            <ul>
+
+       
+            </ul>
+       
+            <h3 class="heading-small">Unavailable on</h3>
+            <ul>
+                <li>Monday <span>afternoons</span>
+                </li>
+                <li>Tuesdays</li>
+                
+              </ul>
+              
+            <p class="mt20"> <a href="/{{path }}/scenario2/not-testing" class="">Add or edit preferences</a></p>
+            
+            </div>
+            </div>
+  
+      </div>
+      
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+  
+
+    
+  
+  
+    <div class="visually-hidden">
+        <div class="multiple-choice">
+            <input id="radio-inline-1" type="radio" name="bookedAppointment" value="yes" checked="">
+            <label for="radio-inline-1">Yes</label>
+          </div>
+        </div>
+    
+  
+    </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

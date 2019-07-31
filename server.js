@@ -293,6 +293,7 @@ if (typeof (routes) !== 'function') {
   app.use('/fha/v8', require('./app/views/fha/v8/_routes.js'))
   app.use('/fha/v9', require('./app/views/fha/v9/_routes.js'))
   app.use('/fha/scrutiny-scenarios', require('./app/views/fha/scrutiny-scenarios/_routes.js')) 
+  app.use('/fha/appointment-scenarios', require('./app/views/fha/appointment-scenarios/_routes.js')) 
   app.use('/', routes)
 
   
