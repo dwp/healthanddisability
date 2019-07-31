@@ -1,0 +1,129 @@
+{% extends path+"/_layout-case-simple2.html" %}
+
+
+{% block actioncolumn %}
+   
+ <p class="returnRef"><a href="/{{path }}/scenario2/referrals-fme">Return to case list</a></p>
+  <hr>
+ <div class="case-status">
+<p class="mt10 mb0 bold-small">
+Recommendation
+</p>
+
+<hr>
+<!--<ul class="secondary-actions">
+ <li><a href="/{{path }}/scrutiny/recordFME" class="">Record evidence</a></li>
+  
+  </ul>-->
+</div>
+{% endblock %}
+
+{% block citizen_detail %}
+Roberto Clyne
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+    
+   
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+        
+
+    	
+    	<h1 class="heading-large">Request evidence</h1>
+		
+		
+		<div class="evidence-requests mt30">
+
+
+			<h2 class="heading-medium mb10">Requesting {% if data['evidenceChoice']=='ev-gp'%}GP report{% else %}Factual report{% endif %}</h2>
+			
+			
+			{% if data['evidenceChoice']=='ev-fr'%}
+			<h3 class="heading-small mb5">Information requested:</h3>
+			<p>{{FactRequestReason}}</p>
+			{% else %}
+			{% endif %}
+			
+			
+			<h3 class="heading-small mb5">Reason:</h3>
+			
+			{% if data['requestReason']=='insuff'%}
+			<p>Insufficient evidence to support claimant's statements</p>
+			{% else %}
+			<p>{{evRequestReason}}</p>
+			{% endif %}
+			
+			<hr>
+			
+			<div class="notice">
+				<i class="icon icon-important">
+					<span class="visually-hidden">Warning</span>
+				</i>
+				<strong class="bold-small">
+					To complete the evidence request process:<br>you need to print off a {% if data['evidenceChoice']=='ev-gp'%}GP report request{% else %}factual report request{% endif %} and send it to the relevant person</strong>
+			</div>
+			
+			<p class="mt20"><a href="#" class="secondary-invert">Print {% if data['evidenceChoice']=='ev-gp'%}GP report request{% else %}factual report request{% endif %}</a></p>
+			
+			
+
+		</div>
+		
+		<hr>
+
+				
+				
+				{% if data['evidencePath']=='ev-pba'%}
+				<p class="mt30"><a href="/{{path }}/scenario2/timeline-review" class="button">Save and continue</a></p>
+																		
+					{% else %}
+				<p class="mt30"><a href="/{{path }}/scenario2/evidence-step3" class="button">Save and continue</a></p>
+					{% endif %}
+				
+				
+				
+
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

@@ -59,15 +59,9 @@ Roberto Clyne
 		<div class="evidence-requests mt30">
 		
 		
-		
-		{% if data['evidencePath']=='ev-pba'%}
-			<form action="/{{path }}/scenario2/timeline-review" method="POST" class="form">
-																		
-		{% else %}
-			<form action="/{{path }}/scenario2/evidence-step3" method="POST" class="form">
-		{% endif %}
-				
-				
+
+			<form action="/{{path }}/scenario2/evidence-step-print" method="POST" class="form">
+
 			
 			
 			<fieldset>
@@ -93,7 +87,7 @@ Roberto Clyne
 	
 												<div class="multiple-choice">
 													<input id="requestReason1" type="radio" name="requestReason" value="insuff">
-													<label for="requestReason1">Insufficient evidence to support claimants statements</label>
+													<label for="requestReason1">Insufficient evidence to support claimant's statements</label>
 												</div>
 												
 												<div class="multiple-choice" data-target="reasonWithin">
@@ -103,7 +97,7 @@ Roberto Clyne
 												
 												<div class="panel js-hidden" id="reasonWithin">	
 													<label for="requestReason2a" class="form-label">Reason:</label>
-													<textarea id="requestReason2a" class="form-control form-control-3-4" rows="5"></textarea>
+													<textarea id="requestReason2a" class="form-control form-control-3-4" rows="5" name="evRequestReason"></textarea>
 												</div>
 												
 												
@@ -120,7 +114,7 @@ Roberto Clyne
 										<div class="panel js-hidden" id="reason2">		
 											<div class="form-group">
 												<label for="ev-info" class="form-label-bold">What information do you want?</label>
-												<textarea id="ev-info" class="form-control form-control-3-4" rows="5"></textarea>
+												<textarea id="ev-info" class="form-control form-control-3-4" rows="5" name="FactRequestReason"></textarea>
 											</div>
 											<div class="form-group">
 											<fieldset>
@@ -130,7 +124,7 @@ Roberto Clyne
 		
 													<div class="multiple-choice">
 														<input id="requestReason3" type="radio" name="requestReason2" value="insuff">
-														<label for="requestReason3">Insufficient evidence to support claimants statements</label>
+														<label for="requestReason3">Insufficient evidence to support claimant's statements</label>
 													</div>
 													
 													<div class="multiple-choice" data-target="reasonWithin2">
@@ -140,7 +134,7 @@ Roberto Clyne
 													
 													<div class="panel js-hidden" id="reasonWithin2">	
 														<label for="requestReason4a" class="form-label">Reason:</label>
-														<textarea id="requestReason4a" class="form-control form-control-3-4" rows="5"></textarea>
+														<textarea id="requestReason4a" class="form-control form-control-3-4" rows="5" name="evRequestReason"></textarea>
 													</div>
 													
 													
