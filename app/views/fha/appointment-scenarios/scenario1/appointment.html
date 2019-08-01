@@ -1,0 +1,127 @@
+{% extends path+"/_layout-case-simple2.html" %}
+
+
+{% block actioncolumn %}
+  
+   {% include path+"/scenario1/_actionColumn.html" %} 
+
+{% endblock %}
+
+{% block citizen_detail %}
+Stevie Barnes
+{% endblock %}
+
+{% block citizen_content %}
+<div class="container">
+  <div class="grid-row">
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.scenario_tabs("appointment",1,path1, customer._id) }}
+  
+
+
+    <div class="column-two-thirds">
+  <div class="grid-row">
+    <div class="column-half" style="padding-left:0px;">
+        <div class="card-single">  
+            <h2 class="heading-small">
+             Appointment preferences
+       
+            </h2>
+            <div class="inner">
+               
+          <ul>
+          </ul>
+     
+          <h3 class="heading-small">Unavailable on</h3>
+          <ul>
+              <li>Monday <span>afternoons</span>
+              </li>
+              <li>Tuesdays</li>
+              
+            </ul>
+            
+          
+          </div>
+          </div>
+
+    </div>
+    <div class="column-half"> 
+        <div class="card-single">
+           
+          <h2 class="heading-small">
+          
+            Appointment history
+          
+          </h2>
+      
+            <div class="inner">
+              
+             
+                  <h3 class="heading-small mb10">
+                    Did not attend
+                  </h3>
+                    
+            
+                  
+          
+                  <p class="small">Claimant wrang multiple times to confirm unattendance
+                    of appointment.
+                  </p>
+
+                  
+      
+              <p>  
+                  
+                 <a href="/{{path }}/scenario1/appointment-history">
+                  View appointment history
+                </a>
+                 
+            </p>
+              </div>
+  </div>
+
+  
+
+  </div>
+      </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+  
+
+    
+  
+  
+  
+    
+  
+    </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

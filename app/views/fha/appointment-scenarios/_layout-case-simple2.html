@@ -1,6 +1,7 @@
 {% extends path+"/_layout.html" %}
 
-{% import path+"/scenario2/_macros_nav_scenario2.html" as nav %} 
+{% import path+"/scenario1/_macros_nav_scenario.html" as nav %} 
+{% import path+"/scenario2/_macros_nav_scenario.html" as nav2 %} 
 
 
 
@@ -47,8 +48,7 @@
                
               </div><!-- column -->
               
-              
-              
+             
               
               <div class="column-half head-customer-extended">
               
@@ -57,10 +57,15 @@
                  <p>{{customer.dateOfBirth |formatDate('D MMMM YYYY') }}</p>
                 </div>
         
-              <div class="header-right-col mt20">
+              <div class="header-left-col mt20">
                    <h2>Benefit</h2>
                  <p>Universal credit</p>
               </div>
+
+             <!--  <div class="header-left-col mt20"  style="width:33%">
+                   <h2>Type</h2>
+                 <p>DNA Re-referral</p>
+              </div> -->
               
               <!-- / column half -->
         

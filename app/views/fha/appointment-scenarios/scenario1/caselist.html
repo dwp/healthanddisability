@@ -1,0 +1,143 @@
+{% extends path+"/_layout-caselist.html" %}
+
+ {% block horizontal_secondary_nav %}
+
+
+    <div class="search-customer">
+        <label class="form-label-bold visually-hidden" for="search">Customer search</label>
+		    <span class="form-hint">Search by NI number</span>
+        <input class="form-control form-control-2-3" id="search" type="text" name="search">
+        <button class="gem-c-search__submit">Search</button>
+    </div>
+                
+
+
+
+
+<nav class="details-nav v2 mb30">
+	<ul>
+	  
+	  
+	    <li>
+				<a href="referrals">
+				Assessment reports (60)</a>
+	    
+
+	    </li>
+	  
+	    <li class="active_detail">
+				<a href="review">
+				Dwp decisions to make (22)</a>
+	    
+	    	<ul>
+	    	
+	    		<li>
+	    			<a href="#" class="active_child">Did not attend (8)</a>
+
+	    		</li>
+
+	    	
+	    		<li>
+	    			<a href="/{{path }}/scenario/not-testing.html">Questionaire not returned (10)</a>
+
+	    		</li>
+
+
+	    		<li>
+	    			<a href="/{{path }}/scenario/not-testing.html">Deceased (2)</a>
+
+	    		</li>
+
+	    	
+	    	</ul>
+	    
+
+	    </li>
+	</ul>
+</nav>
+
+
+
+
+
+
+  
+       
+
+{% endblock %}  
+ 
+
+{% block caselist_content %}
+
+            <h2 class="heading-medium mt0"><span class="heading-xlarge">8</span><br/>Did not attend</h2>
+
+              <table class="">
+
+                <thead>
+                  <tr>
+                    <th>Details</th>
+                    <th>Date recieved</th>
+                  </tr>
+                </thead>
+                
+
+                <tr>
+                  <td><a href="/{{path }}/scenario1/timeline"><span class="visually-hidden">Name</span>Stevie Barnes</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>ZZ 41 54 60 Z</span></td>
+                  <td>{{ 'Do MMMM YYYY' | baseDate(5)}}</td>
+                                 </tr>
+                
+                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Douglas Smith</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>YY 41 54 60 Z</span></td>
+                  <td>{{ 'Do MMMM YYYY' | baseDate(4)}}</td>
+                  
+                </tr>
+                
+                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>James White</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>XX 41 54 60 Z</span></td>
+                  <td>{{ 'Do MMMM YYYY' | baseDate(4)}}</td>
+                </tr>
+                
+                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Sherry Wooten</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>WW 41 54 60 Z</span></td>
+                  <td>{{ 'Do MMMM YYYY' | baseDate(3)}}</td>
+                  
+                </tr>
+                
+                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Marvin Hall</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>VV 41 54 60 Z</span></td>
+                  <td>{{ 'Do MMMM YYYY' | baseDate(2)}}</td>
+                  
+                </tr>
+                
+                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Brian Fredericks</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>UU 41 54 60 Z</span></td>
+                  <td>{{ 'Do MMMM YYYY' | baseDate(2)}}</td>
+                  
+                </tr>
+                
+                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Tony Jacobs</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>TT 41 54 60 Z</span></td>
+                  <td>{{ 'Do MMMM YYYY' | baseDate(1)}}</td>
+                </tr>
+                
+                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Lucas Ashton</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>SS 41 54 60 Z</span></td>
+                  <td>{{ 'Do MMMM YYYY' | baseDate(0)}}</td>
+                  
+                </tr>
+      
+      
+
+               
+
+                </tbody>
+
+              </table>
+          
+
+{% endblock %}
+
+
+
+
+

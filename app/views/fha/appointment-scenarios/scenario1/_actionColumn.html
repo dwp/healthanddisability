@@ -1,0 +1,20 @@
+  <p class="returnRef"><a href="/{{path }}/scenario2/dm-dna-caselist">Return to case list</a></p>
+  <hr>
+ <div class="case-status">
+
+
+ {% if data['record']%}
+	<p class="main-status">DNA Re-referral</p>
+	<p><a href="/{{path }}/scenario1/record" class="button">Make referral choice</a></p>
+{% elif data['confirm']%}
+	<p class="main-status">Referral closed</p>
+	<p><a href="/{{path }}/scenario1/record" class="button">Record a decision</a></p>
+      {% else %}
+      <p class="main-status">Did not attend</p>
+	<p><a href="/{{path }}/scenario1/confirm" class="button">Close referral</a></p>
+
+      {% endif %}
+
+<hr>
+
+</div>
