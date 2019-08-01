@@ -1,0 +1,140 @@
+{% extends path+"/_layout-case-simple2.html" %}
+
+
+{% block actioncolumn %}
+   
+ <p class="returnRef"><a href="/{{path }}/scenario2/referrals-fme">Return to case list</a></p>
+  <hr>
+ <div class="case-status">
+<p class="mt10 mb0 bold-small">
+Recording evidence
+</p>
+
+<hr>
+<!--<ul class="secondary-actions">
+ <li><a href="/{{path }}/scrutiny/recordFME" class="">Record evidence</a></li>
+  
+  </ul>-->
+</div>
+{% endblock %}
+
+{% block citizen_detail %}
+Roberto Clyne
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+    
+   
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+        
+
+
+    	
+    	<h1 class="heading-large">Record a telephone conversation</h1>
+    	
+    	
+   
+		
+		
+		<div class="evidence-requests mt30">
+				
+				
+			<form action="/{{path }}/scenario2/evidence-portal" method="POST" class="form">
+			
+			
+					<div class="form-group">
+						<fieldset>
+						  
+							  <legend class="heading-medium mb5">Source of information:</legend>
+
+
+										<div class="multiple-choice">
+											<input id="claimant" type="radio" name="sourceTele" value="roberto">
+											<label for="claimant">Roberto Clyne</label>
+										</div>
+										
+
+										<div class="multiple-choice">
+											<input id="gpTele" type="radio" name="sourceTele" value="jurgen">
+											<label for="gpTele">GP</label>
+										</div>
+										
+										<div class="multiple-choice" data-target="otherName">
+											<input id="other" type="radio" name="sourceTele" value="other">
+											<label for="other">Other</label>
+										</div>
+										
+										<div class="panel js-hidden" id="otherName">	
+											<div class="form-group">
+												<label for="otherNameField" class="form-label-bold">Full name</label>
+												<input type="text" id="otherNameField" class="form-control form-control-3-4">
+											</div>
+											<div>
+												<label for="otherNameField2" class="form-label-bold">Who are they?</label>
+												<input type="text" id="otherNameField2" class="form-control form-control-3-4">
+											</div>
+										</div>
+
+
+							</fieldset>
+						</div>
+			
+										
+						<div class="form-group">	
+
+							<label for="typeReasonTele" class="heading-medium mb10">Information gathered:</label>
+							<textarea id="typeReasonTele" class="form-control form-control-3-4" rows="10"></textarea>
+
+						</div>
+					
+				
+				<p class="mt30"><input type="submit" class="button" value="Save and continue"></p>
+				
+
+				
+				
+				</form>
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
