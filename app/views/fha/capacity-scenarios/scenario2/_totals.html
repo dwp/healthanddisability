@@ -1,0 +1,51 @@
+<div class="inner-panel  panel-open total-panel">
+             <div class="inner-panel-content sticky">
+
+
+                 <h2 class="heading-large">Totals</h2>
+
+                 <div class="total-container">
+                        <h2 class="heading-small mt30">Complex neuro</h2>
+                        <label class="visually-hidden" for="" ></label>
+                        <input type="number" name="sum" id="sum" class="form-control" readonly value="{{sum}}" />
+                      </div>
+
+                      <div class="total-container">
+                            <h2 class="heading-small">Neuro</h2>
+                            <label class="visually-hidden" for="" ></label>
+                            <input class="form-control" id="col_2_sum"  type="text" name="col_2_sum"  type="text" value="{{col_2_sum}}" >
+                 </div>
+                      <div class="total-container">
+                          <h2 class="heading-small">Non neuro</h2>
+                          <label class="visually-hidden" for="" ></label>
+                          <input type="number" name="col_3_sum" id="col_3_sum" class="form-control" readonly  value="{{col_3_sum}}" />
+                        </div>
+                         {% if checked('benefits','ben2') %}
+                        <div class="total-container">
+                            <h2 class="heading-small">IIDB</h2>
+                            <label class="visually-hidden" for="" ></label>
+                            <input class="form-control" id="col_4_sum"  type="text" name="col_4_sum"  type="text" value="{{col_4_sum}}" >
+                    </div>
+                    {% endif %}
+                    
+                    <div class="total-container alt">
+                        <h2 class="heading-small">Total appointments</h2>
+                        <label class="visually-hidden" for="" ></label>
+                        <input class="form-control" id="rowsum_sum"  type="text" name="rowsum_sum"  type="text" value="{{rowsum_sum}}" >
+             </div>
+          
+             <div class="total-container">
+                <h2 class="heading-small">UCB</h2>
+                <label class="visually-hidden" for="" ></label>
+                <input class="form-control" id="col_6_sum"  type="text" name="col_6_sum"  type="text" value="{{col_6_sum}}" >
+     </div>
+
+
+
+
+		
+         </div>
+
+         </div> 
+
+  

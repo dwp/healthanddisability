@@ -1,0 +1,98 @@
+{% extends path+"/_layout-stripped.html" %}
+
+
+{% block actioncolumn %}
+   
+ <!-- <p class="returnRef"><a href="/fha/v8/referrals-fme">Return to case list</a></p> 
+  <hr>-->
+ <div class="case-status">
+
+<h2 class="heading-small mb5">Other scenarios</h2>
+
+<ul class="scenario-nav">
+	<li><a href="/scrutiny-scenarios/index">Scrutiny</a></li>
+	<li><a href="#">Capacity management</a></li>
+	<li><a href="#">Assessment</a></li>
+</ul>
+
+</div>
+
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+       <div class="column-full">
+    
+    
+    	<p><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+		
+		
+	
+				
+			<h1 class="heading-large"><span class="heading-secondary">Scenarios</span>Appointment</h1>
+
+          
+			  <hr>
+			  
+			  
+			  <div class="grid-row">
+			  <div class="column-three-quarters">
+			  
+					  <div class="scenario">
+						 <h2 class="heading-medium">Did not attend - DM</h2>
+						 
+						 <ul class="list-bullet">
+						 	<li>Active profile: <b>Stevie Barnes</b></li>
+							<li>UC caseworker actions case</li>
+						 </ul>
+			             <p><a href="/{{path }}/scenario1/dashboard" class="button secondary-invert">Start scenario</a></p> 
+					 </div>
+					 
+					 <hr>
+
+			  
+			  		<div class="scenario">
+						 <h2 class="heading-medium">DNA re-referral</h2>
+			             <ul class="list-bullet">
+			             	<li>Active profile: <b>Stevie Barnes</b></li>
+			             	<li>Scenario to cover Admin have the file in hand and determine case route</li>
+			             </ul>
+			             <p><a href="/{{path }}/scenario2/dashboard" class="button secondary-invert">Start scenario</a></p> 
+					 </div>
+					 
+					 <hr>
+		             
+         
+			  </div>
+			  </div>
+				
+	</div>
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
