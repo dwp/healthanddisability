@@ -12,7 +12,7 @@
 
 
 
-<h1 class="heading-large">Functional LCRWA</h1>
+
 
 
 
@@ -23,15 +23,30 @@
 	<form method="post" action="recommendedReviewPeriod">
 	
 
-
-	<p>Activity: 
+<!-- Displays report item based on selection from LCWRA page -->
+{% if data['lcwra']==='lcwra1'%}
+{% elif data['lcwra']==='lcwra2' or data['lcwra']==='lcwra3' or data['lcwra']==='lcwra4'%}
+<h1 class="heading-large">Treat as LCRWA</h1>
+<p>Special circumstance: 
 		{% if data['lcwra']==='lcwra1'%}
 		{% elif data['lcwra']==='lcwra2'%}
 		Risks associated with pregnancy
 		{% elif data['lcwra']==='lcwra3'%}
-		Cancer treatment underway
+		Chemotherapy or radiotherapy in progress
 		{% elif data['lcwra']==='lcwra4'%}
-		Terminal illness
+		Terminally ill
+		{% endif %}
+		</p>
+
+		<div class="form-group">
+			<label class="form-label-bold" for="justify">Give reasons</label>
+			<textarea class="form-control form-control-3-4" name="justifyTreatLCWRA" id="justify" rows="8"></textarea>
+		</div>
+
+{% elif data['lcwra']==='lcwra6' or data['lcwra']==='lcwra7' or data['lcwra']==='lcwra8' or data['lcwra']==='lcwra9' or data['lcwra']==='lcwra10' or data['lcwra']==='lcwra11' or data['lcwra']==='lcwra12' or data['lcwra']==='lcwra13' or data['lcwra']==='lcwra14' or data['lcwra']==='lcwra15' or data['lcwra']==='lcwra16' or data['lcwra']==='lcwra17' or data['lcwra']==='lcwra18' or data['lcwra']==='lcwra19' or data['lcwra']==='lcwra20'%}
+<h1 class="heading-large">Functional LCRWA</h1>
+<p>Activity: 
+		{% if data['lcwra']==='lcwra1'%}
 		{% elif data['lcwra']==='lcwra6'%}
 		Moving around and climbing steps without someone’s help
 		{% elif data['lcwra']==='lcwra7'%}
@@ -67,8 +82,11 @@
 
 		<div class="form-group">
 			<label class="form-label-bold" for="justify">Give reasons</label>
-			<textarea class="form-control form-control-3-4" name="justify" id="justify" rows="8"></textarea>
+			<textarea class="form-control form-control-3-4" name="justifyFunctionalLCWRA" id="justify" rows="8"></textarea>
 		</div>
+
+{% endif %}
+
 
     <p><input type="submit" class="button" value="Continue" id="submitButton"></p>
 		</form>	
