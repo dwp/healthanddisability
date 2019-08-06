@@ -29,7 +29,7 @@
 <!-- <p class="form-hint mb10" style="max-width:650px">Only add comments if you find abnormalities. If you choose an examination and leave the text box blank, it will be marked as normal.</p> -->
 	
 <div class="multiple-choice" data-target="issue1open">
-		      <input id="issue1" name="issueswith" type="checkbox" value="Lower Back Issue 1" {{ checked('issueswith', 'Lower Back Issue 1') }} >
+		      <input id="issue1" name="issueswithlowerback1" type="checkbox" value="Lower Back Issue 1" {{ checked('issueswithlowerback1', 'Lower Back Issue 1') }} >
 		      <label for="issue1">Forward flexion</label>
 		    </div>
 		     <div class="panel js-hidden" id="issue1open">
@@ -38,15 +38,15 @@
 				 <fieldset>
 				 	<legend class="heading-small mb5">Choose:</legend>
 					 	<div class="multiple-choice">
-					      <input id="test1" name="testingthis" type="radio" value="test1" {{ checked('testingthis', 'test1') }}>
+					      <input id="test1" name="lowerback1" type="radio" value="test1" {{ checked('lowerback1', 'test1') }}>
 					      <label for="test1">Unrestricted</label>
 					    </div>
 					    <div class="multiple-choice">
-					      <input id="test2" name="testingthis" type="radio" value="test2" {{ checked('testingthis', 'test2') }}>
+					      <input id="test2" name="lowerback1" type="radio" value="test2" {{ checked('lowerback1', 'test2') }}>
 					      <label for="test2">To knees: can bend forward to reach knees</label>
 							</div>
 							<div class="multiple-choice">
-									<input id="test3" name="testingthis" type="radio" value="test3" {{ checked('testingthis', 'test3') }}>
+									<input id="test3" name="lowerback1" type="radio" value="test3" {{ checked('lowerback1', 'test3') }}>
 									<label for="test3">Above knees: cannot bend forward to reach knees</label>
 								</div>
 				 </fieldset>
@@ -56,7 +56,7 @@
 
 
 <div class="multiple-choice" data-target="issue2open">
-		<input id="issue2" name="issueswith" type="checkbox" value="Lower Back Issue 2" {{ checked('issueswith', 'Lower Back Issue 2') }} >
+		<input id="issue2" name="issueswithlowerback2" type="checkbox" value="Lower Back Issue 2" {{ checked('issueswithlowerback2', 'Lower Back Issue 2') }} >
 		<label for="issue2">Extension</label>
 	</div>
 	 <div class="panel js-hidden" id="issue2open">
@@ -65,15 +65,15 @@
 	 <fieldset>
 		 <legend class="heading-small mb5">Choose:</legend>
 			 <div class="multiple-choice">
-					<input id="test1" name="testingthis" type="radio" value="test1" {{ checked('testingthis', 'test1') }}>
+					<input id="test1" name="lowerback2" type="radio" value="test1" {{ checked('lowerback2', 'test1') }}>
 					<label for="test1">Full</label>
 				</div>
 				<div class="multiple-choice">
-					<input id="test2" name="testingthis" type="radio" value="test2" {{ checked('testingthis', 'test2') }}>
+					<input id="test2" name="lowerback2" type="radio" value="test2" {{ checked('lowerback2', 'test2') }}>
 					<label for="test2">Able to crouch half way down to the floor: reduced to half way</label>
 				</div>
 				<div class="multiple-choice">
-						<input id="test3" name="testingthis" type="radio" value="test3" {{ checked('testingthis', 'test3') }}>
+						<input id="test3" name="lowerback2" type="radio" value="test3" {{ checked('lowerback2', 'test3') }}>
 						<label for="test3">Able to crouch less than half way down to the floor: reduced to less than half way</label>
 					</div>
 	 </fieldset>
