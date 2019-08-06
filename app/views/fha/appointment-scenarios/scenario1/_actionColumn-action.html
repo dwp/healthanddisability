@@ -1,0 +1,16 @@
+
+ <div class="case-status">
+ {% if data['record']%}
+	<p class="main-status">DNA Re-referral</p>
+{% elif data['confirm']%}
+	<p class="main-status">Referral closed</p>
+      {% else %}
+      <p class="main-status">Did not attend</p>
+      {% endif %}
+
+</p>
+
+
+<hr>
+
+</div>

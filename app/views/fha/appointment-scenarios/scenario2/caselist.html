@@ -1,0 +1,126 @@
+{% extends path+"/_layout-caselist.html" %}
+
+ {% block horizontal_secondary_nav %}
+
+
+    <div class="search-customer">
+        <label class="form-label-bold visually-hidden" for="search">Customer search</label>
+		    <span class="form-hint">Search by NI number</span>
+        <input class="form-control form-control-2-3" id="search" type="text" name="search">
+        <button class="gem-c-search__submit">Search</button>
+    </div>
+                
+<nav class="details-nav v2 mb30">
+	<ul>
+	  
+	  
+	    <li class="active_detail">
+				<a href="referrals">
+				Referrals (49)</a>
+	    
+	    	<ul>
+	    	
+	    		<li>
+	    			<a href="new-referrals">New referrals (32)</a>
+
+	    		</li>
+
+	    	
+	    		<li>
+	    			<a href="uc50-posted">UC50 posted (9)</a>
+
+	    		</li>
+
+	    	
+	    		<li>
+	    			<a href="uc50-received">UC50 received (8)</a>
+
+	    		</li>
+
+	    	
+	    		<li>
+	    			<a href="ed-referrals" class="active_child">DNA Re-referrals (2)</a>
+
+	    		</li>
+
+	    	
+	    	</ul>
+	    
+
+	    </li>
+	  
+	    <li>
+				<a href="review">
+				Reviews (44)</a>
+	    
+
+	    </li>
+	  
+	    <li>
+				<a href="appointments">
+				Appointments (21)</a>
+	    
+
+	    </li>
+	  
+	    <li>
+				<a href="assessment">
+				Today's appointments (21)</a>
+	    
+
+	    </li>
+	  
+	</ul>
+</nav>
+
+
+
+
+
+
+  
+       
+
+{% endblock %}  
+ 
+
+{% block caselist_content %}
+
+            <h2 class="heading-medium mt0"><span class="heading-xlarge">2</span><br/>DNA re-referrals</h2>
+
+              <table class="">
+
+                <thead>
+                  <tr>
+                    <th>Details</th>
+                    <th>Date recieved</th>
+                  </tr>
+                </thead>
+                
+
+                <tr>
+                  <td><a href="/{{path }}/scenario2/timeline"><span class="visually-hidden">Name</span>Stevie Barnes</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>ZZ 41 54 60 Z</span></td>
+                  <td>{{ 'Do MMMM YYYY' | baseDate(5)}}</td>
+                                 </tr>
+                
+                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Douglas Smith</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>YY 41 54 60 Z</span></td>
+                  <td>{{ 'Do MMMM YYYY' | baseDate(4)}}</td>
+                  
+                </tr>
+                
+              
+
+               
+
+                </tbody>
+
+              </table>
+          
+
+{% endblock %}
+
+
+
+
+

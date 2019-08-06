@@ -3,115 +3,20 @@
 
 {% block actioncolumn %}
    
-  <p class="returnRef"><a href="/{{path }}/scenario2/referrals-fme">Return to case list</a></p>
-  <hr>
- <div class="case-status">
- 
- 
-{% if data['pbachoice']=='no'%}
- 
-	 <p class="main-status">Appointment booked</p>
-	 
-	 
-	 {% elif data['pbachoice']=='yes'%}
-	 
-	 <p class="main-status">Ready for paper based assessment</p>
-	 <p><a href="/{{path }}/scenario2/not-testing" class="button">Start assessment</a></p>
-	 
-	 
-	 {% else %}
-	 
- 
-
-{% if data['evidencePath']=='ev-ftf'%}
-
-	<p class="main-status">Ready to book</p>
-	<span class="pending">Pending evidence review</span>
-
-	{% if data['evidenceRecorded']=='record-yes'%}
-		
-	{% endif %}
-	
-	
-	{% elif data['evidencePath']=='ev-pba'%}
-	
-	{% if data['evidenceRecorded']=='record-yes'%}
-		<p class="main-status">Ready for review</p>
-		<p><a href="/{{path }}/scenario2/rec-portal" class="button">Make recommendation</a></p>
-		{% else %}
-		<p class="main-status">Medical evidence requested</p>
-	{% endif %}
-	
-	
-	{% else %}
-	
-	<p class="main-status">Ready for review</p>
-	<p><a href="/{{path }}/scenario2/rec-portal" class="button">Make recommendation</a></p>
-	
-	
-
-{% endif %}
-
-
-{% endif %}
-</p>
-
-
-<hr>
-
-</div>
+{% include path+"/scenario2/_actionColumn.html" %} 
 
 {% endblock %}
 
 {% block citizen_detail %}
-Roberto Clyne
+Stevie Barnes
 {% endblock %}
 
 {% block citizen_content %}
-
-{% if data['evidencePath']=='ev-ftf'%}
-
-
-	{% if data['evidenceRecorded']=='record-yes'%}
-	
-	
-		{% if data['pbachoice']%}
-	
-		
-	{% else %}
-	<div class="panel panel-info panel-instruction fme-warning"><h2 class="heading-small">New evidence recorded</h2>
-	   <ul class="numeric" data-id="">
-	       <li>
-	         <span class="circle circle-step circle-white">1</span>
-	         <h2 class="govuk-heading-m">Roberto's case should be reviewed before making a recommendation</h2>
-	       </li>
-	
-	       <li>
-	         <span class="circle circle-step circle-white">2</span>
-	         <h2 class="govuk-heading-m"><a href="/{{path }}/scenario2/recordFMEdecision">Make recommendation</a></h2>
-	       </li>
-	     </ul>
-	</div>
-	{% endif %}
-	
-	
-	
-		
-	{% endif %}
-	
-	
-	{% endif %}
-
 
 <div class="container">
 
 
   <div class="grid-row">
-  
-  
- 
-  
-  	
 
     <div class="column-full">
     
@@ -145,17 +50,14 @@ Roberto Clyne
 
 <tbody>
 
-
-{% if data['pbachoice']=='yes'%}
-
-<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
-		  <td><a href="/{{path }}/scenario2/not-testing">Paper based assessment justification</a></td>
-		  <td>HCP</td>
+<tr>
+		  <td><a href="/{{path }}/scenario2/good-cause-evidence">Good cause decision</a></td>
+		  <td>DWP</td>
 		  <td></td>
-		  <td class="numeric"><span>11 August 2019</span></td>
+		  <td class="numeric"><span>{{ 'Do MMMM YYYY' | baseDate(0)}}</span></td>
 		</tr>
 
-{% endif %}
+
 
 
 

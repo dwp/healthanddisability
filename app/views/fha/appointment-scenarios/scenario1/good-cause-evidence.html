@@ -1,0 +1,56 @@
+{% extends path+"/_layout-case-simple2.html" %}
+
+
+{% block actioncolumn %}
+   {% include path+"/scenario1/_actionColumn-action.html" %} 
+{% endblock %}
+
+{% block citizen_detail %}
+Stevie Barnes
+{% endblock %}
+
+{% block citizen_content %}
+<div class="container">
+  <div class="grid-row">
+  
+   <div class="column-full">
+      <p class="no-kdBar"> <a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">Good cause decision</h1>
+      <form class="form" action="/fha/v8/scrutiny/5bbf32d5ed63a198101d1d2b/booking-post" method="post">
+        
+        
+      
+      <h2 class="heading-small">Reason the claimant didn't attend the appointment</h2>
+      <p>Mental health case</p>
+      
+      <h2 class="heading-small">Additional information</h3>
+      <p>Claimant was having a bad day with his depression and was struggling to get out of the house, he asked for a rearrangement but we could not provide it because he had previously rearranged his appointment.</p>
+      
+      
+      
+      
+      </form>
+      </div>
+  </div>
+
+    </div>
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

@@ -1,0 +1,83 @@
+{% extends path+"/_layout-case-simple2.html" %}
+
+
+{% block actioncolumn %}
+   {% include path+"/scenario2/_actionColumn-action.html" %} 
+{% endblock %}
+
+{% block citizen_detail %}
+Stevie Barnes
+{% endblock %}
+
+{% block citizen_content %}
+<div class="container">
+  <div class="grid-row">
+  
+    <div class="column-full">
+    
+  
+    
+    
+  <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+<form class="form" action="/{{path }}/scenario2/timeline" method="post">
+
+        <h2 class="heading-large">Who do you want to refer this case to?</h2>
+        
+        <fieldset>
+          <legend class="visually-hidden">Refer this case to</legend>
+          
+          <div class="form-group">
+        
+            <div class="multiple-choice">
+              <input id="decide_now" name="referto" type="radio" value="review">
+              <label for="decide_now"> Refer to review</label>
+            </div>
+        
+            <div class="multiple-choice">
+              <input id="face2face" name="referto" type="radio" value="appointment">
+              <label for="face2face"> Refer for appointment</label>
+            </div>
+        
+          </div><!-- form-group -->
+          <div class="form-group">
+            <button class="button">Save and continue</button>
+          </div><!-- form-group -->
+          
+        </fieldset>
+        
+          
+    
+      
+
+
+
+</div>
+
+
+
+
+          </div></form>
+
+ 
+
+    
+
+
+  
+</div> 
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

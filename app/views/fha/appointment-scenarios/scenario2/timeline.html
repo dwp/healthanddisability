@@ -1,0 +1,229 @@
+{% extends path+"/_layout-case-simple2.html" %}
+
+
+{% block actioncolumn %}
+  
+   {% include path+"/scenario2/_actionColumn.html" %} 
+{% endblock %}
+
+
+
+
+{% block citizen_detail %}
+Stevie Barnes
+{% endblock %}
+
+{% block citizen_content %}
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav2.scenario_tabs("timeline",1,path1, customer._id) }}
+
+<div class="timeline">
+
+              {% if data['referto']=='review'%}
+                <span class="line"></span>
+                <div class="timeline__event">
+                  <h3 class="timeline__heading">Referred for review</h3>
+                  <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0)}}</p>
+                </div>
+                {% endif %}
+                {% if data['referto']=='appointment'%}
+                <span class="line"></span>
+                <div class="timeline__event">
+                  <h3 class="timeline__heading">Referred for appointment</h3>
+                  <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(0)}}</p>
+                </div>
+                {% endif %}
+
+              <span class="line"></span>
+                <div class="timeline__event">
+                  <h3 class="timeline__heading">Referral reopened: good caused accepted</h3>
+                  <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(2)}}</p>
+                </div>
+                      <span class="line"></span>
+                <div class="timeline__event">
+                  <h3 class="timeline__heading">Referral closed</h3>
+                  <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(6)}}</p>
+                </div>
+            
+             
+            
+
+                <span class="line"></span>
+                <div class="timeline__event">
+                  <h3 class="timeline__heading">Did not attend appointment</h3>
+                  <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(6)}}</p>
+  
+                  <p class="address-stack">  
+                      <span class="mt10">Appointment details:</span>
+                      <span>Non-neuro appointment</span>
+                      <span>30th July 2019</span>
+                      <span>11:00am</span>
+                      <span>Tresco House</span>
+                  </p>
+                </div>
+  
+
+
+                    <span class="line"></span>
+                    <div class="timeline__event">
+                      <h3 class="timeline__heading">Appointment sms sent</h3>
+                      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(9)}}</p>
+                     
+                      <p class="address-stack">
+                        
+                          <span class="mt10">Phone number:</span>
+                          <span>07815 526 315</span>
+                      </p>
+                    </div>
+       
+                    <span class="line"></span>
+                    <div class="timeline__event">
+                      <h3 class="timeline__heading">Appointment letter sent</h3>
+                      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(13)}}</p>
+             
+                      <p class="address-stack">
+                          <span class="mt10">Address:</span>
+                          <span>158 Merit Court</span>
+                          <span>Birmingham</span>
+                          <span>B9 9IP</span>
+                      </p>
+                 
+                    </div>
+
+  
+                    <span class="line"></span>
+                    <div class="timeline__event">
+                      <h3 class="timeline__heading">Appointment booked</h3>
+                      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(16)}}</p>
+                      <p class="address-stack">  
+                          <span class="mt10">Appointment details:</span>
+                          <span>Non-neuro appointment</span>
+                          <span>{{ 'Do MMMM YYYY' | baseDate(10)}}</span>
+                          <span>11:00am</span>
+                          <span>Tresco House</span>
+                      </p>
+                    </div>
+
+                    <span class="line"></span>
+                    <div class="timeline__event">
+                      <h3 class="timeline__heading">Cancelled appointment</h3>
+                      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(16)}}/ Barry Gallager / Tresco assessment centre</p>
+                      <p class="address-stack">  
+                          <span class="mt10">Assessment centre:</span>
+                          <span>We have cancelled this appointment because there wasn't a hcp available to fullfill the appointment</span>
+                      </p>
+                    </div>
+
+  
+                    <span class="line"></span>
+                    <div class="timeline__event">
+                      <h3 class="timeline__heading">Appointment booked</h3>
+                      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(18)}}</p>
+                      <p class="address-stack">  
+                          <span class="mt10">Appointment details:</span>
+                          <span>Non-neuro appointment</span>
+                          <span>21st July 2019</span>
+                          <span>11:00am</span>
+                          <span>Tresco House</span>
+                      
+                      </p>
+                    </div>
+  
+                  
+                  <span class="line"></span>
+                    <div class="timeline__event">
+                      <h3 class="timeline__heading">Referred for appointment</h3>
+                      <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(20)}}</p>
+                    </div>
+
+            
+            
+            <span class="line"></span>
+            <div class="timeline__event">
+              <h3 class="timeline__heading">GP report - medical evidence received</h3>
+              <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(22)}}</p>
+            </div>
+  
+
+            
+            
+            <span class="line"></span>
+            <div class="timeline__event">
+              <h3 class="timeline__heading">GP Report - medical evidence requested</h3>
+              <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(30)}}</p>
+            </div>
+            
+ 
+            
+                  
+                  <span class="line"></span>
+                  <div class="timeline__event">
+                    <h3 class="timeline__heading">Med 3 - medical evidence received </h3>
+                    <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(32)}}</p>
+                  </div>
+   
+                  <span class="line"></span>
+                  <div class="timeline__event">
+                    <h3 class="timeline__heading">UC50 form received</h3>
+                    <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(32)}}</p>
+                  </div>
+
+            
+                  <span class="line"></span>
+                  <div class="timeline__event">
+                    <h3 class="timeline__heading">UC50 form sent out</h3>
+                    <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(36)}}</p>
+                    <p class="address-stack">
+                        <span class="mt10">Address:</span>
+                        <span>158 Merit Court</span>
+                        <span>Birmingham</span>
+                        <span>B9 9IP</span>
+                    </p>
+                  </div>
+  
+            
+                  <span class="line"></span>
+                  <div class="timeline__event">
+                    <h3 class="timeline__heading">New referral created</h3>
+                    <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(36)}}</p>
+                  </div>
+            
+
+
+
+                
+        
+          
+                <div style="clear:both"></div>
+          
+              </div>
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

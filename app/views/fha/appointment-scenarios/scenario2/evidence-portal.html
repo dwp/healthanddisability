@@ -2,125 +2,24 @@
 
 
 {% block actioncolumn %}
-   
-  <p class="returnRef"><a href="/{{path }}/scenario2/referrals-fme">Return to case list</a></p>
-  <hr>
- <div class="case-status">
+     
+   {% include path+"/scenario2/_actionColumn.html" %} 
  
- 
-{% if data['pbachoice']=='no'%}
- 
-	 <p class="main-status">Appointment booked</p>
-	 
-	 
-	 {% elif data['pbachoice']=='yes'%}
-	 
-	 <p class="main-status">Ready for paper based assessment</p>
-	 <p><a href="/{{path }}/scenario2/not-testing" class="button">Start assessment</a></p>
-	 
-	 
-	 {% else %}
-	 
- 
-
-{% if data['evidencePath']=='ev-ftf'%}
-
-	<p class="main-status">Ready to book</p>
-	<span class="pending">Pending evidence review</span>
-
-	{% if data['evidenceRecorded']=='record-yes'%}
-		
-	{% endif %}
-	
-	
-	{% elif data['evidencePath']=='ev-pba'%}
-	
-	{% if data['evidenceRecorded']=='record-yes'%}
-		<p class="main-status">Ready for review</p>
-		<p><a href="/{{path }}/scenario2/rec-portal" class="button">Make recommendation</a></p>
-		{% else %}
-		<p class="main-status">Medical evidence requested</p>
-	{% endif %}
-	
-	
-	{% else %}
-	
-	<p class="main-status">Ready for review</p>
-	<p><a href="/{{path }}/scenario2/rec-portal" class="button">Make recommendation</a></p>
-	
-	
-
-{% endif %}
-
-
-{% endif %}
-</p>
-
-
-<hr>
-
-</div>
-
 {% endblock %}
 
 {% block citizen_detail %}
-Roberto Clyne
+Stevie Barnes
 {% endblock %}
 
 {% block citizen_content %}
 
-{% if data['evidencePath']=='ev-ftf'%}
-
-
-	{% if data['evidenceRecorded']=='record-yes'%}
-	
-	
-		{% if data['pbachoice']%}
-	
-		
-	{% else %}
-	<div class="panel panel-info panel-instruction fme-warning"><h2 class="heading-small">New evidence recorded</h2>
-	   <ul class="numeric" data-id="">
-	       <li>
-	         <span class="circle circle-step circle-white">1</span>
-	         <h2 class="govuk-heading-m">Roberto's case should be reviewed before making a recommendation</h2>
-	       </li>
-	
-	       <li>
-	         <span class="circle circle-step circle-white">2</span>
-	         <h2 class="govuk-heading-m"><a href="/{{path }}/scenario2/recordFMEdecision">Make recommendation</a></h2>
-	       </li>
-	     </ul>
-	</div>
-	{% endif %}
-	
-	
-	
-		
-	{% endif %}
-	
-	
-	{% endif %}
-
-
-
-
-
 <div class="container">
-
-
   <div class="grid-row">
-  
-  
- 
-  
-  	
-
     <div class="column-full">
     
     
     {# macro #}
-  {{ nav.scenario_tabs("evidence-portal",1,path1, customer._id) }}
+  {{ nav2.scenario_tabs("evidence-portal",1,path1, customer._id) }}
   <div class="grid-row">
 
     <div class="column-full">
@@ -177,94 +76,17 @@ Roberto Clyne
 						
 						<tbody>
 						
-						
-						{% if data['pbachoice']=='yes'%}
-						
-									<tr>
-										<td><a href="/{{path }}/scenario1/not-testing">Paper based assessment justification</a></td>
-										<td>11 August 2019</td>
-									</tr>
-						
-						{% endif %}
-						
-						
-						
-							{% if data['evidenceChoice']=='ev-gp'%}
-	  	
-	  	
-						  		{% if data['evidenceRecorded']=='record-yes'%}
-						  		
-						  		
-						  			<tr>
-										<td><a href="/{{path }}/scenario1/not-testing">GP report</a></td>
-										<td>10 August 2019</td>
-									</tr> 		
-						  		
-						  		{% endif %}
-						  		
-						  		
-						  		
-						  	{% elif data['evidenceChoice']=='ev-fr'%}
-						  		
-						  		
-						  		 {% if data['evidenceRecorded']=='record-yes'%}
-						  		
-						  		
-						  			<tr>
-										<td><a href="/{{path }}/scenario1/not-testing">Factual report</a></td>
-										<td>10 August 2019</td>
-									</tr> 		
-						  		
-						  		{% endif %}
-	
-						  		  	
-						  	{% endif %}
-						  	
-						  	
-						  	
-						  	{% if data['evidenceRecorded']=='record-yes'%}
-						  	
-						  	
-						  		{% if data['appointmentReferral']%}
 								  		<tr>
-											<td><a href="/{{path }}/scenario1/not-testing">Appointment referral justification</a></td>
-											<td>3 August 2019</td>
-										</tr>
-										{% else %}
-										
-										<tr>
-											<td><a href="/{{path }}/scenario1/not-testing">Med 3</a></td>
-											<td>1 August 2019</td>
-										</tr>
-								  	
-								  	{% endif %}
-								
-								
-								{% else %}
-								
-								
-								{% if data['appointmentReferral']%}
-								  		<tr>
-											<td><a href="/{{path }}/scenario1/not-testing">Appointment referral justification</a></td>
-											<td>3 August 2019</td>
+											<td><a href="/{{path }}/scenario2/good-cause-evidence">Good cause decision</a></td>
+											<td>{{ 'Do MMMM YYYY' | baseDate(0)}}</td>
 										</tr>
 										<tr>
-											<td><a href="/{{path }}/scenario1/not-testing">Med 3</a></td>
-											<td>1 August 2019</td>
-										</tr>
-										{% else %}
-								
-										<tr>
-											<td><a href="/{{path }}/scenario1/not-testing">Med 3</a></td>
-											<td>1 August 2019</td>
-										</tr>
-										<tr>
-											<td><a href="/{{path }}/scenario1/not-testing">UC50</a></td>
-											<td>21 July 2019</td>
+											<td><a href="/{{path }}/scenario1/not-testing">Gp report</a></td>
+											<td>{{ 'Do MMMM YYYY' | baseDate(22)}}</td>
 										</tr>
 										
-										{% endif %}
-							{% endif %}
+									
+							
 						</tbody>
 					</table>
 					

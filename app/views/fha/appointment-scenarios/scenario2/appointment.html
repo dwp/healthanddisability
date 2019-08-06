@@ -1,0 +1,143 @@
+{% extends path+"/_layout-case-simple2.html" %}
+
+
+{% block actioncolumn %}
+  
+   {% include path+"/scenario2/_actionColumn.html" %} 
+
+{% endblock %}
+
+{% block citizen_detail %}
+Stevie Barnes
+{% endblock %}
+
+{% block citizen_content %}
+<div class="container">
+  <div class="grid-row">
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav2.scenario_tabs("appointment",1,path1, customer._id) }}
+   {% if data['referto']=='appointment'%}  
+<div class="column-one-third">
+      
+
+
+    
+ 
+    <h2 class="heading-small"><span style="font-weight:normal" class="text-secondary">Next available</span><br>Standard appointment</h2> 
+      <ul class="list-bullet mt10 mb10">
+          <li>8th August 2019</li>
+          <li>10:30am</li>
+          <li>Tresco House</li>
+      </ul>
+      <p><button class="button-secondary">Book this appointment</button></p>
+
+      <p><a href="">Choose another date</a></p>
+</div>
+{% endif %}
+
+    <div class="column-two-thirds">
+  <div class="grid-row">
+    <div class="column-half" style="padding-left:0px;">
+        <div class="card-single">  
+            <h2 class="heading-small">
+             Appointment preferences
+       
+            </h2>
+            <div class="inner">
+               
+          <ul>
+          </ul>
+     
+          <h3 class="heading-small">Unavailable on</h3>
+          <ul>
+              <li>Monday <span>afternoons</span>
+              </li>
+              <li>Tuesdays</li>
+              
+            </ul>
+            
+          
+          </div>
+          </div>
+
+    </div>
+    <div class="column-half"> 
+        <div class="card-single">
+           
+          <h2 class="heading-small">
+          
+            Appointment history
+          
+          </h2>
+      
+            <div class="inner">
+              
+             
+                  <h3 class="heading-small mb10">
+                    Did not attend
+                  </h3>
+                    
+            
+                  
+          
+                  <p class="small">Claimant wrang multiple times to confirm unattendance
+                    of appointment.
+                  </p>
+
+                  
+      
+              <p>  
+                  
+                 <a href="/{{path }}/scenario2/appointment-history">
+                  View appointment history
+                </a>
+                 
+            </p>
+              </div>
+  </div>
+
+  
+
+  </div>
+      </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+  
+
+    
+  
+  
+  
+    
+  
+    </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
