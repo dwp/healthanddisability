@@ -1,0 +1,236 @@
+
+{% extends path+"/_layout-case-action.html" %} 
+{% block citizen_content %} {{ data.nuggets | log }}
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+<h1 class="heading-large"><span class="heading-secondary">Step 3 of 5</span>Right Upper Arm</h1>
+
+		
+		
+ {% if checked('physicalvisited', 'yes') %}
+				<form action="report-physical" method="Post">
+	{% else %}	
+	       <form action="neck-arms_left-forearm" method="Post">	
+	{% endif%}		
+
+																	
+																		 
+																		 
+
+
+									
+	<div class="form-group">
+																			
+<fieldset>
+
+  <legend class="heading-medium mb10">Select the examinations you want to complete</legend>																		
+<!-- <p class="form-hint mb10" style="max-width:650px">Only add comments if you find abnormalities. If you choose an examination and leave the text box blank, it will be marked as normal.</p> -->
+	
+<div class="multiple-choice" data-target="issue1open">
+		      <input id="issue1" name="issueswith" type="checkbox" value="Right Upper Arm Issue 1" {{ checked('issueswith', 'Right Upper Arm Issue 1') }} >
+		      <label for="issue1">Hand behind neck</label>
+		    </div>
+		     <div class="panel js-hidden" id="issue1open">
+				 
+				 
+				 <fieldset>
+				 	<legend class="heading-small mb5">Choose:</legend>
+					 	<div class="multiple-choice">
+					      <input id="test1" name="testingthis" type="radio" value="test1" {{ checked('testingthis', 'test1') }}>
+					      <label for="test1">Fingers overlap mid line</label>
+					    </div>
+					    <div class="multiple-choice">
+					      <input id="test2" name="testingthis" type="radio" value="test2" {{ checked('testingthis', 'test2') }}>
+					      <label for="test2">Fingers do not reach mid line: hand reaches to back of neck but not fully behind it</label>
+							</div>
+							<div class="multiple-choice">
+									<input id="test3" name="testingthis" type="radio" value="test3" {{ checked('testingthis', 'test3') }}>
+									<label for="test3">Cannot put hand behind neck: hand does not reach behind neck</label>
+								</div>
+				 </fieldset>
+				 	
+</div>
+
+
+
+<div class="multiple-choice" data-target="issue2open">
+		<input id="issue2" name="issueswith" type="checkbox" value="Right Upper Arm Issue 2" {{ checked('issueswith', 'Right Upper Arm Issue 2') }} >
+		<label for="issue2">Hand behind back</label>
+	</div>
+	 <div class="panel js-hidden" id="issue2open">
+	 
+	 
+	 <fieldset>
+		 <legend class="heading-small mb5">Choose:</legend>
+			 <div class="multiple-choice">
+					<input id="test1" name="testingthis" type="radio" value="test1" {{ checked('testingthis', 'test1') }}>
+					<label for="test1">Finger to mid scapula</label>
+				</div>
+				<div class="multiple-choice">
+					<input id="test2" name="testingthis" type="radio" value="test2" {{ checked('testingthis', 'test2') }}>
+					<label for="test2">Finger below scapula: hand can only reach small of back</label>
+				</div>
+				<div class="multiple-choice">
+						<input id="test3" name="testingthis" type="radio" value="test3" {{ checked('testingthis', 'test3') }}>
+						<label for="test3">Cannot put hand behind back</label>
+					</div>
+	 </fieldset>
+		 
+</div>
+
+
+
+<div class="multiple-choice" data-target="issue3open">
+		<input id="issue3" name="issueswith" type="checkbox" value="Right Upper Arm Issue 3" {{ checked('issueswith', 'Right Upper Arm Issue 3') }} >
+		<label for="issue3">Shoulder abduction</label>
+	</div>
+	 <div class="panel js-hidden" id="issue3open">
+	 
+	 <fieldset>
+		 <legend class="heading-small mb5">Choose:</legend>
+			 <div class="multiple-choice">
+					<input id="test1" name="testingthis" type="radio" value="test1" {{ checked('testingthis', 'test1') }}>
+					<label for="test1">Normal (more than 170°)</label>
+				</div>
+				<div class="multiple-choice">
+					<input id="test2" name="testingthis" type="radio" value="test2" {{ checked('testingthis', 'test2') }}>
+					<label for="test2">Ability to raise arm away from side to above shoulder is reduced to between 120° and 150°</label>
+				</div>
+				<div class="multiple-choice">
+						<input id="test3" name="testingthis" type="radio" value="test3" {{ checked('testingthis', 'test3') }}>
+						<label for="test3">Ability to raise arm away from side is restricted around shoulder level to between 70° and 110°</label>
+				</div>
+				<div class="multiple-choice">
+						<input id="test4" name="testingthis" type="radio" value="test4" {{ checked('testingthis', 'test4') }}>
+						<label for="test4">Ability to raise arm away from side is restricted around shoulder level to less than 70°</label>
+				</div>
+				<div class="multiple-choice">
+						<input id="test5" name="testingthis" type="radio" value="test5" {{ checked('testingthis', 'test5') }}>
+						<label for="test5">Painful arm movement above shoulder height at between 100° and 150°</label>
+				</div>
+				<div class="multiple-choice">
+						<input id="test6" name="testingthis" type="radio" value="test6" {{ checked('testingthis', 'test6') }}>
+						<label for="test6">Painful arm movement around shoulder height at between 100° and 110°</label>
+				</div>
+				<div class="multiple-choice">
+						<input id="test7" name="testingthis" type="radio" value="test7" {{ checked('testingthis', 'test7') }}>
+						<label for="test7">Not able to initiate: cannot start to lift arm away from side</label>
+				</div>
+	 </fieldset>
+		 
+</div>
+
+
+
+
+<div class="multiple-choice" data-target="issue4open">
+		<input id="issue4" name="issueswith" type="checkbox" value="Right Upper Arm Issue 4" {{ checked('issueswith', 'Right Upper Arm Issue 4') }} >
+		<label for="issue4">Elbow flexion</label>
+	</div>
+	 <div class="panel js-hidden" id="issue4open">
+	 
+	 <fieldset>
+		 <legend class="heading-small mb5">Choose:</legend>
+			 <div class="multiple-choice">
+					<input id="test1" name="testingthis" type="radio" value="test1" {{ checked('testingthis', 'test1') }}>
+					<label for="test1">Normal (130°)</label>
+				</div>
+				<div class="multiple-choice">
+					<input id="test2" name="testingthis" type="radio" value="test2" {{ checked('testingthis', 'test2') }}>
+					<label for="test2">Can bend elbow beyond half way to between 100° and 120°</label>
+				</div>
+				<div class="multiple-choice">
+						<input id="test3" name="testingthis" type="radio" value="test3" {{ checked('testingthis', 'test3') }}>
+						<label for="test3">Can bend elbow almost half way to between 80° and 90°</label>
+				</div>
+				<div class="multiple-choice">
+						<input id="test4" name="testingthis" type="radio" value="test4" {{ checked('testingthis', 'test4') }}>
+						<label for="test4">Can bend elbow less than half way to less than 80°</label>
+				</div>
+	 </fieldset>
+		 
+</div>
+
+
+
+<div class="multiple-choice" data-target="issue5open">
+		<input id="issue5" name="issueswith" type="checkbox" value="Right Upper Arm Issue 5" {{ checked('issueswith', 'Right Upper Arm Issue 5') }} >
+		<label for="issue5">Upper limb power</label>
+	</div>
+	 <div class="panel js-hidden" id="issue5open">
+	 
+	 <fieldset>
+		 <legend class="heading-small mb5">Choose:</legend>
+			 <div class="multiple-choice">
+					<input id="test1" name="testingthis" type="radio" value="test1" {{ checked('testingthis', 'test1') }}>
+					<label for="test1">Normal</label>
+				</div>
+				<div class="multiple-choice">
+					<input id="test2" name="testingthis" type="radio" value="test2" {{ checked('testingthis', 'test2') }}>
+					<label for="test2">Muscle power in the arm is slightly reduced</label>
+				</div>
+				<div class="multiple-choice">
+						<input id="test3" name="testingthis" type="radio" value="test3" {{ checked('testingthis', 'test3') }}>
+						<label for="test3">Muscle power in the arm is significantly reduced</label>
+				</div>
+				<div class="multiple-choice">
+						<input id="test4" name="testingthis" type="radio" value="test4" {{ checked('testingthis', 'test4') }}>
+						<label for="test4">No movement</label>
+				</div>				
+	 </fieldset>
+		 
+</div>
+		    
+		    
+		    
+</fieldset>			    
+</div>									    
+		    
+		    
+<div class="form-group">
+	<label class="heading-small" for="right-upper-arm-issue-open-comments">Other examination findings</label>
+	<textarea class="form-control form-control-2-4" name="rightupperarmissueopencomments" id="rightupperarmissueopencomments" rows="4">{{rightupperarmissueopencomments}}</textarea>
+</div>
+																			
+			
+												
+												 
+												  <p class="mt30"><button class="button">Save and continue</button></p>
+												 
+		
+				</form>
+
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+{% macro physGroup(name,sel) %}
+  {% set s = name | slug %}
+  <!-- GROUP -->
+  <div class="multiple-choice" data-target="group_{{s}}_yes">
+    <input id="group_{{s}}" type="checkbox" name="group_{{s}}" sue="group_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="group_{{s}}">{{name}}</label>
+</div>
+{% endmacro %} 
+
+{% macro physObs(name, displayname ,sel) %} {% set s = name | slug %}
+<div class="multiple-choice" data-target="phys_{{s}}_yes">
+    <input id="phys_{{s}}" type="checkbox" name="phys_{{s}}" value="phys_{{s}}" {% if sel %} checked="checked" {% endif %}>
+    <label for="phys_{{s}}">{{displayname}}</label>
+</div>
+<div class="form-group panel js-hidden mt0 mb20" id="phys_{{s}}_yes">
+    <p>
+        <label class="form-label" for="phys_{{s}}_obs">Comments</label>
+        <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4">
+				</textarea>
+    </p>
+</div>
+{% endmacro %} {% block footer_top %} {{ super() }}
+<p class="font-xsmall">
+    <a href="/{{ path2 }}/phys_exam_1">exam v1</a> |
+    <a href="/{{ path2 }}/phys_exam_2">exam v2</a>
+</p>
+{% endblock %} {% block page_scripts %} {{ super() }} {% endblock %}

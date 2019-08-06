@@ -100,6 +100,7 @@ router.get('/', function (req, res, next) {
   next()
 })
 
+
 router.post('*', function (req, res, next) {
   // path is only available with the proper value within this sub-module/router.
   res.locals.path = req.baseUrl.substr(1)
@@ -138,6 +139,8 @@ router.post('*', function (req, res, next) {
 
   next()
 })
+
+
 
 router.get('/miarussell/*', function (req, res, next) {
   res.locals.firstname = 'Mia'

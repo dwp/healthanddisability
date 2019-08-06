@@ -77,7 +77,7 @@
 
 	</div>
 	
-	<p class="edit-report"><a href="exceptionalCircumstances" class="button-secondary">Edit exceptional circumstances</a></p>
+	<!--<p class="edit-report"><a href="exceptionalCircumstances" class="button-secondary">Edit exceptional circumstances</a></p>-->
 	
 </div>
 
@@ -130,7 +130,7 @@
 
 	</div>
 	
-	<p class="edit-report"><a href="exceptionalCircumstances" class="button-secondary">Edit medical opinion</a></p>
+	<!--<p class="edit-report"><a href="exceptionalCircumstances" class="button-secondary">Edit medical opinion</a></p>-->
 	
 </div>
 
@@ -165,7 +165,7 @@
 		</p>
 	</div>
 	
-	<p class="edit-report"><a href="recommendedReviewPeriod" class="button-secondary">Edit recommended review period</a></p>
+	<!--<p class="edit-report"><a href="recommendedReviewPeriod" class="button-secondary">Edit recommended review period</a></p>-->
 	
 </div>
 <!-- / report item -->	
@@ -180,7 +180,7 @@
 		<p>{{ statement }}</p>
 	</div>
 	
-	<p class="edit-report"><a href="personalSummaryStatement" class="button-secondary">Edit personal summary statement</a></p>
+	<!--<p class="edit-report"><a href="personalSummaryStatement" class="button-secondary">Edit personal summary statement</a></p>-->
 	
 </div>
 <!-- / report item -->	
@@ -196,7 +196,7 @@
 		<p><span style="font-weight:bold;">Name of attendee:</span> {{ additionalAttendeeName }}</p>
 		<p><span style="font-weight:bold;">Relationship to claimant:</span> {{ additionalAttendeeRelationship }}</p>
 	</div>
-	<p class="edit-report"><a href="addAttendee" class="button-secondary">Edit additional attendees</a></p>
+	<!--<p class="edit-report"><a href="addAttendee" class="button-secondary">Edit additional attendees</a></p>-->
 </div>
 <!-- / report item -->	
 
@@ -210,7 +210,7 @@
 		<p>{{ conditionHistory }}</p>
 	</div>
 	
-	<p class="edit-report"><a href="conditionHistory" class="button-secondary">Edit condition history</a></p>
+	<!--<p class="edit-report"><a href="conditionHistory" class="button-secondary">Edit condition history</a></p>-->
 	
 </div>
 <!-- / report item -->
@@ -226,7 +226,7 @@
 		<p>{{ medicationSideEffects }}</p>
 	</div>
 	
-	<p class="edit-report"><a href="conditionHistory" class="button-secondary">Edit medication and side effects</a></p>
+	<!--<p class="edit-report"><a href="conditionHistory" class="button-secondary">Edit medication and side effects</a></p>-->
 	
 </div>
 <!-- / report item -->
@@ -311,7 +311,7 @@
   
 	</div>
 	
-	<p class="edit-report"><a href="socialWorkHistoryEdit" class="button-secondary">Edit social and work history</a></p>
+	<!--<p class="edit-report"><a href="socialWorkHistoryEdit" class="button-secondary">Edit social and work history</a></p>-->
 	
 </div>
 <!-- / report item -->
@@ -328,7 +328,7 @@
   		{% endfor %}
 	</div>
 	
-	<p class="edit-report"><a href="typicalDayEdit" class="button-secondary">Edit typical day</a></p>
+	<!--<p class="edit-report"><a href="typicalDayEdit" class="button-secondary">Edit typical day</a></p>-->
 	
 </div>
 <!-- / report item -->
@@ -347,7 +347,7 @@
 
 	</div>
 
-	<p class="edit-report"><a href="observedBehaviourEdit" class="button-secondary">Edit informal observations</a></p>
+	<!--<p class="edit-report"><a href="observedBehaviourEdit" class="button-secondary">Edit informal observations</a></p>-->
 	
 </div>
 <!-- / report item -->
@@ -671,7 +671,7 @@
 					</tbody>
 				</table>
 				<form action="lower-limbs2" method="Post">
-				<p><button class="button-secondary">Edit left leg</button></p>
+				<!--<p><button class="button-secondary">Edit left leg</button></p>-->
 						 <div class="visually-hidden">
 				<div class="multiple-choice">
 						<input id="issue15" name="physicalvisited" type="checkbox" value="yes" checked>
@@ -854,7 +854,7 @@
 					</tbody>
 				</table>
 				<form action="lower-limbs3" method="Post">
-						<p><button class="button-secondary">Edit right leg</button></p>
+						<!--<p><button class="button-secondary">Edit right leg</button></p>-->
 						 <div class="visually-hidden">
 						<div class="multiple-choice">
 								<input id="issue15" name="physicalvisited" type="checkbox" value="yes" checked>
@@ -865,8 +865,516 @@
 				
 	
 			<!-- / iteem end -->
+
+			<h3 class="heading-medium">Neck and arms</h3>
+			
+			<table class="report-view-table">
+					<caption class="heading-small">Neck</caption>
 	
-	
+					<tbody>
+						{% if checked('issueswith', 'Neck Issue 1') %}
+						<tr>
+							<th>Forward flexion</th>
+							<td>
+									{% if data['testingthis']==="test1" %}
+									Unrestricted
+									{% elif data['testingthis']==="test2" %}
+									Can very nearly touch chin to front of chest (gap of 1 cm)
+									{% elif data['testingthis']==="test3" %}
+									Cannot touch chin to front of chest (gap greater than 2 cm)
+									{% endif %}
+							</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswith', 'Neck Issue 2') %}
+						<tr>
+							<th>Extension</th>
+							<td>
+									{% if data['testingthis']==="test1" %}
+									Unrestricted
+									{% elif data['testingthis']==="test2" %}
+									Upward neck movement reduced by a quarter to between 60° and 70°
+									{% elif data['testingthis']==="test3" %}
+									Upward neck movement greatly reduced to less than 30°
+									{% endif %}
+							</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswith', 'Neck Issue 3') %}
+						<tr>
+							<th>Left rotation</th>
+							<td>
+									{% if data['testingthis']==="test1" %}
+									Unrestricted
+									{% elif data['testingthis']==="test2" %}
+									Ability to look to side is reduced to between 60° and 70°
+									{% elif data['testingthis']==="test3" %}
+									Ability to look to side is reduced to less than 60°
+									{% endif %}
+							</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswith', 'Neck Issue 4') %}
+						<tr>
+							<th>Left ear to shoulder</th>
+							<td>
+									{% if data['testingthis']==="test1" %}
+									Unrestricted
+									{% elif data['testingthis']==="test2" %}
+									No: cannot move ear towards shoulder
+									{% endif %}
+							</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswith', 'Neck Issue 5') %}
+						<tr>
+							<th>Right rotation</th>
+							<td>
+									{% if data['testingthis']==="test1" %}
+									Unrestricted
+									{% elif data['testingthis']==="test2" %}
+									Ability to look to side is reduced to between 60° and 70°
+									{% elif data['testingthis']==="test3" %}
+									Ability to look to side is reduced to less than 60°
+									{% endif %}
+							</td>
+						</tr>
+						{% endif %}
+						{% if checked('issueswith', 'Neck Issue 6') %}
+						<tr>
+							<th>Right ear to shoulder</th>
+							<td>
+									{% if data['testingthis']==="test1" %}
+									Unrestricted
+									{% elif data['testingthis']==="test2" %}
+									No: cannot move ear towards shoulder
+									{% endif %}
+							</td>
+						</tr>
+						{% endif %}
+						{% if data['neck-issue-opencomments'] %}
+						<tr>
+							<th>Other examination findings</th>
+							<td>
+									{{ neck-issue-opencomments }}
+								</td>
+						</tr>
+						{% endif %}
+					</tbody>
+				</table>
+				<!-- / issue end -->
+
+
+				<table class="report-view-table">
+						<caption class="heading-small">Left upper arm</caption>
+		
+						<tbody>
+							{% if checked('issueswith', 'Left Upper Arm Issue 1') %}
+							<tr>
+								<th>Hand behind neck</th>
+								<td>
+										{% if data['testingthis']==="test1" %}
+										Fingers overlap mid line
+										{% elif data['testingthis']==="test2" %}
+										Fingers do not reach mid line: hand reaches to back of neck but not fully behind it
+										{% elif data['testingthis']==="test3" %}
+										Cannot put hand behind neck: hand does not reach behind neck
+										{% endif %}
+								</td>
+							</tr>
+							{% endif %}
+							{% if checked('issueswith', 'Left Upper Arm Issue 2') %}
+							<tr>
+								<th>Hand behind back</th>
+								<td>
+										{% if data['testingthis']==="test1" %}
+										Finger to mid scapula
+										{% elif data['testingthis']==="test2" %}
+										Finger below scapula: hand can only reach small of back
+										{% elif data['testingthis']==="test3" %}
+										Cannot put hand behind back
+										{% endif %}
+								</td>
+							</tr>
+							{% endif %}
+							{% if checked('issueswith', 'Left Upper Arm Issue 3') %}
+							<tr>
+								<th>Shoulder abduction</th>
+								<td>
+										{% if data['testingthis']==="test1" %}
+										Normal (more than 170°)
+										{% elif data['testingthis']==="test2" %}
+										Ability to raise arm away from side to above shoulder is reduced to between 120° and 150°
+										{% elif data['testingthis']==="test3" %}
+										Ability to raise arm away from side is restricted around shoulder level to between 70° and 110°
+										{% elif data['testingthis']==="test4" %}
+										Ability to raise arm away from side is restricted around shoulder level to less than 70°
+										{% elif data['testingthis']==="test5" %}
+										Painful arm movement above shoulder height at between 100° and 150°
+										{% elif data['testingthis']==="test6" %}
+										Painful arm movement around shoulder height at between 100° and 110°
+										{% elif data['testingthis']==="test7" %}
+										Not able to initiate: cannot start to lift arm away from side
+										{% endif %}
+								</td>
+							</tr>
+							{% endif %}
+							{% if checked('issueswith', 'Left Upper Arm Issue 4') %}
+							<tr>
+								<th>Elbow flexion</th>
+								<td>
+										{% if data['testingthis']==="test1" %}
+										Normal (130°)
+										{% elif data['testingthis']==="test2" %}
+										Can bend elbow beyond half way to between 100° and 120°
+										{% elif data['testingthis']==="test3" %}
+										Can bend elbow almost half way to between 80° and 90°
+										{% elif data['testingthis']==="test4" %}
+										Can bend elbow less than half way to less than 80°
+										{% endif %}
+								</td>
+							</tr>
+							{% endif %}
+							{% if checked('issueswith', 'Left Upper Arm Issue 5') %}
+							<tr>
+								<th>Upper limb power</th>
+								<td>
+										{% if data['testingthis']==="test1" %}
+										Normal
+										{% elif data['testingthis']==="test2" %}
+										Muscle power in the arm is slightly reduced
+										{% elif data['testingthis']==="test3" %}
+										Muscle power in the arm is significantly reduced
+										{% elif data['testingthis']==="test4" %}
+										No movement
+										{% endif %}
+								</td>
+							</tr>
+							{% endif %}
+							{% if data['left-upper-arm-issue-opencomments'] %}
+							<tr>
+								<th>Other examination findings</th>
+								<td>
+										{{ left-upper-arm-issue-opencomments }}
+									</td>
+							</tr>
+							{% endif %}
+						</tbody>
+						
+					</table>
+					<!-- / issue end -->
+
+
+			
+					<table class="report-view-table">
+							<caption class="heading-small">Right upper arm</caption>
+			
+							<tbody>
+								{% if checked('issueswith', 'Right Upper Arm Issue 1') %}
+								<tr>
+									<th>Hand behind neck</th>
+									<td>
+											{% if data['testingthis']==="test1" %}
+											Fingers overlap mid line
+											{% elif data['testingthis']==="test2" %}
+											Fingers do not reach mid line: hand reaches to back of neck but not fully behind it
+											{% elif data['testingthis']==="test3" %}
+											Cannot put hand behind neck: hand does not reach behind neck
+											{% endif %}
+									</td>
+								</tr>
+								{% endif %}
+								{% if checked('issueswith', 'Right Upper Arm Issue 2') %}
+								<tr>
+									<th>Hand behind back</th>
+									<td>
+											{% if data['testingthis']==="test1" %}
+											Finger to mid scapula
+											{% elif data['testingthis']==="test2" %}
+											Finger below scapula: hand can only reach small of back
+											{% elif data['testingthis']==="test3" %}
+											Cannot put hand behind back
+											{% endif %}
+									</td>
+								</tr>
+								{% endif %}
+								{% if checked('issueswith', 'Right Upper Arm Issue 3') %}
+								<tr>
+									<th>Shoulder abduction</th>
+									<td>
+											{% if data['testingthis']==="test1" %}
+											Normal (more than 170°)
+											{% elif data['testingthis']==="test2" %}
+											Ability to raise arm away from side to above shoulder is reduced to between 120° and 150°
+											{% elif data['testingthis']==="test3" %}
+											Ability to raise arm away from side is restricted around shoulder level to between 70° and 110°
+											{% elif data['testingthis']==="test4" %}
+											Ability to raise arm away from side is restricted around shoulder level to less than 70°
+											{% elif data['testingthis']==="test5" %}
+											Painful arm movement above shoulder height at between 100° and 150°
+											{% elif data['testingthis']==="test6" %}
+											Painful arm movement around shoulder height at between 100° and 110°
+											{% elif data['testingthis']==="test7" %}
+											Not able to initiate: cannot start to lift arm away from side
+											{% endif %}
+									</td>
+								</tr>
+								{% endif %}
+								{% if checked('issueswith', 'Right Upper Arm Issue 4') %}
+								<tr>
+									<th>Elbow flexion</th>
+									<td>
+											{% if data['testingthis']==="test1" %}
+											Normal (130°)
+											{% elif data['testingthis']==="test2" %}
+											Can bend elbow beyond half way to between 100° and 120°
+											{% elif data['testingthis']==="test3" %}
+											Can bend elbow almost half way to between 80° and 90°
+											{% elif data['testingthis']==="test4" %}
+											Can bend elbow less than half way to less than 80°
+											{% endif %}
+									</td>
+								</tr>
+								{% endif %}
+								{% if checked('issueswith', 'Right Upper Arm Issue 5') %}
+								<tr>
+									<th>Upper limb power</th>
+									<td>
+											{% if data['testingthis']==="test1" %}
+											Normal
+											{% elif data['testingthis']==="test2" %}
+											Muscle power in the arm is slightly reduced
+											{% elif data['testingthis']==="test3" %}
+											Muscle power in the arm is significantly reduced
+											{% elif data['testingthis']==="test4" %}
+											No movement
+											{% endif %}
+									</td>
+								</tr>
+								{% endif %}
+								{% if data['right-upper-arm-issue-opencomments'] %}
+								<tr>
+									<th>Other examination findings</th>
+									<td>
+											{{ right-upper-arm-issue-opencomments }}
+										</td>
+								</tr>
+								{% endif %}
+							</tbody>
+						</table>
+						<!-- / issue end -->
+
+
+						<table class="report-view-table">
+								<caption class="heading-small">Left forearm</caption>
+				
+								<tbody>
+									{% if checked('issueswith', 'Left Forearm Issue 1') %}
+									<tr>
+										<th>Wrist pronation</th>
+										<td>
+												{% if data['testingthis']==="test1" %}
+												Normal (70° to 80°)
+												{% elif data['testingthis']==="test2" %}
+												Wrist turning inwards is reduced to between 40° and 60°
+												{% elif data['testingthis']==="test3" %}
+												Wrist turning inwards is reduced to less than 40°
+												{% endif %}
+										</td>
+									</tr>
+									{% endif %}
+									{% if checked('issueswith', 'Left Forearm Issue 2') %}
+									<tr>
+										<th>Wrist supination</th>
+										<td>
+												{% if data['testingthis']==="test1" %}
+												Normal (70° to 80°)
+												{% elif data['testingthis']==="test2" %}
+												Wrist turning outwards is reduced to between 60° and 65
+												{% elif data['testingthis']==="test3" %}
+												Wrist turning outwards is reduced to less than 60°
+												{% endif %}
+										</td>
+									</tr>
+									{% endif %}
+									{% if checked('issueswith', 'Left Forearm Issue 3') %}
+									<tr>
+										<th>Wrist dorsiflexion</th>
+										<td>
+												{% if data['testingthis']==="test1" %}
+												Normal (30° or more)
+												{% elif data['testingthis']==="test2" %}
+												Wrist bending backwards is reduced to less than 30°
+												{% endif %}
+										</td>
+									</tr>
+									{% endif %}
+									{% if checked('issueswith', 'Left Forearm Issue 4') %}
+									<tr>
+										<th>Wrist plantarflexion</th>
+										<td>
+												{% if data['testingthis']==="test1" %}
+												Normal (30° or more)
+												{% elif data['testingthis']==="test2" %}
+												Wrist bending forwards is reduced to less than 30°
+												{% endif %}
+										</td>
+									</tr>
+									{% endif %}
+									{% if checked('issueswith', 'Left Forearm Issue 5') %}
+									<tr>
+										<th>Pinch grip</th>
+										<td>
+												{% if data['testingthis']==="test1" %}
+												Normal (thumb to index finger)
+												{% elif data['testingthis']==="test2" %}
+												Thumb and finger grip is weaker than normal: can touch but with reduced power
+												{% elif data['testingthis']==="test3" %}
+												Fist grip reduced: can touch but with reduced power
+												{% elif data['testingthis']==="test4" %}
+												Cannot grip with thumb and finger: unable to touch thumb to finger
+												{% endif %}
+										</td>
+									</tr>
+									{% endif %}
+									{% if checked('issueswith', 'Left Forearm Issue 6') %}
+									<tr>
+										<th>Power grip</th>
+										<td>
+												{% if data['testingthis']==="test1" %}
+												Normal
+												{% elif data['testingthis']==="test2" %}
+												Fist grip reduced
+												{% elif data['testingthis']==="test3" %}
+												Fist grip very weak: fingers do not touch palm
+												{% elif data['testingthis']==="test4" %}
+												Cannot make a fist: fingers 3 cm from palm 
+												{% elif data['testingthis']==="test5" %}
+												Cannot grip at all: cannot bend fingers 
+												{% endif %}
+										</td>
+									</tr>
+									{% endif %}
+									{% if data['left-forearm-issue-opencomments'] %}
+									<tr>
+										<th>Other examination findings</th>
+										<td>
+												{{ left-forearm-issue-opencomments }}
+											</td>
+									</tr>
+									{% endif %}
+								</tbody>
+							</table>
+							<!-- / issue end -->
+
+							<table class="report-view-table">
+									<caption class="heading-small">Right forearm</caption>
+					
+									<tbody>
+										{% if checked('issueswith', 'Right Forearm Issue 1') %}
+										<tr>
+											<th>Wrist pronation</th>
+											<td>
+													{% if data['testingthis']==="test1" %}
+													Normal (70° to 80°)
+													{% elif data['testingthis']==="test2" %}
+													Wrist turning inwards is reduced to between 40° and 60°
+													{% elif data['testingthis']==="test3" %}
+													Wrist turning inwards is reduced to less than 40°
+													{% endif %}
+											</td>
+										</tr>
+										{% endif %}
+										{% if checked('issueswith', 'Right Forearm Issue 2') %}
+										<tr>
+											<th>Wrist supination</th>
+											<td>
+													{% if data['testingthis']==="test1" %}
+													Normal (70° to 80°)
+													{% elif data['testingthis']==="test2" %}
+													Wrist turning outwards is reduced to between 60° and 65
+													{% elif data['testingthis']==="test3" %}
+													Wrist turning outwards is reduced to less than 60°
+													{% endif %}
+											</td>
+										</tr>
+										{% endif %}
+										{% if checked('issueswith', 'Right Forearm Issue 3') %}
+										<tr>
+											<th>Wrist dorsiflexion</th>
+											<td>
+													{% if data['testingthis']==="test1" %}
+													Normal (30° or more)
+													{% elif data['testingthis']==="test2" %}
+													Wrist bending backwards is reduced to less than 30°
+													{% endif %}
+											</td>
+										</tr>
+										{% endif %}
+										{% if checked('issueswith', 'Right Forearm Issue 4') %}
+										<tr>
+											<th>Wrist plantarflexion</th>
+											<td>
+													{% if data['testingthis']==="test1" %}
+													Normal (30° or more)
+													{% elif data['testingthis']==="test2" %}
+													Wrist bending forwards is reduced to less than 30°
+													{% endif %}
+											</td>
+										</tr>
+										{% endif %}
+										{% if checked('issueswith', 'Right Forearm Issue 5') %}
+										<tr>
+											<th>Pinch grip</th>
+											<td>
+													{% if data['testingthis']==="test1" %}
+													Normal (thumb to index finger)
+													{% elif data['testingthis']==="test2" %}
+													Thumb and finger grip is weaker than normal: can touch but with reduced power
+													{% elif data['testingthis']==="test3" %}
+													Fist grip reduced: can touch but with reduced power
+													{% elif data['testingthis']==="test4" %}
+													Cannot grip with thumb and finger: unable to touch thumb to finger
+													{% endif %}
+											</td>
+										</tr>
+										{% endif %}
+										{% if checked('issueswith', 'Right Forearm Issue 6') %}
+										<tr>
+											<th>Power grip</th>
+											<td>
+													{% if data['testingthis']==="test1" %}
+													Normal
+													{% elif data['testingthis']==="test2" %}
+													Fist grip reduced
+													{% elif data['testingthis']==="test3" %}
+													Fist grip very weak: fingers do not touch palm
+													{% elif data['testingthis']==="test4" %}
+													Cannot make a fist: fingers 3 cm from palm 
+													{% elif data['testingthis']==="test5" %}
+													Cannot grip at all: cannot bend fingers 
+													{% endif %}
+											</td>
+										</tr>
+										{% endif %}
+										{% if data['right-forearm-issue-opencomments'] %}
+										<tr>
+											<th>Other examination findings</th>
+											<td>
+													{{ right-forearm-issue-opencomments }}
+												</td>
+										</tr>
+										{% endif %}
+									</tbody>
+								</table>
+								<!-- / issue end -->
+
+					
+
+
+
+
+
 			{% if data['cardiac'] %}
 			<h3 class="heading-medium">Cardio vascular and respiratory</h3>
 			{% if checked('cardiac', 'general') %}
