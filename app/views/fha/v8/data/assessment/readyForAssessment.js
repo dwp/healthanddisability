@@ -866,15 +866,15 @@ module.exports = [
     "illnesses": [
       {
         "dataname": "condition1",
-        "name": "Anxiety",
-        "source": "Claimant",
-        "date": "1997"
-      },
-      {
-        "dataname": "condition2",
         "name": "Depression",
         "source": "Claimant",
         "date": "2011"
+      },
+      {
+        "dataname": "condition2",
+        "name": "Anxiety",
+        "source": "Claimant",
+        "date": "2017"
       },  {
         "dataname": "condition3",
         "name": "PTSD",
@@ -911,7 +911,7 @@ module.exports = [
       }
     ],
     "status": "Ready for assessment",
-    "dateOfBirth": "1961-11-10T23:13:32+00:00",
+    "dateOfBirth": "1991-11-10T23:13:32+00:00",
     "mobile": "07961 542 293",
     "NINO": "QQ 78 13 92 C",
     "email": "david.lowe@fakemail.com",
@@ -1003,7 +1003,7 @@ module.exports = [
       }
     ],
     "status": "Ready for assessment",
-    "dateOfBirth": "1958-08-15T14:32:38+00:00",
+    "dateOfBirth": "1991-08-15T14:32:38+00:00",
     "mobile": "07825 447 216",
     "NINO": "QQ 69 17 54 C",
     "email": "michael.morris@fakemail.com",
