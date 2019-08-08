@@ -1,70 +1,32 @@
-{% extends path+"/_layout-case-simple2.html" %}
+{% extends path+"/_layout-case-simple4.html" %}
 
 
 {% block actioncolumn %}
    
-  <p class="returnRef"><a href="/{{path }}/scenario2/referrals-fme" class="link-back">Return to case list</a></p>
-  <hr>
- <div class="case-status">
- 
- 
-{% if data['pbachoice']=='no'%}
- 
-	 <p class="main-status">Appointment booked</p>
-	 
-	 
-	 {% elif data['pbachoice']=='yes'%}
-	 
-	 <p class="main-status">Ready for paper based assessment</p>
-	 <p><a href="/{{path }}/scenario2/not-testing" class="button">Start assessment</a></p>
-	 
-	 
-	 {% else %}
-	 
- 
+<p class="returnRef"><a href="javascript: history.go(-1)" class="link-back">Return to case list</a></p>
 
-{% if data['evidencePath']=='ev-ftf'%}
+ <div class="caseStatus">
+ 	
+	<p class="main-status"><span>Current case status</span>Did not attend appointment</p>
 
-	<p class="main-status">Ready to book</p>
-	<span class="pending">Pending evidence review</span>
+	<p class="primary-action"><span>Suggested case action</span><a href="#" class="button">Record a reason</a></p>
 
-	{% if data['evidenceRecorded']=='record-yes'%}
+ </div>
+
+<!--<div class="secondary-nav-actions">
+
+	<ul>
+		<li><a href="#">Withdraw case</a></li>
+		<li><a href="#">Close case</a></li>
+		<li><a href="#">Delete case</a></li>
+	</ul>
 		
-	{% endif %}
-	
-	
-	{% elif data['evidencePath']=='ev-pba'%}
-	
-	{% if data['evidenceRecorded']=='record-yes'%}
-		<p class="main-status">Ready for review</p>
-		<p><a href="/{{path }}/scenario2/rec-portal" class="button">Make recommendation</a></p>
-		{% else %}
-		<p class="main-status">Medical evidence requested</p>
-	{% endif %}
-	
-	
-	{% else %}
-	
-	<p class="main-status">Ready for review</p>
-	<p><a href="/{{path }}/scenario2/rec-portal" class="button">Make recommendation</a></p>
-	
-	
-
-{% endif %}
-
-
-{% endif %}
-</p>
-
-
-<hr>
-
-</div>
+ </div> -->
 
 {% endblock %}
 
 {% block citizen_detail %}
-Roberto Clyne
+Kenneth Robertson
 {% endblock %}
 
 {% block citizen_content %}
@@ -153,7 +115,7 @@ Roberto Clyne
 
 				<div class="portal-inner">
 				
-				<h4>Latest recorded evidence</h4>
+				<h4>Last recorded evidence</h4>
 
 					<table>
 						<caption>Evidence item</caption>
@@ -298,32 +260,16 @@ Roberto Clyne
 					</ul>
 					
 					
-					
-					
-					{% if data['evidenceRecorded']=='record-yes'%}
-					
-					{% else %}
-					
-			
-					{% if data['evidenceChoice'] %}		
+	
 					<div class="requested-evidence">
 		
 							<ul class="action-list req-list">
-								{% if data['evidenceChoice']=='ev-gp'%}
 								<li><p>GP report<span>Requested on 3 August 2019</span></p>
 								<a href="/{{path }}/scenario2/record-evidence" class="secondary-invert">Record GP report</a></li>
-								{% elif data['evidenceChoice']=='ev-fr'%}
-								<li><p>Factual report<span>Requested on 3 August 2019</span></p>
-								<a href="/{{path }}/scenario2/record-evidence" class="secondary-invert">Record factual report</a></li>
-								{% endif %}
+								
 							</ul>
 						</div>
-						{% else %}
-						{% endif %}
 
-					{% endif %}
-		
-					
 					
 		
 					

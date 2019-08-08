@@ -1,65 +1,43 @@
-{% extends path+"/_layout-case-simple2.html" %}
+{% extends path+"/_layout-case-simple4.html" %}
 
 
 {% block actioncolumn %}
    
-  <p class="returnRef"><a href="/{{path }}/scenario2/referrals-fme" class="link-back">Return to case list</a></p>
-  <hr>
- <div class="case-status">
- 
- 
-{% if data['pbachoice']=='no'%}
- 
-	 <p class="main-status">Appointment booked</p>
-	 
-	 
-	 {% elif data['pbachoice']=='yes'%}
-	 
-	 <p class="main-status">Ready for paper based assessment</p>
-	 <p><a href="/{{path }}/scenario2/not-testing" class="button">Start assessment</a></p>
-	 
-	 
-	 {% else %}
-	 
- 
+ <p class="returnRef"><a href="javascript: history.go(-1)" class="link-back">Return to case list</a></p>
 
-{% if data['evidencePath']=='ev-ftf'%}
 
-	<p class="main-status">Ready to book</p>
-	<span class="pending">Pending evidence review</span>
-
-	{% if data['evidenceRecorded']=='record-yes'%}
-		
-	{% endif %}
+<div class="caseIdentifiers">
+	<div class="caseFlags">
+		<h2>Case flags</h2>
 	
-	
-	{% elif data['evidencePath']=='ev-pba'%}
-	
-	{% if data['evidenceRecorded']=='record-yes'%}
-		<p class="main-status">Ready for review</p>
-		<p><a href="/{{path }}/scenario2/rec-portal" class="button">Make recommendation</a></p>
-		{% else %}
-		<p class="main-status">Medical evidence requested</p>
-	{% endif %}
-	
-	
-	{% else %}
-	
-	<p class="main-status">Ready for review</p>
-	<p><a href="/{{path }}/scenario2/rec-portal" class="button">Make recommendation</a></p>
-	
-	
-
-{% endif %}
-
-
-{% endif %}
-</p>
-
-
-<hr>
-
+		<ul class="list-bullet">
+			<li>Unacceptable customer behaviour</li>
+			<li>Claimant has appointee</li>
+		</ul>
+	</div>
 </div>
+		
+	
+
+
+ <div class="caseStatus">
+ 	
+	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+	
+
+	<h3 class="primary-action"><span>Suggested case action</span><a href="#" class="button">Make a recommendation</a></h3>
+
+ </div>
+
+<!--<div class="secondary-nav-actions">
+
+	<ul>
+		<li><a href="#">Withdraw case</a></li>
+		<li><a href="#">Close case</a></li>
+		<li><a href="#">Delete case</a></li>
+	</ul>
+		
+ </div> -->
 
 {% endblock %}
 
@@ -67,7 +45,7 @@
 
 
 {% block citizen_detail %}
-Roberto Clyne
+Kenneth Robertson
 {% endblock %}
 
 {% block citizen_content %}

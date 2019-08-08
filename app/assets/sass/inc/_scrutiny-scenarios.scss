@@ -94,6 +94,100 @@
 }
 
 
+.appointment-history-list {
+	margin-top: 10px;
+	li {
+		font-size: 18px;
+		span {
+			color: $grey-1;
+		}
+		h5 {
+			font-weight: bold;
+			margin: 0;
+			padding: 0;
+		}
+	}
+}
 
 
+.view-all {
+	margin-top: 30px;
+}
+
+.address-stack {
+	span {
+		display: block;
+	}
+}
+
+table {
+	th, td {
+		vertical-align: top;
+	}
+}
+
+
+.caseStatus {
+	border-top: 1px solid $grey-2;
+	border-bottom: 1px solid $grey-2;
+	padding: 20px 0 25px 0;
+	margin-top: 10px;
+	.main-status{
+		font-size:18px;
+		margin: 0;
+		padding: 15px;
+		font-weight: normal;
+		background: rgba($turquoise, 0.05);
+		border-left: 3px solid $turquoise;
+	  span{
+		  font-weight:bold;
+		  display:block;
+	      font-size:17px;
+	      margin-bottom: 2px;
+	  }	
+	}
+	.primary-action {
+		margin: 0;
+		margin-top: 20px;
+		span {
+			display: block;
+			font-size: 17px;
+			margin-bottom: 5px;
+			color: #000;
+			font-weight: bold;
+		}
+	}
+}
+
+
+
+.caseIdentifiers {
+	border-top: 1px solid $grey-2;
+	padding: 20px 0 10px 0;
+	margin-top: 10px;
+		.caseFlags{
+			padding: 15px;
+			background: rgba($mellow-red, 0.05);
+			border-left: 3px solid $mellow-red;
+			h2 {
+				margin: 0;
+				padding: 0;
+				font-weight: bold;
+				font-size: 17px;
+			}
+			ul {
+				margin-top: 3px;
+				li {
+					font-size: 18px;
+				}
+			}
+		}
+	
+	}
+
+
+
+.secondary-nav-actions {
+	margin-top: 20px;
+}
 

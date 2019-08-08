@@ -289,7 +289,7 @@ select.form-select:hover {
   }
   
   .left-panel {
-	  padding: 16px 24px 0 36px;
+	  padding: 10px 24px 0 36px;
   }
   
   .main-content {
@@ -310,6 +310,7 @@ select.form-select:hover {
 		padding-bottom: 200px!important;
 		padding:30px;
 	  background: #fff;
+	  border-left: 2px solid #000;
   }
 
 
@@ -317,7 +318,7 @@ select.form-select:hover {
 
 
 .main-row {
-	background: $grey-3;
+	background: $grey-4;
 	padding:0 30px 0 0;
 	margin-right:-30px;
 }
@@ -506,6 +507,16 @@ hr {
 	}
 }
 
+.back-navigation {
+	margin: 0;
+	padding: 0;
+	a {
+		margin-top: 15px;
+		margin-bottom: 5px;
+		display: inline-block;
+	}
+}
+
 .yes-kdBar {
 	.link-back {
 		margin-bottom:0px;
@@ -524,10 +535,11 @@ hr {
 }
 
 .returnRef {
-		padding-top: 10px;
+	margin: 0;
+	padding: 0;
 		a {
-			font-weight: bold;
 			font-size: 18px;
+			color: #000;
 		}
 	}
 	
@@ -2315,6 +2327,10 @@ table.profile-table .col5{
 	.portal-card {
 		background: #fff;
 		border: 1px solid $grey-3;
+		margin-top: 1em;
+		&:first-child {
+			margin-top: 0;
+		}
 			
 		.portal-head {
 			overflow: hidden;
@@ -2343,6 +2359,8 @@ table.profile-table .col5{
 			h4 {
 				padding: .4em 0;
 			}
+
+			
 			
 			table {
 				margin: 0;
@@ -2353,14 +2371,40 @@ table.profile-table .col5{
 				th {
 					width: 40%;
 					border-bottom: 1px solid $grey-2;
+					font-size: 18px;
+					vertical-align: top;
 				}
 				td {
 					border-bottom: 1px solid $grey-2;
+					font-size: 18px;
+					vertical-align: top;
+					span {
+						display: block;
+						&.dose {
+							color: $grey-1;
+							font-size: 17px;
+						}
+					}
+					
+				}
+				
+				&.medical-list {
+					td {
+						&:first-child {
+							width: 50%;
+						}
+					}
 				}
 			}
 			
 			.view-all {
 				margin: 30px 0 .7em 0;
+			}
+			
+			.list-bullet {
+				li {
+					font-size: 18px;
+				}
 			}
 			
 			.action-list {
@@ -2370,6 +2414,7 @@ table.profile-table .col5{
 					p {
 						margin: 0 0 .5em 0;
 						color: $grey-1;
+						font-size: 18px;
 					}
 					&:first-child {
 						border-top: 0;
@@ -2384,12 +2429,13 @@ table.profile-table .col5{
 				padding-top: 1.6em;
 				p {
 					font-weight: bold;
-					font-size: 19px;
 					color: #000!important;
+					font-size: 19px;
 					span {
 						display: block;
 						font-weight: normal;
 						color: $grey-1;
+						font-size: 18px;
 					}
 				}
 			}
@@ -2438,11 +2484,3 @@ table.profile-table .col5{
 
 @import "inc/scrutiny-scenarios";
 
-.main-status{
-	font-size:20px;
-  span{
-	  font-weight:normal;
-	  display:block;
-      font-size:18px;
-  }	
-}

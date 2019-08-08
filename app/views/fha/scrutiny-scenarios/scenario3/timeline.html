@@ -3,34 +3,30 @@
 
 {% block actioncolumn %}
    
-  <p class="returnRef"><a href="/{{path }}/dashboard">Return to case list</a></p>
-  <hr>
- <div class="case-status">
+  <p class="returnRef"><a href="/{{path }}/dashboard" class="link-back">Return to case list</a></p>
+  
+ <div class="caseStatus">
  
 
 	 {% if data['customerStatus']=='status-yes'%}
-		 <p class="main-status">Case closed</p>
+		 <h2 class="main-status"><span>Current case status</span>Case closed</h2>
 
 		
 		{% elif data['customerStatus']=='status-no'%}
 		
-		<p class="main-status">Ready for review</p>
-		<p><a href="/{{path }}/scenario3/not-testing" class="button">Make a recommendation</a></p>
+		<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario3/not-testing" class="button">Make a recommendation</a></h3>
 		
 		{% else %}
 		
-		<p class="main-status">Case withdrawn</p>
-		<p><a href="/{{path }}/scenario3/record-decision" class="button">Record a decision</a></p>
+		<h2 class="main-status"><span>Current case status</span>Case withdrawn</h2>
+		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario3/record-decision" class="button">Record a decision</a></h3>
 		
 		{% endif %}
-
-<hr>
 
 </div>
 
 {% endblock %}
-
-
 
 
 {% block citizen_detail %}

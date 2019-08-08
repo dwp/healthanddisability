@@ -3,60 +3,12 @@
 
 {% block actioncolumn %}
    
-  <p class="returnRef"><a href="/{{path }}/scenario2/referrals-fme" class="link-back">Return to case list</a></p>
+  <p class="returnRef"><a href="/{{path }}/scenario2/referrals-fme">Return to case list</a></p>
   <hr>
  <div class="case-status">
  
  
-{% if data['pbachoice']=='no'%}
- 
-	 <p class="main-status">Appointment booked</p>
-	 
-	 
-	 {% elif data['pbachoice']=='yes'%}
-	 
-	 <p class="main-status">Ready for paper based assessment</p>
-	 <p><a href="/{{path }}/scenario2/not-testing" class="button">Start assessment</a></p>
-	 
-	 
-	 {% else %}
-	 
- 
-
-{% if data['evidencePath']=='ev-ftf'%}
-
-	<p class="main-status">Ready to book</p>
-	<span class="pending">Pending evidence review</span>
-
-	{% if data['evidenceRecorded']=='record-yes'%}
-		
-	{% endif %}
-	
-	
-	{% elif data['evidencePath']=='ev-pba'%}
-	
-	{% if data['evidenceRecorded']=='record-yes'%}
-		<p class="main-status">Ready for review</p>
-		<p><a href="/{{path }}/scenario2/rec-portal" class="button">Make recommendation</a></p>
-		{% else %}
-		<p class="main-status">Medical evidence requested</p>
-	{% endif %}
-	
-	
-	{% else %}
-	
-	<p class="main-status">Ready for review</p>
-	<p><a href="/{{path }}/scenario2/rec-portal" class="button">Make recommendation</a></p>
-	
-	
-
-{% endif %}
-
-
-{% endif %}
-</p>
-
-
+<p class="main-status">Portal designs</p>
 <hr>
 
 </div>
