@@ -8,9 +8,6 @@ var calendar = require('node-calendar')
 var moment = require('moment')
 const crypto = require('crypto')
 
-const radioButtonRedirect = require('radio-button-redirect')
-router.use(radioButtonRedirect)
-
 var versionNumber = '8'
 var filePath = '../../../../app/views/fha/v' + versionNumber
 var viewPath = 'fha/v' + versionNumber
@@ -31,8 +28,8 @@ router.get('*', function (req, res, next) {
   res.locals.path2 = res.locals.path + '/' + bits[0] + '/' + bits[1]
   res.locals.stage = 1
 
-  res.locals.cssPath = '/public/stylesheets/fha_v' + versionNumber + '.css'
-  res.locals.javascriptPath = '/public/javascripts/application_v' + versionNumber + '.js'
+  res.locals.cssPath = '/public/stylesheets/fha_v9.css'
+  res.locals.javascriptPath = '/public/javascripts/application_v9.js'
   res.locals.versionNumber = versionNumber
 
   if (!req.session.data.socialWorkComments) {
@@ -100,7 +97,6 @@ router.get('/', function (req, res, next) {
   next()
 })
 
-
 router.post('*', function (req, res, next) {
   // path is only available with the proper value within this sub-module/router.
   res.locals.path = req.baseUrl.substr(1)
@@ -110,8 +106,8 @@ router.post('*', function (req, res, next) {
   res.locals.path2 = res.locals.path + '/' + bits[0] + '/' + bits[1]
   res.locals.stage = 1
 
-  res.locals.cssPath = '/public/stylesheets/fha_v' + versionNumber + '.css'
-  res.locals.javascriptPath = '/public/javascripts/application_v' + versionNumber + '.js'
+  res.locals.cssPath = '/public/stylesheets/fha_v9.css'
+  res.locals.javascriptPath = '/public/javascripts/application_v9.js'
   res.locals.versionNumber = versionNumber
 
   if (!req.session.data.socialWorkComments) {
@@ -139,8 +135,6 @@ router.post('*', function (req, res, next) {
 
   next()
 })
-
-
 
 router.get('/miarussell/*', function (req, res, next) {
   res.locals.firstname = 'Mia'

@@ -23,9 +23,13 @@
 	
 	
 	
+{% if data['mental-health'] %}
+		<form method="post" action="exceptionalCircumstancesJustification">
+	{% else %}
+		<form method="post" action="mentalHealthAssessmentDecision">
+	{% endif %}
 	
-	
-	<form method="post" action="exceptionalCircumstancesJustification">
+	<!-- <form method="post" action="exceptionalCircumstancesJustification">-->
 	
 	<div class="form-group">
 		 <fieldset>
@@ -33,7 +37,8 @@
 				    	<!--<legend class="heading-medium mb10">Why do you want to curtail {{customer.name.first}}'s assessment?</legend>-->
 		
 					    <div class="multiple-choice" data-target="reasons1">
-					      <input id="decide_now" name="LcwAndLcwra" type="radio" value="yes~/{{path}}/assessment/{{customer._id}}/evidence/exceptionalCircumstancesJustificationTreat">
+								<!--<input id="decide_now" name="LcwAndLcwra" type="radio" value="yes~/{{path}}/assessment/{{customer._id}}/evidence/exceptionalCircumstancesJustificationTreat">-->
+								<input id="decide_now" name="LcwAndLcwra" type="radio" value="treataslcwra">
 					      <label for="decide_now">Treat as LCWRA due to special circumstances</label>
 					    </div>
 					    <!-- Start -->
@@ -60,7 +65,8 @@
 					    <!-- / end panel -->
 		  
 					    <div class="multiple-choice" data-target="justify5">
-					      <input id="face2face" name="LcwAndLcwra" type="radio" value="no~/{{path}}/assessment/{{customer._id}}/evidence/exceptionalCircumstancesJustificationFunctional">
+								<!--<input id="face2face" name="LcwAndLcwra" type="radio" value="no~/{{path}}/assessment/{{customer._id}}/evidence/exceptionalCircumstancesJustificationFunctional">-->
+								<input id="face2face" name="LcwAndLcwra" type="radio" value="functionallcwra">
 					      <label for="face2face">Evidence meets criteria for functional LCWRA</label>
 					    </div>	
 

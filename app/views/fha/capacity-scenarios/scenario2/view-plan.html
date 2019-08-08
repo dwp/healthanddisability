@@ -1,0 +1,401 @@
+{% extends path+"/_layout-stripped.html" %} 
+
+
+{% block assess_content %}
+<main id="content" role="main" class="main-content">
+
+      <div class="container">
+          <div class="grid-row">
+              <div class="column-full">
+  <a href="javascript: history.go(-1)" class="link-back">Back</a>   
+   <h1 class="heading-large mt10">View and edit capacity</h1>
+
+<style>
+.greatest-show .show-start.filters span{
+  background:#DEE0E2;
+  color:black;
+}
+
+.greatest-show .show-start.filters{
+  border-color:#DEE0E2;
+}
+</style>
+  
+  <div class="greatest-show  mt30">
+
+	<h3 class="show-start filters"><span>Filters</span></h3>
+  <div class="grid-row">
+  <div class="column-quarter">
+  <h4 class="heading-medium mt20 mb0">When</h4>
+
+ <div class="pickslots">
+<style>
+.column-quarter .time-choice{
+  width:100%;
+}
+</style>
+
+   <div class="time-group time-top">
+      <fieldset class="timeslot-picker">
+
+        <legend>
+          <h3 class="heading-medium">Choose Dates </h3>
+
+        </legend>
+
+
+
+
+        <div class="time-choice">
+          <input id="filter1" name="filter" type="checkbox" value="This week" {{checked('filters', 'This week') }} >
+          <label for="filter1">This week</label>
+        </div>
+        <div class="time-choice">
+            <input id="filter2" name="filter" type="checkbox" value="Next week" {{checked('filters', 'Next week') }}>
+            <label for="filter2">Next week</label>
+          </div>
+          <div class="time-choice">
+              <input id="filter3" name="filter" type="checkbox" value="Week 3" {{checked('filters', 'Week 3') }}>
+              <label for="filter3">Week 3</label>
+          </div>
+          <div class="time-choice">
+              <input id="filter3a" name="filters" type="checkbox" value="Week 4" {{checked('filters', 'Week 4') }}>
+              <label for="filter3a">Week 4</label>
+          </div>
+
+      </fieldset>
+   </div>
+</div>
+
+
+  </div>
+
+  <div class="column-quarter">
+  <h4 class="heading-medium mt20 mb0">Area</h4>
+
+     <div class="time-group time-top">
+      <fieldset class="timeslot-picker">
+
+        <legend>
+          <h3 class="heading-medium">Choose Dates </h3>
+
+        </legend>
+
+
+
+
+        <div class="time-choice">
+          <input id="filter1" name="filter" type="checkbox" value="This week" {{checked('filters', 'This week') }} >
+          <label for="filter1">London</label>
+        </div>
+        <div class="time-choice">
+            <input id="filter2" name="filter" type="checkbox" value="Next week" {{checked('filters', 'Next week') }}>
+            <label for="filter2">North west</label>
+          </div>
+          <div class="time-choice">
+              <input id="filter3" name="filter" type="checkbox" value="Week 3" {{checked('filters', 'Week 3') }}>
+              <label for="filter3">North</label>
+          </div>
+          <div class="time-choice">
+              <input id="filter3a" name="filters" type="checkbox" value="Week 4" {{checked('filters', 'Week 4') }}>
+              <label for="filter3a">Midlands</label>
+          </div>
+           <div class="time-choice">
+              <input id="filter3a" name="filters" type="checkbox" value="Week 4" {{checked('filters', 'Week 4') }}>
+              <label for="filter3a">Wales</label>
+          </div>
+           <div class="time-choice">
+              <input id="filter3a" name="filters" type="checkbox" value="Week 4" {{checked('filters', 'Week 4') }}>
+              <label for="filter3a">Scotland</label>
+          </div>
+           <div class="time-choice">
+              <input id="filter3a" name="filters" type="checkbox" value="Week 4" {{checked('filters', 'Week 4') }}>
+              <label for="filter3a">Nothern Ireland</label>
+          </div>
+
+      </fieldset>
+   </div>
+  </div>
+
+  
+
+  </div>
+
+	<h3 class="show-start"><span>Mann Island</span></h3>
+ 
+   <div class="grid-row">
+      
+   
+  <div class="column-full"><p class="lede mt20 mb20">Week commencing: <span class="bold">Monday 24 April</span></p></div>
+  </div>
+    <div class="grid-row">
+    <div class="card-container">
+
+        <div class="card alt">
+          <a href="edit-plan">
+        
+              <h2>
+                View and edit
+                <span class="heading-small" >Mondays appointments</span>
+               </h2>
+               </a>
+               <div class="inner">
+               <table>
+                  <thead>
+                    <tr>
+                      <th scope="col"><span class="panel panel-info"><span class="block" style="font-weight:normal">Based on </span>6 FTE's</span></th>
+                      <th class="numeric" scope="col"> <span class="heading-xlarge">
+                          {% if data['timesEdit'] %}
+                          {{ sum }}
+                          {% else %}
+                          48
+                         {% endif %} 
+                          <span class="block"><span class="visually-hidden">appointents</span>Opened</span>
+                      </span></th>
+
+                                  <th class="numeric" scope="col"> <span class="heading-xlarge">
+                          {% if data['timesEdit'] %}
+                          {{ sum }}
+                          {% else %}
+                          25
+                         {% endif %} 
+                          <span class="block"><span class="visually-hidden">appointents</span>Available</span>
+                      </span></th>
+                      <th class="numeric" scope="col">
+                          <span class="visually-hidden">of which</span>
+                          <span class="heading-xlarge">
+                              23
+                              <span class="block"><span class="visually-hidden">appointents are</span>Booked</span>
+                          </span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Complex neuro</th>
+                      <td class="numeric">{% if data['complexsumedit'] %}{{ complexsumedit }}  {% else %} 6 {% endif%}</td>
+                      <td class="numeric">3</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Neuro</th>
+                      <td class="numeric">{% if data['neurosumedit'] %}{{ neurosumedit }}  {% else %}42 {% endif%}</td>
+                      <td class="numeric">18</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Non neuro</th>
+                      <td class="numeric">{% if data['nonesumedit'] %}{{ nonesumedit }}  {% else %}0 {% endif%}</td>
+                      <td class="numeric">0</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+        
+        </div>
+
+        <div class="card alt">
+            <a href="#">
+          
+                <h2>
+                  View and edit
+                  <span class="heading-small" >Tuesdays appointments</span>
+                  
+                 </h2>
+                 </a>
+                 <div class="inner">
+                 <table>
+                    <thead>
+                      <tr>
+                        <th scope="col"></th>
+                        <th class="numeric" scope="col"> <span class="heading-xlarge">
+                            64
+                            <span class="block"><span class="visually-hidden">appointents</span>Opened</span>
+                        </span></th>
+                        <th class="numeric" scope="col">
+                            <span class="visually-hidden">of which</span>
+                            <span class="heading-xlarge">
+                                45
+                                <span class="block"><span class="visually-hidden">appointents are</span>Booked</span>
+                            </span>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Complex neuro</th>
+                        <td class="numeric">12</td>
+                        <td class="numeric">8</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Neuro</th>
+                        <td class="numeric">38</td>
+                        <td class="numeric">20</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Non neuro</th>
+                        <td class="numeric">2</td>
+                        <td class="numeric">2</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+          
+          </div>
+
+          <div class="card alt">
+              <a href="#">
+            
+                  <h2>
+                    View and edit
+                    <span class="heading-small" >Wednesdays appointments</span>
+                    
+                   </h2>
+                   </a>
+                   <div class="inner">
+                   <table>
+                      <thead>
+                        <tr>
+                          <th scope="col"></th>
+                          <th class="numeric" scope="col"> <span class="heading-xlarge">
+                             54
+                              <span class="block"><span class="visually-hidden">appointents</span>Opened</span>
+                          </span></th>
+                          <th class="numeric" scope="col">
+                              <span class="visually-hidden">of which</span>
+                              <span class="heading-xlarge">
+                                  44
+                                  <span class="block"><span class="visually-hidden">appointents are</span>Booked</span>
+                              </span>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">Complex neuro</th>
+                          <td class="numeric">12</td>
+                          <td class="numeric">8</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Neuro</th>
+                          <td class="numeric">38</td>
+                          <td class="numeric">20</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Non neuro</th>
+                          <td class="numeric">2</td>
+                          <td class="numeric">2</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+            
+            </div>
+
+            <div class="card alt">
+                <a href="#">
+              
+                    <h2>
+                      View and edit
+                      <span class="heading-small" >Thursdays Appointments</span>
+                      
+                     </h2>
+                     </a>
+                     <div class="inner">
+                     <table>
+                        <thead>
+                          <tr>
+                            <th scope="col"></th>
+                            <th class="numeric" scope="col"> <span class="heading-xlarge">
+                               76
+                                <span class="block"><span class="visually-hidden">appointents</span>Opened</span>
+                            </span></th>
+                            <th class="numeric" scope="col">
+                                <span class="visually-hidden">of which</span>
+                                <span class="heading-xlarge">
+                                    50
+                                    <span class="block"><span class="visually-hidden">appointents are</span>Booked</span>
+                                </span>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Complex neuro</th>
+                            <td class="numeric">12</td>
+                            <td class="numeric">8</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Neuro</th>
+                            <td class="numeric">38</td>
+                            <td class="numeric">20</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Non neuro</th>
+                            <td class="numeric">2</td>
+                            <td class="numeric">2</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+              
+              </div>
+
+              <div class="card alt">
+                  <a href="">
+                
+                      <h2>
+                        View and edit
+                        <span class="heading-small" >Fridays Appointments</span>
+                        
+                       </h2>
+                       </a>
+                       <div class="inner">
+                       <table>
+                          <thead>
+                            <tr>
+                              <th scope="col"></th>
+                              <th class="numeric" scope="col"> <span class="heading-xlarge">
+                                  63
+                                  <span class="block"><span class="visually-hidden">appointents</span>Opened</span>
+                              </span></th>
+                              <th class="numeric" scope="col">
+                                  <span class="visually-hidden">of which</span>
+                                  <span class="heading-xlarge">
+                                      50
+                                      <span class="block"><span class="visually-hidden">appointents are</span>Booked</span>
+                                  </span>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">Complex neuro</th>
+                              <td class="numeric">12</td>
+                              <td class="numeric">8</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Neuro</th>
+                              <td class="numeric">38</td>
+                              <td class="numeric">20</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Non neuro</th>
+                              <td class="numeric">2</td>
+                              <td class="numeric">2</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                
+                </div>
+       </div>
+      </div>
+
+        </div>
+        
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}

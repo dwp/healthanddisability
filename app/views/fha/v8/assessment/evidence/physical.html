@@ -17,15 +17,15 @@
 		  <div class="task-list">
 					<ul class="task-list-itmes">
               <li class="task-list-item"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing">General</a></li>
-						<li class="task-list-item"><a href="lower-limbs">Lower back and legs {% if data['lowerlimbs'] %}<span class="task-completed">Assessed</span>{% endif %}</a></li>
-						<li class="task-list-item"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing">Neck and arms{% if data['neckwhatcando']==='Yes' or data['neckwhatcando']==='No'%}<span class="task-completed">Assessed</span>{% endif %}</a></li>
+						<li class="task-list-item"><a href="lower-limbs_lower-back">Lower back and legs {% if data['issueswithlowerback1'] or data['issueswithlowerback2'] or data['issueswithleftleg1'] or data['issueswithleftleg2'] or data['issueswithleftleg3'] or data['issueswithleftleg4'] or data['issueswithleftleg5'] or data['issueswithleftleg6'] or data['issueswithleftleg7'] or data['issueswithleftleg8'] or data['issueswithrightleg1'] or data['issueswithrightleg2'] or data['issueswithrightleg3'] or data['issueswithrightleg4'] or data['issueswithrightleg5'] or data['issueswithrightleg6'] or data['issueswithrightleg7'] or data['issueswithrightleg8'] %}<span class="task-completed">Assessed</span>{% endif %}</a></li>
+						<li class="task-list-item"><a href="neck-arms_neck">Neck and arms {% if data['issueswithneck1'] or data['issueswithneck2'] or data['issueswithneck3'] or data['issueswithneck4'] or data['issueswithneck5'] or data['issueswithleftupperarm1'] or data['issueswithleftupperarm2'] or data['issueswithleftupperarm3'] or data['issueswithleftupperarm4'] or data['issueswithleftupperarm5'] or data['issueswithrightupperarm1'] or data['issueswithrightupperarm2'] or data['issueswithrightupperarm3'] or data['issueswithrightupperarm4'] or data['issueswithrightupperarm5'] or data['issueswithleftforearm1'] or data['issueswithleftforearm2'] or data['issueswithleftforearm3'] or data['issueswithleftforearm4'] or data['issueswithleftforearm5'] or data['issueswithrightforearm1'] or data['issueswithrightforearm2'] or data['issueswithrightforearm3'] or data['issueswithrightforearm4'] or data['issueswithrightforearm5'] %}<span class="task-completed">Assessed</span>{% endif %}</a></li>
 						<li class="task-list-item"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing">Cardiac vascular and respiratory systems</a></li>
 						<li class="task-list-item"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing">Vision hearing and speech</a></li>
             <li class="task-list-item"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/not-testing">Central nervous system</a></li>
          </ul>
          </div>
 
-	
+         	
  
     {% if customer.status == 'Ready for recommendation' %}
     <form class="mt30" method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/wca-index">
@@ -37,7 +37,7 @@
 						<label for="radio-4">hidden radio one</label>
           </div>
           {% else %}
-          <form class="mt30" method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/wca-index">
+          <form class="mt30" method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/wca-index_step2">
           <p class="mt30"><button class="button">Save and continue</button></p>
           {% endif %}
           
