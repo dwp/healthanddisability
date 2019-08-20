@@ -1316,7 +1316,7 @@ ul.numeric{
 
 
 .staff__heading {
-  padding: 10px 0 20px 0;
+  padding: 5px 0 20px 0;
 
   	.badges {
 	  	ul {
@@ -2097,21 +2097,18 @@ table.profile-table .col5{
 
 
 .secondary-invert {
-	  background: #fff!important;
+	  background: #fff;
 	  color: #10813e!important;
-	  box-shadow: none!important;
-	  border: 2px solid #10813e!important;
+	  border: 2px solid #10813e;
 	  padding: .526315em .789473em .263157em;
-	  display: inline-block!important;
+	  display: inline-block;
 	  text-decoration: none;
 	  padding-bottom: 6px;
-	  }
-
-	  .secondary-invert:hover {
-		  background: $grey-4!important;
-		  box-shadow: none!important;
-		  border: 2px solid #0b6831!important;
-		  color: #0b6831!important;
+		  &:hover {
+			  background: $grey-4;
+			  border: 2px solid #0b6831;
+			  color: #0b6831!important;
+			  }
 	  }
 
 
@@ -2393,6 +2390,12 @@ table.profile-table .col5{
 						&:first-child {
 							width: 50%;
 						}
+					}
+				}
+				
+				&.tele-list {
+					th {
+						width: 50%;
 					}
 				}
 			}
