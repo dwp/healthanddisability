@@ -1,0 +1,87 @@
+{% extends path+"/_layout-stripped.html" %}
+
+
+{% block actioncolumn %}
+   
+ <!-- <p class="returnRef"><a href="/fha/v8/referrals-fme">Return to case list</a></p> 
+  <hr>-->
+ <div class="case-status">
+
+<h2 class="heading-small mb5">Other scenarios</h2>
+
+<ul class="scenario-nav">
+	<li><a href="/fha/appointment-scenarios/index">Appointment</a></li>
+	<li><a href="#">Capacity management</a></li>
+</ul>
+
+</div>
+
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+       <div class="column-full">
+    
+    
+    	<p><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+		
+		
+	
+				
+			<h1 class="heading-large"><span class="heading-secondary">Scenarios</span>Assessment</h1>
+
+          
+			  <hr>
+			  
+			  
+			  <div class="grid-row">
+			  <div class="column-three-quarters">
+			  
+			  
+			  		<div class="scenario">
+						 <h2 class="heading-medium">Curtailed: Functional LCWRA</h2>
+						 
+						 <ul class="list-bullet">
+						    <li>Active profile: <b>David Lowe</b></li>
+							<li>LCWRA Reason: Moving</li>
+						 </ul>
+			             <p><a href="/{{path }}/scenario_curtailment/wca-index" class="button secondary-invert">Start scenario</a></p> 
+					 </div>
+					 
+					 <hr>
+
+		             
+         
+			  </div>
+			  </div>
+				
+	</div>
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

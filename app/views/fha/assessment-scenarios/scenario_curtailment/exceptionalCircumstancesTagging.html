@@ -1,0 +1,111 @@
+{% extends path+"/_layout-case-simple_clear-sidebar.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+	
+	<form method="post" action="exceptionalCircumstancesJustification">
+	
+	<h3 class="heading-medium" style="color:#6f777b; font-weight:100;">LCWRA recommendation</h3>
+	<h1 class="heading-large">Moving around and climbing steps without someone’s help</h1>
+	<h2 class="heading-medium">Choose statements that are relevant to this descriptor:</h2>
+
+  	<fieldset>
+	    
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="moving" value="moving">
+	      <label for="des1">Got a lift to the centre.</label>
+	    </div>
+
+		<div class="multiple-choice">
+	      <input id="des2" type="checkbox" name="standing" value="standing">
+	      <label for="des2">It was 15 to 20 minutes in the car. They do not live far away. Mum drove.</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des3" type="checkbox" name="reaching" value="reaching">
+	      <label for="des3">He could not stay in the car for longer than 15 to 20 minutesdue to shoulder pain, hands, forearms, knees and feels like his may lock.</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des4" type="checkbox" name="picking" value="picking">
+	      <label for="des4">His knees do not lock as he tries to prevent this by not going far in the car.</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des5" type="checkbox" name="using" value="using">
+	      <label for="des5">Parked in the disabled space in the car park.</label>
+	    </div>
+
+			    <div class="multiple-choice">
+	      <input id="des5" type="checkbox" name="using" value="using">
+	      <label for="des5">Walked 10 yards to walk from the car to the waiting room with a walking stick and assistance from mum. He walked at a very slow pace.</label>
+	    </div>
+
+			    <div class="multiple-choice">
+	      <input id="des5" type="checkbox" name="using" value="using">
+	      <label for="des5">It took 5 minutes to walk from the car tio the waiting area, did not have to stop in this time.</label>
+	    </div>
+
+			    <div class="multiple-choice">
+	      <input id="des5" type="checkbox" name="using" value="using">
+	      <label for="des5">Lives with mum in a ground floor flat.</label>
+	    </div>
+
+			    <div class="multiple-choice">
+	      <input id="des5" type="checkbox" name="using" value="using">
+	      <label for="des5">There is 1 step at the front door, there is no rail.</label>
+	    </div>
+
+			    <div class="multiple-choice">
+	      <input id="des5" type="checkbox" name="using" value="using">
+	      <label for="des5">Assessment completed at the assessment centre on the ground floor.</label>
+	    </div>
+
+			    <div class="multiple-choice">
+	      <input id="des5" type="checkbox" name="using" value="using">
+	      <label for="des5">The council are looking at getting a ramp at the front door for ease of access with the wheelchair. The council have been to the property to assess the flat in July and they are waiting to hear from them.</label>
+	    </div>
+
+			    <div class="multiple-choice">
+	      <input id="des5" type="checkbox" name="using" value="using">
+	      <label for="des5">He went to work for 1 week in Jan 2018 in the park but stopped due to flu like virus, fatigue and pain.</label>
+	    </div>
+
+			    <div class="multiple-choice">
+	      <input id="des5" type="checkbox" name="using" value="using">
+	      <label for="des5">No current work or study. No plans for work or study. He has no concentration for this.</label>
+	    </div>
+
+			    <div class="multiple-choice">
+	      <input id="des5" type="checkbox" name="using" value="using">
+	      <label for="des5">Loved the job he had but this seems like a distant memory.</label>
+	    </div>
+
+			    <div class="multiple-choice">
+	      <input id="des5" type="checkbox" name="using" value="using">
+	      <label for="des5">Is right handed.</label>
+	    </div>
+
+  	</fieldset>
+<br>
+    <p><input type="submit" class="button" value="Next" id="submitButton"></p>
+		</form>	
+
+  </div><!-- column -->
+</div><!-- row -->
+
+
+
+{% endblock %}
