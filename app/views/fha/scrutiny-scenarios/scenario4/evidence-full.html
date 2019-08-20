@@ -1,17 +1,17 @@
-{% extends path+"/_layout-case-simple2.html" %}
+{% extends path+"/_layout-case-simple4.html" %}
 
 
 {% block actioncolumn %}
    
-  <p class="returnRef"><a href="/{{path }}/scenario2/referrals-fme">Return to case list</a></p>
-  <hr>
- <div class="case-status">
- 
- 
-<p class="main-status">Portal designs</p>
-<hr>
+<p class="returnRef"><a href="javascript: history.go(-1)" class="link-back">Return to case list</a></p>
 
-</div>
+ <div class="caseStatus">
+ 	
+	<p class="main-status"><span>Current case status</span>Ready to book</p>
+
+	<!--<p class="primary-action"><span>Suggested case action</span><a href="#" class="button">Book appointment</a></p>-->
+
+ </div>
 
 {% endblock %}
 
@@ -83,10 +83,54 @@ Roberto Clyne
 
 
 
+<h3 class="filter-head"><span>Filter by:</span></h3>
+
+
+
+ 
+   				 <div class="time-group time-top timeline-break filter-portal">
+			   
+				      <fieldset>
+				    
+				        <legend class="visually-hidden">Filter options</legend>
+				    
+				    
+				    
+				    
+				        <div class="time-choice">
+				         <input id="notes" name="timelinefilter" type="checkbox" value="note"  {{ checked('timelinefilter', 'note') }}>
+				          <label for="notes">All evidence items</label>
+				        </div>
+				        <div class="time-choice">
+				            <input id="evidence" name="timelinefilter" type="checkbox" value="evidence"  {{ checked('timelinefilter', 'evidence') }}>
+				            <label for="evidence">Medical reports</label>
+				          </div>
+				          <div class="time-choice">
+				              <input id="referral" name="timelinefilter" type="checkbox" value="referral"  {{ checked('timelinefilter', 'referral') }}>
+				              <label for="referral">Justifications</label>
+				          </div>
+				          <div class="time-choice">
+				              <input id="tele" name="timelinefilter" type="checkbox" value="tele"  {{ checked('timelinefilter', 'tele') }}>
+				              <label for="tele">Telephone conversations</label>
+				          </div>
+				          <div class="time-choice">
+				              <input id="review" name="timelinefilter" type="checkbox" value="review"  {{ checked('timelinefilter', 'review') }}>
+				              <label for="review">Previous decisions</label>
+				          </div>
+
+				     				          
+				      </fieldset>
+				   </div>
+				   
+				   
+				<!--   <p class="currently-showing">Currently showing: <span>all evidence items</span></p>  -->
+
+
+
 <table class="evidence-list">
 
 <thead>
-<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+<tr>
   <th>Evidence type</th>
   <th>Source</th>
   <th>Received</th>
@@ -100,7 +144,7 @@ Roberto Clyne
 
 {% if data['pbachoice']=='yes'%}
 
-<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+		<tr>
 		  <td><a href="/{{path }}/scenario2/not-testing">Paper based assessment justification</a></td>
 		  <td>HCP</td>
 		  <td></td>
@@ -117,7 +161,7 @@ Roberto Clyne
 		{% if data['evidenceRecorded']=='record-yes'%}
 		
 
-		<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+		<tr>
 		  <td><a href="/{{path }}/scenario2/not-testing">GP report</a></td>
 		  <td>GP</td>
 		  <td><span class="secondary-text">9 August 2019</span></td>
@@ -134,7 +178,7 @@ Roberto Clyne
 		 {% if data['evidenceRecorded']=='record-yes'%}
 		
 		
-		<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+		<tr>
 		  <td><a href="/{{path }}/scenario2/not-testing">Factual report</a></td>
 		  <td>GP</td>
 		  <td><span class="secondary-text">9 August 2019</span></td>
@@ -151,7 +195,7 @@ Roberto Clyne
 	{% if data['appointmentReferral']%}
 	
 	
-		<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+		<tr>
 		  <td><a href="/{{path }}/scenario2/referralJustify">Appointment referral justification</a></td>
 		  <td>HCP</td>
 		  <td></td>
@@ -171,15 +215,41 @@ Roberto Clyne
   <td class="numeric"><span>1 August 2019</span></td>
 </tr> -->
 
+<tr>
+  <td><a href="/{{path }}/scenario2/not-testing">Paper based assessment justification</a></td>
+  <td>HCP</td>
+  <td>&ndash;</td>
+  <td class="numeric">28 July 2019</td>
+</tr>
+
+
+<tr>
+  <td><a href="/{{path }}/scenario2/not-testing">Factual report</a></td>
+  <td>GP</td>
+  <td>27 July 2019</td>
+  <td class="numeric">28 July 2019</td>
+</tr>
 
 
 
-<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+<tr>
+  <td><a href="/{{path }}/scenario2/not-testing">Appointment referral justification</a></td>
+  <td>HCP</td>
+  <td>&ndash;</td>
+  <td class="numeric">25 July 2019</td>
+</tr>
+
+
+<tr>
   <td><a href="/{{path }}/scenario2/not-testing">UC50 </a></td>
   <td>Claimant</td>
-  <td><span class="secondary-text">21 July 2019</span></td>
-  <td class="numeric"><span>21 July 2019</span></td>
+  <td>21 July 2019</td>
+  <td class="numeric">21 July 2019</td>
 </tr>
+
+
+
+
 </tbody>
 
 </table> 

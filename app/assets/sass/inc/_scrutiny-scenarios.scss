@@ -128,8 +128,8 @@ table {
 
 
 .caseStatus {
-	border-top: 1px solid $grey-3;
-	border-bottom: 1px solid $grey-3;
+	border-top: 1px solid $border-colour;
+	border-bottom: 1px solid $border-colour;
 	padding: 20px 0 25px 0;
 	margin-top: 10px;
 	.main-status{
@@ -162,7 +162,7 @@ table {
 
 
 .caseIdentifiers {
-	border-top: 1px solid $grey-3;
+	border-top: 1px solid $border-colour;
 	padding: 20px 0 10px 0;
 	margin-top: 10px;
 		.caseFlags{
@@ -176,9 +176,13 @@ table {
 				font-size: 17px;
 			}
 			ul {
-				margin-top: 3px;
 				li {
-					font-size: 18px;
+					font-size: 17px;
+					margin-top: 6px;
+					&:first-child {
+						border-top: 0;
+						margin-top: 10px;
+					}
 				}
 			}
 		}
@@ -190,4 +194,47 @@ table {
 .secondary-nav-actions {
 	margin-top: 20px;
 }
+
+
+.filter-portal {
+	margin-bottom: 30px;
+	padding-bottom: 20px!important;
+	border-bottom: 1px solid $grey-2;
+	
+	.time-choice {
+		float: left;
+		width: auto;
+		padding: 0;
+		margin-right: 5px;
+		label {
+			padding: .6em 1em .5em 1em;
+			font-size: 18px;
+			border: 0;
+			background: #fff;
+			color: $govuk-blue;
+			font-weight: normal;
+			
+			border: 1px solid $govuk-blue;
+			&:hover {
+				background: $grey-4;
+			}
+		}
+	}
+}
+
+
+.filter-head {
+		margin-top: 20px;
+		span {
+			display: inline-block;
+			font-weight: bold;
+			font-size: 19px;
+		}
+	}
+	
+	
+.currently-showing {
+	color: $grey-1;
+}
+
 
