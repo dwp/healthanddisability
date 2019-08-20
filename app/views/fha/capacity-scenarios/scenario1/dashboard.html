@@ -1,86 +1,41 @@
-{% extends path+"/_layout.html" %}
- 
-
-{% block assess_content %}
-<main id="content" role="main" class="main-content">
-  
-
-  <div class="container">
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  {% extends path+"/_layout.html" %} {% block assess_content %}
+  <main class="main-content"
+        id="content"
+        role="main">
+    <div class="container">
       <div class="grid-row">
-          <div class="column-one-quarter">
-         
-            <div class="search-customer">
-              <form action="/{{path}}/search-results" method="post">
-                    <label class="form-label-bold visually-hidden" for="search">Customer search</label>
-                <span class="form-hint">Search by NI number</span>
-                    <input class="form-control form-control-2-3" id="search" type="text" name="search">
-                    <button class="gem-c-search__submit">Search</button>
-                </form>
-                </div>
-  
-          </div>
-          <div class="column-three-quarters">
-             
-                <div class="grid-row">
-                  <div class="column-full">
-                
-                      <h1 class="heading-xlarge mb20">         
-                      80 cases
-                        </h1>
-                      </div>
-                      </div>
-                      <div class="grid-row">   
-                  <div class="card-container">
+        <div class="column-full">
+          <h1 class="heading-xlarge mb20">Capacity management</h1>
 
-               
-             
-                    <div class="card">
-                      <a href="/{{path }}/scenario/not-testing.html">
-                    
-                        <h2 class="heading-xlarge">
-                            60
-                          <span class="heading-small">Assessment reports</span>
-                         </h2>
-                    
-                      </a>
-                      <ul>
-                          <li><a href="/{{path }}/scenario/not-testing.html">Face to face (42)</a></li>
-                          <li>
-                            <a href="/{{path }}/scenario/not-testing.html">Paper based (18)</a></li>
-                      
-                      </ul>
-                      </div>
-
-                
-                             
-                           <div class="card">
-                                <a href="/{{path }}/scenario/not-testing.html">
-                              
-                                  <h2 class="heading-xlarge">
-                                      20
-                                    <span class="heading-small">DWP decision's to make</span>
-                                   </h2>
-                              
-                                </a>
-                                <ul>
-                                    <li><a href="/{{path}}/scenario1/caselist.html">Did not attend (8)</a></li>
-                                    <li>
-                                      <a href="/{{path }}/scenario/not-testing.html">Questionnaire not returned (10)</a></li>
-                                      <li> <a href="/{{path }}/scenario/not-testing.html">Deceased(2)</a></li>
-                                </ul>
-                                </div>
-                    </div>
-                </div>
-          </div><!-- column -->
+           {% if data['times'] %}
+<div class="panel panel-confirmation">
+  <h2 class="heading-large">Capacity plan created</h2>
+  <p>Week commencing Monday 22 July for Mann island </p>
+</div>
+{% endif %}
         </div>
- 
-    <!-- row -->
-  </div><!-- container -->
-
-</main>
-{% endblock %}
-
-
-
-
-
+       
+      </div>
+      <div class="grid-row">
+        <div class="card-container">
+          <div class="card">
+            <a href="/{{path}}/scenario1/create-date.html">
+            <h2 class="heading-small">Create capacity</h2></a>
+          </div>
+          <div class="card">
+            <a href="/{{path}}/scenario2/view-plan.html">
+            <h2 class="heading-small">Veiw and edit capacity</h2></a>
+          </div>
+        </div>
+      </div><!-- column -->
+    </div><!-- row -->
+    <!-- container -->
+  </main>{% endblock %}
+</body>
+</html>

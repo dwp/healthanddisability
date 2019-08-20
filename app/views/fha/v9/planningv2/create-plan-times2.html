@@ -23,15 +23,15 @@
   <h2 class="heading-medium mt30">Monday 10 September</h2>
   {% include path+"/planningv2/_info-panel-times.html" %} 
 
-   <h3 class="heading-small mt20">Choose appointment times</h3>
+   <h3 class="heading-small mt20">Choose appointment checks</h3>
    <button id="selectAll" class="button secondary-invert mb10 mt10" hidden>Select all</button>
    <form class="form" action="create-plan-amount2" method="post">
 
 
-   <div class="pickslots">
+   <div class="timeslot">
 
 
-   <div class="time-group time-top">
+   <div class="check-group check-top">
       <fieldset class="timeslot-picker">
 
         <legend>
@@ -42,28 +42,28 @@
 
 
 
-        <div class="time-choice">
-          <input id="time1" name="times" type="checkbox" value="9" {{checked('times', '9') }} >
-          <label for="time1">9:00am</label>
+        <div class="check-choice">
+          <input id="check1" name="checks" type="checkbox" value="9" {{checked('checks', '9') }} >
+          <label for="check1">9:00am</label>
         </div>
-        <div class="time-choice">
-            <input id="time2" name="times" type="checkbox" value="915" {{checked('times', '915') }}>
-            <label for="time2">9:15am</label>
+        <div class="check-choice">
+            <input id="check2" name="checks" type="checkbox" value="915" {{checked('checks', '915') }}>
+            <label for="check2">9:15am</label>
           </div>
-          <div class="time-choice">
-              <input id="time3" name="times" type="checkbox" value="930" {{checked('times', '930') }}>
-              <label for="time3">9:30am</label>
+          <div class="check-choice">
+              <input id="check3" name="checks" type="checkbox" value="930" {{checked('checks', '930') }}>
+              <label for="check3">9:30am</label>
           </div>
-          <div class="time-choice">
-              <input id="time3a" name="times" type="checkbox" value="945" {{checked('times', '945') }}>
-              <label for="time3a">9:45am</label>
+          <div class="check-choice">
+              <input id="check3a" name="checks" type="checkbox" value="945" {{checked('checks', '945') }}>
+              <label for="check3a">9:45am</label>
           </div>
 
       </fieldset>
    </div>
 
-   <div class="time-group">
-      <fieldset class="timeslot-picker">
+   <div class="check-group">
+      <fieldset class="checkslot-picker">
 
         <legend>
           <h3 class="heading-medium">Choose times </h3>
@@ -71,28 +71,28 @@
         </legend>
 
 
-        <div class="time-choice">
-            <input id="time4" name="times" type="checkbox" value="10" {{checked('times', '10') }}>
-            <label for="time4">10:00am</label>
+        <div class="check-choice">
+            <input id="check4" name="checks" type="checkbox" value="10" {{checked('checks', '10') }}>
+            <label for="check4">10:00am</label>
           </div>
-          <div class="time-choice">
-              <input id="time5" name="times" type="checkbox" value="1015" {{checked('times', '1015') }}>
-              <label for="time5">10:15am</label>
+          <div class="check-choice">
+              <input id="check5" name="checks" type="checkbox" value="1015" {{checked('checks', '1015') }}>
+              <label for="check5">10:15am</label>
             </div>
-            <div class="time-choice">
-                <input id="time6" name="times" type="checkbox" value="1030" {{checked('times', '1030') }}>
-                <label for="time6">10:30am</label>
+            <div class="check-choice">
+                <input id="check6" name="checks" type="checkbox" value="1030" {{checked('checks', '1030') }}>
+                <label for="check6">10:30am</label>
             </div>
-            <div class="time-choice">
-                <input id="time6a" name="times" type="checkbox" value="1045" {{checked('times', '1045') }}>
-                <label for="time6a">10:45am</label>
+            <div class="check-choice">
+                <input id="check6a" name="checks" type="checkbox" value="1045" {{checked('checks', '1045') }}>
+                <label for="check6a">10:45am</label>
             </div>
 
       </fieldset>
    </div>
 
-   <div class="time-group">
-      <fieldset class="timeslot-picker">
+   <div class="check-group">
+      <fieldset class="checkslot-picker">
 
         <legend>
           <h3 class="heading-medium">Choose times </h3>
@@ -100,29 +100,29 @@
         </legend>
 
 
-        <div class="time-choice">
-            <input id="time7" name="times" type="checkbox" value="11" {{checked('times', '11') }}>
-            <label for="time7">11:00am</label>
+        <div class="check-choice">
+            <input id="check7" name="checks" type="checkbox" value="11" {{checked('checks', '11') }}>
+            <label for="check7">11:00am</label>
           </div>
-          <div class="time-choice">
-              <input id="time8" name="times" type="checkbox" value="1115" {{checked('times', '1115') }}>
-              <label for="time8">11:15am</label>
+          <div class="check-choice">
+              <input id="check8" name="checks" type="checkbox" value="1115" {{checked('checks', '1115') }}>
+              <label for="check8">11:15am</label>
             </div>
-            <div class="time-choice">
-                <input id="time9" name="times" type="checkbox" value="1130" {{checked('times', '1130') }}>
-                <label for="time9">11:30am</label>
+            <div class="check-choice">
+                <input id="check9" name="checks" type="checkbox" value="1130" {{checked('checks', '1130') }}>
+                <label for="check9">11:30am</label>
             </div>
-            <div class="time-choice">
-                <input id="time9a" name="times" type="checkbox" value="1145" {{checked('times', '1145') }}>
-                <label for="time9a">11:45am</label>
+            <div class="check-choice">
+                <input id="check9a" name="checks" type="checkbox" value="1145" {{checked('checks', '1145') }}>
+                <label for="check9a">11:45am</label>
             </div>
 
       </fieldset>
    </div>
 
 
-   <div class="time-group">
-      <fieldset class="timeslot-picker">
+   <div class="check-group">
+      <fieldset class="checkslot-picker">
 
         <legend>
           <h3 class="heading-medium">Choose times </h3>
@@ -130,55 +130,21 @@
         </legend>
 
 
-        <div class="time-choice">
-            <input id="time7aa" name="times" type="checkbox" value="12" {{checked('times', '12') }}>
-            <label for="time7aa">12:00pm</label>
+        <div class="check-choice">
+            <input id="check7aa" name="checks" type="checkbox" value="12" {{checked('checks', '12') }}>
+            <label for="check7aa">12:00pm</label>
           </div>
-          <div class="time-choice">
-              <input id="time8aa" name="times" type="checkbox" value="1215" {{checked('times', '1215') }}>
-              <label for="time8aa">12:15pm</label>
+          <div class="check-choice">
+              <input id="check8aa" name="checks" type="checkbox" value="1215" {{checked('checks', '1215') }}>
+              <label for="check8aa">12:15pm</label>
             </div>
-            <div class="time-choice">
-                <input id="time9aa" name="times" type="checkbox" value="1230" {{checked('times', '1230') }}>
-                <label for="time9aa">12:30pm</label>
+            <div class="check-choice">
+                <input id="check9aa" name="checks" type="checkbox" value="1230" {{checked('checks', '1230') }}>
+                <label for="check9aa">12:30pm</label>
             </div>
-            <div class="time-choice">
-                <input id="time9aaa" name="times" type="checkbox" value="1245" {{checked('times', '1245') }}>
-                <label for="time9aaa">12:45pm</label>
-            </div>
-
-      </fieldset>
-   </div>
-
-
-
-
-
-   <div class="time-group">
-      <fieldset class="timeslot-picker">
-
-        <legend>
-          <h3 class="heading-medium">Choose times </h3>
-
-        </legend>
-
-
-
-        <div class="time-choice">
-            <input id="time10" name="times" type="checkbox" value="1" {{checked('times', '1') }}>
-            <label for="time10">1:00pm</label>
-          </div>
-          <div class="time-choice">
-              <input id="time11" name="times" type="checkbox" value="115" {{checked('times', '115') }}>
-              <label for="time11">1:15pm</label>
-            </div>
-            <div class="time-choice">
-                <input id="time12" name="times" type="checkbox" value="130" {{checked('times', '130') }}>
-                <label for="time12">1:30pm</label>
-            </div>
-            <div class="time-choice">
-                <input id="time12a" name="times" type="checkbox" value="145" {{checked('times', '145') }}>
-                <label for="time12a">1:45pm</label>
+            <div class="check-choice">
+                <input id="check9aaa" name="checks" type="checkbox" value="1245" {{checked('checks', '1245') }}>
+                <label for="check9aaa">12:45pm</label>
             </div>
 
       </fieldset>
@@ -187,8 +153,9 @@
 
 
 
-   <div class="time-group">
-      <fieldset class="timeslot-picker">
+
+   <div class="check-group">
+      <fieldset class="checkslot-picker">
 
         <legend>
           <h3 class="heading-medium">Choose times </h3>
@@ -197,21 +164,21 @@
 
 
 
-        <div class="time-choice">
-            <input id="time13" name="times" type="checkbox" value="2" {{checked('times', '2') }}>
-            <label for="time13">2:00pm</label>
+        <div class="check-choice">
+            <input id="check10" name="checks" type="checkbox" value="1" {{checked('checks', '1') }}>
+            <label for="check10">1:00pm</label>
           </div>
-          <div class="time-choice">
-              <input id="time14" name="times" type="checkbox" value="215" {{checked('times', '215') }}>
-              <label for="time14">2:15pm</label>
+          <div class="check-choice">
+              <input id="check11" name="checks" type="checkbox" value="115" {{checked('checks', '115') }}>
+              <label for="check11">1:15pm</label>
             </div>
-            <div class="time-choice">
-                <input id="time15" name="times" type="checkbox" value="230" {{checked('times', '230') }}>
-                <label for="time15">2:30pm</label>
+            <div class="check-choice">
+                <input id="check12" name="checks" type="checkbox" value="130" {{checked('checks', '130') }}>
+                <label for="check12">1:30pm</label>
             </div>
-            <div class="time-choice">
-                <input id="time15a" name="times" type="checkbox" value="245" {{checked('times', '245') }}>
-                <label for="time15a">2:45pm</label>
+            <div class="check-choice">
+                <input id="check12a" name="checks" type="checkbox" value="145" {{checked('checks', '145') }}>
+                <label for="check12a">1:45pm</label>
             </div>
 
       </fieldset>
@@ -219,8 +186,9 @@
 
 
 
-   <div class="time-group">
-      <fieldset class="timeslot-picker">
+
+   <div class="check-group">
+      <fieldset class="checkslot-picker">
 
         <legend>
           <h3 class="heading-medium">Choose times </h3>
@@ -228,22 +196,54 @@
         </legend>
 
 
-            <div class="time-choice">
-                <input id="time16" name="times" type="checkbox" value="3" {{checked('times', '3') }}>
-                <label for="time16">3:00pm</label>
+
+        <div class="check-choice">
+            <input id="check13" name="checks" type="checkbox" value="2" {{checked('checks', '2') }}>
+            <label for="check13">2:00pm</label>
+          </div>
+          <div class="check-choice">
+              <input id="check14" name="checks" type="checkbox" value="215" {{checked('checks', '215') }}>
+              <label for="check14">2:15pm</label>
+            </div>
+            <div class="check-choice">
+                <input id="check15" name="checks" type="checkbox" value="230" {{checked('checks', '230') }}>
+                <label for="check15">2:30pm</label>
+            </div>
+            <div class="check-choice">
+                <input id="check15a" name="checks" type="checkbox" value="245" {{checked('checks', '245') }}>
+                <label for="check15a">2:45pm</label>
+            </div>
+
+      </fieldset>
+   </div>
+
+
+
+   <div class="check-group">
+      <fieldset class="checkslot-picker">
+
+        <legend>
+          <h3 class="heading-medium">Choose times </h3>
+
+        </legend>
+
+
+            <div class="check-choice">
+                <input id="check16" name="checks" type="checkbox" value="3" {{checked('checks', '3') }}>
+                <label for="check16">3:00pm</label>
               </div>
-              <div class="time-choice">
-                  <input id="time17" name="times" type="checkbox" value="315" {{checked('times', '315') }}>
-                  <label for="time17">3:15pm</label>
+              <div class="check-choice">
+                  <input id="check17" name="checks" type="checkbox" value="315" {{checked('checks', '315') }}>
+                  <label for="check17">3:15pm</label>
                 </div>
-                <div class="time-choice">
-                    <input id="time18" name="times" type="checkbox" value="330" {{checked('times', '330') }}>
-                    <label for="time18">3:30pm</label>
+                <div class="check-choice">
+                    <input id="check18" name="checks" type="checkbox" value="330" {{checked('checks', '330') }}>
+                    <label for="check18">3:30pm</label>
                 </div>
 
-				<div class="time-choice">
-                    <input id="time18a" name="times" type="checkbox" value="345" {{checked('times', '345') }}>
-                    <label for="time18a">3:45pm</label>
+				<div class="check-choice">
+                    <input id="check18a" name="checks" type="checkbox" value="345" {{checked('checks', '345') }}>
+                    <label for="check18a">3:45pm</label>
                 </div>
 
 
@@ -252,8 +252,8 @@
 
 
 
-    <div class="time-group mb20">
-      <fieldset class="timeslot-picker">
+    <div class="check-group mb20">
+      <fieldset class="checkslot-picker">
 
         <legend>
           <h3 class="heading-medium">Choose times </h3>
@@ -261,22 +261,22 @@
         </legend>
 
 
-            <div class="time-choice">
-                <input id="time19" name="times" type="checkbox" value="4" {{checked('times', '4') }}>
-                <label for="time19">4:00pm</label>
+            <div class="check-choice">
+                <input id="check19" name="checks" type="checkbox" value="4" {{checked('checks', '4') }}>
+                <label for="check19">4:00pm</label>
               </div>
-              <div class="time-choice">
-                  <input id="time20" name="times" type="checkbox" value="415" {{checked('times', '415') }}>
-                  <label for="time20">4:15pm</label>
+              <div class="check-choice">
+                  <input id="check20" name="checks" type="checkbox" value="415" {{checked('checks', '415') }}>
+                  <label for="check20">4:15pm</label>
                 </div>
-                <div class="time-choice">
-                    <input id="time21" name="times" type="checkbox" value="430" {{checked('times', '430') }}>
-                    <label for="time21">4:30pm</label>
+                <div class="check-choice">
+                    <input id="check21" name="checks" type="checkbox" value="430" {{checked('checks', '430') }}>
+                    <label for="check21">4:30pm</label>
                 </div>
 
-				<div class="time-choice">
-                    <input id="time22" name="times" type="checkbox" value="445" {{checked('times', '445') }}>
-                    <label for="time22">4:45pm</label>
+				<div class="check-choice">
+                    <input id="check22" name="checks" type="checkbox" value="445" {{checked('checks', '445') }}>
+                    <label for="check22">4:45pm</label>
                 </div>
 
 
