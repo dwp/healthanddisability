@@ -34,10 +34,18 @@ details {
 }
 
 .launch-panel {
-	background: $grey-3;
-	padding: 1em;
+	background: #fff;
+	border: 1px solid $grey-2;
 	h2 {
-		margin: 0 0 1em 0;
+		margin: 0;
+		font-size: 20px;
+		font-weight: bold;
+		padding: .8em 1em .6em 1em;
+		background: $grey-4; 
+	}
+	p {
+		padding: .8em 1em .9em 1em!important;
+		margin: 0;
 	}
 }
 
@@ -73,3 +81,19 @@ details {
 .index-page-banner {
 	background: $govuk-blue;
 }
+
+
+.secondary-invert {
+	  background: #fff;
+	  color: #10813e!important;
+	  border: 2px solid #10813e;
+	  padding: .526315em .789473em .263157em;
+	  display: inline-block;
+	  text-decoration: none;
+	  padding-bottom: 6px;
+		  &:hover {
+			  background: rgba($green, 0.05);
+			  border: 2px solid #0b6831;
+			  color: #0b6831!important;
+			  }
+	  }
