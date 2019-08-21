@@ -295,6 +295,7 @@ if (typeof (routes) !== 'function') {
   app.use('/fha/scrutiny-scenarios', require('./app/views/fha/scrutiny-scenarios/_routes.js')) 
   app.use('/fha/appointment-scenarios', require('./app/views/fha/appointment-scenarios/_routes.js')) 
   app.use('/fha/capacity-scenarios', require('./app/views/fha/capacity-scenarios/_routes.js')) 
+  app.use('/fha/assessment-scenarios', require('./app/views/fha/assessment-scenarios/_routes.js')) 
   app.use('/', routes)
 
   

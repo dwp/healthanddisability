@@ -3,16 +3,15 @@
 
 {% block actioncolumn %}
    
-  <p class="returnRef"><a href="/{{path }}/scenario2/referrals-fme">Return to case list</a></p>
-  <hr>
- <div class="case-status">
- 
- 
-<p class="main-status">Portal designs</p>
+<p class="returnRef"><a href="javascript: history.go(-1)" class="link-back">Return to case list</a></p>
 
-<hr>
+ <div class="caseStatus">
+ 	
+	<p class="main-status"><span>Current case status</span>Ready for assessment</p>
 
-</div>
+	<p class="primary-action"><span>Suggested case action</span><a href="#" class="button">Start assessment review</a></p>
+
+ </div>
 
 {% endblock %}
 
@@ -141,8 +140,8 @@ Kenneth Robertson
 						</tbody>
 					</table>
 					
-					<p class="view-all"><a href="/{{path }}/scenario4/not-testing" class="secondary-invert">Add a medical condition</a></p>
-					<p><a href="/{{path }}/scenario4/not-testing" class="secondary-invert">Edit a medical condition</a></p>
+					<p class="view-all"><a href="/{{path }}/scenario4/not-testing" class="secondary-invert">Add or edit a medical condition</a></p>
+
 
 
 						  	

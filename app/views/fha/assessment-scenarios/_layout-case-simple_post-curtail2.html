@@ -1,6 +1,6 @@
 {% extends path+"/_layout.html" %}
 
-{% import path+"/scenario4/_macros_nav_scenario4.html" as nav %} 
+
 
 
 
@@ -15,8 +15,11 @@
       <div class="column-one-quarter left-area">
       
       	<div class="left-panel">
-  
-          
+
+<p style="font-weight:bold;">Assessment complete</p>
+<hr>
+
+
           {% block actioncolumn %}{% endblock %}
       
 
@@ -42,8 +45,8 @@
                   </ul>
                 </div> -->
                 
-                <h1 class="heading-xlarge"><span>Customer details</span>{% block citizen_detail %}{% endblock %}</h1>
-                <p><span class="visually-hidden">National insurance number</span>AA 12 34 56 B</p>
+                <h1 class="heading-xlarge"><span>Customer details</span>{% block citizen_detail %}Michael Morris{% endblock %}</h1>
+                <p class="mb20"><span class="visually-hidden">National insurance number</span>QQ 69 17 54 C</p>
                
               </div><!-- column -->
               
@@ -54,7 +57,7 @@
               
                 <div class="header-left-col mt20">
                  <h2>Date of birth</h2>
-                 <p>{{customer.dateOfBirth |formatDate('D MMMM YYYY') }}</p>
+                 <p>15 August 1991  <!--{{customer.dateOfBirth |formatDate('D MMMM YYYY') }}--></p>
                 </div>
         
               <div class="header-right-col mt20">
@@ -63,7 +66,10 @@
               </div>
               
               <!-- / column half -->
-
+        
+         
+               
+                 
             
               
             </div><!-- / grid row -->

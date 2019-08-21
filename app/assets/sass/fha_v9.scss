@@ -1316,7 +1316,7 @@ ul.numeric{
 
 
 .staff__heading {
-  padding: 10px 0 20px 0;
+  padding: 5px 0 20px 0;
 
   	.badges {
 	  	ul {
@@ -1959,11 +1959,14 @@ table.task-list {
 
 .section-tabs ul li a {
 	color: #0b0c0c!important;
-	background: #f8f8f8;
+	background: $grey-4;
 	font-weight: normal;
 	border-color: #f8f8f8;
 	padding-left: 20px;
 	padding-right: 20px;
+	&:hover {
+		background: $grey-3;
+	}
 }
 
 .section-tabs ul li.active a {
@@ -2098,21 +2101,18 @@ table.profile-table .col5{
 
 
 .secondary-invert {
-	  background: #fff!important;
+	  background: #fff;
 	  color: #10813e!important;
-	  box-shadow: none!important;
-	  border: 2px solid #10813e!important;
+	  border: 2px solid #10813e;
 	  padding: .526315em .789473em .263157em;
-	  display: inline-block!important;
+	  display: inline-block;
 	  text-decoration: none;
 	  padding-bottom: 6px;
-	  }
-
-	  .secondary-invert:hover {
-		  background: $grey-4!important;
-		  box-shadow: none!important;
-		  border: 2px solid #0b6831!important;
-		  color: #0b6831!important;
+		  &:hover {
+			  background: rgba($green, 0.05);
+			  border: 2px solid #0b6831;
+			  color: #0b6831!important;
+			  }
 	  }
 
 // style checkboxes for filters and multiple selections --------------------
@@ -2371,6 +2371,25 @@ table.profile-table .col5{
 		&:first-child {
 			margin-top: 0;
 		}
+		
+		////// Test code ////////
+		
+		.dash-test {
+			font-size: 18px;
+			text-decoration: none;
+			line-height: 1.8em;
+
+			span {
+				display: block;
+				font-size: 42px;
+				padding-top: .2em;
+			}
+			&:hover {
+				color: #000!important;
+			}
+		}
+		
+		////// Test code ////////
 			
 		.portal-head {
 			overflow: hidden;
@@ -2433,6 +2452,12 @@ table.profile-table .col5{
 						&:first-child {
 							width: 50%;
 						}
+					}
+				}
+				
+				&.tele-list {
+					th {
+						width: 50%;
 					}
 				}
 			}
