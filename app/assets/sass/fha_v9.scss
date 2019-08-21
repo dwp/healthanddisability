@@ -1959,11 +1959,14 @@ table.task-list {
 
 .section-tabs ul li a {
 	color: #0b0c0c!important;
-	background: #f8f8f8;
+	background: $grey-4;
 	font-weight: normal;
 	border-color: #f8f8f8;
 	padding-left: 20px;
 	padding-right: 20px;
+	&:hover {
+		background: $grey-3;
+	}
 }
 
 .section-tabs ul li.active a {
@@ -2106,7 +2109,7 @@ table.profile-table .col5{
 	  text-decoration: none;
 	  padding-bottom: 6px;
 		  &:hover {
-			  background: $grey-4;
+			  background: rgba($green, 0.05);
 			  border: 2px solid #0b6831;
 			  color: #0b6831!important;
 			  }
@@ -2365,6 +2368,25 @@ table.profile-table .col5{
 		&:first-child {
 			margin-top: 0;
 		}
+		
+		////// Test code ////////
+		
+		.dash-test {
+			font-size: 18px;
+			text-decoration: none;
+			line-height: 1.8em;
+
+			span {
+				display: block;
+				font-size: 42px;
+				padding-top: .2em;
+			}
+			&:hover {
+				color: #000!important;
+			}
+		}
+		
+		////// Test code ////////
 			
 		.portal-head {
 			overflow: hidden;
