@@ -1,4 +1,4 @@
-{% extends path+"/_layout-case-simple_post-curtail2.html" %}
+{% extends path+"/_layout-case-simple_assessment-complete.html" %}
 
 {% block citizen_content %}
 
@@ -9,7 +9,7 @@
 <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
 
   
-<h1 class="heading-large mb0">Work capability report</h1>
+<h1 class="heading-large mb0">Work capability review</h1>
  
 
 <div class="review-wrapper full-report">
@@ -47,34 +47,6 @@
 </div>
 <!-- / report item -->
 
-
-
-<div class="report-item">
-
-	<h2 class="heading-large">Personal summary statement</h2> 
-	
-	<div class="inner-focus">
-		<p>{{ statement }}</p>
-	</div>
-	
-	<!--<p class="edit-report"><a href="personalSummaryStatement" class="button-secondary">Edit personal summary statement</a></p>-->
-	
-</div>
-<!-- / report item -->	
-
-
-
-<div class="report-item">
-
-	<h2 class="heading-large">Additional attendee</h2> 
-	
-	<div class="inner-focus">
-		<p><span style="font-weight:bold;">Name of attendee:</span> {{ additionalAttendeeName }}</p>
-		<p><span style="font-weight:bold;">Relationship to claimant:</span> {{ additionalAttendeeRelationship }}</p>
-	</div>
-	<!--<p class="edit-report"><a href="addAttendee" class="button-secondary">Edit additional attendees</a></p>-->
-</div>
-<!-- / report item -->
 
 
 
@@ -336,149 +308,6 @@
 
 
 
-
-<!-- Displays report item based on selection from LCWRA page -->
-{% if data['lcwra']==='lcwra1'%}
-{% elif data['lcwra']==='lcwra2' or data['lcwra']==='lcwra3' or data['lcwra']==='lcwra4'%}
-<div class="report-item">
-
-	<h2 class="heading-large">Special Circumstances</h2> 
-	
-	<div class="inner-focus">
-		
-		<h2 class="heading-medium">Treat as LCWRA</h2>
-
-		<p><span style="font-weight:bold;">Reason:</span>
-		{% if data['lcwra']==='lcwra1'%}
-		{% elif data['lcwra']==='lcwra2'%}
-		Risks associated with pregnancy
-		{% elif data['lcwra']==='lcwra3'%}
-		Cancer treatment underway
-		{% elif data['lcwra']==='lcwra4'%}
-		Terminal illness
-		{% endif %}
-		</p>
-
-		<h4 class="heading-small">Justification:</h4>
-		<p>{{ justifyTreatLCWRA }}</p>
-
-	</div>
-	
-	<!--<p class="edit-report"><a href="exceptionalCircumstances" class="button-secondary">Edit exceptional circumstances</a></p>-->
-	
-</div>
-
-{% elif data['lcwra']==='lcwra6' or data['lcwra']==='lcwra7' or data['lcwra']==='lcwra8' or data['lcwra']==='lcwra9' or data['lcwra']==='lcwra10' or data['lcwra']==='lcwra11' or data['lcwra']==='lcwra12' or data['lcwra']==='lcwra13' or data['lcwra']==='lcwra14' or data['lcwra']==='lcwra15' or data['lcwra']==='lcwra16' or data['lcwra']==='lcwra17' or data['lcwra']==='lcwra18' or data['lcwra']==='lcwra19' or data['lcwra']==='lcwra20'%}
-<div class="report-item">
-
-	<h2 class="heading-large">Medical opinion</h2> 
-	
-	<div class="inner-focus">
-		
-		<h2 class="heading-medium">Functional LCWRA</h2>
-		
-		<p><span style="font-weight:bold;">Activity:</span>
-		{% if data['lcwra']==='lcwra1'%}
-		{% elif data['lcwra']==='lcwra6'%}
-		Moving around and climbing steps without someone’s help
-		{% elif data['lcwra']==='lcwra7'%}
-		Standing, sitting and moving between the two
-		{% elif data['lcwra']==='lcwra8'%}
-		Reaching
-		{% elif data['lcwra']==='lcwra9'%}
-		Picking things up and moving them
-		{% elif data['lcwra']==='lcwra10'%}
-		Using your hands
-		{% elif data['lcwra']==='lcwra11'%}
-		Speaking, writing and typing
-		{% elif data['lcwra']==='lcwra12'%}
-		Hearing and reading
-		{% elif data['lcwra']==='lcwra13'%}
-		Controlling your bowels and bladder
-		{% elif data['lcwra']==='lcwra14'%}
-		Learning to do new tasks
-		{% elif data['lcwra']==='lcwra15'%}
-		Being aware of hazards and danger
-		{% elif data['lcwra']==='lcwra16'%}
-		Planning, starting and finishing everyday tasks
-		{% elif data['lcwra']==='lcwra17'%}
-		Coping with changes to your daily routine
-		{% elif data['lcwra']==='lcwra18'%}
-		Meeting and being with people
-		{% elif data['lcwra']==='lcwra19'%}
-		Behaving appropriately around other people
-		{% elif data['lcwra']==='lcwra20'%}
-		Eating and drinking
-		{% endif %}
-		</p>
-
-		<h4 class="heading-small">Justification:</h4>
-		<p>{{ justifyFunctionalLCWRA }}</p>
-
-		<h4 class="heading-small">Supporting statements:</h4>
-		<p>{{taggedstatement}}</p>
-
-	</div>
-	
-	<!--<p class="edit-report"><a href="exceptionalCircumstances" class="button-secondary">Edit medical opinion</a></p>-->
-	
-</div>
-
-{% endif %}		
-<!-- / report item -->
-
-
-
-<div class="report-item">
-
-	<h2 class="heading-large">Recommended review period</h2> 
-	
-	<div class="inner-focus">
-
-		<p>
-		{% if data['reviewPeriod']==='reviewPeriod1'%}
-		{% elif data['reviewPeriod']==='3months'%}
-		3 months
-		{% elif data['reviewPeriod']==='6months'%}
-		6 months
-		{% elif data['reviewPeriod']==='12months'%}
-		12 months
-		{% elif data['reviewPeriod']==='18months'%}
-		18 months
-		{% elif data['reviewPeriod']==='2years'%}
-		2 years
-		{% elif data['reviewPeriod']==='longerterm'%}
-		in the longer term
-		{% elif data['reviewPeriod']==='notrequired'%}
-		not future assessment required
-		{% endif %}
-		</p>
-	</div>
-	
-	<!--<p class="edit-report"><a href="recommendedReviewPeriod" class="button-secondary">Edit recommended review period</a></p>-->
-	
-</div>
-<!-- / report item -->	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!--
 <div class="report-item">
 
@@ -570,9 +399,6 @@
    </div>
  <!-- / wrapper -->
   
-
-
-	<p class="depart"><a href="/{{path}}/scenario-curtailment/curtailDeclaration" class="button">Finish &ndash; sign off report</a></p>
 
 
 

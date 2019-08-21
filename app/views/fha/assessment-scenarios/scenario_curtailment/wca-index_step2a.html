@@ -19,14 +19,14 @@
 
       <div class="task-list">
 					<ul class="task-list-itmes">
-           <li class="task-list-item"><a href="/{{path}}/scenario/not-testing">Physical assessments{% if data['physicalAssessed'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+           <li class="task-list-item"><a href="phys_consent">Physical assessments{% if data['physicalAssessed'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
            <li class="task-list-item"><a href="/{{path}}/scenario/not-testing">Mental state examination {% if data['mental-health'] %}<span class="task-completed">Saved</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
           </ul>
         </div>
   </div><!-- column here -->
 </div><!-- row -->
 
-<form class="mt30" method="post" action="recommendedReviewPeriod">
+<form class="mt30" method="post" action="miniReview">
   <p class="mt30"><button class="button">Finish and review</button></p>
 </form>
 
