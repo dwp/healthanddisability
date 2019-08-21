@@ -20,19 +20,23 @@
 {% include path+"/scenario2/_info-panel-amount.html" %} 
 
 <style>
-.profile-table td span{
-  background:#dee0e2;
+.profile-table td span.container{
+ background:#dee0e2;
  display:block;
- padding:2px 0 0 0;
+ padding:2px;
  margin-top:1px;
+ font-size:16px;
+}
+
+.profile-table td span.container .badge{
+  font-size:16px;
 }
 
 .profile-table input[type="text"]:disabled {
   border:none;
-  padding:5px;
-  font-size:18px;
+  font-size:16px;
   display:inline;
-  width:30%;
+  width:35px;
   background:transparent;
   color:#000;
 }
@@ -82,21 +86,22 @@
                   <th class="col">9:00am</th>
                   <td > <label class="visually-hidden" for="" ></label>
                     <input class="form-control" id="col_1_1"  type="text" name="col_1_1"  type="text" value="{{col_1_1}}" >
-                    <span>
+                    <span class="container">
                     <label class="" for="">Booked</label>
-                    <input class="form-control" id="col_1_1_row_2" type="text" name="col_1_1_row_2"  value="2"  disabled="disabled">
+                    <input class="form-control" id="col_1_1_row_2" type="text" name="col_1_1_row_2"  value="1"  disabled="disabled">
+                    <span class="badge">UCB</span>
                     </span>
                     </td> 
                     <td ><label class="visually-hidden" for=""></label>
                       <input class="form-control" id="col_2_1" type="text" name="col_2_1"  value="{{col_2_1}}">
-                        <span>
+                        <span class="container">
                     <label class="" for="">Booked</label>
                     <input class="form-control" id="col_2_1_row_2" type="text" name="col_2_1_row_2"  value="2"  disabled="disabled">
                     </span>
                       </td>
                   <td><label class="visually-hidden" for=""></label>
                     <input class="form-control" id="col_3_1" type="text" name="col_3_1"  value="{{col_3_1}}">
-                       <span>
+                       <span class="container">
                     <label class="" for="">Booked</label>
                     <input class="form-control" id="col_3_1_row_2" type="text" name="col_3_1_row_2"  value="2"  disabled="disabled">
                     </span>
@@ -104,7 +109,7 @@
                   {% if checked('benefits','ben2') %}
                   <td><label class="visually-hidden" for=""></label>
                     <input class="form-control" id="col_4_1" type="text" name="col_4_1"  value="{{col_4_1}}">
-                       <span>
+                       <span class="container">
                     <label class="" for="">Booked</label>
                     <input class="form-control" id="col_4_1_row_2" type="text" name="col_4_1_row_2"  value="2"  disabled="disabled">
                     </span>
@@ -117,9 +122,9 @@
 
                   <td class="col6"><label class="visually-hidden" for=""></label>
                     <input class="form-control" id="col_6_1" type="text" name="col_6_1"  value="{{col_6_1}}">
-                      <span>
+                      <span class="container">
                     <label class="" for="">Booked</label>
-                    <input class="form-control" id="" type="text" name=""  value="2"  disabled="disabled">
+                    <input class="form-control" id="" type="text" name=""  value="1"  disabled="disabled">
                     </span>
                     </td>
                 </tr>
@@ -161,6 +166,8 @@
 <script>
 
 $('#col_1_1').val("3");
+$('#col_6_1').val("0");
+
 
 function total(inputFields, totalField) {
   var sumValues = 0;

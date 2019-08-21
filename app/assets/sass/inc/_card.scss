@@ -35,6 +35,17 @@
 			li:first-of-type{
                border-top:0px;
 			}
+
+			a{
+				background:$white;
+				padding:10px 0;
+				text-decoration:underline;
+
+				&:hover{
+					background:transparent;
+					color:$link-hover-colour;
+				}
+			}
 		}
 
 		
@@ -69,7 +80,7 @@
 		}
 
 		a{
-			background:$grey-3;
+			background:$grey-4;
 			
 
 			&:hover{
