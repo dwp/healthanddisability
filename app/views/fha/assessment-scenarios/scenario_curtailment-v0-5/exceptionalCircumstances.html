@@ -1,0 +1,166 @@
+{% extends path+"/scenario_curtailment-v0-5/_layout-case-simple_clear-assessment-complete.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+<h3 class="heading-medium" style="color:#6f777b; font-weight:100;">LCWRA</h3>
+<h1 class="heading-large">Why do you want to curtail Michael's assessment?</h1>
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+
+		<form method="post" action="exceptionalCircumstancesTagging">
+	
+	<!-- <form method="post" action="exceptionalCircumstancesJustification">-->
+	
+	<div class="form-group">
+		 <fieldset>
+		    
+				    	<!--<legend class="heading-medium mb10">Why do you want to curtail {{customer.name.first}}'s assessment?</legend>-->
+		  
+					    <div class="multiple-choice" data-target="justify5">
+								<!--<input id="face2face" name="LcwAndLcwra" type="radio" value="no~/{{path}}/assessment/{{customer._id}}/evidence/exceptionalCircumstancesJustificationFunctional">-->
+								<input id="face2face" name="LcwAndLcwra" type="radio" value="functionallcwra">
+					      <label for="face2face">Evidence meets criteria for functional LCWRA</label>
+					    </div>	
+
+					   
+					    <div class="panel js-hidden" id="justify5">
+
+					    	<fieldset>
+								<legend class="form-label-bold mb5">Choose the activity where there's functional LCWRA:</legend>
+			
+							    <div class="multiple-choice" data-target="justify6">
+							      <input id="lcwra6" name="lcwra" type="radio" value="lcwra6">
+							      <label for="lcwra6">Moving around and climbing steps without someone’s help</label>
+							    </div>	
+							    
+							    <div class="multiple-choice" data-target="justify7">
+							      <input id="lcwra7" name="lcwra" type="radio" value="lcwra7">
+							      <label for="lcwra7">Standing, sitting and moving between the two</label>
+							    </div>	
+							    
+							    <div class="multiple-choice" data-target="justify8">
+							      <input id="lcwra8" name="lcwra" type="radio" value="lcwra8">
+							      <label for="lcwra8">Reaching</label>
+							    </div>	
+							    
+							    <div class="multiple-choice" data-target="justify9">
+							      <input id="lcwra9" name="lcwra" type="radio" value="lcwra9">
+							      <label for="lcwra9">Picking things up and moving them</label>
+							    </div>	
+							    
+							    <div class="multiple-choice" data-target="justify10">
+							      <input id="lcwra10" name="lcwra" type="radio" value="lcwra10">
+							      <label for="lcwra10">Using your hands</label>
+							    </div>	
+							    
+							    <div class="multiple-choice" data-target="justify11">
+							      <input id="lcwra11" name="lcwra" type="radio" value="lcwra11">
+							      <label for="lcwra11">Speaking, writing and typing</label>
+							    </div>	
+							    
+							    <div class="multiple-choice" data-target="justify12">
+							      <input id="lcwra12" name="lcwra" type="radio" value="lcwra12">
+							      <label for="lcwra12">Hearing and reading</label>
+							    </div>	
+							    
+							    <div class="multiple-choice" data-target="justify13">
+							      <input id="lcwra13" name="lcwra" type="radio" value="lcwra13">
+							      <label for="lcwra13">Controlling your bowels and bladder</label>
+							    </div>	
+							    
+							    <div class="multiple-choice" data-target="justify14">
+							      <input id="lcwra14" name="lcwra" type="radio" value="lcwra14">
+							      <label for="lcwra14">Learning to do new tasks</label>
+							    </div>	
+							    
+							    <div class="multiple-choice" data-target="justify15">
+							      <input id="lcwra15" name="lcwra" type="radio" value="lcwra15">
+							      <label for="lcwra15">Being aware of hazards and danger</label>
+							    </div>	
+							    
+							    <div class="multiple-choice" data-target="justify16">
+							      <input id="lcwra16" name="lcwra" type="radio" value="lcwra16">
+							      <label for="lcwra16">Planning, starting and finishing everyday tasks</label>
+							    </div>	
+							    
+							    <div class="multiple-choice" data-target="justify17">
+							      <input id="lcwra17" name="lcwra" type="radio" value="lcwra17">
+							      <label for="lcwra17">Coping with changes to your daily routine</label>
+							    </div>	
+							    
+							    <div class="multiple-choice" data-target="justify18">
+							      <input id="lcwra18" name="lcwra" type="radio" value="lcwra18">
+							      <label for="lcwra18">Meeting and being with people</label>
+							    </div>	
+							    
+							    <div class="multiple-choice" data-target="justify19">
+							      <input id="lcwra19" name="lcwra" type="radio" value="lcwra19">
+							      <label for="lcwra19">Behaving appropriately around other people</label>
+							    </div>	
+							    
+							    <div class="multiple-choice" data-target="justify20">
+							      <input id="lcwra20" name="lcwra" type="radio" value="lcwra20">
+							      <label for="lcwra20">Eating and drinking</label>
+							    </div>
+					    	</fieldset>
+   	
+				    </div>
+
+					    <div class="multiple-choice" data-target="reasons1">
+								<!--<input id="decide_now" name="LcwAndLcwra" type="radio" value="yes~/{{path}}/assessment/{{customer._id}}/evidence/exceptionalCircumstancesJustificationTreat">-->
+								<input id="decide_now" name="LcwAndLcwra" type="radio" value="treataslcwra">
+					      <label for="decide_now">Treat as having LCWRA due to special circumstances</label>
+					    </div>
+					    <!-- Start -->
+					    <div class="panel js-hidden" id="reasons1">	
+					    	<fieldset>
+								<legend class="form-label-bold mb5">Choose a reason:</legend>
+			
+							    <div class="multiple-choice" data-target="justify2">
+							      <input id="lcwra2" name="lcwra" type="radio" value="lcwra2">
+							      <label for="lcwra2">Risks associated with pregnancy</label>
+							    </div>	
+							    
+							    <div class="multiple-choice" data-target="justify3">
+							      <input id="lcwra3" name="lcwra" type="radio" value="lcwra3">
+							      <label for="lcwra3">Chemotherapy or radiotherapy</label>
+							    </div>	
+							    
+							    <div class="multiple-choice" data-target="justify4">
+							      <input id="lcwra4" name="lcwra" type="radio" value="lcwra4">
+							      <label for="lcwra4">Terminally ill</label>
+							    </div>
+					    	</fieldset>
+					    </div>
+					    <!-- / end panel -->
+					    
+				    </fieldset>
+	</div>
+	
+	<!--<p>By choosing to curtail, you must have captured enough evidence from the claimant to support an LCWRA recommendation.</p>-->
+
+    <p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+		</form>	
+
+  </div><!-- column -->
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+
