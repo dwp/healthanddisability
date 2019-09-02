@@ -18,12 +18,14 @@
           border-color:#DEE0E2;
           }
     </style>
+
     <div class="container">
       <div class="grid-row">
         <div class="column-full">
           <a class="link-back"
                href="javascript:%20history.go(-1)">Back</a>
           <h1 class="heading-large mt10">View and edit capacity</h1>
+          
           <div class="greatest-show mt30">
             <h3 class="show-start filters"><span>Filters</span></h3>
             <div class="grid-row">
@@ -77,7 +79,7 @@
                       <input id="filter6"
                            name="filter"
                            type="checkbox"
-                           value="NW"> <label for="filter6">North west</label>
+                           value="NW" {{checked('filter', 'NW') }} checked> <label for="filter6">North west</label>
                     </div>
                     <div class="check-choice">
                       <input id="filter7"
@@ -124,7 +126,7 @@
                         <input id="filter12"
                              name="filter"
                              type="checkbox"
-                             value="london"> <label for="filter12">Birkenhead</label>
+                             value="Birk" {{checked('filter', 'Birk') }} checked> <label for="filter12">Birkenhead</label>
                       </div>
                       <div class="check-choice">
                         <input id="filter13"
@@ -203,254 +205,294 @@
               </div>
               <div class="grid-row">
                 <div class="card-container">
-                  <div class="card alt">
-                    <a href="edit-plan">
+                  <div class="card">
+                    <a href="edit-plan-times">
                     <h2>View and edit <span class="heading-small">Mondays appointments</span></h2></a>
                     <div class="inner">
                       <table>
                         <thead>
                           <tr>
-                            <th class="numeric"
+                            <th class="col"
                                 scope="col">
                               <div class="panel panel-info">
                                <div class="number">
                                <span class="border">
-                               76
+                                {% if data['e_rowsum_sum'] %} {{ e_rowsum_sum }} {% else %} 40 {% endif %}
                                 <span>Opened</span>
                                 </span>
                                 </div>
                                 <div class="content">
-                              <span class="">Based on 6FTE's</span></span>
+                              <span class="">Based on {% if data['monfte']%}{{monfte}} {% else %} 4 {% endif %} FTE's</span></span>
                                </div>
                               <div>
                             </th>
                             <th class="numeric"
-                                scope="col"><span class="heading-xlarge">{% if data['timesEdit'] %} {{ sum }} {% else %} 25 {% endif %} <span class="block"><span class="visually-hidden">appointents are</span>Available</span></span></th>
+                                scope="col"><span class="heading-xlarge">{% if data['e_rowsum_sum'] %} {{ e_rowsum_sum -('38')}}  {% else %} 2 {% endif %} <span class="block"><span class="visually-hidden">appointents are</span>Available</span></span></th>
                             <th class="numeric"
-                                scope="col"><span class="visually-hidden">of which</span> <span class="heading-xlarge">23 <span class="block"><span class="visually-hidden">appointents are</span>Booked</span></span></th>
+                                scope="col"><span class="visually-hidden">of which</span> <span class="heading-xlarge">38 <span class="block"><span class="visually-hidden">appointents are</span>Booked</span></span></th>
                           </tr>
                         </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">Complex neuro</th>
-                            <td class="numeric">{% if data['complexsumedit'] %}{{ complexsumedit }} {% else %} 6 {% endif%}</td>
-                            <td class="numeric">3</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Neuro</th>
-                            <td class="numeric">{% if data['neurosumedit'] %}{{ neurosumedit }} {% else %}42 {% endif%}</td>
-                            <td class="numeric">18</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Non neuro</th>
-                            <td class="numeric">{% if data['nonesumedit'] %}{{ nonesumedit }} {% else %}0 {% endif%}</td>
-                            <td class="numeric">0</td>
-                          </tr>
-                              <tr>
-                        <td class="ucb"
-                            colspan='3'><span class="bold">{% if data['col_6_sum'] %}{{ col_6_sum }} {% else %} 0 {% endif %}</span>of these appointments can be <span class="bold">UCB</span></td>
+                                    <tbody>
+                      <tr>
+                        <th scope="row">Complex neuro</th>
+                        <td class="numeric">{% if data['e_col_1_sum'] %} {{ e_col_1_sum -('7')}} {% else %} 1 {% endif %}</td>
+                        <td class="numeric">7</td>
                       </tr>
-                        </tbody>
+                      <tr>
+                        <th scope="row">Neuro</th>
+                        <td class="numeric">{% if data['e_col_2_sum'] %} {{ e_col_2_sum -('31') }} {% else %} 1{% endif %}</td>
+                        <td class="numeric">31</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Non neuro</th>
+                        <td class="numeric">{% if data['e_col_3_sum'] %} {{ e_col_3_sum }} {% else %} 0 {% endif %}</td>
+                        <td class="numeric">0</td>
+                      </tr>
+                          {% if checked('e_benefits','ben2') %}
+                      <tr>
+                        <th scope="row">IIDB</th>
+                        <td class="numeric">{% if data['e_col_4_sum'] %} {{ e_col_4_sum }} {% else %} 0 {% endif %}</td>
+                        <td class="numeric">0</td>
+                      </tr>
+                      {% endif %}
+                      <tr>
+                        <td class="ucb"
+                            colspan='3'><span class="bold">{% if data['e_col_6_sum'] %}{{ e_col_6_sum }} {% else %} 0 {% endif %}</span>of these appointments can be <span class="bold">UCB</span></td>
+                      </tr>
+                    </tbody>
                       </table>
                     </div>
                   </div>
-                  <div class="card alt">
-                    <a href="#">
+                  <div class="card">
+                    <a href="edit-plan-times-tue">
                     <h2>View and edit <span class="heading-small">Tuesdays appointments</span></h2></a>
                     <div class="inner">
-                      <table>
+                            <table>
                         <thead>
                           <tr>
-                            <th scope="col">
-                                    <div class="panel panel-info">
+                            <th class="col"
+                                scope="col">
+                              <div class="panel panel-info">
                                <div class="number">
                                <span class="border">
-                               76
+                                {% if data['e_rowsum_tuesum'] %} {{ e_rowsum_tuesum }} {% else %} 40 {% endif %}
                                 <span>Opened</span>
                                 </span>
                                 </div>
                                 <div class="content">
-                              <span class="">Based on 6FTE's</span></span>
+                              <span class="">Based on {% if data['tuefte']%}{{tuefte}} {% else %} 4 {% endif %} FTE's</span></span>
                                </div>
                               <div>
                             </th>
                             <th class="numeric"
-                                scope="col"><span class="heading-xlarge">64 <span class="block"><span class="visually-hidden">appointents</span>Opened</span></span></th>
+                                scope="col"><span class="heading-xlarge">{% if data['e_rowsum_tuesum'] %} {{ e_rowsum_tuesum -('32')}}  {% else %} 8 {% endif %} <span class="block"><span class="visually-hidden">appointents are</span>Available</span></span></th>
                             <th class="numeric"
-                                scope="col"><span class="visually-hidden">of which</span> <span class="heading-xlarge">45 <span class="block"><span class="visually-hidden">appointents are</span>Booked</span></span></th>
+                                scope="col"><span class="visually-hidden">of which</span> <span class="heading-xlarge">32 <span class="block"><span class="visually-hidden">appointents are</span>Booked</span></span></th>
                           </tr>
                         </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">Complex neuro</th>
-                            <td class="numeric">12</td>
-                            <td class="numeric">8</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Neuro</th>
-                            <td class="numeric">38</td>
-                            <td class="numeric">20</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Non neuro</th>
-                            <td class="numeric">2</td>
-                            <td class="numeric">2</td>
-                          </tr>
-                              <tr>
-                        <td class="ucb"
-                            colspan='3'><span class="bold">{% if data['col_6_sum'] %}{{ col_6_sum }} {% else %} 0 {% endif %}</span>of these appointments can be <span class="bold">UCB</span></td>
+                                    <tbody>
+                      <tr>
+                        <th scope="row">Complex neuro</th>
+                        <td class="numeric">{% if data['e_col_tue_1_sum'] %} {{ e_col_tue_1_sum }} {% else %} 8 {% endif %}</td>
+                        <td class="numeric">0</td>
                       </tr>
-                        </tbody>
+                      <tr>
+                        <th scope="row">Neuro</th>
+                        <td class="numeric">{% if data['e_col_tue_2_sum'] %} {{ e_col_tue_2_sum -('32') }} {% else %} 0{% endif %}</td>
+                        <td class="numeric">32</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Non neuro</th>
+                        <td class="numeric">{% if data['e_col_tue_3_sum'] %} {{ e_col_tue_3_sum }} {% else %} 0 {% endif %}</td>
+                        <td class="numeric">0</td>
+                      </tr>
+                          {% if checked('e_benefits','ben2') %}
+                      <tr>
+                        <th scope="row">IIDB</th>
+                        <td class="numeric">{% if data['e_col_tue_4_sum'] %} {{ e_col_tue_4_sum }} {% else %} 0 {% endif %}</td>
+                        <td class="numeric">0</td>
+                      </tr>
+                      {% endif %}
+                      <tr>
+                        <td class="ucb"
+                            colspan='3'><span class="bold">{% if data['e_col_tue_6_sum'] %}{{ e_col_tue_6_sum }} {% else %} 0 {% endif %}</span>of these appointments can be <span class="bold">UCB</span></td>
+                      </tr>
+                    </tbody>
                       </table>
                     </div>
                   </div>
-                  <div class="card alt">
-                    <a href="#">
+                  <div class="card">
+                    <a href="edit-plan-times-wed">
                     <h2>View and edit <span class="heading-small">Wednesdays appointments</span></h2></a>
                     <div class="inner">
-                      <table>
+                     <table>
                         <thead>
                           <tr>
-                            <th scope="col">
-                                    <div class="panel panel-info">
+                            <th class="col"
+                                scope="col">
+                              <div class="panel panel-info">
                                <div class="number">
                                <span class="border">
-                               76
+                                {% if data['e_rowsum_wedsum'] %} {{ e_rowsum_wedsum }} {% else %} 40 {% endif %}
                                 <span>Opened</span>
                                 </span>
                                 </div>
                                 <div class="content">
-                              <span class="">Based on 6FTE's</span></span>
+                              <span class="">Based on {% if data['wedfte']%}{{wedfte}} {% else %} 4 {% endif %} FTE's</span></span>
                                </div>
                               <div>
                             </th>
                             <th class="numeric"
-                                scope="col"><span class="heading-xlarge">54 <span class="block"><span class="visually-hidden">appointents</span>Opened</span></span></th>
+                                scope="col"><span class="heading-xlarge">{% if data['e_rowsum_wedsum'] %} {{ e_rowsum_wedsum -('25')}}  {% else %} 15 {% endif %} <span class="block"><span class="visually-hidden">appointents are</span>Available</span></span></th>
                             <th class="numeric"
-                                scope="col"><span class="visually-hidden">of which</span> <span class="heading-xlarge">44 <span class="block"><span class="visually-hidden">appointents are</span>Booked</span></span></th>
+                                scope="col"><span class="visually-hidden">of which</span> <span class="heading-xlarge">25 <span class="block"><span class="visually-hidden">appointents are</span>Booked</span></span></th>
                           </tr>
                         </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">Complex neuro</th>
-                            <td class="numeric">12</td>
-                            <td class="numeric">8</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Neuro</th>
-                            <td class="numeric">38</td>
-                            <td class="numeric">20</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Non neuro</th>
-                            <td class="numeric">2</td>
-                            <td class="numeric">2</td>
-                          </tr>
-                              <tr>
-                        <td class="ucb"
-                            colspan='3'><span class="bold">{% if data['col_6_sum'] %}{{ col_6_sum }} {% else %} 0 {% endif %}</span>of these appointments can be <span class="bold">UCB</span></td>
+                                    <tbody>
+                      <tr>
+                        <th scope="row">Complex neuro</th>
+                        <td class="numeric">{% if data['e_col_wed_1_sum'] %} {{ e_col_wed_1_sum -('5') }} {% else %} 3 {% endif %}</td>
+                        <td class="numeric">5</td>
                       </tr>
-                        </tbody>
-                      </table>
+                      <tr>
+                        <th scope="row">Neuro</th>
+                        <td class="numeric">{% if data['e_col_wed_2_sum'] %} {{ e_col_wed_2_sum -('16') }} {% else %} 10 {% endif %}</td>
+                        <td class="numeric">16</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Non neuro</th>
+                        <td class="numeric">{% if data['e_col_wed_3_sum'] %} {{ e_col_wed_3_sum -('4')}} {% else %} 2 {% endif %}</td>
+                        <td class="numeric">4</td>
+                      </tr>
+                          {% if checked('e_benefits','ben2') %}
+                      <tr>
+                        <th scope="row">IIDB</th>
+                        <td class="numeric">{% if data['e_col_wed_4_sum'] %} {{ e_col_wed_4_sum }} {% else %} 0 {% endif %}</td>
+                        <td class="numeric">0</td>
+                      </tr>
+                      {% endif %}
+                      <tr>
+                        <td class="ucb"
+                            colspan='3'><span class="bold">{% if data['e_col_wed_6_sum'] %}{{ e_col_wed_6_sum }} {% else %} 0 {% endif %}</span>of these appointments can be <span class="bold">UCB</span></td>
+                      </tr>
+                    </tbody>
+                    </table>
                     </div>
                   </div>
-                  <div class="card alt">
-                    <a href="#">
+                  <div class="card">
+                    <a href="edit-plan-times-thur">
                     <h2>View and edit <span class="heading-small">Thursdays Appointments</span></h2></a>
                     <div class="inner">
-                      <table>
+                        <table>
                         <thead>
                           <tr>
-                            <th scope="col">
-                                    <div class="panel panel-info">
+                            <th class="col"
+                                scope="col">
+                              <div class="panel panel-info">
                                <div class="number">
                                <span class="border">
-                               76
+                                {% if data['e_rowsum_thursum'] %} {{ e_rowsum_thursum }} {% else %} 40 {% endif %}
                                 <span>Opened</span>
                                 </span>
                                 </div>
                                 <div class="content">
-                              <span class="">Based on 6 FTE's</span></span>
-                               </div>
-                              <div></th>
-                            <th class="numeric"
-                                scope="col"><span class="heading-xlarge">76 <span class="block"><span class="visually-hidden">appointents</span>Opened</span></span></th>
-                            <th class="numeric"
-                                scope="col"><span class="visually-hidden">of which</span> <span class="heading-xlarge">50 <span class="block"><span class="visually-hidden">appointents are</span>Booked</span></span></th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">Complex neuro</th>
-                            <td class="numeric">12</td>
-                            <td class="numeric">8</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Neuro</th>
-                            <td class="numeric">38</td>
-                            <td class="numeric">20</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Non neuro</th>
-                            <td class="numeric">2</td>
-                            <td class="numeric">2</td>
-                          </tr>
-                              <tr>
-                        <td class="ucb"
-                            colspan='3'><span class="bold">{% if data['col_6_sum'] %}{{ col_6_sum }} {% else %} 0 {% endif %}</span>of these appointments can be <span class="bold">UCB</span></td>
-                      </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                  <div class="card alt">
-                    <a href="">
-                    <h2>View and edit <span class="heading-small">Fridays Appointments</span></h2></a>
-                    <div class="inner">
-                      <table>
-                        <thead>
-                          <tr>
-                            <th scope="col">
-                                    <div class="panel panel-info">
-                               <div class="number">
-                               <span class="border">
-                               84
-                                <span>Opened</span>
-                                </span>
-                                </div>
-                                <div class="content">
-                              <span class="">Based on 7 FTE's</span></span>
+                              <span class="">Based on {% if data['thurfte']%}{{thurfte}} {% else %} 3 {% endif %} FTE's</span></span>
                                </div>
                               <div>
                             </th>
                             <th class="numeric"
-                                scope="col"><span class="heading-xlarge">63 <span class="block"><span class="visually-hidden">appointents</span>Opened</span></span></th>
+                                scope="col"><span class="heading-xlarge">{% if data['e_rowsum_thursum'] %} {{ e_rowsum_thursum -('35')}}  {% else %} 5 {% endif %} <span class="block"><span class="visually-hidden">appointents are</span>Available</span></span></th>
                             <th class="numeric"
-                                scope="col"><span class="visually-hidden">of which</span> <span class="heading-xlarge">50 <span class="block"><span class="visually-hidden">appointents are</span>Booked</span></span></th>
+                                scope="col"><span class="visually-hidden">of which</span> <span class="heading-xlarge">35 <span class="block"><span class="visually-hidden">appointents are</span>Booked</span></span></th>
                           </tr>
                         </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">Complex neuro</th>
-                            <td class="numeric">12</td>
-                            <td class="numeric">8</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Neuro</th>
-                            <td class="numeric">38</td>
-                            <td class="numeric">20</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Non neuro</th>
-                            <td class="numeric">2</td>
-                            <td class="numeric">2</td>
-                          </tr>
-                              <tr>
-                        <td class="ucb"
-                            colspan='3'><span class="bold">{% if data['col_6_sum'] %}{{ col_6_sum }} {% else %} 0 {% endif %}</span>of these appointments can be <span class="bold">UCB</span></td>
+                                    <tbody>
+                      <tr>
+                        <th scope="row">Complex neuro</th>
+                        <td class="numeric">{% if data['e_col_thur_1_sum'] %} {{ e_col_thur_1_sum -('7') }} {% else %} 1 {% endif %}</td>
+                        <td class="numeric">7</td>
                       </tr>
-                        </tbody>
-                      </table>
+                      <tr>
+                        <th scope="row">Neuro</th>
+                        <td class="numeric">{% if data['e_col_thur_2_sum'] %} {{ e_col_thur_2_sum -('20') }} {% else %} 4 {% endif %}</td>
+                        <td class="numeric">20</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Non neuro</th>
+                        <td class="numeric">{% if data['e_col_thur_3_sum'] %} {{ e_col_thur_3_sum -('8')}} {% else %} 0 {% endif %}</td>
+                        <td class="numeric">8</td>
+                      </tr>
+                          {% if checked('e_benefits','ben2') %}
+                      <tr>
+                        <th scope="row">IIDB</th>
+                        <td class="numeric">{% if data['e_col_thur_4_sum'] %} {{ e_col_thur_4_sum }} {% else %} 0 {% endif %}</td>
+                        <td class="numeric">0</td>
+                      </tr>
+                      {% endif %}
+                      <tr>
+                        <td class="ucb"
+                            colspan='3'><span class="bold">{% if data['e_col_thur_6_sum'] %}{{ e_col_thur_6_sum }} {% else %} 0 {% endif %}</span>of these appointments can be <span class="bold">UCB</span></td>
+                      </tr>
+                    </tbody>
+                    </table>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <a href="edit-plan-times-fri">
+                    <h2>View and edit <span class="heading-small">Fridays Appointments</span></h2></a>
+                    <div class="inner">
+                                             <table>
+                        <thead>
+                          <tr>
+                            <th class="col"
+                                scope="col">
+                              <div class="panel panel-info">
+                               <div class="number">
+                               <span class="border">
+                                {% if data['e_rowsum_frisum'] %} {{ e_rowsum_frisum }} {% else %} 40 {% endif %}
+                                <span>Opened</span>
+                                </span>
+                                </div>
+                                <div class="content">
+                              <span class="">Based on {% if data['frifte']%}{{frifte}} {% else %} 3 {% endif %} FTE's</span></span>
+                               </div>
+                              <div>
+                            </th>
+                            <th class="numeric"
+                                scope="col"><span class="heading-xlarge">{% if data['e_rowsum_frisum'] %} {{ e_rowsum_frisum -('10')}}  {% else %} 5 {% endif %} <span class="block"><span class="visually-hidden">appointents are</span>Available</span></span></th>
+                            <th class="numeric"
+                                scope="col"><span class="visually-hidden">of which</span> <span class="heading-xlarge">10 <span class="block"><span class="visually-hidden">appointents are</span>Booked</span></span></th>
+                          </tr>
+                        </thead>
+                                    <tbody>
+                      <tr>
+                        <th scope="row">Complex neuro</th>
+                        <td class="numeric">{% if data['e_col_fri_1_sum'] %} {{ e_col_fri_1_sum }} {% else %} 8 {% endif %}</td>
+                        <td class="numeric">0</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Neuro</th>
+                        <td class="numeric">{% if data['e_col_fri_2_sum'] %} {{ e_col_fri_2_sum -('10') }} {% else %} 22 {% endif %}</td>
+                        <td class="numeric">10</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Non neuro</th>
+                        <td class="numeric">{% if data['e_col_fri_3_sum'] %} {{ e_col_fri_3_sum }} {% else %} 0 {% endif %}</td>
+                        <td class="numeric">0</td>
+                      </tr>
+                          {% if checked('e_benefits','ben2') %}
+                      <tr>
+                        <th scope="row">IIDB</th>
+                        <td class="numeric">{% if data['e_col_fri_4_sum'] %} {{ e_col_fri_4_sum }} {% else %} 0 {% endif %}</td>
+                        <td class="numeric">0</td>
+                      </tr>
+                      {% endif %}
+                      <tr>
+                        <td class="ucb"
+                            colspan='3'><span class="bold">{% if data['e_col_fri_6_sum'] %}{{ e_col_fri_6_sum }} {% else %} 0 {% endif %}</span>of these appointments can be <span class="bold">UCB</span></td>
+                      </tr>
+                    </tbody>
+                    </table>
                     </div>
                   </div>
                 </div>
@@ -473,6 +515,272 @@
                   <p class="lede mt20 mb20">Week commencing: <span class="bold">Monday 24 April</span></p>
                 </div>
               </div>
+
+
+                 <div class="grid-row">
+                <div class="card-container">
+                  
+                  <div class="card">
+                    <a href="">
+                    <h2>View and edit <span class="heading-small">Mondays Appointments</span></h2></a>
+                    <div class="inner">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th scope="col">
+                                    <div class="panel panel-info">
+                               <div class="number">
+                               <span class="border">
+                               80
+                                <span>Opened</span>
+                                </span>
+                                </div>
+                                <div class="content">
+                              <span class="">Based on 8 FTE's</span></span>
+                               </div>
+                              <div>
+                            </th>
+                            <th class="numeric"
+                                scope="col"><span class="heading-xlarge">12 <span class="block"><span class="visually-hidden">appointents</span>Available</span></span></th>
+                            <th class="numeric"
+                                scope="col"><span class="heading-xlarge">68 <span class="block"><span class="visually-hidden">appointents are</span>Booked</span></span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Complex neuro</th>
+                            <td class="numeric">0</td>
+                            <td class="numeric">8</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Neuro</th>
+                            <td class="numeric">12</td>
+                            <td class="numeric">60</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Non neuro</th>
+                            <td class="numeric">0</td>
+                            <td class="numeric">0</td>
+                          </tr>
+                              <tr>
+                        <td class="ucb"
+                            colspan='3'><span class="bold"> 0</span>of these appointments can be <span class="bold">UCB</span></td>
+                      </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+
+                         <div class="card">
+                    <a href="">
+                    <h2>View and edit <span class="heading-small">Tuesdays Appointments</span></h2></a>
+                    <div class="inner">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th scope="col">
+                                    <div class="panel panel-info">
+                               <div class="number">
+                               <span class="border">
+                               70
+                                <span>Opened</span>
+                                </span>
+                                </div>
+                                <div class="content">
+                              <span class="">Based on 6 FTE's</span></span>
+                               </div>
+                              <div>
+                            </th>
+                            <th class="numeric"
+                                scope="col"><span class="heading-xlarge">4 <span class="block"><span class="visually-hidden">appointents</span>Available</span></span></th>
+                            <th class="numeric"
+                                scope="col"><span class="heading-xlarge">66 <span class="block"><span class="visually-hidden">appointents are</span>Booked</span></span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Complex neuro</th>
+                            <td class="numeric">0</td>
+                            <td class="numeric">16</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Neuro</th>
+                            <td class="numeric">4</td>
+                            <td class="numeric">50</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Non neuro</th>
+                            <td class="numeric">0</td>
+                            <td class="numeric">0</td>
+                          </tr>
+                              <tr>
+                        <td class="ucb"
+                            colspan='3'><span class="bold"> 0 </span>of these appointments can be <span class="bold">UCB</span></td>
+                      </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                         <div class="card">
+                    <a href="">
+                    <h2>View and edit <span class="heading-small">Wednesdays Appointments</span></h2></a>
+                    <div class="inner">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th scope="col">
+                                    <div class="panel panel-info">
+                               <div class="number">
+                               <span class="border">
+                               80
+                                <span>Opened</span>
+                                </span>
+                                </div>
+                                <div class="content">
+                              <span class="">Based on 7 FTE's</span></span>
+                               </div>
+                              <div>
+                            </th>
+                            <th class="numeric"
+                                scope="col"><span class="heading-xlarge">3 <span class="block"><span class="visually-hidden">appointents</span>Available</span></span></th>
+                            <th class="numeric"
+                                scope="col"><span class="heading-xlarge">77 <span class="block"><span class="visually-hidden">appointents are</span>Booked</span></span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Complex neuro</th>
+                            <td class="numeric">1</td>
+                            <td class="numeric">7</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Neuro</th>
+                            <td class="numeric">7</td>
+                            <td class="numeric">70</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Non neuro</th>
+                            <td class="numeric">0</td>
+                            <td class="numeric">0</td>
+                          </tr>
+                              <tr>
+                        <td class="ucb"
+                            colspan='3'><span class="bold"> 0 </span>of these appointments can be <span class="bold">UCB</span></td>
+                      </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                         <div class="card">
+                    <a href="">
+                    <h2>View and edit <span class="heading-small">Thursdays Appointments</span></h2></a>
+                    <div class="inner">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th scope="col">
+                                    <div class="panel panel-info">
+                               <div class="number">
+                               <span class="border">
+                               80
+                                <span>Opened</span>
+                                </span>
+                                </div>
+                                <div class="content">
+                              <span class="">Based on 8 FTE's</span></span>
+                               </div>
+                              <div>
+                            </th>
+                            <th class="numeric"
+                                scope="col"><span class="heading-xlarge">6 <span class="block"><span class="visually-hidden">appointents</span>Available</span></span></th>
+                            <th class="numeric"
+                                scope="col"><span class="heading-xlarge">74 <span class="block"><span class="visually-hidden">appointents are</span>Booked</span></span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Complex neuro</th>
+                            <td class="numeric">2</td>
+                            <td class="numeric">14</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Neuro</th>
+                            <td class="numeric">4</td>
+                            <td class="numeric">60</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Non neuro</th>
+                            <td class="numeric">0</td>
+                            <td class="numeric">0</td>
+                          </tr>
+                              <tr>
+                        <td class="ucb"
+                            colspan='3'><span class="bold"> 0 </span>of these appointments can be <span class="bold">UCB</span></td>
+                      </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                         <div class="card">
+                    <a href="">
+                    <h2>View and edit <span class="heading-small">Fridays Appointments</span></h2></a>
+                    <div class="inner">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th scope="col">
+                                    <div class="panel panel-info">
+                               <div class="number">
+                               <span class="border">
+                               80
+                                <span>Opened</span>
+                                </span>
+                                </div>
+                                <div class="content">
+                              <span class="">Based on 6 FTE's</span></span>
+                               </div>
+                              <div>
+                            </th>
+                            <th class="numeric"
+                                scope="col"><span class="heading-xlarge">4 <span class="block"><span class="visually-hidden">appointents</span>Available</span></span></th>
+                            <th class="numeric"
+                                scope="col"><span class="heading-xlarge">76 <span class="block"><span class="visually-hidden">appointents are</span>Booked</span></span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Complex neuro</th>
+                            <td class="numeric">1</td>
+                            <td class="numeric">7</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Neuro</th>
+                            <td class="numeric">3</td>
+                            <td class="numeric">69</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Non neuro</th>
+                            <td class="numeric">0</td>
+                            <td class="numeric">0</td>
+                          </tr>
+                              <tr>
+                        <td class="ucb"
+                            colspan='3'><span class="bold"> 0 </span>of these appointments can be <span class="bold">UCB</span></td>
+                      </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  
+
+
+                  </div>
+
+
+
             </div>
           </div>
         </div><!-- column -->

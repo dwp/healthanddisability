@@ -25,6 +25,22 @@
 	box-sizing: border-box;
 	position:relative;
 	border:1px solid $border-colour;
+	font-size:16px;
+
+
+	.capacity & {
+		flex: 1 1 0;
+		margin:15px 8px;
+	}
+
+
+	.header{
+		margin: 0;
+		font-size: 20px;
+		font-weight: bold;
+		padding: .8em 1em .6em 1em;
+		background: #f8f8f8;
+	}
 
  
 
@@ -71,6 +87,7 @@
 			.numeric{
 				text-align: center;
 				vertical-align: middle;
+				padding:0 5px;
 			}
 		}
 
@@ -91,7 +108,7 @@
 
 
 		.heading-xlarge {
-			font-size:42px;
+			font-size:35px;
 
 			@media only screen and (max-width: 400px) {
 				font-size:30px;
@@ -116,12 +133,18 @@
 
 		
 		h2 {
+
+        a &	{		
 		color:$link-colour;
 		padding-bottom:15px;
 
-	  &:hover{
+
+		&:hover{
 			color:$text-colour;
 		}
+
+		}
+
 	}
 
 
@@ -187,7 +210,7 @@
 		  width:50%;
 
 		  span{
-			padding:10px 0px 0  15px;
+			padding:10px 0px 10px  10px;
 			font-weight:normal;
 		   }
 		}

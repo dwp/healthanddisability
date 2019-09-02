@@ -2141,16 +2141,12 @@ table.profile-table .col5{
 		position: absolute;
 		left: -9999px;
 
-		&[type=checkbox]:checked + label {
+		&[type=checkbox]:checked + label, &[type=radio]:checked + label {
 			background: $grey-1;
 			border-color: $grey-1;
 			color: #fff;
 		} 
 
-		&[type=radio]:checked + label {
-			background: #005ea5;
-			color: #fff;
-		} 
 
 		&[type=checkbox]:focus + label {
 			border-color: #FFBF47;

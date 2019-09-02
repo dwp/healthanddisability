@@ -1,0 +1,189 @@
+
+{% extends path+"/_layout.html" %}
+
+
+
+{% block assess_content %}
+
+<main id="content" role="main" class="main-content">
+
+      <div class="container">
+          <div class="grid-row">
+              <div class="column-three-quarters capacity">
+  <a href="javascript: history.go(-1)" class="link-back">Back</a>   
+
+   <h1 class="heading-large">Edit a capacity plan for {% include path+"/scenario2/_ACname.html" %} </h1>
+
+   <h2 class="heading-medium">Monday 22 July</h2>
+   <form class="form" action="view-plan" method="post">
+    <div class="greatest-show mt30">
+     <h2 class="show-start"><span>9:00am</span></h2>
+
+
+     <style>
+     .totals-container {
+  display: flex;
+}
+
+.total-card{
+  border-bottom:1px solid #000000;
+}
+
+
+.total-card.alt{
+  background:#f8f8f8;
+}
+
+
+.total-card .heading-medium {
+  margin:0;
+  font-size:18px;
+  padding:10px;
+
+}
+
+.total-card .heading-medium {
+  margin:0;
+  font-size:18px;
+  border-bottom:1px solid #BFC1C3;
+}
+
+.total-card th, .total-card td {
+  margin:0;
+  font-size:16px;
+  font-weight:normal;
+  border:none;
+  padding:0;
+
+}
+
+.total-card th{
+  padding-right:10px;
+  line-height:35px;
+}
+
+.total-card .inner{
+  padding:10px;
+}
+
+
+.total-card .form-control {
+width:100%;
+text-align:center;
+font-size:20px;
+font-weight:bold;
+}
+
+ span.booked {
+  background:#dee0e2;
+  display:block;
+  margin-top:7px;
+  padding:5px;
+  text-align:center;
+  font-size:16px;
+}
+
+
+input[readonly]{
+        background:#D8DDE0;
+        border-color:#D8DDE0;
+}
+
+
+     </style>
+
+
+       <div class="totals-container">
+          <!-- card -->
+                              <div class="total-card">
+                    <h3 class="heading-medium">Complex neuro</h3>
+                    <div class="inner">
+                       
+                            <label class="" for="" > Available</label>
+                    <input class="form-control half" id="col_1_1"  type="text" name="col_1_1"  type="text" value="{{col_1_1}}" >
+                           <span class='booked'><span class="bold">3 </span>Booked<span></td>
+                          
+                    </div>
+                    </div>
+                    <!--  end card -->
+
+
+          <!-- card -->
+                              <div class="total-card">
+                    <h3 class="heading-medium">Neuro</h3>
+                    <div class="inner">
+                          
+                            <label class="" for="" > Available</label>
+                    <input class="form-control half" id="col_1_1"  type="text" name="col_1_1"  type="text" value="{{col_1_1}}" >
+                       <span class='booked'> <span class="bold">3 </span>Booked</span>
+                    </div>
+                    </div>
+                    <!--  end card -->
+
+                         <!-- card -->
+                              <div class="total-card">
+                    <h3 class="heading-medium">Non neuro</h3>
+                    <div class="inner">
+                  
+                            <label class="" for="" > Available</label>
+                    <input class="form-control half" id="col_1_1"  type="text" name="col_1_1"  type="text" value="{{col_1_1}}" >
+                        <span class='booked'><span class="bold">3 </span>Booked<span class="block">1 is UCB</span></span>
+                    </div>
+                    </div>
+                    <!--  end card -->
+
+                                    <!-- card -->
+                              <div class="total-card">
+                    <h3 class="heading-medium">IIDB</h3>
+                    <div class="inner">
+                       
+                            <label class="" for="" > Available</label>
+                    <input class="form-control half" id="col_1_1"  type="text" name="col_1_1"  type="text" value="{{col_1_1}}" >
+                           <span class='booked'> <span class="bold">3 </span>Booked</span>
+                
+                    </div>
+                    </div>
+                    <!--  end card -->
+
+                                    <!-- card -->
+                              <div class="total-card alt">
+                    <h3 class="heading-medium">Appointments</h3>
+                    <div class="inner">
+                        
+                            <label class="" for="" >Total</label>
+                            <input class="form-control" id="rowsum_1" type="text" name="rowsum_1" readonly  value=" 8 {{ rowsum_1 }}">
+                    </div>
+                    </div>
+                    <!--  end card -->
+
+                                         <!-- card -->
+                              <div class="total-card alt">
+                    <h3 class="heading-medium">UCB</h3>
+                    <div class="inner">
+                  
+                            <label class="" for="" > Available</label>
+                    <input class="form-control half" id="col_1_1"  type="text" name="col_1_1"  type="text" value="0 {{col_1_1}}" >
+                         <span class='booked'> <span class="bold">1 </span>Booked</span>
+                    </div>
+                    </div>
+                    <!--  end card -->
+
+                    
+
+
+
+                    </div>
+                    </div>
+
+</form>
+
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+{% endblock %}
+
+
+{% block page_scripts %}
+{% endblock %}

@@ -1,0 +1,1686 @@
+
+{% extends path+"/_layout.html" %}
+
+
+
+{% block assess_content %}
+
+<main id="content" role="main" class="main-content">
+
+
+
+      <div class="container">
+          <div class="grid-row">
+              <div class="column-three-quarters capacity">
+  <a href="javascript: history.go(-1)" class="link-back">Back</a>   
+
+   <h1 class="heading-large">Edit a capacity plan for {% include path+"/scenario2/_ACname.html" %} </h1>
+
+   <h2 class="heading-medium">Friday 22 July</h2>
+{% include path+"/scenario2/_info-panel-amount.html" %} 
+
+<style>
+.profile-table td span.container{
+ background:#dee0e2;
+ display:block;
+ padding:2px;
+ margin-top:1px;
+ font-size:16px;
+}
+
+.profile-table td span.container .badge{
+  font-size:16px;
+}
+
+.profile-table input[type="text"]:disabled {
+  border:none;
+  font-size:16px;
+  display:inline;
+  width:35px;
+  background:transparent;
+  color:#000;
+}
+
+table.profile-table td, table.profile-table th{
+  font-size:17px;    
+}
+
+table.profile-table td{
+        font-size:16px;
+}
+
+ span.booked {
+  display:block;
+  text-align:center;
+  font-size:16px;
+  margin-top:5px;
+}
+
+</style>
+   <form class="form" action="view-plan" method="post">
+
+              <table class="profile-table">
+
+            
+                <thead>
+                  <tr>
+                    <th></th>
+                    <!-- <th>Assessment Centre</th> -->
+                    <th>Complex neuro <span>Available</span></th>
+                    <th>Neuro<span>Available</span></th>
+                    <th>Non neuro<span>Available</span></th>
+                        {% if checked('e_benefits_fri','ben2') %}
+                    <th>IIDB <span>Available</span></th>
+                    {% endif %}
+                    <th class="col5"><span></span>Appointments <span>Total</span></th>
+                  
+                
+                     <th class="col6">UCB<span>Available</span></th>
+               
+                    
+                  </tr>
+                </thead>
+
+           {% if checked('fritimes','9') %}
+                <tr>
+                  <th class="col">9:00am</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_1"  type="text" name="col_fri_1_1"  type="text" value="{{col_fri_1_1}}" >
+                        <span class='booked'><span class="bold">0</span> Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_1"  type="text" name="col_fri_2_1"  type="text" value="{{col_fri_2_1}}" >
+                        <span class='booked'><span class="bold">1 </span>Booked <span class="block">1 is UCB</span></span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_1"  type="text" name="col_fri_3_1"  type="text" value="{{col_fri_3_1}}" >
+                        <span class='booked  visually-hidden'><span class="bold">1 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_1"  type="text" name="col_fri_4_1"  type="text" value="{{col_fri_4_1}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+          <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+						<input class="form-control" id="rowsum_fri1" type="text" name="rowsum_fri1" readonly  value="{{ rowsum_fri1 }}">
+                                                <input class="visually-hidden" id="bookedsum_fri_1"  type="text" name="bookedsum_fri_1"  type="text" value="{{ bookedsum_fri_1 }}" >
+					</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_1"  type="text" name="col_fri_6_1"  type="text" value="{{col_fri_6_1}}" >
+                        <span class='booked'><span class="bold">1 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+                {% if checked('fritimes','915') %}
+                <tr>
+                  <th class="col">9:15am</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_2"  type="text" name="col_fri_1_2"  type="text" value="{{col_fri_1_2}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_2"  type="text" name="col_fri_2_2"  type="text" value="{{col_fri_2_2}}" >
+                        <span class='booked'><span class="bold">1 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_2"  type="text" name="col_fri_3_2"  type="text" value="{{col_fri_3_2}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_2"  type="text" name="col_fri_4_2"  type="text" value="{{col_fri_4_2}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri2" type="text" name="rowsum_fri2" readonly  value="{{rowsum_fri2}}">
+                        <input class="visually-hidden" id="bookedsum_fri_2"  type="text" name="bookedsum_fri_2"  type="text" value="{{ bookedsum_fri_2 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_2"  type="text" name="col_fri_6_2"  type="text" value="{{col_fri_6_2}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+
+                        {% if checked('fritimes','930') %}
+                <tr>
+                  <th class="col">9:30am</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_3"  type="text" name="col_fri_1_3"  type="text" value="{{col_fri_1_3}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_3"  type="text" name="col_fri_2_3"  type="text" value="{{col_fri_2_3}}" >
+                        <span class='booked'><span class="bold">1 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_3"  type="text" name="col_fri_3_3"  type="text" value="{{col_fri_3_3}}" >
+                        <span class='booked  visually-hidden'><span class="bold">1 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_3"  type="text" name="col_fri_4_3"  type="text" value="{{col_fri_4_3}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri3" type="text" name="rowsum_fri3" readonly  value="{{rowsum_fri3}}">
+                        <input class="visually-hidden" id="bookedsum_fri_3"  type="text" name="bookedsum_fri_3"  type="text" value="{{ bookedsum_fri_3 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_3"  type="text" name="col_fri_6_3"  type="text" value="{{col_fri_6_3}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+
+                {% if checked('fritimes','945') %}
+                <tr>
+                  <th class="col">9:45am</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_4"  type="text" name="col_fri_1_4"  type="text" value="{{col_fri_1_4}}" >
+                        <span class='booked'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_4"  type="text" name="col_fri_2_4"  type="text" value="{{col_fri_2_4}}" >
+                        <span class='booked'><span class="bold">1 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_4"  type="text" name="col_fri_3_4"  type="text" value="{{col_fri_3_4}}" >
+                        <span class='booked visually-hidden'><span class="bold"> </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_4"  type="text" name="col_fri_4_4"  type="text" value="{{col_fri_4_4}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri4" type="text" name="rowsum_fri4" readonly  value="{{rowsum_fri4}}">
+                        <input class="visually-hidden" id="bookedsum_fri_4"  type="text" name="bookedsum_fri_4"  type="text" value="{{ bookedsum_fri_4 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_4"  type="text" name="col_fri_6_4"  type="text" value="{{col_fri_6_4}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+
+                {% if checked('fritimes','10') %}
+                <tr>
+                  <th class="col">10:00am</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_5"  type="text" name="col_fri_1_5"  type="text" value="{{col_fri_1_5}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_5"  type="text" name="col_fri_2_5"  type="text" value="{{col_fri_2_5}}" >
+                        <span class='booked'><span class="bold">1 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_5"  type="text" name="col_fri_3_5"  type="text" value="{{col_fri_3_5}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_5"  type="text" name="col_fri_4_5"  type="text" value="{{col_fri_4_5}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri5" type="text" name="rowsum_fri5" readonly  value="{{rowsum_fri5}}">
+                        <input class="visually-hidden" id="bookedsum_fri_5"  type="text" name="bookedsum_fri_5"  type="text" value="{{ bookedsum_fri_5 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_5"  type="text" name="col_fri_6_5"  type="text" value="{{col_fri_6_5}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+                       {% if checked('fritimes','1015') %}
+                <tr>
+                  <th class="col">10:15am</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_6"  type="text" name="col_fri_1_6"  type="text" value="{{col_fri_1_6}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_6"  type="text" name="col_fri_2_6"  type="text" value="{{col_fri_2_6}}" >
+                        <span class='booked'><span class="bold">1 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_6"  type="text" name="col_fri_3_6"  type="text" value="{{col_fri_3_6}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_6"  type="text" name="col_fri_4_6"  type="text" value="{{col_fri_4_6}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri6" type="text" name="rowsum_fri6" readonly  value="{{ rowsum_fri6 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_6"  type="text" name="bookedsum_fri_6"  type="text" value="{{ bookedsum_fri_6 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_6"  type="text" name="col_fri_6_6"  type="text" value="{{col_fri_6_6}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+                               {% if checked('fritimes','1030') %}
+                <tr>
+                  <th class="col">10:30am</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_7"  type="text" name="col_fri_1_7"  type="text" value="{{col_fri_1_7}}" >
+                        <span class='booked'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_7"  type="text" name="col_fri_2_7"  type="text" value="{{col_fri_2_7}}" >
+                        <span class='booked'><span class="bold">1 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_7"  type="text" name="col_fri_3_7"  type="text" value="{{col_fri_3_7}}" >
+                        <span class='booked  visually-hidden'><span class="bold">1 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_7"  type="text" name="col_fri_4_7"  type="text" value="{{col_fri_4_7}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri7" type="text" name="rowsum_fri7" readonly  value="{{ rowsum_fri7 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_7"  type="text" name="bookedsum_fri_7"  type="text" value="{{ bookedsum_fri_7 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_7"  type="text" name="col_fri_6_7"  type="text" value="{{col_fri_6_7}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+
+                               {% if checked('fritimes','1045') %}
+                <tr>
+                  <th class="col">10:45am</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_8"  type="text" name="col_fri_1_8"  type="text" value="{{col_fri_1_8}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_8"  type="text" name="col_fri_2_8"  type="text" value="{{col_fri_2_8}}" >
+                        <span class='booked'><span class="bold">1 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_8"  type="text" name="col_fri_3_8"  type="text" value="{{col_fri_3_8}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_8"  type="text" name="col_fri_4_8"  type="text" value="{{col_fri_4_8}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri8" type="text" name="rowsum_fri8" readonly  value="{{ rowsum_fri8 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_8"  type="text" name="bookedsum_fri_8"  type="text" value="{{ bookedsum_fri_8 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_8"  type="text" name="col_fri_6_8"  type="text" value="{{col_fri_6_8}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+
+                               {% if checked('fritimes','11') %}
+                <tr>
+                  <th class="col">11:00am</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_9"  type="text" name="col_fri_1_9"  type="text" value="{{col_fri_1_9}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_9"  type="text" name="col_fri_2_9"  type="text" value="{{col_fri_2_9}}" >
+                        <span class='booked'><span class="bold">1 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_9"  type="text" name="col_fri_3_9"  type="text" value="{{col_fri_3_9}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_9"  type="text" name="col_fri_4_9"  type="text" value="{{col_fri_4_9}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri9" type="text" name="rowsum_fri9" readonly  value="{{ rowsum_fri9 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_9"  type="text" name="bookedsum_fri_9"  type="text" value="{{ bookedsum_fri_9 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_9"  type="text" name="col_fri_6_9"  type="text" value="{{col_fri_6_9}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+
+
+                               {% if checked('fritimes','1115') %}
+                <tr>
+                  <th class="col">11:15am</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_10"  type="text" name="col_fri_1_10"  type="text" value="{{col_fri_1_10}}" >
+                        <span class='booked'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_10"  type="text" name="col_fri_2_10"  type="text" value="{{col_fri_2_10}}" >
+                        <span class='booked'><span class="bold">1 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_10"  type="text" name="col_fri_3_10"  type="text" value="{{col_fri_3_10}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_10"  type="text" name="col_fri_4_10"  type="text" value="{{col_fri_4_10}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri10" type="text" name="rowsum_fri10" readonly  value="{{ rowsum_fri10 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_10"  type="text" name="bookedsum_fri_10"  type="text" value="{{ bookedsum_fri_10 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_10"  type="text" name="col_fri_6_10"  type="text" value="{{col_fri_6_10}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+
+                               {% if checked('fritimes','1130') %}
+                <tr>
+                  <th class="col">11:30am</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_11"  type="text" name="col_fri_1_11"  type="text" value="{{col_fri_1_11}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_11"  type="text" name="col_fri_2_11"  type="text" value="{{col_fri_2_11}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_11"  type="text" name="col_fri_3_11"  type="text" value="{{col_fri_3_11}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_11"  type="text" name="col_fri_4_11"  type="text" value="{{col_fri_4_11}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri11" type="text" name="rowsum_fri11" readonly  value="{{ rowsum_fri11 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_11"  type="text" name="bookedsum_fri_11"  type="text" value="{{ bookedsum_fri_11 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_11"  type="text" name="col_fri_6_11"  type="text" value="{{col_fri_6_11}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+
+                               {% if checked('fritimes','1145') %}
+                <tr>
+                  <th class="col">11:45am</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_12"  type="text" name="col_fri_1_12"  type="text" value="{{col_fri_1_12}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_12"  type="text" name="col_fri_2_12"  type="text" value="{{col_fri_2_12}}" >
+                        <span class='booked'><span class="bold">0 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_12"  type="text" name="col_fri_3_12"  type="text" value="{{col_fri_3_12}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_12"  type="text" name="col_fri_4_12"  type="text" value="{{col_fri_4_12}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri12" type="text" name="rowsum_fri12" readonly  value="{{ rowsum_fri12 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_12"  type="text" name="bookedsum_fri_12"  type="text" value="{{ bookedsum_fri_12 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_12"  type="text" name="col_fri_6_12"  type="text" value="{{col_fri_6_12}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+
+                               {% if checked('fritimes','12') %}
+                <tr>
+                  <th class="col">12:00pm</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_13"  type="text" name="col_fri_1_13"  type="text" value="{{col_fri_1_13}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_13"  type="text" name="col_fri_2_13"  type="text" value="{{col_fri_2_13}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_13"  type="text" name="col_fri_3_13"  type="text" value="{{col_fri_3_13}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_13"  type="text" name="col_fri_4_13"  type="text" value="{{col_fri_4_13}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri13" type="text" name="rowsum_fri13" readonly  value="{{ rowsum_fri13 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_13"  type="text" name="bookedsum_fri_13"  type="text" value="{{ bookedsum_fri_13 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_13"  type="text" name="col_fri_6_13"  type="text" value="{{col_fri_6_13}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+
+                               {% if checked('fritimes','1215') %}
+                <tr>
+                  <th class="col">12:15pm</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_14"  type="text" name="col_fri_1_14"  type="text" value="{{col_fri_1_14}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_14"  type="text" name="col_fri_2_14"  type="text" value="{{col_fri_2_14}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_14"  type="text" name="col_fri_3_14"  type="text" value="{{col_fri_3_14}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_14"  type="text" name="col_fri_4_14"  type="text" value="{{col_fri_4_14}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri14" type="text" name="rowsum_fri14" readonly  value="{{ rowsum_fri14 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_14"  type="text" name="bookedsum_fri_14"  type="text" value="{{ bookedsum_fri_14 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_14"  type="text" name="col_fri_6_14"  type="text" value="{{col_fri_6_14}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+
+                               {% if checked('fritimes','1230') %}
+                <tr>
+                  <th class="col">12:30pm</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_15"  type="text" name="col_fri_1_15"  type="text" value="{{col_fri_1_15}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_15"  type="text" name="col_fri_2_15"  type="text" value="{{col_fri_2_15}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_15"  type="text" name="col_fri_3_15"  type="text" value="{{col_fri_3_15}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_15"  type="text" name="col_fri_4_15"  type="text" value="{{col_fri_4_15}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri15" type="text" name="rowsum_fri15" readonly  value="{{ rowsum_fri15 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_15"  type="text" name="bookedsum_fri_15"  type="text" value="{{ bookedsum_fri_15 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_15"  type="text" name="col_fri_6_15"  type="text" value="{{col_fri_6_15}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+
+                                          {% if checked('fritimes','1245') %}
+                <tr>
+                  <th class="col">12:45pm</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_15"  type="text" name="col_fri_1_15"  type="text" value="{{col_fri_1_15}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_15"  type="text" name="col_fri_2_15"  type="text" value="{{col_fri_2_15}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_15"  type="text" name="col_fri_3_15"  type="text" value="{{col_fri_3_15}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_15"  type="text" name="col_fri_4_15"  type="text" value="{{col_fri_4_15}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri15" type="text" name="rowsum_fri15" readonly  value="{{ rowsum_fri15 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_15"  type="text" name="bookedsum_fri_15"  type="text" value="{{ bookedsum_fri_15 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_15"  type="text" name="col_fri_6_15"  type="text" value="{{col_fri_6_15}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+
+
+                                          {% if checked('fritimes','1') %}
+                <tr>
+                  <th class="col">1:00pm</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_16"  type="text" name="col_fri_1_16"  type="text" value="{{col_fri_1_16}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_16"  type="text" name="col_fri_2_16"  type="text" value="{{col_fri_2_16}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_16"  type="text" name="col_fri_3_16"  type="text" value="{{col_fri_3_16}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_16"  type="text" name="col_fri_4_16"  type="text" value="{{col_fri_4_16}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri16" type="text" name="rowsum_fri16" readonly  value="{{ rowsum_fri16 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_16"  type="text" name="bookedsum_fri_16"  type="text" value="{{ bookedsum_fri_16 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_16"  type="text" name="col_fri_6_16"  type="text" value="{{col_fri_6_16}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+
+        {% if checked('fritimes','115') %}
+                <tr>
+                  <th class="col">1:15pm</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_17"  type="text" name="col_fri_1_17"  type="text" value="{{col_fri_1_17}}" >
+                        <span class='booked'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_17"  type="text" name="col_fri_2_17"  type="text" value="{{col_fri_2_17}}" >
+                        <span class='booked'><span class="bold">0 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_17"  type="text" name="col_fri_3_17"  type="text" value="{{col_fri_3_17}}" >
+                        <span class='booked  visually-hidden'><span class="bold">2 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_17"  type="text" name="col_fri_4_17"  type="text" value="{{col_fri_4_17}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri17" type="text" name="rowsum_fri17" readonly  value="{{ rowsum_fri17 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_17"  type="text" name="bookedsum_fri_17"  type="text" value="{{ bookedsum_fri_17 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_17"  type="text" name="col_fri_6_17"  type="text" value="{{col_fri_6_17}}" >
+                        <span class='booked'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+
+              {% if checked('fritimes','130') %}
+                <tr>
+                  <th class="col">1:30pm</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_18"  type="text" name="col_fri_1_18"  type="text" value="{{col_fri_1_18}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_18"  type="text" name="col_fri_2_18"  type="text" value="{{col_fri_2_18}}" >
+                        <span class='booked'><span class="bold">0 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_18"  type="text" name="col_fri_3_18"  type="text" value="{{col_fri_3_18}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_18"  type="text" name="col_fri_4_18"  type="text" value="{{col_fri_4_18}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri18" type="text" name="rowsum_fri18" readonly  value="{{ rowsum_fri18 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_18"  type="text" name="bookedsum_fri_18"  type="text" value="{{ bookedsum_fri_18 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_18"  type="text" name="col_fri_6_18"  type="text" value="{{col_fri_6_18}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+              {% if checked('fritimes','145') %}
+                <tr>
+                  <th class="col">1:45pm</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_19"  type="text" name="col_fri_1_19"  type="text" value="{{col_fri_1_19}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_19"  type="text" name="col_fri_2_19"  type="text" value="{{col_fri_2_19}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_19"  type="text" name="col_fri_3_19"  type="text" value="{{col_fri_3_19}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_19"  type="text" name="col_fri_4_19"  type="text" value="{{col_fri_4_19}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri19" type="text" name="rowsum_fri19" readonly  value="{{ rowsum_fri19 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_19"  type="text" name="bookedsum_fri_19"  type="text" value="{{ bookedsum_fri_19 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_19"  type="text" name="col_fri_6_19"  type="text" value="{{col_fri_6_19}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+
+              {% if checked('fritimes','2') %}
+                <tr>
+                  <th class="col">2:00pm</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_20"  type="text" name="col_fri_1_20"  type="text" value="{{col_fri_1_20}}" >
+                        <span class='booked'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_20"  type="text" name="col_fri_2_20"  type="text" value="{{col_fri_2_20}}" >
+                        <span class='booked'><span class="bold">0 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_20"  type="text" name="col_fri_3_20"  type="text" value="{{col_fri_3_20}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_20"  type="text" name="col_fri_4_20"  type="text" value="{{col_fri_4_20}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri20" type="text" name="rowsum_fri20" readonly  value="{{ rowsum_fri20 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_20"  type="text" name="bookedsum_fri_20"  type="text" value="{{ bookedsum_fri_20 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_20"  type="text" name="col_fri_6_20"  type="text" value="{{col_fri_6_20}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+              {% if checked('fritimes','215') %}
+                <tr>
+                  <th class="col">2:15pm</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_21"  type="text" name="col_fri_1_21"  type="text" value="{{col_fri_1_21}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_21"  type="text" name="col_fri_2_21"  type="text" value="{{col_fri_2_21}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_21"  type="text" name="col_fri_3_21"  type="text" value="{{col_fri_3_21}}" >
+                        <span class='booked'><span class="bold">1 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_21"  type="text" name="col_fri_4_21"  type="text" value="{{col_fri_4_21}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri21" type="text" name="rowsum_fri21" readonly  value="{{ rowsum_fri21 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_21"  type="text" name="bookedsum_fri_21"  type="text" value="{{ bookedsum_fri_21 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_21"  type="text" name="col_fri_6_21"  type="text" value="{{col_fri_6_21}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+
+   {% if checked('fritimes','230') %}
+                <tr>
+                  <th class="col">2:30pm</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_22"  type="text" name="col_fri_1_22"  type="text" value="{{col_fri_1_22}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_22"  type="text" name="col_fri_2_22"  type="text" value="{{col_fri_2_22}}" >
+                        <span class='booked'><span class="bold">1 </span>Booked</span>
+                      </td>
+                   <td><label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_22"  type="text" name="col_fri_3_22"  type="text" value="{{col_fri_3_22}}" >
+                        <span class='booked  visually-hidden'><span class="bold">1 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_22"  type="text" name="col_fri_4_22"  type="text" value="{{col_fri_4_22}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri22" type="text" name="rowsum_fri22" readonly  value="{{ rowsum_fri22 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_22"  type="text" name="bookedsum_fri_22"  type="text" value="{{ bookedsum_fri_22 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_22"  type="text" name="col_fri_6_22"  type="text" value="{{col_fri_6_22}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+
+              {% if checked('fritimes','245') %}
+                <tr>
+                  <th class="col">2:45pm</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_23"  type="text" name="col_fri_1_23"  type="text" value="{{col_fri_1_23}}" >
+                        <span class='booked'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_23"  type="text" name="col_fri_2_23"  type="text" value="{{col_fri_2_23}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_23"  type="text" name="col_fri_3_23"  type="text" value="{{col_fri_3_23}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_23"  type="text" name="col_fri_4_23"  type="text" value="{{col_fri_4_23}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri23" type="text" name="rowsum_fri23" readonly  value="{{ rowsum_fri23 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_23"  type="text" name="bookedsum_fri_23"  type="text" value="{{ bookedsum_fri_23 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_23"  type="text" name="col_fri_6_23"  type="text" value="{{col_fri_6_23}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+
+
+              {% if checked('fritimes','3') %}
+                <tr>
+                  <th class="col">3:00pm</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_24"  type="text" name="col_fri_1_24"  type="text" value="{{col_fri_1_24}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_24"  type="text" name="col_fri_2_24"  type="text" value="{{col_fri_2_24}}" >
+                        <span class='booked '><span class="bold">0 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_24"  type="text" name="col_fri_3_24"  type="text" value="{{col_fri_3_24}}" >
+                        <span class='booked  visually-hidden'><span class="bold">1 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_24"  type="text" name="col_fri_4_24"  type="text" value="{{col_fri_4_24}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri24" type="text" name="rowsum_fri24" readonly  value="{{ rowsum_fri24 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_24"  type="text" name="bookedsum_fri_24"  type="text" value="{{ bookedsum_fri_24 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_24"  type="text" name="col_fri_6_24"  type="text" value="{{col_fri_6_24}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+
+
+              {% if checked('fritimes','315') %}
+                <tr>
+                  <th class="col">3:15pm</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_25"  type="text" name="col_fri_1_25"  type="text" value="{{col_fri_1_25}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_25"  type="text" name="col_fri_2_25"  type="text" value="{{col_fri_2_25}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_25"  type="text" name="col_fri_3_25"  type="text" value="{{col_fri_3_25}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_25"  type="text" name="col_fri_4_25"  type="text" value="{{col_fri_4_25}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri25" type="text" name="rowsum_fri25" readonly  value="{{ rowsum_fri25 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_25"  type="text" name="bookedsum_fri_25"  type="text" value="{{ bookedsum_fri_25 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_25"  type="text" name="col_fri_6_25"  type="text" value="{{col_fri_6_25}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+
+
+              {% if checked('fritimes','330') %}
+                <tr>
+                  <th class="col">3:30pm</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_26"  type="text" name="col_fri_1_26"  type="text" value="{{col_fri_1_26}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_26"  type="text" name="col_fri_2_26"  type="text" value="{{col_fri_2_26}}" >
+                        <span class='booked'><span class="bold">0 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_26"  type="text" name="col_fri_3_26"  type="text" value="{{col_fri_3_26}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_26"  type="text" name="col_fri_4_26"  type="text" value="{{col_fri_4_26}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri26" type="text" name="rowsum_fri26" readonly  value="{{ rowsum_fri26 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_26"  type="text" name="bookedsum_fri_26"  type="text" value="{{ bookedsum_fri_26 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_26"  type="text" name="col_fri_6_26"  type="text" value="{{col_fri_6_26}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+           {% endif %}
+
+
+              {% if checked('fritimes','345') %}
+                <tr>
+                  <th class="col">3:45pm</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_27"  type="text" name="col_fri_1_27"  type="text" value="{{col_fri_1_27}}" >
+                        <span class='booked'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_27"  type="text" name="col_fri_2_27"  type="text" value="{{col_fri_2_27}}" >
+                        <span class='booked'><span class="bold">0 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_27"  type="text" name="col_fri_3_27"  type="text" value="{{col_fri_3_27}}" >
+                        <span class='booked  visually-hidden'><span class="bold">1 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_27"  type="text" name="col_fri_4_27"  type="text" value="{{col_fri_4_27}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri27" type="text" name="rowsum_fri27" readonly  value="{{ rowsum_fri27 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_27"  type="text" name="bookedsum_fri_27"  type="text" value="{{ bookedsum_fri_27 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_27"  type="text" name="col_fri_6_27"  type="text" value="{{col_fri_6_27}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+
+              {% if checked('fritimes','4') %}
+                <tr>
+                  <th class="col">4:00pm</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_28"  type="text" name="col_fri_1_28"  type="text" value="{{col_fri_1_28}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_28"  type="text" name="col_fri_2_28"  type="text" value="{{col_fri_2_28}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_28"  type="text" name="col_fri_3_28"  type="text" value="{{col_fri_3_28}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_28"  type="text" name="col_fri_4_28"  type="text" value="{{col_fri_4_28}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri28" type="text" name="rowsum_fri28" readonly  value="{{ rowsum_fri28 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_28"  type="text" name="bookedsum_fri_28"  type="text" value="{{ bookedsum_fri_28 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_28"  type="text" name="col_fri_6_28"  type="text" value="{{col_fri_6_28}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+
+
+              {% if checked('fritimes','415') %}
+                <tr>
+                  <th class="col">4:15pm</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_29"  type="text" name="col_fri_1_29"  type="text" value="{{col_fri_1_29}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_29"  type="text" name="col_fri_2_29"  type="text" value="{{col_fri_2_29}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_29"  type="text" name="col_fri_3_29"  type="text" value="{{col_fri_3_29}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_29"  type="text" name="col_fri_4_29"  type="text" value="{{col_fri_4_29}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri29" type="text" name="rowsum_fri29" readonly  value="{{ rowsum_fri29 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_29"  type="text" name="bookedsum_fri_29"  type="text" value="{{ bookedsum_fri_29 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_29"  type="text" name="col_fri_6_29"  type="text" value="{{col_fri_6_29}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+
+              {% if checked('fritimes','430') %}
+                <tr>
+                  <th class="col">4:30pm</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_30"  type="text" name="col_fri_1_30"  type="text" value="{{col_fri_1_30}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_30"  type="text" name="col_fri_2_30"  type="text" value="{{col_fri_2_30}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_30"  type="text" name="col_fri_3_30"  type="text" value="{{col_fri_3_30}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_30"  type="text" name="col_fri_4_30"  type="text" value="{{col_fri_4_30}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri30" type="text" name="rowsum_fri30" readonly  value="{{ rowsum_fri30 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_30"  type="text" name="bookedsum_fri_30"  type="text" value="{{ bookedsum_fri_30 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_30"  type="text" name="col_fri_6_30"  type="text" value="{{col_fri_6_30}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+           
+
+
+              {% if checked('fritimes','445') %}
+                <tr>
+                  <th class="col">4:45pm</th>
+                  <td >    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_1_31"  type="text" name="col_fri_1_31"  type="text" value="{{col_fri_1_31}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td> 
+                    <td >  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_2_31"  type="text" name="col_fri_2_31"  type="text" value="{{col_fri_2_31}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                      </td>
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_3_31"  type="text" name="col_fri_3_31"  type="text" value="{{col_fri_3_31}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+               {% if checked('e_benefits_fris','ben2') %}
+                  <td>  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_4_31"  type="text" name="col_fri_4_31"  type="text" value="{{col_fri_4_31}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                 {% endif %}
+                 <td class="col5">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_fri31" type="text" name="rowsum_fri31" readonly  value="{{ rowsum_fri31 }}">
+                        <input class="visually-hidden" id="bookedsum_fri_31"  type="text" name="bookedsum_fri_31"  type="text" value="{{ bookedsum_fri_31 }}" >
+			</td>
+
+                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_fri_6_31"  type="text" name="col_fri_6_31"  type="text" value="{{col_fri_6_31}}" >
+                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
+                    </td>
+                </tr>
+
+           {% endif %}
+
+
+               
+  
+
+                        
+                              
+       
+
+
+               
+              </table>
+
+              <p><button class="button mt25">Save and continue</button></p>
+             
+
+<!-- Totals -->
+
+<div class="inner-panel  panel-open total-panel">
+             <div class="inner-panel-content sticky">
+
+
+                 <h2 class="heading-large">Totals</h2>
+
+                 <div class="total-container">
+                        <h2 class="heading-small mt30">Complex neuro</h2>
+                        <label class="visually-hidden" for="" ></label>
+                        <input type="number" name="e_col_fri_1_sum" id="e_col_fri_1_sum" class="form-control" readonly value="{{ e_col_fri_1_sum }}" />
+                      </div>
+
+                      <div class="total-container">
+                            <h2 class="heading-small">Neuro</h2>
+                            <label class="visually-hidden" for="" ></label>
+                            <input class="form-control" id="e_col_fri_2_sum"  type="text" name="e_col_fri_2_sum"  type="text" value="{{e_col_fri_2_sum}}" >
+                 </div>
+                      <div class="total-container">
+                          <h2 class="heading-small">Non neuro</h2>
+                          <label class="visually-hidden" for="" ></label>
+                          <input type="number" name="e_col_fri_3_sum" id="e_col_fri_3_sum" class="form-control" readonly  value="{{e_col_fri_3_sum}}" />
+                        </div>
+                         {% if checked('e_benefits','ben2') %}
+                        <div class="total-container">
+                            <h2 class="heading-small">IIDB</h2>
+                            <label class="visually-hidden" for="" ></label>
+                            <input class="form-control" id="e_col_fri_4_sum"  type="text" name="e_col_fri_4_sum"  type="text" value="{{e_col_fri_4_sum}}" >
+                    </div>
+                    {% endif %}
+                    
+                    <div class="total-container alt">
+                        <h2 class="heading-small">Total appointments</h2>
+                        <label class="visually-hidden" for="" ></label>
+                        <input class="form-control" id="e_rowsum_frisum"  type="text" name="e_rowsum_frisum"  type="text" value="{{e_rowsum_frisum}}" >
+             </div>
+          
+             <div class="total-container">
+                <h2 class="heading-small">UCB</h2>
+                <label class="visually-hidden" for="" ></label>
+                <input class="form-control" id="e_col_fri_6_sum"  type="text" name="e_col_fri_6_sum"  type="text" value="{{e_col_fri_6_sum}}" >
+          </div>
+
+
+
+
+		
+         </div>
+
+         </div> 
+
+
+<!-- End totals -->
+
+
+
+
+
+
+              	<div class="check-choice visually-hidden">
+                    <input id="frivisited" name="frivisited" type="checkbox" value="yes" checked>
+                    <label for=""></label>
+                </div>
+              </form>
+            </div>
+         
+   
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+</main>
+
+<input class="visually-hidden" id="neuro-booked"  type="text" name="neauro-booked"  type="text" value="10" >
+<input class="visually-hidden" id="total-booked"  type="text" name="total-booked"  type="text" value="10" >
+<input class="visually-hidden" id="ucb-booked"  type="text" name="ucb-booked"  type="text" value="1" >
+
+
+{% endblock %}
+
+
+{% block page_scripts %}
+<script>
+{% if data['frivisited']=='yes'%}
+
+{% else %}
+$('#e_col_fri_1_sum').val('8');
+$('#e_col_fri_2_sum').val("32");
+$('#e_rowsum_frisum').val("40");
+$('#e_col_fri_6_sum').val("2");
+$('#col_fri_1_1').val("1");
+$('#col_fri_1_4').val("1");
+$('#col_fri_1_7').val("1");
+$('#col_fri_1_10').val("1");
+$('#col_fri_1_17').val("1");
+$('#col_fri_1_20').val("1");
+$('#col_fri_1_23').val("1");
+$('#col_fri_1_27').val("1");
+
+
+
+$('#col_fri_2_1').val("3");
+$('#col_fri_2_2').val("1");
+$('#col_fri_2_3').val("1");
+$('#col_fri_2_4').val("1");
+$('#col_fri_2_5').val("1");
+$('#col_fri_2_6').val("1");
+$('#col_fri_2_7').val("1");
+$('#col_fri_2_8').val("1");
+$('#col_fri_2_9').val("1");
+$('#col_fri_2_10').val("1");
+$('#col_fri_2_10').val("2");
+$('#col_fri_2_17').val("2");
+$('#col_fri_2_18').val("1");
+$('#col_fri_2_20').val("1");
+$('#col_fri_2_22').val("1");
+$('#col_fri_2_23').val("1");
+$('#col_fri_2_24').val("1");
+$('#col_fri_2_26').val("1");
+$('#col_fri_2_27').val("1");
+
+
+
+
+
+
+$('#rowsum_fri1').val("5");
+$('#rowsum_fri2').val("2");
+$('#rowsum_fri3').val("2");
+$('#rowsum_fri4').val("2");
+$('#rowsum_fri5').val("1");
+$('#rowsum_fri6').val("1");
+$('#rowsum_fri7').val("3");
+$('#rowsum_fri8').val("1");
+$('#rowsum_fri9').val("1");
+$('#rowsum_fri10').val("2");
+$('#rowsum_fri12').val("2");
+$('#rowsum_fri17').val("5");
+$('#rowsum_fri18').val("1");
+$('#rowsum_fri20').val("2");
+$('#rowsum_fri22').val("3");
+$('#rowsum_fri23').val("1");
+$('#rowsum_fri24').val("3");
+$('#rowsum_fri26').val("1");
+$('#rowsum_fri27').val("2");
+{% endif %}
+
+
+
+$('#col_fri_6_17').val("1");
+
+// 9am
+
+$('#bookedsum_fri_1').val("1");
+// 9:15am
+
+$('#bookedsum_fri_2').val("1");
+// 9:30am
+
+$('#bookedsum_fri_3').val("1");
+// 9:45am
+
+$('#bookedsum_fri_4').val("1");
+//10
+
+$('#bookedsum_fri_5').val("1");
+
+//10:15
+
+$('#bookedsum_fri_6').val("1");
+//1030
+
+$('#bookedsum_fri_7').val("1");
+//1045
+
+$('#bookedsum_fri_8').val("1");
+//11
+
+$('#bookedsum_fri_9').val("1");
+//1115
+
+$('#bookedsum_fri_10').val("1");
+//1145
+
+$('#bookedsum_fri_12').val("0");
+//1:15pm
+
+$('#bookedsum_fri_17').val("0");
+//1:30pm
+
+$('#bookedsum_fri_18').val("0");
+//2:00
+
+$('#bookedsum_fri_20').val("0");
+//2:30
+
+$('#bookedsum_fri_22').val("0");
+//2:45
+
+$('#bookedsum_fri_23').val("0");
+//3:00
+
+$('#bookedsum_fri_24').val("0");
+//3:30
+
+$('#bookedsum_fri_26').val("0");
+//3:45
+
+$('#bookedsum_fri_27').val("0");
+
+
+
+
+
+
+
+function total(inputFields, totalField) {
+  var sumValues = 0;
+  $(inputFields).each(function() { 
+      if (this.value.length!=0 && !isNaN(this.value)) {
+          sumValues += parseFloat(this.value);
+      }
+  });
+  $(totalField).val(sumValues).triggerHandler('change');
+}
+
+$(function() {
+  $('#e_col_fri_1_sum, #e_col_fri_2_sum, #e_col_fri_3_sum, #e_col_fri_4_sum').change(function() { 
+    total('#e_col_fri_1_sum, #e_col_fri_2_sum, #e_col_fri_3_sum, #e_col_fri_4_sum, #total-booked','#e_rowsum_frisum');
+  });
+});
+
+$(function() { 
+  $('#col_fri_1_1, #col_fri_1_2, #col_fri_1_3, #col_fri_1_4, #col_fri_1_5, #col_fri_1_6, #col_fri_1_7, #col_fri_1_8, #col_fri_1_9, #col_fri_1_10, #col_fri_1_11, #col_fri_1_12, #col_fri_1_13, #col_fri_1_14, #col_fri_1_15, #col_fri_1_16, #col_fri_1_17, #col_fri_1_18, #col_fri_1_19, #col_fri_1_20, #col_fri_1_21, #col_fri_1_23, #col_fri_1_23, #col_fri_1_24, #col_fri_1_25, #col_fri_1_26, #col_fri_1_27, #col_fri_1_28, #col_fri_1_29, #col_fri_1_30, #col_fri_1_31, #col_fri_1_32').change(function(){
+    total('#col_fri_1_1, #col_fri_1_2, #col_fri_1_3, #col_fri_1_4, #col_fri_1_5, #col_fri_1_6, #col_fri_1_7, #col_fri_1_8, #col_fri_1_9, #col_fri_1_10, #col_fri_1_11, #col_fri_1_12, #col_fri_1_13, #col_fri_1_14, #col_fri_1_15, #col_fri_1_16, #col_fri_1_17, #col_fri_1_18, #col_fri_1_19, #col_fri_1_20, #col_fri_1_21, #col_fri_1_23, #col_fri_1_23, #col_fri_1_24, #col_fri_1_25, #col_fri_1_26, #col_fri_1_27, #col_fri_1_28, #col_fri_1_29, #col_fri_1_30, #col_fri_1_31, #col_fri_1_32, #complex-booked','#e_col_fri_1_sum');
+  });
+});
+
+$(function(){
+  $('#col_fri_2_1, #col_fri_2_2, #col_fri_2_3, #col_fri_2_4, #col_fri_2_5, #col_fri_2_6, #col_fri_2_7, #col_fri_2_8, #col_fri_2_9, #col_fri_2_10, #col_fri_2_11, #col_fri_2_12, #col_fri_2_13, #col_fri_2_14, #col_fri_2_15, #col_fri_2_16, #col_fri_2_17, #col_fri_2_18, #col_fri_2_19, #col_fri_2_20, #col_fri_2_21, #col_fri_2_22, #col_fri_2_23, #col_fri_2_24, #col_fri_2_25, #col_fri_2_26, #col_fri_2_27, #col_fri_2_28, #col_fri_2_29, #col_fri_2_30, #col_fri_2_31, #col_fri_2_32').change(function(){
+     total('#col_fri_2_1, #col_fri_2_2, #col_fri_2_3, #col_fri_2_4, #col_fri_2_5, #col_fri_2_6, #col_fri_2_7, #col_fri_2_8, #col_fri_2_9, #col_fri_2_10, #col_fri_2_11, #col_fri_2_12, #col_fri_2_13, #col_fri_2_14, #col_fri_2_15, #col_fri_2_16, #col_fri_2_17, #col_fri_2_18, #col_fri_2_19, #col_fri_2_20, #col_fri_2_21, #col_fri_2_22, #col_fri_2_23, #col_fri_2_24, #col_fri_2_25, #col_fri_2_26, #col_fri_2_27, #col_fri_2_28, #col_fri_2_29, #col_fri_2_30, #col_fri_2_31, #col_fri_2_32, #neuro-booked','#e_col_fri_2_sum');
+  });
+});
+
+
+
+$(function(){
+  $('#col_fri_3_1, #col_fri_3_2, #col_fri_3_3, #col_fri_3_4, #col_fri_3_5, #col_fri_3_6, #col_fri_3_7, #col_fri_3_8, #col_fri_3_9, #col_fri_3_10, #col_fri_3_11, #col_fri_3_12, #col_fri_3_13, #col_fri_3_14, #col_fri_3_15, #col_fri_3_16, #col_fri_3_17, #col_fri_3_18, #col_fri_3_19, #col_fri_3_20, #col_fri_3_21, #col_fri_3_22, #col_fri_3_23, #col_fri_3_24, #col_fri_3_25, #col_fri_3_26, #col_fri_3_27, #col_fri_3_28, #col_fri_3_29, #col_fri_3_30, #col_fri_3_31, #col_fri_3_32').change(function(){
+       total('#col_fri_3_1, #col_fri_3_2, #col_fri_3_3, #col_fri_3_4, #col_fri_3_5, #col_fri_3_6, #col_fri_3_7, #col_fri_3_8, #col_fri_3_9, #col_fri_3_10, #col_fri_3_11, #col_fri_3_12, #col_fri_3_13, #col_fri_3_14, #col_fri_3_15, #col_fri_3_16, #col_fri_3_17, #col_fri_3_18, #col_fri_3_19, #col_fri_3_20, #col_fri_3_21, #col_fri_3_22, #col_fri_3_23, #col_fri_3_24, #col_fri_3_25, #col_fri_3_26, #col_fri_3_27, #col_fri_3_28, #col_fri_3_29, #col_fri_3_30, #col_fri_3_31, #col_fri_3_32 ,#non-booked','#e_col_fri_3_sum');
+  });
+});
+
+$(function(){
+  $('#col_fri_4_1, #col_fri_4_2, #col_fri_4_3, #col_fri_4_4, #col_fri_4_5, #col_fri_4_6, #col_fri_4_7, #col_fri_4_8, #col_fri_4_9, #col_fri_4_10, #col_fri_4_11, #col_fri_4_12, #col_fri_4_13, #col_fri_4_14, #col_fri_4_15, #col_fri_4_16, #col_fri_4_17, #col_fri_4_18, #col_fri_4_19, #col_fri_4_20, #col_fri_4_21, #col_fri_4_22, #col_fri_4_23, #col_fri_4_24, #col_fri_4_25, #col_fri_4_26, #col_fri_4_27, #col_fri_4_28, #col_fri_4_29, #col_fri_4_30, #col_fri_4_31, #col_fri_4_32').change(function(){
+total('#col_fri_4_1, #col_fri_4_2, #col_fri_4_3, #col_fri_4_4, #col_fri_4_5, #col_fri_4_6, #col_fri_4_7, #col_fri_4_8, #col_fri_4_9, #col_fri_4_10, #col_fri_4_11, #col_fri_4_12, #col_fri_4_13, #col_fri_4_14, #col_fri_4_15, #col_fri_4_16, #col_fri_4_17, #col_fri_4_18, #col_fri_4_19, #col_fri_4_20, #col_fri_4_21, #col_fri_4_22, #col_fri_4_23, #col_fri_4_24, #col_fri_4_25, #col_fri_4_26, #col_fri_4_27, #col_fri_4_28, #col_fri_4_29, #col_fri_4_30, #col_fri_4_31, #col_fri_4_32','#e_col_fri_4_sum');
+  });
+});
+
+$(function(){
+  $('#col_fri_1_1, #col_fri_2_1, #col_fri_3_1, #col_fri_4_1, #bookedsum_fri_1').change(function(){
+   total('#col_fri_1_1, #col_fri_2_1, #col_fri_3_1, #col_fri_4_1, #bookedsum_fri_1 ', '#rowsum_fri1');
+  });
+  });
+
+  $(function(){
+  $('#col_fri_1_2, #col_fri_2_2, #col_fri_3_2, #col_fri_4_2, #bookedsum_fri_2').change(function(){
+          total('#col_fri_1_2, #col_fri_2_2, #col_fri_3_2, #col_fri_4_2, #bookedsum_fri_2','#rowsum_fri2');
+  });
+  });
+
+    $(function(){
+  $('#col_fri_1_3, #col_fri_2_3, #col_fri_3_3, #col_fri_4_3 , #bookedsum_fri_3').change(function(){
+             total('#col_fri_1_3, #col_fri_2_3, #col_fri_3_3, #col_fri_4_3, #bookedsum_fri_3','#rowsum_fri3');
+  });
+  });
+
+      $(function(){
+  $('#col_fri_1_4, #col_fri_2_4, #col_fri_3_4, #col_fri_4_4, #bookedsum_fri_4').change(function(){
+     total('#col_fri_1_4, #col_fri_2_4, #col_fri_3_4, #col_fri_4_4, #bookedsum_fri_4', '#rowsum_fri4');
+  });
+  });
+
+      $(function(){
+  $('#col_fri_1_5, #col_fri_2_5, #col_fri_3_5, #col_fri_4_5, #bookedsum_fri_5').change(function(){
+          total('#col_fri_1_5, #col_fri_2_5, #col_fri_3_5, #col_fri_4_5, #bookedsum_fri_5','#rowsum_fri5');
+  });
+  });
+
+        $(function(){
+  $('#col_fri_1_6, #col_fri_2_6, #col_fri_3_6, #col_fri_4_6, #bookedsum_fri_6').change(function(){
+       total('#col_fri_1_6, #col_fri_2_6, #col_fri_3_6, #col_fri_4_6, #bookedsum_fri_6','#rowsum_fri6');
+  });
+  });
+
+          $(function(){
+  $('#col_fri_1_7, #col_fri_2_7, #col_fri_3_7, #col_fri_4_7, #bookedsum_fri_7').change(function(){
+      total('#col_fri_1_7, #col_fri_2_7, #col_fri_3_7, #col_fri_4_7, #bookedsum_fri_7','#rowsum_fri7');
+  });
+  });
+
+          $(function(){
+  $('#col_fri_1_8, #col_fri_2_8, #col_fri_3_8, #col_fri_4_8 , #bookedsum_fri_8').change(function(){
+      total('#col_fri_1_8, #col_fri_2_8, #col_fri_3_8, #col_fri_4_8 , #bookedsum_fri_8','#rowsum_fri8');
+  });
+  });
+
+          $(function(){
+  $('#col_fri_1_9, #col_fri_2_9, #col_fri_3_9, #col_fri_4_9,  #bookedsum_fri_9').change(function(){
+       total('#col_fri_1_9, #col_fri_2_9, #col_fri_3_9, #col_fri_4_9,  #bookedsum_fri_9','#rowsum_fri9');
+  });
+  });
+
+          $(function(){
+  $('#col_fri_1_10, #col_fri_2_10, #col_fri_3_10, #col_fri_4_10,  #bookedsum_fri_10').change(function(){
+       total('#col_fri_1_10, #col_fri_2_10, #col_fri_3_10, #col_fri_4_10,  #bookedsum_fri_10','#rowsum_fri10');
+  });
+  });
+
+          $(function(){
+  $('#col_fri_1_11, #col_fri_2_11, #col_fri_3_11, #col_fri_4_11,  #bookedsum_fri_11').change(function(){
+       total('#col_fri_1_11, #col_fri_2_11, #col_fri_3_11, #col_fri_4_11 ,#bookedsum_fri_11','#rowsum_fri11');
+  });
+  });
+
+          $(function(){
+  $('#col_fri_1_12, #col_fri_2_12, #col_fri_3_12, #col_fri_4_12, #bookedsum_fri_12').change(function(){
+       total('#col_fri_1_12, #col_fri_2_12, #col_fri_3_12, #col_fri_4_12,  #bookedsum_fri_12','#rowsum_fri12');
+  });
+  });
+
+          $(function(){
+  $('#col_fri_1_13, #col_fri_2_13, #col_fri_3_13, #col_fri_4_13,  #bookedsum_fri_13').change(function(){
+       total('#col_fri_1_13, #col_fri_2_13, #col_fri_3_13, #col_fri_4_13,  #bookedsum_fri_13','#rowsum_fri13');
+  });
+  });
+
+          $(function(){
+  $('#col_fri_1_14, #col_fri_2_14, #col_fri_3_14, #col_fri_4_14, #bookedsum_fri_14').change(function(){
+      total('#col_fri_1_14, #col_fri_2_14, #col_fri_3_14, #col_fri_4_14, #bookedsum_fri_14','#rowsum_fri14');
+  });
+  });
+        $(function(){
+  $('#col_fri_1_15, #col_fri_2_15, #col_fri_3_15, #col_fri_4_15, #bookedsum_fri_15').change(function(){
+       total('#col_fri_1_15, #col_fri_2_15, #col_fri_3_15, #col_fri_4_15, #bookedsum_fri_15','#rowsum_fri15');
+  });
+  });
+          $(function(){
+  $('#col_fri_1_16, #col_fri_2_16, #col_fri_3_16, #col_fri_4_16,  #bookedsum_fri_16').change(function(){
+      total('#col_fri_1_16, #col_fri_2_16, #col_fri_3_16, #col_fri_4_16, #bookedsum_fri_16','#rowsum_fri16');
+  });
+  });
+
+          $(function(){
+  $('#col_fri_1_17, #col_fri_2_17, #col_fri_3_17, #col_fri_4_17,  #bookedsum_fri_17').change(function(){
+       total('#col_fri_1_17, #col_fri_2_17, #col_fri_3_17, #col_fri_4_17,  #bookedsum_fri_17','#rowsum_fri17');
+  });
+  });
+
+          $(function(){
+  $('#col_fri_1_18, #col_fri_2_18, #col_fri_3_18, #col_fri_4_18, #bookedsum_fri_18').change(function(){
+      total('#col_fri_1_18, #col_fri_2_18, #col_fri_3_18, #col_fri_4_18,  #bookedsum_fri_18','#rowsum_fri18');
+  });
+  });
+
+          $(function(){
+  $('#col_fri_1_19, #col_fri_2_19, #col_fri_3_19, #col_fri_4_19, #bookedsum_fri_19').change(function(){
+       total('#col_fri_1_19, #col_fri_2_19, #col_fri_3_19, #col_fri_4_19,  #bookedsum_fri_19','#rowsum_fri19');
+  });
+  });
+
+          $(function(){
+  $('#col_fri_1_20, #col_fri_2_20, #col_fri_3_20, #col_fri_4_20,  #bookedsum_fri_20').change(function(){
+      total('#col_fri_1_20, #col_fri_2_20, #col_fri_3_20, #col_fri_4_20,  #bookedsum_fri_20','#rowsum_fri20');
+  });
+  });
+
+          $(function(){
+  $('#col_fri_1_21, #col_fri_2_21, #col_fri_3_21, #col_fri_4_21,  #bookedsum_fri_21').change(function(){
+       total('#col_fri_1_21, #col_fri_2_21, #col_fri_3_21, #col_fri_4_21,  #bookedsum_fri_21','#rowsum_fri21');
+  });
+  });
+
+          $(function(){
+  $('#col_fri_1_22, #col_fri_2_22, #col_fri_3_22, #col_fri_4_22,  #bookedsum_fri_22').change(function(){
+      total('#col_fri_1_22, #col_fri_2_22, #col_fri_3_22, #col_fri_4_22, #bookedsum_fri_22','#rowsum_fri22');
+  });
+  });
+
+          $(function(){
+  $('#col_fri_1_23, #col_fri_2_23, #col_fri_3_23, #col_fri_4_23,  #bookedsum_fri_23').change(function(){
+       total('#col_fri_1_23, #col_fri_2_23, #col_fri_3_23, #col_fri_4_23,  #bookedsum_fri_23','#rowsum_fri23');
+  });
+  });
+
+          $(function(){
+  $('#col_fri_1_24, #col_fri_2_24, #col_fri_3_24, #col_fri_4_24,  #bookedsum_fri_24').change(function(){
+      total('#col_fri_1_24, #col_fri_2_24, #col_fri_3_24, #col_fri_4_24,  #bookedsum_fri_24','#rowsum_fri24');
+  });
+  });
+
+
+          $(function(){
+  $('#col_fri_1_25, #col_fri_2_25, #col_fri_3_25, #col_fri_4_25,  #bookedsum_fri_25').change(function(){
+     total('#col_fri_1_25, #col_fri_2_25, #col_fri_3_25, #col_fri_4_25,  #bookedsum_fri_25','#rowsum_fri25');
+  });
+  });
+
+          $(function(){
+  $('#col_fri_1_26, #col_fri_2_26, #col_fri_3_26, #col_fri_4_26,  #bookedsum_fri_26').change(function(){
+      total('#col_fri_1_26, #col_fri_2_26, #col_fri_3_26, #col_fri_4_26,  #bookedsum_fri_26','#rowsum_fri26');
+  });
+  });
+
+
+          $(function(){
+  $('#col_fri_1_27, #col_fri_2_27, #col_fri_3_27, #col_fri_4_27,  #bookedsum_fri_27').change(function(){
+       total('#col_fri_1_27, #col_fri_2_27, #col_fri_3_27, #col_fri_4_27,  #bookedsum_fri_27','#rowsum_fri27');
+  });
+  });
+
+          $(function(){
+  $('#col_fri_1_28, #col_fri_2_28, #col_fri_3_28, #col_fri_4_28,  #bookedsum_fri_28').change(function(){
+       total('#col_fri_1_28, #col_fri_2_28, #col_fri_3_28, #col_fri_4_28,  #bookedsum_fri_28','#rowsum_fri28');
+  });
+  });
+
+          $(function(){
+  $('#col_fri_1_29, #col_fri_2_29, #col_fri_3_29, #col_fri_4_29,  #bookedsum_fri_29').change(function(){
+     total('#col_fri_1_29, #col_fri_2_29, #col_fri_3_29, #col_fri_4_29,  #bookedsum_fri_29','#rowsum_fri29');
+  });
+  });
+
+          $(function(){
+  $('#col_fri_1_30, #col_fri_2_30, #col_fri_3_30, #col_fri_4_30,  #bookedsum_fri_30').change(function(){
+      total('#col_fri_1_30, #col_fri_2_30, #col_fri_3_30, #col_fri_4_30,  #bookedsum_fri_30','#rowsum_fri30');
+  });
+  });
+
+          $(function(){
+  $('#col_fri_1_31, #col_fri_2_31, #col_fri_3_31, #col_fri_4_31, #bookedsum_fri_31').change(function(){
+      total('#col_fri_1_31, #col_fri_2_31, #col_fri_3_31, #col_fri_4_31, #bookedsum_fri_31','#rowsum_fri31');
+  });
+  });
+
+
+
+$(function(){
+  $('#rowsum_fri1, #rowsum_fri2, #rowsum_fri3, #rowsum_fri4, #rowsum_fri5, #rowsum_fri6, #rowsum_fri7, #rowsum_fri8, #rowsum_fri9, #rowsum_fri10, #rowsum_fri11, #rowsum_fri12, #rowsum_fri13, #rowsum_fri14, #rowsum_fri15, #rowsum_fri16, #rowsum_fri17, #rowsum_fri18, #rowsum_fri19, #rowsum_fri20, #rowsum_fri21, #rowsum_fri22, #rowsum_fri23, #rowsum_fri24, #rowsum_fri25, #rowsum_fri26, #rowsum_fri27, #rowsum_fri28, #rowsum_fri29, #rowsum_fri30, #rowsum_fri31, #rowsum_fri32').change(function(){
+    total('#rowsum_fri1, #rowsum_fri2, #rowsum_fri3, #rowsum_fri4, #rowsum_fri5, #rowsum_fri6, #rowsum_fri7, #rowsum_fri8, #rowsum_fri9, #rowsum_fri10, #rowsum_fri11, #rowsum_fri12, #rowsum_fri13, #rowsum_fri14, #rowsum_fri15, #rowsum_fri16, #rowsum_fri17, #rowsum_fri18, #rowsum_fri19, #rowsum_fri20, #rowsum_fri21, #rowsum_fri22, #rowsum_fri23, #rowsum_fri24, #rowsum_fri25, #rowsum_fri26, #rowsum_fri27, #rowsum_fri28, #rowsum_fri29, #rowsum_fri30, #rowsum_fri31, #rowsum_fri32','#e_rowsum_frisum');
+  });
+});
+
+
+$(function(){
+  $('#col_fri_6_1, #col_fri_6_2, #col_fri_6_3, #col_fri_6_4, #col_fri_6_5, #col_fri_6_6, #col_fri_6_7, #col_fri_6_8, #col_fri_6_9, #col_fri_6_10, #col_fri_6_11, #col_fri_6_12, #col_fri_6_13, #col_fri_6_14, #col_fri_6_15, #col_fri_6_16, #col_fri_6_17, #col_fri_6_18, #col_fri_6_19, #col_fri_6_20, #col_fri_6_21, #col_fri_6_22, #col_fri_6_23, #col_fri_6_24, #col_fri_6_25, #col_fri_6_26, #col_fri_6_27, #col_fri_6_28, #col_fri_6_29, #col_fri_6_30, #col_fri_6_31, #col_fri_6_32, #ucb-booked').change(function(){
+  total('#col_fri_6_1, #col_fri_6_2, #col_fri_6_3, #col_fri_6_4, #col_fri_6_5, #col_fri_6_6, #col_fri_6_7, #col_fri_6_8, #col_fri_6_9, #col_fri_6_10, #col_fri_6_11, #col_fri_6_12, #col_fri_6_13, #col_fri_6_14, #col_fri_6_15, #col_fri_6_16, #col_fri_6_17, #col_fri_6_18, #col_fri_6_19, #col_fri_6_20, #col_fri_6_21, #col_fri_6_22, #col_fri_6_23, #col_fri_6_24, #col_fri_6_25, #col_fri_6_26, #col_fri_6_27, #col_fri_6_28, #col_fri_6_29, #col_fri_6_30, #col_fri_6_31, #col_fri_6_32, #ucb-booked','#e_col_fri_6_sum');
+  });
+});
+
+
+
+
+
+
+
+
+</script>
+{% endblock %}
