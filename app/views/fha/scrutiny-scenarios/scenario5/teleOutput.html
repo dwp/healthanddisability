@@ -1,0 +1,126 @@
+{% extends path+"/_layout-case-simple4.html" %}
+
+
+{% block actioncolumn %}
+   
+<p class="returnRef"><a href="javascript: history.go(-1)" class="link-back">Return to case list</a></p>
+
+ <div class="caseStatus">
+ 	
+	<p class="main-status"><span>Current case status</span>Ready to book</p>
+
+	<!--<p class="primary-action"><span>Suggested case action</span><a href="#" class="button">Book appointment</a></p>-->
+
+ </div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Kenneth Robertson
+{% endblock %}
+
+{% block citizen_content %}
+
+{% if data['evidencePath']=='ev-ftf'%}
+
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+	
+	
+		{% if data['pbachoice']%}
+	
+		
+	{% else %}
+	<div class="panel panel-info panel-instruction fme-warning"><h2 class="heading-small">New evidence recorded</h2>
+	   <ul class="numeric" data-id="">
+	       <li>
+	         <span class="circle circle-step circle-white">1</span>
+	         <h2 class="govuk-heading-m">Roberto's case should be reviewed before making a recommendation</h2>
+	       </li>
+	
+	       <li>
+	         <span class="circle circle-step circle-white">2</span>
+	         <h2 class="govuk-heading-m"><a href="/{{path }}/scenario2/recordFMEdecision">Make recommendation</a></h2>
+	       </li>
+	     </ul>
+	</div>
+	{% endif %}
+	
+	
+	
+		
+	{% endif %}
+	
+	
+	{% endif %}
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.scenario_tabs("evidence-portal",1,path1, customer._id) }}
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+        
+
+<p><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+<h1 class="heading-large mt10">Telephone conversation</h1>
+
+
+<div class="evidence-output">
+
+
+	<div class="output-row">
+		<h2 class="heading-medium">Date recorded</h2>
+		<p>12 July 2019</p>
+	</div>
+	
+	<div class="output-row">
+		<h2 class="heading-medium">Source</h2>
+		<p>Consultant</p>
+	</div>
+			
+			
+	<div class="output-row">		
+		<h2 class="heading-medium">Information gathered</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 				exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 					pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+	
+</div>
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

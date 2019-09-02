@@ -1,0 +1,373 @@
+{% extends path+"/_layout-case-simple6.html" %}
+
+
+{% block actioncolumn %}
+   
+  <p class="returnRef"><a href="/{{path }}/scenario6/referrals-fme" class="link-back">Return to case list</a></p>
+ 
+ <div class="caseStatus">
+ 
+
+ 
+ 
+{% if data['pbachoice']=='no'%}
+ 
+	 <h2 class="main-status"><span>Current case status</span>Appointment booked</h2>
+	 
+	 
+	 {% elif data['pbachoice']=='yes'%}
+	 
+	 <h2 class="main-status"><span>Current case status</span>Paper based review</h2>
+	 <!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/not-testing" class="button">Start assessment</a></h3>-->
+	 
+	 
+	 {% else %}
+	 
+ 
+
+{% if data['evidencePath']=='ev-ftf'%}
+
+	<h2 class="main-status"><span>Current case status</span>Ready to book</h2>
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+		
+	{% endif %}
+	
+	
+	{% elif data['evidencePath']=='ev-pba'%}
+	
+	{% if data['evidenceRecorded']=='record-yes'%}
+		<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal" class="button">Make recommendation</a></h3>
+		{% else %}
+		<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
+	{% endif %}
+	
+	
+	{% else %}
+	
+	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal" class="button">Make recommendation</a></h3>
+	
+	
+
+{% endif %}
+
+
+{% endif %}
+
+
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Jurgen Covault
+{% endblock %}
+
+{% block citizen_content %}
+
+{% if data['evidencePath']=='ev-ftf'%}
+
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+	
+	
+		{% if data['pbachoice']%}
+	
+		
+	{% else %}
+	<div class="panel panel-info panel-instruction fme-warning"><h2 class="heading-small">New evidence recorded</h2>
+	   <ul class="numeric" data-id="">
+	       <li>
+	         <span class="circle circle-step circle-white">1</span>
+	         <h2 class="govuk-heading-m">Roberto's case should be reviewed before making a recommendation</h2>
+	       </li>
+	
+	       <li>
+	         <span class="circle circle-step circle-white">2</span>
+	         <h2 class="govuk-heading-m"><a href="/{{path }}/scenario6/recordFMEdecision">Make recommendation</a></h2>
+	       </li>
+	     </ul>
+	</div>
+	{% endif %}
+	
+	
+	
+		
+	{% endif %}
+	
+	
+	{% endif %}
+
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.scenario_tabs("evidence-portal",1,path1, customer._id) }}
+  <div class="grid-row">
+
+    <div class="column-full">
+        
+
+
+
+<h1 class="heading-large mt10">Evidence</h1>
+
+
+
+<!-------- Portal --------->
+
+<div class="portal-display">
+		
+	
+	
+	<!------ ROW START ------>
+	<div class="grid-row">
+		
+		
+		<!---------------------------------- Card ---------------------------------->
+		<div class="column-half">
+		
+			<div class="portal-card">
+				<div class="portal-head">
+					<h3>What we have</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+				
+				<h4>Latest recorded evidence</h4>
+
+					<table>
+						<caption>Evidence item</caption>
+						
+						<thead>
+							<tr>
+								<th>Evidence type</th>
+								<th>Date recorded</th>
+							</tr>
+						
+						
+						
+						
+						
+		
+						
+						
+							
+						
+						
+						
+						<tbody>
+						
+						
+						{% if data['pbachoice']=='yes'%}
+						
+									<tr>
+										<td><a href="/{{path }}/scenario6/not-testing">paper based review justification</a></td>
+										<td>11 August 2019</td>
+									</tr>
+						
+						{% endif %}
+						
+						
+						
+							{% if data['evidenceChoice']=='ev-gp'%}
+	  	
+	  	
+						  		{% if data['evidenceRecorded']=='record-yes'%}
+						  		
+						  		
+						  			<tr>
+										<td><a href="/{{path }}/scenario6/not-testing">GP report</a></td>
+										<td>10 August 2019</td>
+									</tr> 		
+						  		
+						  		{% endif %}
+						  		
+						  		
+						  		
+						  	{% elif data['evidenceChoice']=='ev-fr'%}
+						  		
+						  		
+						  		 {% if data['evidenceRecorded']=='record-yes'%}
+						  		
+						  		
+						  			<tr>
+										<td><a href="/{{path }}/scenario6/not-testing">Factual report</a></td>
+										<td>10 August 2019</td>
+									</tr> 		
+						  		
+						  		{% endif %}
+	
+						  		  	
+						  	{% endif %}
+						  	
+						  	
+						  	
+						  	{% if data['evidenceRecorded']=='record-yes'%}
+						  	
+						  	
+						  		{% if data['appointmentReferral']%}
+								  		<tr>
+											<td><a href="/{{path }}/scenario6/referralJustify">Appointment referral justification</a></td>
+											<td>3 August 2019</td>
+										</tr>
+										{% else %}
+										
+										<tr>
+											<td><a href="/{{path }}/scenario6/not-testing">UC50</a></td>
+											<td>21 July 2019</td>
+										</tr>
+								  	
+								  	{% endif %}
+								
+								
+								{% else %}
+								
+								
+								{% if data['appointmentReferral']%}
+								  		<tr>
+											<td><a href="/{{path }}/scenario6/referralJustify">Appointment referral justification</a></td>
+											<td>3 August 2019</td>
+										</tr>
+										<tr>
+											<td><a href="/{{path }}/scenario6/not-testing">UC50</a></td>
+											<td>21 July 2019</td>
+										</tr>
+										{% else %}
+								
+										<!--<tr>
+											<td><a href="/{{path }}/scenario1/not-testing">Med 3</a></td>
+											<td>1 August 2019</td>
+										</tr>-->
+										<tr>
+											<td><a href="/{{path }}/scenario6/not-testing">UC50</a></td>
+											<td>21 July 2019</td>
+										</tr>
+										
+										{% endif %}
+							{% endif %}
+						</tbody>
+					</table>
+					
+					<p class="view-all"><a href="/{{path }}/scenario6/evidence-full" class="secondary-invert">View all recorded evidence</a></p>
+					
+				</div>
+				<!-- / inner card -->
+			</div>
+			<!-- / portal card -->
+			
+		</div>
+		<!---------------------------------- / Card ---------------------------------->
+		
+
+		
+		
+		<!---------------------------------- Card ---------------------------------->
+		<div class="column-half">
+		
+			<div class="portal-card">
+				<div class="portal-head">
+					<h3>Record</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+					<p>Choose the evidence type you want to record:</p>
+					<ul class="action-list">
+						<li><a href="/{{path }}/scenario6/recordTelephone" class="secondary-invert">Record a telephone conversation</a></li>
+						<li><a href="/{{path }}/scenario6/not-testing" class="secondary-invert">Record other evidence</a></li>
+					</ul>
+					
+					
+					
+					
+					{% if data['evidenceRecorded']=='record-yes'%}
+					
+					{% else %}
+					
+			
+					{% if data['evidenceChoice'] %}		
+					<div class="requested-evidence">
+		
+							<ul class="action-list req-list">
+								{% if data['evidenceChoice']=='ev-gp'%}
+								<li><p>GP report<span>Requested on 3 August 2019</span></p>
+								<a href="/{{path }}/scenario6/record-evidence" class="secondary-invert">Record GP report</a></li>
+								{% elif data['evidenceChoice']=='ev-fr'%}
+								<li><p>Factual report<span>Requested on 3 August 2019</span></p>
+								<a href="/{{path }}/scenario6/record-evidence" class="secondary-invert">Record factual report</a></li>
+								{% endif %}
+							</ul>
+						</div>
+						{% else %}
+						{% endif %}
+
+					{% endif %}
+		
+					
+					
+		
+					
+				</div>
+				<!-- / inner card -->
+			</div>
+			<!-- / portal card -->
+			
+		</div>
+		<!---------------------------------- / Card ---------------------------------->
+		
+		
+		
+		
+		
+				
+	</div>
+	<!------ ROW END ------->
+	
+	
+</div>
+
+<!------- / PORTAL END ------->
+
+
+
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

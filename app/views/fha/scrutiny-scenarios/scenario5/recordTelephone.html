@@ -1,0 +1,182 @@
+{% extends path+"/_layout-case-simple4.html" %}
+
+
+{% block actioncolumn %}
+   
+
+
+<p class="returnRef"><a href="javascript: history.go(-1)" class="link-back">Return to case list</a></p>
+
+ <div class="caseStatus">
+ 	
+	<p class="main-status"><span>Recording evidence</span></p>
+
+ </div>
+{% endblock %}
+
+{% block citizen_detail %}
+Kenneth Robertson
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+    
+   
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+        
+
+
+    	
+    	<h1 class="heading-large">Record a telephone conversation</h1>
+    	
+    	
+   
+		
+		
+		<div class="evidence-requests mt30">
+				
+				
+			<form action="/{{path }}/scenario4/evidence-portal" method="POST" class="form">
+			
+			
+					<div class="form-group">
+						<fieldset>
+						  
+							  <legend class="heading-medium mb5">Source of information:</legend>
+
+
+										<div class="multiple-choice">
+											<input id="claimant" type="radio" name="sourceTele" value="roberto">
+											<label for="claimant">GP</label>
+										</div>
+										
+
+										<div class="multiple-choice">
+											<input id="gpTele" type="radio" name="sourceTele" value="jurgen">
+											<label for="gpTele">HCP</label>
+										</div>
+										
+										<div class="multiple-choice" data-target="otherName">
+											<input id="other" type="radio" name="sourceTele" value="other">
+											<label for="other">Other</label>
+										</div>
+										
+										<div class="panel js-hidden" id="otherName">
+											
+											<fieldset>
+						  
+											  <legend class="heading-small mb5">Choose a source:</legend>
+				
+				
+													<div class="multiple-choice">
+														<input id="Consultant" type="radio" name="sourceTele2" value="Consultant">
+														<label for="Consultant">Consultant</label>
+													</div>
+													
+													<div class="multiple-choice">
+														<input id="Specialist" type="radio" name="sourceTele2" value="Specialist">
+														<label for="Specialist">Specialist doctor</label>
+													</div>
+													
+													<div class="multiple-choice">
+														<input id="Psychiatrist" type="radio" name="sourceTele2" value="Psychiatrist">
+														<label for="Psychiatrist">Psychiatrist</label>
+													</div>
+													
+													<div class="multiple-choice">
+														<input id="Community" type="radio" name="sourceTele2" value="Community">
+														<label for="Community">Community psychiatric nurse</label>
+													</div>
+													
+													<div class="multiple-choice">
+														<input id="Physiotherapist" type="radio" name="sourceTele2" value="Physiotherapist">
+														<label for="Physiotherapist">Physiotherapist</label>
+													</div>
+													
+													<div class="multiple-choice">
+														<input id="Occupational" type="radio" name="sourceTele2" value="Occupational">
+														<label for="Occupational">Occupational therapist</label>
+													</div>
+													
+													<div class="multiple-choice">
+														<input id="Social" type="radio" name="sourceTele2" value="Social">
+														<label for="Social">Social worker</label>
+													</div>
+													
+													<div class="multiple-choice">
+														<input id="Support" type="radio" name="sourceTele2" value="Support">
+														<label for="Support">Support worker</label>
+													</div>
+													
+													<div class="multiple-choice">
+														<input id="Carer" type="radio" name="sourceTele2" value="Carer">
+														<label for="Carer">Carer</label>
+													</div>
+		
+														
+											</fieldset>
+											
+										</div>
+
+
+							</fieldset>
+						</div>
+			
+										
+						<div class="form-group">	
+
+							<label for="typeReasonTele" class="heading-medium mb10">Information gathered:</label>
+							<textarea id="typeReasonTele" class="form-control form-control-3-4" rows="10"></textarea>
+
+						</div>
+					
+				
+				<p class="mt30"><input type="submit" class="button" value="Save and continue"></p>
+				
+
+				
+				
+				</form>
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
