@@ -3,12 +3,63 @@
 
 {% block actioncolumn %}
    
- <p class="returnRef"><a href="/{{path }}/scenario6/referrals-fme" class="link-back">Return to case list</a></p>
+  <p class="returnRef"><a href="/{{path }}/scenario6/referrals-fme" class="link-back">Return to case list</a></p>
+ 
  <div class="caseStatus">
-	 <h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+ 
+
+ 
+ 
+{% if data['pbachoice']=='no'%}
+ 
+	 <h2 class="main-status"><span>Current case status</span>Appointment booked</h2>
+	 
+	 
+	 {% elif data['pbachoice']=='yes'%}
+	 
+	 <h2 class="main-status"><span>Current case status</span>Paper based review</h2>
+	<!-- <h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/not-testing" class="button">Start assessment</a></h3> -->
+	 
+	 
+	 {% else %}
+	 
+ 
+
+{% if data['evidencePath']=='ev-ftf'%}
+
+	<h2 class="main-status"><span>Current case status</span>Ready to book</h2>
+
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+		
+	{% endif %}
+	
+	
+	{% elif data['evidencePath']=='ev-pba'%}
+	
+	{% if data['evidenceRecorded']=='record-yes'%}
+		<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+		<!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal" class="button">Make recommendation</a></h3> -->
+		{% else %}
+		<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
+	{% endif %}
+	
+	
+	{% else %}
+	
+	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+	<!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal" class="button">Make recommendation</a></h3>-->
+	
+	
+
+{% endif %}
+
+
+{% endif %}
 
 
 </div>
+
 {% endblock %}
 
 {% block citizen_detail %}
@@ -39,17 +90,9 @@ Jurgen Covault
   <div class="grid-row">
 
     <div class="column-two-thirds">
-        
 
-{% if data['evidencePath']=='ev-ftf'%}
-		<div class="panel panel-info panel-instruction fme-warning mt30">
-    		<h2 class="heading-small">{% if data['evidenceChoice']=='ev-gp'%}GP report{% else %}Factual report{% endif %} requested</h2>
-		   <p>Roberto will be referred for a face to face appointment pending a review of the requested evidence</p>
-		</div>
-{% else %}
-{% endif %}
     	
-    	<h1 class="heading-large">Appointment referral justification</h1>
+    	<h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Paper based review</h1>
     	
     	
    
@@ -64,7 +107,7 @@ Jurgen Covault
 					<div class="form-group">
 						<fieldset>
 						  
-							  <legend class="heading-medium mb5">Why does Roberto need a face to face assessment?</legend>
+							  <legend class="heading-medium mb5">Why does Jurgen need a paper based review?</legend>
 
 
 										<div class="multiple-choice" data-target="justify-details">
@@ -113,42 +156,6 @@ Jurgen Covault
 			
 			
 					
-
-						<div class="form-group">
-						<fieldset>
-						  
-							  <legend class="heading-medium mb5">Type of appointment needed:</legend>
-
-
-										<div class="multiple-choice">
-											<input id="type1" type="radio" name="types" value="nonNeuro">
-											<label for="type1">Non neuro</label>
-										</div>
-										
-
-										<div class="multiple-choice">
-											<input id="type2" type="radio" name="types" value="Neuro">
-											<label for="type2">Neuro</label>
-										</div>
-										
-										<div class="multiple-choice" data-target="justify-type">
-											<input id="type3" type="radio" name="types" value="complexNeuro">
-											<label for="type3">Complex neuro</label>
-										</div>
-										
-										
-										
-										<div class="panel js-hidden" id="justify-type">		
-	
-											<label for="typeReason" class="form-label">Reason for Complex Neuro appointment:</label>
-											<textarea id="typeReason" class="form-control form-control-3-4" rows="5" name="typeReasonJustify"></textarea>
-
-										</div>
-
-							</fieldset>
-						</div>
-						
-						
 						<div class="form-group">
 						<fieldset>
 						  
