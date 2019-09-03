@@ -2541,6 +2541,42 @@ table.profile-table .col5{
 }
 
 
+.profile-table td span.container{
+ background:#dee0e2;
+ display:block;
+ padding:2px;
+ margin-top:1px;
+ font-size:16px;
+}
+
+.profile-table td span.container .badge{
+  font-size:16px;
+}
+
+.profile-table input[type="text"]:disabled {
+  border:none;
+  font-size:16px;
+  display:inline;
+  background:transparent;
+  color:#000;
+}
+
+table.profile-table td, table.profile-table th{
+  font-size:17px;    
+}
+
+table.profile-table td{
+        font-size:16px;
+}
+
+ span.booked {
+  display:block;
+  text-align:center;
+  font-size:16px;
+  margin-top:5px;
+}
+
+
 
 
 @import "inc/scrutiny-scenarios";

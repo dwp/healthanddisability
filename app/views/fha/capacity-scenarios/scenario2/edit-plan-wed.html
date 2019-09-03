@@ -14,49 +14,10 @@
               <div class="column-three-quarters capacity">
   <a href="javascript: history.go(-1)" class="link-back">Back</a>   
 
-   <h1 class="heading-large">Edit a capacity plan for {% include path+"/scenario2/_ACname.html" %} </h1>
+   <h1 class="heading-large">Edit capacity for {% include path+"/scenario2/_ACname.html" %} </h1>
 
-   <h2 class="heading-medium">Monday 22 July</h2>
+   <h2 class="heading-medium">Wednesday 25 September</h2>
 {% include path+"/scenario2/_info-panel-amount.html" %} 
-
-<style>
-.profile-table td span.container{
- background:#dee0e2;
- display:block;
- padding:2px;
- margin-top:1px;
- font-size:16px;
-}
-
-.profile-table td span.container .badge{
-  font-size:16px;
-}
-
-.profile-table input[type="text"]:disabled {
-  border:none;
-  font-size:16px;
-  display:inline;
-  width:35px;
-  background:transparent;
-  color:#000;
-}
-
-table.profile-table td, table.profile-table th{
-  font-size:17px;    
-}
-
-table.profile-table td{
-        font-size:16px;
-}
-
- span.booked {
-  display:block;
-  text-align:center;
-  font-size:16px;
-  margin-top:5px;
-}
-
-</style>
    <form class="form" action="view-plan" method="post">
 
               <table class="profile-table">
@@ -1279,6 +1240,11 @@ table.profile-table td{
               	<div class="check-choice visually-hidden">
                     <input id="wedvisited" name="wedvisited" type="checkbox" value="yes" checked>
                     <label for=""></label>
+                </div>
+
+                <div class="check-choice visually-hidden">
+                <input id="visited" name="visited" type="checkbox" value="yes" checked>
+                <label for=""></label>
                 </div>
               </form>
             </div>
