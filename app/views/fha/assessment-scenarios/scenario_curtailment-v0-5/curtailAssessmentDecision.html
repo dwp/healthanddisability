@@ -1,4 +1,4 @@
-{% extends path+"/_layout-case-action.html" %}
+{% extends path+"/scenario_curtailment-v0-5/_layout-case-simple_clear-assessment-complete.html" %}
 
 {% block citizen_content %}
 
@@ -23,7 +23,7 @@
 	
 	
 
-<form method="post" action="exceptionalCircumstances" id="sufficient-evidence">
+<form method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/exceptionalCircumstances" id="sufficient-evidence">
 	
 <div class="form-group">
   <fieldset class="inline">
