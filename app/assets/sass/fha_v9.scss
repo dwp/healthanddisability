@@ -2108,6 +2108,7 @@ table.profile-table .col5{
 	  display: inline-block;
 	  text-decoration: none;
 	  padding-bottom: 6px;
+
 		  &:hover {
 			  background: rgba($green, 0.05);
 			  border: 2px solid #0b6831;
@@ -2404,7 +2405,7 @@ table.profile-table .col5{
 				display: block;
 				font-weight: bold;
 				background: $grey-4;
-				font-size: 24px;
+				font-size: 22px;
 			}
 		}
 		
@@ -2413,6 +2414,7 @@ table.profile-table .col5{
 			
 			h4 {
 				padding: .4em 0;
+				font-weight: bold;
 			}
 
 			
@@ -2444,9 +2446,22 @@ table.profile-table .col5{
 				}
 				
 				&.medical-list {
-					td {
+					th, td {
 						&:first-child {
-							width: 50%;
+							width: 60%;
+						}
+						&:last-child {
+							text-align: right;
+						}
+					}
+				}
+				
+				&.evidence-list {
+					th, td {	
+						text-align: right;
+						&:first-child {
+							width: 70%;
+							text-align: left;
 						}
 					}
 				}
@@ -2459,7 +2474,7 @@ table.profile-table .col5{
 			}
 			
 			.view-all {
-				margin: 30px 0 .7em 0;
+				margin: 20px 0 .7em 0;
 			}
 			
 			.list-bullet {
@@ -2469,6 +2484,7 @@ table.profile-table .col5{
 			}
 			
 			.action-list {
+			margin-top: 10px;
 				li {
 					border-top: 1px solid $grey-2;
 					padding: .7em 0;
@@ -2480,6 +2496,9 @@ table.profile-table .col5{
 					&:first-child {
 						border-top: 0;
 						padding-top: 0;
+					}
+					h5 {
+						font-weight: normal;
 					}
 				}
 

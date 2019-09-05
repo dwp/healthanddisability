@@ -1,0 +1,88 @@
+{% extends path+"/scenario_curtailment-v0-5/_layout-case-simple_clear-assessment-complete.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+<h1 class="heading-large">Have you found evidence for LCWRA?</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	
+	
+
+<form method="post" action="exceptionalCircumstances" id="sufficient-evidence">
+	
+<div class="form-group">
+  <fieldset>
+
+
+    <div class="multiple-choice" data-target="consultedHCP">
+      <input id="radio-inline-1" type="radio" name="radio-inline-group" value="~/{{path}}/scenario_curtailment-v0-5/exceptionalCircumstances">
+      <label for="radio-inline-1">Yes</label>
+    </div>
+	<div class="panel js-hidden" id="consultedHCP">
+			<div class="form-group">
+			<label class="form-label" for="consulted">Name of senior practitioner if consulted</label>
+			<textarea class="form-control form-control-3-4" name="consultedPractitioner" id="consulted" rows="1"></textarea>
+		</div>
+   	
+				    </div>
+    <div class="multiple-choice">
+      <input id="radio-inline-2" type="radio" name="radio-inline-group" value="~/{{path}}/scenario/not-testing">
+      <label for="radio-inline-2">No</label>
+    </div>
+
+  </fieldset>
+</div>
+
+<p><input type="submit" class="button" value="Continue" id="submitButton"></p>
+
+		</form>	
+
+  </div><!-- column -->
+</div><!-- row -->
+
+
+
+
+<script type="text/javascript">
+
+$("radio-inline-group").change(function(){
+if ($("radio-inline-group").val() == 'yes'){
+   $("#sufficient-evidence").attr("action","exceptionalCircumstances");
+}
+else
+{
+   $("#sufficient-evidence").attr("action","wca-index");
+}
+});
+</script>
+
+{% endblock %}
+
+

@@ -141,7 +141,7 @@ Jurgen Covault
 		
 		
 		<!---------------------------------- Card ---------------------------------->
-		<div class="column-half">
+		<div class="column-two-thirds">
 		
 			<div class="portal-card">
 				<div class="portal-head">
@@ -151,9 +151,14 @@ Jurgen Covault
 
 				<div class="portal-inner">
 				
-				<h4>Latest recorded evidence</h4>
+				
 
-					<table>
+				
+				
+				
+				<h4>Latest recorded medical evidence</h4>
+
+					<table class="evidence-list">
 						<caption>Evidence item</caption>
 						
 						<thead>
@@ -179,7 +184,7 @@ Jurgen Covault
 						{% if data['pbachoice']=='yes'%}
 						
 									<tr>
-										<td><a href="/{{path }}/scenario6/not-testing">paper based review justification</a></td>
+										<td><a href="/{{path }}/scenario6/not-testing">Paper based review justification</a></td>
 										<td>11 August 2019</td>
 									</tr>
 						
@@ -200,9 +205,11 @@ Jurgen Covault
 						  		
 						  		{% endif %}
 						  		
+						  	{% endif %}
 						  		
 						  		
-						  	{% elif data['evidenceChoice']=='ev-fr'%}
+						  		
+						  	{% if data['evidenceChoice']=='ev-fr'%}
 						  		
 						  		
 						  		 {% if data['evidenceRecorded']=='record-yes'%}
@@ -219,8 +226,7 @@ Jurgen Covault
 						  	{% endif %}
 						  	
 						  	
-						  	
-						  	{% if data['evidenceRecorded']=='record-yes'%}
+
 						  	
 						  	
 						  		{% if data['appointmentReferral']%}
@@ -228,51 +234,58 @@ Jurgen Covault
 											<td><a href="/{{path }}/scenario6/referralJustify">Appointment referral justification</a></td>
 											<td>3 August 2019</td>
 										</tr>
-										{% else %}
-										
-										<tr>
-											<td><a href="/{{path }}/scenario6/not-testing">UC50</a></td>
-											<td>21 July 2019</td>
-										</tr>
-								  	
+																		  	
 								  	{% endif %}
-								
-								
-								{% else %}
-								
-								
-								{% if data['appointmentReferral']%}
-								  		<tr>
-											<td><a href="/{{path }}/scenario6/referralJustify">Appointment referral justification</a></td>
-											<td>3 August 2019</td>
-										</tr>
-										<tr>
-											<td><a href="/{{path }}/scenario6/not-testing">UC50</a></td>
-											<td>21 July 2019</td>
-										</tr>
-										{% else %}
-								
-										<!--<tr>
-											<td><a href="/{{path }}/scenario1/not-testing">Med 3</a></td>
+								  	
+								  	<tr>
+											<td><a href="#">UC50</a></td>
 											<td>1 August 2019</td>
-										</tr>-->
-										<tr>
-											<td><a href="/{{path }}/scenario6/not-testing">UC50</a></td>
-											<td>21 July 2019</td>
-										</tr>
-										
-										{% endif %}
-							{% endif %}
-						</tbody>
+										</tr> 	
+								  	
+								  	
+							</tbody>
 					</table>
 					
 					<p class="view-all"><a href="/{{path }}/scenario6/evidence-full" class="secondary-invert">View all recorded evidence</a></p>
+					
+					<div class="previousDecisions">
+						<h4>Previous decisions</h4>
+
+						
+						
+						<table class="evidence-list">
+							<caption>Evidence item</caption>
+							
+							<thead>
+								<tr>
+									<th>Decision</th>
+									<th>Date of decision</th>
+								</tr>
+							</thead>
+							
+							<tbody>
+								<tr>
+									<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+									<td>28 June 2010</td>
+								</tr>
+							</tbody>
+						</table>
+						
+						<p class="view-all"><a href="/{{path }}/scenario6/not-testing" class="secondary-invert">Add or edit a previous decision</a></p>
+
+						
+						
+						
+					</div>
 					
 				</div>
 				<!-- / inner card -->
 			</div>
 			<!-- / portal card -->
 			
+			
+			
+						
 		</div>
 		<!---------------------------------- / Card ---------------------------------->
 		
@@ -280,55 +293,38 @@ Jurgen Covault
 		
 		
 		<!---------------------------------- Card ---------------------------------->
-		<div class="column-half">
+		<div class="column-third">
 		
 			<div class="portal-card">
 				<div class="portal-head">
-					<h3>Record</h3>
+					<h3>Record evidence</h3>
 				</div>
 				<!-- / title -->
 
 				<div class="portal-inner">
-					<p>Choose the evidence type you want to record:</p>
-					<ul class="action-list">
-						<li><a href="/{{path }}/scenario6/recordTelephone" class="secondary-invert">Record a telephone conversation</a></li>
-						<li><a href="/{{path }}/scenario6/not-testing" class="secondary-invert">Record other evidence</a></li>
-					</ul>
-					
-					
-					
-					
-					{% if data['evidenceRecorded']=='record-yes'%}
-					
-					{% else %}
-					
-			
-					{% if data['evidenceChoice'] %}		
-					<div class="requested-evidence">
-		
-							<ul class="action-list req-list">
-								{% if data['evidenceChoice']=='ev-gp'%}
-								<li><p>GP report<span>Requested on 3 August 2019</span></p>
-								<a href="/{{path }}/scenario6/record-evidence" class="secondary-invert">Record GP report</a></li>
-								{% elif data['evidenceChoice']=='ev-fr'%}
-								<li><p>Factual report<span>Requested on 3 August 2019</span></p>
-								<a href="/{{path }}/scenario6/record-evidence" class="secondary-invert">Record factual report</a></li>
-								{% endif %}
-							</ul>
-						</div>
-						{% else %}
-						{% endif %}
 
-					{% endif %}
-		
-					
-					
-		
-					
+					<ul class="action-list">
+						
+							{% if data['evidenceChoice']=='ev-gp'%}
+								<li><a href="/{{path }}/scenario6/record-evidence" class="secondary-invert">GP report</a></li>
+								{% else %}
+							{% endif %}		
+							{% if data['evidenceChoice']=='ev-fr'%}
+								<li><a href="/{{path }}/scenario6/record-evidence" class="secondary-invert">Factual report</a></li>
+								{% else %}
+							{% endif %}
+						<li><a href="/{{path }}/scenario6/recordTelephone" class="secondary-invert">Telephone conversation</a></li>
+						<li><a href="/{{path }}/scenario6/not-testing" class="secondary-invert">Other evidence</a></li>
+					</ul>
+	
 				</div>
 				<!-- / inner card -->
 			</div>
 			<!-- / portal card -->
+			
+			
+	
+			
 			
 		</div>
 		<!---------------------------------- / Card ---------------------------------->
