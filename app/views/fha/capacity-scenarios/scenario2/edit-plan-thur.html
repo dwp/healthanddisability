@@ -18,476 +18,449 @@
 
    <h2 class="heading-medium">Thursday 26 September</h2>
 {% include path+"/scenario2/_info-panel-amount.html" %} 
+<p>
+<a href="edit-plan-times-thur" class="secondary-invert">Add or edit slot times or benefits</a>
+</p>
    <form class="form" action="view-plan" method="post">
 
-              <table class="profile-table">
-                <thead>
+              <table class="profile-table edit">
+                 <thead>
                   <tr>
                     <th></th>
                     <!-- <th>Assessment Centre</th> -->
-                    <th>Complex neuro <span>Available</span></th>
-                    <th>Neuro<span>Available</span></th>
-                    <th>Non neuro<span>Available</span></th>
+                    <th>Complex neuro<br> <span>Available</span><span>Booked</span></th>
+                    <th>Neuro<br><span>Available</span><span>Booked</span></th>
+                    <th>Non neuro<br><span>Available</span><span>Booked</span></th>
                         {% if checked('e_benefits_thur','ben2') %}
-                    <th>IIDB <span>Available</span></th>
+                    <th>IIDB<br> <span>Available</span><span>Booked</span></th>
                     {% endif %}
-                    <th class="col5"><span></span>Appointments <span>Total</span></th>
+                    <th class="col5"><span></span>Total<br> <span class="block">Opened</span></th>
                   
                 
-                     <th class="col6">UCB<span>Available</span></th>
+                     <th class="col6">UCB<br><span>Available</span><span>Booked</span></th>
                
                     
                   </tr>
                 </thead>
 
-           {% if checked('thurtimes','9') %}
+         
                 <tr>
                   <th class="col">9:00am</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_1_1"  type="text" name="col_thur_1_1"  type="text" value="{{col_thur_1_1}}" >
-                        <span class='booked'><span class="bold">0</span> Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked'><span class="bold">0</span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_2_1"  type="text" name="col_thur_2_1"  type="text" value="{{col_thur_2_1}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked <span class="block">1 is UCB</span></span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_3_1"  type="text" name="col_thur_3_1"  type="text" value="{{col_thur_3_1}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked'><span class="bold">1 <span class="badge block">1 is UCB</span></span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_3_1"  type="text" name="col_thur_3_1"  type="text" value="{% if data['visited']%}{{col_thur_3_1}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_1"  type="text" name="col_thur_4_1"  type="text" value="{{col_thur_4_1}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
           <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
 						<input class="form-control" id="rowsum_thur1" type="text" name="rowsum_thur1" readonly  value="{{ rowsum_thur1 }}">
                                                 <input class="visually-hidden" id="bookedsum_thur_1"  type="text" name="bookedsum_thur_1"  type="text" value="{{ bookedsum_thur_1 }}" >
-					</td>
+					</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_1"  type="text" name="col_thur_6_1"  type="text" value="{{col_thur_6_1}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                    </td>
+                        <span class='booked'><span class="bold">1 </span></span>
+                    </div></td>
                 </tr>
 
-           {% endif %}
-
-                {% if checked('thurtimes','915') %}
+         
                 <tr>
                   <th class="col">9:15am</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_1_2"  type="text" name="col_thur_1_2"  type="text" value="{{col_thur_1_2}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_2_2"  type="text" name="col_thur_2_2"  type="text" value="{{col_thur_2_2}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_2_2"  type="text" name="col_thur_2_2"  type="text" value="{% if data['visited']%}{{col_thur_2_2}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_3_2"  type="text" name="col_thur_3_2"  type="text" value="{{col_thur_3_2}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_2"  type="text" name="col_thur_4_2"  type="text" value="{{col_thur_4_2}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur2" type="text" name="rowsum_thur2" readonly  value="{{rowsum_thur2}}">
                         <input class="visually-hidden" id="bookedsum_thur_2"  type="text" name="bookedsum_thur_2"  type="text" value="{{ bookedsum_thur_2 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_2"  type="text" name="col_thur_6_2"  type="text" value="{{col_thur_6_2}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
-           {% endif %}
-
-
-                        {% if checked('thurtimes','930') %}
+         
                 <tr>
                   <th class="col">9:30am</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_1_3"  type="text" name="col_thur_1_3"  type="text" value="{{col_thur_1_3}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_2_3"  type="text" name="col_thur_2_3"  type="text" value="{{col_thur_2_3}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_3_3"  type="text" name="col_thur_3_3"  type="text" value="{{col_thur_3_3}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_2_3"  type="text" name="col_thur_2_3"  type="text" value="{% if data['visited']%}{{col_thur_2_3}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_3_3"  type="text" name="col_thur_3_3"  type="text" value="{% if data['visited']%}{{col_thur_3_3}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_3"  type="text" name="col_thur_4_3"  type="text" value="{{col_thur_4_3}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur3" type="text" name="rowsum_thur3" readonly  value="{{rowsum_thur3}}">
                         <input class="visually-hidden" id="bookedsum_thur_3"  type="text" name="bookedsum_thur_3"  type="text" value="{{ bookedsum_thur_3 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_3"  type="text" name="col_thur_6_3"  type="text" value="{{col_thur_6_3}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
-           {% endif %}
-
-
-                {% if checked('thurtimes','945') %}
+        
                 <tr>
                   <th class="col">9:45am</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_1_4"  type="text" name="col_thur_1_4"  type="text" value="{{col_thur_1_4}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_2_4"  type="text" name="col_thur_2_4"  type="text" value="{{col_thur_2_4}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_1_4"  type="text" name="col_thur_1_4"  type="text" value="{% if data['visited']%}{{col_thur_1_4}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_2_4"  type="text" name="col_thur_2_4"  type="text" value="{% if data['visited']%}{{col_thur_2_4}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_3_4"  type="text" name="col_thur_3_4"  type="text" value="{{col_thur_3_4}}" >
-                        <span class='booked visually-hidden'><span class="bold"> </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold"> </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_4"  type="text" name="col_thur_4_4"  type="text" value="{{col_thur_4_4}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur4" type="text" name="rowsum_thur4" readonly  value="{{rowsum_thur4}}">
                         <input class="visually-hidden" id="bookedsum_thur_4"  type="text" name="bookedsum_thur_4"  type="text" value="{{ bookedsum_thur_4 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_4"  type="text" name="col_thur_6_4"  type="text" value="{{col_thur_6_4}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
-           {% endif %}
-
-
-                {% if checked('thurtimes','10') %}
                 <tr>
                   <th class="col">10:00am</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_1_5"  type="text" name="col_thur_1_5"  type="text" value="{{col_thur_1_5}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_2_5"  type="text" name="col_thur_2_5"  type="text" value="{{col_thur_2_5}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_2_5"  type="text" name="col_thur_2_5"  type="text" value="{% if data['visited']%}{{col_thur_2_5}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_3_5"  type="text" name="col_thur_3_5"  type="text" value="{{col_thur_3_5}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_5"  type="text" name="col_thur_4_5"  type="text" value="{{col_thur_4_5}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur5" type="text" name="rowsum_thur5" readonly  value="{{rowsum_thur5}}">
                         <input class="visually-hidden" id="bookedsum_thur_5"  type="text" name="bookedsum_thur_5"  type="text" value="{{ bookedsum_thur_5 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_5"  type="text" name="col_thur_6_5"  type="text" value="{{col_thur_6_5}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
-           {% endif %}
-
-                       {% if checked('thurtimes','1015') %}
                 <tr>
                   <th class="col">10:15am</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_1_6"  type="text" name="col_thur_1_6"  type="text" value="{{col_thur_1_6}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_2_6"  type="text" name="col_thur_2_6"  type="text" value="{{col_thur_2_6}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_2_6"  type="text" name="col_thur_2_6"  type="text" value="{% if data['visited']%}{{col_thur_2_6}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_3_6"  type="text" name="col_thur_3_6"  type="text" value="{{col_thur_3_6}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_6"  type="text" name="col_thur_4_6"  type="text" value="{{col_thur_4_6}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur6" type="text" name="rowsum_thur6" readonly  value="{{ rowsum_thur6 }}">
                         <input class="visually-hidden" id="bookedsum_thur_6"  type="text" name="bookedsum_thur_6"  type="text" value="{{ bookedsum_thur_6 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_6"  type="text" name="col_thur_6_6"  type="text" value="{{col_thur_6_6}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
-           {% endif %}
-
-                               {% if checked('thurtimes','1030') %}
+        
                 <tr>
                   <th class="col">10:30am</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_1_7"  type="text" name="col_thur_1_7"  type="text" value="{{col_thur_1_7}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_1_7"  type="text" name="col_thur_1_7"  type="text" value="{% if data['visited']%}{{col_thur_1_7}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_2_7"  type="text" name="col_thur_2_7"  type="text" value="{{col_thur_2_7}}" >
-                        <span class='booked'><span class="bold">0 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_3_7"  type="text" name="col_thur_3_7"  type="text" value="{{col_thur_3_7}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked'><span class="bold">0 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_3_7"  type="text" name="col_thur_3_7"  type="text" value="{% if data['visited']%}{{col_thur_3_7}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_7"  type="text" name="col_thur_4_7"  type="text" value="{{col_thur_4_7}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur7" type="text" name="rowsum_thur7" readonly  value="{{ rowsum_thur7 }}">
                         <input class="visually-hidden" id="bookedsum_thur_7"  type="text" name="bookedsum_thur_7"  type="text" value="{{ bookedsum_thur_7 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_7"  type="text" name="col_thur_6_7"  type="text" value="{{col_thur_6_7}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
-           {% endif %}
-
-
-                               {% if checked('thurtimes','1045') %}
                 <tr>
                   <th class="col">10:45am</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_1_8"  type="text" name="col_thur_1_8"  type="text" value="{{col_thur_1_8}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_2_8"  type="text" name="col_thur_2_8"  type="text" value="{{col_thur_2_8}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_2_8"  type="text" name="col_thur_2_8"  type="text" value="{% if data['visited']%}{{col_thur_2_8}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_3_8"  type="text" name="col_thur_3_8"  type="text" value="{{col_thur_3_8}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_8"  type="text" name="col_thur_4_8"  type="text" value="{{col_thur_4_8}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur8" type="text" name="rowsum_thur8" readonly  value="{{ rowsum_thur8 }}">
                         <input class="visually-hidden" id="bookedsum_thur_8"  type="text" name="bookedsum_thur_8"  type="text" value="{{ bookedsum_thur_8 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_8"  type="text" name="col_thur_6_8"  type="text" value="{{col_thur_6_8}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
-           {% endif %}
-
-
-                               {% if checked('thurtimes','11') %}
+   
                 <tr>
                   <th class="col">11:00am</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_1_9"  type="text" name="col_thur_1_9"  type="text" value="{{col_thur_1_9}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_2_9"  type="text" name="col_thur_2_9"  type="text" value="{{col_thur_2_9}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_2_9"  type="text" name="col_thur_2_9"  type="text" value="{% if data['visited']%}{{col_thur_2_9}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_3_9"  type="text" name="col_thur_3_9"  type="text" value="{{col_thur_3_9}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_9"  type="text" name="col_thur_4_9"  type="text" value="{{col_thur_4_9}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur9" type="text" name="rowsum_thur9" readonly  value="{{ rowsum_thur9 }}">
                         <input class="visually-hidden" id="bookedsum_thur_9"  type="text" name="bookedsum_thur_9"  type="text" value="{{ bookedsum_thur_9 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_9"  type="text" name="col_thur_6_9"  type="text" value="{{col_thur_6_9}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
-           {% endif %}
-
-
-
-                               {% if checked('thurtimes','1115') %}
                 <tr>
                   <th class="col">11:15am</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_1_10"  type="text" name="col_thur_1_10"  type="text" value="{{col_thur_1_10}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_2_10"  type="text" name="col_thur_2_10"  type="text" value="{{col_thur_2_10}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_1_10"  type="text" name="col_thur_1_10"  type="text" value="{% if data['visited']%}{{col_thur_1_10}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_2_10"  type="text" name="col_thur_2_10"  type="text" value="{% if data['visited']%}{{col_thur_2_10}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_3_10"  type="text" name="col_thur_3_10"  type="text" value="{{col_thur_3_10}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_10"  type="text" name="col_thur_4_10"  type="text" value="{{col_thur_4_10}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur10" type="text" name="rowsum_thur10" readonly  value="{{ rowsum_thur10 }}">
                         <input class="visually-hidden" id="bookedsum_thur_10"  type="text" name="bookedsum_thur_10"  type="text" value="{{ bookedsum_thur_10 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_10"  type="text" name="col_thur_6_10"  type="text" value="{{col_thur_6_10}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
-           {% endif %}
+    
 
 
                                {% if checked('thurtimes','1130') %}
                 <tr>
                   <th class="col">11:30am</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_1_11"  type="text" name="col_thur_1_11"  type="text" value="{{col_thur_1_11}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_2_11"  type="text" name="col_thur_2_11"  type="text" value="{{col_thur_2_11}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_3_11"  type="text" name="col_thur_3_11"  type="text" value="{{col_thur_3_11}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_11"  type="text" name="col_thur_4_11"  type="text" value="{{col_thur_4_11}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur11" type="text" name="rowsum_thur11" readonly  value="{{ rowsum_thur11 }}">
                         <input class="visually-hidden" id="bookedsum_thur_11"  type="text" name="bookedsum_thur_11"  type="text" value="{{ bookedsum_thur_11 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_11"  type="text" name="col_thur_6_11"  type="text" value="{{col_thur_6_11}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
            {% endif %}
 
 
-                               {% if checked('thurtimes','1145') %}
                 <tr>
                   <th class="col">11:45am</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_1_12"  type="text" name="col_thur_1_12"  type="text" value="{{col_thur_1_12}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_2_12"  type="text" name="col_thur_2_12"  type="text" value="{{col_thur_2_12}}" >
-                        <span class='booked'><span class="bold">2 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_2_12"  type="text" name="col_thur_2_12"  type="text" value="{% if data['visited']%}{{col_thur_2_12}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">2 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_3_12"  type="text" name="col_thur_3_12"  type="text" value="{{col_thur_3_12}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_12"  type="text" name="col_thur_4_12"  type="text" value="{{col_thur_4_12}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur12" type="text" name="rowsum_thur12" readonly  value="{{ rowsum_thur12 }}">
                         <input class="visually-hidden" id="bookedsum_thur_12"  type="text" name="bookedsum_thur_12"  type="text" value="{{ bookedsum_thur_12 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_12"  type="text" name="col_thur_6_12"  type="text" value="{{col_thur_6_12}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
-           {% endif %}
+  
 
 
                                {% if checked('thurtimes','12') %}
                 <tr>
                   <th class="col">12:00pm</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_1_13"  type="text" name="col_thur_1_13"  type="text" value="{{col_thur_1_13}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_2_13"  type="text" name="col_thur_2_13"  type="text" value="{{col_thur_2_13}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_3_13"  type="text" name="col_thur_3_13"  type="text" value="{{col_thur_3_13}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_13"  type="text" name="col_thur_4_13"  type="text" value="{{col_thur_4_13}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur13" type="text" name="rowsum_thur13" readonly  value="{{ rowsum_thur13 }}">
                         <input class="visually-hidden" id="bookedsum_thur_13"  type="text" name="bookedsum_thur_13"  type="text" value="{{ bookedsum_thur_13 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_13"  type="text" name="col_thur_6_13"  type="text" value="{{col_thur_6_13}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
            {% endif %}
@@ -496,33 +469,33 @@
                                {% if checked('thurtimes','1215') %}
                 <tr>
                   <th class="col">12:15pm</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_1_14"  type="text" name="col_thur_1_14"  type="text" value="{{col_thur_1_14}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_2_14"  type="text" name="col_thur_2_14"  type="text" value="{{col_thur_2_14}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_3_14"  type="text" name="col_thur_3_14"  type="text" value="{{col_thur_3_14}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_14"  type="text" name="col_thur_4_14"  type="text" value="{{col_thur_4_14}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur14" type="text" name="rowsum_thur14" readonly  value="{{ rowsum_thur14 }}">
                         <input class="visually-hidden" id="bookedsum_thur_14"  type="text" name="bookedsum_thur_14"  type="text" value="{{ bookedsum_thur_14 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_14"  type="text" name="col_thur_6_14"  type="text" value="{{col_thur_6_14}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
            {% endif %}
@@ -531,33 +504,33 @@
                                {% if checked('thurtimes','1230') %}
                 <tr>
                   <th class="col">12:30pm</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_1_15"  type="text" name="col_thur_1_15"  type="text" value="{{col_thur_1_15}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_2_15"  type="text" name="col_thur_2_15"  type="text" value="{{col_thur_2_15}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_3_15"  type="text" name="col_thur_3_15"  type="text" value="{{col_thur_3_15}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_15"  type="text" name="col_thur_4_15"  type="text" value="{{col_thur_4_15}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur15" type="text" name="rowsum_thur15" readonly  value="{{ rowsum_thur15 }}">
                         <input class="visually-hidden" id="bookedsum_thur_15"  type="text" name="bookedsum_thur_15"  type="text" value="{{ bookedsum_thur_15 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_15"  type="text" name="col_thur_6_15"  type="text" value="{{col_thur_6_15}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
            {% endif %}
@@ -566,33 +539,33 @@
                                           {% if checked('thurtimes','1245') %}
                 <tr>
                   <th class="col">12:45pm</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_1_15"  type="text" name="col_thur_1_15"  type="text" value="{{col_thur_1_15}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_2_15"  type="text" name="col_thur_2_15"  type="text" value="{{col_thur_2_15}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_3_15"  type="text" name="col_thur_3_15"  type="text" value="{{col_thur_3_15}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_15"  type="text" name="col_thur_4_15"  type="text" value="{{col_thur_4_15}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur15" type="text" name="rowsum_thur15" readonly  value="{{ rowsum_thur15 }}">
                         <input class="visually-hidden" id="bookedsum_thur_15"  type="text" name="bookedsum_thur_15"  type="text" value="{{ bookedsum_thur_15 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_15"  type="text" name="col_thur_6_15"  type="text" value="{{col_thur_6_15}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
            {% endif %}
@@ -602,453 +575,438 @@
                                           {% if checked('thurtimes','1') %}
                 <tr>
                   <th class="col">1:00pm</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_1_16"  type="text" name="col_thur_1_16"  type="text" value="{{col_thur_1_16}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_2_16"  type="text" name="col_thur_2_16"  type="text" value="{{col_thur_2_16}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_3_16"  type="text" name="col_thur_3_16"  type="text" value="{{col_thur_3_16}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_16"  type="text" name="col_thur_4_16"  type="text" value="{{col_thur_4_16}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur16" type="text" name="rowsum_thur16" readonly  value="{{ rowsum_thur16 }}">
                         <input class="visually-hidden" id="bookedsum_thur_16"  type="text" name="bookedsum_thur_16"  type="text" value="{{ bookedsum_thur_16 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_16"  type="text" name="col_thur_6_16"  type="text" value="{{col_thur_6_16}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
            {% endif %}
 
 
-        {% if checked('thurtimes','115') %}
+   
                 <tr>
                   <th class="col">1:15pm</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_1_17"  type="text" name="col_thur_1_17"  type="text" value="{{col_thur_1_17}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_2_17"  type="text" name="col_thur_2_17"  type="text" value="{{col_thur_2_17}}" >
-                        <span class='booked'><span class="bold">2 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_3_17"  type="text" name="col_thur_3_17"  type="text" value="{{col_thur_3_17}}" >
-                        <span class='booked'><span class="bold">2 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_1_17"  type="text" name="col_thur_1_17"  type="text" value="{% if data['visited']%}{{col_thur_1_17}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_2_17"  type="text" name="col_thur_2_17"  type="text" value="{% if data['visited']%}{{col_thur_2_17}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">2 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_3_17"  type="text" name="col_thur_3_17"  type="text" value="{% if data['visited']%}{{col_thur_3_17}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">2 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_17"  type="text" name="col_thur_4_17"  type="text" value="{{col_thur_4_17}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur17" type="text" name="rowsum_thur17" readonly  value="{{ rowsum_thur17 }}">
                         <input class="visually-hidden" id="bookedsum_thur_17"  type="text" name="bookedsum_thur_17"  type="text" value="{{ bookedsum_thur_17 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_17"  type="text" name="col_thur_6_17"  type="text" value="{{col_thur_6_17}}" >
-                        <span class='booked'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
-
-           {% endif %}
-
-
-              {% if checked('thurtimes','130') %}
                 <tr>
                   <th class="col">1:30pm</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_1_18"  type="text" name="col_thur_1_18"  type="text" value="{{col_thur_1_18}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_2_18"  type="text" name="col_thur_2_18"  type="text" value="{{col_thur_2_18}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_2_18"  type="text" name="col_thur_2_18"  type="text" value="{% if data['visited']%}{{col_thur_2_18}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_3_18"  type="text" name="col_thur_3_18"  type="text" value="{{col_thur_3_18}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_18"  type="text" name="col_thur_4_18"  type="text" value="{{col_thur_4_18}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur18" type="text" name="rowsum_thur18" readonly  value="{{ rowsum_thur18 }}">
                         <input class="visually-hidden" id="bookedsum_thur_18"  type="text" name="bookedsum_thur_18"  type="text" value="{{ bookedsum_thur_18 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_18"  type="text" name="col_thur_6_18"  type="text" value="{{col_thur_6_18}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
-           {% endif %}
+
 
               {% if checked('thurtimes','145') %}
                 <tr>
                   <th class="col">1:45pm</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_1_19"  type="text" name="col_thur_1_19"  type="text" value="{{col_thur_1_19}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_2_19"  type="text" name="col_thur_2_19"  type="text" value="{{col_thur_2_19}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_3_19"  type="text" name="col_thur_3_19"  type="text" value="{{col_thur_3_19}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_19"  type="text" name="col_thur_4_19"  type="text" value="{{col_thur_4_19}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur19" type="text" name="rowsum_thur19" readonly  value="{{ rowsum_thur19 }}">
                         <input class="visually-hidden" id="bookedsum_thur_19"  type="text" name="bookedsum_thur_19"  type="text" value="{{ bookedsum_thur_19 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_19"  type="text" name="col_thur_6_19"  type="text" value="{{col_thur_6_19}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
            {% endif %}
 
-
-              {% if checked('thurtimes','2') %}
                 <tr>
                   <th class="col">2:00pm</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_1_20"  type="text" name="col_thur_1_20"  type="text" value="{{col_thur_1_20}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_2_20"  type="text" name="col_thur_2_20"  type="text" value="{{col_thur_2_20}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_1_20"  type="text" name="col_thur_1_20"  type="text" value="{% if data['visited']%}{{col_thur_1_20}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_2_20"  type="text" name="col_thur_2_20"  type="text" value="{% if data['visited']%}{{col_thur_2_20}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_3_20"  type="text" name="col_thur_3_20"  type="text" value="{{col_thur_3_20}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_20"  type="text" name="col_thur_4_20"  type="text" value="{{col_thur_4_20}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur20" type="text" name="rowsum_thur20" readonly  value="{{ rowsum_thur20 }}">
                         <input class="visually-hidden" id="bookedsum_thur_20"  type="text" name="bookedsum_thur_20"  type="text" value="{{ bookedsum_thur_20 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_20"  type="text" name="col_thur_6_20"  type="text" value="{{col_thur_6_20}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
-           {% endif %}
+       
 
               {% if checked('thurtimes','215') %}
                 <tr>
                   <th class="col">2:15pm</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_1_21"  type="text" name="col_thur_1_21"  type="text" value="{{col_thur_1_21}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_2_21"  type="text" name="col_thur_2_21"  type="text" value="{{col_thur_2_21}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_3_21"  type="text" name="col_thur_3_21"  type="text" value="{{col_thur_3_21}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked'><span class="bold">1 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_21"  type="text" name="col_thur_4_21"  type="text" value="{{col_thur_4_21}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur21" type="text" name="rowsum_thur21" readonly  value="{{ rowsum_thur21 }}">
                         <input class="visually-hidden" id="bookedsum_thur_21"  type="text" name="bookedsum_thur_21"  type="text" value="{{ bookedsum_thur_21 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_21"  type="text" name="col_thur_6_21"  type="text" value="{{col_thur_6_21}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
            {% endif %}
 
 
-   {% if checked('thurtimes','230') %}
                 <tr>
                   <th class="col">2:30pm</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_1_22"  type="text" name="col_thur_1_22"  type="text" value="{{col_thur_1_22}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_2_22"  type="text" name="col_thur_2_22"  type="text" value="{{col_thur_2_22}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                      </td>
-                   <td><label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_3_22"  type="text" name="col_thur_3_22"  type="text" value="{{col_thur_3_22}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked'><span class="bold">1 </span></span>
+                      </div></td>
+                   <td><div class="totals"> <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_3_22"  type="text" name="col_thur_3_22"  type="text" value="{% if data['visited']%}{{col_thur_3_22}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_22"  type="text" name="col_thur_4_22"  type="text" value="{{col_thur_4_22}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur22" type="text" name="rowsum_thur22" readonly  value="{{ rowsum_thur22 }}">
                         <input class="visually-hidden" id="bookedsum_thur_22"  type="text" name="bookedsum_thur_22"  type="text" value="{{ bookedsum_thur_22 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_22"  type="text" name="col_thur_6_22"  type="text" value="{{col_thur_6_22}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
-           {% endif %}
-
-
-              {% if checked('thurtimes','245') %}
                 <tr>
                   <th class="col">2:45pm</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_1_23"  type="text" name="col_thur_1_23"  type="text" value="{{col_thur_1_23}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_1_23"  type="text" name="col_thur_1_23"  type="text" value="{% if data['visited']%}{{col_thur_1_23}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_2_23"  type="text" name="col_thur_2_23"  type="text" value="{{col_thur_2_23}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_3_23"  type="text" name="col_thur_3_23"  type="text" value="{{col_thur_3_23}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_23"  type="text" name="col_thur_4_23"  type="text" value="{{col_thur_4_23}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur23" type="text" name="rowsum_thur23" readonly  value="{{ rowsum_thur23 }}">
                         <input class="visually-hidden" id="bookedsum_thur_23"  type="text" name="bookedsum_thur_23"  type="text" value="{{ bookedsum_thur_23 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_23"  type="text" name="col_thur_6_23"  type="text" value="{{col_thur_6_23}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
-           {% endif %}
+           
 
 
 
-              {% if checked('thurtimes','3') %}
                 <tr>
                   <th class="col">3:00pm</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_1_24"  type="text" name="col_thur_1_24"  type="text" value="{{col_thur_1_24}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_2_24"  type="text" name="col_thur_2_24"  type="text" value="{{col_thur_2_24}}" >
-                        <span class='booked'><span class="bold">2 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_3_24"  type="text" name="col_thur_3_24"  type="text" value="{{col_thur_3_24}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_2_24"  type="text" name="col_thur_2_24"  type="text" value="{% if data['visited']%}{{col_thur_2_24}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">2 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_3_24"  type="text" name="col_thur_3_24"  type="text" value="{% if data['visited']%}{{col_thur_3_24}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_24"  type="text" name="col_thur_4_24"  type="text" value="{{col_thur_4_24}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur24" type="text" name="rowsum_thur24" readonly  value="{{ rowsum_thur24 }}">
                         <input class="visually-hidden" id="bookedsum_thur_24"  type="text" name="bookedsum_thur_24"  type="text" value="{{ bookedsum_thur_24 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_24"  type="text" name="col_thur_6_24"  type="text" value="{{col_thur_6_24}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
-           {% endif %}
-
+      
 
 
               {% if checked('thurtimes','315') %}
                 <tr>
                   <th class="col">3:15pm</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_1_25"  type="text" name="col_thur_1_25"  type="text" value="{{col_thur_1_25}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_2_25"  type="text" name="col_thur_2_25"  type="text" value="{{col_thur_2_25}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_3_25"  type="text" name="col_thur_3_25"  type="text" value="{{col_thur_3_25}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_25"  type="text" name="col_thur_4_25"  type="text" value="{{col_thur_4_25}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur25" type="text" name="rowsum_thur25" readonly  value="{{ rowsum_thur25 }}">
                         <input class="visually-hidden" id="bookedsum_thur_25"  type="text" name="bookedsum_thur_25"  type="text" value="{{ bookedsum_thur_25 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_25"  type="text" name="col_thur_6_25"  type="text" value="{{col_thur_6_25}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
            {% endif %}
 
 
 
-              {% if checked('thurtimes','330') %}
+      
                 <tr>
                   <th class="col">3:30pm</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_1_26"  type="text" name="col_thur_1_26"  type="text" value="{{col_thur_1_26}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_2_26"  type="text" name="col_thur_2_26"  type="text" value="{{col_thur_2_26}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_2_26"  type="text" name="col_thur_2_26"  type="text" value="{% if data['visited']%}{{col_thur_2_26}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_3_26"  type="text" name="col_thur_3_26"  type="text" value="{{col_thur_3_26}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_26"  type="text" name="col_thur_4_26"  type="text" value="{{col_thur_4_26}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur26" type="text" name="rowsum_thur26" readonly  value="{{ rowsum_thur26 }}">
                         <input class="visually-hidden" id="bookedsum_thur_26"  type="text" name="bookedsum_thur_26"  type="text" value="{{ bookedsum_thur_26 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_26"  type="text" name="col_thur_6_26"  type="text" value="{{col_thur_6_26}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
-           {% endif %}
+          
 
 
-              {% if checked('thurtimes','345') %}
                 <tr>
                   <th class="col">3:45pm</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_1_27"  type="text" name="col_thur_1_27"  type="text" value="{{col_thur_1_27}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_2_27"  type="text" name="col_thur_2_27"  type="text" value="{{col_thur_2_27}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
-                    <input class="form-control " id="col_thur_3_27"  type="text" name="col_thur_3_27"  type="text" value="{{col_thur_3_27}}" >
-                        <span class='booked'><span class="bold">1 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_1_27"  type="text" name="col_thur_1_27"  type="text" value="{% if data['visited']%}{{col_thur_1_27}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_2_27"  type="text" name="col_thur_2_27"  type="text" value="{% if data['visited']%}{{col_thur_2_27}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="col_thur_3_27"  type="text" name="col_thur_3_27"  type="text" value="{% if data['visited']%}{{col_thur_3_27}} {% else %}0 {% endif %}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_27"  type="text" name="col_thur_4_27"  type="text" value="{{col_thur_4_27}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur27" type="text" name="rowsum_thur27" readonly  value="{{ rowsum_thur27 }}">
                         <input class="visually-hidden" id="bookedsum_thur_27"  type="text" name="bookedsum_thur_27"  type="text" value="{{ bookedsum_thur_27 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_27"  type="text" name="col_thur_6_27"  type="text" value="{{col_thur_6_27}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
-           {% endif %}
+    
 
 
               {% if checked('thurtimes','4') %}
                 <tr>
                   <th class="col">4:00pm</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_1_28"  type="text" name="col_thur_1_28"  type="text" value="{{col_thur_1_28}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_2_28"  type="text" name="col_thur_2_28"  type="text" value="{{col_thur_2_28}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_3_28"  type="text" name="col_thur_3_28"  type="text" value="{{col_thur_3_28}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_28"  type="text" name="col_thur_4_28"  type="text" value="{{col_thur_4_28}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur28" type="text" name="rowsum_thur28" readonly  value="{{ rowsum_thur28 }}">
                         <input class="visually-hidden" id="bookedsum_thur_28"  type="text" name="bookedsum_thur_28"  type="text" value="{{ bookedsum_thur_28 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_28"  type="text" name="col_thur_6_28"  type="text" value="{{col_thur_6_28}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
            {% endif %}
@@ -1058,33 +1016,33 @@
               {% if checked('thurtimes','415') %}
                 <tr>
                   <th class="col">4:15pm</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_1_29"  type="text" name="col_thur_1_29"  type="text" value="{{col_thur_1_29}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_2_29"  type="text" name="col_thur_2_29"  type="text" value="{{col_thur_2_29}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_3_29"  type="text" name="col_thur_3_29"  type="text" value="{{col_thur_3_29}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_29"  type="text" name="col_thur_4_29"  type="text" value="{{col_thur_4_29}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur29" type="text" name="rowsum_thur29" readonly  value="{{ rowsum_thur29 }}">
                         <input class="visually-hidden" id="bookedsum_thur_29"  type="text" name="bookedsum_thur_29"  type="text" value="{{ bookedsum_thur_29 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_29"  type="text" name="col_thur_6_29"  type="text" value="{{col_thur_6_29}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
            {% endif %}
@@ -1093,33 +1051,33 @@
               {% if checked('thurtimes','430') %}
                 <tr>
                   <th class="col">4:30pm</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_1_30"  type="text" name="col_thur_1_30"  type="text" value="{{col_thur_1_30}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_2_30"  type="text" name="col_thur_2_30"  type="text" value="{{col_thur_2_30}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_3_30"  type="text" name="col_thur_3_30"  type="text" value="{{col_thur_3_30}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_30"  type="text" name="col_thur_4_30"  type="text" value="{{col_thur_4_30}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur30" type="text" name="rowsum_thur30" readonly  value="{{ rowsum_thur30 }}">
                         <input class="visually-hidden" id="bookedsum_thur_30"  type="text" name="bookedsum_thur_30"  type="text" value="{{ bookedsum_thur_30 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_30"  type="text" name="col_thur_6_30"  type="text" value="{{col_thur_6_30}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
            {% endif %}
@@ -1129,33 +1087,33 @@
               {% if checked('thurtimes','445') %}
                 <tr>
                   <th class="col">4:45pm</th>
-                  <td >    <label class="visually-hidden" for="" > Available</label>
+                  <td><div class="totals">     <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_1_31"  type="text" name="col_thur_1_31"  type="text" value="{{col_thur_1_31}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td> 
-                    <td >  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td> 
+                    <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_2_31"  type="text" name="col_thur_2_31"  type="text" value="{{col_thur_2_31}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                      </td>
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                      </div></td>
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_3_31"  type="text" name="col_thur_3_31"  type="text" value="{{col_thur_3_31}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
-               {% if checked('e_benefits_thurs','ben2') %}
-                  <td>  <label class="visually-hidden" for="" > Available</label>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
+               {% if checked('e_benefits_thur','ben2') %}
+                  <td><div class="totals">   <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_4_31"  type="text" name="col_thur_4_31"  type="text" value="{{col_thur_4_31}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                 {% endif %}
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                 </div></td>{% endif %}
                  <td class="col5">
                     	<label class="visually-hidden" for="">Total</label>
                         <input class="form-control" id="rowsum_thur31" type="text" name="rowsum_thur31" readonly  value="{{ rowsum_thur31 }}">
                         <input class="visually-hidden" id="bookedsum_thur_31"  type="text" name="bookedsum_thur_31"  type="text" value="{{ bookedsum_thur_31 }}" >
-			</td>
+			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_thur_6_31"  type="text" name="col_thur_6_31"  type="text" value="{{col_thur_6_31}}" >
-                        <span class='booked visually-hidden'><span class="bold">0 </span>Booked</span>
-                    </td>
+                        <span class='booked visually-hidden'><span class="bold">0 </span></span>
+                    </div></td>
                 </tr>
 
            {% endif %}
@@ -1172,7 +1130,13 @@
                
               </table>
 
-              <p><button class="button mt25">Save and continue</button></p>
+                                <div class="form-group mt30">
+  <label class="form-label-bold" for="thurfte">How many full time employees are you basing this capacity on?</label>
+  <input class="form-control form-control-1-8" id="thurfte" type="number" name="thurfte" value="4" style=>
+</div>
+
+              <p><button class="button">Save and continue</button></p>
+             
              
 
 <!-- Totals -->
@@ -1199,7 +1163,7 @@
                           <label class="visually-hidden" for="" ></label>
                           <input type="number" name="e_col_thur_3_sum" id="e_col_thur_3_sum" class="form-control" readonly  value="{{e_col_thur_3_sum}}" />
                         </div>
-                         {% if checked('e_benefits','ben2') %}
+                         {% if checked('e_benefits_thur','ben2') %}
                         <div class="total-container">
                             <h2 class="heading-small">IIDB</h2>
                             <label class="visually-hidden" for="" ></label>

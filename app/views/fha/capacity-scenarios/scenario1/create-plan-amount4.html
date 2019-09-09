@@ -48,7 +48,7 @@
                      {% if checked('benefitsWed','ben2') %}
                     <th><span></span>IIDB</th>
                     {% endif %}
-                    <th class="col5"><span></span>Appointments</th>
+                    <th class="col5"><span></span>Opened</th>
                   
                 
                      <th class="col6"><span></span>UCB</th>
@@ -943,7 +943,12 @@
                
               </table>
 
-              <p><button class="button mt25">Save and continue</button></p>
+                              <div class="form-group mt30">
+  <label class="form-label-bold" for="wedfte">How many full time employees are you basing this capacity on?</label>
+  <input class="form-control form-control-1-8" id="wedfte" type="number" name="wedfte" value="{{wedfte}}">
+</div>
+
+              <p><button class="button">Save and continue</button></p>
               {% include path+"/scenario1/_help_totalsWedv2.html" %}
               </form>
             </div>
