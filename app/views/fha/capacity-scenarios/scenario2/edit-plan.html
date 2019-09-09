@@ -7,59 +7,6 @@
 
 <main id="content" role="main" class="main-content">
 
-<style>
-table.profile-table input  {
-
-        float:left;
-        width:50%;
-}
-
-.totals{
-   background:#DEE0E2;
-   float:left;
-}
-
-table.profile-table td {
-
-}
-
-table.profile-table  td.col5 input[readonly]{
-        padding-right:0;
-}
-th span{
-        width:50%;
-        float:left;
-}
-
-th.col5 span{
-        width:100% ;
-}
-
-.booked{
-
-        float:left;
-        background:#DEE0E2;
-        height:50px;
-        padding:2px 5px;
-        vertical-align:middle;
-        width:50%;
-        display:table;
-}
-
-.bold{
-        display:table-cell;
-        vertical-align:middle;
-}
-
-.badge{
-        margin:0px 5px 3px 5px;
-        font-size:14px;
-        padding:3px;
-}
-
-
-
-</style>
 
       <div class="container">
           <div class="grid-row">
@@ -70,10 +17,12 @@ th.col5 span{
 
    <h2 class="heading-medium">Monday 23 September</h2>
 {% include path+"/scenario2/_info-panel-amount.html" %} 
-
+<p>
+<a href="edit-plan-times" class="secondary-invert">Add or edit slot times or benefits</a>
+</p>
    <form class="form" action="view-plan" method="post">
 
-              <table class="profile-table">
+              <table class="profile-table edit">
 
             
                 <thead>
@@ -84,7 +33,7 @@ th.col5 span{
                     <th>Neuro<br><span>Available</span><span>Booked</span></th>
                     <th>Non neuro<br><span>Available</span><span>Booked</span></th>
                         {% if checked('e_benefits','ben2') %}
-                    <th>IIDB <span>Available</span></th>
+                    <th>IIDB<br> <span>Available</span><span>Booked</span></th>
                     {% endif %}
                     <th class="col5"><span></span>Total<br> <span class="block">Opened</span></th>
                   
@@ -97,7 +46,6 @@ th.col5 span{
 
                
 
-           {% if checked('times','9') %}
                 <tr>
                   <th class="col">9:00am</th>
                   <td><div class="totals"><div  class="totals">   <label class="visually-hidden" for="" > Available</label>
@@ -106,7 +54,7 @@ th.col5 span{
                     </div></td> 
                     <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_2_1"  type="text" name="col_2_1"  type="text" value="{% if data['visited']%}{{col_2_1}} {% else %}0 {% endif %}" >
-                        <span class='booked'><span class="bold">4<br> <span class="badge">1 UCB</span></span></span>
+                        <span class='booked'><span class="bold">4<span class="badge block">1 UCB</span></span></span>
                       </div></td>
                   <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_3_1"  type="text" name="col_3_1"  type="text" value="{{col_3_1}}" >
@@ -123,15 +71,12 @@ th.col5 span{
                                                 <input class="visually-hidden" id="bookedsum_1"  type="text" name="bookedsum_1"  type="text" value="{{ bookedsum_1 }}" >
 					</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_1"  type="text" name="col_6_1"  type="text" value="{{col_6_1}}" >
                         <span class='booked'><span class="bold">1 </span></span>
                     </div></td>
                 </tr>
 
-           {% endif %}
-
-                {% if checked('times','915') %}
                 <tr>
                   <th class="col">9:15am</th>
                   <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
@@ -157,16 +102,12 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_2"  type="text" name="bookedsum_2"  type="text" value="{{ bookedsum_2 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_2"  type="text" name="col_6_2"  type="text" value="{{col_6_2}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
                 </tr>
 
-           {% endif %}
-
-
-                        {% if checked('times','930') %}
                 <tr>
                   <th class="col">9:30am</th>
                   <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
@@ -192,16 +133,11 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_3"  type="text" name="bookedsum_3"  type="text" value="{{ bookedsum_3 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_3"  type="text" name="col_6_3"  type="text" value="{{col_6_3}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
                 </tr>
-
-           {% endif %}
-
-
-                {% if checked('times','945') %}
                 <tr>
                   <th class="col">9:45am</th>
                   <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
@@ -227,16 +163,11 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_4"  type="text" name="bookedsum_4"  type="text" value="{{ bookedsum_4 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_4"  type="text" name="col_6_4"  type="text" value="{{col_6_4}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
                 </tr>
-
-           {% endif %}
-
-
-                {% if checked('times','10') %}
                 <tr>
                   <th class="col">10:00am</th>
                   <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
@@ -262,15 +193,13 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_5"  type="text" name="bookedsum_5"  type="text" value="{{ bookedsum_5 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_5"  type="text" name="col_6_5"  type="text" value="{{col_6_5}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
                 </tr>
 
-           {% endif %}
 
-                       {% if checked('times','1015') %}
                 <tr>
                   <th class="col">10:15am</th>
                   <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
@@ -296,15 +225,13 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_6"  type="text" name="bookedsum_6"  type="text" value="{{ bookedsum_6 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_6"  type="text" name="col_6_6"  type="text" value="{{col_6_6}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
                 </tr>
 
-           {% endif %}
 
-                               {% if checked('times','1030') %}
                 <tr>
                   <th class="col">10:30am</th>
                   <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
@@ -330,16 +257,12 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_7"  type="text" name="bookedsum_7"  type="text" value="{{ bookedsum_7 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_7"  type="text" name="col_6_7"  type="text" value="{{col_6_7}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
                 </tr>
 
-           {% endif %}
-
-
-                               {% if checked('times','1045') %}
                 <tr>
                   <th class="col">10:45am</th>
                   <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
@@ -365,16 +288,12 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_8"  type="text" name="bookedsum_8"  type="text" value="{{ bookedsum_8 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_8"  type="text" name="col_6_8"  type="text" value="{{col_6_8}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
                 </tr>
 
-           {% endif %}
-
-
-                               {% if checked('times','11') %}
                 <tr>
                   <th class="col">11:00am</th>
                   <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
@@ -400,17 +319,11 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_9"  type="text" name="bookedsum_9"  type="text" value="{{ bookedsum_9 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_9"  type="text" name="col_6_9"  type="text" value="{{col_6_9}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
                 </tr>
-
-           {% endif %}
-
-
-
-                               {% if checked('times','1115') %}
                 <tr>
                   <th class="col">11:15am</th>
                   <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
@@ -436,13 +349,13 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_10"  type="text" name="bookedsum_10"  type="text" value="{{ bookedsum_10 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_10"  type="text" name="col_6_10"  type="text" value="{{col_6_10}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
                 </tr>
 
-           {% endif %}
+        
 
 
                                {% if checked('times','1130') %}
@@ -471,7 +384,7 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_11"  type="text" name="bookedsum_11"  type="text" value="{{ bookedsum_11 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_11"  type="text" name="col_6_11"  type="text" value="{{col_6_11}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
@@ -479,8 +392,6 @@ th.col5 span{
 
            {% endif %}
 
-
-                               {% if checked('times','1145') %}
                 <tr>
                   <th class="col">11:45am</th>
                   <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
@@ -506,13 +417,12 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_12"  type="text" name="bookedsum_12"  type="text" value="{{ bookedsum_12 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_12"  type="text" name="col_6_12"  type="text" value="{{col_6_12}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
                 </tr>
 
-           {% endif %}
 
 
                                {% if checked('times','12') %}
@@ -541,7 +451,7 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_13"  type="text" name="bookedsum_13"  type="text" value="{{ bookedsum_13 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_13"  type="text" name="col_6_13"  type="text" value="{{col_6_13}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
@@ -576,7 +486,7 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_14"  type="text" name="bookedsum_14"  type="text" value="{{ bookedsum_14 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_14"  type="text" name="col_6_14"  type="text" value="{{col_6_14}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
@@ -611,7 +521,7 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_15"  type="text" name="bookedsum_15"  type="text" value="{{ bookedsum_15 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_15"  type="text" name="col_6_15"  type="text" value="{{col_6_15}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
@@ -646,7 +556,7 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_15"  type="text" name="bookedsum_15"  type="text" value="{{ bookedsum_15 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_15"  type="text" name="col_6_15"  type="text" value="{{col_6_15}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
@@ -682,7 +592,7 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_16"  type="text" name="bookedsum_16"  type="text" value="{{ bookedsum_16 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_16"  type="text" name="col_6_16"  type="text" value="{{col_6_16}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
@@ -691,7 +601,6 @@ th.col5 span{
            {% endif %}
 
 
-        {% if checked('times','115') %}
                 <tr>
                   <th class="col">1:15pm</th>
                   <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
@@ -717,16 +626,14 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_17"  type="text" name="bookedsum_17"  type="text" value="{{ bookedsum_17 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_17"  type="text" name="col_6_17"  type="text" value="{{col_6_17}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
                 </tr>
 
-           {% endif %}
+   
 
-
-              {% if checked('times','130') %}
                 <tr>
                   <th class="col">1:30pm</th>
                   <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
@@ -752,13 +659,13 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_18"  type="text" name="bookedsum_18"  type="text" value="{{ bookedsum_18 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_18"  type="text" name="col_6_18"  type="text" value="{{col_6_18}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
                 </tr>
 
-           {% endif %}
+       
 
               {% if checked('times','145') %}
                 <tr>
@@ -786,7 +693,7 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_19"  type="text" name="bookedsum_19"  type="text" value="{{ bookedsum_19 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_19"  type="text" name="col_6_19"  type="text" value="{{col_6_19}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
@@ -795,7 +702,7 @@ th.col5 span{
            {% endif %}
 
 
-              {% if checked('times','2') %}
+        
                 <tr>
                   <th class="col">2:00pm</th>
                   <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
@@ -821,13 +728,13 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_20"  type="text" name="bookedsum_20"  type="text" value="{{ bookedsum_20 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_20"  type="text" name="col_6_20"  type="text" value="{{col_6_20}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
                 </tr>
 
-           {% endif %}
+
 
               {% if checked('times','215') %}
                 <tr>
@@ -855,7 +762,7 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_21"  type="text" name="bookedsum_21"  type="text" value="{{ bookedsum_21 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_21"  type="text" name="col_6_21"  type="text" value="{{col_6_21}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
@@ -864,7 +771,7 @@ th.col5 span{
            {% endif %}
 
 
-   {% if checked('times','230') %}
+
                 <tr>
                   <th class="col">2:30pm</th>
                   <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
@@ -890,16 +797,15 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_22"  type="text" name="bookedsum_22"  type="text" value="{{ bookedsum_22 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_22"  type="text" name="col_6_22"  type="text" value="{{col_6_22}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
                 </tr>
 
-           {% endif %}
 
 
-              {% if checked('times','245') %}
+
                 <tr>
                   <th class="col">2:45pm</th>
                   <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
@@ -925,17 +831,15 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_23"  type="text" name="bookedsum_23"  type="text" value="{{ bookedsum_23 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_23"  type="text" name="col_6_23"  type="text" value="{{col_6_23}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
                 </tr>
 
-           {% endif %}
 
 
 
-              {% if checked('times','3') %}
                 <tr>
                   <th class="col">3:00pm</th>
                   <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
@@ -961,13 +865,13 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_24"  type="text" name="bookedsum_24"  type="text" value="{{ bookedsum_24 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_24"  type="text" name="col_6_24"  type="text" value="{{col_6_24}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
                 </tr>
 
-           {% endif %}
+
 
 
 
@@ -997,7 +901,7 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_25"  type="text" name="bookedsum_25"  type="text" value="{{ bookedsum_25 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_25"  type="text" name="col_6_25"  type="text" value="{{col_6_25}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
@@ -1007,7 +911,6 @@ th.col5 span{
 
 
 
-              {% if checked('times','330') %}
                 <tr>
                   <th class="col">3:30pm</th>
                   <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
@@ -1033,15 +936,12 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_26"  type="text" name="bookedsum_26"  type="text" value="{{ bookedsum_26 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_26"  type="text" name="col_6_26"  type="text" value="{{col_6_26}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
                 </tr>
-           {% endif %}
-
-
-              {% if checked('times','345') %}
+  
                 <tr>
                   <th class="col">3:45pm</th>
                   <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
@@ -1067,13 +967,13 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_27"  type="text" name="bookedsum_27"  type="text" value="{{ bookedsum_27 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_27"  type="text" name="col_6_27"  type="text" value="{{col_6_27}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
                 </tr>
 
-           {% endif %}
+ 
 
 
               {% if checked('times','4') %}
@@ -1102,7 +1002,7 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_28"  type="text" name="bookedsum_28"  type="text" value="{{ bookedsum_28 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_28"  type="text" name="col_6_28"  type="text" value="{{col_6_28}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
@@ -1138,7 +1038,7 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_29"  type="text" name="bookedsum_29"  type="text" value="{{ bookedsum_29 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_29"  type="text" name="col_6_29"  type="text" value="{{col_6_29}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
@@ -1173,7 +1073,7 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_30"  type="text" name="bookedsum_30"  type="text" value="{{ bookedsum_30 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_30"  type="text" name="col_6_30"  type="text" value="{{col_6_30}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
@@ -1209,7 +1109,7 @@ th.col5 span{
                         <input class="visually-hidden" id="bookedsum_31"  type="text" name="bookedsum_31"  type="text" value="{{ bookedsum_31 }}" >
 			</div></td>
 
-                  <td class="col6">  <label class="visually-hidden" for="" > Available</label>
+                  <td class="col5"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="col_6_31"  type="text" name="col_6_31"  type="text" value="{{col_6_31}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
@@ -1229,7 +1129,14 @@ th.col5 span{
                
               </table>
 
-              <p><button class="button mt25">Save and continue</button></p>
+
+
+     <div class="form-group mt30">
+  <label class="form-label-bold" for="monfte">How many full time employees are you basing this capacity on?</label>
+  <input class="form-control form-control-1-8" id="monfte" type="number" name="monfte" value="4" style=>
+</div>
+
+              <p><button class="button">Save and continue</button></p>
               {% include path+"/scenario2/_totals.html" %}
               	<div class="check-choice visually-hidden">
                     <input id="mondayvisited" name="mondayvisited" type="checkbox" value="yes" checked>

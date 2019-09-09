@@ -2560,17 +2560,7 @@ table.profile-table .col5{
 }
 
 
-.profile-table td span.container{
- background:#dee0e2;
- display:block;
- padding:2px;
- margin-top:1px;
- font-size:16px;
-}
 
-.profile-table td span.container .badge{
-  font-size:16px;
-}
 
 .profile-table input[type="text"]:disabled {
   border:none;
@@ -2589,6 +2579,65 @@ table.profile-table td{
 }
 
 
+
+
+table.profile-table.edit 
+
+{
+input  {
+	float:left;
+	width:50%;
+}
+
+.totals{
+background:#DEE0E2;
+float:left;
+padding:0px;
+}
+
+td.col5 input[readonly]{
+	padding-right:0;
+	width:100%;
+}
+th span{
+	width:50%;
+	float:left;
+}
+
+th.col5 span{
+	width:100% ;
+}
+
+.booked{
+
+	float:left;
+	background:#DEE0E2;
+	height:50px;
+
+	vertical-align:middle;
+	width:50%;
+	display:table;
+	font-size:18px;
+
+	.bold{
+		display:table-cell;
+		vertical-align:middle;
+		
+	}
+
+	.badge{
+		margin:0px 5px 0px 5px;
+		font-size:14px;
+		padding:3px;
+	}
+  
+}
+
+
+
+
+
+}
 
 
 

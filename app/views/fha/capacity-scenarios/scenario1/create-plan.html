@@ -14,7 +14,7 @@
           <a class="link-back"
                href="javascript:%20history.go(-1)">Back</a>
           <h1 class="heading-large mt10">Create a capacity plan for Mann Island</h1>
-          <h2 class="heading-medium mt30"><span style="font-weight:normal">Week commencing:</span> Monday 10 September</h2>
+          <h2 class="heading-medium mt30"><span style="font-weight:normal">Week commencing:</span> Monday 23 September</h2>
     
           <div class="grid-row">
             <div class="card-container">
@@ -44,8 +44,7 @@
                               </th>
                         <th class="numeric"
                             scope="col"><span class="heading-xlarge">{% if data['rowsum_sum'] %} {{ rowsum_sum }} {% else %} 0 {% endif %}<span class="block"><span class="visually-hidden">appointents</span>Available</span></span></th>
-                            <th class="numeric"
-                            scope="col"><span class="heading-xlarge">0<span class="block"><span class="visually-hidden">appointents</span>Booked</span></span></th>
+                          
 
                       </tr>
                     </thead>
@@ -53,23 +52,23 @@
                       <tr>
                         <th scope="row">Complex neuro</th>
                         <td class="numeric">{% if data['sum'] %} {{ sum }} {% else %} 0 {% endif %}</td>
-                        <td class="numeric">0</td>
+                      
                       </tr>
                       <tr>
                         <th scope="row">Neuro</th>
                         <td class="numeric">{% if data['col_2_sum'] %} {{ col_2_sum }} {% else %} 0 {% endif %}</td>
-                        <td class="numeric">0</td>
+  
                       </tr>
                       <tr>
                         <th scope="row">Non neuro</th>
                         <td class="numeric">{% if data['col_3_sum'] %} {{ col_3_sum }} {% else %} 0 {% endif %}</td>
-                        <td class="numeric">0</td>
+                      
                       </tr>
                         {% if checked('benefits','ben2') %}
                       <tr>
                         <th scope="row">IIDB</th>
                         <td class="numeric">{% if data['col_4_sum'] %} {{ col_4_sum }} {% else %} 0 {% endif %}</td>
-                        <td class="numeric">0</td>
+                 
                       </tr>
                       {% endif %}
                       <tr>
@@ -104,31 +103,30 @@
                         </th>
                         <th class="numeric"
                             scope="col"><span class="heading-xlarge">{{ rowsum_tue_sum }} <span class="block"><span class="visually-hidden">appointents</span>Available</span></span></th>
-                               <th class="numeric"
-                            scope="col"><span class="heading-xlarge">0 <span class="block"><span class="visually-hidden">appointents</span>Booked</span></span></th>
+      
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <th scope="row">Complex neuro</th>
                         <td class="numeric">{% if data['sum_tue'] %} {{ sum_tue }} {% else %} 0 {% endif %}</td>
-                         <td class="numeric">0</td>
+                     
                       </tr>
                       <tr>
                         <th scope="row">Neuro</th>
                         <td class="numeric">{% if data['col_tue_2_sum'] %} {{ col_tue_2_sum }} {% else %} 0 {% endif %}</td>
-                         <td class="numeric">0</td>
+                      
                       </tr>
                       <tr>
                         <th scope="row">Non neuro</th>
                         <td class="numeric">{% if data['col_tue_3_sum'] %} {{ col_tue_3_sum }} {% else %} 0 {% endif %}</td>
-                         <td class="numeric">0</td>
+                     
                       </tr>
                       {% if checked('benefitsTue','ben2') %}
                       <tr>
                         <th scope="row">IIDB</th>
                         <td class="numeric">{% if data['col_tue_4_sum'] %} {{ col_tue_4_sum }} {% else %} 0 {% endif %}</td>
-                         <td class="numeric">0</td>
+                     
                       </tr>
                       {% endif %}
                       <tr>
@@ -163,31 +161,30 @@
                         </th>
                         <th class="numeric"
                             scope="col"><span class="heading-xlarge">{{ rowsum_wed_sum }} <span class="block"><span class="visually-hidden">appointents</span>Available</span></span></th>
-                              <th class="numeric"
-                            scope="col"><span class="heading-xlarge">0 <span class="block"><span class="visually-hidden">appointents</span>Booked</span></span></th>
+              
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <th scope="row">Complex neuro</th>
                         <td class="numeric">{% if data['sum_wed'] %} {{ sum_wed }} {% else %} 0 {% endif %}</td>
-                          <td class="numeric">0</td>
+                       
                       </tr>
                       <tr>
                         <th scope="row">Neuro</th>
-                        <td class="numeric">{% if data['col_2_sum'] %} {{ col_wed_2_sum }} {% else %} 0 {% endif %}</td>
-                          <td class="numeric">0</td>
+                        <td class="numeric">{% if data['col_wed_2_sum'] %} {{ col_wed_2_sum }} {% else %} 0 {% endif %}</td>
+                      
                       </tr>
                       <tr>
                         <th scope="row">Non neuro</th>
-                        <td class="numeric">{% if data['col_3_sum'] %} {{ col_wed_3_sum }} {% else %} 0 {% endif %}</td>
-                          <td class="numeric">0</td>
+                        <td class="numeric">{% if data['col_wed_3_sum'] %} {{ col_wed_3_sum }} {% else %} 0 {% endif %}</td>
+                  
                       </tr>
                         {% if checked('benefitsWed','ben2') %}
                       <tr>
                         <th scope="row">IIDB</th>
                         <td class="numeric">{% if data['col_4_sum'] %} {{ col_wed_4_sum }} {% else %} 0 {% endif %}</td>
-                          <td class="numeric">0</td>
+                    
                       </tr>
                       {% endif %}
                       <tr>
@@ -221,31 +218,30 @@
                         </th>
                         <th class="numeric"
                             scope="col"><span class="heading-xlarge">69 <span class="block"><span class="visually-hidden">appointents</span>Available</span></span></th>
-                              <th class="numeric"
-                            scope="col"><span class="heading-xlarge">0 <span class="block"><span class="visually-hidden">appointents</span>Booked</span></span></th>
+          
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <th scope="row">Complex neuro</th>
                         <td class="numeric">0</td>
-                          <td class="numeric">0</td>
+                        
                       </tr>
                       <tr>
                         <th scope="row">Neuro</th>
                         <td class="numeric">37</td>
-                          <td class="numeric">0</td>
+                     
                       </tr>
                       <tr>
                         <th scope="row">Non neuro</th>
                         <td class="numeric">30</td>
-                          <td class="numeric">0</td>
+                         
                       </tr>
                         {% if checked('benefitsWed','ben2') %}
                       <tr>
                         <th scope="row">IIDB</th>
                         <td class="numeric">2</td>
-                          <td class="numeric">0</td>
+                      
                       </tr>
                       {% endif %}
                       <tr>
@@ -279,31 +275,30 @@
                         </th>
                         <th class="numeric"
                             scope="col"><span class="heading-xlarge">89 <span class="block"><span class="visually-hidden">appointents</span>Available</span></span></th>
-                              <th class="numeric"
-                            scope="col"><span class="heading-xlarge">0 <span class="block"><span class="visually-hidden">appointents</span>Booked</span></span></th>
+                            
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <th scope="row">Complex neuro</th>
                         <td class="numeric">0</td>
-                          <td class="numeric">0</td>
+                        
                       </tr>
                       <tr>
                         <th scope="row">Neuro</th>
                         <td class="numeric">57</td>
-                          <td class="numeric">0</td>
+                        
                       </tr>
                       <tr>
                         <th scope="row">Non neuro</th>
                         <td class="numeric">30</td>
-                          <td class="numeric">0</td>
+                        
                       </tr>
                          {% if checked('benefitsWed','ben2') %}
                       <tr>
                         <th scope="row">IIDB</th>
                         <td class="numeric">2</td>
-                          <td class="numeric">0</td>
+                       
                       </tr>
                        {% endif %}
                       <tr>
@@ -324,7 +319,7 @@
               </div>
             </div>
           </div>{% if data['times'] %}
-          <p><a class="button mt25"
+          <p><a class="button"
              href="dashboard">Save capacity plan</a></p>{% endif %}
         </div><!-- column -->
       </div><!-- row -->
