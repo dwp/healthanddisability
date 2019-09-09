@@ -1,0 +1,118 @@
+{% extends path+"/_layout-case-simple4.html" %}
+
+
+{% block actioncolumn %}
+   
+
+
+<p class="returnRef"><a href="javascript: history.go(-1)" class="link-back">Return to case list</a></p>
+
+ <div class="caseStatus">
+ 	
+	<p class="main-status"><span>Recording evidence</span></p>
+
+ </div>
+{% endblock %}
+
+{% block citizen_detail %}
+Kenneth Robertson
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+    
+   
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+        
+
+
+    	
+    	<h1 class="heading-large">Choose another date</h1>
+    	
+    	
+   
+		
+		
+
+				
+				
+			<form action="/{{path }}/scenario4/evidence-portal" method="POST" class="form">
+			
+		
+			
+										
+		
+
+		<div class="form-group">
+            <div class="">
+                <label class="form-label-bold mt20" for="location-select-dropdown">
+                    
+                     Search for a 
+                     Non neuro
+                      appointment 
+                  
+                  <span class="form-hint mt5 mb5">
+                      
+                      For example type Tuesday 17th September 1pm
+                      
+                      </span>
+                </label>
+                <div class="form-control-1-2">
+                    <div id="tt-default" class="autocomplete-wrapper"><div class="autocomplete__wrapper" role="combobox" aria-expanded="false"><div aria-atomic="true" aria-live="polite" role="status" style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin-bottom: -1px; margin-right: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 1px;">No search results.<span>,,</span></div><input aria-owns="autocomplete-placeholder__listbox" autocomplete="off" class="autocomplete__input autocomplete__input--default" id="autocomplete-placeholder" name="input-autocomplete" placeholder="Day month or time" type="text" role="textbox"><ul class="autocomplete__menu autocomplete__menu--inline autocomplete__menu--hidden" id="autocomplete-placeholder__listbox" role="listbox"></ul></div></div>
+                </div>
+              </div>  
+                                        </div>	
+
+					
+
+					
+				
+				<p class="mt30"><input type="submit" class="button" value="Save and continue"></p>
+				
+
+				
+				
+				</form>
+
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
