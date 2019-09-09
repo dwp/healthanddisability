@@ -109,7 +109,7 @@ router.post('*', function (req, res, next) {
   res.locals.path2 = res.locals.path + '/' + bits[0] + '/' + bits[1]
   res.locals.stage = 1
 
-  res.locals.cssPath = '/public/stylesheets/fha_v9.css'
+  res.locals.cssPath = '/public/stylesheets/fha_v8.css'
   res.locals.javascriptPath = '/public/javascripts/application_v9.js'
   res.locals.versionNumber = versionNumber
 
