@@ -3,60 +3,15 @@
 
 {% block actioncolumn %}
    
-  <p class="returnRef"><a href="/{{path }}/scenario6/referrals-fme" class="link-back">Return to case list</a></p>
+ <!-- <p class="returnRef"><a href="/{{path }}/scenario6/referrals-fme" class="link-back">Return to case list</a></p> -->
  
  <div class="caseStatus">
  
 
- 
- 
-{% if data['pbachoice']=='no'%}
- 
-	 <h2 class="main-status"><span>Current case status</span>Appointment booked</h2>
-	 
-	 
-	 {% elif data['pbachoice']=='yes'%}
-	 
-	 <h2 class="main-status"><span>Current case status</span>Paper based review</h2>
-	 <!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/not-testing" class="button">Start assessment</a></h3>-->
-	 
-	 
-	 {% else %}
-	 
- 
 
-{% if data['evidencePath']=='ev-ftf'%}
-
-	<h2 class="main-status"><span>Current case status</span>Ready to book</h2>
-
-	{% if data['evidenceRecorded']=='record-yes'%}
-		
-	{% endif %}
-	
-	
-	{% elif data['evidencePath']=='ev-pba'%}
-	
-	{% if data['evidenceRecorded']=='record-yes'%}
 		<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
-		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal" class="button">Make recommendation</a></h3>
-		{% else %}
-		<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
-	{% endif %}
-	
-	
-	{% else %}
-	
-	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
-	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal" class="button">Make recommendation</a></h3>
-	
-	
-
-{% endif %}
-
-
-{% endif %}
-
-
+		<!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal" class="button">Make recommendation</a></h3>-->
+		
 </div>
 
 {% endblock %}
@@ -67,38 +22,7 @@ Jurgen Covault
 
 {% block citizen_content %}
 
-{% if data['evidencePath']=='ev-ftf'%}
 
-
-	{% if data['evidenceRecorded']=='record-yes'%}
-	
-	
-		{% if data['pbachoice']%}
-	
-		
-	{% else %}
-	<div class="panel panel-info panel-instruction fme-warning"><h2 class="heading-small">New evidence recorded</h2>
-	   <ul class="numeric" data-id="">
-	       <li>
-	         <span class="circle circle-step circle-white">1</span>
-	         <h2 class="govuk-heading-m">Roberto's case should be reviewed before making a recommendation</h2>
-	       </li>
-	
-	       <li>
-	         <span class="circle circle-step circle-white">2</span>
-	         <h2 class="govuk-heading-m"><a href="/{{path }}/scenario6/recordFMEdecision">Make recommendation</a></h2>
-	       </li>
-	     </ul>
-	</div>
-	{% endif %}
-	
-	
-	
-		
-	{% endif %}
-	
-	
-	{% endif %}
 
 
 <div class="container">
@@ -112,20 +36,14 @@ Jurgen Covault
   	
 
     <div class="column-full">
-    
-    
-    {# macro #}
-  {{ nav.scenario_tabs("evidence-portal",1,path1, customer._id) }}
-  <div class="grid-row">
 
-    <div class="column-full">
         
 
-<p><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
 
 
 
-<h1 class="heading-large mt10">Recorded evidence</h1>
+<h1 class="heading-large">Recorded evidence</h1>
 
 
 
@@ -231,9 +149,6 @@ Jurgen Covault
 </table> 
 
 
-
-    </div><!-- column-full -->
-  </div>
 
     </div><!-- column -->
 
