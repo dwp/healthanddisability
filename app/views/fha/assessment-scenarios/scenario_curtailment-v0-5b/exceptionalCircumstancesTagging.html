@@ -1,0 +1,107 @@
+{% extends path+"/scenario_curtailment-v0-5b/_layout-case-simple_clear-assessment-complete.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+	
+	<form method="post" action="exceptionalCircumstancesJustification">
+	
+	<p class="caption-large">LCWRA</p>
+	<h1 class="heading-large" style="margin-top:0px !important;">Starting and finishing tasks</h1>
+	<p class="lede">David cannot plan, start and finish everyday tasks.</p>
+
+	<p>Choose relevant statements that support this:</p>
+
+  	<fieldset>
+		<div class="multiple-choice">
+<input id="SW1" type="checkbox" name="taggedstatement1" value="Lives with his mother, this is in a house.">
+<label for="SW1">Lives with his mother, this is in a house.</label>
+</div>
+<div class="multiple-choice">
+<input id="SW2" type="checkbox" name="taggedstatement2" value="Travelled here today in a car, travelled and attended with his mother who was present.">
+<label for="SW2">Travelled here today in a car, travelled and attended with his mother who was present.</label>
+</div>
+<div class="multiple-choice">
+<input id="SW3" type="checkbox" name="taggedstatement3" value="David can find car journeys quite stressful since his accident.">
+<label for="SW3">David can find car journeys quite stressful since his accident.</label>
+</div>
+<div class="multiple-choice">
+<input id="SW4" type="checkbox" name="taggedstatement4" value="Last worked in a library in the office.">
+<label for="SW4">Last worked in a library in the office.</label>
+</div>
+<div class="multiple-choice">
+<input id="SW5" type="checkbox" name="taggedstatement5" value="Worked up until the accident, following the accident he did not return to work due to his mental health.">
+<label for="SW5">Worked up until the accident, following the accident he did not return to work due to his mental health.</label>
+</div>
+<div class="multiple-choice">
+<input id="SW6" type="checkbox" name="taggedstatement6" value="Gets up at different times, this can very, mother tries to wake him at the same time every day and takes him tea and toast.">
+<label for="SW6">Gets up at different times, this can very, mother tries to wake him at the same time every day and takes him tea and toast.</label>
+</div>
+<div class="multiple-choice">
+<input id="SW7" type="checkbox" name="taggedstatement7" value="Sometimes when she goes back to the room the tea and toast won't have been touched.">
+<label for="SW7">Sometimes when she goes back to the room the tea and toast won't have been touched.</label>
+</div>
+<div class="multiple-choice">
+<input id="SW8" type="checkbox" name="taggedstatement8" value="Were his mother not to wake him then he would stop in bed, he needs prompting to do nearly everything.">
+<label for="SW8">Were his mother not to wake him then he would stop in bed, he needs prompting to do nearly everything.</label>
+</div>
+<div class="multiple-choice">
+<input id="SW9" type="checkbox" name="taggedstatement9" value="Needs prompting with everything, wouldn't shower without prompting, he doesn't see the point.">
+<label for="SW9">Needs prompting with everything, wouldn't shower without prompting, he doesn't see the point.</label>
+</div>
+<div class="multiple-choice">
+<input id="SW10" type="checkbox" name="taggedstatement10" value="Has a kindle, however has not used this for 2 weeks, downloaded the book, read a few pages and then forgot what he has read, has poor concentration.">
+<label for="SW10">Has a kindle, however has not used this for 2 weeks, downloaded the book, read a few pages and then forgot what he has read, has poor concentration.</label>
+</div>
+<div class="multiple-choice">
+<input id="SW11" type="checkbox" name="taggedstatement11" value="Has a TV in his room but rarely watches this, is not interested in this any more.">
+<label for="SW11">Has a TV in his room but rarely watches this, is not interested in this any more.</label>
+</div>
+<div class="multiple-choice">
+<input id="SW12" type="checkbox" name="taggedstatement12" value="Would never make his own food or drink, can't be bothered, never feels hungry, needs to be prompted, most of his meals he eats in his room. Mother tries to prompt him to come downstairs but generally doesn't, just wants to stop in his room, isn't interested.">
+<label for="SW12">Would never make his own food or drink, can't be bothered, never feels hungry, needs to be prompted, most of his meals he eats in his room. Mother tries to prompt him to come downstairs but generally doesn't, just wants to stop in his room, isn't interested.</label>
+</div>
+<div class="multiple-choice">
+<input id="SW13" type="checkbox" name="taggedstatement13" value="His mother arranges all of his appointments, she has to take him to all of them or he wouldn't go.">
+<label for="SW13">His mother arranges all of his appointments, she has to take him to all of them or he wouldn't go.</label>
+</div>
+<div class="multiple-choice">
+<input id="SW14" type="checkbox" name="taggedstatement14" value="This is because he needs constant reassurance and prompting, he wouldn't open mail or read them if not prompted, mother generally reads everything and deals with this.">
+<label for="SW14">This is because he needs constant reassurance and prompting, he wouldn't open mail or read them if not prompted, mother generally reads everything and deals with this.</label>
+</div>
+<div class="multiple-choice">
+<input id="SW15" type="checkbox" name="taggedstatement15" value="His mother manages all bills and correspondence, she does all of the cleaning, lacks motivation.">
+<label for="SW15">His mother manages all bills and correspondence, she does all of the cleaning, lacks motivation.</label>
+</div>
+<div class="multiple-choice">
+<input id="SW16" type="checkbox" name="taggedstatement16" value="His mother tries to go into his room to open the curtains, but he doesn't like this, wants to be on his own in the dark.">
+<label for="SW16">His mother tries to go into his room to open the curtains, but he doesn't like this, wants to be on his own in the dark.</label>
+</div>
+<div class="multiple-choice">
+<input id="SW17" type="checkbox" name="taggedstatement17" value="Doesn't go out anywhere other than to appointments that his mother takes him to, this is because he lacks interest.">
+<label for="SW17">Doesn't go out anywhere other than to appointments that his mother takes him to, this is because he lacks interest.</label>
+</div>
+<div class="multiple-choice">
+<input id="SW18" type="checkbox" name="taggedstatement18" value="No hobbies or interests that he wishes to add, there is nothing that he wishes to add to his typical day.">
+<label for="SW18">No hobbies or interests that he wishes to add, there is nothing that he wishes to add to his typical day.</label>
+</div>
+  	</fieldset>
+<br>
+    <p><input type="submit" class="button" value="Next" id="submitButton"></p>
+		</form>	
+
+  </div><!-- column -->
+</div><!-- row -->
+
+
+
+{% endblock %}
