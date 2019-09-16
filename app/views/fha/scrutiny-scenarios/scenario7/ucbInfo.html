@@ -1,8 +1,8 @@
-{% extends path+"/_layout-case-simple4.html" %}
+{% extends path+"/_layout-case-simple7.html" %}
 
 
 {% block actioncolumn %}
-   
+
 
 
  <div class="caseStatus">
@@ -16,43 +16,11 @@
 {% endblock %}
 
 {% block citizen_detail %}
-Kenneth Robertson
+Billy Keita
 {% endblock %}
 
 {% block citizen_content %}
 
-{% if data['evidencePath']=='ev-ftf'%}
-
-
-	{% if data['evidenceRecorded']=='record-yes'%}
-	
-	
-		{% if data['pbachoice']%}
-	
-		
-	{% else %}
-	<div class="panel panel-info panel-instruction fme-warning"><h2 class="heading-small">New evidence recorded</h2>
-	   <ul class="numeric" data-id="">
-	       <li>
-	         <span class="circle circle-step circle-white">1</span>
-	         <h2 class="govuk-heading-m">Roberto's case should be reviewed before making a recommendation</h2>
-	       </li>
-	
-	       <li>
-	         <span class="circle circle-step circle-white">2</span>
-	         <h2 class="govuk-heading-m"><a href="/{{path }}/scenario4/recordFMEdecision">Make recommendation</a></h2>
-	       </li>
-	     </ul>
-	</div>
-	{% endif %}
-	
-	
-	
-		
-	{% endif %}
-	
-	
-	{% endif %}
 
 
 <div class="container">
@@ -91,22 +59,25 @@ Kenneth Robertson
 		<h2 class="heading-medium">Details</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 				exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 					pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 	</div>
+
+	<div class="output-row">
+	<form>
+		<fieldset>
+			<legend class="heading-medium">Control measures</legend>
 	
-	
-	
-	
-	<div class="output-row">		
-		<h2 class="heading-medium">Control measures</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 				exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 					pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<div class="form-group">	
+
+			<label for="typeReasonTele" class="form-label-bold">Add information:</label>
+			<textarea id="typeReasonTele" class="form-control form-control-3-4" rows="10"></textarea>
+
+		</div>	
+		</fieldset>
+		
+		<p><a href="ucbInfo2" class="button">Save and continue</a></p>
+	</form>
 	</div>
 	
-	
-	
-	<p><a href="#" class="secondary-invert">Edit control measures</a></p>
-	
-	<hr>
-	
-	<p><a href="/{{path }}/scenario4/timeline-review" class="button">Finish</a></p>
+
 	
 </div>
 

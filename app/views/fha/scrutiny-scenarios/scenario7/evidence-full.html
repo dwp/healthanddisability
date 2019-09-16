@@ -1,0 +1,262 @@
+{% extends path+"/_layout-case-simple7.html" %}
+
+
+{% block actioncolumn %}
+   
+
+ <div class="caseStatus">
+ 	
+	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+	
+
+ </div>
+
+<!--<div class="secondary-nav-actions">
+
+	<ul>
+		<li><a href="#">Withdraw case</a></li>
+		<li><a href="#">Close case</a></li>
+		<li><a href="#">Delete case</a></li>
+	</ul>
+		
+ </div> -->
+
+{% endblock %}
+
+{% block citizen_detail %}
+Billy Keita
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.scenario_tabs("evidence-portal",1,path1, customer._id) }}
+  <div class="grid-row">
+
+    <div class="column-full">
+        
+
+<p><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+<h1 class="heading-large mt10">Recorded evidence</h1>
+
+
+
+<!--<h3 class="filter-head"><span>Filter by:</span></h3>
+
+
+
+ 
+   			 <div class="time-group time-top timeline-break filter-portal">
+			   
+				      <fieldset>
+				    
+				        <legend class="visually-hidden">Filter options</legend>
+				    
+				    
+				    
+				    
+				        <div class="time-choice">
+				         <input id="notes" name="timelinefilter" type="checkbox" value="note"  {{ checked('timelinefilter', 'note') }}>
+				          <label for="notes">All evidence items</label>
+				        </div>
+				        <div class="time-choice">
+				            <input id="evidence" name="timelinefilter" type="checkbox" value="evidence"  {{ checked('timelinefilter', 'evidence') }}>
+				            <label for="evidence">Medical reports</label>
+				          </div>
+				          <div class="time-choice">
+				              <input id="referral" name="timelinefilter" type="checkbox" value="referral"  {{ checked('timelinefilter', 'referral') }}>
+				              <label for="referral">Justifications</label>
+				          </div>
+				          <div class="time-choice">
+				              <input id="tele" name="timelinefilter" type="checkbox" value="tele"  {{ checked('timelinefilter', 'tele') }}>
+				              <label for="tele">Telephone conversations</label>
+				          </div>
+				          <div class="time-choice">
+				              <input id="review" name="timelinefilter" type="checkbox" value="review"  {{ checked('timelinefilter', 'review') }}>
+				              <label for="review">Previous decisions</label>
+				          </div>
+
+				     				          
+				      </fieldset>
+				   </div>		-->
+				   
+				   
+				 
+
+
+
+<table class="evidence-list">
+
+<thead>
+<tr>
+  <th>Evidence type</th>
+  <th>Source</th>
+  <th>Received</th>
+  <th class="numeric">Recorded</th>
+</tr>
+</thead>
+
+
+<tbody>
+
+
+{% if data['pbachoice']=='yes'%}
+
+		<tr>
+		  <td><a href="/{{path }}/scenario7/not-testing">Paper based assessment justification</a></td>
+		  <td>HCP</td>
+		  <td></td>
+		  <td class="numeric"><span>11 August 2019</span></td>
+		</tr>
+
+{% endif %}
+
+
+
+{% if data['evidenceChoice']=='ev-gp'%}
+	  	
+	  	
+		{% if data['evidenceRecorded']=='record-yes'%}
+		
+
+		<tr>
+		  <td><a href="/{{path }}/scenario7/not-testing">GP report</a></td>
+		  <td>GP</td>
+		  <td><span class="secondary-text">9 August 2019</span></td>
+		  <td class="numeric"><span>10 August 2019</span></td>
+		</tr>
+
+		{% endif %}
+		
+		
+		
+	{% elif data['evidenceChoice']=='ev-fr'%}
+		
+		
+		 {% if data['evidenceRecorded']=='record-yes'%}
+		
+		
+		<tr>
+		  <td><a href="/{{path }}/scenario7/not-testing">Factual report</a></td>
+		  <td>GP</td>
+		  <td><span class="secondary-text">9 August 2019</span></td>
+		  <td class="numeric"><span>10 August 2019</span></td>
+		</tr>		
+		
+		{% endif %}
+
+		  	
+	{% endif %}
+	
+	
+	
+	{% if data['appointmentReferral']%}
+	
+	
+		<tr>
+		  <td><a href="/{{path }}/scenario7/referralJustify">Appointment referral justification</a></td>
+		  <td>HCP</td>
+		  <td></td>
+		  <td class="numeric"><span>3 August 2019</span></td>
+		</tr>
+	
+	
+	{% endif %}
+
+
+
+
+<!--<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+  <td><a href="/{{path }}/scenario7/not-testing">Med 3</a></td>
+  <td>GP</td>
+  <td><span class="secondary-text">1 August 2019</span></td>
+  <td class="numeric"><span>1 August 2019</span></td>
+</tr> -->
+
+<tr>
+  <td><a href="/{{path }}/scenario7/teleOutput">Telephone conversation</a></td>
+  <td>Consultant</td>
+  <td>&ndash;</td>
+  <td class="numeric">19 August 2019</td>
+</tr>
+
+
+<tr>
+  <td><a href="/{{path }}/scenario7/not-testing">Paper based assessment justification</a></td>
+  <td>HCP</td>
+  <td>&ndash;</td>
+  <td class="numeric">28 July 2019</td>
+</tr>
+
+
+<tr>
+  <td><a href="/{{path }}/scenario7/not-testing">Factual report</a></td>
+  <td>GP</td>
+  <td>27 July 2019</td>
+  <td class="numeric">28 July 2019</td>
+</tr>
+
+
+
+<tr>
+  <td><a href="/{{path }}/scenario7/not-testing">Appointment referral justification</a></td>
+  <td>HCP</td>
+  <td>&ndash;</td>
+  <td class="numeric">25 July 2019</td>
+</tr>
+
+
+<tr>
+  <td><a href="/{{path }}/scenario7/not-testing">UC50 </a></td>
+  <td>Claimant</td>
+  <td>21 July 2019</td>
+  <td class="numeric">21 July 2019</td>
+</tr>
+
+
+
+
+</tbody>
+
+</table> 
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

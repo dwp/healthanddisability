@@ -1,0 +1,138 @@
+{% extends path+"/_layout-case-simple7.html" %}
+
+
+{% block actioncolumn %}
+   
+  <div class="caseStatus">
+ 	
+	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+ </div>
+
+<!--<div class="secondary-nav-actions">
+
+	<ul>
+		<li><a href="#">Withdraw case</a></li>
+		<li><a href="#">Close case</a></li>
+		<li><a href="#">Delete case</a></li>
+	</ul>
+		
+ </div> -->
+
+{% endblock %}
+
+{% block citizen_detail %}
+Billy Keita
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+  <div class="grid-row">
+  
+    <div class="column-full">
+    
+    {# macro #}
+  {{ nav.scenario_tabs("details-fme",1,path1, customer._id) }}
+  
+
+
+<div class="back-navigation"><a href="javascript: history.go(-1)" class="link-back">Back</a></div>
+  
+
+  <h1 class="heading-large">
+  	Medical conditions</h1>
+  	
+  
+  <div class="portal-display">	
+  	
+  	
+  	
+  	 <div class="grid-row">
+  
+		  	<div class="column-full">
+		  	
+		  		
+					<table class="medical-list">
+						<caption class="visually-hidden">Medical conditions list</caption>
+						
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Since</th>
+								<th>Source</th>
+							</tr>
+						</thead>
+
+						
+						<tbody>
+						
+						
+						<tr>
+							<td>Glucose 6 phosphate dehydrogenase (G6PD) deficiency</td>
+							<td>12 June 1999</td>
+							<td>Claimant</td>
+						</tr>
+						
+						<tr>
+							<td>Glucose 6 phosphate dehydrogenase (G6PD) deficiency</td>
+							<td>12 June 1999</td>
+							<td>Claimant</td>
+						</tr>
+						
+						<tr>
+							<td>Glucose 6 phosphate dehydrogenase (G6PD) deficiency</td>
+							<td>12 June 1999</td>
+							<td>Claimant</td>
+						</tr>
+						
+						<tr>
+							<td>Glucose 6 phosphate dehydrogenase (G6PD) deficiency</td>
+							<td>12 June 1999</td>
+							<td>Claimant</td>
+						</tr>
+						
+						<tr>
+							<td>Glucose 6 phosphate dehydrogenase (G6PD) deficiency</td>
+							<td>12 June 1999</td>
+							<td>Claimant</td>
+						</tr>
+						
+						<tr>
+							<td>Glucose 6 phosphate dehydrogenase (G6PD) deficiency</td>
+							<td>12 June 1999</td>
+							<td>Claimant</td>
+						</tr>
+
+						
+						
+						</tbody>
+					</table>
+					
+					<p class="view-all"><a href="/{{path }}/scenario4/not-testing" class="secondary-invert">Add or edit a medical condition</a></p>
+
+
+
+						  	
+		  	</div>
+		  	
+		  	
+		   
+    
+  </div>
+  
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
