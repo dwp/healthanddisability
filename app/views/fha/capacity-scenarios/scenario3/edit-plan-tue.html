@@ -86,6 +86,11 @@
                
                </style>
 
+             <div class="form-group mt30">
+  <label class="form-label-bold" for="monfte">How many full time equivalent are you basing this capacity on?</label>
+  <input class="form-control form-control-1-8" id="tuefte" type="number" name="tuefte" value="{{ tuefte }}" >
+</div>       
+
                 <tr>
                   <th class="col">9:00am</th>
                        <td class="col5"><div class="totals">
@@ -101,7 +106,7 @@
                     <input class="form-control " id="e_col_tue_2_1"  type="text" name="e_col_tue_2_1"  type="text" value="{{e_col_tue_2_1}}" >
                         <span class='booked'><span class="bold">3</span></span>
                       </div>
-                      <span class='flags'>1 UCB<br>1 DE Referral</span>
+                      <span class='flags'>1 UCB<br>1 ED Referral</span>
                       </td>
                   <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="e_col_tue_3_1"  type="text" name="e_col_tue_3_1"  type="text" value="{{e_col_tue_3_1}}" >
@@ -165,7 +170,7 @@
                     <input class="form-control " id="e_col_tue_1_4"  type="text" name="e_col_tue_1_4"  type="text" value="{{e_col_tue_1_4}}" >
                         <span class='booked'><span class="bold">1 </span></span>
                     </div>
-                      <span class='flags'>DE Referral</span>
+                      <span class='flags'>ED Referral</span>
                     </td> 
                     <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="e_col_tue_2_4"  type="text" name="e_col_tue_2_4"  type="text" value="{{e_col_tue_2_4}}" >
@@ -339,7 +344,7 @@
                     <input class="form-control " id="e_col_tue_2_17"  type="text" name="e_col_tue_2_17"  type="text" value="{{e_col_tue_2_17}}" >
                         <span class='booked'><span class="bold">3 </span></span>
                       </div>
-                        <span class='flags'>1 DE Referral</span>
+                        <span class='flags'>1 ED Referral</span>
                       </td>
                   <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="e_col_tue_3_17"  type="text" name="e_col_tue_3_17"  type="text" value="{{e_col_tue_3_17}}" >
@@ -455,7 +460,7 @@
                     <input class="form-control " id="e_col_tue_2_25"  type="text" name="e_col_tue_2_25"  type="text" value="{{e_col_tue_2_25}}" >
                         <span class='booked'><span class="bold">1</span></span>
                       </div>
-                       <span class='flags'>1 DE Referral</span></td>
+                       <span class='flags'>1 ED Referral</span></td>
                   <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
                     <input class="form-control " id="e_col_tue_3_25"  type="text" name="e_col_tue_3_25"  type="text" value="{{e_col_tue_3_25}}" >
                         <span class='booked'><span class="bold"> </span></span>
@@ -524,12 +529,9 @@
 
 
 
-     <div class="form-group mt30">
-  <label class="form-label-bold" for="monfte">How many full time equivalent are you basing this capacity on?</label>
-  <input class="form-control form-control-1-8" id="tuefte" type="number" name="tuefte" value="{{ tuefte }}" >
-</div>
 
-              <p><button class="button">Save and continue</button></p>
+
+              <p><button class="button mt30">Save and continue</button></p>
               {% include path+"/scenario3/_totals_tue.html" %}
               	<div class="check-choice visually-hidden">
                     <input id="tuesdayvisited" name="tuesdayvisited" type="checkbox" value="yes" checked>
@@ -565,10 +567,10 @@
 {% if data['tuesdayvisited']=='yes'%}
 
 {% else %}
-$('#e_e_col_tue_1_sum').val('8');
-$('#e_e_col_tue_2_sum').val("33");
+$('#e_col_tue_1_sum').val('8');
+$('#e_col_tue_2_sum').val("33");
 $('#e_rowsum_tuesum').val("41");
-$('#e_e_col_tue_6_sum').val("2");
+$('#e_col_tue_6_sum').val("2");
 $('#e_rowsum_tuesum_avail').val("8");
 $('#e_col_tue_1_20').val("1");
 $('#e_col_tue_2_27').val("1");
@@ -648,20 +650,20 @@ function total(inputFields, totalField) {
 
 
 $(function() {
-  $('#e_e_col_tue_1_sum, #e_e_col_tue_2_sum, #e_e_col_tue_3_sum, #e_e_col_tue_4_sum').change(function() { 
-    total('#e_e_col_tue_1_sum, #e_e_col_tue_2_sum, #e_e_col_tue_3_sum, #e_e_col_tue_4_sum, #total-booked','#e_rowsum_tuesum');
+  $('#e_col_tue_1_sum, #e_col_tue_2_sum, #e_col_tue_3_sum, #e_col_tue_4_sum').change(function() { 
+    total('#e_col_tue_1_sum, #e_col_tue_2_sum, #e_col_tue_3_sum, #e_col_tue_4_sum, #total-booked','#e_rowsum_tuesum');
   });
 });
 
 $(function() { 
   $('#e_col_tue_1_1, #e_col_tue_1_2, #e_col_tue_1_3, #e_col_tue_1_4, #e_col_tue_1_5, #e_col_tue_1_6, #e_col_tue_1_7, #e_col_tue_1_8, #e_col_tue_1_9, #e_col_tue_1_10, #e_col_tue_1_11, #e_col_tue_1_12, #e_col_tue_1_13, #e_col_tue_1_14, #e_col_tue_1_15, #e_col_tue_1_16, #e_col_tue_1_17, #e_col_tue_1_18, #e_col_tue_1_19, #e_col_tue_1_20, #e_col_tue_1_21, #e_col_tue_1_23, #e_col_tue_1_23, #e_col_tue_1_24, #e_col_tue_1_25, #e_col_tue_1_26, #e_col_tue_1_27, #e_col_tue_1_28, #e_col_tue_1_29, #e_col_tue_1_30, #e_col_tue_1_31, #e_col_tue_1_32').change(function(){
-    total('#e_col_tue_1_1, #e_col_tue_1_2, #e_col_tue_1_3, #e_col_tue_1_4, #e_col_tue_1_5, #e_col_tue_1_6, #e_col_tue_1_7, #e_col_tue_1_8, #e_col_tue_1_9, #e_col_tue_1_10, #e_col_tue_1_11, #e_col_tue_1_12, #e_col_tue_1_13, #e_col_tue_1_14, #e_col_tue_1_15, #e_col_tue_1_16, #e_col_tue_1_17, #e_col_tue_1_18, #e_col_tue_1_19, #e_col_tue_1_20, #e_col_tue_1_21, #e_col_tue_1_23, #e_col_tue_1_23, #e_col_tue_1_24, #e_col_tue_1_25, #e_col_tue_1_26, #e_col_tue_1_27, #e_col_tue_1_28, #e_col_tue_1_29, #e_col_tue_1_30, #e_col_tue_1_31, #e_col_tue_1_32, #complex-booked','#e_e_col_tue_1_sum');
+    total('#e_col_tue_1_1, #e_col_tue_1_2, #e_col_tue_1_3, #e_col_tue_1_4, #e_col_tue_1_5, #e_col_tue_1_6, #e_col_tue_1_7, #e_col_tue_1_8, #e_col_tue_1_9, #e_col_tue_1_10, #e_col_tue_1_11, #e_col_tue_1_12, #e_col_tue_1_13, #e_col_tue_1_14, #e_col_tue_1_15, #e_col_tue_1_16, #e_col_tue_1_17, #e_col_tue_1_18, #e_col_tue_1_19, #e_col_tue_1_20, #e_col_tue_1_21, #e_col_tue_1_23, #e_col_tue_1_23, #e_col_tue_1_24, #e_col_tue_1_25, #e_col_tue_1_26, #e_col_tue_1_27, #e_col_tue_1_28, #e_col_tue_1_29, #e_col_tue_1_30, #e_col_tue_1_31, #e_col_tue_1_32, #complex-booked','#e_col_tue_1_sum');
   });
 });
 
 $(function(){
   $('#e_col_tue_2_1, #e_col_tue_2_2, #e_col_tue_2_3, #e_col_tue_2_4, #e_col_tue_2_5, #e_col_tue_2_6, #e_col_tue_2_7, #e_col_tue_2_8, #e_col_tue_2_9, #e_col_tue_2_10, #e_col_tue_2_11, #e_col_tue_2_12, #e_col_tue_2_13, #e_col_tue_2_14, #e_col_tue_2_15, #e_col_tue_2_16, #e_col_tue_2_17, #e_col_tue_2_18, #e_col_tue_2_19, #e_col_tue_2_20, #e_col_tue_2_21, #e_col_tue_2_22, #e_col_tue_2_23, #e_col_tue_2_24, #e_col_tue_2_25, #e_col_tue_2_26, #e_col_tue_2_27, #e_col_tue_2_28, #e_col_tue_2_29, #e_col_tue_2_30, #e_col_tue_2_31, #e_col_tue_2_32').change(function(){
-     total('#e_col_tue_2_1, #e_col_tue_2_2, #e_col_tue_2_3, #e_col_tue_2_4, #e_col_tue_2_5, #e_col_tue_2_6, #e_col_tue_2_7, #e_col_tue_2_8, #e_col_tue_2_9, #e_col_tue_2_10, #e_col_tue_2_11, #e_col_tue_2_12, #e_col_tue_2_13, #e_col_tue_2_14, #e_col_tue_2_15, #e_col_tue_2_16, #e_col_tue_2_17, #e_col_tue_2_18, #e_col_tue_2_19, #e_col_tue_2_20, #e_col_tue_2_21, #e_col_tue_2_22, #e_col_tue_2_23, #e_col_tue_2_24, #e_col_tue_2_25, #e_col_tue_2_26, #e_col_tue_2_27, #e_col_tue_2_28, #e_col_tue_2_29, #e_col_tue_2_30, #e_col_tue_2_31, #e_col_tue_2_32, #neuro-booked','#e_e_col_tue_2_sum');
+     total('#e_col_tue_2_1, #e_col_tue_2_2, #e_col_tue_2_3, #e_col_tue_2_4, #e_col_tue_2_5, #e_col_tue_2_6, #e_col_tue_2_7, #e_col_tue_2_8, #e_col_tue_2_9, #e_col_tue_2_10, #e_col_tue_2_11, #e_col_tue_2_12, #e_col_tue_2_13, #e_col_tue_2_14, #e_col_tue_2_15, #e_col_tue_2_16, #e_col_tue_2_17, #e_col_tue_2_18, #e_col_tue_2_19, #e_col_tue_2_20, #e_col_tue_2_21, #e_col_tue_2_22, #e_col_tue_2_23, #e_col_tue_2_24, #e_col_tue_2_25, #e_col_tue_2_26, #e_col_tue_2_27, #e_col_tue_2_28, #e_col_tue_2_29, #e_col_tue_2_30, #e_col_tue_2_31, #e_col_tue_2_32, #neuro-booked','#e_col_tue_2_sum');
   });
 });
 
@@ -669,13 +671,13 @@ $(function(){
 
 $(function(){
   $('#e_col_tue_3_1, #e_col_tue_3_2, #e_col_tue_3_3, #e_col_tue_3_4, #e_col_tue_3_5, #e_col_tue_3_6, #e_col_tue_3_7, #e_col_tue_3_8, #e_col_tue_3_9, #e_col_tue_3_10, #e_col_tue_3_11, #e_col_tue_3_12, #e_col_tue_3_13, #e_col_tue_3_14, #e_col_tue_3_15, #e_col_tue_3_16, #e_col_tue_3_17, #e_col_tue_3_18, #e_col_tue_3_19, #e_col_tue_3_20, #e_col_tue_3_21, #e_col_tue_3_22, #e_col_tue_3_23, #e_col_tue_3_24, #e_col_tue_3_25, #e_col_tue_3_26, #e_col_tue_3_27, #e_col_tue_3_28, #e_col_tue_3_29, #e_col_tue_3_30, #e_col_tue_3_31, #e_col_tue_3_32').change(function(){
-       total('#e_col_tue_3_1, #e_col_tue_3_2, #e_col_tue_3_3, #e_col_tue_3_4, #e_col_tue_3_5, #e_col_tue_3_6, #e_col_tue_3_7, #e_col_tue_3_8, #e_col_tue_3_9, #e_col_tue_3_10, #e_col_tue_3_11, #e_col_tue_3_12, #e_col_tue_3_13, #e_col_tue_3_14, #e_col_tue_3_15, #e_col_tue_3_16, #e_col_tue_3_17, #e_col_tue_3_18, #e_col_tue_3_19, #e_col_tue_3_20, #e_col_tue_3_21, #e_col_tue_3_22, #e_col_tue_3_23, #e_col_tue_3_24, #e_col_tue_3_25, #e_col_tue_3_26, #e_col_tue_3_27, #e_col_tue_3_28, #e_col_tue_3_29, #e_col_tue_3_30, #e_col_tue_3_31, #e_col_tue_3_32','#e_e_col_tue_3_sum');
+       total('#e_col_tue_3_1, #e_col_tue_3_2, #e_col_tue_3_3, #e_col_tue_3_4, #e_col_tue_3_5, #e_col_tue_3_6, #e_col_tue_3_7, #e_col_tue_3_8, #e_col_tue_3_9, #e_col_tue_3_10, #e_col_tue_3_11, #e_col_tue_3_12, #e_col_tue_3_13, #e_col_tue_3_14, #e_col_tue_3_15, #e_col_tue_3_16, #e_col_tue_3_17, #e_col_tue_3_18, #e_col_tue_3_19, #e_col_tue_3_20, #e_col_tue_3_21, #e_col_tue_3_22, #e_col_tue_3_23, #e_col_tue_3_24, #e_col_tue_3_25, #e_col_tue_3_26, #e_col_tue_3_27, #e_col_tue_3_28, #e_col_tue_3_29, #e_col_tue_3_30, #e_col_tue_3_31, #e_col_tue_3_32','#e_col_tue_3_sum');
   });
 });
 
 $(function(){
   $('#e_col_tue_4_1, #e_col_tue_4_2, #e_col_tue_4_3, #e_col_tue_4_4, #e_col_tue_4_5, #e_col_tue_4_6, #e_col_tue_4_7, #e_col_tue_4_8, #e_col_tue_4_9, #e_col_tue_4_10, #e_col_tue_4_11, #e_col_tue_4_12, #e_col_tue_4_13, #e_col_tue_4_14, #e_col_tue_4_15, #e_col_tue_4_16, #e_col_tue_4_17, #e_col_tue_4_18, #e_col_tue_4_19, #e_col_tue_4_20, #e_col_tue_4_21, #e_col_tue_4_22, #e_col_tue_4_23, #e_col_tue_4_24, #e_col_tue_4_25, #e_col_tue_4_26, #e_col_tue_4_27, #e_col_tue_4_28, #e_col_tue_4_29, #e_col_tue_4_30, #e_col_tue_4_31, #e_col_tue_4_32').change(function(){
-total('#e_col_tue_4_1, #e_col_tue_4_2, #e_col_tue_4_3, #e_col_tue_4_4, #e_col_tue_4_5, #e_col_tue_4_6, #e_col_tue_4_7, #e_col_tue_4_8, #e_col_tue_4_9, #e_col_tue_4_10, #e_col_tue_4_11, #e_col_tue_4_12, #e_col_tue_4_13, #e_col_tue_4_14, #e_col_tue_4_15, #e_col_tue_4_16, #e_col_tue_4_17, #e_col_tue_4_18, #e_col_tue_4_19, #e_col_tue_4_20, #e_col_tue_4_21, #e_col_tue_4_22, #e_col_tue_4_23, #e_col_tue_4_24, #e_col_tue_4_25, #e_col_tue_4_26, #e_col_tue_4_27, #e_col_tue_4_28, #e_col_tue_4_29, #e_col_tue_4_30, #e_col_tue_4_31, #e_col_tue_4_32','#e_e_col_tue_4_sum');
+total('#e_col_tue_4_1, #e_col_tue_4_2, #e_col_tue_4_3, #e_col_tue_4_4, #e_col_tue_4_5, #e_col_tue_4_6, #e_col_tue_4_7, #e_col_tue_4_8, #e_col_tue_4_9, #e_col_tue_4_10, #e_col_tue_4_11, #e_col_tue_4_12, #e_col_tue_4_13, #e_col_tue_4_14, #e_col_tue_4_15, #e_col_tue_4_16, #e_col_tue_4_17, #e_col_tue_4_18, #e_col_tue_4_19, #e_col_tue_4_20, #e_col_tue_4_21, #e_col_tue_4_22, #e_col_tue_4_23, #e_col_tue_4_24, #e_col_tue_4_25, #e_col_tue_4_26, #e_col_tue_4_27, #e_col_tue_4_28, #e_col_tue_4_29, #e_col_tue_4_30, #e_col_tue_4_31, #e_col_tue_4_32','#e_col_tue_4_sum');
   });
 });
 
@@ -876,7 +878,7 @@ $(function(){
 
 $(function(){
   $('#e_col_tue_6_1, #e_col_tue_6_2, #e_col_tue_6_3, #e_col_tue_6_4, #e_col_tue_6_5, #e_col_tue_6_6, #e_col_tue_6_7, #e_col_tue_6_8, #e_col_tue_6_9, #e_col_tue_6_10, #e_col_tue_6_11, #e_col_tue_6_12, #e_col_tue_6_13, #e_col_tue_6_14, #e_col_tue_6_15, #e_col_tue_6_16, #e_col_tue_6_17, #e_col_tue_6_18, #e_col_tue_6_19, #e_col_tue_6_20, #e_col_tue_6_21, #e_col_tue_6_22, #e_col_tue_6_23, #e_col_tue_6_24, #e_col_tue_6_25, #e_col_tue_6_26, #e_col_tue_6_27, #e_col_tue_6_28, #e_col_tue_6_29, #e_col_tue_6_30, #e_col_tue_6_31, #e_col_tue_6_32, #ucb-booked').change(function(){
-  total('#e_col_tue_6_1, #e_col_tue_6_2, #e_col_tue_6_3, #e_col_tue_6_4, #e_col_tue_6_5, #e_col_tue_6_6, #e_col_tue_6_7, #e_col_tue_6_8, #e_col_tue_6_9, #e_col_tue_6_10, #e_col_tue_6_11, #e_col_tue_6_12, #e_col_tue_6_13, #e_col_tue_6_14, #e_col_tue_6_15, #e_col_tue_6_16, #e_col_tue_6_17, #e_col_tue_6_18, #e_col_tue_6_19, #e_col_tue_6_20, #e_col_tue_6_21, #e_col_tue_6_22, #e_col_tue_6_23, #e_col_tue_6_24, #e_col_tue_6_25, #e_col_tue_6_26, #e_col_tue_6_27, #e_col_tue_6_28, #e_col_tue_6_29, #e_col_tue_6_30, #e_col_tue_6_31, #e_col_tue_6_32, #ucb-booked','#e_e_col_tue_6_sum');
+  total('#e_col_tue_6_1, #e_col_tue_6_2, #e_col_tue_6_3, #e_col_tue_6_4, #e_col_tue_6_5, #e_col_tue_6_6, #e_col_tue_6_7, #e_col_tue_6_8, #e_col_tue_6_9, #e_col_tue_6_10, #e_col_tue_6_11, #e_col_tue_6_12, #e_col_tue_6_13, #e_col_tue_6_14, #e_col_tue_6_15, #e_col_tue_6_16, #e_col_tue_6_17, #e_col_tue_6_18, #e_col_tue_6_19, #e_col_tue_6_20, #e_col_tue_6_21, #e_col_tue_6_22, #e_col_tue_6_23, #e_col_tue_6_24, #e_col_tue_6_25, #e_col_tue_6_26, #e_col_tue_6_27, #e_col_tue_6_28, #e_col_tue_6_29, #e_col_tue_6_30, #e_col_tue_6_31, #e_col_tue_6_32, #ucb-booked','#e_col_tue_6_sum');
   });
 });
 
