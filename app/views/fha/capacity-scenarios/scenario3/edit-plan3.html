@@ -1,0 +1,608 @@
+
+{% extends path+"/_layout.html" %}
+
+
+
+{% block assess_content %}
+
+<main id="content" role="main" class="main-content">
+<style>
+table.profile-table.edit input {
+    float: none;
+    width: 100%;
+    border-color:black;
+    font-size:18px;
+}
+
+table.profile-table.edit input[readonly]{
+ border-color:#333;
+ background:#333;
+   color:#fff;
+}
+table.profile-table.edit td, table.profile-table.edit th{
+  text-align:left;
+  padding:5px 10px;
+
+}
+
+table.profile-table.edit .booked
+{
+    float: none;
+    background: transparent;
+    height: auto;
+    vertical-align: middle;
+    width: 100%;
+    display: block;
+    font-size: 18px;
+    font-weight:bold;
+    padding-top:3px;
+}
+
+table.profile-table.edit dl.booked-container{
+border-bottom:none;
+}
+
+
+table.profile-table.edit td.col6, table.profile-table.edit th.col6 {
+  background:transparent;
+  border-left:1px solid #ddd;
+}
+
+table.profile-table th.col{
+  width:auto;
+}
+</style>
+
+      <div class="container">
+          <div class="grid-row">
+              <div class="column-three-quarters capacity">
+  <a href="javascript: history.go(-1)" class="link-back">Back</a>   
+
+   <h1 class="heading-large">Edit capacity for  {% include path+"/scenario3/_ACname.html" %}</h1>
+
+   <h2 class="heading-medium"> {% include path+"/scenario3/_Mon_Date.html" %}</h2>
+{% include path+"/scenario2/_info-panel-amount.html" %} 
+<p>
+<a href="not-testing" class="secondary-invert">Add or edit slot times or benefits</a>
+</p>
+   <form class="form" action="view-plan" method="post">
+
+              <table class="profile-table edit">
+
+            
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th class="col5"><span></span>Total</th>
+                  
+                    <!-- <th>Assessment Centre</th> -->
+                    <th>Complex neuro</th>
+                    <th>Neuro</th>
+                    <th>Non neuro</th>
+                      
+                    
+                
+                     <th class="col6">UCB</th>
+               
+                    
+                  </tr>
+                </thead>
+
+               
+
+                <tr>
+                  <th class="col">9:00am</th>
+
+                          <td class="col5">
+          
+           <dl>
+                          <dt>Opened slots</dt>
+                          <dd>	<input class="form-control" id="rowsum_1" type="text" name="rowsum_1" readonly  value="{{ rowsum_1 }}">
+                          <input class="visually-hidden" id="bookedsum_1"  type="text" name="bookedsum_1"  type="text" value="{{ bookedsum_1 }}" ></dd>
+                       </dl>
+        </td>
+                  <td>
+                   <dl>
+                          <dt>Available</dt>
+                          <dd><input class="form-control " id="col_1_1"  type="text" name="col_1_1"  type="text" value="{{col_1_1}}" ></dd>
+                       </dl>
+                       <dl class="booked-container">
+                          <dt>Booked</dt>
+                          <dd><span class="booked">1</span></dd>
+                          </dl>
+                         <span class="greytext block">ED referral</span>
+                  </td>
+
+                    <td>
+                   <dl>
+                          <dt>Available</dt>
+                          <dd><input class="form-control " id="col_2_1"  type="text" name="col_2_1"  type="text" value="{{col_2_1}}" ></dd>
+                       </dl>
+                       <dl class="booked-container">
+                          <dt>Booked</dt>
+                          <dd><span class="booked">3</span></dd>
+                          </dl>
+                          <span class="greytext block">1 UCB</span>
+                           <span class="greytext block">1 ED referral</span>
+                  </td>
+
+                       <td>
+                   <dl>
+                          <dt>Available</dt>
+                          <dd> <input class="form-control " id="col_3_1"  type="text" name="col_3_1"  type="text" value="{{col_3_1}}" ></dd>
+                       </dl>
+                      
+                        
+                  </td>
+                
+              
+  
+
+                  <td class="col6">
+                   <dl>
+                          <dt>Available</dt>
+                          <dd><input class="form-control " id="col_6_1"  type="text" name="col_6_1"  type="text" value="{{col_6_1}}" ></dd>
+                       </dl>
+                       <dl class="booked-container">
+                          <dt>Booked</dt>
+                          <dd><span class="booked">1</span></dd>
+                          </dl>
+                        
+                  </td>
+                </tr>
+
+
+                                <tr>
+                  <th class="col">9:30am</th>
+
+                           <td class="col5">
+          
+           <dl>
+                          <dt>Opened slots</dt>
+                          <dd>	<input class="form-control" id="rowsum_1" type="text" name="rowsum_1" readonly  value="5">
+                          <input class="visually-hidden" id="bookedsum_1"  type="text" name="bookedsum_1"  type="text" value="{{ bookedsum_1 }}" ></dd>
+                       </dl>
+        </td>
+                  <td>
+                   <dl>
+                          <dt>Available</dt>
+                          <dd><input class="form-control " id="col_1_1"  type="text" name="col_1_1"  type="text" value="1" ></dd>
+                       </dl>
+                       <dl class="booked-container">
+                          <dt>Booked</dt>
+                          <dd><span class="booked">1</span></dd>
+                          </dl>
+                         
+                  </td>
+
+                    <td>
+                   <dl>
+                          <dt>Available</dt>
+                          <dd><input class="form-control " id="col_2_1"  type="text" name="col_2_1"  type="text" value="{{col_2_1}}" ></dd>
+                       </dl>
+                       <dl class="booked-container">
+                          <dt>Booked</dt>
+                          <dd><span class="booked">3</span></dd>
+                          </dl>
+                     
+                  </td>
+
+                       <td>
+                   <dl>
+                          <dt>Available</dt>
+                          <dd> <input class="form-control " id="col_3_1"  type="text" name="col_3_1"  type="text" value="{{col_3_1}}" ></dd>
+                       </dl>
+                      
+                        
+                  </td>
+                
+              
+ 
+
+                  <td class="col6">
+                   <dl>
+                          <dt>Available</dt>
+                          <dd><input class="form-control " id="col_6_1"  type="text" name="col_6_1"  type="text" value="{{col_6_1}}" ></dd>
+                       </dl>
+                       <dl class="booked-container">
+                          <dt>Booked</dt>
+                          <dd><span class="booked">1</span></dd>
+                          </dl>
+                        
+                  </td>
+                </tr>
+          
+
+
+
+     
+
+
+
+        
+
+
+  
+
+
+        
+
+
+               
+  
+
+                        
+                              
+       
+
+
+               
+              </table>
+
+
+
+     <div class="form-group mt30">
+  <label class="form-label-bold" for="monfte">How many full time equivalent are you basing this capacity on?</label>
+  <input class="form-control form-control-1-8" id="monfte" type="number" name="monfte" value="4" style=>
+</div>
+
+              <p><button class="button">Save and continue</button></p>
+              {% include path+"/scenario3/_totals.html" %}
+              	<div class="check-choice visually-hidden">
+                    <input id="mondayvisited" name="mondayvisited" type="checkbox" value="yes" checked>
+                    <label for=""></label>
+                </div>
+
+                <div class="check-choice visually-hidden">
+                <input id="visited" name="visited" type="checkbox" value="yes" checked>
+                <label for=""></label>
+                </div>
+              </form>
+            </div>
+         
+   
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+</main>
+
+
+
+  <input class="visually-hidden" id="complex-booked"  type="text" name="complex-booked"  type="text" value="7" >
+<input class="visually-hidden" id="neuro-booked"  type="text" name="neauro-booked"  type="text" value="32" >
+<input class="visually-hidden" id="total-booked"  type="text" name="total-booked"  type="text" value="38" >
+<input class="visually-hidden" id="ucb-booked"  type="text" name="ucb-booked"  type="text" value="1" >
+
+
+{% endblock %}
+
+
+{% block page_scripts %}
+<script>
+{% if data['mondayvisited']=='yes'%}
+
+{% else %}
+$('#e_col_1_sum').val('8');
+$('#e_col_2_sum').val("33");
+$('#e_rowsum_sum').val("41");
+$('#e_col_6_sum').val("2");
+{% endif %}
+
+
+$('#e_rowsum_sum-avail').val("3");
+$('#col_1_20').val("1");
+$('#col_1_12').val("1");
+$('#col_2_27').val("1");
+$('#col_6_17').val("1");
+
+
+
+$('#rowsum_1').val("4");
+$('#bookedsum_1').val("4");
+
+
+
+$('#rowsum_3').val("3");
+$('#bookedsum_3').val("3");
+
+$('#rowsum_4').val("1");
+$('#bookedsum_4').val("1");
+
+$('#rowsum_5').val("3");
+$('#bookedsum_5').val("3");
+
+$('#rowsum_8').val("4");
+$('#bookedsum_8').val("4");
+
+$('#rowsum_10').val("4");
+$('#bookedsum_10').val("3");
+
+$('#rowsum_12').val("3");
+$('#bookedsum_12').val("3");
+
+$('#rowsum_17').val("4");
+$('#bookedsum_17').val("4");
+
+
+
+$('#rowsum_20').val("4");
+$('#bookedsum_20').val("3");
+
+$('#rowsum_22').val("3");
+$('#bookedsum_22').val("2");
+
+$('#rowsum_23').val("4");
+$('#bookedsum_23').val("4");
+
+$('#rowsum_25').val("3");
+$('#bookedsum_25').val("3");
+
+
+$('#rowsum_26').val("3");
+$('#bookedsum_26').val("3");
+
+$('#rowsum_27').val("4");
+$('#bookedsum_27').val("3");
+
+
+
+
+
+
+
+function total(inputFields, totalField) {
+  var sumValues = 0;
+  $(inputFields).each(function() { 
+      if (this.value.length!=0 && !isNaN(this.value)) {
+          sumValues += parseFloat(this.value);
+      }
+  });
+  $(totalField).val(sumValues).triggerHandler('change');
+}
+
+
+
+
+
+$(function() {
+  $('#e_col_1_sum, #e_col_2_sum, #e_col_3_sum, #e_col_4_sum').change(function() { 
+    total('#e_col_1_sum, #e_col_2_sum, #e_col_3_sum, #e_col_4_sum, #total-booked','#e_rowsum_sum');
+  });
+});
+
+$(function() { 
+  $('#col_1_1, #col_1_2, #col_1_3, #col_1_4, #col_1_5, #col_1_6, #col_1_7, #col_1_8, #col_1_9, #col_1_10, #col_1_11, #col_1_12, #col_1_13, #col_1_14, #col_1_15, #col_1_16, #col_1_17, #col_1_18, #col_1_19, #col_1_20, #col_1_21, #col_1_23, #col_1_23, #col_1_24, #col_1_25, #col_1_26, #col_1_27, #col_1_28, #col_1_29, #col_1_30, #col_1_31, #col_1_32').change(function(){
+    total('#col_1_1, #col_1_2, #col_1_3, #col_1_4, #col_1_5, #col_1_6, #col_1_7, #col_1_8, #col_1_9, #col_1_10, #col_1_11, #col_1_12, #col_1_13, #col_1_14, #col_1_15, #col_1_16, #col_1_17, #col_1_18, #col_1_19, #col_1_20, #col_1_21, #col_1_23, #col_1_23, #col_1_24, #col_1_25, #col_1_26, #col_1_27, #col_1_28, #col_1_29, #col_1_30, #col_1_31, #col_1_32, #complex-booked','#e_col_1_sum');
+  });
+});
+
+$(function(){
+  $('#col_2_1, #col_2_2, #col_2_3, #col_2_4, #col_2_5, #col_2_6, #col_2_7, #col_2_8, #col_2_9, #col_2_10, #col_2_11, #col_2_12, #col_2_13, #col_2_14, #col_2_15, #col_2_16, #col_2_17, #col_2_18, #col_2_19, #col_2_20, #col_2_21, #col_2_22, #col_2_23, #col_2_24, #col_2_25, #col_2_26, #col_2_27, #col_2_28, #col_2_29, #col_2_30, #col_2_31, #col_2_32').change(function(){
+     total('#col_2_1, #col_2_2, #col_2_3, #col_2_4, #col_2_5, #col_2_6, #col_2_7, #col_2_8, #col_2_9, #col_2_10, #col_2_11, #col_2_12, #col_2_13, #col_2_14, #col_2_15, #col_2_16, #col_2_17, #col_2_18, #col_2_19, #col_2_20, #col_2_21, #col_2_22, #col_2_23, #col_2_24, #col_2_25, #col_2_26, #col_2_27, #col_2_28, #col_2_29, #col_2_30, #col_2_31, #col_2_32, #neuro-booked','#e_col_2_sum');
+  });
+});
+
+
+
+$(function(){
+  $('#col_3_1, #col_3_2, #col_3_3, #col_3_4, #col_3_5, #col_3_6, #col_3_7, #col_3_8, #col_3_9, #col_3_10, #col_3_11, #col_3_12, #col_3_13, #col_3_14, #col_3_15, #col_3_16, #col_3_17, #col_3_18, #col_3_19, #col_3_20, #col_3_21, #col_3_22, #col_3_23, #col_3_24, #col_3_25, #col_3_26, #col_3_27, #col_3_28, #col_3_29, #col_3_30, #col_3_31, #col_3_32').change(function(){
+       total('#col_3_1, #col_3_2, #col_3_3, #col_3_4, #col_3_5, #col_3_6, #col_3_7, #col_3_8, #col_3_9, #col_3_10, #col_3_11, #col_3_12, #col_3_13, #col_3_14, #col_3_15, #col_3_16, #col_3_17, #col_3_18, #col_3_19, #col_3_20, #col_3_21, #col_3_22, #col_3_23, #col_3_24, #col_3_25, #col_3_26, #col_3_27, #col_3_28, #col_3_29, #col_3_30, #col_3_31, #col_3_32','#e_col_3_sum');
+  });
+});
+
+$(function(){
+  $('#col_4_1, #col_4_2, #col_4_3, #col_4_4, #col_4_5, #col_4_6, #col_4_7, #col_4_8, #col_4_9, #col_4_10, #col_4_11, #col_4_12, #col_4_13, #col_4_14, #col_4_15, #col_4_16, #col_4_17, #col_4_18, #col_4_19, #col_4_20, #col_4_21, #col_4_22, #col_4_23, #col_4_24, #col_4_25, #col_4_26, #col_4_27, #col_4_28, #col_4_29, #col_4_30, #col_4_31, #col_4_32').change(function(){
+total('#col_4_1, #col_4_2, #col_4_3, #col_4_4, #col_4_5, #col_4_6, #col_4_7, #col_4_8, #col_4_9, #col_4_10, #col_4_11, #col_4_12, #col_4_13, #col_4_14, #col_4_15, #col_4_16, #col_4_17, #col_4_18, #col_4_19, #col_4_20, #col_4_21, #col_4_22, #col_4_23, #col_4_24, #col_4_25, #col_4_26, #col_4_27, #col_4_28, #col_4_29, #col_4_30, #col_4_31, #col_4_32','#e_col_4_sum');
+  });
+});
+
+$(function(){
+  $('#col_1_1, #col_2_1, #col_3_1, #col_4_1, #bookedsum_1').change(function(){
+   total('#col_1_1, #col_2_1, #col_3_1, #col_4_1, #bookedsum_1 ', '#rowsum_1');
+  });
+  });
+
+  $(function(){
+  $('#col_1_2, #col_2_2, #col_3_2, #col_4_2, #bookedsum_2').change(function(){
+          total('#col_1_2, #col_2_2, #col_3_2, #col_4_2, #bookedsum_2','#rowsum_2');
+  });
+  });
+
+    $(function(){
+  $('#col_1_3, #col_2_3, #col_3_3, #col_4_3 , #bookedsum_3').change(function(){
+             total('#col_1_3, #col_2_3, #col_3_3, #col_4_3, #bookedsum_3','#rowsum_3');
+  });
+  });
+
+      $(function(){
+  $('#col_1_4, #col_2_4, #col_3_4, #col_4_4, #bookedsum_4').change(function(){
+     total('#col_1_4, #col_2_4, #col_3_4, #col_4_4, #bookedsum_4', '#rowsum_4');
+  });
+  });
+
+      $(function(){
+  $('#col_1_5, #col_2_5, #col_3_5, #col_4_5, #bookedsum_5').change(function(){
+          total('#col_1_5, #col_2_5, #col_3_5, #col_4_5, #bookedsum_5','#rowsum_5');
+  });
+  });
+
+        $(function(){
+  $('#col_1_6, #col_2_6, #col_3_6, #col_4_6, #bookedsum_6').change(function(){
+       total('#col_1_6, #col_2_6, #col_3_6, #col_4_6, #bookedsum_6','#rowsum_6');
+  });
+  });
+
+          $(function(){
+  $('#col_1_7, #col_2_7, #col_3_7, #col_4_7, #bookedsum_7').change(function(){
+      total('#col_1_7, #col_2_7, #col_3_7, #col_4_7, #bookedsum_7','#rowsum_7');
+  });
+  });
+
+          $(function(){
+  $('#col_1_8, #col_2_8, #col_3_8, #col_4_8 , #bookedsum_8').change(function(){
+      total('#col_1_8, #col_2_8, #col_3_8, #col_4_8 , #bookedsum_8','#rowsum_8');
+  });
+  });
+
+          $(function(){
+  $('#col_1_9, #col_2_9, #col_3_9, #col_4_9,  #bookedsum_9').change(function(){
+       total('#col_1_9, #col_2_9, #col_3_9, #col_4_9,  #bookedsum_9','#rowsum_9');
+  });
+  });
+
+          $(function(){
+  $('#col_1_10, #col_2_10, #col_3_10, #col_4_10,  #bookedsum_10').change(function(){
+       total('#col_1_10, #col_2_10, #col_3_10, #col_4_10,  #bookedsum_10','#rowsum_10');
+  });
+  });
+
+          $(function(){
+  $('#col_1_11, #col_2_11, #col_3_11, #col_4_11,  #bookedsum_11').change(function(){
+       total('#col_1_11, #col_2_11, #col_3_11, #col_4_11 ,#bookedsum_11','#rowsum_11');
+  });
+  });
+
+          $(function(){
+  $('#col_1_12, #col_2_12, #col_3_12, #col_4_12, #bookedsum_12').change(function(){
+       total('#col_1_12, #col_2_12, #col_3_12, #col_4_12,  #bookedsum_12','#rowsum_12');
+  });
+  });
+
+          $(function(){
+  $('#col_1_13, #col_2_13, #col_3_13, #col_4_13,  #bookedsum_13').change(function(){
+       total('#col_1_13, #col_2_13, #col_3_13, #col_4_13,  #bookedsum_13','#rowsum_13');
+  });
+  });
+
+          $(function(){
+  $('#col_1_14, #col_2_14, #col_3_14, #col_4_14, #bookedsum_14').change(function(){
+      total('#col_1_14, #col_2_14, #col_3_14, #col_4_14, #bookedsum_14','#rowsum_14');
+  });
+  });
+        $(function(){
+  $('#col_1_15, #col_2_15, #col_3_15, #col_4_15, #bookedsum_15').change(function(){
+       total('#col_1_15, #col_2_15, #col_3_15, #col_4_15, #bookedsum_15','#rowsum_15');
+  });
+  });
+          $(function(){
+  $('#col_1_16, #col_2_16, #col_3_16, #col_4_16,  #bookedsum_16').change(function(){
+      total('#col_1_16, #col_2_16, #col_3_16, #col_4_16, #bookedsum_16','#rowsum_16');
+  });
+  });
+
+          $(function(){
+  $('#col_1_17, #col_2_17, #col_3_17, #col_4_17,  #bookedsum_17').change(function(){
+       total('#col_1_17, #col_2_17, #col_3_17, #col_4_17,  #bookedsum_17','#rowsum_17');
+  });
+  });
+
+          $(function(){
+  $('#col_1_18, #col_2_18, #col_3_18, #col_4_18, #bookedsum_18').change(function(){
+      total('#col_1_18, #col_2_18, #col_3_18, #col_4_18,  #bookedsum_18','#rowsum_18');
+  });
+  });
+
+          $(function(){
+  $('#col_1_19, #col_2_19, #col_3_19, #col_4_19, #bookedsum_19').change(function(){
+       total('#col_1_19, #col_2_19, #col_3_19, #col_4_19,  #bookedsum_19','#rowsum_19');
+  });
+  });
+
+          $(function(){
+  $('#col_1_20, #col_2_20, #col_3_20, #col_4_20,  #bookedsum_20').change(function(){
+      total('#col_1_20, #col_2_20, #col_3_20, #col_4_20,  #bookedsum_20','#rowsum_20');
+  });
+  });
+
+          $(function(){
+  $('#col_1_21, #col_2_21, #col_3_21, #col_4_21,  #bookedsum_21').change(function(){
+       total('#col_1_21, #col_2_21, #col_3_21, #col_4_21,  #bookedsum_21','#rowsum_21');
+  });
+  });
+
+          $(function(){
+  $('#col_1_22, #col_2_22, #col_3_22, #col_4_22,  #bookedsum_22').change(function(){
+      total('#col_1_22, #col_2_22, #col_3_22, #col_4_22, #bookedsum_22','#rowsum_22');
+  });
+  });
+
+          $(function(){
+  $('#col_1_23, #col_2_23, #col_3_23, #col_4_23,  #bookedsum_23').change(function(){
+       total('#col_1_23, #col_2_23, #col_3_23, #col_4_23,  #bookedsum_23','#rowsum_23');
+  });
+  });
+
+          $(function(){
+  $('#col_1_24, #col_2_24, #col_3_24, #col_4_24,  #bookedsum_24').change(function(){
+      total('#col_1_24, #col_2_24, #col_3_24, #col_4_24,  #bookedsum_24','#rowsum_24');
+  });
+  });
+
+
+          $(function(){
+  $('#col_1_25, #col_2_25, #col_3_25, #col_4_25,  #bookedsum_25').change(function(){
+     total('#col_1_25, #col_2_25, #col_3_25, #col_4_25,  #bookedsum_25','#rowsum_25');
+  });
+  });
+
+          $(function(){
+  $('#col_1_26, #col_2_26, #col_3_26, #col_4_26,  #bookedsum_26').change(function(){
+      total('#col_1_26, #col_2_26, #col_3_26, #col_4_26,  #bookedsum_26','#rowsum_26');
+  });
+  });
+
+
+          $(function(){
+  $('#col_1_27, #col_2_27, #col_3_27, #col_4_27,  #bookedsum_27').change(function(){
+       total('#col_1_27, #col_2_27, #col_3_27, #col_4_27,  #bookedsum_27','#rowsum_27');
+  });
+  });
+
+          $(function(){
+  $('#col_1_28, #col_2_28, #col_3_28, #col_4_28,  #bookedsum_28').change(function(){
+       total('#col_1_28, #col_2_28, #col_3_28, #col_4_28,  #bookedsum_28','#rowsum_28');
+  });
+  });
+
+          $(function(){
+  $('#col_1_29, #col_2_29, #col_3_29, #col_4_29,  #bookedsum_29').change(function(){
+     total('#col_1_29, #col_2_29, #col_3_29, #col_4_29,  #bookedsum_29','#rowsum_29');
+  });
+  });
+
+          $(function(){
+  $('#col_1_30, #col_2_30, #col_3_30, #col_4_30,  #bookedsum_30').change(function(){
+      total('#col_1_30, #col_2_30, #col_3_30, #col_4_30,  #bookedsum_30','#rowsum_30');
+  });
+  });
+
+          $(function(){
+  $('#col_1_31, #col_2_31, #col_3_31, #col_4_31, #bookedsum_31').change(function(){
+      total('#col_1_31, #col_2_31, #col_3_31, #col_4_31, #bookedsum_31','#rowsum_31');
+  });
+  });
+
+
+
+$(function(){
+  $('#rowsum_1, #rowsum_2, #rowsum_3, #rowsum_4, #rowsum_5, #rowsum_6, #rowsum_7, #rowsum_8, #rowsum_9, #rowsum_10, #rowsum_11, #rowsum_12, #rowsum_13, #rowsum_14, #rowsum_15, #rowsum_16, #rowsum_17, #rowsum_18, #rowsum_19, #rowsum_20, #rowsum_21, #rowsum_22, #rowsum_23, #rowsum_24, #rowsum_25, #rowsum_26, #rowsum_27, #rowsum_28, #rowsum_29, #rowsum_30, #rowsum_31, #rowsum_32').change(function(){
+    total('#rowsum_1, #rowsum_2, #rowsum_3, #rowsum_4, #rowsum_5, #rowsum_6, #rowsum_7, #rowsum_8, #rowsum_9, #rowsum_10, #rowsum_11, #rowsum_12, #rowsum_13, #rowsum_14, #rowsum_15, #rowsum_16, #rowsum_17, #rowsum_18, #rowsum_19, #rowsum_20, #rowsum_21, #rowsum_22, #rowsum_23, #rowsum_24, #rowsum_25, #rowsum_26, #rowsum_27, #rowsum_28, #rowsum_29, #rowsum_30, #rowsum_31, #rowsum_32','#e_rowsum_sum');
+  });
+});
+
+
+$(function(){
+  $('#col_6_1, #col_6_2, #col_6_3, #col_6_4, #col_6_5, #col_6_6, #col_6_7, #col_6_8, #col_6_9, #col_6_10, #col_6_11, #col_6_12, #col_6_13, #col_6_14, #col_6_15, #col_6_16, #col_6_17, #col_6_18, #col_6_19, #col_6_20, #col_6_21, #col_6_22, #col_6_23, #col_6_24, #col_6_25, #col_6_26, #col_6_27, #col_6_28, #col_6_29, #col_6_30, #col_6_31, #col_6_32, #ucb-booked').change(function(){
+  total('#col_6_1, #col_6_2, #col_6_3, #col_6_4, #col_6_5, #col_6_6, #col_6_7, #col_6_8, #col_6_9, #col_6_10, #col_6_11, #col_6_12, #col_6_13, #col_6_14, #col_6_15, #col_6_16, #col_6_17, #col_6_18, #col_6_19, #col_6_20, #col_6_21, #col_6_22, #col_6_23, #col_6_24, #col_6_25, #col_6_26, #col_6_27, #col_6_28, #col_6_29, #col_6_30, #col_6_31, #col_6_32, #ucb-booked','#e_col_6_sum');
+  });
+});
+
+
+
+
+
+
+
+
+</script>
+{% endblock %}
