@@ -25,6 +25,12 @@
    <form class="form" action="create-plan" method="post">
 
 
+          <div class="form-group">
+          <label class="form-label-bold" for="tuefte">How many full time equivalent are you basing this capacity on?</label>
+          <input class="form-control form-control-1-8" id="tuefte" type="number" name="tuefte" value="{{tuefte}}">
+        </div>
+
+
               <table class="profile-table">
 
             
@@ -945,12 +951,8 @@
                
               </table>
 
-                              <div class="form-group mt30">
-                              <label class="form-label-bold" for="tuefte">How many full time equivalent are you basing this capacity on?</label>
-                              <input class="form-control form-control-1-8" id="tuefte" type="number" name="tuefte" value="{{tuefte}}">
-                            </div>
 
-              <p><button class="button">Save and continue</button></p>
+              <p><button class="button mt30">Save and continue</button></p>
               {% include path+"/scenario1/_help_totalsTuev2.html" %}
               </form>
             </div>
