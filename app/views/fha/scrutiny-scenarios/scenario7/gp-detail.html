@@ -1,0 +1,117 @@
+{% extends path+"/_layout-case-simple7.html" %}
+
+
+{% block actioncolumn %}
+
+ <div class="caseStatus">
+ 	
+	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+ </div>
+
+<!--<div class="secondary-nav-actions">
+
+	<ul>
+		<li><a href="#">Withdraw case</a></li>
+		<li><a href="#">Close case</a></li>
+		<li><a href="#">Delete case</a></li>
+	</ul>
+		
+ </div> -->
+
+{% endblock %}
+
+{% block citizen_detail %}
+Billy Keita
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+
+<div class="container">
+  <div class="grid-row">
+  
+    <div class="column-full">
+    
+    {# macro #}
+  {{ nav.scenario_tabs("details-fme",1,path1, customer._id) }}
+  
+
+<div class="back-navigation"><a href="javascript: history.go(-1)" class="link-back">Back</a></div>
+  
+
+  <h1 class="heading-large">
+  	GP contact details</h1>
+  	
+  
+  <div class="portal-display">	
+  	
+  	
+  	
+  	 <div class="grid-row">
+  
+		  	<div class="column-two-thirds">
+		  	
+		  		
+					<table class="medical-list">
+						<caption class="visually-hidden">Contact information</caption>
+
+
+						
+						<tbody>
+						
+						<tr>
+							<th>Name of GP</th>
+							<td>Sylvester Fury</td>
+						</tr>
+						
+						<tr>
+							<th>Name of surgery</th>
+							<td>Hollywood Lane surgery</td>
+						</tr>
+						
+						<tr>
+							<th>Surgery contact number</th>
+							<td>0151 000 0000</td>
+						</tr>
+						
+						<tr>
+							<th>Address</th>
+							<td class="address-stack">
+								<span>860 Liverpool Lane</span>
+								<span>Bolton</span>
+								<span>Lancashire</span>
+								<span>TXX ZZZ</span>
+							</td>
+						</tr>
+
+						
+						</tbody>
+					</table>
+					
+					<p class="view-all"><a href="/{{path }}/scenario4/not-testing" class="secondary-invert">Edit details</a></p>
+
+
+						  	
+		  	</div>
+		  	
+		  	
+		   
+    
+  </div>
+  
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

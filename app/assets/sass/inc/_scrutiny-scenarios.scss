@@ -168,8 +168,8 @@ table {
 
 
 .caseIdentifiers {
-	border-top: 1px solid $border-colour;
-	padding: 20px 0 10px 0;
+	border-bottom: 1px solid $border-colour;
+	padding: 10px 0 20px 0;
 	margin-top: 10px;
 		.caseFlags{
 			padding: 15px;
@@ -184,10 +184,14 @@ table {
 			ul {
 				li {
 					font-size: 17px;
-					margin-top: 6px;
+					margin-top: 5px;
+					border-top: 1px solid $grey-2;
+					padding-top: 5px;
+					
 					&:first-child {
 						border-top: 0;
 						margin-top: 10px;
+						padding-top: 0;
 					}
 				}
 			}

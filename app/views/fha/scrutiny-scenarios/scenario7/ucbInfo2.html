@@ -1,4 +1,4 @@
-{% extends path+"/_layout-case-simple4.html" %}
+{% extends path+"/_layout-case-simple7.html" %}
 
 
 {% block actioncolumn %}
@@ -16,43 +16,12 @@
 {% endblock %}
 
 {% block citizen_detail %}
-Kenneth Robertson
+Billy Keita
 {% endblock %}
 
 {% block citizen_content %}
 
-{% if data['evidencePath']=='ev-ftf'%}
 
-
-	{% if data['evidenceRecorded']=='record-yes'%}
-	
-	
-		{% if data['pbachoice']%}
-	
-		
-	{% else %}
-	<div class="panel panel-info panel-instruction fme-warning"><h2 class="heading-small">New evidence recorded</h2>
-	   <ul class="numeric" data-id="">
-	       <li>
-	         <span class="circle circle-step circle-white">1</span>
-	         <h2 class="govuk-heading-m">Roberto's case should be reviewed before making a recommendation</h2>
-	       </li>
-	
-	       <li>
-	         <span class="circle circle-step circle-white">2</span>
-	         <h2 class="govuk-heading-m"><a href="/{{path }}/scenario4/recordFMEdecision">Make recommendation</a></h2>
-	       </li>
-	     </ul>
-	</div>
-	{% endif %}
-	
-	
-	
-		
-	{% endif %}
-	
-	
-	{% endif %}
 
 
 <div class="container">
@@ -106,7 +75,7 @@ Kenneth Robertson
 	
 	<hr>
 	
-	<p><a href="/{{path }}/scenario4/timeline-review" class="button">Finish</a></p>
+	<p><a href="/{{path }}/scenario7/timeline-review" class="button">Finish</a></p>
 	
 </div>
 

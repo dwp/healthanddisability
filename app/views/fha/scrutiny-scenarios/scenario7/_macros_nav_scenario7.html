@@ -1,0 +1,17 @@
+{% macro scenario_tabs(selected,num,path, id) %}
+  <div class="section-tabs js-tabs clearfix mb20">
+    <ul>
+
+      {% set navs = [
+        {url:"timeline-review",label:"Timeline"},
+        {url:"details-fme",label:"Details"},
+        {url:"evidence-portal",label:"Evidence"},
+		{url:"appointment",label:"Appointment"}
+        ] %} 
+   
+      {% for item in navs %}
+        <li {% if item.url == selected %} class="active"{% endif %}><a href="/fha/scrutiny-scenarios/scenario7/{{ item.url }}/">{{ item.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endmacro %}
