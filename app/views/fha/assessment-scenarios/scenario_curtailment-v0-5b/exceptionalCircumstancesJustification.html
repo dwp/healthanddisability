@@ -1,0 +1,73 @@
+{% extends path+"/scenario_curtailment-v0-5b/_layout-case-simple_clear-assessment-complete.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+	
+	<form method="post" action="recommendedReviewPeriod">
+
+	<p class="caption-large">Step 2 of 2</p>
+	<h1 class="heading-large" style="margin-top:0px !important;">Starting and finishing tasks</h1>
+	<p class="lede">David cannot plan, start and finish everyday tasks.</p>
+
+<div>
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Relevant statements
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+  <p>{{ taggedstatement1 }}</p>
+				<p>{{ taggedstatement2 }}</p>
+				<p>{{ taggedstatement3 }}</p>
+				<p>{{ taggedstatement4 }}</p>
+				<p>{{ taggedstatement5 }}</p>
+				<p>{{ taggedstatement6 }}</p>
+				<p>{{ taggedstatement7 }}</p>
+				<p>{{ taggedstatement8 }}</p>
+				<p>{{ taggedstatement9 }}</p>
+				<p>{{ taggedstatement10 }}</p>
+				<p>{{ taggedstatement11 }}</p>
+				<p>{{ taggedstatement12 }}</p>
+				<p>{{ taggedstatement13 }}</p>
+				<p>{{ taggedstatement14 }}</p>
+				<p>{{ taggedstatement15 }}</p>
+				<p>{{ taggedstatement16 }}</p>
+				<p>{{ taggedstatement17 }}</p>
+				<p>{{ taggedstatement18 }}</p>
+  </div>
+</details>
+</div>
+<br>
+
+			<div class="form-group">
+			<label class="form-label" for="justify">Write your justification.</label>
+			<textarea class="form-control form-control-3-4" name="justificationStatement" id="justificationStatement" rows="8"></textarea>
+		</div>
+
+
+
+
+    <p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+		</form>	
+
+
+
+
+  </div><!-- column -->
+
+
+</div><!-- row -->
+
+
+{% endblock %}

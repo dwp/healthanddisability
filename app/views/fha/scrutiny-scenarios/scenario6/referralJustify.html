@@ -1,22 +1,24 @@
-{% extends path+"/_layout-case-simple2.html" %}
+{% extends path+"/_layout-case-simple6.html" %}
 
 
 {% block actioncolumn %}
    
-  <p class="returnRef"><a href="/{{path }}/scenario2/referrals-fme" class="link-back">Return to case list</a></p>
-  <hr>
- <div class="case-status">
+  
+ 
+ <div class="caseStatus">
+ 
+
  
  
 {% if data['pbachoice']=='no'%}
  
-	 <p class="main-status">Appointment booked</p>
+	 <h2 class="main-status"><span>Current case status</span>Appointment booked</h2>
 	 
 	 
 	 {% elif data['pbachoice']=='yes'%}
 	 
-	 <p class="main-status">Ready for paper based review</p>
-	 <p><a href="/{{path }}/scenario2/not-testing" class="button">Start assessment</a></p>
+	 <h2 class="main-status"><span>Current case status</span>Paper based review</h2>
+	 <!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/not-testing" class="button">Start assessment</a></h3>-->
 	 
 	 
 	 {% else %}
@@ -25,28 +27,31 @@
 
 {% if data['evidencePath']=='ev-ftf'%}
 
-	<p class="main-status">Ready to book</p>
-	<span class="pending">Pending evidence review</span>
-
 	{% if data['evidenceRecorded']=='record-yes'%}
+	
+	<h2 class="main-status"><span>Current case status</span>Second review</h2>
+		<!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal-second" class="button">Make recommendation</a></h3>-->
+		{% else %}
 		
+	<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
+	<!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/record-evidence" class="button">Record GP report</a></h3>-->
 	{% endif %}
 	
 	
 	{% elif data['evidencePath']=='ev-pba'%}
 	
 	{% if data['evidenceRecorded']=='record-yes'%}
-		<p class="main-status">Ready for review</p>
-		<p><a href="/{{path }}/scenario2/rec-portal" class="button">Make recommendation</a></p>
+		<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+		<!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal" class="button">Make recommendation</a></h3>-->
 		{% else %}
-		<p class="main-status">Medical evidence requested</p>
+		<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
 	{% endif %}
 	
 	
 	{% else %}
 	
-	<p class="main-status">Ready for review</p>
-	<p><a href="/{{path }}/scenario2/rec-portal" class="button">Make recommendation</a></p>
+	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+	<!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal" class="button">Make recommendation</a></h3>-->
 	
 	
 
@@ -54,17 +59,14 @@
 
 
 {% endif %}
-</p>
 
-
-<hr>
 
 </div>
 
 {% endblock %}
 
 {% block citizen_detail %}
-Roberto Clyne
+Jurgen Covault
 {% endblock %}
 
 {% block citizen_content %}
@@ -94,19 +96,17 @@ Roberto Clyne
         
 
     	
-    	<h1 class="heading-large">Appointment referral justification</h1>
+    	<h1 class="heading-large">{% if data['appointmentReferral2']%}<span class="heading-secondary">Second review</span>{% endif %}Appointment referral justification</h1>
     	
     	
    
 		
 		
 		<div class="evidence-requests mt30">
-		
-		
 
 						  
 						 <div> 
-							<h2 class="heading-medium mb10">Reason Roberto needs a face to face assessment:</h2>
+							<h2 class="heading-medium mb10">Reason Jurgen needs a face to face assessment:</h2>
 							
 							
 							{% if data['justifyF2Fa']=='f2f-reason1'%}

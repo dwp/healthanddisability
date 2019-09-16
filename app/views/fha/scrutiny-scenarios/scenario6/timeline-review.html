@@ -27,11 +27,14 @@
 
 {% if data['evidencePath']=='ev-ftf'%}
 
-	<h2 class="main-status"><span>Current case status</span>Ready to book</h2>
-	
-
 	{% if data['evidenceRecorded']=='record-yes'%}
+	
+	<h2 class="main-status"><span>Current case status</span>Second review</h2>
+		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal-second" class="button">Make recommendation</a></h3>
+		{% else %}
 		
+	<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
+	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/record-evidence" class="button">Record GP report</a></h3>
 	{% endif %}
 	
 	
@@ -72,40 +75,6 @@ Jurgen Covault
 {% block citizen_content %}
 
 
-
-
-{% if data['evidencePath']=='ev-ftf'%}
-
-
-	{% if data['evidenceRecorded']=='record-yes'%}
-	
-	
-		{% if data['pbachoice']%}
-	
-		
-	{% else %}
-	<div class="panel panel-info panel-instruction fme-warning"><h2 class="heading-small">New evidence recorded</h2>
-	   <ul class="numeric" data-id="">
-	       <li>
-	         <span class="circle circle-step circle-white">1</span>
-	         <h2 class="govuk-heading-m">Roberto's case should be reviewed before making a recommendation</h2>
-	       </li>
-	
-	       <li>
-	         <span class="circle circle-step circle-white">2</span>
-	         <h2 class="govuk-heading-m"><a href="/{{path }}/scenario6/recordFMEdecision">Make recommendation</a></h2>
-	       </li>
-	     </ul>
-	</div>
-	{% endif %}
-	
-	
-	
-		
-	{% endif %}
-	
-	
-	{% endif %}
 
 
 
@@ -220,11 +189,7 @@ Jurgen Covault
   
   	     
 {% if data['evidencePath']=='ev-ftf'%}
- <span class="line"></span>
-<div class="timeline__event">
-  <h3 class="timeline__heading">Referred for face to face appointment</h3>
-  <p class="timeline_datetime">3 August 2019</p>
-</div>
+
  <span class="line"></span>
 <div class="timeline__event">
   <h3 class="timeline__heading">GP Report &ndash; medical evidence requested</h3>
