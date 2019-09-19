@@ -1,0 +1,107 @@
+{% extends path+"/_layout-case-action.html" %}
+<!--{% extends path1+"/_layoutChat.html" %}-->
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<div class="grid-row no-kdBar">
+  <div>
+  <!--<div class="column-two-thirds">-->
+  
+ <p class="mt0"><a href="" class="link-back">Back</a></p>
+  <h1 class="heading-large">Typical day</h1>
+
+
+  <div class="chat-layout">
+
+
+	 <div class="chat-window">
+    {% if comments.length < 1 %}
+   <p class="comments-window">You haven't added any comments yet</p>
+    {% endif %}
+    {% for item in comments | sortBy("time",false) %}
+  
+      <div class="tag-box">
+      
+        <div class="tag-text">{{ item.comment }}</div>
+        
+        <div class="edit-item">
+          <form action="" method="post">
+            <input type="hidden" name="id" value="{{item.id}}">
+            <input type="hidden" name="delete" value="true">
+            <button class="remove-link" >Edit</button>
+          </form>
+       </div>
+       
+      </div>
+    {% endfor %}
+   </div>
+    
+    <form class="form" id="add_ev"
+      action="typicalDay"
+      method="post">
+
+      <div class="form-group chat-capture">
+          <textarea id="nugget" class="form-control" name="comments"></textarea>
+          <input class="button secondary mt20" type="submit" value="Add" id="submitButton">
+      </div><!-- form-group -->
+      
+      
+    </form>
+
+
+  <form action="wca-index" method="POST" class="form">
+      <input type="submit" class="button mb30" value="Save progress" id="submitButton">
+      
+
+      
+      
+
+      <div class="multiple-choice" style="display:none">
+          <input id="radio-inline-4" type="radio" name="typicalDay" value="typicalDay" checked>
+            
+          <label for="radio-4">hidden radio one</label>
+        </div>
+    </form>
+
+    
+    
+  </div><!-- column -->
+</div><!-- row -->
+
+{% include path+"/includes/help/_help_panel_typicalday.html" %}
+
+{% endblock %}
+
+
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+$(document).on('ready',function()
+
+{
+
+  
+  $("#nugget").keydown(function (event) {
+    if ((event.keyCode == 13))
+    {
+      $('#submitButton').trigger('click');
+    }
+  });
+
+
+});
+
+
+
+</script>
+
+
+
+
+{% endblock %}

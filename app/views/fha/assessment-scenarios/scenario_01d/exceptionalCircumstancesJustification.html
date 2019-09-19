@@ -1,0 +1,96 @@
+{% extends path+"/scenario_01d/_layout-case-simple_clear-assessment-complete.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+	
+	<form method="post" action="recommendedReviewPeriod">
+
+<p class="caption-large">Step 2 of 2</p>
+	<h1 class="heading-large" style="margin-top:0px !important;">Moving around and climbing steps without someone’s help</h1>
+	<p class="lede">Charles cannot move more than 50 metres.</p>
+
+
+			<div class="form-group">
+			<label class="form-label" for="justify">Write your justification.</label>
+			<textarea class="form-control form-control-3-4" name="justificationStatement" id="justificationStatement" rows="8"></textarea>
+		</div>
+
+
+    <p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+		</form>	
+
+  </div><!-- column -->
+  <div class="column-one-third">
+
+<div class="portal-display">
+<div class="portal-card">
+				<div class="portal-head">
+					<h4>Relevant statements</h4>
+				</div>
+				<!-- / title -->
+				<div class="portal-inner">
+				<p class="font-xsmall">{{ taggedstatement1 }}</p>
+				<p class="font-xsmall">{{ taggedstatement2 }}</p>
+				<p class="font-xsmall">{{ taggedstatement3 }}</p>
+				<p class="font-xsmall">{{ taggedstatement4 }}</p>
+				<p class="font-xsmall">{{ taggedstatement5 }}</p>
+				<p class="font-xsmall">{{ taggedstatement6 }}</p>
+				<p class="font-xsmall">{{ taggedstatement7 }}</p>
+				<p class="font-xsmall">{{ taggedstatement8 }}</p>
+				<p class="font-xsmall">{{ taggedstatement9 }}</p>
+				<p class="font-xsmall">{{ taggedstatement10 }}</p>
+				<p class="font-xsmall">{{ taggedstatement11 }}</p>
+				<p class="font-xsmall">{{ taggedstatement12 }}</p>
+				<p class="font-xsmall">{{ taggedstatement13 }}</p>
+				<p class="font-xsmall">{{ taggedstatement14 }}</p>
+				<p class="font-xsmall">{{ taggedstatement15 }}</p>
+				<p class="font-xsmall">{{ taggedstatement16 }}</p>
+				<p class="font-xsmall">{{ taggedstatement17 }}</p>
+				<p class="font-xsmall">{{ taggedstatement18 }}</p>
+				<p class="font-xsmall">{{ taggedstatement19 }}</p>
+				<p class="font-xsmall">{{ taggedstatement20 }}</p>
+				<p class="font-xsmall">{{ taggedstatement21 }}</p>
+				<p class="font-xsmall">{{ taggedstatement22 }}</p>
+				<p class="font-xsmall">{{ taggedstatement23 }}</p>
+				<p class="font-xsmall">{{ taggedstatement24 }}</p>
+				<p class="font-xsmall">{{ taggedstatement25 }}</p>
+				<p class="font-xsmall">{{ taggedstatement26 }}</p>
+				<p class="font-xsmall">{{ taggedstatement27 }}</p>
+				<p class="font-xsmall">{{ taggedstatement28 }}</p>
+				<p class="font-xsmall">{{ taggedstatement29 }}</p>
+				<p class="font-xsmall">{{ taggedstatement30 }}</p>
+				<p class="font-xsmall">{{ taggedstatement31 }}</p>
+				<p class="font-xsmall">{{ taggedstatement32 }}</p>
+				<p class="font-xsmall">{{ taggedstatement33 }}</p>
+				<p class="font-xsmall">{{ taggedstatement34 }}</p>
+				<p class="font-xsmall">{{ taggedstatement35 }}</p>
+				</div>
+				<!-- / inner card -->
+			</div>
+			</div>
+  </div><!-- column -->
+
+
+
+
+</div><!-- row -->
+
+
+{% endblock %}
