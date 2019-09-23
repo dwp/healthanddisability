@@ -1,0 +1,60 @@
+{% extends path+"/scenario_01e/_layout-case-simple.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<hr class="no-kdBar" />
+
+<h1 class="heading-large">Work capability assessment</h1>
+
+<p class="mt30 mb20 evidence-steps">Step 1 of 2</p>
+
+<p class="mt30 mb20">Assessment started: {{ last_one.time | formatDate("H:mma D MMMM YYYY") }}</p>
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+      <div class="task-list">
+					<ul class="task-list-itmes">
+           <li class="task-list-item"><a href="#">Condition history <span class="task-completed">Saved</span></a></li>
+           <li class="task-list-item"><a href="#">Social and work history <span class="task-completed">Saved</span></a></li>
+           <li class="task-list-item"><a href="#">Typical day <span class="task-completed">Saved</span></a></li>
+           <li class="task-list-item"><a href="#">Medication and side effects <span class="task-completed">Saved</span></a></li>
+          </ul>
+        </div>
+  </div><!-- column here -->
+</div><!-- row -->
+
+<div class="primary-cta-button">
+<form class="mt30" method="post" action="wca-index_step2a">
+  <p class="mt30"><button class="button">Save and continue</button></p>
+</form>
+</div>
+
+{% endblock %}
+
+{% macro physGroup(name,sel) %}
+  {% set s = name | slug %}
+  <!-- GROUP -->
+  <div class="multiple-choice" data-target="group_{{s}}_yes">
+    <input id="group_{{s}}" type="checkbox" name="group_{{s}}" sue="group_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="group_{{s}}">{{name}}</label>
+  </div>
+{% endmacro %}
+
+{% macro physObs(name,sel) %}
+  {% set s = name | slug %}
+  <div class="multiple-choice" data-target="phys_{{s}}_yes">
+    <input id="phys_{{s}}" type="checkbox" name="mobility" value="phys_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="phys_{{s}}">{{name}}</label>
+  </div>
+  <div class="form-group panel panel-indent js-hidden mt0 mb20" id="phys_{{s}}_yes">
+    <p>
+      <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
+      <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
+    </p>
+  </div>
+{% endmacro %}
+
