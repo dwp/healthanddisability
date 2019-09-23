@@ -1,0 +1,65 @@
+{% extends path+"/screen-designs_error-message-examples/_layout-case-simple.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<div class="column-two-thirds">
+
+    <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+      <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+        There is a problem
+      </h2>
+
+      <ul class="error-summary-list">
+        <li><a href="#error-full-name">Individual words must be 50 characters or less</a></li>
+      </ul>
+
+    </div>
+
+
+<h1 class="heading-large mb20">Social and work history</h1>
+
+
+<div class="chat-layout form-group-error">
+<span class="error-message mb20">Individual words must be 50 characters or less</span>
+  <div class="chat-window">
+    
+  </div>
+  <div style="display: inline-block; width:100%;">
+    <form class="form" id="add_ev" action="socialWorkHistory" method="post">
+      <div class="form-group chat-capture" style="margin-bottom:0px;">
+          <textarea id="nugget" class="form-control form-control-error" name="comments">Loremipsumdolorsitametconsecteturadipiscingelit.Insempregestastincidunt</textarea>
+          <input class="button secondary mt20" type="submit" value="Add" id="submitButton">
+      </div><!-- form-group -->
+    </form>
+  </div>
+</div>
+
+
+
+
+
+<br>
+
+
+
+<input class="button" type="submit" value="Save and continue">
+
+
+
+
+
+  
+   </div>
+ <!-- / wrapper -->
+  
+</div>
+
+
+{% endblock %}
