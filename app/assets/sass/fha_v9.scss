@@ -2338,17 +2338,16 @@ table.profile-table .col5{
 		margin-right: .4em;
 		a {
 			display: block;
-			background: $grey-4;
-			padding: .6em 20px .5em 20px;
-			font-weight: bold;
+			background: $grey-3;
+			padding: .7em 20px .5em 20px;
 			text-decoration: none;
 			color: #000;
-			font-size: 18px;
+			font-size: 17px;
 			&:hover {
-				background: $grey-3;
+				background: $grey-2;
 			}
 			&.selected {
-				background: $govuk-blue;
+				background: $grey-1;
 				color: #fff;
 			}
 		}
