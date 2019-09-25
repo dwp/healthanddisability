@@ -1,0 +1,88 @@
+{% extends path+"/scenario_01d/_layout-case-simple_clear-assessment-complete.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+<h1 class="heading-large">Time until Larsen's case needs reviewing</h1>
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	
+	
+	
+<!--
+{% if data['mental-health'] %}
+	<form method="post" action="personalSummaryStatement">
+{% else %}
+	<form method="post" action="mentalHealthAssessmentDecision">
+{% endif %}-->
+
+<form method="post" action="personalSummaryStatement">
+
+	<div class="form-group">
+		 <fieldset>
+		    
+				    	<!--<legend class="heading-medium mb10">When should this case be reviewed?</legend>-->
+		
+					    <div class="multiple-choice">
+					      <input id="3months" name="reviewPeriod" type="radio" value="3months">
+					      <label for="3months">3 months</label>
+					    </div>
+							<div class="multiple-choice">
+					      <input id="6months" name="reviewPeriod" type="radio" value="6months">
+					      <label for="6months">6 months</label>
+					    </div>
+							<div class="multiple-choice">
+					      <input id="12months" name="reviewPeriod" type="radio" value="12months">
+					      <label for="12months">12 months</label>
+					    </div>
+							<div class="multiple-choice">
+					      <input id="18months" name="reviewPeriod" type="radio" value="18months">
+					      <label for="18months">18 months</label>
+					    </div>
+							<div class="multiple-choice">
+					      <input id="2years" name="reviewPeriod" type="radio" value="2years">
+					      <label for="2years">within 2 years</label>
+					    </div>
+							<div class="multiple-choice">
+					      <input id="longerterm" name="reviewPeriod" type="radio" value="longerterm">
+					      <label for="longerterm">in the longer term</label>
+					    </div>
+							<div class="multiple-choice">
+					      <input id="notrequired" name="reviewPeriod" type="radio" value="notrequired">
+					      <label for="notrequired">no future assessments required</label>
+					    </div>
+					    
+				    </fieldset>
+
+	</div>
+	
+<div class="form-group">
+			<label class="form-label" for="justify">Give details</label>
+			<textarea class="form-control form-control-3-4" name="justifyTreatLCWRA" id="justify" rows="8"></textarea>
+		</div>
+
+    <p><input type="submit" class="button" value="Continue" id="submitButton"></p>
+		</form>	
+
+  </div><!-- column -->
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+

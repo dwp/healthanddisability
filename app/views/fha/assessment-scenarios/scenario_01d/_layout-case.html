@@ -1,0 +1,286 @@
+{% extends path+"/_layout.html" %}
+{% import path+"/scrutiny/_macros_nav.html" as nav %} 
+{% import path+"/decisionmaker/_macros_nav_fta.html" as navfta %}
+{% import path+"/decisionmaker/_macros_nav_report.html" as navreport %}
+{% block assess_content %}
+
+
+  <main id="content" role="main" class="main-content-inner">
+
+    <div class="container">
+      <div class="grid-row main-row">
+    
+      <div class="column-one-quarter left-area">
+      
+      	<div class="left-panel">
+            {% if customer.status == 'Assessment started' or customer.status == 'Ready for recommendation'%}
+            {% elif customer.status == 'Assessment reports' 
+            or customer.status == 'Questionnaire not returned' %}
+            <p class="returnRef"><a href="/{{path}}/decision-maker">Return to case list</a></p>
+            <hr>
+            {% elif customer.status == 'Failed to attend appointment' %}
+            <p class="returnRef"><a href="/{{path}}/failed-to-attend">Return to case list</a></p>
+            <hr>
+            
+            {% elif customer.status == 'Ready to book' %}
+            <p class="returnRef"><a href="/{{path}}/ready-to-book">Return to case list</a></p>
+            <hr>
+            {% elif customer.status == 'Ready for assessment' or customer.status == 'Assessment completed' or customer.status == 'Assessment stopped' or customer.status == 'Appointment today' or customer.status == 'Booked' %}
+            <p class="returnRef"><a href="/{{path}}/assessment">Return to case list</a></p>
+            <hr>
+            {% elif customer.status == 'Ready to book' or customer.status == 'Booked' or customer.status == 'Did not attend'%}
+            <p class="returnRef"><a href="/{{path}}/appointments">Return to case list</a></p>
+            <hr>
+            {% elif customer.status == 'Security booked'%}
+            <p class="returnRef"><a href="/{{path}}/search-results-id">Return to search</a></p>
+            <hr>
+            {% else %}
+      		<p class="returnRef"><a href="/{{path}}/ready-for-review">Return to case list</a></p>
+          <hr>
+          {% endif %}
+      	
+      	
+      	
+      	 <div class="case-status">
+      	     	 
+      	 
+		 
+ <p class="mt10 mb0 bold-small">
+{{ 'Ready to book' if customer.status == 'Ready to book' or customer.status == 'Did not attend' and data['dna']=="No" }}   
+{{ 'Ready for review' if customer.status == 'review' }}
+{{ 'Requested further medical evidence' if customer.status == 'fme' }}
+{{ 'Appointment today' if customer.status == 'Appointment today'}}
+{{ 'Ready for assessment' if customer.status == 'Ready for assessment' and data['wca']!=='start' and data['appointments']!=='yes' }}
+{{ 'Assessment started' if customer.status == 'Ready for assessment' and data['wca']==='start' }}
+{{ 'Ready for recommendation' if customer.status == 'Ready for recommendation' }}
+{{ 'Assessment completed' if customer.status == 'Assessment completed' }}
+{{ 'Assessment stopped' if customer.status == 'Assessment stopped' and data['appointments']!=='no' and data['appointments']!=='yes' }}
+{{ 'Referred for appointment - welfare call required' if data['appointments']=='no' and customer.status == 'Assessment stopped' }}
+
+
+{{ 'Did not attend' if customer.status == 'Did not attend' and data['dna']!=="No" or customer.status == 'Did not attend' and data['dna']=="Yes"  
+ }}
+
+{{ 'Booked' if customer.status == 'Booked' and customer.name.first !== 'Dillon' }}
+{{ 'Booked' if customer.status == 'Booked' and customer.name.first == 'Dillon' and data['book-next']==="yes" }}
+{% if customer.name.first == 'Deena' and data['changedByCustomer']==="yes" %}
+{% else %}
+{{ 'Booked' if customer.status == 'Security booked' or data['appointments']=='yes' }} 
+{% endif %}
+{{ 'Ready to book' if customer.status == 'Security booked' and customer.name.first == 'Deena' and data['changedByCustomer']==="yes" }}
+{{ 'Ready to score' if customer.status == 'Assessment reports' }}
+
+
+{{ 'Did not attend' if customer.status == 'Failed to attend appointment' and data['whatcando']!=='newappointment'
+or data['confirmfta']=="Arnaq" and customer.name.first == 'Arnaq'
+or data['confirmfta']=="Sarah"  and customer.name.first == 'Sarah' 
+or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes' 
+
+}}
+{{ '' if customer.status == 'Failed to attend appointment' and data['whatcando']=='newappointment' }}
+
+{{ 'Questionnaire not returned' if customer.status == 'Questionnaire not returned' }}
+
+ </p>
+     {% if customer.status == 'Assessment started' 
+     or customer.status == 'Booked' 
+     or customer.status == 'Security booked' 
+     or customer.status == 'Failed to attend appointment' and data['whatcando']=='newappointment' 
+     or customer.status == 'Ready to book' 
+     or data['appointments']=='no' 
+     or data['appointments']=='yes' 
+     or customer.status == 'Did not attend' and data['dna']=="No" %}
+
+     {% elif customer.status == 'Failed to attend appointment' and customer.substatus == 'Record a reason' and data['dmreason'] or customer.substatus == 'Request a reason' and data['dmreason'] %}
+     <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/index" class="button">Make a decision</a></p>
+
+     {% elif customer.status == 'Failed to attend appointment' and customer.substatus == 'Record a reason' or customer.substatus == 'Request a reason' and data['whatcando']=='requestreason'  %}
+     <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/record-fta-reason" class="button">Record a reason</a></p> 
+
+     {% elif customer.status == 'Failed to attend appointment' and customer.substatus == 'Request a reason'  %}
+     <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/request-fta-reason" class="button">Request a reason</a></p> 
+  
+     {% elif customer.status == 'Assessment reports' %}
+     <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/report-test" class="button">Make a decision</a></p>
+     
+     {% elif customer.status == 'Failed to attend appointment'
+     or customer.status == 'Questionnaire not returned'
+     %}
+     <p><a href="/{{path}}/decisionmaker/{{customer._id}}/decision/index" class="button">Make a decision</a></p>
+     
+     
+
+     {% elif data['confirmfta']=="Arnaq" and customer.name.first == 'Arnaq'
+     or data['confirmfta']=="Sarah"  and customer.name.first == 'Sarah' 
+     or data['confirmfta']=="Johannes" and customer.name.first == 'Johannes' %}
+
+     {% elif customer.status == 'Assessment completed' %}
+     <p><a href="/{{path}}/assessment/{{customer._id}}/scoring/report-view" class="button">Rework report</a></p>   
+   
+     {% elif customer.status == 'Assessment stopped' %}
+     <form class="" method="post" action="/{{path}}/assessment/{{customer._id}}/start-assessment">
+      <p><button  class="button">Restart assessment</button></p>
+    </form>
+     {% elif customer.status == 'Ready for recommendation' %}
+     <p><a href="/{{path}}/assessment/{{customer._id}}/scoring/index-todo" class="button">Make your recommendation</a></p>   
+ 
+     
+
+
+     {% elif customer.status == 'Ready for assessment' and data['wca']==='start'%}
+   
+
+      {% elif customer.status == 'Ready for assessment' and data['wca']==='yes'%}
+      <form class="" method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/wca-index">
+        <p><button  class="button">Start assessment</button></p>
+        <div class="multiple-choice" style="display:none">
+            <input id="radio-inline-4" type="radio" name="wca" value="start" checked>
+            <label for="radio-4">hidden radio one</label>
+          </div>
+      </form>
+
+
+      {% elif customer.status == 'Ready for assessment' %}
+      <form class="" method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/descriptorchoice">
+		  <p><button  class="button">Start assessment review</button></p>
+      <div class="multiple-choice" style="display:none">
+          <input id="radio-inline-4" type="radio" name="wca" value="yes" checked>
+          <label for="radio-4">hidden radio one</label>
+        </div>
+    </form>
+
+
+    {% elif customer.status == 'Appointment today' %}
+    <form class="" method="post" action="/{{path}}/assessment/{{customer._id}}/ready-for-assessment">
+		  <p><button  class="button">Confirm arrival</button></p>
+    </form>
+    {% elif customer.status == 'Did not attend' and data['dna']=="Yes"%} 
+    {% elif customer.status == 'Did not attend' %}
+    <p class="mt10"><a href="/{{path}}/booking/{{customer._id}}/evidence/rec" class="button">Confirm DNA or refer to appointment</a></p>
+    
+    
+    {% else %}
+      <p class="mt10"><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/rec" class="button">Make a recommendation</a></p>
+      {% endif%}
+      
+		  
+		  
+		  <hr>
+		  <ul class="secondary-actions">
+     
+ 
+          {% if customer.status == 'fme' or customer.status == 'review' %}
+          <li><a href="/{{path}}/scrutiny/{{customer._id}}/evidence/request-evidence" class="">Request evidence</a></li>
+          {% endif %}
+         
+
+            {% if customer.status == 'Ready for assessment' and data['wca']==='start' or customer.status == 'Ready for recommendation'%}  
+            <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/observedBehaviour">Observations</a></li>
+<!--        <li><a href="/{{path}}/assessment/{{customer._id}}/general-observations">General observations {% if data['general-observations-post']==='posted' %}({{ observations.length }}){% endif%}</a></li>-->
+            <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/addAttendee" class="">Additional attendee</a></li>
+            <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/stopAssess">Abandon assessment</a></li>
+            <li><a href="/{{path}}/assessment/{{customer._id}}/evidence/curtailAssessmentDecision">Curtail assessment</a></li>
+            <!--{% if data['socialWorkHistory'] and data['typicalDay'] %}<li><a href="/{{path}}/assessment/{{customer._id}}/evidence/curtailAssessmentDecision">Curtail assessment</a></li>{% else %}
+{% endif %}-->
+
+            {% endif %}
+
+          </ul>
+          
+      </div>
+      
+
+      	
+      	
+      	</div>
+      
+      </div>
+<!--
+      <div class="column-three-quarters">
+          <div class="grid-row" >
+          <div class="panel panel-info" style="max-width:100%; margin: 0;">
+              <h2 class="heading-small">Claimant case identifiers</h2>
+              <ul class="list-bullet">
+                
+                  <li>Unacceptable claimant behaviour</li>
+                  <li>Has appointee</li>
+                 </ul>
+                 </div>
+    </div> 
+    </div> -->
+
+     
+        <div class="column-three-quarters main-area">
+           
+                <div class="column-full">
+                <style>
+                    .identifiers{
+                      margin:10px 0 20px 0;
+                      border-left:5px solid #F47738;
+                      padding:1em 0;
+                      background:#eee;
+                     
+                    }
+
+                    .identifiers.v2 {
+                      margin:10px 0 20px 0;
+                      border-left:5px solid #005ea5;
+                      padding:1em 0;
+                      background:transparent;
+                      background:#eee;
+                    }
+                
+                    .identifiers li {
+                      display:inline-block;
+                      font-weight:bold;
+                      padding:0 20px;
+                      border-right:1px solid #BFC1C3;
+                    }
+                   </style>
+
+
+                  <!-- <ul class="identifiers v2">
+            
+                      
+                        <li>Unacceptable customer behaviour</li>
+                        <li>Death</li>
+                       </ul>
+                       </div>
+                  </div> -->
+
+  {% include path+"/includes/_staff_heading.html" %}
+          <div nunj-block="citizen_content">
+            {% block citizen_content %}{% endblock %}
+          </div>
+
+        </div><!-- column -->
+        
+        
+      </div><!-- row -->
+    </div><!-- container -->
+
+  </main>
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super }}
+
+<script type="text/javascript">
+  $( document ).ready(function() {
+         $( ".panel-switch" ).click(function() {
+             $( ".inner-panel" ).toggleClass( "panel-open" );
+         });
+     }); 
+   
+ </script>
+
+
+
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+
+{% endblock %}

@@ -1,0 +1,123 @@
+<div class="inner-panel  panel-open total-panel">
+             <div class="inner-panel-content sticky">
+
+
+                 <h2 class="heading-large">Total slots</h2>
+
+                    <div class="panel panel-info mt10">
+                       
+                             Capacity based on  <span class="bold">{% if data['tuefte']%}{{tuefte}} {% else %} 4 {% endif %} FTE's</span>
+                              
+                            
+                       </div>
+
+                      <style>
+
+                      table.totals{
+                        margin-top:15px;
+                        position:relative;
+                      }
+                      
+                      table.totals tbody th {
+
+                        font-weight:normal;
+                        width:60%;
+                        padding:0.3em 0.3em 0.3em 0;
+
+                      }
+
+                       table.totals tbody td {
+
+                        font-weight:bold;
+                        text-align:right;
+                        padding-right:0px;
+                        padding:0.2em 0.2em 0.2em 0;
+     
+
+                      }
+
+                      input[readonly]{
+                       text-align:center;
+                       background:#ddd;
+                       border-color:#ddd;
+                       font-weight:bold;
+                       width:100%;
+                      }
+
+                      .booked{
+                        padding-right:20px;
+                      }
+
+
+                      dl { 
+                           border-bottom:1px solid #ccc;
+                           padding:5px 0;
+                        }
+                        
+                        
+                        dt {
+                              float: left;                     
+                              width: 70%;                            
+                              clear: left;
+                              padding-top:5px;
+                           
+                          }
+                          dd {
+                              float: left;
+                              width: 30%;
+                              text-align:center;
+                          
+                          }
+                          dl:after {content:"";display:table;clear:both;}
+
+                          .totalbooked
+                          {
+                            display:block;
+                          }
+                      </style>
+
+                          <dl>
+                          <dt class="bold">Total opened</dt>
+                          <dd><input class="form-control" id="e_rowsum_tuesum"  type="text" name="e_rowsum_tuesum" readonly type="text" value="{{e_rowsum_tuesum}}" ></dd>
+                          </dl>
+                          <dl>
+                          <dt>Available</dt>
+                          <dd><input class="form-control" id="e_rowsum_tuesum_avail"  type="text" name="e_rowsum_tuesum_avail" readonly type="text" value="{{e_rowsum_tuesum_avail}}" ></dd>
+                          </dl>
+                          <dl>
+                          <dt>Booked</dt>
+                          <dd><span class="totalbooked">33</span></dd>
+                        </dl>
+
+
+                         <dl class="mt30">
+                          <dt class="bold">Complex neuro</dt>
+                          <dd><input type="number" name="e_col_tue_1_sum" id="e_col_tue_1_sum" class="form-control" readonly value="{{ e_col_tue_1_sum }}" /></dd>
+                          </dl>
+                            <dl>
+                          <dt class="bold">Neuro</dt>
+                          <dd> <input class="form-control" id="e_col_tue_2_sum"  type="text" name="e_col_tue_2_sum" readonly type="text" value="{{e_col_tue_2_sum}}" ></dd>
+                          </dl>
+                             <dl>
+                          <dt class="bold">Non neuro</dt>
+                          <dd><input type="number" name="e_col_tue_3_sum" id="e_col_tue_3_sum" class="form-control" readonly  value="{{e_col_tue_3_sum}}" /></dd>
+                          </dl>
+                       
+                             <dl>
+                          <dt class="bold">UCB</dt>
+                          <dd> <input class="form-control" id="e_col_tue_6_sum"  type="text" name="e_col_tue_6_sum" readonly type="text" value="{{e_col_tue_6_sum}}" ></dd>
+                          </dl>
+
+
+
+
+
+
+            
+               
+                    
+
+
+         </div> 
+
+  

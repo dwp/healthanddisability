@@ -1,0 +1,900 @@
+
+{% extends path+"/_layout.html" %}
+
+
+
+{% block assess_content %}
+
+<main id="content" role="main" class="main-content">
+
+
+      <div class="container">
+          <div class="grid-row">
+              <div class="column-three-quarters capacity">
+  <a href="javascript: history.go(-1)" class="link-back">Back</a>   
+
+   <h1 class="heading-large">Edit capacity for  {% include path+"/scenario3/_ACname.html" %}</h1>
+
+   <h2 class="heading-medium"> {% include path+"/scenario3/_Tue_Date.html" %}</h2>
+{% include path+"/scenario2/_info-panel-amount.html" %} 
+<p>
+<a href="not-testing" class="secondary-invert">Add or edit slot times or benefits</a>
+</p>
+   <form class="form" action="view-plan" method="post">
+
+              <table class="profile-table edit">
+
+            
+                <thead>
+                  <tr>
+                    <th></th>
+                    <!-- <th>Assessment Centre</th> -->
+                     <th class="col5"><span></span>Total<br> <span class="block">Opened</span></th>
+                    <th>Complex neuro<br> <span>Available</span><span>Booked</span></th>
+                    <th>Neuro<br><span>Available</span><span>Booked</span></th>
+                    <th>Non neuro<br><span>Available</span><span>Booked</span></th>
+                        {% if checked('e_benefits','ben2') %}
+                    <th>IIDB<br> <span>Available</span><span>Booked</span></th>
+                    {% endif %}
+                   
+                  
+                
+                     <th class="col6">UCB<br><span>Available</span><span>Booked</span></th>
+               
+                    
+                  </tr>
+                </thead>
+
+               <style>
+               .flags {
+                width:50%;
+                color:#6f777b;
+                font-size:16px;
+                text-align:center;
+                float:right;
+                margin-top:5px;
+                }
+
+                table.profile-table.edit td.col5 input[readonly]{
+                  background:#555;
+                  border-color:#555;
+                  color:#fff;
+                }
+
+                table.profile-table input{
+                  border-color:#000;
+
+                }
+
+                table.profile-table .col5 {
+    padding-left: 10px;
+    padding-right:10px;
+    background:transparent;
+    border-right:1px solid #ddd;
+}
+
+                table.profile-table .col6 {
+    padding-left: 10px;
+    padding-right:10px;
+    background:transparent;
+    border-left:1px solid #ddd;
+}
+ table.profile-table td, table.profile-table td{
+   width:16.66%;
+   padding:5px 10px;
+ }
+               
+               </style>
+
+             <div class="form-group mt30">
+  <label class="form-label-bold" for="monfte">How many full time equivalent are you basing this capacity on?</label>
+  <input class="form-control form-control-1-8" id="tuefte" type="number" name="tuefte" value="{{ tuefte }}" >
+</div>       
+
+                <tr>
+                  <th class="col">9:00am</th>
+                       <td class="col5"><div class="totals">
+                    	<label class="visually-hidden" for="">Total</label>
+						<input class="form-control" id="rowsum_tue1" type="text" name="rowsum_tue1" readonly  value="{{ rowsum_tue1 }}">
+                                                <input class="visually-hidden" id="bookedsum_tue_1"  type="text" name="bookedsum_tue_1"  type="text" value="{{ bookedsum_tue_1 }}" >
+					</div></td>
+                  <td><div class="totals"><div  class="totals">   <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_1_1"  type="text" name="e_col_tue_1_1"  type="text" value="{{e_col_tue_1_1}}" >
+                        <span class='booked'><span class="bold">1</span></span>
+                    </div></td> 
+                    <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_2_1"  type="text" name="e_col_tue_2_1"  type="text" value="{{e_col_tue_2_1}}" >
+                        <span class='booked'><span class="bold">3</span></span>
+                      </div>
+                      <span class='flags'>1 UCB<br>1 ED Referral</span>
+                      </td>
+                  <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_3_1"  type="text" name="e_col_tue_3_1"  type="text" value="{{e_col_tue_3_1}}" >
+                        <span class='booked'><span class="bold"></span></span>
+                    </div></td>
+               {% if checked('e_benefits','ben2') %}
+                  <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_4_1"  type="text" name="e_col_tue_4_1"  type="text" value="{{e_col_tue_4_1}}" >
+                        <span class='booked'><span class="bold"> </span></span></div></td>
+                 {% endif %}
+     
+
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_6_1"  type="text" name="e_col_tue_6_1"  type="text" value="{{e_col_tue_6_1}}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                    </div></td>
+                </tr>
+
+
+                <tr>
+                  <th class="col">9:30am</th>
+                           <td class="col5"><div class="totals">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_tue3" type="text" name="rowsum_tue3" readonly  value="{{rowsum_tue3}}">
+                        <input class="visually-hidden" id="bookedsum_tue_3"  type="text" name="bookedsum_tue_3"  type="text" value="{{ bookedsum_tue_3 }}" >
+			</div></td>
+
+                  <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_1_3"  type="text" name="e_col_tue_1_3"  type="text" value="{{e_col_tue_1_3}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                    </div></td> 
+                    <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_2_3"  type="text" name="e_col_tue_2_3"  type="text" value="{{e_col_tue_2_3}}" >
+                        <span class='booked'><span class="bold">2 </span></span>
+                      </div></td>
+                  <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_3_3"  type="text" name="e_col_tue_3_3"  type="text" value="{{e_col_tue_3_3}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                    </div></td>
+               {% if checked('e_benefits','ben2') %}
+                  <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_4_3"  type="text" name="e_col_tue_4_3"  type="text" value="{{e_col_tue_4_3}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                 {% endif %}
+        
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_6_3"  type="text" name="e_col_tue_6_3"  type="text" value="{{e_col_tue_6_3}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                    </div></td>
+                </tr>
+
+                  <tr>
+                  <th class="col">9:45am</th>
+                            <td class="col5"><div class="totals">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_tue4" type="text" name="rowsum_tue4" readonly  value="{{rowsum_tue4}}">
+                        <input class="visually-hidden" id="bookedsum_tue_4"  type="text" name="bookedsum_tue_4"  type="text" value="{{ bookedsum_tue_4 }}" >
+			</div></td>
+
+                  <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_1_4"  type="text" name="e_col_tue_1_4"  type="text" value="{{e_col_tue_1_4}}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                    </div>
+                      <span class='flags'>ED Referral</span>
+                    </td> 
+                    <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_2_4"  type="text" name="e_col_tue_2_4"  type="text" value="{{e_col_tue_2_4}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                      </div></td>
+                  <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_3_4"  type="text" name="e_col_tue_3_4"  type="text" value="{{e_col_tue_3_4}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                    </div></td>
+               {% if checked('e_benefits','ben2') %}
+                  <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_4_4"  type="text" name="e_col_tue_4_4"  type="text" value="{{e_col_tue_4_4}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                 {% endif %}
+       
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_6_4"  type="text" name="e_col_tue_6_4"  type="text" value="{{e_col_tue_6_4}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                    </div></td>
+                </tr>
+                <tr>
+                  <th class="col">10:00am</th>
+
+                       <td class="col5"><div class="totals">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_tue5" type="text" name="rowsum_tue5" readonly  value="{{rowsum_tue5}}">
+                        <input class="visually-hidden" id="bookedsum_tue_5"  type="text" name="bookedsum_tue_5"  type="text" value="{{ bookedsum_tue_5 }}" >
+			</div></td>
+                  <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_1_5"  type="text" name="e_col_tue_1_5"  type="text" value="{{e_col_tue_1_5}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                    </div></td> 
+                    <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_2_5"  type="text" name="e_col_tue_2_5"  type="text" value="{{e_col_tue_2_5}}" >
+                        <span class='booked'><span class="bold">2</span></span>
+                      </div></td>
+                  <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_3_5"  type="text" name="e_col_tue_3_5"  type="text" value="{{e_col_tue_3_5}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                    </div></td>
+               {% if checked('e_benefits','ben2') %}
+                  <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_4_5"  type="text" name="e_col_tue_4_5"  type="text" value="{{e_col_tue_4_5}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                 {% endif %}
+            
+
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_6_5"  type="text" name="e_col_tue_6_5"  type="text" value="{{e_col_tue_6_5}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                    </div></td>
+                </tr>
+                <tr>
+                  <th class="col">10:45am</th>
+
+                               <td class="col5"><div class="totals">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_tue8" type="text" name="rowsum_tue8" readonly  value="{{ rowsum_tue8 }}">
+                        <input class="visually-hidden" id="bookedsum_tue_8"  type="text" name="bookedsum_tue_8"  type="text" value="{{ bookedsum_tue_8 }}" >
+			</div></td>
+                  <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_1_8"  type="text" name="e_col_tue_1_8"  type="text" value="{{e_col_tue_1_8}}" >
+                        <span class='booked'><span class="bold">1</span></span>
+                    </div></td> 
+                    <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_2_8"  type="text" name="e_col_tue_2_8"  type="text" value="{{e_col_tue_2_8}}" >
+                        <span class='booked'><span class="bold">3</span></span>
+                      </div></td>
+                  <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_3_8"  type="text" name="e_col_tue_3_8"  type="text" value="{{e_col_tue_3_8}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                    </div></td>
+               {% if checked('e_benefits','ben2') %}
+                  <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_4_8"  type="text" name="e_col_tue_4_8"  type="text" value="{{e_col_tue_4_8}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                 {% endif %}
+    
+
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_6_8"  type="text" name="e_col_tue_6_8"  type="text" value="{{e_col_tue_6_8}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                    </div></td>
+                </tr>
+
+               
+                <tr>
+                  <th class="col">11:15am</th>
+                           <td class="col5"><div class="totals">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_tue10" type="text" name="rowsum_tue10" readonly  value="{{ rowsum_tue10 }}">
+                        <input class="visually-hidden" id="bookedsum_tue_10"  type="text" name="bookedsum_tue_10"  type="text" value="{{ bookedsum_tue_10 }}" >
+		             	</div></td>
+                  <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_1_10"  type="text" name="e_col_tue_1_10"  type="text" value="{{e_col_tue_1_10}}" >
+                        <span class='booked'><span class="bold"></span></span>
+                    </div></td> 
+                    <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_2_10"  type="text" name="e_col_tue_2_10"  type="text" value="{{e_col_tue_2_10}}" >
+                        <span class='booked'><span class="bold">2</span></span>
+                      </div></td>
+                  <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_3_10"  type="text" name="e_col_tue_3_10"  type="text" value="{{e_col_tue_3_10}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                    </div></td>
+               {% if checked('e_benefits','ben2') %}
+                  <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_4_10"  type="text" name="e_col_tue_4_10"  type="text" value="{{e_col_tue_4_10}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                 {% endif %}
+        
+
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_6_10"  type="text" name="e_col_tue_6_10"  type="text" value="{{e_col_tue_6_10}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                    </div></td>
+                </tr>
+
+        
+
+
+             
+
+                <tr>
+                  <th class="col">11:45am</th>
+                            <td class="col5"><div class="totals">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_tue12" type="text" name="rowsum_tue12" readonly  value="{{ rowsum_tue12 }}">
+                        <input class="visually-hidden" id="bookedsum_tue_12"  type="text" name="bookedsum_tue_12"  type="text" value="{{ bookedsum_tue_12 }}" >
+			</div></td>
+                  <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_1_12"  type="text" name="e_col_tue_1_12"  type="text" value="{{e_col_tue_1_12}}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                    </div></td> 
+                    <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_2_12"  type="text" name="e_col_tue_2_12"  type="text" value="{{e_col_tue_2_12}}" >
+                        <span class='booked'><span class="bold">3 </span></span>
+                      </div></td>
+                  <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_3_12"  type="text" name="e_col_tue_3_12"  type="text" value="{{e_col_tue_3_12}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                    </div></td>
+               {% if checked('e_benefits','ben2') %}
+                  <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_4_12"  type="text" name="e_col_tue_4_12"  type="text" value="{{e_col_tue_4_12}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                 {% endif %}
+       
+
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_6_12"  type="text" name="e_col_tue_6_12"  type="text" value="{{e_col_tue_6_12}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                    </div></td>
+                </tr>
+
+
+
+
+                <tr>
+                  <th class="col">1:15pm</th>
+                         <td class="col5"><div class="totals">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_tue17" type="text" name="rowsum_tue17" readonly  value="{{ rowsum_tue17 }}">
+                        <input class="visually-hidden" id="bookedsum_tue_17"  type="text" name="bookedsum_tue_17"  type="text" value="{{ bookedsum_tue_17 }}" >
+			</div></td>
+                  <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_1_17"  type="text" name="e_col_tue_1_17"  type="text" value="{{ e_col_tue_1_17 }}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                    </div></td> 
+                    <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_2_17"  type="text" name="e_col_tue_2_17"  type="text" value="{{e_col_tue_2_17}}" >
+                        <span class='booked'><span class="bold">3 </span></span>
+                      </div>
+                        <span class='flags'>1 ED Referral</span>
+                      </td>
+                  <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_3_17"  type="text" name="e_col_tue_3_17"  type="text" value="{{e_col_tue_3_17}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                    </div></td>
+               {% if checked('e_benefits','ben2') %}
+                  <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_4_17"  type="text" name="e_col_tue_4_17"  type="text" value="{{e_col_tue_4_17}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                 {% endif %}
+          
+
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_6_17"  type="text" name="e_col_tue_6_17"  type="text" value="{{e_col_tue_6_17}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                    </div></td>
+                </tr>
+
+   
+
+            
+
+        
+                <tr>
+                  <th class="col">2:00pm</th>
+                          <td class="col5"><div class="totals">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_tue20" type="text" name="rowsum_tue20" readonly  value="{{ rowsum_tue20 }}">
+                        <input class="visually-hidden" id="bookedsum_tue_20"  type="text" name="bookedsum_tue_20"  type="text" value="{{ bookedsum_tue_20 }}" >
+			</div></td>
+                  <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_1_20"  type="text" name="e_col_tue_1_20"  type="text" value="{{e_col_tue_1_20}}" >
+                        <span class='booked'><span class="bold"></span></span>
+                    </div></td> 
+                    <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_2_20"  type="text" name="e_col_tue_2_20"  type="text" value="{{e_col_tue_2_20}}" >
+                        <span class='booked'><span class="bold">3</span></span>
+                      </div></td>
+                  <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_3_20"  type="text" name="e_col_tue_3_20"  type="text" value="{{e_col_tue_3_20}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                    </div></td>
+               {% if checked('e_benefits','ben2') %}
+                  <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_4_20"  type="text" name="e_col_tue_4_20"  type="text" value="{{e_col_tue_4_20}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                 {% endif %}
+         
+
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_6_20"  type="text" name="e_col_tue_6_20"  type="text" value="{{e_col_tue_6_20}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                    </div></td>
+                </tr>
+
+
+
+         
+
+
+             
+                <tr>
+                  <th class="col">2:45pm</th>
+                          <td class="col5"><div class="totals">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_tue23" type="text" name="rowsum_tue23" readonly  value="{{ rowsum_tue23 }}">
+                        <input class="visually-hidden" id="bookedsum_tue_23"  type="text" name="bookedsum_tue_23"  type="text" value="{{ bookedsum_tue_23 }}" >
+			</div></td>
+
+                  <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_1_23"  type="text" name="e_col_tue_1_23"  type="text" value="{{e_col_tue_1_23}}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                    </div></td> 
+                    <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_2_23"  type="text" name="e_col_tue_2_23"  type="text" value="{{e_col_tue_2_23}}" >
+                        <span class='booked'><span class="bold">2</span></span>
+                      </div></td>
+                  <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_3_23"  type="text" name="e_col_tue_3_23"  type="text" value="{{e_col_tue_3_23}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                    </div></td>
+               {% if checked('e_benefits','ben2') %}
+                  <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_4_23"  type="text" name="e_col_tue_4_23"  type="text" value="{{e_col_tue_4_23}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                 {% endif %}
+         
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_6_23"  type="text" name="e_col_tue_6_23"  type="text" value="{{e_col_tue_6_23}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                    </div></td>
+                </tr>
+
+
+
+
+        
+
+
+
+                <tr>
+                  <th class="col">3:15pm</th>
+                          <td class="col5"><div class="totals">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_tue25" type="text" name="rowsum_tue25" readonly  value="{{ rowsum_tue25 }}">
+                        <input class="visually-hidden" id="bookedsum_tue_25"  type="text" name="bookedsum_tue_25"  type="text" value="{{ bookedsum_tue_25 }}" >
+			</div></td>
+                  <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_1_25"  type="text" name="e_col_tue_1_25"  type="text" value="{{e_col_tue_1_25}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                    </div></td> 
+                    <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_2_25"  type="text" name="e_col_tue_2_25"  type="text" value="{{e_col_tue_2_25}}" >
+                        <span class='booked'><span class="bold">1</span></span>
+                      </div>
+                       <span class='flags'>1 ED Referral</span></td>
+                  <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_3_25"  type="text" name="e_col_tue_3_25"  type="text" value="{{e_col_tue_3_25}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                    </div></td>
+               {% if checked('e_benefits','ben2') %}
+                  <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_4_25"  type="text" name="e_col_tue_4_25"  type="text" value="{{e_col_tue_4_25}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                 {% endif %}
+         
+
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_6_25"  type="text" name="e_col_tue_6_25"  type="text" value="{{e_col_tue_6_25}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                    </div></td>
+                </tr>
+  
+                <tr>
+                  <th class="col">3:45pm</th>
+                            <td class="col5"><div class="totals">
+                    	<label class="visually-hidden" for="">Total</label>
+                        <input class="form-control" id="rowsum_tue27" type="text" name="rowsum_tue27" readonly  value="{{ rowsum_tue27 }}">
+                        <input class="visually-hidden" id="bookedsum_tue_27"  type="text" name="bookedsum_tue_27"  type="text" value="{{ bookedsum_tue_27 }}" >
+			</div></td>
+                  <td><div class="totals">    <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_1_27"  type="text" name="e_col_tue_1_27"  type="text" value="{{e_col_tue_1_27}}" >
+                        <span class='booked'><span class="bold">1 </span></span>
+                    </div></td> 
+                    <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_2_27"  type="text" name="e_col_tue_2_27"  type="text" value="{{e_col_tue_2_27}}" >
+                        <span class='booked'><span class="bold">2 </span></span>
+                      </div></td>
+                  <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_3_27"  type="text" name="e_col_tue_3_27"  type="text" value="{{e_col_tue_3_27}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                    </div></td>
+               {% if checked('e_benefits','ben2') %}
+                  <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_4_27"  type="text" name="e_col_tue_4_27"  type="text" value="{{e_col_tue_4_27}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                 {% endif %}
+       
+
+                  <td class="col6"><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <input class="form-control " id="e_col_tue_6_27"  type="text" name="e_col_tue_6_27"  type="text" value="{{e_col_tue_6_27}}" >
+                        <span class='booked'><span class="bold"> </span></span>
+                    </div></td>
+                </tr>
+
+ 
+
+
+        
+
+
+               
+  
+
+                        
+                              
+       
+
+
+               
+              </table>
+
+
+
+
+
+              <p><button class="button mt30">Save and continue</button></p>
+              {% include path+"/scenario3/_totals_tue.html" %}
+              	<div class="check-choice visually-hidden">
+                    <input id="tuesdayvisited" name="tuesdayvisited" type="checkbox" value="yes" checked>
+                    <label for=""></label>
+                </div>
+
+                <div class="check-choice visually-hidden">
+                <input id="visited" name="visited" type="checkbox" value="yes" checked>
+                <label for=""></label>
+                </div>
+              </form>
+            </div>
+         
+   
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+</main>
+
+
+
+  <input class="visually-hidden" id="complex-booked"  type="text" name="complex-booked"  type="text" value="7" >
+<input class="visually-hidden" id="neuro-booked"  type="text" name="neauro-booked"  type="text" value="26" >
+<input class="visually-hidden" id="total-booked"  type="text" name="total-booked"  type="text" value="33" >
+<input class="visually-hidden" id="ucb-booked"  type="text" name="ucb-booked"  type="text" value="1" >
+
+
+{% endblock %}
+
+
+{% block page_scripts %}
+<script>
+{% if data['tuesdayvisited']=='yes'%}
+
+{% else %}
+$('#e_col_tue_1_sum').val('8');
+$('#e_col_tue_2_sum').val("33");
+$('#e_rowsum_tuesum').val("41");
+$('#e_col_tue_6_sum').val("2");
+$('#e_rowsum_tuesum_avail').val("8");
+$('#e_col_tue_1_20').val("1");
+$('#e_col_tue_2_27').val("1");
+$('#e_col_tue_6_17').val("1");
+$('#e_col_tue_2_3').val("1");
+$('#e_col_tue_2_5').val("1");
+$('#e_col_tue_2_10').val("1");
+$('#e_col_tue_2_23').val("1");
+$('#e_col_tue_2_25').val("2");
+$('#rowsum_tue1').val("4");
+$('#rowsum_tue3').val("3");
+$('#rowsum_tue4').val("1");
+$('#rowsum_tue5').val("3");
+$('#rowsum_tue8').val("4");
+$('#rowsum_tue10').val("3");
+$('#rowsum_tue12').val("4");
+$('#rowsum_tue17').val("4");
+$('#rowsum_tue20').val("4");
+$('#rowsum_tue22').val("3");
+$('#rowsum_tue23').val("4");
+$('#rowsum_tue25').val("3");
+$('#rowsum_tue26').val("3");
+$('#rowsum_tue27').val("4");
+$('#tuefte').val("4");
+{% endif %}
+
+
+
+
+
+
+
+$('#bookedsum_tue_1').val("4");
+$('#bookedsum_tue_3').val("2");
+$('#bookedsum_tue_4').val("1");
+
+$('#bookedsum_tue_5').val("2");
+
+$('#bookedsum_tue_8').val("4");
+
+$('#bookedsum_tue_10').val("2");
+
+$('#bookedsum_tue_12').val("4");
+
+$('#bookedsum_tue_17').val("4");
+
+$('#bookedsum_tue_20').val("3");
+
+$('#bookedsum_tue_22').val("2");
+
+$('#bookedsum_tue_23').val("3");
+
+$('#bookedsum_tue_25').val("1");
+
+$('#bookedsum_tue_26').val("3");
+
+$('#bookedsum_tue_27').val("3");
+
+
+
+
+
+
+
+function total(inputFields, totalField) {
+  var sumValues = 0;
+  $(inputFields).each(function() { 
+      if (this.value.length!=0 && !isNaN(this.value)) {
+          sumValues += parseFloat(this.value);
+      }
+  });
+  $(totalField).val(sumValues).triggerHandler('change');
+}
+
+
+
+
+
+$(function() {
+  $('#e_col_tue_1_sum, #e_col_tue_2_sum, #e_col_tue_3_sum, #e_col_tue_4_sum').change(function() { 
+    total('#e_col_tue_1_sum, #e_col_tue_2_sum, #e_col_tue_3_sum, #e_col_tue_4_sum, #total-booked','#e_rowsum_tuesum');
+  });
+});
+
+$(function() { 
+  $('#e_col_tue_1_1, #e_col_tue_1_2, #e_col_tue_1_3, #e_col_tue_1_4, #e_col_tue_1_5, #e_col_tue_1_6, #e_col_tue_1_7, #e_col_tue_1_8, #e_col_tue_1_9, #e_col_tue_1_10, #e_col_tue_1_11, #e_col_tue_1_12, #e_col_tue_1_13, #e_col_tue_1_14, #e_col_tue_1_15, #e_col_tue_1_16, #e_col_tue_1_17, #e_col_tue_1_18, #e_col_tue_1_19, #e_col_tue_1_20, #e_col_tue_1_21, #e_col_tue_1_23, #e_col_tue_1_23, #e_col_tue_1_24, #e_col_tue_1_25, #e_col_tue_1_26, #e_col_tue_1_27, #e_col_tue_1_28, #e_col_tue_1_29, #e_col_tue_1_30, #e_col_tue_1_31, #e_col_tue_1_32').change(function(){
+    total('#e_col_tue_1_1, #e_col_tue_1_2, #e_col_tue_1_3, #e_col_tue_1_4, #e_col_tue_1_5, #e_col_tue_1_6, #e_col_tue_1_7, #e_col_tue_1_8, #e_col_tue_1_9, #e_col_tue_1_10, #e_col_tue_1_11, #e_col_tue_1_12, #e_col_tue_1_13, #e_col_tue_1_14, #e_col_tue_1_15, #e_col_tue_1_16, #e_col_tue_1_17, #e_col_tue_1_18, #e_col_tue_1_19, #e_col_tue_1_20, #e_col_tue_1_21, #e_col_tue_1_23, #e_col_tue_1_23, #e_col_tue_1_24, #e_col_tue_1_25, #e_col_tue_1_26, #e_col_tue_1_27, #e_col_tue_1_28, #e_col_tue_1_29, #e_col_tue_1_30, #e_col_tue_1_31, #e_col_tue_1_32, #complex-booked','#e_col_tue_1_sum');
+  });
+});
+
+$(function(){
+  $('#e_col_tue_2_1, #e_col_tue_2_2, #e_col_tue_2_3, #e_col_tue_2_4, #e_col_tue_2_5, #e_col_tue_2_6, #e_col_tue_2_7, #e_col_tue_2_8, #e_col_tue_2_9, #e_col_tue_2_10, #e_col_tue_2_11, #e_col_tue_2_12, #e_col_tue_2_13, #e_col_tue_2_14, #e_col_tue_2_15, #e_col_tue_2_16, #e_col_tue_2_17, #e_col_tue_2_18, #e_col_tue_2_19, #e_col_tue_2_20, #e_col_tue_2_21, #e_col_tue_2_22, #e_col_tue_2_23, #e_col_tue_2_24, #e_col_tue_2_25, #e_col_tue_2_26, #e_col_tue_2_27, #e_col_tue_2_28, #e_col_tue_2_29, #e_col_tue_2_30, #e_col_tue_2_31, #e_col_tue_2_32').change(function(){
+     total('#e_col_tue_2_1, #e_col_tue_2_2, #e_col_tue_2_3, #e_col_tue_2_4, #e_col_tue_2_5, #e_col_tue_2_6, #e_col_tue_2_7, #e_col_tue_2_8, #e_col_tue_2_9, #e_col_tue_2_10, #e_col_tue_2_11, #e_col_tue_2_12, #e_col_tue_2_13, #e_col_tue_2_14, #e_col_tue_2_15, #e_col_tue_2_16, #e_col_tue_2_17, #e_col_tue_2_18, #e_col_tue_2_19, #e_col_tue_2_20, #e_col_tue_2_21, #e_col_tue_2_22, #e_col_tue_2_23, #e_col_tue_2_24, #e_col_tue_2_25, #e_col_tue_2_26, #e_col_tue_2_27, #e_col_tue_2_28, #e_col_tue_2_29, #e_col_tue_2_30, #e_col_tue_2_31, #e_col_tue_2_32, #neuro-booked','#e_col_tue_2_sum');
+  });
+});
+
+
+
+$(function(){
+  $('#e_col_tue_3_1, #e_col_tue_3_2, #e_col_tue_3_3, #e_col_tue_3_4, #e_col_tue_3_5, #e_col_tue_3_6, #e_col_tue_3_7, #e_col_tue_3_8, #e_col_tue_3_9, #e_col_tue_3_10, #e_col_tue_3_11, #e_col_tue_3_12, #e_col_tue_3_13, #e_col_tue_3_14, #e_col_tue_3_15, #e_col_tue_3_16, #e_col_tue_3_17, #e_col_tue_3_18, #e_col_tue_3_19, #e_col_tue_3_20, #e_col_tue_3_21, #e_col_tue_3_22, #e_col_tue_3_23, #e_col_tue_3_24, #e_col_tue_3_25, #e_col_tue_3_26, #e_col_tue_3_27, #e_col_tue_3_28, #e_col_tue_3_29, #e_col_tue_3_30, #e_col_tue_3_31, #e_col_tue_3_32').change(function(){
+       total('#e_col_tue_3_1, #e_col_tue_3_2, #e_col_tue_3_3, #e_col_tue_3_4, #e_col_tue_3_5, #e_col_tue_3_6, #e_col_tue_3_7, #e_col_tue_3_8, #e_col_tue_3_9, #e_col_tue_3_10, #e_col_tue_3_11, #e_col_tue_3_12, #e_col_tue_3_13, #e_col_tue_3_14, #e_col_tue_3_15, #e_col_tue_3_16, #e_col_tue_3_17, #e_col_tue_3_18, #e_col_tue_3_19, #e_col_tue_3_20, #e_col_tue_3_21, #e_col_tue_3_22, #e_col_tue_3_23, #e_col_tue_3_24, #e_col_tue_3_25, #e_col_tue_3_26, #e_col_tue_3_27, #e_col_tue_3_28, #e_col_tue_3_29, #e_col_tue_3_30, #e_col_tue_3_31, #e_col_tue_3_32','#e_col_tue_3_sum');
+  });
+});
+
+$(function(){
+  $('#e_col_tue_4_1, #e_col_tue_4_2, #e_col_tue_4_3, #e_col_tue_4_4, #e_col_tue_4_5, #e_col_tue_4_6, #e_col_tue_4_7, #e_col_tue_4_8, #e_col_tue_4_9, #e_col_tue_4_10, #e_col_tue_4_11, #e_col_tue_4_12, #e_col_tue_4_13, #e_col_tue_4_14, #e_col_tue_4_15, #e_col_tue_4_16, #e_col_tue_4_17, #e_col_tue_4_18, #e_col_tue_4_19, #e_col_tue_4_20, #e_col_tue_4_21, #e_col_tue_4_22, #e_col_tue_4_23, #e_col_tue_4_24, #e_col_tue_4_25, #e_col_tue_4_26, #e_col_tue_4_27, #e_col_tue_4_28, #e_col_tue_4_29, #e_col_tue_4_30, #e_col_tue_4_31, #e_col_tue_4_32').change(function(){
+total('#e_col_tue_4_1, #e_col_tue_4_2, #e_col_tue_4_3, #e_col_tue_4_4, #e_col_tue_4_5, #e_col_tue_4_6, #e_col_tue_4_7, #e_col_tue_4_8, #e_col_tue_4_9, #e_col_tue_4_10, #e_col_tue_4_11, #e_col_tue_4_12, #e_col_tue_4_13, #e_col_tue_4_14, #e_col_tue_4_15, #e_col_tue_4_16, #e_col_tue_4_17, #e_col_tue_4_18, #e_col_tue_4_19, #e_col_tue_4_20, #e_col_tue_4_21, #e_col_tue_4_22, #e_col_tue_4_23, #e_col_tue_4_24, #e_col_tue_4_25, #e_col_tue_4_26, #e_col_tue_4_27, #e_col_tue_4_28, #e_col_tue_4_29, #e_col_tue_4_30, #e_col_tue_4_31, #e_col_tue_4_32','#e_col_tue_4_sum');
+  });
+});
+
+$(function(){
+  $('#e_col_tue_1_1, #e_col_tue_2_1, #e_col_tue_3_1, #e_col_tue_4_1, #bookedsum_tue_1').change(function(){
+   total('#e_col_tue_1_1, #e_col_tue_2_1, #e_col_tue_3_1, #e_col_tue_4_1, #bookedsum_tue_1 ', '#rowsum_tue1');
+  });
+  });
+
+  $(function(){
+  $('#e_col_tue_1_2, #e_col_tue_2_2, #e_col_tue_3_2, #e_col_tue_4_2, #bookedsum_tue_2').change(function(){
+          total('#e_col_tue_1_2, #e_col_tue_2_2, #e_col_tue_3_2, #e_col_tue_4_2, #bookedsum_tue_2','#rowsum_tue2');
+  });
+  });
+
+    $(function(){
+  $('#e_col_tue_1_3, #e_col_tue_2_3, #e_col_tue_3_3, #e_col_tue_4_3 , #bookedsum_tue_3').change(function(){
+             total('#e_col_tue_1_3, #e_col_tue_2_3, #e_col_tue_3_3, #e_col_tue_4_3, #bookedsum_tue_3','#rowsum_tue3');
+  });
+  });
+
+      $(function(){
+  $('#e_col_tue_1_4, #e_col_tue_2_4, #e_col_tue_3_4, #e_col_tue_4_4, #bookedsum_tue_4').change(function(){
+     total('#e_col_tue_1_4, #e_col_tue_2_4, #e_col_tue_3_4, #e_col_tue_4_4, #bookedsum_tue_4', '#rowsum_tue4');
+  });
+  });
+
+      $(function(){
+  $('#e_col_tue_1_5, #e_col_tue_2_5, #e_col_tue_3_5, #e_col_tue_4_5, #bookedsum_tue_5').change(function(){
+          total('#e_col_tue_1_5, #e_col_tue_2_5, #e_col_tue_3_5, #e_col_tue_4_5, #bookedsum_tue_5','#rowsum_tue5');
+  });
+  });
+
+        $(function(){
+  $('#e_col_tue_1_6, #e_col_tue_2_6, #e_col_tue_3_6, #e_col_tue_4_6, #bookedsum_tue_6').change(function(){
+       total('#e_col_tue_1_6, #e_col_tue_2_6, #e_col_tue_3_6, #e_col_tue_4_6, #bookedsum_tue_6','#rowsum_tue6');
+  });
+  });
+
+          $(function(){
+  $('#e_col_tue_1_7, #e_col_tue_2_7, #e_col_tue_3_7, #e_col_tue_4_7, #bookedsum_tue_7').change(function(){
+      total('#e_col_tue_1_7, #e_col_tue_2_7, #e_col_tue_3_7, #e_col_tue_4_7, #bookedsum_tue_7','#rowsum_tue7');
+  });
+  });
+
+          $(function(){
+  $('#e_col_tue_1_8, #e_col_tue_2_8, #e_col_tue_3_8, #e_col_tue_4_8 , #bookedsum_tue_8').change(function(){
+      total('#e_col_tue_1_8, #e_col_tue_2_8, #e_col_tue_3_8, #e_col_tue_4_8 , #bookedsum_tue_8','#rowsum_tue8');
+  });
+  });
+
+          $(function(){
+  $('#e_col_tue_1_9, #e_col_tue_2_9, #e_col_tue_3_9, #e_col_tue_4_9,  #bookedsum_tue_9').change(function(){
+       total('#e_col_tue_1_9, #e_col_tue_2_9, #e_col_tue_3_9, #e_col_tue_4_9,  #bookedsum_tue_9','#rowsum_tue9');
+  });
+  });
+
+          $(function(){
+  $('#e_col_tue_1_10, #e_col_tue_2_10, #e_col_tue_3_10, #e_col_tue_4_10,  #bookedsum_tue_10').change(function(){
+       total('#e_col_tue_1_10, #e_col_tue_2_10, #e_col_tue_3_10, #e_col_tue_4_10,  #bookedsum_tue_10','#rowsum_tue10');
+  });
+  });
+
+          $(function(){
+  $('#e_col_tue_1_11, #e_col_tue_2_11, #e_col_tue_3_11, #e_col_tue_4_11,  #bookedsum_tue_11').change(function(){
+       total('#e_col_tue_1_11, #e_col_tue_2_11, #e_col_tue_3_11, #e_col_tue_4_11 ,#bookedsum_tue_11','#rowsum_tue11');
+  });
+  });
+
+          $(function(){
+  $('#e_col_tue_1_12, #e_col_tue_2_12, #e_col_tue_3_12, #e_col_tue_4_12, #bookedsum_tue_12').change(function(){
+       total('#e_col_tue_1_12, #e_col_tue_2_12, #e_col_tue_3_12, #e_col_tue_4_12,  #bookedsum_tue_12','#rowsum_tue12');
+  });
+  });
+
+          $(function(){
+  $('#e_col_tue_1_13, #e_col_tue_2_13, #e_col_tue_3_13, #e_col_tue_4_13,  #bookedsum_tue_13').change(function(){
+       total('#e_col_tue_1_13, #e_col_tue_2_13, #e_col_tue_3_13, #e_col_tue_4_13,  #bookedsum_tue_13','#rowsum_tue13');
+  });
+  });
+
+          $(function(){
+  $('#e_col_tue_1_14, #e_col_tue_2_14, #e_col_tue_3_14, #e_col_tue_4_14, #bookedsum_tue_14').change(function(){
+      total('#e_col_tue_1_14, #e_col_tue_2_14, #e_col_tue_3_14, #e_col_tue_4_14, #bookedsum_tue_14','#rowsum_tue14');
+  });
+  });
+        $(function(){
+  $('#e_col_tue_1_15, #e_col_tue_2_15, #e_col_tue_3_15, #e_col_tue_4_15, #bookedsum_tue_15').change(function(){
+       total('#e_col_tue_1_15, #e_col_tue_2_15, #e_col_tue_3_15, #e_col_tue_4_15, #bookedsum_tue_15','#rowsum_tue15');
+  });
+  });
+          $(function(){
+  $('#e_col_tue_1_16, #e_col_tue_2_16, #e_col_tue_3_16, #e_col_tue_4_16,  #bookedsum_tue_16').change(function(){
+      total('#e_col_tue_1_16, #e_col_tue_2_16, #e_col_tue_3_16, #e_col_tue_4_16, #bookedsum_tue_16','#rowsum_tue16');
+  });
+  });
+
+          $(function(){
+  $('#e_col_tue_1_17, #e_col_tue_2_17, #e_col_tue_3_17, #e_col_tue_4_17,  #bookedsum_tue_17').change(function(){
+       total('#e_col_tue_1_17, #e_col_tue_2_17, #e_col_tue_3_17, #e_col_tue_4_17,  #bookedsum_tue_17','#rowsum_tue17');
+  });
+  });
+
+          $(function(){
+  $('#e_col_tue_1_18, #e_col_tue_2_18, #e_col_tue_3_18, #e_col_tue_4_18, #bookedsum_tue_18').change(function(){
+      total('#e_col_tue_1_18, #e_col_tue_2_18, #e_col_tue_3_18, #e_col_tue_4_18,  #bookedsum_tue_18','#rowsum_tue18');
+  });
+  });
+
+          $(function(){
+  $('#e_col_tue_1_19, #e_col_tue_2_19, #e_col_tue_3_19, #e_col_tue_4_19, #bookedsum_tue_19').change(function(){
+       total('#e_col_tue_1_19, #e_col_tue_2_19, #e_col_tue_3_19, #e_col_tue_4_19,  #bookedsum_tue_19','#rowsum_tue19');
+  });
+  });
+
+          $(function(){
+  $('#e_col_tue_1_20, #e_col_tue_2_20, #e_col_tue_3_20, #e_col_tue_4_20,  #bookedsum_tue_20').change(function(){
+      total('#e_col_tue_1_20, #e_col_tue_2_20, #e_col_tue_3_20, #e_col_tue_4_20,  #bookedsum_tue_20','#rowsum_tue20');
+  });
+  });
+
+          $(function(){
+  $('#e_col_tue_1_21, #e_col_tue_2_21, #e_col_tue_3_21, #e_col_tue_4_21,  #bookedsum_tue_21').change(function(){
+       total('#e_col_tue_1_21, #e_col_tue_2_21, #e_col_tue_3_21, #e_col_tue_4_21,  #bookedsum_tue_21','#rowsum_tue21');
+  });
+  });
+
+          $(function(){
+  $('#e_col_tue_1_22, #e_col_tue_2_22, #e_col_tue_3_22, #e_col_tue_4_22,  #bookedsum_tue_22').change(function(){
+      total('#e_col_tue_1_22, #e_col_tue_2_22, #e_col_tue_3_22, #e_col_tue_4_22, #bookedsum_tue_22','#rowsum_tue22');
+  });
+  });
+
+          $(function(){
+  $('#e_col_tue_1_23, #e_col_tue_2_23, #e_col_tue_3_23, #e_col_tue_4_23,  #bookedsum_tue_23').change(function(){
+       total('#e_col_tue_1_23, #e_col_tue_2_23, #e_col_tue_3_23, #e_col_tue_4_23,  #bookedsum_tue_23','#rowsum_tue23');
+  });
+  });
+
+          $(function(){
+  $('#e_col_tue_1_24, #e_col_tue_2_24, #e_col_tue_3_24, #e_col_tue_4_24,  #bookedsum_tue_24').change(function(){
+      total('#e_col_tue_1_24, #e_col_tue_2_24, #e_col_tue_3_24, #e_col_tue_4_24,  #bookedsum_tue_24','#rowsum_tue24');
+  });
+  });
+
+
+          $(function(){
+  $('#e_col_tue_1_25, #e_col_tue_2_25, #e_col_tue_3_25, #e_col_tue_4_25,  #bookedsum_tue_25').change(function(){
+     total('#e_col_tue_1_25, #e_col_tue_2_25, #e_col_tue_3_25, #e_col_tue_4_25,  #bookedsum_tue_25','#rowsum_tue25');
+  });
+  });
+
+          $(function(){
+  $('#e_col_tue_1_26, #e_col_tue_2_26, #e_col_tue_3_26, #e_col_tue_4_26,  #bookedsum_tue_26').change(function(){
+      total('#e_col_tue_1_26, #e_col_tue_2_26, #e_col_tue_3_26, #e_col_tue_4_26,  #bookedsum_tue_26','#rowsum_tue26');
+  });
+  });
+
+
+          $(function(){
+  $('#e_col_tue_1_27, #e_col_tue_2_27, #e_col_tue_3_27, #e_col_tue_4_27,  #bookedsum_tue_27').change(function(){
+       total('#e_col_tue_1_27, #e_col_tue_2_27, #e_col_tue_3_27, #e_col_tue_4_27,  #bookedsum_tue_27','#rowsum_tue27');
+  });
+  });
+
+          $(function(){
+  $('#e_col_tue_1_28, #e_col_tue_2_28, #e_col_tue_3_28, #e_col_tue_4_28,  #bookedsum_tue_28').change(function(){
+       total('#e_col_tue_1_28, #e_col_tue_2_28, #e_col_tue_3_28, #e_col_tue_4_28,  #bookedsum_tue_28','#rowsum_tue28');
+  });
+  });
+
+          $(function(){
+  $('#e_col_tue_1_29, #e_col_tue_2_29, #e_col_tue_3_29, #e_col_tue_4_29,  #bookedsum_tue_29').change(function(){
+     total('#e_col_tue_1_29, #e_col_tue_2_29, #e_col_tue_3_29, #e_col_tue_4_29,  #bookedsum_tue_29','#rowsum_tue29');
+  });
+  });
+
+          $(function(){
+  $('#e_col_tue_1_30, #e_col_tue_2_30, #e_col_tue_3_30, #e_col_tue_4_30,  #bookedsum_tue_30').change(function(){
+      total('#e_col_tue_1_30, #e_col_tue_2_30, #e_col_tue_3_30, #e_col_tue_4_30,  #bookedsum_tue_30','#rowsum_tue30');
+  });
+  });
+
+          $(function(){
+  $('#e_col_tue_1_31, #e_col_tue_2_31, #e_col_tue_3_31, #e_col_tue_4_31, #bookedsum_tue_31').change(function(){
+      total('#e_col_tue_1_31, #e_col_tue_2_31, #e_col_tue_3_31, #e_col_tue_4_31, #bookedsum_tue_31','#rowsum_tue31');
+  });
+  });
+
+
+
+$(function(){
+  $('#rowsum_tue1, #rowsum_tue2, #rowsum_tue3, #rowsum_tue4, #rowsum_tue5, #rowsum_tue6, #rowsum_tue7, #rowsum_tue8, #rowsum_tue9, #rowsum_tue10, #rowsum_tue11, #rowsum_tue12, #rowsum_tue13, #rowsum_tue14, #rowsum_tue15, #rowsum_tue16, #rowsum_tue17, #rowsum_tue18, #rowsum_tue19, #rowsum_tue20, #rowsum_tue21, #rowsum_tue22, #rowsum_tue23, #rowsum_tue24, #rowsum_tue25, #rowsum_tue26, #rowsum_tue27, #rowsum_tue28, #rowsum_tue29, #rowsum_tue30, #rowsum_tue31, #rowsum_tue32').change(function(){
+    total('#rowsum_tue1, #rowsum_tue2, #rowsum_tue3, #rowsum_tue4, #rowsum_tue5, #rowsum_tue6, #rowsum_tue7, #rowsum_tue8, #rowsum_tue9, #rowsum_tue10, #rowsum_tue11, #rowsum_tue12, #rowsum_tue13, #rowsum_tue14, #rowsum_tue15, #rowsum_tue16, #rowsum_tue17, #rowsum_tue18, #rowsum_tue19, #rowsum_tue20, #rowsum_tue21, #rowsum_tue22, #rowsum_tue23, #rowsum_tue24, #rowsum_tue25, #rowsum_tue26, #rowsum_tue27, #rowsum_tue28, #rowsum_tue29, #rowsum_tue30, #rowsum_tue31, #rowsum_tue32','#e_rowsum_tuesum');
+  });
+});
+
+
+$(function(){
+  $('#e_col_tue_6_1, #e_col_tue_6_2, #e_col_tue_6_3, #e_col_tue_6_4, #e_col_tue_6_5, #e_col_tue_6_6, #e_col_tue_6_7, #e_col_tue_6_8, #e_col_tue_6_9, #e_col_tue_6_10, #e_col_tue_6_11, #e_col_tue_6_12, #e_col_tue_6_13, #e_col_tue_6_14, #e_col_tue_6_15, #e_col_tue_6_16, #e_col_tue_6_17, #e_col_tue_6_18, #e_col_tue_6_19, #e_col_tue_6_20, #e_col_tue_6_21, #e_col_tue_6_22, #e_col_tue_6_23, #e_col_tue_6_24, #e_col_tue_6_25, #e_col_tue_6_26, #e_col_tue_6_27, #e_col_tue_6_28, #e_col_tue_6_29, #e_col_tue_6_30, #e_col_tue_6_31, #e_col_tue_6_32, #ucb-booked').change(function(){
+  total('#e_col_tue_6_1, #e_col_tue_6_2, #e_col_tue_6_3, #e_col_tue_6_4, #e_col_tue_6_5, #e_col_tue_6_6, #e_col_tue_6_7, #e_col_tue_6_8, #e_col_tue_6_9, #e_col_tue_6_10, #e_col_tue_6_11, #e_col_tue_6_12, #e_col_tue_6_13, #e_col_tue_6_14, #e_col_tue_6_15, #e_col_tue_6_16, #e_col_tue_6_17, #e_col_tue_6_18, #e_col_tue_6_19, #e_col_tue_6_20, #e_col_tue_6_21, #e_col_tue_6_22, #e_col_tue_6_23, #e_col_tue_6_24, #e_col_tue_6_25, #e_col_tue_6_26, #e_col_tue_6_27, #e_col_tue_6_28, #e_col_tue_6_29, #e_col_tue_6_30, #e_col_tue_6_31, #e_col_tue_6_32, #ucb-booked','#e_col_tue_6_sum');
+  });
+});
+
+
+
+$(function(){
+            $('#e_rowsum_tuesum, #total-booked').change(function(){
+               var value1 = parseFloat($('#e_rowsum_tuesum').val()) || 0;
+               var value2 = parseFloat($('#total-booked').val()) || 0;
+               $('#e_rowsum_tuesum_avail').val(value1 - value2);
+            });
+         });
+
+
+
+
+
+</script>
+{% endblock %}
