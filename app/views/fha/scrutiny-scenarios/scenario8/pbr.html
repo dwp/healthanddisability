@@ -1,0 +1,108 @@
+{% extends path+"/_layout-case-simple6.html" %}
+
+
+{% block actioncolumn %}
+   
+ <!-- <p class="returnRef"><a href="/{{path }}/scenario6/referrals-fme" class="link-back">Return to case list</a></p> -->
+ <div class="caseStatus">
+	 <h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+
+
+</div>
+{% endblock %}
+
+{% block citizen_detail %}
+Jurgen Covault
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+    
+   
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+    	
+    	<h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Paper based review</h1>
+    	
+    	
+   
+		
+		
+		<div class="evidence-requests mt30">
+				
+				
+			<form action="/{{path }}/scenario6/pbr2" method="POST" class="form">
+			
+			
+					<div class="form-group">
+						<fieldset>
+						  
+							  <legend class="heading-medium mb5">Why does Jurgen need a paper based review?</legend>
+
+							</fieldset>
+						</div>
+			
+			
+											
+		
+					
+				
+				<p class="mt30"><input type="submit" class="button" value="Save and continue"></p>
+				
+				
+				
+				
+				
+				<div class="visually-hidden">
+		        <div class="multiple-choice">
+		            <input id="radio-inline-1" type="radio" name="appointmentReferral" value="referral-yes" checked="checked">
+		            <label for="radio-inline-1">Evidence is recorded</label>
+		          </div>
+		        </div>
+				
+				
+				
+				</form>
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

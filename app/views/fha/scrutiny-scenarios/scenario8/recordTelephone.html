@@ -1,0 +1,176 @@
+{% extends path+"/_layout-case-simple6.html" %}
+
+
+{% block actioncolumn %}
+   
+ <!-- <p class="returnRef"><a href="/{{path }}/scenario6/referrals-fme" class="link-back">Return to case list</a></p> -->
+ 
+ <div class="caseStatus">
+ 
+
+ 
+ 
+{% if data['pbachoice']=='no'%}
+ 
+	 <h2 class="main-status"><span>Current case status</span>Appointment booked</h2>
+	 
+	 
+	 {% elif data['pbachoice']=='yes'%}
+	 
+	 <h2 class="main-status"><span>Current case status</span>Paper based review</h2>
+	 <!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/not-testing" class="button">Start assessment</a></h3>-->
+	 
+	 
+	 {% else %}
+	 
+ 
+
+{% if data['evidencePath']=='ev-ftf'%}
+
+	<h2 class="main-status"><span>Current case status</span>Ready to book</h2>
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+		
+	{% endif %}
+	
+	
+	{% elif data['evidencePath']=='ev-pba'%}
+	
+	{% if data['evidenceRecorded']=='record-yes'%}
+		<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+		<!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal" class="button">Make recommendation</a></h3> -->
+		{% else %}
+		<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
+	{% endif %}
+	
+	
+	{% else %}
+	
+	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+	<!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal" class="button">Make recommendation</a></h3>-->
+	
+	
+
+{% endif %}
+
+
+{% endif %}
+
+
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Jurgen Covault
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+    
+   
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+        
+
+    	
+    	<h1 class="heading-large"><span class="heading-secondary">Record evidence</span>Telephone conversation</h1>
+    	
+    	
+   
+		
+		
+		<div class="evidence-requests mt30">
+				
+				
+			<form action="/{{path }}/scenario6/evidence-portal" method="POST" class="form">
+			
+			
+					<div class="form-group">
+						<fieldset>
+						  
+							  <legend class="heading-medium mb5">Source of information:</legend>
+
+
+										<div class="multiple-choice">
+											<input id="gpTele" type="radio" name="sourceTele" value="jurgen">
+											<label for="gpTele">GP</label>
+										</div>
+										
+										<div class="multiple-choice" data-target="otherName">
+											<input id="other" type="radio" name="sourceTele" value="other">
+											<label for="other">Other</label>
+										</div>
+										
+										<div class="panel js-hidden" id="otherName">	
+											<div class="form-group">
+												<label for="otherNameField" class="form-label-bold">Full name</label>
+												<input type="text" id="otherNameField" class="form-control form-control-3-4">
+											</div>
+											<div>
+												<label for="otherNameField2" class="form-label-bold">Who are they?</label>
+												<input type="text" id="otherNameField2" class="form-control form-control-3-4">
+											</div>
+										</div>
+
+
+							</fieldset>
+						</div>
+			
+										
+						<div class="form-group">	
+
+							<label for="typeReasonTele" class="heading-medium mb10">Information gathered:</label>
+							<textarea id="typeReasonTele" class="form-control form-control-3-4" rows="10"></textarea>
+
+						</div>
+					
+				
+				<p class="mt30"><input type="submit" class="button" value="Save and continue"></p>
+				
+
+				
+				
+				</form>
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

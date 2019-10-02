@@ -2416,6 +2416,16 @@ table.profile-table .col5{
 				padding: .4em 0;
 				font-weight: bold;
 			}
+			
+			dl {
+				dt {
+					font-weight: bold;
+					margin-top: 10px;
+					&:first-child {
+						margin-top: 0;
+					}
+				}
+			}
 
 			
 			
