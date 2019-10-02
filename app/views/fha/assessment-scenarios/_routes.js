@@ -10,7 +10,16 @@ const crypto = require('crypto')
 
 const radioButtonRedirect = require('radio-button-redirect')
 router.use(radioButtonRedirect)
-
+router.use(function(req, res, next){
+  if(req.method === 'post' || req.method === 'POST'){
+    console.log('the path posted to is');
+    console.log(req.path);
+  }else{
+    console.log('the get path is');
+    console.log(req.path);
+  }
+  next();
+})
 var versionNumber = '8'
 var filePath = '../../../../app/views/fha/v' + versionNumber
 var viewPath = 'fha/v' + versionNumber
@@ -55,6 +64,33 @@ router.get('*', function (req, res, next) {
 
   next()
 })
+
+router.get('/scenario_02a/wca-index', (req, res, next) => {
+  res.locals.assessmentStartTime = req.session.assessmentStartTime;
+  next();
+})
+
+router.post('/scenario_02a/wca-index', (req, res, next) => {
+  if(req.body['startFTFtrigger'] === 'Start face-to-face'){
+    req.session.assessmentStartTime = moment(new Date(), 'hh:mm:ss a');
+  }
+  
+  next();
+});
+
+router.get('/scenario_02a/wca-index', (req, res, next) => {
+  res.locals.assessmentFinishTime = req.session.assessmentFinishTime;
+  next();
+})
+
+router.post('/scenario_02a/wca-index', (req, res, next) => {
+  if(req.body['endFTFtrigger'] === 'Finish face-to-face'){
+    req.session.assessmentFinishTime = moment(new Date(), 'hh:mm:ss a');
+  }
+  
+  next();
+});
+
 
 router.get('/', function (req, res, next) {
   res.locals.reviewNumbers = {

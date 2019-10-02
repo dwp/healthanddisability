@@ -23,26 +23,47 @@
 
 
 	 <div class="chat-window">
-    {% if comments.length < 1 %}
-	 <p class="comments-window">You haven't added any comments yet</p>
-    {% endif %}
-    {% for item in comments | sortBy("time",false) %}
-  
-      <div class="tag-box">
-      
-        <div class="tag-text">{{ item.comment}}</div>
-        
-        <div class="edit-item">
-          <form action="socialWorkHistory" method="post">
-            <input type="hidden" name="id" value="{{item.id}}">
-            <input type="hidden" name="delete" value="true">
-         		<button class="remove-link" >remove</button>
-          </form>
-       </div>
-       
-      </div>
+    <div class="tag-box">
+<div class="tag-text">Got a lift to the centre.</div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">Mum drove.</div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">It was 15 to 20 minutes in the car. They do not live far away. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">He could not stay in the car for longer than 15 to 20 minutes due to shoulder pain, hands, forearms, knees and feels like his may lock. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">His knees do not lock as he tries to prevent this by not going far in the car. Parked in the disabled space in the car park. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">Walked 10 yards to walk from the car to the waiting room with a walking stick and assistance from mum. He walked at a very slow pace. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">It took 5 minutes to walk from the car to the waiting area, did not have to stop in this time. Lives with mum in a ground floor flat.</div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">There is 1 step at the front door. There is no rail.</div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">Assessment completed at the assessment centre on the ground floor. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">The council are looking at getting a ramp at the front door for ease of access with the wheelchair. The council have been to the property to assess the flat in July and they are waiting to hear from them. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">He went to work for 1 week in Jan 2018 in the park but stopped due to flu like virus, fatigue and pain. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">No current work or study. No plans for work or study. He has no concentration for this. Loved the job he had but this seems like a distant memory.</div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">Is right-handed. </div>       
+</div>
 
-    {% endfor %}
+
 	 </div>
     
     <form class="form" id="add_ev"
@@ -72,8 +93,6 @@
   </div><!-- column -->
 </div><!-- row -->
 
-{% include path+"/scenario_02a/_help_panel_social.html" %}
-
 {% endblock %}
 
 {% block page_scripts %}
@@ -82,7 +101,6 @@
 $(document).on('ready',function()
 
 {
-  $('#nugget').focus();
   
   $("#nugget").keydown(function (event) {
     if ((event.keyCode == 13))
@@ -95,6 +113,7 @@ $(document).on('ready',function()
 });
 
 
+var commentsData = require(filePath + '/scenario_02a/data/comments.js')
 
 </script>
 

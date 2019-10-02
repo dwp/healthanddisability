@@ -1,0 +1,56 @@
+{% extends path+"/scenario_02a/_layout-case-simple_ready-for-assessment.html" %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+
+    <div class="section-tabs js-tabs clearfix mb20">
+    <ul>
+
+       
+   
+      
+        <li><a href="#">Timeline</a></li>
+      
+        <li><a href="#">Details</a></li>
+      
+        <li class="active"><a href="">Appointment</a></li>
+      
+        <li><a href="#">Evidence</a></li>
+      
+    </ul>
+  </div>
+
+<div class="grid-row">
+    {% include path+"/scenario_02a/_index.html" %}
+</div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

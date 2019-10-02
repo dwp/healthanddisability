@@ -19,25 +19,54 @@
 
 
 	 <div class="chat-window">
-    {% if comments.length < 1 %}
-   <p class="comments-window">You haven't added any comments yet</p>
-    {% endif %}
-    {% for item in comments | sortBy("time",false) %}
-  
       <div class="tag-box">
-      
-        <div class="tag-text">{{ item.comment }}</div>
-        
-        <div class="edit-item">
-          <form action="" method="post">
-            <input type="hidden" name="id" value="{{item.id}}">
-            <input type="hidden" name="delete" value="true">
-            <button class="remove-link" >Edit</button>
-          </form>
-       </div>
-       
-      </div>
-    {% endfor %}
+<div class="tag-text">Does not have a set bedtime. This depends how he is feeling. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">Lately he has been spending several days in bed where he has not got up at all due to pain, frustration and fatigue. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">When he is in bed, can sleep, dose or be awake.</div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">The warm weather has made it hard to sleep so has been awake more. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">The TV can be on, but he often does not watch this due to poor concentration and as he just nods off. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">He cannot concentrate due to pain, brain fog and drugs/medication. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">On the days that he does get up, he does not do much. Occasionally they will go to the park as he likes being outside. This was his life, but he gets embarrassed as people he works with will be there. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">Occasionally goes to the supermarket but will go in his wheelchair. Cannot self-propel at all due to upper limb pain. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">Last went to the supermarket on Saturday. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">Gets a lift to the supermarket. There is a drive at home so will walk from the home to the car, linking mum to get down the step. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">It is about 5 yards from the house to the car. Does this at a very slow pace. It’s more of a shuffle. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">Once home from shopping he will go home and rest. He has pay back and all symptoms are exacerbated. He has more pain, fatigue and frustration. This will last for the rest of the day. He takes medication and will nod off for an hour or two. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">Can sleep for up to 3 hours after going out. They do not plan anything else for these days as he could not manage it. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">There is nowhere else that he goes that he has to mobilise Will attend the GP surgery in the wheelchair. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">Has an overhead shower in the bath and will stand in the shower. Needs help getting in and out of the bath and with washing and dressing due to pain and pins and needles. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">Mum will do the cooking, cleaning and washing. He used to do his own and was self-sufficient and stopped this when he had the flu virus. In Jan 2018 he stopped doing these activities when he finished work. </div>       
+</div>
    </div>
     
     <form class="form" id="add_ev"
@@ -85,7 +114,6 @@ $(document).on('ready',function()
 
 {
 
-  
   $("#nugget").keydown(function (event) {
     if ((event.keyCode == 13))
     {
@@ -95,7 +123,6 @@ $(document).on('ready',function()
 
 
 });
-
 
 
 </script>
