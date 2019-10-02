@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <title>Timestamp Attempt</title>
+
+ <script>
+   var timestart = new Date();
+   function show(id) {
+     if (id == 1) {
+        document.getElementById('start').value=time;
+     }
+   }
+   var start = new Date();
+   var timestart = start.getHours() + ":" + start.getMinutes() + ":" + start.getSeconds();
+
+
+   var timefinish = new TimeFinish();
+   function show(id) {
+     if (id == 2) {
+        document.getElementById('finish').value=time;
+     }
+   }
+   var finish = new TimeFinish();
+   var timefinish = finish.getHours() + ":" + finish.getMinutes() + ":" + finish.getSeconds();
+
+
+
+var rightnow = new Date();
+</script>
+
+</head>
+<body>
+
+Start time: <input type='text' id="start" value=""> 
+    <button id='1' onClick="show(this.id)">Start time</button>
+
+
+Finish time: <input type='text' id="finish" value=""> 
+    <button id='2' onClick="show(this.id)">Finish time</button>
+
+<p>{{ rightnow }}</p>
+</body>
+</html>
