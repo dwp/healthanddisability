@@ -4,15 +4,6 @@
 
 {{ data.nuggets | log }}
 
-<script>
-   var time = new Date();
-   function show(id) {
-     if (id == 1) {
-        document.getElementById('john').value=time;
-        document.formatDate("H:mma").value=time;
-     }
-   }
-</script>
 
 <hr class="no-kdBar" />
 
@@ -29,7 +20,7 @@
            <li class="task-list-item"><a href="conditionHistory">Conditions, medication and side effects {% if data['conditionHistory'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></a></li>
            <li class="task-list-item"><a href="socialWorkHistory">Social and work history {% if data['socialWorkHistory'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
            <li class="task-list-item"><a href="typicalDay">Typical day {% if data['typicalDay'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
-           <li class="task-list-item"><a href="physicalConsent">Physical assessment &nbsp;&nbsp;<span style="font-weight:normal;">(Optional)</span> {% if data['physicalConsent'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+           <li class="task-list-item"><a href="physicalConsent">Physical assessment &nbsp;&nbsp;<span style="font-weight:normal;">(Optional)</span> {% if data['physicalConsentJustification'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
            <li class="task-list-item"><a href="mentalStateExamination">Mental state examination &nbsp;&nbsp;<span style="font-weight:normal;">(Optional)</span> {% if data['mentalHealthAppearance'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
           </ul>
         </div>
@@ -45,25 +36,28 @@
     padding: 16px;
     font-weight: normal;
     background: rgba(40, 161, 151, 0.05);
-    border-left: 3px solid #28a197;">
+    border-left: 3px solid #28a197;" class="mb20">
     
-    {% if data['conditionHistory'] and data['socialWorkHistory'] and data['typicalDay'] %}
-<a href="wca-index_stage-2" class="button secondary" style="float:right; margin-top:8px;" id="endFTFtrigger">Finish face-to-face</a>{% else %}{% endif %}<p style="font-weight:bold;" class="mb0">Face-to-face in progress</p>
-<p class="mb0">Started at: {{ last_one.time | formatDate("H:mma") }}</p>
+    {% if data['conditionHistory'] and data['socialWorkHistory'] and data['typicalDay'] and data['endFTFtrigger'] %}
+    <p style="font-weight:bold;" class="mb0">Face-to-face complete</p>
+    {% elif data['conditionHistory'] and data['socialWorkHistory'] and data['typicalDay'] %}
+    
+<form action="#" method="POST">
+      <input type="submit" value="Finish face-to-face" class="button secondary" style="float:right; margin-top:8px;" name="endFTFtrigger" id="endFTFtrigger">
+    </form><p style="font-weight:bold;" class="mb0">Face-to-face in progress</p>
+    {% else %}<p style="font-weight:bold;" class="mb0">Face-to-face in progress</p>
+    {% endif %}
 
-
+    <p class="mb0">Started at: {{ assessmentStartTime | formatDate("H:mma")}}{% if data['endFTFtrigger'] %}<span style="margin-left:32px;">Finished at: {{ assessmentFinishTime | formatDate("H:mma")}}{% else %}{% endif %}</span></p>
 </div>
 
   </div><!-- column here -->
 </div><!-- row -->
 
-
-
-John: <input type='text' id="john" value=""> 
-<button id='1' onClick="show(this.id)" class="button secondary" style="float:right; margin-top:8px;">Finish face-to-face</button>
-
-
-
+{% if data['conditionHistory'] and data['socialWorkHistory'] and data['typicalDay'] and data['endFTFtrigger'] %}
+<p><a href="miniReview" class="button">Continue and review</a></p>
+{% else %}
+{% endif %}
 
 {% endblock %}
 
