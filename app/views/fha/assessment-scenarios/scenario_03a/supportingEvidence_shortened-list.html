@@ -1,0 +1,94 @@
+{% extends path+"/scenario_03a/_layout-case-simple.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	<p class="caption-large" class="mb0">Paper based assessment</p>
+	<h1 class="heading-large mt0">What evidence have you considered?</h1>
+	<form method="post" action="reviewPeriod">
+	
+  	<fieldset class="mb20">
+		<div class="multiple-choice">
+<input id="SE1" type="checkbox" name="evidence1" value="113">
+<label for="SE1">113</label>
+</div>
+<div class="multiple-choice">
+<input id="SE4" type="checkbox" name="evidence4" value="DS1500">
+<label for="SE4">DS1500</label>
+</div>
+<div class="multiple-choice">
+<input id="SE5" type="checkbox" name="evidence5" value="FFR2">
+<label for="SE5">FFR2</label>
+</div>
+<div class="multiple-choice">
+<input id="SE7" type="checkbox" name="evidence7" value="FFR4">
+<label for="SE7">FFR4</label>
+</div>
+<div class="multiple-choice">
+<input id="SE9" type="checkbox" name="evidence9" value="MED3">
+<label for="SE9">MED3</label>
+</div>
+<div class="multiple-choice">
+<input id="SE11" type="checkbox" name="evidence11" value="UC50">
+<label for="SE11">UC50</label>
+</div>
+<div class="multiple-choice">
+<input id="SE14" type="checkbox" name="evidence14" value="UC85">
+<label for="SE14">UC85</label>
+</div>
+<div class="multiple-choice">
+<input id="SE15" type="checkbox" name="evidence15" value="UC85A">
+<label for="SE15">UC85A</label>
+</div>
+
+	</fieldset>
+
+    <p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+	</form>	
+
+  </div><!-- column -->
+
+
+
+
+  <div class="column-one-third">
+
+<div class="portal-display">
+<div class="portal-card">
+				<div class="portal-head">
+					<h4>Summary</h4>
+				</div>
+				<!-- / title -->
+				<div class="portal-inner">
+				<p class="font-xsmall">{{ taggedstatement1 }}</p>
+				<p class="font-xsmall">{{ taggedstatement2 }}</p>
+				<p class="font-xsmall">{{ taggedstatement3 }}</p>
+				<p class="font-xsmall">{{ taggedstatement4 }}</p>
+				<p class="font-xsmall">{{ taggedstatement5 }}</p>
+				<p class="font-xsmall">{{ taggedstatement6 }}</p>
+				<p class="font-xsmall">{{ taggedstatement7 }}</p>
+				<p class="font-xsmall">{{ taggedstatement8 }}</p>
+				<p class="font-xsmall">{{ taggedstatement9 }}</p>
+				<p class="font-xsmall">{{ taggedstatement10 }}</p>
+				</div>
+				<!-- / inner card -->
+			</div>
+			</div>
+  </div><!-- right hand column -->
+
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+
