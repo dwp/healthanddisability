@@ -1,0 +1,44 @@
+{% extends path+"/scenario_03c/_layout-case-simple.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	<p class="caption-large" class="mb0">Paper-based assessment</p>
+	<h1 class="heading-large mt0">Evidence you've considered</h1>
+
+<form action="supportingEvidence1" method="post">
+
+{% include path+"/scenario_03a/autocomplete/pbaEvidenceAutocomplete.html" %}
+
+
+
+
+<!--<p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>-->
+      </form>
+
+
+  </div><!-- column -->
+
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+
+{% block page_scripts %}
+
+{% include path+"/scenario_03a/autocomplete/_autocompletedata.html" %}
+  
+ 
+{% endblock %} 
