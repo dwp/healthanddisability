@@ -1,0 +1,71 @@
+{% extends path+"/scenario_03c/_layout-case-simple.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+<p class="caption-large" class="mb0">Paper-based assessment</p>
+<h1 class="heading-large mt0">Summarise your findings</h1>
+
+
+<form method="post" action="miniReport">
+
+	
+<div class="form-group">
+			<label class="form-label" for="justify">Write your justification statement.</label>
+			<textarea class="form-control form-control-3-4" name="justifyAdvice" id="justify" rows="8"></textarea>
+		</div>
+
+    <p><input type="submit" class="button" value="Save and review advice" id="submitButton"></p>
+		</form>	
+
+  </div><!-- column -->
+
+
+<div class="column-one-third">
+
+<div class="portal-display mb20" style="margin-top:0px;">
+	<div class="portal-card">
+				<div class="portal-head">
+					<h4>Overview</h4>
+				</div>
+				<!-- / title -->
+				<div class="portal-inner">
+
+				<p class="mb5 font-xsmall bold">Advice</p>
+				<p class="font-xsmall">Terminal illness</p>
+
+				<p class="mb5 font-xsmall bold">Evidence considered</p>
+				<ul class="mb20 font-xsmall">
+				<li class="mb5">MED3<span class="font-xsmall" style="margin-left:16px;">(04/10/2009)</span></li>
+				<li class="mb5">DS1500</li>
+				</ul>
+
+				<p class="mb5 font-xsmall bold">Review period</p>
+				<p class="mb5 font-xsmall">n/a</p>
+				</div>
+				<!-- / inner card -->
+				
+	</div>
+</div>
+
+  </div><!-- right hand column -->
+
+
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+
