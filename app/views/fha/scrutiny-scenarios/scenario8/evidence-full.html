@@ -1,0 +1,169 @@
+{% extends path+"/_layout-case-simple6.html" %}
+
+
+{% block actioncolumn %}
+   
+ <!-- <p class="returnRef"><a href="/{{path }}/scenario6/referrals-fme" class="link-back">Return to case list</a></p> -->
+ 
+ <div class="caseStatus">
+ 
+
+
+		<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+		<!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal" class="button">Make recommendation</a></h3>-->
+		
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Jurgen Covault
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+
+        
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+<h1 class="heading-large">Recorded evidence</h1>
+
+
+
+<table class="evidence-list">
+
+<thead>
+<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+  <th>Evidence type</th>
+  <th>Source</th>
+  <th>Received</th>
+  <th class="numeric">Recorded</th>
+</tr>
+</thead>
+
+
+<tbody>
+
+
+{% if data['pbachoice']=='yes'%}
+
+<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+		  <td><a href="/{{path }}/scenario6/not-testing">paper based review justification</a></td>
+		  <td>HCP</td>
+		  <td></td>
+		  <td class="numeric"><span>11 August 2019</span></td>
+		</tr>
+
+{% endif %}
+
+
+
+{% if data['evidenceChoice']=='ev-gp'%}
+	  	
+	  	
+		{% if data['evidenceRecorded']=='record-yes'%}
+		
+
+		<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+		  <td><a href="/{{path }}/scenario6/not-testing">GP report</a></td>
+		  <td>GP</td>
+		  <td><span class="secondary-text">9 August 2019</span></td>
+		  <td class="numeric"><span>10 August 2019</span></td>
+		</tr>
+
+		{% endif %}
+		
+		
+		
+	{% elif data['evidenceChoice']=='ev-fr'%}
+		
+		
+		 {% if data['evidenceRecorded']=='record-yes'%}
+		
+		
+		<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+		  <td><a href="/{{path }}/scenario6/not-testing">Factual report</a></td>
+		  <td>GP</td>
+		  <td><span class="secondary-text">9 August 2019</span></td>
+		  <td class="numeric"><span>10 August 2019</span></td>
+		</tr>		
+		
+		{% endif %}
+
+		  	
+	{% endif %}
+	
+	
+	
+	{% if data['appointmentReferral']%}
+	
+	
+		<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+		  <td><a href="/{{path }}/scenario6/referralJustify">Appointment referral justification</a></td>
+		  <td>HCP</td>
+		  <td></td>
+		  <td class="numeric"><span>3 August 2019</span></td>
+		</tr>
+	
+	
+	{% endif %}
+
+
+
+
+<!--<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+  <td><a href="/{{path }}/scenario6/not-testing">Med 3</a></td>
+  <td>GP</td>
+  <td><span class="secondary-text">1 August 2019</span></td>
+  <td class="numeric"><span>1 August 2019</span></td>
+</tr> -->
+
+
+
+
+<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+  <td><a href="/{{path }}/scenario6/not-testing">UC50 </a></td>
+  <td>Claimant</td>
+  <td><span class="secondary-text">21 July 2019</span></td>
+  <td class="numeric"><span>21 July 2019</span></td>
+</tr>
+</tbody>
+
+</table> 
+
+
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

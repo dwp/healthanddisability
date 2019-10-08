@@ -1,0 +1,85 @@
+{% extends path+"/scenario_03c/_layout-case-simple.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	<p class="caption-large" class="mb0">Paper-based assessment</p>
+	<h1 class="heading-large mt0">Evidence you've considered</h1>
+
+<form action="writeJustification" method="post">
+
+{% include path+"/scenario_03a/autocomplete/pbaEvidenceAutocomplete.html" %}
+
+</form>
+
+<hr style="width:100%; display:inline-block; clear:both;">
+
+<form action="writeJustification" method="post">
+<p class="mb20 bold">DS1500 (Medical condition report)</p>
+
+<div class="form-group">
+<p class="mb5 bold">MED3 (Fit note)</p>
+	
+							<fieldset>
+				                <legend class="mb5">Date of statement</legend>
+				                <span class="form-hint">For example, 31 3 1980</span>
+					                <div class="form-date">
+						                     
+						                <div class="form-group form-group-month">
+							                <label class="form-label" for="field-5">
+							                Day 
+							                </label>
+							                <input class="form-control" id="field-5" name="newillnessday" type="number" pattern="[0-9]*" min="0" max="12">
+						                </div>      
+						                <div class="form-group form-group-month">
+							                <label class="form-label" for="field-6">
+							                Month 
+							                </label>
+							                <input class="form-control" id="field-6" name="newillnessmonth" type="number" pattern="[0-9]*" min="0" max="12">
+						                </div>             
+						                <div class="form-group form-group-year">
+							                <label class="form-label" for="field-7">
+							                Year 
+							                </label>
+							                <input class="form-control" id="field-7" name="newillnessyear" type="number" pattern="[0-9]*" min="0" max="2018">
+						                </div>
+					                </div>
+				            </fieldset>
+
+						</div>
+<hr>
+
+
+
+<p><input type="submit" class="button mt20" value="Save and continue" id="submitButton"></p>
+</form>
+
+  </div><!-- column -->
+
+
+
+
+
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+
+{% block page_scripts %}
+
+{% include path+"/scenario_03a/autocomplete/_autocompletedata.html" %}
+  
+ 
+{% endblock %} 

@@ -1,0 +1,94 @@
+{% extends path+"/_layout-case-action.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+<h1 class="heading-large">Condition history</h1>
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+	
+	<form method="post" action="wca-index">
+	
+	<div class="form-group">
+			<textarea class="form-control form-control-3-4" name="conditionHistory" id="conditionHistory" rows="8">{{ conditionHistory }}</textarea>
+		</div>
+
+    <p><input type="submit" class="button" value="Continue" id="submitButton"></p>
+		</form>	
+
+  </div><!-- column -->
+</div><!-- row -->
+
+
+<!--
+
+{% if data['condition-history-post']==='posted' %}
+
+<h2 class="heading-medium">Observations</h2>
+<div class="review-item">
+			{% for comment in comments|sort(attribute='timestamp', reverse=true) %}
+			
+			<div class="review-inner" >
+				
+							<p>{{comment.comment}}</p>
+	
+					{% if not comment.hasComment %}
+					<h4>
+						{{ 'Customer' if comment.isCustomer }} {{ 'Appointee' if not comment.isCustomer }} passed security</h4>
+					{% endif %}
+				
+				<p class="namedate">{{comment.name}} | <span class="text-secondary"> {{comment.dateFormatted}}</span></p>
+				{% if comment.hasComment %}
+		
+			{% endif %}
+
+					</div>
+		{% endfor %}
+
+
+</div>
+<hr />
+	{% endif %}		
+
+	
+
+<form class="m-t-xl" method="post" action="condition-history-post">
+
+	<div class="form-group">
+		<label class="form-label m-b-xs" for="add-comment">Your comment</label>
+		<textarea class="form-control form-control-3-4" name="comment" id="add-comment" rows="5"></textarea>
+	</div>
+	<p><button type="submit" class="button button-secondary">Add observation</button></p>
+	{% if data['wca']==='yes' %}
+	<a href="evidence/wca-index" class="button">Save</a>
+	{% elif data['wca']==='continue' %}
+	<a href="evidence/physical" class="button">Save</a>
+	{% else%}
+	<a href="timeline" class="button">Save</a>
+	{% endif %}
+
+	<div class="multiple-choice" style="display:none">
+    <input id="radio-inline-4" type="radio" name="condition-history-post" value="posted" checked>
+      
+    <label for="radio-4">hidden radio one</label>
+	</div>
+	</form>
+
+-->
+
+{% endblock %}
+
+

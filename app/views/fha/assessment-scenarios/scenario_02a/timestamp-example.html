@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+    <title>Timestamp Attempt</title>
+
+ <script>
+   var timestart = new Date();
+   function show(id) {
+     if (id == 1) {
+        document.getElementById('start').value=time;
+     }
+   }
+   var start = new Date();
+   var timestart = start.getHours() + ":" + start.getMinutes() + ":" + start.getSeconds();
+
+
+   var timefinish = new TimeFinish();
+   function show(id) {
+     if (id == 2) {
+        document.getElementById('finish').value=time;
+     }
+   }
+   var finish = new TimeFinish();
+   var timefinish = finish.getHours() + ":" + finish.getMinutes() + ":" + finish.getSeconds();
+
+
+
+var rightnow = new Date();
+</script>
+
+
+<script>
+   var time = new Date();
+   function show(id) {
+     if (id == 1) {
+        document.getElementById('john').value=time;
+     }
+
+     if(id == 2) {
+        document.getElementById('amber').value=time;
+     }
+   }
+   var time = start.getHours() + ":" + start.getMinutes() + ":" + start.getSeconds();
+</script>
+
+
+<script>
+// For the time now
+Date.prototype.timeNow = function () {
+     return ((this.getHours() < 10)?"0":"") + this.getHours() +":"+ ((this.getMinutes() < 10)?"0":"") + this.getMinutes() +":"+ ((this.getSeconds() < 10)?"0":"") + this.getSeconds();
+}
+</script>
+
+</head>
+<body>
+
+<h2>GT Test 2</h2>
+
+<p>{{ prototype.timeNow }}</p>
+
+
+<h2>GT Test 1</h2>
+
+Start time: <input type='text' id="start" value=""> 
+    <button id='1' onClick="show(this.id)">Start time</button>
+
+
+Finish time: <input type='text' id="finish" value=""> 
+    <button id='2' onClick="show(this.id)">Finish time</button>
+
+<p>{{ rightnow }}</p>
+
+<hr>
+
+
+<h2>Original code</h2>
+
+John: <input type='text' id="john" value=""> 
+    <button id='1' onClick="show(this.id)">End FTF</button>
+        <br>
+Amber: <input type='text' id="amber" value=""> 
+    <button id='2' onClick="show(this.id)">Click Amber</button>
+
+</body>
+</html>

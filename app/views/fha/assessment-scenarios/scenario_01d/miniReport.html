@@ -1,0 +1,494 @@
+{% extends path+"/scenario_01d/_layout-case-simple_clear-assessment-complete.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+  
+<h1 class="heading-large mb0">Work capability report</h1>
+ 
+
+<div class="review-wrapper full-report">
+
+
+<div class="report-item">
+
+	<table class="report-view-table">
+	<caption class="heading-small">Assessment overview</caption>
+	
+		<tbody>
+			<tr>
+				<th>Date of assessment</th>
+				<td>{{ "Do MMM YYYY" | daysAgo }}</td>
+			</tr>
+			<tr>
+				<th>Assessment centre</th>
+				<td>Fiveways, Birmingham</td>
+			</tr>
+			<tr>
+				<th>Assessor</th>
+				<td>Heather Harrison</td>
+			</tr>
+			<tr>
+				<th>Assessment start</th>
+				<td>{{ last_one.time | formatDate("H:mma") }}</td>
+			</tr>
+			<tr>
+				<th>Assessment finish</th>
+				<td>{{ first_one.time | formatDate("H:mma") }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+<!-- / report item -->
+
+
+
+<div class="report-item">
+
+	<h2 class="heading-large">Personal summary statement</h2> 
+	
+	<div class="inner-focus">
+		<p>{{ statement }}</p>
+	</div>
+	
+	<!--<p class="edit-report"><a href="personalSummaryStatement" class="button-secondary">Edit personal summary statement</a></p>-->
+	
+</div>
+<!-- / report item -->	
+
+
+
+<div class="report-item">
+
+	<h2 class="heading-large">Additional attendee</h2> 
+	
+	<div class="inner-focus">
+		<p><span style="font-weight:bold;">Name of attendee:</span> {{ additionalAttendeeName }}</p>
+		<p><span style="font-weight:bold;">Relationship to claimant:</span> {{ additionalAttendeeRelationship }}</p>
+	</div>
+	<!--<p class="edit-report"><a href="addAttendee" class="button-secondary">Edit additional attendees</a></p>-->
+</div>
+<!-- / report item -->
+
+
+
+<div class="report-item">
+
+	<h2 class="heading-large">Condition history</h2> 
+	
+	<div class="inner-focus">
+	<p>Diagnosed with anxiety and depression about 6 months.</p>
+<p>He states that he went to his GP about low moods and suicidal thoughts at this time.</p>
+<p>He states that he has been seeing his GP for his low mood, he states that his GP is aware of his suicidal thoughts at that time.</p>
+<p>He states that he has never self harmed.</p>
+<p>He states that he has not had any suicidal thoughts since June 2017.</p>
+<p>He states that he has been doing exercise at the mood which has help improve his mood.</p>
+<p>He was started on anti-depressants when he went to see his GP in June, he states that he has been weaning off his anti-depressants himself as he finds exercise is the best medication for him.</p>
+<p>He states that in June and July he spent most of his time in bed, however now he says that is not really having any bad days.</p>
+<p>He has been seeing his GP every 4 weeks on average at the moment.</p>
+<p>No input from the community mental health team at the moment.</p>
+<p>No hospital admissions linked to mental health problems.</p>
+<p>No history of alcohol or drugs misuse.</p>
+<p>He finds that a lot of his previous depression symptoms associated with lack of motivation and poor sleeping problems have improved.</p>
+<p>He states that he does not feel anxious at the moment, he says that he does not suffer from panic attacks. He states that no situations at the moment cause him anxiety.</p>
+<!--<p>{{ conditionHistory }}</p>-->
+	</div>
+	
+	<!--<p class="edit-report"><a href="conditionHistory" class="button-secondary">Edit condition history</a></p>-->
+	
+</div>
+<!-- / report item -->
+
+
+
+<div class="report-item">
+
+	<h2 class="heading-large">Social and work history</h2> 
+	
+	<div class="inner-focus">
+<p>Evidence reviewed includes the Questionnaire, Med 3 and POID1. The client was seen in an assessment centre.</p>
+<p>Lives in a house with his parents.</p>
+<p>No dependants or caring responsibilities.</p>
+<p>Came to assessment today alone on the bus, which took about 30 minutes.</p>
+<p>Stopped work 5 months ago.</p>
+	<!--    Outputs social work history 
+	    {% for item in socialWorkComments | sortBy("time",true) %}
+		<p>{{ item.comment }}</p>
+  		{% endfor %}-->
+  
+	</div>
+	
+	<!--<p class="edit-report"><a href="socialWorkHistoryEdit" class="button-secondary">Edit social and work history</a></p>-->
+	
+</div>
+<!-- / report item -->
+
+
+
+<div class="report-item">
+
+	<h2 class="heading-large">Typical day</h2> 
+	
+	<div class="inner-focus">
+	<p>Usually gets up at about 7 am.</p>
+<p>He will have a bath or shower twice a day at the moment, he will complete this task daily at the moment.</p>
+<p>He will attempt to work out at home using equipment that he has at home 3-4 times a week at the moment.</p>
+<p>He will only go out at the moment if he has to.</p>
+<p>He states that he lives in a village.</p>
+<p>He communicates with friends via facebook and social media at the moment as most of his friends have moved abroad in recent years.</p>
+<p>His mum will complete most of the food shopping.</p>
+<p>He will occasionally go to the local Tesco once or twice a fortnight, he will walk there when he goes to this shop. He will walk down to the local fish and chip shop himself as well 1-2 times a fortnight as well.</p>
+<p>He says that he has been applying for 3 jobs a day online at the moment.</p>
+<p>He says that he will gain access to the internet on his mobile phone.</p>
+<p>He says that he will play a lot of x box while laying in bed.</p>
+<p>He enjoys playing on games consoles, he enjoys retro gaming.</p>
+<p>He enjoys reading book and doing painting and art.</p>
+<p>He will make himself simple meals to eat, he has never had any serious accidents in the kitchen when preparing meals.</p>
+		<!--{% for item in typicalDayComments | sortBy("time",true) %}
+		<p>{{ item.comment }}</p>
+  		{% endfor %}-->
+	</div>
+	
+	<!--<p class="edit-report"><a href="typicalDayEdit" class="button-secondary">Edit typical day</a></p>-->
+	
+</div>
+<!-- / report item -->
+
+
+
+<div class="report-item">
+
+	<h2 class="heading-large">Medication and side effects</h2> 
+	
+	<div class="inner-focus">
+	<p>Citalopram (antidepressant) taken regularly.</p>
+<p>He states that he has a box of citalopram in a draw at home however he has not taken any of this medication for the last 16 days as he has weaned himself off it.</p>
+		<!--<p>{{ medicationSideEffects }}</p>-->
+	</div>
+	
+	<!--<p class="edit-report"><a href="conditionHistory" class="button-secondary">Edit medication and side effects</a></p>-->
+	
+</div>
+<!-- / report item -->
+
+
+
+<div class="report-item">
+
+	<div class="inner-focus">
+	<h2 class="heading-large">Physical examination</h2>
+	<p>Not assessed</p>
+	</div>
+</div>
+<!-- / report item -->
+
+
+
+<div class="report-item">
+	<div class="inner-focus">
+	<h2 class="heading-large">Mental state examination</h2>
+	<p>Not assessed</p>
+	</div>
+</div>
+<!-- / report item -->
+
+
+
+
+<!-- Displays report item based on selection from LCWRA page -->
+{% if data['lcwra']==='lcwra1'%}
+{% elif data['lcwra']==='lcwra2' or data['lcwra']==='lcwra3' or data['lcwra']==='lcwra4'%}
+<div class="report-item">
+
+	<h2 class="heading-large">Special Circumstances</h2> 
+	
+	<div class="inner-focus">
+		
+		<h2 class="heading-medium">Treat as LCWRA</h2>
+
+		<p><span style="font-weight:bold;">Reason:</span>
+		{% if data['lcwra']==='lcwra1'%}
+		{% elif data['lcwra']==='lcwra2'%}
+		Risks associated with pregnancy
+		{% elif data['lcwra']==='lcwra3'%}
+		Cancer treatment underway
+		{% elif data['lcwra']==='lcwra4'%}
+		Terminal illness
+		{% endif %}
+		</p>
+
+		<h4 class="heading-small">Justification:</h4>
+		<p>{{ justifyTreatLCWRA }}</p>
+
+	</div>
+	
+	<!--<p class="edit-report"><a href="exceptionalCircumstances" class="button-secondary">Edit exceptional circumstances</a></p>-->
+	
+</div>
+
+
+
+
+
+
+{% elif data['lcwra']==='lcwra6' or data['lcwra']==='lcwra7' or data['lcwra']==='lcwra8' or data['lcwra']==='lcwra9' or data['lcwra']==='lcwra10' or data['lcwra']==='lcwra11' or data['lcwra']==='lcwra12' or data['lcwra']==='lcwra13' or data['lcwra']==='lcwra14' or data['lcwra']==='lcwra15' or data['lcwra']==='lcwra16' or data['lcwra']==='lcwra17' or data['lcwra']==='lcwra18' or data['lcwra']==='lcwra19' or data['lcwra']==='lcwra20'%}
+<div class="report-item">
+
+	<h2 class="heading-large">Medical opinion</h2> 
+	
+	<div class="inner-focus">
+		<p>I have consided the possible UC activity outcomes and my advice is that the following applies:</p>
+		<h2 class="heading-medium">LCWRA</h2>
+		<p class="edit-report"><a href="#" class="button-secondary">Change LCWRA recommendation</a></p>
+		
+		<h4 class="heading-small">Activity</h4>
+		<p>
+		{% if data['lcwra']==='lcwra1'%}
+		{% elif data['lcwra']==='lcwra6'%}
+		Moving around and climbing steps without someone’s help
+		{% elif data['lcwra']==='lcwra7'%}
+		Standing, sitting and moving between the two
+		{% elif data['lcwra']==='lcwra8'%}
+		Reaching
+		{% elif data['lcwra']==='lcwra9'%}
+		Picking things up and moving them
+		{% elif data['lcwra']==='lcwra10'%}
+		Using your hands
+		{% elif data['lcwra']==='lcwra11'%}
+		Speaking, writing and typing
+		{% elif data['lcwra']==='lcwra12'%}
+		Hearing and reading
+		{% elif data['lcwra']==='lcwra13'%}
+		Controlling your bowels and bladder
+		{% elif data['lcwra']==='lcwra14'%}
+		Learning to do new tasks
+		{% elif data['lcwra']==='lcwra15'%}
+		Being aware of hazards and danger
+		{% elif data['lcwra']==='lcwra16'%}
+		Planning, starting and finishing everyday tasks
+		{% elif data['lcwra']==='lcwra17'%}
+		Coping with changes to your daily routine
+		{% elif data['lcwra']==='lcwra18'%}
+		Meeting and being with people
+		{% elif data['lcwra']==='lcwra19'%}
+		Behaving appropriately around other people
+		{% elif data['lcwra']==='lcwra20'%}
+		Eating and drinking
+		{% endif %}
+		</p>
+		<p class="edit-report"><a href="#" class="button-secondary">Edit activity</a></p>
+
+
+		<h4 class="heading-small">Relevant statements</h4>
+				<p>{{ taggedstatement1 }}</p>
+				<p>{{ taggedstatement2 }}</p>
+				<p>{{ taggedstatement3 }}</p>
+				<p>{{ taggedstatement4 }}</p>
+				<p>{{ taggedstatement5 }}</p>
+				<p>{{ taggedstatement6 }}</p>
+				<p>{{ taggedstatement7 }}</p>
+				<p>{{ taggedstatement8 }}</p>
+				<p>{{ taggedstatement9 }}</p>
+				<p>{{ taggedstatement10 }}</p>
+				<p>{{ taggedstatement11 }}</p>
+				<p>{{ taggedstatement12 }}</p>
+				<p>{{ taggedstatement13 }}</p>
+				<p>{{ taggedstatement14 }}</p>
+				<p>{{ taggedstatement15 }}</p>
+				<p>{{ taggedstatement16 }}</p>
+				<p>{{ taggedstatement17 }}</p>
+				<p>{{ taggedstatement18 }}</p>
+				<p>{{ taggedstatement19 }}</p>
+				<p>{{ taggedstatement20 }}</p>
+				<p>{{ taggedstatement21 }}</p>
+				<p>{{ taggedstatement22 }}</p>
+				<p>{{ taggedstatement23 }}</p>
+				<p>{{ taggedstatement24 }}</p>
+				<p>{{ taggedstatement25 }}</p>
+				<p>{{ taggedstatement26 }}</p>
+				<p>{{ taggedstatement27 }}</p>
+				<p>{{ taggedstatement28 }}</p>
+				<p>{{ taggedstatement29 }}</p>
+				<p>{{ taggedstatement30 }}</p>
+				<p>{{ taggedstatement31 }}</p>
+				<p>{{ taggedstatement32 }}</p>
+				<p>{{ taggedstatement33 }}</p>
+				<p>{{ taggedstatement34 }}</p>
+				<p>{{ taggedstatement35 }}</p>
+		<!--<p>{{taggedstatement}}</p>-->
+		<p class="edit-report"><a href="#" class="button-secondary">Edit relevant statements</a></p>
+
+
+		<h4 class="heading-small">Justification</h4>
+		<p>{{ justificationStatement }}</p>
+		<p class="edit-report"><a href="#" class="button-secondary">Edit justification</a></p>
+		
+
+		<h4 class="heading-small">Practitioner consulted</h4>
+		<p>{{ consultedPractitioner }}</p>
+
+	</div>
+	
+	<!--<p class="edit-report"><a href="exceptionalCircumstances" class="button-secondary">Edit medical opinion</a></p>-->
+	
+</div>
+
+{% endif %}		
+<!-- / report item -->
+
+
+
+<div class="report-item">
+
+	<h2 class="heading-large">Recommended review period</h2> 
+	
+	<div class="inner-focus">
+
+		<p>
+		{% if data['reviewPeriod']==='reviewPeriod1'%}
+		{% elif data['reviewPeriod']==='3months'%}
+		3 months
+		{% elif data['reviewPeriod']==='6months'%}
+		6 months
+		{% elif data['reviewPeriod']==='12months'%}
+		12 months
+		{% elif data['reviewPeriod']==='18months'%}
+		18 months
+		{% elif data['reviewPeriod']==='2years'%}
+		2 years
+		{% elif data['reviewPeriod']==='longerterm'%}
+		in the longer term
+		{% elif data['reviewPeriod']==='notrequired'%}
+		not future assessment required
+		{% endif %}
+		</p>
+	</div>
+	
+	<p class="edit-report"><a href="#" class="button-secondary">Edit recommended review period</a></p>
+	
+</div>
+<!-- / report item -->	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<div class="report-item">
+
+	<h2 class="heading-large">Illnesses, disabilities and medication</h2>  
+
+	<table class="report-view-table">
+	<caption class="heading-small">Illnesses and disabilities</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Source</th>
+			</tr>
+		</thead>
+	
+		<tbody>
+			<tr>
+				<td>Diabetes</td>
+				<td>Claimant</td>
+			</tr>
+			<tr>
+				<td>Arthritis</td>
+				<td>Claimant</td>
+			</tr>
+			<tr>
+				<td>Liver disease</td>
+				<td>Claimant</td>
+			</tr>
+			<tr>
+				<td>Urine problems</td>
+				<td>Claimant</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	
+	<table class="report-view-table">
+	<caption class="heading-small">Medication and side effects</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Dose</th>
+				<th>Side effects</th>
+			</tr>
+		</thead>
+	
+		<tbody>
+			<tr>
+				<td>Ibuprofen</td>
+				<td>Twice daily</td>
+				<td>None</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	
+	
+	
+	
+	<p class="edit-report"><a href="#" class="button-secondary">Edit illnesses, disabilities and medication</a></p>
+	
+	
+
+</div>-->
+<!-- / report item -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+   </div>
+ <!-- / wrapper -->
+  
+
+
+	<p class="depart"><a href="/{{path}}/scenario-curtailment/curtailDeclaration" class="button">Finish &ndash; sign off report</a></p>
+
+
+
+{% endblock %}

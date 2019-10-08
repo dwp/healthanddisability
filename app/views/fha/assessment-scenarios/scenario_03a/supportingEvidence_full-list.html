@@ -1,0 +1,173 @@
+{% extends path+"/scenario_03a/_layout-case-simple.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	<p class="caption-large" class="mb0">Paper-based assessment</p>
+	<h1 class="heading-large mt0">What evidence have you considered?</h1>
+	<form method="post" action="reviewPeriod">
+	
+  	<fieldset class="mb20">
+		<div class="multiple-choice">
+<input id="SE1" type="checkbox" name="evidence1" value="113">
+<label for=" Value»">113</label>
+</div>
+<div class="multiple-choice">
+<input id="SE2" type="checkbox" name="evidence2" value="BF223">
+<label for=" Value»">BF223</label>
+</div>
+<div class="multiple-choice">
+<input id="SE3" type="checkbox" name="evidence3" value="DNA1">
+<label for=" Value»">DNA1</label>
+</div>
+<div class="multiple-choice">
+<input id="SE4" type="checkbox" name="evidence4" value="DS1500">
+<label for=" Value»">DS1500</label>
+</div>
+<div class="multiple-choice">
+<input id="SE5" type="checkbox" name="evidence5" value="FFR2">
+<label for=" Value»">FFR2</label>
+</div>
+<div class="multiple-choice">
+<input id="SE6" type="checkbox" name="evidence6" value="FFR3">
+<label for=" Value»">FFR3</label>
+</div>
+<div class="multiple-choice">
+<input id="SE7" type="checkbox" name="evidence7" value="FFR4">
+<label for=" Value»">FFR4</label>
+</div>
+<div class="multiple-choice">
+<input id="SE8" type="checkbox" name="evidence8" value="LT54">
+<label for=" Value»">LT54</label>
+</div>
+<div class="multiple-choice">
+<input id="SE9" type="checkbox" name="evidence9" value="MED3">
+<label for=" Value»">MED3</label>
+</div>
+<div class="multiple-choice">
+<input id="SE10" type="checkbox" name="evidence10" value="POID">
+<label for=" Value»">POID</label>
+</div>
+<div class="multiple-choice">
+<input id="SE11" type="checkbox" name="evidence11" value="UC50">
+<label for=" Value»">UC50</label>
+</div>
+<div class="multiple-choice">
+<input id="SE12" type="checkbox" name="evidence12" value="UC63">
+<label for=" Value»">UC63</label>
+</div>
+<div class="multiple-choice">
+<input id="SE13" type="checkbox" name="evidence13" value="UC65">
+<label for=" Value»">UC65</label>
+</div>
+<div class="multiple-choice">
+<input id="SE14" type="checkbox" name="evidence14" value="UC85">
+<label for=" Value»">UC85</label>
+</div>
+<div class="multiple-choice">
+<input id="SE15" type="checkbox" name="evidence15" value="UC85A">
+<label for=" Value»">UC85A</label>
+</div>
+<div class="multiple-choice">
+<input id="SE16" type="checkbox" name="evidence16" value="Appointment letter">
+<label for=" Value»">Appointment letter</label>
+</div>
+<div class="multiple-choice">
+<input id="SE17" type="checkbox" name="evidence17" value="Care Plan">
+<label for=" Value»">Care Plan</label>
+</div>
+<div class="multiple-choice">
+<input id="SE18" type="checkbox" name="evidence18" value="Client letter">
+<label for=" Value»">Client letter</label>
+</div>
+<div class="multiple-choice">
+<input id="SE19" type="checkbox" name="evidence19" value="Consultant letter">
+<label for=" Value»">Consultant letter</label>
+</div>
+<div class="multiple-choice">
+<input id="SE20" type="checkbox" name="evidence20" value="Copy of prescription">
+<label for=" Value»">Copy of prescription</label>
+</div>
+<div class="multiple-choice">
+<input id="SE21" type="checkbox" name="evidence21" value="GP Letter">
+<label for=" Value»">GP Letter</label>
+</div>
+<div class="multiple-choice">
+<input id="SE22" type="checkbox" name="evidence22" value="GP medical record printout">
+<label for=" Value»">GP medical record printout</label>
+</div>
+<div class="multiple-choice">
+<input id="SE23" type="checkbox" name="evidence23" value="Hospital correspondence">
+<label for=" Value»">Hospital correspondence</label>
+</div>
+<div class="multiple-choice">
+<input id="SE24" type="checkbox" name="evidence24" value="PIP / DLA Decision letter">
+<label for=" Value»">PIP / DLA Decision letter</label>
+</div>
+<div class="multiple-choice">
+<input id="SE25" type="checkbox" name="evidence25" value="Questionnaire Cancer treatment page">
+<label for=" Value»">Questionnaire Cancer treatment page</label>
+</div>
+<div class="multiple-choice">
+<input id="SE26" type="checkbox" name="evidence26" value="Specialist letter">
+<label for=" Value»">Specialist letter</label>
+</div>
+<div class="multiple-choice">
+<input id="SE27" type="checkbox" name="evidence27" value="Support / Key worker letter">
+<label for=" Value»">Support / Key worker letter</label>
+</div>
+<div class="multiple-choice">
+<input id="SE28" type="checkbox" name="evidence28" value="Tribunal decision letter">
+<label for=" Value»">Tribunal decision letter</label>
+</div>
+	</fieldset>
+
+    <p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+	</form>	
+
+  </div><!-- column -->
+
+
+
+
+  <div class="column-one-third">
+
+<div class="portal-display">
+<div class="portal-card">
+				<div class="portal-head">
+					<h4>Summary</h4>
+				</div>
+				<!-- / title -->
+				<div class="portal-inner">
+				<p class="font-xsmall">{{ taggedstatement1 }}</p>
+				<p class="font-xsmall">{{ taggedstatement2 }}</p>
+				<p class="font-xsmall">{{ taggedstatement3 }}</p>
+				<p class="font-xsmall">{{ taggedstatement4 }}</p>
+				<p class="font-xsmall">{{ taggedstatement5 }}</p>
+				<p class="font-xsmall">{{ taggedstatement6 }}</p>
+				<p class="font-xsmall">{{ taggedstatement7 }}</p>
+				<p class="font-xsmall">{{ taggedstatement8 }}</p>
+				<p class="font-xsmall">{{ taggedstatement9 }}</p>
+				<p class="font-xsmall">{{ taggedstatement10 }}</p>
+				</div>
+				<!-- / inner card -->
+			</div>
+			</div>
+  </div><!-- right hand column -->
+
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+

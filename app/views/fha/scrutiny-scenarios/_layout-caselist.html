@@ -10,12 +10,51 @@
              
             <div class="column-one-quarter">
 
-                {% block horizontal_secondary_nav %}
                 
-              
+                <div class="search-customer">
+        <label class="form-label-bold visually-hidden" for="search">Customer search</label>
+            <span class="form-hint">Search by NI number</span>
+        <input class="form-control form-control-2-3" id="search" type="text" name="search">
+        <button class="gem-c-search__submit">Search</button>
+    </div>
+    
+                
+<nav class="details-nav v2 mb30">
+    <ul>
+        <li>
+                <a href="appointments">
+                Assessment reports (21)</a>
+        
+        </li>
+      
+           <li class="active_detail">
+                <a href="referrals">
+                Decisions to make (21)</a>
+        
+            <ul>
+            
+                <li>
+                    <a href="new-referrals">Did not attend (6)</a>
+                </li>
+            
+                <li>
+                    <a href="uc50-posted">Questionnaire not returned (7)</a>
+                </li>
+            
+                <li>
+                    <a href="uc50-posted" class="active_child">Cases withdrawn (4)</a>
+                </li>
 
-          
-                {% endblock %}  
+            
+            </ul>
+        
+        </li>
+
+      
+    </ul>
+</nav>
+                
+                 
             </div>
             <div class="column-three-quarters">
                 {% block caselist_content %}

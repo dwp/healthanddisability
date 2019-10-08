@@ -1,0 +1,101 @@
+{% extends path+"/scenario_01e/_layout-case-simple_clear-assessment-complete.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+  
+<h1 class="heading-large mb0">Paper-based assessment report</h1>
+ 
+
+<div class="review-wrapper full-report">
+
+
+<div>
+
+	<table class="report-view-table">
+	<caption class="heading-small">Assessment overview</caption>
+	
+		<tbody>
+			<tr>
+				<th>Date of assessment</th>
+				<td>{{ "Do MMM YYYY" | daysAgo }}</td>
+			</tr>
+			<tr>
+				<th>Assessment centre</th>
+				<td>Fiveways, Birmingham</td>
+			</tr>
+			<tr>
+				<th>Assessor</th>
+				<td>Heather Harrison</td>
+			</tr>
+			<tr>
+				<th>Assessment start</th>
+				<td>{{ last_one.time | formatDate("H:mma") }}</td>
+			</tr>
+			<tr>
+				<th>Assessment finish</th>
+				<td>{{ first_one.time | formatDate("H:mma") }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+<!-- / report item -->
+
+
+<div>
+
+	<h2 class="heading-medium">Advice</h2> 
+	
+	<div class="inner-focus">
+		<p>LCWRA: Moving around and climbing steps without someone’s help</p>
+	</div>
+	<p class="edit-report"><a href="#" class="button-secondary">Edit advice</a></p>
+<hr>
+	<h2 class="heading-medium">Evidence considered</h2> 
+	
+	<div class="inner-focus">
+				<ul class="mb20">
+				<li class="mb5">FFR4</li>
+				<li class="mb5">MED3<span style="margin-left:16px;">(04/10/2009)</span></li>
+				<li class="mb5">UC85A<span style="margin-left:16px;">(17/04/2010)</span></li>
+				<li class="mb5">UC85A<span style="margin-left:16px;">(04/08/2019)</span></li>
+				<li>Unknown evidence</li>
+				</ul>
+	</div>
+	<p class="edit-report"><a href="#" class="button-secondary">Add or remove evidence</a></p>
+<hr>
+	<h2 class="heading-medium">Review period</h2> 
+	
+	<div class="inner-focus">
+		<p>12 months</p>
+		<p>{{ reviewPeriodDetails }}</p>
+	</div>
+	<p class="edit-report"><a href="#" class="button-secondary">Edit review period</a></p>
+<hr>
+	<h2 class="heading-medium">Justification of advice</h2> 
+	
+	<div class="inner-focus">
+		<p>{{ justifyAdvice }}</p>
+	</div>
+	<p class="edit-report"><a href="#" class="button-secondary">Edit justification statement</a></p>
+
+</div>
+<!-- / report item -->	
+
+  
+   </div>
+ <!-- / wrapper -->
+  
+
+
+	<p class="depart"><a href="#" class="button">Finish &ndash; sign off report</a></p>
+
+
+
+{% endblock %}

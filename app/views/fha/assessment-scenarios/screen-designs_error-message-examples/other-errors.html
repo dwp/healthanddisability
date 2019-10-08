@@ -1,0 +1,70 @@
+{% extends path+"/screen-designs_error-message-examples/_layout-case-simple_assessment-complete.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<div class="column-two-thirds">
+
+    <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+      <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+        There is a problem
+      </h2>
+
+      <ul class="error-summary-list">
+        <li><a href="#error-full-name">Height (cm) must be a number</a></li>
+        <li><a href="#error-full-name">Other findings must be 1000 characters or less</a></li>
+      </ul>
+
+    </div>
+
+
+<h1 class="heading-large mb20">General health</h1>
+
+
+
+<div class="form-group form-group-error">
+  <label class="form-label" for="first-name-2">Height (cm)</label>
+  <span class="error-message">Height (cm) must be a number</span>
+  <input class="form-control form-control-1-4" id="first-name-2" name="first-name-2" type="text">
+</div>
+<div class="form-group">
+  <label class="form-label" for="last-name-2">Weight (kg)</label>
+  <input class="form-control form-control-1-4" id="last-name-2" name="last-name-2" type="text">
+</div>
+
+
+<div class="form-group form-group-error">
+
+      <label for="example-full-name" id="error-full-name">
+
+        <span class="form-label">Other findings</span>
+        <span class="error-message">Other findings must be 1000 characters or less<br>(You have 20 characters too many)</span>
+
+      </label>
+<textarea class="form-control form-control-3-4 form-control-error" name="textarea" id="textarea" rows="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper egestas tincidunt. Duis a nisl ipsum. Sed accumsan vel turpis a hendrerit. In id tellus nec ipsum viverra maximus. Aenean vestibulum hendrerit ornare. Phasellus posuere neque et ipsum gravida porttitor. Cras feugiat sit amet urna non lacinia. Donec eleifend felis</textarea>
+      
+</div>
+
+
+
+
+<input class="button" type="submit" value="Save and continue">
+
+
+
+
+
+  
+   </div>
+ <!-- / wrapper -->
+  
+</div>
+
+
+{% endblock %}
