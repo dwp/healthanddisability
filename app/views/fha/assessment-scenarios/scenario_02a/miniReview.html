@@ -1,4 +1,4 @@
-{% extends path+"/_layout-case-simple_assessment-complete.html" %}
+{% extends path+"/scenario_02a/_layout-case-simple_assessment-complete.html" %}
 
 {% block citizen_content %}
 
@@ -34,12 +34,12 @@
 				<td>Heather Harrison</td>
 			</tr>
 			<tr>
-				<th>Assessment start</th>
-				<td>{{ last_one.time | formatDate("H:mma") }}</td>
+				<th>Face-to-face start</th>
+				<td>{{ assessmentStartTime | formatDate("H:mma") }}</td>
 			</tr>
 			<tr>
-				<th>Assessment finish</th>
-				<td>{{ first_one.time | formatDate("H:mma") }}</td>
+				<th>Face-to-face finish</th>
+				<td>{{ assessmentFinishTime | formatDate("H:mma") }}</td>
 			</tr>
 		</tbody>
 	</table>
@@ -52,7 +52,7 @@
 
 <div class="report-item">
 
-	<h2 class="heading-large">Condition history</h2> 
+	<h2 class="heading-large">Conditions, medication and side effects</h2> 
 	
 	<div class="inner-focus">
 	<p>Has fibromyalgia. </p>
@@ -71,6 +71,12 @@
 <p>Today is the first day in a week that he has not spent most of the day in bed. </p>
 <p>Even when he does get up, he will dose in the lounge for 45 minutes to 4 to 5 hours during the day. There is no pattern to this and no particular activity that makes his fatigue better or worse. </p>
 <p>It is just making him very frustrated and he cannot see any end to this.</p>
+<p>Tramadol 50 mg x 1 once per day before bed.</p>
+<p>Morphine tablet 15 mg twice daily.</p>
+<p>Oramorph 5 mls once daily - unsure of the dosage of the bottle. </p>
+<p>Gets drowsy. Thinks this may be from tramadol.</p>
+<p>It’s hard to say what symptoms are from the condition and what is a side effect of medication. </p>
+<p>No other side effects of medication. Possible brain fog from medication but thinks this may be part of the condition also. </p>
 <!--<p>{{ conditionHistory }}</p>-->
 	</div>
 	
@@ -150,27 +156,6 @@
 </div>
 <!-- / report item -->
 
-
-
-<div class="report-item">
-
-	<h2 class="heading-large">Medication and side effects</h2> 
-	
-	<div class="inner-focus">
-	<p>Tramadol 50 mg x 1 once per day before bed.</p>
-<p>Morphine tablet 15 mg twice daily.</p>
-<p>Oramorph 5 mls once daily - unsure of the dosage of the bottle. </p>
-<p>Gets drowsy. Thinks this may be from tramadol.</p>
-<p>It’s hard to say what symptoms are from the condition and what is a side effect of medication. </p>
-<p>No other side effects of medication. Possible brain fog from medication but thinks this may be part of the condition also. </p>
-
-		<!--<p>{{ medicationSideEffects }}</p>-->
-	</div>
-	
-	<!--<p class="edit-report"><a href="conditionHistory" class="button-secondary">Edit medication and side effects</a></p>-->
-	
-</div>
-<!-- / report item -->
 
 
 
@@ -372,27 +357,6 @@
 
 </div>-->
 <!-- / report item -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   

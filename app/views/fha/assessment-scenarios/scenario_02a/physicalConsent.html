@@ -14,7 +14,7 @@
     
     
     
-    
+<form method="post" action="wca-index">    
  <div class="form-group">
 		    
 				    <fieldset class="inline">
@@ -37,16 +37,16 @@
 					      </div>
 					      
 					      <div class="panel js-hidden" id="reasons2">
-							 <label class="form-label" for="justification">Why doesn't Michael consent?</label>
-							 <textarea class="form-control form-control-3-4" name="justification" id="justification" rows="5"></textarea>
-							 <p class="mt30"><a href="wca-index" class="button">Finish assessment</a></p>
+							 <label class="form-label" for="physicalConsentJustification">Why doesn't Michael consent?</label>
+							 <textarea class="form-control form-control-3-4 mb20" name="physicalConsentJustification" id="physicalConsentJustification" rows="5"></textarea>
+							 <p><input type="submit" class="button" value="Save & continue" id="submitButton"></p>
 					      </div>
 					    
 				    </fieldset>
 				    
 				</div>
     
-    
+   </form> 
   </div><!-- column -->
 </div><!-- row -->
 {% endblock %}
