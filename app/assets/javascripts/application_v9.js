@@ -348,3 +348,12 @@ $(document).ready(function () {
     $('#facetFilterBtn').click();
   })
 })
+
+
+$(document).ready(function () {
+  $('#clearFilter').click(function() {
+    $('input').val("");
+  });
+  })
+
+

@@ -1,0 +1,83 @@
+				   <tr>
+                  <td><ul class="identifiers">
+				  <li><span class="badge">{{customer.benefit}}</span></li>
+				   {% if customer.caseflags == 'ucb' %}<li><span class="badge ucb">UCB</span></li>  {% endif %}
+				  </ul>
+				  <div class="claimant"><a href="/{{path }}/scenario2/timeline"><span class="visually-hidden">Name</span>{{customer.name}}</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.nino}}
+				  </span>
+				  
+				  </div>
+				 <!-- {% if customer.caseflags %}
+				  <div class="panel panel-error">
+				  <h2 class="heading-small">Case flags</h2>
+				  <ul>
+				   {% if customer.caseflags == 'ucb' %}
+				  <li>Unacceptable claimant behaviour</li>
+                  {% endif %}
+				  {% if customer.caseflags == 'appointee' %}
+				  <li>Has appiontee</li>
+				  {% endif %}
+				  </ul></div>
+				  {% endif %} -->
+				  </td>
+                  <td>
+				  <div class="grid-row">
+				  <div class="column-half">
+				  <h3 class="">Details:</h3>
+				  <ul class="list">
+				  {% if customer.appointment.time %}
+				  <li>{{customer.appointment.time}}</li>
+				  {% endif%}
+				    {% if customer.appointment.date =='04/10/2019' and customer.appointment.date and customer.status == 'Booked' %}
+				  <li>{{capDay}}/{{capMonth}}/2019</li>
+				    {% elif customer.appointment.date and customer.status == 'Booked' %}
+				  <li>{{customer.appointment.date}}</li>
+				  {% endif%}
+				  <li>{{customer.appointment.type}}</li>
+				  <li>{{customer.appointment.centre}}</li>
+
+				  </ul>
+				  </div>
+				  <div class="column-half">
+				    {% if customer.appointment.requirement
+					 %}
+				  <h3 class="">Requirements:</h3>
+				  <ul class="list">
+				   {% if customer.appointment.requirement == 'taxi' %}
+				  <li>Taxi</li>
+				  {% endif%}
+				  {% if customer.appointment.requirement == 'interpreter' %}
+				  <li>Interpreter: {{customer.appointment.interpreter}}</li>
+				  {% endif%}
+				   {% if customer.appointment.requirement == 'audio' %}
+				  <li>Audio recording</li>
+				  {% endif%}
+				     {% if customer.appointment.requirement == 'accessible'%}
+				  <li>Accessible room</li>
+				  {% endif%}
+				  {% if customer.appointment.requirement == 'gender' %}
+				  <li>Same gender hcp</li>
+				  {% endif%}
+				  </ul>
+				   {% endif%}
+				   </div>
+				   </div>
+				  </td>
+				  <td>
+				   <h3 class="">{{customer.referral.type}}</h3>
+	
+				   <ul class="list">
+				  {% if customer.status == 'Ready to book' and customer.referral.edtarget %}
+				   <li>ED rebooking target:<span class=""> {{customer.referral.edtarget}} days remaining</span></li>
+				  {% endif %} 
+				   <li>SLA <span class="">{{customer.sla}} days remaining</span></li>
+				   
+				   </ul>
+
+				   </div>
+
+				  </td>
+                 </tr>
+                
+    

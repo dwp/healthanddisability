@@ -1,0 +1,346 @@
+{% extends path+"/_layout-caselist.html" %}
+
+ {% block horizontal_secondary_nav %}
+
+
+    <div class="search-customer">
+        <label class="form-label-bold visually-hidden" for="search">Customer search</label>
+		    <span class="form-hint">Search by NI number</span>
+        <input class="form-control form-control-2-3" id="search" type="text" name="search">
+        <button class="gem-c-search__submit">Search</button>
+    </div>
+
+	{% set bookedCounter = 0 %}
+	{% set readyCounter = 0 %}
+	{% set taxiCounter = 0 %}
+
+	{% for item in customers %}
+	{% if item.status === "Booked"%}
+	 {% set bookedCounter = bookedCounter + 1 %}
+	{% endif %}
+	{% if item.status === "Ready to book"%}
+	 {% set readyCounter = readyCounter + 1 %}
+	{% endif %}
+	{% if item.status === "Ready to book" and item.appointment.requirement == 'taxi'%}
+	 {% set taxiCounter = taxiCounter + 1 %}
+	{% endif %}
+	{% endfor %}
+	
+                
+<nav class="details-nav v2 mb30">
+	<ul>
+	    <li>
+				<a href="appointments">
+				Referrals (21)</a>
+	    
+
+	    </li>
+	  
+	    <li>
+				<a href="review">
+				Reviews (44)</a>
+	    
+
+	    </li>
+	  
+
+			    <li class="active_detail">
+				<a href="caselist">
+				Appointments ({{customers.length}})</a>
+	    
+	    	<ul>
+	    		<li>
+	    			<a href="readytobook">Ready to book ({{readyCounter}}) </a>
+
+	    		</li>
+	    		<li>
+	    			<a href="booked">Booked ({{bookedCounter}})</a>
+
+	    		</li>
+
+	    	
+	    		<!--<li>
+	    			<a href="ed-referrals" class="active_child">ED Re-referrals (2)</a>
+
+	    		</li> -->
+
+	    	
+	    	</ul>
+	    
+
+	    </li>
+	  
+	    <li>
+				<a href="assessment">
+				Today's appointments (21)</a>
+	    
+
+	    </li>
+	  
+	</ul>
+</nav>
+
+
+
+
+
+
+  
+       
+
+{% endblock %}  
+ 
+
+{% block caselist_content %}
+
+            <h1 class="heading-medium mt0"><span class="heading-xlarge">{{customers.length}}</span><br/>Appointments</h1>
+<style>
+hr.filter{
+	clear:left;
+	width:100%;
+}
+
+.badge{
+	float:left;
+	margin-top:2px;
+}
+.badge.ucb{
+	background:black;
+}
+#facetFilterBtn{
+  position:absolute;
+  left:-100%;	
+}
+
+.panel.panel-error{
+	background:rgba(223, 48, 52, 0.05);
+	border-left:3px solid #df3034;
+}
+
+.panel{
+		border-left:3px solid;
+		margin-top:5px;
+		font-size:16px;
+		padding:8px;
+}
+
+.panel .heading-small{
+		font-size:17px;
+}
+
+.claimant{
+	display:inline-block;
+	margin-left:10px;
+}
+</style>
+  <form class="" method="post" action="/{{path}}/scenario4/caselist">
+ <hr >
+			<div class="grid-row">
+			<div class="column-full">
+			<h2> Filter by:</h2>
+			</div>
+           
+			            <div class="column-quarter">
+              <h2 class="heading-small mt20 mb0">When</h2>
+              <div class="pickslots">
+                <div class="check-group check-top">
+                  <fieldset class="checkslot-picker">
+                    <h3 class="visually-hidden"><legend>Choose Dates</legend></h3>
+                    <div class="check-choice">
+                      <input id="tomorrow"
+                           name="filter-day"
+                           type="radio"
+                           value="tomorrow" class="facet" {{ checked('filter-day', 'tomorrow') }}> <label for="tomorrow" >Tomorrow</label>
+                    </div>
+                    <div class="check-choice">
+                      <input id="nextweek"
+                           name="filter-day"
+                           type="radio"
+                           value="nextweek"  class="facet" {{ checked('filter-day', 'nextweek') }}> <label for="nextweek">Next week</label>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+			</div>
+  			            <div class="column-quarter">
+              <h2 class="heading-small mt20 mb0">Requirements</h2>
+              <div class="pickslots">
+                <div class="check-group check-top">
+                  <fieldset class="checkslot-picker">
+                    <h3 class="visually-hidden"><legend></legend></h3>
+                    <div class="check-choice">
+                      <input id="interpreter"
+                           name="filter-requirement"
+                           type="radio"
+                           value="interpreter" class="facet" {{ checked('filter-requirement', 'interpreter') }}> <label for="interpreter">Interpreter</label>
+                    </div>
+                    <div class="check-choice">
+                      <input id="gender"
+                           name="filter-requirement"
+                           type="radio"
+                           value="gender" class="facet" {{ checked('filter-requirement', 'gender') }}> <label for="gender">Same gender</label>
+                    </div>
+
+					  <div class="check-choice">
+                      <input id="accessible"
+                           name="filter-requirement"
+                           type="radio"
+                           value="accessible" class="facet" {{ checked('filter-requirement', 'accessible') }}> <label for="accessible">Accessible room</label>
+                    </div>
+						  <div class="check-choice">
+                      <input id="audio"
+                           name="filter-requirement"
+                           type="radio"
+                           value="audio" class="facet" {{ checked('filter-requirement', 'audio') }}> <label for="audio">Audio equipment</label>
+                    </div>
+
+						  <div class="check-choice">
+                      <input id="taxi"
+                           name="filter-requirement"
+                           type="radio"
+                           value="taxi" class="facet" {{ checked('filter-requirement', 'taxi') }}> <label for="taxi">Taxi ({{taxiCounter}})</label>
+                    </div>
+
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+
+
+			  			            <div class="column-quarter">
+              <h2 class="heading-small mt20 mb0">Referral type</h2>
+              <div class="pickslots">
+                <div class="check-group check-top">
+                  <fieldset class="checkslot-picker">
+                    <h3 class="visually-hidden"><legend></legend></h3>
+                    <div class="check-choice">
+                      <input id="New referral"
+                           name="filter-type"
+                           type="radio"
+                           value="New referral"> <label for="New referral">New referral</label>
+                    </div>
+                    <div class="check-choice">
+                      <input id="Re refferals"
+                           name="filter-type"
+                           type="radio"
+                           value="Re refferals"> <label for="Re refferals">Re refferals</label>
+                    </div>
+
+					  <div class="check-choice">
+                      <input id="Ed referals"
+                           name="filter-type"
+                           type="radio"
+                           value="Ed referals"> <label for="Ed referals">Ed referals</label>
+                    </div>
+			
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+
+
+					  			            <div class="column-quarter">
+              <h2 class="heading-small mt20 mb0">Case flags</h2>
+              <div class="pickslots">
+                <div class="check-group check-top">
+                  <fieldset class="checkslot-picker">
+                    <h3 class="visually-hidden"><legend></legend></h3>
+                    <div class="check-choice">
+                      <input id="filter1"
+                           name="filter-flag"
+                           type="radio"
+                           value="ucb"> <label for="filter1">UCB</label>
+                    </div>
+    
+
+					  <div class="check-choice">
+                      <input id="filter-flag"
+                           name="filter-flag"
+                           type="radio"
+                           value="c"> <label for="next we">Appointee</label>
+                    </div>
+			 <p><button id="facetFilterBtn" class="">Apply filter</button></p>
+                  </fieldset>
+                </div>
+              </div>
+		
+            </div>
+		</div>
+    <hr >
+</form>
+
+    	  <table>
+
+                <thead>
+                  <tr>
+                    <th>Case details</th>
+					<th>Status</th>
+                    <th>Appointment details</th>
+					<th>Referral type</th>
+  
+                  </tr>
+                </thead>
+
+		{% if checked('filter-day', 'tomorrow') and checked('filter-requirement', 'taxi') %}
+			{% for customer in customers %}
+					{% if customer.appointment.date =='04/10/2019' and customer.status == 'Booked' and customer.appointment.requirement == 'taxi'
+					%}
+						{% include path+"/scenario4/_table-row-caselist.html" %}
+					{% endif %}
+			{% endfor %}	
+		{% elif checked('filter-day', 'tomorrow') and checked('filter-requirement', 'audio') %}
+			{% for customer in customers %}
+					{% if customer.appointment.date =='04/10/2019' and customer.status == 'Booked' and customer.appointment.requirement == 'audio'
+					%}
+						{% include path+"/scenario4/_table-row-caselist.html" %}
+					{% endif %}
+			{% endfor %}			
+		{% elif checked('filter-day', 'tomorrow') and checked('filter-requirement', 'accessible') %}
+			{% for customer in customers %}
+					{% if customer.appointment.date =='04/10/2019' and customer.status == 'Booked' and customer.appointment.requirement == 'accessible'
+					%}
+						{% include path+"/scenario4/_table-row-caselist.html" %}
+					{% endif %}
+			{% endfor %}	
+
+			{% elif checked('filter-day', 'tomorrow') and checked('filter-requirement', 'gender') %}
+		{% for customer in customers %}
+				{% if customer.appointment.date =='04/10/2019' and customer.status == 'Booked' and customer.appointment.requirement == 'gender'
+				 %}
+					{% include path+"/scenario4/_table-row-caselist.html" %}
+				{% endif %}
+		{% endfor %}			
+		
+		
+
+
+	{% elif checked('filter-day', 'tomorrow') and checked('filter-requirement', 'interpreter') %}
+		{% for customer in customers %}
+				{% if customer.appointment.date =='04/10/2019' and customer.status == 'Booked' and customer.appointment.requirement == 'interpreter'
+				 %}
+					{% include path+"/scenario4/_table-row-caselist.html" %}
+				{% endif %}
+		{% endfor %}			
+
+	{% elif checked('filter-day', 'tomorrow') %}
+	
+		{% for customer in customers %}
+				{% if customer.appointment.date =='04/10/2019' and customer.status == 'Booked' %}
+					{% include path+"/scenario4/_table-row-caselist.html" %}
+				{% endif %}
+		{% endfor %}
+
+	{% else %}			
+		{% for customer in customers %}    
+				{% include path+"/scenario4/_table-row-caselist.html" %}
+		{% endfor %}   
+	{%endif%}
+
+              </table>
+
+{% endblock %}
+
+
+
+
+
