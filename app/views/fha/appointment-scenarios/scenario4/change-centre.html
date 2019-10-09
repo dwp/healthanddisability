@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  {% extends path+"/_layout-stripped.html" %} {% block assess_content %}
+  <main class="main-content"
+        id="content"
+        role="main">
+     <form class="form" action="booked" method="post">    
+    <div class="container">
+      <div class="grid-row">
+        <div class="column-full">
+          <a class="link-back"
+               href="javascript:%20history.go(-1)">Back</a>
+          <h1 class="heading-large mt10">Change centre</h1>
+          <div class="grid-row">
+            <div class="column-quarter">
+              <h4 class="heading-medium mt20 mb0">Area</h4>
+              <div class="check-group check-top">
+                <fieldset class="checkslot-picker">
+                  <h3 class="visually-hidden"><legend>Choose Areas</legend></h3>
+                  <div class="check-choice" data-target="mid">
+                    <input id="filter5"
+                         name="area"
+                         type="radio"
+                         value="mid"> <label for="filter5">Midlands</label>
+                  </div>
+                  <div class="check-choice"
+                       data-target="lon">
+                    <input id="filter6"
+                         name="area"
+                         type="radio"
+                         value="lon"> <label for="filter6">London</label>
+                  </div>          
+                </fieldset>
+              </div>
+            </div>
+            <div class="js-hidden"
+                 id="mid">
+              <div class="column-half">
+                <h4 class="heading-medium mt20 mb0">Assessment centres</h4>
+                <div class="check-group check-top">
+                  <fieldset class="checkslot-picker">
+                    <h3 class="visually-hidden"><legend>Choose centres</legend></h3>
+                    <div class="check-choice"
+                         data-target="button">
+                      <input id="filter1"
+                           name="filter"
+                           type="radio"
+                           value="fiveways"> <label for="filter1">DWP Birmingham Fiveways</label>
+                    </div>
+                    <div class="check-choice"  data-target="button">
+                      <input id="filter2"
+                           name="filter"
+                           type="radio"
+                           value="wolves"> <label for="filter2">Wolverhampton</label>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+             <div class="js-hidden"
+                 id="lon">
+              <div class="column-half">
+                <h4 class="heading-medium mt20 mb0">Assessment centres</h4>
+                <div class="check-group check-top">
+                  <fieldset class="checkslot-picker">
+                    <h3 class="visually-hidden"><legend>Choose centres</legend></h3>
+                    <div class="check-choice"
+                         data-target="button">
+                      <input id="filter3"
+                           name="filter"
+                           type="radio"
+                           value="tresco"> <label for="filter3">DWP Tresco House</label>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="js-hidden"
+               id="button">
+            <hr>
+            <p><button class="button"
+               >Save and continue</button>
+          </div>
+        </div><!-- column -->
+      </div><!-- row -->
+    </div><!-- container -->
+    </form>
+  </main>{% endblock %}
+</body>
+</html>
