@@ -1,4 +1,4 @@
-{% extends path+"/scenario_03c/_layout-case-simple.html" %}
+{% extends path+"/scenario_03b/_layout-case-simple.html" %}
 
 {% block citizen_content %}
 
@@ -14,10 +14,10 @@
 <div class="grid-row">
   <div class="column-two-thirds">
 
-<p class="caption-large" class="mb0">Paper based assessment</p>
+<p class="caption-large" class="mb0">Paper-based assessment</p>
 <h1 class="heading-large mt0">Time until Mia's case needs reviewing</h1>
 
-<form method="post" action="writeJustification">
+<form method="post" action="miniReport">
 
 	<div class="form-group">
 		 <fieldset>
@@ -62,6 +62,33 @@
 		</form>	
 
   </div><!-- column -->
+
+
+<div class="column-one-third">
+
+<div class="portal-display mb20" style="margin-top:0px;">
+	<div class="portal-card">
+				<div class="portal-head">
+					<h4>Recommendation</h4>
+				</div>
+				<!-- / title -->
+				<div class="portal-inner">
+				<p class="font-xsmall">LCWRA: moving around and climbing steps without someone’s help</p>
+				<p class="mb5 font-xsmall bold">Evidence considered</p>
+				<ul class="mb20 font-xsmall">
+				<li class="mb5">113 (GP report)</li>
+				<li class="mb5">Med3 (fit note)</li>
+				<li class="mb5">UC50 (questionnaire)</li>
+				</ul>
+				<p class="mb5 font-xsmall bold">Justification</p>
+				<p class="font-xsmall">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus euismod sem a sollicitudin.</p>
+				</div>
+				<!-- / inner card -->
+				
+	</div>
+</div>
+
+  </div><!-- right hand column -->
 
 </div><!-- row -->
 
