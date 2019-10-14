@@ -65,10 +65,7 @@ button.link{
 	background:transparent;
 }
 
-.check-choice label span{
-	font-weight:bold;
-	display:block;
-}
+
 
 .check-group{
 	margin:0;
@@ -363,7 +360,8 @@ text-align:center;
               <h2 class="">Showing</h2>
               <div class="pickslots">
                 <div class="check-group check-top">
-                
+                <fieldset>
+				 <div class="check-picker">
                     <h3 class="visually-hidden"><legend></legend></h3>
                      <div class="check-choice">
                       <input id="all"
@@ -415,9 +413,9 @@ text-align:center;
                            value="DNA referral"  class="facet" {{ checked('filter', 'DNA referral') }}> <label for="DNA referral">DNA referral
 						      <span>{% if data['capDay'] %}({{edCounterDay}}){% else %} ({{edCounter}}){% endif %}</span>
 						   </label>
-                    </div>
-			
-                
+                     </div>
+			        </div>
+                  </fieldset>
                 </div>
               </div>
             </div>
