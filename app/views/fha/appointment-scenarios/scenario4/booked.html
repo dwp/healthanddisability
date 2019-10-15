@@ -157,7 +157,7 @@ text-align:center;
 	 {% set specialRequirements = specialRequirements + 1 %}
 	{% endif %}
 
-	{% if item.appointment.date =='17/10/2019' and item.status == 'Booked' and item.appointment.requirement %}
+	{% if item.appointment.date =='16/10/2019' and item.status == 'Booked' and item.appointment.requirement %}
 	 {% set specialRequirementsDay = specialRequirementsDay + 1 %}
 	{% endif %}
 
@@ -165,7 +165,7 @@ text-align:center;
 	 {% set taxiCounter = taxiCounter + 1 %}
 	{% endif %}
 
-	{% if  item.appointment.date =='17/10/2019' and item.status === "Booked" and item.appointment.requirement == 'taxi'%}
+	{% if  item.appointment.date =='16/10/2019' and item.status === "Booked" and item.appointment.requirement == 'taxi'%}
 	 {% set taxiCounterDay = taxiCounterDay + 1 %}
 	{% endif %}
 
@@ -173,27 +173,27 @@ text-align:center;
 	 {% set interpreterCounter = interpreterCounter + 1 %}
 	{% endif %}
 
-	{% if item.appointment.date =='17/10/2019' and item.status === "Booked" and item.appointment.requirement == 'interpreter'%}
+	{% if item.appointment.date =='16/10/2019' and item.status === "Booked" and item.appointment.requirement == 'interpreter'%}
 	 {% set interpreterCounterDay = interpreterCounterDay + 1 %}
 	{% endif %}
 	{% if item.status === "Booked" and item.appointment.requirement == 'gender'%}
 	 {% set genderCounter = genderCounter + 1 %}
 	{% endif %}
 
-	{% if item.appointment.date =='17/10/2019' and item.status === "Booked" and item.appointment.requirement == 'gender'%}
+	{% if item.appointment.date =='16/10/2019' and item.status === "Booked" and item.appointment.requirement == 'gender'%}
 	 {% set genderCounterDay = genderCounterDay + 1 %}
 	{% endif %}
 	{% if item.status === "Booked" and item.appointment.requirement == 'audio'%}
 	 {% set audioCounter = audioCounter + 1 %}
 	{% endif %}
 
-	{% if item.appointment.date =='17/10/2019' and item.status === "Booked" and item.appointment.requirement == 'audio'%}
+	{% if item.appointment.date =='16/10/2019' and item.status === "Booked" and item.appointment.requirement == 'audio'%}
 	 {% set audioCounterDay = audioCounterDay + 1 %}
 	{% endif %}
 	{% if item.status === "Booked" and item.appointment.requirement == 'accessible'%}
 	 {% set accessCounter = accessCounter + 1 %}
 	{% endif %}
-    {% if item.appointment.date =='17/10/2019' and item.status === "Booked" and item.appointment.requirement == 'accessible'%}
+    {% if item.appointment.date =='16/10/2019' and item.status === "Booked" and item.appointment.requirement == 'accessible'%}
 	 {% set accessCounterDay = accessCounterDay + 1 %}
 	{% endif %}
 
@@ -202,7 +202,7 @@ text-align:center;
 	 {% set ucbCounter = ucbCounter + 1 %}
 	{% endif %}
 
-	{% if item.appointment.date =='17/10/2019' and item.status == 'Booked' and item.caseflags =='ucb' %}
+	{% if item.appointment.date =='16/10/2019' and item.status == 'Booked' and item.caseflags =='ucb' %}
 	 {% set ucbCounterDay = ucbCounterDay + 1 %}
 	{% endif %}
 
@@ -211,7 +211,7 @@ text-align:center;
 	 {% set newCounter = newCounter + 1 %}
 	{% endif %}
 
-	{% if item.appointment.date =='17/10/2019' and item.status === "Booked" and item.referral.type == 'New referral' %}
+	{% if item.appointment.date =='16/10/2019' and item.status === "Booked" and item.referral.type == 'New referral' %}
 	 {% set newCounterDay = newCounterDay + 1 %}
 	{% endif %}
 
@@ -219,7 +219,7 @@ text-align:center;
 	 {% set reCounter = reCounter + 1 %}
 	{% endif %}
 
-	{% if item.appointment.date =='17/10/2019' and item.status === "Booked" and item.referral.type == 'Re referral' %}
+	{% if item.appointment.date =='16/10/2019' and item.status === "Booked" and item.referral.type == 'Re referral' %}
 	 {% set reCounterDay = reCounterDay + 1 %}
 	{% endif %}
 
@@ -228,15 +228,15 @@ text-align:center;
 	{% endif %}
 
     
-	{% if item.appointment.date =='17/10/2019' and item.status === "Booked" and item.referral.type == 'DNA referral' %}
+	{% if item.appointment.date =='16/10/2019' and item.status === "Booked" and item.referral.type == 'DNA referral' %}
 	 {% set edCounterDay = edCounterDay + 1 %}
 	{% endif %}
 
-  	{% if item.appointment.date == '17/10/2019' and item.appointment.requirement == 'taxi' and item.referral.type == 'New referral' %}
+  	{% if item.appointment.date == '16/10/2019' and item.appointment.requirement == 'taxi' and item.referral.type == 'New referral' %}
      {% set todayTaxiNewCounter = todayTaxiNewCounter + 1 %}
-  	{% elif item.appointment.date == '17/10/2019' and item.appointment.requirement == 'taxi' %}
+  	{% elif item.appointment.date == '16/10/2019' and item.appointment.requirement == 'taxi' %}
      {% set todayTaxiCounter = todayTaxiCounter + 1 %}
-    {% elif item.appointment.date == '17/10/2019' %}
+    {% elif item.appointment.date == '16/10/2019' %}
 	 {% set todayCounter = todayCounter + 1 %}
 	{% endif %}
 	{% endfor %}
@@ -509,7 +509,7 @@ text-align:center;
 {% if  data['capDay'] and checked('filter', 'DNA referral') %}
 		{% for customer in customers %}
 
-				{% if customer.appointment.date =='17/10/2019' and customer.status == 'Booked' and customer.referral.type =='DNA referral' %}
+				{% if customer.appointment.date =='16/10/2019' and customer.status == 'Booked' and customer.referral.type =='DNA referral' %}
 					{% include path+"/scenario4/_table-row-caselist.html" %}
 				{% endif %}
 		{% endfor %}
@@ -528,7 +528,7 @@ text-align:center;
 
 {% elif  data['capDay'] and checked('filter', 'Re referrals') %}
 		{% for customer in customers %}
-				{% if customer.appointment.date =='17/10/2019' and customer.status == 'Booked' and customer.referral.type =='Re referral' %}
+				{% if customer.appointment.date =='16/10/2019' and customer.status == 'Booked' and customer.referral.type =='Re referral' %}
 					{% include path+"/scenario4/_table-row-caselist.html" %}
 				{% endif %}
 		{% endfor %}
@@ -542,7 +542,7 @@ text-align:center;
 
 {% elif  data['capDay'] and checked('filter', 'New referrals') %}
 		{% for customer in customers %}
-				{% if customer.appointment.date =='17/10/2019' and customer.status == 'Booked' and customer.referral.type =='New referral' %}
+				{% if customer.appointment.date =='16/10/2019' and customer.status == 'Booked' and customer.referral.type =='New referral' %}
 					{% include path+"/scenario4/_table-row-caselist.html" %}
 				{% endif %}
 		{% endfor %}
@@ -556,7 +556,7 @@ text-align:center;
 
 {% elif  data['capDay'] and checked('filter', 'ucb') %}
 		{% for customer in customers %}
-				{% if customer.appointment.date =='17/10/2019' and customer.status == 'Booked' and customer.caseflags =='ucb' %}
+				{% if customer.appointment.date =='16/10/2019' and customer.status == 'Booked' and customer.caseflags =='ucb' %}
 					{% include path+"/scenario4/_table-row-caselist.html" %}
 				{% endif %}
 		{% endfor %}
@@ -572,7 +572,7 @@ text-align:center;
 	{% elif  data['capDay'] and checked('filter', 'Special requirements') %}
 
 		{% for customer in customers %}
-				{% if customer.appointment.date =='17/10/2019' and customer.status == 'Booked' and customer.appointment.requirement %}
+				{% if customer.appointment.date =='16/10/2019' and customer.status == 'Booked' and customer.appointment.requirement %}
 					{% include path+"/scenario4/_table-row-caselist.html" %}
 				{% endif %}
 		{% endfor %}
@@ -588,7 +588,7 @@ text-align:center;
 	{% elif data['capDay'] %}
 	
 		{% for customer in customers %}
-				{% if customer.appointment.date =='17/10/2019' and customer.status == 'Booked' %}
+				{% if customer.appointment.date =='16/10/2019' and customer.status == 'Booked' %}
 					{% include path+"/scenario4/_table-row-caselist.html" %}
 				{% endif %}
 		{% endfor %}
