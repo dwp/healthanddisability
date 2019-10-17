@@ -29,13 +29,12 @@
 				  {% if customer.appointment.time %}
 				  <li>{{customer.appointment.time}}</li>
 				  {% endif%}
-				    {% if customer.appointment.date =='04/10/2019' and customer.appointment.date and customer.status == 'Booked' %}
+				    {% if customer.appointment.date =='21/10/2019' and customer.appointment.date and customer.status == 'Booked' %}
 				  <li>{{capDay}}/{{capMonth}}/2019</li>
 				    {% elif customer.appointment.date and customer.status == 'Booked' %}
 				  <li>{{customer.appointment.date}}</li>
 				  {% endif%}
 				  <li>{{customer.appointment.type}}</li>
-				  <li>{{customer.appointment.centre}}</li>
 
 				  </ul>
 				  </div>

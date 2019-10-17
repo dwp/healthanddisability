@@ -21,12 +21,12 @@
 {% block proposition_header %}
 
   <ul class="user_detail">
-      {% if checked('filter','tresco') %}
-      <li><a href="/{{path}}/scenario4/change-centre">Change centre</a> : DWP Tresco House</li>
-      {% elif checked('filter','fiveways') %}
-      <li><a href="/{{path}}/scenario4/change-centre">Change centre</a> : DWP Birmingham Fiveways</li>
+      {% if checked('Choose-centre','Tresco') %}
+      <li><a href="/{{path}}/choose-centre.html">Change centre</a> : Tresco House</li>
+      {% elif checked('Choose-centre','Fiveways') %}
+      <li><a href="/{{path}}/choose-centre.html">Change centre</a> : Birmingham Fiveways</li>
       {% else %}
-      <li><a href="/{{path}}/scenario4/change-centre">Change centre</a> : Wolverhampton</li>
+  
       {% endif%}
      <!-- <li>Heather Harrison</li>
       <li><a href=""> Sign out</a></li> -->

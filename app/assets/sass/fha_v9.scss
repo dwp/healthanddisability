@@ -2127,16 +2127,19 @@ table.profile-table .col5{
 
 .check-group {
 
-	display: flex;
-	flex-wrap: wrap;
-	flex-flow: row nowrap;
-	width:100%;
 	border-top: 1px solid $border-colour;
 	padding-top: .2em;
 
 	legend{
 		display:none;
 	}
+
+.check-picker{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	width:100%;
+}	
 }
 .check-top {
 	border-top: 0;
@@ -2146,15 +2149,54 @@ table.profile-table .col5{
 	position:relative;
 	width: calc(100% * (1/4));
 	margin-bottom:4px;
-	float:left;
+	padding-right:4px;
+
+
 
 	.column-quarter & {
 		width: calc(100% * (1/2));
 	}
 
-	.column-three-quarters.refiners &{
+	.column-two-thirds & {
+		width: calc(100% * (1/6));
+	}
+
+	.column-three-quarters.refiners & {
 		width: calc(100% * (1/1));
 	}
+
+
+	@media only screen  and (max-width : 1224px) {
+
+		.column-quarter & {
+			width: calc(100% * (1));
+		}
+
+		.column-half & {
+			width: calc(100% * (1/2));
+		}
+
+		.column-two-thirds & {
+			width: calc(100% * (1/3));
+		}
+	
+	
+		}
+
+		@media only screen  and (max-width : 768px) {
+			.column-two-thirds & {
+				width: calc(100% * (1/2));
+			}
+		
+		}
+
+		@media only screen  and (max-width : 640px) {
+			.column-quarter & {
+				width: calc(100% * (1/2));
+			}
+			}
+
+
 
 	input {
 		position: absolute;
@@ -2173,20 +2215,28 @@ table.profile-table .col5{
 	}
 
 	label {
+		box-sizing: border-box;
 		padding: 0.7em 5px;
-		display: block;
-		margin-right: .2em;
+		display:block;
 		text-align: center;
 		border: 2px solid $grey-3;
 		background:$grey-3;
 		color:$text-colour;
-		flex: 1;
-		height:70%;
+		height:100%;
+		word-break: break-word; 
+
+		span{
+			font-weight:bold;
+			display:block;
+		}
+
+		
 	
 
 		&:hover {
 			background: $grey-2;
 			border-color:$grey-2;
+			cursor: pointer;
 		}
 
 		.timeslot &{
@@ -2194,6 +2244,7 @@ table.profile-table .col5{
 		}
 
 	}
+
 }
        .filter.time-group {
                overflow: hidden;

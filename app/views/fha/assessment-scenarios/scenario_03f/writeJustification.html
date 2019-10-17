@@ -1,4 +1,4 @@
-{% extends path+"/scenario_03c/_layout-case-simple.html" %}
+{% extends path+"/scenario_03b/_layout-case-simple.html" %}
 
 {% block citizen_content %}
 
@@ -18,15 +18,15 @@
 <h1 class="heading-large mt0">Summarise your findings</h1>
 
 
-<form method="post" action="miniReport">
+<form method="post" action="reviewPeriod">
 
 	
 <div class="form-group">
-			<label class="form-label" for="justify">Write your justification statement.</label>
+			<label class="form-label" for="justify">Write your justification.</label>
 			<textarea class="form-control form-control-3-4" name="justifyAdvice" id="justify" rows="8"></textarea>
 		</div>
 
-    <p><input type="submit" class="button" value="Save and review advice" id="submitButton"></p>
+    <p><input type="submit" class="button" value="Save and review" id="submitButton"></p>
 		</form>	
 
   </div><!-- column -->
@@ -37,22 +37,17 @@
 <div class="portal-display mb20" style="margin-top:0px;">
 	<div class="portal-card">
 				<div class="portal-head">
-					<h4>Overview</h4>
+					<h4>Recommendation</h4>
 				</div>
 				<!-- / title -->
 				<div class="portal-inner">
-
-				<p class="mb5 font-xsmall bold">Advice</p>
-				<p class="font-xsmall">Terminal illness</p>
-
+				<p class="font-xsmall">LCWRA: moving around and climbing steps without someone’s help</p>
 				<p class="mb5 font-xsmall bold">Evidence considered</p>
 				<ul class="mb20 font-xsmall">
-				<li class="mb5">MED3<span class="font-xsmall" style="margin-left:16px;">(05/02/2019)</span></li>
-				<li class="mb5">DS1500</li>
+				<li class="mb5">113 (GP report)</li>
+				<li class="mb5">Med3 (fit note)</li>
+				<li class="mb5">UC50 (questionnaire)</li>
 				</ul>
-
-				<p class="mb5 font-xsmall bold">Review period</p>
-				<p class="mb5 font-xsmall">n/a</p>
 				</div>
 				<!-- / inner card -->
 				
