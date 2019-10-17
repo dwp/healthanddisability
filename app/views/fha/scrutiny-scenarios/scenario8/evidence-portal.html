@@ -116,7 +116,7 @@ Cranjus McManaman
 		
 			<div class="portal-card">
 				<div class="portal-head">
-					<h3>What we have</h3>
+					<h3>Evidence held</h3>
 				</div>
 				<!-- / title -->
 
@@ -127,15 +127,15 @@ Cranjus McManaman
 				
 				
 				
-				<h4>Latest recorded medical evidence</h4>
+				<h4>All evidence relevant to this referral</h4>
 
 					<table class="evidence-list">
 						<caption>Evidence item</caption>
 						
 						<thead>
 							<tr>
-								<th>Evidence type</th>
-								<th>Date recorded</th>
+								<th>Type</th>
+								<th>Recorded</th>
 							</tr>
 						
 						
@@ -151,32 +151,20 @@ Cranjus McManaman
 						
 						<tbody>
 						
-						
-						{% if data['appointmentReferral2']%}
+				
 								  		<tr>
 											<td><a href="/{{path }}/scenario8/referralJustify">Appointment referral justification &ndash; second review</a></td>
 											<td>2 September 2019</td>
 										</tr>
-																		  	
-								  	{% endif %}
 						
 						
-						
-						{% if data['pbachoice']=='yes'%}
+	
 						
 									<tr>
 										<td><a href="/{{path }}/scenario8/not-testing">Paper based review justification</a></td>
 										<td>11 August 2019</td>
 									</tr>
-						
-						{% endif %}
-						
-						
-						
-							{% if data['evidenceChoice']=='ev-gp'%}
-	  	
-	  	
-						  		{% if data['evidenceRecorded']=='record-yes'%}
+					
 						  		
 						  		
 						  			<tr>
@@ -184,40 +172,19 @@ Cranjus McManaman
 										<td>10 August 2019</td>
 									</tr> 		
 						  		
-						  		{% endif %}
-						  		
-						  	{% endif %}
-						  		
-						  		
-						  		
-						  	{% if data['evidenceChoice']=='ev-fr'%}
-						  		
-						  		
-						  		 {% if data['evidenceRecorded']=='record-yes'%}
-						  		
-						  		
+						  							  		
 						  			<tr>
 										<td><a href="/{{path }}/scenario8/not-testing">Factual report</a></td>
 										<td>10 August 2019</td>
 									</tr> 		
 						  		
-						  		{% endif %}
-	
-						  		  	
-						  	{% endif %}
-						  	
-						  	
-
-						  	
-						  	
-						  		{% if data['appointmentReferral']%}
+						  		
 								  		<tr>
 											<td><a href="/{{path }}/scenario8/referralJustify">Appointment referral justification</a></td>
 											<td>3 August 2019</td>
 										</tr>
 																		  	
-								  	{% endif %}
-								  	
+								 								  	
 								  	<tr>
 											<td><a href="#">UC50</a></td>
 											<td>1 August 2019</td>
@@ -227,7 +194,7 @@ Cranjus McManaman
 							</tbody>
 					</table>
 					
-					<p class="view-all"><a href="/{{path }}/scenario8/evidence-full" class="secondary-invert">View all recorded evidence</a></p>
+					<p class="view-all"><a href="/{{path }}/scenario8/evidence-full" class="secondary-invert">View historical evidence</a></p>
 
 				</div>
 				<!-- / inner card -->
