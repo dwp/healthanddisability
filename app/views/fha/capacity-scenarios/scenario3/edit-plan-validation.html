@@ -11,6 +11,25 @@
       <div class="container">
           <div class="grid-row">
               <div class="column-three-quarters capacity">
+
+
+    <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+      <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+        Unable to update capacity 
+      </h2>
+
+      <p>
+        The availble slots you want to remove have been booked into
+      </p>
+
+      <ul class="error-summary-list">
+        <li><a href="#e_col_2_27">3:45pm Neuro availability conflict</a></li>
+      </ul>
+
+    </div>
+
+
   <a href="javascript: history.go(-1)" class="link-back">Back</a>   
 
    <h1 class="heading-large">Edit capacity for  {% include path+"/scenario3/_ACname.html" %}</h1>
@@ -82,6 +101,21 @@
  table.profile-table td, table.profile-table td{
    width:16.66%;
    padding:5px 10px;
+ }
+
+  table.profile-table.edit .totals.form-group.form-group-error{
+    margin-bottom:0px;
+    padding-left:10px;
+    background:transparent;
+  }
+
+  .totals.form-group.form-group-error input {
+    border-color:#b10e1e;
+  }
+
+ .totals.form-group.form-group-error .error-message{
+   text-align:left;
+   font-size:16px;
  }
                
                </style>
@@ -490,11 +524,15 @@
                     <input class="form-control " id="e_col_1_27"  type="text" name="e_col_1_27"  type="text" value="{{e_col_1_27}}" >
                         <span class='booked'><span class="bold">1 </span></span>
                     </div></td> 
-                    <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+                    <td><div class="totals form-group form-group-error">  <label class="visually-hidden" for="" > Available</label>
+                     <span class="error-message">
+              Availability conflict
+            </span>
                     <input class="form-control " id="e_col_2_27"  type="text" name="e_col_2_27"  type="text" value="{{e_col_2_27}}" >
-                        <span class='booked'><span class="bold">2 </span></span>
+                        <span class='booked'><span class="bold">3 </span></span>
                       </div></td>
                   <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+
                     <input class="form-control " id="e_col_3_27"  type="text" name="e_col_3_27"  type="text" value="{{e_col_3_27}}" >
                         <span class='booked'><span class="bold"> </span></span>
                     </div></td>
@@ -554,8 +592,8 @@
 
 
   <input class="visually-hidden" id="complex-booked"  type="text" name="complex-booked"  type="text" value="7" >
-<input class="visually-hidden" id="neuro-booked"  type="text" name="neauro-booked"  type="text" value="32" >
-<input class="visually-hidden" id="total-booked"  type="text" name="total-booked"  type="text" value="39" >
+<input class="visually-hidden" id="neuro-booked"  type="text" name="neauro-booked"  type="text" value="33" >
+<input class="visually-hidden" id="total-booked"  type="text" name="total-booked"  type="text" value="40" >
 <input class="visually-hidden" id="ucb-booked"  type="text" name="ucb-booked"  type="text" value="1" >
 
 
@@ -573,7 +611,6 @@ $('#e_rowsum_sum').val("41");
 $('#e_col_6_sum').val("2");
 $('#e_rowsum_sum_avail').val("2");
 $('#e_col_1_20').val("1");
-$('#e_col_2_27').val("1");
 $('#e_col_6_17').val("1");
 $('#monfte').val("4");
 
@@ -633,7 +670,7 @@ $('#bookedsum_25').val("3");
 
 $('#bookedsum_26').val("3");
 
-$('#bookedsum_27').val("3");
+$('#bookedsum_27').val("4");
 
 
 
