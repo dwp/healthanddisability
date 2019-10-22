@@ -407,7 +407,7 @@ button.link{
                       <input id="all"
                            name="filter"
                            type="radio"
-                           value="all" class="facet" {{ checked('filter', 'all') }} checked> <label for="all">All<span>{% if data['capDay'] %}
+                           value="all" class="facet" {{ checked('filter', 'all') }} checked> <label for="all">Appointments<span>{% if data['capDay'] %}
              ({{todayCounter}}){% else %} ({{customers.length}}){% endif %}</span></label>
                     </div>
 
@@ -585,7 +585,7 @@ button.link{
 			{% elif checked('filter', 'Special requirements') %}
 			Requirements 
 			{% else %}
-	        All
+	        Appointments
             {% endif %}
 			</span>
 			
@@ -671,7 +671,7 @@ button.link{
                 <thead>
                   <tr>
                     <th>Case details</th>
-                    <th>Appointment details and requirements</th>
+                    <th>Appointment information</th>
 				    <th>Referral type</th>
                   </tr>
                 </thead>

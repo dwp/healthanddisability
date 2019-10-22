@@ -22,7 +22,7 @@
 				  <li><span class="badge">{{customer.benefit}}</span></li>
 				   {% if customer.caseflags == 'ucb' %}<li><span class="badge ucb">UCB</span></li>  {% endif %}
 				  </ul>
-				  <div class="claimant"><a href="/{{path }}/scenario2/timeline"><span class="visually-hidden">Name</span>{{customer.name}}</a>
+				  <div class="claimant"><a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>{{customer.name}}</a>
 				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.nino}}
 				  </span>
 				  
@@ -48,7 +48,7 @@
 				  <div class="column-third">
 				    {% if customer.appointment.requirement
 					 %}
-				  <h3 class="">Requirements:</h3>
+				  <h3 class=""><a href="">Requirements:</a></h3>
 				  <ul class="list">
 				   {% if customer.appointment.requirement == 'taxi' %}
 				  <li>Taxi - Booked</li>
@@ -71,7 +71,7 @@
 				   	  <div class="column-third">
 				    {% if customer.history
 					 %}
-				  <h3 class="">History:</h3>
+				  <h3 class=""><a href="">History:</a></h3>
 				  <ul class="list">
 				   {% if customer.history.senthome == 'sent home' %}
 				  <li>Previously sent home</li>

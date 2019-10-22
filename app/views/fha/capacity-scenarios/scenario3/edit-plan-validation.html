@@ -19,12 +19,11 @@
         Unable to update capacity 
       </h2>
 
-      <p>
-        The availble slots you want to remove have been booked into
-      </p>
+      <h3 class="heading-small">The following appointments have been booked and can no longer be removed</h3>
 
-      <ul class="error-summary-list">
-        <li><a href="#e_col_2_27">3:45pm Neuro availability conflict</a></li>
+      <ul class="list-bullet">
+        <li>2:00pm &ndash; Neuro appointment </li>
+        <li>2:45pm &ndash; Neuro appointment</li>
       </ul>
 
     </div>
@@ -109,9 +108,6 @@
     background:transparent;
   }
 
-  .totals.form-group.form-group-error input {
-    border-color:#b10e1e;
-  }
 
  .totals.form-group.form-group-error .error-message{
    text-align:left;
@@ -524,10 +520,8 @@
                     <input class="form-control " id="e_col_1_27"  type="text" name="e_col_1_27"  type="text" value="{{e_col_1_27}}" >
                         <span class='booked'><span class="bold">1 </span></span>
                     </div></td> 
-                    <td><div class="totals form-group form-group-error">  <label class="visually-hidden" for="" > Available</label>
-                     <span class="error-message">
-              Availability conflict
-            </span>
+                    <td><div class="totals">  <label class="visually-hidden" for="" > Available</label>
+           
                     <input class="form-control " id="e_col_2_27"  type="text" name="e_col_2_27"  type="text" value="{{e_col_2_27}}" >
                         <span class='booked'><span class="bold">3 </span></span>
                       </div></td>
