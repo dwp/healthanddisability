@@ -212,38 +212,38 @@ Andy Smicer
     </fiesdset>
       
     </div>
-
+<p class="form-block bold">John's requests were not met</p>
     <div class="multiple-choice" data-target="requests">
       <input id="example-contact-by-text" type="radio" name="radio-contact-group" value="No">
-      <label for="example-contact-by-text">Claimant requests not met</label>
+      <label for="example-contact-by-text">Details of the requests</label>
     </div>
     <div class="panel js-hidden" id="requests">
         <fieldset>
-						<legend class="heading-small mb10">
-						Reason
+						<legend class="heading-small mb10 visually hidden">
+				
 						</legend>
 
             <div class="multiple-choice">
-							<input id="know-3" name="scenario" type="radio" value="know-4" {{checked('scenario', 'know-4') }}>
+							<input id="know-3" name="scenario" type="checkbox" value="know-4" {{checked('scenario', 'know-4') }}>
 							<label for="know-3">Claiment called in in error </label>
 						</div>
 	
 						<div class="multiple-choice">
-							<input id="know-3" name="scenario" type="radio" value="know-5" {{checked('scenario', 'know-5') }}>
+							<input id="know-3" name="scenario" type="checkbox" value="know-5" {{checked('scenario', 'know-5') }}>
 							<label for="know-3">Interpreter not provided</label>
 						</div>
 						<div class="multiple-choice">
-							<input id="know-3" name="scenario" type="radio" value="know-6" {{checked('scenario', 'know-6') }}>
+							<input id="know-3" name="scenario" type="checkbox" value="know-6" {{checked('scenario', 'know-6') }}>
 							<label for="know-3">Healthcare practitioner of same gender not provided</label>
 						</div>
 						<div class="multiple-choice">
-							<input id="know-3" name="scenario" type="radio" value="know-7" {{checked('scenario', 'know-7') }}>
+							<input id="know-3" name="scenario" type="checkbox" value="know-7" {{checked('scenario', 'know-7') }}>
 							<label for="know-3"> Audio recording equipment not provided</label>
 						</div>
 
 
             <div class="multiple-choice" data-target="otherreason2">
-              <input id="know-3" name="requirment" type="radio" value="five" {{checked('requirment', 'five') }}>
+              <input id="know-3" name="requirment" type="checkbox" value="five" {{checked('requirment', 'five') }}>
               <label for="know-3">Other</label>
             </div>
 
@@ -257,6 +257,8 @@ Andy Smicer
 
     </fiesdset>
     </div>
+
+	<p class="form-block bold">Another heading</p>
 
       <div class="multiple-choice" data-target="building">
       <input id="example-contact-by-text" type="radio" name="radio-contact-group" value="No">
