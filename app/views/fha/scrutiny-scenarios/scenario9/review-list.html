@@ -1,0 +1,191 @@
+{% extends path+"/_layout-caselist.html" %}
+ 
+
+{% block caselist_content %}
+
+
+
+
+<h1 class="heading-large mt0">
+            <span class="heading-secondary">
+			     
+					DWP Tresco House
+					
+			</span>
+			Reviews
+             </h1>
+
+
+
+
+ <h2 class="heading-small mt30">Filter by:</h2>
+                <div class="check-group check-top">
+                <fieldset>
+				 <div class="check-picker">
+                    <h3 class="visually-hidden"><legend></legend></h3>
+                <div class="check-choice">
+                      <input id="all"
+                           name="filter"
+                           type="radio"
+                           value="all" class="facet" {{ checked('filter', 'all') }} checked> <label for="all">All reviews<span>100</span></label>
+                    </div>
+
+                    <div class="check-choice">
+                      <input id="Special requirements"
+                           name="filter"
+                           type="radio"
+                           value="Special requirements" class="facet" {{ checked('filter', 'Special requirements') }}> <label for="Special requirements">New referrals
+						    <span>50</span>
+						   </label>
+                    </div>
+
+                    <div class="check-choice">
+                      <input id="ucb"
+                           name="filter"
+                           type="radio"
+                           value="ucb" class="facet" {{ checked('filter', 'ucb') }}> <label for="ucb">Re-referrals
+						   <span>50</span>
+						   </label>
+                    </div>
+
+					
+                  </fieldset>
+                </div>
+            
+	
+
+
+		 <div class="subfilter">
+                <h2 class="heading-small mt10" >Showing:</h2>   
+                <fieldset>
+				
+				 <div class="check-picker">
+			
+                    <h3 class="visually-hidden"><legend>Secondary filter</legend></h3>
+						 <div class="check-choice">
+                      <input id="all2"
+                           name="filter2"
+                           type="radio"
+                           value="all2" class="facet" {{ checked('filter', 'all2') }} checked> <label for="all2">All benefit types <span>20</span></label>
+                    </div>
+                     <div class="check-choice">
+                      <input id="Complex"
+                           name="filter"
+                           type="radio"
+                           value="Complex" class="facet" {{ checked('filter', 'Complex') }}> <label for="Complex">PIP <span>5</span></label>
+                    </div>
+					  <div class="check-choice">
+                      <input id="Neuro"
+                           name="filter"
+                           type="radio"
+                           value="Neuro" class="facet" {{ checked('filter', 'Neuro') }}> <label for="Neuro">UC <span>5</span></label>
+                    </div>
+					  <div class="check-choice">
+                      <input id="Non"
+                           name="filter"
+                           type="radio"
+                           value="Non" class="facet" {{ checked('filter', 'Non') }}> <label for="Non">ESA <span>10</span></label>
+                    </div>
+					</fieldset>
+					</div>
+				
+					
+       
+
+            
+            
+            
+            
+   
+              <table class="referrals-layout">
+
+                <thead>
+                  <tr>
+                    <th>Details</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                
+
+                <tr>
+                  <td><a href="/{{path }}/scenario1/timeline-fme"><span class="visually-hidden">Name</span>Bobby Henderson</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>ZZ 41 54 60 Z</span></td>
+                  <td>New evidence recorded</td>
+                                 </tr>
+                
+                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Douglas Smith</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>YY 41 54 60 Z</span></td>
+                  <td>DNA rereferral</td>
+                  
+                </tr>
+                
+                <tr>
+                  <td><a href="/{{path }}/scenario2/timeline-review"><span class="visually-hidden">Name</span>Roberto Clyne</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>XX 41 54 60 Z</span></td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td><a href="/{{path }}/scenario3/death-notice"><span class="visually-hidden">Name</span>Dejan Brewster</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>WW 41 54 60 Z</span></td>
+                  <td>Ready for review</td>
+                  
+                </tr>
+                
+                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Marvin Hall</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>VV 41 54 60 Z</span></td>
+                  <td>Ready for review</td>
+                  
+                </tr>
+                
+                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Brian Fredericks</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>UU 41 54 60 Z</span></td>
+                  <td>Ready for review</td>
+                  
+                </tr>
+                
+                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Tony Jacobs</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>TT 41 54 60 Z</span></td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Lucas Ashton</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>SS 41 54 60 Z</span></td>
+                  <td>Ready for review</td>
+                  
+                </tr>
+                
+                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Chris Rodgers</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>RR 41 54 60 Z</span></td>
+                  <td>Ready for review</td>
+                  
+                </tr>
+                
+                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Karen Pennington</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>QQ 41 54 60 Z</span></td>
+                  <td>Ready for review</td>
+                  
+                </tr>
+                
+                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Katie Woo</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>PP 41 54 60 Z</span></td>
+                  <td>Ready for review</td>
+                  
+                </tr>
+                
+                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Alan Edwards</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>OO 41 54 60 Z</span></td>
+                  <td>Ready for review</td>
+                  
+                </tr>
+
+               
+
+                </tbody>
+
+              </table>
+          
+
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,83 @@
+{% extends path+"/_layout-caselist.html" %}
+ 
+
+{% block caselist_content %}
+
+            <h2 class="heading-medium mt0"><span class="heading-xlarge">4</span><br/>Cases withdrawn</h2>
+            
+            
+            
+            
+            <hr />
+
+
+<div class="filter-mimic">
+
+
+          <h3 class="heading-small mt0">Filter by:</h3>
+
+		  <div class="filter-choice">
+                <a href="/{{path }}/scenario3/referalls-death" class="selected">All</a>
+              </div>
+          <div class="filter-choice">
+                <a href="/{{path }}/scenario3/not-testing">Customer has died</a>
+              </div>
+          <div class="filter-choice">
+              <a href="/{{path }}/scenario3/not-testing">UCB</a>
+            </div>
+           <div class="filter-choice">
+              <a href="/{{path }}/scenario3/not-testing">PBA</a>
+            </div> 
+            <div class="filter-choice">
+              <a href="/{{path }}/scenario3/not-testing">Returned to work</a>
+            </div> 
+
+     </div>
+
+              <table class="referrals-layout">
+
+                <thead>
+                  <tr>
+                    <th>Details</th>
+                    <th>Reason withdrawn</th>
+                    <th>Date withdrawn</th>
+                  </tr>
+                </thead>
+                
+
+                <tr>
+                  <td><a href="/{{path }}/scenario3/timeline"><span class="visually-hidden">Name</span>Dejan Brewster</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>ZZ 41 54 60 Z</span></td>
+                  <td>Customer has died</td>
+                  <td>25 September 2019</td>
+                </tr>
+                
+                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Jurgen Covault</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>ZZ 41 54 00 Y</span></td>
+                  <td>Returned to work</td>
+                  <td>21 September 2019</td>
+                </tr>
+                
+                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Bobby Henderson</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>ZZ 41 54 00 Y</span></td>
+                  <td>Unacceptable claimant behavour</td>
+                  <td>21 September 2019</td>
+                </tr>
+                
+                 <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Sylvester Fury</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>ZZ 41 54 00 Y</span></td>
+                  <td>Returned to work</td>
+                  <td>20 September 2019</td>
+                </tr>
+                
+               
+                </tbody>
+
+              </table>
+          
+
+{% endblock %}
+
+
+
+
+

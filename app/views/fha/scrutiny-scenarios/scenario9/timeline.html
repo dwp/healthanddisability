@@ -1,0 +1,161 @@
+{% extends path+"/_layout-case-simple3.html" %}
+
+
+{% block actioncolumn %}
+   
+  <p class="returnRef"><a href="/{{path }}/dashboard" class="link-back">Return to case list</a></p>
+  
+ <div class="caseStatus">
+ 
+
+	 {% if data['customerStatus']=='status-yes'%}
+		 <h2 class="main-status"><span>Current case status</span>Case closed</h2>
+
+		
+		{% elif data['customerStatus']=='status-no'%}
+		
+		<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario3/not-testing" class="button">Make a recommendation</a></h3>
+		
+		{% else %}
+		
+		<h2 class="main-status"><span>Current case status</span>Case withdrawn</h2>
+		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario3/record-decision" class="button">Record a decision</a></h3>
+		
+		{% endif %}
+
+</div>
+
+{% endblock %}
+
+
+{% block citizen_detail %}
+Dejan Brewster
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+
+{% if data['customerStatus']=='status-yes'%}
+		
+		
+		<div class="panel panel-warning fme-warning"><h2 class="heading-small">Case closed</h2>
+
+			<p>This case has been closed as the customer has died</p>
+			   
+		</div>
+
+		
+		{% elif data['customerStatus']=='status-no'%}
+		
+		
+		
+		{% else %}
+		
+		<div class="panel panel-warning fme-warning"><h2 class="heading-small">Case withdrawn</h2>
+
+			<p>This case has been withdrawn as we have received information that the customer has died.<br>The case file should be sent to DWP. <a href="#">Action case file</a></p>
+			   
+		</div>
+		
+		{% endif %}
+
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.scenario_tabs("timeline",1,path1, customer._id) }}
+
+    
+  <div class="timeline">
+  
+  
+  
+  		 {% if data['customerStatus']=='status-yes'%}
+		 <span class="line"></span>
+		<div class="timeline__event">
+		  <h3 class="timeline__heading">Case closed</h3>
+		  <p class="mb5">Customer has died</p>
+		  <p class="timeline_datetime">28 August 2019</p>
+		</div>
+
+		
+		{% elif data['customerStatus']=='status-no'%}
+		
+		<span class="line"></span>
+		<div class="timeline__event">
+		  <h3 class="timeline__heading">Case reinstated</h3>
+		  <p class="timeline_datetime">28 August 2019</p>
+		</div>
+		
+		{% endif %}
+  
+  
+  	   <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">Case withdrawn</h3>
+        <p class="mb5">Information received that the customer has died</p>
+        <p class="timeline_datetime">27 July 2019</p>
+      </div>
+      
+          
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">UC50 form recorded</h3>
+        <p class="timeline_datetime">21 July 2019</p>
+      </div>
+
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">UC50 form posted</h3>
+        <p class="timeline_datetime">9 July 2019</p>
+      </div>
+      
+ 
+
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">New referral created</h3>
+        <p class="timeline_datetime">5 July 2019</p>
+      </div>
+
+
+
+      <div style="clear:both"></div>
+
+    </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

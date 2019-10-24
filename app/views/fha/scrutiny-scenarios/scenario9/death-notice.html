@@ -1,0 +1,90 @@
+{% extends path+"/_layout-case-simple3.html" %}
+
+
+{% block actioncolumn %}
+   
+ <p class="returnRef"><a href="/{{path }}/dashboard" class="link-back">Return to case list</a></p>
+  
+ <div class="caseStatus">
+
+<h2 class="main-status"><span>Current case status</span>Case withdrawn</h2>
+
+
+</div>
+{% endblock %}
+
+{% block citizen_detail %}
+Dejan Brewster
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+    
+   
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+        
+
+
+
+
+
+    	
+    	<h1 class="heading-large">Case withdrawn</h1>
+		
+		
+		<p>This case has been withdrawn as we have received information that the customer has died.</p>
+				
+		
+		<div class="notice">
+				<i class="icon icon-important">
+					<span class="visually-hidden">Warning</span>
+				</i>
+				<strong class="bold-small">
+					The case file needs to be sent to DWP</strong>
+			</div>
+			
+			
+			<p class="mt30"><a href="/{{path }}/dashboard" class="button">Confirm file has been sent</a></p>
+
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
