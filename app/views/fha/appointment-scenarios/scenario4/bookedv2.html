@@ -4,10 +4,7 @@
  {% block horizontal_secondary_nav %}
 
  <style>
-hr.filter{
-	clear:left;
-	width:100%;
-}
+
 
 .badge{
 	float:left;
@@ -21,81 +18,13 @@ hr.filter{
   left:-100%;	
 }
 
-.panel.panel-error{
-	background:rgba(223, 48, 52, 0.05);
-	border-left:3px solid #df3034;
-}
 
-.panel{
-		border-left:3px solid;
-		margin-top:5px;
-		font-size:16px;
-		padding:8px;
-}
-
-.panel .heading-small{
-		font-size:17px;
-}
-
-.claimant{
-	display:inline-block;
-	margin-left:10px;
-}
-
-
-ul.totals {
-	background:#f8f8f8;
-	padding:15px;
-	margin-bottom:10px;
-}
-
-
-ul.totals li{
-   display:inline-block;
-   text-align:center;
-   padding:0 15px 0 0;
-}
-
-ul.totals li span{
-   font-weight:bold;
-}
-
-.sublinks {
-	background:#f8f8f8;
-	padding:15px;
-	margin-bottom:10px;
-}
-
-.sublinks .check-choice, .sublinks .check-choice label, .sublinks .check-choice label span {
-	display:inline-block;
-}
-
-.sublinks .check-choice{
-	width:auto;
-	margin:0;
-}
-
-.sublinks .check-choice label{
-	padding:0;
-	margin:0 10px 0 0;
-	background:transparent;
-	border:none;
-	color:#005EA5;
-	text-decoration:underline;
-}
-
-.sublinks .check-choice input[type=checkbox]:checked + label, .sublinks .check-choice input[type=radio]:checked + label {
-    background: transparent;
-    color: #000;
-	text-decoration:none;
-	font-weight:bold;
-}
 
 button.link{
 	border:none;
 	padding:0;
 	font-size:19px;
-	background:transparent;
+	background:transparent;	
 }
 
 
@@ -116,8 +45,19 @@ button.link{
 	font-size:17px;
 }
 
+.claimant{
+	display:inline-block;
+	margin-left:10px;
+}
 
-
+.button.button-tursery{
+	background:transparent;
+	color:black;
+	border:2px solid #dee0e2;
+	height:40px;
+	line-height:16px;
+	box-shadow:none;
+}
 
 </style>
 
@@ -365,13 +305,10 @@ button.link{
 					Wolverhampton
 					{% endif%}
 			</span>
-			Appointments booked
+			Booked appointments
              </h1>
 
-			<h2 class="heading-small mt30">Filter by:</h2>
-			</div>
-           
-			            <div class="column-third">
+
     <fieldset>
       <legend>
         <span class="visually-hidden">
@@ -390,15 +327,12 @@ button.link{
 
 
         <button class="button button-secondary" style="margin-top:25px">Apply date</button>
-		<p>
-		<button id="clearFilter" class="link mt10">Clear date</button>
-		</p>
+		<button id="clearFilter" class="button button-tursery" style="margin-top:25px">Clear date</button>
+		
       </div>
     </fieldset>
-			</div>
-  			            <div class="column-two-thirds">
-            
-              <div class="pickslots mt25">
+	
+            <h2 class="heading-small mt30">Filter by:</h2>
                 <div class="check-group check-top">
                 <fieldset>
 				 <div class="check-picker">
@@ -407,7 +341,7 @@ button.link{
                       <input id="all"
                            name="filter"
                            type="radio"
-                           value="all" class="facet" {{ checked('filter', 'all') }} checked> <label for="all">Appointments<span>{% if data['capDay'] %}
+                           value="all" class="facet" {{ checked('filter', 'all') }} checked> <label for="all">Booked<span>{% if data['capDay'] %}
              ({{todayCounter}}){% else %} ({{customers.length}}){% endif %}</span></label>
                     </div>
 
@@ -453,146 +387,18 @@ button.link{
                            value="Re referrals" class="facet" {{ checked('filter', 'Re referrals') }}> <label for="Re refferals">Re referrals
 						      <span>{% if data['capDay'] %}({{reCounterDay}}){% else %} ({{reCounter}}){% endif %}</span>
 						   </label>
-                    </div>
+                   
 			        </div>
                   </fieldset>
                 </div>
-              </div>
-            </div>
+            
 					
 			 <p><button id="facetFilterBtn" class="">Apply filter</button></p>
-		</div>
-	
 		
-       
+	     {% if checked('filter', 'Special requirements') or checked('filter', 'taxi') or checked('filter', 'interpreter') or checked('filter', 'gender') or checked('filter', 'audio') or checked('filter', 'access')%} 		
+	<div class="subfilter">	
+    <h2 class="heading-small mt10" >Showing:</h2>   
 
-
-
-
-
-
-            <h2 class="heading-medium mt30">
-			
-			<span class="heading-xlarge">
-     
-              <span class="heading-secondary">
-			  Showing
-			  </span>
-
-			
-
-
-			   {% if  data['capDay'] and checked('filter', 'taxi') %}
-             {{taxiCounterDay}}
-			 {% elif checked('filter', 'taxi') %}
-             {{taxiCounter}}
-			
-			
-			{% elif  data['capDay'] and checked('filter', 'interpreter') %}
-             {{interpreterCounterDay}}
-			{% elif checked('filter', 'interpreter') %}
-             {{interpreterCounter}}
-		
-			  {% elif  data['capDay'] and checked('filter', 'gender') %}
-             {{genderCounterDay}}
-			  {% elif checked('filter', 'gender') %}
-             {{genderCounter}}
-		
-			 	  {% elif  data['capDay'] and checked('filter', 'audio') %}
-             {{audioCounterDay}}
-				  
-				  {% elif checked('filter', 'audio') %}
-             {{audioCounter}}
-
-			{% elif  data['capDay'] and checked('filter', 'access') %}
-             {{accessCounterDay}} 
-			{% elif checked('filter', 'access') %}
-             {{accessCounter}}
-	
-			 {% elif  data['capDay'] and checked('filter', 'Complex') %}
-             {{complexCounterDay}}
-			 {% elif checked('filter', 'Complex') %}
-             {{complexCounter}}
-
-			  {% elif  data['capDay'] and checked('filter', 'Neuro') %}
-             {{neuroCounterDay}}
-			  {% elif checked('filter', 'Neuro') %}
-             {{neuroCounter}}
-
-			  {% elif data['capDay'] and  checked('filter', 'Non') %}
-             {{nonCounterDay}}
-			  {% elif checked('filter', 'Non') %}
-             {{nonCounter}}
-
-			{% elif  data['capDay'] and checked('filter', 'DNA referral') %}
-             {{edCounterDay}}
-			 {% elif checked('filter', 'DNA referral') %}
-             {{edCounter}}
-
-			{% elif  data['capDay'] and checked('filter', 'Re referrals') %}
-             {{reCounterDay}}
-			 {% elif checked('filter', 'Re referrals') %}
-             {{reCounter}}
-
-			{% elif  data['capDay'] and checked('filter', 'New referrals') %}
-             {{newCounterDay}}
-			 {% elif checked('filter', 'New referrals') %}
-             {{newCounter}}
-
-            {% elif  data['capDay'] and checked('filter', 'ucb') %}
-			{{ucbCounterDay}} 
-			{% elif checked('filter', 'ucb') %}
-			{{ucbCounter}} 
-
-            {% elif  data['capDay'] and checked('filter', 'Special requirements') %}
-			{{specialRequirementsDay}} 
-			{% elif checked('filter', 'Special requirements') %}
-			{{specialRequirements}}
-
-			{% elif  data['capDay'] %} 
-            {{todayCounter}} 
-			{% else %} 
-            {{customers.length}}
-            {% endif %}
-	
-             </span>
-			 	
-                 <span class="block">
-			 {% if checked('filter', 'DNA referral') %}
-            Previous DNA's
-			  {% elif checked('filter', 'taxi') %}
-			Taxi
-			  {% elif checked('filter', 'interpreter') %}
-			Interpreters
-			  {% elif checked('filter', 'gender') %}
-			Same gender
-			  {% elif checked('filter', 'audio') %}
-			Audio
-			{% elif checked('filter', 'access') %}
-			Accessible room
-             {% elif checked('filter', 'Complex') %}
-			Complex neuro
-			 {% elif checked('filter', 'Neuro') %}
-			Neuro
-			 {% elif checked('filter', 'Non') %}
-			Non neuro
-			 {% elif checked('filter', 'Re referrals') %}
-            Re referrals
-			 {% elif checked('filter', 'New referrals') %}
-            New referrals
-			{% elif checked('filter', 'ucb') %}
-			UCB
-			{% elif checked('filter', 'Special requirements') %}
-			Requirements 
-			{% else %}
-	        Appointments
-            {% endif %}
-			</span>
-			
-			</h2>
-            {% if checked('filter', 'Special requirements') or checked('filter', 'taxi') or checked('filter', 'interpreter') or checked('filter', 'gender') or checked('filter', 'audio') or checked('filter', 'access')%} 
-
-	 <div class="sublinks">
                 <fieldset>
 				 <div class="check-picker">
                     <h3 class="visually-hidden"><legend></legend></h3>
@@ -630,14 +436,27 @@ button.link{
                            value="access" class="facet" {{ checked('filter', 'access') }}> <label for="access">Accessible room: <span>{% if data['capDay'] %}
                             ({{accessCounterDay}}){% else %} ({{accessCounter}}){% endif %}</span></label>
                     </div>
+					    </fieldset>
 					</div>
-					</div>
+					
+				
 			{% elif checked('filter', 'ucb') or checked('filter', 'DNA referral') or checked('filter', 'New referrals') or checked('filter', 'Re referrals') %}
 			{% else %}
-		 <div class="sublinks">
+
+		 <div class="subfilter">
+                <h2 class="heading-small mt10" >Showing:</h2>   
                 <fieldset>
+				
 				 <div class="check-picker">
-                    <h3 class="visually-hidden"><legend></legend></h3>
+			
+                    <h3 class="visually-hidden"><legend>Secondary filter</legend></h3>
+						 <div class="check-choice">
+                      <input id="all2"
+                           name="filter2"
+                           type="radio"
+                           value="all2" class="facet" {{ checked('filter', 'all2') }} checked> <label for="all2">All skill types <span> {% if data['capDay'] %}
+             ({{todayCounter}}){% else %} ({{customers.length}}){% endif %}</span></label>
+                    </div>
                      <div class="check-choice">
                       <input id="Complex"
                            name="filter"
@@ -659,10 +478,12 @@ button.link{
                            value="Non" class="facet" {{ checked('filter', 'Non') }}> <label for="Non">Non neuro <span>{% if data['capDay'] %}
                             ({{nonCounterDay}}){% else %} ({{nonCounter}}){% endif %}</span></label>
                     </div>
+					</fieldset>
 					</div>
-					</div>
+				
+					
             {% endif %}
-
+            
 
            
 
