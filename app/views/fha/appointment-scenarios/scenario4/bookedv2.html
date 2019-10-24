@@ -291,9 +291,6 @@ button.link{
 
 
 
-			<div class="grid-row">
-			
-			<div class="column-full">
             
 			    <h1 class="heading-large mt0">
             <span class="heading-secondary">
@@ -341,7 +338,7 @@ button.link{
                       <input id="all"
                            name="filter"
                            type="radio"
-                           value="all" class="facet" {{ checked('filter', 'all') }} checked> <label for="all">Booked<span>{% if data['capDay'] %}
+                           value="all" class="facet" {{ checked('filter', 'all') }}> <label for="all">Booked<span>{% if data['capDay'] %}
              ({{todayCounter}}){% else %} ({{customers.length}}){% endif %}</span></label>
                     </div>
 
@@ -479,7 +476,7 @@ button.link{
                             ({{nonCounterDay}}){% else %} ({{nonCounter}}){% endif %}</span></label>
                     </div>
 					</fieldset>
-					</div>
+			
 				
 					
             {% endif %}
@@ -720,11 +717,6 @@ button.link{
 	{%endif%}
 
               </table>
-
-<script>
-
-</script>
-
 
 
 </form>

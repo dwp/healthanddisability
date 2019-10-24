@@ -37,7 +37,7 @@
 		width: calc(100% * (1/2));
 	}
 
-	.column-full & {
+	.column-three-quarters & {
 		width: auto;
 	}
 
@@ -45,9 +45,6 @@
 		width: calc(100% * (1/6));
 	}
 
-	.column-three-quarters.refiners & {
-		width: calc(100% * (1/1));
-	}
 
 
 	@media only screen  and (max-width : 1224px) {
