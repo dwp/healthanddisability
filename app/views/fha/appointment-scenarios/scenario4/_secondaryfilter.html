@@ -1,0 +1,105 @@
+     {% if checked('filter', 'requirementstwo') or checked('filter', 'requirements') or checked('filter', 'taxi') or checked('filter', 'interpreter') or checked('filter', 'gender') or checked('filter', 'audio') or checked('filter', 'access')%} 		
+	<div class="" style="margin-top:0px">	
+    <h2 class="heading-small" >Filter by type</h2>   
+
+                <fieldset>
+				 <div class="check-picker">
+                    <h3 class="visually-hidden"><legend></legend></h3>
+					  <div class="check-choice">
+                      <input id="requirementstwo"
+                           name="filter"
+                           type="radio"
+                           value="requirementstwo" class="facet" {{ checked('filter', 'requirementstwo') }} checked> <label for="requirementstwo">All types<span> {% if data['capDay'] %} ({{requirementsRequirementsDay}}){% else %} ({{requirementsRequirements}}){% endif %}</span></label>
+                    </div>
+                     <div class="check-choice">
+                      <input id="taxi"
+                           name="filter"
+                           type="radio"
+                           value="taxi" class="facet" {{ checked('filter', 'taxi') }}> <label for="taxi">Taxi <span> {% if data['capDay'] %}{{taxiCounterDay}}{% else %} {{taxiCounter}}{% endif %}</span></label>
+                    </div>
+					  <div class="check-choice">
+                      <input id="interpreter"
+                           name="filter"
+                           type="radio"
+                           value="interpreter" class="facet" {{ checked('filter', 'interpreter') }}> <label for="interpreter">interpreter <span>{% if data['capDay'] %}
+                            ({{interpreterCounterDay}}){% else %} ({{interpreterCounter}}){% endif %}</span></label>
+                    </div>
+					  <div class="check-choice">
+                      <input id="gender"
+                           name="filter"
+                           type="radio"
+                           value="gender" class="facet" {{ checked('filter', 'gender') }}> <label for="gender">Same gender<span>{% if data['capDay'] %}
+                            ({{genderCounterDay}}){% else %} ({{genderCounter}}){% endif %}</span></label>
+                    </div>
+						  <div class="check-choice">
+                      <input id="audio"
+                           name="filter"
+                           type="radio"
+                           value="audio" class="facet" {{ checked('filter', 'audio') }}> <label for="audio">Audio <span>{% if data['capDay'] %}
+                            ({{audioCounterDay}}){% else %} ({{audioCounter}}){% endif %}</span></label>
+                    </div>
+						  <div class="check-choice">
+                      <input id="access"
+                           name="filter"
+                           type="radio"
+                           value="access" class="facet" {{ checked('filter', 'access') }}> <label for="access">Accessible room <span>{% if data['capDay'] %}
+                            ({{accessCounterDay}}){% else %} ({{accessCounter}}){% endif %}</span></label>
+                    </div>
+					    </fieldset>
+					</div>
+					
+				
+			{% elif checked('filter', 'ucb') or checked('filter', 'DNA referral') or checked('filter', 'New referrals') or checked('filter', 'Re referrals') %}
+			{% else %}
+
+		 <div class="">
+                <h2 class="heading-small" >Filter by type</h2>   
+                <fieldset>
+				
+				 <div class="check-picker">
+			
+                    <h3 class="visually-hidden"><legend>Secondary filter</legend></h3>
+					{% if checked('filter', 'all')%}
+						 <div class="check-choice">
+                      <input id="all2"
+                           name="filter"
+                           type="radio"
+                           value="all2" class="facet" {{ checked('filter', 'all2') }} checked> <label for="all2">All types <span> {% if data['capDay'] %}
+             ({{todayCounter}}){% else %} ({{customers.length}}){% endif %}</span></label>
+                    </div>
+					{% else %}
+				<div class="check-choice">
+                      <input id="all2"
+                           name="filter"
+                           type="radio"
+                           value="all2" class="facet" {{ checked('filter', 'all2') }}> <label for="all2">All types <span> {% if data['capDay'] %}
+             ({{todayCounter}}){% else %} ({{customers.length}}){% endif %}</span></label>
+                    </div>
+					{% endif %}
+                     <div class="check-choice">
+                      <input id="Complex"
+                           name="filter"
+                           type="radio"
+                           value="Complex" class="facet" {{ checked('filter', 'Complex') }}> <label for="Complex">Complex neuro <span>{% if data['capDay'] %}
+                            ({{complexCounterDay}}){% else %} ({{complexCounter}}){% endif %}</span></label>
+                    </div>
+					  <div class="check-choice">
+                      <input id="Neuro"
+                           name="filter"
+                           type="radio"
+                           value="Neuro" class="facet" {{ checked('filter', 'Neuro') }}> <label for="Neuro">Neuro <span>{% if data['capDay'] %}
+                            ({{neuroCounterDay}}){% else %} ({{neuroCounter}}){% endif %}</span></label>
+                    </div>
+					  <div class="check-choice">
+                      <input id="Non"
+                           name="filter"
+                           type="radio"
+                           value="Non" class="facet" {{ checked('filter', 'Non') }}> <label for="Non">Non neuro <span>{% if data['capDay'] %}
+                            ({{nonCounterDay}}){% else %} ({{nonCounter}}){% endif %}</span></label>
+                    </div>
+					</fieldset>
+			        </div>
+				
+					
+            {% endif %}
+            

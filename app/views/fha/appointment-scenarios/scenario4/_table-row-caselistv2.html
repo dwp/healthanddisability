@@ -14,6 +14,30 @@
 					   width:100%;
 					   text-align:center;
 				   }
+				   ul.list li{
+					   font-weight:normal;
+					
+					 
+				   }
+				   ul.list{
+					//border-left:1px solid #bfc1c3;
+					//padding-left:10px;
+				   }
+
+				   .filtered td {
+                     font-size:17px;
+				   }
+				   .filtered td h3{
+                     padding-bottom:5px;
+					 margin-bottom:10px;
+					 border-bottom:1px solid #bfc1c3;
+				   }
+
+				   .column-third{
+					  min-height:1px;
+				   }
+
+			
 				   </style>
 				   
 				   
@@ -31,14 +55,14 @@
                   <td>
 				  <div class="grid-row">
 				  <div class="column-third">
-				  <h3 class="">Details:</h3>
+				  <h3 class="">Details</h3>
 				  <ul class="list">
 				  {% if customer.appointment.time %}
 				  <li>{{customer.appointment.time}}</li>
 				  {% endif%}
-				    {% if customer.appointment.date =='21/10/2019' and customer.appointment.date and customer.status == 'Booked' %}
+				    {% if data['capDay']  and customer.status == 'Booked' %}
 				  <li>{{capDay}}/{{capMonth}}/2019</li>
-				    {% elif customer.appointment.date and customer.status == 'Booked' %}
+				    {% else %}
 				  <li>{{customer.appointment.date}}</li>
 				  {% endif%}
 				  <li>{{customer.appointment.type}}</li>
@@ -48,7 +72,7 @@
 				  <div class="column-third">
 				    {% if customer.appointment.requirement
 					 %}
-				  <h3 class=""><a href="">Requirements:</a></h3>
+				  <h3 class="">Requirements</h3>
 				  <ul class="list">
 				   {% if customer.appointment.requirement == 'taxi' %}
 				  <li>Taxi - Booked</li>
@@ -69,15 +93,15 @@
 				   {% endif%}
 				   </div>
 				   	  <div class="column-third">
-				    {% if customer.history
+				    {% if customer.history or customer.appointment.dna
 					 %}
-				  <h3 class=""><a href="">History:</a></h3>
+				  <h3 class=""><a href="">History</a></h3>
 				  <ul class="list">
+				  {% if customer.status == 'Booked' and customer.appointment.dna %} 
+				  <li>Previous DNA</li>
+				  {% endif %}
 				   {% if customer.history.senthome == 'sent home' %}
 				  <li>Previously sent home</li>
-				  {% endif%}
-				  {% if customer.history.uta == 'uta' %}
-				  <li>Previously rearranged appointment</li>
 				  {% endif%}
 				   {% if customer.history.inbound == 'inbound' %}
 				  <li>Inbound contact: 21/10/2019</li>
@@ -88,7 +112,7 @@
 				   </div>
 				  </td>
 				  <td class="col3">
-				   <h3 class="">{% if customer.status == 'Booked' and customer.appointment.dna %} DNA - {% endif %}{{customer.referral.type}}</h3>
+				   <h3 class="">{{customer.referral.type}}</h3>
 	
 				   <ul class="list">
 				  {% if customer.status == 'Ready to book' and customer.referral.edtarget %}

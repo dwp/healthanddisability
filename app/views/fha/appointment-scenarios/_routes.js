@@ -129,6 +129,12 @@ router.get('/scenario4/bookedv2', function (req, res, next) {
   next()
   })
 
+  router.get('/scenario4/bookedv3', function (req, res, next) {
+    res.locals.customers = appointmentCustomers
+    .filter(customer => customer.status === "Booked");
+    next()
+    })
+
 
 
 

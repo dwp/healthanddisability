@@ -1,0 +1,74 @@
+	
+            <h2 class="heading-small">Filter booked appiontments</h2>
+                <div class="check-group check-top">
+                <fieldset>
+				 <div class="check-picker">
+                    <h3 class="visually-hidden"><legend></legend></h3>
+				{% if checked('filter', 'all') or checked('filter', 'all2') or checked('filter', 'Complex') or checked('filter', 'Neuro') or checked('filter', 'Non')%}	
+                <div class="check-choice">
+                     <span class="dummy">Booked<span>{% if data['capDay'] %}
+             ({{todayCounter}}){% else %} ({{customers.length}}){% endif %}</span></span>
+                    </div>
+					{% else %}
+					    <div class="check-choice">
+                      <input id="all"
+                           name="filter"
+                           type="radio"
+                           value="all" class="facet" {{ checked('filter', 'all') }} checked > <label for="all">Booked<span>{% if data['capDay'] %}
+             ({{todayCounter}}){% else %} ({{customers.length}}){% endif %}</span></label>
+                    </div>
+					{% endif %}
+					{% if checked('filter', 'requirements') or checked('filter', 'requirementstwo') or checked('filter', 'taxi') or checked('filter', 'interpreter') or checked('filter', 'gender') or checked('filter', 'audio') or checked('filter', 'access')%}	
+					                <div class="check-choice">
+									<span class="dummy">Requirements <span> {% if data['capDay'] %}
+             ({{requirementsRequirementsDay}}){% else %} ({{requirementsRequirements}}) {% endif %}</span></span>
+			 </div>
+					{%else%}
+                    <div class="check-choice">
+                      <input id="requirements"
+                           name="filter"
+                           type="radio"
+                           value="requirements" class="facet" {{ checked('filter', 'requirements') }}> <label for="requirements">Requirements
+						    <span>{% if data['capDay'] %}({{requirementsRequirementsDay}}){% else %} ({{requirementsRequirements}}){% endif %}</span>
+						   </label>
+                    </div>
+					{% endif %}
+
+                    <div class="check-choice">
+                      <input id="ucb"
+                           name="filter"
+                           type="radio"
+                           value="ucb" class="facet" {{ checked('filter', 'ucb') }}> <label for="ucb">UCB
+						   <span>{% if data['capDay'] %}({{ucbCounterDay}}){% else %} ({{ucbCounter}}){% endif %}</span>
+						   </label>
+                    </div>
+
+					<div class="check-choice">
+                      <input id="DNA referral"
+                           name="filter"
+                           type="radio"
+                           value="DNA referral"  class="facet" {{ checked('filter', 'DNA referral') }}> <label for="DNA referral">Previous DNA's
+						      <span>{% if data['capDay'] %}({{edCounterDay}}){% else %} ({{edCounter}}){% endif %}</span>
+						   </label>
+                     </div>
+                  
+                    <div class="check-choice">
+                      <input id="New referrals"
+                           name="filter"
+                           type="radio"
+                           value="New referrals" class="facet" {{ checked('filter', 'New referrals') }}> <label for="New referrals">New referrals
+						   <span>{% if data['capDay'] %}({{newCounterDay}}){% else %} ({{newCounter}}){% endif %}</span>
+						   </label>
+                    </div>
+                    <div class="check-choice">
+                      <input id="Re refferals"
+                           name="filter"
+                           type="radio"
+                           value="Re referrals" class="facet" {{ checked('filter', 'Re referrals') }}> <label for="Re refferals">Re referrals
+						      <span>{% if data['capDay'] %}({{reCounterDay}}){% else %} ({{reCounter}}){% endif %}</span>
+						   </label>
+                   
+			        </div>
+                  </fieldset>
+                </div>
+            
