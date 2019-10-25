@@ -338,7 +338,7 @@ button.link{
                       <input id="all"
                            name="filter"
                            type="radio"
-                           value="all" class="facet" {{ checked('filter', 'all') }}> <label for="all">Booked<span>{% if data['capDay'] %}
+                           value="all" class="facet" {{ checked('filter', 'all') }} checked> <label for="all">Booked<span>{% if data['capDay'] %}
              ({{todayCounter}}){% else %} ({{customers.length}}){% endif %}</span></label>
                     </div>
 
@@ -447,6 +447,7 @@ button.link{
 				 <div class="check-picker">
 			
                     <h3 class="visually-hidden"><legend>Secondary filter</legend></h3>
+					{% if checked('filter', 'all')%}
 						 <div class="check-choice">
                       <input id="all2"
                            name="filter2"
@@ -454,6 +455,15 @@ button.link{
                            value="all2" class="facet" {{ checked('filter', 'all2') }} checked> <label for="all2">All skill types <span> {% if data['capDay'] %}
              ({{todayCounter}}){% else %} ({{customers.length}}){% endif %}</span></label>
                     </div>
+					{% else %}
+				<div class="check-choice">
+                      <input id="all2"
+                           name="filter2"
+                           type="radio"
+                           value="all2" class="facet" {{ checked('filter', 'all2') }}> <label for="all2">All skill types <span> {% if data['capDay'] %}
+             ({{todayCounter}}){% else %} ({{customers.length}}){% endif %}</span></label>
+                    </div>
+					{% endif %}
                      <div class="check-choice">
                       <input id="Complex"
                            name="filter"
@@ -476,7 +486,7 @@ button.link{
                             ({{nonCounterDay}}){% else %} ({{nonCounter}}){% endif %}</span></label>
                     </div>
 					</fieldset>
-			
+			        </div>
 				
 					
             {% endif %}
