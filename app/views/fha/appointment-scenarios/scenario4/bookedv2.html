@@ -73,6 +73,11 @@ span.dummy   {
     color: #fff;
 	}
 
+.subfilter span.dummy{
+	background:transparent;
+	color:#0b0c0c;
+}	
+
 	.check-choice label{
 	  padding:10px 12px;
 	  font-size:18px;
@@ -489,21 +494,18 @@ span.dummy   {
 				 <div class="check-picker">
 			
                     <h3 class="visually-hidden"><legend>Secondary filter</legend></h3>
-					{% if checked('filter', 'all')%}
-						 <div class="check-choice">
-                      <input id="all2"
-                           name="filter"
-                           type="radio"
-                           value="all2" class="facet" {{ checked('filter', 'all2') }} checked> <label for="all2">All types <span> {% if data['capDay'] %}
-             ({{todayCounter}}){% else %} ({{customers.length}}){% endif %}</span></label>
-                    </div>
-					{% else %}
-				<div class="check-choice">
+					{% if checked('filter', 'Complex') or checked('filter', 'Neuro') or checked('filter', 'Non')%}
+					<div class="check-choice">
                       <input id="all2"
                            name="filter"
                            type="radio"
                            value="all2" class="facet" {{ checked('filter', 'all2') }}> <label for="all2">All types <span> {% if data['capDay'] %}
              ({{todayCounter}}){% else %} ({{customers.length}}){% endif %}</span></label>
+                    </div>
+					{% else %}
+								 <div class="check-choice">
+                    <span class="dummy">All types<span>{% if data['capDay'] %}
+             ({{todayCounter}}){% else %} ({{customers.length}}){% endif %}</span></span>
                     </div>
 					{% endif %}
                      <div class="check-choice">
@@ -535,7 +537,7 @@ span.dummy   {
             
 
 
-         <h2 class="showing-sign">Showing: &nbsp;<span>	 {% if checked('filter', 'DNA referral') %}
+         <h2 class="showing-sign">Showing: &nbsp;<span>	{% if data['capDay'] %}{{capDay}} {{capMonth}} 2019 &nbsp;<b>&#124;</b> &nbsp;{% endif %} {% if checked('filter', 'DNA referral') %}
             Previous DNA's
 			 {% elif checked('filter', 'Re referrals') %}
             Re referrals
@@ -683,7 +685,7 @@ span.dummy   {
 		{% endfor %}		
 
 
-	{% elif  data['capDay'] and checked('filter', 'requirements') or  ata['capDay'] and checked('filter', 'requirementstwo')%}
+	{% elif  data['capDay'] and checked('filter', 'requirements') or  data['capDay'] and checked('filter', 'requirementstwo')%}
 
 		{% for customer in customers %}
 				{% if customer.appointment.date =='16/10/2019' and customer.status == 'Booked' and customer.appointment.requirement %}
