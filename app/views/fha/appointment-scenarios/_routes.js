@@ -129,11 +129,19 @@ router.get('/scenario4/bookedv2', function (req, res, next) {
   next()
   })
 
+  router.get('/scenario4/appointment-history', function (req, res, next) {
+    let findCustomer = {}
 
-
-
-
-
+    for (let i = 0; i < appointmentCustomers.length; i++ ) {
+      if(appointmentCustomers[i].nino === req.query.nino){
+        findCustomer = appointmentCustomers[i];
+      }
+    }
+  
+    res.locals.customer = findCustomer
+    // .filter(customer => customer.status === "Booked");
+    next()
+    })
 /// end appointment data -------
 
 module.exports = router
