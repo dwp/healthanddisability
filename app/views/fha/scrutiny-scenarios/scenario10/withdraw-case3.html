@@ -1,19 +1,22 @@
-{% extends path+"/_layout-case-simple3.html" %}
+{% extends path+"/_layout-case-simple10.html" %}
 
 
 {% block actioncolumn %}
- <p class="returnRef"><a href="/{{path }}/dashboard" class="link-back">Return to case list</a></p>
-  
+   
+ <!-- <p class="returnRef"><a href="/{{path }}/scenario6/referrals-fme" class="link-back">Return to case list</a></p> -->
+ 
  <div class="caseStatus">
+ 
 
 <h2 class="main-status"><span>Current case status</span>Case withdrawn</h2>
 
 
 </div>
+
 {% endblock %}
 
 {% block citizen_detail %}
-Dejan Brewster
+Adrian Becker
 {% endblock %}
 
 {% block citizen_content %}
@@ -42,34 +45,18 @@ Dejan Brewster
     <div class="column-two-thirds">
         
 
-
-
-
-
+    	<form action="#" method="POST" class="form">
     	
     	<h1 class="heading-large">Case withdrawn</h1>
-		
-		
-		<p>
-		
-			This case has been withdrawn as we have received information that the customer has died				
-			
-		</p>
-		
-		
-		
-		
-<form action="/{{path }}/scenario3/timeline" method="POST" class="form">
-			
-
+    	
+    	
+		<p>This case has now been withdrawn</p>
+							
+		<p class="mt30"><input type="submit" class="button" value="Return to dashboard"></p>
 				
-				
-				<p><input type="submit" class="button" value="Confirm customer has died"></p>
 
-		
-		
-</form>
 
+    	</form>
 
 
     </div><!-- column-full -->

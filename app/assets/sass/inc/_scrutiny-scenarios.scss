@@ -167,6 +167,25 @@ table {
 
 
 
+.end-actions {
+	padding: 20px 0;
+	h3 {
+		font-weight: bold;
+		font-size: 17px;
+	}
+	ul {
+		border-left: 3px solid $govuk-blue;
+		padding: 10px 10px 10px 18px;
+	}
+	li {
+		font-size: 18px;
+		margin-top: 5px;
+	}
+}
+
+
+
+
 .caseIdentifiers {
 	border-bottom: 1px solid $border-colour;
 	padding: 10px 0 20px 0;
