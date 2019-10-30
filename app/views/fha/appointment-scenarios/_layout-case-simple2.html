@@ -59,7 +59,7 @@
         
               <div class="header-left-col mt20">
                    <h2>Benefit</h2>
-                 <p>Universal credit</p>
+                 <p>{% if customer.benefit =='ESA' %}ESA{% else %}Universal credit{% endif %}</p>
               </div>
 
              <!--  <div class="header-left-col mt20"  style="width:33%">

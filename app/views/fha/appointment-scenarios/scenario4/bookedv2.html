@@ -73,6 +73,11 @@ span.dummy   {
     color: #fff;
 	}
 
+.subfilter span.dummy{
+	background:transparent;
+	color:#0b0c0c;
+}	
+
 	.check-choice label{
 	  padding:10px 12px;
 	  font-size:18px;
@@ -145,7 +150,7 @@ span.dummy   {
 	 {% set requirementsRequirements = requirementsRequirements + 1 %}
 	{% endif %}
 
-	{% if item.appointment.date =='16/10/2019' and item.status == 'Booked' and item.appointment.requirement %}
+	{% if item.appointment.date =='6/11/2019' and item.status == 'Booked' and item.appointment.requirement %}
 	 {% set requirementsRequirementsDay = requirementsRequirementsDay + 1 %}
 	{% endif %}
 
@@ -153,7 +158,7 @@ span.dummy   {
 	 {% set taxiCounter = taxiCounter + 1 %}
 	{% endif %}
 
-	{% if  item.appointment.date =='16/10/2019' and item.status === "Booked" and item.appointment.requirement == 'taxi'%}
+	{% if  item.appointment.date =='6/11/2019' and item.status === "Booked" and item.appointment.requirement == 'taxi'%}
 	 {% set taxiCounterDay = taxiCounterDay + 1 %}
 	{% endif %}
 
@@ -161,27 +166,27 @@ span.dummy   {
 	 {% set interpreterCounter = interpreterCounter + 1 %}
 	{% endif %}
 
-	{% if item.appointment.date =='16/10/2019' and item.status === "Booked" and item.appointment.requirement == 'interpreter'%}
+	{% if item.appointment.date =='6/11/2019' and item.status === "Booked" and item.appointment.requirement == 'interpreter'%}
 	 {% set interpreterCounterDay = interpreterCounterDay + 1 %}
 	{% endif %}
 	{% if item.status === "Booked" and item.appointment.requirement == 'gender'%}
 	 {% set genderCounter = genderCounter + 1 %}
 	{% endif %}
 
-	{% if item.appointment.date =='16/10/2019' and item.status === "Booked" and item.appointment.requirement == 'gender'%}
+	{% if item.appointment.date =='6/11/2019' and item.status === "Booked" and item.appointment.requirement == 'gender'%}
 	 {% set genderCounterDay = genderCounterDay + 1 %}
 	{% endif %}
 	{% if item.status === "Booked" and item.appointment.requirement == 'audio'%}
 	 {% set audioCounter = audioCounter + 1 %}
 	{% endif %}
 
-	{% if item.appointment.date =='16/10/2019' and item.status === "Booked" and item.appointment.requirement == 'audio'%}
+	{% if item.appointment.date =='6/11/2019' and item.status === "Booked" and item.appointment.requirement == 'audio'%}
 	 {% set audioCounterDay = audioCounterDay + 1 %}
 	{% endif %}
 	{% if item.status === "Booked" and item.appointment.requirement == 'accessible'%}
 	 {% set accessCounter = accessCounter + 1 %}
 	{% endif %}
-    {% if item.appointment.date =='16/10/2019' and item.status === "Booked" and item.appointment.requirement == 'accessible'%}
+    {% if item.appointment.date =='6/11/2019' and item.status === "Booked" and item.appointment.requirement == 'accessible'%}
 	 {% set accessCounterDay = accessCounterDay + 1 %}
 	{% endif %}
 
@@ -190,7 +195,7 @@ span.dummy   {
 	 {% set ucbCounter = ucbCounter + 1 %}
 	{% endif %}
 
-	{% if item.appointment.date =='16/10/2019' and item.status == 'Booked' and item.caseflags =='ucb' %}
+	{% if item.appointment.date =='6/11/2019' and item.status == 'Booked' and item.caseflags =='ucb' %}
 	 {% set ucbCounterDay = ucbCounterDay + 1 %}
 	{% endif %}
 
@@ -199,7 +204,7 @@ span.dummy   {
 	 {% set newCounter = newCounter + 1 %}
 	{% endif %}
 
-	{% if item.appointment.date =='16/10/2019' and item.status === "Booked" and item.referral.type == 'New referral' %}
+	{% if item.appointment.date =='6/11/2019' and item.status === "Booked" and item.referral.type == 'New referral' %}
 	 {% set newCounterDay = newCounterDay + 1 %}
 	{% endif %}
 
@@ -207,12 +212,12 @@ span.dummy   {
 	 {% set reCounter = reCounter + 1 %}
 	{% endif %}
 
-	{% if item.appointment.date =='16/10/2019' and item.status === "Booked" and item.referral.type == 'Re referral' %}
+	{% if item.appointment.date =='6/11/2019' and item.status === "Booked" and item.referral.type == 'Re referral' %}
 	 {% set reCounterDay = reCounterDay + 1 %}
 	{% endif %}
 
 	    
-	{% if item.appointment.date =='16/10/2019' and item.status == 'Booked' and item.appointment.dna == 'dna'%}
+	{% if item.appointment.date =='6/11/2019' and item.status == 'Booked' and item.appointment.dna == 'dna'%}
 	 {% set edCounterDay = edCounterDay + 1 %}
 	{% endif %}
 
@@ -221,30 +226,29 @@ span.dummy   {
 	{% endif %}
 
 
-    {% if item.appointment.date == '16/10/2019' %}
+    {% if item.appointment.date == '6/11/2019' %}
 	 {% set todayCounter = todayCounter + 1 %}
 	{% endif %}
 
 
- 	{% if item.appointment.date =='16/10/2019' and  item.status === "Booked" and item.appointment.type == 'Complex neuro' %}
+ 	{% if item.appointment.date =='6/11/2019' and  item.status === "Booked" and item.appointment.type == 'Complex neuro' %}
 	 {% set complexCounterDay = complexCounterDay + 1 %}
     {% elif item.status === "Booked" and item.appointment.type == 'Complex neuro' %}
 	 {% set complexCounter = complexCounter + 1 %}
 	{% endif %}
 
 
- 	{% if item.appointment.date =='16/10/2019' and  item.status === "Booked" and item.appointment.type == 'Neuro' %}
+ 	{% if item.appointment.date =='6/11/2019' and  item.status === "Booked" and item.appointment.type == 'Neuro' %}
 	 {% set neuroCounterDay = neuroCounterDay + 1 %}
     {% elif item.status === "Booked" and item.appointment.type == 'Neuro' %}
 	 {% set neuroCounter = neuroCounter + 1 %}
 	{% endif %}
 
-	{% if item.appointment.date =='16/10/2019' and  item.status === "Booked" and item.appointment.type == 'Non neuro' %}
+	{% if item.appointment.date =='6/11/2019' and  item.status === "Booked" and item.appointment.type == 'Non neuro' %}
 	 {% set nonCounterDay = nonCounterDay + 1 %}
     {% elif item.status === "Booked" and item.appointment.type == 'Non neuro' %}
 	 {% set nonCounter = nonCounter + 1 %}
 	{% endif %}
-
 	{% endfor %}
                
 <nav class="details-nav v2 mb30">
@@ -352,7 +356,7 @@ span.dummy   {
       </div>
     </fieldset>
 	
-            <h2 class="heading-small mt30">Filter booked appiontments</h2>
+            <h2 class="heading-small mt30">Filter booked appointments</h2>
                 <div class="check-group check-top">
                 <fieldset>
 				 <div class="check-picker">
@@ -489,21 +493,18 @@ span.dummy   {
 				 <div class="check-picker">
 			
                     <h3 class="visually-hidden"><legend>Secondary filter</legend></h3>
-					{% if checked('filter', 'all')%}
-						 <div class="check-choice">
-                      <input id="all2"
-                           name="filter"
-                           type="radio"
-                           value="all2" class="facet" {{ checked('filter', 'all2') }} checked> <label for="all2">All types <span> {% if data['capDay'] %}
-             ({{todayCounter}}){% else %} ({{customers.length}}){% endif %}</span></label>
-                    </div>
-					{% else %}
-				<div class="check-choice">
+					{% if checked('filter', 'Complex') or checked('filter', 'Neuro') or checked('filter', 'Non')%}
+					<div class="check-choice">
                       <input id="all2"
                            name="filter"
                            type="radio"
                            value="all2" class="facet" {{ checked('filter', 'all2') }}> <label for="all2">All types <span> {% if data['capDay'] %}
              ({{todayCounter}}){% else %} ({{customers.length}}){% endif %}</span></label>
+                    </div>
+					{% else %}
+								 <div class="check-choice">
+                    <span class="dummy">All types<span>{% if data['capDay'] %}
+             ({{todayCounter}}){% else %} ({{customers.length}}){% endif %}</span></span>
                     </div>
 					{% endif %}
                      <div class="check-choice">
@@ -535,7 +536,7 @@ span.dummy   {
             
 
 
-         <h2 class="showing-sign">Showing: &nbsp;<span>	 {% if checked('filter', 'DNA referral') %}
+         <h2 class="showing-sign">Showing: &nbsp;<span>	{% if data['capDay'] %}{{capDay}} {{capMonth}} 2019 &nbsp;<b>&#124;</b> &nbsp;{% endif %} {% if checked('filter', 'DNA referral') %}
             Previous DNA's
 			 {% elif checked('filter', 'Re referrals') %}
             Re referrals
@@ -563,7 +564,11 @@ span.dummy   {
 			{% else%}&nbsp;<b>&#124;</b> &nbsp; All types </span>{% endif %}</h2>  
            
 
-    	  <table id="fileredTable"class="filtered">
+		 
+		 
+		 
+		 
+		  <table id="fileredTable"class="filtered">
 
                 <thead>
                   <tr>
@@ -577,7 +582,7 @@ span.dummy   {
 {% if  data['capDay'] and checked('filter', 'DNA referral') %}
 		{% for customer in customers %}
 
-				{% if customer.appointment.date =='16/10/2019' and customer.status == 'Booked' and customer.appointment.dna == 'dna' %}
+				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.appointment.dna == 'dna' %}
 					{% include path+"/scenario4/_table-row-caselistv2.html" %}
 				{% endif %}
 		{% endfor %}
@@ -593,7 +598,7 @@ span.dummy   {
 
    	{% elif data['capDay'] and checked('filter', 'Non') %}		
 	 	{% for customer in customers %}
-				{% if customer.appointment.date =='16/10/2019' and  customer.status == 'Booked' and customer.appointment.type =='Non neuro' %}
+				{% if customer.appointment.date =='6/11/2019' and  customer.status == 'Booked' and customer.appointment.type =='Non neuro' %}
 					{% include path+"/scenario4/_table-row-caselistv2.html" %}
 				{% endif %}
 		{% endfor %}	
@@ -609,7 +614,7 @@ span.dummy   {
 
 	{% elif data['capDay'] and checked('filter', 'Neuro') %}		
 	 	{% for customer in customers %}
-				{% if customer.appointment.date =='16/10/2019' and  customer.status == 'Booked' and customer.appointment.type =='Neuro' %}
+				{% if customer.appointment.date =='6/11/2019' and  customer.status == 'Booked' and customer.appointment.type =='Neuro' %}
 					{% include path+"/scenario4/_table-row-caselistv2.html" %}
 				{% endif %}
 		{% endfor %}	
@@ -624,7 +629,7 @@ span.dummy   {
 
  	{% elif data['capDay'] and checked('filter', 'Complex') %}		
 	 	{% for customer in customers %}
-				{% if customer.appointment.date =='16/10/2019' and  customer.status == 'Booked' and customer.appointment.type =='Complex neuro' %}
+				{% if customer.appointment.date =='6/11/2019' and  customer.status == 'Booked' and customer.appointment.type =='Complex neuro' %}
 					{% include path+"/scenario4/_table-row-caselistv2.html" %}
 				{% endif %}
 		{% endfor %}	
@@ -642,7 +647,7 @@ span.dummy   {
 
 {% elif  data['capDay'] and checked('filter', 'Re referrals') %}
 		{% for customer in customers %}
-				{% if customer.appointment.date =='16/10/2019' and customer.status == 'Booked' and customer.referral.type =='Re referral' %}
+				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.referral.type =='Re referral' %}
 					{% include path+"/scenario4/_table-row-caselistv2.html" %}
 				{% endif %}
 		{% endfor %}
@@ -656,11 +661,10 @@ span.dummy   {
 
 {% elif  data['capDay'] and checked('filter', 'New referrals') %}
 		{% for customer in customers %}
-				{% if customer.appointment.date =='16/10/2019' and customer.status == 'Booked' and customer.referral.type =='New referral' %}
+				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.referral.type =='New referral' %}
 					{% include path+"/scenario4/_table-row-caselistv2.html" %}
 				{% endif %}
 		{% endfor %}
-
 {% elif checked('filter', 'New referrals') %}
 		{% for customer in customers %}
 				{% if customer.status == 'Booked' and customer.referral.type =='New referral' %}
@@ -670,7 +674,7 @@ span.dummy   {
 
 {% elif  data['capDay'] and checked('filter', 'ucb') %}
 		{% for customer in customers %}
-				{% if customer.appointment.date =='16/10/2019' and customer.status == 'Booked' and customer.caseflags =='ucb' %}
+				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.caseflags =='ucb' %}
 					{% include path+"/scenario4/_table-row-caselistv2.html" %}
 				{% endif %}
 		{% endfor %}
@@ -683,10 +687,10 @@ span.dummy   {
 		{% endfor %}		
 
 
-	{% elif  data['capDay'] and checked('filter', 'requirements') or  ata['capDay'] and checked('filter', 'requirementstwo')%}
+	{% elif  data['capDay'] and checked('filter', 'requirements') or  data['capDay'] and checked('filter', 'requirementstwo')%}
 
 		{% for customer in customers %}
-				{% if customer.appointment.date =='16/10/2019' and customer.status == 'Booked' and customer.appointment.requirement %}
+				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.appointment.requirement %}
 					{% include path+"/scenario4/_table-row-caselistv2.html" %}
 				{% endif %}
 		{% endfor %}
@@ -702,7 +706,7 @@ span.dummy   {
 			{% elif  data['capDay'] and checked('filter', 'taxi') %}
 
 		{% for customer in customers %}
-				{% if customer.appointment.date =='16/10/2019' and customer.status == 'Booked' and customer.appointment.requirement =='taxi' %}
+				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.appointment.requirement =='taxi' %}
 					{% include path+"/scenario4/_table-row-caselistv2.html" %}
 				{% endif %}
 		{% endfor %}
@@ -718,7 +722,7 @@ span.dummy   {
 			{% elif  data['capDay'] and  checked('filter', 'interpreter') %}
 
 		{% for customer in customers %}
-				{% if customer.appointment.date =='16/10/2019' and customer.status == 'Booked' and customer.appointment.requirement =='interpreter' %}
+				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.appointment.requirement =='interpreter' %}
 					{% include path+"/scenario4/_table-row-caselistv2.html" %}
 				{% endif %}
 		{% endfor %}
@@ -734,7 +738,7 @@ span.dummy   {
 				{% elif  data['capDay'] and  checked('filter', 'gender') %}
 
 		{% for customer in customers %}
-				{% if customer.appointment.date =='16/10/2019' and customer.status == 'Booked' and customer.appointment.requirement =='gender' %}
+				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.appointment.requirement =='gender' %}
 					{% include path+"/scenario4/_table-row-caselistv2.html" %}
 				{% endif %}
 		{% endfor %}
@@ -750,7 +754,7 @@ span.dummy   {
 					{% elif  data['capDay'] and  checked('filter', 'audio') %}
 
 		{% for customer in customers %}
-				{% if customer.appointment.date =='16/10/2019' and customer.status == 'Booked' and customer.appointment.requirement =='audio' %}
+				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.appointment.requirement =='audio' %}
 					{% include path+"/scenario4/_table-row-caselistv2.html" %}
 				{% endif %}
 		{% endfor %}
@@ -766,7 +770,7 @@ span.dummy   {
 					{% elif  data['capDay'] and  checked('filter', 'access') %}
 
 		{% for customer in customers %}
-				{% if customer.appointment.date =='16/10/2019' and customer.status == 'Booked' and customer.appointment.requirement =='accessible' %}
+				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.appointment.requirement =='accessible' %}
 					{% include path+"/scenario4/_table-row-caselistv2.html" %}
 				{% endif %}
 		{% endfor %}
@@ -784,7 +788,7 @@ span.dummy   {
 	{% elif data['capDay'] %}
 	
 		{% for customer in customers %}
-				{% if customer.appointment.date =='16/10/2019' and customer.status == 'Booked' %}
+				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' %}
 					{% include path+"/scenario4/_table-row-caselistv2.html" %}
 				{% endif %}
 		{% endfor %}
