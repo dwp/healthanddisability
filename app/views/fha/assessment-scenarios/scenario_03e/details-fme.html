@@ -1,0 +1,214 @@
+{% extends path+"/scenario_03e/_layout-case-simple1.html" %}
+
+
+{% block actioncolumn %}
+   
+  <p class="returnRef"><a href="/{{path }}/scenario6/referrals-fme" class="link-back">Return to case list</a></p>
+ 
+ <div class="caseStatus">
+ 
+
+ 
+ 
+{% if data['pbachoice']=='no'%}
+ 
+	 <h2 class="main-status"><span>Current case status</span>Appointment booked</h2>
+	 
+	 
+	 {% elif data['pbachoice']=='yes'%}
+	 
+	 <h2 class="main-status"><span>Current case status</span>Paper based review</h2>
+	 <!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/not-testing" class="button">Start assessment</a></h3>-->
+	 
+	 
+	 {% else %}
+	 
+ 
+
+{% if data['evidencePath']=='ev-ftf'%}
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+	
+	<h2 class="main-status"><span>Current case status</span>Second review</h2>
+		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal-second" class="button">Make recommendation</a></h3>
+		{% else %}
+		
+	<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
+	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/record-evidence" class="button">Record GP report</a></h3>
+	{% endif %}
+	
+	
+	{% elif data['evidencePath']=='ev-pba'%}
+	
+	{% if data['evidenceRecorded']=='record-yes'%}
+		<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal" class="button">Make recommendation</a></h3>
+		{% else %}
+		<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
+	{% endif %}
+	
+	
+	{% else %}
+	
+	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal" class="button">Make recommendation</a></h3>
+	
+	
+
+{% endif %}
+
+
+{% endif %}
+
+
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Jurgen Covault
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+
+<div class="container">
+  <div class="grid-row">
+    <div class="column-full">
+    
+    {# macro #}
+  {{ nav.scenario_tabs("details-fme",1,path1, customer._id) }}
+    
+   <h1 class="heading-large">
+  	Details</h1>
+  	
+  
+  <div class="portal-display">	
+  	
+  	
+  	
+  	 <div class="grid-row">
+  
+		  	<div class="column-two-thirds">
+		  	
+		  		 <div class="portal-card">
+				<div class="portal-head">
+					<h3>Medical conditions</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+				
+				<h4>Current medical conditions</h4>
+				
+
+					<table class="medical-list">
+						<caption>Medical conditions list</caption>
+						
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Since</th>
+								<th>Source</th>
+							</tr>
+						</thead>
+
+						
+						<tbody>
+						
+						
+						<tr>
+							<td>Medical condition 1</td>
+							<td>12 June 1999</td>
+							<td>Claimant</td>
+						</tr>
+						
+						<tr>
+							<td>Medical condition 2</td>
+							<td>12 June 1999</td>
+							<td>Claimant</td>
+						</tr>
+						
+						<tr>
+							<td>Medical condition 3</td>
+							<td>12 June 1999</td>
+							<td>Claimant</td>
+						</tr>
+						
+						<tr>
+							<td>Medical condition 4</td>
+							<td>12 June 1999</td>
+							<td>Claimant</td>
+						</tr>
+						
+						<tr>
+							<td>Medical condition 5</td>
+							<td>12 June 1999</td>
+							<td>Claimant</td>
+						</tr>
+
+						
+						
+						</tbody>
+					</table>
+					
+					<p class="view-all"><a href="/{{path }}/scenario6/not-testing" class="secondary-invert">View all medical conditions</a></p>
+
+
+					
+				</div>
+				<!-- / inner card -->
+			</div>
+			<!-- / portal card -->
+		  	
+		  	</div>
+		  	
+		  	
+		  	<div class="column-third">
+		  		<!---------------------------------- Card ---------------------------------->
+		
+			<div class="portal-card">
+				<div class="portal-head">
+					<h3>Contact</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+				
+				
+				<ul class="action-list">
+						<li><a href="/{{path }}/scenario6/not-testing" class="secondary-invert">View Kenneth's details</a></li>
+						<li><a href="/{{path }}/scenario6/not-testing" class="secondary-invert">Add GP details</a></li>
+						<li><a href="/{{path }}/scenario6/not-testing" class="secondary-invert">Add a medical contact</a></li>
+					</ul>
+														
+				</div>
+				<!-- / inner card -->
+			<!-- / portal card -->
+		  	</div>
+		  	
+		  	
+		  	  	
+  	 </div>
+    
+
+ 
+    
+  </div>
+  
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

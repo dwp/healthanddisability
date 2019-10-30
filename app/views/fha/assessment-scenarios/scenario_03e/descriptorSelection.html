@@ -1,4 +1,4 @@
-{% extends path+"/scenario_03b/_layout-case-simple.html" %}
+{% extends path+"/scenario_03c/_layout-case-simple.html" %}
 
 {% block citizen_content %}
 
@@ -13,7 +13,7 @@
 
 <!--<h3 class="heading-medium" style="color:#6f777b; font-weight:100;">LCWRA</h3>-->
 <p class="caption-large" class="mb0">Paper-based assessment</p>
-<h1 class="heading-large mt0">What's your recommendation?</h1>
+<h1 class="heading-large mt0">What would you advise in Lucas’s case?</h1>
 
 
 
@@ -30,7 +30,7 @@
 		  
 					    <div class="multiple-choice" data-target="severeFuncDisability">
 								<input id="category01" name="PBAdescriptors" type="radio" value="functionalLcwra">
-					      <label for="category01">LCWRA: Severe functional impairment</label>
+					      <label for="category01">LCWRA: Severe functional disability</label>
 					    </div>	
 
 					   
@@ -133,19 +133,19 @@
 							    
 							    <div class="multiple-choice" data-target="justify3">
 							      <input id="lcwra3" name="lcwra" type="radio" value="lcwra3">
-							      <label for="lcwra3">Risk to self or others</label>
+							      <label for="lcwra3">Physical / mental health risk</label>
 							    </div>	
 							    
 							    <div class="multiple-choice" data-target="justify4">
 							      <input id="lcwra4" name="lcwra" type="radio" value="lcwra4">
-							      <label for="lcwra4">Risks associated with pregnancy</label>
+							      <label for="lcwra4">Pregnancy risk</label>
 							    </div>
 					    	</fieldset>
 					    </div>
 
 					<div class="multiple-choice" data-target="lcwReasons">
 						<input id="category03" name="PBAdescriptors" type="radio" value="treataslcw">
-					      <label for="category03">Treat as having LCW</label>
+					      <label for="category03">Treat as LCW</label>
 					</div>
 					<!-- Start -->
 					    <div class="panel js-hidden" id="lcwReasons">	
@@ -159,23 +159,8 @@
 							    
 							    <div class="multiple-choice" data-target="inpatientOptions">
 							      <input id="lcw2" name="lcw" type="radio" value="lcw2">
-							      <label for="lcw2">Hospital inpatient</label>
-							    </div>
-
-							    <div class="multiple-choice" data-target="inpatientOptions">
-							      <input id="lcw3" name="lcw" type="radio" value="lcw3">
-							      <label for="lcw3">Will be hospital inpatient within the next 21 days</label>
-							    </div>
-
-							    <div class="multiple-choice">
-							      <input id="lcw4" name="lcw" type="radio" value="lcw4">
-							      <label for="lcw4">In recovery</label>
-							    </div>
-
-							    <div class="multiple-choice">
-							      <input id="lcw5" name="lcw" type="radio" value="lcw5">
-							      <label for="lcw5">In residential rehab</label>
-							    </div>
+							      <label for="lcw2">Inpatient hospital</label>
+							    </div>	
 
 								<!-- Inpatient Options Start 
 								<div class="panel js-hidden" id="inpatientOptions">	
@@ -200,8 +185,8 @@
 					    </div> Inpatient Options Finish -->
 
 							    <div class="multiple-choice" data-target="regularTreatmentOptions">
-							      <input id="lcw6" name="lcw" type="radio" value="lcw6">
-							      <label for="lcw6">Regular treatment</label>
+							      <input id="lcw3" name="lcw" type="radio" value="lcw3">
+							      <label for="lcw3">Regular treatment</label>
 							    </div>
 
 							<!-- Regular Treatment Options Start 
@@ -227,8 +212,8 @@
 					    </div> Regular Treatment Options Finish -->
 
 							    <div class="multiple-choice">
-							      <input id="lcw7" name="lcw" type="radio" value="lcw7">
-							      <label for="lcw7">Risk LCW</label>
+							      <input id="lcw4" name="lcw" type="radio" value="lcw4">
+							      <label for="lcw4">Risk LCW</label>
 							    </div>
 					    	</fieldset>
 					    </div>
