@@ -1,7 +1,7 @@
-{% extends path+"/scenario_03f/_layout.html" %}
+{% extends path+"/_layout.html" %}
 
+{% import path+"/scenario_03e/_macros_nav_scenario6.html" as nav %} 
 
-{% import path+"/scenario_03f/_macros_nav_scenario6.html" as nav %} 
 
 
 {% block assess_content %}
@@ -15,18 +15,8 @@
       <div class="column-one-quarter left-area">
       
       	<div class="left-panel">
-
-<p style="font-weight:bold;">Ready for review</p>
-<hr>
-<!--
-          		  <ul class="secondary-actions">
-
-            <li><a href="/{{path}}/scenario/not-testing">Observations</a></li>
-            <li><a href="/{{path}}/scenario/not-testing" class="">Additional attendee</a></li>
-            <li><a href="/{{path}}/scenario/not-testing">Abandon assessment</a></li>
-            <li><a href="/{{path}}/scenario_curtailment-v0-5/exceptionalCircumstances">Curtail assessment</a></li>
-
-          </ul>-->
+  
+          
           {% block actioncolumn %}{% endblock %}
       
 
@@ -52,8 +42,8 @@
                   </ul>
                 </div> -->
                 
-                <h1 class="heading-xlarge"><span>Customer details</span>{% block citizen_detail %}Mia Russell{% endblock %}</h1>
-                <p class="mb20"><span class="visually-hidden">National insurance number</span>CC 12 34 56 D</p>
+                <h1 class="heading-xlarge"><span>Customer details</span>{% block citizen_detail %}{% endblock %}</h1>
+                <p><span class="visually-hidden">National insurance number</span>AA 12 34 56 B</p>
                
               </div><!-- column -->
               
@@ -64,7 +54,7 @@
               
                 <div class="header-left-col mt20">
                  <h2>Date of birth</h2>
-                 <p>2 October 1961  <!--{{customer.dateOfBirth |formatDate('D MMMM YYYY') }}--></p>
+                 <p>{{customer.dateOfBirth |formatDate('D MMMM YYYY') }}</p>
                 </div>
         
               <div class="header-right-col mt20">
@@ -73,10 +63,7 @@
               </div>
               
               <!-- / column half -->
-        
-         
-               
-                 
+
             
               
             </div><!-- / grid row -->

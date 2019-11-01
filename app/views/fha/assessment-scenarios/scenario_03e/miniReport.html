@@ -1,4 +1,4 @@
-{% extends path+"/scenario_03b/_layout-case-simple_review-complete.html" %}
+{% extends path+"/scenario_03c/_layout-case-simple_review-complete.html" %}
 
 {% block citizen_content %}
 
@@ -53,9 +53,8 @@
 	<h2 class="heading-medium">Advice</h2> 
 	
 	<div class="inner-focus">
-		<p>LCWRA: Moving around and climbing steps without someone’s help</p>
-		<p>I advise that Mia meets the criteria for Limited Capability for Work Related Activity as they have severe
-functional disability.</p>
+		<p>Terminal illness</p>
+		<p>I advise that Lucas is terminally ill as they are suffering from a progressive disease and their death in consequence of that disease can reasonably be expected within 6 months.</p>
 	</div>
 	<p class="edit-report"><a href="#" class="button-secondary">Edit advice</a></p>
 <hr>
@@ -64,28 +63,25 @@ functional disability.</p>
 	<div class="inner-focus">
 				<ul class="mb20">
 				<li class="mb5">Fit note (Med3)</li>
-				<li class="mb5">GP report (113)</li>
-				<li class="mb5">Questionnaire (UC50)</li>
-				<li class="mb5">Basic medical report (UC85A)</li>
+				<li class="mb5">Medical condition report (DS1500)</li>
 				</ul>
 	</div>
 	<p class="edit-report"><a href="#" class="button-secondary">Add or remove evidence</a></p>
-
 <hr>
 	<h2 class="heading-medium">Justification of advice</h2> 
 	
 	<div class="inner-focus">
 		<p>{{ justifyAdvice }}</p>
 	</div>
-	<p class="edit-report"><a href="#" class="button-secondary">Edit justification</a></p>
+	<p class="edit-report"><a href="#" class="button-secondary">Edit justification statement</a></p>
+
 <hr>
 	<h2 class="heading-medium">Recommended review period</h2> 
 	
 	<div class="inner-focus">
-		<p>I advise that Mia's case needs reviewing in 12 months</p>
-		<p>{{ reviewPeriodDetails }}</p>
+		<p>Not applicable.</p>
 	</div>
-	<p class="edit-report"><a href="#" class="button-secondary">Edit review period</a></p>
+	<!--<p class="edit-report"><a href="#" class="button-secondary">Edit review period</a></p>-->
 
 <hr>
 	<h2 class="heading-medium">Declaration</h2> 
