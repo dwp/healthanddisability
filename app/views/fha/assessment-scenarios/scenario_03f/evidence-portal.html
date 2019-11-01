@@ -1,10 +1,9 @@
-{% extends path+"/_layout-case-simple6.html" %}
+{% extends path+"/scenario_03f/_layout-case-simple1.html" %}
 
 
 {% block actioncolumn %}
    
-  <p class="returnRef"><a href="/{{path }}/scenario6/referrals-fme" class="link-back">Return to case list</a></p>
- 
+
  <div class="caseStatus">
  
 
@@ -50,8 +49,8 @@
 	
 	{% else %}
 	
-	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
-	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal" class="button">Make recommendation</a></h3>
+
+	<h3 class="primary-action"><a href="../rec-portal" class="button">Make recommendation</a></h3>
 	
 	
 
@@ -65,9 +64,6 @@
 
 {% endblock %}
 
-{% block citizen_detail %}
-Jurgen Covault
-{% endblock %}
 
 {% block citizen_content %}
 
@@ -89,7 +85,9 @@ Jurgen Covault
     
     
     {# macro #}
-  {{ nav.scenario_tabs("evidence-portal",1,path1, customer._id) }}
+
+	{{ nav.scenario_tabs("evidence-portal",1,path1, customer._id) }}
+
   <div class="grid-row">
 
     <div class="column-full">
@@ -116,7 +114,7 @@ Jurgen Covault
 		
 			<div class="portal-card">
 				<div class="portal-head">
-					<h3>What we have</h3>
+					<h3>Evidence held</h3>
 				</div>
 				<!-- / title -->
 
@@ -127,15 +125,15 @@ Jurgen Covault
 				
 				
 				
-				<h4>Latest recorded medical evidence</h4>
+				<h4>All evidence relevant to this referral</h4>
 
 					<table class="evidence-list">
 						<caption>Evidence item</caption>
 						
 						<thead>
 							<tr>
-								<th>Evidence type</th>
-								<th>Date recorded</th>
+								<th>Type</th>
+								<th>Recorded</th>
 							</tr>
 						
 						
@@ -218,17 +216,25 @@ Jurgen Covault
 																		  	
 								  	{% endif %}
 								  	
-								  	<tr>
-											<td><a href="#">UC50</a></td>
-											<td>1 August 2019</td>
-										</tr> 	
-								  	
+									<tr>
+											<td>Fit note (Med3)</td>
+											<td>7 October 2019</td>
+									</tr>
+									<tr>
+											<td>GP report (113)</td>
+											<td>1 October 2019</td>
+									</tr>
+									<tr>
+											<td>Questionnaire (UC50)</td>
+											<td>11 October 2019</td>
+									</tr>								  	
 								  	
 							</tbody>
 					</table>
 					
-					<p class="view-all"><a href="/{{path }}/scenario6/evidence-full" class="secondary-invert">View all recorded evidence</a></p>
+					<!--<p class="view-all"><a href="/{{path }}/scenario6/evidence-full" class="secondary-invert">View historical evidence</a></p>-->
 					
+					<!--
 					<div class="previousDecisions">
 						<h4>Previous decisions</h4>
 
@@ -257,7 +263,7 @@ Jurgen Covault
 						
 						
 						
-					</div>
+					</div>-->
 					
 				</div>
 				<!-- / inner card -->
@@ -294,8 +300,8 @@ Jurgen Covault
 								<li><a href="/{{path }}/scenario6/record-evidence" class="secondary-invert">Factual report</a></li>
 								{% else %}
 							{% endif %}
-						<li><a href="/{{path }}/scenario6/recordTelephone" class="secondary-invert">Telephone conversation</a></li>
-						<li><a href="/{{path }}/scenario6/not-testing" class="secondary-invert">Other evidence</a></li>
+						<li><a href="#" class="secondary-invert">Telephone conversation</a></li>
+						<li><a href="#" class="secondary-invert">Other evidence</a></li>
 					</ul>
 	
 				</div>

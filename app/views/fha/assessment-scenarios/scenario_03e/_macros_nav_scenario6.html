@@ -5,12 +5,11 @@
       {% set navs = [
         {url:"timeline-review",label:"Timeline"},
         {url:"details-fme",label:"Details"},
-        {url:"evidence-portal",label:"Evidence"},
-		{url:"appointment-fme",label:"Appointment"}
+        {url:"evidence-portal",label:"Evidence"}
         ] %} 
    
       {% for item in navs %}
-        <li {% if item.url == selected %} class="active"{% endif %}><a href="/fha/scrutiny-scenarios/scenario6/{{ item.url }}/">{{ item.label }}</a></li>
+        <li {% if item.url == selected %} class="active"{% endif %}><a href="/fha/assessment-scenarios/scenario_03e/{{ item.url }}/">{{ item.label }}</a></li>
       {% endfor %}
     </ul>
   </div>

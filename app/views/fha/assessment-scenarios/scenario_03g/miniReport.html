@@ -9,7 +9,7 @@
 <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
 
   
-<h1 class="heading-large mb0">Paper-based assessment - Report</h1>
+<h1 class="heading-large mb0">Paper-based assessment report</h1>
  
 
 <div class="review-wrapper full-report">
@@ -53,7 +53,8 @@
 	<h2 class="heading-medium">Advice</h2> 
 	
 	<div class="inner-focus">
-		<p>Treat as LCW: Risk</p>
+		<p>Treat as LCW: In residential rehab</p>
+		<p>I advise that the person meets the criteria for being treated as having Limited Capability for Work.</p>
 	</div>
 	<p class="edit-report"><a href="#" class="button-secondary">Edit advice</a></p>
 <hr>
@@ -61,22 +62,15 @@
 	
 	<div class="inner-focus">
 				<ul class="mb20">
-				<li class="mb5">113</li>
-				<li class="mb5">MED3<span style="margin-left:16px;">(20/09/2016)</span></li>
-				<li class="mb5">MED3<span style="margin-left:16px;">(08/09/2019)</span></li>
-				<li class="mb5">UC50</li>
-				<li class="mb5">UC85<span style="margin-left:16px;">(01/10/2016)</span></li>
+				<li class="mb5">Fit note (Med3)</li>
+				<li class="mb5">Fit note (Med3)</li>
+				<li class="mb5">GP report (113)</li>
+				<li class="mb5">Medical report (UC85)</li>
+				<li class="mb5">Questionnaire (UC50)</li>
+				<li class="mb5">Specialist letter</li>
 				</ul>
 	</div>
 	<p class="edit-report"><a href="#" class="button-secondary">Add or remove evidence</a></p>
-<hr>
-	<h2 class="heading-medium">Review period</h2> 
-	
-	<div class="inner-focus">
-		<p>12 months</p>
-		<p>{{ reviewPeriodDetails }}</p>
-	</div>
-	<p class="edit-report"><a href="#" class="button-secondary">Edit review period</a></p>
 <hr>
 	<h2 class="heading-medium">Justification of advice</h2> 
 	
@@ -84,6 +78,26 @@
 		<p>{{ justifyAdvice }}</p>
 	</div>
 	<p class="edit-report"><a href="#" class="button-secondary">Edit justification statement</a></p>
+
+<hr>
+	<h2 class="heading-medium">Recommended review period</h2> 
+	
+	<div class="inner-focus">
+		<p>I advise that Aaron could be considered for work within 6 months</p>
+		<p>{{ reviewPeriodDetails }}</p>
+	</div>
+	<p class="edit-report"><a href="#" class="button-secondary">Edit review period</a></p>
+
+<hr>
+	<h2 class="heading-medium">Declaration</h2> 
+	
+	<div class="inner-focus">
+		<p>This form has been completed by a healthcare professional approved by the Secretary of State for Work and Pensions.</p>
+		<p>I have completed this form in accordance with the current guidance to UC examining healthcare professionals as issued by the Department for Work and Pensions.</p>
+		<p>I can confirm that there is no harmful information in the report.</p>
+		<p><span class="bold" style="margin-right:20px;">Healthcare Professional's name:</span> Heather Harrison</p>
+		<p><span class="bold" style="margin-right:20px;">Date:</span> {{ "Do MMM YYYY" | daysAgo }}</p>
+	</div>
 
 </div>
 <!-- / report item -->	

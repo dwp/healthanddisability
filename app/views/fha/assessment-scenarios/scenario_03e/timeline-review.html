@@ -1,9 +1,9 @@
-{% extends path+"/_layout-case-simple6.html" %}
+{% extends path+"/scenario_03e/_layout-case-simple1.html" %}
 
 
 {% block actioncolumn %}
    
-  <p class="returnRef"><a href="/{{path }}/scenario6/referrals-fme" class="link-back">Return to case list</a></p>
+  <!--<p class="returnRef"><a href="/{{path }}/scenario6/referrals-fme" class="link-back">Return to case list</a></p>-->
   
   
   
@@ -40,21 +40,12 @@
 	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/record-evidence" class="button">Record GP report</a></h3>
 	{% endif %}
 	
-	
-	{% elif data['evidencePath']=='ev-pba'%}
-	
-	{% if data['evidenceRecorded']=='record-yes'%}
-		<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
-		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal" class="button">Make recommendation</a></h3>
-		{% else %}
-		<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
-	{% endif %}
+
 	
 	
 	{% else %}
 	
-	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
-	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal" class="button">Make recommendation</a></h3>
+	<h3 class="primary-action"><a href="../rec-portal" class="button">Make recommendation</a></h3>
 	
 	
 
@@ -71,9 +62,7 @@
 
 
 
-{% block citizen_detail %}
-Jurgen Covault
-{% endblock %}
+
 
 {% block citizen_content %}
 
@@ -210,7 +199,7 @@ Jurgen Covault
       </div>-->
       
       
-      
+      <!--
       <span class="line"></span>
       <div class="timeline__event">
         <h3 class="timeline__heading">UC50 form recorded</h3>
@@ -221,14 +210,14 @@ Jurgen Covault
       <div class="timeline__event">
         <h3 class="timeline__heading">UC50 form posted</h3>
         <p class="timeline_datetime">9 July 2019</p>
-      </div>
+      </div>-->
       
  
 
       <span class="line"></span>
       <div class="timeline__event">
         <h3 class="timeline__heading">New referral created</h3>
-        <p class="timeline_datetime">5 July 2019</p>
+        <p class="timeline_datetime">1 October 2019</p>
       </div>
 
 

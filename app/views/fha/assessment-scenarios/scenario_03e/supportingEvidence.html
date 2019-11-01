@@ -1,4 +1,4 @@
-{% extends path+"/scenario_03c/_layout-case-simple.html" %}
+{% extends path+"/scenario_03e/_layout-case-simple.html" %}
 
 {% block citizen_content %}
 
@@ -36,7 +36,7 @@
 
 <hr style="width:100%; display:inline-block; clear:both;" class="mt0 mb0">
 
-<form action="supportingEvidence1" method="post">
+<form action="writeJustification" method="post">
 
 
 {% include path+"/scenario_03e/autocomplete/pbaEvidenceAutocomplete.html" %}
@@ -50,16 +50,34 @@
 
   </div><!-- column -->
 
+<div class="column-one-third">
+<div class="portal-display mb20" style="margin-top:0px;">
+	<div class="portal-card">
+				<div class="portal-head">
+					<h4>Overview</h4>
+				</div>
+				<!-- / title -->
+				<div class="portal-inner">
+        <p class="mb5 font-xsmall bold">Advice</p>
+				<p class="font-xsmall">Terminal illness</p>
+				</div>
+				<!-- / inner card -->
+				
+	</div>
+</div>
+</div><!-- right hand column -->
+
+
 </div><!-- row -->
 
 
 
 {% endblock %}
 
-
+<hr style="width:100%; display:inline-block; clear:both;">
 {% block page_scripts %}
 
-{% include path+"/scenario_03a/autocomplete/_autocompletedata.html" %}
+{% include path+"/scenario_03e/autocomplete/_autocompletedata.html" %}
   
  
 {% endblock %} 

@@ -15,9 +15,9 @@
   <div class="column-two-thirds">
 
 <p class="caption-large" class="mb0">Paper based assessment</p>
-<h1 class="heading-large mt0">Time until Aaron's case needs reviewing</h1>
+<h1 class="heading-large mt0">Time until Aaron's case needs considering</h1>
 
-<form method="post" action="writeJustification">
+<form method="post" action="miniReport">
 
 	<div class="form-group">
 		 <fieldset>
@@ -58,10 +58,44 @@
 			<textarea class="form-control form-control-3-4" name="reviewPeriodDetails" id="justify" rows="4"></textarea>
 		</div>
 
-    <p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+    <p><input type="submit" class="button" value="Save and review" id="submitButton"></p>
 		</form>	
 
   </div><!-- column -->
+
+<div class="column-one-third">
+
+<div class="portal-display mb20" style="margin-top:0px;">
+	<div class="portal-card">
+				<div class="portal-head">
+					<h4>Overview</h4>
+				</div>
+				<!-- / title -->
+				<div class="portal-inner">
+
+				<p class="mb5 font-xsmall bold">Advice</p>
+				<p class="font-xsmall">Treat as LCW: In residential rehab</p>
+
+				<p class="mb5 font-xsmall bold">Evidence considered</p>
+				<ul class="mb20 font-xsmall">
+				<li class="mb5">Fit note (Med3)</li>
+				<li class="mb5">Fit note (Med3)</li>
+				<li class="mb5">GP report (113)</li>
+				<li class="mb5">Medical report (UC85)</li>
+				<li class="mb5">Questionnaire (UC50)</li>
+				<li class="mb5">Specialist letter</li>
+				</ul>
+
+				<p class="mb5 font-xsmall bold">Justification</p>
+				<p class="font-xsmall">{{ justifyAdvice }}</p>
+				
+				</div>
+				<!-- / inner card -->
+				
+	</div>
+</div>
+
+  </div><!-- right hand column -->
 
 </div><!-- row -->
 
