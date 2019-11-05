@@ -1,4 +1,4 @@
-{% extends path+"/scenario_03b/_layout-case-simple.html" %}
+{% extends path+"/scenario_03e/_layout-case-simple.html" %}
 
 {% block citizen_content %}
 
@@ -24,36 +24,31 @@
     </legend>
 
     <div class="multiple-choice mt20">
-      <input id="evidence-type-1" name="waste-types" type="checkbox" value="gp-report">
-      <label for="evidence-type-1">GP report (113)</label>
+      <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">
+      <label for="waste-type-1">Fit note (Med3)</label>
     </div>
     <div class="multiple-choice">
-      <input id="evidence-type-2" name="waste-types" type="checkbox" value="fit-note">
-      <label for="evidence-type-2">Fit note (Med3)</label>
-    </div>
-	<div class="multiple-choice">
-      <input id="evidence-type-3" name="waste-types" type="checkbox" value="questionairre">
-      <label for="evidence-type-3">Questionnaire (UC50)</label>
-    </div>
-	<div class="multiple-choice">
-      <input id="evidence-type-4" name="waste-types" type="checkbox" value="medical-report">
-      <label for="evidence-type-4">Basic medical report (UC85A)</label>
+      <input id="waste-type-2" name="waste-types" type="checkbox" value="waste-mines">
+      <label for="waste-type-2">Medical condition report (DS1500)</label>
     </div>
   </fieldset>
 </div>
+
 <hr style="width:100%; display:inline-block; clear:both;" class="mt0 mb0">
-<form action="supportingEvidence2" method="post">
+
+<form action="writeJustification" method="post">
+
 
 {% include path+"/scenario_03e/autocomplete/pbaEvidenceAutocomplete.html" %}
 
-</form>
 
-<form action="writeJustification" method="post">
-<p><input type="submit" class="button mt20" value="Save and continue" id="submitButton"></p>
-</form>
+
+
+<p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+      </form>
+
 
   </div><!-- column -->
-
 
 <div class="column-one-third">
 <div class="portal-display mb20" style="margin-top:0px;">
@@ -64,7 +59,7 @@
 				<!-- / title -->
 				<div class="portal-inner">
         <p class="mb5 font-xsmall bold">Advice</p>
-				<p class="font-xsmall">LCWRA: moving around and climbing steps without someone’s help</p>
+				<p class="font-xsmall">Terminal illness</p>
 				</div>
 				<!-- / inner card -->
 				
@@ -79,7 +74,7 @@
 
 {% endblock %}
 
-
+<hr style="width:100%; display:inline-block; clear:both;">
 {% block page_scripts %}
 
 {% include path+"/scenario_03e/autocomplete/_autocompletedata.html" %}

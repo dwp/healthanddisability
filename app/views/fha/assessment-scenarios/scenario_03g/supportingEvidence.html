@@ -1,4 +1,4 @@
-{% extends path+"/scenario_03b/_layout-case-simple.html" %}
+{% extends path+"/scenario_03d/_layout-case-simple.html" %}
 
 {% block citizen_content %}
 
@@ -22,25 +22,40 @@
     <legend>
       <span class="body-text">Select evidence you've considered from the list below.</span>
     </legend>
-
     <div class="multiple-choice mt20">
-      <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">
-      <label for="waste-type-1">GP report (113)</label>
+      <input id="waste-type-2" name="waste-types" type="checkbox" value="waste-mines">
+      <label for="waste-type-2">Fit note (Med3)</label>
     </div>
     <div class="multiple-choice">
       <input id="waste-type-2" name="waste-types" type="checkbox" value="waste-mines">
       <label for="waste-type-2">Fit note (Med3)</label>
     </div>
-	<div class="multiple-choice">
+    <div class="multiple-choice">
+      <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">
+      <label for="waste-type-1">GP report (113)</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="waste-type-2" name="waste-types" type="checkbox" value="waste-mines">
+      <label for="waste-type-2">Key worker letter</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="waste-type-3" name="waste-types" type="checkbox" value="waste-mines">
+      <label for="waste-type-3">Medical report (UC85)</label>
+    </div>
+    <div class="multiple-choice">
       <input id="waste-type-3" name="waste-types" type="checkbox" value="waste-mines">
       <label for="waste-type-3">Questionnaire (UC50)</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="waste-type-2" name="waste-types" type="checkbox" value="waste-mines">
+      <label for="waste-type-2">Specialist letter</label>
     </div>
   </fieldset>
 </div>
 
 <hr style="width:100%; display:inline-block; clear:both;" class="mt0 mb0">
 
-<form action="supportingEvidence1" method="post">
+<form action="writeJustification" method="post">
 
 {% include path+"/scenario_03e/autocomplete/pbaEvidenceAutocomplete.html" %}
 
@@ -51,9 +66,8 @@
 
   </div><!-- column -->
 
-
-
 <div class="column-one-third">
+
 <div class="portal-display mb20" style="margin-top:0px;">
 	<div class="portal-card">
 				<div class="portal-head">
@@ -61,15 +75,16 @@
 				</div>
 				<!-- / title -->
 				<div class="portal-inner">
-        <p class="mb5 font-xsmall bold">Advice</p>
-				<p class="font-xsmall">LCWRA: moving around and climbing steps without someone’s help</p>
+
+				<p class="mb5 font-xsmall bold">Advice</p>
+				<p class="font-xsmall">Treat as LCW: In residential rehab</p>
 				</div>
 				<!-- / inner card -->
 				
 	</div>
 </div>
-</div><!-- right hand column -->
 
+  </div><!-- right hand column -->
 
 
 </div><!-- row -->
