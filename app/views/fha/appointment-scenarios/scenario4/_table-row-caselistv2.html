@@ -38,6 +38,7 @@
 				   }
 
 			
+			
 				   </style>
 				   
 				   
@@ -47,9 +48,8 @@
 				   {% if customer.caseflags == 'ucb' %}<li><span class="badge ucb">UCB</span></li>  {% endif %}
 				  </ul>
 				  <div class="claimant"><a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>{{customer.name}}</a>
-				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.nino}}
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.nino}} 
 				  </span>
-				  
 				  </div>
 				  </td>
                   <td>
@@ -101,6 +101,7 @@
 				  <li>Previous DNA</li>
 				  {% endif %}
 				   {% if customer.history.senthome == 'sent home' %}
+				  <li>Skillset change</li>
 				  <li>Previously sent home</li>
 				  {% endif%}
 				   {% if customer.history.inbound == 'inbound' %}

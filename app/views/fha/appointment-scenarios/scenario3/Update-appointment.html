@@ -41,7 +41,7 @@ Andy Smicer
     
     	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
       
-      
+        <form class="form" method="post" action="/{{path}}/scenario3/appointment-history">
       <h1 class="heading-large">Update appointment</h1>
 
 	  		<div class="form-group">
@@ -120,28 +120,28 @@ Andy Smicer
                             </div>
 
 							   <div class="form-group">
-                                                <fieldset>
+                                                <fieldset class="inline">
                                               
                                                   <legend>
                                                     <h2 class="heading-small mb10">
-                                                      Who is changing this appointment?
+                                                      Is this update because of inbound contact?
                                                     </h2>
                                                   </legend>
                                               
                                                   <div class="multiple-choice">
-                                                    <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
-                                                    <label for="radio-inline-1">Claimant or representative</label>
+                                                    <input id="radio-inline-1" type="radio" name="contact" value="yes">
+                                                    <label for="radio-inline-1">Yes</label>
                                                   </div>
                                                   <div class="multiple-choice">
-                                                    <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
-                                                    <label for="radio-inline-2">Assessment centre </label>
+                                                    <input id="radio-inline-2" type="radio" name="contact" value="no">
+                                                    <label for="radio-inline-2">No</label>
                                                   </div>
                                               
                                                 </fieldset>
                                               </div>
                          
                                     <div class="form-group">
-                                            <label class="form-label-bold">Reason</label>
+                                            <label class="form-label-bold">Add a note</label>
                                             <textarea name="reason" class="form-control " style="height: 150px; width:100%; max-width:650px;">{{reason}}</textarea>
                                     </div>        
                            
@@ -152,7 +152,7 @@ Andy Smicer
 
             <p class="mt30"><button class="button">Save and continue</button></p>
         </div>
-				
+				</form>
 	
    </div>
 

@@ -1,4 +1,4 @@
- {% extends path+"/_layout-caselist.html" %}
+{% extends path+"/_layout-caselist.html" %}
 
 
  {% block horizontal_secondary_nav %}
@@ -85,6 +85,23 @@ span.dummy   {
 
 	.check-choice label span{
 
+	}
+
+	li.active_child { 
+		border-left: 5px solid #005ea5;
+	}
+
+	.active_detail ul li.active_child a { 
+		background:#f8f8f8 !important;
+	}
+
+	.active_detail ul li.active_child .child{
+			background:#fff !important;
+			margin-right:-15px;
+	}
+
+	.active_detail ul li.active_child .child a {
+		background:#fff !important;
 	}
 
 </style>
@@ -277,8 +294,22 @@ span.dummy   {
 	    			<a href="/{{path }}/scenario/not-testing">Ready to book (244) </a>
 
 	    		</li>
-	    		<li>
-	    			<a href="booked" class="active_child">Booked ({{bookedCounter}})</a>
+	    		<li class="active_child">
+	    			<a href="booked">Booked ({{bookedCounter}})</a>
+					<ul>
+					  <li class="child"><a href="">All types</a>
+					      <ul>
+						  <li><a href="">Comlpex neuro</a></li>
+					      <li><a href="">Neuro</a></li>
+					      <li><a href="">Non neuro</a></li>
+						  </ul>
+					  </li>
+					  <li><a href="">Reqiurements</a></li>
+					  <li><a href="">UCB</a></li>
+					  <li><a href="">Previous DNA's</a></li>
+					  <li><a href="">New referral's</a></li>
+					  <li><a href="">Re referral's</a></li>
+					</ul>
 	    		</li>
 
 	    	
@@ -405,15 +436,6 @@ span.dummy   {
                            name="filter"
                            type="radio"
                            value="DNA referral"  class="facet" {{ checked('filter', 'DNA referral') }}> <label for="DNA referral">Previous DNA's
-						      <span>{% if data['capDay'] %}({{edCounterDay}}){% else %} ({{edCounter}}){% endif %}</span>
-						   </label>
-                     </div>
-
-                     	<div class="check-choice">
-                      <input id="skill change"
-                           name="filter"
-                           type="radio"
-                           value="skill change"  class="facet" {{ checked('filter', 'skill change') }}> <label for="skill change">Skill type change
 						      <span>{% if data['capDay'] %}({{edCounterDay}}){% else %} ({{edCounter}}){% endif %}</span>
 						   </label>
                      </div>
@@ -816,7 +838,6 @@ span.dummy   {
 
 
 	
-
 
 
 
