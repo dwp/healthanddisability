@@ -1,0 +1,631 @@
+{% extends path+"/_layout-caselist.html" %}
+
+
+ {% block horizontal_secondary_nav %}
+
+ <style>
+
+
+.badge{
+	float:left;
+	margin:2px 10px 2px 0;
+}
+.badge.ucb{
+	background:black;
+}
+#facetFilterBtn{
+  position:absolute;
+  left:-100%;	
+}
+
+
+
+button.link{
+	border:none;
+	padding:0;
+	font-size:19px;
+	background:transparent;	
+}
+
+
+
+.check-group{
+	margin:0;
+	padding:0;
+}
+
+.filterhr{
+	margin:15px 0;
+}
+
+
+.filtered td ul.list{
+	font-weight:bold;
+	margin-bottom:0px;
+	font-size:17px;
+}
+
+.claimant{
+	display:inline-block;
+
+}
+
+.button.button-tursery{
+	background:transparent;
+	color:black;
+	border:2px solid #dee0e2;
+	height:40px;
+	line-height:16px;
+	box-shadow:none;
+}
+
+span.dummy   { 
+	-webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding:10px 12px;
+    display: block;
+    text-align: center;
+    border: 2px solid  #6f777b;
+    height: 100%;
+    word-break: break-word;
+	background: #6f777b;
+    border-color: #6f777b;
+    color: #fff;
+	}
+
+.subfilter span.dummy{
+	background:transparent;
+	color:#0b0c0c;
+}	
+
+	.check-choice label{
+	  padding:10px 12px;
+	  font-size:18px;
+	}
+
+	.check-choice label span{
+
+	}
+
+
+					   .col3{
+					   width:20%;
+				   }
+				     .col1{
+					   width:25%;
+				   }
+	
+				   .identifiers{
+					   width:35px;
+				   }
+
+				   .identifiers .badge{
+					   width:100%;
+					   text-align:center;
+				   }
+				   ul.list li{
+					   font-weight:normal;
+					
+					 
+				   }
+				   ul.list{
+					//border-left:1px solid #bfc1c3;
+					//padding-left:10px;
+				   }
+
+				   .filtered td {
+                     font-size:17px;
+				   }
+				   .filtered td h3{
+					 //margin-bottom:10px;
+					 //border-bottom:1px solid #bfc1c3;
+					font-weight:bold;
+				   }
+
+				   .column-third{
+					  min-height:1px;
+				   }
+
+</style>
+
+
+    <form class="form" action="bookedv2" method="post">
+	<div class="fixednav">
+		<div class="search-customer">
+			<label class="form-label-bold visually-hidden" for="search">Customer search</label>
+				<span class="form-hint">Search by NI number</span>
+			<input class="form-control form-control-2-3" id="search" type="text" name="search">
+			<button class="gem-c-search__submit">Search</button>
+		</div>
+
+
+  {% set bookedCounter = 0 %}
+	{% set readyCounter = 0 %}
+
+	{% set requirementsRequirements = 0 %}
+	{% set requirementsRequirementsDay = 0 %}
+	{% set taxiCounter = 0 %}
+	{% set taxiCounterDay = 0 %}
+	{% set ucbCounter = 0 %}
+	{% set ucbCounterDay = 0 %}
+	{% set interpreterCounter = 0 %}
+	{% set interpreterCounterDay = 0 %}
+	{% set genderCounter = 0 %}
+	{% set genderCounterDay = 0 %}
+	{% set accessCounter = 0 %}
+	{% set accessCounterDay = 0 %}
+	{% set audioCounter = 0 %}
+	{% set audioCounterDay = 0 %}
+	{% set newCounter = 0 %}
+	{% set newCounterDay = 0 %}
+	{% set reCounter = 0 %}
+	{% set reCounterDay = 0 %}
+	{% set edCounter = 0 %}
+	{% set edCounterDay = 0 %}
+	{% set todayCounter = 0 %}
+	{% set complexCounter = 0 %}
+	{% set complexCounterDay = 0 %}
+	{% set neuroCounter = 0 %}
+	{% set neuroCounterDay = 0 %}
+	{% set nonCounter = 0 %}
+	{% set nonCounterDay = 0 %}
+
+
+
+  
+
+	{% for item in customers %}
+
+  {% if item %}
+	 {% set totalCounter = totalCounter + 1 %}
+	{% endif %}
+	{% if item.status === "Booked"%}
+	 {% set bookedCounter = bookedCounter + 1 %}
+	{% endif %}
+	{% if item.status === "Ready to book"%}
+	 {% set readyCounter = readyCounter + 1 %}
+	{% endif %}
+	{% if item.status == 'Booked' and item.appointment.requirement %}
+	 {% set requirementsRequirements = requirementsRequirements + 1 %}
+	{% endif %}
+
+	{% if item.appointment.date =='6/11/2019' and item.status == 'Booked' and item.appointment.requirement %}
+	 {% set requirementsRequirementsDay = requirementsRequirementsDay + 1 %}
+	{% endif %}
+
+	{% if item.status === "Booked" and item.appointment.requirement == 'taxi'%}
+	 {% set taxiCounter = taxiCounter + 1 %}
+	{% endif %}
+
+	{% if  item.appointment.date =='6/11/2019' and item.status === "Booked" and item.appointment.requirement == 'taxi'%}
+	 {% set taxiCounterDay = taxiCounterDay + 1 %}
+	{% endif %}
+
+	{% if item.status === "Booked" and item.appointment.requirement == 'interpreter'%}
+	 {% set interpreterCounter = interpreterCounter + 1 %}
+	{% endif %}
+
+	{% if item.appointment.date =='6/11/2019' and item.status === "Booked" and item.appointment.requirement == 'interpreter'%}
+	 {% set interpreterCounterDay = interpreterCounterDay + 1 %}
+	{% endif %}
+	{% if item.status === "Booked" and item.appointment.requirement == 'gender'%}
+	 {% set genderCounter = genderCounter + 1 %}
+	{% endif %}
+
+	{% if item.appointment.date =='6/11/2019' and item.status === "Booked" and item.appointment.requirement == 'gender'%}
+	 {% set genderCounterDay = genderCounterDay + 1 %}
+	{% endif %}
+	{% if item.status === "Booked" and item.appointment.requirement == 'audio'%}
+	 {% set audioCounter = audioCounter + 1 %}
+	{% endif %}
+
+	{% if item.appointment.date =='6/11/2019' and item.status === "Booked" and item.appointment.requirement == 'audio'%}
+	 {% set audioCounterDay = audioCounterDay + 1 %}
+	{% endif %}
+	{% if item.status === "Booked" and item.appointment.requirement == 'accessible'%}
+	 {% set accessCounter = accessCounter + 1 %}
+	{% endif %}
+    {% if item.appointment.date =='6/11/2019' and item.status === "Booked" and item.appointment.requirement == 'accessible'%}
+	 {% set accessCounterDay = accessCounterDay + 1 %}
+	{% endif %}
+
+
+	{% if item.status === "Booked" and item.caseflags == 'ucb' %}
+	 {% set ucbCounter = ucbCounter + 1 %}
+	{% endif %}
+
+	{% if item.appointment.date =='6/11/2019' and item.status == 'Booked' and item.caseflags =='ucb' %}
+	 {% set ucbCounterDay = ucbCounterDay + 1 %}
+	{% endif %}
+
+	
+	{% if item.status === "Booked" and item.referral.type == 'New referral' %}
+	 {% set newCounter = newCounter + 1 %}
+	{% endif %}
+
+	{% if item.appointment.date =='6/11/2019' and item.status === "Booked" and item.referral.type == 'New referral' %}
+	 {% set newCounterDay = newCounterDay + 1 %}
+	{% endif %}
+
+	{% if item.status === "Booked" and item.referral.type == 'Re referral' %}
+	 {% set reCounter = reCounter + 1 %}
+	{% endif %}
+
+	{% if item.appointment.date =='6/11/2019' and item.status === "Booked" and item.referral.type == 'Re referral' %}
+	 {% set reCounterDay = reCounterDay + 1 %}
+	{% endif %}
+
+	    
+	{% if item.appointment.date =='6/11/2019' and item.status == 'Booked' and item.appointment.dna == 'dna'%}
+	 {% set edCounterDay = edCounterDay + 1 %}
+	{% endif %}
+
+	{% if item.status === "Booked" and item.appointment.dna == 'dna' %}
+	 {% set edCounter = edCounter + 1 %}
+	{% endif %}
+
+
+    {% if item.appointment.date == '6/11/2019' %}
+	 {% set todayCounter = todayCounter + 1 %}
+	{% endif %}
+
+
+ 	{% if item.appointment.date =='6/11/2019' and  item.status === "Booked" and item.appointment.type == 'Complex neuro' %}
+	 {% set complexCounterDay = complexCounterDay + 1 %}
+    {% elif item.status === "Booked" and item.appointment.type == 'Complex neuro' %}
+	 {% set complexCounter = complexCounter + 1 %}
+	{% endif %}
+
+
+ 	{% if item.appointment.date =='6/11/2019' and  item.status === "Booked" and item.appointment.type == 'Neuro' %}
+	 {% set neuroCounterDay = neuroCounterDay + 1 %}
+    {% elif item.status === "Booked" and item.appointment.type == 'Neuro' %}
+	 {% set neuroCounter = neuroCounter + 1 %}
+	{% endif %}
+
+	{% if item.appointment.date =='6/11/2019' and  item.status === "Booked" and item.appointment.type == 'Non neuro' %}
+	 {% set nonCounterDay = nonCounterDay + 1 %}
+    {% elif item.status === "Booked" and item.appointment.type == 'Non neuro' %}
+	 {% set nonCounter = nonCounter + 1 %}
+	{% endif %}
+	{% endfor %}
+               
+<nav class="details-nav v2 mb30">
+	<ul>
+	    <li>
+				<a href="/{{path }}/scenario/not-testing">
+				Referrals (21)</a>
+	    
+
+	    </li>
+	  
+	    <li>
+				<a href="/{{path }}/scenario/not-testing">
+				Reviews (44)</a>
+	    
+
+	    </li>
+	  
+
+              <li class="active_detail">
+				<a href="/{{path }}/scenario/not-testing">
+				Appointments (1000)</a>
+	    
+	    	<ul>
+	    		<li>
+	    			<a href="/{{path }}/scenario/not-testing" class="active_child">Ready to book (244) </a>
+
+	    		</li>
+	    		<li>
+	    			<a href="booked">Booked (400)</a>
+	    		</li>
+
+	    	
+	    		<!--<li>
+	    			<a href="ed-referrals" class="active_child">ED Re-referrals (2)</a>
+
+	    		</li> -->
+
+	    	
+	    	</ul>
+	    
+
+	    </li>
+	  
+	    <li>
+				<a href="/{{path }}/scenario/not-testing">
+				Today's appointments (21)</a>
+	    
+
+	    </li>
+	  
+	</ul>
+</nav>
+</div>
+
+
+
+
+  
+       
+
+{% endblock %}  
+ 
+
+{% block caselist_content %}
+
+
+
+
+            
+			    <h1 class="heading-large mt0">
+            <span class="heading-secondary">
+			     {% if checked('filter','tresco') %}
+					DWP Tresco House
+					{% elif checked('filter','fiveways') %}
+					DWP Birmingham Fiveways
+					{% else %}
+					Wolverhampton
+					{% endif%}
+			</span>
+			Ready to book
+             </h1>
+
+	
+            <h2 class="heading-small mt30">Filter booked appointments</h2>
+                <div class="check-group check-top">
+                <fieldset>
+				 <div class="check-picker">
+                    <h3 class="visually-hidden"><legend></legend></h3>
+				       <div class="check-choice">
+                      <input id="all"
+                           name="filter"
+                           type="radio"
+                           value="all" class="facet" checked> <label for="all">All ready to book <span>&#40;100&#41;</span></label>
+                    </div>
+                    
+                    
+                    <div class="check-choice">
+                      <input id="new"
+                           name="filter"
+                           type="radio"
+                           value="newReferrals" class="facet"> <label for="new">Good cause referrals<span>&#40;50&#41;</span>
+						   </label>
+                    </div>
+                  </fieldset>
+                </div>
+            
+					
+			 <p><button id="facetFilterBtn" class="">Apply filter</button></p>
+		
+
+            
+
+
+         <h2 class="showing-sign">Showing: &nbsp;<span>	{% if data['capDay'] %}{{capDay}} {{capMonth}} 2019 &nbsp;<b>&#124;</b> &nbsp;{% endif %} {% if checked('filter', 'DNA referral') %}
+            Previous DNA's
+			 {% elif checked('filter', 'Re referrals') %}
+            Re referrals
+			 {% elif checked('filter', 'New referrals') %}
+            New referrals
+			{% elif checked('filter', 'ucb') %}
+			UCB
+			{% elif checked('filter', 'requirements') or checked('filter', 'requirementstwo') or checked('filter', 'taxi') or checked('filter', 'interpreter') or checked('filter', 'gender') or checked('filter', 'audio') or checked('filter', 'access') %}
+			Requirements 
+			{% else %}
+	        Ready to book
+            {% endif %} 
+			{% if  checked('filter', 'Complex') %}&nbsp;<b>&#124;</b> &nbsp; Complex neuro</span> 
+			{% elif  checked('filter', 'Neuro') %}&nbsp;<b>&#124;</b> &nbsp; Neuro</span> 
+			{% elif  checked('filter', 'Non') %}&nbsp;<b>&#124;</b> &nbsp; Non neuro</span> 
+			{% elif  checked('filter', 'taxi') %}&nbsp;<b>&#124;</b> &nbsp; Taxi</span> 
+			{% elif  checked('filter', 'interpreter') %}&nbsp;<b>&#124;</b> &nbsp; Interpreter</span> 
+			{% elif  checked('filter', 'gender') %}&nbsp;<b>&#124;</b> &nbsp; Same gender</span> 
+			{% elif  checked('filter', 'audio') %}&nbsp;<b>&#124;</b> &nbsp; Audio</span>
+			{% elif  checked('filter', 'access') %}&nbsp;<b>&#124;</b> &nbsp; Accessible room</span>  
+			{% elif  checked('filter', 'ucb') %} 
+			{% elif  checked('filter', 'DNA referral') %}
+			{% elif  checked('filter', 'New referrals') %}
+			{% elif  checked('filter', 'Re referrals') %}
+			{% else%}&nbsp;<b>&#124;</b> &nbsp; All types </span>{% endif %}</h2>  
+           
+
+		 
+		 
+		 
+		 
+		  <table id="fileredTable"class="filtered">
+
+                <thead>
+                  <tr>
+                    <th>Case details</th>
+                    <th>Appointment information</th>
+				    <th>Referral type</th>
+                  </tr>
+                </thead>
+
+				<tr>
+                  <td class="col1"><ul class="identifiers">
+				  <li><span class="badge">UC</span></li>
+				   
+				  </ul>
+				  <div class="claimant"><a href="/fha/appointment-scenarios/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Frannie Giabuzzi</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>21-2266110 
+				  </span>
+				  </div>
+				  </td>
+                  <td>
+				  <div class="grid-row">
+				  <div class="column-third">
+				  <h3 class="">Details</h3>
+				  <ul class="list">
+				  
+				  <li>10:00 am</li>
+				  
+				    
+				  <li>30/10/2019</li>
+				  
+				  <li>Non neuro</li>
+
+				  </ul>
+				  </div>
+				  <div class="column-third">
+				    
+				  <h3 class="">Requirements</h3>
+				  <ul class="list">
+				   
+				  
+				   
+				  <li>Audio recording</li>
+				  
+				     
+				  
+				  </ul>
+				   
+				   </div>
+				   	  <div class="column-third">
+				    
+				  <h3 class=""><a href="appointment-history?nino=21-2266110">History</a></h3>
+				  <ul class="list">
+				   
+				  <li>Previous DNA</li>
+				  
+				   
+				   
+				  
+				  </ul>
+				   
+				   </div>
+				   </div>
+				  </td>
+				  <td class="col3">
+				   <h3 class="">Good cause new referral</h3>
+	
+				   <ul class="list">
+				   
+				  <li>Rebook target: <span class="block">9 days remaining</span></li>
+				   <li>SLA target:<span class="block">19 days remaining</span></li>
+				     
+				   </ul>
+
+				  </td>
+                 </tr>
+
+
+                <tr>
+                  <td class="col1"><ul class="identifiers">
+				  <li><span class="badge">ESA</span></li>
+				   
+				  </ul>
+				  <div class="claimant"><a href="/fha/appointment-scenarios/scenario2/timeline"><span class="visually-hidden">Name</span>Burnard Stables</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>80-2725257 
+				  </span>
+				  </div>
+				  </td>
+                  <td>
+				  <div class="grid-row">
+				  <div class="column-third">
+				  <h3 class="">Details</h3>
+				  <ul class="list">
+				  
+				  <li>10:00 am</li>
+				  
+				    
+				  <li>30/10/2019</li>
+				  
+				  <li>Neuro</li>
+
+				  <li>Wolverhampton</li>
+
+				  </ul>
+				  </div>
+				  <div class="column-third">
+				    
+				  <h3 class="">Requirements</h3>
+				  <ul class="list">
+				   
+				  
+				  <li>Interpreter: German</li>
+				  <li>Same gender hcp</li>
+				   
+				     
+				  
+				  </ul>
+				   
+				   </div>
+				   	  <div class="column-third">
+				    
+				   </div>
+				   </div>
+				  </td>
+				  <td class="col3">
+				   <h3 class="">Re referral</h3>
+	
+				   <ul class="list">
+				   
+				   
+				   </ul>
+
+				   
+
+				  </td>
+                 </tr>
+
+				 <tr>
+                  <td class="col1"><ul class="identifiers">
+				  <li><span class="badge">ESA</span></li>
+				   
+				  </ul>
+				  <div class="claimant"><a href="/fha/appointment-scenarios/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Perice Webburn</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>31-1668467 
+				  </span>
+				  </div>
+				  </td>
+                  <td>
+				  <div class="grid-row">
+				  <div class="column-third">
+				  <h3 class="">Details</h3>
+				  <ul class="list">
+				  
+				  <li>11:00 am</li>
+				  
+				    
+				  <li>30/10/2019</li>
+				  
+				  <li>Complex neuro</li>
+
+				  </ul>
+				  </div>
+				  <div class="column-third">
+				    
+				   </div>
+				   	  <div class="column-third">
+				   </div>
+				   </div>
+				  </td>
+				  <td class="col3">
+				   <h3 class="">New referral</h3>
+	
+				   <ul class="list">
+				   <li>SLA target:<span class="block">22 days remaining</span></li>
+				     
+				   </ul>
+
+				   
+
+				  </td>
+                 </tr>
+
+              </table>
+
+
+</form>
+{% endblock %}
+
+
+	
+
+
+
+
+

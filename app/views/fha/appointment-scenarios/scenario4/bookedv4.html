@@ -107,7 +107,7 @@ span.dummy   {
 </style>
 
 
-    <form class="form" action="bookedv2" method="post">
+    <form class="form" action="bookedv4" method="post">
 	<div class="fixednav">
 		<div class="search-customer">
 			<label class="form-label-bold visually-hidden" for="search">Customer search</label>
@@ -268,6 +268,7 @@ span.dummy   {
 	{% endif %}
 	{% endfor %}
                
+<!-- 
 <nav class="details-nav v2 mb30">
 	<ul>
 	    <li>
@@ -312,6 +313,53 @@ span.dummy   {
 					</ul>
 	    		</li>
 
+	    
+	    	
+	    	</ul>
+	    
+
+	    </li>
+	  
+	    <li>
+				<a href="/{{path }}/scenario/not-testing">
+				Today's appointments (21)</a>
+	    
+
+	    </li>
+	  
+	</ul>
+</nav> -->
+
+<nav class="details-nav v2 mb30">
+	<ul>
+	    <li>
+				<a href="/{{path }}/scenario/not-testing">
+				Referrals (21)</a>
+	    
+
+	    </li>
+	  
+	    <li>
+				<a href="/{{path }}/scenario/not-testing">
+				Reviews (44)</a>
+	    
+
+	    </li>
+	  
+
+              <li class="active_detail">
+				<a href="/{{path }}/scenario/not-testing">
+				Appointments (1000)</a>
+	    
+	    	<ul>
+	    		<li>
+	    			<a href="/{{path }}/scenario/not-testing">Ready to book (244) </a>
+
+	    		</li>
+	    		<li>
+	    			<a href="booked" class="active_child">Booked ({{bookedCounter}})</a>
+	    		</li>
+
 	    	
 	    		<!--<li>
 	    			<a href="ed-referrals" class="active_child">ED Re-referrals (2)</a>
@@ -352,18 +400,59 @@ span.dummy   {
             
 			    <h1 class="heading-large mt0">
             <span class="heading-secondary">
-			     {% if checked('filter','tresco') %}
+			     {% if checked('filter-assess','tresco') %}
 					DWP Tresco House
-					{% elif checked('filter','fiveways') %}
+					{% elif checked('filter-assess','fiveways') %}
 					DWP Birmingham Fiveways
-					{% else %}
+					{% elif checked('filter-assess','wolves') %}
 					Wolverhampton
+					{% else %}
+					All 
 					{% endif%}
 			</span>
 			Booked appointments
              </h1>
 
+         <h3 class="heading-small mt30">Filter by assessment centre</h3>
+                <div class="check-group check-top">
+                <fieldset>
+						 <div class="check-picker">
+                    <h3 class="visually-hidden"><legend></legend></h3>
+				       <div class="check-choice">
+                      <input id="all-assess"
+                           name="filter-assess"
+                           type="radio"
+                           value="all-assess" class="facet" {{ checked('filter-assess', 'all-assess') }} checked> <label for="all-assess">All  <span>&#40;457&#41;</span></label>
+                    </div>
+                    
+                    
+                    <div class="check-choice">
+                      <input id="tresco"
+                           name="filter-assess"
+                           type="radio"
+                           value="tresco" class="facet" class="facet" {{ checked('filter-assess', 'tresco') }} > <label for="tresco">Tresco <span>&#40;156&#41;</span>
+						   </label>
+                    </div>
 
+					    <div class="check-choice">
+                      <input id="fiveways"
+                           name="filter-assess"
+                           type="radio"
+                           value="fiveways" class="facet" class="facet" {{ checked('filter-assess', 'fiveways') }} > <label for="fiveways">Fiveways <span>&#40;147&#41;</span>
+						   </label>
+                    </div>
+
+					    <div class="check-choice">
+                      <input id="wolves"
+                           name="filter-assess"
+                           type="radio"
+                           value="wolves" class="facet" class="facet" {{ checked('filter-assess', 'wolves') }} > <label for="wolves">Wolverhampton <span>&#40;154&#41;</span>
+						   </label>
+                    </div>
+                  </fieldset>
+                </div>
+             <hr class="filterhr" />
+			  <h2 class="heading-small mt15">Filter by day</h2>
     <fieldset>
       <legend>
         <span class="visually-hidden">
@@ -564,40 +653,6 @@ span.dummy   {
 				
 					
             {% endif %}
-            
-
-
-         <h2 class="showing-sign">Showing: &nbsp;<span>	{% if data['capDay'] %}{{capDay}} {{capMonth}} 2019 &nbsp;<b>&#124;</b> &nbsp;{% endif %} {% if checked('filter', 'DNA referral') %}
-            Previous DNA's
-			 {% elif checked('filter', 'Re referrals') %}
-            Re referrals
-			 {% elif checked('filter', 'New referrals') %}
-            New referrals
-			{% elif checked('filter', 'ucb') %}
-			UCB
-			{% elif checked('filter', 'requirements') or checked('filter', 'requirementstwo') or checked('filter', 'taxi') or checked('filter', 'interpreter') or checked('filter', 'gender') or checked('filter', 'audio') or checked('filter', 'access') %}
-			Requirements 
-			{% else %}
-	        Booked
-            {% endif %} 
-			{% if  checked('filter', 'Complex') %}&nbsp;<b>&#124;</b> &nbsp; Complex neuro</span> 
-			{% elif  checked('filter', 'Neuro') %}&nbsp;<b>&#124;</b> &nbsp; Neuro</span> 
-			{% elif  checked('filter', 'Non') %}&nbsp;<b>&#124;</b> &nbsp; Non neuro</span> 
-			{% elif  checked('filter', 'taxi') %}&nbsp;<b>&#124;</b> &nbsp; Taxi</span> 
-			{% elif  checked('filter', 'interpreter') %}&nbsp;<b>&#124;</b> &nbsp; Interpreter</span> 
-			{% elif  checked('filter', 'gender') %}&nbsp;<b>&#124;</b> &nbsp; Same gender</span> 
-			{% elif  checked('filter', 'audio') %}&nbsp;<b>&#124;</b> &nbsp; Audio</span>
-			{% elif  checked('filter', 'access') %}&nbsp;<b>&#124;</b> &nbsp; Accessible room</span>  
-			{% elif  checked('filter', 'ucb') %} 
-			{% elif  checked('filter', 'DNA referral') %}
-			{% elif  checked('filter', 'New referrals') %}
-			{% elif  checked('filter', 'Re referrals') %}
-			{% else%}&nbsp;<b>&#124;</b> &nbsp; All types </span>{% endif %}</h2>  
-           
-
-		 
-		 
-		 
 		 
 		  <table id="fileredTable"class="filtered">
 

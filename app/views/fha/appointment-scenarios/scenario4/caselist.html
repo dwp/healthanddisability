@@ -93,12 +93,9 @@
 
 {% block caselist_content %}
 
-            <h1 class="heading-medium mt0"><span class="heading-xlarge">{{customers.length}}</span><br/>Appointments</h1>
+ 
 <style>
-hr.filter{
-	clear:left;
-	width:100%;
-}
+
 
 .badge{
 	float:left;
@@ -112,231 +109,890 @@ hr.filter{
   left:-100%;	
 }
 
-.panel.panel-error{
-	background:rgba(223, 48, 52, 0.05);
-	border-left:3px solid #df3034;
+
+
+button.link{
+	border:none;
+	padding:0;
+	font-size:19px;
+	background:transparent;	
 }
 
-.panel{
-		border-left:3px solid;
-		margin-top:5px;
-		font-size:16px;
-		padding:8px;
+
+
+.check-group{
+	margin:0;
+	padding:0;
 }
 
-.panel .heading-small{
-		font-size:17px;
+.filterhr{
+	margin:15px 0;
+}
+
+
+.filtered td ul.list{
+	font-weight:bold;
+	margin-bottom:0px;
+	font-size:17px;
 }
 
 .claimant{
 	display:inline-block;
 	margin-left:10px;
 }
+
+.button.button-tursery{
+	background:transparent;
+	color:black;
+	border:2px solid #dee0e2;
+	height:40px;
+	line-height:16px;
+	box-shadow:none;
+}
+
 </style>
-  <form class="" method="post" action="/{{path}}/scenario4/caselist">
- <hr >
-			<div class="grid-row">
-			<div class="column-full">
-			<h2> Filter by:</h2>
-			</div>
-           
-			            <div class="column-quarter">
-              <h2 class="heading-small mt20 mb0">When</h2>
-              <div class="pickslots">
+
+
+
+
+<h1 class="heading-large mt0">
+            <span class="heading-secondary">
+			     
+					DWP Tresco House
+					
+			</span>
+			Reviews
+             </h1>
+
+
+
+
+ <h2 class="heading-small mt30">Filter by referral:</h2>
                 <div class="check-group check-top">
-                  <fieldset class="checkslot-picker">
-                    <h3 class="visually-hidden"><legend>Choose Dates</legend></h3>
-                    <div class="check-choice">
-                      <input id="tomorrow"
-                           name="filter-day"
+                <fieldset>
+				 <div class="check-picker">
+                    <h3 class="visually-hidden"><legend></legend></h3>
+                <div class="check-choice">
+                      <input id="all"
+                           name="filter"
                            type="radio"
-                           value="tomorrow" class="facet" {{ checked('filter-day', 'tomorrow') }}> <label for="tomorrow" >Tomorrow</label>
+                           value="all" class="facet" checked> <label for="all">All referrals <span>&#40;100&#41;</span></label>
                     </div>
+                    
+                    
                     <div class="check-choice">
-                      <input id="nextweek"
-                           name="filter-day"
+                      <input id="new"
+                           name="filter"
                            type="radio"
-                           value="nextweek"  class="facet" {{ checked('filter-day', 'nextweek') }}> <label for="nextweek">Next week</label>
+                           value="newReferrals" class="facet"> <label for="new">New referrals <span>&#40;50&#41;</span>
+						   </label>
                     </div>
+
+                    <div class="check-choice">
+                      <input id="reRe"
+                           name="filter"
+                           type="radio"
+                           value="reReferrals" class="facet"> <label for="reRe">Re-referrals <span>&#40;20&#41;</span>
+						   </label>
+                    </div>
+                    
+                    <div class="check-choice">
+                      <input id="good"
+                           name="filter"
+                           type="radio"
+                           value="GoodCause" class="facet"> <label for="good">Good cause referrals <span>&#40;30&#41;</span>
+						   </label>
+                    </div>
+                    
+
+                
+
+					
                   </fieldset>
                 </div>
-              </div>
-			</div>
-  			            <div class="column-quarter">
-              <h2 class="heading-small mt20 mb0">Requirements</h2>
-              <div class="pickslots">
-                <div class="check-group check-top">
-                  <fieldset class="checkslot-picker">
-                    <h3 class="visually-hidden"><legend></legend></h3>
-                    <div class="check-choice">
-                      <input id="interpreter"
-                           name="filter-requirement"
-                           type="radio"
-                           value="interpreter" class="facet" {{ checked('filter-requirement', 'interpreter') }}> <label for="interpreter">Interpreter</label>
-                    </div>
-                    <div class="check-choice">
-                      <input id="gender"
-                           name="filter-requirement"
-                           type="radio"
-                           value="gender" class="facet" {{ checked('filter-requirement', 'gender') }}> <label for="gender">Same gender</label>
-                    </div>
-
-					  <div class="check-choice">
-                      <input id="accessible"
-                           name="filter-requirement"
-                           type="radio"
-                           value="accessible" class="facet" {{ checked('filter-requirement', 'accessible') }}> <label for="accessible">Accessible room</label>
-                    </div>
-						  <div class="check-choice">
-                      <input id="audio"
-                           name="filter-requirement"
-                           type="radio"
-                           value="audio" class="facet" {{ checked('filter-requirement', 'audio') }}> <label for="audio">Audio equipment</label>
-                    </div>
-
-						  <div class="check-choice">
-                      <input id="taxi"
-                           name="filter-requirement"
-                           type="radio"
-                           value="taxi" class="facet" {{ checked('filter-requirement', 'taxi') }}> <label for="taxi">Taxi ({{taxiCounter}})</label>
-                    </div>
-
-                  </fieldset>
-                </div>
-              </div>
-            </div>
+            
+	
 
 
-			  			            <div class="column-quarter">
-              <h2 class="heading-small mt20 mb0">Referral type</h2>
-              <div class="pickslots">
-                <div class="check-group check-top">
-                  <fieldset class="checkslot-picker">
-                    <h3 class="visually-hidden"><legend></legend></h3>
-                    <div class="check-choice">
-                      <input id="New referral"
-                           name="filter-type"
-                           type="radio"
-                           value="New referral"> <label for="New referral">New referral</label>
-                    </div>
-                    <div class="check-choice">
-                      <input id="Re refferals"
-                           name="filter-type"
-                           type="radio"
-                           value="Re refferals"> <label for="Re refferals">Re refferals</label>
-                    </div>
-
-					  <div class="check-choice">
-                      <input id="Ed referals"
-                           name="filter-type"
-                           type="radio"
-                           value="Ed referals"> <label for="Ed referals">Ed referals</label>
-                    </div>
+		 <div class="subfilter">
+                <h2 class="heading-small mt10" >Filter by benefit:</h2>   
+                <fieldset>
+				
+				 <div class="check-picker">
 			
-                  </fieldset>
-                </div>
-              </div>
-            </div>
-
-
-					  			            <div class="column-quarter">
-              <h2 class="heading-small mt20 mb0">Case flags</h2>
-              <div class="pickslots">
-                <div class="check-group check-top">
-                  <fieldset class="checkslot-picker">
-                    <h3 class="visually-hidden"><legend></legend></h3>
-                    <div class="check-choice">
-                      <input id="filter1"
-                           name="filter-flag"
+                    <h3 class="visually-hidden"><legend>Secondary filter</legend></h3>
+						 <div class="check-choice">
+                      <input id="all2"
+                           name="filter2"
                            type="radio"
-                           value="ucb"> <label for="filter1">UCB</label>
+                           value="all2" class="facet" checked> <label for="all2">All benefit types <span>&#40;100&#41;</span></label>
                     </div>
-    
-
+                     <div class="check-choice">
+                      <input id="pip"
+                           name="filter2"
+                           type="radio"
+                           value="pip" class="facet"> <label for="pip">PIP <span>&#40;75&#41;</span></label>
+                    </div>
 					  <div class="check-choice">
-                      <input id="filter-flag"
-                           name="filter-flag"
+                      <input id="uc"
+                           name="filter2"
                            type="radio"
-                           value="c"> <label for="next we">Appointee</label>
+                           value="uc" class="facet"> <label for="uc">UC <span>&#40;15&#41;</span></label>
                     </div>
-			 <p><button id="facetFilterBtn" class="">Apply filter</button></p>
-                  </fieldset>
-                </div>
-              </div>
-		
-            </div>
-		</div>
-    <hr >
-</form>
+					  <div class="check-choice">
+                      <input id="esa"
+                           name="filter2"
+                           type="radio"
+                           value="esa" class="facet"> <label for="esa">ESA <span>&#40;10&#41;</span></label>
+                    </div>
+					</fieldset>
+					</div>
+				
+					
+       
 
-    	  <table>
+            <h2 class="showing-sign">Showing: &nbsp;&nbsp;<span>All referrals &nbsp; <b>&#124;</b> &nbsp; PIP Benefit</span></h2>  
+            
+                      
+   
+              <table id="fileredTable" class="filtered">
 
                 <thead>
                   <tr>
                     <th>Case details</th>
-					<th>Status</th>
-                    <th>Appointment details</th>
-					<th>Referral type</th>
-  
+                    <th>Referral type</th>
+                    <th>Status</th>
                   </tr>
                 </thead>
+                
 
-		{% if checked('filter-day', 'tomorrow') and checked('filter-requirement', 'taxi') %}
-			{% for customer in customers %}
-					{% if customer.appointment.date =='04/10/2019' and customer.status == 'Booked' and customer.appointment.requirement == 'taxi'
-					%}
-						{% include path+"/scenario4/_table-row-caselist.html" %}
-					{% endif %}
-			{% endfor %}	
-		{% elif checked('filter-day', 'tomorrow') and checked('filter-requirement', 'audio') %}
-			{% for customer in customers %}
-					{% if customer.appointment.date =='04/10/2019' and customer.status == 'Booked' and customer.appointment.requirement == 'audio'
-					%}
-						{% include path+"/scenario4/_table-row-caselist.html" %}
-					{% endif %}
-			{% endfor %}			
-		{% elif checked('filter-day', 'tomorrow') and checked('filter-requirement', 'accessible') %}
-			{% for customer in customers %}
-					{% if customer.appointment.date =='04/10/2019' and customer.status == 'Booked' and customer.appointment.requirement == 'accessible'
-					%}
-						{% include path+"/scenario4/_table-row-caselist.html" %}
-					{% endif %}
-			{% endfor %}	
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+                <tr>
+                  <td class="col1">
+                  <ul class="identifiers">
+					  <li><span class="badge">PIP</span></li>
+				  </ul>
+				  <div class="claimant">
+				  	<a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Bobby Henderson</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>JW 41 55 66 Z
+				  </span>
+				  
+				  </div>
+				  </td>
+				  <td>New referral</td>
+                  <td>Ready for review</td>
+                </tr>
+                
+             
 
-			{% elif checked('filter-day', 'tomorrow') and checked('filter-requirement', 'gender') %}
-		{% for customer in customers %}
-				{% if customer.appointment.date =='04/10/2019' and customer.status == 'Booked' and customer.appointment.requirement == 'gender'
-				 %}
-					{% include path+"/scenario4/_table-row-caselist.html" %}
-				{% endif %}
-		{% endfor %}			
-		
-		
+               
 
-
-	{% elif checked('filter-day', 'tomorrow') and checked('filter-requirement', 'interpreter') %}
-		{% for customer in customers %}
-				{% if customer.appointment.date =='04/10/2019' and customer.status == 'Booked' and customer.appointment.requirement == 'interpreter'
-				 %}
-					{% include path+"/scenario4/_table-row-caselist.html" %}
-				{% endif %}
-		{% endfor %}			
-
-	{% elif checked('filter-day', 'tomorrow') %}
-	
-		{% for customer in customers %}
-				{% if customer.appointment.date =='04/10/2019' and customer.status == 'Booked' %}
-					{% include path+"/scenario4/_table-row-caselist.html" %}
-				{% endif %}
-		{% endfor %}
-
-	{% else %}			
-		{% for customer in customers %}    
-				{% include path+"/scenario4/_table-row-caselist.html" %}
-		{% endfor %}   
-	{%endif%}
+                </tbody>
 
               </table>
+          
 
 {% endblock %}
 
