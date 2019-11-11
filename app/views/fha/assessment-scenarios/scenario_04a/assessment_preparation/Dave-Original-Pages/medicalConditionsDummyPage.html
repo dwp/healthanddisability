@@ -1,0 +1,38 @@
+{% extends path+"/scenario_04a/_layout-case-simple.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+<h1 class="heading-large">Conditions & medication</h1>
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+	
+	<form method="post" action="window.close();">
+
+	<div class="form-group">
+		<textarea class="form-control form-control-3-4" name="exampleDummyData" id="exampleDummyData" rows="6">{{ exampleDummyData }}</textarea>
+	</div><!-- section end -->
+
+<a href="/{{path }}/scenario_04a/assessment_face-to-face/appointment-fme" class="button" id="closePrepTrigger" target="_blank">Finish & close</a>
+
+	</form>
+
+  </div><!-- column -->
+</div><!-- row -->
+
+
+{% endblock %}
+
+

@@ -1,4 +1,4 @@
-{% extends path+"/scenario_04a/_layout-case-simple_gt.html" %}
+{% extends path+"/scenario_04a/_layout-case-simple8.html" %}
 
 
 {% block actioncolumn %}
@@ -71,7 +71,7 @@
 {% endblock %}
 
 {% block citizen_detail %}
-Jurgen Covault
+Cranjus McManaman
 {% endblock %}
 
 {% block citizen_content %}
@@ -85,10 +85,10 @@ Jurgen Covault
     <div class="column-full">
     
     {# macro #}
-  {{ nav.scenario_tabs("contact",1,path1, customer._id) }}
+  {{ nav.scenario_tabs("details-fme",1,path1, customer._id) }}
     
    <h1 class="heading-large">
-  	Contact</h1>
+  	Medical</h1>
   	
   
   <div class="portal-display">	
@@ -101,61 +101,65 @@ Jurgen Covault
 		  	
 		  		 <div class="portal-card">
 				<div class="portal-head">
-					<h3>Cranjus' details</h3>
+					<h3>Current conditions</h3>
 				</div>
 				<!-- / title -->
 
 				<div class="portal-inner">
 				
 				
-				<table>
-						<caption class="visually-hidden">Contact information</caption>
 
+					<table class="medical-list">
+						<caption>Medical conditions list</caption>
+						
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Since</th>
+					
+							</tr>
+						</thead>
 
 						
 						<tbody>
 						
 						
 						<tr>
-							<th>Contact number</th>
-							<td>0151 000 0000</td>
+							<td>Thalassaemia</td>
+							<td>12 November 2018</td>
+							
 						</tr>
 						
 						<tr>
-							<th>Email address</th>
-							<td>cranjus@mcmanaman.com</td>
+							<td>Autoimmune (idiopathic) thrombocytopaenic purpura (ITP)</td>
+							<td>7 September 2018</td>
+							
 						</tr>
 						
 						<tr>
-							<th>Preferred contact method</th>
-							<td>Email</td>
+							<td>Influenza seasonal flu</td>
+							<td>7 September 2018</td>
+							
 						</tr>
 						
 						<tr>
-							<th>Address</th>
-							<td class="address-stack">
-								<span>860 Liverpool Lane</span>
-								<span>Bolton</span>
-								<span>Lancashire</span>
-								<span>TXX ZZZ</span>
-							</td>
+							<td>Depressive disorder</td>
+							<td>23 August 2018</td>
+							
 						</tr>
 						
 						<tr>
-							<th>Is address used for correspondence</th>
-							<td>Yes</td>
+							<td>Fracture complication &ndash; complex regional pain syndrome (Sudeck's atrophy)</td>
+							<td>17 August 2018</td>
+							
 						</tr>
 
 						
 						
 						</tbody>
 					</table>
-				
-				
-				
 					
-					
-				<p class="view-all"><a href="/{{path }}/scenario8/not-testing" class="secondary-invert">Edit Cranjus's details</a></p>
+					<p class="view-all"><a href="/{{path }}/scenario8/not-testing" class="secondary-invert">View historical conditions</a></p>
 
 
 					
@@ -163,6 +167,13 @@ Jurgen Covault
 				<!-- / inner card -->
 			</div>
 			<!-- / portal card -->
+			
+			
+			
+			
+			
+			
+			
 		  	
 		  	</div>
 		  	
@@ -172,18 +183,32 @@ Jurgen Covault
 		
 			<div class="portal-card">
 				<div class="portal-head">
-					<h3>Other details</h3>
+					<h3>Previous outcome</h3>
 				</div>
 				<!-- / title -->
 
 				<div class="portal-inner">
+
 				
+				<dl>
+					<dt>Date</dt>
+					<dd>12 June 2019</dd>
+					
+					<dt>Primary condition</dt>
+					<dd>Asthma</dd>
+					
+					<dt>Outcome</dt>
+					<dd>Support group</dd>
+					
+					<dt>Justification</dt>
+					<dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</dd>
+					
+				</dl>
+
+				<hr>
 				
-				<ul class="action-list">
-						<li><a href="/{{path }}/scenario8/not-testing" class="secondary-invert">View GP details</a></li>
-						<li><a href="/{{path }}/scenario8/not-testing" class="secondary-invert">Add a medical contact</a></li>
-					</ul>
-														
+				<p><a href="/{{path }}/scenario8/not-testing" class="secondary-invert">View report</a></p>
+								
 				</div>
 				<!-- / inner card -->
 			<!-- / portal card -->

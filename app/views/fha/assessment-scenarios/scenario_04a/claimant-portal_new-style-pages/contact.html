@@ -1,9 +1,9 @@
-{% extends path+"/_layout-case-simple8.html" %}
+{% extends path+"/scenario_04a/_layout-case-simple8.html" %}
 
 
 {% block actioncolumn %}
    
-  <p class="returnRef"><a href="#" class="link-back">Return to case list</a></p>
+  <!--<p class="returnRef"><a href="#" class="link-back">Return to case list</a></p>-->
  
  <div class="caseStatus">
  
@@ -50,8 +50,13 @@
 	
 	{% else %}
 	
-	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
-	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario8/rec-portal" class="button">Make recommendation</a></h3>
+	<!--<h2 class="main-status"><span>Current case status</span>Ready for review</h2>-->
+	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario_04a/medicalConditionsDummyPage" class="button"  
+    onclick="window.open('/{{path }}/scenario_04a/medicalConditionsDummyPage', 
+                         'newwindow', 
+                         'width=1200,height=800'); 
+              return false;"
+ >Prepare for assessment</a></h3>
 	
 	
 
@@ -80,10 +85,10 @@ Cranjus McManaman
     <div class="column-full">
     
     {# macro #}
-  {{ nav.scenario_tabs("details-fme",1,path1, customer._id) }}
+  {{ nav.scenario_tabs("contact",1,path1, customer._id) }}
     
    <h1 class="heading-large">
-  	Medical</h1>
+  	Contact</h1>
   	
   
   <div class="portal-display">	
@@ -96,65 +101,61 @@ Cranjus McManaman
 		  	
 		  		 <div class="portal-card">
 				<div class="portal-head">
-					<h3>Current conditions</h3>
+					<h3>Cranjus' details</h3>
 				</div>
 				<!-- / title -->
 
 				<div class="portal-inner">
 				
 				
+				<table>
+						<caption class="visually-hidden">Contact information</caption>
 
-					<table class="medical-list">
-						<caption>Medical conditions list</caption>
-						
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Since</th>
-					
-							</tr>
-						</thead>
 
 						
 						<tbody>
 						
 						
 						<tr>
-							<td>Thalassaemia</td>
-							<td>12 November 2018</td>
-							
+							<th>Contact number</th>
+							<td>0151 000 0000</td>
 						</tr>
 						
 						<tr>
-							<td>Autoimmune (idiopathic) thrombocytopaenic purpura (ITP)</td>
-							<td>7 September 2018</td>
-							
+							<th>Email address</th>
+							<td>cranjus@mcmanaman.com</td>
 						</tr>
 						
 						<tr>
-							<td>Influenza seasonal flu</td>
-							<td>7 September 2018</td>
-							
+							<th>Preferred contact method</th>
+							<td>Email</td>
 						</tr>
 						
 						<tr>
-							<td>Depressive disorder</td>
-							<td>23 August 2018</td>
-							
+							<th>Address</th>
+							<td class="address-stack">
+								<span>860 Liverpool Lane</span>
+								<span>Bolton</span>
+								<span>Lancashire</span>
+								<span>TXX ZZZ</span>
+							</td>
 						</tr>
 						
 						<tr>
-							<td>Fracture complication &ndash; complex regional pain syndrome (Sudeck's atrophy)</td>
-							<td>17 August 2018</td>
-							
+							<th>Is address used for correspondence</th>
+							<td>Yes</td>
 						</tr>
 
 						
 						
 						</tbody>
 					</table>
+				
+				
+				
 					
-					<p class="view-all"><a href="/{{path }}/scenario8/not-testing" class="secondary-invert">View historical conditions</a></p>
+					
+				<p class="view-all"><a href="/{{path }}/scenario8/not-testing" class="secondary-invert">Edit Cranjus's details</a></p>
 
 
 					
@@ -162,13 +163,6 @@ Cranjus McManaman
 				<!-- / inner card -->
 			</div>
 			<!-- / portal card -->
-			
-			
-			
-			
-			
-			
-			
 		  	
 		  	</div>
 		  	
@@ -178,32 +172,18 @@ Cranjus McManaman
 		
 			<div class="portal-card">
 				<div class="portal-head">
-					<h3>Previous outcome</h3>
+					<h3>Other details</h3>
 				</div>
 				<!-- / title -->
 
 				<div class="portal-inner">
-
 				
-				<dl>
-					<dt>Date</dt>
-					<dd>12 June 2019</dd>
-					
-					<dt>Primary condition</dt>
-					<dd>Asthma</dd>
-					
-					<dt>Outcome</dt>
-					<dd>Support group</dd>
-					
-					<dt>Justification</dt>
-					<dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</dd>
-					
-				</dl>
-
-				<hr>
 				
-				<p><a href="/{{path }}/scenario8/not-testing" class="secondary-invert">View report</a></p>
-								
+				<ul class="action-list">
+						<li><a href="/{{path }}/scenario8/not-testing" class="secondary-invert">View GP details</a></li>
+						<li><a href="/{{path }}/scenario8/not-testing" class="secondary-invert">Add a medical contact</a></li>
+					</ul>
+														
 				</div>
 				<!-- / inner card -->
 			<!-- / portal card -->

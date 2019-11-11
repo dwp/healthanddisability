@@ -1,0 +1,31 @@
+{% extends path+"/scenario_04a/_layout.html" %}
+
+{% import path+"/scenario_04a/_macro_horizonalSecondaryNav.html" as secondaryNav %} 
+
+{% block assess_content %}
+<main id="content" role="main" class="main-content">
+    <div class="container">
+        {% include path+"/scenario_04a/caselist/_nav.html" %}
+        <div class="grid-row">
+             
+            <div class="column-one-quarter">
+                {% include path+"/scenario_04a/caselist/_search-box.html" %}
+                {% block horizontal_secondary_nav %}
+                
+              
+
+          
+                {% endblock %}  
+            </div>
+            <div class="column-three-quarters">
+                {% block caselist_content %}
+
+                {% endblock %}
+            </div>
+            <!-- column -->
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+</main>
+{% endblock %}

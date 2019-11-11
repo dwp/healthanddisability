@@ -1,6 +1,6 @@
 {% extends path+"/scenario_04a/_layout.html" %}
 
-
+{% import path+"/scenario_04a/_macros_nav_scenario_assessment-prep.html" as nav %} 
 
 
 
@@ -15,18 +15,8 @@
       <div class="column-one-quarter left-area">
       
       	<div class="left-panel">
-
-<p style="font-weight:bold;">Review in progress</p>
-<hr>
-<!--
-          		  <ul class="secondary-actions">
-
-            <li><a href="/{{path}}/scenario/not-testing">Observations</a></li>
-            <li><a href="/{{path}}/scenario/not-testing" class="">Additional attendee</a></li>
-            <li><a href="/{{path}}/scenario/not-testing">Abandon assessment</a></li>
-            <li><a href="/{{path}}/scenario_curtailment-v0-5/exceptionalCircumstances">Curtail assessment</a></li>
-
-          </ul>-->
+  
+          
           {% block actioncolumn %}{% endblock %}
       
 
@@ -52,8 +42,8 @@
                   </ul>
                 </div> -->
                 
-                <h1 class="heading-xlarge"><span>Customer details</span>{% block citizen_detail %}Steve Wooten{% endblock %}</h1>
-                <p class="mb20"><span class="visually-hidden">National insurance number</span>QQ 69 17 54 C</p>
+                <h1 class="heading-xlarge"><span>Customer details</span>{% block citizen_detail %}{% endblock %}</h1>
+                <p><span class="visually-hidden">National insurance number</span>QQ 69 17 54 C</p>
                
               </div><!-- column -->
               
@@ -64,7 +54,7 @@
               
                 <div class="header-left-col mt20">
                  <h2>Date of birth</h2>
-                 <p>15 August 1982  <!--{{customer.dateOfBirth |formatDate('D MMMM YYYY') }}--></p>
+                 <p><!--{{customer.dateOfBirth |formatDate('D MMMM YYYY') }}-->15 August 1982</p>
                 </div>
         
               <div class="header-right-col mt20">
@@ -73,10 +63,7 @@
               </div>
               
               <!-- / column half -->
-        
-         
-               
-                 
+
             
               
             </div><!-- / grid row -->

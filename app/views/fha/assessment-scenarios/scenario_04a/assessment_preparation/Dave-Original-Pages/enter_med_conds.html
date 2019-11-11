@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Medical conditions</h1>
+
+      <form class="form" action="/Medication_now_question" method="post">
+
+        <div class="govuk-form-group">
+    <label class="govuk-label" for="name-of-medical-condition">
+      Name of medical condition
+    </label>
+    <input class="govuk-input" id="name-of-medical-condition" name="name-of-medical-condition" type="text">
+  </div>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="name-of-medical-condition">
+      Who gave this diagnosis?
+    </label>
+    <input class="govuk-input" id="name-of-medical-condition" name="name-of-medical-condition" type="text">
+  </div>
+  <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="date-diagnosed-hint">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <p> Roughly when was it diagnosed?
+      </p>
+    </legend>
+    <span id="passport-issued-hint" class="govuk-hint">
+      For example, 11 2017
+    </span>
+    <div class="govuk-date-input" id="diagnosed-date">
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="diagnosed-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="diagnosed-month" name="diagnosed-month" type="number" pattern="[0-9]*">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="diagnosed-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="diagnosed-year" name="diagnosed-year" type="number" pattern="[0-9]*">
+        </div>
+      </div>
+  </fieldset>
+</div>
+<a href="enter_med_conds2" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Save and add another condition
+</a>
+<br>
+        <button class="govuk-button">No more conditions to add - save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

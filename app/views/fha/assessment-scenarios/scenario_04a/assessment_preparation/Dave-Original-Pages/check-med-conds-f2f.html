@@ -1,0 +1,187 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Conditions and medication - check your entries</h1>
+
+      <h2 class="govuk-heading-m">Medical conditions</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Condition name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Anxiety and depression
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> condition name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Source
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Customer
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> source</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Since
+          </dt>
+          <dd class="govuk-summary-list__value">
+            May 2018
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> Since</span>
+            </a>
+          </dd>
+        </div>
+
+        <a href="#">
+          Remove condition
+          </a>
+        <br>
+        <br>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Condition name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Gout
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> condition name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Source
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Customer
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> source</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Since
+          </dt>
+          <dd class="govuk-summary-list__value">
+            July 2018
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> Since</span>
+            </a>
+          </dd>
+        </div>
+
+        <a href="#">
+          Remove condition
+          </a>
+          <br>
+          <br>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Condition name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Tremors
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change
+                <span class="govuk-visually-hidden"> condition name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Source
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Customer
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change
+                <span class="govuk-visually-hidden"> source</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Since
+            </dt>
+            <dd class="govuk-summary-list__value">
+              February 2019
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change
+                <span class="govuk-visually-hidden"> Since</span>
+              </a>
+            </dd>
+          </div>
+
+          <a href="#">
+            Remove condition
+            </a>
+            <br>
+            <br>
+              <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Add new condition
+              </button>
+      </dl>
+
+
+
+      <h2 class="govuk-heading-m">Confirm medical conditions</h2>
+
+      <p>By submitting these conditions you are confirming that you have discussed them with the customer they have agreed them to be complete and correct.</p>
+
+      <form action="/confirmation" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button">
+          Accept and continue
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

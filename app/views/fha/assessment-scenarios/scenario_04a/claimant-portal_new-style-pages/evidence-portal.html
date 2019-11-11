@@ -1,9 +1,9 @@
-{% extends path+"/_layout-case-simple8.html" %}
+{% extends path+"/scenario_04a/_layout-case-simple8.html" %}
 
 
 {% block actioncolumn %}
    
-  <p class="returnRef"><a href="#" class="link-back">Return to case list</a></p>
+  <!--<p class="returnRef"><a href="#" class="link-back">Return to case list</a></p>-->
  
  <div class="caseStatus">
  
@@ -50,8 +50,13 @@
 	
 	{% else %}
 	
-	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
-	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario8/rec-portal" class="button">Make recommendation</a></h3>
+	<!--<h2 class="main-status"><span>Current case status</span>Ready for review</h2>-->
+	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario_04a/medicalConditionsDummyPage" class="button"  
+    onclick="window.open('/{{path }}/scenario_04a/medicalConditionsDummyPage', 
+                         'newwindow', 
+                         'width=1200,height=800'); 
+              return false;"
+ >Prepare for assessment</a></h3>
 	
 	
 
