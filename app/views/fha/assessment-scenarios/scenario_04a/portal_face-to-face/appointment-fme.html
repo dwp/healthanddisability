@@ -55,8 +55,11 @@
   <!--<form action="#" method="POST">
   <a href="/{{path }}/scenario_04a/assessment_ftf/wca-index" class="button" onclick="window.open('/{{path }}/scenario_04a/assessment_ftf/wca-index', 'newwindow', 'width=1200,height=800'); return false;" id="preparationTrigger">Start face-to-face</a>
 </form>-->
-<form action="#" method="POST">
-  <a href="/{{path }}/scenario_04a/assessment_ftf/wca-index" class="button" id="preparationTrigger">Start face-to-face</a>
+<!--<form action="#" method="POST">
+  <a href="/{{path }}/scenario_04a/assessment_ftf/wca-index" class="button" name="startFTFtrigger" id="startFTFtrigger">Start face-to-face assessment</a>
+</form>-->
+<form action="/{{path }}/scenario_04a/assessment_ftf/wca-index" method="POST">
+<input type="submit" value="Start face-to-face" class="button" name="startFTFtrigger" id="startFTFtrigger">
 </form>
 </h3>
 	
@@ -122,7 +125,7 @@ Steve Wooten
 				
 				<h4>Standard appointment</h4> 
 			      <ul class="list-bullet">
-			          <li>{{ 'Do MMMM YYYY' | baseDateAdd(8) }}</li>
+			          <li>14 November 2019<!--{{ 'Do MMMM YYYY' | baseDateAdd(8) }}--></li>
 			          <li>10:30am</li>
 			          <li>Tresco House</li>
 			      </ul>

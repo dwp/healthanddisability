@@ -1,0 +1,379 @@
+{% extends path+"/scenario_04a/_layout-case-simple_assessment-complete.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+  
+<h1 class="heading-large mb0">Work capability review</h1>
+ 
+
+<div class="review-wrapper full-report">
+
+
+<div class="report-item">
+
+	<table class="report-view-table">
+	<caption class="heading-small">Assessment overview</caption>
+	
+		<tbody>
+			<tr>
+				<th>Date of assessment</th>
+				<td>{{ "Do MMM YYYY" | daysAgo }}</td>
+			</tr>
+			<tr>
+				<th>Assessment centre</th>
+				<td>Fiveways, Birmingham</td>
+			</tr>
+			<tr>
+				<th>Assessor</th>
+				<td>Heather Harrison</td>
+			</tr>
+			<tr>
+				<th>Face-to-face start</th>
+				<td>{{ assessmentStartTime | formatDate("H:mma") }}</td>
+			</tr>
+			<tr>
+				<th>Face-to-face finish</th>
+				<td>{{ assessmentFinishTime | formatDate("H:mma") }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+<!-- / report item -->
+
+
+<div class="report-item">
+
+<h2 class="heading-large">Conditions and medication</h2> 
+
+<table class="report-view-table">
+		<thead>
+			<tr>
+				<th>Name of condition</th>
+				<th>Source</th>
+				<th>Since</th>
+			</tr>
+		</thead>
+	
+		<tbody>
+			<tr>
+				<td>Anxiety and depression</td>
+				<td>Claimant</td>
+				<td>May 2018</td>
+			</tr>
+			<tr>
+				<td>Tremors</td>
+				<td>Claimant</td>
+				<td>Jun 2018</td>
+			</tr>
+		</tbody>
+	</table>
+	
+<h4 class="heading-medium">Anxiety and depression</h4> 
+<p class="bold">Condition history</p>
+<p>{{conditionHistory1}}</p>
+
+	<table class="report-view-table">
+	<caption class="heading-small">Medication and side effects</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Dose</th>
+				<th>Side effects</th>
+			</tr>
+		</thead>
+	
+		<tbody>
+			<tr>
+				<td>Sertraline</td>
+				<td>50mg twice daily</td>
+				<td>None</td>
+			</tr>
+		</tbody>
+	</table>
+
+<p class="bold">Side effects</p>
+<p>{{sideEffects1}}</p>
+<p class="edit-report"><a href="#" class="button-secondary">Edit anxiety and depression details</a></p>
+
+
+<h4 class="heading-medium">Asthma</h4> 
+<p class="bold">Condition history</p>
+<p>{{conditionHistory2}}</p>
+
+	<table class="report-view-table">
+	<caption class="heading-small">Medication and side effects</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Dose</th>
+				<th>Side effects</th>
+			</tr>
+		</thead>
+	
+		<tbody>
+			<tr>
+				<td>Salbutamol</td>
+				<td>1.5mg twice daily</td>
+				<td>None</td>
+			</tr>
+		</tbody>
+	</table>
+
+<p class="bold">Side effects</p>
+<p>{{sideEffects2}}</p>
+
+<p class="edit-report"><a href="#" class="button-secondary">Edit tremors details</a></p>
+
+
+{% if data['conditionHistory3'] %}
+
+<h4 class="heading-medium">Arthiritis</h4> 
+<p class="bold">Condition history</p>
+<p>{{conditionHistory3}}</p>
+
+	<table class="report-view-table">
+	<caption class="heading-small">Medication and side effects</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Dose</th>
+				<th>Side effects</th>
+			</tr>
+		</thead>
+	
+		<tbody>
+			<tr>
+				<td>Ibuprofen</td>
+				<td>Twice daily</td>
+				<td>None</td>
+			</tr>
+		</tbody>
+	</table>
+
+<p class="bold">Side effects</p>
+<p>{{sideEffects3}}</p>
+
+<p class="edit-report"><a href="#" class="button-secondary">Edit tremors details</a></p>
+
+{% endif %}
+
+</div>
+<!-- / report item -->
+
+
+
+<div class="report-item">
+
+	<h2 class="heading-large">Social and work history</h2> 
+	
+	<div class="inner-focus">
+	<p>{{socialWorkHistory}}</p>
+
+
+	<!--    Outputs social work history 
+	    {% for item in socialWorkComments | sortBy("time",true) %}
+		<p>{{ item.comment }}</p>
+  		{% endfor %}-->
+  
+	</div>
+	
+	<p class="edit-report"><a href="#" class="button-secondary">Edit social and work history</a></p>
+	
+</div>
+<!-- / report item -->
+
+
+
+<div class="report-item">
+
+	<h2 class="heading-large">Typical day</h2> 
+	
+	<div class="inner-focus">
+<p>{{typicalDayHistory}}</p>
+
+
+		<!--{% for item in typicalDayComments | sortBy("time",true) %}
+		<p>{{ item.comment }}</p>
+  		{% endfor %}-->
+	</div>
+	
+	<p class="edit-report"><a href="#" class="button-secondary">Edit typical day</a></p>
+	
+</div>
+<!-- / report item -->
+
+
+<div class="report-item">
+
+	<h2 class="heading-large">Informal observations</h2> 
+	
+	<div class="inner-focus">
+<p>{{informalObservations}}</p>
+
+	</div>
+	
+	<p class="edit-report"><a href="#" class="button-secondary">Edit informal observations</a></p>
+	
+</div>
+<!-- / report item -->
+
+
+
+<div class="report-item">
+
+	<h2 class="heading-large">Physical assessment</h2> 
+	
+	<div class="inner-focus">
+
+		<!--{% for item in typicalDayComments | sortBy("time",true) %}
+		<p>{{ item.comment }}</p>
+  		{% endfor %}-->
+	</div>
+	
+	<p class="edit-report"><a href="#" class="button-secondary">Edit physical assessment</a></p>
+	
+</div>
+<!-- / report item -->
+
+
+
+
+<div class="report-item">
+
+	<div class="inner-focus">
+
+	<h2 class="heading-large">Mental state examination</h2> 
+
+{% if data['mentalHealthAppearance'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium ">Appearance <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mentalHealthAppearance}}</p>
+	
+	<!--<p><a href="#" class="button secondary">Edit appearance</a></p>-->
+</div>
+{% endif %}
+
+{% if data['mentalHealthBehaviour'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium ">Behaviour <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mentalHealthBehaviour}}</p>
+	
+	<!--<p><a href="#" class="button secondary">Edit Behaviour</a></p>-->
+</div>
+{% endif %}
+
+{% if data['mentalHealthSpeech'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium ">Speech <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mentalHealthSpeech}}</p>
+	
+	<!--<p><a href="#" class="button secondary">Edit Speech</a></p>-->
+</div>
+{% endif %}
+
+{% if data['mentalHealthMood'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium ">Mood <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mentalHealthMood}}</p>
+	
+	<!--<p><a href="#" class="button secondary">Edit Mood</a></p>-->
+</div>
+{% endif %}
+
+{% if data['mentalHealthCognition'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium ">Cognition <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mentalHealthCognition}}</p>
+	
+	<!--<p><a href="#" class="button secondary">Edit Cognition</a></p>-->
+</div>
+{% endif %}
+
+{% if data['mentalHealthGeneral'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium ">General <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mentalHealthGeneral}}</p>
+	
+	<!--<p><a href="#" class="button secondary">Edit General</a></p>-->
+</div>
+{% endif %}
+
+
+
+{% if data['mentalHealthInsight'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium ">Insight <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mentalHealthInsight}}</p>
+	
+	<!--<p><a href="#" class="button secondary">Edit Insight</a></p>-->
+</div>
+{% endif %}
+
+{% if data['mentalHealthThoughts'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium">Thoughts <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mentalHealthThoughts}}</p>
+	
+	<!--<p><a href="#" class="button secondary">Edit Thoughts</a></p>-->
+</div>
+{% endif %}
+
+
+{% if data['mentalHealthPerceptions'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium ">Perceptions <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mentalHealthPerceptions}}</p>
+	
+	<!--<p><a href="#" class="button secondary">Edit Perceptions</a></p>-->
+</div>
+{% endif %}
+
+{% if data['mentalHealthAddiction'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium ">Addiction <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mentalHealthAddiction}}</p>
+	
+	<!--<p><a href="#" class="button secondary">Edit Addiction</a></p>-->
+</div>
+{% endif %}
+
+{% if data['Involentry-movements'] %}    
+<div class="review-inner">	
+	<h3 class="heading-medium ">Involuntary movements <!-- <span class="edited">Edited</span> --></h3>
+	
+	<p>{{mhinvolentry}}</p>
+	
+	<!--<p><a href="#" class="button secondary">Edit Involuntary movements</a></p>-->
+</div>
+{% endif %}
+
+	</div>
+	
+</div>
+<!-- / report item -->
+
+  
+   </div>
+ <!-- / wrapper -->
+  
+
+
+
+{% endblock %}

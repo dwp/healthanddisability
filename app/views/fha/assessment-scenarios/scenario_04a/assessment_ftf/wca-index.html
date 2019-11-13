@@ -1,4 +1,4 @@
-{% extends path+"/scenario_04a/_layout-case-simple.html" %}
+{% extends path+"/scenario_04a/_layout-case_assessment-in-progress-plus-links.html" %}
 
 {% block citizen_content %}
 
@@ -17,7 +17,7 @@
 
       <div class="task-list">
 					<ul class="task-list-itmes">
-           <li class="task-list-item"><a href="med_conds_check_details">Conditions, medication and side effects {% if data['anxietyConditionHistory'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></a></li>
+           <li class="task-list-item">{% if data['conditionHistory3'] %}<a href="med_conds_check_details_2">{% else %}<a href="med_conds_check_details">{% endif %}Conditions, medication and side effects {% if data['conditionHistory1'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></a></li>
            <li class="task-list-item"><a href="../socialWorkHistory">Social and work history {% if data['socialWorkHistory'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
            <li class="task-list-item"><a href="../typicalDay">Typical day {% if data['typicalDayHistory'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
            <li class="task-list-item"><a href="../evidence/physicalConsent">Physical assessment {% if data['physicalConsentJustification'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
@@ -38,9 +38,9 @@
     background: rgba(40, 161, 151, 0.05);
     border-left: 3px solid #28a197;" class="mb20">
     
-    {% if data['anxietyConditionHistory'] and data['socialWorkHistory'] and data['typicalDayHistory'] and data['endFTFtrigger'] %}
+    {% if data['conditionHistory1'] and data['socialWorkHistory'] and data['typicalDayHistory'] and data['endFTFtrigger'] %}
     <p style="font-weight:bold;" class="mb0">Face-to-face complete</p>
-    {% elif data['anxietyConditionHistory'] and data['socialWorkHistory'] and data['typicalDayHistory'] %}
+    {% elif data['conditionHistory1'] and data['socialWorkHistory'] and data['typicalDayHistory'] %}
     
 <form action="#" method="POST">
       <input type="submit" value="Finish face-to-face" class="button" style="float:right; margin-top:8px;" name="endFTFtrigger" id="endFTFtrigger">
@@ -54,8 +54,8 @@
   </div><!-- column here -->
 </div><!-- row -->
 
-{% if data['anxietyConditionHistory'] and data['socialWorkHistory'] and data['typicalDay'] and data['endFTFtrigger'] %}
-<p><a href="miniReview" class="button">Continue and review</a></p>
+{% if data['conditionHistory1'] and data['socialWorkHistory'] and data['typicalDayHistory'] and data['endFTFtrigger'] %}
+<p><a href="../review/miniReview" class="button">Continue and review</a></p>
 {% else %}
 {% endif %}
 
