@@ -1,0 +1,326 @@
+{% extends path+"/_layout-caselist.html" %}
+
+
+ {% block horizontal_secondary_nav %}
+
+    <form class="form" action="" method="post">
+	<div class="fixednav">
+		<div class="search-customer">
+			<label class="form-label-bold visually-hidden" for="search">Customer search</label>
+				<span class="form-hint">Search by NI number</span>
+			<input class="form-control form-control-2-3" id="search" type="text" name="search">
+			<button class="gem-c-search__submit">Search</button>
+		</div>
+
+
+               
+<nav class="details-nav v2 mb30">
+	<ul>
+	    <li>
+				<a href="/{{path }}/scenario/not-testing">
+				Referrals (21)</a>
+	    
+
+	    </li>
+	  
+	    <li>
+				<a href="/{{path }}/scenario/not-testing">
+				Reviews (44)</a>
+	    
+
+	    </li>
+
+		   <li>
+				<a href="/{{path }}/scenario4/appointments">
+			  Appointments(44)</a>
+	    </li>
+	  
+
+              <li class="active_detail">
+				<a href="/{{path }}/scenario4/appointments">
+				Today's appointment</a>
+	    
+	    	<ul>
+	    		<li>
+	    			<a href="/{{path }}/scenario4/ready-to-book">Confirm arrival </a>
+
+	    		</li>
+	    		<li>
+	    			<a href="booked">Ready for assessment</a>
+	    		</li>
+				<li>
+	    			<a href="booked">Assessment in progress</a>
+	    		</li>
+					<li>
+	    			<a href="booked">Assessment stopped</a>
+	    		</li>
+					<li>
+	    			<a href="booked">Assessment completed</a>
+	    		</li>
+					<li>
+	    			<a href="booked">Report completed</a>
+	    		</li>
+				
+
+
+	   
+
+	    	
+	    	</ul>
+	    
+
+	    </li>
+	  
+	</ul>
+</nav>
+</div>
+
+
+
+
+  
+       
+
+{% endblock %}  
+ 
+
+{% block caselist_content %}
+
+
+
+
+            
+			    <h1 class="heading-large mt0">
+           <!-- <span class="heading-secondary">
+			     {% if checked('filter','tresco') %}
+					DWP Tresco House
+					{% elif checked('filter','fiveways') %}
+					DWP Birmingham Fiveways
+					{% else %}
+					Wolverhampton
+					{% endif%}
+			</span> -->
+			Today's appointments
+             </h1>
+
+	
+					
+			 <p><button id="facetFilterBtn" class="">Apply filter</button></p>
+	
+           
+
+		 
+		 
+		 
+		 
+		  <table id="fileredTable"class="filtered">
+
+                <thead>
+                  <tr>
+                    <th>Case details and status</th>
+                    <th>Appointment information</th>
+				    <th>Referral type</th>
+                  </tr>
+                </thead>
+
+				<tr>
+                  <td class="col1"><ul class="identifiers">
+				  <li><span class="badge">UC</span></li>
+				   
+				  </ul>
+				  <div class="claimant"><a href="/fha/appointment-scenarios/scenario2/timeline" ><span class="visually-hidden">Name</span>Frannie Giabuzzi</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>21-2266110 
+				  </span>
+				 <p>Status:<br>Assessment today</p>
+				  </div>
+				  </td>
+                  <td>
+				  <div class="grid-row">
+				  <div class="column-third">
+				  <h3 class="">Details</h3>
+				  <ul class="list">
+				  
+				  <li>10:00 am</li>
+				  
+				    
+				  <li>30/10/2019</li>
+				  
+				  <li>Non neuro</li>
+
+				  </ul>
+				  </div>
+				  <div class="column-third">
+				    
+				  <h3 class="">Requirements</h3>
+				  <ul class="list">
+				   
+				  
+				  <li>Interpreter: Polish</li> 
+				  <li>Audio recording</li>
+				  <li>Same genger hcp</li>
+				  <li>Accessible room</li>
+				  <li>Taxi</li>
+				  <li>Hcp must not be wearing any perfume due to COPD issues<li>
+				  
+				     
+				  
+				  </ul>
+				   
+				   </div>
+				   	  <div class="column-third">
+				    
+				  <h3 class=""><a href="appointment-history?nino=21-2266110">History</a></h3>
+				  <ul class="list">
+				   
+				  <li>Previous DNA</li>
+				  <li>Skillset change</li>
+				  <li>Previously sent home</li>
+				  <li>Inbound contact - 21/11/2019</li>
+				  <li>Outbound contact - 18/11/2019</li>
+
+				  
+				   
+				   
+				  
+				  </ul>
+				   
+				   </div>
+				   </div>
+				  </td>
+				  <td class="col3">
+				   <h3 class="">Good cause new referral</h3>
+	
+				   <ul class="list">
+				   
+				  <li>Rebook target: <span class="block">9 days remaining</span></li>
+				   <li>SLA target:<span class="block">19 days remaining</span></li>
+				     
+				   </ul>
+
+				  </td>
+                 </tr>
+
+
+                <tr>
+                  <td class="col1"><ul class="identifiers">
+				  <li><span class="badge">ESA</span></li>
+				   
+				  </ul>
+				  <div class="claimant"><a href="/fha/appointment-scenarios/scenario2/timeline"><span class="visually-hidden">Name</span>Burnard Stables</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>80-2725257 
+				  </span>
+				  <p>Status: <br>Assessment today</p>
+				  </div>
+				  </td>
+                  <td>
+				  <div class="grid-row">
+				  <div class="column-third">
+				  <h3 class="">Details</h3>
+				  <ul class="list">
+				  
+				  <li>10:00 am</li>
+				  
+				    
+				  <li>30/10/2019</li>
+				  
+				  <li>Neuro</li>
+
+
+
+				  </ul>
+				  </div>
+				  <div class="column-third">
+				    
+				  <h3 class="">Requirements</h3>
+				  <ul class="list">
+				   
+				  
+				  <li>Interpreter: German</li>
+				  <li>Same gender hcp</li>
+				   
+				     
+				  
+				  </ul>
+				   
+				   </div>
+				   	  <div class="column-third">
+				    
+				   </div>
+				   </div>
+				  </td>
+				  <td class="col3">
+				   <h3 class="">Re referral</h3>
+	
+				   <ul class="list">
+				   
+				   
+				   </ul>
+
+				   
+
+				  </td>
+                 </tr>
+
+				 <tr>
+                  <td class="col1"><ul class="identifiers">
+				  <li><span class="badge">ESA</span></li>
+				   
+				  </ul>
+				  <div class="claimant"><a href="/fha/appointment-scenarios/scenario2/timeline" ><span class="visually-hidden">Name</span>Perice Webburn</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>31-1668467 
+				  </span>
+				  <p>Status: <br/>Ready for assessment</p>
+				  </div>
+				  </td>
+                  <td>
+				  <div class="grid-row">
+				  <div class="column-third">
+				  <h3 class="">Details</h3>
+				  <ul class="list">
+				  
+				  <li>11:00 am</li>
+				  
+				    
+				  <li>30/10/2019</li>
+				  
+				  <li>Complex neuro</li>
+
+				   <li class="arrived">Arrived:<span class="bold"> 11:04am</span></li>
+				   <li class="waiting">Waiting:<span class="bold"> 35 mins</span></li>
+           
+				  </ul>
+				  
+				  </div>
+				  <div class="column-third">
+				    
+				   </div>
+				   	  <div class="column-third">
+				   </div>
+				   </div>
+				  </td>
+				  <td class="col3">
+				   <h3 class="">New referral</h3>
+	
+				   <ul class="list">
+				   <li>SLA target:<span class="block">22 days remaining</span></li>
+				     
+				   </ul>
+
+				   
+
+				  </td>
+                 </tr>
+
+              </table>
+
+
+</form>
+{% endblock %}
+
+
+	
+
+
+
+
+
