@@ -1,0 +1,71 @@
+{% extends path+"/scenario_04a/_layout-case-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+<h1 class="heading-large">Medical conditions - check details</h1>
+
+<div>
+	<table class="report-view-table mb10">	
+		<tbody>
+			<tr>
+				<th>Name of condition</th>
+				<th>Source</th>
+        		<th>Since</th>
+			</tr>
+			<tr>
+				<td>Anxiety and depression</td>
+				<td>Customer</td>
+        		<td>May 2018</td>
+			</tr>
+			<tr>
+				<td>Tremors</td>
+				<td>Customer</td>
+        		<td>May 2018</td>
+			</tr>
+		</tbody>
+	</table>
+  <p class="mb20"><a href="#">Add or amend medical conditions</a></p>
+
+</div>
+<!-- / report item -->
+
+
+<!--
+        <h2 class="heading-medium">Confirm medical conditions</h2>
+
+        <p class="govuk-body">By submitting these conditions you are confirming that you have discussed them with the customer they have agreed them to be complete and correct.</p>
+-->
+        <form action="enter_condition_history_1" method="post" novalidate>
+
+          <input type="hidden" name="answers-checked" value="true">
+
+          <button class="button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+        </form>
+
+  </div><!-- column -->
+  
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+

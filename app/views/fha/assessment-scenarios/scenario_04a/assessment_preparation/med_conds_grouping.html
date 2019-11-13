@@ -1,0 +1,92 @@
+{% extends path+"/scenario_04a/_layout-case-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+<p class="caption-large" class="mb0">Assessment preparation</p>
+<h1 class="heading-large mt0">Medical conditions</h1>
+
+
+<div class="grid-row">
+  <div class="column-half">
+  
+  <form>
+
+<fieldset>
+
+  <legend class="heading-medium mt0 mb10">Choose the conditions you want to talk about together:</legend>	
+
+  
+  <div class="multiple-choice">
+		<input id="condition1" name="conditions" type="checkbox" value="1">
+		<label for="condition1">Anxiety</label>
+	  </div>
+
+  <div class="multiple-choice">
+		<input id="condition2" name="conditions" type="checkbox" value="2">
+		<label for="condition2">Depression</label>
+	  </div>
+
+  <div class="multiple-choice">
+		<input id="condition3" name="conditions" type="checkbox" value="3">
+		<label for="condition3">Tremors</label>
+	  </div>
+	<!--  
+	<div class="multiple-choice">
+		<input id="condition4" name="conditions" type="checkbox" value="4">
+		<label for="condition4">Tremors</label>
+	  </div>-->
+			
+			
+			
+			
+	</fieldset>
+	
+	<hr>
+	
+	
+	<p class="create-group mt20"><a href="medication_guard_question" class="button secondary">Create group</a></p>
+	
+	
+	<hr>
+	
+	
+	
+	  <p class="mt30"><a href="medication_guard_question" class="button">Save and continue</a></p>	
+	  
+	</form>
+	  
+	  
+	    
+
+  </div><!-- column -->
+  
+  
+  <div class="column-half">
+  	<div class="grouped-conditions">
+	  	<h2 class="heading-small mt0">Grouped conditions</h2>
+	  	
+	  	<p>There are no groups yet.</p>
+  	</div>
+  	
+  	
+  	
+  </div>
+  
+  
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+
