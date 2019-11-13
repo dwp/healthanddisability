@@ -72,6 +72,13 @@
 				<td>Claimant</td>
 				<td>Jun 2018</td>
 			</tr>
+			{% if data['conditionHistory3'] %}
+			<tr>
+				<td>Arthritis</td>
+				<td>Claimant</td>
+				<td>Nov 2019</td>
+			</tr>
+			{% endif %}
 		</tbody>
 	</table>
 	
@@ -134,7 +141,7 @@
 
 {% if data['conditionHistory3'] %}
 
-<h4 class="heading-medium">Arthiritis</h4> 
+<h4 class="heading-medium">Arthritis</h4> 
 <p class="bold">Condition history</p>
 <p>{{conditionHistory3}}</p>
 
