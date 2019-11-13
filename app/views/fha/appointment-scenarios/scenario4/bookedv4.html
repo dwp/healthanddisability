@@ -3,108 +3,6 @@
 
  {% block horizontal_secondary_nav %}
 
- <style>
-
-
-.badge{
-	float:left;
-	margin:2px 10px 2px 0;
-}
-.badge.ucb{
-	background:black;
-}
-#facetFilterBtn{
-  position:absolute;
-  left:-100%;	
-}
-
-
-
-button.link{
-	border:none;
-	padding:0;
-	font-size:19px;
-	background:transparent;	
-}
-
-
-
-.check-group{
-	margin:0;
-	padding:0;
-}
-
-.filterhr{
-	margin:15px 0;
-}
-
-
-.filtered td ul.list{
-	font-weight:bold;
-	margin-bottom:0px;
-	font-size:17px;
-}
-
-.claimant{
-	display:inline-block;
-
-}
-
-.button.button-tursery{
-	background:transparent;
-	color:black;
-	border:2px solid #dee0e2;
-	height:40px;
-	line-height:16px;
-	box-shadow:none;
-}
-
-span.dummy   { 
-	-webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding:10px 12px;
-    display: block;
-    text-align: center;
-    border: 2px solid  #6f777b;
-    height: 100%;
-    word-break: break-word;
-	background: #6f777b;
-    border-color: #6f777b;
-    color: #fff;
-	}
-
-.subfilter span.dummy{
-	background:transparent;
-	color:#0b0c0c;
-}	
-
-	.check-choice label{
-	  padding:10px 12px;
-	  font-size:18px;
-	}
-
-	.check-choice label span{
-
-	}
-
-	li.active_child { 
-		border-left: 5px solid #005ea5;
-	}
-
-	.active_detail ul li.active_child a { 
-		background:#f8f8f8 !important;
-	}
-
-	.active_detail ul li.active_child .child{
-			background:#fff !important;
-			margin-right:-15px;
-	}
-
-	.active_detail ul li.active_child .child a {
-		background:#fff !important;
-	}
-
-</style>
 
 
     <form class="form" action="bookedv4" method="post">
@@ -348,16 +246,16 @@ span.dummy   {
 	  
 
               <li class="active_detail">
-				<a href="/{{path }}/scenario/not-testing">
+				<a href="appointments">
 				Appointments (1000)</a>
 	    
 	    	<ul>
 	    		<li>
-	    			<a href="/{{path }}/scenario/not-testing">Ready to book (244) </a>
+	    			<a href="ready-to-book">Ready to book (244) </a>
 
 	    		</li>
 	    		<li>
-	    			<a href="booked" class="active_child">Booked ({{bookedCounter}})</a>
+	    			<a href="bookedv4" class="active_child">Booked ({{bookedCounter}})</a>
 	    		</li>
 
 	    	

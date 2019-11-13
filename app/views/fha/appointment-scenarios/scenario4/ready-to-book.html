@@ -3,131 +3,6 @@
 
  {% block horizontal_secondary_nav %}
 
- <style>
-
-
-.badge{
-	float:left;
-	margin:2px 10px 2px 0;
-}
-.badge.ucb{
-	background:black;
-}
-#facetFilterBtn{
-  position:absolute;
-  left:-100%;	
-}
-
-
-
-button.link{
-	border:none;
-	padding:0;
-	font-size:19px;
-	background:transparent;	
-}
-
-
-
-.check-group{
-	margin:0;
-	padding:0;
-}
-
-.filterhr{
-	margin:15px 0;
-}
-
-
-.filtered td ul.list{
-	font-weight:bold;
-	margin-bottom:0px;
-	font-size:17px;
-}
-
-.claimant{
-	display:inline-block;
-
-}
-
-.button.button-tursery{
-	background:transparent;
-	color:black;
-	border:2px solid #dee0e2;
-	height:40px;
-	line-height:16px;
-	box-shadow:none;
-}
-
-span.dummy   { 
-	-webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding:10px 12px;
-    display: block;
-    text-align: center;
-    border: 2px solid  #6f777b;
-    height: 100%;
-    word-break: break-word;
-	background: #6f777b;
-    border-color: #6f777b;
-    color: #fff;
-	}
-
-.subfilter span.dummy{
-	background:transparent;
-	color:#0b0c0c;
-}	
-
-	.check-choice label{
-	  padding:10px 12px;
-	  font-size:18px;
-	}
-
-	.check-choice label span{
-
-	}
-
-
-					   .col3{
-					   width:20%;
-				   }
-				     .col1{
-					   width:25%;
-				   }
-	
-				   .identifiers{
-					   width:35px;
-				   }
-
-				   .identifiers .badge{
-					   width:100%;
-					   text-align:center;
-				   }
-				   ul.list li{
-					   font-weight:normal;
-					
-					 
-				   }
-				   ul.list{
-					//border-left:1px solid #bfc1c3;
-					//padding-left:10px;
-				   }
-
-				   .filtered td {
-                     font-size:17px;
-				   }
-				   .filtered td h3{
-					 //margin-bottom:10px;
-					 //border-bottom:1px solid #bfc1c3;
-					font-weight:bold;
-				   }
-
-				   .column-third{
-					  min-height:1px;
-				   }
-
-</style>
-
 
     <form class="form" action="bookedv2" method="post">
 	<div class="fixednav">
@@ -308,16 +183,16 @@ span.dummy   {
 	  
 
               <li class="active_detail">
-				<a href="/{{path }}/scenario/not-testing">
+				<a href="/{{path }}/scenario4/appointments">
 				Appointments (1000)</a>
 	    
 	    	<ul>
 	    		<li>
-	    			<a href="/{{path }}/scenario/not-testing" class="active_child">Ready to book (244) </a>
+	    			<a href="" class="active_child">Ready to book (244) </a>
 
 	    		</li>
 	    		<li>
-	    			<a href="booked">Booked (400)</a>
+	    			<a href="bookedv4">Booked (400)</a>
 	    		</li>
 
 	    	
@@ -333,7 +208,7 @@ span.dummy   {
 	    </li>
 	  
 	    <li>
-				<a href="/{{path }}/scenario/not-testing">
+				<a href="todays-appointments">
 				Today's appointments (21)</a>
 	    
 
@@ -359,7 +234,7 @@ span.dummy   {
 
             
 			    <h1 class="heading-large mt0">
-            <span class="heading-secondary">
+         <!-- <span class="heading-secondary">
 			     {% if checked('filter','tresco') %}
 					DWP Tresco House
 					{% elif checked('filter','fiveways') %}
@@ -367,21 +242,21 @@ span.dummy   {
 					{% else %}
 					Wolverhampton
 					{% endif%}
-			</span>
+			</span> -->
 			Ready to book
              </h1>
 
-	
-            <h2 class="heading-small mt30">Filter booked appointments</h2>
+
+ <h2 class="heading-small mt30">Filter by ready to book:</h2>
                 <div class="check-group check-top">
                 <fieldset>
 				 <div class="check-picker">
                     <h3 class="visually-hidden"><legend></legend></h3>
-				       <div class="check-choice">
+                <div class="check-choice">
                       <input id="all"
                            name="filter"
                            type="radio"
-                           value="all" class="facet" checked> <label for="all">All ready to book <span>&#40;100&#41;</span></label>
+                           value="all" class="facet" checked> <label for="all">All <span>&#40;100&#41;</span></label>
                     </div>
                     
                     
@@ -391,50 +266,19 @@ span.dummy   {
                            type="radio"
                            value="newReferrals" class="facet"> <label for="new">Good cause referrals<span>&#40;50&#41;</span>
 						   </label>
-                    </div>
+                    </div>				
                   </fieldset>
                 </div>
-            
 					
-			 <p><button id="facetFilterBtn" class="">Apply filter</button></p>
-		
-
-            
-
-
-         <h2 class="showing-sign">Showing: &nbsp;<span>	{% if data['capDay'] %}{{capDay}} {{capMonth}} 2019 &nbsp;<b>&#124;</b> &nbsp;{% endif %} {% if checked('filter', 'DNA referral') %}
-            Previous DNA's
-			 {% elif checked('filter', 'Re referrals') %}
-            Re referrals
-			 {% elif checked('filter', 'New referrals') %}
-            New referrals
-			{% elif checked('filter', 'ucb') %}
-			UCB
-			{% elif checked('filter', 'requirements') or checked('filter', 'requirementstwo') or checked('filter', 'taxi') or checked('filter', 'interpreter') or checked('filter', 'gender') or checked('filter', 'audio') or checked('filter', 'access') %}
-			Requirements 
-			{% else %}
-	        Ready to book
-            {% endif %} 
-			{% if  checked('filter', 'Complex') %}&nbsp;<b>&#124;</b> &nbsp; Complex neuro</span> 
-			{% elif  checked('filter', 'Neuro') %}&nbsp;<b>&#124;</b> &nbsp; Neuro</span> 
-			{% elif  checked('filter', 'Non') %}&nbsp;<b>&#124;</b> &nbsp; Non neuro</span> 
-			{% elif  checked('filter', 'taxi') %}&nbsp;<b>&#124;</b> &nbsp; Taxi</span> 
-			{% elif  checked('filter', 'interpreter') %}&nbsp;<b>&#124;</b> &nbsp; Interpreter</span> 
-			{% elif  checked('filter', 'gender') %}&nbsp;<b>&#124;</b> &nbsp; Same gender</span> 
-			{% elif  checked('filter', 'audio') %}&nbsp;<b>&#124;</b> &nbsp; Audio</span>
-			{% elif  checked('filter', 'access') %}&nbsp;<b>&#124;</b> &nbsp; Accessible room</span>  
-			{% elif  checked('filter', 'ucb') %} 
-			{% elif  checked('filter', 'DNA referral') %}
-			{% elif  checked('filter', 'New referrals') %}
-			{% elif  checked('filter', 'Re referrals') %}
-			{% else%}&nbsp;<b>&#124;</b> &nbsp; All types </span>{% endif %}</h2>  
+	
+	
            
 
 		 
 		 
 		 
 		 
-		  <table id="fileredTable"class="filtered">
+		  <table id="fileredTable"class="filtered mt30">
 
                 <thead>
                   <tr>
@@ -449,7 +293,7 @@ span.dummy   {
 				  <li><span class="badge">UC</span></li>
 				   
 				  </ul>
-				  <div class="claimant"><a href="/fha/appointment-scenarios/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Frannie Giabuzzi</a>
+				  <div class="claimant"><a href="/fha/appointment-scenarios/scenario2/timeline"><span class="visually-hidden">Name</span>Frannie Giabuzzi</a>
 				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>21-2266110 
 				  </span>
 				  </div>
@@ -474,9 +318,9 @@ span.dummy   {
 				  <h3 class="">Requirements</h3>
 				  <ul class="list">
 				   
-				  
-				   
+				 
 				  <li>Audio recording</li>
+			
 				  
 				     
 				  
@@ -489,6 +333,11 @@ span.dummy   {
 				  <ul class="list">
 				   
 				  <li>Previous DNA</li>
+				  <li>Skillset change</li>
+				  <li>Previously sent home</li>
+				  <li>Inbound contact - 21/11/2019</li>
+				  <li>Outbound contact - 18/11/2019</li>
+
 				  
 				   
 				   
@@ -544,9 +393,12 @@ span.dummy   {
 				  <h3 class="">Requirements</h3>
 				  <ul class="list">
 				   
-				  
-				  <li>Interpreter: German</li>
-				  <li>Same gender hcp</li>
+				   <li>Interpreter: Polish</li> 
+				  <li>Audio recording</li>
+				  <li>Same genger hcp</li>
+				  <li>Accessible room</li>
+				  <li>Taxi</li>
+				  <li>Hcp must not be wearing any perfume due to COPD issues<li>
 				   
 				     
 				  
@@ -576,7 +428,7 @@ span.dummy   {
 				  <li><span class="badge">ESA</span></li>
 				   
 				  </ul>
-				  <div class="claimant"><a href="/fha/appointment-scenarios/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>Perice Webburn</a>
+				  <div class="claimant"><a href="/fha/appointment-scenarios/scenario2/timeline"><span class="visually-hidden">Name</span>Perice Webburn</a>
 				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>31-1668467 
 				  </span>
 				  </div>
