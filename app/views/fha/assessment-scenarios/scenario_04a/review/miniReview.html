@@ -65,18 +65,18 @@
 			<tr>
 				<td>Anxiety and depression</td>
 				<td>Claimant</td>
-				<td>May 2018</td>
+				<td>March 2018</td>
 			</tr>
 			<tr>
-				<td>Tremors</td>
+				<td>Asthma</td>
 				<td>Claimant</td>
-				<td>Jun 2018</td>
+				<td>January 2019</td>
 			</tr>
 			{% if data['conditionHistory3'] %}
 			<tr>
 				<td>Arthritis</td>
 				<td>Claimant</td>
-				<td>Nov 2019</td>
+				<td>November 2019</td>
 			</tr>
 			{% endif %}
 		</tbody>
@@ -87,20 +87,22 @@
 <p>{{conditionHistory1}}</p>
 
 	<table class="report-view-table">
-	<caption class="heading-small">Medication and side effects</caption>
+	<caption class="heading-small">Medication</caption>
 		<thead>
 			<tr>
 				<th>Name</th>
 				<th>Dose</th>
-				<th>Side effects</th>
+				<th>Frequency</th>
+				<th>Last prescribed</th>
 			</tr>
 		</thead>
 	
 		<tbody>
 			<tr>
 				<td>Sertraline</td>
-				<td>50mg twice daily</td>
-				<td>None</td>
+				<td>50mg</td>
+				<td>Twice daily</td>
+				<td>November 2019</td>
 			</tr>
 		</tbody>
 	</table>
@@ -115,20 +117,22 @@
 <p>{{conditionHistory2}}</p>
 
 	<table class="report-view-table">
-	<caption class="heading-small">Medication and side effects</caption>
+	<caption class="heading-small">Medication</caption>
 		<thead>
 			<tr>
 				<th>Name</th>
 				<th>Dose</th>
-				<th>Side effects</th>
+				<th>Frequency</th>
+				<th>Last prescribed</th>
 			</tr>
 		</thead>
 	
 		<tbody>
 			<tr>
 				<td>Salbutamol</td>
-				<td>1.5mg twice daily</td>
-				<td>None</td>
+				<td>1.5mg</td>
+				<td>Twice daily</td>
+				<td>November 2019</td>
 			</tr>
 		</tbody>
 	</table>
@@ -136,7 +140,7 @@
 <p class="bold">Side effects</p>
 <p>{{sideEffects2}}</p>
 
-<p class="edit-report"><a href="#" class="button-secondary">Edit tremors details</a></p>
+<p class="edit-report"><a href="#" class="button-secondary">Edit asthma details</a></p>
 
 
 {% if data['conditionHistory3'] %}
@@ -146,20 +150,22 @@
 <p>{{conditionHistory3}}</p>
 
 	<table class="report-view-table">
-	<caption class="heading-small">Medication and side effects</caption>
+	<caption class="heading-small">Medication</caption>
 		<thead>
 			<tr>
 				<th>Name</th>
 				<th>Dose</th>
-				<th>Side effects</th>
+				<th>Frequency</th>
+				<th>Last prescribed</th>
 			</tr>
 		</thead>
 	
 		<tbody>
 			<tr>
-				<td>Ibuprofen</td>
+				<td>Unknown</td>
+				<td>??mg</td>
 				<td>Twice daily</td>
-				<td>None</td>
+				<td>November 2019</td>
 			</tr>
 		</tbody>
 	</table>
@@ -167,7 +173,7 @@
 <p class="bold">Side effects</p>
 <p>{{sideEffects3}}</p>
 
-<p class="edit-report"><a href="#" class="button-secondary">Edit tremors details</a></p>
+<p class="edit-report"><a href="#" class="button-secondary">Edit arthritis details</a></p>
 
 {% endif %}
 
