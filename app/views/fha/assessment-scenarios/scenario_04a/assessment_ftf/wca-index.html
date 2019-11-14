@@ -14,25 +14,8 @@
 
 <div class="grid-row">
   <div class="column-two-thirds">
-
-      <div class="task-list">
-					<ul class="task-list-itmes">
-           <li class="task-list-item">{% if data['conditionHistory3'] %}<a href="med_conds_check_details_2">{% else %}<a href="med_conds_check_details">{% endif %}Conditions, medication and side effects {% if data['conditionHistory1'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></a></li>
-           <li class="task-list-item"><a href="../socialWorkHistory">Social and work history {% if data['socialWorkHistory'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
-           <li class="task-list-item"><a href="../typicalDay">Typical day {% if data['typicalDayHistory'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
-           <li class="task-list-item"><a href="../evidence/physicalConsent">Physical assessment {% if data['physicalConsentJustification'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
-           <li class="task-list-item"><a href="../mentalStateExamination">Mental state examination {% if data['mentalHealthAppearance'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
-          </ul>
-        </div>
-  </div><!-- column here -->
-</div><!-- row -->
-
-
-
-<div class="grid-row">
-  <div class="column-two-thirds">
 <div style="font-size: 18px;
-    margin: 32px 0 0;
+    margin: 0px 0 0;
     padding: 16px;
     font-weight: normal;
     background: rgba(40, 161, 151, 0.05);
@@ -54,8 +37,27 @@
   </div><!-- column here -->
 </div><!-- row -->
 
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+      <div class="task-list">
+					<ul class="task-list-itmes">
+           <li class="task-list-item">{% if data['conditionHistory3'] %}<a href="med_conds_check_details_2">{% else %}<a href="med_conds_check_details">{% endif %}Conditions, medication and side effects {% if data['conditionHistory1'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></a></li>
+           <li class="task-list-item"><a href="../socialWorkHistory">Social and work history {% if data['socialWorkHistory'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+           <li class="task-list-item"><a href="../typicalDay">Typical day {% if data['typicalDayHistory'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+           <li class="task-list-item"><a href="../evidence/physicalConsent">Physical assessment {% if data['physicalConsentJustification'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+           <li class="task-list-item"><a href="../mentalStateExamination">Mental state examination {% if data['mentalHealthAppearance'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+          </ul>
+        </div>
+  </div><!-- column here -->
+</div><!-- row -->
+
+
+
+
+
 {% if data['conditionHistory1'] and data['socialWorkHistory'] and data['typicalDayHistory'] and data['endFTFtrigger'] %}
-<p><a href="../review/miniReview" class="button">Continue and review</a></p>
+<p style="margin-top:32px;"><a href="../review/miniReview" class="button">Continue and review</a></p>
 {% else %}
 {% endif %}
 
@@ -83,5 +85,3 @@
     </p>
   </div>
 {% endmacro %}
-
-
