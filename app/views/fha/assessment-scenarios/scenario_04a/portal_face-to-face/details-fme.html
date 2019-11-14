@@ -1,4 +1,4 @@
-{% extends path+"/scenario_04a/_layout-case-simple_ftf.html" %}
+{% extends path+"/scenario_04a/_layout-case-simple_portal-ftf.html" %}
 
 
 {% block actioncolumn %}
@@ -22,7 +22,7 @@
 	 
 	 {% else %}
 	 
-	 
+<h2 class="main-status"><span>Current case status</span>Ready for review</h2>	 
 <h3 class="primary-action"><span>Suggested case action</span>
 <form action="/{{path }}/scenario_04a/assessment_ftf/wca-index" method="POST">
 <input type="submit" value="Start face-to-face" class="button" name="startFTFtrigger" id="startFTFtrigger">
@@ -95,7 +95,7 @@ Steve Wooten
 						
 						<tr>
 							<td>Depression</td>
-							<td>12 March 2019</td>
+							<td>12 March 2018</td>
 							<td>Claimant</td>
 						</tr>
 						<!--
