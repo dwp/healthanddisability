@@ -1,4 +1,4 @@
-{% extends path+"/_layout-case-simple8.html" %}
+{% extends path+"/_layout-case-simple11.html" %}
 
 
 {% block actioncolumn %}
@@ -18,7 +18,7 @@
 	 {% elif data['pbachoice']=='yes'%}
 	 
 	 <h2 class="main-status"><span>Current case status</span>Paper based review</h2>
-	 <!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario8/not-testing" class="button">Start assessment</a></h3>-->
+	 <!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario11/not-testing" class="button">Start assessment</a></h3>-->
 	 
 	 
 	 {% else %}
@@ -30,11 +30,11 @@
 	{% if data['evidenceRecorded']=='record-yes'%}
 	
 	<h2 class="main-status"><span>Current case status</span>Second review</h2>
-		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario8/rec-portal-second" class="button">Make recommendation</a></h3>
+		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario11/rec-portal-second" class="button">Make recommendation</a></h3>
 		{% else %}
 		
 	<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
-	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario8/record-evidence" class="button">Record GP report</a></h3>
+	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario11/record-evidence" class="button">Record GP report</a></h3>
 	{% endif %}
 	
 	
@@ -42,7 +42,7 @@
 	
 	{% if data['evidenceRecorded']=='record-yes'%}
 		<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
-		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario8/rec-portal" class="button">Make recommendation</a></h3>
+		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario11/rec-portal" class="button">Make recommendation</a></h3>
 		{% else %}
 		<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
 	{% endif %}
@@ -51,7 +51,7 @@
 	{% else %}
 	
 	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
-	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario8/rec-portal" class="button">Make recommendation</a></h3>
+	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario11/rec-portal" class="button">Make recommendation</a></h3>
 	
 	
 
@@ -66,7 +66,7 @@
 {% endblock %}
 
 {% block citizen_detail %}
-Cranjus McManaman
+Harvey Chamberlain
 {% endblock %}
 
 {% block citizen_content %}
@@ -154,7 +154,7 @@ Cranjus McManaman
 						</tbody>
 					</table>
 					
-					<p class="view-all"><a href="/{{path }}/scenario8/not-testing" class="secondary-invert">View historical conditions</a></p>
+					<p class="view-all"><a href="/{{path }}/scenario11/not-testing" class="secondary-invert">View historical conditions</a></p>
 
 
 					
@@ -189,25 +189,25 @@ Cranjus McManaman
 					<dt>Date</dt>
 					<dd>12 June 2019</dd>
 					
+					<dt>Primary condition</dt>
+					<dd>Asthma</dd>
+					
 					<dt>Outcome</dt>
 					<dd>Support group</dd>
-
+					
+					<dt>Justification</dt>
+					<dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</dd>
+					
 				</dl>
 
 				<hr>
 				
-				<p><a href="/{{path }}/scenario8/not-testing" class="secondary-invert">View report</a></p>
+				<p><a href="/{{path }}/scenario11/not-testing" class="secondary-invert">View report</a></p>
 								
 				</div>
 				<!-- / inner card -->
 			<!-- / portal card -->
 		  	</div>
-		  	
-		  	
-		  	
-		  	
-		  	
-		  	
 		  	
 		  	
 		  	  	
