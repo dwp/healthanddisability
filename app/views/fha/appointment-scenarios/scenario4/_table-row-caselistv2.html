@@ -1,45 +1,4 @@
-				   <style>
-				   .col3{
-					   width:20%;
-				   }
-				     .col1{
-					   width:25%;
-				   }
-	
-				   .identifiers{
-					   width:35px;
-				   }
 
-				   .identifiers .badge{
-					   width:100%;
-					   text-align:center;
-				   }
-				   ul.list li{
-					   font-weight:normal;
-					
-					 
-				   }
-				   ul.list{
-					//border-left:1px solid #bfc1c3;
-					//padding-left:10px;
-				   }
-
-				   .filtered td {
-                     font-size:17px;
-				   }
-				   .filtered td h3{
-					 //margin-bottom:10px;
-					 //border-bottom:1px solid #bfc1c3;
-					font-weight:bold;
-				   }
-
-				   .column-third{
-					  min-height:1px;
-				   }
-
-			
-			
-				   </style>
 				   
 				   
 				   <tr>
@@ -47,7 +6,7 @@
 				  <li><span class="badge">{{customer.benefit}}</span></li>
 				   {% if customer.caseflags == 'ucb' %}<li><span class="badge ucb">UCB</span></li>  {% endif %}
 				  </ul>
-				  <div class="claimant"><a href="/{{path }}/scenario2/timeline" style="font-weight:bold"><span class="visually-hidden">Name</span>{{customer.name}}</a>
+				  <div class="claimant"><a href="/{{path }}/scenario2/timeline"><span class="visually-hidden">Name</span>{{customer.name}}</a>
 				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.nino}} 
 				  </span>
 				  </div>
@@ -123,7 +82,7 @@
 				   <li>DNA rebooking target:<span class=""> {{customer.referral.edtarget}} days remaining</span></li>
 				  {% endif %} 
 				  {% if customer.status == 'Booked' and customer.referral.type =='New referral' %}
-				   <li>SLA <span class="">{{customer.sla}} days remaining</span></li>
+				   <li>SLA target: <span class="">{{customer.sla}} days remaining</span></li>
 				    {% endif %} 
 				   </ul>
 
