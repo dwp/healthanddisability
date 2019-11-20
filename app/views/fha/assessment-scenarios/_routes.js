@@ -67,12 +67,13 @@ router.get('*', function (req, res, next) {
   next()
 })
 
-router.get('/scenario_02a/wca-index', (req, res, next) => {
+
+router.get('/scenario_04a/assessment_ftf/wca-index', (req, res, next) => {
   res.locals.assessmentStartTime = req.session.assessmentStartTime;
   next();
 })
 
-router.post('/scenario_02a/wca-index', (req, res, next) => {
+router.post('/scenario_04a/assessment_ftf/wca-index', (req, res, next) => {
   if(req.body['startFTFtrigger'] === 'Start face-to-face'){
     req.session.assessmentStartTime = moment(new Date(), 'hh:mm:ss a');
   }
@@ -80,12 +81,12 @@ router.post('/scenario_02a/wca-index', (req, res, next) => {
   next();
 });
 
-router.get('/scenario_02a/wca-index', (req, res, next) => {
+router.get('/scenario_04a/assessment_ftf/wca-index', (req, res, next) => {
   res.locals.assessmentFinishTime = req.session.assessmentFinishTime;
   next();
 })
 
-router.post('/scenario_02a/wca-index', (req, res, next) => {
+router.post('/scenario_04a/assessment_ftf/wca-index', (req, res, next) => {
   if(req.body['endFTFtrigger'] === 'Finish face-to-face'){
     req.session.assessmentFinishTime = moment(new Date(), 'hh:mm:ss a');
   }

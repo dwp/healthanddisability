@@ -1,0 +1,197 @@
+{% extends path+"/_layout-case-simple11.html" %}
+
+
+{% block actioncolumn %}
+   
+ <!--<p class="returnRef"><a href="/{{path }}/scenario11/referrals-fme" class="link-back">Return to case list</a></p>-->
+ <div class="caseStatus">
+	 <h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+
+
+</div>
+{% endblock %}
+
+{% block citizen_detail %}
+Harvey Chamberlain
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+    
+   
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+        
+
+
+
+
+
+    	
+    	<h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Factual report request</h1>
+		
+		
+		<div class="evidence-requests mt30">
+		
+		
+
+			<form action="/{{path }}/scenario11/evidence-step-Factual2" method="POST" class="form">
+				
+			<fieldset>
+				<legend class="visually-hidden">Factual report request form</legend>	
+			
+			
+			<div class="form-group">
+						<fieldset>
+						  
+							  <legend class="heading-medium mb10">
+							
+										Choose who you want to request this from:
+							
+							  </legend>
+							  
+	
+									<div class="multiple-choice">
+											<input id="gpName" type="radio" name="personChoice" value="name-gp">
+											<label for="gpName">GP - Name of GP</label>
+										</div>
+										
+										
+
+										<div class="multiple-choice">
+											<input id="cName" type="radio" name="personChoice" value="name-consultant">
+											<label for="cName">Consultant - Name of consultant</label>
+										</div>
+										
+										<div class="multiple-choice" data-target="other">
+											<input id="otherName" type="radio" name="personChoice" value="other-name">
+											<label for="otherName">Other</label>
+										</div>
+										
+										
+										<div class="panel js-hidden" id="other">		
+
+											<fieldset>
+						  
+												<legend class="visually-hidden">Details of medical professional</legend>
+												
+												<div class="form-group">
+												<label for="otherNameField" class="form-label-bold">Full name</label>
+												<input type="text" id="otherNameField" class="form-control form-control-2-4">
+											</div>
+											<div>
+												<label for="otherNameField2" class="form-label-bold">Who are they?</label>
+												<input type="text" id="otherNameField2" class="form-control form-control-2-4">
+											</div>												
+												
+											</fieldset>
+
+										</div>
+																
+
+							</fieldset>
+						</div>
+						
+						
+						<div class="form-group">
+						<fieldset>
+						  
+							  <legend class="heading-medium mb10">
+							
+										Choose what you want more detail about:
+							
+							  </legend>
+							  
+	
+									<div class="multiple-choice">
+											<input id="Continence" type="checkbox" name="frrDetail" value="frr-Continence">
+											<label for="Continence">Continence</label>
+										</div>
+										
+										
+
+										<div class="multiple-choice">
+											<input id="Consciousness" type="checkbox" name="frrDetail" value="frr-Consciousness">
+											<label for="Consciousness">Consciousness</label>
+										</div>
+										
+										<div class="multiple-choice">
+											<input id="Suicidal" type="checkbox" name="frrDetail" value="frr-Suicidal">
+											<label for="Suicidal">Suicidal ideation</label>
+										</div>
+										
+										<div class="multiple-choice">
+											<input id="Mental" type="checkbox" name="frrDetail" value="frr-Mental">
+											<label for="Mental">Mental health</label>
+										</div>
+										
+										<div class="multiple-choice">
+											<input id="Cancer" type="checkbox" name="frrDetail" value="frr-Cancer">
+											<label for="Cancer">Cancer</label>
+										</div>
+										
+										<div class="multiple-choice">
+											<input id="Surgery" type="checkbox" name="frrDetail" value="frr-Surgery">
+											<label for="Surgery">Surgery details</label>
+										</div>
+										
+										<div class="multiple-choice">
+											<input id="Vision" type="checkbox" name="frrDetail" value="frr-Vision">
+											<label for="Vision">Vision</label>
+										</div>
+										
+										
+							</fieldset>
+						</div>
+						
+						
+		
+					
+				
+				<p class="mt30"><input type="submit" class="button" value="Save and continue"></p>
+				
+			</fieldset>
+			
+				</form>
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

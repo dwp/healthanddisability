@@ -1,0 +1,65 @@
+{% extends path+"/scenario_04a/_layout-case-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+
+<h1 class="heading-large">Conditions and medication</h1>
+
+<h2 class="heading-medium">Arthritis</h2>
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+	
+	<form method="post" action="wca-index">
+	
+
+	<div class="form-group">
+			<label class="form-label" for="consulted">Condition history</label>
+			<textarea class="form-control form-control-3-4" name="conditionHistory3" id="conditionHistory3" rows="8">{{ conditionHistory3 }}</textarea>
+	</div>
+
+
+<p class="mb0">Medication</p>
+<div class="form-control-3-4">
+<table class="report-view-table mb10">	
+		<tbody>
+			<tr>
+				<td>Methartrexates</td>
+				<td>1.5mg</td>
+        <td>Last prescribed Nov 2019</td>
+			</tr>
+		</tbody>
+	</table>
+  <p class="mt0"><a href="#">Add or change medication</a></p>
+</div>
+<br>
+	<div class="form-group">
+			<label class="form-label" for="consulted">Side effects</label>
+			<textarea class="form-control form-control-3-4" name="sideEffects2" id="sideEffects2" rows="4">{{ sideEffects3 }}</textarea>
+	</div>
+
+<!-- section end -->
+
+<!--<p>By selecting "Confirm and continue" I am confirming that this is a complete set of currently known medical conditions and medication</p>-->
+
+<p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+	</form>
+
+  </div><!-- column -->
+</div><!-- row -->
+
+
+{% endblock %}
+
+

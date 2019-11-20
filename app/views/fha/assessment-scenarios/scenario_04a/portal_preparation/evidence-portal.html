@@ -1,4 +1,4 @@
-{% extends path+"/scenario_04a/_layout-case-simple_prep.html" %}
+{% extends path+"/scenario_04a/_layout-case-simple_portal-prep.html" %}
 
 
 {% block actioncolumn %}
@@ -49,7 +49,7 @@
 	
 	{% else %}
 	
-
+<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
 	<h3 class="primary-action"><span>Suggested case action</span>
   <form action="#" method="POST">
   <a href="/{{path }}/scenario_04a/assessment_preparation/med_conds_guard_question" class="button" id="preparationTrigger">Prepare for assessment</a>
@@ -224,21 +224,13 @@ Steve Wooten
 								  	{% endif %}
 								  	
 									<tr>
-											<td>Fit note (Med3)</td>
-											<td>7 October 2019</td>
-									</tr>
-									<tr>
-											<td>GP report (113)</td>
-											<td>1 October 2019</td>
-									</tr>
-									<tr>
 											<td>Questionnaire (UC50)</td>
-											<td>11 October 2019</td>
+											<td>2 November 2019</td>
 									</tr>								  	
 								  	
 							</tbody>
 					</table>
-					
+
 					<!--<p class="view-all"><a href="/{{path }}/scenario6/evidence-full" class="secondary-invert">View historical evidence</a></p>-->
 					
 					<!--

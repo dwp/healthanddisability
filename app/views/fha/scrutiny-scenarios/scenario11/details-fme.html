@@ -1,0 +1,233 @@
+{% extends path+"/_layout-case-simple11.html" %}
+
+
+{% block actioncolumn %}
+   
+  <p class="returnRef"><a href="#" class="link-back">Return to case list</a></p>
+ 
+ <div class="caseStatus">
+ 
+
+ 
+ 
+{% if data['pbachoice']=='no'%}
+ 
+	 <h2 class="main-status"><span>Current case status</span>Appointment booked</h2>
+	 
+	 
+	 {% elif data['pbachoice']=='yes'%}
+	 
+	 <h2 class="main-status"><span>Current case status</span>Paper based review</h2>
+	 <!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario11/not-testing" class="button">Start assessment</a></h3>-->
+	 
+	 
+	 {% else %}
+	 
+ 
+
+{% if data['evidencePath']=='ev-ftf'%}
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+	
+	<h2 class="main-status"><span>Current case status</span>Second review</h2>
+		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario11/rec-portal-second" class="button">Make recommendation</a></h3>
+		{% else %}
+		
+	<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
+	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario11/record-evidence" class="button">Record GP report</a></h3>
+	{% endif %}
+	
+	
+	{% elif data['evidencePath']=='ev-pba'%}
+	
+	{% if data['evidenceRecorded']=='record-yes'%}
+		<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario11/rec-portal" class="button">Make recommendation</a></h3>
+		{% else %}
+		<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
+	{% endif %}
+	
+	
+	{% else %}
+	
+	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario11/rec-portal" class="button">Make recommendation</a></h3>
+	
+	
+
+{% endif %}
+
+
+{% endif %}
+
+
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Harvey Chamberlain
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+
+<div class="container">
+  <div class="grid-row">
+    <div class="column-full">
+    
+    {# macro #}
+  {{ nav.scenario_tabs("details-fme",1,path1, customer._id) }}
+    
+   <h1 class="heading-large">
+  	Medical</h1>
+  	
+  
+  <div class="portal-display">	
+  	
+  	
+  	
+  	 <div class="grid-row">
+  
+		  	<div class="column-two-thirds">
+		  	
+		  		 <div class="portal-card">
+				<div class="portal-head">
+					<h3>Current conditions</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+				
+				
+
+					<table class="medical-list">
+						<caption>Medical conditions list</caption>
+						
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Since</th>
+					
+							</tr>
+						</thead>
+
+						
+						<tbody>
+						
+						
+						<tr>
+							<td>Thalassaemia</td>
+							<td>12 November 2018</td>
+							
+						</tr>
+						
+						<tr>
+							<td>Autoimmune (idiopathic) thrombocytopaenic purpura (ITP)</td>
+							<td>7 September 2018</td>
+							
+						</tr>
+						
+						<tr>
+							<td>Influenza seasonal flu</td>
+							<td>7 September 2018</td>
+							
+						</tr>
+						
+						<tr>
+							<td>Depressive disorder</td>
+							<td>23 August 2018</td>
+							
+						</tr>
+						
+						<tr>
+							<td>Fracture complication &ndash; complex regional pain syndrome (Sudeck's atrophy)</td>
+							<td>17 August 2018</td>
+							
+						</tr>
+
+						
+						
+						</tbody>
+					</table>
+					
+					<p class="view-all"><a href="/{{path }}/scenario11/not-testing" class="secondary-invert">View historical conditions</a></p>
+
+
+					
+				</div>
+				<!-- / inner card -->
+			</div>
+			<!-- / portal card -->
+			
+			
+			
+			
+			
+			
+			
+		  	
+		  	</div>
+		  	
+		  	
+		  	<div class="column-third">
+		  		<!---------------------------------- Card ---------------------------------->
+		
+			<div class="portal-card">
+				<div class="portal-head">
+					<h3>Previous outcome</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+
+				
+				<dl>
+					<dt>Date</dt>
+					<dd>12 June 2019</dd>
+					
+					<dt>Primary condition</dt>
+					<dd>Asthma</dd>
+					
+					<dt>Outcome</dt>
+					<dd>Support group</dd>
+					
+					<dt>Justification</dt>
+					<dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</dd>
+					
+				</dl>
+
+				<hr>
+				
+				<p><a href="/{{path }}/scenario11/not-testing" class="secondary-invert">View report</a></p>
+								
+				</div>
+				<!-- / inner card -->
+			<!-- / portal card -->
+		  	</div>
+		  	
+		  	
+		  	  	
+  	 </div>
+    
+
+ 
+    
+  </div>
+  
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

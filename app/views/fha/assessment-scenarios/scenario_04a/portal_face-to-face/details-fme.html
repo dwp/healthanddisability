@@ -1,4 +1,4 @@
-{% extends path+"/scenario_04a/_layout-case-simple_ftf.html" %}
+{% extends path+"/scenario_04a/_layout-case-simple_portal-ftf.html" %}
 
 
 {% block actioncolumn %}
@@ -22,11 +22,12 @@
 	 
 	 {% else %}
 	 
-	 
+<h2 class="main-status"><span>Current case status</span>Ready for review</h2>	 
 <h3 class="primary-action"><span>Suggested case action</span>
-  <form action="#" method="POST">
-  <a href="/{{path }}/scenario_04a/assessment_ftf/wca-index" class="button" onclick="window.open('/{{path }}/scenario_04a/assessment_ftf/wca-index', 'newwindow', 'width=1200,height=800'); return false;" id="preparationTrigger">Start face-to-face</a>
-</form></h3>
+<form action="/{{path }}/scenario_04a/assessment_ftf/wca-index" method="POST">
+<input type="submit" value="Start face-to-face" class="button" name="startFTFtrigger" id="startFTFtrigger">
+</form>
+</h3>
 
 {% endif %}
 
@@ -93,9 +94,9 @@ Steve Wooten
 						
 						
 						<tr>
-							<td>Stroke</td>
-							<td>12 March 2019</td>
-							<td>GP</td>
+							<td>Depression</td>
+							<td>12 March 2018</td>
+							<td>Claimant</td>
 						</tr>
 						<!--
 						<tr>
@@ -126,7 +127,7 @@ Steve Wooten
 						
 						</tbody>
 					</table>
-					
+					<p class="view-all"><a href="#" class="secondary-invert">Add or edit medical conditions</a></p>
 					<!--<p class="view-all"><a href="/{{path }}/scenario6/not-testing" class="secondary-invert">View all medical conditions</a></p>-->
 
 
@@ -152,7 +153,7 @@ Steve Wooten
 				
 				
 				<ul class="action-list">
-						<li><a href="#" class="secondary-invert">View Mia's details</a></li>
+						<li><a href="#" class="secondary-invert">View Steve's details</a></li>
 						<li><a href="#" class="secondary-invert">Add GP details</a></li>
 						<li><a href="#" class="secondary-invert">Add a medical contact</a></li>
 					</ul>
