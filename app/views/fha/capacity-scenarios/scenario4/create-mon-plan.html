@@ -1,0 +1,105 @@
+{% extends path+"/_layout-stripped.html" %}
+
+
+
+{% block assess_content %}
+
+
+
+
+<style>
+
+</style>
+
+
+
+<main id="content" role="main" class="main-content">
+      <div class="container">
+          <div class="grid-row">
+              <div class="column-three-quarters">
+  <a href="javascript: history.go(-1)" class="link-back">Back</a>
+  <h1 class="heading-large mt10">Create a capacity plan for {% include path+"/scenario3/_ACname.html" %}</h1>
+  <h2 class="heading-medium mt30">{% include path+"/scenario3/_Mon_Date.html" %}</h2>
+   <form class="form" action="create-cap-plan" method="post">
+
+   <div class="form-group">
+  <fieldset class="inline">
+
+    <legend>
+      <h2 class="heading-medium mt10">
+        Do you want to apply a reusable plan to monday?
+      </h2>
+    </legend>
+
+    <div class="multiple-choice" data-target="panel-yes">
+      <input id="checkbox-inline-1" type="radio" name="checkbox-inline-group" value="Yes">
+      <label for="checkbox-inline-1">Yes</label>
+    </div>
+    <div class="multiple-choice" data-target="panel-no">
+      <input id="checkbox-inline-2" type="radio" name="checkbox-inline-group" value="No">
+      <label for="checkbox-inline-2">No</label>
+    </div>
+
+    <div class="panel js-hidden" id="panel-yes">
+    <div class="form-group">
+  <fieldset >
+
+    <legend>
+      <h1 class="heading-small mb10">
+        What plan do you want to apply to Monday?
+      </h1>
+    </legend>
+       
+        {% if data['tuestimes']%}
+             <div class="multiple-choice">
+      <input id="plannew" name="plans" type="checkbox" value="plannew">
+      <label for="plannew">{{planname}}</label>
+    </div>
+           
+        {% endif %}
+
+      <div class="multiple-choice">
+      <input id="plan1" name="plans" type="checkbox" value="plan1">
+      <label for="waste-type-1">1 Complex / 3 Neuro </label>
+    </div>
+
+    <div class="multiple-choice">
+      <input id="plan2" name="plans" type="checkbox" value="plan2">
+      <label for="plan2">1 Complex / 3 Neuro / 1 Non neuro</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="plan3" name="plans" type="checkbox" value="plan3">
+      <label for="plan3">2 Complex / 3 Neuro </label>
+    </div>
+    <div class="multiple-choice">
+      <input id="plan4" name="plans" type="checkbox" value="plan4">
+      <label for="plan4">4 Neuro / 2 Non neuro</label>
+    </div>
+  </fieldset>
+  <p><button class="button mt25">Save and continue</button></p>
+</div>
+    </div>
+
+    <div class="panel js-hidden" id="panel-no">
+    {% include path+"/scenario4/_times.html" %}
+    </div>
+
+  </fieldset>
+</div>
+
+        </form>
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+<style>
+fieldset.inline fieldset .multiple-choice {
+  background red;
+  float:none;
+  margin-bottom:10px;
+}
+</style>
+
+{% endblock %}
