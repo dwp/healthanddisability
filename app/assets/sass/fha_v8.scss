@@ -340,6 +340,7 @@ margin-top:30px;
 
 	.fha-style-column{
 		background-color: #F8F8F8 !important;
+		border-right: 2px solid #000 !important;
 	}
 
 .main-row {
@@ -359,6 +360,9 @@ margin-top:30px;
   }
 }	
 
+.main-area-fha{
+	border-left: 2px solid #000 !important;
+}
 
 
 .exam-content {
@@ -2389,6 +2393,95 @@ table.profile-table .col5{
 	
 }
 
+.summary-panel{
+	background-color:#F8F8F8;
+	padding:1em;}
+.summary-panel h4{
+	font-size:19px;}
+.summary-panel p, .summary-panel li{
+	font-size:17px;}
+
+.summary-display {
+	margin-top: 30px;
+	background-color: #DDDDDD;
+	
+	.summary-card {
+		background: #fff;
+		border: 2px solid $grey-2;
+			
+		.summary-head {
+			overflow: hidden;
+			a {			
+				padding: 1em 1em .7em 1em;
+				display: block;
+				font-weight: bold;
+				background: $grey-4;
+				&:hover {
+					background: $grey-3;
+					color: #000;
+				}
+			}
+			h3 {
+				padding: .8em 1em .6em 1em;
+				display: block;
+				font-weight: bold;
+				background: $grey-4;
+				font-size: 24px;
+			}
+		}
+		
+		.summary-inner {
+			padding: .7em 1em;
+			
+			p{
+				font-size:17px;
+			}
+
+			h4 {
+				padding: .4em 0;
+			}
+			
+			table {
+				caption {
+					font-size: .1em;
+					visibility: hidden;
+				}
+				th {
+					width: 40%;
+				}
+			}
+			
+			.action-list {
+				li {
+					border-top: 1px solid $grey-3;
+					padding: .7em 0;
+					p {
+						margin: 0 0 .5em 0;
+						color: $grey-1;
+					}
+					&:first-child {
+						border-top: 0;
+						padding-top: 0;
+					}
+				}
+			}
+			
+			.requested-evidence {
+				border-top: 1px solid $grey-2;
+				margin-top: 1em;
+				padding-top: .8em;
+				h4 {
+					font-weight: bold;
+				}
+			}
+			
+		}
+		
+	}
+	
+}
+
+
   .circle-white {
 	color: #005ea5;
 	background: #fff;
@@ -2426,4 +2519,12 @@ table.profile-table .col5{
 	color: $grey-1;
 }
 
+
+.form-control-1-1 {
+	width: 100%;
+  
+	@include media(tablet) {
+	  width: 100%;
+	}
+  }
 @import "inc/assessment-scenarios";

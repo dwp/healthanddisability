@@ -1,0 +1,121 @@
+{% extends path+"/scenario_03h/_layout.html" %}
+
+
+{% import path+"/scenario_03h/_macros_nav_scenario6.html" as nav %} 
+
+
+{% block assess_content %}
+
+
+  <main id="content" role="main" class="main-content-inner">
+
+    <div class="container">
+      <div class="grid-row main-row">
+    
+      <div class="column-one-quarter left-area">
+      
+      	<div class="left-panel">
+
+<p style="font-weight:bold;">Ready for review</p>
+<hr>
+<!--
+          		  <ul class="secondary-actions">
+
+            <li><a href="/{{path}}/scenario/not-testing">Observations</a></li>
+            <li><a href="/{{path}}/scenario/not-testing" class="">Additional attendee</a></li>
+            <li><a href="/{{path}}/scenario/not-testing">Abandon assessment</a></li>
+            <li><a href="/{{path}}/scenario_curtailment-v0-5/exceptionalCircumstances">Curtail assessment</a></li>
+
+          </ul>-->
+          {% block actioncolumn %}{% endblock %}
+      
+
+      	
+      	
+      	</div>
+      
+      </div>
+
+     
+        <div class="column-three-quarters main-area">
+           
+          <div class="staff__heading">
+
+            <div class="grid-row">
+              <div class="column-half head-customer-details">
+                <!--<div class="badges">
+                  <ul>
+                    <li class="badge">UC</li>
+                    {% if customer.name.first == 'Lowery' %}
+                    <li class="badge support-item">Unacceptable customer behaviour</li>
+                    {% endif %}
+                  </ul>
+                </div> -->
+                
+                <h1 class="heading-xlarge"><span>Customer details</span>{% block citizen_detail %}Lucas Moran{% endblock %}</h1>
+                <p class="mb20"><span class="visually-hidden">National insurance number</span>GG 12 34 56 F</p>
+               
+              </div><!-- column -->
+              
+              
+              
+              
+              <div class="column-half head-customer-extended">
+              
+                <div class="header-left-col mt20">
+                 <h2>Date of birth</h2>
+                 <p>24 April 1965  <!--{{customer.dateOfBirth |formatDate('D MMMM YYYY') }}--></p>
+                </div>
+        
+              <div class="header-right-col mt20">
+                   <h2>Benefit</h2>
+                 <p>Universal credit</p>
+              </div>
+              
+              <!-- / column half -->
+        
+         
+               
+                 
+            
+              
+            </div><!-- / grid row -->
+        
+              </div>	 
+        </div>
+                
+          <div nunj-block="citizen_content">
+            {% block citizen_content %}{% endblock %}
+       
+
+        </div><!-- column -->
+        
+        
+      </div><!-- row -->
+    </div><!-- container -->
+
+  </main>
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super }}
+
+<script type="text/javascript">
+  $( document ).ready(function() {
+         $( ".panel-switch" ).click(function() {
+             $( ".inner-panel" ).toggleClass( "panel-open" );
+         });
+     }); 
+   
+ </script>
+
+
+
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+
+{% endblock %}
