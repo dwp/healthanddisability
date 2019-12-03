@@ -1,0 +1,115 @@
+<div class="inner-panel  panel-open total-panel">
+             <div class="inner-panel-content sticky">
+
+
+                 <h2 class="heading-large">Total slots</h2>
+                      <style>
+
+                      table.totals{
+                        margin-top:15px;
+                        position:relative;
+                      }
+                      
+                      table.totals tbody th {
+
+                        font-weight:normal;
+                        width:60%;
+                        padding:0.3em 0.3em 0.3em 0;
+
+                      }
+
+                       table.totals tbody td {
+
+                        font-weight:bold;
+                        text-align:right;
+                        padding-right:0px;
+                        padding:0.2em 0.2em 0.2em 0;
+     
+
+                      }
+
+                      input[readonly]{
+                       text-align:center;
+                       background:#ddd;
+                       border-color:#ddd;
+                       font-weight:bold;
+                       width:100%;
+                      }
+
+                      .booked{
+                        padding-right:20px;
+                      }
+
+
+                      dl { 
+                           border-bottom:1px solid #ccc;
+                           padding:5px 0;
+                        }
+                        
+                        
+                        dt {
+                              float: left;                     
+                              width: 70%;                            
+                              clear: left;
+                              padding-top:5px;
+                           
+                          }
+                          dd {
+                              float: left;
+                              width: 30%;
+                              text-align:center;
+                          
+                          }
+                          dl:after {content:"";display:table;clear:both;}
+
+                          .totalbooked
+                          {
+                            display:block;
+                          }
+                      </style>
+
+    
+
+                          <dl class="mt30">
+                          <dt class="bold">Total opened</dt>
+                          <dd><input class="form-control" id="rowsum_tue_sum"  type="text" name="rowsum_tue_sum" readonly type="text" value="{{rowsum_tue_sum}}" ></dd>
+                          </dl>
+                          <dl  class="mt30">
+                          <dt class="bold">Complex neuro</dt>
+                          <dd><input class="form-control" id="sum_tue"  type="text" name="sum_tue" readonly type="text" value="{{sum_tue}}" ></dd>
+                          </dl>
+
+                            <dl>
+                          <dt class="bold">Neuro</dt>
+                          <dd><input type="number" name="col_tue_2_sum" id="col_tue_2_sum" class="form-control" readonly value="{{ col_tue_2_sum }}" /></dd>
+                          </dl>
+
+                         <dl>
+                          <dt class="bold">Non neuro</dt>
+                          <dd><input type="number" name="col_tue_3_sum" id="col_tue_3_sum" class="form-control" readonly value="{{ col_tue_3_sum }}" /></dd>
+                          </dl>
+                            {% if checked('benefits','ben2') %}
+                            <dl>
+                          <dt class="bold">IIDB</dt>
+                          <dd> <input class="form-control" id="col_tue_4_sum"  type="text" name="col_tue_4_sum" readonly type="text" value="{{col_tue_4_sum}}" ></dd>
+                          </dl>
+                          {% endif %}
+                    
+                             <dl>
+                          <dt class="bold">UCB</dt>
+                          <dd> <input class="form-control" id="col_tue_6_sum"  type="text" name="col_tue_6_sum" readonly type="text" value="{{col_tue_6_sum}}" ></dd>
+                          </dl>
+
+
+
+
+
+
+            
+               
+                    
+
+
+         </div> 
+
+  

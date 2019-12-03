@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  {% extends path+"/_layout.html" %} {% block assess_content %}
+  <main class="main-content"
+        id="content"
+        role="main">
+    <div class="container">
+      <div class="grid-row">
+        <div class="column-full">
+          <h1 class="heading-xlarge mb20">Capacity management</h1>
+
+           {% if data['tuestimes'] %}
+             <div class="grid-row">
+        <div class="column-full">
+<div class="panel panel-confirmation">
+
+  <h2 class="heading-large">{% if data['editReusablePlan'] %} Reusable plan updated{% else %}Reusable plan created {% endif %}</h2>
+  <p>For Birkehead assessment centre</p>
+</div>
+</div>
+</div>
+{% endif %}
+        </div>
+       
+      </div>
+      <div class="grid-row">
+        <div class="card-container">
+          <div class="card">
+            <a href="/{{path}}/scenario4/create-cap-date.html">
+            <h2 class="heading-small">Create capacity</h2></a>
+          </div>
+          <div class="card">
+            <a href="/{{path}}/scenario3/view-plan.html">
+            <h2 class="heading-small">View and edit capacity</h2></a>
+          </div>
+            <div class="card">
+            <a href="/{{path}}/scenario4/create-date.html">
+            <h2 class="heading-small">Create reusable plan</h2></a>
+          </div>
+             <div class="card">
+            <a href="/{{path}}/scenario4/view-choose-ac.html">
+            <h2 class="heading-small">View and edit reusable plan</h2></a>
+          </div>
+        </div>
+      </div><!-- column -->
+    </div><!-- row -->
+    <!-- container -->
+  </main>{% endblock %}
+</body>
+</html>

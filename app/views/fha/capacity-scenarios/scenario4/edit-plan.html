@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  {% extends path+"/_layout.html" %} {% block assess_content %}
+  <main class="main-content"
+        id="content"
+        role="main">
+    <div class="container">
+      <div class="grid-row">
+        <div class="column-full">
+          <a class="link-back"
+               href="javascript:%20history.go(-1)">Back</a>
+          <h1 class="heading-large mt10">View and edit reusable plans for {% include path+"/scenario3/_ACname.html" %}</h1>
+       
+    
+          <div class="grid-row">
+            <div class="card-container">
+              <div class="card">
+                <a href="create-plan-times3">
+                <h2>{% if data['tuestimes'] %} View and edit <span class="heading-small">{{ planname }}</span> <!--<span class="badge">Updated</span>-->
+                 {% else %} <span class="heading-small">Tuesday</span> {% endif %}</h2></a> {% if data['tuestimes'] %}
+                <div class="inner">
+                  {% if checked('benefitsTue','ben2') %} {% endif %}
+                  <table>
+                    <thead>
+                      <tr>
+                        <th scope="col">
+                           <div class="panel panel-info">
+                               <div class="number">
+                               <span class="border">
+                              {{ rowsum_tue_sum }} 
+                                <span>To open</span>
+                                </span>
+                                </div>
+                                <div class="content">
+                              <span class="">Based on {{tuefte}} FTE's</span></span>
+                               </div>
+                              <div>
+                        </th>
+                        <th class="numeric"
+                            scope="col"></th>
+      
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Complex neuro</th>
+                        <td class="numeric">{% if data['sum_tue'] %} {{ sum_tue }} {% else %} 0 {% endif %}</td>
+                     
+                      </tr>
+                      <tr>
+                        <th scope="row">Neuro</th>
+                        <td class="numeric">{% if data['col_tue_2_sum'] %} {{ col_tue_2_sum }} {% else %} 0 {% endif %}</td>
+                      
+                      </tr>
+                      <tr>
+                        <th scope="row">Non neuro</th>
+                        <td class="numeric">{% if data['col_tue_3_sum'] %} {{ col_tue_3_sum }} {% else %} 0 {% endif %}</td>
+                     
+                      </tr>
+                      {% if checked('benefitsTue','ben2') %}
+                      <tr>
+                        <th scope="row">IIDB</th>
+                        <td class="numeric">{% if data['col_tue_4_sum'] %} {{ col_tue_4_sum }} {% else %} 0 {% endif %}</td>
+                     
+                      </tr>
+                      {% endif %}
+                      <tr>
+                        <td class="ucb"
+                            colspan='3'><span class="bold">{% if data['col_tue_6_sum'] %}{{ col_tue_6_sum }} {% else %} 0 {% endif %}</span>of these appointments can be <span class="bold">UCB</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>{% endif %}
+              </div>    
+          </div>
+        <div class="column-full">
+           <p><a class="button"
+             href="dashboard">Save reusable plan</a></p>
+        </div>
+        </div><!-- column -->
+      </div><!-- row -->
+      <!-- container -->
+    </div>
+  </main>{% endblock %}
+</body>
+</html>

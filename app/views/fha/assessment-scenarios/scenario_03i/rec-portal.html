@@ -1,0 +1,142 @@
+{% extends path+"/scenario_03i/_layout-case-simple_claimant-portal.html" %}
+
+
+
+{% block citizen_detail %}
+Mia Russell
+{% endblock %}
+
+{% block actioncolumn %}
+<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+    
+    
+    <h1 class="heading-large">Make recommendation</h1>
+    
+
+
+    	 
+  <div class="portal-display">	
+  	
+  	
+  	
+  	 <div class="grid-row">
+  
+		  	<div class="column-third">
+		  	
+		  
+			
+			<div class="portal-card">
+				<div class="portal-head">
+					<h3>Request evidence</h3>
+				</div>
+			
+				<div class="portal-inner">
+				
+				<p>I think further evidence will help Mia's case</p>		      
+			      
+			      <p class="view-all"><a href="#" class="secondary-invert">Choose evidence</a></p>
+
+					
+				</div>
+
+			</div>
+			<!-- / portal card -->
+			
+			
+			
+		  	
+		  	</div>
+		  	
+		  	
+		  	<div class="column-third">
+		  		<!---------------------------------- Card ---------------------------------->
+		
+			<div class="portal-card">
+				<div class="portal-head">
+					<h3>Face to face assessment</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+				
+				
+				<p>Call Mia in for a face to face assessment</p>
+              
+            <p class="view-all"> <a href="#" class="secondary-invert">Call for assessment</a></p>
+														
+				</div>
+				<!-- / inner card -->
+			<!-- / portal card -->
+		  	</div>
+		  			  
+  	 </div>
+  	 
+  	 
+  	 <div class="column-third">
+  	 
+  	 	<div class="portal-card">
+				<div class="portal-head">
+					<h3>Paper-based assessment</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+				
+				<p>There is enough evidence to recommend a paper based assessment</p>
+				
+              
+            <p> <a href="descriptorSelection" class="secondary-invert">Start assessment</a></p>
+														
+				</div>
+				<!-- / inner card -->
+			<!-- / portal card -->
+		  	</div>
+  	 	
+  	 </div>
+    
+
+ 
+    
+  </div>
+
+ 
+    
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

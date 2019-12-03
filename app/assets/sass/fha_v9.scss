@@ -1205,7 +1205,7 @@ span.status {
 	background:$turquoise;
 	color:$white;
 	text-align: center;
-	margin:50px 30px 50px 0;
+	//margin:50px 30px 50px 0;
 	padding:3em ;
 	max-width:100%;
   font-size:30px;
@@ -1700,6 +1700,8 @@ padding-left: 20px;
 			font-size: 24px;
 		}
 	}
+
+		
 	
 	.show-slots {
 		margin-top: 20px;
@@ -2532,6 +2534,18 @@ th.col5 span{
 
 }
 
+.section {
+	margin-top: 20px;
+	border-bottom: 5px solid #000;
+	span {
+		background: #000;
+		color: #fff;
+		padding: 12px 1em 6px 1em;
+		display: inline-block;
+		font-weight: bold;
+		font-size: 24px;
+	}
+}
 
 
 @import "inc/scrutiny-scenarios";

@@ -1,0 +1,108 @@
+{% extends path+"/_layout-stripped.html" %}
+
+
+
+{% block assess_content %}
+
+
+
+
+<style>
+
+</style>
+
+
+
+<main id="content" role="main" class="main-content">
+      <div class="container">
+          <div class="grid-row">
+              <div class="column-three-quarters">
+  <a href="javascript: history.go(-1)" class="link-back">Back</a>
+<h1 class="heading-large">Choose reusable plans for {% include path+"/scenario3/_ACname.html" %} <span class="heading-secondary">Week commencing:{% include path+"/scenario3/_Mon_Date.html" %}</span> </h1>
+   <form class="form" action="create-cap-plan" method="post">
+
+  
+    <fieldset>
+
+    <legend>
+      <h1 class="heading-small">
+        Choose the the day's you want to apply a plan to?
+      </h1>
+    </legend>
+
+    <div class="multiple-choice" data-target="monday-panel">
+      <input id="monday" name="day" type="checkbox" value="monday" >
+      <label for="monday">Monday</label>
+    </div>
+
+        <div class="panel js-hidden" id="monday-panel">
+    <div class="form-group">
+  <fieldset>
+
+    <legend>
+      <h1 class="heading-small">
+        What plan do you want to apply to Monday?
+      </h1>
+    </legend>
+       
+        {% if data['tuestimes']%}
+             <div class="multiple-choice">
+      <input id="plannew" name="plans" type="radio" value="plannew">
+      <label for="plannew">{{planname}}</label>
+    </div>
+           
+        {% endif %}
+
+      <div class="multiple-choice">
+      <input id="plan1" name="plans" type="radio" value="plan1">
+      <label for="waste-type-1">1 Complex / 3 Neuro </label>
+    </div>
+
+    <div class="multiple-choice">
+      <input id="plan2" name="plans" type="radio" value="plan2">
+      <label for="plan2">1 Complex / 3 Neuro / 1 Non neuro</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="plan3" name="plans" type="radio" value="plan3">
+      <label for="plan3">2 Complex / 3 Neuro </label>
+    </div>
+    <div class="multiple-choice">
+      <input id="plan4" name="plans" type="radio" value="plan4">
+      <label for="plan4">4 Neuro / 2 Non neuro</label>
+    </div>
+  </fieldset>
+</div>
+    </div>
+    <div class="multiple-choice">
+      <input id="tuesday" name="day" type="checkbox" value="Irish">
+      <label for="tuesday">Tuesday</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="wednesday" name="day" type="checkbox" value="wednesday">
+      <label for="wednesday">Wednesday</label>
+    </div>
+      <div class="multiple-choice">
+      <input id="thursday" name="day" type="checkbox" value="thursday">
+      <label for="thursday">Thursday</label>
+    </div>
+      <div class="multiple-choice">
+      <input id="friday" name="day" type="checkbox" value="friday">
+      <label for="friday">Friday</label>
+    </div>
+
+  
+
+    
+
+  </fieldset>
+
+
+              <p><button class="button mt25">Save and continue</button></p>
+        </form>
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+{% endblock %}
