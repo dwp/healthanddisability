@@ -1,4 +1,4 @@
-{% extends path+"/scenario_03i/_layout-case-simple.html" %}
+{% extends path+"/scenario_04a/_layout-case-simple.html" %}
 
 {% block citizen_content %}
 
@@ -54,8 +54,8 @@
 	</div>
 	
 <div class="form-group">
-			<label class="form-label" for="reviewPeriodDetails">Write your justification</label>
-			<textarea class="form-control form-control-1-1" name="reviewPeriodDetails" id="reviewPeriodDetails" rows="4"></textarea>
+			<label class="form-label" for="justify">Give details</label>
+			<textarea class="form-control form-control-3-4" name="reviewPeriodDetails" id="justify" rows="4"></textarea>
 		</div>
 
     <p><input type="submit" class="button" value="Save and review" id="submitButton"></p>
@@ -63,37 +63,32 @@
 
   </div><!-- column -->
 
+
 <div class="column-one-third">
 
-<div class="summary-panel">
-<h4 class="bold mb10">Justification so far</h4>
-<p class="font-small">The {{ keyEvidence }} GP report (113) and Questionnaire (UC50) suggest the client cannot mobilise unaided by another person, more than 50 metres without stopping because of significant discomfort or exhaustion due to {{ diagnosedConditions }}. This suggests the client has limited capability for work and work-related activity.</p>
-<p>{{ evidenceKeyFacts }}</p>
-<p>The evidence suggests that they would be unable to propel a wheelchair due to upper limb restrictions and fatigue. {{ mobilityRestrictionsDetail }}</p>
+<div class="portal-display mb20" style="margin-top:0px;">
+	<div class="portal-card">
+				<div class="portal-head">
+					<h4>Overview</h4>
+				</div>
+				<!-- / title -->
+				<div class="portal-inner">
+				<p class="mb5 font-xsmall bold">Advice</p>
+				<p class="font-xsmall">LCWRA: moving around and climbing steps without someone’s help</p>
+				<p class="mb5 font-xsmall bold">Evidence considered</p>
+				<ul class="mb20 font-xsmall">
+				<li class="mb5">GP report (113)</li>
+				<li class="mb5">Fit note (Med3)</li>
+				<li class="mb5">Questionnaire (UC50)</li>
+				<li class="mb5">Basic medical report (UC85A)</li>
+				</ul>
+				<p class="mb5 font-xsmall bold">Justification</p>
+				<p class="font-xsmall">{{ justifyAdvice }}</p>
+				</div>
+				<!-- / inner card -->
+				
+	</div>
 </div>
-
-</div>
-
-
-{# <div class="column-one-third">
-
-<div class="summary-panel">
-<h4 class="bold mb10">Summary</h4>
-<p class="font-small">LCWRA: moving around and climbing steps without someone’s help</p>
-<p class="font-small bold mb10">Evidence considered</p>
-<ul class="mb20">
-	<li class="mb5">GP report (113)</li>
-	<li class="mb5">Fit note (Med3)</li>
-	<li class="mb5">Questionnaire (UC50)</li>
-	<li>Basic medical report (UC85A)</li>
-</ul>
-<p class="font-small bold mb10">Previous reports seen</p>
-<p class="font-small">{{ previousReportDates }}</p>
-<p class="font-small bold mb10">Justification</p>
-<p class="font-small">{{ justifyAdvice }}</p>
-</div> #}
-
-
 
   </div><!-- right hand column -->
 

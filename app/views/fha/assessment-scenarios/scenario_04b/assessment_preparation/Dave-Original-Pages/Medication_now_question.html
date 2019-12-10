@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Do you want to add medication now?</h1>
+
+      <form class="form" action="/enter_medication" method="post">
+
+        <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+
+    </legend>
+
+    <div class="govuk-radios govuk-radios--stacked">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="medication-now" name="medication-now" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="medication-now">
+          Yes
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="medication-now-2" name="medication-now" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="medication-now-2">
+          No, I'll do it in the assessment
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
