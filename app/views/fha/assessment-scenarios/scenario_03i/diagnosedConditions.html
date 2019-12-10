@@ -8,27 +8,23 @@
 
 <p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
 
-
-<form action="keyEvidence" method="post">
-
+<form action="evidenceDetails" method="post">
 
 <div class="grid-row">
   <div class="column-two-thirds">
 
 	<p class="caption-large" class="mb0">Paper-based assessment</p>
-	<h1 class="heading-large mt0">Previous reports you've seen</h1>
-
-<label class="form-label mt20">
-List dates of previous medical reports you've seen.
-<span class="form-hint mt5 mb5">For example, March 2018.</span>
-</label>
+	<h1 class="heading-large mt0">Which conditions have been diagnosed in the LCWRA evidence?</h1>
 
 
-
+<div class="form-group">
+			<label class="form-label" for="diagnosedConditions">Diagnosed conditions</label>
+			<textarea class="form-control form-control-1-1" name="diagnosedConditions" id="diagnosedConditions" rows="1"></textarea>
+		</div>
 
 
 
-<textarea class="form-control form-control-3-4 mb20" name="previousReportDates" id="previousreports" rows="1">{{ previousReportDates }}</textarea>
+
 
 <p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
       </form>
@@ -37,23 +33,17 @@ List dates of previous medical reports you've seen.
   </div><!-- column -->
 
 
-
-{# <div class="column-one-third">
+<!--
+<div class="column-one-third">
 
 <div class="summary-panel">
 <h4 class="bold mb10">Summary</h4>
 <p class="font-small">LCWRA: moving around and climbing steps without someone’s help</p>
-<p class="font-small bold mb10">Evidence considered</p>
-<ul >
-	<li class="mb5">GP report (113)</li>
-	<li class="mb5">Fit note (Med3)</li>
-	<li class="mb5">Questionnaire (UC50)</li>
-	<li>Basic medical report (UC85A)</li>
-</ul>
-</div> #}
+</div>
 
 
-</div><!-- right hand column -->
+</div>-->
+<!-- right hand column -->
 
 
 

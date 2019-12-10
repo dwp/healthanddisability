@@ -1,0 +1,322 @@
+
+{% extends path+"/_layout-case-action.html" %} 
+{% block citizen_content %} {{ data.nuggets | log }}
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+<h1 class="heading-large"><span class="heading-secondary">Step 2 of 3</span>Left leg</h1>
+
+		
+		
+ {% if checked('physicalvisited', 'yes') %}
+				<form action="report-physical" method="Post">
+	{% else %}	
+	       <form action="lower-limbs_right-leg" method="Post">	
+	{% endif%}		
+
+																	
+																		 
+																		 
+
+
+									
+	<div class="form-group">
+																			
+<fieldset>
+
+  <legend class="heading-medium mb10">Select the examinations you want to complete</legend>																		
+<!-- <p class="form-hint mb10" style="max-width:650px">Only add comments if you find abnormalities. If you choose an examination and leave the text box blank, it will be marked as normal.</p> -->
+	
+<div class="multiple-choice" data-target="issue1open">
+		      <input id="issue1" name="issueswithleftleg1" type="checkbox" value="Left Leg Issue 1" {{ checked('issueswithleftleg1', 'Left Leg Issue 1') }} >
+		      <label for="issue1">Straight leg raising</label>
+		    </div>
+		     <div class="panel js-hidden" id="issue1open">
+				 
+				 
+				 <fieldset>
+				 	<legend class="heading-small mb5">Choose:</legend>
+					 	<div class="multiple-choice">
+					      <input id="test1" name="leftlegissue1" type="radio" value="test1" {{ checked('leftlegissue1', 'test1') }}>
+					      <label for="test1">Normal (more than 70°)</label>
+					    </div>
+					    <div class="multiple-choice">
+					      <input id="test2" name="leftlegissue1" type="radio" value="test2" {{ checked('leftlegissue1', 'test2') }}>
+					      <label for="test2">Ability to lift straight leg when lying down is reduced by muscle tightness at the back of the leg</label>
+							</div>
+							<div class="multiple-choice">
+									<input id="test3" name="leftlegissue1" type="radio" value="test3" {{ checked('leftlegissue1', 'test3') }}>
+									<label for="test3">Ability to lift straight leg when lying down is reduced due to hip pain</label>
+								</div>
+							<div class="multiple-choice">
+									<input id="test4" name="leftlegissue1" type="radio" value="test4" {{ checked('leftlegissue1', 'test4') }}>
+									<label for="test4">Ability to lift straight leg when lying down is reduced due to low back pain</label>
+								</div>
+							<div class="multiple-choice">
+										<input id="test5" name="leftlegissue1" type="radio" value="test5" {{ checked('leftlegissue1', 'test5') }}>
+										<label for="test5">Ability to lift straight leg when lying down is reduced due to pain below the knee</label>
+									</div>
+							<div class="multiple-choice">
+											<input id="test6" name="leftlegissue1" type="radio" value="test6" {{ checked('leftlegissue1', 'test6') }}>
+											<label for="test6">Ability to lift straight leg when lying down is reduced due to numbness in lower leg</label>
+									</div>
+							<div class="multiple-choice">
+											<input id="test7" name="leftlegissue1" type="radio" value="test7" {{ checked('leftlegissue1', 'test7') }}>
+											<label for="test7">Straight leg raising is reduced by weakness</label>
+									</div>
+				 </fieldset>
+				 	
+</div>
+
+
+
+<div class="multiple-choice" data-target="issue2open">
+		<input id="issue2" name="issueswithleftleg2" type="checkbox" value="Left Leg Issue 2" {{ checked('issueswithleftleg2', 'Left Leg Issue 2') }} >
+		<label for="issue2">Hip flexion</label>
+	</div>
+	 <div class="panel js-hidden" id="issue2open"> 
+	 
+	 <fieldset>
+		 <legend class="heading-small mb5">Choose:</legend>
+			 <div class="multiple-choice">
+					<input id="test1" name="leftlegissue2" type="radio" value="test1" {{ checked('leftlegissue2', 'test1') }}>
+					<label for="test1">Normal (130°)</label>
+				</div>
+				<div class="multiple-choice">
+					<input id="test2" name="leftlegissue2" type="radio" value="test2" {{ checked('leftlegissue2', 'test2') }}>
+					<label for="test2">Hip bending is slightly reduced to between 130° and 110°</label>
+				</div>
+				<div class="multiple-choice">
+						<input id="test3" name="leftlegissue2" type="radio" value="test3" {{ checked('leftlegissue2', 'test3') }}>
+						<label for="test3">Hip bending moderately reduced to  between 100° and 80°</label>
+					</div>
+					<div class="multiple-choice">
+							<input id="test4" name="leftlegissue2" type="radio" value="test4" {{ checked('leftlegissue2', 'test4') }}>
+							<label for="test4">Hip bending is considerably reduced to less than 80°</label>
+						</div>
+	 </fieldset>
+		 
+</div>
+
+
+<div class="multiple-choice" data-target="issue3open">
+		<input id="issue3" name="issueswithleftleg3" type="checkbox" value="Left Leg Issue 3" {{ checked('issueswithleftleg3', 'Left Leg Issue 3') }} >
+		<label for="issue3">Knee flexion</label>
+	</div>
+	 <div class="panel js-hidden" id="issue3open"> 
+	 
+	 <fieldset>
+		 <legend class="heading-small mb5">Choose:</legend>
+			 <div class="multiple-choice">
+					<input id="test1" name="leftlegissue3" type="radio" value="test1" {{ checked('leftlegissue3', 'test1') }}>
+					<label for="test1">Normal (120°)</label>
+				</div>
+				<div class="multiple-choice">
+					<input id="test2" name="leftlegissue3" type="radio" value="test2" {{ checked('leftlegissue3', 'test2') }}>
+					<label for="test2">Knee bending slightly reduced to between 120° and 90°</label>
+				</div>
+				<div class="multiple-choice">
+						<input id="test3" name="leftlegissue3" type="radio" value="test3" {{ checked('leftlegissue3', 'test3') }}>
+						<label for="test3">Knee bending significantly reduced to between 90° and 45°</label>
+					</div>
+					<div class="multiple-choice">
+							<input id="test4" name="leftlegissue3" type="radio" value="test4" {{ checked('leftlegissue3', 'test4') }}>
+							<label for="test4">Knee bending is considerably reduced to less than 45°</label>
+						</div>
+						<div class="multiple-choice">
+								<input id="test4" name="leftlegissue3" type="radio" value="test4" {{ checked('leftlegissue3', 'test4') }}>
+								<label for="test4">Knee grates on movement: accompanied by marked crepitus</label>
+							</div>
+	 </fieldset>
+		 
+</div>
+
+
+<div class="multiple-choice" data-target="issue4open">
+		<input id="issue4" name="issueswithleftleg4" type="checkbox" value="Left Leg Issue 4" {{ checked('issueswithleftleg4', 'Left Leg Issue 4') }} >
+		<label for="issue4">Knee extension</label>
+	</div>
+	 <div class="panel js-hidden" id="issue4open"> 
+	 
+	 <fieldset>
+		 <legend class="heading-small mb5">Choose:</legend>
+			 <div class="multiple-choice">
+					<input id="test1" name="leftlegissue4" type="radio" value="test1" {{ checked('leftlegissue4', 'test1') }}>
+					<label for="test1">Full</label>
+				</div>
+				<div class="multiple-choice">
+					<input id="test2" name="leftlegissue4" type="radio" value="test2" {{ checked('leftlegissue4', 'test2') }}>
+					<label for="test2">Unable to fully straighten knee</label>
+				</div>
+	 </fieldset>
+		 
+</div>
+		    
+
+
+<div class="multiple-choice" data-target="issue5open">
+		<input id="issue5" name="issueswithleftleg5" type="checkbox" value="Left Leg Issue 5" {{ checked('issueswithleftleg5', 'Left Leg Issue 5') }} >
+		<label for="issue5">External hip rotation</label>
+	</div>
+	 <div class="panel js-hidden" id="issue5open"> 
+	 
+	 <fieldset>
+		 <legend class="heading-small mb5">Choose:</legend>
+			 <div class="multiple-choice">
+					<input id="test1" name="leftlegissue5" type="radio" value="test1" {{ checked('leftlegissue5', 'test1') }}>
+					<label for="test1">Normal (45°)</label>
+				</div>
+				<div class="multiple-choice">
+					<input id="test2" name="leftlegissue5" type="radio" value="test2" {{ checked('leftlegissue5', 'test2') }}>
+					<label for="test2">Outward hip rotation is limited by pain to less than 30°</label>
+				</div>
+				<div class="multiple-choice">
+						<input id="test3" name="leftlegissue5" type="radio" value="test3" {{ checked('leftlegissue5', 'test3') }}>
+						<label for="test3">Outward hip rotation is limited by stiffness to less than 30° </label>
+					</div>
+	 </fieldset>
+		 
+</div>
+
+
+
+<div class="multiple-choice" data-target="issue6open">
+		<input id="issue6" name="issueswithleftleg6" type="checkbox" value="Left Leg Issue 6" {{ checked('issueswithleftleg6', 'Left Leg Issue 6') }} >
+		<label for="issue6">Ankle plantarflexion</label>
+	</div>
+	 <div class="panel js-hidden" id="issue6open"> 
+	 
+	 <fieldset>
+		 <legend class="heading-small mb5">Choose:</legend>
+			 <div class="multiple-choice">
+					<input id="test1" name="leftlegissue6" type="radio" value="test1" {{ checked('leftlegissue6', 'test1') }}>
+					<label for="test1">Normal (50°)</label>
+				</div>
+				<div class="multiple-choice">
+					<input id="test2" name="leftlegissue6" type="radio" value="test2" {{ checked('leftlegissue6', 'test2') }}>
+					<label for="test2">Downward movement of the ankle was reduced to less than 50°</label>
+				</div>
+				<div class="multiple-choice">
+						<input id="test3" name="leftlegissue6" type="radio" value="test3" {{ checked('leftlegissue6', 'test3') }}>
+						<label for="test3">Downward movement of the ankle was absent</label>
+					</div>
+	 </fieldset>
+		 
+</div>
+
+
+
+<div class="multiple-choice" data-target="issue7open">
+		<input id="issue7" name="issueswithleftleg7" type="checkbox" value="Left Leg Issue 7" {{ checked('issueswithleftleg7', 'Left Leg Issue 7') }} >
+		<label for="issue7">Ankle dorsiflexion</label>
+	</div>
+	 <div class="panel js-hidden" id="issue7open"> 
+	 
+	 <fieldset>
+		 <legend class="heading-small mb5">Choose:</legend>
+			 <div class="multiple-choice">
+					<input id="test1" name="leftlegissue7" type="radio" value="test1" {{ checked('leftlegissue7', 'test1') }}>
+					<label for="test1">Normal (20°)</label>
+				</div>
+				<div class="multiple-choice">
+					<input id="test2" name="leftlegissue7" type="radio" value="test2" {{ checked('leftlegissue7', 'test2') }}>
+					<label for="test2">Upward movement of the ankle reduced by tight Achilles tendon</label>
+				</div>
+				<div class="multiple-choice">
+						<input id="test3" name="leftlegissue7" type="radio" value="test3" {{ checked('leftlegissue7', 'test3') }}>
+						<label for="test3">Upward movement of the ankle slightly reduced</label>
+					</div>
+					<div class="multiple-choice">
+							<input id="test4" name="leftlegissue7" type="radio" value="test4" {{ checked('leftlegissue7', 'test4') }}>
+							<label for="test4">Upward movement of ankle significantly reduced</label>
+						</div>
+						<div class="multiple-choice">
+								<input id="test5" name="leftlegissue7" type="radio" value="test5" {{ checked('leftlegissue7', 'test5') }}>
+								<label for="test5">Upward movement of ankle was absent</label>
+							</div>
+	 </fieldset>
+		 
+</div>
+
+
+
+<div class="multiple-choice" data-target="issue8open">
+		<input id="issue8" name="issueswithleftleg8" type="checkbox" value="Left Leg Issue 8" {{ checked('issueswithleftleg8', 'Left Leg Issue 8') }} >
+		<label for="issue8">Power</label>
+	</div>
+	 <div class="panel js-hidden" id="issue8open"> 
+	 
+	 <fieldset>
+		 <legend class="heading-small mb5">Choose:</legend>
+			 <div class="multiple-choice">
+					<input id="test1" name="leftlegissue8" type="radio" value="test1" {{ checked('leftlegissue8', 'test1') }}>
+					<label for="test1">Normal</label>
+				</div>
+				<div class="multiple-choice">
+					<input id="test2" name="leftlegissue8" type="radio" value="test2" {{ checked('leftlegissue8', 'test2') }}>
+					<label for="test2">Power in leg was slightly reduced</label>
+				</div>
+				<div class="multiple-choice">
+						<input id="test3" name="leftlegissue8" type="radio" value="test3" {{ checked('leftlegissue8', 'test3') }}>
+						<label for="test3">Power in leg significantly reduced</label>
+					</div>
+					<div class="multiple-choice">
+							<input id="test4" name="leftlegissue8" type="radio" value="test4" {{ checked('leftlegissue8', 'test4') }}>
+							<label for="test4">No movement in leg</label>
+						</div>
+	 </fieldset>
+		 
+</div>
+
+		    
+</fieldset>			    
+</div>									    
+		    
+		    
+<div class="form-group">
+	<label class="heading-small" for="left-leg-issue-open-comments">Other examination findings</label>
+	<textarea class="form-control form-control-2-4" name="leftlegissueopencomments" id="leftlegissueopencomments" rows="4">{{leftlegissueopencomments}}</textarea>
+</div>
+																			
+																				    
+														
+												 
+												 
+												  <p class="mt30"><button class="button">Save and continue</button></p>
+												 
+		
+				</form>
+
+
+  </div><!-- column -->
+</div><!-- row -->
+{% endblock %}
+
+{% macro physGroup(name,sel) %}
+  {% set s = name | slug %}
+  <!-- GROUP -->
+  <div class="multiple-choice" data-target="group_{{s}}_yes">
+    <input id="group_{{s}}" type="checkbox" name="group_{{s}}" sue="group_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="group_{{s}}">{{name}}</label>
+</div>
+{% endmacro %} 
+
+{% macro physObs(name, displayname ,sel) %} {% set s = name | slug %}
+<div class="multiple-choice" data-target="phys_{{s}}_yes">
+    <input id="phys_{{s}}" type="checkbox" name="phys_{{s}}" value="phys_{{s}}" {% if sel %} checked="checked" {% endif %}>
+    <label for="phys_{{s}}">{{displayname}}</label>
+</div>
+<div class="form-group panel js-hidden mt0 mb20" id="phys_{{s}}_yes">
+    <p>
+        <label class="form-label" for="phys_{{s}}_obs">Comments</label>
+        <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4">
+				</textarea>
+    </p>
+</div>
+{% endmacro %} {% block footer_top %} {{ super() }}
+<p class="font-xsmall">
+    <a href="/{{ path2 }}/phys_exam_1">exam v1</a> |
+    <a href="/{{ path2 }}/phys_exam_2">exam v2</a>
+</p>
+{% endblock %} {% block page_scripts %} {{ super() }} {% endblock %}

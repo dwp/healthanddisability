@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Assessment preparation</h1>
+
+      <form class="form" action="/enter_med_conds" method="post">
+
+        <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="med-conds-now-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Do you want to add medical conditions now?
+      </h1>
+    </legend>
+
+    <div class="govuk-radios govuk-radios--stacked">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="med-conds-now" name="med-conds-now" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="med-conds-now">
+          Yes
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="med-conds-now-2" name="med-conds-now" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="med-conds-now-2">
+          No, I'll do it in the assessment
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

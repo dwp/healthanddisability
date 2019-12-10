@@ -1,0 +1,49 @@
+{% extends path+"/scenario_04a/_layout-case-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+<p class="caption-large" class="mb0">Assessment preparation</p>
+
+<h1 class="heading-large mt0">Do you want to add medication details for this condition?</h1>
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+	
+	<form method="post">
+	
+
+	<div class="form-group">
+		 <fieldset>
+			<div class="multiple-choice">
+								<input id="category01" name="PBAdescriptors" type="radio" value="~/{{path}}/scenario_04a/assessment_ftf/enter_medication_1">
+					      <label for="category01">Yes</label>
+			</div>
+						<div class="multiple-choice">
+								<input id="category01" name="PBAdescriptors" type="radio" value="~/{{path}}/scenario_04a/assessment_ftf/med_conds_check_details_2">
+					      <label for="category01">No</label>
+			</div>
+		</fieldset>
+
+
+	</div><!-- section end -->
+
+<p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+	</form>
+
+  </div><!-- column -->
+</div><!-- row -->
+
+
+{% endblock %}
+
+

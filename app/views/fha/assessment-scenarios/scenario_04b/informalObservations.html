@@ -1,0 +1,58 @@
+{% extends path+"/scenario_04a/_layout-case-simple.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<div class="grid-row no-kdBar">
+  <div>
+  <!--<div class="column-two-thirds">-->
+
+<form action="../scenario_04a/assessment_ftf/wca-index" method="POST" class="form">
+ <p class="mt0"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+  <h1 class="heading-large">Informal observations</h1>
+
+<div class="form-group">
+		<textarea class="form-control form-control-3-4" name="informalObservations" id="informalObservations" rows="12">{{ informalObservations }}</textarea>
+	</div>  
+ <input type="submit" class="button mb30" value="Save and continue" id="submitButton">
+
+</form>
+    
+    
+  </div><!-- column -->
+</div><!-- row -->
+
+{% include path+"/scenario_02a/_help_panel_typicalday.html" %}
+
+{% endblock %}
+
+
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+$(document).on('ready',function()
+
+{
+
+  $("#nugget").keydown(function (event) {
+    if ((event.keyCode == 13))
+    {
+      $('#submitButton').trigger('click');
+    }
+  });
+
+
+});
+
+
+</script>
+
+
+
+
+{% endblock %}

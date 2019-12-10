@@ -1,4 +1,4 @@
-{% extends path+"/scenario_03i/_layout-case-simple.html" %}
+{% extends path+"/scenario_04a/_layout-case-simple.html" %}
 
 {% block citizen_content %}
 
@@ -9,7 +9,6 @@
 <p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
 
 
-<form action="previousReports" method="post">
 
 <div class="grid-row">
   <div class="column-two-thirds">
@@ -39,10 +38,11 @@
   </fieldset>
 </div>
 
+<hr style="width:100%; display:inline-block; clear:both;" class="mt0 mb0">
 
+<form action="supportingEvidence1" method="post">
 
-
-{% include path+"/scenario_03i/autocomplete/pbaEvidenceAutocomplete.html" %}
+{% include path+"/scenario_03e/autocomplete/pbaEvidenceAutocomplete.html" %}
 
 
 <p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
@@ -53,14 +53,21 @@
 
 
 
-{# <div class="column-one-third">
-
-<div class="summary-panel">
-<h4 class="bold mb10">Summary</h4>
-<p class="font-small">LCWRA: moving around and climbing steps without someone’s help</p>
-</div> #}
-
-
+<div class="column-one-third">
+<div class="portal-display mb20" style="margin-top:0px;">
+	<div class="portal-card">
+				<div class="portal-head">
+					<h4>Overview</h4>
+				</div>
+				<!-- / title -->
+				<div class="portal-inner">
+        <p class="mb5 font-xsmall bold">Advice</p>
+				<p class="font-xsmall">LCWRA: moving around and climbing steps without someone’s help</p>
+				</div>
+				<!-- / inner card -->
+				
+	</div>
+</div>
 </div><!-- right hand column -->
 
 
@@ -74,7 +81,7 @@
 
 {% block page_scripts %}
 
-{% include path+"/scenario_03i/autocomplete/_autocompletedata.html" %}
+{% include path+"/scenario_03e/autocomplete/_autocompletedata.html" %}
   
  
 {% endblock %} 

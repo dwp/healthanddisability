@@ -1863,6 +1863,44 @@ router.get('/welfare-call-required', function (req, res, next) {
   next()
 })
 
+
+// Create a list of numbered medical conditions
+router.get('/scenario_04b/assessment_preparation/enter_medical_conditions', function (req, res, next) {
+
+  console.log('GET --- ', res.locals.data.conditionsNumber);
+  
+  let tempArray  = [];
+  for (let index = 0; index < res.locals.data.conditionsNumber; index++) {
+    tempArray.push("");
+  }
+
+  console.log('ARRAY', tempArray);
+  
+  res.locals.data.medicalConditions = tempArray;
+
+  next();
+});
+
+ 
+
+// create array of reported conditions
+router.post('/scenario_04b/assessment_preparation/medical_conditions_grouping', function (req, res, next) {
+  console.log(req.body.conditions);
+  console.log(res.locals.data.reportedcondition);
+  
+
+  next();
+});
+
+
+
+// create array of reported conditions
+// router.get('/scenario_04b/assessment_preparation/medication_choose_conditions', function (req, res, next) {
+//   next();
+// });
+
+
+
 /// end appointment data -------
 
 module.exports = router
