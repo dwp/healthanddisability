@@ -13,13 +13,13 @@
         <div class="column-full">
           <h1 class="heading-xlarge mb20">Capacity management</h1>
 
-           {% if data['times'] %}
+           {% if data['monstimes'] %}
              <div class="grid-row">
         <div class="column-two-thirds">
 <div class="panel panel-confirmation">
 
   <h2 class="heading-large">Capacity plan created</h2>
-  <p>Week commencing Monday 23 September for Mann island </p>
+  <p>Week commencing {% include path+"/scenario5/_Mon_Date.html" %} for {% include path+"/scenario5/_ACname.html" %}</p>
 </div>
 </div>
 </div>

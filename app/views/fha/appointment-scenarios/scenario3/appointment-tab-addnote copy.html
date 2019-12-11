@@ -28,16 +28,6 @@
 					  border-top:0;
 					  border-bottom:0;
 	}
-
-	.panel{
-		padding:7px 7px 2px 7px;
-		font-size:17px;
-	}
-
-	.portalhr{
-		margin:15px 0;
-
-	}
 	</style>
 
 <div class="container">
@@ -84,9 +74,121 @@
 			      </ul>
 			      
 			      <ul class="action-list">
-            <li><a href="/{{path }}/scenario3/rearrange-appointment" class="secondary-invert">Update appointment</a></li>
+            <li><a href="/{{path }}/scenario3/rearrange-appointment" class="secondary-invert">Rearrange appointment</a></li>
+            <li><a href="/{{path }}/scenario3/addanote" class="secondary-invert">Add a note</a></li>
+            <li><a href="/{{path }}/scenario3/cancel-appointment" class="secondary-invert">Cancel appointment</a></li>
             </ul>
 
+					
+				</div>
+
+			</div>
+			<!-- / portal card -->
+			
+			
+			
+		  	
+		  	</div>
+		  	
+		  	
+		  	<div class="column-third">
+		  		<!---------------------------------- Card ---------------------------------->
+		
+			<div class="portal-card">
+				<div class="portal-head">
+					<h3>Preferences</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+			
+				
+				<h4>Unavailable on</h4>
+				<ul class="list-bullet">
+               	 <li>Monday <span>afternoons</span></li>
+			   	 <li>Tuesdays</li>
+                </ul>
+		    {% if customer.requirement
+					 %}
+				  <h4 class="">Requirements</h4>
+				  <ul class="list">
+				   {% if customer.requirement.taxi %}
+				  <li>Taxi
+				  	 {% if checked('booked', 'taxi') or data['reference'] %} 
+				  <div class="ref">
+				  <span class="badge pull-right"> Booked</span> 
+				   Reference number:<span class="bold block">{{taxiReference}}{{reference}}</span>
+				  </div>
+				  {% endif %}
+				  
+				  </li>
+				  {% endif%}
+				  {% if customer.requirement.interpreter %}
+				  <li>Interpreter: {{customer.appointment.interpreter}}
+				  <style>
+			
+				  </style>
+				 {% if checked('booked', 'interpreter') or data['reference'] %} 
+				  <div class="panel panel-info">
+				  <span class="badge pull-right"> Booked</span> 
+				   Reference number:<span class="bold block">{{interpreterReference}}</span>
+				  </div>
+				  {% endif %}
+				  </li>
+				  {% endif%}
+				   {% if customer.requirement.audio %}
+				  <li>Audio recording</li>
+				  {% endif%}
+				     {% if customer.requirement.accessible%}
+				  <li>Accessible room</li>
+				  {% endif%}
+				  {% if customer.requirement.gender %}
+				  <li>Same gender hcp</li>
+				  {% endif%}
+				  </ul>
+				   {% endif%}	  
+				      <ul class="action-list">
+            <li> <a href="preferences" class="secondary-invert">Add or edit preferences</a></li>
+			  {% if customer.requirement.interpreter == 'interpreter' or  customer.requirement.taxi == 'taxi'  %}
+            <li> <a href="record-bookings?nino={{customer.nino}}" class="secondary-invert">Record bookings</a></li>
+            {% endif %}
+            </ul>
+														
+				</div>
+				<!-- / inner card -->
+			<!-- / portal card -->
+		  	</div>
+		  	
+		  	<!--<hr>
+		  	
+		  	<div class="portal-card">
+				<div class="portal-head">
+					<h3>Preferences</h3>
+				</div>
+				
+
+				<div class="portal-inner">
+
+              
+            <p> <a href="/{{path }}/scenario2/not-testing" class="secondary-invert">Add preferences</a></p>
+														
+				</div>
+			
+		  	</div>
+		  	<!-- / portal card -->
+		  	
+  	 </div>
+  	 
+  	 
+  	 <div class="column-third">
+  	 
+  	 	<div class="portal-card">
+				<div class="portal-head">
+					<h3>History</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
 
 
         {% if  checked('contact', 'yes')%}
@@ -135,13 +237,8 @@
 						</li>
 					</ul>
 {% else %}   
-        <hr class="portalhr">
-       
-	     <h4 class="">
-		 History
-		 </h4>
 
-		Skillset change:
+		<h4>Skillset change</h4>
 				
 				
 					<ul class="action-list appointment-history-list">
@@ -158,114 +255,14 @@
 				
               
             <p> <a href="/{{path }}/scenario3/appointment-history" class="secondary-invert">View all history</a></p>
-
-					
-				</div>
-
-			</div>
-			<!-- / portal card -->
-			
-			
-			
-		  	
-		  	</div>
-		  	
-		  	
-		  	<div class="column-two-thirds">
-		  		<!---------------------------------- Card ---------------------------------->
-		
-			<div class="portal-card">
-				<div class="portal-head">
-					<h3>Preferences</h3>
-				</div>
-				<!-- / title -->
-
-				<div class="portal-inner">
-			
-				<div class="grid-row">
-				<div class="column-half">
-
-				<h4>Unavailable on</h4>
-				<ul class="list-bullet">
-               	 <li>Monday <span>afternoons</span></li>
-			   	 <li>Tuesdays</li>
-                </ul>
-				</div>
-				<div class="column-half">
-		    {% if customer.requirement
-					 %}
-				  <h4 class="">Requirements</h4>
-				  <ul class="list">
-				   {% if customer.requirement.taxi %}
-				  <li>Taxi
-				  	 {% if checked('booked', 'taxi') or data['reference'] %} 
-				  <div class="panel panel-info">
-				  <span class="badge pull-right"> Booked</span> 
-				   Reference number:<span class="bold block">{% if checked('booked', 'taxi')%}{{taxiReference}} {% else %}{{reference}}{% endif %}</span>
-				  </div>
-				  {% endif %}
-				  
-				  </li>
-				  {% endif%}
-				  {% if customer.requirement.interpreter %}
-				  <li>Interpreter: {{customer.appointment.interpreter}}
-				  <style>
-			
-				  </style>
-				 {% if checked('booked', 'interpreter') or data['reference'] %} 
-				  <div class="panel panel-info">
-				  <span class="badge pull-right"> Booked</span> 
-				   Reference number:<span class="bold block">{% if checked('booked', 'interpreter')%} {{interpreterReference}}{% else %}{{reference}}{% endif %}</span>
-				  </div>
-				  {% endif %}
-				  </li>
-				  {% endif%}
-				   {% if customer.requirement.audio %}
-				  <li>Audio recording</li>
-				  {% endif%}
-				     {% if customer.requirement.accessible%}
-				  <li>Accessible room</li>
-				  {% endif%}
-				  {% if customer.requirement.gender %}
-				  <li>Same gender hcp</li>
-				  {% endif%}
-				  </ul>
-				   {% endif%}	  
-				      <ul class="action-list">
-            <li> <a href="preferences" class="secondary-invert">Add or edit preferences</a></li>
-			  {% if customer.requirement.interpreter == 'interpreter' or  customer.requirement.taxi == 'taxi'  %}
-            <li> <a href="record-bookings?nino={{customer.nino}}" class="secondary-invert">Record bookings</a></li>
-            {% endif %}
-            </ul>
-			</div></div>
 														
 				</div>
 				<!-- / inner card -->
 			<!-- / portal card -->
 		  	</div>
-		  	
-		  	<!--<hr>
-		  	
-		  	<div class="portal-card">
-				<div class="portal-head">
-					<h3>Preferences</h3>
-				</div>
-				
-
-				<div class="portal-inner">
-
-              
-            <p> <a href="/{{path }}/scenario2/not-testing" class="secondary-invert">Add preferences</a></p>
-														
-				</div>
-			
-		  	</div>
-		  	<!-- / portal card -->
-		  	
+  	 	
   	 </div>
-  	 
-  	 
-
+    
   
   
     

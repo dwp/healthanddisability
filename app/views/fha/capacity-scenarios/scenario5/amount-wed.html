@@ -1,0 +1,727 @@
+
+{% extends path+"/_layout-stripped.html" %}
+
+
+
+{% block assess_content %}
+
+<main id="content" role="main" class="main-content">
+
+
+
+      <div class="container">
+          <div class="grid-row">
+              <div class="column-three-quarters capacity">
+  <a href="javascript: history.go(-1)" class="link-back">Back</a>   
+
+   <h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Open appointment slots for {% include path+"/scenario5/_ACname.html" %} </h1>
+
+
+   <form class="form" action="create-plan" method="post">
+
+ <h2 class="heading-medium mt30"> {% include path+"/scenario5/_Wed_Date.html" %}</h2>
+          <div class="form-group">
+          <label class="form-label-bold" for="wedfte">How many full time equivalent are you basing this capacity on?</label>
+          <input class="form-control form-control-1-8" id="wedfte" type="number" name="wedfte" value="{{wedfte}}">
+        </div>
+
+
+              <table class="profile-table">
+
+            
+                <thead>
+                    <tr>
+                          <th></th>
+                          <th><span>How many</span></th>
+                          <th class="col6"><span>How many can be</span></th>
+                      </tr>
+                  <tr>
+
+                    <th></th>    
+                    <th><span></span>HCP's</th>
+                     <th class="col6"><span></span>UCB</th>
+               
+                    
+                  </tr>
+                </thead>
+
+                {% if checked('wedstimes','9') %}
+                <tr>
+                  <th class="col">9:00am</th>
+                  <td > <label class="visually-hidden" for="" ></label>
+                    <input class="form-control" id="col_wed_1_1"  type="text" name="col_wed_1_1"  type="text" value="{{col_wed_1_1}}" ></td> 
+         
+
+                  <td class="col6"><label class="visually-hidden" for=""></label>
+                    <input class="form-control" id="col_wed_6_1" type="text" name="col_wed_6_1"  value="{{col_wed_6_1}}"></td>
+                </tr>
+
+                {% endif %}
+                {% if  checked('wedstimes','915') %}
+                <tr>
+                    <th class="col">9:15am</th>
+                    <td > <label class="visually-hidden" for="" ></label>
+                      <input class="form-control" id="col_wed_1_2"  type="text" name="col_wed_1_2"  type="text" value="{{col_wed_1_2}}" ></td> 
+                  
+                
+                   
+     
+                      <td class="col6">
+                        <label class="visually-hidden" for=""></label>
+              <input class="form-control" id="col_wed_6_2" type="text" name="col_wed_6_2"  value="{{col_wed_6_2}}">
+            </td>
+            
+
+                  {% endif %}
+                  {% if checked('wedstimes','930')  %}
+                  <tr>
+                      <th class="col">9:30am</th>
+                      <td> <label class="visually-hidden" for="" ></label>
+                        <input class="form-control" id="col_wed_1_3"  type="text" name="col_wed_1_3"  type="text" value="{{col_wed_1_3}}" ></td> 
+             
+                     
+       
+           
+                        <td class="col6">
+                          <label class="visually-hidden" for=""></label>
+                <input class="form-control" id="col_wed_6_3" type="text" name="col_wed_6_3"  value="{{col_wed_6_3}}">
+              </td>
+           
+                    </tr>
+
+                    {% endif %}
+                    
+                    {% if checked('wedstimes','945')  %}
+                  <tr>
+                      <th class="col">9:45am</th>
+                      <td> <label class="visually-hidden" for="" ></label>
+                        <input class="form-control" id="col_wed_1_4"  type="text" name="col_wed_1_4"  type="text" value="{{col_wed_1_4}}" ></td> 
+         
+        
+                        <td class="col6">
+                          <label class="visually-hidden" for=""></label>
+                <input class="form-control" id="col_wed_6_4" type="text" name="col_wed_6_4"  value="{{col_wed_6_4}}">
+              </td>
+            
+                    </tr>
+
+                    {% endif %}
+                    
+                    {% if checked('wedstimes','10')  %}
+                    <tr>
+                        <th class="col">10:00am</th>
+                        <td> <label class="visually-hidden" for="" ></label>
+                          <input class="form-control" id="col_wed_1_5"  type="text" name="col_wed_1_5"  type="text" value="{{col_wed_1_5}}" ></td> 
+                       
+                
+                       
+         
+             
+                          <td class="col6">
+                            <label class="visually-hidden" for=""></label>
+                  <input class="form-control" id="col_wed_6_5" type="text" name="col_wed_6_5"  value="{{col_wed_6_5}}">
+                </td>
+               
+                      {% endif %}
+
+                      {% if checked('wedstimes','1015')  %}
+                      <tr>
+                          <th class="col">10:15am</th>
+                          <td> <label class="visually-hidden" for="" ></label>
+                            <input class="form-control" id="col_wed_1_6"  type="text" name="col_wed_1_6"  type="text" value="{{col_wed_1_6}}" ></td> 
+                          <td class="col5"><label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="rowsum_wed_6" type="text" name="rowsum_wed_6"  readonly value="{{rowsum_wed_6}}"></td>
+                         
+           
+               
+                            <td class="col6">
+                              <label class="visually-hidden" for=""></label>
+                    <input class="form-control" id="col_wed_6_6" type="text" name="col_wed_6_6"  value="{{col_wed_6_6}}">
+                  </td>
+                
+                        {% endif %}
+                      {% if checked('wedstimes','1030')  %}
+
+                      <tr>
+                          <th class="col">10:30am</th>
+                          <td> <label class="visually-hidden" for="" ></label>
+                            <input class="form-control" id="col_wed_1_7"  type="text" name="col_wed_1_7"  type="text" value="{{col_wed_1_7}}" ></td> 
+  
+                            <td class="col6">
+                              <label class="visually-hidden" for=""></label>
+                    <input class="form-control" id="col_wed_6_7" type="text" name="col_wed_6_7"  value="{{col_wed_6_7}}">
+                  </td>
+                
+
+                        {% endif %}
+                        
+                        {% if checked('wedstimes','1045')  %}
+
+                      <tr>
+                          <th class="col">10:45am</th>
+                          <td> <label class="visually-hidden" for="" ></label>
+                            <input class="form-control" id="col_wed_1_8"  type="text" name="col_wed_1_8"  type="text" value="{{col_wed_1_8}}" ></td> 
+                        
+                      
+                
+                            <td class="col6">
+                              <label class="visually-hidden" for=""></label>
+                    <input class="form-control" id="col_wed_6_8" type="text" name="col_wed_6_8"  value="{{col_wed_6_8}}">
+                  </td>
+                 
+                        {% endif %}
+                        
+                        {% if checked('wedstimes','11')  %}
+
+                        <tr>
+                            <th class="col">11:00am</th>
+                            <td> <label class="visually-hidden" for="" ></label>
+                              <input class="form-control" id="col_wed_1_9"  type="text" name="col_wed_1_9"  type="text" value="{{col_wed_1_9}}" ></td> 
+                           
+                      
+                              <td class="col6">
+                                <label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="col_wed_6_9" type="text" name="col_wed_6_9"  value="{{col_wed_6_9}}">
+                    </td>
+                  
+                          </tr>
+
+                          {% endif %}
+                          {% if checked('wedstimes','1115')  %}
+
+                          <tr>
+                              <th class="col">11:15am</th>
+                              <td> <label class="visually-hidden" for="" ></label>
+                                <input class="form-control" id="col_wed_1_10"  type="text" name="col_wed_1_10"  type="text" value="{{col_wed_1_10}}" ></td> 
+                            
+           
+                                <td class="col6">
+                                  <label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="col_wed_6_10" type="text" name="col_wed_6_10"  value="{{col_wed_6_10}}">
+                      </td>
+                  
+                            </tr>
+
+                            {% endif %}
+                            
+                            {% if checked('wedstimes','1130')  %}
+
+                          <tr>
+                              <th class="col">11:30am</th>
+                              <td> <label class="visually-hidden" for="" ></label>
+                                <input class="form-control" id="col_wed_1_11"  type="text" name="col_wed_1_11"  type="text" value="{{col_wed_1_11}}" ></td> 
+                        
+                        
+                             
+               
+                    
+                                <td class="col6">
+                                  <label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="col_wed_6_11" type="text" name="col_wed_6_11"  value="{{col_wed_6_11}}">
+                      </td>
+                     
+                            </tr>
+
+                            {% endif %}
+                            {% if checked('wedstimes','1145')  %}
+
+                          <tr>
+                              <th class="col">11:45am</th>
+                              <td> <label class="visually-hidden" for="" ></label>
+                                <input class="form-control" id="col_wed_1_12"  type="text" name="col_wed_1_12"  type="text" value="{{col_wed_1_12}}" ></td> 
+                               
+                           
+               
+                                <td class="col6">
+                                  <label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="col_wed_6_12" type="text" name="col_wed_6_12"  value="{{col_wed_6_12}}">
+                      </td>
+                      
+                            
+                            </tr>
+
+                            {% endif %}
+
+                            {% if checked('wedstimes','12')  %}
+
+                            <tr>
+                                <th class="col">12:00pm</th>
+                                <td> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="col_wed_1_13"  type="text" name="col_wed_1_13"  type="text" value="{{col_wed_1_13}}" ></td> 
+                   
+                               
+                 
+                                  <td class="col6">
+                                    <label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="col_wed_6_13" type="text" name="col_wed_6_13"  value="{{col_wed_6_13}}">
+                        </td>
+                       
+                              
+                              </tr>
+  
+                              {% endif %}
+                              {% if checked('wedstimes','1215')  %}
+
+                              <tr>
+                                  <th class="col">12:15pm</th>
+                                  <td> <label class="visually-hidden" for="" ></label>
+                                    <input class="form-control" id="col_wed_1_14"  type="text" name="col_wed_1_14"  type="text" value="{{col_wed_1_14}}" ></td> 
+                                 
+                        
+                                 
+                  
+                                    <td class="col6">
+                                      <label class="visually-hidden" for=""></label>
+                            <input class="form-control" id="col_wed_6_14" type="text" name="col_wed_6_14"  value="{{col_wed_6_14}}">
+                          </td>
+                      
+                                
+                                </tr>
+    
+                                {% endif %}
+
+                                {% if checked('wedstimes','1230')  %}
+
+                                <tr>
+                                    <th class="col">12:30pm</th>
+                                    <td> <label class="visually-hidden" for="" ></label>
+                                      <input class="form-control" id="col_wed_1_15"  type="text" name="col_wed_1_15"  type="text" value="{{col_wed_1_15}}" ></td> 
+                  
+                                   
+                     
+                                      <td class="col6">
+                                        <label class="visually-hidden" for=""></label>
+                              <input class="form-control" id="col_wed_6_15" type="text" name="col_wed_6_15"  value="{{col_wed_6_15}}">
+                            </td>
+                           
+                                  
+                                  </tr>
+      
+                                  {% endif %}
+
+                                  {% if checked('wedstimes','1245')  %}
+
+                                  <tr>
+                                      <th class="col">12:45pm</th>
+                                      <td> <label class="visually-hidden" for="" ></label>
+                                        <input class="form-control" id="col_wed_1_16"  type="text" name="col_wed_1_16"  type="text" value="{{col_wed_1_16}}" ></td> 
+                                      
+                                
+                                     
+                       
+                            
+                                        <td class="col6">
+                                          <label class="visually-hidden" for=""></label>
+                                <input class="form-control" id="col_wed_6_16" type="text" name="col_wed_6_16"  value="{{col_wed_6_16}}">
+                              </td>
+                             
+                                    
+                                    </tr>
+        
+                                    {% endif %}
+                            {% if checked('wedstimes','1')  %}
+
+                <tr>
+                    <th class="col">1:00pm</th>
+                    <td> <label class="visually-hidden" for="" ></label>
+                      <input class="form-control" id="col_wed_1_17"  type="text" name="col_wed_1_17"  type="text" value="{{col_wed_1_17}}" ></td> 
+                    
+            
+                   
+     
+            
+                      <td class="col6">
+                        <label class="visually-hidden" for=""></label>
+              <input class="form-control" id="col_wed_6_17" type="text" name="col_wed_6_17"  value="{{col_wed_6_17}}">
+            </td>
+          
+                  </tr>
+                  {% endif %}
+                  {% if checked('wedstimes','115')  %}
+                  <tr>
+                      <th class="col">1:15pm</th>
+                      <td> <label class="visually-hidden" for="" ></label>
+                        <input class="form-control" id="col_wed_1_18"  type="text" name="col_wed_1_18"  type="text" value="{{col_wed_1_18}}" ></td> 
+                    
+               
+                   
+                        <td class="col6">
+                          <label class="visually-hidden" for=""></label>
+                <input class="form-control" id="col_wed_6_18" type="text" name="col_wed_6_18"  value="{{col_wed_6_18}}">
+              </td>
+           
+                    </tr>
+                    {% endif %}
+                    {% if checked('wedstimes','130')  %}
+                    <tr>
+                        <th class="col">1:30pm</th>
+                        <td> <label class="visually-hidden" for="" ></label>
+                          <input class="form-control" id="col_wed_1_19"  type="text" name="col_wed_1_19"  type="text" value="{{col_wed_1_19}}" ></td> 
+             
+                       
+         
+           
+                          <td class="col6">
+                            <label class="visually-hidden" for=""></label>
+                  <input class="form-control" id="col_wed_6_19" type="text" name="col_wed_6_19"  value="{{col_wed_6_19}}">
+                </td>
+               
+                      </tr>
+                      {% endif %}
+                      {% if checked('wedstimes','145')  %}
+                    <tr>
+                        <th class="col">1:45pm</th>
+                        <td> <label class="visually-hidden" for="" ></label>
+                          <input class="form-control" id="col_wed_1_20"  type="text" name="col_wed_1_20"  type="text" value="{{col_wed_1_20}}" ></td> 
+                         
+
+          
+                          <td class="col6">
+                            <label class="visually-hidden" for=""></label>
+                  <input class="form-control" id="col_wed_6_20" type="text" name="col_wed_6_20"  value="{{col_wed_6_20}}">
+                </td>
+            
+                      </tr>
+                      {% endif %}
+                      {% if checked('wedstimes','2')  %}
+
+                      <tr>
+                          <th class="col">2:00pm</th>
+                          <td> <label class="visually-hidden" for="" ></label>
+                            <input class="form-control" id="col_wed_1_21"  type="text" name="col_wed_1_21"  type="text" value="{{col_wed_1_21}}" ></td> 
+                      
+           
+                
+                            <td class="col6">
+                              <label class="visually-hidden" for=""></label>
+                    <input class="form-control" id="col_wed_6_21" type="text" name="col_wed_6_21"  value="{{col_wed_6_21}}">
+                  </td>
+                
+                        </tr>
+                        {% endif %}
+
+                        {% if checked('wedstimes','215')  %}
+
+                        <tr>
+                            <th class="col">2:15pm</th>
+                            <td> <label class="visually-hidden" for="" ></label>
+                              <input class="form-control" id="col_wed_1_22"  type="text" name="col_wed_1_22"  type="text" value="{{col_wed_1_22}}" ></td> 
+         
+             
+                   
+                              <td class="col6">
+                                <label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="col_wed_6_22" type="text" name="col_wed_6_22"  value="{{col_wed_6_22}}">
+                    </td>
+                   
+                          </tr>
+                          {% endif %}
+                        {% if checked('wedstimes','230')  %}
+  
+                        <tr>
+                            <th class="col">2:30pm</th>
+                            <td> <label class="visually-hidden" for="" ></label>
+                              <input class="form-control" id="col_wed_1_23"  type="text" name="col_wed_1_23"  type="text" value="{{col_wed_1_23}}" ></td> 
+                     
+                           
+             
+                    
+                              <td class="col6">
+                                <label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="col_wed_6_23" type="text" name="col_wed_6_23"  value="{{col_wed_6_23}}">
+                    </td>
+               
+                          </tr>
+                          {% endif %}
+                          
+                          {% if checked('wedstimes','245')  %}
+  
+                        <tr>
+                            <th class="col">2:45pm</th>
+                            <td> <label class="visually-hidden" for="" ></label>
+                              <input class="form-control" id="col_wed_1_24"  type="text" name="col_wed_1_24"  type="text" value="{{col_wed_1_24}}" ></td> 
+                           
+            
+                           
+             
+                   
+                              <td class="col6">
+                                <label class="visually-hidden" for=""></label>
+                      <input class="form-control" id="col_wed_6_24" type="text" name="col_wed_6_24"  value="{{col_wed_6_24}}">
+                    </td>
+                   
+                          </tr>
+                          {% endif %}
+                          
+                          {% if checked('wedstimes','3')  %}
+  
+                          <tr>
+                              <th class="col">3:00pm</th>
+                              <td> <label class="visually-hidden" for="" ></label>
+                                <input class="form-control" id="col_wed_1_25"  type="text" name="col_wed_1_25"  type="text" value="{{col_wed_1_25}}" ></td> 
+                           
+              
+                             
+               
+                                <td class="col6">
+                                  <label class="visually-hidden" for=""></label>
+                        <input class="form-control" id="col_wed_6_25" type="text" name="col_wed_6_25"  value="{{col_wed_6_25}}">
+                      </td>
+                     
+                            </tr>
+
+                            {% endif %}
+                            {% if checked('wedstimes','315')  %}
+  
+                            <tr>
+                                <th class="col">3:15pm</th>
+                                <td> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="col_wed_1_26"  type="text" name="col_wed_1_26"  type="text" value="{{col_wed_1_26}}" ></td> 
+                                
+                  
+                               
+                 
+                     
+                                  <td class="col6">
+                                    <label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="col_wed_6_26" type="text" name="col_wed_6_26"  value="{{col_wed_6_26}}">
+                        </td>
+                       
+                              </tr>
+  
+
+                              {% endif %}
+                              {% if checked('wedstimes','330')  %}
+
+
+                            <tr>
+                                <th class="col">3:30pm</th>
+                                <td> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="col_wed_1_27"  type="text" name="col_wed_1_27"  type="text" value="{{col_wed_1_27}}" ></td> 
+                   
+                                  <td class="col6">
+                                    <label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="col_wed_6_27" type="text" name="col_wed_6_27"  value="{{col_wed_6_27}}">
+                        </td>
+                     
+                              </tr>
+  
+
+                              {% endif %}
+                              {% if checked('wedstimes','345')  %}
+
+
+                            <tr>
+                                <th class="col">3:45pm</th>
+                                <td> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="col_wed_1_28"  type="text" name="col_wed_1_28"  type="text" value="{{col_wed_1_28}}" ></td> 
+                                
+          
+                                  <td class="col6">
+                                    <label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="col_wed_6_28" type="text" name="col_wed_6_28"  value="{{col_wed_6_28}}">
+                        </td>
+                   
+                              </tr>
+  
+
+                              {% endif %}
+                              
+                              {% if checked('wedstimes','4')  %}
+
+
+                            <tr>
+                                <th class="col">4:00pm</th>
+                                <td> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="col_wed_1_29"  type="text" name="col_wed_1_29"  type="text" value="{{col_wed_1_29}}" ></td> 
+                           
+                                  <td class="col6">
+                                    <label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="col_wed_6_29" type="text" name="col_wed_6_29"  value="{{col_wed_6_29}}">
+                        </td>
+                    
+                              {% endif %}
+                              {% if checked('wedstimes','415')  %}
+
+
+                            <tr>
+                                <th class="col">4:15pm</th>
+                                <td> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="col_wed_1_30"  type="text" name="col_wed_1_30"  type="text" value="{{col_wed_1_30}}" ></td> 
+                          
+                                  <td class="col6">
+                                    <label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="col_wed_6_30" type="text" name="col_wed_6_30"  value="{{col_wed_6_30}}">
+                        </td>
+                    
+                              </tr>
+  
+
+                              {% endif %}
+                              {% if checked('wedstimes','430')  %}
+
+
+                            <tr>
+                                <th class="col">4:30pm</th>
+                                <td> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="col_wed_1_31"  type="text" name="col_wed_1_31"  type="text" value="{{col_wed_1_31}}" ></td> 
+                              
+  
+                    
+                                  <td class="col6">
+                                    <label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="col_wed_6_31" type="text" name="col_wed_6_31"  value="{{col_wed_6_31}}">
+                        </td>
+                  
+                              </tr>
+  
+
+                              {% endif %}
+                              {% if checked('wedstimes','445')  %}
+
+
+                            <tr>
+                                <th class="col">4:45pm</th>
+                                <td> <label class="visually-hidden" for="" ></label>
+                                  <input class="form-control" id="col_wed_1_32"  type="text" name="col_wed_1_32"  type="text" value="{{col_wed_1_32}}" ></td> 
+                              
+                            
+                        
+                                  <td class="col6">
+                                    <label class="visually-hidden" for=""></label>
+                          <input class="form-control" id="col_wed_6_32" type="text" name="col_wed_6_32"  value="{{col_wed_6_32}}">
+                        </td>
+                        {% endif %}
+                              </tr>             
+              </table>
+
+
+              <p><button class="button mt30">Save and continue</button></p>
+              {% include path+"/scenario5/_totals-wed.html" %}
+              </form>
+            </div>
+         
+   
+          </div><!-- column -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+</main>
+
+
+
+
+
+
+{% endblock %}
+
+
+{% block page_scripts %}
+<script>
+
+
+
+
+$(function(){
+  $('#sum_wed, #col_wed_2_sum, #col_wed_3_sum, #col_wed_4_sum').change(function(){
+     var value1 = parseFloat($('#sum_wed').val()) || 0;
+     var value2 = parseFloat($('#col_wed_2_sum').val()) || 0;
+     var value3 = parseFloat($('#col_wed_3_sum').val()) || 0;
+     var value4 = parseFloat($('#col_wed_4_sum').val()) || 0;
+     $('#rowsum_wed_sum').val(value1 + value2 + value3+ value4);
+  });
+});
+$(function(){
+  $('#col_wed_1_1, #col_wed_1_2, #col_wed_1_3, #col_wed_1_4, #col_wed_1_5, #col_wed_1_6, #col_wed_1_7, #col_wed_1_8, #col_wed_1_9, #col_wed_1_10, #col_wed_1_11, #col_wed_1_12, #col_wed_1_13, #col_wed_1_14, #col_wed_1_15, #col_wed_1_16, #col_wed_1_17, #col_wed_1_18, #col_wed_1_19, #col_wed_1_20, #col_wed_1_21, #col_wed_1_23, #col_wed_1_23, #col_wed_1_24, #col_wed_1_25, #col_wed_1_26, #col_wed_1_27, #col_wed_1_28, #col_wed_1_29, #col_wed_1_30, #col_wed_1_31, #col_wed_1_32').keyup(function(){
+     var value1 = parseFloat($('#col_wed_1_1').val()) || 0;
+     var value2 = parseFloat($('#col_wed_1_2').val()) || 0;
+     var value3 = parseFloat($('#col_wed_1_3').val()) || 0;
+     var value4 = parseFloat($('#col_wed_1_4').val()) || 0;
+     var value5 = parseFloat($('#col_wed_1_5').val()) || 0;
+     var value6 = parseFloat($('#col_wed_1_6').val()) || 0;
+     var value7 = parseFloat($('#col_wed_1_7').val()) || 0;
+     var value8 = parseFloat($('#col_wed_1_8').val()) || 0;
+     var value9 = parseFloat($('#col_wed_1_9').val()) || 0;
+     var value10 = parseFloat($('#col_wed_1_10').val()) || 0;
+     var value11 = parseFloat($('#col_wed_1_11').val()) || 0;
+     var value12 = parseFloat($('#col_wed_1_12').val()) || 0;
+     var value13 = parseFloat($('#col_wed_1_13').val()) || 0;
+     var value14 = parseFloat($('#col_wed_1_14').val()) || 0;
+     var value15 = parseFloat($('#col_wed_1_15').val()) || 0;
+     var value16 = parseFloat($('#col_wed_1_16').val()) || 0;
+     var value17 = parseFloat($('#col_wed_1_17').val()) || 0;
+     var value18 = parseFloat($('#col_wed_1_18').val()) || 0;
+     var value19 = parseFloat($('#col_wed_1_19').val()) || 0;
+     var value20 = parseFloat($('#col_wed_1_20').val()) || 0;
+     var value21 = parseFloat($('#col_wed_1_21').val()) || 0;
+     var value22 = parseFloat($('#col_wed_1_22').val()) || 0;
+     var value23 = parseFloat($('#col_wed_1_23').val()) || 0;
+     var value24 = parseFloat($('#col_wed_1_24').val()) || 0;
+     var value25 = parseFloat($('#col_wed_1_25').val()) || 0;
+     var value26 = parseFloat($('#col_wed_1_26').val()) || 0;
+     var value27 = parseFloat($('#col_wed_1_27').val()) || 0;
+     var value28 = parseFloat($('#col_wed_1_28').val()) || 0;
+     var value29 = parseFloat($('#col_wed_1_29').val()) || 0;
+     var value30 = parseFloat($('#col_wed_1_30').val()) || 0;
+     var value31 = parseFloat($('#col_wed_1_31').val()) || 0;
+     var value32 = parseFloat($('#col_wed_1_32').val()) || 0;
+     $('#sum_wed').val(value1 + value2 + value3+ value4+ value5+ value6+ value7+ value8+ value9+ value10+ value11+ value12+ value13+ value14+  value15+ value16+ value17+ value18+ value19+ value20+ value21+ value22+ value23+ value24+ value25+ value26+ value27+ value28+ value29+ value30+ value31+ value32).triggerHandler('change');
+  });
+});
+
+
+
+
+
+
+
+
+$(function(){
+  $('#col_wed_6_1, #col_wed_6_2, #col_wed_6_3, #col_wed_6_4, #col_wed_6_5, #col_wed_6_6, #col_wed_6_7, #col_wed_6_8, #col_wed_6_9, #col_wed_6_10, #col_wed_6_11, #col_wed_6_12, #col_wed_6_13, #col_wed_6_14, #col_wed_6_15, #col_wed_6_16, #col_wed_6_17, #col_wed_6_18, #col_wed_6_19, #col_wed_6_20, #col_wed_6_21, #col_wed_6_22, #col_wed_6_23, #col_wed_6_24, #col_wed_6_25, #col_wed_6_26, #col_wed_6_27, #col_wed_6_28, #col_wed_6_29, #col_wed_6_30, #col_wed_6_31, #col_wed_6_32').keyup(function(){
+     var comvalue1 = parseFloat($('#col_wed_6_1').val()) || 0;
+     var comvalue2 = parseFloat($('#col_wed_6_2').val()) || 0;
+     var comvalue3 = parseFloat($('#col_wed_6_3').val()) || 0;
+     var comvalue4 = parseFloat($('#col_wed_6_4').val()) || 0;
+     var comvalue5 = parseFloat($('#col_wed_6_5').val()) || 0;
+     var comvalue6 = parseFloat($('#col_wed_6_6').val()) || 0;
+     var comvalue7 = parseFloat($('#col_wed_6_7').val()) || 0;
+     var comvalue8 = parseFloat($('#col_wed_6_8').val()) || 0;
+     var comvalue9 = parseFloat($('#col_wed_6_9').val()) || 0;
+     var comvalue10 = parseFloat($('#col_wed_6_10').val()) || 0;
+     var comvalue11 = parseFloat($('#col_wed_6_11').val()) || 0;
+     var comvalue12 = parseFloat($('#col_wed_6_12').val()) || 0;
+     var comvalue13 = parseFloat($('#col_wed_6_13').val()) || 0;
+     var comvalue14 = parseFloat($('#col_wed_6_14').val()) || 0;
+     var comvalue15 = parseFloat($('#col_wed_6_15').val()) || 0;
+     var comvalue16 = parseFloat($('#col_wed_6_16').val()) || 0;
+     var comvalue17 = parseFloat($('#col_wed_6_17').val()) || 0;
+     var comvalue18 = parseFloat($('#col_wed_6_18').val()) || 0;
+     var comvalue19 = parseFloat($('#col_wed_6_19').val()) || 0;
+     var comvalue20 = parseFloat($('#col_wed_6_20').val()) || 0;
+     var comvalue21 = parseFloat($('#col_wed_6_21').val()) || 0;
+     var comvalue22 = parseFloat($('#col_wed_6_22').val()) || 0;
+     var comvalue23 = parseFloat($('#col_wed_6_23').val()) || 0;
+     var comvalue24 = parseFloat($('#col_wed_6_24').val()) || 0;
+     var comvalue25 = parseFloat($('#col_wed_6_25').val()) || 0;
+     var comvalue26 = parseFloat($('#col_wed_6_26').val()) || 0;
+     var comvalue27 = parseFloat($('#col_wed_6_27').val()) || 0;
+     var comvalue28 = parseFloat($('#col_wed_6_28').val()) || 0;
+     var comvalue29 = parseFloat($('#col_wed_6_29').val()) || 0;
+     var comvalue30 = parseFloat($('#col_wed_6_30').val()) || 0;
+     var comvalue31 = parseFloat($('#col_wed_6_31').val()) || 0;
+     var comvalue32 = parseFloat($('#col_wed_6_32').val()) || 0;
+     $('#col_wed_6_sum').val(comvalue1 + comvalue2 + comvalue3+ comvalue4+ comvalue5+ comvalue6+ comvalue7+ comvalue8+ comvalue9+ comvalue10+ comvalue11+ comvalue12+ comvalue13+ comvalue14+  comvalue15+ comvalue16+ comvalue17+ comvalue18+ comvalue19+ comvalue20+ comvalue21+ comvalue22+ comvalue23+ comvalue24+ comvalue25+ comvalue26+ comvalue27+ comvalue28+ comvalue29+ comvalue30+ comvalue31+ comvalue32);
+  });
+});
+
+
+
+
+
+
+
+
+
+
+</script>
+{% endblock %}

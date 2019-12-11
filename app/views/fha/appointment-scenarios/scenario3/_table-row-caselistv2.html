@@ -1,0 +1,108 @@
+
+				   
+				   
+				   <tr>
+                  <td class="col1"><ul class="identifiers">
+				  <li><span class="badge">{{customer.benefit}}</span></li>
+				   {% if customer.caseflags == 'ucb' %}<li><span class="badge ucb">UCB</span></li>  {% endif %}
+				  </ul>
+				  <div class="claimant"><a href="/{{path }}/scenario3/appointment-tab?nino={{customer.nino}}"><span class="visually-hidden">Name</span>{{customer.name}}</a>
+				  <span class="text-secondary block"><span class="visually-hidden">Nino</span>{{customer.nino}} 
+				  </span>
+				  </div>
+				  </td>
+                  <td>
+				  <div class="grid-row">
+				  <div class="column-third">
+				  <h3 class="">Details</h3>
+				  <ul class="list">
+				  {% if customer.appointment.time %}
+				  <li>{{customer.appointment.time}}</li>
+				  {% endif%}
+				    {% if data['capDay']  and customer.status == 'Booked' %}
+				  <li>{{capDay}}/{{capMonth}}/2019</li>
+				    {% else %}
+				  <li>{{customer.appointment.date}}</li>
+				  {% endif%}
+				  <li>{{customer.appointment.type}}</li>
+
+				  </ul>
+				  </div>
+				  <div class="column-third">
+				    {% if customer.requirement
+					 %}
+				  <h3 class="">Requirements</h3>
+				  <ul class="list">
+				   {% if customer.requirement.taxi %}
+				  <li>Taxi
+				    {{customer.appointment.taxi}}  {% if checked('booked', 'taxi') %} 
+				  <br />
+				  <span class="badge mb5"> Booked</span> 
+				 
+				  {% endif %}
+				  </li>
+				  {% endif%}
+				  {% if customer.requirement.interpreter %}
+				  <li>Interpreter:
+				  {{customer.appointment.interpreter}}  {% if checked('booked', 'interpreter') %} 
+				  <br />
+				  <span class="badge mb5"> Booked</span> 
+				 
+				  {% endif %}
+				  
+				  </li>
+				 
+				  {% endif%}
+				   {% if customer.requirement.audio %}
+				  <li>Audio recording</li>
+				  {% endif%}
+				     {% if customer.requirement.accessible%}
+				  <li>Accessible room</li>
+				  {% endif%}
+				  {% if customer.requirement.gender %}
+				  <li>Same gender hcp</li>
+				  {% endif%}
+				  </ul>
+				   {% endif%}
+				   </div>
+				   	  <div class="column-third">
+				    {% if customer.history or customer.appointment.dna
+					 %}
+				  <h3 class=""><a href="appointment-history?nino={{customer.nino}}">History</a></h3>
+				  <ul class="list">
+				  {% if customer.status == 'Booked' and customer.appointment.dna %} 
+				  <li>Previous DNA</li>
+				  {% endif %}
+				   {% if customer.history.senthome == 'sent home' %}
+				  <li>Skillset change</li>
+				  <li>Previously sent home</li>
+				  {% endif%}
+				   {% if customer.history.inbound == 'inbound' %}
+				  <li>Inbound contact:<span class="text-secondary"><br />{{ 'Do MMMM YYYY' | baseDate(15)}}<span></li>
+				  {% endif%}
+				  {% if customer.history.inbound == 'inbound' %}
+				  <li>Outbound contact:<span class="text-secondary"><br />{{ 'Do MMMM YYYY' | baseDate(19)}}<span></li>
+				  {% endif%}
+				  </ul>
+				   {% endif%}
+				   </div>
+				   </div>
+				  </td>
+				  <td class="col3">
+				   <h3 class="">{{customer.referral.type}}</h3>
+	
+				   <ul class="list">
+				  {% if customer.status == 'Ready to book' and customer.referral.edtarget %}
+				   <li>DNA rebooking target:<span class=""> {{customer.referral.edtarget}} days remaining</span></li>
+				  {% endif %} 
+				  {% if customer.status == 'Booked' and customer.referral.type =='New referral' %}
+				   <li>SLA target: <span class="">{{customer.sla}} days remaining</span></li>
+				    {% endif %} 
+				   </ul>
+
+				   </div>
+
+				  </td>
+                 </tr>
+                
+    
