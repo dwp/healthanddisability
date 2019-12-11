@@ -1,0 +1,282 @@
+{% extends path+"/scenario_04a/_layout-case-simple8.html" %}
+
+
+{% block actioncolumn %}
+   
+  <!--<p class="returnRef"><a href="#" class="link-back">Return to case list</a></p>-->
+  
+  
+  
+ 
+ <div class="caseStatus">
+ 
+
+ 
+ 
+{% if data['pbachoice']=='no'%}
+ 
+	 <h2 class="main-status"><span>Current case status</span>Appointment booked</h2>
+	 
+	 
+	 {% elif data['pbachoice']=='yes'%}
+	 
+	 <h2 class="main-status"><span>Current case status</span>Paper based review</h2>
+	 <!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario8/not-testing" class="button">Start assessment</a></h3>-->
+	 
+	 
+	 {% else %}
+	 
+ 
+
+
+
+<!--
+{% if data['closePrepTrigger'] %}
+<form action="#" method="POST">
+<a href="/{{path }}/scenario_04a/wca-index" class="button"  
+    onclick="window.open('/{{path }}/scenario_04a/wca-index', 'newwindow', 'width=1200,height=800'); return false;">Start face-to-face assessment</a>
+</form>
+{% else %}
+<a href="/{{path }}/scenario_04a/medicalConditionsDummyPage" class="button"  
+    onclick="window.open('/{{path }}/scenario_04a/medicalConditionsDummyPage', 'newwindow', 'width=1200,height=800'); return false;" id="preparationTrigger">Prepare for face-to-face assessment</a>
+    {% endif %}
+-->
+
+
+
+{% if data['evidencePath']=='ev-ftf'%}
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+	
+	<h2 class="main-status"><span>Current case status</span>Second review</h2>
+		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario8/rec-portal-second" class="button">Make recommendation</a></h3>
+		{% else %}
+		
+	<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
+	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario8/record-evidence" class="button">Record GP report</a></h3>
+	{% endif %}
+	
+	
+	{% elif data['evidencePath']=='ev-pba'%}
+	
+	{% if data['evidenceRecorded']=='record-yes'%}
+		<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario8/rec-portal" class="button">Make recommendation</a></h3>
+		{% else %}
+		<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
+	{% endif %}
+	
+	
+	{% else %}
+	
+	<!--<h2 class="main-status"><span>Current case status</span>Ready for review</h2>-->
+
+<h3 class="primary-action"><span>Suggested case action</span>
+  <form action="#" method="POST">
+  <a href="/{{path }}/scenario_04a/medicalConditionsDummyPage" class="button" onclick="window.open('/{{path }}/scenario_04a/medicalConditionsDummyPage', 'newwindow', 'width=1200,height=800'); return false;" id="preparationTrigger">Prepare for assessment</a>
+</form></h3>
+	<!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario_04a/wca-index" class="button"  
+    onclick="window.open('/{{path }}/scenario_04a/medicalConditionsDummyPage', 'newwindow', 'width=1200,height=800'); return false;">Prepare for face-to-face assessment</a>
+ <a href="/{{path }}/scenario_04a/wca-index" class="button"  
+    onclick="window.open('/{{path }}/scenario_04a/wca-index', 'newwindow', 'width=1200,height=800'); return false;">Start face-to-face assessment</a></h3>-->
+
+{% endif %}
+
+
+
+
+
+
+{% endif %}
+
+
+</div>
+
+{% endblock %}
+
+
+
+
+{% block citizen_detail %}
+Cranjus McManaman
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.scenario_tabs("timeline-review",1,path1, customer._id) }}
+
+    
+  <div class="timeline">
+  
+  
+  
+  {% if data['pbachoice']=='yes'%}
+ <span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">Referred for paper based review</h3>
+  <p class="timeline_datetime">11 August 2019</p>
+</div>
+ <span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">Face to face referral cancelled</h3>
+  <p class="timeline_datetime">11 August 2019</p>
+</div>
+ <span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">GP Report &ndash; medical evidence reviewed</h3>
+  <p class="timeline_datetime">11 August 2019</p>
+</div>
+
+{% elif data['pbachoice']=='no'%}
+
+<span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">Face to face appointment booked</h3>
+  <p class="timeline_datetime">11 August 2019</p>
+</div>
+
+ <span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">GP Report &ndash; medical evidence reviewed</h3>
+  <p class="timeline_datetime">11 August 2019</p>
+</div>
+
+{% endif %}
+  
+  
+
+  	
+  	
+  	{% if data['evidenceChoice']=='ev-gp'%}
+  	
+  	
+  		{% if data['evidenceRecorded']=='record-yes'%}
+  		
+  		
+  		<span class="line"></span>
+		<div class="timeline__event">
+		  <h3 class="timeline__heading">GP Report &ndash; medical evidence recorded</h3>
+		  <p class="timeline_datetime">10 August 2019</p>
+		</div>
+		
+  		
+  		{% endif %}
+  		
+  		
+  		
+  		{% elif data['evidenceChoice']=='ev-fr'%}
+  		
+  		
+  		{% if data['evidenceRecorded']=='record-yes'%}
+  		
+  		
+  		<span class="line"></span>
+		<div class="timeline__event">
+		  <h3 class="timeline__heading">Factual report &ndash; medical evidence recorded</h3>
+		  <p class="timeline_datetime">10 August 2019</p>
+		</div>
+  		
+  		
+  		<span class="line"></span>
+		<div class="timeline__event">
+		  <h3 class="timeline__heading">Factual report &ndash; medical evidence received</h3>
+		  <p class="timeline_datetime">9 August 2019</p>
+		</div>  		
+  		
+  		{% endif %}
+  		
+  		  	
+  	{% endif %}
+
+  
+  
+  	     
+{% if data['evidencePath']=='ev-ftf'%}
+
+ <span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">GP Report &ndash; medical evidence requested</h3>
+  <p class="timeline_datetime">3 August 2019</p>
+</div>
+
+{% elif data['evidencePath']=='ev-pba'%}
+ <span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">GP Report &ndash; medical evidence requested</h3>
+  <p class="timeline_datetime">3 August 2019</p>
+</div>
+
+{% endif %}
+
+      
+    <!--  <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">Med 3 &ndash; medical evidence recorded </h3>
+        <p class="timeline_datetime">1 August 2019</p>
+      </div>-->
+      
+      
+      
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">UC50 form recorded</h3>
+        <p class="timeline_datetime">21 July 2019</p>
+      </div>
+
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">UC50 form posted</h3>
+        <p class="timeline_datetime">9 July 2019</p>
+      </div>
+      
+ 
+
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">New referral created</h3>
+        <p class="timeline_datetime">5 July 2019</p>
+      </div>
+
+
+
+      <div style="clear:both"></div>
+
+    </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

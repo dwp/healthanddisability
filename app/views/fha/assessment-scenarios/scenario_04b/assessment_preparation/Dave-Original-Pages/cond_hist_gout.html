@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Conditions and medication</h1>
+    <h2 class="govuk-heading-l">Gout</h2>
+
+      <form class="form" action="/cond_hist_tremors" method="post">
+
+        <div class="govuk-form-group">
+  <label class="govuk-label" for="more-detail">
+    Condition history
+  </label>
+
+  <textarea class="govuk-textarea" id="cond-history" name="gout" rows="10" aria-describedby="cond-history-hint"></textarea>
+</div>
+<table class="govuk-table">
+  <caption class="govuk-table__caption">Medication</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Name</th>
+      <th scope="col" class="govuk-table__header">Dose</th>
+      <th scope="col" class="govuk-table__header">frequency</th>
+      <th scope="col" class="govuk-table__header">Since</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Goutoutahere</td>
+      <td class="govuk-table__cell">5mg</td>
+      <td class="govuk-table__cell">3 per day</td>
+      <td class="govuk-table__cell">June 2018</td>
+    </tr>
+
+</tbody>
+</table>
+<a href="#" class="govuk-link govuk-link--no-visited-state">Add or change medication</a>
+<br>
+<br>
+<br>
+<div class="govuk-form-group">
+<label class="govuk-label" for="more-detail">
+Side effects
+</label>
+
+<textarea class="govuk-textarea" id="side-effects" name="gout" rows="5" aria-describedby="more-detail-hint"></textarea>
+</div>
+<br>
+<br>
+        <button class="govuk-button">Save and continue</button>
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

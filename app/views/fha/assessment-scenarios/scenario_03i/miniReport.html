@@ -9,7 +9,7 @@
 <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
 
   
-<h1 class="heading-large mb0">Paper-based assessment report</h1>
+<h1 class="heading-large mb0">Report ready to file</h1>
  
 
 <div class="review-wrapper full-report">
@@ -31,7 +31,7 @@
 			</tr>
 			<tr>
 				<th>Assessor</th>
-				<td>Heather Harrison</td>
+				<td>Jane Smith</td>
 			</tr>
 			<tr>
 				<th>Assessment start</th>
@@ -50,14 +50,14 @@
 
 <div>
 
-	<h2 class="heading-medium">Advice</h2> 
+	<h2 class="heading-medium">Recommendation</h2> 
 	
 	<div class="inner-focus">
-		<p>LCWRA: Moving around and climbing steps without someone’s help</p>
+		{# <p>LCWRA: Moving around and climbing steps without someone’s help</p> #}
 		<p>I advise that Mia meets the criteria for Limited Capability for Work Related Activity as they have severe
 functional disability.</p>
 	</div>
-	<p class="edit-report"><a href="#" class="button-secondary">Edit advice</a></p>
+	<p class="edit-report"><a href="#" class="button-secondary">Edit recommendation</a></p>
 <hr>
 	<h2 class="heading-medium">Evidence considered</h2> 
 	
@@ -66,24 +66,27 @@ functional disability.</p>
 				<li class="mb5">Fit note (Med3)</li>
 				<li class="mb5">GP report (113)</li>
 				<li class="mb5">Questionnaire (UC50)</li>
-				<li class="mb5">Basic medical report (UC85A)</li>
+				<li class="mb5">Previous reports ({{ previousReportDates }})</li>
 				</ul>
 	</div>
 	<p class="edit-report"><a href="#" class="button-secondary">Add or remove evidence</a></p>
 
 <hr>
-	<h2 class="heading-medium">Justification of advice</h2> 
+	<h2 class="heading-medium">Justification</h2> 
 	
 	<div class="inner-focus">
-		<p>{{ justifyAdvice }}</p>
+<p>The {{ keyEvidence }} GP report (113) and Questionnaire (UC50) suggest the client cannot mobilise unaided by another person, more than 50 metres without stopping because of significant discomfort or exhaustion due to {{ diagnosedConditions }}. This suggests the client has limited capability for work and work-related activity.</p>
+<p>{{ evidenceKeyFacts }}</p>
+<p>The evidence suggests that they would be unable to self-propel a manual wheelchair. {{ mobilityRestrictionsDetail }}<p>
+<p>The available evidence suggests review in the medium term.<p>
+<p>{{ reviewPeriodDetails }}<p>
 	</div>
-	<p class="edit-report"><a href="#" class="button-secondary">Edit justification</a></p>
+	<p class="edit-report"><a href="justificationSummary" class="button-secondary">Edit justification</a></p>
 <hr>
 	<h2 class="heading-medium">Recommended review period</h2> 
 	
 	<div class="inner-focus">
 		<p>I advise that Mia's case needs reviewing in 12 months</p>
-		<p>{{ reviewPeriodDetails }}</p>
 	</div>
 	<p class="edit-report"><a href="#" class="button-secondary">Edit review period</a></p>
 
@@ -94,7 +97,7 @@ functional disability.</p>
 		<p>This form has been completed by a healthcare professional approved by the Secretary of State for Work and Pensions.</p>
 		<p>I have completed this form in accordance with the current guidance to UC examining healthcare professionals as issued by the Department for Work and Pensions.</p>
 		<p>I can confirm that there is no harmful information in the report.</p>
-		<p><span class="bold" style="margin-right:20px;">Healthcare Professional's name:</span> Heather Harrison</p>
+		<p><span class="bold" style="margin-right:20px;">Healthcare Professional's name:</span> Jane Smith</p>
 		<p><span class="bold" style="margin-right:20px;">Date:</span> {{ "Do MMM YYYY" | daysAgo }}</p>
 	</div>
 

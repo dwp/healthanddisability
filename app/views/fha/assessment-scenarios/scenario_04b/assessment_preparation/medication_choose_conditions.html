@@ -1,0 +1,65 @@
+{% extends path+"/scenario_04a/_layout-case-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+<p class="caption-large" class="mb0">Assessment preparation</p>
+
+<h1 class="heading-large mt0">Select which conditions you want to add medication details for</h1>
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+<form method="post">
+
+<fieldset>
+
+  <legend class="mt0 mb10">You can add some now and finish it later if you need to.</legend>
+
+
+{% for item in data.selectedConditionArray %}
+            
+            <div class="multiple-choice">
+              <input id="condition-{{loop.index}}" name="conditions" type="checkbox" value="{{ item }}" class="checkbox"/>
+              <label for="condition-{{loop.index}}">{{ item }}</label>
+            </div>
+
+{% endfor %}
+
+  {# <div class="multiple-choice">
+		<input id="condition1" name="conditions" type="checkbox" value="1">
+		<label for="condition1">Anxiety and depression</label>
+	  </div>
+
+  <div class="multiple-choice">
+		<input id="condition2" name="conditions" type="checkbox" value="2">
+		<label for="condition2">Asthma</label>
+	  </div> #}
+			
+			
+	</fieldset>
+	
+	
+	  <p class="mt30"><a href="enter_medication_1" class="button">Save and continue</a></p>	
+	  
+	</form>
+    
+
+  </div><!-- column -->
+  
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+

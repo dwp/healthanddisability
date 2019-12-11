@@ -1,0 +1,240 @@
+{% extends path+"/scenario_04b/_layout-case-simple_portal-ftf.html" %}
+
+
+{% block actioncolumn %}
+   
+  <!--<p class="returnRef"><a href="/{{path }}/scenario6/referrals-fme" class="link-back">Return to case list</a></p>-->
+ 
+ <div class="caseStatus">
+ 
+
+ 
+ 
+{% if data['pbachoice']=='no'%}
+ 
+	 <h2 class="main-status"><span>Current case status</span>Appointment booked</h2>
+	 
+	 
+	 {% elif data['pbachoice']=='yes'%}
+	 
+	 <h2 class="main-status"><span>Current case status</span>Paper based review</h2>
+	 <!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/not-testing" class="button">Start assessment</a></h3>-->
+	 
+	 
+	 {% else %}
+	 
+ 
+
+{% if data['evidencePath']=='ev-ftf'%}
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+	
+	<h2 class="main-status"><span>Current case status</span>Second review</h2>
+		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal-second" class="button">Make recommendation</a></h3>
+		{% else %}
+		
+	<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
+	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/record-evidence" class="button">Record GP report</a></h3>
+	{% endif %}
+	
+	
+	{% elif data['evidencePath']=='ev-pba'%}
+	
+	{% if data['evidenceRecorded']=='record-yes'%}
+		<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal" class="button">Make recommendation</a></h3>
+		{% else %}
+		<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
+	{% endif %}
+	
+	
+	{% else %}
+	
+	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+	<h3 class="primary-action"><span>Suggested case action</span>
+  <!--<form action="#" method="POST">
+  <a href="/{{path }}/scenario_04a/assessment_ftf/wca-index" class="button" onclick="window.open('/{{path }}/scenario_04a/assessment_ftf/wca-index', 'newwindow', 'width=1200,height=800'); return false;" id="preparationTrigger">Start face-to-face</a>
+</form>-->
+<!--<form action="#" method="POST">
+  <a href="/{{path }}/scenario_04a/assessment_ftf/wca-index" class="button" name="startFTFtrigger" id="startFTFtrigger">Start face-to-face assessment</a>
+</form>-->
+<form action="/{{path }}/scenario_04b/assessment_ftf/wca-index" method="POST">
+<input type="submit" value="Start assessment" class="button" name="startFTFtrigger" id="startFTFtrigger">
+</form>
+</h3>
+	
+	
+
+{% endif %}
+
+
+{% endif %}
+
+
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Steve Wooten
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.scenario_tabs("appointment-fme",1,path1, customer._id) }}
+  
+  
+ <h1 class="heading-large">
+  	Appointment</h1>
+  	
+  
+  <div class="portal-display">	
+  	
+  	
+  	
+  	 <div class="grid-row">
+  
+		  	<div class="column-third">
+		  	
+		  
+			
+			<div class="portal-card">
+				<div class="portal-head">
+					<h3>Booked</h3>
+				</div>
+			
+				<div class="portal-inner">
+				
+				<h4>Standard appointment</h4> 
+			      <ul class="list-bullet">
+			          <li>14 November 2019<!--{{ 'Do MMMM YYYY' | baseDateAdd(8) }}--></li>
+			          <li>10:30am</li>
+			          <li>Tresco House</li>
+			      </ul>
+			      
+			      
+			      <p class="view-all"><a href="/{{path }}/scenario6/not-testing" class="secondary-invert">Update appointment</a></p>
+				  <p><a href="/{{path }}/scenario6/not-testing" class="secondary-invert">Record change of circumstances</a></p>
+
+					
+				</div>
+
+			</div>
+			<!-- / portal card -->
+			
+			
+			
+		  	
+		  	</div>
+		  	
+		  	
+		  	<div class="column-third">
+		  		<!---------------------------------- Card ---------------------------------->
+		
+			<div class="portal-card">
+				<div class="portal-head">
+					<h3>Preferences</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+				
+				
+				<h4>Unavailable on</h4>
+				<ul class="list-bullet">
+               	 <li>Monday <span>afternoons</span></li>
+			   	 <li>Tuesdays</li>
+                </ul>
+              
+            <p class="view-all"> <a href="/{{path }}/scenario6/not-testing" class="secondary-invert">Edit preferences</a></p>
+														
+				</div>
+				<!-- / inner card -->
+			<!-- / portal card -->
+		  	</div>
+		  	
+		  	<!--<hr>
+		  	
+		  	<div class="portal-card">
+				<div class="portal-head">
+					<h3>Preferences</h3>
+				</div>
+				
+
+				<div class="portal-inner">
+
+              
+            <p> <a href="/{{path }}/scenario6/not-testing" class="secondary-invert">Add preferences</a></p>
+														
+				</div>
+			
+		  	</div>
+		  	<!-- / portal card -->
+		  	
+  	 </div>
+  	 
+  	 
+  	 <div class="column-third">
+  	 
+  	 	<div class="portal-card">
+				<div class="portal-head">
+					<h3>History</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+				
+				<h4>Last appointment event</h4>
+				
+				
+					<ul class="action-list appointment-history-list">
+						<li><h5>Referred for appointment<h5></li>
+					</ul>
+
+				
+              
+            <p> <a href="/{{path }}/scenario6/not-testing" class="secondary-invert">View all history</a></p>
+														
+				</div>
+				<!-- / inner card -->
+			<!-- / portal card -->
+		  	</div>
+  	 	
+  	 </div>
+    
+
+ 
+    
+  </div>
+  
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
