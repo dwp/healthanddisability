@@ -53,7 +53,7 @@ Harvey Chamberlain
 		
 		
 
-			<form action="/{{path }}/scenario11/evidence-step-Factual2" method="POST" class="form">
+			<form action="/{{path }}/scenario11/evidence-step-Factual-alt" method="POST" class="form">
 				
 			<fieldset>
 				<legend class="visually-hidden">Factual report request form</legend>	
@@ -81,7 +81,7 @@ Harvey Chamberlain
 											<label for="cName">Consultant - Name of consultant</label>
 										</div>
 										
-										<div class="multiple-choice" data-target="other">
+									<!--	<div class="multiple-choice" data-target="other">
 											<input id="otherName" type="radio" name="personChoice" value="other-name">
 											<label for="otherName">Other</label>
 										</div>
@@ -104,7 +104,7 @@ Harvey Chamberlain
 												
 											</fieldset>
 
-										</div>
+										</div> -->
 																
 
 							</fieldset>
@@ -122,41 +122,68 @@ Harvey Chamberlain
 							  
 	
 									<div class="multiple-choice">
-											<input id="Continence" type="checkbox" name="frrDetail" value="frr-Continence">
+											<input id="Continence" type="checkbox" name="frrDetail" value="frr-Continence" {% if frr.request.info1 or checked('frrDetail', 'frr-Continence') %} checked {%endif%}>
 											<label for="Continence">Continence</label>
 										</div>
 										
 										
 
 										<div class="multiple-choice">
-											<input id="Consciousness" type="checkbox" name="frrDetail" value="frr-Consciousness">
+											<input id="Consciousness" type="checkbox" name="frrDetail" value="frr-Consciousness" {% if frr.request.info2 or checked('frrDetail', 'frr-Consciousness') %} checked {%endif%}>
 											<label for="Consciousness">Consciousness</label>
 										</div>
 										
-										<div class="multiple-choice">
+										<!--<div class="multiple-choice">
 											<input id="Suicidal" type="checkbox" name="frrDetail" value="frr-Suicidal">
 											<label for="Suicidal">Suicidal ideation</label>
-										</div>
+										</div>-->
 										
-										<div class="multiple-choice">
-											<input id="Mental" type="checkbox" name="frrDetail" value="frr-Mental">
+										<div class="multiple-choice" data-target="mentalHealthDetail">
+											<input id="Mental" type="checkbox" name="frrDetail" value="frr-MentalHealth" {% if frr.request.info3 or checked('frrDetail', 'frr-MentalHealth') %} checked {%endif%}>
 											<label for="Mental">Mental health</label>
 										</div>
 										
+										
+										<div class="panel js-hidden" id="mentalHealthDetail">		
+
+											<fieldset>
+						  
+												<legend class="heading-small">Type of mental health:</legend>
+												
+												<div class="multiple-choice">
+											<input id="Mental1" type="checkbox" name="mentalDetail" value="frr-MentalDetail1" {% if frr.request.health1 or checked('frrDetail', 'frr-MentalDetail1') %} checked {%endif%}>
+											<label for="Mental1">Learning disability</label>
+										</div>
+										
 										<div class="multiple-choice">
-											<input id="Cancer" type="checkbox" name="frrDetail" value="frr-Cancer">
+											<input id="Mental2" type="checkbox" name="mentalDetail" value="frr-MentalDetail2" {% if frr.request.health2 or checked('frrDetail', 'frr-MentalDetail2') %} checked {%endif%}>
+											<label for="Mental2">Psychosis</label>
+										</div>
+										
+										<div class="multiple-choice">
+											<input id="Mental3" type="checkbox" name="mentalDetail" value="frr-MentalDetail3" {% if frr.request.health3 or checked('frrDetail', 'frr-MentalDetail3') %} checked {%endif%}>
+											<label for="Mental3">Suicidal ideation</label>
+										</div>												
+												
+											</fieldset>
+
+										</div>
+										
+										<div class="multiple-choice">
+											<input id="Cancer" type="checkbox" name="frrDetail" value="frr-Cancer" {% if frr.request.info4 or checked('frrDetail', 'frr-Cancer') %} checked {%endif%}>
 											<label for="Cancer">Cancer</label>
 										</div>
 										
 										<div class="multiple-choice">
-											<input id="Surgery" type="checkbox" name="frrDetail" value="frr-Surgery">
-											<label for="Surgery">Surgery details</label>
+											<input id="Surgery" type="checkbox" name="frrDetail" value="frr-Surgery" {% if frr.request.info5 or checked('frrDetail', 'frr-Surgery') %} checked {%endif%}>
+											<label for="Surgery">Surgery</label>
 										</div>
 										
 										<div class="multiple-choice">
-											<input id="Vision" type="checkbox" name="frrDetail" value="frr-Vision">
+											<input id="Vision" type="checkbox" name="frrDetail" value="frr-Vision" {% if frr.request.info6 or checked('frrDetail', 'frr-Vision') %} checked {%endif%}>
 											<label for="Vision">Vision</label>
 										</div>
+										
 										
 										
 							</fieldset>

@@ -1,0 +1,136 @@
+{% extends path+"/scenario_04a/_layout-case-simple.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<div class="grid-row no-kdBar">
+
+ 
+
+    <div>
+    <!--<div class="column-two-thirds">-->
+
+
+
+ <p class="mt0"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+  <h1 class="heading-large">Social and work history</h1>
+
+<form action="../scenario_04a/assessment_ftf/wca-index" method="POST" class="form">
+<div class="form-group">
+		<textarea class="form-control form-control-3-4" name="socialWorkHistory" id="socialWorkHistory" rows="12">{{ socialWorkHistory }}</textarea>
+	</div>  
+ <input type="submit" class="button mb30" value="Save progress" id="submitButton">
+</form>
+
+<!--
+    <p class="mt0"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+  <h1 class="heading-large ">Social and work history</h1>
+  
+
+  
+  <div class="chat-layout">
+
+
+	 <div class="chat-window">
+    <div class="tag-box">
+<div class="tag-text">Got a lift to the centre.</div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">Mum drove.</div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">It was 15 to 20 minutes in the car. They do not live far away. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">He could not stay in the car for longer than 15 to 20 minutes due to shoulder pain, hands, forearms, knees and feels like his may lock. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">His knees do not lock as he tries to prevent this by not going far in the car. Parked in the disabled space in the car park. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">Walked 10 yards to walk from the car to the waiting room with a walking stick and assistance from mum. He walked at a very slow pace. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">It took 5 minutes to walk from the car to the waiting area, did not have to stop in this time. Lives with mum in a ground floor flat.</div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">There is 1 step at the front door. There is no rail.</div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">Assessment completed at the assessment centre on the ground floor. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">The council are looking at getting a ramp at the front door for ease of access with the wheelchair. The council have been to the property to assess the flat in July and they are waiting to hear from them. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">He went to work for 1 week in Jan 2018 in the park but stopped due to flu like virus, fatigue and pain. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">No current work or study. No plans for work or study. He has no concentration for this. Loved the job he had but this seems like a distant memory.</div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">Is right-handed. </div>       
+</div>
+
+
+	 </div>
+    
+    <form class="form" id="add_ev"
+      action="socialWorkHistory"
+      method="post">
+
+      <div class="form-group chat-capture">
+          <textarea id="nugget" class="form-control" name="comments"></textarea>
+          <input class="button secondary mt20" type="submit" value="Add" id="submitButton">
+      </div>
+
+      
+    </form>
+
+
+  <form action="wca-index" method="POST" class="form">
+      <input type="submit" class="button" value="Save progress">
+
+      <div class="multiple-choice" style="display:none">
+          <input id="radio-inline-4" type="radio" name="socialWorkHistory" value="socialWorkHistory" checked>
+            
+          <label for="radio-4">hidden radio one</label>
+        </div>
+    </form>
+    <br>-->
+    
+  </div><!-- column -->
+</div><!-- row -->
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+$(document).on('ready',function()
+
+{
+  
+  $("#nugget").keydown(function (event) {
+    if ((event.keyCode == 13))
+    {
+      $('#submitButton').trigger('click');
+    }
+  });
+
+
+});
+
+
+var commentsData = require(filePath + '/scenario_02a/data/comments.js')
+
+</script>
+
+
+
+
+{% endblock %}

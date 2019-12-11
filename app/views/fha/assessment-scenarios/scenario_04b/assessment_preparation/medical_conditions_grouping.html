@@ -1,0 +1,51 @@
+{% extends path+"/scenario_04a/_layout-case-full-width.html" %}
+
+{% block citizen_content %}
+
+  {{ data.nuggets | log }}
+
+  <p class="no-kdBar">
+    <a href="#" class="link-back">Back</a>
+  </p>
+  <p class="mb0">Assessment preparation</p>
+  <h1 class="heading-large mt0">Medical conditions</h1>
+  <div class="grid-row">
+    <div class="column-half">
+      <form method="post">
+        <fieldset>
+          <legend class="heading-medium mt0 mb10">Select the conditions you want to talk about as a group:</legend>
+
+          {% for item in data.reportedcondition %}
+            
+            <div class="multiple-choice">
+              <input id="condition-{{loop.index}}" name="conditions" type="checkbox" value="{{ item }}" class="checkbox"/>
+              <label for="condition-{{loop.index}}">{{ item }}</label>
+            </div>
+
+          {% endfor %}
+        </fieldset>
+        <hr>
+        <button id="add-button" class="button secondary button-add-another-vertical">Create group</button>
+        <hr>
+      </form>
+
+      <p class="mt30">
+        <a href="medication_guard_question" class="button">Save and continue</a>
+      </p>
+
+    </div>
+    <!-- column -->
+
+    <div class="column-half">
+      <div class="grouped-conditions">
+        <h2 class="heading-small mt0">Grouped conditions</h2>
+
+        <p>There are no groups yet.</p>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- row -->
+
+{% endblock %}

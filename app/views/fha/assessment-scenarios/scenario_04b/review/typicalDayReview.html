@@ -1,0 +1,133 @@
+{% extends path+"/scenario_02a/_layout-case-simple.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<div class="grid-row no-kdBar">
+  <div>
+  <!--<div class="column-two-thirds">-->
+
+<form action="../scenario_04a/assessment_ftf/wca-index" method="POST" class="form">
+ <p class="mt0"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+  <h1 class="heading-large">Typical day</h1>
+
+<div class="form-group">
+		<textarea class="form-control form-control-3-4" name="typicalDayHistory" id="typicalDayHistory" rows="12">{{ typicalDayHistory }}</textarea>
+	</div>  
+ <input type="submit" class="button mb30" value="Save progress" id="submitButton">
+
+</form>
+
+<!--
+  <div class="chat-layout">
+	 <div class="chat-window">
+      <div class="tag-box">
+<div class="tag-text">Does not have a set bedtime. This depends how he is feeling. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">Lately he has been spending several days in bed where he has not got up at all due to pain, frustration and fatigue. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">When he is in bed, can sleep, dose or be awake.</div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">The warm weather has made it hard to sleep so has been awake more. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">The TV can be on, but he often does not watch this due to poor concentration and as he just nods off. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">He cannot concentrate due to pain, brain fog and drugs/medication. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">On the days that he does get up, he does not do much. Occasionally they will go to the park as he likes being outside. This was his life, but he gets embarrassed as people he works with will be there. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">Occasionally goes to the supermarket but will go in his wheelchair. Cannot self-propel at all due to upper limb pain. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">Last went to the supermarket on Saturday. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">Gets a lift to the supermarket. There is a drive at home so will walk from the home to the car, linking mum to get down the step. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">It is about 5 yards from the house to the car. Does this at a very slow pace. It’s more of a shuffle. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">Once home from shopping he will go home and rest. He has pay back and all symptoms are exacerbated. He has more pain, fatigue and frustration. This will last for the rest of the day. He takes medication and will nod off for an hour or two. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">Can sleep for up to 3 hours after going out. They do not plan anything else for these days as he could not manage it. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">There is nowhere else that he goes that he has to mobilise Will attend the GP surgery in the wheelchair. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">Has an overhead shower in the bath and will stand in the shower. Needs help getting in and out of the bath and with washing and dressing due to pain and pins and needles. </div>       
+</div>
+<div class="tag-box">
+<div class="tag-text">Mum will do the cooking, cleaning and washing. He used to do his own and was self-sufficient and stopped this when he had the flu virus. In Jan 2018 he stopped doing these activities when he finished work. </div>       
+</div>
+   </div>
+    
+    <form class="form" id="add_ev"
+      action="typicalDay"
+      method="post">
+
+      <div class="form-group chat-capture">
+          <textarea id="nugget" class="form-control" name="comments"></textarea>
+          <input class="button secondary mt20" type="submit" value="Add" id="submitButton">
+      </div>
+    </form>-->
+
+<!--
+  <form action="../scenario_04a/assessment_ftf/wca-index" method="POST" class="form">
+      <input type="submit" class="button mb30" value="Save progress" id="submitButton">
+
+      <div class="multiple-choice" style="display:none">
+          <input id="radio-inline-4" type="radio" name="typicalDay" value="typicalDay" checked>
+            
+          <label for="radio-4">hidden radio one</label>
+        </div>
+    </form>
+-->
+    
+    
+  </div><!-- column -->
+</div><!-- row -->
+
+{% include path+"/scenario_02a/_help_panel_typicalday.html" %}
+
+{% endblock %}
+
+
+
+{% block page_scripts %}
+{{ super() }}
+<script type="text/javascript">
+$(document).on('ready',function()
+
+{
+
+  $("#nugget").keydown(function (event) {
+    if ((event.keyCode == 13))
+    {
+      $('#submitButton').trigger('click');
+    }
+  });
+
+
+});
+
+
+</script>
+
+
+
+
+{% endblock %}

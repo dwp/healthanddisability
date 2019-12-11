@@ -1,0 +1,152 @@
+{% extends path+"/scenario_04a/_layout-case-simple.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+<h1 class="heading-large">Mental health assessment</h1>
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+	
+	<form method="post" action="../scenario_04a/assessment_ftf/wca-index">
+	
+
+	<p>Appearance</p>
+		<details>
+  			<summary><span class="summary">Help prompts</span></summary>
+  				<div class="panel panel-border-narrow">
+					<p>Example content</p>
+  				</div>
+		</details>
+	<div class="form-group">
+		<textarea class="form-control form-control-3-4" name="mentalHealthAppearance" id="mentalHealthAppearance" rows="6">{{ mentalHealthAppearance }}</textarea>
+	</div><!-- section end -->
+
+
+	<p>Behaviour</p>
+		<details>
+  			<summary><span class="summary">Help prompts</span></summary>
+  				<div class="panel panel-border-narrow">
+					<p>Example content</p>
+  				</div>
+		</details>
+	<div class="form-group">
+		<textarea class="form-control form-control-3-4" name="mentalHealthBehaviour" id="mentalHealthBehaviour" rows="6">{{ mentalHealthBehaviour }}</textarea>
+	</div><!-- section end -->
+
+
+	<p>Speech</p>
+		<details>
+  			<summary><span class="summary">Help prompts</span></summary>
+  				<div class="panel panel-border-narrow">
+					<p>Example content</p>
+  				</div>
+		</details>
+	<div class="form-group">
+		<textarea class="form-control form-control-3-4" name="mentalHealthSpeech" id="mentalHealthSpeech" rows="6">{{ mentalHealthSpeech }}</textarea>
+	</div><!-- section end -->
+    
+	
+	<p>Mood</p>
+		<details>
+  			<summary><span class="summary">Help prompts</span></summary>
+  				<div class="panel panel-border-narrow">
+					<p>Example content</p>
+  				</div>
+		</details>
+	<div class="form-group">
+		<textarea class="form-control form-control-3-4" name="mentalHealthMood" id="mentalHealthMood" rows="6">{{ mentalHealthMood }}</textarea>
+	</div><!-- section end -->
+
+
+	<p>Cognitition general</p>
+		<details>
+  			<summary><span class="summary">Help prompts</span></summary>
+  				<div class="panel panel-border-narrow">
+					<p>Example content</p>
+  				</div>
+		</details>
+	<div class="form-group">
+		<textarea class="form-control form-control-3-4" name="mentalHealthCognitition" id="mentalHealthCognitition" rows="6">{{ mentalHealthCognitition }}</textarea>
+	</div><!-- section end -->
+
+
+	<p>Insight</p>
+		<details>
+  			<summary><span class="summary">Help prompts</span></summary>
+  				<div class="panel panel-border-narrow">
+					<p>Example content</p>
+  				</div>
+		</details>
+	<div class="form-group">
+		<textarea class="form-control form-control-3-4" name="mentalHealthInsight" id="mentalHealthInsight" rows="6">{{ mentalHealthInsight }}</textarea>
+	</div><!-- section end -->
+
+
+	<p>Thoughts</p>
+		<details>
+  			<summary><span class="summary">Help prompts</span></summary>
+  				<div class="panel panel-border-narrow">
+					<p>Example content</p>
+  				</div>
+		</details>
+	<div class="form-group">
+		<textarea class="form-control form-control-3-4" name="mentalHealthThoughts" id="mentalHealthThoughts" rows="6">{{ mentalHealthThoughts }}</textarea>
+	</div><!-- section end -->
+
+
+	<p>Perceptions</p>
+		<details>
+  			<summary><span class="summary">Help prompts</span></summary>
+  				<div class="panel panel-border-narrow">
+					<p>Example content</p>
+  				</div>
+		</details>
+	<div class="form-group">
+		<textarea class="form-control form-control-3-4" name="mentalHealthPerceptions" id="mentalHealthPerceptions" rows="6">{{ mentalHealthPerceptions }}</textarea>
+	</div><!-- section end -->
+
+
+	<p>Addictions</p>
+		<details>
+  			<summary><span class="summary">Help prompts</span></summary>
+  				<div class="panel panel-border-narrow">
+					<p>Example content</p>
+  				</div>
+		</details>
+	<div class="form-group">
+		<textarea class="form-control form-control-3-4" name="mentalHealthAddictions" id="mentalHealthAddictions" rows="6">{{ mentalHealthAddictions }}</textarea>
+	</div><!-- section end -->
+
+
+	<p>Cognitive tests</p>
+		<details>
+  			<summary><span class="summary">Help prompts</span></summary>
+  				<div class="panel panel-border-narrow">
+					<p>Example content</p>
+  				</div>
+		</details>
+	<div class="form-group">
+		<textarea class="form-control form-control-3-4" name="mentalHealthCognitiveTests" id="mentalHealthCognitiveTests" rows="6">{{ mentalHealthCognitiveTests }}</textarea>
+	</div><!-- section end -->
+
+	
+	<p><input type="submit" class="button" value="Continue" id="submitButton"></p>
+	</form>
+
+  </div><!-- column -->
+</div><!-- row -->
+
+
+{% endblock %}

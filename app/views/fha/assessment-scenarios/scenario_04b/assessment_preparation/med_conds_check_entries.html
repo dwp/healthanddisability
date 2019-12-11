@@ -1,0 +1,160 @@
+{% extends path+"/scenario_04a/_layout-case-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  
+<h1 class="heading-large">Check condition and medication details</h1>
+
+
+        <h2 class="heading-medium">Medical details</h2>
+
+<div>
+
+	<table class="report-view-table mb10">	
+		<tbody>
+			<tr>
+				<th>Condition name</th>
+				<td width="45%">Anxiety and depression</td>
+        <td><a href="#">Change</a></td>
+			</tr>
+			<tr>
+				<th>Diagnosed by</th>
+				<td>GP</td>
+        <td><a href="#">Change</a></td>
+			</tr>
+			<tr>
+				<th>Date of diagnosis</th>
+				<td>March 2018</td>
+        <td><a href="#">Change</a></td>
+			</tr>
+		</tbody>
+	</table>
+  <p class="mb20"><a href="#">Remove condition</a></p>
+
+	<table class="report-view-table mb10">	
+		<tbody>
+			<tr>
+				<th>Condition name</th>
+				<td width="45%">Asthma</td>
+        <td><a href="#">Change</a></td>
+			</tr>
+			<tr>
+				<th>Diagnosed by</th>
+				<td>GP</td>
+        <td><a href="#">Change</a></td>
+			</tr>
+			<tr>
+				<th>Date of diagnosis</th>
+				<td>January 2019</td>
+        <td><a href="#">Change</a></td>
+			</tr>
+		</tbody>
+	</table>
+  <p class="mb20"><a href="#">Remove condition</a></p>
+
+<button class="button secondary" data-module="govuk-button">Add new condition</button>
+
+</div>
+<!-- / report item -->
+
+
+
+<h2 class="heading-medium">Medication</h2>
+
+<div>
+
+	<table class="report-view-table mb10">	
+		<tbody>
+			<tr>
+				<th>Name of medication</th>
+				<td width="45%">Sertraline</td>
+        <td><a href="#">Change</a></td>
+			</tr>
+			<tr>
+				<th>Dose</th>
+				<td>50mg</td>
+        <td><a href="#">Change</a></td>
+			</tr>
+			<tr>
+				<th>Frequency</th>
+				<td>Twice a day</td>
+        <td><a href="#">Change</a></td>
+			</tr>
+			<tr>
+				<th>Date last prescribed</th>
+				<td>November 2019</td>
+        <td><a href="#">Change</a></td>
+			</tr>
+		</tbody>
+	</table>
+  <p class="mb20"><a href="#">Remove medication</a></p>
+
+	<table class="report-view-table mb10">	
+		<tbody>
+			<tr>
+				<th>Name of medication</th>
+				<td width="45%">Salbutamol</td>
+        <td><a href="#">Change</a></td>
+			</tr>
+			<tr>
+				<th>Dose</th>
+				<td>1.5mg</td>
+        <td><a href="#">Change</a></td>
+			</tr>
+			<tr>
+				<th>Frequency</th>
+				<td>Twice a day</td>
+        <td><a href="#">Change</a></td>
+			</tr>
+			<tr>
+				<th>Date last prescribed</th>
+				<td>November 2019</td>
+        <td><a href="#">Change</a></td>
+			</tr>
+		</tbody>
+	</table>
+  <p class="mb20"><a href="#">Remove medication</a></p>
+
+<button class="button secondary mb30" data-module="govuk-button">Add new medication</button>
+</div>
+<!-- / report item -->
+<!--
+        <h2 class="heading-medium">Finish your preparation</h2>
+
+        <p class="govuk-body">By submitting this preparation you are confirming that, to the best of your knowledge, the details you are providing are complete and correct.</p>
+-->
+        <form action="../portal_face-to-face/appointment-fme" method="post" novalidate>
+
+          <input type="hidden" name="answers-checked" value="true">
+
+          <!--<button class="button" data-module="govuk-button">
+            Accept and finish
+          </button>-->
+
+		  <button class="button" data-module="govuk-button">Save and proceed to assessment</button>
+
+        </form>
+
+  </div><!-- column -->
+  
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+
