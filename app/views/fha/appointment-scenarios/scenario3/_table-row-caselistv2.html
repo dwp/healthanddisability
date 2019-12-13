@@ -35,18 +35,18 @@
 				  <ul class="list">
 				   {% if customer.requirement.taxi %}
 				  <li>Taxi
-				    {{customer.appointment.taxi}}  {% if checked('booked', 'taxi') %} 
-				  <br />
-				  <span class="badge mb5"> Booked</span> 
+				    {{customer.appointment.taxi}}  {% if customer.nino =='70-4506349' and data['reference'] or customer.nino =='18-8309546' and checked('booked', 'taxi')  %} 
+				  -
+				  <span class="bold"> Booked</span> 
 				 
 				  {% endif %}
 				  </li>
 				  {% endif%}
 				  {% if customer.requirement.interpreter %}
 				  <li>Interpreter:
-				  {{customer.appointment.interpreter}}  {% if checked('booked', 'interpreter') %} 
-				  <br />
-				  <span class="badge mb5"> Booked</span> 
+				  {{customer.appointment.interpreter}}  {% if customer.nino =='18-8309546' and checked('booked', 'interpreter') %} 
+			      -
+				  <span class="bold"> Booked</span> 
 				 
 				  {% endif %}
 				  

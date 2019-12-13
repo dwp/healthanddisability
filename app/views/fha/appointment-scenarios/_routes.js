@@ -150,6 +150,18 @@ router.get('/scenario4/bookedv2', function (req, res, next) {
     next()
     })
 
+    router.get('/scenario3/booked-card-row', function (req, res, next) {
+      res.locals.customers = appointmentCustomersRequirements
+      .filter(customer => customer.status === "Booked");
+      next()
+      })
+
+    router.get('/scenario4/bookedv4', function (req, res, next) {
+      res.locals.customers = appointmentCustomersRequirements
+      .filter(customer => customer.status === "Booked");
+      next()
+      })
+
   router.get('/scenario4/appointment-history', function (req, res, next) {
     let findCustomer = {}
 

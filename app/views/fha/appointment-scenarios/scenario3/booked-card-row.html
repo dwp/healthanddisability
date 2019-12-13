@@ -4,7 +4,7 @@
  {% block horizontal_secondary_nav %}
 
 
-    <form class="form" action="booked" method="post">
+    <form class="form" action="booked-card-row" method="post">
 	<div class="fixednav">
 		<div class="search-customer">
 			<label class="form-label-bold visually-hidden" for="search">Customer search</label>
@@ -455,20 +455,13 @@
 					
             {% endif %}
             	 
-		  <table id="fileredTable"class="filtered">
 
-                <thead>
-                  <tr>
-                    <th>Case details</th>
-                    <th>Appointment information</th>
-				    <th>Referral type</th>
-                  </tr>
-                </thead>
+<div class="portal-display">
 
 {% if  data['capDay'] and checked('filter', 'DNA referral') %}
 		{% for customer in customers %}
 				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.appointment.dna == 'dna' %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}
 
@@ -477,14 +470,14 @@
 		{% for customer in customers %}
 
 				{% if customer.status == 'Booked' and customer.appointment.dna == 'dna' %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}
 
    	{% elif data['capDay'] and checked('filter', 'Non') %}		
 	 	{% for customer in customers %}
 				{% if customer.appointment.date =='6/11/2019' and  customer.status == 'Booked' and customer.appointment.type =='Non neuro' %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}	
 
@@ -492,7 +485,7 @@
 {% elif  checked('filter', 'Non') %}
 		{% for customer in customers %}
 				{% if customer.status == 'Booked' and customer.appointment.type =='Non neuro' %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}
 
@@ -500,7 +493,7 @@
 	{% elif data['capDay'] and checked('filter', 'Neuro') %}		
 	 	{% for customer in customers %}
 				{% if customer.appointment.date =='6/11/2019' and  customer.status == 'Booked' and customer.appointment.type =='Neuro' %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}	
 
@@ -508,14 +501,14 @@
 {% elif  checked('filter', 'Neuro') %}
 		{% for customer in customers %}
 				{% if customer.status == 'Booked' and customer.appointment.type =='Neuro' %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}			
 
  	{% elif data['capDay'] and checked('filter', 'Complex') %}		
 	 	{% for customer in customers %}
 				{% if customer.appointment.date =='6/11/2019' and  customer.status == 'Booked' and customer.appointment.type =='Complex neuro' %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}	
 
@@ -523,7 +516,7 @@
 {% elif  checked('filter', 'Complex') %}
 		{% for customer in customers %}
 				{% if customer.status == 'Booked' and customer.appointment.type =='Complex neuro' %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}		
 
@@ -533,41 +526,41 @@
 {% elif  data['capDay'] and checked('filter', 'Re referrals') %}
 		{% for customer in customers %}
 				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.referral.type =='Re referral' %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}
 
 {% elif checked('filter', 'Re referrals') %}
 		{% for customer in customers %}
 				{% if customer.status == 'Booked' and customer.referral.type =='Re referral' %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}		
 
 {% elif  data['capDay'] and checked('filter', 'New referrals') %}
 		{% for customer in customers %}
 				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.referral.type =='New referral' %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}
 {% elif checked('filter', 'New referrals') %}
 		{% for customer in customers %}
 				{% if customer.status == 'Booked' and customer.referral.type =='New referral' %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}		
 
 {% elif  data['capDay'] and checked('filter', 'ucb') %}
 		{% for customer in customers %}
 				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.caseflags =='ucb' %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}
 
    {% elif checked('filter', 'ucb') %}
 		{% for customer in customers %}
 				{% if customer.status == 'Booked' and customer.caseflags =='ucb' %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}		
 
@@ -576,7 +569,7 @@
 
 		{% for customer in customers %}
 				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.requirement %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}
 
@@ -584,7 +577,7 @@
 
 		{% for customer in customers %}
 				{% if customer.status == 'Booked' and customer.requirement %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}
 
@@ -592,7 +585,7 @@
 
 		{% for customer in customers %}
 				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.requirement.taxi =='taxi' %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}
 
@@ -600,7 +593,7 @@
 
 		{% for customer in customers %}
 				{% if customer.status == 'Booked' and customer.requirement.taxi =='taxi' %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}
 
@@ -608,7 +601,7 @@
 
 		{% for customer in customers %}
 				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.requirement.interpreter =='interpreter' %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}
 
@@ -616,7 +609,7 @@
 
 		{% for customer in customers %}
 				{% if customer.status == 'Booked' and customer.requirement.interpreter =='interpreter' %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}
 
@@ -624,7 +617,7 @@
 
 		{% for customer in customers %}
 				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.requirement.gender =='gender' %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}
 
@@ -632,7 +625,7 @@
 
 		{% for customer in customers %}
 				{% if customer.status == 'Booked' and customer.requirement.gender =='gender' %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}
 
@@ -640,7 +633,7 @@
 
 		{% for customer in customers %}
 				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.requirement.audio =='audio' %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}
 
@@ -648,7 +641,7 @@
 
 		{% for customer in customers %}
 				{% if customer.status == 'Booked' and customer.requirement.audio =='audio' %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}
 
@@ -656,7 +649,7 @@
 
 		{% for customer in customers %}
 				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.requirement.accessible =='accessible' %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}
 
@@ -664,7 +657,7 @@
 
 		{% for customer in customers %}
 				{% if customer.status == 'Booked' and customer.requirement.accessible =='accessible' %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}
 
@@ -674,17 +667,17 @@
 	
 		{% for customer in customers %}
 				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' %}
-					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+					{% include path+"/scenario3/_caserow.html" %}
 				{% endif %}
 		{% endfor %}
 
 	{% else %}			
 		{% for customer in customers %}    
-				{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% include path+"/scenario3/_caserow.html" %}
 		{% endfor %}   
 	{%endif%}
 
-</table>
+</div>
 
 </form>
 {% endblock %}
