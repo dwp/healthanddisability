@@ -1,4 +1,4 @@
-{% extends path+"/scenario_03i/_layout-case-simple.html" %}
+{% extends path+"/scenario_03k/_layout-case-simple.html" %}
 
 {% block citizen_content %}
 
@@ -13,8 +13,8 @@
 <div class="grid-row">
   <div class="column-two-thirds">
 
-	<p class="caption-large" class="mb0">Paper-based assessment</p>
-	<h1 class="heading-large mt0">Previous reports you've seen</h1>
+	<p class="caption-large" class="mb0">File report: Treat as having LCW due to regular treatment</p>
+	<h1 class="heading-large mt10">Previous reports you've seen</h1>
 
 <label class="form-label mt20">
 List dates of previous medical reports you've seen.
@@ -23,8 +23,7 @@ List dates of previous medical reports you've seen.
 
 
 
-
-<form action="writeJustification" method="post">
+<form action="keyEvidence" method="post">
 
 <textarea class="form-control form-control-3-4 mb20" name="previousReportDates" id="previousreports" rows="1">{{ previousReportDates }}</textarea>
 
@@ -34,25 +33,23 @@ List dates of previous medical reports you've seen.
 
   </div><!-- column -->
 
-
-
-<div class="column-one-third">
-
+{# <div class="column-one-third">
 <div class="summary-panel">
 <h4 class="bold mb10">Summary</h4>
-<p class="font-small">LCWRA: moving around and climbing steps without someone’s help</p>
+<p class="font-small">Treat as LCW: In residential rehab</p>
 <p class="font-small bold mb10">Evidence considered</p>
 <ul >
-	<li class="mb5">GP report (113)</li>
 	<li class="mb5">Fit note (Med3)</li>
+	<li class="mb5">Fit note (Med3)</li>
+	<li class="mb5">GP report (113)</li>
+	<li class="mb5">Medical report (UC85)</li>
 	<li class="mb5">Questionnaire (UC50)</li>
-	<li>Basic medical report (UC85A)</li>
+	<li>Specialist letter</li>
 </ul>
-</div>
+</div> #}
 
 
-</div><!-- right hand column -->
-
+  </div><!-- right hand column -->
 
 
 </div><!-- row -->
@@ -64,7 +61,7 @@ List dates of previous medical reports you've seen.
 
 {% block page_scripts %}
 
-{% include path+"/scenario_03i/autocomplete/_autocompletedata.html" %}
+{% include path+"/scenario_03k/autocomplete/_autocompletedata.html" %}
   
  
 {% endblock %} 
