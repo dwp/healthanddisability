@@ -1,0 +1,79 @@
+{% extends path+"/scenario_03k/_layout-case-simple.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<form action="evidenceDetails" method="post">
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	<p class="caption-large" class="mb0">File report: Treat as having LCW due to regular treatment</p>
+	<h1 class="heading-large mt10">Which of the following treatments is Aaron receiving?</h1>
+	{# <h1 class="heading-large mt10">Which conditions support LCWRA in the evidence?</h1> #}
+
+
+<div class="form-group">
+	<fieldset>
+		<div class="multiple-choice">
+			<input id="decide_now" name="regularTreatment" type="radio" value="haemodialysis">
+			<label for="decide_now">Haemodialysis</label>
+		</div>
+		<div class="multiple-choice">
+			<input id="decide_now" name="regularTreatment" type="radio" value="plasmapheresis">
+			<label for="decide_now">Plasmapheresis</label>
+		</div>
+		<div class="multiple-choice">
+			<input id="decide_now" name="regularTreatment" type="radio" value="parentalNutrition">
+			<label for="decide_now">Total parenteral nutrition</label>
+		</div>
+	</fieldset>
+</div>
+
+
+<div class="form-group">
+			<label class="form-label" for="diagnosedConditions">What condition is this treatment related to?</label>
+			<textarea class="form-control form-control-2-3" name="diagnosedConditions" id="diagnosedConditions" rows="1"></textarea>
+</div>
+
+
+
+<p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+      </form>
+
+
+  </div><!-- column -->
+
+
+<!--
+<div class="column-one-third">
+
+<div class="summary-panel">
+<h4 class="bold mb10">Summary</h4>
+<p class="font-small">LCWRA: moving around and climbing steps without someone’s help</p>
+</div>
+
+
+</div>-->
+<!-- right hand column -->
+
+
+
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+
+{% block page_scripts %}
+
+{% include path+"/scenario_03i/autocomplete/_autocompletedata.html" %}
+  
+ 
+{% endblock %} 
