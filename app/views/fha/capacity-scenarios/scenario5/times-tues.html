@@ -20,10 +20,10 @@
   <a href="javascript: history.go(-1)" class="link-back">Back</a>
    <h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Open appointment slots for {% include path+"/scenario5/_ACname.html" %} </h1>
   
-  <h2 class="heading-medium mt30"> {% include path+"/scenario5/_Mon_Date.html" %}</h2>
+   <h2 class="heading-medium mt30"> {% include path+"/scenario5/_Tue_Date.html" %}</h2>
   {% include path+"/scenario1/_info-panel-times.html" %} 
 
-   <form class="form" action="amount" method="post">
+   <form class="form" action="amount-tue" method="post">
 
    <h3 class="heading-small mt20">Choose appointment times</h3>
    <button id="selectAll" class="button button-secondary mb10 mt10" hidden>Select all</button>
@@ -44,19 +44,19 @@
 
 
         <div class="check-choice">
-          <input id="time1" name="monstimes" type="checkbox" value="9" {{checked('monstimes', '9') }} >
+          <input id="time1" name="tuestimes" type="checkbox" value="9" {{checked('tuestimes', '9') }} >
           <label for="time1">9:00am</label>
         </div>
         <div class="check-choice">
-            <input id="time2" name="monstimes" type="checkbox" value="915" {{checked('monstimes', '915') }}>
+            <input id="time2" name="tuestimes" type="checkbox" value="915" {{checked('tuestimes', '915') }}>
             <label for="time2">9:15am</label>
           </div>
           <div class="check-choice">
-              <input id="time3" name="monstimes" type="checkbox" value="930" {{checked('monstimes', '930') }}>
+              <input id="time3" name="tuestimes" type="checkbox" value="930" {{checked('tuestimes', '930') }}>
               <label for="time3">9:30am</label>
           </div>
           <div class="check-choice">
-              <input id="time3a" name="monstimes" type="checkbox" value="945" {{checked('monstimes', '945') }}>
+              <input id="time3a" name="tuestimes" type="checkbox" value="945" {{checked('tuestimes', '945') }}>
               <label for="time3a">9:45am</label>
           </div>
 
@@ -73,19 +73,19 @@
 
 
         <div class="check-choice">
-            <input id="time4" name="monstimes" type="checkbox" value="10" {{checked('monstimes', '10') }}>
+            <input id="time4" name="tuestimes" type="checkbox" value="10" {{checked('tuestimes', '10') }}>
             <label for="time4">10:00am</label>
           </div>
           <div class="check-choice">
-              <input id="time5" name="monstimes" type="checkbox" value="1015" {{checked('monstimes', '1015') }}>
+              <input id="time5" name="tuestimes" type="checkbox" value="1015" {{checked('tuestimes', '1015') }}>
               <label for="time5">10:15am</label>
             </div>
             <div class="check-choice">
-                <input id="time6" name="monstimes" type="checkbox" value="1030" {{checked('monstimes', '1030') }}>
+                <input id="time6" name="tuestimes" type="checkbox" value="1030" {{checked('tuestimes', '1030') }}>
                 <label for="time6">10:30am</label>
             </div>
             <div class="check-choice">
-                <input id="time6a" name="monstimes" type="checkbox" value="1045" {{checked('monstimes', '1045') }}>
+                <input id="time6a" name="tuestimes" type="checkbox" value="1045" {{checked('tuestimes', '1045') }}>
                 <label for="time6a">10:45am</label>
             </div>
 
@@ -103,19 +103,19 @@
 
 
         <div class="check-choice">
-            <input id="time7" name="monstimes" type="checkbox" value="11" {{checked('monstimes', '11') }}>
+            <input id="time7" name="tuestimes" type="checkbox" value="11" {{checked('tuestimes', '11') }}>
             <label for="time7">11:00am</label>
           </div>
           <div class="check-choice">
-              <input id="time8" name="monstimes" type="checkbox" value="1115" {{checked('monstimes', '1115') }}>
+              <input id="time8" name="tuestimes" type="checkbox" value="1115" {{checked('tuestimes', '1115') }}>
               <label for="time8">11:15am</label>
             </div>
             <div class="check-choice">
-                <input id="time9" name="monstimes" type="checkbox" value="1130" {{checked('monstimes', '1130') }}>
+                <input id="time9" name="tuestimes" type="checkbox" value="1130" {{checked('tuestimes', '1130') }}>
                 <label for="time9">11:30am</label>
             </div>
             <div class="check-choice">
-                <input id="time9a" name="monstimes" type="checkbox" value="1145" {{checked('monstimes', '1145') }}>
+                <input id="time9a" name="tuestimes" type="checkbox" value="1145" {{checked('tuestimes', '1145') }}>
                 <label for="time9a">11:45am</label>
             </div>
 
@@ -133,19 +133,19 @@
 
 
         <div class="check-choice">
-            <input id="time7aa" name="monstimes" type="checkbox" value="12" {{checked('monstimes', '12') }}>
+            <input id="time7aa" name="tuestimes" type="checkbox" value="12" {{checked('tuestimes', '12') }}>
             <label for="time7aa">12:00pm</label>
           </div>
           <div class="check-choice">
-              <input id="time8aa" name="monstimes" type="checkbox" value="1215" {{checked('monstimes', '1215') }}>
+              <input id="time8aa" name="tuestimes" type="checkbox" value="1215" {{checked('tuestimes', '1215') }}>
               <label for="time8aa">12:15pm</label>
             </div>
             <div class="check-choice">
-                <input id="time9aa" name="monstimes" type="checkbox" value="1230" {{checked('monstimes', '1230') }}>
+                <input id="time9aa" name="tuestimes" type="checkbox" value="1230" {{checked('tuestimes', '1230') }}>
                 <label for="time9aa">12:30pm</label>
             </div>
             <div class="check-choice">
-                <input id="time9aaa" name="monstimes" type="checkbox" value="1245" {{checked('monstimes', '1245') }}>
+                <input id="time9aaa" name="tuestimes" type="checkbox" value="1245" {{checked('tuestimes', '1245') }}>
                 <label for="time9aaa">12:45pm</label>
             </div>
 
@@ -167,19 +167,19 @@
 
 
         <div class="check-choice">
-            <input id="time10" name="monstimes" type="checkbox" value="1" {{checked('monstimes', '1') }}>
+            <input id="time10" name="tuestimes" type="checkbox" value="1" {{checked('tuestimes', '1') }}>
             <label for="time10">1:00pm</label>
           </div>
           <div class="check-choice">
-              <input id="time11" name="monstimes" type="checkbox" value="115" {{checked('monstimes', '115') }}>
+              <input id="time11" name="tuestimes" type="checkbox" value="115" {{checked('tuestimes', '115') }}>
               <label for="time11">1:15pm</label>
             </div>
             <div class="check-choice">
-                <input id="time12" name="monstimes" type="checkbox" value="130" {{checked('monstimes', '130') }}>
+                <input id="time12" name="tuestimes" type="checkbox" value="130" {{checked('tuestimes', '130') }}>
                 <label for="time12">1:30pm</label>
             </div>
             <div class="check-choice">
-                <input id="time12a" name="monstimes" type="checkbox" value="145" {{checked('monstimes', '145') }}>
+                <input id="time12a" name="tuestimes" type="checkbox" value="145" {{checked('tuestimes', '145') }}>
                 <label for="time12a">1:45pm</label>
             </div>
 
@@ -200,19 +200,19 @@
 
 
         <div class="check-choice">
-            <input id="time13" name="monstimes" type="checkbox" value="2" {{checked('monstimes', '2') }}>
+            <input id="time13" name="tuestimes" type="checkbox" value="2" {{checked('tuestimes', '2') }}>
             <label for="time13">2:00pm</label>
           </div>
           <div class="check-choice">
-              <input id="time14" name="monstimes" type="checkbox" value="215" {{checked('monstimes', '215') }}>
+              <input id="time14" name="tuestimes" type="checkbox" value="215" {{checked('tuestimes', '215') }}>
               <label for="time14">2:15pm</label>
             </div>
             <div class="check-choice">
-                <input id="time15" name="monstimes" type="checkbox" value="230" {{checked('monstimes', '230') }}>
+                <input id="time15" name="tuestimes" type="checkbox" value="230" {{checked('tuestimes', '230') }}>
                 <label for="time15">2:30pm</label>
             </div>
             <div class="check-choice">
-                <input id="time15a" name="monstimes" type="checkbox" value="245" {{checked('monstimes', '245') }}>
+                <input id="time15a" name="tuestimes" type="checkbox" value="245" {{checked('tuestimes', '245') }}>
                 <label for="time15a">2:45pm</label>
             </div>
 
@@ -231,20 +231,20 @@
 
 
             <div class="check-choice">
-                <input id="time16" name="monstimes" type="checkbox" value="3" {{checked('monstimes', '3') }}>
+                <input id="time16" name="tuestimes" type="checkbox" value="3" {{checked('tuestimes', '3') }}>
                 <label for="time16">3:00pm</label>
               </div>
               <div class="check-choice">
-                  <input id="time17" name="monstimes" type="checkbox" value="315" {{checked('monstimes', '315') }}>
+                  <input id="time17" name="tuestimes" type="checkbox" value="315" {{checked('tuestimes', '315') }}>
                   <label for="time17">3:15pm</label>
                 </div>
                 <div class="check-choice">
-                    <input id="time18" name="monstimes" type="checkbox" value="330" {{checked('monstimes', '330') }}>
+                    <input id="time18" name="tuestimes" type="checkbox" value="330" {{checked('tuestimes', '330') }}>
                     <label for="time18">3:30pm</label>
                 </div>
 
 				<div class="check-choice">
-                    <input id="time18a" name="monstimes" type="checkbox" value="345" {{checked('monstimes', '345') }}>
+                    <input id="time18a" name="tuestimes" type="checkbox" value="345" {{checked('tuestimes', '345') }}>
                     <label for="time18a">3:45pm</label>
                 </div>
 
@@ -264,20 +264,20 @@
 
 
             <div class="check-choice">
-                <input id="time19" name="monstimes" type="checkbox" value="4" {{checked('monstimes', '4') }}>
+                <input id="time19" name="tuestimes" type="checkbox" value="4" {{checked('tuestimes', '4') }}>
                 <label for="time19">4:00pm</label>
               </div>
               <div class="check-choice">
-                  <input id="time20" name="monstimes" type="checkbox" value="415" {{checked('monstimes', '415') }}>
+                  <input id="time20" name="tuestimes" type="checkbox" value="415" {{checked('tuestimes', '415') }}>
                   <label for="time20">4:15pm</label>
                 </div>
                 <div class="check-choice">
-                    <input id="time21" name="monstimes" type="checkbox" value="430" {{checked('monstimes', '430') }}>
+                    <input id="time21" name="tuestimes" type="checkbox" value="430" {{checked('tuestimes', '430') }}>
                     <label for="time21">4:30pm</label>
                 </div>
 
 				<div class="check-choice">
-                    <input id="time22" name="monstimes" type="checkbox" value="445" {{checked('monstimes', '445') }}>
+                    <input id="time22" name="tuestimes" type="checkbox" value="445" {{checked('tuestimes', '445') }}>
                     <label for="time22">4:45pm</label>
                 </div>
 
@@ -291,16 +291,13 @@
     <div class="form-group mt20">
 			<fieldset>
 					<legend class="heading-small mb5">Choose benefit types:</legend>
-
-
-
 					<div class="multiple-choice">
-				      <input id="ben1" name="benefitchoice" type="radio" value="ben1" {{checked('benefitchoice', 'ben1') }}>
+				      <input id="ben1" name="benefitchoicetue" type="radio" value="ben1" {{checked('benefitchoicetue', 'ben1') }}>
 				      <label for="ben1">WCA (UC, ESA)</label>
 				    </div>
 
 				    <div class="multiple-choice">
-				      <input id="ben2" name="benefitchoice" type="radio" value="ben2" {{checked('benefitchoice', 'ben2') }}>
+				      <input id="ben2" name="benefitchoicetue" type="radio" value="ben2" {{checked('benefitchoicetue', 'ben2') }}>
 				      <label for="ben2">PIP</label>
 				    </div>
 

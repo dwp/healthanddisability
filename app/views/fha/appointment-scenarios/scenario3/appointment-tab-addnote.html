@@ -15,25 +15,7 @@
 
 {% block citizen_content %}
 
-<style>
-.ref{
-					  padding:10px;
-				
-					  margin-bottom:10px;
-					  display:block;
-					  font-size:17px;
-					  border:1px solid #bfc1c3;
-					  border-left:3px solid #bfc1c3;
-					  border-right:0;
-					  border-top:0;
-					  border-bottom:0;
-	}
 
-	.panel{
-		padding:7px 7px 2px 7px;
-		font-size:17px;
-	}
-	</style>
 
 <div class="container">
 
@@ -79,7 +61,9 @@
 			      </ul>
 			      
 			      <ul class="action-list">
-            <li><a href="/{{path }}/scenario3/rearrange-appointment" class="secondary-invert">Update appointment</a></li>
+            <li><a href="/{{path }}/scenario3/rearrange-appointment" class="secondary-invert">Rearrange appointment</a></li>
+            <li><a href="/{{path }}/scenario3/addanote" class="secondary-invert">Add a note</a></li>
+            <li><a href="/{{path }}/scenario3/cancel-appointment" class="secondary-invert">Cancel appointment</a></li>
             </ul>
 
 					
@@ -117,17 +101,10 @@
 				  <ul class="list">
 				   {% if customer.requirement.taxi %}
 				  <li>Taxi
-				  	 {% if customer.nino =='18-8309546' and checked('booked', 'taxi') %} 
-				  <div class="panel panel-info">
+				  	 {% if checked('booked', 'taxi') or data['reference'] %} 
+				  <div class="ref">
 				  <span class="badge pull-right"> Booked</span> 
-				   Reference number:<span class="bold block">{% if checked('booked', 'taxi')%}{{taxiReference}} {% else %}{{reference}}{% endif %}</span>
-				  </div>
-				  {% endif %}
-
-				  	 {% if customer.nino =='70-4506349' and data['reference'] %} 
-				  <div class="panel panel-info">
-				  <span class="badge pull-right"> Booked</span> 
-				   Reference number:<span class="bold block">{{reference}}</span>
+				   Reference number:<span class="bold block">{{taxiReference}}{{reference}}</span>
 				  </div>
 				  {% endif %}
 				  
@@ -138,10 +115,10 @@
 				  <style>
 			
 				  </style>
-				 {% if checked('booked', 'interpreter') %} 
+				 {% if checked('booked', 'interpreter') or data['reference'] %} 
 				  <div class="panel panel-info">
 				  <span class="badge pull-right"> Booked</span> 
-				   Reference number:<span class="bold block">{% if checked('booked', 'interpreter')%} {{interpreterReference}}{% else %}{{reference}}{% endif %}</span>
+				   Reference number:<span class="bold block">{{interpreterReference}}</span>
 				  </div>
 				  {% endif %}
 				  </li>

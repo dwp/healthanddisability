@@ -1,0 +1,60 @@
+{% extends path+"/scenario_03k/_layout-case-simple.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<form action="reviewPeriod" method="post">
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	<p class="caption-large" class="mb0">File report: Treat as having LCW due to regular treatment</p>
+	<h1 class="heading-large mt10">What does the evidence show?</h1>
+
+
+<div class="form-group">
+			<label class="form-label" for="evidenceKeyFacts">Summarise key details from the evidence to support your recommendation</label>
+			<textarea class="form-control form-control-1-1" name="evidenceKeyFacts" id="evidenceKeyFacts" rows="6"></textarea>
+<br>
+			<label class="form-label" for="nonSupportGroupDetail">If the claimant has reported any support group activity, please provide details of why they don’t qualify for LCWRA</label>
+			<textarea class="form-control form-control-1-1" name="nonSupportGroupDetail" id="nonSupportGroupDetail" rows="3"></textarea>
+</div>
+
+
+
+<p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+      </form>
+
+
+  </div><!-- column -->
+
+<div class="column-one-third">
+
+<div class="summary-panel">
+<h4 class="bold mb10">Justification so far</h4>
+<p class="font-small">The {{ keyEvidence }} questionnaire (UC50) and specialist letter indicates that the claimant is undergoing regular {{ treatmentName }} Haemodialysis treatment for {{ diagnosedConditions }}, this suggests they should be treated as having limited capability for work.</p>
+</div>
+
+</div>
+<!-- right hand column -->
+
+
+
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+
+{% block page_scripts %}
+
+{% include path+"/scenario_03i/autocomplete/_autocompletedata.html" %}
+  
+ 
+{% endblock %} 

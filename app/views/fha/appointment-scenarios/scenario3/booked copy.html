@@ -1,0 +1,696 @@
+{% extends path+"/_layout-caselist.html" %}
+
+
+ {% block horizontal_secondary_nav %}
+
+
+    <form class="form" action="booked" method="post">
+	<div class="fixednav">
+		<div class="search-customer">
+			<label class="form-label-bold visually-hidden" for="search">Customer search</label>
+				<span class="form-hint">Search by NI number</span>
+			<input class="form-control form-control-2-3" id="search" type="text" name="search">
+			<button class="gem-c-search__submit">Search</button>
+		</div>
+
+
+  {% set bookedCounter = 0 %}
+	{% set readyCounter = 0 %}
+
+	{% set requirementsRequirements = 0 %}
+	{% set requirementsRequirementsDay = 0 %}
+	{% set taxiCounter = 0 %}
+	{% set taxiCounterDay = 0 %}
+	{% set ucbCounter = 0 %}
+	{% set ucbCounterDay = 0 %}
+	{% set interpreterCounter = 0 %}
+	{% set interpreterCounterDay = 0 %}
+	{% set genderCounter = 0 %}
+	{% set genderCounterDay = 0 %}
+	{% set accessCounter = 0 %}
+	{% set accessCounterDay = 0 %}
+	{% set audioCounter = 0 %}
+	{% set audioCounterDay = 0 %}
+	{% set newCounter = 0 %}
+	{% set newCounterDay = 0 %}
+	{% set reCounter = 0 %}
+	{% set reCounterDay = 0 %}
+	{% set edCounter = 0 %}
+	{% set edCounterDay = 0 %}
+	{% set todayCounter = 0 %}
+	{% set complexCounter = 0 %}
+	{% set complexCounterDay = 0 %}
+	{% set neuroCounter = 0 %}
+	{% set neuroCounterDay = 0 %}
+	{% set nonCounter = 0 %}
+	{% set nonCounterDay = 0 %}
+
+
+
+  
+
+	{% for item in customers %}
+
+  {% if item %}
+	 {% set totalCounter = totalCounter + 1 %}
+	{% endif %}
+	{% if item.status === "Booked"%}
+	 {% set bookedCounter = bookedCounter + 1 %}
+	{% endif %}
+	{% if item.status === "Ready to book"%}
+	 {% set readyCounter = readyCounter + 1 %}
+	{% endif %}
+	{% if item.status == 'Booked' and item.appointment.requirement %}
+	 {% set requirementsRequirements = requirementsRequirements + 1 %}
+	{% endif %}
+
+	{% if item.appointment.date =='6/11/2019' and item.status == 'Booked' and item.appointment.requirement %}
+	 {% set requirementsRequirementsDay = requirementsRequirementsDay + 1 %}
+	{% endif %}
+
+	{% if item.status === "Booked" and item.appointment.requirement == 'taxi'%}
+	 {% set taxiCounter = taxiCounter + 1 %}
+	{% endif %}
+
+	{% if  item.appointment.date =='6/11/2019' and item.status === "Booked" and item.appointment.requirement == 'taxi'%}
+	 {% set taxiCounterDay = taxiCounterDay + 1 %}
+	{% endif %}
+
+	{% if item.status === "Booked" and item.appointment.requirement == 'interpreter'%}
+	 {% set interpreterCounter = interpreterCounter + 1 %}
+	{% endif %}
+
+	{% if item.appointment.date =='6/11/2019' and item.status === "Booked" and item.appointment.requirement == 'interpreter'%}
+	 {% set interpreterCounterDay = interpreterCounterDay + 1 %}
+	{% endif %}
+	{% if item.status === "Booked" and item.appointment.requirement == 'gender'%}
+	 {% set genderCounter = genderCounter + 1 %}
+	{% endif %}
+
+	{% if item.appointment.date =='6/11/2019' and item.status === "Booked" and item.appointment.requirement == 'gender'%}
+	 {% set genderCounterDay = genderCounterDay + 1 %}
+	{% endif %}
+	{% if item.status === "Booked" and item.appointment.requirement == 'audio'%}
+	 {% set audioCounter = audioCounter + 1 %}
+	{% endif %}
+
+	{% if item.appointment.date =='6/11/2019' and item.status === "Booked" and item.appointment.requirement == 'audio'%}
+	 {% set audioCounterDay = audioCounterDay + 1 %}
+	{% endif %}
+	{% if item.status === "Booked" and item.appointment.requirement == 'accessible'%}
+	 {% set accessCounter = accessCounter + 1 %}
+	{% endif %}
+    {% if item.appointment.date =='6/11/2019' and item.status === "Booked" and item.appointment.requirement == 'accessible'%}
+	 {% set accessCounterDay = accessCounterDay + 1 %}
+	{% endif %}
+
+
+	{% if item.status === "Booked" and item.caseflags == 'ucb' %}
+	 {% set ucbCounter = ucbCounter + 1 %}
+	{% endif %}
+
+	{% if item.appointment.date =='6/11/2019' and item.status == 'Booked' and item.caseflags =='ucb' %}
+	 {% set ucbCounterDay = ucbCounterDay + 1 %}
+	{% endif %}
+
+	
+	{% if item.status === "Booked" and item.referral.type == 'New referral' %}
+	 {% set newCounter = newCounter + 1 %}
+	{% endif %}
+
+	{% if item.appointment.date =='6/11/2019' and item.status === "Booked" and item.referral.type == 'New referral' %}
+	 {% set newCounterDay = newCounterDay + 1 %}
+	{% endif %}
+
+	{% if item.status === "Booked" and item.referral.type == 'Re referral' %}
+	 {% set reCounter = reCounter + 1 %}
+	{% endif %}
+
+	{% if item.appointment.date =='6/11/2019' and item.status === "Booked" and item.referral.type == 'Re referral' %}
+	 {% set reCounterDay = reCounterDay + 1 %}
+	{% endif %}
+
+	    
+	{% if item.appointment.date =='6/11/2019' and item.status == 'Booked' and item.appointment.dna == 'dna'%}
+	 {% set edCounterDay = edCounterDay + 1 %}
+	{% endif %}
+
+	{% if item.status === "Booked" and item.appointment.dna == 'dna' %}
+	 {% set edCounter = edCounter + 1 %}
+	{% endif %}
+
+
+    {% if item.appointment.date == '6/11/2019' %}
+	 {% set todayCounter = todayCounter + 1 %}
+	{% endif %}
+
+
+ 	{% if item.appointment.date =='6/11/2019' and  item.status === "Booked" and item.appointment.type == 'Complex neuro' %}
+	 {% set complexCounterDay = complexCounterDay + 1 %}
+    {% elif item.status === "Booked" and item.appointment.type == 'Complex neuro' %}
+	 {% set complexCounter = complexCounter + 1 %}
+	{% endif %}
+
+
+ 	{% if item.appointment.date =='6/11/2019' and  item.status === "Booked" and item.appointment.type == 'Neuro' %}
+	 {% set neuroCounterDay = neuroCounterDay + 1 %}
+    {% elif item.status === "Booked" and item.appointment.type == 'Neuro' %}
+	 {% set neuroCounter = neuroCounter + 1 %}
+	{% endif %}
+
+	{% if item.appointment.date =='6/11/2019' and  item.status === "Booked" and item.appointment.type == 'Non neuro' %}
+	 {% set nonCounterDay = nonCounterDay + 1 %}
+    {% elif item.status === "Booked" and item.appointment.type == 'Non neuro' %}
+	 {% set nonCounter = nonCounter + 1 %}
+	{% endif %}
+	{% endfor %}
+               
+<nav class="details-nav v2 mb30">
+	<ul>
+	    <li>
+				<a href="/{{path }}/scenario/not-testing">
+				Referrals (21)</a>
+	    
+
+	    </li>
+	  
+	    <li>
+				<a href="/{{path }}/scenario/not-testing">
+				Reviews (44)</a>
+	    
+
+	    </li>
+	  
+
+              <li class="active_detail">
+				<a href="appointments">
+				Appointments (1000)</a>
+	    
+	    	<ul>
+	    		<li>
+	    			<a href="ready-to-book">Ready to book (244) </a>
+
+	    		</li>
+	    		<li>
+	    			<a href="booked" class="active_child">Booked ({{bookedCounter}})</a>
+	    		</li>
+
+	    	
+	    		<!--<li>
+	    			<a href="ed-referrals" class="active_child">ED Re-referrals (2)</a>
+
+	    		</li> -->
+
+	    	
+	    	</ul>
+	    
+
+	    </li>
+	  
+	    <li>
+				<a href="todays-appointments">
+				Today's appointments (21)</a>
+	    
+
+	    </li>
+	  
+	</ul>
+</nav>
+</div>
+
+
+
+
+  
+       
+
+{% endblock %}  
+ 
+
+{% block caselist_content %}
+
+
+
+
+            
+			    <h1 class="heading-large mt0">
+            <span class="heading-secondary">
+			     {% if checked('filter','tresco') %}
+					DWP Tresco House
+					{% elif checked('filter','fiveways') %}
+					DWP Birmingham Fiveways
+					{% else %}
+					Wolverhampton
+					{% endif%}
+			</span>
+			Booked appointments
+             </h1>
+
+
+    <fieldset>
+      <legend>
+        <span class="visually-hidden">
+          When
+        </span>
+      </legend>
+      <div class="form-date">
+        <div class="form-group form-group-day">
+          <label class="form-label" for="capDay">Day</label>
+          <input class="form-control" id="capDay" name="capDay" type="number" pattern="[0-9]*" value="{{capDay}}">
+        </div>
+        <div class="form-group form-group-month">
+          <label class="form-label" for="capMonth">Month</label>
+          <input class="form-control" id="capMonth" name="capMonth" type="number" pattern="[0-9]*" value="{{capMonth}}">
+        </div>
+
+
+        <button class="button button-secondary" style="margin-top:25px">Apply date</button>
+		<button id="clearFilter" class="button button-tursery" style="margin-top:25px">Clear date</button>
+		
+      </div>
+    </fieldset>
+	
+            <h2 class="heading-small mt30">Filter booked appointments</h2>
+                <div class="check-group check-top">
+                <fieldset>
+				 <div class="check-picker">
+                    <h3 class="visually-hidden"><legend></legend></h3>
+				{% if checked('filter', 'all') or checked('filter', 'all2') or checked('filter', 'Complex') or checked('filter', 'Neuro') or checked('filter', 'Non')%}	
+                <div class="check-choice">
+                     <span class="dummy">Booked<span>{% if data['capDay'] %}
+             ({{todayCounter}}){% else %} ({{customers.length}}){% endif %}</span></span>
+                    </div>
+					{% else %}
+					    <div class="check-choice">
+                      <input id="all"
+                           name="filter"
+                           type="radio"
+                           value="all" class="facet" {{ checked('filter', 'all') }} checked> <label for="all">Booked<span>{% if data['capDay'] %}
+             ({{todayCounter}}){% else %} ({{customers.length}}){% endif %}</span></label>
+                    </div>
+					{% endif %}
+					{% if checked('filter', 'requirements') or checked('filter', 'requirementstwo') or checked('filter', 'taxi') or checked('filter', 'interpreter') or checked('filter', 'gender') or checked('filter', 'audio') or checked('filter', 'access')%}	
+					                <div class="check-choice">
+									<span class="dummy">Requirements <span> {% if data['capDay'] %}
+             ({{requirementsRequirementsDay}}){% else %} ({{requirementsRequirements}}) {% endif %}</span></span>
+			 </div>
+					{%else%}
+                    <div class="check-choice">
+                      <input id="requirements"
+                           name="filter"
+                           type="radio"
+                           value="requirements" class="facet" {{ checked('filter', 'requirements') }}> <label for="requirements">Requirements
+						    <span>{% if data['capDay'] %}({{requirementsRequirementsDay}}){% else %} ({{requirementsRequirements}}){% endif %}</span>
+						   </label>
+                    </div>
+					{% endif %}
+
+                    <div class="check-choice">
+                      <input id="ucb"
+                           name="filter"
+                           type="radio"
+                           value="ucb" class="facet" {{ checked('filter', 'ucb') }}> <label for="ucb">UCB
+						   <span>{% if data['capDay'] %}({{ucbCounterDay}}){% else %} ({{ucbCounter}}){% endif %}</span>
+						   </label>
+                    </div>
+
+					<div class="check-choice">
+                      <input id="DNA referral"
+                           name="filter"
+                           type="radio"
+                           value="DNA referral"  class="facet" {{ checked('filter', 'DNA referral') }}> <label for="DNA referral">Previous DNA's
+						      <span>{% if data['capDay'] %}({{edCounterDay}}){% else %} ({{edCounter}}){% endif %}</span>
+						   </label>
+                     </div>
+                  
+                    <div class="check-choice">
+                      <input id="New referrals"
+                           name="filter"
+                           type="radio"
+                           value="New referrals" class="facet" {{ checked('filter', 'New referrals') }}> <label for="New referrals">New referrals
+						   <span>{% if data['capDay'] %}({{newCounterDay}}){% else %} ({{newCounter}}){% endif %}</span>
+						   </label>
+                    </div>
+                    <div class="check-choice">
+                      <input id="Re refferals"
+                           name="filter"
+                           type="radio"
+                           value="Re referrals" class="facet" {{ checked('filter', 'Re referrals') }}> <label for="Re refferals">Re referrals
+						      <span>{% if data['capDay'] %}({{reCounterDay}}){% else %} ({{reCounter}}){% endif %}</span>
+						   </label>
+                   
+			        </div>
+                  </fieldset>
+                </div>
+            
+					
+			 <p><button id="facetFilterBtn" class="">Apply filter</button></p>
+		
+	     {% if checked('filter', 'requirementstwo') or checked('filter', 'requirements') or checked('filter', 'taxi') or checked('filter', 'interpreter') or checked('filter', 'gender') or checked('filter', 'audio') or checked('filter', 'access')%} 		
+	<div class="subfilter">	
+    <h2 class="heading-small mt10" >Filter by type</h2>   
+
+                <fieldset>
+				 <div class="check-picker">
+                    <h3 class="visually-hidden"><legend></legend></h3>
+					  <div class="check-choice">
+                      <input id="requirementstwo"
+                           name="filter"
+                           type="radio"
+                           value="requirementstwo" class="facet" {{ checked('filter', 'requirementstwo') }} checked> <label for="requirementstwo">All types<span> {% if data['capDay'] %} ({{requirementsRequirementsDay}}){% else %} ({{requirementsRequirements}}){% endif %}</span></label>
+                    </div>
+                     <div class="check-choice">
+                      <input id="taxi"
+                           name="filter"
+                           type="radio"
+                           value="taxi" class="facet" {{ checked('filter', 'taxi') }}> <label for="taxi">Taxi: <span> {% if data['capDay'] %}{{taxiCounterDay}}{% else %} {{taxiCounter}}{% endif %}</span></label>
+                    </div>
+					  <div class="check-choice">
+                      <input id="interpreter"
+                           name="filter"
+                           type="radio"
+                           value="interpreter" class="facet" {{ checked('filter', 'interpreter') }}> <label for="interpreter">interpreter: <span>{% if data['capDay'] %}
+                            ({{interpreterCounterDay}}){% else %} ({{interpreterCounter}}){% endif %}</span></label>
+                    </div>
+					  <div class="check-choice">
+                      <input id="gender"
+                           name="filter"
+                           type="radio"
+                           value="gender" class="facet" {{ checked('filter', 'gender') }}> <label for="gender">Same gender:<span>{% if data['capDay'] %}
+                            ({{genderCounterDay}}){% else %} ({{genderCounter}}){% endif %}</span></label>
+                    </div>
+						  <div class="check-choice">
+                      <input id="audio"
+                           name="filter"
+                           type="radio"
+                           value="audio" class="facet" {{ checked('filter', 'audio') }}> <label for="audio">Audio: <span>{% if data['capDay'] %}
+                            ({{audioCounterDay}}){% else %} ({{audioCounter}}){% endif %}</span></label>
+                    </div>
+						  <div class="check-choice">
+                      <input id="access"
+                           name="filter"
+                           type="radio"
+                           value="access" class="facet" {{ checked('filter', 'access') }}> <label for="access">Accessible room: <span>{% if data['capDay'] %}
+                            ({{accessCounterDay}}){% else %} ({{accessCounter}}){% endif %}</span></label>
+                    </div>
+					    </fieldset>
+					</div>
+					
+				
+			{% elif checked('filter', 'ucb') or checked('filter', 'DNA referral') or checked('filter', 'New referrals') or checked('filter', 'Re referrals') %}
+			{% else %}
+
+		 <div class="subfilter">
+                <h2 class="heading-small mt10" >Filter by type</h2>   
+                <fieldset>
+				
+				 <div class="check-picker">
+			
+                    <h3 class="visually-hidden"><legend>Secondary filter</legend></h3>
+					{% if checked('filter', 'Complex') or checked('filter', 'Neuro') or checked('filter', 'Non')%}
+					<div class="check-choice">
+                      <input id="all2"
+                           name="filter"
+                           type="radio"
+                           value="all2" class="facet" {{ checked('filter', 'all2') }}> <label for="all2">All types <span> {% if data['capDay'] %}
+             ({{todayCounter}}){% else %} ({{customers.length}}){% endif %}</span></label>
+                    </div>
+					{% else %}
+								 <div class="check-choice">
+                    <span class="dummy">All types<span>{% if data['capDay'] %}
+             ({{todayCounter}}){% else %} ({{customers.length}}){% endif %}</span></span>
+                    </div>
+					{% endif %}
+                     <div class="check-choice">
+                      <input id="Complex"
+                           name="filter"
+                           type="radio"
+                           value="Complex" class="facet" {{ checked('filter', 'Complex') }}> <label for="Complex">Complex neuro <span>{% if data['capDay'] %}
+                            ({{complexCounterDay}}){% else %} ({{complexCounter}}){% endif %}</span></label>
+                    </div>
+					  <div class="check-choice">
+                      <input id="Neuro"
+                           name="filter"
+                           type="radio"
+                           value="Neuro" class="facet" {{ checked('filter', 'Neuro') }}> <label for="Neuro">Neuro <span>{% if data['capDay'] %}
+                            ({{neuroCounterDay}}){% else %} ({{neuroCounter}}){% endif %}</span></label>
+                    </div>
+					  <div class="check-choice">
+                      <input id="Non"
+                           name="filter"
+                           type="radio"
+                           value="Non" class="facet" {{ checked('filter', 'Non') }}> <label for="Non">Non neuro <span>{% if data['capDay'] %}
+                            ({{nonCounterDay}}){% else %} ({{nonCounter}}){% endif %}</span></label>
+                    </div>
+					</fieldset>
+			        </div>
+				
+					
+            {% endif %}
+            	 
+		 
+		 
+		  <table id="fileredTable"class="filtered">
+
+                <thead>
+                  <tr>
+                    <th>Case details</th>
+                    <th>Appointment information</th>
+				    <th>Referral type</th>
+                  </tr>
+                </thead>
+
+
+{% if  data['capDay'] and checked('filter', 'DNA referral') %}
+		{% for customer in customers %}
+
+				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.appointment.dna == 'dna' %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}
+
+
+{% elif checked('filter', 'DNA referral') %}
+		{% for customer in customers %}
+
+				{% if customer.status == 'Booked' and customer.appointment.dna == 'dna' %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}
+
+   	{% elif data['capDay'] and checked('filter', 'Non') %}		
+	 	{% for customer in customers %}
+				{% if customer.appointment.date =='6/11/2019' and  customer.status == 'Booked' and customer.appointment.type =='Non neuro' %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}	
+
+
+{% elif  checked('filter', 'Non') %}
+		{% for customer in customers %}
+				{% if customer.status == 'Booked' and customer.appointment.type =='Non neuro' %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}
+
+
+	{% elif data['capDay'] and checked('filter', 'Neuro') %}		
+	 	{% for customer in customers %}
+				{% if customer.appointment.date =='6/11/2019' and  customer.status == 'Booked' and customer.appointment.type =='Neuro' %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}	
+
+
+{% elif  checked('filter', 'Neuro') %}
+		{% for customer in customers %}
+				{% if customer.status == 'Booked' and customer.appointment.type =='Neuro' %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}			
+
+ 	{% elif data['capDay'] and checked('filter', 'Complex') %}		
+	 	{% for customer in customers %}
+				{% if customer.appointment.date =='6/11/2019' and  customer.status == 'Booked' and customer.appointment.type =='Complex neuro' %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}	
+
+
+{% elif  checked('filter', 'Complex') %}
+		{% for customer in customers %}
+				{% if customer.status == 'Booked' and customer.appointment.type =='Complex neuro' %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}		
+
+
+		
+
+{% elif  data['capDay'] and checked('filter', 'Re referrals') %}
+		{% for customer in customers %}
+				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.referral.type =='Re referral' %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}
+
+{% elif checked('filter', 'Re referrals') %}
+		{% for customer in customers %}
+				{% if customer.status == 'Booked' and customer.referral.type =='Re referral' %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}		
+
+{% elif  data['capDay'] and checked('filter', 'New referrals') %}
+		{% for customer in customers %}
+				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.referral.type =='New referral' %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}
+{% elif checked('filter', 'New referrals') %}
+		{% for customer in customers %}
+				{% if customer.status == 'Booked' and customer.referral.type =='New referral' %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}		
+
+{% elif  data['capDay'] and checked('filter', 'ucb') %}
+		{% for customer in customers %}
+				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.caseflags =='ucb' %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}
+
+   {% elif checked('filter', 'ucb') %}
+		{% for customer in customers %}
+				{% if customer.status == 'Booked' and customer.caseflags =='ucb' %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}		
+
+
+	{% elif  data['capDay'] and checked('filter', 'requirements') or  data['capDay'] and checked('filter', 'requirementstwo')%}
+
+		{% for customer in customers %}
+				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.appointment.requirement %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}
+
+		{% elif  checked('filter', 'requirements') or checked('filter', 'requirementstwo') %}
+
+		{% for customer in customers %}
+				{% if customer.status == 'Booked' and customer.appointment.requirement %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}
+
+			{% elif  data['capDay'] and checked('filter', 'taxi') %}
+
+		{% for customer in customers %}
+				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.appointment.requirement =='taxi' %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}
+
+			{% elif checked('filter', 'taxi') %}
+
+		{% for customer in customers %}
+				{% if customer.status == 'Booked' and customer.appointment.requirement =='taxi' %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}
+
+			{% elif  data['capDay'] and  checked('filter', 'interpreter') %}
+
+		{% for customer in customers %}
+				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.appointment.requirement =='interpreter' %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}
+
+			{% elif checked('filter', 'interpreter') %}
+
+		{% for customer in customers %}
+				{% if customer.status == 'Booked' and customer.appointment.requirement =='interpreter' %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}
+
+				{% elif  data['capDay'] and  checked('filter', 'gender') %}
+
+		{% for customer in customers %}
+				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.appointment.requirement =='gender' %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}
+
+			{% elif checked('filter', 'gender') %}
+
+		{% for customer in customers %}
+				{% if customer.status == 'Booked' and customer.appointment.requirement =='gender' %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}
+
+					{% elif  data['capDay'] and  checked('filter', 'audio') %}
+
+		{% for customer in customers %}
+				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.appointment.requirement =='audio' %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}
+
+				{% elif checked('filter', 'audio') %}
+
+		{% for customer in customers %}
+				{% if customer.status == 'Booked' and customer.appointment.requirement =='audio' %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}
+
+					{% elif  data['capDay'] and  checked('filter', 'access') %}
+
+		{% for customer in customers %}
+				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' and customer.appointment.requirement =='accessible' %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}
+
+					{% elif checked('filter', 'access') %}
+
+		{% for customer in customers %}
+				{% if customer.status == 'Booked' and customer.appointment.requirement =='accessible' %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}
+
+		
+
+	{% elif data['capDay'] %}
+	
+		{% for customer in customers %}
+				{% if customer.appointment.date =='6/11/2019' and customer.status == 'Booked' %}
+					{% include path+"/scenario3/_table-row-caselistv2.html" %}
+				{% endif %}
+		{% endfor %}
+
+	{% else %}			
+		{% for customer in customers %}    
+				{% include path+"/scenario3/_table-row-caselistv2.html" %}
+		{% endfor %}   
+	{%endif%}
+
+              </table>
+
+
+</form>
+{% endblock %}
+
+
+	
+
+
+
+
+

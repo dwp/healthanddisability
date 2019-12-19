@@ -14,29 +14,28 @@
   <div class="column-two-thirds">
 
 	<p class="caption-large" class="mb0">File report: Treat as having LCW due to regular treatment</p>
-	<h1 class="heading-large mt10">Evidence you've considered</h1>
+	<h1 class="heading-large mt10">Which evidence supports your recommendation?</h1>
 
 <div class="form-group">
   <fieldset>
 
     <legend>
-      <span class="body-text">Select evidence you've considered from the list below.</span>
+      <span class="body-text">Select evidence from the list below that you'll use to justify your recommendation.</span>
     </legend>
-    <div class="multiple-choice">
+
+	<div class="multiple-choice">
       <input id="waste-type-3" name="waste-types" type="checkbox" value="waste-mines">
       <label for="waste-type-3">Questionnaire (UC50)</label>
     </div>
-    <div class="multiple-choice">
-      <input id="waste-type-2" name="waste-types" type="checkbox" value="waste-mines">
-      <label for="waste-type-2">Specialist letter</label>
+  	<div class="multiple-choice">
+      <input id="waste-type-3" name="waste-types" type="checkbox" value="waste-mines">
+      <label for="waste-type-3">Specialist letter</label>
     </div>
   </fieldset>
 </div>
 
 
-<form action="previousReports" method="post">
-
-{% include path+"/scenario_03k/autocomplete/pbaEvidenceAutocomplete.html" %}
+<form action="diagnosedConditions" method="post">
 
 
 <p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
@@ -45,14 +44,19 @@
 
   </div><!-- column -->
 
-{# <div class="column-one-third">
+
+<!--
+<div class="column-one-third">
+
 <div class="summary-panel">
 <h4 class="bold mb10">Summary</h4>
-<p class="font-small">Treat as LCW: In residential rehab</p>
-</div> #}
+<p class="font-small">LCWRA: moving around and climbing steps without someone’s help</p>
+</div>
 
 
-  </div><!-- right hand column -->
+</div>-->
+<!-- right hand column -->
+
 
 
 </div><!-- row -->
@@ -64,7 +68,7 @@
 
 {% block page_scripts %}
 
-{% include path+"/scenario_03k/autocomplete/_autocompletedata.html" %}
+{% include path+"/scenario_03i/autocomplete/_autocompletedata.html" %}
   
  
 {% endblock %} 
