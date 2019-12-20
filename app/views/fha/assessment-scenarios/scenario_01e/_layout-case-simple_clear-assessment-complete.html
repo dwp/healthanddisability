@@ -45,8 +45,8 @@
                   </ul>
                 </div> -->
                 
-                <h1 class="heading-xlarge"><span>Customer details</span>{% block citizen_detail %}Michael Morris{% endblock %}</h1>
-                <p class="mb20"><span class="visually-hidden">National insurance number</span>QQ 69 17 54 C</p>
+                <h1 class="heading-xlarge">{% block citizen_detail %}Michael Morris{% endblock %}</h1>
+                {# <p class="mb20"><span class="visually-hidden">National insurance number</span>QQ 69 17 54 C</p> #}
                
               </div><!-- column -->
               
@@ -55,14 +55,14 @@
               
               <div class="column-half head-customer-extended">
               
-                <div class="header-left-col mt20">
-                 <h2>Date of birth</h2>
-                 <p>15 August 1991  <!--{{customer.dateOfBirth |formatDate('D MMMM YYYY') }}--></p>
+                <div class="header-left-col">
+                 <h2>National insurance number</h2>
+                 <p>QQ 69 17 54 C</p>
                 </div>
         
-              <div class="header-right-col mt20">
-                   <h2>Benefit</h2>
-                 <p>Universal credit</p>
+              <div class="header-right-col">
+                   <h2>Date of birth</h2>
+                 <p>15 August 1991  <!--{{customer.dateOfBirth |formatDate('D MMMM YYYY') }}--></p>
               </div>
               
               <!-- / column half -->

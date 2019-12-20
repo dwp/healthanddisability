@@ -1,4 +1,4 @@
-{% extends path+"/scenario_01e/_layout-case-simple_full-width.html" %}
+{% extends path+"/scenario_03k/_layout-case-simple.html" %}
 
 {% block citizen_content %}
 
@@ -9,24 +9,13 @@
 
 <p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
 
-<p class="caption-large mb10">LCWRA: severe functional impairment</p>
-<h1 class="heading-large" style="margin-top:0px !important;">Time until Michael's case needs reviewing</h1>
-
-
 
 
 <div class="grid-row">
   <div class="column-two-thirds">
 
-	
-	
-	
-<!--
-{% if data['mental-health'] %}
-	<form method="post" action="personalSummaryStatement">
-{% else %}
-	<form method="post" action="mentalHealthAssessmentDecision">
-{% endif %}-->
+<p class="caption-large" class="mb0">File report: Treat as having LCW due to regular treatment</p>
+<h1 class="heading-large mt10">Time until Aaron's case needs considering</h1>
 
 <form method="post" action="miniReport">
 
@@ -53,15 +42,11 @@
 					    </div>
 							<div class="multiple-choice">
 					      <input id="2years" name="reviewPeriod" type="radio" value="2years">
-					      <label for="2years">within 2 years</label>
+					      <label for="2years">2 years</label>
 					    </div>
 							<div class="multiple-choice">
 					      <input id="longerterm" name="reviewPeriod" type="radio" value="longerterm">
 					      <label for="longerterm">in the longer term</label>
-					    </div>
-							<div class="multiple-choice">
-					      <input id="notrequired" name="reviewPeriod" type="radio" value="notrequired">
-					      <label for="notrequired">no future assessments required</label>
 					    </div>
 					    
 				    </fieldset>
@@ -69,14 +54,29 @@
 	</div>
 	
 <div class="form-group">
-			<label class="form-label" for="justify">Give details</label>
-			<textarea class="form-control form-control-1-1" name="justifyTreatLCWRA" id="justify" rows="3"></textarea>
+			<label class="form-label" for="justify">Write your justification</label>
+			<textarea class="form-control form-control-1-1" name="reviewPeriodDetails" id="justify" rows="4"></textarea>
 		</div>
 
-    <p><input type="submit" class="button" value="Generate report" id="submitButton"></p>
+    <p><input type="submit" class="button" value="Save and review" id="submitButton"></p>
 		</form>	
 
   </div><!-- column -->
+
+<div class="column-one-third">
+
+<div class="summary-panel">
+<h4 class="bold mb10">Justification so far</h4>
+<p class="font-small">The {{ keyEvidence }} questionnaire (UC50) and specialist letter indicates that the claimant is undergoing regular {{ treatmentName }} Haemodialysis treatment for {{ diagnosedConditions }}, this suggests they should be treated as having limited capability for work.</p>
+<p class="font-small">{{ evidenceKeyFacts }}<p>
+<p class="font-small">{{ nonSupportGroupDetail }}<p>
+<p></p>
+</div>
+
+</div>
+
+  </div><!-- right hand column -->
+
 </div><!-- row -->
 
 

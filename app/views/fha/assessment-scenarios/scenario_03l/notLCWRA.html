@@ -1,0 +1,81 @@
+{% extends path+"/scenario_03k/_layout-case-simple.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<form action="reviewPeriod" method="post">
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	<p class="caption-large" class="mb0">File report: Treat as having LCW due to regular treatment</p>
+	<h1 class="heading-large mt10">Not LCWRA justification</h1>
+	<p>Select any of the statements below to edit where necessary.</p>
+
+<div class="form-group">
+	<label class="form-label" for="evidenceKeyFacts">Terminal illness</label>
+	<textarea class="form-control form-control-1-1" name="evidenceKeyFacts" id="evidenceKeyFacts" rows="2">The available evidence does not suggest that death within 6 months is likely to occur.</textarea>
+<br>
+	<label class="form-label" for="nonSupportGroupDetail">Chemotherapy or radiotherapy</label>
+	<textarea class="form-control form-control-1-1" name="nonSupportGroupDetail" id="nonSupportGroupDetail" rows="3">From the available evidence the client is not currently receiving or recovering from debilitating chemotherapy or radiotherapy for cancer. They are also unlikely to receive such treatment in the next 6 months.</textarea>
+<br>
+	<label class="form-label" for="nonSupportGroupDetail">Risk to self or others</label>
+	<textarea class="form-control form-control-1-1" name="nonSupportGroupDetail" id="nonSupportGroupDetail" rows="3">The available evidence does not suggest there would be substantial mental or physical risk if the client were found capable of work related activity.</textarea>
+<br>
+	<label class="form-label" for="nonSupportGroupDetail">Risks associated with pregnancy</label>
+	<textarea class="form-control form-control-1-1" name="nonSupportGroupDetail" id="nonSupportGroupDetail" rows="3"></textarea>
+<br>
+	<label class="form-label" for="nonSupportGroupDetail">Moving around and climbing steps without someone’s help / Standing, sitting and moving between the two</label>
+	<textarea class="form-control form-control-1-1" name="nonSupportGroupDetail" id="nonSupportGroupDetail" rows="3">The available evidence does not suggest that the client has severely restricted musculo-skeletal or cardio-respiratory function such that they would be unable to mobilise more than 50 metres, or transfer between two seats without assistance from another person.</textarea>
+<br>
+	<label class="form-label" for="nonSupportGroupDetail">Reaching / Picking things up and moving them / Using your hands</label>
+	<textarea class="form-control form-control-1-1" name="nonSupportGroupDetail" id="nonSupportGroupDetail" rows="3">The available evidence suggests the client is likely to be able to raise an arm as if to a top pocket, pick up and move a 0.5 litre carton of liquid, and press a button or turn book pages.</textarea>
+<br>
+	<label class="form-label" for="nonSupportGroupDetail">Speaking, writing and typing / Hearing and reading</label>
+	<textarea class="form-control form-control-1-1" name="nonSupportGroupDetail" id="nonSupportGroupDetail" rows="3">The available evidence suggests that the client would be able to both convey and understand a simple message.</textarea>
+<br>
+	<label class="form-label" for="nonSupportGroupDetail">Controlling your bowels and bladder</label>
+	<textarea class="form-control form-control-1-1" name="nonSupportGroupDetail" id="nonSupportGroupDetail" rows="3">The available evidence suggests that it is likely that the client does have full control of their bladder and bowels.</textarea>
+<br>
+	<label class="form-label" for="nonSupportGroupDetail">Learning to do new tasks</label>
+	<textarea class="form-control form-control-1-1" name="nonSupportGroupDetail" id="nonSupportGroupDetail" rows="3">The available evidence suggests that the client would be able to learn to complete a simple task and at least two sequential personal actions.</textarea>
+</div>
+
+
+
+<p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+      </form>
+
+
+  </div><!-- column -->
+
+<div class="column-one-third">
+
+<div class="summary-panel">
+<h4 class="bold mb10">Justification so far</h4>
+<p class="font-small">The {{ keyEvidence }} questionnaire (UC50) and specialist letter indicates that the claimant is undergoing regular {{ treatmentName }} Haemodialysis treatment for {{ diagnosedConditions }}, this suggests they should be treated as having limited capability for work.</p>
+</div>
+
+</div>
+<!-- right hand column -->
+
+
+
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+
+{% block page_scripts %}
+
+{% include path+"/scenario_03i/autocomplete/_autocompletedata.html" %}
+  
+ 
+{% endblock %} 
