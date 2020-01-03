@@ -1,0 +1,133 @@
+{% extends path+"/scenario_03k/_layout-case-simple.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<form action="reviewPeriod" method="post">
+
+<div class="grid-row">
+  <div>
+
+	<p class="caption-large" class="mb0">File report: Treat as having LCW due to regular treatment</p>
+	<h1 class="heading-large mt10">Not LCWRA justification</h1>
+
+
+
+<div class="form-group">
+  <fieldset>
+
+    <legend class="mb20">
+      {# <h3 class="heading-medium">Which types of waste do you transport regularly?</h3> #}
+      <span class="body-text">Review the statements below and select any that you need to edit:</span>
+    </legend>
+
+    <div class="multiple-choice">
+      <input id="not-lcwra-1" name="not-lcwra" type="checkbox" value="terminal-illness">
+      <label for="not-lcwra-1">Terminal illness</label>
+	  <label class="form-hint">The available evidence does not suggest that death within 6 months is likely to occur.</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="not-lcwra-2" name="not-lcwra" type="checkbox" value="chemo">
+      <label for="not-lcwra-2">Chemotherapy or radiotherapy</label>
+	  <label class="form-hint">From the available evidence the client is not currently receiving or recovering from debilitating chemotherapy or radiotherapy for cancer. They are also unlikely to receive such treatment in the next 6 months.</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="not-lcwra-3" name="not-lcwra" type="checkbox" value="risk">
+      <label for="not-lcwra-3">Risk to self or others</label>
+	  <label class="form-hint">The available evidence does not suggest there would be substantial mental or physical risk if the client were found capable of work related activity.</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="not-lcwra-4" name="not-lcwra" type="checkbox" value="risk">
+      <label for="not-lcwra-4">Risks associated with pregnancy</label>
+	  <label class="form-hint">Lorem ipsum dolor est.</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="not-lcwra-5" name="not-lcwra" type="checkbox" value="risk">
+      <label for="not-lcwra-5">Moving around and climbing steps without someone’s help / Standing, sitting and moving between the two</label>
+	  <label class="form-hint">The available evidence does not suggest that the client has severely restricted musculo-skeletal or cardio-respiratory function such that they would be unable to mobilise more than 50 metres, or transfer between two seats without assistance from another person.</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="not-lcwra-6" name="not-lcwra" type="checkbox" value="risk">
+      <label for="not-lcwra-6">Reaching / Picking things up and moving them / Using your hands</label>
+	  <label class="form-hint">The available evidence suggests the client is likely to be able to raise an arm as if to a top pocket, pick up and move a 0.5 litre carton of liquid, and press a button or turn book pages.</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="not-lcwra-7" name="not-lcwra" type="checkbox" value="risk">
+      <label for="not-lcwra-7">Speaking, writing and typing / Hearing and reading</label>
+	  <label class="form-hint">The available evidence suggests that the client would be able to both convey and understand a simple message.</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="not-lcwra-8" name="not-lcwra" type="checkbox" value="risk">
+      <label for="not-lcwra-8">Learning to do new tasks</label>
+	  <label class="form-hint">The available evidence suggests that the client would be able to learn to complete a simple task and at least two sequential personal actions.</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="not-lcwra-9" name="not-lcwra" type="checkbox" value="risk">
+      <label for="not-lcwra-9">Learning to do new tasks</label>
+	  <label class="form-hint">The available evidence suggests that the client would be able to learn to complete a simple task and at least two sequential personal actions.</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="not-lcwra-10" name="not-lcwra" type="checkbox" value="risk">
+      <label for="not-lcwra-10">Being aware of hazards and danger / Planning, starting and finishing everyday tasks</label>
+	  <label class="form-hint">The available evidence suggests that the client does not have reduced awareness of hazards, likely to lead to a significant risk of injury to self or others, or damage to property or possessions.</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="not-lcwra-11" name="not-lcwra" type="checkbox" value="risk">
+      <label for="not-lcwra-11">Coping with changes to your daily routine</label>
+	  <label class="form-hint">The available evidence does not suggest the client has a mental disorder or cognitive impairment, such that they could not cope with any change to the extent that day to day life cannot be managed.</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="not-lcwra-12" name="not-lcwra" type="checkbox" value="risk">
+      <label for="not-lcwra-12">Meeting and being with people</label>
+	  <label class="form-hint">The available evidence does not suggest the client cannot engage in social contact due to difficulty relating to others, or to their own significant distress, due to cognitive impairment or mental disorder.</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="not-lcwra-13" name="not-lcwra" type="checkbox" value="risk">
+      <label for="not-lcwra-13">Behaving appropriately around other people</label>
+	  <label class="form-hint">The available evidence does not suggest the client has cognitive impairment or a mental disorder leading to daily episodes of aggressive or disinhibited behaviour, which are uncontrollable and would be unreasonable in any workplace.</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="not-lcwra-14" name="not-lcwra" type="checkbox" value="risk">
+      <label for="not-lcwra-14">Eating and drinking</label>
+	  <label class="form-hint">The available evidence suggests that the client's physical and mental function is at a level which would allow them to feed themselves, and drink, chew and swallow independently.</label>
+    </div>
+  </fieldset>
+</div>
+
+
+<p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+      </form>
+
+
+  </div><!-- column -->
+
+{# <div class="column-one-third">
+
+<div class="summary-panel">
+<h4 class="bold mb10">Justification so far</h4>
+<p class="font-small">The {{ keyEvidence }} questionnaire (UC50) and specialist letter indicates that the claimant is undergoing regular {{ treatmentName }} Haemodialysis treatment for {{ diagnosedConditions }}, this suggests they should be treated as having limited capability for work.</p>
+</div>
+
+</div> #}
+<!-- right hand column -->
+
+
+
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+
+{% block page_scripts %}
+
+{% include path+"/scenario_03i/autocomplete/_autocompletedata.html" %}
+  
+ 
+{% endblock %} 

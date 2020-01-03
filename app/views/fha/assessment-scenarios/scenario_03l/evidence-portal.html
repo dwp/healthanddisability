@@ -1,0 +1,355 @@
+{% extends path+"/scenario_03k/_layout-case-simple_claimant-portal.html" %}
+
+
+{% block actioncolumn %}
+   
+
+ <div class="caseStatus">
+ 
+
+ 
+ 
+{% if data['pbachoice']=='no'%}
+ 
+	 <h2 class="main-status"><span>Current case status</span>Appointment booked</h2>
+	 
+	 
+	 {% elif data['pbachoice']=='yes'%}
+	 
+	 <h2 class="main-status"><span>Current case status</span>Paper based review</h2>
+	 <!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/not-testing" class="button">Start assessment</a></h3>-->
+	 
+	 
+	 {% else %}
+	 
+ 
+
+{% if data['evidencePath']=='ev-ftf'%}
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+	
+	<h2 class="main-status"><span>Current case status</span>Second review</h2>
+		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal-second" class="button">Make recommendation</a></h3>
+		{% else %}
+		
+	<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
+	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/record-evidence" class="button">Record GP report</a></h3>
+	{% endif %}
+	
+	
+	{% elif data['evidencePath']=='ev-pba'%}
+	
+	{% if data['evidenceRecorded']=='record-yes'%}
+		<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal" class="button">Make recommendation</a></h3>
+		{% else %}
+		<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
+	{% endif %}
+	
+	
+	{% else %}
+	
+
+	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+	<h3 class="primary-action"><span>Suggested case action</span>
+	<a href="../rec-portal" class="button">Make recommendation</a></h3>
+	
+	
+
+{% endif %}
+
+
+{% endif %}
+
+
+</div>
+
+{% endblock %}
+
+
+{% block citizen_content %}
+
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+
+	{{ nav.scenario_tabs("evidence-portal",1,path1, customer._id) }}
+
+  <div class="grid-row">
+
+    <div class="column-full">
+        
+
+
+
+<h1 class="heading-large mt10">Evidence</h1>
+
+
+
+<!-------- Portal --------->
+
+<div class="portal-display">
+		
+	
+	
+	<!------ ROW START ------>
+	<div class="grid-row">
+		
+		
+		<!---------------------------------- Card ---------------------------------->
+		<div class="column-half">
+		
+			<div class="portal-card">
+				<div class="portal-head">
+					<h3>What we have</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+				
+				
+
+				
+				
+				
+				<h4 class="bold">Last recorded evidence</h4>
+
+					<table class="evidence-list">
+						<caption>Evidence item</caption>
+						
+						<thead>
+							<tr>
+								<th>Evidence type</th>
+								<th>Date recorded</th>
+							</tr>
+						
+						
+						
+						
+						
+		
+						
+						
+							
+						
+						
+						
+						<tbody>
+						
+						
+						{% if data['appointmentReferral2']%}
+								  		<tr>
+											<td><a href="/{{path }}/scenario6/referralJustify">Appointment referral justification &ndash; second review</a></td>
+											<td>2 September 2019</td>
+										</tr>
+																		  	
+								  	{% endif %}
+						
+						
+						
+						{% if data['pbachoice']=='yes'%}
+						
+									<tr>
+										<td><a href="/{{path }}/scenario6/not-testing">Paper based review justification</a></td>
+										<td>11 August 2019</td>
+									</tr>
+						
+						{% endif %}
+						
+						
+						
+							{% if data['evidenceChoice']=='ev-gp'%}
+	  	
+	  	
+						  		{% if data['evidenceRecorded']=='record-yes'%}
+						  		
+						  		
+						  			<tr>
+										<td><a href="/{{path }}/scenario6/not-testing">GP report</a></td>
+										<td>10 August 2019</td>
+									</tr> 		
+						  		
+						  		{% endif %}
+						  		
+						  	{% endif %}
+						  		
+						  		
+						  		
+						  	{% if data['evidenceChoice']=='ev-fr'%}
+						  		
+						  		
+						  		 {% if data['evidenceRecorded']=='record-yes'%}
+						  		
+						  		
+						  			<tr>
+										<td><a href="/{{path }}/scenario6/not-testing">Factual report</a></td>
+										<td>10 August 2019</td>
+									</tr> 		
+						  		
+						  		{% endif %}
+	
+						  		  	
+						  	{% endif %}
+						  	
+						  	
+
+						  	
+						  	
+						  		{% if data['appointmentReferral']%}
+								  		<tr>
+											<td><a href="/{{path }}/scenario6/referralJustify">Appointment referral justification</a></td>
+											<td>3 August 2019</td>
+										</tr>
+																		  	
+								  	{% endif %}
+								  	
+									<tr>
+											<td><a href="">Questionnaire (UC50)</a></td>
+											<td>11 October 2019</td>
+									</tr>
+									<tr>
+											<td><a href="">Specialist letter</a></td>
+											<td>8 October 2019</td>
+									</tr> 	
+								  	
+								  	
+							</tbody>
+					</table>
+					
+					<p class="view-all"><a href="/{{path }}/scenario6/evidence-full" class="secondary-invert">View historical evidence</a></p>
+					
+					<!--
+					<div class="previousDecisions">
+						<h4>Previous decisions</h4>
+
+						
+						
+						<table class="evidence-list">
+							<caption>Evidence item</caption>
+							
+							<thead>
+								<tr>
+									<th>Decision</th>
+									<th>Date of decision</th>
+								</tr>
+							</thead>
+							
+							<tbody>
+								<tr>
+									<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+									<td>28 June 2010</td>
+								</tr>
+							</tbody>
+						</table>
+						
+						<p class="view-all"><a href="/{{path }}/scenario6/not-testing" class="secondary-invert">Add or edit a previous decision</a></p>
+
+						
+						
+						
+					</div>-->
+					
+				</div>
+				<!-- / inner card -->
+			</div>
+			<!-- / portal card -->
+			
+			
+			
+						
+		</div>
+		<!---------------------------------- / Card ---------------------------------->
+		
+
+		
+		
+		<!---------------------------------- Card ---------------------------------->
+		<div class="column-half">
+		
+			<div class="portal-card">
+				<div class="portal-head">
+					<h3>Record</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+<p class="bold">Choose the type of evidence you want to record:</p>
+					<ul class="action-list">
+						
+							{% if data['evidenceChoice']=='ev-gp'%}
+								<li><a href="/{{path }}/scenario6/record-evidence" class="secondary-invert">GP report</a></li>
+								{% else %}
+							{% endif %}		
+							{% if data['evidenceChoice']=='ev-fr'%}
+								<li><a href="/{{path }}/scenario6/record-evidence" class="secondary-invert">Factual report</a></li>
+								{% else %}
+							{% endif %}
+						<li><a href="#" class="secondary-invert">Record a telephone conversation</a></li>
+						<li><a href="#" class="secondary-invert">Record other evidence</a></li>
+					</ul>
+	
+				</div>
+				<!-- / inner card -->
+			</div>
+			<!-- / portal card -->
+			
+			
+	
+			
+			
+		</div>
+		<!---------------------------------- / Card ---------------------------------->
+		
+		
+		
+		
+		
+				
+	</div>
+	<!------ ROW END ------->
+	
+	
+</div>
+
+<!------- / PORTAL END ------->
+
+
+
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

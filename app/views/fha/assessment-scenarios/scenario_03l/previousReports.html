@@ -1,0 +1,67 @@
+{% extends path+"/scenario_03k/_layout-case-simple.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	<p class="caption-large" class="mb0">File report: Treat as having LCW due to regular treatment</p>
+	<h1 class="heading-large mt10">Previous reports you've seen</h1>
+
+<label class="form-label mt20">
+List dates of previous medical reports you've seen.
+<span class="form-hint mt5 mb5">For example, March 2018.</span>
+</label>
+
+
+
+<form action="keyEvidence" method="post">
+
+<textarea class="form-control form-control-3-4 mb20" name="previousReportDates" id="previousreports" rows="1">{{ previousReportDates }}</textarea>
+
+<p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+      </form>
+
+
+  </div><!-- column -->
+
+{# <div class="column-one-third">
+<div class="summary-panel">
+<h4 class="bold mb10">Summary</h4>
+<p class="font-small">Treat as LCW: In residential rehab</p>
+<p class="font-small bold mb10">Evidence considered</p>
+<ul >
+	<li class="mb5">Fit note (Med3)</li>
+	<li class="mb5">Fit note (Med3)</li>
+	<li class="mb5">GP report (113)</li>
+	<li class="mb5">Medical report (UC85)</li>
+	<li class="mb5">Questionnaire (UC50)</li>
+	<li>Specialist letter</li>
+</ul>
+</div> #}
+
+
+  </div><!-- right hand column -->
+
+
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+
+{% block page_scripts %}
+
+{% include path+"/scenario_03k/autocomplete/_autocompletedata.html" %}
+  
+ 
+{% endblock %} 
