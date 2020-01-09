@@ -1,0 +1,102 @@
+{% extends path+"/scenario_03i/_layout-case-simple.html" %}
+
+{% block citizen_content %}
+
+<style type="text/css">
+.multiple-choice [type=checkbox] + label::before{
+    width: 22px;
+    height: 22px;}
+</style>
+
+{{ data.nuggets | log }}
+
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+<form action="previousReports" method="post">
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	<p class="caption-large" class="mb0">File report: LCWRA due to mobilising and using steps</p>
+	<h1 class="heading-large mt10">Evidence you've considered</h1>
+
+<div class="form-group">
+  <fieldset>
+
+    <legend>
+      <span class="body-text">Select evidence you've considered from the list below.</span>
+    </legend>
+
+    <div class="multiple-choice mt20">
+      <input id="evidence-type-1" name="waste-types" type="checkbox" value="evidence-113">
+      <label for="evidence-type-1">113</label>
+    </div>
+    <div class="multiple-choice mt20">
+      <input id="evidence-type-2" name="waste-types" type="checkbox" value="evidence-BF223">
+      <label for="evidence-type-2">BF223</label>
+    </div>
+    <div class="multiple-choice mt20">
+      <input id="evidence-type-3" name="waste-types" type="checkbox" value="evidence-care-plan">
+      <label for="evidence-type-3">Care Plan</label>
+    </div>
+    <div class="multiple-choice mt20">
+      <input id="evidence-type-4" name="waste-types" type="checkbox" value="evidence-dna1">
+      <label for="evidence-type-4">DNA1</label>
+    </div>
+    <div class="multiple-choice mt20">
+      <input id="evidence-type-5" name="waste-types" type="checkbox" value="evidence-frr2">
+      <label for="evidence-type-5">FRR2</label>
+    </div>
+    <div class="multiple-choice mt20">
+      <input id="evidence-type-6" name="waste-types" type="checkbox" value="evidence-frr3">
+      <label for="evidence-type-6">FRR3</label>
+    </div>
+    <div class="multiple-choice mt20">
+      <input id="evidence-type-7" name="waste-types" type="checkbox" value="evidence-frr4">
+      <label for="evidence-type-7">FRR4</label>
+    </div>
+  </fieldset>
+</div>
+
+
+
+
+{% include path+"/scenario_03i/autocomplete/pbaEvidenceAutocomplete.html" %}
+
+
+<p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+      </form>
+
+
+  </div><!-- column -->
+
+
+
+{# <div class="column-one-third">
+
+<div class="summary-panel">
+<h4 class="bold mb10">Summary</h4>
+<p class="font-small">LCWRA: moving around and climbing steps without someone’s help</p>
+</div> #}
+
+
+</div><!-- right hand column -->
+
+
+
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+
+{% block page_scripts %}
+
+{% include path+"/scenario_03i/autocomplete/_autocompletedata.html" %}
+  
+ 
+{% endblock %} 
