@@ -2,43 +2,35 @@
 
 {% block citizen_content %}
 
-{{ data.nuggets | log }}
+				{{ data.nuggets | log }}
 
+				<p class="no-kdBar mb20">
+								<a href="javascript: history.go(-1)" class="link-back">Back</a>
+				</p>
 
+				<div class="grid-row">
+								<div class="column-two-thirds">
 
-<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+												<p class="caption-large mb0">File report: LCWRA due to mobilising and using steps</p>
+												<h1 class="heading-large mt10">Previous reports you've seen</h1>
 
+												<form action="keyEvidence" method="post">
+																<label class="form-label mt20">
+																				List dates of previous medical reports you've seen.
+																				<span class="form-hint mt5 mb5">For example, March 2018.</span>
+																</label>
 
-<form action="keyEvidence" method="post">
+																<div class="form-group mb10">
+																				<textarea class="form-control form-control-3-4 mb20" name="previousReportDates" id="previousreports" rows="1">{{ previousReportDates }}</textarea>
+																</div>
 
+																<p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+												</form>
 
-<div class="grid-row">
-  <div class="column-two-thirds">
+								</div>
+								<!-- column -->
 
-	<p class="caption-large" class="mb0">File report: LCWRA due to moving around and climbing steps</p>
-	<h1 class="heading-large mt10">Previous reports you've seen</h1>
-
-<label class="form-label mt20">
-List dates of previous medical reports you've seen.
-<span class="form-hint mt5 mb5">For example, March 2018.</span>
-</label>
-
-
-
-
-
-
-<textarea class="form-control form-control-3-4 mb20" name="previousReportDates" id="previousreports" rows="1">{{ previousReportDates }}</textarea>
-
-<p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
-      </form>
-
-
-  </div><!-- column -->
-
-
-
-{# <div class="column-one-third">
+								{# <div class="column-one-third">
 
 <div class="summary-panel">
 <h4 class="bold mb10">Summary</h4>
@@ -52,21 +44,16 @@ List dates of previous medical reports you've seen.
 </ul>
 </div> #}
 
+				</div>
+				<!-- right hand column -->
 
-</div><!-- right hand column -->
-
-
-
-</div><!-- row -->
-
-
+</div>
+<!-- row -->
 
 {% endblock %}
 
-
 {% block page_scripts %}
 
-{% include path+"/scenario_03i/autocomplete/_autocompletedata.html" %}
-  
- 
-{% endblock %} 
+{% include path + "/scenario_03i/autocomplete/_autocompletedata.html" %}
+
+{% endblock %}
