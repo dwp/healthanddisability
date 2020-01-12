@@ -4,7 +4,24 @@
 
 {{ data.nuggets | log }}
 
+<style type="text/css">
+  .multiple-choice {
+      padding: 4px 10px 9px 40px;
+      margin-bottom:10px;}
+    .multiple-choice [type=checkbox] + label::before {
+      width: 22px;
+      height: 22px;
+      padding-top: 2px !important;
+    }
 
+    .multiple-choice label::after {
+      top: 9px !important;
+      left: 7px !important;
+      width: 10px !important;
+      height: 5px !important;
+      border-width: 0 0 3px 3px !important;
+    }
+</style>
 
 <p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
 
@@ -13,15 +30,19 @@
 <div class="grid-row">
   <div class="column-two-thirds">
 
-	<p class="caption-large" class="mb0">File report: LCWRA due to mobilising and using steps</p>
+	<p class="caption-large mb0">File report: LCWRA due to mobilising and using steps</p>
 	<h1 class="heading-large mt10">Which evidence supports your recommendation?</h1>
 
-<div class="form-group">
+<form action="diagnosedConditions" method="post">
+
+<div class="form-group mb20">
   <fieldset>
 
     <legend>
       <span class="body-text">Select evidence from the list below that you'll use to justify your recommendation.</span>
     </legend>
+
+
 
     <div class="multiple-choice mt20">
       <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">
@@ -37,9 +58,6 @@
     </div>
   </fieldset>
 </div>
-
-
-<form action="diagnosedConditions" method="post">
 
 
 <p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
