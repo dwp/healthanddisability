@@ -20,6 +20,8 @@ function calculateTotals (plan, day) {
 function ViewPlan (req, res, next) {
   if (!req.session.viewAndEditPip) {
     console.log('No session key')
+
+
     req.session.viewAndEditPip = fakeData
   }
 
