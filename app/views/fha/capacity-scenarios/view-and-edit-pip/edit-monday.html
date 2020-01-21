@@ -1,0 +1,192 @@
+{% extends path+"/_layout.html" %}
+{% block assess_content %}
+<main id="content" role="main" class="main-content">
+    <div class="container">
+        <div class="grid-row">
+            <div class="column-three-quarters capacity">
+                <a href="javascript: history.go(-1)" class="link-back">Back</a>
+                <h1 class="heading-large">Edit capacity for {% include path+"/scenario3/_ACname.html" %}</h1>
+                <h2 class="heading-medium"> {% include path+"/scenario3/_Mon_Date.html" %}</h2>
+                <div class="panel panel-info panel-instruction"><h2 class="heading-small">How to edit a plan</h2>
+                    <ul class="numeric" data-id="">
+                        <li>
+                            <span class="circle circle-step circle-white">1</span>
+                            <h2 class="govuk-heading-m">If you want to add to your capacity just add the amount to the
+                                relevent timeslot</h2>
+                        </li>
+                        <li>
+                            <span class="circle circle-step circle-white">2</span>
+                            <h2 class="govuk-heading-m">If you want to remove capacity just take away the amount from
+                                the relevent timeslot, you can only take away available capacity</h2>
+                        </li>
+                        <li>
+                            <span class="circle circle-step circle-white">3</span>
+                            <h2 class="govuk-heading-m">If you have capacity to take unacceptable claimant behaviour
+                                (UCB), add this to the relevant time slot</h2>
+                        </li>
+                    </ul>
+                </div>
+                <p>
+                    <a href="create-plan-times2" class="secondary-invert">Add or edit slot times</a>
+                </p>
+                <form class="form" action="edit-monday" method="post">
+
+                    <table class="profile-table edit">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <!-- <th>Assessment Centre</th> -->
+                            <th class="col5"><span></span>Total<br> <span class="block">Opened</span></th>
+                            <th>HCP's<br> <span>Available</span><span>Booked</span></th>
+                            {% if checked('e_benefits','ben2') %}
+                            <th>IIDB<br> <span>Available</span><span>Booked</span></th>
+                            {% endif %}
+                            <th class="col6">UCB<br><span>Available</span><span>Booked</span></th>
+                        </tr>
+                        </thead>
+
+                        <style>
+                            .flags {
+                                width: 50%;
+                                color: #6f777b;
+                                font-size: 16px;
+                                text-align: center;
+                                float: right;
+                                margin-top: 5px;
+                            }
+
+                            table.profile-table.edit td.col5 input[readonly] {
+                                background: #555;
+                                border-color: #555;
+                                color: #fff;
+                            }
+
+                            table.profile-table input {
+                                border-color: #000;
+
+                            }
+
+                            table.profile-table .col5 {
+                                padding-left: 10px;
+                                padding-right: 10px;
+                                background: transparent;
+                                border-right: 1px solid #ddd;
+                            }
+
+                            table.profile-table .col6 {
+                                padding-left: 10px;
+                                padding-right: 10px;
+                                background: transparent;
+                                border-left: 1px solid #ddd;
+                            }
+
+                            table.profile-table td, table.profile-table td {
+                                width: 16.66%;
+                                padding: 5px 10px;
+                            }
+
+                        </style>
+
+                        <div class="form-group mt30">
+                            <label class="form-label-bold" for="monfte">How many full time equivalent are you basing
+                                this capacity on?</label>
+                            <input class="form-control form-control-1-8" id="fte" type="number" name="fte"
+                                   value="{{ viewAndEditPip.monday.fte }}" style=>
+                        </div>
+
+                        {% for item in viewAndEditPip.monday.slots %}
+                        <tr class="slot_row" >
+                            <th class="col" >{{ item.time }}</th>
+                            <td class="col5">
+                                <div class="totals">
+                                    <label class="visually-hidden" for="">Total</label>
+                                    <input class="form-control total_row" id="total_row" type="text" name="slots[{{loop.index}}][total]"
+                                           readonly
+                                           value="">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="totals">
+                                    <div class="totals"><label class="visually-hidden" for=""> Available</label>
+                                        <input class="form-control hcp_available change_input" id="hcp_col" type="text" name="slots[{{loop.index}}][hcpA]"
+                                               type="text" value="{{item.hcp.avaliable}}">
+                                        <span class='booked'><span class="bold hcp_booked ">{{item.hcp.booked}}</span></span>
+                                    </div>
+                            </td>
+                            <td class="col6">
+                                <div class="totals"><label class="visually-hidden" for=""> Available</label>
+                                    <input class="form-control ucb_available change_input" id="ucb_col" type="text" name="slots[{{loop.index}}][ucbA]" type="text"
+                                           value="{{item.ucb.avaliable}}">
+                                    <span class='booked'><span class="bold ucb_booked">{{item.ucb.booked}} </span></span>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                    <p>
+                        <button class="button mt30">Save and continue</button>
+                    </p>
+                    {% include path+"/view-and-edit-pip/_totals_hcp_revised.html" %}
+                </form>
+            </div>
+        </div><!-- column -->
+    </div><!-- row -->
+    </div><!-- container -->
+</main>
+{% endblock %}
+
+{% block page_scripts %}
+<script>
+    $('.slot_row').each((idx, el) => {
+        rowTots($(el))
+    })
+
+    rowSum();
+
+    $('.change_input').change(function() {
+        rowTots($(this).closest('.slot_row'))
+        rowSum();
+    })
+
+    function rowSum() {
+      var hcp_available_tots = 0
+      var hcp_booked_tots = 0
+      $('.hcp_available').each((idx, el) => {
+        hcp_available_tots += Number($(el).val())
+      })
+      $('.total_available').val(hcp_available_tots)
+
+      $('.hcp_booked').each((idx, el) => {
+        hcp_booked_tots += Number($(el).text())
+      })
+      $('.total_booked').val(hcp_booked_tots)
+
+      $('.total_opened').val(hcp_available_tots + hcp_booked_tots)
+
+
+      // UCB
+      var ucb_tots = 0
+      $('.ucb_available').each((idx, el) => {
+        ucb_tots += Number($(el).val())
+      })
+
+      $('.ucb_booked').each((idx, el) => {
+        ucb_tots += Number($(el).text())
+      })
+
+      $('.total_ucb').val(ucb_tots)
+    }
+
+    function rowTots(row) {
+      console.log('ROW', row)
+      var hcp_avaliable = row.find('.hcp_available').val()
+      var hcp_booked = row.find('.hcp_booked').text()
+      var total = Number(hcp_avaliable) + Number(hcp_booked)
+      if (total === 0 )
+      {
+        total = ''
+      }
+      row.find('.total_row').val(total)
+    }
+</script>
+{% endblock %}
