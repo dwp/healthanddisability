@@ -97,6 +97,12 @@ router.get('/', function (req, res, next) {
   next()
 })
 
+router.get('/view-and-edit-pip/view-plan', require('../routes/pip/view-and-edit-pip').ViewPlan)
+router.get('/view-and-edit-pip/edit-monday', require('../routes/pip/view-and-edit-pip').EditMonday)
+router.post('/view-and-edit-pip/edit-monday', require('../routes/pip/view-and-edit-pip').PostMonday)
+router.get('/view-and-edit-pip/edit-tuesday', require('../routes/pip/view-and-edit-pip').EditTuesday)
+router.post('/view-and-edit-pip/edit-tuesday', require('../routes/pip/view-and-edit-pip').PostTuesday)
+
 router.post('*', function (req, res, next) {
   // path is only available with the proper value within this sub-module/router.
   res.locals.path = req.baseUrl.substr(1)

@@ -1,0 +1,101 @@
+<div class="inner-panel  panel-open total-panel">
+    <div class="inner-panel-content sticky">
+        <h2 class="heading-large">Total slots</h2>
+        <div class="panel panel-info mt10">
+            Capacity based on <span class="bold">{% if data['monfte']%}{{monfte}} {% else %} 4 {% endif %} FTE's</span>
+        </div>
+        <style>
+            table.totals {
+                margin-top: 15px;
+                position: relative;
+            }
+
+            table.totals tbody th {
+
+                font-weight: normal;
+                width: 60%;
+                padding: 0.3em 0.3em 0.3em 0;
+
+            }
+
+            table.totals tbody td {
+
+                font-weight: bold;
+                text-align: right;
+                padding-right: 0px;
+                padding: 0.2em 0.2em 0.2em 0;
+
+
+            }
+
+            input[readonly] {
+                text-align: center;
+                background: #ddd;
+                border-color: #ddd;
+                font-weight: bold;
+                width: 100%;
+            }
+
+            .booked {
+                padding-right: 20px;
+            }
+
+
+            dl {
+                border-bottom: 1px solid #ccc;
+                padding: 5px 0;
+            }
+
+
+            dt {
+                float: left;
+                width: 70%;
+                clear: left;
+                padding-top: 5px;
+
+            }
+
+            dd {
+                float: left;
+                width: 30%;
+                text-align: center;
+
+            }
+
+            dl:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            .totalbooked {
+                display: block;
+            }
+        </style>
+
+        <dl>
+            <dt class="bold">Total opened</dt>
+            <dd><input class="form-control total_opened" id="total_opened" type="text" name="total_opened" readonly type="text"
+                       value=""></dd>
+        </dl>
+        <dl>
+            <dt>Available</dt>
+            <dd><input class="form-control total_available" id="total_available" type="text" name="total_available" readonly
+                       type="text" value=""></dd>
+        </dl>
+        <dl>
+            <dt>Booked</dt>
+            <dd>
+                <span >
+                    <input class="form-control total_booked" id="total_booked" type="text" name="total_booked" readonly
+                                                    type="text" value=""></span>
+            </dd>
+        </dl>
+
+        <br>
+        <dl>
+            <dt class="bold">UCB</dt>
+            <dd><input class="form-control total_ucb" id="total_ucb" type="text" name="total_ucb" readonly type="text"
+                       value=""></dd>
+        </dl>
+    </div>
