@@ -1,0 +1,156 @@
+{% extends path+"/scenario_03n/_layout-case-simple.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<style type="text/css">
+  .multiple-choice {
+      padding: 4px 10px 9px 40px;
+      margin-bottom:10px;}
+    .multiple-choice [type=checkbox] + label::before {
+      width: 22px;
+      height: 22px;
+      padding-top: 2px !important;
+    }
+
+    .multiple-choice label::after {
+      top: 9px !important;
+      left: 7px !important;
+      width: 10px !important;
+      height: 5px !important;
+      border-width: 0 0 3px 3px !important;
+    }
+</style>
+
+
+  <p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<p class="caption-large mb0">File report: accept ongoing LCW</p>
+<h1 class="heading-large mt10">Select activities where Connor previously scored LCW</h1>
+
+<form class="" method="post" action="activityToDo">
+	
+	
+	<h3 class="heading-small">Physical functions</h3>
+	
+  	<fieldset>
+					
+	    <legend class="visually-hidden">Choose the relevant descriptor:</legend>
+	    
+	    
+	    
+	    <div class="multiple-choice">
+	      <input id="des1" type="checkbox" name="moving" value="moving">
+	      <label for="des1">Mobilising and using steps </label>
+	    </div>
+
+		<div class="multiple-choice">
+	      <input id="des2" type="checkbox" name="standing" value="standing">
+	      <label for="des2">Standing, sitting and transferring from seat to seat</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des3" type="checkbox" name="reaching" value="reaching">
+	      <label for="des3">Reaching</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des4" type="checkbox" name="picking" value="picking">
+	      <label for="des4">Picking up and moving things</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des5" type="checkbox" name="using" value="using">
+	      <label for="des5">Manual dexterity</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des6" type="checkbox" name="speaking" value="speaking">
+	      <label for="des6">Making self understood</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des7" type="checkbox" name="hearing" value="hearing">
+	      <label for="des7">Understanding communication</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des8" type="checkbox" name="seeing" value="seeing">
+	      <label for="des8">Navigation</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des9" type="checkbox" name="controlling" value="controlling">
+	      <label for="des9">Continence</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des10" type="checkbox" name="staying" value="staying">
+	      <label for="des10">Staying conscious when awake</label>
+			</div>
+  	</fieldset>
+  	
+  	
+  	<h3 class="heading-small">Mental, cognitive and intellectual capabilities</h3>
+			<fieldset>
+					
+		<legend class="visually-hidden">Choose the relevant descriptor:</legend>
+		
+	    <div class="multiple-choice">
+	      <input id="des11" type="checkbox" name="learning" value="learning">
+	      <label for="des11">Learning to do new tasks</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des12" type="checkbox" name="being" value="being">
+	      <label for="des12">Awareness of hazards and danger</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des13" type="checkbox" name="planning" value="planning">
+	      <label for="des13">Planning, starting and finishing everyday tasks</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des14" type="checkbox" name="coping" value="coping">
+	      <label for="des14">Coping with changes</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des15" type="checkbox" name="going" value="going">
+	      <label for="des15">Getting about</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des16" type="checkbox" name="meeting" value="meeting">
+	      <label for="des16">Coping with social situations</label>
+	    </div>
+	    
+	    <div class="multiple-choice">
+	      <input id="des17" type="checkbox" name="behaving" value="behaving">
+	      <label for="des17">Behaving appropriately around other people</label>
+			</div>
+			</fieldset>
+			
+			<h3 class="heading-small">Eating and drinking</h3>
+			<fieldset>
+					
+			<legend class="visually-hidden">Choose the relevant descriptor:</legend>
+		  
+		<div class="multiple-choice">
+		      <input id="des17" type="checkbox" name="eating" value="eating">
+		      <label for="des17">Eating and drinking</label>
+		    </div>
+
+
+	</fieldset>
+	
+	
+	<p class="mt30"><button class="button">Save and continue</button></p>
+  
+  </form>
+
+
+
+{% endblock %}

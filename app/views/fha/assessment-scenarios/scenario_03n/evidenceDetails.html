@@ -1,0 +1,61 @@
+{% extends path+"/scenario_03n/_layout-case-simple.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<form action="reviewPeriod" method="post">
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	<p class="caption-large" class="mb0">File report: accept ongoing LCW</p>
+	<h1 class="heading-large mt10">What does the evidence show?</h1>
+
+<div class="form-group">
+			<label class="form-label" for="notLCWRAjustification">Explain why the claimant does not meet the criteria for LCWRA.
+			<span class="form-hint">For example, they may have indicated an LCWRA descriptor on the questionnaire.</span></label>
+			<textarea class="form-control form-control-1-1" name="notLCWRAjustification" id="notLCWRAjustification" rows="4"></textarea>
+</div>
+
+<div class="form-group">
+			<label class="form-label" for="evidenceKeyFacts">Summarise any other key details from the evidence to support your recommendation.</label>
+			<textarea class="form-control form-control-1-1" name="evidenceKeyFacts" id="evidenceKeyFacts" rows="4"></textarea>
+		</div>
+
+<p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+      </form>
+
+  </div><!-- column -->
+
+
+
+<div class="column-one-third">
+
+<div class="summary-panel">
+<h4 class="bold mb10">Justification so far</h4>
+<p class="font-small">The {{ keyEvidence }} Fit note (MED3), Questionnaire (ESA50) and previous report ({{ previousReportDates }}) suggest the claimant meets the criteria for having limited capability for work due to {{ diagnosedConditions }}.</p>
+</div>
+
+</div>
+<!-- right hand column -->
+
+
+
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+
+{% block page_scripts %}
+
+{% include path+"/scenario_03i/autocomplete/_autocompletedata.html" %}
+  
+ 
+{% endblock %} 

@@ -1,0 +1,96 @@
+{% extends path+"/scenario_03n/_layout-case-simple.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<style type="text/css">
+  .multiple-choice {
+      padding: 4px 10px 9px 40px;
+      margin-bottom:10px;}
+    .multiple-choice [type=checkbox] + label::before {
+      width: 22px;
+      height: 22px;
+      padding-top: 2px !important;
+    }
+
+    .multiple-choice label::after {
+      top: 9px !important;
+      left: 7px !important;
+      width: 10px !important;
+      height: 5px !important;
+      border-width: 0 0 3px 3px !important;
+    }
+</style>
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	<p class="caption-large mb0">File report: accept ongoing LCW</p>
+	<h1 class="heading-large mt10">Which evidence supports your recommendation?</h1>
+
+<form action="diagnosedConditions" method="post">
+
+<div class="form-group mb20">
+  <fieldset>
+
+    <legend>
+      <span class="body-text">Select evidence from the list below that you'll use to justify your recommendation.</span>
+    </legend>
+
+
+
+    <div class="multiple-choice mt20">
+      <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">
+      <label for="waste-type-1">Fit note (MED3)</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="waste-type-2" name="waste-types" type="checkbox" value="waste-mines">
+      <label for="waste-type-2">Questionnaire (ESA50)</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="waste-type-2" name="waste-types" type="checkbox" value="waste-mines">
+      <label for="waste-type-2">Previous report ({{ previousReportDates }})</label>
+    </div>
+  </fieldset>
+</div>
+
+
+<p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+      </form>
+
+
+  </div><!-- column -->
+
+
+<!--
+<div class="column-one-third">
+
+<div class="summary-panel">
+<h4 class="bold mb10">Summary</h4>
+<p class="font-small">LCWRA: moving around and climbing steps without someone’s help</p>
+</div>
+
+
+</div>-->
+<!-- right hand column -->
+
+
+
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+
+{% block page_scripts %}
+
+{% include path+"/scenario_03i/autocomplete/_autocompletedata.html" %}
+  
+ 
+{% endblock %} 

@@ -1,0 +1,105 @@
+{% extends path+"/scenario_03n/_layout-case-simple.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+<p class="caption-large" class="mb0">File report: LCWRA due to mobilising and using steps</p>
+<h1 class="heading-large mt10">Time until Connor's case needs reviewing</h1>
+
+<form method="post" action="miniReport">
+
+	<div class="form-group">
+		 <fieldset>
+		    
+				    	<!--<legend class="heading-medium mb10">When should this case be reviewed?</legend>-->
+		
+					    <div class="multiple-choice">
+					      <input id="3months" name="reviewPeriod" type="radio" value="3months">
+					      <label for="3months">3 months</label>
+					    </div>
+							<div class="multiple-choice">
+					      <input id="6months" name="reviewPeriod" type="radio" value="6months">
+					      <label for="6months">6 months</label>
+					    </div>
+							<div class="multiple-choice">
+					      <input id="12months" name="reviewPeriod" type="radio" value="12months">
+					      <label for="12months">12 months</label>
+					    </div>
+							<div class="multiple-choice">
+					      <input id="18months" name="reviewPeriod" type="radio" value="18months">
+					      <label for="18months">18 months</label>
+					    </div>
+							<div class="multiple-choice">
+					      <input id="2years" name="reviewPeriod" type="radio" value="2years">
+					      <label for="2years">2 years</label>
+					    </div>
+							<div class="multiple-choice">
+					      <input id="longerterm" name="reviewPeriod" type="radio" value="longerterm">
+					      <label for="longerterm">in the longer term</label>
+					    </div>
+					    
+				    </fieldset>
+
+	</div>
+	
+<div class="form-group">
+			<label class="form-label" for="reviewPeriodDetails">Justify why you've chosen this review period.</label>
+			<textarea class="form-control form-control-1-1" name="reviewPeriodDetails" id="reviewPeriodDetails" rows="4"></textarea>
+		</div>
+
+    <p><input type="submit" class="button" value="Save and review" id="submitButton"></p>
+		</form>	
+
+  </div><!-- column -->
+
+<div class="column-one-third">
+
+<div class="summary-panel">
+<h4 class="bold mb10">Justification so far</h4>
+<p class="font-small">The {{ keyEvidence }} Fit note (MED3), Questionnaire (ESA50) and previous report ({{ previousReportDates }}) suggest the claimant meets the criteria for having limited capability for work due to {{ diagnosedConditions }}.</p>
+<p class="font-small">{{ notLCWRAjustification }}</p>
+<p class="font-small">{{ evidenceKeyFacts }}</p>
+</div>
+</div>
+
+
+{# <div class="column-one-third">
+
+<div class="summary-panel">
+<h4 class="bold mb10">Summary</h4>
+<p class="font-small">LCWRA: moving around and climbing steps without someone’s help</p>
+<p class="font-small bold mb10">Evidence considered</p>
+<ul class="mb20">
+	<li class="mb5">GP report (113)</li>
+	<li class="mb5">Fit note (Med3)</li>
+	<li class="mb5">Questionnaire (UC50)</li>
+	<li>Basic medical report (UC85A)</li>
+</ul>
+<p class="font-small bold mb10">Previous reports seen</p>
+<p class="font-small">{{ previousReportDates }}</p>
+<p class="font-small bold mb10">Justification</p>
+<p class="font-small">{{ justifyAdvice }}</p>
+</div> #}
+
+
+
+  </div><!-- right hand column -->
+
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+
