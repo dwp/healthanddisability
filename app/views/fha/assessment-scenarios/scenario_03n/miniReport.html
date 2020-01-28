@@ -4,18 +4,65 @@
 
 {{ data.nuggets | log }}
 
-
+<style type="text/css">
+table.scoring-table td, table.scoring-table th
+{border-bottom: none !important;}
+</style>
 
 <p class="no-kdBar"></p>
 
   
-<h1 class="heading-large mb0">Report ready to file</h1>
+<h1 class="heading-large mb0">Review report before submission</h1>
  
 
 <div class="review-wrapper full-report">
 
 
 <div>
+
+	<table class="report-view-table">
+	{# <caption class="heading-small">Assessment overview</caption> #}
+	
+		<tbody>
+			<tr>
+				<th>Name</th>
+				<td>Connor Browne</td>
+			</tr>
+			<tr>
+				<th>NINO</th>
+				<td>SW 06 51 61 T</td>
+			</tr>
+			<tr>
+				<th>DOB</th>
+				<td>28 September 1957</td>
+			</tr>
+			<tr>
+				<th>Date of assessment</th>
+				<td>{{ "Do MMM YYYY" | daysAgo }}</td>
+			</tr>
+			<tr>
+				<th>Assessment centre</th>
+				<td>Fiveways, Birmingham</td>
+			</tr>
+			<tr>
+				<th>Assessor</th>
+				<td>Jane Smith</td>
+			</tr>
+			<tr>
+				<th>Assessment started</th>
+				<td>{{ last_one.time | formatDate("H:mma") }}</td>
+			</tr>
+			<tr>
+				<th>Assessment finished</th>
+				<td>{{ first_one.time | formatDate("H:mma") }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+<!-- / report item -->
+
+{# <div>
 
 	<table class="report-view-table">
 	<caption class="heading-small">Assessment overview</caption>
@@ -44,7 +91,7 @@
 		</tbody>
 	</table>
 
-</div>
+</div> #}
 <!-- / report item -->
 
 
@@ -58,11 +105,100 @@
 	</div>
 	<p class="edit-report"><a href="#" class="button-secondary">Edit recommendation</a></p>
 <hr>
+
+<h2 class="heading-medium">Scoring</h2> 
+
+<table class="scoring-table">
+	{# <caption class="heading-small">Assessment overview</caption> #}
+	
+		<tbody>
+			<tr>
+				<th style="width:80% !important;">Activity</th>
+				<th>Score</th>
+			</tr>
+			<tr>
+				<th><a href="#">Picking up and moving things</a></th>
+				<td>9</td>
+			</tr>
+			<tr>
+				<th><a href="#">Manual dexterity</a></th>
+				<td>9</td>
+			</tr>
+			<tr>
+				<th colspan="2">Connor did not identify any problems in the following areas:</th>
+			</tr>
+			<tr>
+				<td>Mobilising and using steps</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Standing, sitting and transferring from seat to seat</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Reaching</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Making self understood</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Understanding communication</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Navigation</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Continence</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Staying conscious when awake</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Learning to do new tasks</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Awareness of hazards and danger</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Planning, starting and finishing everyday tasks</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Coping with changes</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Getting about</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Coping with social situations</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Behaving appropriately around other people</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<th>Total score</th>
+				<th>16</th>
+			</tr>
+		</tbody>
+	</table>
+<hr>
 	<h2 class="heading-medium">Evidence considered</h2> 
 	
 	<div class="inner-focus">
 				<ul class="mb20">
-				<li class="mb5">Fit note (MED3)</li>
+				<li class="mb5">Fit note (Med3)</li>
 				<li class="mb5">Questionnaire (ESA50)</li>
 				<li class="mb5">Previous reports ({{ previousReportDates }})</li>
 				</ul>
@@ -73,9 +209,9 @@
 	<h2 class="heading-medium">Justification</h2> 
 	
 	<div class="inner-focus">
-<p class="font-small">The {{ keyEvidence }} Fit note (MED3), Questionnaire (ESA50) and previous report ({{ previousReportDates }}) suggest the claimant meets the criteria for having limited capability for work due to {{ diagnosedConditions }}.</p>
-<p>{{ notLCWRAjustification }}</p> 
+<p class="font-small">The {{ keyEvidence }} Fit note (Med3), Questionnaire (ESA50) and previous medical report ({{ previousReportDates }}) suggest the claimant meets the criteria for having limited capability for work due to {{ diagnosedConditions }}.</p>
 <p>{{ evidenceKeyFacts }}</p>
+<p>{{ notLCWRAjustification }}</p>
 <p>The available evidence suggests review in the medium term.<p>
 <p>{{ reviewPeriodDetails }}<p>
 	</div>
