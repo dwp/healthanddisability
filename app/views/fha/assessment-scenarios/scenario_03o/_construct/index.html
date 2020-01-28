@@ -1,35 +1,14 @@
-{% extends path+"/scenario_03n/_layout-case-simple.html" %}
+{% extends path+"/_layout-case-action.html" %}
 
 {% block citizen_content %}
 
-{{ data.nuggets | log }}
 
-<style type="text/css">
-  .multiple-choice {
-      padding: 4px 10px 9px 40px;
-      margin-bottom:10px;}
-    .multiple-choice [type=checkbox] + label::before {
-      width: 22px;
-      height: 22px;
-      padding-top: 2px !important;
-    }
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
 
-    .multiple-choice label::after {
-      top: 9px !important;
-      left: 7px !important;
-      width: 10px !important;
-      height: 5px !important;
-      border-width: 0 0 3px 3px !important;
-    }
-</style>
+<h1 class="heading-large">Make your recommendation</h1>
+<h2 class="heading-medium">Choose the areas that you have considered relevant to {{customer.name.first}}:</h2>
 
-
-  <p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
-
-<p class="caption-large mb0">File report: accept ongoing LCW</p>
-<h1 class="heading-large mt10">Choose activities</h1>
-
-<form class="" method="post" action="activityToDo">
+<form class="" method="post" action="/{{path}}/assessment/{{customer._id}}/scoring/index-todo">
 	
 	
 	<h3 class="heading-small">Physical functions</h3>
@@ -42,12 +21,12 @@
 	    
 	    <div class="multiple-choice">
 	      <input id="des1" type="checkbox" name="moving" value="moving">
-	      <label for="des1">Mobilising and using steps </label>
+	      <label for="des1">Moving around and climbing steps without someone’s help </label>
 	    </div>
 
 		<div class="multiple-choice">
 	      <input id="des2" type="checkbox" name="standing" value="standing">
-	      <label for="des2">Standing, sitting and transferring from seat to seat</label>
+	      <label for="des2">Standing, sitting and moving between the two</label>
 	    </div>
 	    
 	    <div class="multiple-choice">
@@ -57,37 +36,37 @@
 	    
 	    <div class="multiple-choice">
 	      <input id="des4" type="checkbox" name="picking" value="picking">
-	      <label for="des4">Picking up and moving things</label>
+	      <label for="des4">Picking things up and moving them</label>
 	    </div>
 	    
 	    <div class="multiple-choice">
 	      <input id="des5" type="checkbox" name="using" value="using">
-	      <label for="des5">Manual dexterity</label>
+	      <label for="des5">Using your hands</label>
 	    </div>
 	    
 	    <div class="multiple-choice">
 	      <input id="des6" type="checkbox" name="speaking" value="speaking">
-	      <label for="des6">Making self understood</label>
+	      <label for="des6">Speaking, writing and typing</label>
 	    </div>
 	    
 	    <div class="multiple-choice">
 	      <input id="des7" type="checkbox" name="hearing" value="hearing">
-	      <label for="des7">Understanding communication</label>
+	      <label for="des7">Hearing and reading</label>
 	    </div>
 	    
 	    <div class="multiple-choice">
 	      <input id="des8" type="checkbox" name="seeing" value="seeing">
-	      <label for="des8">Navigation</label>
+	      <label for="des8">Seeing well enough to get around safely</label>
 	    </div>
 	    
 	    <div class="multiple-choice">
 	      <input id="des9" type="checkbox" name="controlling" value="controlling">
-	      <label for="des9">Continence</label>
+	      <label for="des9">Controlling your bowels and bladder</label>
 	    </div>
 	    
 	    <div class="multiple-choice">
 	      <input id="des10" type="checkbox" name="staying" value="staying">
-	      <label for="des10">Staying conscious when awake</label>
+	      <label for="des10">Staying conscious without fainting, seizures, or blackouts</label>
 			</div>
   	</fieldset>
   	
@@ -104,7 +83,7 @@
 	    
 	    <div class="multiple-choice">
 	      <input id="des12" type="checkbox" name="being" value="being">
-	      <label for="des12">Awareness of hazards and danger</label>
+	      <label for="des12">Being aware of hazards and danger</label>
 	    </div>
 	    
 	    <div class="multiple-choice">
@@ -114,17 +93,17 @@
 	    
 	    <div class="multiple-choice">
 	      <input id="des14" type="checkbox" name="coping" value="coping">
-	      <label for="des14">Coping with changes</label>
+	      <label for="des14">Coping with changes to your daily routine</label>
 	    </div>
 	    
 	    <div class="multiple-choice">
 	      <input id="des15" type="checkbox" name="going" value="going">
-	      <label for="des15">Getting about</label>
+	      <label for="des15">Going out on your own</label>
 	    </div>
 	    
 	    <div class="multiple-choice">
 	      <input id="des16" type="checkbox" name="meeting" value="meeting">
-	      <label for="des16">Coping with social situations</label>
+	      <label for="des16">Meeting and being with people</label>
 	    </div>
 	    
 	    <div class="multiple-choice">
@@ -132,6 +111,17 @@
 	      <label for="des17">Behaving appropriately around other people</label>
 			</div>
 			</fieldset>
+			
+			<h3 class="heading-small">Eating and drinking</h3>
+			<fieldset>
+					
+			<legend class="visually-hidden">Choose the relevant descriptor:</legend>
+		  
+		<div class="multiple-choice">
+		      <input id="des17" type="checkbox" name="eating" value="eating">
+		      <label for="des17">Eating and drinking</label>
+		    </div>
+
 
 	</fieldset>
 	
@@ -139,7 +129,17 @@
 	<p class="mt30"><button class="button">Save and continue</button></p>
   
   </form>
+	
+
+  
+
+
+
+
+
+  <!--  <p class="mt30"><a href="/{{path2}}/record_phys_exam" class="button">Finish assessment</a></p> -->
 
 
 
 {% endblock %}
+

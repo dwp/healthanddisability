@@ -1,0 +1,53 @@
+{% extends path+"/scenario_03o/_layout-case-simple.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+<!--<h3 class="heading-medium" style="color:#6f777b; font-weight:100;">LCWRA</h3>-->
+<p class="caption-large" class="mb0">File report: accept ongoing LCW</p>
+<h1 class="heading-large mt10">Staying conscious when awake</h1>
+<h2 class="heading-medium mt10">How often does Abbie lose consciousness because of fainting, seizures or blackouts?</h2>
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+
+	<form method="post" action="activityToDo">
+	<div class="form-group">
+		 <fieldset>
+						<div class="multiple-choice">
+						<input id="option1" name="stayingDescriptors" type="radio" value="6points">
+					      <label for="option1">At least once a week</label>
+						</div>
+						<div class="multiple-choice">
+						<input id="option2" name="stayingDescriptors" type="radio" value="9points">
+					      <label for="option2">At least once a month</label>
+						</div>
+				    </fieldset>
+	</div>
+	
+	<!--<p>By choosing to curtail, you must have captured enough evidence from the claimant to support an LCWRA recommendation.</p>-->
+
+
+    <p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+		</form>	
+
+  </div><!-- column -->
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+
