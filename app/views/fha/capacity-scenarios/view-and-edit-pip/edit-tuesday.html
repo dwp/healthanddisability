@@ -5,8 +5,8 @@
         <div class="grid-row">
             <div class="column-three-quarters capacity">
                 <a href="javascript: history.go(-1)" class="link-back">Back</a>
-                <h1 class="heading-large">Edit capacity for {% include path+"/scenario3/_ACname.html" %}</h1>
-                <h2 class="heading-medium"> {% include path+"/scenario3/_Mon_Date.html" %}</h2>
+                <h1 class="heading-large">Edit capacity for Nottingham</h1>
+                <h2 class="heading-medium"> Monday 3 February</h2>
                 <div class="panel panel-info panel-instruction"><h2 class="heading-small">How to edit a plan</h2>
                     <ul class="numeric" data-id="">
                         <li>
@@ -26,9 +26,6 @@
                         </li>
                     </ul>
                 </div>
-                <p>
-                    <a href="create-plan-times2" class="secondary-invert">Add or edit slot times</a>
-                </p>
                 <form class="form" action="view-plan" method="post">
 
                     <table class="profile-table edit">
@@ -123,6 +120,10 @@
                         </tr>
                         {% endfor %}
                     </table>
+                    <br>
+                    <p>
+                        <a href="create-plan-times2">Add or edit slot times</a>
+                    </p>
                     <p>
                         <button class="button mt30">Save and continue</button>
                     </p>

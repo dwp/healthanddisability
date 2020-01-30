@@ -3,17 +3,17 @@
 
 {% block actioncolumn %}
 
- <!-- <p class="returnRef"><a href="/fha/v8/referrals-fme">Return to case list</a></p>
-  <hr>-->
- <div class="case-status">
+<!-- <p class="returnRef"><a href="/fha/v8/referrals-fme">Return to case list</a></p>
+ <hr>-->
+<div class="case-status">
 
-<h2 class="heading-small mb5">Other scenarios</h2>
+    <h2 class="heading-small mb5">Other scenarios</h2>
 
-<ul class="scenario-nav">
-	<li><a href="/fha/scrutiny-scenarios/index">Scrutiny</a></li>
-	<li><a href="/fha/appointment-scenarios/index">Appointment</a></li>
-	<li><a href="#">Assessment</a></li>
-</ul>
+    <ul class="scenario-nav">
+        <li><a href="/fha/scrutiny-scenarios/index">Scrutiny</a></li>
+        <li><a href="/fha/appointment-scenarios/index">Appointment</a></li>
+        <li><a href="#">Assessment</a></li>
+    </ul>
 
 </div>
 
@@ -22,128 +22,118 @@
 {% block citizen_content %}
 
 
-
-
 <div class="container">
 
 
-  <div class="grid-row">
+    <div class="grid-row">
 
 
+        <div class="column-full">
 
 
+            <p><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
 
 
-       <div class="column-full">
+            <h1 class="heading-large"><span class="heading-secondary">Scenarios</span>Capacity</h1>
 
 
-    	<p><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+            <hr>
 
 
+            <div class="grid-row">
+                <div class="column-three-quarters">
+
+                    <div class="scenario">
+                        <h2 class="heading-medium">View and edit capacity for pip</h2>
+                        <ul class="list-bullet">
+                            <li>Active area: <b>East Midlands</b></li>
+                            <li>Active Assessment center: <b>Nottingham</b></li>
+                        </ul>
+                        <p><a href="/{{path }}/view-and-edit-pip/view-plan" class="secondary-invert">Start scenario</a>
+                        </p>
+                    </div>
+
+                    <div class="scenario">
+                        <h2 class="heading-medium">Create capacity for pip</h2>
+
+                        <ul class="list-bullet">
+                            <li>Active area: <b>East Midlands</b></li>
+                            <li>Active Assessment center: <b>Nottingham</b></li>
+                        </ul>
+                        <p><a href="/{{path }}/scenario5/dashboard" class="secondary-invert">Start scenario</a></p>
+                    </div>
+
+                    <div class="scenario">
+                        <h2 class="heading-medium">Create capacity v2</h2>
+
+                        <ul class="list-bullet">
+                            <li>Active area: <b>North west</b></li>
+                            <li>Active Assessment center: <b>Birkenhead</b></li>
+                        </ul>
+                        <p><a href="/{{path }}/scenario3/dashboard" class="secondary-invert">Start scenario</a></p>
+                    </div>
 
 
-			<h1 class="heading-large"><span class="heading-secondary">Scenarios</span>Capacity</h1>
+                    <hr>
+                    <div class="scenario">
+                        <h2 class="heading-medium">Capacity templates</h2>
+                        <p><a href="/{{path }}/scenario4/dashboard" class="secondary-invert">Start scenario</a></p>
+                    </div>
 
 
-			  <hr>
+                    <hr>
+                    <div class="scenario">
+                        <h2 class="heading-medium">View and edit capacity v2</h2>
+                        <ul class="list-bullet">
+                            <li>Active area: <b>Bootle</b></li>
+                            <li>Active Assessment center: <b>Birkenhead</b></li>
+                        </ul>
+                        <p><a href="/{{path }}/scenario3/view-plan" class="secondary-invert">Start scenario</a></p>
+                        <!--						<p><a href="/{{path }}/view-and-edit-pip/view-plan" class="secondary-invert">Start scenario</a></p>-->
+                    </div>
+                    <hr>
+                    <div class="scenario">
+                        <h2 class="heading-medium">Create capacity</h2>
+
+                        <ul class="list-bullet">
+                            <li>Active area: <b>North west</b></li>
+                            <li>Active Assessment center: <b>Mann island</b></li>
+                        </ul>
+                        <p><a href="/{{path }}/scenario1/dashboard" class="secondary-invert">Start scenario</a></p>
+                    </div>
 
 
-			  <div class="grid-row">
-			  <div class="column-three-quarters">
+                    <hr>
+                    <div class="scenario">
+                        <h2 class="heading-medium">View and edit capacity</h2>
+                        <ul class="list-bullet">
+                            <li>Active area: <b>North west</b></li>
+                            <li>Active Assessment center: <b>Birkenhead</b></li>
+                            <li>Active Assessment center: view only <b>Mann Island</b></li>
+                        </ul>
+                        <p><a href="/{{path }}/scenario2/view-plan" class="secondary-invert">Start scenario</a></p>
+                    </div>
 
-				  <div class="scenario">
-					  <h2 class="heading-medium">View and edit capacity for pip</h2>
-					  <ul class="list-bullet">
-						  <li>Active area: <b>Bootle</b></li>
-						  <li>Active Assessment center: <b>Birkenhead</b></li>
-					  </ul>
-					  <p><a href="/{{path }}/view-and-edit-pip/view-plan" class="secondary-invert">Start scenario</a></p>
-				  </div>
-
-			  	  <div class="scenario">
-						 <h2 class="heading-medium">Create capacity for pip</h2>
-
-						 <ul class="list-bullet">
-						 	<li>Active area: <b>North west</b></li>
-							<li>Active Assessment center: <b>Blackpool</b></li>
-							<li>Active date: <b>Monday 3 February</b></li>
-						 </ul>
-			             <p><a href="/{{path }}/scenario5/dashboard" class="secondary-invert">Start scenario</a></p>
-					 </div>
-
-					  <div class="scenario">
-						 <h2 class="heading-medium">Create capacity v2</h2>
-
-						 <ul class="list-bullet">
-						 	<li>Active area: <b>North west</b></li>
-							<li>Active Assessment center: <b>Birkenhead</b></li>
-						 </ul>
-			             <p><a href="/{{path }}/scenario3/dashboard" class="secondary-invert">Start scenario</a></p>
-					 </div>
+                    <hr>
 
 
-					 	 		 <hr>
-			  		<div class="scenario">
-						 <h2 class="heading-medium">Capacity templates</h2>
-			             <p><a href="/{{path }}/scenario4/dashboard" class="secondary-invert">Start scenario</a></p>
-					 </div>
+                </div>
+            </div>
+
+        </div>
 
 
-
-					 		 <hr>
-			  		<div class="scenario">
-						 <h2 class="heading-medium">View and edit capacity v2</h2>
-			             <ul class="list-bullet">
-						 	<li>Active area: <b>Bootle</b></li>
-							<li>Active Assessment center: <b>Birkenhead</b></li>
-			             </ul>
-			             <p><a href="/{{path }}/scenario3/view-plan" class="secondary-invert">Start scenario</a></p>
-<!--						<p><a href="/{{path }}/view-and-edit-pip/view-plan" class="secondary-invert">Start scenario</a></p>-->
-					</div>
-                     <hr>
-					 	 	  <div class="scenario">
-						 <h2 class="heading-medium">Create capacity</h2>
-
-						 <ul class="list-bullet">
-						 	<li>Active area: <b>North west</b></li>
-							<li>Active Assessment center: <b>Mann island</b></li>
-						 </ul>
-			             <p><a href="/{{path }}/scenario1/dashboard" class="secondary-invert">Start scenario</a></p>
-					 </div>
-
-
-
-					 <hr>
-			  		<div class="scenario">
-						 <h2 class="heading-medium">View and edit capacity</h2>
-			             <ul class="list-bullet">
-						 	<li>Active area: <b>North west</b></li>
-							<li>Active Assessment center: <b>Birkenhead</b></li>
-							<li>Active Assessment center: view only <b>Mann Island</b></li>
-			             </ul>
-			             <p><a href="/{{path }}/scenario2/view-plan" class="secondary-invert">Start scenario</a></p>
-					 </div>
-
-					 <hr>
-
-
-			  </div>
-			  </div>
-
-	</div>
-
-
-  </div><!-- row -->
+    </div><!-- row -->
 </div><!-- container -->
 
 {% endblock %}
 
 {# {% block page_script %}
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $('#status_status').combobox();
-      $('#app_adviser').combobox();
-      $('#app_team').combobox();
-    });
-  </script>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#status_status').combobox()
+    $('#app_adviser').combobox()
+    $('#app_team').combobox()
+  })
+</script>
 {% endblock %} #}

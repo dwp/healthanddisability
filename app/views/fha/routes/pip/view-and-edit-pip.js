@@ -11,8 +11,8 @@ function calculateTotals (plan, day) {
     plan[day].total_ucb.avaliable += Number(el.ucb.avaliable)
     plan[day].total_ucb.booked += Number(el.ucb.booked)
   })
-  plan[day].total_avaliable = plan[day].total_hcp.avaliable + plan[day].total_ucb.avaliable
-  plan[day].total_booked = plan[day].total_hcp.booked + plan[day].total_ucb.booked
+  plan[day].total_avaliable = plan[day].total_hcp.avaliable
+  plan[day].total_booked = plan[day].total_hcp.booked
   plan[day].total_opened = plan[day].total_avaliable + plan[day].total_booked
   return plan
 }
