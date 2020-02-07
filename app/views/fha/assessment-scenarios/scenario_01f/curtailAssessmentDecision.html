@@ -1,0 +1,74 @@
+{% extends path+"/scenario_01f/_layout-case-simple_clear-assessment-complete.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+<h1 class="heading-large">Are you sure you want to curtail the assessment?</h1>
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	
+	
+
+<form method="post" action="/{{path}}/assessment/{{customer._id}}/evidence/exceptionalCircumstances" id="sufficient-evidence">
+	
+<div class="form-group">
+  <fieldset class="inline">
+
+
+<!--<legend class="heading-medium mb10">Do you have enough evidence to make your recommendation?</legend>-->
+<legend class="heading-medium mb10">You'll need to have enough evidence to support your recommendation</legend>
+
+    <div class="multiple-choice">
+      <input id="radio-inline-1" type="radio" name="radio-inline-group" value="yes~/{{path}}/assessment/{{customer._id}}/evidence/exceptionalCircumstances">
+      <label for="radio-inline-1">Yes</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="radio-inline-2" type="radio" name="radio-inline-group" value="no~/{{path}}/assessment/{{customer._id}}/evidence/wca-index">
+      <label for="radio-inline-2">No</label>
+    </div>
+    <div class="panel panel-border-narrow js-hidden" id="curtail-decision-no">
+		<p>Continue with the assessment until you have enough evidence to support your recommendation</p>
+    </div>
+
+  </fieldset>
+</div>
+
+<p><input type="submit" class="button" value="Continue" id="submitButton"></p>
+
+		</form>	
+
+  </div><!-- column -->
+</div><!-- row -->
+
+
+
+<script type="text/javascript">
+
+$("radio-inline-group").change(function(){
+if ($("radio-inline-group").val() == 'yes'){
+   $("#sufficient-evidence").attr("action","exceptionalCircumstances");
+}
+else
+{
+   $("#sufficient-evidence").attr("action","wca-index");
+}
+});
+</script>
+
+{% endblock %}
+
+

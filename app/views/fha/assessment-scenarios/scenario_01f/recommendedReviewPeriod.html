@@ -1,0 +1,125 @@
+{% extends path+"/scenario_01f/_layout-case-simple_full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+
+<p class="caption-large mb10">LCWRA: severe functional impairment</p>
+<h1 class="heading-large" style="margin-top:0px !important;">Time until Michael's case needs reviewing</h1>
+	
+<!--
+{% if data['mental-health'] %}
+	<form method="post" action="personalSummaryStatement">
+{% else %}
+	<form method="post" action="mentalHealthAssessmentDecision">
+{% endif %}-->
+
+<form method="post" action="miniReport">
+
+	<div class="form-group">
+		 <fieldset>
+		    
+				    	<!--<legend class="heading-medium mb10">When should this case be reviewed?</legend>-->
+		
+					    <div class="multiple-choice" data-target="justify3months">
+					      <input id="3months" name="reviewPeriod" type="radio" value="3months">
+					      <label for="3months">3 months</label>
+					    </div>
+						<div class="panel js-hidden" id="justify3months">
+							<div class="form-group">
+								<label class="form-label" for="justify">** CONTENT PLACEHOLDER **</label>
+								<textarea class="form-control form-control-1-1" name="justifyLCWRA3months" id="justify" rows="3">{{justifyLCWRA3months}}</textarea>
+							</div>
+					    </div>
+
+						<div class="multiple-choice" data-target="justify6months">
+					      <input id="6months" name="reviewPeriod" type="radio" value="6months">
+					      <label for="6months">6 months</label>
+					    </div>
+						<div class="panel js-hidden" id="justify6months">
+							<div class="form-group">
+								<label class="form-label" for="justify">** CONTENT PLACEHOLDER **</label>
+								<textarea class="form-control form-control-1-1" name="justifyLCWRA6months" id="justify" rows="3">{{justifyLCWRA6months}}</textarea>
+							</div>
+					    </div>
+
+						<div class="multiple-choice" data-target="justify12months">
+					      <input id="12months" name="reviewPeriod" type="radio" value="12months">
+					      <label for="12months">12 months</label>
+					    </div>
+						<div class="panel js-hidden" id="justify12months">
+							<div class="form-group">
+								<label class="form-label" for="justify">** CONTENT PLACEHOLDER **</label>
+								<textarea class="form-control form-control-1-1" name="justifyLCWRA12months" id="justify" rows="3">{{justifyLCWRA12months}}</textarea>
+							</div>
+					    </div>
+
+						<div class="multiple-choice" data-target="justify18months">
+					      <input id="18months" name="reviewPeriod" type="radio" value="18months">
+					      <label for="18months">18 months</label>
+					    </div>
+						<div class="panel js-hidden" id="justify18months">
+							<div class="form-group">
+								<label class="form-label" for="justify">** CONTENT PLACEHOLDER **</label>
+								<textarea class="form-control form-control-1-1" name="justifyLCWRA18months" id="justify" rows="3">{{justifyLCWRA18months}}</textarea>
+							</div>
+					    </div>
+
+						<div class="multiple-choice" data-target="justify2years">
+					      <input id="2years" name="reviewPeriod" type="radio" value="2years">
+					      <label for="2years">within 2 years</label>
+					    </div>
+						<div class="panel js-hidden" id="justify2years">
+							<div class="form-group">
+								<label class="form-label" for="justify">** CONTENT PLACEHOLDER **</label>
+								<textarea class="form-control form-control-1-1" name="justifyLCWRA2years" id="justify" rows="3">{{justifyLCWRA2years}}</textarea>
+							</div>
+					    </div>
+
+						<div class="multiple-choice" data-target="justifylonger">
+					      <input id="longerterm" name="reviewPeriod" type="radio" value="longerterm">
+					      <label for="longerterm">in the longer term</label>
+					    </div>
+						<div class="panel js-hidden" id="justifylonger">
+							<div class="form-group">
+								<label class="form-label" for="justify">** CONTENT PLACEHOLDER **</label>
+								<textarea class="form-control form-control-1-1" name="justifyLCWRAlonger" id="justify" rows="3">{{justifyLCWRAlonger}}</textarea>
+							</div>
+					    </div>
+
+						<div class="multiple-choice" data-target="justifynofuture">
+					      <input id="notrequired" name="reviewPeriod" type="radio" value="notrequired">
+					      <label for="notrequired">no future assessments required</label>
+					    </div>
+						<div class="panel js-hidden" id="justifynofuture">
+							<div class="form-group">
+								<label class="form-label" for="justify">** CONTENT PLACEHOLDER **</label>
+								<textarea class="form-control form-control-1-1" name="justifyLCWRAnofuture" id="justify" rows="3">{{justifyLCWRAnofuture}}</textarea>
+							</div>
+					    </div>
+					    
+				    </fieldset>
+
+	</div>
+
+    <p><input type="submit" class="button" value="Generate report" id="submitButton"></p>
+		</form>	
+
+  </div><!-- column -->
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+

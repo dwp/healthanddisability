@@ -1,0 +1,130 @@
+{% extends path+"/_layout-case-simple11.html" %}
+
+
+{% block actioncolumn %}
+   
+
+
+ <div class="caseStatus">
+ 	
+	<h2 class="main-status"><span>Current case status</span>Questionnaire not returned</h2>
+
+ </div>
+{% endblock %}
+
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+    
+   
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+        
+
+
+    	
+    	<h1 class="heading-large">Update UC50 status</h1>
+    	
+    	
+   
+		
+		
+		<div class="evidence-requests mt30">
+				
+				
+			<form method="POST">
+			
+			
+					<div class="form-group">
+						<fieldset>
+						  
+							  <legend class="heading-medium mb5">Choose an update:</legend>
+
+										<div class="multiple-choice">
+											<input id="claimant" type="radio" name="uc50choice" value="received">
+											<label for="claimant">UC50 received</label>
+										</div>
+										
+
+										<div class="multiple-choice">
+											<input id="gpTele" type="radio" name="uc50choice" value="required">
+											<label for="gpTele">UC50 not required</label>
+										</div>
+										
+										<div class="multiple-choice" data-target="uc50notreturned">
+											<input id="other" type="radio" name="uc50choice" value="returned">
+											<label for="other">UC50 not returned</label>
+										</div>
+
+											<div class="panel js-hidden" id="uc50notreturned">
+										    	<fieldset>
+													<legend class="form-label mb5">Choose a reason.</legend>
+
+														<div class="multiple-choice">
+															<input id="other" type="radio" name="uc50notreturnedchoice" value="~/{{path}}/scenario11/vulnerable">
+															<label for="other">Claimant is vulnerable</label>
+														</div>
+														<div class="multiple-choice">
+															<input id="other" type="radio" name="uc50notreturnedchoice" value="~/{{path}}/scenario11/close-referral">
+															<label for="other">Claimant has left the health journey</label>
+														</div>
+														<div class="multiple-choice">
+															<input id="other" type="radio" name="uc50notreturnedchoice" value="~/{{path}}/scenario11/changed-address">
+															<label for="other">Claimant has changed address</label>
+														</div>
+												</fieldset>
+											</div>
+
+							</fieldset>
+						</div>
+			
+
+				
+				<p class="mt30"><input type="submit" class="button" value="Save and continue"></p>
+				
+
+				
+				
+				</form>
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

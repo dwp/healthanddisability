@@ -1,0 +1,98 @@
+{% extends path+"/_layout-caselist.html" %}
+ 
+
+{% block caselist_content %}
+
+            <h2 class="heading-medium mt0"><span class="heading-xlarge">4</span><br/>Referrals in progress</h2>
+            
+            
+            
+            
+            <hr />
+
+
+<div class="filter-mimic">
+
+
+          <h3 class="heading-small mt0">Filter by:</h3>
+
+		  <div class="filter-choice">
+                <a href="/{{path }}/scenario3/referalls-death" class="selected">All</a>
+              </div>
+          <div class="filter-choice">
+                <a href="/{{path }}/scenario3/not-testing">Customer has died</a>
+              </div>
+          <div class="filter-choice">
+              <a href="/{{path }}/scenario3/not-testing">UCB</a>
+            </div>
+           <div class="filter-choice">
+              <a href="/{{path }}/scenario3/not-testing">PBA</a>
+            </div> 
+            <div class="filter-choice">
+              <a href="/{{path }}/scenario3/not-testing">Returned to work</a>
+            </div> 
+
+     </div>
+
+              <table class="referrals-layout">
+
+                <thead>
+                  <tr>
+                    <th>Details</th>
+                    <th>Benefit</th>
+                    <th>Assessment centre</th>
+                    <th>Status</th>
+                    <th>Questionnaire due</th>
+                    <th>Referral type</th>
+                  </tr>
+                </thead>
+                
+
+                <tr>
+                  <td><a href="/{{path }}/scenario3/timeline"><span class="visually-hidden">Name</span>Dejan Brewster</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>ZZ 41 54 60 Z</span></td>
+                  <td>UC</td>
+                  <td>DWP Tresco House</td>
+                  <td>Referral in progress</td>
+                  <td>20 February 2020</td>
+                  <td>New referral</td>                  
+                </tr>
+                
+                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Jurgen Covault</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>ZZ 41 54 00 Y</span></td>
+                  <td>UC</td>
+                  <td>DWP Tresco House</td>
+                  <td>Referral in progress</td>
+                  <td>20 February 2020</td>
+                  <td>New referral</td>    
+                </tr>
+                
+                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Bobby Henderson</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>ZZ 41 54 00 Y</span></td>
+                  <td>UC</td>
+                  <td>DWP Tresco House</td>
+                  <td>Referral in progress</td>
+                  <td>20 February 2020</td>
+                  <td>New referral</td>
+                </tr>
+                
+                 <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Sylvester Fury</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>ZZ 41 54 00 Y</span></td>
+                  <td>UC</td>
+                  <td>DWP Tresco House</td>
+                  <td>Referral in progress</td>
+                  <td>20 February 2020</td>
+                  <td>New referral</td>
+                </tr>
+                
+               
+                </tbody>
+
+              </table>
+          
+
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,38 @@
+{% extends path+"/scenario_01f/_layout-case-simple_clear-assessment-complete.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+<h1 class="heading-large">Personal summary statement</h1>
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+	
+	<form method="post" action="miniReport">
+	
+	<div class="form-group">
+			<!-- <label class="form-label-bold" for="statement">Personal summary statement:</label>-->
+			<textarea class="form-control form-control-3-4" name="statement" id="statement" rows="8"></textarea>
+		</div>
+
+    <p><input type="submit" class="button" value="Continue" id="submitButton"></p>
+		</form>	
+
+  </div><!-- column -->
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+

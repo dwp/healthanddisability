@@ -1,0 +1,151 @@
+{% extends path+"/_layout-case-simple11.html" %}
+
+
+{% block actioncolumn %}
+   
+ <p class="returnRef"><a href="javascript: history.go(-1)" class="link-back">Return to case list</a></p>
+
+
+<!-- <div class="caseIdentifiers">
+	<div class="caseFlags">
+		<h2>Case flags</h2>
+	
+		<ul>
+			<li><a href="#">Unacceptable claimant behaviour</a></li>
+			<li><a href="#">Claimant has an appointee</a></li>
+		</ul>
+	</div>
+</div> -->
+		
+	
+
+
+ <div class="caseStatus">
+ 	
+	<h2 class="main-status"><span>Current case status</span>Questionnaire not returned</h2>
+	
+
+	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario11/uc50status" class="button">Update UC50 status</a></h3>
+
+ </div>
+
+<!--<div class="secondary-nav-actions">
+
+	<ul>
+		<li><a href="#">Withdraw case</a></li>
+		<li><a href="#">Close case</a></li>
+		<li><a href="#">Delete case</a></li>
+	</ul>
+		
+ </div> -->
+
+{% endblock %}
+
+
+
+
+{% block citizen_detail %}
+Divock Kennedy
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.scenario_tabs("timeline-review",1,path1, customer._id) }}
+
+    
+  <div class="timeline">
+  
+
+   {% if data['uc50choice']=='received'%}
+ <span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">UC50 received</h3>
+  <p class="timeline_datetime">29 July 2019</p>
+</div>
+
+
+{% elif data['uc50choice']=='required'%}
+
+<span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">UC50 not required</h3>
+  <p class="timeline_datetime">29 July 2019</p>
+</div>
+
+{% elif data['uc50choice']=='returned'%}
+
+<span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">UC50 not returned</h3>
+  <p class="timeline_datetime">29 July 2019</p>
+</div>
+
+
+{% endif %}
+
+      
+      
+      
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">UC50 form overdue</h3>
+        <p class="timeline_datetime">28 July 2019</p>
+      </div>
+
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">UC50 form posted</h3>
+        <p class="timeline_datetime">1 July 2019</p>
+      </div>
+      
+ 
+
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">New referral created</h3>
+        <p class="timeline_datetime">28 June 2019</p>
+      </div>
+
+
+
+      <div style="clear:both"></div>
+
+    </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
