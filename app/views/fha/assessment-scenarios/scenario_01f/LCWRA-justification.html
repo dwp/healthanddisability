@@ -1,0 +1,49 @@
+{% extends path+"/scenario_01f/_layout-case-simple_full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+
+
+
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+	
+
+<p class="caption-large mb10">LCWRA: severe functional impairment</p>
+	<h1 class="heading-large mt0">Mobilising and using steps</h1>
+	<p class="lede">Michael cannot move more than 50 metres.</p>
+
+<form method="post" action="recommendedReviewPeriod">
+			<div class="form-group">
+			<label class="form-label" for="justify">Give reasons</label>
+			<textarea class="form-control form-control-1-1" name="justificationStatement" id="justificationStatement" rows="8">{{ justificationStatement }}</textarea>
+		</div>
+
+
+    <p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+		</form>	
+
+  </div><!-- column -->
+  <div class="column-one-third">
+
+  </div><!-- column -->
+
+
+
+
+</div><!-- row -->
+
+
+{% endblock %}

@@ -1,0 +1,322 @@
+{% extends path+"/scenario_01f/_layout-case-simple_clear-assessment-complete.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<style>table th, table td{
+border-bottom:none !important;}</style>
+
+<p class="no-kdBar">&nbsp;</p>
+
+  
+<h1 class="heading-large mb0">Work capability assessment report</h1>
+ 
+
+<div class="review-wrapper full-report">
+
+
+<div>
+
+	<table class="report-view-table">
+	{# <caption class="heading-small">Assessment overview</caption> #}
+	
+		<tbody>
+			<tr>
+				<th>Name</th>
+				<td>Michael Morris</td>
+			</tr>
+			<tr>
+				<th>NINO</th>
+				<td>QQ 69 17 54 C</td>
+			</tr>
+			<tr>
+				<th>DOB</th>
+				<td>15 August 1991</td>
+			</tr>
+			<tr>
+				<th>Date of assessment</th>
+				<td>{{ "Do MMM YYYY" | daysAgo }}</td>
+			</tr>
+			<tr>
+				<th>Assessment centre</th>
+				<td>Fiveways, Birmingham</td>
+			</tr>
+			<tr>
+				<th>Assessor</th>
+				<td>Jane Smith</td>
+			</tr>
+			<tr>
+				<th>Assessment started</th>
+				<td>{{ last_one.time | formatDate("H:mma") }}</td>
+			</tr>
+			<tr>
+				<th>Assessment finished</th>
+				<td>{{ first_one.time | formatDate("H:mma") }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+<!-- / report item -->
+
+<hr>
+
+<!-- Displays report item based on selection from LCWRA page -->
+{% if data['lcwra']==='lcwra1'%}
+{% elif data['lcwra']==='lcwra2' or data['lcwra']==='lcwra3' or data['lcwra']==='lcwra4'%}
+<div class="report-item">
+
+	<h2 class="heading-large">Special Circumstances</h2> 
+	
+	<div class="inner-focus">
+		
+		<h2 class="heading-medium">Treat as LCWRA</h2>
+
+		<p><span style="font-weight:bold;">Reason:</span>
+		{% if data['lcwra']==='lcwra1'%}
+		{% elif data['lcwra']==='lcwra2'%}
+		Risks associated with pregnancy
+		{% elif data['lcwra']==='lcwra3'%}
+		Cancer treatment underway
+		{% elif data['lcwra']==='lcwra4'%}
+		Terminal illness
+		{% endif %}
+		</p>
+
+		<h4 class="heading-small">Justification:</h4>
+		<p>{{ justifyTreatLCWRA }}</p>
+
+	</div>
+	
+	<!--<p class="edit-report"><a href="exceptionalCircumstances" class="button-secondary">Edit exceptional circumstances</a></p>-->
+	
+</div>
+
+
+
+
+
+
+{% elif data['lcwra']==='lcwra6' or data['lcwra']==='lcwra7' or data['lcwra']==='lcwra8' or data['lcwra']==='lcwra9' or data['lcwra']==='lcwra10' or data['lcwra']==='lcwra11' or data['lcwra']==='lcwra12' or data['lcwra']==='lcwra13' or data['lcwra']==='lcwra14' or data['lcwra']==='lcwra15' or data['lcwra']==='lcwra16' or data['lcwra']==='lcwra17' or data['lcwra']==='lcwra18' or data['lcwra']==='lcwra19' or data['lcwra']==='lcwra20'%}
+<div class="report-item">
+
+	<h2 class="heading-medium mt0">Medical opinion</h2> 
+	
+	<div class="inner-focus">
+		<p>I have consided the possible UC activity outcomes and my advice is that the following applies:</p>
+
+		{# <h4 class="heading-small">Activity</h4> #}
+		<p> 
+		{% if data['lcwra']==='lcwra1'%}
+		{% elif data['lcwra']==='lcwra6'%}
+		<h4 class="heading-small">Moving around and using steps (mobilising)</h4>
+		Michael cannot mobilise more than 50 metres, or 50 metres repeatedly
+		{% elif data['lcwra']==='lcwra7'%}
+		Standing, sitting and transferring from seat to seat
+		{% elif data['lcwra']==='lcwra8'%}
+		Reaching
+		{% elif data['lcwra']==='lcwra9'%}
+		Picking up and moving things
+		{% elif data['lcwra']==='lcwra10'%}
+		Using your hands (manual dexterity)
+		{% elif data['lcwra']==='lcwra11'%}
+		Speaking, writing and typing (making self understood)
+		{% elif data['lcwra']==='lcwra12'%}
+		Hearing and reading (understanding communication)
+		{% elif data['lcwra']==='lcwra13'%}
+		Controlling your bowels and bladder and using a collecting device (continence)
+		{% elif data['lcwra']==='lcwra14'%}
+		Learning to do new tasks
+		{% elif data['lcwra']==='lcwra15'%}
+		Awareness of hazards and danger
+		{% elif data['lcwra']==='lcwra16'%}
+		Planning, starting and finishing everyday tasks
+		{% elif data['lcwra']==='lcwra17'%}
+		Coping with changes
+		{% elif data['lcwra']==='lcwra18'%}
+		Coping with social situations
+		{% elif data['lcwra']==='lcwra19'%}
+		Behaving appropriately around other people
+		{% elif data['lcwra']==='lcwra20'%}
+		Eating and drinking
+		{% endif %}
+		</p>
+		<p class="edit-report"><a href="LCWRA-descriptor" class="button-secondary">Edit activity</a></p>
+
+		<h4 class="heading-small">Justification</h4>
+		<p>{{ justificationStatement }}</p>
+		<p class="edit-report"><a href="LCWRA-justification" class="button-secondary">Edit justification</a></p>
+
+		<h4 class="heading-small">CSD practitioner consulted</h4>
+		<p>{{ consultedPractitioner }}</p>
+		<p class="edit-report"><a href="LCWRA-question" class="button-secondary">Edit CSD practitioner</a></p>
+
+		<p class="edit-report"><a href="LCWRA-question">Change LCWRA recommendation</a></p>
+
+
+	</div>
+	
+	<!--<p class="edit-report"><a href="exceptionalCircumstances" class="button-secondary">Edit medical opinion</a></p>-->
+	
+</div>
+
+{% endif %}		
+<!-- / report item -->
+
+
+
+<div class="report-item">
+
+	<h2 class="heading-medium">Additional attendees</h2> 
+	
+	<div class="inner-focus">
+		<p>John Smith</p>
+	</div>
+	<p class="edit-report"><a href="addAttendee" class="button-secondary">Edit additional attendees</a></p>
+
+
+	<h2 class="heading-medium">Condition history</h2> 
+	
+	<div class="inner-focus">
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p>Morbi posuere egestas urna, eu ornare lorem eleifend id.</p>
+<p>Etiam molestie, nunc sed lacinia placerat, nisi augue malesuada est, at vehicula est enim sed nibh.</p>
+<p>Curabitur consectetur mi blandit, condimentum enim a, tempor arcu.</p>
+<p>Nulla arcu augue, vestibulum vel libero ut, condimentum vulputate nisl.</p>
+<!--<p>{{ conditionHistory }}</p>-->
+	</div>
+	
+	<p class="edit-report"><a href="#" class="button-secondary">Edit condition history</a></p>
+
+
+	<h2 class="heading-medium">Social and work history</h2> 
+	
+	<div class="inner-focus">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p>Morbi posuere egestas urna, eu ornare lorem eleifend id.</p>
+<p>Etiam molestie, nunc sed lacinia placerat, nisi augue malesuada est, at vehicula est enim sed nibh.</p>
+<p>Curabitur consectetur mi blandit, condimentum enim a, tempor arcu.</p>
+<p>Nulla arcu augue, vestibulum vel libero ut, condimentum vulputate nisl.</p>
+	<!--    Outputs social work history 
+	    {% for item in socialWorkComments | sortBy("time",true) %}
+		<p>{{ item.comment }}</p>
+  		{% endfor %}-->
+  
+	</div>
+	
+	<p class="edit-report"><a href="#" class="button-secondary">Edit social and work history</a></p>
+
+
+	<h2 class="heading-medium">Typical day</h2> 
+	
+	<div class="inner-focus">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p>Morbi posuere egestas urna, eu ornare lorem eleifend id.</p>
+<p>Etiam molestie, nunc sed lacinia placerat, nisi augue malesuada est, at vehicula est enim sed nibh.</p>
+<p>Curabitur consectetur mi blandit, condimentum enim a, tempor arcu.</p>
+<p>Nulla arcu augue, vestibulum vel libero ut, condimentum vulputate nisl.</p>
+		<!--{% for item in typicalDayComments | sortBy("time",true) %}
+		<p>{{ item.comment }}</p>
+  		{% endfor %}-->
+	</div>
+	
+	<p class="edit-report"><a href="#" class="button-secondary">Edit typical day</a></p>
+
+
+	<h2 class="heading-medium">Medication and side effects</h2> 
+	
+	<div class="inner-focus">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p>Morbi posuere egestas urna, eu ornare lorem eleifend id.</p>
+<p>Etiam molestie, nunc sed lacinia placerat, nisi augue malesuada est, at vehicula est enim sed nibh.</p>
+<p>Curabitur consectetur mi blandit, condimentum enim a, tempor arcu.</p>
+<p>Nulla arcu augue, vestibulum vel libero ut, condimentum vulputate nisl.</p>
+	<!--<p>{{ medicationSideEffects }}</p>-->
+	</div>
+	
+	<p class="edit-report"><a href="#" class="button-secondary">Edit medication and side effects</a></p>
+	
+</div>
+<!-- / report item -->
+
+
+
+<div class="report-item">
+
+	<div class="inner-focus">
+	<h2 class="heading-medium">Physical assessments</h2>
+	</div>
+</div>
+<!-- / report item -->
+
+
+
+<div class="report-item">
+	<div class="inner-focus">
+	<h2 class="heading-medium">Mental health assessment</h2>
+	</div>
+</div>
+<!-- / report item -->
+
+
+
+<div class="report-item">
+	<div class="inner-focus">
+	<h2 class="heading-medium">Recommended review period</h2>
+		<p>
+		{% if data['reviewPeriod']==='reviewPeriod1'%}
+		{% elif data['reviewPeriod']==='3months'%}
+		I advise that Michael's case needs reviewing in 3 months.<br><br>{{justifyLCWRA3months}}
+		{% elif data['reviewPeriod']==='6months'%}
+		I advise that Michael's case needs reviewing in 6 months.<br><br>{{justifyLCWRA6months}}
+		{% elif data['reviewPeriod']==='12months'%}
+		I advise that Michael's case needs reviewing in 12 months.<br><br>{{justifyLCWRA12months}}
+		{% elif data['reviewPeriod']==='18months'%}
+		I advise that Michael's case needs reviewing in 18 months.<br><br>{{justifyLCWRA18months}}
+		{% elif data['reviewPeriod']==='2years'%}
+		I advise that Michael's case needs reviewing in 2 years.<br><br>{{justifyLCWRA2years}}
+		{% elif data['reviewPeriod']==='longerterm'%}
+		In the longer term.<br><br>{{justifyLCWRAlonger}}
+		{% elif data['reviewPeriod']==='notrequired'%}
+		No future assessment required.<br><br>{{justifyLCWRAnofuture}}
+		{% endif %}
+		</p>
+		<p class="edit-report"><a href="recommendedReviewPeriod" class="button-secondary">Edit recommended review period</a></p>
+	</div>
+</div>
+<!-- / report item -->
+
+
+
+<div class="report-item">
+	<div class="inner-focus">
+
+	<h2 class="heading-medium">Declaration</h2> 
+	
+	<div class="inner-focus">
+		<p>This form has been completed by a healthcare professional approved by the Secretary of State for Work and Pensions.</p>
+		<p>I have completed this form in accordance with the current guidance to UC examining healthcare professionals as issued by the Department for Work and Pensions.</p>
+		<p>I can confirm that there is no harmful information in the report.</p>
+		<p><span class="bold" style="margin-right:20px; width:400px; display:inline-block;">Healthcare Professional's name</span> Jane Smith</p>
+		<p><span class="bold" style="margin-right:20px; width:400px; display:inline-block;">Healthcare Professional's title</span></p>
+		<p><span class="bold" style="margin-right:20px; width:400px; display:inline-block;">Date</span> {{ "Do MMM YYYY" | daysAgo }}</p>
+	</div>
+
+	</div>
+
+</div>
+<!-- / report item -->	
+
+
+  
+   </div>
+ <!-- / wrapper -->
+  
+
+
+	<p class="depart"><a href="/{{path}}/scenario-curtailment/curtailDeclaration" class="button">Pre-approval submission</a></p>
+
+
+
+{% endblock %}

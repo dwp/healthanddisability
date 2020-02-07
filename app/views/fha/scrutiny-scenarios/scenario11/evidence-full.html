@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 {% extends path+"/_layout-case-simple11.html" %}
+=======
+{% extends path+"/_layout-case-simple4.html" %}
+>>>>>>> curtail
 
 
 {% block actioncolumn %}
    
+<<<<<<< HEAD
  <!-- <p class="returnRef"><a href="/{{path }}/scenario11/referrals-fme" class="link-back">Return to case list</a></p> -->
  
  <div class="caseStatus">
@@ -13,16 +18,66 @@
 		<!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario11/rec-portal" class="button">Make recommendation</a></h3>-->
 		
 </div>
+=======
+<p class="returnRef"><a href="javascript: history.go(-1)" class="link-back">Return to case list</a></p>
+
+ <div class="caseStatus">
+ 	
+	<p class="main-status"><span>Current case status</span>Ready to book</p>
+
+	<!--<p class="primary-action"><span>Suggested case action</span><a href="#" class="button">Book appointment</a></p>-->
+
+ </div>
+>>>>>>> curtail
 
 {% endblock %}
 
 {% block citizen_detail %}
+<<<<<<< HEAD
 Harvey Chamberlain
+=======
+Kenneth Robertson
+>>>>>>> curtail
 {% endblock %}
 
 {% block citizen_content %}
 
+<<<<<<< HEAD
 
+=======
+{% if data['evidencePath']=='ev-ftf'%}
+
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+	
+	
+		{% if data['pbachoice']%}
+	
+		
+	{% else %}
+	<div class="panel panel-info panel-instruction fme-warning"><h2 class="heading-small">New evidence recorded</h2>
+	   <ul class="numeric" data-id="">
+	       <li>
+	         <span class="circle circle-step circle-white">1</span>
+	         <h2 class="govuk-heading-m">Roberto's case should be reviewed before making a recommendation</h2>
+	       </li>
+	
+	       <li>
+	         <span class="circle circle-step circle-white">2</span>
+	         <h2 class="govuk-heading-m"><a href="/{{path }}/scenario2/recordFMEdecision">Make recommendation</a></h2>
+	       </li>
+	     </ul>
+	</div>
+	{% endif %}
+	
+	
+	
+		
+	{% endif %}
+	
+	
+	{% endif %}
+>>>>>>> curtail
 
 
 <div class="container">
@@ -36,6 +91,7 @@ Harvey Chamberlain
   	
 
     <div class="column-full">
+<<<<<<< HEAD
 
         
 
@@ -44,13 +100,77 @@ Harvey Chamberlain
 
 
 <h1 class="heading-large">Recorded evidence</h1>
+=======
+    
+    
+    {# macro #}
+  {{ nav.scenario_tabs("evidence-portal",1,path1, customer._id) }}
+  <div class="grid-row">
+
+    <div class="column-full">
+        
+
+<p><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+<h1 class="heading-large mt10">Recorded evidence</h1>
+
+
+
+<!--<h3 class="filter-head"><span>Filter by:</span></h3>
+
+
+
+ 
+   			 <div class="time-group time-top timeline-break filter-portal">
+			   
+				      <fieldset>
+				    
+				        <legend class="visually-hidden">Filter options</legend>
+				    
+				    
+				    
+				    
+				        <div class="time-choice">
+				         <input id="notes" name="timelinefilter" type="checkbox" value="note"  {{ checked('timelinefilter', 'note') }}>
+				          <label for="notes">All evidence items</label>
+				        </div>
+				        <div class="time-choice">
+				            <input id="evidence" name="timelinefilter" type="checkbox" value="evidence"  {{ checked('timelinefilter', 'evidence') }}>
+				            <label for="evidence">Medical reports</label>
+				          </div>
+				          <div class="time-choice">
+				              <input id="referral" name="timelinefilter" type="checkbox" value="referral"  {{ checked('timelinefilter', 'referral') }}>
+				              <label for="referral">Justifications</label>
+				          </div>
+				          <div class="time-choice">
+				              <input id="tele" name="timelinefilter" type="checkbox" value="tele"  {{ checked('timelinefilter', 'tele') }}>
+				              <label for="tele">Telephone conversations</label>
+				          </div>
+				          <div class="time-choice">
+				              <input id="review" name="timelinefilter" type="checkbox" value="review"  {{ checked('timelinefilter', 'review') }}>
+				              <label for="review">Previous decisions</label>
+				          </div>
+
+				     				          
+				      </fieldset>
+				   </div>		-->
+				   
+				   
+				 
+>>>>>>> curtail
 
 
 
 <table class="evidence-list">
 
 <thead>
+<<<<<<< HEAD
 <tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+=======
+<tr>
+>>>>>>> curtail
   <th>Evidence type</th>
   <th>Source</th>
   <th>Received</th>
@@ -64,8 +184,13 @@ Harvey Chamberlain
 
 {% if data['pbachoice']=='yes'%}
 
+<<<<<<< HEAD
 <tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
 		  <td><a href="/{{path }}/scenario11/not-testing">paper based review justification</a></td>
+=======
+		<tr>
+		  <td><a href="/{{path }}/scenario2/not-testing">Paper based assessment justification</a></td>
+>>>>>>> curtail
 		  <td>HCP</td>
 		  <td></td>
 		  <td class="numeric"><span>11 August 2019</span></td>
@@ -81,8 +206,13 @@ Harvey Chamberlain
 		{% if data['evidenceRecorded']=='record-yes'%}
 		
 
+<<<<<<< HEAD
 		<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
 		  <td><a href="/{{path }}/scenario11/not-testing">GP report</a></td>
+=======
+		<tr>
+		  <td><a href="/{{path }}/scenario2/not-testing">GP report</a></td>
+>>>>>>> curtail
 		  <td>GP</td>
 		  <td><span class="secondary-text">9 August 2019</span></td>
 		  <td class="numeric"><span>10 August 2019</span></td>
@@ -98,8 +228,13 @@ Harvey Chamberlain
 		 {% if data['evidenceRecorded']=='record-yes'%}
 		
 		
+<<<<<<< HEAD
 		<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
 		  <td><a href="/{{path }}/scenario11/not-testing">Factual report</a></td>
+=======
+		<tr>
+		  <td><a href="/{{path }}/scenario2/not-testing">Factual report</a></td>
+>>>>>>> curtail
 		  <td>GP</td>
 		  <td><span class="secondary-text">9 August 2019</span></td>
 		  <td class="numeric"><span>10 August 2019</span></td>
@@ -115,8 +250,13 @@ Harvey Chamberlain
 	{% if data['appointmentReferral']%}
 	
 	
+<<<<<<< HEAD
 		<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
 		  <td><a href="/{{path }}/scenario11/referralJustify">Appointment referral justification</a></td>
+=======
+		<tr>
+		  <td><a href="/{{path }}/scenario2/referralJustify">Appointment referral justification</a></td>
+>>>>>>> curtail
 		  <td>HCP</td>
 		  <td></td>
 		  <td class="numeric"><span>3 August 2019</span></td>
@@ -129,12 +269,17 @@ Harvey Chamberlain
 
 
 <!--<tr class="done" style="display:none"><td colspan="6"> added to ‘my referrals’&nbsp;&nbsp;<a href="#" class="undo">Undo</a></td></tr><tr>
+<<<<<<< HEAD
   <td><a href="/{{path }}/scenario11/not-testing">Med 3</a></td>
+=======
+  <td><a href="/{{path }}/scenario2/not-testing">Med 3</a></td>
+>>>>>>> curtail
   <td>GP</td>
   <td><span class="secondary-text">1 August 2019</span></td>
   <td class="numeric"><span>1 August 2019</span></td>
 </tr> -->
 
+<<<<<<< HEAD
 
 
 
@@ -144,12 +289,63 @@ Harvey Chamberlain
   <td><span class="secondary-text">21 July 2019</span></td>
   <td class="numeric"><span>21 July 2019</span></td>
 </tr>
+=======
+<tr>
+  <td><a href="/{{path }}/scenario4/teleOutput">Telephone conversation</a></td>
+  <td>Consultant</td>
+  <td>&ndash;</td>
+  <td class="numeric">19 August 2019</td>
+</tr>
+
+
+<tr>
+  <td><a href="/{{path }}/scenario2/not-testing">Paper based assessment justification</a></td>
+  <td>HCP</td>
+  <td>&ndash;</td>
+  <td class="numeric">28 July 2019</td>
+</tr>
+
+
+<tr>
+  <td><a href="/{{path }}/scenario2/not-testing">Factual report</a></td>
+  <td>GP</td>
+  <td>27 July 2019</td>
+  <td class="numeric">28 July 2019</td>
+</tr>
+
+
+
+<tr>
+  <td><a href="/{{path }}/scenario2/not-testing">Appointment referral justification</a></td>
+  <td>HCP</td>
+  <td>&ndash;</td>
+  <td class="numeric">25 July 2019</td>
+</tr>
+
+
+<tr>
+  <td><a href="/{{path }}/scenario2/not-testing">UC50 </a></td>
+  <td>Claimant</td>
+  <td>21 July 2019</td>
+  <td class="numeric">21 July 2019</td>
+</tr>
+
+
+
+
+>>>>>>> curtail
 </tbody>
 
 </table> 
 
 
 
+<<<<<<< HEAD
+=======
+    </div><!-- column-full -->
+  </div>
+
+>>>>>>> curtail
     </div><!-- column -->
 
 
