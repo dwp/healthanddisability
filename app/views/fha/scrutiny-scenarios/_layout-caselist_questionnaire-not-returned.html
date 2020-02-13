@@ -1,0 +1,76 @@
+{% extends path+"/_layout.html" %} 
+
+
+
+{% block assess_content %}
+<main id="content" role="main" class="main-content">
+    <div class="container">
+       
+        <div class="grid-row">
+             
+            <div class="column-one-quarter">
+
+                
+                <div class="search-customer">
+        <label class="form-label-bold visually-hidden" for="search">Customer search</label>
+            <span class="form-hint">Search by NI number</span>
+        <input class="form-control form-control-2-3" id="search" type="text" name="search">
+        <button class="gem-c-search__submit">Search</button>
+    </div>
+    
+                
+<nav class="details-nav v2 mb30">
+    <ul>
+
+           <li class="active_detail">
+                <a href="referrals">
+                Referrals (47)</a>
+        
+            <ul>
+            
+                <li>
+                    <a href="new-referrals">New referrals (36)</a>
+                </li>
+            
+                <li>
+                    <a href="uc50-posted">Referrals in progress (4)</a>
+                </li>
+            
+                <li>
+                    <a href="uc50-posted">Incomplete referrals</a>
+                </li>
+
+                <li>
+                    <a href="uc50-posted">Good cause referrals (0)</a>
+                </li>
+
+                <li>
+                    <a href="uc50-posted" class="active_child">Questionnaire not returned (7)</a>
+                </li>
+            
+            </ul>
+        
+        </li>
+
+        <li><a href="#">Reviews (12)</a></li>
+        <li><a href="#">Appointments (55)</a></li>
+        <li><a href="#">Today's appointments (11)</a></li>
+        <li><a href="#">Post assessment (13)</a></li>
+        <li><a href="#">DWP actions to take (10)</a></li>
+    </ul>
+</nav>
+                
+                 
+            </div>
+            <div class="column-three-quarters">
+                {% block caselist_content %}
+
+                {% endblock %}
+            </div>
+            <!-- column -->
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+</main>
+{% endblock %}
