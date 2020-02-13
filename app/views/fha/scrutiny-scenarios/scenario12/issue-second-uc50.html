@@ -1,4 +1,4 @@
-{% extends path+"/_layout-case-simple11.html" %}
+{% extends path+"/_layout-case-simple12.html" %}
 
 
 {% block actioncolumn %}
@@ -41,25 +41,23 @@
 
 
     	
-    	<h1 class="heading-large">Close HTDS referral</h1>
+    	<h1 class="heading-large">Issue second UC50</h1>
     	
-		<p>By continuing you are confirming that the claimant is no longer on the health journey.</p>
-    	
-   
-		
+    	<p>By continuing you are confirming that you’ve issued a second UC50 to the claimant.</p>
 		
 		<div class="evidence-requests mt30">
 				
 				
-			<form method="POST">
+			<form method="POST" action="case-list_referrals-in-progress">
+			
 			
 					{# <div class="form-group">
 						<fieldset class="inline">
 						  
-							  <legend class="heading-medium mb5">Are you ready to close this referral?</legend>
+							  <legend class="heading-large mb5">Issue 2nd UC50 to the claimant</legend>
 
 										<div class="multiple-choice">
-											<input id="yes" type="radio" name="seconduc50option" value="~/{{path}}/scenario11/not-testing">
+											<input id="yes" type="radio" name="seconduc50option" value="~/{{path}}/scenario11/case-list-referral-in-progress">
 											<label for="yes">Yes</label>
 										</div>
 										
@@ -72,7 +70,9 @@
 							</fieldset>
 						</div> #}
 			
-				<p class="mt30"><input type="submit" class="button" value="Confirm and close"></p>
+
+				
+				<p class="mt30"><input type="submit" class="button" value="Confirm and continue"></p>
 				
 
 				

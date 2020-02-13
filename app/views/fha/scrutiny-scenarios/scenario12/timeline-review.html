@@ -1,4 +1,4 @@
-{% extends path+"/_layout-case-simple11.html" %}
+{% extends path+"/_layout-case-simple12.html" %}
 
 
 {% block actioncolumn %}
@@ -22,19 +22,13 @@
 
  <div class="caseStatus">
  	
-	<h2 class="main-status"><span>Current case status</span>Vulnerable claimant</h2>
+	<h2 class="main-status"><span>Current case status</span>Questionnaire not returned</h2>
 	
 
-	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario11/vulnerable-claimant" class="button">Make recommendation</a></h3>
+	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario12/uc50status" class="button">Update UC50 status</a></h3>
 
  </div>
-<details class="end-actions">
-<summary>Other case actions</summary>
 
-	<ul>
-		<li><a href="case-list_referrals-in-progress">UC50 received</a></li>
-	</ul>
-</details>
 <!--<div class="secondary-nav-actions">
 
 	<ul>
@@ -78,11 +72,6 @@
     
   <div class="timeline">
   
-  {# <span class="line"></span>
-<div class="timeline__event">
-  <h3 class="timeline__heading">Evidence of claimant vulnerability</h3>
-  <p class="timeline_datetime">03 August 2019</p>
-</div>  #}
 
    {% if data['uc50choice']=='received'%}
  <span class="line"></span>
@@ -102,11 +91,11 @@
 
 {% elif data['uc50choice']=='returned'%}
 
-<span class="line"></span>
+{# <span class="line"></span>
 <div class="timeline__event">
-  <h3 class="timeline__heading">UC50 not returned - Evidence of claimant vulnerability</h3>
+  <h3 class="timeline__heading">UC50 not returned</h3>
   <p class="timeline_datetime">29 July 2019</p>
-</div>
+</div> #}
 
 
 {% endif %}
