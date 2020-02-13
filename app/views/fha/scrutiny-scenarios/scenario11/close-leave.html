@@ -41,35 +41,41 @@
 
 
     	
-    	<h1 class="heading-large">Claimant has changed address</h1>
+    	<h1 class="heading-large">Close HTDS referral</h1>
     	
+		<p>By continuing you are confirming that the claimant is no longer on the health journey.</p>
     	
+   
+		
+		
 		<div class="evidence-requests mt30">
 				
 				
 			<form method="POST">
 			
-					<div class="form-group">
-						<fieldset>
+					{# <div class="form-group">
+						<fieldset class="inline">
 						  
-							  <legend class="heading-medium mb10">Choose an option</legend>
+							  <legend class="heading-medium mb5">Are you ready to close this referral?</legend>
 
 										<div class="multiple-choice">
-											<input id="claimant" type="radio" name="uc50changedaddress" value="~/{{path}}/scenario11/edit-address-details">
-											<label for="claimant">New address within assessment centre area</label>
-											<span class="form-hint mt5">Update address details and issue second UC50</span>
+											<input id="yes" type="radio" name="seconduc50option" value="~/{{path}}/scenario11/not-testing">
+											<label for="yes">Yes</label>
 										</div>
+										
 
 										<div class="multiple-choice">
-											<input id="gpTele" type="radio" name="uc50changedaddress" value="~/{{path}}/scenario11/close-rebuild">
-											<label for="gpTele">New address outside assessment centre area</label>
-											<span class="form-hint mt5">Close referral and recreate in MSRS</span>
+											<input id="no" type="radio" name="seconduc50option" value="~/{{path}}/scenario11/timeline-review">
+											<label for="no">No</label>
 										</div>
 
 							</fieldset>
-						</div>
+						</div> #}
+			
+				<p class="mt30"><input type="submit" class="button" value="Confirm and close"></p>
 				
-				<p class="mt30"><input type="submit" class="button" value="Save and continue"></p>
+
+				
 				
 				</form>
 		</div>
