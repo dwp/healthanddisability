@@ -1,0 +1,105 @@
+{% extends path+"/_layout-case-simple13.html" %}
+
+
+{% block actioncolumn %}
+   
+
+
+ <div class="caseStatus">
+ 	
+	<h2 class="main-status"><span>Current case status</span>Vulnerable claimant</h2>
+
+ </div>
+{% endblock %}
+
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+    
+   
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+        
+
+
+    	
+    	<h1 class="heading-large">Issue second UC50</h1>
+    	
+    	<p>By continuing you are confirming that you’ve issued a second UC50 to the claimant.</p>
+		
+		
+		<div class="evidence-requests mt30">
+				
+				
+			<form method="POST" action="case-list_referrals-in-progress">
+			
+			
+					{# <div class="form-group">
+						<fieldset class="inline">
+						  
+							  <legend class="heading-large mb5">Issue 2nd UC50 to the claimant</legend>
+
+										<div class="multiple-choice">
+											<input id="yes" type="radio" name="seconduc50option" value="~/{{path}}/scenario11/case-list-referral-in-progress">
+											<label for="yes">Yes</label>
+										</div>
+										
+
+										<div class="multiple-choice">
+											<input id="no" type="radio" name="seconduc50option" value="~/{{path}}/scenario11/timeline-review">
+											<label for="no">No</label>
+										</div>
+
+							</fieldset>
+						</div> #}
+			
+
+				
+				<p class="mt30"><input type="submit" class="button" value="Confirm and continue"></p>
+				
+
+				
+				
+				</form>
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

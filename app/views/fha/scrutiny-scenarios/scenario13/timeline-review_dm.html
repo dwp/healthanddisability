@@ -1,0 +1,159 @@
+{% extends path+"/_layout-case-simple13.html" %}
+
+
+{% block actioncolumn %}
+   
+ <p class="returnRef"><a href="javascript: history.go(-1)" class="link-back">Return to case list</a></p>
+
+
+<!-- <div class="caseIdentifiers">
+	<div class="caseFlags">
+		<h2>Case flags</h2>
+	
+		<ul>
+			<li><a href="#">Unacceptable claimant behaviour</a></li>
+			<li><a href="#">Claimant has an appointee</a></li>
+		</ul>
+	</div>
+</div> -->
+		
+	
+
+
+ <div class="caseStatus">
+ 	
+	<h2 class="main-status"><span>Current case status</span>Vulnerable claimant</h2>
+	
+
+	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario13/vulnerable-claimant" class="button">Make recommendation</a></h3>
+
+ </div>
+<details class="end-actions">
+<summary>Other case actions</summary>
+
+	<ul>
+		<li><a href="case-list_referrals-in-progress">UC50 received</a></li>
+	</ul>
+</details>
+<!--<div class="secondary-nav-actions">
+
+	<ul>
+		<li><a href="#">Withdraw case</a></li>
+		<li><a href="#">Close case</a></li>
+		<li><a href="#">Delete case</a></li>
+	</ul>
+		
+ </div> -->
+
+{% endblock %}
+
+
+
+
+
+{% block citizen_content %}
+
+
+
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.scenario_tabs("timeline-review",1,path1, customer._id) }}
+
+    
+  <div class="timeline">
+  
+  {# <span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">Evidence of claimant vulnerability</h3>
+  <p class="timeline_datetime">03 August 2019</p>
+</div>  #}
+
+   {% if data['uc50choice']=='received'%}
+ <span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">UC50 received</h3>
+  <p class="timeline_datetime">29 July 2019</p>
+</div>
+
+
+{% elif data['uc50choice']=='required'%}
+
+<span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">UC50 not required</h3>
+  <p class="timeline_datetime">29 July 2019</p>
+</div>
+
+{% elif data['uc50choice']=='returned'%}
+
+<span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">UC50 not returned - Evidence of claimant vulnerability</h3>
+  <p class="timeline_datetime">29 July 2019</p>
+</div>
+
+
+{% endif %}
+
+      
+      
+      
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">UC50 form overdue</h3>
+        <p class="timeline_datetime">28 July 2019</p>
+      </div>
+
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">UC50 form posted</h3>
+        <p class="timeline_datetime">1 July 2019</p>
+      </div>
+      
+ 
+
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">New referral created</h3>
+        <p class="timeline_datetime">28 June 2019</p>
+      </div>
+
+
+
+      <div style="clear:both"></div>
+
+    </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
