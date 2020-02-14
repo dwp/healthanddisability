@@ -1,13 +1,8 @@
-<<<<<<< HEAD
 {% extends path+"/_layout-case-simple11.html" %}
-=======
-{% extends path+"/_layout-case-simple4.html" %}
->>>>>>> curtail
 
 
 {% block actioncolumn %}
    
-<<<<<<< HEAD
   <p class="returnRef"><a href="#" class="link-back">Return to case list</a></p>
  
  <div class="caseStatus">
@@ -76,95 +71,19 @@ Harvey Chamberlain
 
 {% block citizen_content %}
 
-=======
-<p class="returnRef"><a href="javascript: history.go(-1)" class="link-back">Return to case list</a></p>
-
- <div class="caseStatus">
- 	
-	<p class="main-status"><span>Current case status</span>Ready for assessment</p>
-
-	<p class="primary-action"><span>Suggested case action</span><a href="#" class="button">Start assessment review</a></p>
-
- </div>
-
-<!--<div class="secondary-nav-actions">
-
-	<ul>
-		<li><a href="#">Withdraw case</a></li>
-		<li><a href="#">Close case</a></li>
-		<li><a href="#">Delete case</a></li>
-	</ul>
-		
- </div> -->
-
-{% endblock %}
-
-{% block citizen_detail %}
-Kenneth Robertson
-{% endblock %}
-
-{% block citizen_content %}
-
-
-{% if data['evidencePath']=='ev-ftf'%}
-
-
-	{% if data['evidenceRecorded']=='record-yes'%}
-	
-	
-		{% if data['pbachoice']%}
-	
-		
-	{% else %}
-	<div class="panel panel-info panel-instruction fme-warning"><h2 class="heading-small">New evidence recorded</h2>
-	   <ul class="numeric" data-id="">
-	       <li>
-	         <span class="circle circle-step circle-white">1</span>
-	         <h2 class="govuk-heading-m">Roberto's case should be reviewed before making a recommendation</h2>
-	       </li>
-	
-	       <li>
-	         <span class="circle circle-step circle-white">2</span>
-	         <h2 class="govuk-heading-m"><a href="/{{path }}/scenario2/recordFMEdecision">Make recommendation</a></h2>
-	       </li>
-	     </ul>
-	</div>
-	{% endif %}
-	
-	
-	
-		
-	{% endif %}
-	
-	
-	{% endif %}
->>>>>>> curtail
 
 
 
 
 <div class="container">
   <div class="grid-row">
-<<<<<<< HEAD
-=======
-  
->>>>>>> curtail
     <div class="column-full">
     
     {# macro #}
   {{ nav.scenario_tabs("details-fme",1,path1, customer._id) }}
-<<<<<<< HEAD
     
    <h1 class="heading-large">
   	Medical</h1>
-=======
-  
-
-  
-
-  <h1 class="heading-large">
-  	Details</h1>
->>>>>>> curtail
   	
   
   <div class="portal-display">	
@@ -177,17 +96,12 @@ Kenneth Robertson
 		  	
 		  		 <div class="portal-card">
 				<div class="portal-head">
-<<<<<<< HEAD
 					<h3>Current referral</h3>
-=======
-					<h3>Medical conditions</h3>
->>>>>>> curtail
 				</div>
 				<!-- / title -->
 
 				<div class="portal-inner">
 				
-<<<<<<< HEAD
 				
 				<!-- Previous outcome -->
 				<div class="currentPrimary">
@@ -240,46 +154,10 @@ Kenneth Robertson
 				<hr>
 				<p><a href="/{{path }}/scenario11/evidence-step2" class="secondary-invert">Request medical evidence</a></p>
 									
-=======
-				<h4>Last recorded medical condition</h4>
-				
-
-					<table class="medical-list">
-						<caption>Medical conditions list</caption>
-						
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Since</th>
-								<th>Source</th>
-							</tr>
-						</thead>
-
-						
-						<tbody>
-						
-						
-						<tr>
-							<td>Glucose 6 phosphate dehydrogenase (G6PD) deficiency</td>
-							<td>12 June 1999</td>
-							<td>Claimant</td>
-						</tr>
-
-						
-						
-						</tbody>
-					</table>
-					
-					<p class="view-all"><a href="/{{path }}/scenario4/conditions" class="secondary-invert">View all medical conditions</a></p>
-
-
-					
->>>>>>> curtail
 				</div>
 				<!-- / inner card -->
 			</div>
 			<!-- / portal card -->
-<<<<<<< HEAD
 			
 			
 			
@@ -287,8 +165,6 @@ Kenneth Robertson
 			
 			
 			
-=======
->>>>>>> curtail
 		  	
 		  	</div>
 		  	
@@ -298,18 +174,13 @@ Kenneth Robertson
 		
 			<div class="portal-card">
 				<div class="portal-head">
-<<<<<<< HEAD
 					<h3>Previous outcome</h3>
-=======
-					<h3>Contact details</h3>
->>>>>>> curtail
 				</div>
 				<!-- / title -->
 
 				<div class="portal-inner">
 				
 				
-<<<<<<< HEAD
 				
 				
 				
@@ -401,27 +272,16 @@ Kenneth Robertson
 				
 				
 								
-=======
-				<ul class="action-list">
-						<li><a href="/{{path }}/scenario4/customer-detail" class="secondary-invert">View Kenneth's details</a></li>
-						<li><a href="/{{path }}/scenario4/gp-detail" class="secondary-invert">View GP details</a></li>
-						<li><a href="/{{path }}/scenario4/not-testing" class="secondary-invert">Add a contact</a></li>
-					</ul>
-														
->>>>>>> curtail
 				</div>
 				<!-- / inner card -->
 			<!-- / portal card -->
 		  	</div>
 		  	
 		  	
-<<<<<<< HEAD
 		  	
 		  	
 		  		  	
 		  	
-=======
->>>>>>> curtail
 		  	  	
   	 </div>
     

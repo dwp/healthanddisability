@@ -1,13 +1,8 @@
-<<<<<<< HEAD
 {% extends path+"/_layout-case-simple11.html" %}
-=======
-{% extends path+"/_layout-case-simple4.html" %}
->>>>>>> curtail
 
 
 {% block actioncolumn %}
    
-<<<<<<< HEAD
   <p class="returnRef"><a href="#" class="link-back">Return to case list</a></p>
  
  <div class="caseStatus">
@@ -75,68 +70,6 @@ Harvey Chamberlain
 {% endblock %}
 
 {% block citizen_content %}
-=======
-<p class="returnRef"><a href="javascript: history.go(-1)" class="link-back">Return to case list</a></p>
-
- <div class="caseStatus">
- 	
-	<p class="main-status"><span>Current case status</span>Did not attend appointment</p>
-
-	<p class="primary-action"><span>Suggested case action</span><a href="#" class="button">Record a reason</a></p>
-
- </div>
-
-<!--<div class="secondary-nav-actions">
-
-	<ul>
-		<li><a href="#">Withdraw case</a></li>
-		<li><a href="#">Close case</a></li>
-		<li><a href="#">Delete case</a></li>
-	</ul>
-		
- </div> -->
-
-{% endblock %}
-
-{% block citizen_detail %}
-Kenneth Robertson
-{% endblock %}
-
-{% block citizen_content %}
-
-{% if data['evidencePath']=='ev-ftf'%}
-
-
-	{% if data['evidenceRecorded']=='record-yes'%}
-	
-	
-		{% if data['pbachoice']%}
-	
-		
-	{% else %}
-	<div class="panel panel-info panel-instruction fme-warning"><h2 class="heading-small">New evidence recorded</h2>
-	   <ul class="numeric" data-id="">
-	       <li>
-	         <span class="circle circle-step circle-white">1</span>
-	         <h2 class="govuk-heading-m">Roberto's case should be reviewed before making a recommendation</h2>
-	       </li>
-	
-	       <li>
-	         <span class="circle circle-step circle-white">2</span>
-	         <h2 class="govuk-heading-m"><a href="/{{path }}/scenario4/recordFMEdecision">Make recommendation</a></h2>
-	       </li>
-	     </ul>
-	</div>
-	{% endif %}
-	
-	
-	
-		
-	{% endif %}
-	
-	
-	{% endif %}
->>>>>>> curtail
 
 
 
@@ -179,25 +112,16 @@ Kenneth Robertson
 		
 		
 		<!---------------------------------- Card ---------------------------------->
-<<<<<<< HEAD
 		<div class="column-two-thirds">
 		
 			<div class="portal-card">
 				<div class="portal-head">
 					<h3>Evidence held</h3>
-=======
-		<div class="column-half">
-		
-			<div class="portal-card">
-				<div class="portal-head">
-					<h3>What we have</h3>
->>>>>>> curtail
 				</div>
 				<!-- / title -->
 
 				<div class="portal-inner">
 				
-<<<<<<< HEAD
 				
 
 				
@@ -206,22 +130,12 @@ Kenneth Robertson
 				<h4>All evidence relevant to this referral</h4>
 
 					<table class="evidence-list">
-=======
-				<h4>Last recorded evidence</h4>
-
-					<table>
->>>>>>> curtail
 						<caption>Evidence item</caption>
 						
 						<thead>
 							<tr>
-<<<<<<< HEAD
 								<th>Type</th>
 								<th>Recorded</th>
-=======
-								<th>Evidence type</th>
-								<th>Date recorded</th>
->>>>>>> curtail
 							</tr>
 						
 						
@@ -237,7 +151,6 @@ Kenneth Robertson
 						
 						<tbody>
 						
-<<<<<<< HEAD
 				
 								  		<tr>
 											<td><a href="/{{path }}/scenario11/referralJustify">Appointment referral justification &ndash; second review</a></td>
@@ -283,112 +196,14 @@ Kenneth Robertson
 					
 					<p class="view-all"><a href="/{{path }}/scenario11/evidence-full" class="secondary-invert">View historical evidence</a></p>
 
-=======
-						
-						{% if data['pbachoice']=='yes'%}
-						
-									<tr>
-										<td><a href="/{{path }}/scenario1/not-testing">Paper based assessment justification</a></td>
-										<td>11 August 2019</td>
-									</tr>
-						
-						{% endif %}
-						
-						
-						
-							{% if data['evidenceChoice']=='ev-gp'%}
-	  	
-	  	
-						  		{% if data['evidenceRecorded']=='record-yes'%}
-						  		
-						  		
-						  			<tr>
-										<td><a href="/{{path }}/scenario1/not-testing">GP report</a></td>
-										<td>10 August 2019</td>
-									</tr> 		
-						  		
-						  		{% endif %}
-						  		
-						  		
-						  		
-						  	{% elif data['evidenceChoice']=='ev-fr'%}
-						  		
-						  		
-						  		 {% if data['evidenceRecorded']=='record-yes'%}
-						  		
-						  		
-						  			<tr>
-										<td><a href="/{{path }}/scenario1/not-testing">Factual report</a></td>
-										<td>10 August 2019</td>
-									</tr> 		
-						  		
-						  		{% endif %}
-	
-						  		  	
-						  	{% endif %}
-						  	
-						  	
-						  	
-						  	{% if data['evidenceRecorded']=='record-yes'%}
-						  	
-						  	
-						  		{% if data['appointmentReferral']%}
-								  		<tr>
-											<td><a href="/{{path }}/scenario2/referralJustify">Appointment referral justification</a></td>
-											<td>3 August 2019</td>
-										</tr>
-										{% else %}
-										
-										<tr>
-											<td><a href="/{{path }}/scenario1/not-testing">UC50</a></td>
-											<td>21 July 2019</td>
-										</tr>
-								  	
-								  	{% endif %}
-								
-								
-								{% else %}
-								
-								
-								{% if data['appointmentReferral']%}
-								  		<tr>
-											<td><a href="/{{path }}/scenario2/referralJustify">Appointment referral justification</a></td>
-											<td>3 August 2019</td>
-										</tr>
-										<tr>
-											<td><a href="/{{path }}/scenario1/not-testing">UC50</a></td>
-											<td>21 July 2019</td>
-										</tr>
-										{% else %}
-								
-										<!--<tr>
-											<td><a href="/{{path }}/scenario1/not-testing">Med 3</a></td>
-											<td>1 August 2019</td>
-										</tr>-->
-										<tr>
-											<td><a href="/{{path }}/scenario1/not-testing">UC50</a></td>
-											<td>21 July 2019</td>
-										</tr>
-										
-										{% endif %}
-							{% endif %}
-						</tbody>
-					</table>
-					
-					<p class="view-all"><a href="/{{path }}/scenario4/evidence-full" class="secondary-invert">View all recorded evidence</a></p>
-					
->>>>>>> curtail
 				</div>
 				<!-- / inner card -->
 			</div>
 			<!-- / portal card -->
 			
-<<<<<<< HEAD
 			
 			
 						
-=======
->>>>>>> curtail
 		</div>
 		<!---------------------------------- / Card ---------------------------------->
 		
@@ -396,24 +211,15 @@ Kenneth Robertson
 		
 		
 		<!---------------------------------- Card ---------------------------------->
-<<<<<<< HEAD
 		<div class="column-third">
 		
 			<div class="portal-card">
 				<div class="portal-head">
 					<h3>Record new evidence</h3>
-=======
-		<div class="column-half">
-		
-			<div class="portal-card">
-				<div class="portal-head">
-					<h3>Record</h3>
->>>>>>> curtail
 				</div>
 				<!-- / title -->
 
 				<div class="portal-inner">
-<<<<<<< HEAD
 
 					<ul class="action-list">
 						
@@ -429,40 +235,15 @@ Kenneth Robertson
 						<li><a href="/{{path }}/scenario11/recordOther" class="secondary-invert">Record other evidence</a></li>
 					</ul>
 	
-=======
-					<p>Choose the evidence type you want to record:</p>
-					<ul class="action-list">
-						<li><a href="/{{path }}/scenario4/recordTelephone" class="secondary-invert">Record a telephone conversation</a></li>
-						<li><a href="/{{path }}/scenario4/recordOther" class="secondary-invert">Record other evidence</a></li>
-					</ul>
-					
-					
-	
-					<!--<div class="requested-evidence">
-		
-							<ul class="action-list req-list">
-								<li><p>GP report<span>Requested on 3 August 2019</span></p>
-								<a href="/{{path }}/scenario2/record-evidence" class="secondary-invert">Record GP report</a></li>
-								
-							</ul>
-						</div>-->
-
-					
-		
-					
->>>>>>> curtail
 				</div>
 				<!-- / inner card -->
 			</div>
 			<!-- / portal card -->
 			
-<<<<<<< HEAD
 			
 	
 			
 			
-=======
->>>>>>> curtail
 		</div>
 		<!---------------------------------- / Card ---------------------------------->
 		
