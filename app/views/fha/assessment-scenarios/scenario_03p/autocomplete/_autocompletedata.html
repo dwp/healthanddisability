@@ -1,0 +1,41 @@
+<script type="text/javascript">
+
+var evidence = [
+'Appointment letter',
+'BF223',
+'Care Plan',
+'Change of decision (LT54)',
+'Client letter',
+'Consultant letter',
+'Copy of prescription',
+'DNA1',
+'Factual report (FRR2)',
+'Factual report (FRR3)',
+'GP letter',
+'Hospital correspondence',
+'Hospital discharge letter',
+'Medical condition report (DS1500)',
+'Other',
+'PIP / DLA decision letter',
+'Proof of identity form (POID)',
+'Questionnaire cancer treatment page',
+'Support / key worker letter',
+'Tribunal decision letter',
+'UC63',
+'UC65',
+  ]
+id = 'evidenceType'
+</script>
+
+
+<script type="text/javascript">
+    var element = document.querySelector('#tt-default')
+    id = 'autocomplete-placeholder'
+      accessibleAutocomplete({
+        element: element,
+        id: 'lastLocation',
+        autoselect: 'true',
+//      placeholder: 'Search evidence types',
+        source: evidence
+      })
+  </script>

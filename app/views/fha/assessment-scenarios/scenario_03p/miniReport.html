@@ -1,0 +1,238 @@
+{% extends path+"/scenario_03p/_layout-case-simple_review-complete.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<style type="text/css">
+table.scoring-table td, table.scoring-table th
+{border-bottom: none !important;}
+</style>
+
+<p class="no-kdBar"></p>
+
+  
+<h1 class="heading-large mb0">Review report before submission</h1>
+ 
+
+<div class="review-wrapper full-report">
+
+
+<div>
+
+	<table class="report-view-table">
+	{# <caption class="heading-small">Assessment overview</caption> #}
+	
+		<tbody>
+			<tr>
+				<th>Name</th>
+				<td>Kate Burrows</td>
+			</tr>
+			<tr>
+				<th>NINO</th>
+				<td>LG 24 93 49 B</td>
+			</tr>
+			<tr>
+				<th>DOB</th>
+				<td>31 January 1976</td>
+			</tr>
+			<tr>
+				<th>Date of assessment</th>
+				<td>{{ "Do MMM YYYY" | daysAgo }}</td>
+			</tr>
+			<tr>
+				<th>Assessment centre</th>
+				<td>Fiveways, Birmingham</td>
+			</tr>
+			<tr>
+				<th>Assessor</th>
+				<td>Jane Smith</td>
+			</tr>
+			<tr>
+				<th>Assessment started</th>
+				<td>{{ last_one.time | formatDate("H:mma") }}</td>
+			</tr>
+			<tr>
+				<th>Assessment finished</th>
+				<td>{{ first_one.time | formatDate("H:mma") }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+<!-- / report item -->
+
+{# <div>
+
+	<table class="report-view-table">
+	<caption class="heading-small">Assessment overview</caption>
+	
+		<tbody>
+			<tr>
+				<th>Date of assessment</th>
+				<td>{{ "Do MMM YYYY" | daysAgo }}</td>
+			</tr>
+			<tr>
+				<th>Assessment centre</th>
+				<td>Fiveways, Birmingham</td>
+			</tr>
+			<tr>
+				<th>Assessor</th>
+				<td>Jane Smith</td>
+			</tr>
+			<tr>
+				<th>Assessment start</th>
+				<td>{{ last_one.time | formatDate("H:mma") }}</td>
+			</tr>
+			<tr>
+				<th>Assessment finish</th>
+				<td>{{ first_one.time | formatDate("H:mma") }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div> #}
+<!-- / report item -->
+
+
+<div>
+
+	<h2 class="heading-medium">Recommendation</h2> 
+	
+	<div class="inner-focus">
+		{# <p>LCWRA: Moving around and climbing steps without someone’s help</p> #}
+		{% if data['PBAdescriptors']==='terminalIllness' %}
+		<p>I advise that Kate meets the criteria for being treated as having limited capability for work and work-related activity because of terminal illness.</p>
+		{% elif data['pbaOutcome']==='LCWRAmobilising' %}
+		<p>I advise that Kate meets the criteria for limited capability for work and work-related activity as they have severe functional disability in mobilising and using steps.</p>
+		{% elif data['pbaOutcome']==='LCWRAlearning' %}
+		<p>I advise that Kate meets the criteria for limited capability for work and work-related activity as they have severe functional disability in learning to do new tasks.</p>
+		{% elif data['pbaOutcome']==='LCWRAeating'%}
+		<p>I advise that Kate meets the criteria for limited capability for work and work-related activity as they have severe functional disability in eating and drinking.</p>
+		{% elif data['pbaOutcome']==='treatLCWRApregnancy'%}
+		<p>I advise that Kate meets the criteria for being treated as having limited capability for work and work-related activity because of serious risks associated with pregnancy.</p>
+		{% elif data['pbaOutcome']==='treatLCWregular'%}
+		<p>I advise that Kate meets the criteria for being treated as having limited capability for work because of regular treatment.</p>
+		{% elif data['pbaOutcome']==='acceptLCW' %}
+		<p>I advise that Kate meets the criteria for limited capability for work as they have functional disability in picking up and moving things and manual dexterity.</p>
+		{% endif %}
+	</div>
+	<p class="edit-report"><a href="#" class="button-secondary">Edit recommendation</a></p>
+<hr>
+
+{% if data['pbaOutcome']==='acceptLCW'%}
+<h2 class="heading-medium">Scoring</h2> 
+
+<table class="scoring-table">
+	{# <caption class="heading-small">Assessment overview</caption> #}
+	
+		<tbody>
+			<tr>
+				<th style="width:80% !important;">Activity</th>
+				<th>Score</th>
+			</tr>
+			<tr>
+				<th><a href="#">Picking up and moving things</a></th>
+				<td>9</td>
+			</tr>
+			<tr>
+				<th><a href="#">Manual dexterity</a></th>
+				<td>9</td>
+			</tr>
+			<tr>
+				<th>Total score</th>
+				<th>18</th>
+			</tr>
+		</tbody>
+	</table>
+<hr>
+{% endif %}
+	<h2 class="heading-medium">Evidence considered</h2> 
+	
+	<div class="inner-focus">
+				<ul class="mb20">
+				<li class="mb5">Fit note (Med3)</li>
+				<li class="mb5">Questionnaire (UC50)</li>
+				<li class="mb5">Previous reports ({{ dobMonth }}/{{ dobYear }})</li>
+				</ul>
+	</div>
+	<p class="edit-report"><a href="#" class="button-secondary">Add or remove evidence</a></p>
+
+<hr>
+	<h2 class="heading-medium">Justification</h2> 
+	
+	<div class="inner-focus">
+
+<!-- / Justification detail  -->
+
+{% if data['PBAdescriptors']==='terminalIllness'%}<p>The fit note (Med3), questionnaire (UC50) and previous medical report ({{ dobMonth }}/{{ dobYear }}) indicate the claimant should be treated as having limited capability for work and work-related activity because of terminal illness. This is due to {{ diagnosedConditions }}.</p>
+<p>There are conditions reported or evidence available that fulfil this criteria. {{ evidenceKeyFacts }}</p>
+{% elif data['pbaOutcome']==='LCWRAmobilising'%}
+<p>The fit note (Med3), questionnaire (UC50) and previous medical report ({{ dobMonth }}/{{ dobYear }}) indicate the claimant has limited capability for work and work-related activity as they have severe functional disability in mobilising and using steps. This is due to {{ diagnosedConditions }}.</p>
+<p>Kate cannot mobilise more than 50 metres before they have to stop, or 50 metres repeatedly. {{ evidenceKeyFacts }}</p>
+<p>Kate cannot self-propel a manual wheelchair. {{ notLCWRAjustification }}</p>
+{% elif data['pbaOutcome']==='LCWRAlearning'%}
+<p>The fit note (Med3), questionnaire (UC50) and previous medical report ({{ dobMonth }}/{{ dobYear }}) indicate the claimant has limited capability for work and work-related activity as they have severe functional disability in learning to do new tasks. This is due to {{ diagnosedConditions }}.</p>
+<p>Kate cannot learn how to do a simple task, like setting an alarm clock. {{ evidenceKeyFacts }}</p>
+{% elif data['pbaOutcome']==='LCWRAeating'%}<p>The fit note (Med3), questionnaire (UC50) and previous medical report ({{ dobMonth }}/{{ dobYear }}) indicate the claimant has limited capability for work and work-related activity as they have severe functional disability in eating and drinking. This is due to {{ diagnosedConditions }}.</p>
+	{% if data['eatingdrinkingoption']==='conveymouth'%}<p>Kate cannot convey to the mouth. {{ evidenceKeyFacts }}</p>
+	{% elif data['eatingdrinkingoption']==='chewswallow'%}<p>Kate cannot chew or swallow. {{ evidenceKeyFacts }}</p>
+	{% endif %}
+{% elif data['pbaOutcome']==='treatLCWRApregnancy'%}
+<p>The fit note (Med3), questionnaire (UC50) and previous medical report ({{ dobMonth }}/{{ dobYear }}) indicate the claimant should be treated as having limited capability for work and work-related activity because of serious risks associated with pregnancy. This is due to {{ diagnosedConditions }}.</p>
+<p>Kate is pregnant and there is a serious risk of damage to Kate's health or the health of their unborn child if they do not refrain from work and work-related activity. {{ evidenceKeyFacts }}</p>
+{% elif data['pbaOutcome']==='treatLCWregular'%}
+<p>The fit note (Med3), questionnaire (UC50) and previous medical report ({{ dobMonth }}/{{ dobYear }}) indicate the claimant should be treated as having limited capability for work because of regular treatment. This is due to {{ diagnosedConditions }}.</p>
+<p>Kate is receiving haemodialysis, plasmapheresis or total parenteral nutrition. {{ evidenceKeyFacts }}</p>
+<p>Kate does not meet the criteria for LCWRA. {{ notLCWRAjustification }}</p>
+{% elif data['pbaOutcome']==='acceptLCW'%}
+<p>The fit note (Med3), questionnaire (UC50) and previous medical report ({{ dobMonth }}/{{ dobYear }}) indicate the claimant has limited capability for work as they have functional disability in picking up and moving things and manual dexterity. This is due to {{ diagnosedConditions }}.</p>
+<p>Kate cannot pick up and move a 1 litre (2 pint) carton full of liquid and cannot use a pen or pencil to make a meaningful mark. {{ evidenceKeyFacts }}</p>
+<p>Kate does not meet the criteria for LCWRA. {{ notLCWRAjustification }}</p>
+{% endif %}
+
+	</div>
+	<p class="edit-report"><a href="justificationSummary" class="button-secondary">Edit justification</a></p>
+<hr>
+	<h2 class="heading-medium">Recommended review period</h2> 
+	
+	<div class="inner-focus">
+	{% if data['reviewPeriod']==='anyoutcome'%}
+		{% elif data['reviewPeriod']==='3months'%}<p>Time until Kate's case needs reviewing:<br><br><span class="bold">3 months</span></p><p>The available evidence suggests review in the short term.<p><p>{{ justifyprognosis3months }}</p>
+		{% elif data['reviewPeriod']==='6months'%}<p>Time until Kate's case needs reviewing:<br><br><span class="bold">6 months</span></p><p>The available evidence suggests review in the short term.<p><p>{{ justifyprognosis6months }}</p>
+		{% elif data['reviewPeriod']==='12months'%}<p>Time until Kate's case needs reviewing:<br><br><span class="bold">12 months</span></p><p>The available evidence suggests review in the medium term.<p><p>{{ justifyprognosis12months }}</p>
+		{% elif data['reviewPeriod']==='18months'%}<p>Time until Kate's case needs reviewing:<br><br><span class="bold">18 months</span></p><p>The available evidence suggests review in the medium term.<p><p>{{ justifyprognosis18months }}</p>
+		{% elif data['reviewPeriod']==='2years'%}<p>Time until Kate's case needs reviewing:<br><br><span class="bold">2 years</span></p><p>The available evidence suggests review in the longer term.<p><p>{{ justifyprognosis2years }}</p>
+		{% elif data['reviewPeriod']==='longerterm'%}<p>Time until Kate's case needs reviewing: in the longer term</p><p>The available evidence suggests review in the longer term.<p><p>{{ justifyprognosislonger }}</p>
+		{% elif data['reviewPeriod']==='severecondition'%}<p>No future assessments are required</p><p>{{ justifyprognosissevere }}</p>
+		{% elif data['PBAdescriptors']==='terminalIllness'%}<p>No future assessments are required</p>
+    {% endif %}
+				
+	</div>
+	<p class="edit-report"><a href="#" class="button-secondary">Edit review period</a></p>
+
+<hr>
+	<h2 class="heading-medium">Declaration</h2> 
+	
+	<div class="inner-focus">
+		<p>This form has been completed by a healthcare professional approved by the Secretary of State for Work and Pensions.</p>
+		<p>I have completed this form in accordance with the current guidance to UC examining healthcare professionals as issued by the Department for Work and Pensions.</p>
+		<p>I can confirm that there is no harmful information in the report.</p>
+		<p><span class="bold" style="margin-right:20px;">Healthcare Professional's name:</span> Jane Smith</p>
+		<p><span class="bold" style="margin-right:20px;">Date:</span> {{ "Do MMM YYYY" | daysAgo }}</p>
+	</div>
+
+</div>
+<!-- / report item -->	
+
+  
+   </div>
+ <!-- / wrapper -->
+  
+
+
+	<p class="depart"><a href="#" class="button">Finish &ndash; sign off report</a></p>
+
+
+
+{% endblock %}

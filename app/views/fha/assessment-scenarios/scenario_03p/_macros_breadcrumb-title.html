@@ -1,0 +1,16 @@
+
+{% extends path+"/scenario_03p/chooseActivity.html" %}
+
+{% block breadcrumb %}
+<p>
+{% if data['pbaOutcome']==='anyoutcome'%}
+		{% elif data['pbaOutcome']==='terminalillness'%}Terminal illness
+		{% elif data['pbaOutcome']==='LCWRAmobilising'%}LCWRA due to mobilising and using steps
+		{% elif data['pbaOutcome']==='LCWRAlearning'%}LCWRA due to learning to do new tasks
+		{% elif data['pbaOutcome']==='LCWRAeating'%}LCWRA due to eating and drinking
+		{% elif data['pbaOutcome']==='treatLCWRApregnancy'%}Treat as having LCWRA due to serious risks associated with pregnancy
+		{% elif data['pbaOutcome']==='treatLCWregular'%}Treat as having LCWRA due to regular treatment
+		{% elif data['pbaOutcome']==='acceptLCW'%}accept ongoing LCW
+ {% endif %}
+ </p>
+ {% endblock %}

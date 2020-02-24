@@ -1,0 +1,161 @@
+{% extends path+"/scenario_03p/_layout-case-simple-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<p class="caption-large" class="mb0">File report: 
+{% if data['pbaOutcome']==='anyoutcome'%}
+		{% elif data['PBAdescriptors']==='terminalIllness'%}Terminal illness
+		{% elif data['pbaOutcome']==='LCWRAmobilising'%}LCWRA due to mobilising and using steps
+		{% elif data['pbaOutcome']==='LCWRAlearning'%}LCWRA due to learning to do new tasks
+		{% elif data['pbaOutcome']==='LCWRAeating'%}LCWRA due to eating and drinking
+		{% elif data['pbaOutcome']==='treatLCWRApregnancy'%}Treat as having LCWRA due to serious risks associated with pregnancy
+		{% elif data['pbaOutcome']==='treatLCWregular'%}Treat as having LCWRA due to regular treatment
+		{% elif data['pbaOutcome']==='acceptLCW'%}accept ongoing LCW
+{% endif %}
+</p>
+<h1 class="heading-large mt10">Time until Kate's case needs reviewing</h1>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+
+<form method="post" action="miniReport">
+
+	<div class="form-group">
+		 <fieldset>
+		     
+				    	<!--<legend class="heading-medium mb10">When should this case be reviewed?</legend>-->
+		
+					    <div class="multiple-choice" data-target="justify3months">
+					      <input id="3months" name="reviewPeriod" type="radio" value="3months">
+					      <label for="3months">3 months</label>
+					    </div>
+						<div class="panel js-hidden" id="justify3months">
+							<div class="form-group">
+								<label class="form-label" for="justify">Justify prognosis, if necessary</label>
+								<textarea class="form-control form-control-1-1" name="justifyprognosis3months" id="justify" rows="2">{{justifyprognosis3months}}</textarea>
+							</div>
+					    </div>
+							<div class="multiple-choice" data-target="justify6months">
+					      <input id="6months" name="reviewPeriod" type="radio" value="6months">
+					      <label for="6months">6 months</label>
+					    </div>
+						<div class="panel js-hidden" id="justify6months">
+							<div class="form-group">
+								<label class="form-label" for="justify">Justify prognosis, if necessary</label>
+								<textarea class="form-control form-control-1-1" name="justifyprognosis6months" id="justify" rows="2">{{justifyprognosis6months}}</textarea>
+							</div>
+					    </div>
+							<div class="multiple-choice" data-target="justify12months">
+					      <input id="12months" name="reviewPeriod" type="radio" value="12months">
+					      <label for="12months">12 months</label>
+					    </div>
+						<div class="panel js-hidden" id="justify12months">
+							<div class="form-group">
+								<label class="form-label" for="justify">Justify prognosis, if necessary</label>
+								<textarea class="form-control form-control-1-1" name="justifyprognosis12months" id="justify" rows="2">{{justifyprognosis12months}}</textarea>
+							</div>
+					    </div>
+							<div class="multiple-choice" data-target="justify18months">
+					      <input id="18months" name="reviewPeriod" type="radio" value="18months">
+					      <label for="18months">18 months</label>
+					    </div>
+						<div class="panel js-hidden" id="justify18months">
+							<div class="form-group">
+								<label class="form-label" for="justify">Justify prognosis, if necessary</label>
+								<textarea class="form-control form-control-1-1" name="justifyprognosis18months" id="justify" rows="2">{{justifyprognosis18months}}</textarea>
+							</div>
+					    </div>
+							<div class="multiple-choice" data-target="justify2years">
+					      <input id="2years" name="reviewPeriod" type="radio" value="2years">
+					      <label for="2years">2 years</label>
+					    </div>
+						<div class="panel js-hidden" id="justify2years">
+							<div class="form-group">
+								<label class="form-label" for="justify">Justify prognosis, if necessary</label>
+								<textarea class="form-control form-control-1-1" name="justifyprognosis2years" id="justify" rows="2">{{justifyprognosis2years}}</textarea>
+							</div>
+					    </div>
+							<div class="multiple-choice" data-target="justifylonger">
+					      <input id="longerterm" name="reviewPeriod" type="radio" value="longerterm">
+					      <label for="longerterm">in the longer term</label>
+					    </div>
+						<div class="panel js-hidden" id="justifylonger">
+							<div class="form-group">
+								<label class="form-label" for="justify">Justify prognosis, if necessary</label>
+								<textarea class="form-control form-control-1-1" name="justifyprognosislonger" id="justify" rows="2">{{justifyprognosislonger}}</textarea>
+							</div>
+					    </div>
+{% if data['pbaOutcome']==='LCWRAmobilising' or data['pbaOutcome']==='LCWRAlearning' or data['pbaOutcome']==='LCWRAeating' %}
+							<div class="multiple-choice" data-target="justifysevere">
+					      <input id="severecondition" name="reviewPeriod" type="radio" value="severecondition">
+					      <label for="severecondition">no future assessment required</label>
+					    </div>
+						<div class="panel js-hidden" id="justifysevere">
+							<div class="form-group">
+								<label class="form-label" for="justify">Justify prognosis</label>
+								<textarea class="form-control form-control-1-1" name="justifyprognosissevere" id="justify" rows="2">{{justifyprognosissevere}}</textarea>
+							</div>
+					    </div>
+{% endif %}
+				    </fieldset>
+
+	</div>
+	
+{# <div class="form-group">
+			<label class="form-label" for="reviewPeriodDetails">If prognosis is other than expected, give reasons.</label>
+			<textarea class="form-control form-control-1-1" name="reviewPeriodDetails" id="reviewPeriodDetails" rows="2"></textarea>
+		</div> #}
+
+    <p><input type="submit" class="button" value="Save and review" id="submitButton"></p>
+		</form>	
+
+  </div><!-- column -->
+
+{# <div class="column-one-third">
+
+<div class="summary-panel">
+<h4 class="bold mb10">Justification so far</h4>
+<p class="font-small">The {{ keyEvidence }} Fit note (Med3), Questionnaire (ESA50) and previous medical report ({{ previousReportDates }}) suggest the claimant meets the criteria for having limited capability for work due to {{ diagnosedConditions }}.</p>
+<p class="font-small">{{ evidenceKeyFacts }}</p>
+<p class="font-small">{{ notLCWRAjustification }}</p>
+</div>
+</div> #}
+
+
+{# <div class="column-one-third">
+
+<div class="summary-panel">
+<h4 class="bold mb10">Summary</h4>
+<p class="font-small">LCWRA: moving around and climbing steps without someone’s help</p>
+<p class="font-small bold mb10">Evidence considered</p>
+<ul class="mb20">
+	<li class="mb5">GP report (113)</li>
+	<li class="mb5">Fit note (Med3)</li>
+	<li class="mb5">Questionnaire (UC50)</li>
+	<li>Basic medical report (UC85A)</li>
+</ul>
+<p class="font-small bold mb10">Previous reports seen</p>
+<p class="font-small">{{ previousReportDates }}</p>
+<p class="font-small bold mb10">Justification</p>
+<p class="font-small">{{ justifyAdvice }}</p>
+</div> #}
+
+
+
+  </div><!-- right hand column -->
+
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+

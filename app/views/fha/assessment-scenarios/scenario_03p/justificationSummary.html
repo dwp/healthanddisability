@@ -1,0 +1,109 @@
+{% extends path+"/scenario_03p/_layout-case-simple-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<form action="miniReport2" method="post">
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	<p class="caption-large" class="mb0">File report: 
+	{% if data['pbaOutcome']==='anyoutcome'%}
+		{% elif data['PBAdescriptors']==='terminalIllness'%}terminal illness
+		{% elif data['pbaOutcome']==='LCWRAmobilising'%}LCWRA due to mobilising and using steps
+		{% elif data['pbaOutcome']==='LCWRAlearning'%}LCWRA due to learning to do new tasks
+		{% elif data['pbaOutcome']==='LCWRAeating'%}LCWRA due to eating and drinking
+		{% elif data['pbaOutcome']==='treatLCWRApregnancy'%}treat as having LCWRA due to serious risks associated with pregnancy
+		{% elif data['pbaOutcome']==='treatLCWregular'%}treat as having LCW due to regular treatment
+		{% elif data['pbaOutcome']==='acceptLCW'%}accept ongoing LCW
+	{% endif %}	
+	</p>
+	<h1 class="heading-large mt10">Your justification statement</h1>
+
+
+<div class="form-group">
+			<label class="form-label" for="editedJustificationStatement">You can edit any of these details before continuing</label>
+			<textarea class="form-control form-control-1-1" name="editedJustificationStatement" id="editedJustificationStatement" rows="16">{% if data['PBAdescriptors']==='terminalIllness'%}
+The fit note (Med3), questionnaire (UC50) and previous medical report ({{ dobMonth }}/{{ dobYear }}) indicate the claimant should be treated as having limited capability for work and work-related activity because of terminal illness. This is due to {{ diagnosedConditions }}.
+
+There are conditions reported or evidence available that fulfil this criteria. {{ evidenceKeyFacts }}
+{% elif data['pbaOutcome']==='LCWRAmobilising'%}
+The fit note (Med3), questionnaire (UC50) and previous medical report ({{ dobMonth }}/{{ dobYear }}) indicate the claimant has limited capability for work and work-related activity as they have severe functional disability in mobilising and using steps. This is due to {{ diagnosedConditions }}.
+
+Kate cannot mobilise more than 50 metres before they have to stop, or 50 metres repeatedly. {{ evidenceKeyFacts }}
+
+Kate cannot self-propel a manual wheelchair. {{ notLCWRAjustification }}
+{% elif data['pbaOutcome']==='LCWRAlearning'%}
+The fit note (Med3), questionnaire (UC50) and previous medical report ({{ dobMonth }}/{{ dobYear }}) indicate the claimant has limited capability for work and work-related activity as they have severe functional disability in learning to do new tasks. This is due to {{ diagnosedConditions }}.
+
+Kate cannot learn how to do a simple task, like setting an alarm clock. {{ evidenceKeyFacts }}
+{% elif data['pbaOutcome']==='LCWRAeating'%}
+The fit note (Med3), questionnaire (UC50) and previous medical report ({{ dobMonth }}/{{ dobYear }}) indicate the claimant has limited capability for work and work-related activity as they have severe functional disability in eating and drinking. This is due to {{ diagnosedConditions }}.
+
+{% if data['eatingdrinkingoption']==='conveymouth'%}Kate cannot convey to the mouth. {{ evidenceKeyFacts }}
+{% elif data['eatingdrinkingoption']==='chewswallow'%}Kate cannot chew or swallow. {{ evidenceKeyFacts }}
+{% endif %}
+{% elif data['pbaOutcome']==='treatLCWRApregnancy'%}
+The fit note (Med3), questionnaire (UC50) and previous medical report ({{ dobMonth }}/{{ dobYear }}) indicate the claimant should be treated as having limited capability for work and work-related activity because of serious risks associated with pregnancy. This is due to {{ diagnosedConditions }}.
+
+Kate is pregnant and there is a serious risk of damage to Kate's health or the health of their unborn child if they do not refrain from work and work-related activity. {{ evidenceKeyFacts }}
+{% elif data['pbaOutcome']==='treatLCWregular'%}
+The fit note (Med3), questionnaire (UC50) and previous medical report ({{ dobMonth }}/{{ dobYear }}) indicate the claimant should be treated as having limited capability for work because of regular treatment. This is due to {{ diagnosedConditions }}.
+
+Kate is receiving haemodialysis, plasmapheresis or total parenteral nutrition. {{ evidenceKeyFacts }}
+
+Kate does not meet the criteria for LCWRA. {{ notLCWRAjustification }}
+{% elif data['pbaOutcome']==='acceptLCW'%}
+The fit note (Med3), questionnaire (UC50) and previous medical report ({{ dobMonth }}/{{ dobYear }}) indicate the claimant has limited capability for work as they have functional disability in picking up and moving things and manual dexterity. This is due to {{ diagnosedConditions }}.
+
+Kate cannot pick up and move a 1 litre (2 pint) carton full of liquid and cannot use a pen or pencil to make a meaningful mark. {{ evidenceKeyFacts }}
+
+Kate does not meet the criteria for LCWRA. {{ notLCWRAjustification }}
+{% endif %}
+</textarea>
+		</div>
+
+<p class="font-small"></p>
+<p></p>
+<p></p>
+
+
+<p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+      </form>
+
+
+  </div><!-- column -->
+
+
+
+{# <div class="column-one-third">
+
+<div class="summary-panel">
+<h4 class="bold mb10">Justification so far</h4>
+<p class="font-small">The {{ keyEvidence }} LCWRA evidence suggests the client cannot mobilise unaided by another person, more than 50 metres without stopping because of significant discomfort or exhaustion due to {{ diagnosedConditions }}. This suggests the client has limited capability for work and work-related activity.</p>
+</div>
+
+</div> #}
+<!-- right hand column -->
+
+
+
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+
+{% block page_scripts %}
+
+{% include path+"/scenario_03i/autocomplete/_autocompletedata.html" %}
+  
+ 
+{% endblock %} 

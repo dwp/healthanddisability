@@ -1,0 +1,181 @@
+{% extends path+"/scenario_03p/_layout-case-simple_claimant-portal.html" %}
+
+
+{% block actioncolumn %}
+   
+ 
+ <div class="caseStatus">
+ 
+
+ 
+ 
+{% if data['pbachoice']=='no'%}
+ 
+	 <h2 class="main-status"><span>Current case status</span>Appointment booked</h2>
+	 
+	 
+	 {% elif data['pbachoice']=='yes'%}
+	 
+	 <h2 class="main-status"><span>Current case status</span>Paper based review</h2>
+	 <!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/not-testing" class="button">Start assessment</a></h3>-->
+	 
+	 
+	 {% else %}
+	 
+<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+	<h3 class="primary-action"><span>Suggested case action</span>
+	<a href="../rec-portal" class="button">Make recommendation</a></h3>
+	
+{% endif %}
+
+
+</div>
+
+{% endblock %}
+
+
+
+{% block citizen_content %}
+
+
+
+
+
+<div class="container">
+  <div class="grid-row">
+    <div class="column-full">
+    
+    {# macro #}
+  {{ nav.scenario_tabs("details-fme",1,path1, customer._id) }}
+    
+   <h1 class="heading-large">
+  	Details</h1>
+  	
+  
+  <div class="portal-display">	
+  	
+  	
+  	
+  	 <div class="grid-row">
+  
+		  	<div class="column-two-thirds">
+		  	
+		  		 <div class="portal-card">
+				<div class="portal-head">
+					<h3>Medical conditions</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+				
+				<!--<h4>No current medical conditions recorded</h4>-->
+				<h4>Current medical conditions</h4>
+				
+
+					<table class="medical-list">
+						<caption>Medical conditions list</caption>
+						
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Since</th>
+								<th>Source</th>
+							</tr>
+						</thead>
+
+						
+						<tbody>
+						
+						
+						<tr>
+							<td>Parkinson's disease</td>
+							<td>12 March 2018</td>
+							<td>GP</td>
+						</tr>
+						<!--
+						<tr>
+							<td>Medical condition 2</td>
+							<td>12 June 1999</td>
+							<td>Claimant</td>
+						</tr>
+						
+						<tr>
+							<td>Medical condition 3</td>
+							<td>12 June 1999</td>
+							<td>Claimant</td>
+						</tr>
+						
+						<tr>
+							<td>Medical condition 4</td>
+							<td>12 June 1999</td>
+							<td>Claimant</td>
+						</tr>
+						
+						<tr>
+							<td>Medical condition 5</td>
+							<td>12 June 1999</td>
+							<td>Claimant</td>
+						</tr>-->
+
+						
+						
+						</tbody>
+					</table>
+					
+					<!--<p class="view-all"><a href="/{{path }}/scenario6/not-testing" class="secondary-invert">View all medical conditions</a></p>-->
+
+
+					
+				</div>
+				<!-- / inner card -->
+			</div>
+			<!-- / portal card -->
+		  	
+		  	</div>
+		  	
+		  	
+		  	<div class="column-third">
+		  		<!---------------------------------- Card ---------------------------------->
+		
+			<div class="portal-card">
+				<div class="portal-head">
+					<h3>Contact</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+				
+				
+				<ul class="action-list">
+						<li><a href="#" class="secondary-invert">View Kate's details</a></li>
+						<li><a href="#" class="secondary-invert">Add GP details</a></li>
+						<li><a href="#" class="secondary-invert">Add a medical contact</a></li>
+					</ul>
+														
+				</div>
+				<!-- / inner card -->
+			<!-- / portal card -->
+		  	</div>
+		  	
+		  	
+		  	  	
+  	 </div>
+    
+
+ 
+    
+  </div>
+  
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

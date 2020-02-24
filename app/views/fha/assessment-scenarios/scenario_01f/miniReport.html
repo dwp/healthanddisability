@@ -104,14 +104,14 @@ border-bottom:none !important;}</style>
 	<h2 class="heading-medium mt0">Medical opinion</h2> 
 	
 	<div class="inner-focus">
-		<p>I have consided the possible UC activity outcomes and my advice is that the following applies:</p>
+		<p>I recommend that Michael meets the criteria for limited capability for work and work-related activity (LCWRA).</p>
 
 		{# <h4 class="heading-small">Activity</h4> #}
 		<p> 
 		{% if data['lcwra']==='lcwra1'%}
 		{% elif data['lcwra']==='lcwra6'%}
 		<h4 class="heading-small">Moving around and using steps (mobilising)</h4>
-		Michael cannot mobilise more than 50 metres, or 50 metres repeatedly
+		Michael cannot mobilise more than 50 metres before they have to stop, or 50 metres repeatedly.
 		{% elif data['lcwra']==='lcwra7'%}
 		Standing, sitting and transferring from seat to seat
 		{% elif data['lcwra']==='lcwra8'%}
@@ -267,17 +267,17 @@ border-bottom:none !important;}</style>
 		<p>
 		{% if data['reviewPeriod']==='reviewPeriod1'%}
 		{% elif data['reviewPeriod']==='3months'%}
-		I advise that Michael's case needs reviewing in 3 months.<br><br>{{justifyLCWRA3months}}
+		Time until Michael's case needs reviewing: 3 months<br><br>{{justifyLCWRA3months}}
 		{% elif data['reviewPeriod']==='6months'%}
-		I advise that Michael's case needs reviewing in 6 months.<br><br>{{justifyLCWRA6months}}
+		Time until Michael's case needs reviewing: 6 months<br><br>{{justifyLCWRA6months}}
 		{% elif data['reviewPeriod']==='12months'%}
-		I advise that Michael's case needs reviewing in 12 months.<br><br>{{justifyLCWRA12months}}
+		Time until Michael's case needs reviewing: 12 months<br><br>{{justifyLCWRA12months}}
 		{% elif data['reviewPeriod']==='18months'%}
-		I advise that Michael's case needs reviewing in 18 months.<br><br>{{justifyLCWRA18months}}
+		Time until Michael's case needs reviewing: 18 months<br><br>{{justifyLCWRA18months}}
 		{% elif data['reviewPeriod']==='2years'%}
-		I advise that Michael's case needs reviewing in 2 years.<br><br>{{justifyLCWRA2years}}
+		Time until Michael's case needs reviewing: 2 years<br><br>{{justifyLCWRA2years}}
 		{% elif data['reviewPeriod']==='longerterm'%}
-		In the longer term.<br><br>{{justifyLCWRAlonger}}
+		Time until Michael's case needs reviewing: In the longer term<br><br>{{justifyLCWRAlonger}}
 		{% elif data['reviewPeriod']==='notrequired'%}
 		No future assessment required.<br><br>{{justifyLCWRAnofuture}}
 		{% endif %}
