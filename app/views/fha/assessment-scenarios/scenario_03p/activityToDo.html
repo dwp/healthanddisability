@@ -1,0 +1,234 @@
+{% extends path+"/scenario_03p/_layout-case-simple-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<style type="text/css">
+  .multiple-choice {
+      padding: 4px 10px 9px 40px;
+      margin-bottom:10px;}
+    .multiple-choice [type=checkbox] + label::before {
+      width: 22px;
+      height: 22px;
+      padding-top: 2px !important;
+    }
+
+    .multiple-choice label::after {
+      top: 9px !important;
+      left: 7px !important;
+      width: 10px !important;
+      height: 5px !important;
+      border-width: 0 0 3px 3px !important;
+    }
+	.total-score{
+		background-color: #FFF !important;
+		color:#000 !important;
+		text-align:right;
+	}
+	.total-score .heading-large{
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+	}
+</style>
+
+
+  <p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<p class="caption-large mb0">File report: accept ongoing LCW</p>
+<h1 class="heading-large mt10">Review activities</h1>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+
+
+
+
+
+
+		{% if data['moving']==='moving' or data['standing']==='standing' or data['reaching']==='reaching' or data['picking']==='picking' or data['using']==='using'
+		or data['speaking']==='speaking' or data['hearing']==='hearing' or data['seeing']==='seeing' or data['controlling']==='controlling' or data['staying']==='staying' or data['learning']==='learning' or data['being']==='being' or data['planning']==='planning' or data['coping']==='coping' or  data['going']==='going' or data['meeting']==='meeting' 
+			or data['behaving']==='behaving' or data['eating']==='eating'%}
+
+				 <table class="task-list">
+				 	<tbody>
+				 	{% if data['moving']==='moving' %}
+				 	<tr>
+						<td><a href="/{{path}}/assessment/{{customer._id}}/descriptor-moving">Mobilising and using steps</a></td>
+						<td>{% if data['movingDescriptors']%}<span class="task-completed">Saved</span>{% endif %}</td>
+						
+				 	</tr>
+					{% endif %}
+
+					{% if data['standing']==='standing' %}
+					<tr>
+						<td><a href="/{{path}}/assessment/{{customer._id}}/descriptor-standing">Standing, sitting and transferring from seat to seat</a></td>
+						<td>{% if data['standingDescriptors']%}<span class="task-completed">Saved</span>{% endif %}</td>
+						
+					</tr>
+					{% endif %}
+					
+					{% if data['reaching']==='reaching' %}
+					<tr>
+						<td><a href="/{{path}}/assessment/{{customer._id}}/descriptor-reaching">Reaching</a></td>
+						<td>{% if data['reachingDescriptors']%}<span class="task-completed">Saved</span>{% endif %}</td>
+						
+					</tr>
+					{% endif %}
+									
+					
+					{% if data['picking']==='picking' %}
+					<tr>
+						<td><a href="descriptorScoringPicking">Picking up and moving things</a></td>
+						<td>{% if data['pickingDescriptors']%}<span class="task-completed">9</span>{% endif %}</td>
+						
+					</tr>
+					{% endif %}					
+					
+					
+					{% if data['using']==='using' %}
+					<tr>
+						<td><a href="descriptorScoringUsing">Manual dexterity</a></td>
+						<td>{% if data['usingDescriptors']%}<span class="task-completed">9</span>{% endif %}</td>
+						
+					</tr>
+					{% endif %}
+										
+					
+					{% if data['speaking']==='speaking' %}
+					<tr>
+						<td><a href="/{{path}}/assessment/{{customer._id}}/descriptor-speaking">Making self understood</a></td>
+						<td>{% if data['speakingDescriptors']%}<span class="task-completed">Saved</span>{% endif %}</td>
+						
+					</tr>
+					{% endif %}
+					
+					
+					{% if data['hearing']==='hearing' %}
+					<tr>
+						<td><a href="/{{path}}/assessment/{{customer._id}}/descriptor-hearing">Understanding communication</a></td>
+						<td>{% if data['hearingDescriptors']%}<span class="task-completed">Saved</span>{% endif %}</td>
+						
+					</tr>
+					{% endif %}
+										
+					
+					{% if data['seeing']==='seeing' %}
+					<tr>
+						<td><a href="/{{path}}/assessment/{{customer._id}}/descriptor-seeing">Navigation</a></td>
+						<td>{% if data['seeingDescriptors']%}<span class="task-completed">Saved</span>{% endif %}</td>
+						
+					</tr>
+					{% endif %}
+					
+					
+					{% if data['controlling']==='controlling' %}
+					<tr>
+						<td><a href="/{{path}}/assessment/{{customer._id}}/descriptor-controlling">Continence</a></td>
+						<td>{% if data['controllingDescriptors']%}<span class="task-completed">Saved</span>{% endif %}</td>
+						
+					</tr>
+					{% endif %}
+					
+					{% if data['staying']==='staying' %}
+					<tr>
+						<td><a href="descriptorScoringStaying">Staying conscious when awake</a></td>
+						<td>{% if data['stayingDescriptors']%}<span class="task-completed">15</span>{% endif %}</td>
+						
+					</tr>
+					{% endif %}
+					
+					{% if data['learning']==='learning' %}
+						<tr>
+							<td><a href="/{{path}}/assessment/{{customer._id}}/descriptor-learning">Learning to do new tasks</a></td>
+							<td>{% if data['learningDescriptors']%}<span class="task-completed">Saved</span>{% endif %}</td>
+
+						</tr>
+					{% endif %}
+
+					{% if data['being']==='being' %}
+						<tr>
+							<td><a href="/{{path}}/assessment/{{customer._id}}/descriptor-being">Awareness of hazards and danger</a></td>
+							<td>{% if data['beingDescriptors']%}<span class="task-completed">Saved</span>{% endif %}</td>
+						</tr>
+					{% endif %}
+
+					{% if data['planning']==='planning' %}
+						<tr>
+							<td><a href="/{{path}}/assessment/{{customer._id}}/descriptor-planning">Planning, starting and finishing everyday tasks</a></td>
+							<td>{% if data['planningDescriptors']%}<span class="task-completed">Saved</span>{% endif %}</td>
+						</tr>
+					{% endif %}
+
+					{% if data['coping']==='coping' %}
+						<tr>
+							<td><a href="/{{path}}/assessment/{{customer._id}}/descriptor-coping">Coping with changes</a></td>
+							<td>{% if data['copingDescriptors']%}<span class="task-completed">Saved</span>{% endif %}</td>
+						</tr>
+				{% endif %}
+
+				{% if data['going']==='going' %}
+						<tr>
+							<td><a href="descriptorScoringGoing">Getting about</a></td>
+							<td>{% if data['goingDescriptors']%}<span class="task-completed">6</span>{% endif %}</td>
+
+						</tr>
+			{% endif %}
+			{% if data['meeting']==='meeting' %}
+						<tr>
+							<td><a href="/{{path}}/assessment/{{customer._id}}/descriptor-meeting">Coping with social situations</a></td>
+							<td>{% if data['meetingDescriptors']%}<span class="task-completed">Saved</span>{% endif %}</td>
+						</tr>
+		{% endif %}
+		{% if data['behaving']==='behaving' %}
+						<tr>
+							<td><a href="/{{path}}/assessment/{{customer._id}}/descriptor-behaving">Behaving appropriately around other people</a></td>
+							<td>{% if data['behavingDescriptors']%}<span class="task-completed">Saved</span>{% endif %}</td>
+						</tr>
+		{% endif %}
+
+			{% if data['eating']==='eating' %}
+					<tr>
+							<td><a href="/{{path}}/assessment/{{customer._id}}/descriptor-eating">Eating or drinking</a></td>
+							<td>{% if data['eatingDescriptors']%}<span class="task-completed">Saved</span>{% endif %}</td>
+						</tr>
+			{% endif %}
+
+					{% if data['pickingDescriptors'] and data['usingDescriptors'] %}
+						<tr>
+							<td class="bold" style="padding-top:20px !important;">Total score</td>
+							<td><span class="total-score"><h1 class="heading-large">18</h1></span></td>
+						</tr>
+					{% endif %}
+
+					{% if data['stayingDescriptors'] and data['goingDescriptors'] %}
+						<tr>
+							<td class="bold" style="padding-top:20px !important;">Total score</td>
+							<td><span class="total-score"><h1 class="heading-large">21</h1></span></td>
+						</tr>
+					{% elif data['stayingDescriptors'] %}
+						<tr>
+							<td class="bold" style="padding-top:20px !important;">Total score</td>
+							<td><span class="total-score"><h1 class="heading-large">15</h1></span></td>
+						</tr>
+					
+					{% endif %}
+					
+				 	</tbody>
+				 </table>
+				 
+				
+				 {% endif %}
+
+
+
+		<p><a href="chooseActivity" class="button secondary">Add another relevant activity</a></p>
+		
+		<p class="mt30"><a href="supportingEvidence" class="button">Save and continue</a></p>
+
+
+  </div>
+</div>
+
+{% endblock %}

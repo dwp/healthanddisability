@@ -1,0 +1,132 @@
+{% extends path+"/scenario_03p/_layout-case-simple-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<p class="caption-large" class="mb0">File report: 
+{% if data['pbaOutcome']==='anyoutcome'%}
+		{% elif data['PBAdescriptors']==='terminalIllness'%}terminal illness
+		{% elif data['pbaOutcome']==='LCWRAmobilising'%}LCWRA due to mobilising and using steps
+		{% elif data['pbaOutcome']==='LCWRAlearning'%}LCWRA due to learning to do new tasks
+		{% elif data['pbaOutcome']==='LCWRAeating'%}LCWRA due to eating and drinking
+		{% elif data['pbaOutcome']==='treatLCWRApregnancy'%}treat as having LCWRA due to serious risks associated with pregnancy
+		{% elif data['pbaOutcome']==='treatLCWregular'%}treat as having LCW due to regular treatment
+		{% elif data['pbaOutcome']==='acceptLCW'%}accept ongoing LCW
+        {% endif %}
+</p>
+
+<h1 class="heading-large mt10">What does the evidence show?</h1>
+
+{% if data['PBAdescriptors']==='terminalIllness'%}
+<form action="miniReport" method="post">
+{% else %}
+<form action="reviewPeriod" method="post">
+{% endif %}
+
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+{% if data['PBAdescriptors']==='terminalIllness'%}
+<div class="form-group">
+			<label class="form-label" for="evidenceKeyFacts">Explain the conditions reported or evidence available that fulfil this criteria</label>
+			<textarea class="form-control form-control-1-1" name="evidenceKeyFacts" id="evidenceKeyFacts" rows="4"></textarea>
+</div>
+{% elif data['pbaOutcome']==='LCWRAmobilising'%}
+<div class="form-group">
+			<label class="form-label" for="evidenceKeyFacts">Explain why the claimant cannot mobilise more than 50 metres before they have to stop, or 50 metres repeatedly</label>
+			<textarea class="form-control form-control-1-1" name="evidenceKeyFacts" id="evidenceKeyFacts" rows="4"></textarea>
+</div>
+<div class="form-group">
+			<label class="form-label" for="notLCWRAjustification">Explain why the claimant cannot self-propel a manual wheelchair</label>
+			<textarea class="form-control form-control-1-1" name="notLCWRAjustification" id="notLCWRAjustification" rows="4"></textarea>
+</div>
+{% elif data['pbaOutcome']==='LCWRAlearning'%}
+<div class="form-group">
+			<label class="form-label" for="evidenceKeyFacts">Explain why the claimant cannot learn how to do a simple task, like setting an alarm clock</label>
+			<textarea class="form-control form-control-1-1" name="evidenceKeyFacts" id="evidenceKeyFacts" rows="4"></textarea>
+</div>
+{% elif data['pbaOutcome']==='LCWRAeating'%}
+
+<div class="form-group">
+		<fieldset>
+			<legend class="form-label mb5">Choose the descriptor that’s most appropriate to Kate</legend>
+				<div class="multiple-choice">
+					<input id="eatingdrinking01" name="eatingdrinkingoption" type="radio" value="conveymouth">
+					<label for="eatingdrinking01">Cannot convey to the mouth</label>
+				</div>
+			    <div class="multiple-choice">
+					<input id="eatingdrinking02" name="eatingdrinkingoption" type="radio" value="chewswallow">
+					<label for="eatingdrinking02">Cannot chew or swallow</label>
+				</div>
+		</fieldset>
+</div>
+<div class="form-group">
+			<label class="form-label" for="evidenceKeyFacts">Explain why</label>
+			<textarea class="form-control form-control-1-1" name="evidenceKeyFacts" id="evidenceKeyFacts" rows="4"></textarea>
+</div>
+{% elif data['pbaOutcome']==='treatLCWRApregnancy'%}
+<div class="form-group">
+			<label class="form-label" for="evidenceKeyFacts">Explain why there is a serious risk of damage to Kate's health or the health of their unborn child if they do not refrain from work and work-related activity</label>
+			<textarea class="form-control form-control-1-1" name="evidenceKeyFacts" id="evidenceKeyFacts" rows="4"></textarea>
+</div>
+{% elif data['pbaOutcome']==='treatLCWregular'%}
+<div class="form-group">
+			<label class="form-label" for="evidenceKeyFacts">Explain why the claimant is receiving haemodialysis, plasmapheresis or total parenteral nutrition</label>
+			<textarea class="form-control form-control-1-1" name="evidenceKeyFacts" id="evidenceKeyFacts" rows="4"></textarea>
+</div>
+<div class="form-group">
+			<label class="form-label" for="notLCWRAjustification">Explain why the claimant does not meet the criteria for LCWRA
+			<span class="form-hint">For example, they may have indicated an LCWRA descriptor on the questionnaire</span></label>
+			<textarea class="form-control form-control-1-1" name="notLCWRAjustification" id="notLCWRAjustification" rows="4"></textarea>
+</div>
+{% elif data['pbaOutcome']==='acceptLCW'%}
+<div class="form-group">
+			<label class="form-label" for="evidenceKeyFacts">Explain why the claimant cannot pick up and move a 1 litre (2 pint) carton full of liquid and cannot use a pen or pencil to make a meaningful mark</label>
+			<textarea class="form-control form-control-1-1" name="evidenceKeyFacts" id="evidenceKeyFacts" rows="4"></textarea>
+</div>
+<div class="form-group">
+			<label class="form-label" for="notLCWRAjustification">Explain why the claimant does not meet the criteria for LCWRA
+			<span class="form-hint">For example, they may have indicated an LCWRA descriptor on the questionnaire</span></label>
+			<textarea class="form-control form-control-1-1" name="notLCWRAjustification" id="notLCWRAjustification" rows="4"></textarea>
+</div>
+{% endif %}
+
+
+<p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+      </form>
+
+  </div><!-- column -->
+
+
+
+<div class="column-one-third">
+
+{# <div class="summary-panel">
+<h4 class="bold mb10">Justification so far</h4>
+<p class="font-small">The {{ keyEvidence }} Fit note (Med3), Questionnaire (ESA50) and previous medical report ({{ previousReportDates }}) suggest the claimant meets the criteria for having limited capability for work due to {{ diagnosedConditions }}.</p>
+</div> #}
+
+</div>
+<!-- right hand column -->
+
+
+
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+
+{% block page_scripts %}
+
+{% include path+"/scenario_03i/autocomplete/_autocompletedata.html" %}
+  
+ 
+{% endblock %} 

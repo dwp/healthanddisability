@@ -1,0 +1,216 @@
+{% extends path+"/scenario_03p/_layout-case-simple_review-complete.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<style type="text/css">
+table.scoring-table td, table.scoring-table th
+{border-bottom: none !important;}
+</style>
+
+<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+  
+<h1 class="heading-large mb0">Review report before submission</h1>
+ 
+
+<div class="review-wrapper full-report">
+
+
+<div>
+
+	<table class="report-view-table">
+	{# <caption class="heading-small">Assessment overview</caption> #}
+	
+		<tbody>
+			<tr>
+				<th>Name</th>
+				<td>Connor Browne</td>
+			</tr>
+			<tr>
+				<th>NINO</th>
+				<td>SW 06 51 61 T</td>
+			</tr>
+			<tr>
+				<th>DOB</th>
+				<td>28 September 1957</td>
+			</tr>
+			<tr>
+				<th>Date of assessment</th>
+				<td>{{ "Do MMM YYYY" | daysAgo }}</td>
+			</tr>
+			<tr>
+				<th>Assessment centre</th>
+				<td>Fiveways, Birmingham</td>
+			</tr>
+			<tr>
+				<th>Assessor</th>
+				<td>Jane Smith</td>
+			</tr>
+			<tr>
+				<th>Assessment started</th>
+				<td>{{ last_one.time | formatDate("H:mma") }}</td>
+			</tr>
+			<tr>
+				<th>Assessment finished</th>
+				<td>{{ first_one.time | formatDate("H:mma") }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+<!-- / report item -->
+
+
+<div>
+
+	<h2 class="heading-medium">Recommendation</h2> 
+	
+	<div class="inner-focus">
+		{# <p>LCWRA: Moving around and climbing steps without someone’s help</p> #}
+		<p>I advise that Connor meets the criteria for Limited Capability for Work.</p>
+	</div>
+	<p class="edit-report"><a href="#" class="button-secondary">Edit recommendation</a></p>
+<hr>
+
+
+<h2 class="heading-medium">Scoring</h2> 
+
+<table class="scoring-table">
+	{# <caption class="heading-small">Assessment overview</caption> #}
+	
+		<tbody>
+			<tr>
+				<th style="width:80% !important;">Activity</th>
+				<th>Score</th>
+			</tr>
+			<tr>
+				<th><a href="#">Picking up and moving things</a></th>
+				<td>9</td>
+			</tr>
+			<tr>
+				<th><a href="#">Manual dexterity</a></th>
+				<td>9</td>
+			</tr>
+			<tr>
+				<th colspan="2">Connor did not identify any problems in the following areas:</th>
+			</tr>
+			<tr>
+				<td>Mobilising and using steps</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Standing, sitting and transferring from seat to seat</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Reaching</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Making self understood</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Understanding communication</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Navigation</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Continence</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Staying conscious when awake</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Learning to do new tasks</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Awareness of hazards and danger</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Planning, starting and finishing everyday tasks</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Coping with changes</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Getting about</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Coping with social situations</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<td>Behaving appropriately around other people</td>
+				<td>Not assessed</td>
+			</tr>
+			<tr>
+				<th>Total score</th>
+				<th>16</th>
+			</tr>
+		</tbody>
+	</table>
+<hr>
+	<h2 class="heading-medium">Evidence considered</h2> 
+	
+	<div class="inner-focus">
+				<ul class="mb20">
+				<li class="mb5">Fit note (Med3)</li>
+				<li class="mb5">Questionnaire (ESA50)</li>
+				<li class="mb5">Previous reports ({{ dobMonth }} / {{ dobYear }})</li>
+				</ul>
+	</div>
+	<p class="edit-report"><a href="#" class="button-secondary">Add or remove evidence</a></p>
+
+<hr>
+	<h2 class="heading-medium">Justification</h2> 
+	
+	<div class="inner-focus">
+		<p>{{ editedJustificationStatement }}</p>
+	</div>
+	<p class="edit-report"><a href="justificationSummary" class="button-secondary">Edit justification</a></p>
+<hr>
+	<h2 class="heading-medium">Recommended review period</h2> 
+	
+	<div class="inner-focus">
+		<p>I advise that Connor's case needs reviewing in 12 months</p>
+	</div>
+	<p class="edit-report"><a href="#" class="button-secondary">Edit review period</a></p>
+
+<hr>
+	<h2 class="heading-medium">Declaration</h2> 
+	
+	<div class="inner-focus">
+		<p>This form has been completed by a healthcare professional approved by the Secretary of State for Work and Pensions.</p>
+		<p>I have completed this form in accordance with the current guidance to UC examining healthcare professionals as issued by the Department for Work and Pensions.</p>
+		<p>I can confirm that there is no harmful information in the report.</p>
+		<p><span class="bold" style="margin-right:20px;">Healthcare Professional's name:</span> Jane Smith</p>
+		<p><span class="bold" style="margin-right:20px;">Date:</span> {{ "Do MMM YYYY" | daysAgo }}</p>
+	</div>
+
+</div>
+<!-- / report item -->	
+
+  
+   </div>
+ <!-- / wrapper -->
+  
+
+
+	<p class="depart"><a href="#" class="button">Finish &ndash; sign off report</a></p>
+
+
+
+{% endblock %}

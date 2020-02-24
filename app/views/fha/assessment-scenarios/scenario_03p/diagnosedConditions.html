@@ -1,0 +1,91 @@
+{% extends path+"/scenario_03p/_layout-case-simple-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<p class="caption-large" class="mb0">File report: 
+{% if data['pbaOutcome']==='anyoutcome'%}
+		{% elif data['PBAdescriptors']==='terminalIllness'%}terminal illness
+		{% elif data['pbaOutcome']==='LCWRAmobilising'%}LCWRA due to mobilising and using steps
+		{% elif data['pbaOutcome']==='LCWRAlearning'%}LCWRA due to learning to do new tasks
+		{% elif data['pbaOutcome']==='LCWRAeating'%}LCWRA due to eating and drinking
+		{% elif data['pbaOutcome']==='treatLCWRApregnancy'%}treat as having LCWRA due to serious risks associated with pregnancy
+		{% elif data['pbaOutcome']==='treatLCWregular'%}treat as having LCW due to regular treatment
+		{% elif data['pbaOutcome']==='acceptLCW'%}accept ongoing LCW
+        {% endif %}
+</p>
+<h1 class="heading-large mt10">What conditions does the evidence relate to?</h1>
+
+
+<form action="evidenceDetails" method="post">
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+	
+
+
+<div class="form-group conditions-form-group">
+<label class="form-label" for="diagnosedConditions">Diagnosed conditions</label>
+<textarea class="form-control form-control-2-3" name="diagnosedConditions" id="diagnosedConditions" rows="1"></textarea>
+</div>
+
+
+{# <div class="form-group"><button id="add-button" class="button secondary button-add-another-vertical">Add another</button></div> #}
+
+
+<p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+      </form>
+
+
+  </div><!-- column -->
+
+
+<!--
+<div class="column-one-third">
+
+<div class="summary-panel">
+<h4 class="bold mb10">Summary</h4>
+<p class="font-small">LCWRA: moving around and climbing steps without someone’s help</p>
+</div>
+
+
+</div>-->
+<!-- right hand column -->
+
+
+
+</div><!-- row -->
+
+
+
+{% endblock %}
+
+
+{% block page_scripts %}
+
+<script type="text/javascript">
+
+  $(document).on('click', '.button-add-another-vertical', function (e) {
+    e.preventDefault();
+    var beforeThis = $(this)
+      .parents('.grid-row')
+      .find('.conditions-form-group')
+      .last();
+    $(beforeThis).after(
+	'<label class="form-label" for="diagnosedConditions">' +
+	'Diagnosed condition two' +
+	'</label>' +
+	'<textarea class="form-control form-control-2-3 mb30" name="diagnosedConditions" id="diagnosedConditions" rows="1">' +
+    '</textarea>');
+    sortFieldsVertical();
+  });
+
+</script>
+ 
+{% endblock %} 
