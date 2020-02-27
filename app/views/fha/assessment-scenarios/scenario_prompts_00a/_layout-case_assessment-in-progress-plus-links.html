@@ -1,0 +1,120 @@
+{% extends path+"/scenario_prompts_00a/_layout-wide.html" %}
+
+
+
+
+
+{% block assess_content %}
+
+
+  <main id="content" role="main" class="main-content-inner">
+
+    <div class="container">
+      <div class="grid-row main-row">
+    
+      <div class="column-one-quarter left-area">
+      
+      	<div class="left-panel">
+
+<p style="font-weight:bold;">Assessment in progress</p>
+<hr>
+
+          		  <ul class="secondary-actions">
+
+            <li><a href="/{{path}}/scenario/not-testing">Informal observations</a></li>
+            <li><a href="/{{path}}/scenario/not-testing">Additional attendee</a></li>
+            <li><a href="/{{path}}/scenario/not-testing">Abandon assessment</a></li>
+
+          </ul>
+          {% block actioncolumn %}{% endblock %}
+      
+
+      	
+      	
+      	</div>
+      
+      </div>
+
+     
+        <div class="column-three-quarters main-area">
+           
+          <div class="staff__heading">
+
+            <div class="grid-row">
+              <div class="column-half head-customer-details">
+                <!--<div class="badges">
+                  <ul>
+                    <li class="badge">UC</li>
+                    {% if customer.name.first == 'Lowery' %}
+                    <li class="badge support-item">Unacceptable customer behaviour</li>
+                    {% endif %}
+                  </ul>
+                </div> -->
+                
+                <h1 class="heading-xlarge">{% block citizen_detail %}Ruby Haynes{% endblock %}</h1>
+                {# <p class="mb20"><span class="visually-hidden">National insurance number</span>QQ 69 17 54 C</p> #}
+               
+              </div><!-- column -->
+              
+              
+              
+              
+              <div class="column-half head-customer-extended">
+              
+                <div class="header-left-col">
+                 <h2>National insurance number</h2>
+                 <p>YA 13 87 63 A</p>
+                </div>
+        
+              <div class="header-right-col">
+                   <h2>Date of birth</h2>
+                 <p>19 September 1990  <!--{{customer.dateOfBirth |formatDate('D MMMM YYYY') }}--></p>
+              </div>
+              
+              <!-- / column half -->
+        
+         
+               
+                 
+            
+              
+            </div><!-- / grid row -->
+        
+              </div>	 
+        </div>
+                
+          <div nunj-block="citizen_content">
+            {% block citizen_content %}{% endblock %}
+       
+
+        </div><!-- column -->
+        
+        
+      </div><!-- row -->
+    </div><!-- container -->
+
+  </main>
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super }}
+
+<script type="text/javascript">
+  $( document ).ready(function() {
+         $( ".panel-switch" ).click(function() {
+             $( ".inner-panel" ).toggleClass( "panel-open" );
+         });
+     }); 
+   
+ </script>
+
+
+
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+
+{% endblock %}
