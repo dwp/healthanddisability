@@ -1,0 +1,35 @@
+{% extends path+"/scenario_prompts_00a/_layout-case-simple-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<p class="caption-large" class="mb0">Condition history</p>
+
+<h1 class="heading-large mt10">Bowel incontinence</h1>
+
+<form action="condition-history_home" method="post">
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+<div class="form-group">
+	<label class="form-label" for="conditionBowel">Give details</label>
+	<textarea class="form-control form-control-1-1" name="conditionBowel" id="conditionBowel" rows="14">{{ conditionBowel }}</textarea>
+</div>
+
+<p><input type="submit" class="button" value="Save" id="submitButton"></p>
+      </form>
+
+  </div><!-- column -->
+
+<div class="column-one-third">
+
+</div>
+<!-- right hand column -->
+
+</div><!-- row -->
+
+{% endblock %}
