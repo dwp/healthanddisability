@@ -32,7 +32,7 @@
 {% if data['endFTFtrigger'] %}
 <form action="miniReview" method="post">
 {% else %}
-<form action="condition-history_home" method="post">
+<form action="condition-history_Risk" method="post">
 {% endif %}
 
 <div class="grid-row">
@@ -60,28 +60,28 @@
               <span class="body-text">What symptoms do they have?</span>
             </legend>
             <div class="multiple-choice">
-              <input id="evidence-type-1" name="symptomTypesAnxiety" type="checkbox" value="Agoraphobia">
-              <label for="evidence-type-1">Agoraphobia</label>
+              <input id="evidence-type-1" name="symptomTypesAnxiety" type="checkbox" value="Anxiety">
+              <label for="evidence-type-1">Anxiety</label>
             </div>
             <div class="multiple-choice">
-              <input id="evidence-type-2" name="symptomTypesAnxiety" type="checkbox" value="Anxiety">
-              <label for="evidence-type-2">Anxiety</label>
+              <input id="evidence-type-2" name="symptomTypesAnxiety" type="checkbox" value="Low mood">
+              <label for="evidence-type-2">Low mood</label>
             </div>
             <div class="multiple-choice">
-              <input id="evidence-type-3" name="symptomTypesAnxiety" type="checkbox" value="Low mood">
-              <label for="evidence-type-3">Low mood</label>
-            </div>
-            <div class="multiple-choice">
-              <input id="evidence-type-4" name="symptomTypesAnxiety" type="checkbox" value="Low self-esteem">
-              <label for="evidence-type-4">Low self-esteem</label>
+              <input id="evidence-type-3" name="symptomTypesAnxiety" type="checkbox" value="Low self-esteem">
+              <label for="evidence-type-3">Low self-esteem</label>
             </div>
 			<div class="multiple-choice">
-              <input id="evidence-type-5" name="symptomTypesAnxiety" type="checkbox" value="Mood changes">
-              <label for="evidence-type-5">Mood changes</label>
+              <input id="evidence-type-4" name="symptomTypesAnxiety" type="checkbox" value="Mood changes">
+              <label for="evidence-type-4">Mood changes</label>
             </div>
 			<div class="multiple-choice">
-              <input id="evidence-type-6" name="symptomTypesAnxiety" type="checkbox" value="Panic attacks">
-              <label for="evidence-type-6">Panic attacks</label>
+              <input id="evidence-type-5" name="symptomTypesAnxiety" type="checkbox" value="Panic attacks">
+              <label for="evidence-type-5">Panic attacks</label>
+            </div>
+			<div class="multiple-choice">
+              <input id="evidence-type-6" name="symptomTypesAnxiety" type="checkbox" value="Sleep problems">
+              <label for="evidence-type-6">Sleep problems</label>
             </div>
 			<div class="multiple-choice">
               <input id="evidence-type-7" name="symptomTypesAnxiety" type="checkbox" value="Reduced appetite">
@@ -96,17 +96,17 @@
 </div>
 
 <div class="form-group">
-	<label class="form-label" for="conditionAnxietySymptomsFrequency">How frequent are their symptoms?</label>
+	<label class="form-label" for="conditionAnxietySymptomsFrequency">How frequent and variable are their symptoms?</label>
 	<span class="form-hint mt5 mb5">For example, every day or about once a month</span>
-	<textarea class="form-control form-control-3-4" name="conditionAnxietySymptomsFrequency" id="conditionAnxietySymptomsFrequency" rows="1">{{ conditionAnxietySymptomsFrequency }}</textarea>
+	<textarea class="form-control form-control-3-4" name="conditionAnxietySymptomsFrequency" id="conditionAnxietySymptomsFrequency" rows="3">{{ conditionAnxietySymptomsFrequency }}</textarea>
 </div>
 
 <div class="form-group">
-	<label class="form-label" for="conditionAnxietyImpact">How does the condition impact their day-to-day life?</label>
+	<label class="form-label" for="conditionAnxietyImpact">How does the condition impact their function?</label>
 	<textarea class="form-control form-control-1-1" name="conditionAnxietyImpact" id="conditionAnxietyImpact" rows="4">{{ conditionAnxietyImpact }}</textarea>
 </div>
 
-<p><input type="submit" class="button" value="Save" id="submitButton"></p>
+<p><input type="submit" class="button" value="Save and continue to risk factors" id="submitButton"></p>
       </form>
 
   </div><!-- column -->

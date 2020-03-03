@@ -1,4 +1,4 @@
-{% extends path+"/scenario_prompts_01a/_layout-case-simple_assessment-complete.html" %}
+{% extends path+"/scenario_prompts_01b/_layout-case-simple_assessment-complete.html" %}
 
 {% block citizen_content %}
 
@@ -24,15 +24,15 @@ border-bottom:none !important;}</style>
 		<tbody>
 			<tr>
 				<th>Name</th>
-				<td>Ruby Haynes</td>
+				<td>Erin Rowley</td>
 			</tr>
 			<tr>
 				<th>NINO</th>
-				<td>YA 13 87 63 A</td>
+				<td>SK 03 43 21 D</td>
 			</tr>
 			<tr>
 				<th>DOB</th>
-				<td>19 September 1990</td>
+				<td>2 June 1987</td>
 			</tr>
 			<tr>
 				<th>Date of assessment</th>
@@ -77,53 +77,21 @@ border-bottom:none !important;}</style>
 	<h2 class="heading-medium">Condition history</h2> 
 	
 	<div class="inner-focus">
-	<p class="heading-small">Anxiety and depression</p> 
-	<p>Onset and progression:<br>{{ conditionAnxietyTime }}. {{ conditionAnxietyProgression }}.</p>
-	<p>Investigations:<br>{{ conditionAnxietyInvestigations }}</p>
-	<p>Symptoms and frequency:<br>{{ symptomTypesAnxiety }}. {{ conditionAnxietySymptomsOther }}.<br>{{ conditionAnxietySymptomsFrequency }}</p>
-	<p>Impact:<br>{{ conditionAnxietyImpact }}</p>
-	<p class="edit-report"><a href="condition-history_Anxiety" class="button-secondary mt10 mb20">Edit anxiety and depression details</a></p>
+	<p class="heading-small">Back pain</p> 
+	<p>Onset and progression:<br>{{ conditionBackpainTime }}. {{ conditionBackpainProgression }}.</p>
+	<p>Investigations:<br>{{ conditionBackpainInvestigations }}</p>
+	<p>Symptoms and frequency:<br>{{ symptomTypesBackpain }}. {{ conditionBackpainSymptomsOther }}.<br>{{ conditionBackpainSymptomsFrequency }}</p>
+	<p>Impact:<br>{{ conditionBackpainImpact }}</p>
+	<p class="edit-report"><a href="condition-history_Backpain" class="button-secondary mt10 mb20">Edit back pain details</a></p>
 
 <!-- Condition break -->
 
-	<p class="heading-small">Alcohol misuse</p> 
-	<p>Onset and progression:<br>{{ conditionAlcoholTime }}. {{ conditionAlcoholProgression }}.</p>
-	<p>Investigations:<br>{{ conditionAlcoholInvestigations }}</p>
-	<p>Symptoms and frequency:<br>{{ symptomTypesAlcohol }}. {{ conditionAlcoholSymptomsOther }}.<br>{{ conditionAlcoholSymptomsFrequency }}</p>
-	<p>Impact:<br>{{ conditionAlcoholImpact }}</p>
-	<p class="edit-report"><a href="condition-history_Alcohol" class="button-secondary mt10 mb20">Edit alcohol misuse details</a></p>
-
-<!-- Condition break -->
-
-	<p class="heading-small">Urinary incontinence</p> 
-	<p>Onset and progression:<br>{{ conditionUrinaryTime }}. {{ conditionUrinaryProgression }}.</p>
-	<p>Investigations:<br>{{ conditionUrinaryInvestigations }}</p>
-	<p>Symptoms and frequency:<br>{{ symptomTypesUrinary }}. {{ conditionUrinarySymptomsOther }}.<br>{{ conditionUrinarySymptomsFrequency }}</p>
-	<p>Impact:<br>{{ conditionUrinaryImpact }}</p>
-	<br>
-	<p style="text-decoration: underline;">Continence details</p>
-	<p>Type: {{ conditionUrinaryContinenceType }}</p>
-	<p>Frequency: {{ conditionUrinaryContinenceFrequency }}</p>
-	<p>Quantity: {{ continenceQuantityUrinary }}</p>
-	<p>Type of pads used and effectiveness:<br>{{ conditionUrinaryContinencePadsYes }}</p>
-	<p>Reason for not using pads:<br>{{ conditionUrinaryContinencePadsNo }}</p>
-	<p class="edit-report"><a href="condition-history_Urinary" class="button-secondary mt10 mb20">Edit urinary incontinence details</a></p>
-
-<!-- Condition break -->
-
-	<p class="heading-small">Bowel incontinence</p> 
-	<p>Onset and progression:<br>{{ conditionBowelTime }}. {{ conditionBowelProgression }}.</p>
-	<p>Investigations:<br>{{ conditionBowelInvestigations }}.</p>
-	<p>Symptoms and frequency:<br>{{ symptomTypesBowel }}. {{ conditionBowelSymptomsOther }}<br>{{ conditionBowelSymptomsFrequency }}</p>
-	<p>Impact:<br>{{ conditionBowelImpact }}</p>
-	<br>
-	<p style="text-decoration: underline;">Continence details</p>
-	<p>Type:</span> {{ conditionBowelContinenceType }}</p>
-	<p>Frequency: {{ conditionBowelContinenceFrequency }}</p>
-	<p>Quantity: {{ continenceQuantityBowel }}</p>
-	<p>Type of pads used and effectiveness:<br>{{ conditionBowelContinencePadsYes }}</p>
-	<p>Reason for not using pads:<br>{{ conditionBowelContinencePadsNo }}</p>
-	<p class="edit-report"><a href="condition-history_Bowel" class="button-secondary mt10 mb20">Edit bowel incontinence details</a></p>
+	<p class="heading-small">Personality disorder</p> 
+	<p>Onset and progression:<br>{{ conditionPersonalityTime }}. {{ conditionPersonalityProgression }}.</p>
+	<p>Investigations:<br>{{ conditionPersonalityInvestigations }}</p>
+	<p>Symptoms and frequency:<br>{{ symptomTypesPersonality }}. {{ conditionPersonalitySymptomsOther }}.<br>{{ conditionPersonalitySymptomsFrequency }}</p>
+	<p>Impact:<br>{{ conditionPersonalityImpact }}</p>
+	<p class="edit-report"><a href="condition-history_Personality" class="button-secondary mt10 mb20">Edit personality disorder details</a></p>
 
 <!-- Condition break -->
 
