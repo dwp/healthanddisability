@@ -1,0 +1,54 @@
+{% extends path+"/scenario_prompts_01a/_layout-case-simple-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+  <p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<p class="caption-large mb0">Condition history</p>
+<h1 class="heading-large mt10">Review conditions</h1>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+<table class="task-list">
+ 	<tbody>
+		<tr>
+			<td><a href="condition-history_Anxiety">Anxiety & depression</a></td>
+			<td>{% if data['conditionAnxietyTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		</tr>
+		<tr>
+			<td><a href="condition-history_Alcohol">Alcohol misuse</a></td>
+			<td>{% if data['conditionAlcoholTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		</tr>
+		<tr>
+			<td><a href="condition-history_Urinary">Urinary incontinence</a></td>
+			<td>{% if data['conditionUrinaryTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		</tr>
+		<tr>
+			<td><a href="condition-history_Bowel">Bowel incontinence</a></td>
+			<td>{% if data['conditionBowelTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		</tr>
+		<tr>
+			<td><a href="condition-history_Risk">Mental health risk</a></td>
+			<td>{% if data['conditionSelfHarmWhen']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		</tr>
+	</tbody>
+</table>
+
+
+		<p><a href="#" class="button secondary">Add another condition</a></p>
+		
+		{% if data['endFTFtrigger'] %}
+		<p class="mt30"><a href="miniReview" class="button">Save and continue</a></p>
+		{% else %}
+		<p class="mt30"><a href="wca-index" class="button">Save and continue</a></p>
+{% endif %}
+
+  </div>
+</div>
+
+{% endblock %}

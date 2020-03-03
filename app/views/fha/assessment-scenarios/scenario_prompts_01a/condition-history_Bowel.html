@@ -1,0 +1,117 @@
+{% extends path+"/scenario_prompts_01a/_layout-case-simple-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<style type="text/css">
+  .multiple-choice {
+      padding: 4px 10px 9px 40px;
+      margin-bottom:10px;}
+    .multiple-choice [type=checkbox] + label::before {
+      width: 22px;
+      height: 22px;
+      padding-top: 2px !important;
+    }
+
+    .multiple-choice label::after {
+      top: 9px !important;
+      left: 7px !important;
+      width: 10px !important;
+      height: 5px !important;
+      border-width: 0 0 3px 3px !important;
+    }
+</style>
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<p class="caption-large" class="mb0">Condition history</p>
+
+<h1 class="heading-large mt10">Bowel incontinence</h1>
+
+<form action="condition-history_Bowel-02" method="post">
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+<div class="form-group">
+	<label class="form-label" for="conditionBowelTime">When and how did the condition start?</label>
+	<textarea class="form-control form-control-1-1" name="conditionBowelTime" id="conditionBowelTime" rows="2">{{ conditionBowelTime }}</textarea>
+</div>
+
+<div class="form-group">
+	<label class="form-label" for="conditionBowelProgression">How has the condition progressed over time?</label>
+	<textarea class="form-control form-control-1-1" name="conditionBowelProgression" id="conditionBowelProgression" rows="2">{{ conditionBowelProgression }}</textarea>
+</div>
+
+<div class="form-group">
+	<label class="form-label" for="conditionBowelInvestigations">Investigations</label>
+	<span class="form-hint mt5 mb5">For example, who are they seeing about the condition? Are they receiving treatment?</span>
+	<textarea class="form-control form-control-1-1" name="conditionBowelInvestigations" id="conditionBowelInvestigations" rows="4">{{ conditionBowelInvestigations }}</textarea>
+</div>
+
+<div class="form-group">
+          <fieldset>
+            <legend class="mb10">
+              <span class="body-text">What symptoms do they have?</span>
+            </legend>
+            <div class="multiple-choice">
+              <input id="evidence-type-1" name="symptomTypesBowel" type="checkbox" value="Bloating">
+              <label for="evidence-type-1">Bloating</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="evidence-type-2" name="symptomTypesBowel" type="checkbox" value="Discomfort">
+              <label for="evidence-type-2">Discomfort</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="evidence-type-3" name="symptomTypesBowel" type="checkbox" value="Heartburn">
+              <label for="evidence-type-3">Heartburn</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="evidence-type-4" name="symptomTypesBowel" type="checkbox" value="Indigestion">
+              <label for="evidence-type-4">Indigestion</label>
+            </div>
+			<div class="multiple-choice">
+              <input id="evidence-type-5" name="symptomTypesBowel" type="checkbox" value="Nausea">
+              <label for="evidence-type-5">Nausea</label>
+            </div>
+			<div class="multiple-choice">
+              <input id="evidence-type-6" name="symptomTypesBowel" type="checkbox" value="Pain">
+              <label for="evidence-type-6">Pain</label>
+            </div>
+			<div class="multiple-choice">
+              <input id="evidence-type-7" name="symptomTypesBowel" type="checkbox" value="Vomiting">
+              <label for="evidence-type-7">Vomiting</label>
+            </div>			
+          </fieldset>
+</div>
+
+<div class="form-group">
+	<label class="form-label" for="conditionBowelSymptomsOther">Other symptoms</label>
+	<textarea class="form-control form-control-3-4" name="conditionBowelSymptomsOther" id="conditionBowelSymptomsOther" rows="1">{{ conditionBowelSymptomsOther }}</textarea>
+</div>
+
+<div class="form-group">
+	<label class="form-label" for="conditionBowelSymptomsFrequency">How frequent are their symptoms?</label>
+	<span class="form-hint mt5 mb5">For example, every day or about once a month</span>
+	<textarea class="form-control form-control-3-4" name="conditionBowelSymptomsFrequency" id="conditionBowelSymptomsFrequency" rows="1">{{ conditionBowelSymptomsFrequency }}</textarea>
+</div>
+
+<div class="form-group">
+	<label class="form-label" for="conditionBowelImpact">How does the condition impact their day-to-day life?</label>
+	<textarea class="form-control form-control-1-1" name="conditionBowelImpact" id="conditionBowelImpact" rows="4">{{ conditionBowelImpact }}</textarea>
+</div>
+
+<p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+      </form>
+
+  </div><!-- column -->
+
+<div class="column-one-third">
+
+</div>
+<!-- right hand column -->
+
+</div><!-- row -->
+
+{% endblock %}

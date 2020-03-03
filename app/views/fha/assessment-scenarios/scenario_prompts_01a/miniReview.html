@@ -1,4 +1,4 @@
-{% extends path+"/scenario_prompts_00a/_layout-case-simple_assessment-complete.html" %}
+{% extends path+"/scenario_prompts_01a/_layout-case-simple_assessment-complete.html" %}
 
 {% block citizen_content %}
 
@@ -72,26 +72,81 @@ border-bottom:none !important;}</style>
 	</div>
 	<p class="edit-report"><a href="addAttendee" class="button-secondary">Edit additional attendees</a></p>
 
+<hr>
 
 	<h2 class="heading-medium">Condition history</h2> 
 	
 	<div class="inner-focus">
-	<p>{{ conditionHistoryScenarioOne }}</p>
-	{# <p class="heading-small">Anxiety and depression</p> 
-	<p>{{ conditionAnxiety }}</p>
-	<hr>
+	<p class="heading-small">Anxiety and depression</p> 
+	<p>Onset and progression:<br>{{ conditionAnxietyTime }}. {{ conditionAnxietyProgression }}.</p>
+	<p>Investigations:<br>{{ conditionAnxietyInvestigations }}</p>
+	<p>Symptoms and frequency:<br>{{ symptomTypesAnxiety }}. {{ conditionAnxietySymptomsOther }}.<br>{{ conditionAnxietySymptomsFrequency }}</p>
+	<p>Impact:<br>{{ conditionAnxietyImpact }}</p>
+	<p class="edit-report"><a href="condition-history_Anxiety" class="button-secondary mt10 mb20">Edit anxiety and depression details</a></p>
+
+<!-- Condition break -->
+
 	<p class="heading-small">Alcohol misuse</p> 
-	<p>{{ conditionAlcohol }}</p>
-	<hr>
+	<p>Onset and progression:<br>{{ conditionAlcoholTime }}. {{ conditionAlcoholProgression }}.</p>
+	<p>Investigations:<br>{{ conditionAlcoholInvestigations }}</p>
+	<p>Symptoms and frequency:<br>{{ symptomTypesAlcohol }}. {{ conditionAlcoholSymptomsOther }}.<br>{{ conditionAlcoholSymptomsFrequency }}</p>
+	<p>Impact:<br>{{ conditionAlcoholImpact }}</p>
+	<p class="edit-report"><a href="condition-history_Alcohol" class="button-secondary mt10 mb20">Edit alcohol misuse details</a></p>
+
+<!-- Condition break -->
+
 	<p class="heading-small">Urinary incontinence</p> 
-	<p>{{ conditionUrinary }}</p>
-	<hr>
+	<p>Onset and progression:<br>{{ conditionUrinaryTime }}. {{ conditionUrinaryProgression }}.</p>
+	<p>Investigations:<br>{{ conditionUrinaryInvestigations }}</p>
+	<p>Symptoms and frequency:<br>{{ symptomTypesUrinary }}. {{ conditionUrinarySymptomsOther }}.<br>{{ conditionUrinarySymptomsFrequency }}</p>
+	<p>Impact:<br>{{ conditionUrinaryImpact }}</p>
+	<br>
+	<p style="text-decoration: underline;">Continence details</p>
+	<p>Type: {{ conditionUrinaryContinenceType }}</p>
+	<p>Frequency: {{ conditionUrinaryContinenceFrequency }}</p>
+	<p>Quantity: </p>
+	<p>Type of pads used and effectiveness:<br>{{ conditionUrinaryContinencePadsYes }}</p>
+	<p>Reason for not using pads:<br>{{ conditionUrinaryContinencePadsNo }}</p>
+	<p class="edit-report"><a href="condition-history_Urinary" class="button-secondary mt10 mb20">Edit urinary incontinence details</a></p>
+
+<!-- Condition break -->
+
 	<p class="heading-small">Bowel incontinence</p> 
-	<p>{{ conditionBowel }}</p> #}
+	<p>Onset and progression:<br>{{ conditionBowelTime }}. {{ conditionBowelProgression }}.</p>
+	<p>Investigations:<br>{{ conditionBowelInvestigations }}.</p>
+	<p>Symptoms and frequency:<br>{{ symptomTypesBowel }}. {{ conditionBowelSymptomsOther }}<br>{{ conditionBowelSymptomsFrequency }}</p>
+	<p>Impact:<br>{{ conditionBowelImpact }}</p>
+	<br>
+	<p style="text-decoration: underline;">Continence details</p>
+	<p>Type:</span> {{ conditionBowelContinenceType }}</p>
+	<p>Frequency: {{ conditionBowelContinenceFrequency }}</p>
+	<p>Quantity: </p>
+	<p>Type of pads used and effectiveness:<br>{{ conditionBowelContinencePadsYes }}</p>
+	<p>Reason for not using pads:<br>{{ conditionBowelContinencePadsNo }}</p>
+	<p class="edit-report"><a href="condition-history_Bowel" class="button-secondary mt10 mb20">Edit bowel incontinence details</a></p>
+
+<!-- Condition break -->
+
+	<p class="heading-small">Mental health risk</p>
+	<p style="text-decoration: underline;">Suicidal ideation</p>
+	<p>Attempt date and nature:<br>{{ conditionSelfHarmWhen }}</p>
+	<p>Instigation for attempt:<br>{{ conditionSelfHarmPlanned }}</p>
+	<p>Length of medical support:<br>{{ conditionSelfHarmMedical }}</p>
+	<p>Nature and frequency of ongoing thoughts:<br>{{ conditionSelfHarmThoughts }}</p>
+	<p>Person who knows:<br>{{ conditionSelfHarmContact }}</p>
+	<br>
+	<p style="text-decoration: underline;">Alcohol and drug use</p>
+	<p>Average daily use:<br>{{ conditionRiskAlcoholAmount }}</p>
+	<p>Withdrawal symptoms:<br>{{ conditionRiskAlcoholSymptoms }}</p>
+	<p>Rehab or hospital admissions:<br>{{ conditionRiskAlcoholAdmissions }}</p>
+	<br>
+	<p style="text-decoration: underline;">Behaviour</p>
+	<p>History of problems:<br>{{ conditionRiskBehaviourDetails }}</p>
 	</div>
 	
-	<p class="edit-report"><a href="condition-history" class="button-secondary">Edit condition history</a></p>
+	<p class="edit-report"><a href="condition-history_home" class="button-secondary mt10">Edit mental health risk details</a></p>
 
+	<hr>
 
 	<h2 class="heading-medium">Social and work history</h2> 
 	

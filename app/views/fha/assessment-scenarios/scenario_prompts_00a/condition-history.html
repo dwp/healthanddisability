@@ -1,0 +1,39 @@
+{% extends path+"/scenario_prompts_00a/_layout-case-simple-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+{# <p class="caption-large" class="mb0">Condition history</p> #}
+
+<h1 class="heading-large mt10">Condition history</h1>
+
+{% if data['conditionHistoryScenarioOne'] and data['endFTFtrigger'] %}
+<form action="miniReview" method="post">
+{% else %}
+<form action="wca-index" method="post">
+{% endif %}
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+<div class="form-group">
+	<label class="form-label" for="conditionHistoryScenarioOne">Condition history details</label>
+	<textarea class="form-control form-control-1-1" name="conditionHistoryScenarioOne" id="conditionHistoryScenarioOne" rows="14">{{ conditionHistoryScenarioOne }}</textarea>
+</div>
+
+<p><input type="submit" class="button" value="Save" id="submitButton"></p>
+      </form>
+
+  </div><!-- column -->
+
+<div class="column-one-third">
+
+</div>
+<!-- right hand column -->
+
+</div><!-- row -->
+
+{% endblock %}
