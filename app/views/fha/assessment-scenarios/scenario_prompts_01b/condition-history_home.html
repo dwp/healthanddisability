@@ -1,4 +1,4 @@
-{% extends path+"/scenario_prompts_01a/_layout-case-simple-full-width.html" %}
+{% extends path+"/scenario_prompts_01b/_layout-case-simple-full-width.html" %}
 
 {% block citizen_content %}
 
@@ -17,20 +17,12 @@
 <table class="task-list">
  	<tbody>
 		<tr>
-			<td><a href="condition-history_Anxiety">Anxiety & depression</a></td>
-			<td>{% if data['conditionAnxietyTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+			<td><a href="condition-history_Backpain">Back pain</a></td>
+			<td>{% if data['conditionBackpainTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
 		</tr>
 		<tr>
-			<td><a href="condition-history_Alcohol">Alcohol misuse</a></td>
-			<td>{% if data['conditionAlcoholTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
-		</tr>
-		<tr>
-			<td><a href="condition-history_Urinary">Urinary incontinence</a></td>
-			<td>{% if data['conditionUrinaryTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
-		</tr>
-		<tr>
-			<td><a href="condition-history_Bowel">Bowel incontinence</a></td>
-			<td>{% if data['conditionBowelTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+			<td><a href="condition-history_Personality">Personality disorder</a></td>
+			<td>{% if data['conditionPersonalityTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
 		</tr>
 		{# <tr>
 			<td><a href="condition-history_Risk">Mental health risk</a></td>
