@@ -1,0 +1,81 @@
+{% extends path+"/scenario_prompts_01a/_layout-case-simple-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<p class="caption-large" class="mb0">Condition history</p>
+
+<h1 class="heading-large mt10">Urinary incontinence</h1>
+
+<form action="condition-history_home" method="post">
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+<div class="form-group">
+	<label class="form-label" for="conditionUrinaryContinenceType">Is it incontinence, urgency or neither?</label>
+	<textarea class="form-control form-control-1-1" name="conditionUrinaryContinenceType" id="conditionUrinaryContinenceType" rows="2">{{ conditionUrinaryContinenceType }}</textarea>
+</div>
+
+<div class="form-group">
+	<label class="form-label" for="conditionUrinaryContinenceFrequency">How frequently does it happen?</label>
+	<textarea class="form-control form-control-1-1" name="conditionUrinaryContinenceFrequency" id="conditionUrinaryContinenceFrequency" rows="3">{{ conditionUrinaryContinenceFrequency }}</textarea>
+</div>
+
+
+<div class="form-group">
+	<fieldset>
+		<legend class="mb10">What's the quantity?</legend>
+			<div class="multiple-choice">
+				<input id="continenceSmall" name="continenceQuantity" type="radio" value="Small amounts">
+				<label for="continenceSmall">Small amounts</label>
+			</div>
+			<div class="multiple-choice">
+				<input id="continenceLarge" name="continenceQuantity" type="radio" value="Large amounts">
+				<label for="continenceLarge">Large amounts</label>
+			</div>
+	</fieldset>
+</div>
+
+<div class="form-group">
+	<fieldset>
+		<legend class="mb10">Do they wear pads for this condition?</legend>
+			<div class="multiple-choice" data-target="continencePadsYes">
+				<input id="continenceYes" name="continencePads" type="radio" value="yes">
+				<label for="continenceYes">Yes</label>
+			</div>
+			<div class="panel js-hidden" id="continencePadsYes">
+				<div class="form-group">
+					<label class="form-label" for="conditionUrinaryContinencePadsYes">What type of pads do they wear and are they effective?</label>
+					<textarea class="form-control form-control-1-1" name="conditionUrinaryContinencePadsYes" id="conditionUrinaryContinencePadsYes" rows="4">{{ conditionUrinaryContinencePadsYes }}</textarea>
+				</div>
+			</div>
+			<div class="multiple-choice" data-target="continencePadsNo">
+				<input id="continenceNo" name="continencePads" type="radio" value="no">
+				<label for="continenceNo">No</label>
+			</div>
+			<div class="panel js-hidden" id="continencePadsNo">
+				<div class="form-group">
+					<label class="form-label" for="conditionUrinaryContinencePadsNo">Why do they not wear pads?</label>
+					<textarea class="form-control form-control-1-1" name="conditionUrinaryContinencePadsNo" id="conditionUrinaryContinencePadsNo" rows="4">{{ conditionUrinaryContinencePadsNo }}</textarea>
+				</div>
+			</div>
+		</fieldset>
+</div>
+
+<p><input type="submit" class="button" value="Save" id="submitButton"></p>
+      </form>
+
+  </div><!-- column -->
+
+<div class="column-one-third">
+
+</div>
+<!-- right hand column -->
+
+</div><!-- row -->
+
+{% endblock %}
