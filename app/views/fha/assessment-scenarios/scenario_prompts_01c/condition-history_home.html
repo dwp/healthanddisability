@@ -1,0 +1,64 @@
+{% extends path+"/scenario_prompts_01c/_layout-case-simple-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+  <p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<p class="caption-large mb0">Condition history</p>
+<h1 class="heading-large mt10">Review conditions</h1>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+<table class="task-list">
+ 	<tbody>
+		{% if data['reportedcondition1']%}
+		<tr>
+			<td><a href="#">{{ reportedcondition1 }}</a></td>
+			<td>{% if data['conditionAnxietyTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition2']%}
+		<tr>
+			<td><a href="#">{{ reportedcondition2 }}</a></td>
+			<td>{% if data['conditionAnxietyTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition3']%}
+		<tr>
+			<td><a href="#">{{ reportedcondition3 }}</a></td>
+			<td>{% if data['conditionAnxietyTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition4']%}
+		<tr>
+			<td><a href="#">{{ reportedcondition4 }}</a></td>
+			<td>{% if data['conditionAnxietyTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition5']%}
+		<tr>
+			<td><a href="#">{{ reportedcondition5 }}</a></td>
+			<td>{% if data['conditionAnxietyTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		</tr>
+		{% else %}{% endif %}
+	</tbody>
+</table>
+
+
+		<p><a href="#" class="button secondary">Add another condition</a></p>
+		
+		{% if data['endFTFtrigger'] %}
+		<p class="mt30"><a href="#" class="button">Save and continue</a></p>
+		{% else %}
+		<p class="mt30"><a href="#-index" class="button">Save and continue</a></p>
+{% endif %}
+
+  </div>
+</div>
+
+{% endblock %}
