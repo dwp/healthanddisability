@@ -1,0 +1,46 @@
+{% extends path+"/scenario_prompts_03a/_layout-case-simple-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<p class="caption-large" class="mb0">Condition history</p>
+
+<h1 class="heading-large mt10">Are any of the reported conditions related to mental health?</h1>
+
+<form action="condition-history_home" method="post">
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+<div class="form-group">
+	<fieldset>
+		{# <legend class="mb10">Have they ever thought about harming themselves in any way?</legend> #}
+			<div class="multiple-choice">
+				<input id="selfHarmThoughtsYes" name="selfHarmQuestion" type="radio" value="yes">
+				<label for="selfHarmThoughtsYes">Yes</label>
+			</div>
+			<div class="multiple-choice">
+				<input id="selfHarmThoughtsNo" name="selfHarmQuestion" type="radio" value="no">
+				<label for="selfHarmThoughtsNo">No</label>
+			</div>
+		</fieldset>
+</div>
+
+
+<p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+      </form>
+
+  </div><!-- column -->
+
+<div class="column-one-third">
+
+</div>
+<!-- right hand column -->
+
+</div><!-- row -->
+
+{% endblock %}
