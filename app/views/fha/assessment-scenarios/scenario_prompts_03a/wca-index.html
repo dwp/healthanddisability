@@ -21,9 +21,9 @@
     background: rgba(40, 161, 151, 0.05);
     border-left: 3px solid #28a197;" class="mb20">
     
-    {% if data['condition01Freetext'] and data['condition02Freetext'] and data['condition03Freetext'] and data['endFTFtrigger'] %}
+    {% if data['condition01Freetext'] and data['condition02Freetext'] and data['endFTFtrigger'] %}
     <p style="font-weight:bold;" class="mb0">Face-to-face complete</p>
-    {% elif data['condition01Freetext'] and data['condition02Freetext'] and data['condition03Freetext'] %}
+    {% elif data['condition01Freetext'] and data['condition02Freetext'] %}
 <form action="#" method="POST">
       <input type="submit" value="Finish face-to-face" class="button" style="float:right; margin-top:8px;" name="endFTFtrigger" id="endFTFtrigger">
     </form><p style="font-weight:bold;" class="mb0">Face-to-face in progress</p>
@@ -41,10 +41,10 @@
 
       <div class="task-list">
 					<ul class="task-list-itmes">
-           <li class="task-list-item">{%  if data['reportedcondition01'] or data['reportedcondition02'] or data['reportedcondition03'] %}<a href="condition-history_home">{% else %}<a href="condition-history_create-list">{% endif %}Condition history {% if data['condition01Freetext'] and data['condition02Freetext'] and data['condition03Freetext'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></a></li>
-           <li class="task-list-item"><a href="#">Medication and side effects {% if data['condition01Freetext'] and data['condition02Freetext'] and data['condition03Freetext'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
-           <li class="task-list-item"><a href="#">Social and work history {% if data['condition01Freetext'] and data['condition02Freetext'] and data['condition03Freetext'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
-           <li class="task-list-item"><a href="#">Typical day {% if data['condition01Freetext'] and data['condition02Freetext'] and data['condition03Freetext'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+           <li class="task-list-item">{%  if data['reportedcondition01'] or data['reportedcondition02'] or data['reportedcondition03'] %}<a href="condition-history_home">{% else %}<a href="condition-history_create-list">{% endif %}Condition history {% if data['condition01Freetext'] and data['condition02Freetext'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></a></li>
+           <li class="task-list-item"><a href="#">Medication and side effects {% if data['condition01Freetext'] and data['condition02Freetext'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+           <li class="task-list-item"><a href="#">Social and work history {% if data['condition01Freetext'] and data['condition02Freetext'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+           <li class="task-list-item"><a href="#">Typical day {% if data['condition01Freetext'] and data['condition02Freetext'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
            <li class="task-list-item"><a href="#">Physical assessment {% if data['physicalConsentJustification'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
            <li class="task-list-item"><a href="#">Mental state examination {% if data['mentalHealthAppearance'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
           </ul>
