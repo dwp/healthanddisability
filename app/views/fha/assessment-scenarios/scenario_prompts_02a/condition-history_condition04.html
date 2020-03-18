@@ -29,7 +29,11 @@
 
 <h1 class="heading-large mt10">{{ reportedcondition04 }}</h1>
 
+{% if data['endFTFtrigger']%}
+<form action="miniReview" method="post">
+{% else %}
 <form action="condition-history_home" method="post">
+{% endif %}
 
 <div class="grid-row">
   <div class="column-two-thirds">
@@ -47,12 +51,12 @@
   <summary><span class="summary">Substantial risk factors</span></summary>
 
   <div class="panel panel-border-narrow mb30">
-    <p>If certain conditions are reported you must discuss the following...</p>
-    <ul>
-      <li>Alcohol and drug use</li>
-      <li>Behaviour</li>
-      <li>Self-harm</li>
-      <li>Suicidal ideation</li>
+    <p>If certain conditions are reported, you must discuss the following:</p>
+    <ul class="substantial-risk-list">
+      <li>alcohol and drug use</li>
+      <li>behaviour</li>
+      <li>self-harm</li>
+      <li>suicidal ideation</li>
     </ul>
   </div>
 
