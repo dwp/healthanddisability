@@ -1,0 +1,87 @@
+{% extends path+"/scenario_prompts_03b/_layout-case_assessment-in-progress-plus-links.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+<hr class="no-kdBar" />
+
+<h1 class="heading-large">Work capability assessment</h1>
+
+<!--<p class="mt30 mb20">Assessment started: {{ last_one.time | formatDate("H:mma D MMMM YYYY") }}</p>-->
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+<div style="font-size: 18px;
+    margin: 0px 0 0;
+    padding: 16px;
+    font-weight: normal;
+    background: rgba(40, 161, 151, 0.05);
+    border-left: 3px solid #28a197;" class="mb20">
+    
+    {% if data['condition01Freetext'] and data['condition02Freetext'] and data['endFTFtrigger'] %}
+    <p style="font-weight:bold;" class="mb0">Face-to-face complete</p>
+    {% elif data['condition01Freetext'] and data['condition02Freetext'] %}
+<form action="#" method="POST">
+      <input type="submit" value="Finish face-to-face" class="button" style="float:right; margin-top:8px;" name="endFTFtrigger" id="endFTFtrigger">
+    </form><p style="font-weight:bold;" class="mb0">Face-to-face in progress</p>
+    {% else %}<p style="font-weight:bold;" class="mb0">Face-to-face in progress</p>
+    {% endif %}
+
+    <p class="mb0">Started at: {{ assessmentStartTime | formatDate("H:mma")}}{% if data['endFTFtrigger'] %}<span style="margin-left:32px;">Finished at: {{ assessmentFinishTime | formatDate("H:mma")}}{% else %}{% endif %}</span></p>
+</div>
+
+  </div><!-- column here -->
+</div><!-- row -->
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+      <div class="task-list">
+					<ul class="task-list-itmes">
+           <li class="task-list-item">{%  if data['reportedcondition01'] or data['reportedcondition02'] or data['reportedcondition03'] %}<a href="condition-history_home">{% else %}<a href="condition-history_create-list">{% endif %}Condition history {% if data['condition01Freetext'] and data['condition02Freetext'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></a></li>
+           <li class="task-list-item"><a href="#">Medication and side effects {% if data['condition01Freetext'] and data['condition02Freetext'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+           <li class="task-list-item"><a href="#">Social and work history {% if data['condition01Freetext'] and data['condition02Freetext'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+           <li class="task-list-item"><a href="#">Typical day {% if data['condition01Freetext'] and data['condition02Freetext'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+           <li class="task-list-item"><a href="#">Physical assessment {% if data['physicalConsentJustification'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+           <li class="task-list-item"><a href="#">Mental state examination {% if data['mentalHealthAppearance'] %}<span class="task-completed">Assessed</span>{% else %}<span class="visually-hidden">Not started</span>{% endif %}</a></li>
+          </ul>
+        </div>
+  </div><!-- column here -->
+</div><!-- row -->
+
+
+
+
+
+{% if data['condition01Freetext'] and data['endFTFtrigger'] %}
+<p style="margin-top:32px;"><a href="miniReview" class="button">Continue and review</a></p>
+{% else %}
+{% endif %}
+
+{% endblock %}
+
+{% macro physGroup(name,sel) %}
+  {% set s = name | slug %}
+  <!-- GROUP -->
+  <div class="multiple-choice" data-target="group_{{s}}_yes">
+    <input id="group_{{s}}" type="checkbox" name="group_{{s}}" sue="group_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="group_{{s}}">{{name}}</label>
+  </div>
+{% endmacro %}
+
+{% macro physObs(name,sel) %}
+  {% set s = name | slug %}
+  <div class="multiple-choice" data-target="phys_{{s}}_yes">
+    <input id="phys_{{s}}" type="checkbox" name="mobility" value="phys_{{s}}" {% if sel %} checked="checked"{% endif %}>
+    <label for="phys_{{s}}">{{name}}</label>
+  </div>
+  <div class="form-group panel panel-indent js-hidden mt0 mb20" id="phys_{{s}}_yes">
+    <p>
+      <label class="form-label" for="phys_{{s}}_obs">Observation, Palpation, Movement</label>
+      <textarea class="form-control form-control-3-4" name="phys_{{s}}_obs" id="phys_{{s}}_obs" rows="4"></textarea>
+    </p>
+  </div>
+{% endmacro %}

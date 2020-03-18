@@ -1,4 +1,4 @@
-{% extends path+"/scenario_prompts_03a/_layout-case-simple-full-width.html" %}
+{% extends path+"/scenario_prompts_03b/_layout-case-simple-full-width.html" %}
 
 {% block citizen_content %}
 
@@ -37,7 +37,7 @@
 
 <p class="caption-large" class="mb0">Condition history</p>
 
-<h1 class="heading-large mt10">{{ reportedcondition03 }}</h1>
+<h1 class="heading-large mt10">{{ reportedcondition04 }}</h1>
 
 {% if data['endFTFtrigger']%}
 <form action="miniReview" method="post">
@@ -92,8 +92,8 @@
   <div class="column-two-thirds">
 
 <div class="form-group">
-	<label class="form-label mb10" for="condition03Freetext">{{ reportedcondition03 }} details</label>
-	<textarea class="form-control form-control-1-1" name="condition03Freetext" id="condition03Freetext" rows="16">{{ condition03Freetext }}</textarea>
+	<label class="form-label mb10" for="condition04Freetext">{{ reportedcondition04 }} details</label>
+	<textarea class="form-control form-control-1-1" name="condition04Freetext" id="condition04Freetext" rows="16">{{ condition04Freetext }}</textarea>
 </div>
 
 <p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>

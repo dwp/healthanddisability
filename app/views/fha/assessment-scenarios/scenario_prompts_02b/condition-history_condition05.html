@@ -1,4 +1,4 @@
-{% extends path+"/scenario_prompts_02a/_layout-case-simple-full-width.html" %}
+{% extends path+"/scenario_prompts_02b/_layout-case-simple-full-width.html" %}
 
 {% block citizen_content %}
 
@@ -27,7 +27,7 @@
 
 <p class="caption-large" class="mb0">Condition history</p>
 
-<h1 class="heading-large mt10">{{ reportedcondition03 }}</h1>
+<h1 class="heading-large mt10">{{ reportedcondition05 }}</h1>
 
 <form action="condition-history_home" method="post">
 
@@ -35,12 +35,12 @@
   <div class="column-two-thirds">
 
 <div class="form-group">
-	<label class="form-label mb10" for="condition03Time">Onset and progression</label>
-	<textarea class="form-control form-control-1-1" name="condition03Time" id="condition03Time" rows="3">{{ condition03Time }}</textarea>
+	<label class="form-label mb10" for="condition05Time">Onset and progression</label>
+	<textarea class="form-control form-control-1-1" name="condition02Time" id="condition05Time" rows="3">{{ condition05Time }}</textarea>
 </div>
 
 <div class="form-group">
-	<label class="form-label" for="condition03Symptoms">Symptoms</label>
+	<label class="form-label" for="condition05Symptoms">Symptoms</label>
 	<span class="form-hint mt5 mb5">Types of symptoms, frequency and variability</span>
   <details>
 
@@ -57,21 +57,21 @@
   </div>
 
 </details>
-	<textarea class="form-control form-control-1-1" name="condition03Symptoms" id="condition03Symptoms" rows="10">{{ condition03Symptoms }}</textarea>
+	<textarea class="form-control form-control-1-1" name="condition05Symptoms" id="condition05Symptoms" rows="10">{{ condition05Symptoms }}</textarea>
 </div>
 
 <div class="form-group">
-	<label class="form-label mb10" for="condition03Investigations">Investigations, medical input and treatment</label>
+	<label class="form-label mb10" for="condition05Investigations">Investigations, medical input and treatment</label>
 	{# <span class="form-hint mt5 mb5">For example, who are they seeing about the condition?<br>Are they receiving treatment?</span> #}
-	<textarea class="form-control form-control-1-1" name="condition03Investigations" id="condition03Investigations" rows="8">{{ condition03Investigations }}</textarea>
+	<textarea class="form-control form-control-1-1" name="condition05Investigations" id="condition05Investigations" rows="8">{{ condition05Investigations }}</textarea>
 </div>
 
 
 
 <div class="form-group">
-	<label class="form-label mb10" for="condition03Impact">Impact on function</label>
+	<label class="form-label mb10" for="condition05Impact">Impact on function</label>
   {# <span class="form-hint mt5 mb5">For example, how do their symptoms impact their daily life?</span> #}
-	<textarea class="form-control form-control-1-1" name="condition03Impact" id="condition03Impact" rows="4">{{ condition03Impact }}</textarea>
+	<textarea class="form-control form-control-1-1" name="condition05Impact" id="condition05Impact" rows="4">{{ condition05Impact }}</textarea>
 </div>
 
 <p><input type="submit" class="button" value="Save" id="submitButton"></p>

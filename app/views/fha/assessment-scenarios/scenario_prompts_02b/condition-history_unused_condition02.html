@@ -1,0 +1,78 @@
+{% extends path+"/scenario_prompts_02b/_layout-case-simple-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<style type="text/css">
+  .multiple-choice {
+      padding: 4px 10px 9px 40px;
+      margin-bottom:10px;}
+    .multiple-choice [type=checkbox] + label::before {
+      width: 22px;
+      height: 22px;
+      padding-top: 2px !important;
+    }
+
+    .multiple-choice label::after {
+      top: 9px !important;
+      left: 7px !important;
+      width: 10px !important;
+      height: 5px !important;
+      border-width: 0 0 3px 3px !important;
+    }
+</style>
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<p class="caption-large" class="mb0">Condition history</p>
+
+<h1 class="heading-large mt10">{{ reportedcondition02 }}</h1>
+
+<form action="condition-history_home" method="post">
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+<div class="form-group">
+	<label class="form-label" for="condition02Time">When did the condition start?</label>
+	<textarea class="form-control form-control-1-1" name="condition02Time" id="condition02Time" rows="2">{{ condition02Time }}</textarea>
+</div>
+
+<div class="form-group">
+	<label class="form-label" for="condition02Progression">How has the condition progressed over time?</label>
+	<textarea class="form-control form-control-1-1" name="condition02Progression" id="condition02Progression" rows="2">{{ condition02Progression }}</textarea>
+</div>
+
+<div class="form-group">
+	<label class="form-label" for="condition02Investigations">Investigations</label>
+	<span class="form-hint mt5 mb5">For example, who are they seeing about the condition?<br>Are they receiving treatment?</span>
+  
+	<textarea class="form-control form-control-1-1" name="condition02Investigations" id="condition02Investigations" rows="6">{{ condition02Investigations }}</textarea>
+</div>
+
+<div class="form-group">
+	<label class="form-label" for="condition02Symptoms">Symptoms</label>
+	<span class="form-hint mt5 mb5">For example, what are their symptoms?<br>How frequent and variable are their symptoms?</span>
+	<textarea class="form-control form-control-1-1" name="condition02Symptoms" id="condition02Symptoms" rows="6">{{ condition02Symptoms }}</textarea>
+</div>
+
+<div class="form-group">
+	<label class="form-label" for="condition02Impact">Impact on function</label>
+  <span class="form-hint mt5 mb5">For example, how do their symptoms impact their daily life?</span>
+	<textarea class="form-control form-control-1-1" name="condition02Impact" id="condition02Impact" rows="4">{{ condition02Impact }}</textarea>
+</div>
+
+<p><input type="submit" class="button" value="Save" id="submitButton"></p>
+      </form>
+
+  </div><!-- column -->
+
+<div class="column-one-third">
+
+</div>
+<!-- right hand column -->
+
+</div><!-- row -->
+
+{% endblock %}

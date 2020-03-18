@@ -1,0 +1,106 @@
+{% extends path+"/scenario_prompts_03b/_layout-case-simple-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+
+  <p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<p class="caption-large mb0">Condition history</p>
+<h1 class="heading-large mt10">Review conditions</h1>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+<table class="task-list">
+ 	<tbody>
+		{% if data['reportedcondition01']%}
+		<tr>
+			<td><a href="condition-history_condition01">{{ reportedcondition01 }}</a></td>
+			<td>{% if data['condition01Freetext']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition02']%}
+		<tr>
+			<td><a href="condition-history_condition02">{{ reportedcondition02 }}</a></td>
+			<td>{% if data['condition02Freetext']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition03']%}
+		<tr>
+			<td><a href="condition-history_condition03">{{ reportedcondition03 }}</a></td>
+			<td>{% if data['condition03Freetext']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition04']%}
+		<tr>
+			<td><a href="condition-history_condition04">{{ reportedcondition04 }}</a></td>
+			<td>{% if data['condition04Freetext']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition05']%}
+		<tr>
+			<td><a href="condition-history_condition05">{{ reportedcondition05 }}</a></td>
+			<td>{% if data['condition05Freetext']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition06']%}
+		<tr>
+			<td><a href="condition-history_condition06">{{ reportedcondition06 }}</a></td>
+			<td>{% if data['condition06Freetext']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition07']%}
+		<tr>
+			<td><a href="condition-history_condition07">{{ reportedcondition07 }}</a></td>
+			<td>{% if data['condition07Freetext']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		</tr>
+		{% else %}{% endif %}
+		{# <tr>
+			<td><a href="condition-history_Risk">Mental health risk factors (optional)</a></td>
+			<td>{% if data['condition07Time']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		</tr> #}
+	</tbody>
+</table>
+
+
+{# <table class="task-list">
+ 	<tbody>
+		<tr>
+			<td><a href="condition-history_Anxiety">Anxiety & depression</a></td>
+			<td>{% if data['conditionAnxietyTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		</tr>
+		<tr>
+			<td><a href="condition-history_Alcohol">Alcohol misuse</a></td>
+			<td>{% if data['conditionAlcoholTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		</tr>
+		<tr>
+			<td><a href="condition-history_Urinary">Urinary incontinence</a></td>
+			<td>{% if data['conditionUrinaryTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		</tr>
+		<tr>
+			<td><a href="condition-history_Bowel">Bowel incontinence</a></td>
+			<td>{% if data['conditionBowelTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		</tr>
+		<tr>
+			<td><a href="condition-history_Risk">Mental health risk</a></td>
+			<td>{% if data['conditionSelfHarmWhen']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		</tr>
+	</tbody>
+</table> #}
+
+
+		<p><a href="condition-history_create-list" class="button secondary">Add or remove condition</a></p>
+		
+		{% if data['endFTFtrigger'] %}
+		<p class="mt30"><a href="miniReview" class="button">Save and continue</a></p>
+		{% else %}
+		<p class="mt30"><a href="wca-index" class="button">Save and return to main menu</a></p>
+{% endif %}
+
+  </div>
+</div>
+
+{% endblock %}
