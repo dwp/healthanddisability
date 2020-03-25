@@ -1,0 +1,93 @@
+{% extends path+"/scenario_03p/_layout-case-simple-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<style type="text/css">
+  .multiple-choice {
+      padding: 4px 10px 9px 40px;
+      margin-bottom:10px;}
+    .multiple-choice [type=checkbox] + label::before {
+      width: 22px;
+      height: 22px;
+      padding-top: 2px !important;
+    }
+
+    .multiple-choice label::after {
+      top: 9px !important;
+      left: 7px !important;
+      width: 10px !important;
+      height: 5px !important;
+      border-width: 0 0 3px 3px !important;
+    }
+	.total-score{
+		background-color: #FFF !important;
+		color:#000 !important;
+		text-align:right;
+	}
+	.total-score .heading-large{
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+	}
+</style>
+
+
+  <p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+<div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-2" tabindex="-1">
+
+      <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-2">
+        There is a problem
+      </h2>
+
+      <ul class="error-summary-list">
+        <li><a href="#mandatory">Go into the activities you've selected and choose a descriptor</a></li>
+        {# <li><a href="#points-threshold">You must meet the 15 point threshold to accept ongoing LCW</a></li> #}
+      </ul>
+
+</div>
+</div></div>
+
+<p class="caption-large mb10">File report: accept ongoing LCW</p>
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+
+<div class="form-group form-group-error">
+<h1 class="heading-large mt10">Review activities</h1>
+<span class="error-message" id="mandatory">Go into the activities you've selected and choose a descriptor</span>
+				 <table class="task-list">
+				 	<tbody>			
+					<tr>
+						<td><a href="#">Picking up and moving things</a></td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td><a href="#">Manual dexterity</a></td>
+						<td></td>
+					</tr>
+						{# <tr>
+							<td class="bold" style="padding-top:20px !important;"><span class="error-message">You must meet the 15 point threshold to accept ongoing LCW</span><br>Total score</td>
+							<td><span class="total-score"><h1 class="heading-large"><br>12</h1></span></td>
+						</tr>					 #}
+				 	</tbody>
+				 </table>
+				 
+</div>
+
+
+		<p><a href="#" class="button secondary">Add another relevant activity</a></p>
+		
+		<p class="mt30"><a href="#" class="button">Save and continue</a></p>
+
+
+  </div>
+</div>
+
+{% endblock %}
