@@ -1,0 +1,114 @@
+{% extends path+"/_layout-case-simple13.html" %}
+
+
+{% block actioncolumn %}
+   
+
+
+ <div class="caseStatus">
+ 	
+	<h2 class="main-status"><span>Current case status</span>Vulnerable claimant</h2>
+
+ </div>
+{% endblock %}
+
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+    
+   
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+        
+
+
+    	
+    	<h1 class="heading-large">Vulnerable claimant decision</h1>
+    	
+    	
+		<div class="evidence-requests mt30">
+				
+				
+			<form method="POST">
+			
+					<div class="form-group">
+						<fieldset>
+						  
+							  <legend class="heading-medium mb10">What is your recommendation?</legend>
+
+										<div class="multiple-choice" data-target="vulnerable-justification-1">
+											<input id="claimant" type="radio" name="uc50changedaddress" value="~/{{path}}/scenario13a/not-testing">
+											<label for="claimant">Case should continue on health journey</label>
+											{# <span class="form-hint mt5">Give details to support this recommendation</span> #}
+										</div>
+						<div class="panel js-hidden" id="vulnerable-justification-1">
+							<div class="form-group">
+								<label class="form-label" for="justify">Give details</label>
+								<textarea class="form-control" id="justify" rows="4"></textarea>
+							</div>
+					    </div>
+										<div class="multiple-choice" data-target="vulnerable-justification-2">
+											<input id="gpTele" type="radio" name="uc50changedaddress" value="~/{{path}}/scenario13a/not-testing">
+											<label for="gpTele">Outcome decision can be made, evidence of vulnerability</label>
+											{# <span class="form-hint mt5">Add outcome to UCFS</span> #}
+										</div>
+						<div class="panel js-hidden" id="vulnerable-justification-2">
+							<div class="form-group">
+								<label class="form-label" for="justify">What is your decision and why?</label>
+								<textarea class="form-control" id="justify" rows="3"></textarea>
+							</div>
+					    </div>
+										<div class="multiple-choice">
+											<input id="gpTele" type="radio" name="uc50changedaddress" value="~/{{path}}/scenario13a/issue-second-uc50-dm">
+											<label for="gpTele">Issue second UC50, no evidence of vulnerability</label>
+											{# <span class="form-hint mt5">2nd UC50 must be issued to claimant</span> #}
+										</div>
+
+							</fieldset>
+						</div>
+				
+				<p class="mt30"><input type="submit" class="button" value="Save and continue"></p>
+				
+				</form>
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

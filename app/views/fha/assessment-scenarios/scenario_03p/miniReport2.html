@@ -48,14 +48,14 @@ table.scoring-table td, table.scoring-table th
 				<th>Assessor</th>
 				<td>Jane Smith</td>
 			</tr>
-			<tr>
+			{# <tr>
 				<th>Assessment started</th>
 				<td>{{ last_one.time | formatDate("H:mma") }}</td>
 			</tr>
 			<tr>
 				<th>Assessment finished</th>
 				<td>{{ first_one.time | formatDate("H:mma") }}</td>
-			</tr>
+			</tr> #}
 		</tbody>
 	</table>
 
@@ -104,7 +104,7 @@ table.scoring-table td, table.scoring-table th
 		{% if data['PBAdescriptors']==='terminalIllness' %}
 		<p>I advise that Kate meets the criteria for being treated as having limited capability for work and work-related activity because of terminal illness.</p>
 		{% elif data['pbaOutcome']==='LCWRAmobilising' %}
-		<p>I advise that Kate meets the criteria for limited capability for work and work-related activity as they have severe functional disability in mobilising and using steps.</p>
+		<p>I advise that Kate meets the criteria for limited capability for work and work-related activity as they have severe functional disability in moving around and using steps (mobilising).</p>
 		{% elif data['pbaOutcome']==='LCWRAlearning' %}
 		<p>I advise that Kate meets the criteria for limited capability for work and work-related activity as they have severe functional disability in learning to do new tasks.</p>
 		{% elif data['pbaOutcome']==='LCWRAeating'%}
@@ -114,7 +114,7 @@ table.scoring-table td, table.scoring-table th
 		{% elif data['pbaOutcome']==='treatLCWregular'%}
 		<p>I advise that Kate meets the criteria for being treated as having limited capability for work because of regular treatment.</p>
 		{% elif data['pbaOutcome']==='acceptLCW' %}
-		<p>I advise that Kate meets the criteria for limited capability for work as they have functional disability in picking up and moving things and manual dexterity.</p>
+		<p>I advise that Kate meets the criteria for limited capability for work as they have functional disability in picking up and moving things and using your hands (manual dexterity).</p>
 		{% endif %}
 	</div>
 	<p class="edit-report"><a href="#" class="button-secondary">Edit recommendation</a></p>

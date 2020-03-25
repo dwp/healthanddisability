@@ -1,0 +1,98 @@
+{% extends path+"/_layout-case-simple13.html" %}
+
+
+{% block actioncolumn %}
+   
+
+
+ <div class="caseStatus">
+ 	
+	<h2 class="main-status"><span>Current case status</span>Questionnaire not returned</h2>
+
+ </div>
+{% endblock %}
+
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+    
+   
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+        
+
+
+    	
+    	<h1 class="heading-large">Claimant has changed address</h1>
+    	
+    	
+		<div class="evidence-requests mt30">
+				
+				
+			<form method="POST">
+			
+					<div class="form-group">
+						<fieldset>
+						  
+							  <legend class="heading-medium mb10">Choose an option</legend>
+
+										<div class="multiple-choice">
+											<input id="claimant" type="radio" name="uc50changedaddress" value="~/{{path}}/scenario13/edit-address-details">
+											<label for="claimant">New address within assessment centre area</label>
+											<span class="form-hint mt5">Update address details and issue second UC50</span>
+										</div>
+
+										<div class="multiple-choice">
+											<input id="gpTele" type="radio" name="uc50changedaddress" value="~/{{path}}/scenario13/close-rebuild">
+											<label for="gpTele">New address outside assessment centre area</label>
+											<span class="form-hint mt5">Close referral and recreate in MSRS</span>
+										</div>
+
+							</fieldset>
+						</div>
+				
+				<p class="mt30"><input type="submit" class="button" value="Save and continue"></p>
+				
+				</form>
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
