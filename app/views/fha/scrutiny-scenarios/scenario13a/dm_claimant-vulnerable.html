@@ -7,7 +7,7 @@
 
  <div class="caseStatus">
  	
-	<h2 class="main-status"><span>Current case status</span>Vulnerable claimant</h2>
+	<h2 class="main-status"><span>Current case status</span>Claimant is vulnerable</h2>
 
  </div>
 {% endblock %}
@@ -41,24 +41,26 @@
 
 
     	
-    	<h1 class="heading-large">Issue second UC50</h1>
+    	<h1 class="heading-large">Case should continue on health journey</h1>
     	
-    	<p>By continuing you are confirming that you’ve issued a second UC50 to the claimant.</p>
+		<p>Claimant is vulnerable and the case should continue without the UC50 being returned.</p>		
 		
+		<div class="evidence-requests">		
+				
+			<form method="post" action="case-list_good-cause-action">
 		
-		<div class="evidence-requests mt30">
-				
-				
-			<form method="POST" action="case-list_referrals-in-progress">
-			
-			
+			<div class="form-group">
+				<label class="form-label" for="statusVulnerableNotesDM">Give details</label>
+				<textarea class="form-control form-control-3-4" name="statusVulnerableNotesDM" id="statusVulnerableNotesDM" rows="4">{{ statusVulnerableNotesDM }}</textarea>
+			</div>
+
 					{# <div class="form-group">
 						<fieldset class="inline">
 						  
-							  <legend class="heading-large mb5">Issue 2nd UC50 to the claimant</legend>
+							  <legend class="heading-medium mb5">Are you ready to close this referral?</legend>
 
 										<div class="multiple-choice">
-											<input id="yes" type="radio" name="seconduc50option" value="~/{{path}}/scenario11/case-list-referral-in-progress">
+											<input id="yes" type="radio" name="seconduc50option" value="~/{{path}}/scenario11/not-testing">
 											<label for="yes">Yes</label>
 										</div>
 										
@@ -71,9 +73,7 @@
 							</fieldset>
 						</div> #}
 			
-
-				
-				<p class="mt30"><input type="submit" class="button" value="Confirm and continue"></p>
+				<p class="mt30"><input type="submit" class="button" value="Save and continue"></p>
 				
 
 				

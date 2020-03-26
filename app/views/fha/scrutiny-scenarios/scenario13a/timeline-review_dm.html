@@ -22,7 +22,7 @@
 
  <div class="caseStatus">
  	
-	<h2 class="main-status"><span>Current case status</span>Vulnerable claimant</h2>
+	<h2 class="main-status"><span>Current case status</span>Claimant is vulnerable</h2>
 	
 
 	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario13a/vulnerable-claimant" class="button">Make recommendation</a></h3>
@@ -100,13 +100,13 @@
   <p class="timeline_datetime">29 July 2019</p>
 </div>
 
-{% elif data['uc50choice']=='returned'%}
+{% elif data['statusVulnerableNotes'] %}
 
 <span class="line"></span>
 <div class="timeline__event">
-  <h3 class="timeline__heading">UC50 not returned - Evidence of claimant vulnerability</h3>
-  <p class="timeline_datetime">27 February 2020</p>
-  <p>Notes:<br>{{ vulnerabilityNotes }}bafdljb bl blb hab labld hlba lhab </p>
+  <h3 class="timeline__heading">Claimant is vulnerable</h3>
+  <p class="timeline_datetime">29 February 2020</p>
+  <p>Case manager notes:<br>{{ statusVulnerableNotes }}</p>
 </div>
 
 {% endif %}
@@ -122,14 +122,14 @@
       <div class="timeline__event">
         <h3 class="timeline__heading">UC50 reminder issued</h3>
         <p class="timeline_datetime">20 February 2020</p>
-        <p>Sent to:<br>73 Pendwyallt Road, Burscough, Merseyside, L40 1FE.</p>
+        <p>Sent to: 73 Pendwyallt Road, Burscough, Merseyside, L40 1FE.</p>
       </div>
 
       <span class="line"></span>
       <div class="timeline__event">
-        <h3 class="timeline__heading">UC50 form posted</h3>
+        <h3 class="timeline__heading">UC50 form issued</h3>
         <p class="timeline_datetime">29 January 2020</p>
-        <p>Sent to:<br>73 Pendwyallt Road, Burscough, Merseyside, L40 1FE.</p>
+        <p>Sent to: 73 Pendwyallt Road, Burscough, Merseyside, L40 1FE.</p>
       </div>
       
  

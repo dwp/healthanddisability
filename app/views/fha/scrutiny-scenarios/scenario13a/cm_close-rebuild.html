@@ -1,0 +1,86 @@
+{% extends path+"/_layout-case-simple13.html" %}
+
+
+{% block actioncolumn %}
+   
+
+
+ <div class="caseStatus">
+ 	
+	<h2 class="main-status"><span>Current case status</span>Questionnaire not returned</h2>
+
+ </div>
+{% endblock %}
+
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+    
+   
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+    	
+    	<h1 class="heading-large">Close referral</h1>
+    	
+		<p>This claimants new address is not currently supported in this service, the referral must be rebuilt in MSRS then closed in this service.</p>
+    	
+		
+		<div class="evidence-requests mt30">
+				
+				
+			<form method="post">
+			
+			<div class="form-group">	
+			<div class="notice"><i class="icon icon-important"><span class="visually-hidden">Warning</span></i>
+    		<strong class="bold-small">You must rebuild the case in MSRS before you continue.</strong>
+    		</div>
+			</div>
+
+				<p class="mt30"><input type="submit" class="button" value="Confirm and close referral"></p>
+				
+
+				
+				
+				</form>
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

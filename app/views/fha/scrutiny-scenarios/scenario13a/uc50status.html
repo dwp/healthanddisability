@@ -50,7 +50,7 @@
 		<div class="evidence-requests mt30">
 				
 				
-			<form method="POST" action="case-list_questionnaire-not-returned">
+			<form method="post" action="case-list_questionnaire-not-returned">
 			
 			
 					<div class="form-group">
@@ -64,29 +64,22 @@
 										</div>
 										
 
-										<div class="multiple-choice" data-target="mentalHealthNotes">
-											<input id="mentalHealth" type="radio" name="caseStatus">
+										<div class="multiple-choice">
+											<input id="mentalHealth" type="radio" name="caseStatus" value="~/{{path}}/scenario13a/not-testing">
 											<label for="mentalHealth">Claimant has a mental health condition</label>
 										</div>
 
-										<div class="panel js-hidden" id="mentalHealthNotes">
-											<div class="form-group">
-												<label class="form-label" for="statusMentalHealthNotes">Give details</label>
-												<textarea class="form-control form-control-3-4" id="statusMentalHealthNotes" rows="4">{{ statusMentalHealthNotes }}</textarea>
-											</div>
-										</div>
-
 										<div class="multiple-choice" data-target="vulnerableNotes">
-											<input id="vulnerable" type="radio" name="caseStatus" value="~/{{path}}/scenario13a/case-list_questionnaire-not-returned">
+											<input id="vulnerable" type="radio" name="caseStatus" value="~/{{path}}/scenario13a/cm_claimant-vulnerable">
 											<label for="vulnerable">Claimant is vulnerable</label>
 										</div>
 
-										<div class="panel js-hidden" id="vulnerableNotes">
+										{# <div class="panel js-hidden" id="vulnerableNotes">
 											<div class="form-group">
 												<label class="form-label" for="statusVulnerableNotes">Give details</label>
-												<textarea class="form-control form-control-3-4" id="statusVulnerableNotes" rows="4">{{ statusVulnerableNotes }}</textarea>
+												<textarea class="form-control form-control-3-4" name="statusVulnerableNotes" id="statusVulnerableNotes" rows="4">{{ statusVulnerableNotes }}</textarea>
 											</div>
-										</div>
+										</div> #}
 
 										<div class="multiple-choice">
 											<input id="changedAddress" type="radio" name="caseStatus" value="~/{{path}}/scenario13a/changed-address">
@@ -94,16 +87,16 @@
 										</div>
 
 										<div class="multiple-choice" data-target="leftHealthNotes">
-											<input id="leftHealth" type="radio" name="caseStatus" value="~/{{path}}/scenario13a/close-leave">
+											<input id="leftHealth" type="radio" name="caseStatus" value="leftHealth~/{{path}}/scenario13a/cm_left-health">
 											<label for="leftHealth">Claimant has left the health journey</label>
 										</div>
 
-										<div class="panel js-hidden" id="leftHealthNotes">
+										{# <div class="panel js-hidden" id="leftHealthNotes">
 											<div class="form-group">
 												<label class="form-label" for="statusLeftHealthNotes">Give details</label>
-												<textarea class="form-control form-control-3-4" id="statusLeftHealthNotes" rows="4">{{ statusLeftHealthNotes }}</textarea>
+												<textarea class="form-control form-control-3-4" name="statusLeftHealthNotes" id="statusLeftHealthNotes" rows="4">{{ statusLeftHealthNotes }}</textarea>
 											</div>
-										</div>
+										</div> #}
 
 							</fieldset>
 						</div>

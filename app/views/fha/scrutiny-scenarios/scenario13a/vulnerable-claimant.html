@@ -7,7 +7,7 @@
 
  <div class="caseStatus">
  	
-	<h2 class="main-status"><span>Current case status</span>Vulnerable claimant</h2>
+	<h2 class="main-status"><span>Current case status</span>Claimant is vulnerable</h2>
 
  </div>
 {% endblock %}
@@ -41,8 +41,9 @@
 
 
     	
-    	<h1 class="heading-large">Vulnerable claimant decision</h1>
+    	<h1 class="heading-large">Claimant is vulnerable</h1>
     	
+		{# <p>Case manager notes:<br>{{ statusVulnerableNotes }}</p> #}
     	
 		<div class="evidence-requests mt30">
 				
@@ -54,34 +55,22 @@
 						  
 							  <legend class="heading-medium mb10">What is your recommendation?</legend>
 
-										<div class="multiple-choice" data-target="vulnerable-justification-1">
-											<input id="claimant" type="radio" name="uc50changedaddress" value="~/{{path}}/scenario13a/not-testing">
+										<div class="multiple-choice">
+											<input id="claimant" type="radio" name="vulnerableRecommendation" value="DMcontinue~/{{path}}/scenario13a/dm_claimant-vulnerable">
 											<label for="claimant">Case should continue on health journey</label>
 											{# <span class="form-hint mt5">Give details to support this recommendation</span> #}
 										</div>
-						<div class="panel js-hidden" id="vulnerable-justification-1">
-							<div class="form-group">
-								<label class="form-label" for="justify">Give details</label>
-								<textarea class="form-control" id="justify" rows="4"></textarea>
-							</div>
-					    </div>
-										<div class="multiple-choice" data-target="vulnerable-justification-2">
-											<input id="gpTele" type="radio" name="uc50changedaddress" value="~/{{path}}/scenario13a/not-testing">
-											<label for="gpTele">Outcome decision can be made, evidence of vulnerability</label>
-											{# <span class="form-hint mt5">Add outcome to UCFS</span> #}
-										</div>
-						<div class="panel js-hidden" id="vulnerable-justification-2">
-							<div class="form-group">
-								<label class="form-label" for="justify">What is your decision and why?</label>
-								<textarea class="form-control" id="justify" rows="3"></textarea>
-							</div>
-					    </div>
+
 										<div class="multiple-choice">
-											<input id="gpTele" type="radio" name="uc50changedaddress" value="~/{{path}}/scenario13a/issue-second-uc50-dm">
-											<label for="gpTele">Issue second UC50, no evidence of vulnerability</label>
+											<input id="gpTele" type="radio" name="vulnerableRecommendation" value="DMissuesecond~/{{path}}/scenario13a/dm_issue-second-uc50">
+											<label for="gpTele">Second UC50 should be issued</label>
 											{# <span class="form-hint mt5">2nd UC50 must be issued to claimant</span> #}
 										</div>
 
+										<div class="multiple-choice">
+											<input id="gpTele" type="radio" name="vulnerableRecommendation" value="DMlefthealth~/{{path}}/scenario13a/dm_left-health">
+											<label for="gpTele">Claimant has left the health journey</label>
+										</div>
 							</fieldset>
 						</div>
 				
