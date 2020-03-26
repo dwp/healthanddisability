@@ -3,7 +3,7 @@
 
 {% block caselist_content %}
 
-            <h2 class="heading-medium mt0"><span class="heading-xlarge">7</span><br/>Questionnaire not returned{{ statusMentalHealthNotes }}</h2>
+            <h2 class="heading-medium mt0"><span class="heading-xlarge">7</span><br/>Questionnaire not returned</h2>
             
             
             
@@ -46,9 +46,7 @@
                     <th style="width:15% !important;">Referral type</th>
                   </tr>
                 </thead>
-                
-                {% if data['statusVulnerableNotes']==='statusVulnerableNotes' %}
-                Hello
+                {% if data['statusVulnerableNotes'] or data['caseStatus']==='lefthealth' %}
                 {% else %}
                 <tr>
                   <td><a href="timeline-review"><span class="visually-hidden">Name</span>Jay Reynolds</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>SG 24 37 24 A</span></td>

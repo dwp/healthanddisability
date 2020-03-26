@@ -7,7 +7,7 @@
 
  <div class="caseStatus">
  	
-	<h2 class="main-status"><span>Current case status</span>Questionnaire not returned</h2>
+	<h2 class="main-status"><span>Current case status</span>Claimant is vulnerable</h2>
 
  </div>
 {% endblock %}
@@ -43,17 +43,19 @@
     	
     	<h1 class="heading-large">Issue second UC50</h1>
     	
-		<p>Claimant correspondance address:<br>92 Lairg Road, Burscough, Merseyside, L20 2PR.</p>
+		<p>Claimant correspondance address:<br>73 Pendwyallt Road, Burscough, Merseyside, L40 1FE.</p>
 		<p>Assessment centre return address:<br>DWP Tresco House, 65 Lisson Grove, Marylebone, London NW1 6UP.</p>
+		{# <p>73 Pendwyallt Road, Burscough, Merseyside, L40 1FE.</p>
+    	<p>By continuing you are confirming that you’ve issued a second UC50 to the claimant.</p> #}
 		
 		<div class="notice mb30"><i class="icon icon-important"><span class="visually-hidden">Warning</span></i>
     	<strong class="bold-small">By continuing you are confirming that a second UC50 has been issued.</strong>
     	</div>
-		
+
 		<div class="evidence-requests mt30">
 				
 				
-			<form method="POST" action="case-list_referrals-in-progress">
+			<form method="post" action="case-list_good-cause-action">
 			
 			
 					{# <div class="form-group">

@@ -47,7 +47,7 @@
 		<div class="evidence-requests mt30">
 				
 				
-			<form method="POST">
+			<form method="post" action="edit-address-details">
 			
 					<div class="form-group">
 						<fieldset>
@@ -55,15 +55,15 @@
 							  <legend class="heading-medium mb10">Choose an option</legend>
 
 										<div class="multiple-choice">
-											<input id="claimant" type="radio" name="uc50changedaddress" value="~/{{path}}/scenario13/edit-address-details">
+											<input id="claimant" type="radio" name="uc50changedaddress" value="CMissuesecond~/{{path}}/scenario13a/edit-address-details">
 											<label for="claimant">New address within assessment centre area</label>
 											<span class="form-hint mt5">Update address details and issue second UC50</span>
 										</div>
 
 										<div class="multiple-choice">
-											<input id="gpTele" type="radio" name="uc50changedaddress" value="~/{{path}}/scenario13/close-rebuild">
+											<input id="gpTele" type="radio" name="uc50changedaddress" value="~/{{path}}/scenario13a/cm_close-rebuild">
 											<label for="gpTele">New address outside assessment centre area</label>
-											<span class="form-hint mt5">Close referral and recreate in MSRS</span>
+											<span class="form-hint mt5">Close referral and rebuild in MSRS</span>
 										</div>
 
 							</fieldset>

@@ -22,13 +22,19 @@
 
  <div class="caseStatus">
  	
-	<h2 class="main-status"><span>Current case status</span>Questionnaire not returned</h2>
+	<h2 class="main-status"><span>Current case status</span>Referrals in progress</h2>
 	
 
-	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario13a/uc50status" class="button">Update case status</a></h3>
+	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario13a/vulnerable-claimant" class="button">UC50 received</a></h3>
 
  </div>
+{# <details class="end-actions">
+<summary>Other case actions</summary>
 
+	<ul>
+		<li><a href="case-list_referrals-in-progress">UC50 received</a></li>
+	</ul>
+</details> #}
 <!--<div class="secondary-nav-actions">
 
 	<ul>
@@ -72,6 +78,36 @@
     
   <div class="timeline">
   
+  {# <span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">Evidence of claimant vulnerability</h3>
+  <p class="timeline_datetime">03 August 2019</p>
+</div>  #}
+    {% if data['vulnerableRecommendation']==='DMissuesecond' %}
+    <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">Second UC50 form issued</h3>
+        <p class="timeline_datetime">2 March 2020</p>
+        <p>Sent to: 73 Pendwyallt Road, Burscough, Merseyside, L40 1FE.</p>
+      </div>
+
+    <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">Claimant is vulnerable: recommendation</h3>
+        <p class="timeline_datetime">2 March 2020</p>
+        <p>Issue second UC50</p>
+      </div>
+
+    <span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">Claimant is vulnerable</h3>
+  <p class="timeline_datetime">29 February 2020</p>
+  <p>Case manager notes:<br>{{ statusVulnerableNotes }}</p>
+</div>
+    
+    {% endif %}
+
+
 
    {% if data['uc50choice']=='received'%}
  <span class="line"></span>
@@ -89,19 +125,16 @@
   <p class="timeline_datetime">29 July 2019</p>
 </div>
 
-{% elif data['uc50choice']=='returned'%}
-
-{# <span class="line"></span>
-<div class="timeline__event">
-  <h3 class="timeline__heading">UC50 not returned</h3>
-  <p class="timeline_datetime">29 July 2019</p>
-</div> #}
-
-
 {% endif %}
 
-      
-      
+    {% if data['uc50changedaddress']==='CMissuesecond' %}
+    <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">Second UC50 form issued</h3>
+        <p class="timeline_datetime">29 February 2020</p>
+        <p>Sent to: 92 Lairg Road, Burscough, Merseyside, L20 2PR.</p>
+      </div>
+    {% endif %}
       
       <span class="line"></span>
       <div class="timeline__event">
@@ -123,6 +156,8 @@
         <p>Sent to: 73 Pendwyallt Road, Burscough, Merseyside, L40 1FE.</p>
       </div>
       
+ 
+
       <span class="line"></span>
       <div class="timeline__event">
         <h3 class="timeline__heading">New referral created</h3>
