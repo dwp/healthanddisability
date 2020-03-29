@@ -8,7 +8,7 @@ var calendar = require('node-calendar')
 var moment = require('moment')
 const crypto = require('crypto')
 
-var filePath = '../../../../app/views/fha/appointment-scenarios' 
+var filePath = '../../../../app/views/fha/appointment-scenarios'
 var viewPath = '/fha/appointment-scenarios'
 
 
@@ -110,7 +110,7 @@ router.get('/', function (req, res, next) {
     didNotAttend: appointmentCustomers.filter(customer => customer.status === 'Did not attend').length
   }
   next()
-}) 
+})
 
 router.get('/', function (req, res, next) {
   res.locals.appointmentNumbersRec = {
@@ -118,7 +118,7 @@ router.get('/', function (req, res, next) {
     booked: appointmentCustomersRequirements.filter(customer => customer.status === 'Booked').length,
   }
   next()
-}) 
+})
 
 router.get('/scenario4/caselist', function (req, res, next) {
 res.locals.customers = appointmentCustomers
@@ -162,6 +162,14 @@ router.get('/scenario4/bookedv2', function (req, res, next) {
       next()
       })
 
+      router.get('/scenario4/bookedv5', function (req, res, next) {
+        res.locals.customers = appointmentCustomersRequirements
+        .filter(customer => customer.status === "Booked");
+        next()
+        })
+
+      
+
   router.get('/scenario4/appointment-history', function (req, res, next) {
     let findCustomer = {}
 
@@ -170,7 +178,7 @@ router.get('/scenario4/bookedv2', function (req, res, next) {
         findCustomer = appointmentCustomers[i];
       }
     }
-  
+
     res.locals.customer = findCustomer
     // .filter(customer => customer.status === "Booked");
     next()
@@ -178,13 +186,13 @@ router.get('/scenario4/bookedv2', function (req, res, next) {
 
     router.get('/scenario/booked', function (req, res, next) {
       let findCustomer1 = {}
-  
+
       for (let i = 0; i < appointmentCustomersRequirements.length; i++ ) {
         if(appointmentCustomersRequirements[i].nino === req.query.nino){
           findCustomer = appointmentCustomersRequirements[i];
         }
       }
-    
+
       res.locals.customer = findCustomer
       // .filter(customer => customer.status === "Booked");
       next()
@@ -192,36 +200,36 @@ router.get('/scenario4/bookedv2', function (req, res, next) {
 
     router.get('/scenario3/appointment-tab', function (req, res, next) {
       let findCustomer2 = {}
-  
+
       for (let i = 0; i < appointmentCustomersRequirements.length; i++ ) {
         if(appointmentCustomersRequirements[i].nino === req.query.nino){
           findCustomer2 = appointmentCustomersRequirements[i];
         }
       }
-    
+
       res.locals.customer = findCustomer2
       next()
-      })  
+      })
 
       router.get('/scenario3/record-bookings', function (req, res, next) {
         let findCustomer3 = {}
-    
+
         for (let i = 0; i < appointmentCustomersRequirements.length; i++ ) {
           if(appointmentCustomersRequirements[i].nino === req.query.nino){
             findCustomer3 = appointmentCustomersRequirements[i];
           }
         }
-      
+
         res.locals.customer = findCustomer3
         next()
         })
-       
+
         router.post('/scenario3/record-bookings', function (req, res, next) {
 
           console.log('parma', req.body);
 
           const path = 'appointment-tab?nino=' + req.body.nino
-          
+
           res.redirect(301, `appointment-tab?nino=${req.body.nino}`)
         })
 
