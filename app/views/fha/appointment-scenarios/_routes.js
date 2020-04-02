@@ -168,7 +168,7 @@ router.get('/scenario4/bookedv2', function (req, res, next) {
         next()
         })
 
-      
+
 
   router.get('/scenario4/appointment-history', function (req, res, next) {
     let findCustomer = {}
