@@ -53,39 +53,37 @@
 
 
 <h2 class="heading-medium">Assessment centre</h2>
-<form action="/fha/appointment-scenarios/scenario4/dashboard/decision-post" method="post">
+<form action="/fha/appointment-scenarios/scenario4/dashboard-tresco/decision-post" method="post">
 
           <details class="govuk-details" data-module="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
-                  Change assessment centre
+                Change assessment centre
               </span>
             </summary>
             <div class="govuk-details__text">
                           <div class="check-group check-top">
                       <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
                        <div class="govuk-radios__item govuk-radios--small">
-                            <input id="all-assess" name="filter-assess" type="radio" value="all-assess" class="facet" {{ checked('filter-assess', 'all-assess') }} checked> <label for="all-assess">All  <span>&#40;253&#41;</span></label>
+                            <input id="all-assess" name="filter-assess" type="radio" value="all-assess" class="facet" {{ checked('filter-assess', 'all-assess') }} > <label for="all-assess">All  <span>&#40;253&#41;</span></label>
                             </div>
                         <div class="govuk-radios__item govuk-radios--small">
-                            <input id="tresco" name="filter-assess" type="radio" value="tresco" class="facet" class="facet" {{ checked('filter-assess', 'tresco') }} > <label for="tresco">Tresco <span>&#40;150&#41;</span></label>
+                            <input class="govuk-checkboxes__input" id="tresco" name="filter-assess" type="radio" value="tresco" class="facet" class="facet" {{ checked('filter-assess', 'tresco') }} checked> <label for="tresco">Tresco <span>&#40;150&#41;</span></label>
                             </div>
                           <div class="govuk-radios__item govuk-radios--small">
-                            <input id="fiveways" name="filter-assess" type="radio" value="fiveways" class="facet" class="facet" {{ checked('filter-assess', 'fiveways') }} > <label for="fiveways">Fiveways <span>&#40;47&#41;</span></label>
+                            <input class="govuk-checkboxes__input" id="fiveways" name="filter-assess" type="radio" value="fiveways" class="facet" class="facet" {{ checked('filter-assess', 'fiveways') }} > <label for="fiveways">Fiveways <span>&#40;47&#41;</span></label>
                             </div>
                           <div class="govuk-radios__item govuk-radios--small">
-                            <input id="wolves" name="filter-assess" type="radio" value="wolves" class="facet" class="facet" {{ checked('filter-assess', 'wolves') }} > <label for="wolves">Wolverhampton <span>&#40;54&#41;</span></label>
+                            <input class="govuk-checkboxes__input" id="wolves" name="filter-assess" type="radio" value="wolves" class="facet" class="facet" {{ checked('filter-assess', 'wolves') }} > <label for="wolves">Wolverhampton <span>&#40;54&#41;</span></label>
                             </div>
                       </div>
 
                       </fieldset>
                     </div>
                     <br>
-
-
-                              <button class="button button-secondary" data-module="govuk-button">
-                                Apply
-                              </button>
+                    <button class="button button-secondary" data-module="govuk-button">
+                      Apply
+                    </button>
                     </form>
           </details>
 
@@ -96,22 +94,20 @@
               <a class="button mt25"
                    href="#">Create referral</a>
               <hr>
-
-              	<h1 class="heading-xlarge mt0 mb20"><span class="heading-secondary">All assessment centres</span>253 cases</h1>
-
+              <h1 class="heading-xlarge mt0 mb20"><span class="heading-secondary">Tresco assessment centre</span>150 cases</h1>
             </div>
           </div>
           <div class="grid-row">
             <div class="card-container">
               <div class="card">
                 <a href="/{{path%20}}/scenario/not-testing.html">
-                <h2 class="heading-xlarge">25 <span class="heading-small">Referrals</span></h2></a>
+                <h2 class="heading-xlarge">5 <span class="heading-small">Referrals</span></h2></a>
                 <ul class="inner">
                   <li>
-                    <a href="/{{path%20}}/scenario/not-testing.html">New referrals (14)</a>
+                    <a href="/{{path%20}}/scenario/not-testing.html">New referrals (4)</a>
                   </li>
                   <li>
-                    <a href="/{{path%20}}/scenario/not-testing.html">Referrals in progress (10)</a>
+                    <a href="/{{path%20}}/scenario/not-testing.html">Referrals in progress (0)</a>
                   </li>
                   <li>
                     <a href="/{{path}}/scenario2/caselist.html">Incomplete referrals(0)</a>
@@ -123,13 +119,13 @@
               </div>
               <div class="card">
                 <a href="/{{path%20}}/scenario/not-testing.html">
-                <h2 class="heading-xlarge">25 <span class="heading-small">Reviews</span></h2></a>
+                <h2 class="heading-xlarge">5 <span class="heading-small">Reviews</span></h2></a>
                 <ul class="inner">
                   <li>
-                    <a href="/{{path%20}}/scenario/not-testing.html">Ready for review (13)</a>
+                    <a href="/{{path%20}}/scenario/not-testing.html">Ready for review (3)</a>
                   </li>
                   <li>
-                    <a href="/{{path%20}}/scenario/not-testing.html">Ready for second review(10)</a>
+                    <a href="/{{path%20}}/scenario/not-testing.html">Ready for second review(0)</a>
                   </li>
                   <li>
                     <a href="/{{path%20}}/scenario/not-testing.html">Request medical evidence(0)</a>
@@ -141,13 +137,13 @@
               </div>
               <div class="card">
                 <a href="/{{path%20}}/scenario/not-testing.html">
-                <h2 class="heading-xlarge">47 <span class="heading-small">Appointments</span></h2></a>
+                <h2 class="heading-xlarge">121 <span class="heading-small">Appointments</span></h2></a>
                 <ul class="inner">
                   <li>
                     <a href="/{{path%20}}/scenario/not-testing.html">Ready to book (14)</a>
                   </li>
                   <li>
-                    <a href="/{{path%20}}/scenario/not-testing.html">Booked appointments(20)</a>
+                    <a href="/fha/appointment-scenarios/scenario4/bookedv5">Booked appointments(94)</a>
                   </li>
                   <li>
                     <a href="/{{path%20}}/scenario/not-testing.html">Did not attend (13)</a>
@@ -156,31 +152,31 @@
               </div>
               <div class="card">
                 <a href="/{{path%20}}/scenario/not-testing.html">
-                <h2 class="heading-xlarge">26 <span class="heading-small">Todays appointments</span></h2></a>
+                <h2 class="heading-xlarge">6 <span class="heading-small">Todays appointments</span></h2></a>
                 <ul class="inner">
                   <li>
                     <a href="/{{path%20}}/scenario/not-testing.html">Confirm arrival (0)</a>
                   </li>
                   <li>
-                    <a href="/{{path%20}}/scenario/not-testing.html">Ready for assessment(14)</a>
+                    <a href="/{{path%20}}/scenario/not-testing.html">Ready for assessment(4)</a>
                   </li>
                   <li>
                     <a href="/{{path%20}}/scenario/not-testing.html">Assessment stopped(2)</a>
                   </li>
                   <li>
-                    <a href="/{{path%20}}/scenario/not-testing.html">Assessment completed(10)</a>
+                    <a href="/{{path%20}}/scenario/not-testing.html">Assessment completed(0)</a>
                   </li>
                 </ul>
               </div>
               <div class="card">
                 <a href="/{{path%20}}/scenario/not-testing.html">
-                <h2 class="heading-xlarge">23 <span class="heading-small">Post assessment</span></h2></a>
+                <h2 class="heading-xlarge">3 <span class="heading-small">Post assessment</span></h2></a>
                 <ul class="inner">
                   <li>
-                    <a href="/{{path%20}}/scenario/not-testing.html">Assessments completed(12)</a>
+                    <a href="/{{path%20}}/scenario/not-testing.html">Assessments completed(2)</a>
                   </li>
                   <li>
-                    <a href="/{{path%20}}/scenario/not-testing.html">Outcome available(11)</a>
+                    <a href="/{{path%20}}/scenario/not-testing.html">Outcome available(1)</a>
                   </li>
                 </ul>
               </div>
