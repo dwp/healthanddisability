@@ -87,7 +87,7 @@
                     <th style="width:15% !important;">Referral type</th>
                   </tr>
                 </thead>
-                {% if data['statusVulnerableNotes'] or data['caseStatus']==='lefthealth' %}
+                {% if data['statusVulnerableNotes'] or data['caseStatus']==='lefthealth' or data['statusLefthealthNotesCM'] or data['caseStatus']==='changedAddress' or data['caseStatus']==='secondUCrequested' %}
                 {% else %}
                 <tr>
                   <td><a href="timeline-review"><span class="visually-hidden">Name</span>Jay Reynolds</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>SG 24 37 24 A</span></td>

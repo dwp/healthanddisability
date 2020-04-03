@@ -58,21 +58,17 @@
 										<div class="multiple-choice">
 											<input id="claimant" type="radio" name="vulnerableRecommendation" value="DMcontinue~/{{path}}/scenario13a/dm_claimant-vulnerable">
 											<label for="claimant">Case should continue on health journey</label>
-										</div>
-
-										<div class="multiple-choice">
-											<input id="gpTele" type="radio" name="vulnerableRecommendation" value="DMissuesecond~/{{path}}/scenario13a/dm_issue-second-uc50">
-											<label for="gpTele">Claimant has requested a second UC50</label>
-										</div>
-
-										<div class="multiple-choice">
-											<input id="gpTele" type="radio" name="vulnerableRecommendation" value="DMissuesecond~/{{path}}/scenario13a/dm_changed-address">
-											<label for="gpTele">Claimant has changed address</label>
+											{# <span class="form-hint mt5">Give details to support this recommendation</span> #}
 										</div>
 
 										<div class="multiple-choice">
 											<input id="gpTele" type="radio" name="vulnerableRecommendation" value="DMlefthealth~/{{path}}/scenario13a/dm_left-health">
 											<label for="gpTele">Claimant has left the health journey</label>
+										</div>
+
+										<div class="multiple-choice">
+											<input id="gpTele" type="radio" name="vulnerableRecommendation" value="DMlefthealth~/{{path}}/scenario13a/dm_close-referral">
+											<label for="gpTele">Close referral</label>
 										</div>
 							</fieldset>
 						</div>

@@ -7,7 +7,7 @@
 
  <div class="caseStatus">
  	
-	<h2 class="main-status"><span>Current case status</span>Questionnaire not returned</h2>
+	<h2 class="main-status"><span>Current case status</span>Good cause action</h2>
 
  </div>
 {% endblock %}
@@ -38,24 +38,19 @@
 
     <div class="column-two-thirds">
     	
-    	<h1 class="heading-large">Close referral and rebuild</h1>
+    	<h1 class="heading-large">Close referral</h1>
     	
-		<p>This claimants new address is not currently supported in this service, the referral must be rebuilt in MSRS then closed in this service.</p>
+		<p>By continuing you are confirming that the claimants referral is closed.</p>
     	
 		
 		<div class="evidence-requests mt30">
 				
 				
-			<form method="post" action="case-list_questionnaire-not-returned">
-
-      {# <div class="form-group">
-				<label class="form-label" for="statusCloseRebuildNotesCM">Give details</label>
-				<textarea class="form-control form-control-3-4" name="statusCloseRebuildNotesCM" id="statusCloseRebuildNotesCM" rows="4">{{ statusCloseRebuildNotesCM }}</textarea>
-			</div> #}
-      
+			<form method="post" action="case-list_good-cause-action">
+			
 			<div class="form-group">	
 			<div class="notice"><i class="icon icon-important"><span class="visually-hidden">Warning</span></i>
-    		<strong class="bold-small">You must rebuild the case in MSRS before you continue.</strong>
+    		<strong class="bold-small">The referral must be closed on UCFS before you continue.</strong>
     		</div>
 			</div>
 

@@ -63,27 +63,9 @@
 											<label for="received">UC50 received</label>
 										</div>
 										
-
 										<div class="multiple-choice">
 											<input id="mentalHealth" type="radio" name="caseStatus" value="~/{{path}}/scenario13a/not-testing">
 											<label for="mentalHealth">Claimant has a mental health condition</label>
-										</div>
-
-										{# <div class="panel js-hidden" id="vulnerableNotes">
-											<div class="form-group">
-												<label class="form-label" for="statusVulnerableNotes">Give details</label>
-												<textarea class="form-control form-control-3-4" name="statusVulnerableNotes" id="statusVulnerableNotes" rows="4">{{ statusVulnerableNotes }}</textarea>
-											</div>
-										</div> #}
-
-										<div class="multiple-choice">
-											<input id="secondUCrequested" type="radio" name="caseStatus" value="secondUCrequested~/{{path}}/scenario13a/issue-second-uc50">
-											<label for="secondUCrequested">Claimant has requested a second UC50</label>
-										</div>
-
-										<div class="multiple-choice">
-											<input id="changedAddress" type="radio" name="caseStatus" value="changedAddress~/{{path}}/scenario13a/changed-address">
-											<label for="changedAddress">Claimant has changed address</label>
 										</div>
 
 										<div class="multiple-choice" data-target="leftHealthNotes">
@@ -91,18 +73,15 @@
 											<label for="leftHealth">Claimant has left the health journey</label>
 										</div>
 
-										{# <div class="panel js-hidden" id="leftHealthNotes">
-											<div class="form-group">
-												<label class="form-label" for="statusLeftHealthNotes">Give details</label>
-												<textarea class="form-control form-control-3-4" name="statusLeftHealthNotes" id="statusLeftHealthNotes" rows="4">{{ statusLeftHealthNotes }}</textarea>
-											</div>
-										</div> #}
-
 										<div class="multiple-choice" data-target="vulnerableNotes">
 											<input id="vulnerable" type="radio" name="caseStatus" value="~/{{path}}/scenario13a/cm_claimant-vulnerable">
 											<label for="vulnerable">Claimant is vulnerable</label>
 										</div>
 
+										<div class="multiple-choice" data-target="vulnerableNotes">
+											<input id="closeReferral" type="radio" name="caseStatus" value="~/{{path}}/scenario13a/cm_close-referral">
+											<label for="closeReferral">Close referral</label>
+										</div>
 							</fieldset>
 						</div>
 			
