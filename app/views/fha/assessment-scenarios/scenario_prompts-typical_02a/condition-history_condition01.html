@@ -1,0 +1,109 @@
+{% extends path+"/scenario_prompts_03a/_layout-case-simple-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<style type="text/css">
+  .multiple-choice {
+      padding: 4px 10px 9px 40px;
+      margin-bottom:10px;}
+    .multiple-choice [type=checkbox] + label::before {
+      width: 22px;
+      height: 22px;
+      padding-top: 2px !important;
+    }
+
+    .multiple-choice label::after {
+      top: 9px !important;
+      left: 7px !important;
+      width: 10px !important;
+      height: 5px !important;
+      border-width: 0 0 3px 3px !important;
+    }
+    .portal-display{
+    margin-top:0px !important;}
+
+    .portal-display .portal-card{
+    border:2px solid #bfc1c3;
+    }
+    
+    .form-control-1-1 {
+    width:95%;}
+
+</style>
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<p class="caption-large" class="mb0">Condition history</p>
+
+<h1 class="heading-large mt10">{{ reportedcondition01 }}</h1>
+
+{% if data['endFTFtrigger']%}
+<form action="miniReview" method="post">
+{% else %}
+<form action="condition-history_home" method="post">
+{% endif %}
+
+<div class="grid-row">
+  <div class="column-one-third">
+    <div class="portal-display mb30">
+      <div class="portal-card">
+				<div class="portal-head">
+					<h4>Key things to consider</h4>
+				</div>
+				<!-- / title -->
+				<div class="portal-inner">
+        <ul class="mb10 twists-list">
+          <li>Onset</li>
+          <li>Progression</li>
+          <li>Symptoms (including frequency and variability)</li>
+          <li>Investigations</li>
+          <li>Medical input</li>
+          <li>Treatment and therapy</li>
+          <li>Impact on function</li>
+        </ul>
+				</div>
+				<!-- / inner card -->
+			</div>
+		</div>
+
+    <div class="portal-display">
+      <div class="portal-card">
+				<div class="portal-head">
+					<h4>Substantial risk factors</h4>
+				</div>
+				<!-- / title -->
+				<div class="portal-inner">
+        <p class="mb10">If certain conditions are reported, you must discuss the following:</p>
+    <ul class="substantial-risk-list">
+      <li>alcohol and drug use</li>
+      <li>behaviour</li>
+      <li>self-harm</li>
+      <li>suicidal ideation</li>
+    </ul>
+				</div>
+				<!-- / inner card -->
+			</div>
+		</div>
+  </div>
+  <div class="column-two-thirds">
+
+<div class="form-group">
+	<label class="form-label mb10" for="condition01Freetext">{{ reportedcondition01 }} details</label>
+	<textarea class="form-control form-control-1-1" name="condition01Freetext" id="condition01Freetext" rows="16">{{ condition01Freetext }}</textarea>
+</div>
+
+<p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+      </form>
+
+  </div><!-- column -->
+
+<div class="column-one-third">
+
+</div>
+<!-- right hand column -->
+
+</div><!-- row -->
+
+{% endblock %}
