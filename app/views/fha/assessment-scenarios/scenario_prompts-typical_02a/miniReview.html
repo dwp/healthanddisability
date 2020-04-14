@@ -1,0 +1,216 @@
+{% extends path+"/scenario_prompts_03a/_layout-case-simple_assessment-complete.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<style>table th, table td{
+border-bottom:none !important;}</style>
+
+<p class="no-kdBar"></p>
+
+  
+<h1 class="heading-large mb0">Work capability assessment review</h1>
+ 
+
+<div class="review-wrapper full-report">
+
+
+<div>
+
+	<table class="report-view-table">
+	{# <caption class="heading-small">Assessment overview</caption> #}
+	
+		<tbody>
+			<tr>
+				<th>Name</th>
+				<td>Ruby Haynes</td>
+			</tr>
+			<tr>
+				<th>NINO</th>
+				<td>YA 13 87 63 A</td>
+			</tr>
+			<tr>
+				<th>DOB</th>
+				<td>19 September 1990</td>
+			</tr>
+			<tr>
+				<th>Date of assessment</th>
+				<td>{{ "Do MMM YYYY" | daysAgo }}</td>
+			</tr>
+			<tr>
+				<th>Assessment centre</th>
+				<td>Fiveways, Birmingham</td>
+			</tr>
+			<tr>
+				<th>Assessor</th>
+				<td>Jane Smith</td>
+			</tr>
+			<tr>
+				<th>Assessment started</th>
+				<td>{{ last_one.time | formatDate("H:mma") }}</td>
+			</tr>
+			<tr>
+				<th>Assessment finished</th>
+				<td>{{ first_one.time | formatDate("H:mma") }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+<!-- / report item -->
+
+<hr>
+
+
+<div class="report-item">
+
+	<h2 class="heading-medium mt0">Additional attendees</h2> 
+	
+	<div class="inner-focus">
+		<p>John Smith</p>
+	</div>
+	<p class="edit-report"><a href="#" class="button-secondary">Edit additional attendees</a></p>
+
+<hr>
+
+	<h2 class="heading-medium">Condition history</h2> 
+	
+	{% if data['reportedcondition01']%}
+	<div class="inner-focus">
+	<p class="heading-small">{{ reportedcondition01 }}</p> 
+	<p>{{ condition01Freetext }}</p>
+	<p class="edit-report"><a href="condition-history_condition01" class="button-secondary mt10 mb20">Edit {{ reportedcondition01 }} details</a></p>
+	{% else %}{% endif %}
+
+<!-- Condition break -->
+
+	{% if data['reportedcondition02']%}
+	<div class="inner-focus">
+	<p class="heading-small">{{ reportedcondition02 }}</p>
+	<p>{{ condition02Freetext }}</p>
+	<p class="edit-report"><a href="condition-history_condition02" class="button-secondary mt10 mb20">Edit {{ reportedcondition02 }} details</a></p>
+	{% else %}{% endif %}
+	
+<!-- Condition break -->
+
+	{% if data['reportedcondition03']%}
+	<div class="inner-focus">
+	<p class="heading-small">{{ reportedcondition03 }}</p> 
+	<p>{{ condition03Freetext }}</p>
+	<p class="edit-report"><a href="condition-history_condition03" class="button-secondary mt10 mb20">Edit {{ reportedcondition03 }} details</a></p>
+	{% else %}{% endif %}
+	
+<!-- Condition break -->
+
+	{% if data['reportedcondition04']%}
+	<div class="inner-focus">
+	<p class="heading-small">{{ reportedcondition04 }}</p>
+	<p>{{ condition04Freetext }}</p>
+	<p class="edit-report"><a href="condition-history_condition04" class="button-secondary mt10 mb20">Edit {{ reportedcondition04 }} details</a></p>
+	{% else %}{% endif %}
+	
+<!-- Condition break -->
+
+	{% if data['reportedcondition05']%}
+	<div class="inner-focus">
+	<p class="heading-small">{{ reportedcondition05 }}</p> 
+	<p>{{ condition05Freetext }}</p>
+	<p class="edit-report"><a href="condition-history_condition05" class="button-secondary mt10 mb20">Edit {{ reportedcondition05 }} details</a></p>
+	{% else %}{% endif %}
+	
+<!-- Condition break -->
+
+	{% if data['reportedcondition06']%}
+	<div class="inner-focus">
+	<p class="heading-small">{{ reportedcondition06 }}</p> 
+	<p>{{ condition06Freetext }}</p>
+	<p class="edit-report"><a href="condition-history_condition06" class="button-secondary mt10 mb20">Edit {{ reportedcondition06 }} details</a></p>
+	{% else %}{% endif %}
+	
+<!-- Condition break -->
+
+	{% if data['reportedcondition07']%}
+	<div class="inner-focus">
+	<p class="heading-small">{{ reportedcondition07 }}</p> 
+	<p>{{ condition07Freetext }}</p>
+	<p class="edit-report"><a href="condition-history_condition07" class="button-secondary mt10 mb20">Edit {{ reportedcondition07 }} details</a></p>
+	{% else %}{% endif %}
+
+<hr>
+	<h2 class="heading-medium">Social and work history</h2> 
+	
+	<div class="inner-focus">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p>Morbi posuere egestas urna, eu ornare lorem eleifend id.</p>
+<p>Etiam molestie, nunc sed lacinia placerat, nisi augue malesuada est, at vehicula est enim sed nibh.</p>
+<p>Curabitur consectetur mi blandit, condimentum enim a, tempor arcu.</p>
+<p>Nulla arcu augue, vestibulum vel libero ut, condimentum vulputate nisl.</p>
+	<!--    Outputs social work history 
+	    {% for item in socialWorkComments | sortBy("time",true) %}
+		<p>{{ item.comment }}</p>
+  		{% endfor %}-->
+  
+	</div>
+	
+	<p class="edit-report"><a href="#" class="button-secondary">Edit social and work history</a></p>
+
+
+	<h2 class="heading-medium">Typical day</h2> 
+	
+	<div class="inner-focus">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p>Morbi posuere egestas urna, eu ornare lorem eleifend id.</p>
+<p>Etiam molestie, nunc sed lacinia placerat, nisi augue malesuada est, at vehicula est enim sed nibh.</p>
+<p>Curabitur consectetur mi blandit, condimentum enim a, tempor arcu.</p>
+<p>Nulla arcu augue, vestibulum vel libero ut, condimentum vulputate nisl.</p>
+		<!--{% for item in typicalDayComments | sortBy("time",true) %}
+		<p>{{ item.comment }}</p>
+  		{% endfor %}-->
+	</div>
+	
+	<p class="edit-report"><a href="#" class="button-secondary">Edit typical day</a></p>
+
+
+	<h2 class="heading-medium">Medication and side effects</h2> 
+	
+	<div class="inner-focus">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p>Morbi posuere egestas urna, eu ornare lorem eleifend id.</p>
+<p>Etiam molestie, nunc sed lacinia placerat, nisi augue malesuada est, at vehicula est enim sed nibh.</p>
+<p>Curabitur consectetur mi blandit, condimentum enim a, tempor arcu.</p>
+<p>Nulla arcu augue, vestibulum vel libero ut, condimentum vulputate nisl.</p>
+	<!--<p>{{ medicationSideEffects }}</p>-->
+	</div>
+	
+	<p class="edit-report"><a href="#" class="button-secondary">Edit medication and side effects</a></p>
+	
+</div>
+<!-- / report item -->
+
+
+
+<div class="report-item">
+
+	<div class="inner-focus">
+	<h2 class="heading-medium">Physical assessments</h2>
+	</div>
+</div>
+<!-- / report item -->
+
+
+
+<div class="report-item">
+	<div class="inner-focus">
+	<h2 class="heading-medium">Mental health assessment</h2>
+	</div>
+</div>
+<!-- / report item -->
+  
+   </div>
+ <!-- / wrapper -->
+  
+
+
+
+{% endblock %}

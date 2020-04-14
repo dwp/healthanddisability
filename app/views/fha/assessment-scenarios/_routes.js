@@ -600,7 +600,23 @@ router.post('/assessment/:customerId/evidence/socialWorkHistory', function (req,
   next()
 })
 
-router.post('/assessment/:customerId/evidence/typicalDay', function (req, res, next) {
+router.post('/scenario_prompts-typical_01a/typicalDay', function (req, res, next) {
+  if (req.body.delete == 'true') {
+    req.session.data.typicalDayComments = req.session.data.typicalDayComments.filter(item => item.id != req.body.id)
+  } else {
+    req.session.data.typicalDayComments.push({
+      id: crypto.randomBytes(16).toString('hex'),
+      comment: req.body.comments,
+      time: moment().format()
+    })
+
+    res.locals.comments = req.session.data.typicalDayComments
+  }
+  next()
+})
+
+
+router.post('/scenario_prompts-typical_02a/typicalDay', function (req, res, next) {
   if (req.body.delete == 'true') {
     req.session.data.typicalDayComments = req.session.data.typicalDayComments.filter(item => item.id != req.body.id)
   } else {
@@ -650,7 +666,12 @@ router.get('/assessment/:customerId/evidence/socialWorkHistory*', function (req,
   next()
 })
 
-router.get('/assessment/:customerId/evidence/typicalDay', function (req, res, next) {
+router.get('/scenario_prompts-typical_01a/typicalDay', function (req, res, next) {
+  res.locals.comments = req.session.data.typicalDayComments
+  next()
+})
+
+router.get('/scenario_prompts-typical_02a/typicalDay', function (req, res, next) {
   res.locals.comments = req.session.data.typicalDayComments
   next()
 })
