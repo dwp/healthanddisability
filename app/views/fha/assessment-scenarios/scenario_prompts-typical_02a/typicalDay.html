@@ -163,8 +163,12 @@
       
     </form>
 
+{% if data['endFTFtrigger']%}
+<form action="miniReview" method="post" class="form">
+{% else %}
+<form action="wca-index" method="post" class="form">
+{% endif %}
 
-  <form action="wca-index" method="POST" class="form">
       <input type="submit" class="button" value="Save progress" id="submitButton">
       
 

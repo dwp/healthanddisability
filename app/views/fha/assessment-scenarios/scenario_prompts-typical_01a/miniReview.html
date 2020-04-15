@@ -181,17 +181,14 @@ border-bottom:none !important;}</style>
 	<h2 class="heading-medium">Typical day</h2> 
 	
 	<div class="inner-focus">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-<p>Morbi posuere egestas urna, eu ornare lorem eleifend id.</p>
-<p>Etiam molestie, nunc sed lacinia placerat, nisi augue malesuada est, at vehicula est enim sed nibh.</p>
-<p>Curabitur consectetur mi blandit, condimentum enim a, tempor arcu.</p>
-<p>Nulla arcu augue, vestibulum vel libero ut, condimentum vulputate nisl.</p>
-		<!--{% for item in typicalDayComments | sortBy("time",true) %}
-		<p>{{ item.comment }}</p>
-  		{% endfor %}-->
+
+    {% for item in typicalDayComments | sortBy("time",false) %}
+	<p>{{ item.comment }}</p>        
+    {% endfor %}
+
 	</div>
 	
-	<p class="edit-report"><a href="#" class="button-secondary">Edit typical day</a></p>
+	<p class="edit-report"><a href="typicalDay" class="button-secondary">Edit typical day</a></p>
 
 
 	<h2 class="heading-medium">Medication and side effects</h2> 
