@@ -1,0 +1,111 @@
+{% extends path+"/_layout-case-simple11.html" %}
+
+
+{% block actioncolumn %}
+   
+<!-- <p class="returnRef"><a href="/{{path }}/scenario11/referrals-fme" class="link-back">Return to case list</a></p> -->
+ <div class="caseStatus">
+	 <h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+
+
+</div>
+{% endblock %}
+
+{% block citizen_detail %}
+Harvey Chamberlain
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+    
+   
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+        
+
+    	
+    	<h1 class="heading-large">Request evidence</h1>
+		
+		
+		<hr>
+		
+		<div class="evidence-requests mt30">
+
+
+			
+			
+			<div class="notice">
+				<i class="icon icon-important">
+					<span class="visually-hidden">Warning</span>
+				</i>
+				<strong class="bold-small">
+				<!--You need to print a {% if data['evidenceChoice']=='ev-gp'%}GP report request{% else %}factual report request{% endif %} and post it to the relevant person-->
+					
+					All requests for evidence need to be printed and then posted to the relevant person</strong>
+			</div>
+
+				<p class="mt30"><a href="#" class="secondary-invert">Print GP report request</a></p>
+
+				<p class="mt10"><a href="#" class="secondary-invert">Print factual report request</a></p>
+
+		</div>
+		
+		
+		
+		<hr>
+
+				
+				
+				
+				<p class="mt30"><a href="/{{path }}/scenario11/evidence-step1" class="button">Save and continue</a></p>
+																		
+
+				
+						
+						
+						
+				
+				
+
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
