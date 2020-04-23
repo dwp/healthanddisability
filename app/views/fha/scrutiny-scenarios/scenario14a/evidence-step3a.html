@@ -1,0 +1,245 @@
+{% extends path+"/_layout-case-simple14a.html" %}
+
+
+{% block actioncolumn %}
+
+<!-- <p class="returnRef"><a href="/{{path }}/scenario11/referrals-fme" class="link-back">Return to case list</a></p> -->
+ <div class="caseStatus">
+	 <h2 class="main-status"><span>Current case status</span>Second review</h2>
+
+
+</div>
+{% endblock %}
+
+{% block citizen_detail %}
+Harvey Chamberlain
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+
+
+
+
+
+
+    <div class="column-full">
+
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+
+    	<h1 class="heading-large">Appointment referral justification</h1>
+
+
+
+
+
+		<div class="evidence-requests mt30">
+
+
+			<form action="/{{path }}/scenario11/timeline-review" method="POST" class="form">
+
+
+					<div class="form-group">
+						<fieldset>
+
+							  <legend class="heading-medium mb5">Why does Roberto need a face to face assessment?</legend>
+
+
+										<div class="multiple-choice" data-target="justify-details">
+											<input id="justify1" type="radio" name="justifyF2Fa" value="f2f-reason1">
+											<label for="justify1">The evidence we have available is not enough to determine the level of disability</label>
+										</div>
+
+
+										<div class="multiple-choice" data-target="justify-details">
+											<input id="justify2" type="radio" name="justifyF2Fa" value="f2f-reason2">
+											<label for="justify2">An assessment is needed to determine the level of function</label>
+										</div>
+
+
+
+										<div class="panel js-hidden" id="justify-details">
+
+											<fieldset class="inline">
+
+												<legend class="heading-small mb10">Do you want to add further information?</legend>
+
+
+												<div class="multiple-choice" data-target="furtherWithin">
+													<input id="furtherYes" type="radio" name="further" value="further-yes">
+													<label for="furtherYes">Yes</label>
+												</div>
+
+												<div class="multiple-choice">
+													<input id="furtherNo" type="radio" name="further" value="further-no">
+													<label for="furtherNo">No</label>
+												</div>
+
+
+												<div class="panel js-hidden" id="furtherWithin">
+													<label for="furtherReason" class="form-label">Supporting information:</label>
+													<textarea id="furtherReason" name="supportInfo" class="form-control form-control-3-4" rows="5"></textarea>
+												</div>
+
+
+											</fieldset>
+
+										</div>
+
+							</fieldset>
+						</div>
+
+
+
+
+						<div class="form-group">
+						<fieldset>
+
+							  <legend class="heading-medium mb5">Type of appointment needed:</legend>
+
+
+										<div class="multiple-choice">
+											<input id="type1" type="radio" name="types" value="nonNeuro">
+											<label for="type1">Non neuro</label>
+										</div>
+
+
+										<div class="multiple-choice">
+											<input id="type2" type="radio" name="types" value="Neuro">
+											<label for="type2">Neuro</label>
+										</div>
+
+										<div class="multiple-choice" data-target="justify-type">
+											<input id="type3" type="radio" name="types" value="complexNeuro">
+											<label for="type3">Complex neuro</label>
+										</div>
+
+
+
+										<div class="panel js-hidden" id="justify-type">
+
+											<label for="typeReason" class="form-label">Reason for Complex Neuro appointment:</label>
+											<textarea id="typeReason" class="form-control form-control-3-4" rows="5" name="typeReasonJustify"></textarea>
+
+										</div>
+
+							</fieldset>
+						</div>
+
+
+						<div class="form-group">
+						<fieldset>
+
+							  <legend class="heading-medium mb5">What evidence did you consider?</legend>
+
+							  			<div class="multiple-choice">
+											<input id="justify1" type="checkbox" name="justifyF2F" value="f2f-reason1">
+											<label for="justify1">All available evidence</label>
+										</div>
+
+
+
+										{% if data['evidenceChoice']=='ev-gp'%}
+
+
+											{% if data['evidenceRecorded']=='record-yes'%}
+
+
+											<div class="multiple-choice">
+												<input id="justify-gp" type="checkbox" name="justifyF2F" value="f2f-reason-gp">
+												<label for="justify-gp">GP report</label>
+											</div>
+
+											{% endif %}
+
+
+
+										{% elif data['evidenceChoice']=='ev-fr'%}
+
+
+											 {% if data['evidenceRecorded']=='record-yes'%}
+
+
+											<div class="multiple-choice">
+												<input id="justify-fact" type="checkbox" name="justifyF2F" value="f2f-reason-fact">
+												<label for="justify-fact">Factual report</label>
+											</div>
+
+											{% endif %}
+
+
+										{% endif %}
+
+
+										<div class="multiple-choice">
+											<input id="justify3" type="checkbox" name="justifyF2F" value="f2f-reason3">
+											<label for="justify3">Med 3</label>
+										</div>
+
+										<div class="multiple-choice">
+											<input id="justify2" type="checkbox" name="justifyF2F" value="f2f-reason2">
+											<label for="justify2">UC50</label>
+										</div>
+
+							</fieldset>
+						</div>
+
+
+
+
+
+
+				<p class="mt30"><input type="submit" class="button" value="Save and continue"></p>
+
+
+
+
+
+				<div class="visually-hidden">
+		        <div class="multiple-choice">
+		            <input id="radio-inline-1" type="radio" name="appointmentReferral2" value="referral-yes" checked="checked">
+		            <label for="radio-inline-1">Evidence is recorded</label>
+		          </div>
+		        </div>
+
+
+
+				</form>
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

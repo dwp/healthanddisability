@@ -1,0 +1,140 @@
+{% extends path+"/_layout-case-simple14a.html" %}
+
+
+{% block actioncolumn %}
+
+  <p class="returnRef"><a href="#" class="link-back">Return to case list</a></p>
+
+ <div class="caseStatus">
+
+
+   	<h2 class="main-status"><span>Current case status</span>New referral</h2>
+   	<h3 class="primary-action"><span>Suggested case action</span><a href="#" class="button">Issue UC50</a></h3>
+
+
+
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Harvey Chamberlain
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+
+<div class="container">
+  <div class="grid-row">
+    <div class="column-full">
+
+    {# macro #}
+  {{ nav.scenario_tabs("details-fme",1,path1, customer._id) }}
+
+   <h1 class="heading-large">
+  	Medical</h1>
+
+
+  <div class="portal-display">
+
+
+
+  	 <div class="grid-row">
+
+		  	<div class="column-two-thirds">
+
+		  		 <div class="portal-card">
+				<div class="portal-head">
+					<h3>Medical conditions</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+
+
+				<!-- Previous outcome -->
+				<div class="currentPrimary">
+
+
+
+					<div class="pCon">
+						<h2 class="heading-small">
+							Current medical conditions
+						</h2>
+
+						<table>
+
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Since</th>
+                  <th>Source</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Other peripheral nerve injury
+										<span class="source">Source: Claimant</span>
+									</td>
+									<td>12 January 2020</td>
+                  <td>GP</td>
+								</tr>
+
+							</tbody>
+						</table>
+
+					</div>
+
+
+
+
+				</div>
+				<!-- / Focus panel -->
+
+
+				<p class="view-all"><a href="/{{path }}/scenario11/not-testing" class="secondary-invert">Add or edit medical conditions</a></p>
+
+
+				</div>
+				<!-- / inner card -->
+			</div>
+			<!-- / portal card -->
+
+
+
+
+
+
+
+
+		  	</div>
+
+
+
+
+
+
+
+  	 </div>
+
+
+
+
+  </div>
+
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

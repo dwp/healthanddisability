@@ -1,0 +1,146 @@
+{% extends path+"/_layout-case-simple4.html" %}
+
+
+{% block actioncolumn %}
+   
+  <p class="returnRef"><a href="/{{path }}/scenario2/referrals-fme">Return to case list</a></p>
+  <hr>
+ <div class="case-status">
+ 
+ 
+<p class="main-status">Portal designs</p>
+
+<hr>
+
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Kenneth Robertson
+{% endblock %}
+
+{% block citizen_content %}
+
+
+{% if data['evidencePath']=='ev-ftf'%}
+
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+	
+	
+		{% if data['pbachoice']%}
+	
+		
+	{% else %}
+	<div class="panel panel-info panel-instruction fme-warning"><h2 class="heading-small">New evidence recorded</h2>
+	   <ul class="numeric" data-id="">
+	       <li>
+	         <span class="circle circle-step circle-white">1</span>
+	         <h2 class="govuk-heading-m">Roberto's case should be reviewed before making a recommendation</h2>
+	       </li>
+	
+	       <li>
+	         <span class="circle circle-step circle-white">2</span>
+	         <h2 class="govuk-heading-m"><a href="/{{path }}/scenario2/recordFMEdecision">Make recommendation</a></h2>
+	       </li>
+	     </ul>
+	</div>
+	{% endif %}
+	
+	
+	
+		
+	{% endif %}
+	
+	
+	{% endif %}
+
+
+
+
+<div class="container">
+  <div class="grid-row">
+  
+    <div class="column-full">
+    
+    {# macro #}
+  {{ nav.scenario_tabs("details-fme",1,path1, customer._id) }}
+  
+
+<div class="back-navigation"><a href="javascript: history.go(-1)" class="link-back">Back</a></div>
+  
+
+  <h1 class="heading-large">
+  	GP contact details</h1>
+  	
+  
+  <div class="portal-display">	
+  	
+  	
+  	
+  	 <div class="grid-row">
+  
+		  	<div class="column-two-thirds">
+		  	
+		  		
+					<table class="medical-list">
+						<caption class="visually-hidden">Contact information</caption>
+
+
+						
+						<tbody>
+						
+						<tr>
+							<th>Name of GP</th>
+							<td>Sylvester Fury</td>
+						</tr>
+						
+						<tr>
+							<th>Name of surgery</th>
+							<td>Hollywood Lane surgery</td>
+						</tr>
+						
+						<tr>
+							<th>Surgery contact number</th>
+							<td>0151 000 0000</td>
+						</tr>
+						
+						<tr>
+							<th>Address</th>
+							<td class="address-stack">
+								<span>860 Liverpool Lane</span>
+								<span>Bolton</span>
+								<span>Lancashire</span>
+								<span>TXX ZZZ</span>
+							</td>
+						</tr>
+
+						
+						</tbody>
+					</table>
+					
+					<p class="view-all"><a href="/{{path }}/scenario4/not-testing" class="secondary-invert">Edit details</a></p>
+
+
+						  	
+		  	</div>
+		  	
+		  	
+		   
+    
+  </div>
+  
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

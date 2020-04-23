@@ -1,0 +1,440 @@
+{% extends path+"/_layout-case-simple4.html" %}
+
+
+{% block actioncolumn %}
+   
+<p class="returnRef"><a href="javascript: history.go(-1)" class="link-back">Return to case list</a></p>
+
+ <div class="caseStatus">
+ 	
+	<p class="main-status"><span>Current case status</span>Did not attend appointment</p>
+
+	<p class="primary-action"><span>Suggested case action</span><a href="#" class="button">Record a reason</a></p>
+
+ </div>
+
+<!--<div class="secondary-nav-actions">
+
+	<ul>
+		<li><a href="#">Withdraw case</a></li>
+		<li><a href="#">Close case</a></li>
+		<li><a href="#">Delete case</a></li>
+	</ul>
+		
+ </div> -->
+
+{% endblock %}
+
+{% block citizen_detail %}
+Kenneth Robertson
+{% endblock %}
+
+{% block citizen_content %}
+
+{% if data['evidencePath']=='ev-ftf'%}
+
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+	
+	
+		{% if data['pbachoice']%}
+	
+		
+	{% else %}
+	<div class="panel panel-info panel-instruction fme-warning"><h2 class="heading-small">New evidence recorded</h2>
+	   <ul class="numeric" data-id="">
+	       <li>
+	         <span class="circle circle-step circle-white">1</span>
+	         <h2 class="govuk-heading-m">Roberto's case should be reviewed before making a recommendation</h2>
+	       </li>
+	
+	       <li>
+	         <span class="circle circle-step circle-white">2</span>
+	         <h2 class="govuk-heading-m"><a href="/{{path }}/scenario4/recordFMEdecision">Make recommendation</a></h2>
+	       </li>
+	     </ul>
+	</div>
+	{% endif %}
+	
+	
+	
+		
+	{% endif %}
+	
+	
+	{% endif %}
+
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.scenario_tabs("evidence-portal",1,path1, customer._id) }}
+  <div class="grid-row">
+
+    <div class="column-full">
+        
+
+
+
+<h1 class="heading-large mt10">450 cases</h1>
+
+
+
+<!-------- Portal --------->
+
+<div class="portal-display">
+		
+	
+	
+	<!------ ROW START ------>
+	<div class="grid-row">
+		
+		
+		<!---------------------------------- Card ---------------------------------->
+		<div class="column-third">
+		
+			<div class="portal-card">
+				<div class="portal-head">
+					<h2 class="dash-test">
+						<a href="#" class="dash-test">
+							<span>22</span>
+							Referrals
+						</a>
+					</h2>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+
+					<ul class="action-list">
+						<li><a href="#">New referrals (6)</a></li>
+						<li><a href="#">In progress (12)</a></li>
+						<li><a href="#">DNA referrals (4)</a></li>
+					</ul>
+					
+					
+	
+					<!--<div class="requested-evidence">
+		
+							<ul class="action-list req-list">
+								<li><p>GP report<span>Requested on 3 August 2019</span></p>
+								<a href="/{{path }}/scenario2/record-evidence" class="secondary-invert">Record GP report</a></li>
+								
+							</ul>
+						</div>-->
+
+					
+		
+					
+				</div>
+				<!-- / inner card -->
+			</div>
+			<!-- / portal card -->
+			
+		</div>
+		<!---------------------------------- / Card ---------------------------------->
+		
+		
+		
+		<!---------------------------------- Card ---------------------------------->
+		<div class="column-third">
+		
+			<div class="portal-card">
+				<div class="portal-head">
+					<h2 class="dash-test">
+						<a href="#" class="dash-test">
+							<span>18</span>
+							Reviews
+						</a>
+					</h2>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+
+					<ul class="action-list">
+						<li><a href="#">Ready for review (8)</a></li>
+						<li><a href="#">Requested medical evidence (6)</a></li>
+						<li><a href="#">New evidence recorded (4)</a></li>
+					</ul>
+					
+					
+	
+					<!--<div class="requested-evidence">
+		
+							<ul class="action-list req-list">
+								<li><p>GP report<span>Requested on 3 August 2019</span></p>
+								<a href="/{{path }}/scenario2/record-evidence" class="secondary-invert">Record GP report</a></li>
+								
+							</ul>
+						</div>-->
+
+					
+		
+					
+				</div>
+				<!-- / inner card -->
+			</div>
+			<!-- / portal card -->
+			
+		</div>
+		<!---------------------------------- / Card ---------------------------------->
+		
+
+		
+		
+		<!---------------------------------- Card ---------------------------------->
+		<div class="column-third">
+		
+			<div class="portal-card">
+				<div class="portal-head">
+					<h2 class="dash-test">
+						<a href="#" class="dash-test">
+							<span>32</span>
+							Appointments
+						</a>
+					</h2>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+
+					<ul class="action-list">
+						<li><a href="#">Ready to book (28)</a></li>
+						<li><a href="#">Booked appointments (2)</a></li>
+						<li><a href="#">Did not attend (2)</a></li>
+					</ul>
+					
+					
+	
+					<!--<div class="requested-evidence">
+		
+							<ul class="action-list req-list">
+								<li><p>GP report<span>Requested on 3 August 2019</span></p>
+								<a href="/{{path }}/scenario2/record-evidence" class="secondary-invert">Record GP report</a></li>
+								
+							</ul>
+						</div>-->
+
+					
+		
+					
+				</div>
+				<!-- / inner card -->
+			</div>
+			<!-- / portal card -->
+			
+		</div>
+		<!---------------------------------- / Card ---------------------------------->
+		
+		
+		
+		
+		
+				
+	</div>
+	<!------ ROW END ------->
+	
+	
+	
+	
+		<!------ ROW START ------>
+	<div class="grid-row mt30">
+		
+		
+		<!---------------------------------- Card ---------------------------------->
+		<div class="column-third">
+		
+			<div class="portal-card">
+				<div class="portal-head">
+					<h2 class="dash-test">
+						<a href="#" class="dash-test">
+							<span>12</span>
+							Today's appointments
+						</a>
+					</h2>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+
+					<ul class="action-list">
+						<li><a href="#">Confirm arrival (1)</a></li>
+						<li><a href="#">Ready for assessment (7)</a></li>
+						<li><a href="#">Stopped assessments (3)</a></li>
+						<li><a href="#">Completed assessments (1)</a></li>
+					</ul>
+					
+					
+	
+					<!--<div class="requested-evidence">
+		
+							<ul class="action-list req-list">
+								<li><p>GP report<span>Requested on 3 August 2019</span></p>
+								<a href="/{{path }}/scenario2/record-evidence" class="secondary-invert">Record GP report</a></li>
+								
+							</ul>
+						</div>-->
+
+					
+		
+					
+				</div>
+				<!-- / inner card -->
+			</div>
+			<!-- / portal card -->
+			
+		</div>
+		<!---------------------------------- / Card ---------------------------------->
+		
+		
+		
+		<!---------------------------------- Card ---------------------------------->
+		<div class="column-third">
+		
+			<div class="portal-card">
+				<div class="portal-head">
+					<h2 class="dash-test">
+						<a href="#" class="dash-test">
+							<span>41</span>
+							DWP decisions
+						</a>
+					</h2>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+
+					<ul class="action-list">
+						<li><a href="#">Completed assessments (17)</a></li>
+						<li><a href="#">Did not attend (10)</a></li>
+						<li><a href="#">Questionnaire not returned (4)</a></li>
+						<li><a href="#">Good cause not accepted (10)</a></li>
+					</ul>
+					
+					
+	
+					<!--<div class="requested-evidence">
+		
+							<ul class="action-list req-list">
+								<li><p>GP report<span>Requested on 3 August 2019</span></p>
+								<a href="/{{path }}/scenario2/record-evidence" class="secondary-invert">Record GP report</a></li>
+								
+							</ul>
+						</div>-->
+
+					
+		
+					
+				</div>
+				<!-- / inner card -->
+			</div>
+			<!-- / portal card -->
+			
+		</div>
+		<!---------------------------------- / Card ---------------------------------->
+		
+
+		
+		
+		<!---------------------------------- Card ---------------------------------->
+		<div class="column-third">
+		
+			<div class="portal-card">
+				<div class="portal-head">
+					<h2 class="dash-test">
+						<a href="#" class="dash-test">
+							<span>32</span>
+							Appointments
+						</a>
+					</h2>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+
+					<ul class="action-list">
+						<li><a href="#">Ready to book (28)</a></li>
+						<li><a href="#">Booked appointments (2)</a></li>
+						<li><a href="#">Did not attend (2)</a></li>
+					</ul>
+					
+					
+	
+					<!--<div class="requested-evidence">
+		
+							<ul class="action-list req-list">
+								<li><p>GP report<span>Requested on 3 August 2019</span></p>
+								<a href="/{{path }}/scenario2/record-evidence" class="secondary-invert">Record GP report</a></li>
+								
+							</ul>
+						</div>-->
+
+					
+		
+					
+				</div>
+				<!-- / inner card -->
+			</div>
+			<!-- / portal card -->
+			
+		</div>
+		<!---------------------------------- / Card ---------------------------------->
+		
+		
+		
+		
+		
+				
+	</div>
+	<!------ ROW END ------->
+	
+	
+	
+	
+	
+	
+	
+</div>
+
+<!------- / PORTAL END ------->
+
+
+
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

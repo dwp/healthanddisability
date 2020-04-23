@@ -1,0 +1,165 @@
+{% extends path+"/_layout-case-simple14a.html" %}
+
+
+{% block actioncolumn %}
+
+ <!--<p class="returnRef"><a href="/{{path }}/scenario11/referrals-fme" class="link-back">Return to case list</a></p>-->
+ <div class="caseStatus">
+	 <h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+
+
+</div>
+{% endblock %}
+
+{% block citizen_detail %}
+Harvey Chamberlain
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+
+
+
+
+
+
+    <div class="column-full">
+
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+
+
+
+
+
+
+    	<h1 class="heading-large">Request evidence</h1>
+
+
+		<div class="evidence-requests mt30">
+
+
+
+			<form action="/{{path }}/scenario11/evidence-step-Factual" method="POST" class="form">
+
+
+
+			<fieldset>
+
+							  <legend class="heading-medium mb10">
+
+										Choose the evidence you want to request:
+
+							  </legend>
+
+
+									<div class="multiple-choice" data-target="reason1">
+											<input id="gpReport" type="checkbox" name="evidenceChoice" value="ev-gp">
+											<label for="gpReport">GP report</label>
+										</div>
+
+										<div class="panel js-hidden" id="reason1">
+
+											<fieldset>
+
+												<legend class="heading-small mb10">Reason for requesting GP report:</legend>
+
+
+												<div class="multiple-choice">
+													<input id="requestReason1" type="radio" name="requestReason" value="insuff">
+													<label for="requestReason1">Insufficient evidence to support claimant's statements</label>
+												</div>
+
+												<div class="multiple-choice" data-target="reasonWithin">
+													<input id="requestReason2" type="radio" name="requestReason" value="otherreason">
+													<label for="requestReason2">Other</label>
+												</div>
+
+												<div class="panel js-hidden" id="reasonWithin">
+													<label for="requestReason2a" class="form-label">Reason:</label>
+													<textarea id="requestReason2a" class="form-control form-control-3-4" rows="5" name="evRequestReason"></textarea>
+												</div>
+
+
+											</fieldset>
+
+										</div>
+
+
+										<div class="multiple-choice" data-target="reason2">
+											<input id="frReport" type="checkbox" name="evidenceChoice" value="ev-fr">
+											<label for="frReport">Factual report</label>
+										</div>
+
+
+										<div class="panel js-hidden" id="reason2">
+
+											<fieldset>
+
+												<legend class="heading-small mb10">Reason for requesting factual report:</legend>
+
+
+												<div class="multiple-choice">
+													<input id="requestReason2" type="radio" name="requestReason2" value="insuff">
+													<label for="requestReason2">Insufficient evidence to support claimant's statements</label>
+												</div>
+
+												<div class="multiple-choice" data-target="reasonWithin2">
+													<input id="requestReason2" type="radio" name="requestReason2" value="otherreason">
+													<label for="requestReason2">Other</label>
+												</div>
+
+												<div class="panel js-hidden" id="reasonWithin2">
+													<label for="requestReason2b" class="form-label">Reason:</label>
+													<textarea id="requestReason2b" class="form-control form-control-3-4" rows="5" name="evRequestReason"></textarea>
+												</div>
+
+
+											</fieldset>
+
+										</div>
+
+
+							</fieldset>
+
+
+
+				<p class="mt30"><input type="submit" class="button" value="Save and continue"></p>
+				</form>
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
