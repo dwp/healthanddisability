@@ -1,0 +1,307 @@
+{% extends path+"/_layout-case-simple.html" %}
+
+
+{% block actioncolumn %}
+   
+ <!-- <p class="returnRef"><a href="/fha/v8/referrals-fme">Return to case list</a></p> 
+  <hr>-->
+ <div class="case-status">
+<p class="mt10 mb0 bold-small">
+Ready for assessment
+</p>
+
+
+<hr>
+
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Andy Smicer
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+       <div class="column-full">
+    
+    
+    	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+      
+      
+      <h1 class="heading-large"> <span class="heading-secondary">Step 1 of 2</span>Send home</h1>
+				
+			<div class="form-group">
+  <fieldset>
+
+    <legend>
+      <h1 class="heading-medium">
+      Why do we need to send home the Claimant?
+      </h1>
+    </legend>
+
+    <div class="multiple-choice" data-target="claimant">
+      <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
+      <label for="example-contact-by-email">Claimant something</label>
+    </div>
+    <div class="panel js-hidden" id="claimant">
+
+     <fieldset>
+						<legend class="heading-small mb10">
+						Reason
+						</legend>
+	
+	
+						<div class="multiple-choice">
+							<input id="wait" name="scenario" type="radio" value="wait" {{checked('scenario', 'wait') }}>
+							<label for="wait">Claimant does not want to wait any longer</label>
+						</div>
+	
+						<div class="multiple-choice">
+							<input id="late" name="scenario" type="radio" value="late" {{checked('scenario', 'late') }}>
+							<label for="late">Claimant arrived late</label>
+						</div>
+
+						<div class="multiple-choice"data-target="unfitreason">
+								<input id="unfit" name="scenario" type="radio" value="unfit" {{checked('scenario', 'unfit') }}>
+								<label for="unfit">Claimant is unfit to be examined
+		
+								</label>
+							</div>
+
+							<div class="panel js-hidden" id="unfitreason" >	
+									<div class="form-group">
+											<label class="form-label-bold">Add further detail</label>
+											<textarea name="unfitdetail" class="form-control " style="height: 80px; width:100%; max-width:650px;">{{unfitdetail}}</textarea>
+									</div>        
+						   
+							 </div>
+							<div class="multiple-choice" data-target="new-appointment-requirements">
+								<input id="know-3" name="scenario" type="radio" value="special" {{checked('scenario', 'special') }}>
+								<label for="know-3">Claimant has a new special need
+		
+								</label>
+							</div>
+
+							<div class="panel js-hidden" id="new-appointment-requirements">
+									<fieldset>
+											<legend class="heading-small mb10">
+												What is the new requirment?
+											</legend>
+
+											<div class="multiple-choice">
+													<input id="know-3" name="requirment" type="radio" value="one" {{checked('requirment', 'one') }}>
+													<label for="know-3">Accessible room</label>
+												</div>		
+									<div class="multiple-choice" data-target="interpreter">
+											<input id="know-3" name="requirment" type="radio" value="two" {{checked('requirment', 'two') }}>
+											<label for="know-3">Interpreter</label>
+										</div>
+										<div class="panel js-hidden" id="interpreter">
+												<div class="form-group">
+														<label class="form-label">What language is required?</label>
+														<input class="form-control" id="full-name-f1" type="text" name="interpreter">
+												</div> 
+										</div>
+										<div class="multiple-choice">
+											<input id="know-3" name="requirment" type="radio" value="three" {{checked('requirment', 'three') }}>
+											<label for="know-3">Healthcare practitioner of same gender</label>
+										</div>
+										<div class="multiple-choice">
+											<input id="know-3" name="requirment" type="radio" value="four" {{checked('requirment', 'four') }}>
+											<label for="know-3"> Audio recording equipment</label>
+										</div>
+
+                    <div class="multiple-choice" data-target="otherreason">
+											<input id="know-3" name="requirment" type="radio" value="five" {{checked('requirment', 'five') }}>
+											<label for="know-3">Other</label>
+										</div>
+
+                    <div class="panel js-hidden" id="otherreason" >	
+									<div class="form-group">
+											<label class="form-label-bold">Add further detail</label>
+											<textarea name="unfitdetail" class="form-control "></textarea>
+									</div>        
+						   
+							 </div>
+
+
+									</fieldset>
+							</div>
+              </fieldset>
+  
+    </div>
+
+    <div class="multiple-choice" data-target="hcp">
+      <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="No">
+      <label for="example-contact-by-phone">Healthcare professional cannot carry out the assessment</label>
+    </div>
+    <div class="panel js-hidden" id="hcp">
+    <fieldset>
+						<legend class="heading-small mb10">
+						Reason
+						</legend>
+
+            		<div class="multiple-choice">
+									<input id="know-3" name="scenario" type="radio" value="know-2" {{checked('scenario', 'know-2') }}>
+									<label for="know-3">More claimants waiting to be seen than available health care professionals</label>
+								</div>
+								<div class="multiple-choice" data-target="hcp-skillset-chioce">
+									<input id="know-3" name="scenario" type="radio" value="know-3" {{checked('scenario', 'know-3') }}>
+									<label for="know-3">A specialist healthcare professional is required and must be booked</label>
+								</div>
+								<div class="panel js-hidden" id="hcp-skillset-chioce">
+								
+										<fieldset>
+												<legend class="heading-small mb10">
+													Choose healthcare professional's skill level
+												</legend>
+													   <div class="form-group">
+
+													
+														<div class="multiple-choice">
+															<input id="know-2" name="Reason" type="radio" value="neuro">
+															<label for="know-2">Neuro
+															</label>
+														</div>
+							
+														<div class="multiple-choice">
+																<input id="know-2" name="Reason" type="radio" value="complex">
+																<label for="know-2">Complex neuro
+																</label>
+															</div>
+													
+													
+													</div>
+			
+														</fieldset>
+													
+								</div>
+								<div class="multiple-choice">
+										<input id="know-3" name="scenario" type="radio" value="know-9" {{checked('scenario', 'know-9') }}>
+										<label for="know-3">Healthcare professional ill or called away</label>
+							</div>
+
+					<div class="multiple-choice">
+							<input id="know-3" name="scenario" type="radio" value="know-8" {{checked('scenario', 'know-8') }}>
+							<label for="know-3">Inappropriate for health care professional to see claimant (for example they know them)</label>
+						</div>
+		
+						<div class="multiple-choice">
+							<input id="know-3" name="scenario" type="radio" value="know-10" {{checked('scenario', 'know-10') }}>
+							<label for="know-3">Healthcare professional did not attend</label>
+						</div>
+						<div class="multiple-choice">
+								<input id="know-3" name="scenario" type="radio" value="know-14" {{checked('scenario', 'know-14') }}>
+								<label for="know-3">The claimant’s file was not available</label>
+						</div>
+
+    </fiesdset>
+      
+    </div>
+<p class="form-block bold">John's requests were not met</p>
+    <div class="multiple-choice" data-target="requests">
+      <input id="example-contact-by-text" type="radio" name="radio-contact-group" value="No">
+      <label for="example-contact-by-text">Details of the requests</label>
+    </div>
+    <div class="panel js-hidden" id="requests">
+        <fieldset>
+						<legend class="heading-small mb10 visually hidden">
+				
+						</legend>
+
+            <div class="multiple-choice">
+							<input id="know-3" name="scenario" type="checkbox" value="know-4" {{checked('scenario', 'know-4') }}>
+							<label for="know-3">Claiment called in in error </label>
+						</div>
+	
+						<div class="multiple-choice">
+							<input id="know-3" name="scenario" type="checkbox" value="know-5" {{checked('scenario', 'know-5') }}>
+							<label for="know-3">Interpreter not provided</label>
+						</div>
+						<div class="multiple-choice">
+							<input id="know-3" name="scenario" type="checkbox" value="know-6" {{checked('scenario', 'know-6') }}>
+							<label for="know-3">Healthcare practitioner of same gender not provided</label>
+						</div>
+						<div class="multiple-choice">
+							<input id="know-3" name="scenario" type="checkbox" value="know-7" {{checked('scenario', 'know-7') }}>
+							<label for="know-3"> Audio recording equipment not provided</label>
+						</div>
+
+
+            <div class="multiple-choice" data-target="otherreason2">
+              <input id="know-3" name="requirment" type="checkbox" value="five" {{checked('requirment', 'five') }}>
+              <label for="know-3">Other</label>
+            </div>
+
+            <div class="panel js-hidden" id="otherreason2" >	
+          <div class="form-group">
+              <label class="form-label-bold">Add further detail</label>
+              <textarea name="unfitdetail" class="form-control"></textarea>
+          </div>        
+						   
+							 </div>
+
+    </fiesdset>
+    </div>
+
+	<p class="form-block bold">Another heading</p>
+
+      <div class="multiple-choice" data-target="building">
+      <input id="example-contact-by-text" type="radio" name="radio-contact-group" value="No">
+      <label for="example-contact-by-text">Building or Technology problems</label>
+    </div>
+    <div class="panel js-hidden" id="building">
+      <fieldset>
+						<legend class="heading-small mb10">
+						Reason
+						</legend>
+
+
+            	 <div class="multiple-choice">
+											 <input id="know-3" name="scenario" type="radio" value="know-13" {{checked('scenario', 'know-13') }}>
+											 <label for="know-3">Technology performance issues (for example, system down or too slow)</label>
+										 </div>
+                     
+									 <div class="multiple-choice">
+										 <input id="know-3" name="scenario" type="radio" value="know-12" {{checked('scenario', 'know-12') }}>
+										 <label for="know-3">Building problem (for example, evacuation)</label>
+									 </div>
+
+    </fiesdset>
+    </div>
+
+
+  </fieldset>
+</div>
+				
+				</div>
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

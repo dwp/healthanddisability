@@ -1,0 +1,187 @@
+{% extends path+"/_layout-case-simple.html" %}
+
+
+{% block actioncolumn %}
+<div class="caseStatus">
+	<h2 class="main-status"><span>Current case status</span>Booked appointment</h2>
+</div>
+{% endblock %}
+
+{% block citizen_detail %}
+Bobby Henderson
+{% endblock %}
+
+{% block citizen_content %}
+<div class="container">
+  <div class="grid-row">
+  
+    <div class="column-full">
+    
+  
+    
+    
+  <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+  <h1 class="heading-large">Appointment history</h1>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+        
+    
+          
+         
+         
+         <div class="latest_version">
+ 
+         <h2 class="heading-medium">
+         {% if checked('contact', 'yes-cancel')%}
+         Cancelled
+         {% else %}
+         Current
+         {% endif %}
+          appointment: Complex neuro</h2>
+         <p>Appointment details</p>
+         <ul class="list-bullet">
+             <li>9:00am</li>
+
+				     <li>22/11/2019</li>
+			
+             <li>
+      
+					DWP Tresco House
+             
+             </li> 
+              </ul>
+
+
+    {% if checked('contact', 'yes-cancel')%}
+               	<h3 class="heading-small">Reason</h3>  
+                      <p class="small">{{reason}}
+                      <span class="date block mt10 text-secondary">Recorded date:{{ 'Do MMMM YYYY' | baseDate(15)}}/ Jim Smith / Tresco assessment centre</span>      
+            
+             </p>               
+    {% endif%}
+
+{% if  checked('contact', 'yes')%}
+		<h3 class="heading-small">Claimant contacted us</h3>
+        <p class="small">{{reason}}
+
+             <span class="date block mt10 text-secondary">Recorded date:{{ 'Do MMMM YYYY' | baseDate(15)}}/ Jim Smith / Tresco assessment centre</span>        
+         </p>
+{% endif %}
+
+{% if  checked('contact', 'no')%}
+		<h3 class="heading-small">Note</h3>
+        <p class="small">{{reason}}
+
+             <span class="date block mt10 text-secondary">Recorded date:{{ 'Do MMMM YYYY' | baseDate(15)}}/ Jim Smith / Tresco assessment centre</span>        
+         </p>
+{% endif %}
+
+
+{% if checked('contact', 'yes-re') %}
+{% else %}
+         	<h3 class="heading-small">Skill type change</h3>
+                      <p class="small">Neuro to Complex neuro
+             <span class="date block mt10 text-secondary">Recorded date:{{ 'Do MMMM YYYY' | baseDate(15)}}/ Jim Smith / Tresco assessment centre</span>        
+         </p>
+       
+       
+ {% endif %}        
+  </div>
+
+{% if checked('contact', 'yes-re') or checked('contact', 'no-re') %}
+              <h2 class="heading-medium">
+              
+                       {% if  checked('contact', 'yes-re')%}
+                       Claimant
+                 {% else%}
+                      Assessment centre
+                   {% endif %}  rearranged appointment: Complex neuro</h2
+         <p>Appointment details</p>
+         <ul class="list-bullet">
+             <li>9:00am</li>
+
+				     <li>20/11/2019</li>
+			
+             <li>
+					DWP Tresco House
+             </li> 
+              </ul>
+
+               	<h3 class="heading-small">Reason</h3>  
+                      <p class="small">{{reason}}
+                      <span class="date block mt10 text-secondary">Recorded date:{{ 'Do MMMM YYYY' | baseDate(15)}}/ Jim Smith / Tresco assessment centre</span>      
+            
+             </p>  
+         	<h3 class="heading-small">Skill type change</h3>
+                      <p class="small">Neuro to Complex neuro
+             <span class="date block mt10 text-secondary">Recorded date:{{ 'Do MMMM YYYY' | baseDate(15)}}/ Jim Smith / Tresco assessment centre</span>        
+         </p>
+
+{% endif %}     
+
+{% if customer.history.senthome =='sent home' %}
+         <h2 class="heading-medium">Sent home: {{customer.appointment.type}}</h2>
+         <p>Appointment details</p>
+         <ul class="list-bullet">
+             <li>{{ 'Do MMMM YYYY' | baseDate(18)}}</li> 
+             <li>11:00am</li>  
+             <li>Tresco House</li> 
+              </ul>
+
+              <h3 class="heading-small">Reason</h3>
+                  
+              <p>
+              
+              More claimants waiting to be seen than available health care professionals
+   
+           <span class="date block mt10 text-secondary">Recorded date:{{ 'Do MMMM YYYY' | baseDate(18)}}/ Jim Smith / Tresco assessment centre</span>
+         </p> 
+
+{% endif %}  
+
+          
+  {% if customer.history.outbound =='outbound' %}       
+
+<hr />
+  
+         <h2 class="heading-medium">Rearranged appointment: {{customer.appointment.type}}</h2>
+         <p>Appointment details</p>
+         <ul class="list-bullet">
+             <li>{{ 'Do MMMM YYYY' | baseDate(19)}}</li> 
+             <li>11:00am</li>  
+             <li>Tresco House</li> 
+              </ul>
+
+              <h3 class="heading-small">Outbound contact</h3>
+              <p>We have cancelled this appointment because there wasn't a hcp available to fullfill the appointment
+                
+   
+           <span class="date block mt10 text-secondary">Recorded date:{{ 'Do MMMM YYYY' | baseDate(19)}}/ Barry Gallager / Tresco assessment centre</span>
+         </p> 
+
+{% endif %}
+ 
+
+    
+
+
+  
+</div> 
+</div>
+    </div>
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

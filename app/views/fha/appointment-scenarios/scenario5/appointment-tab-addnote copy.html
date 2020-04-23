@@ -1,0 +1,282 @@
+{% extends path+"/_layout-case-simple.html" %}
+
+
+{% block actioncolumn %}
+   
+ <p class="returnRef"><a href="booked" class="link-back">Return to case list</a></p>
+<div class="caseStatus">
+	<h2 class="main-status"><span>Current case status</span>Booked appointment</h2>
+</div>
+{% endblock %}
+
+{% block citizen_detail %}
+{{customer.name}}
+{% endblock %}
+
+{% block citizen_content %}
+
+<style>
+.ref{
+					  padding:10px;
+				
+					  margin-bottom:10px;
+					  display:block;
+					  font-size:17px;
+					  border:1px solid #bfc1c3;
+					  border-left:3px solid #bfc1c3;
+					  border-right:0;
+					  border-top:0;
+					  border-bottom:0;
+	}
+	</style>
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.case_tabs("appointment-fme",1,path1, customer._id) }}
+
+
+  <h1 class="heading-large">
+  	Appointment</h1>
+  	
+
+  
+<div class="portal-display">	
+  	
+  	
+  	
+  	 <div class="grid-row">
+  
+		  	<div class="column-third">
+				
+
+			<div class="portal-card">
+				<div class="portal-head">
+					<h3>Booked</h3>
+				</div>
+			
+				<div class="portal-inner">
+				<h4>Standard appointment</h4> 
+			      <ul class="list-bullet">
+			          <li>{{ 'Do MMMM YYYY' | baseDateAdd(8) }}</li>
+			          <li>10:30am</li>
+			          <li>Tresco House</li>
+			      </ul>
+			      
+			      <ul class="action-list">
+            <li><a href="/{{path }}/scenario3/rearrange-appointment" class="secondary-invert">Rearrange appointment</a></li>
+            <li><a href="/{{path }}/scenario3/addanote" class="secondary-invert">Add a note</a></li>
+            <li><a href="/{{path }}/scenario3/cancel-appointment" class="secondary-invert">Cancel appointment</a></li>
+            </ul>
+
+					
+				</div>
+
+			</div>
+			<!-- / portal card -->
+			
+			
+			
+		  	
+		  	</div>
+		  	
+		  	
+		  	<div class="column-third">
+		  		<!---------------------------------- Card ---------------------------------->
+		
+			<div class="portal-card">
+				<div class="portal-head">
+					<h3>Preferences</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+			
+				
+				<h4>Unavailable on</h4>
+				<ul class="list-bullet">
+               	 <li>Monday <span>afternoons</span></li>
+			   	 <li>Tuesdays</li>
+                </ul>
+		    {% if customer.requirement
+					 %}
+				  <h4 class="">Requirements</h4>
+				  <ul class="list">
+				   {% if customer.requirement.taxi %}
+				  <li>Taxi
+				  	 {% if checked('booked', 'taxi') or data['reference'] %} 
+				  <div class="ref">
+				  <span class="badge pull-right"> Booked</span> 
+				   Reference number:<span class="bold block">{{taxiReference}}{{reference}}</span>
+				  </div>
+				  {% endif %}
+				  
+				  </li>
+				  {% endif%}
+				  {% if customer.requirement.interpreter %}
+				  <li>Interpreter: {{customer.appointment.interpreter}}
+				  <style>
+			
+				  </style>
+				 {% if checked('booked', 'interpreter') or data['reference'] %} 
+				  <div class="panel panel-info">
+				  <span class="badge pull-right"> Booked</span> 
+				   Reference number:<span class="bold block">{{interpreterReference}}</span>
+				  </div>
+				  {% endif %}
+				  </li>
+				  {% endif%}
+				   {% if customer.requirement.audio %}
+				  <li>Audio recording</li>
+				  {% endif%}
+				     {% if customer.requirement.accessible%}
+				  <li>Accessible room</li>
+				  {% endif%}
+				  {% if customer.requirement.gender %}
+				  <li>Same gender hcp</li>
+				  {% endif%}
+				  </ul>
+				   {% endif%}	  
+				      <ul class="action-list">
+            <li> <a href="preferences" class="secondary-invert">Add or edit preferences</a></li>
+			  {% if customer.requirement.interpreter == 'interpreter' or  customer.requirement.taxi == 'taxi'  %}
+            <li> <a href="record-bookings?nino={{customer.nino}}" class="secondary-invert">Record bookings</a></li>
+            {% endif %}
+            </ul>
+														
+				</div>
+				<!-- / inner card -->
+			<!-- / portal card -->
+		  	</div>
+		  	
+		  	<!--<hr>
+		  	
+		  	<div class="portal-card">
+				<div class="portal-head">
+					<h3>Preferences</h3>
+				</div>
+				
+
+				<div class="portal-inner">
+
+              
+            <p> <a href="/{{path }}/scenario2/not-testing" class="secondary-invert">Add preferences</a></p>
+														
+				</div>
+			
+		  	</div>
+		  	<!-- / portal card -->
+		  	
+  	 </div>
+  	 
+  	 
+  	 <div class="column-third">
+  	 
+  	 	<div class="portal-card">
+				<div class="portal-head">
+					<h3>History</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+
+
+        {% if  checked('contact', 'yes')%}
+		<h4>Claimant contacted us</h4>
+      
+    		<ul class="action-list appointment-history-list">
+						<li>
+							<h5>{{reason}}</h5>
+						
+						</li>
+					</ul>
+{% elif  checked('contact', 'no')%}
+		<h4>Note</h4>
+
+    		<ul class="action-list appointment-history-list">
+						<li>
+							<h5>{{reason}}</h5>
+						
+						</li>
+					</ul>
+
+                   {% elif  checked('contact', 'yes-re')%}
+		<h4>Claimant rearranged appointment</h4>
+    		<ul class="action-list appointment-history-list">
+						<li>
+							<h5>{{reason}}</h5>
+						
+						</li>
+					</ul>
+
+          {% elif  checked('contact', 'no-re')%}
+		<h4>Assessment centre rearranged appointment</h4>
+    		<ul class="action-list appointment-history-list">
+						<li>
+							<h5>{{reason}}</h5>
+						
+						</li>
+					</ul>
+
+                 {% elif  checked('contact', 'yes-cancel')%}
+		<h4>Canceled appointment</h4>
+    		<ul class="action-list appointment-history-list">
+						<li>
+							<h5>{{reason}}</h5>
+						
+						</li>
+					</ul>
+{% else %}   
+
+		<h4>Skillset change</h4>
+				
+				
+					<ul class="action-list appointment-history-list">
+						<li>
+							<h5>Neuro to Complex Neuro</h5>
+						
+						</li>
+					</ul>
+
+
+{% endif %}
+
+
+				
+              
+            <p> <a href="/{{path }}/scenario3/appointment-history" class="secondary-invert">View all history</a></p>
+														
+				</div>
+				<!-- / inner card -->
+			<!-- / portal card -->
+		  	</div>
+  	 	
+  	 </div>
+    
+  
+  
+    
+  
+    </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+ 
+{% endblock %} #}
