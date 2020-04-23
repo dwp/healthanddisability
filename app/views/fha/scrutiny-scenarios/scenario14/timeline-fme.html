@@ -1,16 +1,16 @@
-{% extends path+"/_layout-case-simple11.html" %}
+{% extends path+"/_layout-case-simple14.html" %}
 
 
 {% block actioncolumn %}
-   
+
   <p class="returnRef"><a href="/{{path }}/scenario2/referrals-fme" class="link-back">Return to case list</a></p>
   <hr>
  <div class="case-status">
- 
- 
+
+
  {% if data['pbachoice']=='yes'%}
 <p class="mt10 mb0 bold-small">
-Ready for paper based assessment  
+Ready for paper based assessment
 </p>
 <p><a href="/{{path }}/scenario11/not-testing" class="button">Start assessment</a></p>
 {% else %}
@@ -19,9 +19,9 @@ Appointment booked
 </p>
 {% endif %}
 
-    
 
-    
+
+
 
 </p>
 
@@ -30,7 +30,7 @@ Appointment booked
 <!--<ul class="secondary-actions">
 
   <li><a href="/{{path }}/scrutiny-scenarios/scenario11/recordFME" class="">Record evidence</a></li>
-  
+
 
   </ul>-->
 </div>
@@ -45,20 +45,20 @@ Harvey Chamberlain
 
 
 {% if data['pbachoice'] %}
-	 
+
 
 {% else %}
 
-	
-	
-	
+
+
+
 	<div class="panel panel-info panel-instruction fme-warning"><h2 class="heading-small">New evidence recorded</h2>
 	   <ul class="numeric" data-id="">
 	       <li>
 	         <span class="circle circle-step circle-white">1</span>
 	         <h2 class="govuk-heading-m">Bobby's case should be reviewed before making a recommendation</h2>
 	       </li>
-	
+
 	       <li>
 	         <span class="circle circle-step circle-white">2</span>
 	         <h2 class="govuk-heading-m"><a href="/{{path }}/scenario11/recordFMEdecision">Make recommendation</a></h2>
@@ -66,7 +66,7 @@ Harvey Chamberlain
 	     </ul>
 	</div>
 
-	
+
 {% endif %}
 
 
@@ -75,23 +75,23 @@ Harvey Chamberlain
 
 
   <div class="grid-row">
-  
-  
- 
-  
-  	
+
+
+
+
+
 
     <div class="column-full">
-    
-    
+
+
     {# macro #}
   {{ nav.case_tabs("timeline-fme",1,path1, customer._id) }}
 
-    
+
   <div class="timeline">
 
 
-     
+
 {% if data['pbachoice']=='yes'%}
  <span class="line"></span>
 <div class="timeline__event">
@@ -133,20 +133,20 @@ Harvey Chamberlain
           <h3 class="timeline__heading">Appointment letter sent</h3>
           <p class="timeline_datetime">20th June 2019</p>
         </div>
-        
+
         <span class="line"></span>
 		<div class="timeline__event">
 		  <h3 class="timeline__heading">GP Report - medical evidence overdue</h3>
 		  <p class="timeline_datetime">19th June 2019</p>
 		</div>
-      
+
 
         <span class="line"></span>
         <div class="timeline__event">
           <h3 class="timeline__heading">Appointment booked</h3>
           <p class="timeline_datetime">8th June 2019</p>
         </div>
-      
+
       <span class="line"></span>
         <div class="timeline__event">
           <h3 class="timeline__heading">Referred for appointment</h3>
@@ -165,7 +165,7 @@ Harvey Chamberlain
 
 
 
-      
+
       <span class="line"></span>
       <div class="timeline__event">
         <h3 class="timeline__heading">Med 3 - medical evidence recorded </h3>
@@ -182,8 +182,8 @@ Harvey Chamberlain
         <h3 class="timeline__heading">UC50 form posted</h3>
         <p class="timeline_datetime">25th May 2019</p>
       </div>
-      
- 
+
+
 
       <span class="line"></span>
       <div class="timeline__event">

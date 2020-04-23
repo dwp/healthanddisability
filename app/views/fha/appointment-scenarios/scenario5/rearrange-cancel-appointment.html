@@ -1,0 +1,105 @@
+{% extends path+"/_layout-case-simple.html" %}
+
+
+{% block actioncolumn %}
+<div class="caseStatus">
+	<h2 class="main-status"><span>Current case status</span>Booked appointment</h2>
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Bobby Henderson
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+
+
+
+
+
+
+       <div class="column-full">
+
+
+    	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+        <form class="form" method="post" action="/{{path}}/scenario3/appointment-tab">
+      <h1 class="heading-large">Rearrange or cancel appointment</h1>
+
+	  	       <div class="form-group">
+                                                <h2 class="heading-small"><span style="font-weight:normal" class="">Appointment details</span><br>Complex neuro appointment</h2>
+
+
+                                                          <ul class="list-bullet mt10 mb10">
+                                                                <li>Tuesday {{ 'Do MMMM YYYY' | baseDateAdd(7) }}</li>
+                                                                <li>4:00pm</li>
+                                                                <li>Tresco House</li>
+                                                              </ul>
+
+										<div class="form-group">
+																 <fieldset>
+
+																				 <legend>
+																					<h2 class="heading-small mb10">
+																						Do you want to rearrange or cancel this appointment?
+																				 </h2>
+																				</legend>
+
+																			<div class="multiple-choice">
+																					<input id="radio-inline-1" type="radio" name="contact" value="yes-re">
+																					<label for="radio-inline-1">Rearrange</label>
+																		 </div>
+																			<div class="multiple-choice" data-target="cancel-appointment">
+																				<input id="radio-inline-2" type="radio" name="contact" value="no-re" aria-controls="cancel-appointment" aria-expanded="false">
+																				<label for="radio-inline-2">Cancel</label>
+																		</div>
+																		<div class="panel js-hidden" id="cancel-appointment" aria-hidden="true">
+																			<div class="form-group">
+																											<label class="form-label" for="justify">Add a reason</label>
+																											<textarea class="form-control form-control-1-1" name="justifyprognosis3months" id="justify" rows="2"></textarea>
+																										</div>
+																										</div>
+
+																		</fieldset>
+																		</div>
+
+																	
+
+
+              </div>
+
+
+
+
+
+
+            <p class="mt30"><button class="button">Save and continue</button></p>
+
+
+				</form>
+
+   </div>
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

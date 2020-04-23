@@ -1,4 +1,4 @@
-{% extends path+"/_layout-case-simple11.html" %}
+{% extends path+"/_layout-case-simple14.html" %}
 
 
 {% block actioncolumn %}
@@ -9,56 +9,9 @@
 
 
 
+   	<h2 class="main-status"><span>Current case status</span>New referral</h2>
+   	<h3 class="primary-action"><span>Suggested case action</span><a href="#" class="button">Issue UC50</a></h3>
 
-{% if data['pbachoice']=='no'%}
-
-	 <h2 class="main-status"><span>Current case status</span>Appointment booked</h2>
-
-
-	 {% elif data['pbachoice']=='yes'%}
-
-	 <h2 class="main-status"><span>Current case status</span>Paper based review</h2>
-	 <!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario11/not-testing" class="button">Start assessment</a></h3>-->
-
-
-	 {% else %}
-
-
-
-{% if data['evidencePath']=='ev-ftf'%}
-
-	{% if data['evidenceRecorded']=='record-yes'%}
-
-	<h2 class="main-status"><span>Current case status</span>Second review</h2>
-		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario11/rec-portal-second" class="button">Make recommendation</a></h3>
-		{% else %}
-
-	<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
-	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario11/record-evidence" class="button">Record GP report</a></h3>
-	{% endif %}
-
-
-	{% elif data['evidencePath']=='ev-pba'%}
-
-	{% if data['evidenceRecorded']=='record-yes'%}
-		<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
-		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario11/rec-portal" class="button">Make recommendation</a></h3>
-		{% else %}
-		<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
-	{% endif %}
-
-
-	{% else %}
-
-	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
-	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario11/rec-portal" class="button">Make recommendation</a></h3>
-
-
-
-{% endif %}
-
-
-{% endif %}
 
 
 </div>
