@@ -1,21 +1,11 @@
 					  <!-- Location picker -->
             <div class="">
                 <label class="form-label-bold mt20" for="location-select-dropdown">
-                    
-                     Search for a {% if data['Reason']==="complex"%}
-                     Complex neuro
-                     {% elif data['Reason']==="neuro"%}
-                     Neuro
-                     {% else%}
-                     Non neuro
-                     {% endif %} appointment 
-                  
+
+                     Choose a new appointment
+
                   <span class="form-hint mt5 mb5">
-                      {% if customer.name.first == 'Mcconnell' %}
-                        For example Thursday 14th March 1pm
-                      {% else %}
-                      For example type {{ 'dddd Do MMMM' | baseDateAdd(8) }} 1pm
-                      {% endif %}
+                      Type the day, date, month or time, that's most suitable. For example, Wednesday, or, April, or 1pm.
                       </span>
                 </label>
                 <div class="form-control-1-2">
