@@ -1,0 +1,119 @@
+{% extends path+"/_layout-case-simple13.html" %}
+
+
+{% block actioncolumn %}
+   
+
+
+ <div class="caseStatus">
+ 	
+	<h2 class="main-status"><span>Current case status</span>Questionnaire not returned</h2>
+
+ </div>
+{% endblock %}
+
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+    
+   
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+        
+
+
+    	
+    	<h1 class="heading-large">Update case status</h1>
+    	
+    	
+   
+		
+		
+		<div class="evidence-requests mt30">
+				
+				
+			<form method="post" action="case-list_questionnaire-not-returned">
+			
+			
+					<div class="form-group">
+						<fieldset>
+						  
+							  <legend class="heading-medium mb10">Choose an update</legend>
+
+										<div class="multiple-choice">
+											<input id="received" type="radio" name="caseStatus" value="~/{{path}}/scenario13a/not-testing">
+											<label for="received">UC50 received</label>
+										</div>
+										
+										<div class="multiple-choice">
+											<input id="mentalHealth" type="radio" name="caseStatus" value="~/{{path}}/scenario13a/not-testing">
+											<label for="mentalHealth">Claimant has a mental health condition</label>
+										</div>
+
+										<div class="multiple-choice" data-target="leftHealthNotes">
+											<input id="leftHealth" type="radio" name="caseStatus" value="leftHealth~/{{path}}/scenario13a/cm_left-health">
+											<label for="leftHealth">Claimant has left the health journey</label>
+										</div>
+
+										<div class="multiple-choice" data-target="vulnerableNotes">
+											<input id="vulnerable" type="radio" name="caseStatus" value="~/{{path}}/scenario13a/cm_claimant-vulnerable">
+											<label for="vulnerable">Claimant is vulnerable</label>
+										</div>
+
+										<div class="multiple-choice" data-target="vulnerableNotes">
+											<input id="closeReferral" type="radio" name="caseStatus" value="~/{{path}}/scenario13a/cm_close-referral">
+											<label for="closeReferral">Close referral</label>
+										</div>
+							</fieldset>
+						</div>
+			
+
+				
+				<p class="mt30"><input type="submit" class="button" value="Save and continue"></p>
+				
+
+				
+				
+				</form>
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

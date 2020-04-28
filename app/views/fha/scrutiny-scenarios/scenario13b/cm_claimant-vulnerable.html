@@ -1,0 +1,86 @@
+{% extends path+"/_layout-case-simple13.html" %}
+
+
+{% block actioncolumn %}
+   
+
+
+ <div class="caseStatus">
+ 	
+	<h2 class="main-status"><span>Current case status</span>Questionnaire not returned</h2>
+
+ </div>
+{% endblock %}
+
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+    
+   
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+        
+
+
+    	
+    	<h1 class="heading-large">Claimant is vulnerable</h1>
+    	
+		<p>A decison maker will need to review the case before it can continue.</p>		
+		
+		<div class="evidence-requests">		
+				
+			<form method="post" action="case-list_questionnaire-not-returned">
+		
+			<div class="form-group">
+				<label class="form-label" for="statusVulnerableNotes">Give details</label>
+				<textarea class="form-control form-control-3-4" name="statusVulnerableNotes" id="statusVulnerableNotes" rows="4">{{ statusVulnerableNotes }}</textarea>
+			</div>
+			
+				<p class="mt30"><input type="submit" class="button" value="Save and continue"></p>
+				
+
+				
+				
+				</form>
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
