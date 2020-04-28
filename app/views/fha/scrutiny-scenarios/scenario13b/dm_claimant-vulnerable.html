@@ -1,0 +1,105 @@
+{% extends path+"/_layout-case-simple13.html" %}
+
+
+{% block actioncolumn %}
+   
+
+
+ <div class="caseStatus">
+ 	
+	<h2 class="main-status"><span>Current case status</span>Good cause action</h2>
+
+ </div>
+{% endblock %}
+
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+    
+   
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+        
+
+
+    	
+    	<h1 class="heading-large">Case should continue on health journey</h1>
+    	
+		<p>Claimant is vulnerable and the case should continue without the UC50 being returned.</p>		
+		
+		<div class="evidence-requests">		
+				
+			<form method="post" action="case-list_good-cause-action">
+		
+			<div class="form-group">
+				<label class="form-label" for="statusVulnerableNotesDM">Give details</label>
+				<textarea class="form-control form-control-3-4" name="statusVulnerableNotesDM" id="statusVulnerableNotesDM" rows="4">{{ statusVulnerableNotesDM }}</textarea>
+			</div>
+
+					{# <div class="form-group">
+						<fieldset class="inline">
+						  
+							  <legend class="heading-medium mb5">Are you ready to close this referral?</legend>
+
+										<div class="multiple-choice">
+											<input id="yes" type="radio" name="seconduc50option" value="~/{{path}}/scenario11/not-testing">
+											<label for="yes">Yes</label>
+										</div>
+										
+
+										<div class="multiple-choice">
+											<input id="no" type="radio" name="seconduc50option" value="~/{{path}}/scenario11/timeline-review">
+											<label for="no">No</label>
+										</div>
+
+							</fieldset>
+						</div> #}
+			
+				<p class="mt30"><input type="submit" class="button" value="Save and continue"></p>
+				
+
+				
+				
+				</form>
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

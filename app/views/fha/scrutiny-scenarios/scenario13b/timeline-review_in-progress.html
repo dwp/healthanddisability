@@ -1,0 +1,198 @@
+{% extends path+"/_layout-case-simple13.html" %}
+
+
+{% block actioncolumn %}
+   
+ <p class="returnRef"><a href="javascript: history.go(-1)" class="link-back">Return to case list</a></p>
+
+
+<!-- <div class="caseIdentifiers">
+	<div class="caseFlags">
+		<h2>Case flags</h2>
+	
+		<ul>
+			<li><a href="#">Unacceptable claimant behaviour</a></li>
+			<li><a href="#">Claimant has an appointee</a></li>
+		</ul>
+	</div>
+</div> -->
+		
+	
+
+
+ <div class="caseStatus">
+ 	
+	<h2 class="main-status"><span>Current case status</span>Referrals in progress</h2>
+	
+
+	<h3 class="primary-action"><span>Suggested case action</span><a href="#" class="button">UC50 received</a></h3>
+
+ </div>
+{# <details class="end-actions">
+<summary>Other case actions</summary>
+
+	<ul>
+		<li><a href="case-list_referrals-in-progress">UC50 received</a></li>
+	</ul>
+</details> #}
+<!--<div class="secondary-nav-actions">
+
+	<ul>
+		<li><a href="#">Withdraw case</a></li>
+		<li><a href="#">Close case</a></li>
+		<li><a href="#">Delete case</a></li>
+	</ul>
+		
+ </div> -->
+
+{% endblock %}
+
+
+
+
+
+{% block citizen_content %}
+
+
+
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    {# macro #}
+  {{ nav.scenario_tabs("timeline-review",1,path1, customer._id) }}
+
+    
+  <div class="timeline">
+  
+  {# <span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">Evidence of claimant vulnerability</h3>
+  <p class="timeline_datetime">03 August 2019</p>
+</div>  #}
+    {% if data['vulnerableRecommendation']==='DMissuesecond' %}
+    <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">Second UC50 form issued</h3>
+        <p class="timeline_datetime">2 March 2020</p>
+        <p>Sent to: 73 Pendwyallt Road, Burscough, Merseyside, L40 1FE.</p>
+      </div>
+
+    <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">Claimant is vulnerable: recommendation</h3>
+        <p class="timeline_datetime">2 March 2020</p>
+        <p>Issue second UC50</p>
+      </div>
+
+    <span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">UC50 not returned: claimant is vulnerable</h3>
+  <p class="timeline_datetime">29 February 2020</p>
+  <p>Case manager notes:<br>{{ statusVulnerableNotes }}</p>
+</div>
+    
+    {% endif %}
+
+
+
+   {% if data['uc50choice']=='received'%}
+ <span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">UC50 received</h3>
+  <p class="timeline_datetime">29 July 2019</p>
+</div>
+
+
+{% elif data['uc50choice']=='required'%}
+
+<span class="line"></span>
+<div class="timeline__event">
+  <h3 class="timeline__heading">UC50 not required</h3>
+  <p class="timeline_datetime">29 July 2019</p>
+</div>
+
+{% endif %}
+
+    {% if data['uc50changedaddress']==='CMissuesecond' %}
+    <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">Second UC50 form issued</h3>
+        <p class="timeline_datetime">29 February 2020</p>
+        <p>Sent to: 92 Lairg Road, Burscough, Merseyside, L20 2PR.</p>
+      </div>
+    {% endif %}
+
+    {% if data['caseStatus']==='secondUCrequested' %}
+    <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">Second UC50 form issued</h3>
+        <p class="timeline_datetime">29 February 2020</p>
+        <p>Sent to: 73 Pendwyallt Road, Burscough, Merseyside, L40 1FE.</p>
+      </div>
+    {% endif %}
+
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">UC50 form overdue</h3>
+        <p class="timeline_datetime">27 February 2020</p>
+      </div>
+
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">UC50 reminder issued</h3>
+        <p class="timeline_datetime">20 February 2020</p>
+        <p>Sent to: 73 Pendwyallt Road, Burscough, Merseyside, L40 1FE.</p>
+      </div>
+
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">UC50 form issued</h3>
+        <p class="timeline_datetime">29 January 2020</p>
+        <p>Sent to: 73 Pendwyallt Road, Burscough, Merseyside, L40 1FE.</p>
+      </div>
+      
+ 
+
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading">New referral created</h3>
+        <p class="timeline_datetime">27 January 2020</p>
+      </div>
+
+
+
+      <div style="clear:both"></div>
+
+    </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

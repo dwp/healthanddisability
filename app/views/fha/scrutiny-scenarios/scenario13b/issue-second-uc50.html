@@ -1,0 +1,97 @@
+{% extends path+"/_layout-case-simple13.html" %}
+
+
+{% block actioncolumn %}
+   
+
+
+ <div class="caseStatus">
+ 	
+	<h2 class="main-status"><span>Current case status</span>Questionnaire not returned</h2>
+
+ </div>
+{% endblock %}
+
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+    
+   
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+        
+
+
+    	
+    	<h1 class="heading-large">Issue second UC50</h1>
+    	
+		<p>Claimant correspondance address:<br>92 Lairg Road, Burscough, Merseyside, L20 2PR.</p>
+		<p>Assessment centre return address:<br>DWP Tresco House, 65 Lisson Grove, Marylebone, London NW1 6UP.</p>
+		
+
+		
+		<div class="evidence-requests mt30">
+				
+				
+			<form method="post" action="case-list_questionnaire-not-returned">
+			
+						{# <div class="form-group">
+				<label class="form-label" for="statusChangedAddressNotesCM">Give details</label>
+				<textarea class="form-control form-control-3-4" name="statusChangedAddressNotesCM" id="statusChangedAddressNotesCM" rows="4">{{ statusChangedAddressNotesCM }}</textarea>
+			</div> #}
+			
+<div class="form-group">
+		<div class="notice mb30"><i class="icon icon-important"><span class="visually-hidden">Warning</span></i>
+    	<strong class="bold-small">By continuing you are confirming that a second UC50 has been issued.</strong>
+    	</div>
+</div>			
+
+				
+				<p class="mt30"><input type="submit" class="button" value="Confirm and continue"></p>
+				
+
+				
+				
+				</form>
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

@@ -1,0 +1,166 @@
+{% extends path+"/_layout-caselist_questionnaire-not-returned.html" %}
+
+
+{% block caselist_content %}
+
+            <h2 class="heading-medium mt0"><span class="heading-xlarge">7</span><br/>Questionnaire not returned</h2>
+
+
+
+
+            <hr />
+
+<!-- <h2 class="heading-small mt15">Filter referral dates</h2>
+    <fieldset class="mb30">
+      <legend>
+        <span class="visually-hidden">
+          When
+        </span>
+      </legend>
+      <div class="form-date">
+      <span class="form-hint">From<span style="margin-left:225px;">To</span></span>
+        <div class="form-group form-group-day">
+          <label class="form-label" for="capDay">Day</label>
+          <input class="form-control" id="capDay" name="capDay" type="number" pattern="[0-9]*" value="{{capDay}}">
+        </div>
+        <div class="form-group form-group-month">
+          <label class="form-label" for="capMonth">Month</label>
+          <input class="form-control" id="capMonth" name="capMonth" type="number" pattern="[0-9]*" value="{{capMonth}}">
+        </div>
+        <div class="form-group form-group-year" style="margin-right:60px;">
+          <label class="form-label" for="capYear">Year</label>
+          <input class="form-control" id="capYear" name="capYear" type="number" pattern="[0-9]*" value="{{capYear}}">
+        </div>
+
+        <div class="form-date">
+        <div class="form-group form-group-day">
+          <label class="form-label" for="capDay">Day</label>
+          <input class="form-control" id="capDay" name="capDay" type="number" pattern="[0-9]*" value="{{capDay}}">
+        </div>
+        <div class="form-group form-group-month">
+          <label class="form-label" for="capMonth">Month</label>
+          <input class="form-control" id="capMonth" name="capMonth" type="number" pattern="[0-9]*" value="{{capMonth}}">
+        </div>
+        <div class="form-group form-group-year">
+          <label class="form-label" for="capYear">Year</label>
+          <input class="form-control" id="capYear" name="capYear" type="number" pattern="[0-9]*" value="{{capYear}}">
+        </div>
+
+
+        <button class="button button-secondary" style="margin-top:25px; margin-right:15px;">Apply dates</button>
+		<button id="clearFilter" class="button button-tursery" style="margin-top:25px">Clear dates</button>
+
+      </div>
+    </fieldset> -->
+<div class="filter-mimic">
+
+
+          {# <h3 class="heading-small mt0">Filter by:</h3>
+
+		  <div class="filter-choice">
+                <a href="/{{path }}/scenario3/referalls-death" class="selected">All</a>
+              </div>
+          <div class="filter-choice">
+                <a href="/{{path }}/scenario3/not-testing">Customer has died</a>
+              </div>
+          <div class="filter-choice">
+              <a href="/{{path }}/scenario3/not-testing">UCB</a>
+            </div>
+           <div class="filter-choice">
+              <a href="/{{path }}/scenario3/not-testing">PBA</a>
+            </div>
+            <div class="filter-choice">
+              <a href="/{{path }}/scenario3/not-testing">Returned to work</a>
+            </div>
+
+     </div> #}
+
+              <table class="referrals-layout">
+
+                <thead>
+                  <tr>
+                    <th style="width:20% !important;">Details</th>
+                    <th style="width:10% !important;">Benefit</th>
+                    <th style="width:20% !important;">Assessment centre</th>
+                    <th style="width:20% !important;">Status</th>
+                    <th style="width:15% !important;">Questionnaire due</th>
+                    <th style="width:15% !important;">Referral type</th>
+                  </tr>
+                </thead>
+                {% if data['statusVulnerableNotes'] or data['caseStatus']==='lefthealth' or data['statusLefthealthNotesCM'] or data['caseStatus']==='changedAddress' or data['caseStatus']==='secondUCrequested' %}
+                {% else %}
+                <tr>
+                 <td><a href="#"><span class="visually-hidden">Name</span>Sylvester Fury</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>ZZ 41 54 00 Y</span></td>
+                 <td>UC</td>
+                 <td>DWP Tresco House</td>
+                 <td>Referral in progress</td>
+                 <td>22 February 2020</td>
+                 <td>New referral</td>
+               </tr>
+
+
+                {% endif %}
+                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Bobby Henderson</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>ZZ 41 54 00 Y</span></td>
+                  <td>UC</td>
+                  <td>DWP Tresco House</td>
+                  <td>Referral in progress</td>
+                  <td>23 February 2020</td>
+                  <td>New referral</td>
+                </tr>
+                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Jurgen Covault</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>ZZ 41 54 00 Y</span></td>
+                  <td>UC</td>
+                  <td>DWP Tresco House</td>
+                  <td>Referral in progress</td>
+                  <td>23 February 2020</td>
+                  <td>New referral</td>
+                </tr>
+
+
+                <tr>
+                 <td><a href="#"><span class="visually-hidden">Name</span>Sylvester Fury</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>ZZ 41 54 00 Y</span></td>
+                 <td>UC</td>
+                 <td>DWP Tresco House</td>
+                 <td>Referral in progress</td>
+                 <td>23 February 2020</td>
+                 <td>New referral</td>
+                </tr>
+
+                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Bobby Henderson</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>ZZ 41 54 00 Y</span></td>
+                  <td>UC</td>
+                  <td>DWP Tresco House</td>
+                  <td>Referral in progress</td>
+                  <td>24 February 2020</td>
+                  <td>New referral</td>
+                </tr>
+
+
+
+
+
+                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Jurgen Covault</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>ZZ 41 54 00 Y</span></td>
+                  <td>UC</td>
+                  <td>DWP Tresco House</td>
+                  <td>Referral in progress</td>
+                  <td>24 February 2020</td>
+                  <td>New referral</td>
+                </tr>
+                <tr>
+                  <td><a href="timeline-review"><span class="visually-hidden">Name</span>Jay Reynolds</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>SG 24 37 24 A</span></td>
+                  <td>UC</td>
+                  <td>DWP Tresco House</td>
+                  <td>Referral in progress</td>
+                  <td>26 February 2020</td>
+                  <td>New referral</td>
+                </tr>
+
+
+                </tbody>
+
+              </table>
+
+
+{% endblock %}

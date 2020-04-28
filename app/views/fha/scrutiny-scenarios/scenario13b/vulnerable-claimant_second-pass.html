@@ -1,0 +1,102 @@
+{% extends path+"/_layout-case-simple13.html" %}
+
+
+{% block actioncolumn %}
+   
+
+
+ <div class="caseStatus">
+ 	
+	<h2 class="main-status"><span>Current case status</span>Good cause action</h2>
+
+ </div>
+{% endblock %}
+
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+    
+   
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+        
+
+
+    	
+    	<h1 class="heading-large">Claimant is vulnerable</h1>
+    	
+		{# <p>Case manager notes:<br>{{ statusVulnerableNotes }}</p> #}
+    	
+		<div class="evidence-requests mt30">
+				
+				
+			<form method="POST">
+			
+					<div class="form-group">
+						<fieldset>
+						  
+							  <legend class="heading-medium mb10">What is your recommendation?</legend>
+
+										<div class="multiple-choice">
+											<input id="claimant" type="radio" name="vulnerableRecommendation" value="DMcontinue~/{{path}}/scenario13a/dm_claimant-vulnerable">
+											<label for="claimant">Case should continue on health journey</label>
+											{# <span class="form-hint mt5">Give details to support this recommendation</span> #}
+										</div>
+
+										<div class="multiple-choice">
+											<input id="gpTele" type="radio" name="vulnerableRecommendation" value="DMlefthealth~/{{path}}/scenario13a/dm_left-health">
+											<label for="gpTele">Claimant has left the health journey</label>
+										</div>
+
+										<div class="multiple-choice">
+											<input id="gpTele" type="radio" name="vulnerableRecommendation" value="DMlefthealth~/{{path}}/scenario13a/dm_close-referral">
+											<label for="gpTele">Close referral</label>
+										</div>
+							</fieldset>
+						</div>
+				
+				<p class="mt30"><input type="submit" class="button" value="Save and continue"></p>
+				
+				</form>
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
