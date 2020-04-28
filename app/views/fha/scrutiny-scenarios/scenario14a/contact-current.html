@@ -1,0 +1,227 @@
+{% extends path+"/_layout-case-simple14a.html" %}
+
+
+{% block actioncolumn %}
+
+  <p class="returnRef"><a href="#" class="link-back">Return to case list</a></p>
+
+ <div class="caseStatus">
+
+
+
+   	<h2 class="main-status"><span>Current case status</span>New referral</h2>
+   	<h3 class="primary-action"><span>Suggested case action</span><a href="#" class="button">Issue UC50</a></h3>
+
+
+
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Harvey Chamberlain
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+
+<div class="container">
+  <div class="grid-row">
+    <div class="column-full">
+
+    {# macro #}
+  {{ nav.scenario_tabs("contact",1,path1, customer._id) }}
+
+   <h1 class="heading-large">
+  	Contact</h1>
+
+
+  <div class="portal-display">
+
+
+
+  	 <div class="grid-row">
+
+		  	<div class="column-two-thirds">
+
+		  		<h4 class="heading-large">Harvey's details</h4>
+
+				<!-- / title -->
+
+
+
+
+
+						<caption class="visually-hidden">Contact information</caption>
+
+
+
+						<tbody>
+              <h4 class="heading-small">Contact number</h4>
+              <p class="govuk-body">
+              0151 000 0000
+              </p>
+
+              <h4 class="heading-small">Email address</h4>
+              <p class="govuk-body">
+              harvey@chamberlain.com
+              </p>
+
+              <h4 class="heading-small">Preferred contact</h4>
+              <p class="govuk-body">
+              Email
+              </p>
+
+
+
+              <h4 class="heading-small">Preferred contact</h4>
+              <p class="govuk-body">
+                860 Liverpool Lane<br>
+								Bolton<br>
+							  Lancashire<br>
+								TXX ZZZ
+              </p>
+
+              <h4 class="heading-small">Is address used for correspondence?</h4>
+              <p class="govuk-body">
+                Yes
+              </p>
+
+              <h4 class="heading-small">Has Harvey given consent to request further medical information?</h4>
+              <p class="govuk-body">
+                Yes
+              </p>
+
+
+
+
+
+
+
+
+				<p class="view-all"><a href="#" class="secondary-invert">Edit Harvey's details</a></p>
+	</tbody>
+<br>
+
+				<!-- / inner card -->
+
+			<!-- / portal card -->
+<br>
+	<tbody>
+      <h4 class="heading-large">General Practitioner</h4>
+
+
+
+       <h4 class="heading-small">Name</h4>
+       <p class="govuk-body">
+         Doctor who
+       </p>
+       <h4 class="heading-small">Name of surgery</h4>
+       <p class="govuk-body">
+         ojiio
+       </p>
+
+       <h4 class="heading-small">Preferred contact</h4>
+       <p class="govuk-body">
+         60 Market street<br>
+         Adlington<br>
+         Chorley<br>
+         PR7 4HF
+       </p>
+       <h4 class="heading-small">Surgery telephone number</h4>
+       <p class="govuk-body">
+         012345 67890 1234
+       </p>
+
+
+
+
+
+
+
+
+
+   <p class="view-all"><a href="#" class="secondary-invert">Edit GP details</a></p>
+
+ </tbody>
+
+  <br>
+   <tbody>
+
+       <h4 class="heading-large">Healthcare professionals</h4>
+
+
+
+
+      <p class="govuk-body">
+        No other healthcare professional's details have been captured for Harvey.
+      </p>
+
+
+<a href="#" class="secondary-invert">Add a medical contact</a>
+
+
+    </tbody>
+
+
+
+
+ </div>
+ <!-- / inner card -->
+ </div>
+ <!-- / portal card -->
+
+
+
+		  	</div>
+
+
+
+
+		  	<div class="column-third">
+		  		<!---------------------------------- Card ---------------------------------->
+
+			<!-- <div class="portal-card">
+				<div class="portal-head">
+					<h3>Other details</h3>
+				</div>
+				<!-- / title -->
+
+				<!-- <div class="portal-inner">
+
+
+				<ul class="action-list">
+						<li><a href="/{{path }}/scenario11/not-testing" class="secondary-invert">View GP details</a></li>
+						<li><a href="/{{path }}/scenario11/not-testing" class="secondary-invert">Add a medical contact</a></li>
+					</ul>
+
+				</div>
+				<!-- / inner card -->
+			<!-- / portal card -->
+		  	<!-- </div> -->
+
+
+
+  	 </div>
+
+
+
+
+  </div>
+
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
