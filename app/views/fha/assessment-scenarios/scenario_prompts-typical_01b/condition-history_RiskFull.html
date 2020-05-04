@@ -1,0 +1,91 @@
+{% extends path+"/scenario_prompts-typical_01b/_layout-case-simple-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<p class="caption-large" class="mb0">Condition history</p>
+
+<h1 class="heading-large mt10">Mental health risk</h1>
+
+<h2 class="heading-medium mt10">Suicidal ideation continued</h2>
+
+<form action="condition-history_RiskOther" method="post">
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+
+<div class="form-group">
+	<label class="form-label" for="conditionSelfHarmWhen">When did the attempt happen and what was its nature?</label>
+	<textarea class="form-control form-control-1-1" name="conditionSelfHarmWhen" id="conditionSelfHarmWhen" rows="3">{{ conditionSelfHarmWhen }}</textarea>
+</div>
+
+<div class="form-group">
+	<label class="form-label" for="conditionSelfHarmPlanned">Was the attempt planned or impulsive and did a specific incident lead to it?</label>
+	<textarea class="form-control form-control-1-1" name="conditionSelfHarmPlanned" id="conditionSelfHarmPlanned" rows="3">{{ conditionSelfHarmPlanned }}</textarea>
+</div>
+
+<div class="form-group">
+	<fieldset>
+		<legend class="mb10">Did they have any medical input after the attempt?</legend>
+			<div class="multiple-choice" data-target="selfHarmMedicalYes">
+				<input id="continenceYes" name="selfHarmMedicalQuestion" type="radio" value="yes">
+				<label for="continenceYes">Yes</label>
+			</div>
+			<div class="panel js-hidden" id="selfHarmMedicalYes">
+				<div class="form-group">
+				<label class="form-label" for="conditionSelfHarmMedical">How long for?</label>
+				<textarea class="form-control form-control-1-1" name="conditionSelfHarmMedical" id="conditionSelfHarmMedical" rows="1">{{ conditionSelfHarmMedical }}</textarea>
+				</div>
+			</div>
+			<div class="multiple-choice">
+				<input id="continenceNo" name="selfHarmMedicalQuestion" type="radio" value="no">
+				<label for="continenceNo">No</label>
+			</div>
+		</fieldset>
+</div>
+
+<div class="form-group">
+	<label class="form-label" for="conditionSelfHarmThoughts">If they have ongoing thoughts of self-harm or suicide, what is their nature and how frequent are they?</label>
+	<textarea class="form-control form-control-1-1" name="conditionSelfHarmThoughts" id="conditionSelfHarmThoughts" rows="3">{{ conditionSelfHarmThoughts }}</textarea>
+</div>
+
+
+<div class="form-group">
+	<fieldset>
+		<legend class="mb10">Is anyone else aware of their ongoing thoughts of self-harm or suicide?</legend>
+			<div class="multiple-choice" data-target="selfHarmYes">
+				<input id="continenceYes" name="selfHarmContactQuestion" type="radio" value="yes">
+				<label for="continenceYes">Yes</label>
+			</div>
+			<div class="panel js-hidden" id="selfHarmYes">
+				<div class="form-group">
+				<label class="form-label" for="conditionSelfHarmContact">Who is aware of this?</label>
+				<textarea class="form-control form-control-1-1" name="conditionSelfHarmContact" id="conditionSelfHarmContact" rows="1">{{ conditionSelfHarmContact }}</textarea>
+				</div>
+			</div>
+			<div class="multiple-choice">
+				<input id="continenceNo" name="selfHarmContactQuestion" type="radio" value="no">
+				<label for="continenceNo">No</label>
+			</div>
+		</fieldset>
+</div>
+
+
+<p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+      </form>
+
+  </div><!-- column -->
+
+<div class="column-one-third">
+
+</div>
+<!-- right hand column -->
+
+</div><!-- row -->
+
+{% endblock %}

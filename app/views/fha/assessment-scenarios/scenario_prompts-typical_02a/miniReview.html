@@ -1,206 +1,240 @@
-{% extends path+"/scenario_prompts_03a/_layout-case-simple_assessment-complete.html" %}
+{% extends path+"/scenario_prompts-typical_02a/_layout-case-simple-full-width.html" %}
 
 {% block citizen_content %}
 
 {{ data.nuggets | log }}
 
 <style>table th, table td{
-border-bottom:none !important;}</style>
+border-bottom:none !important;}
+
+.column-01{width:25%; vertical-align:top;}
+.column-02{width:60%;}
+.column-03{width:15%; text-align:right; padding-right:1.5em;}
+tr.row{border-bottom:1px solid #bfc1c3;}
+table.section{margin-bottom:60px;}
+.mental-health th, .mental-health td{padding-top:0;}
+</style>
 
 <p class="no-kdBar"></p>
 
   
-<h1 class="heading-large mb0">Work capability assessment review</h1>
+<h1 class="heading-large">Review evidence before making your recommendation</h1>
  
 
-<div class="review-wrapper full-report">
+<div class="full-report">
 
 
-<div>
-
-	<table class="report-view-table">
-	{# <caption class="heading-small">Assessment overview</caption> #}
-	
-		<tbody>
-			<tr>
-				<th>Name</th>
-				<td>Ruby Haynes</td>
-			</tr>
-			<tr>
-				<th>NINO</th>
-				<td>YA 13 87 63 A</td>
-			</tr>
-			<tr>
-				<th>DOB</th>
-				<td>19 September 1990</td>
-			</tr>
-			<tr>
-				<th>Date of assessment</th>
-				<td>{{ "Do MMM YYYY" | daysAgo }}</td>
-			</tr>
-			<tr>
-				<th>Assessment centre</th>
-				<td>Fiveways, Birmingham</td>
-			</tr>
-			<tr>
-				<th>Assessor</th>
-				<td>Jane Smith</td>
-			</tr>
-			<tr>
-				<th>Assessment started</th>
-				<td>{{ last_one.time | formatDate("H:mma") }}</td>
-			</tr>
-			<tr>
-				<th>Assessment finished</th>
-				<td>{{ first_one.time | formatDate("H:mma") }}</td>
-			</tr>
-		</tbody>
-	</table>
-
-</div>
-<!-- / report item -->
-
-<hr>
-
-
-<div class="report-item">
-
-	<h2 class="heading-medium mt0">Additional attendees</h2> 
+	{# <h2 class="heading-medium mt0">Additional attendees</h2> 
 	
 	<div class="inner-focus">
 		<p>John Smith</p>
 	</div>
 	<p class="edit-report"><a href="#" class="button-secondary">Edit additional attendees</a></p>
 
-<hr>
+<hr> #}
 
-	<h2 class="heading-medium">Condition history</h2> 
-	
-	{% if data['reportedcondition01']%}
-	<div class="inner-focus">
-	<p class="heading-small">{{ reportedcondition01 }}</p> 
-	<p>{{ condition01Freetext }}</p>
-	<p class="edit-report"><a href="condition-history_condition01" class="button-secondary mt10 mb20">Edit {{ reportedcondition01 }} details</a></p>
-	{% else %}{% endif %}
-
-<!-- Condition break -->
-
-	{% if data['reportedcondition02']%}
-	<div class="inner-focus">
-	<p class="heading-small">{{ reportedcondition02 }}</p>
-	<p>{{ condition02Freetext }}</p>
-	<p class="edit-report"><a href="condition-history_condition02" class="button-secondary mt10 mb20">Edit {{ reportedcondition02 }} details</a></p>
-	{% else %}{% endif %}
-	
-<!-- Condition break -->
-
-	{% if data['reportedcondition03']%}
-	<div class="inner-focus">
-	<p class="heading-small">{{ reportedcondition03 }}</p> 
-	<p>{{ condition03Freetext }}</p>
-	<p class="edit-report"><a href="condition-history_condition03" class="button-secondary mt10 mb20">Edit {{ reportedcondition03 }} details</a></p>
-	{% else %}{% endif %}
-	
-<!-- Condition break -->
-
-	{% if data['reportedcondition04']%}
-	<div class="inner-focus">
-	<p class="heading-small">{{ reportedcondition04 }}</p>
-	<p>{{ condition04Freetext }}</p>
-	<p class="edit-report"><a href="condition-history_condition04" class="button-secondary mt10 mb20">Edit {{ reportedcondition04 }} details</a></p>
-	{% else %}{% endif %}
-	
-<!-- Condition break -->
-
-	{% if data['reportedcondition05']%}
-	<div class="inner-focus">
-	<p class="heading-small">{{ reportedcondition05 }}</p> 
-	<p>{{ condition05Freetext }}</p>
-	<p class="edit-report"><a href="condition-history_condition05" class="button-secondary mt10 mb20">Edit {{ reportedcondition05 }} details</a></p>
-	{% else %}{% endif %}
-	
-<!-- Condition break -->
-
-	{% if data['reportedcondition06']%}
-	<div class="inner-focus">
-	<p class="heading-small">{{ reportedcondition06 }}</p> 
-	<p>{{ condition06Freetext }}</p>
-	<p class="edit-report"><a href="condition-history_condition06" class="button-secondary mt10 mb20">Edit {{ reportedcondition06 }} details</a></p>
-	{% else %}{% endif %}
-	
-<!-- Condition break -->
-
-	{% if data['reportedcondition07']%}
-	<div class="inner-focus">
-	<p class="heading-small">{{ reportedcondition07 }}</p> 
-	<p>{{ condition07Freetext }}</p>
-	<p class="edit-report"><a href="condition-history_condition07" class="button-secondary mt10 mb20">Edit {{ reportedcondition07 }} details</a></p>
-	{% else %}{% endif %}
-
-<hr>
-	<h2 class="heading-medium">Social and work history</h2> 
-	
-	<div class="inner-focus">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-<p>Morbi posuere egestas urna, eu ornare lorem eleifend id.</p>
-<p>Etiam molestie, nunc sed lacinia placerat, nisi augue malesuada est, at vehicula est enim sed nibh.</p>
-<p>Curabitur consectetur mi blandit, condimentum enim a, tempor arcu.</p>
-<p>Nulla arcu augue, vestibulum vel libero ut, condimentum vulputate nisl.</p>
-	<!--    Outputs social work history 
-	    {% for item in socialWorkComments | sortBy("time",true) %}
-		<p>{{ item.comment }}</p>
-  		{% endfor %}-->
-  
-	</div>
-	
-	<p class="edit-report"><a href="#" class="button-secondary">Edit social and work history</a></p>
+	{# <h4 class="heading-small">Condition history</h4>  #}
 
 
-	<h2 class="heading-medium">Typical day</h2> 
-	
-	<div class="inner-focus">
-    {% for item in typicalDayComments | sortBy("time",false) %}
-	<p>{{ item.comment }}</p>        
-    {% endfor %}
-	</div>
-	
-	<p class="edit-report"><a href="typicalDay" class="button-secondary">Edit typical day</a></p>
+<h4 class="heading-medium">Condition history</h4>
+<table class="section">
+	<tbody>
+		{% if data['reportedcondition01']%}
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition01 }}</th>
+			<td class="column-02">
+				<p style="margin-bottom: auto;">{{ condition01Freetext }}</p>
+			</td>
+			<td class="column-03"><a href="condition-history_condition01">Change</a></td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition02']%}
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition02 }}</th>
+			<td class="column-02">
+				<p style="margin-bottom: auto;">{{ condition02Freetext }}</p>
+			</td>
+			<td class="column-03"><a href="condition-history_condition02">Change</a></td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition03']%}
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition03 }}</th>
+			<td class="column-02">
+				<p style="margin-bottom: auto;">{{ condition03Freetext }}</p>
+			</td>
+			<td class="column-03"><a href="condition-history_condition03">Change</a></td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition04']%}
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition04 }}</th>
+			<td class="column-02">
+				<p style="margin-bottom: auto;">{{ condition04Freetext }}</p>
+			</td>
+			<td class="column-03"><a href="condition-history_condition04">Change</a></td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition05']%}
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition05 }}</th>
+			<td class="column-02">
+				<p style="margin-bottom: auto;">{{ condition05Freetext }}</p>
+			</td>
+			<td class="column-03"><a href="condition-history_condition05">Change</a></td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition06']%}
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition06 }}</th>
+			<td class="column-02">
+				<p style="margin-bottom: auto;">{{ condition06Freetext }}</p>
+			</td>
+			<td class="column-03"><a href="condition-history_condition06">Change</a></td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition07']%}
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition07 }}</th>
+			<td class="column-02">
+				<p style="margin-bottom: auto;">{{ condition07Freetext }}</p>
+			</td>
+			<td class="column-03"><a href="condition-history_condition07">Change</a></td>
+		</tr>
+		{% else %}{% endif %}
+	</tbody>
+</table>
 
 
-	<h2 class="heading-medium">Medication and side effects</h2> 
-	
-	<div class="inner-focus">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-<p>Morbi posuere egestas urna, eu ornare lorem eleifend id.</p>
-<p>Etiam molestie, nunc sed lacinia placerat, nisi augue malesuada est, at vehicula est enim sed nibh.</p>
-<p>Curabitur consectetur mi blandit, condimentum enim a, tempor arcu.</p>
-<p>Nulla arcu augue, vestibulum vel libero ut, condimentum vulputate nisl.</p>
-	<!--<p>{{ medicationSideEffects }}</p>-->
-	</div>
-	
-	<p class="edit-report"><a href="#" class="button-secondary">Edit medication and side effects</a></p>
-	
-</div>
-<!-- / report item -->
+<h4 class="heading-medium">Other details</h4>
+
+<table class="section">
+	<tbody>
+		<tr class="row">
+			<th class="column-01">Medication and side effects</th>
+			<td class="column-02">{{ medicationSideEffects }}</td>
+			<td class="column-03"><a href="medicationSideEffects">Change</a></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Social and work history</th>
+			<td class="column-02">{% for item in socialWorkComments | sortBy("time",false) %}<p style="margin-top:0px; margin-bottom:0;">{{ item.comment }}</p>{% endfor %}</td>
+			<td class="column-03"><a href="socialWork">Change</a></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Typical day</th>
+			<td class="column-02">{% for item in typicalDayComments | sortBy("time",false) %}<p style="margin-top:0px; margin-bottom:0;">{{ item.comment }}</p>{% endfor %}</td>
+			<td class="column-03"><a href="typicalDay">Change</a></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Additional attendees</th>
+			<td class="column-02">Joe Bloggs</td>
+			<td class="column-03"><a href="#">Change</a></td>
+		</tr>
+	</tbody>
+</table>
 
 
 
-<div class="report-item">
 
-	<div class="inner-focus">
-	<h2 class="heading-medium">Physical assessments</h2>
-	</div>
-</div>
-<!-- / report item -->
+<!-- Physical assessments: Start -->
+{# <h4 class="heading-medium">Physical assessments</h4>
+
+<table>
+	<tbody>
+		<tr class="row">
+			<th class="column-01">General health</th>
+			<td class="column-02">Height (m): 1.3<br>Weight (Kg): 94<br>BMI: 25%</td>
+			<td class="column-03"><a href="#">Change</a></td>
+		</tr>
+	</tbody>
+</table>
+
+<h4 class="heading-small">Lower back and legs</h4>
+<table class="section">
+	<tbody>
+		<tr class="row">
+			<th class="column-01">Lower back</th>
+			<td class="column-02">Forward flexion: Unrestricted<br>Squat and rise: Full</td>
+			<td class="column-03"><a href="#">Change</a></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Left leg</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"><a href="#">Change</a></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Right leg</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"><a href="#">Change</a></td>
+		</tr>
+	</tbody>
+</table> #}
+<!-- Physical assessments: End -->
 
 
 
-<div class="report-item">
-	<div class="inner-focus">
-	<h2 class="heading-medium">Mental health assessment</h2>
-	</div>
-</div>
-<!-- / report item -->
+
+<!-- Mental Health: Start -->
+{# <h4 class="heading-medium">Mental health assessment</h4>
+
+<table class="section mental-health">
+	<tbody>
+		<tr>
+			<th class="column-01">Appearance</th>
+			<td class="column-02">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+			<td class="column-03"><a href="#">Change</a></td>
+		</tr>
+		<tr>
+			<th class="column-01">Behaviour</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr>
+			<th class="column-01">Speech</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr>
+			<th class="column-01">Mood</th>
+			<td class="column-02">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr>
+			<th class="column-01">Cognition</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr>
+			<th class="column-01">Insight</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr>
+			<th class="column-01">Thoughts</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr>
+			<th class="column-01">Perceptions</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr>
+			<th class="column-01">Addictions</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Cognitive</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+	</tbody>
+</table> #}
+<!-- Mental Health: End -->
+
+<p><a href="#" class="button">Make your recommendation</a></p>
+
   
    </div>
  <!-- / wrapper -->
