@@ -1,0 +1,185 @@
+{% extends path+"/_layout-case-simple14b.html" %}
+
+
+{% block actioncolumn %}
+
+  <p class="returnRef"><a href="#" class="link-back">Return to case list</a></p>
+
+ <div class="caseStatus">
+
+
+
+   	<h2 class="main-status"><span>Current case status</span>New referral</h2>
+   	<h3 class="primary-action"><span>Suggested case action</span><a href="#" class="button">Issue UC50</a></h3>
+
+
+
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Harvey Chamberlain
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+
+    <div class="column-full">
+
+<!-- tabs -->
+    {# macro #}
+  {{ nav.scenario_tabs("evidence-portal",1,path1, customer._id) }}
+</div>
+</div>
+  <div class="grid-row">
+
+     <div class="column-full">
+
+<!-- header -->
+<h1 class="heading-large mt10">Evidence</h1>
+
+</div>
+</div>
+
+	<div class="grid-row">
+
+		<div class="column-two-thirds">
+				<div class="portal-inner">
+
+<!-- table -->
+          <div class="pCon">
+            <h3 class="heading-small">
+              Last recorded evidence
+            </h3>
+					<table class="evidence-list">
+						<thead>
+							<tr>
+								<th>Type</th>
+								<th>Recorded</th>
+							</tr>
+						<tbody>
+								  		<tr>
+											<td><a href="/{{path }}/scenario11/referralJustify">Appointment referral justification &ndash; second review</a></td>
+											<td>2 September 2019</td>
+										</tr>
+									<tr>
+										<td><a href="/{{path }}/scenario11/not-testing">Paper based review justification</a></td>
+										<td>11 August 2019</td>
+									</tr>
+						  			<tr>
+										<td><a href="/{{path }}/scenario11/not-testing">GP report</a></td>
+										<td>10 August 2019</td>
+									</tr>
+						  			<tr>
+										<td><a href="/{{path }}/scenario11/not-testing">Factual report</a></td>
+										<td>10 August 2019</td>
+									</tr>
+								  		<tr>
+											<td><a href="/{{path }}/scenario11/referralJustify">Appointment referral justification</a></td>
+											<td>3 August 2019</td>
+										</tr>
+								  	<tr>
+											<td><a href="#">UC50</a></td>
+											<td>1 August 2019</td>
+										</tr>
+							</tbody>
+					</table>
+
+					<p class="view-all"><a href="/{{path }}/scenario11/evidence-full" class="secondary-invert">View historical evidence</a></p>
+
+				</div>
+
+
+		</div>
+    </div>
+
+
+<div class="column-third">
+    <div class="app-related-items">
+      <h3 class="heading-small">
+        Last recorded evidence
+      </h3>
+      <!--
+             <h2 class="govuk-heading-m" id="subsection-title">
+               Subsection
+             </h2>
+             <nav role="navigation" aria-labelledby="subsection-title">
+               <ul class="govuk-list govuk-!-font-size-16">
+                 <li>
+                   <a class="govuk-link" href="#">
+                     Related link
+                   </a>
+                 </li>
+                 <li>
+                   <a class="govuk-link" href="#">
+                     Related link
+                   </a>
+                 </li>
+                 <li>
+                   <a href="#" class="govuk-link govuk-!-font-weight-bold">
+                     More <span class="govuk-visually-hidden">in Subsection</span>
+                   </a>
+                 </li>
+               </ul>
+             </nav> -->
+           </div>
+
+</div>
+
+
+
+		<!---------------------------------- Card ---------------------------------->
+		<!-- <div class="column-third">
+
+					<h3>Record new evidence</h3>
+				</div> -->
+				<!-- / title -->
+
+				<!-- <div class="portal-inner"> -->
+
+					<!-- <ul class="action-list">
+
+							{% if data['evidenceChoice']=='ev-gp'%}
+								<li><a href="/{{path }}/scenario11/record-evidence" class="secondary-invert">Record GP report</a></li>
+								{% else %}
+							{% endif %}
+							{% if data['evidenceChoice']=='ev-fr'%}
+								<li><a href="/{{path }}/scenario11/record-evidence" class="secondary-invert">Record Factual report</a></li>
+								{% else %}
+							{% endif %}
+						<li><a href="/{{path }}/scenario11/recordTelephone" class="secondary-invert">Record a telephone conversation</a></li>
+						<li><a href="/{{path }}/scenario11/recordOther" class="secondary-invert">Record other evidence</a></li>
+					</ul> -->
+
+
+			</div>
+
+
+
+
+		</div>
+
+
+
+
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

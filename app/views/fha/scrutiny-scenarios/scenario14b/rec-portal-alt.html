@@ -1,0 +1,97 @@
+{% extends path+"/_layout-case-simple11.html" %}
+
+
+{% block actioncolumn %}
+   
+  <p class="returnRef"><a href="/{{path }}/scenario11/referrals-fme" class="link-back">Return to case list</a></p>
+ 
+ <div class="caseStatus">
+	  <h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+
+
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Harvey Chamberlain
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+  
+  
+ 
+  
+  	
+
+    <div class="column-full">
+    
+    
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+    
+    
+    
+    <h1 class="heading-large">Make your recommendation</h1>
+    
+
+
+    	 <div class="rec-portal grid-row">
+
+				<div class="column-third">
+					<div class="rec-slot">
+						<a href="/{{path }}/scenario11/evidence-step1">
+						<span>Request evidence</span>
+						I think further evidence will help Jurgen's case</a>
+					</div>
+				</div>
+				
+				
+				<div class="column-third">
+					<div class="rec-slot">
+						<a href="/{{path }}/scenario11/evidence-step3">
+						<span>Face to face assessment</span>
+						I would like to call Jurgen in for a face to face assessment</a>
+					</div>
+				</div>
+				
+																							
+				<div class="column-third">
+					<div class="rec-slot">
+						<a href="/{{path }}/scenario11/pbr">
+						<span>Paper based review</span>
+						I have enough evidence to recommend a paper based review</a>
+					</div>
+				</div>
+									
+				
+			
+	
+			</div>
+
+ 
+    
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

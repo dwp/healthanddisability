@@ -1,6 +1,6 @@
 .portal-display {
 	margin-top: 40px;
-	
+
 	.portal-card {
 		background: #fff;
 		border: 1px solid $grey-2;
@@ -8,9 +8,9 @@
 		&:first-child {
 			margin-top: 0;
 		}
-		
+
 		////// Test code ////////
-		
+
 		.dash-test {
 			font-size: 18px;
 			text-decoration: none;
@@ -25,12 +25,12 @@
 				color: #000!important;
 			}
 		}
-		
+
 		////// Test code ////////
-			
+
 		.portal-head {
 			overflow: hidden;
-			a {			
+			a {
 				padding: 1em 1em .7em 1em;
 				display: block;
 				font-weight: bold;
@@ -55,15 +55,15 @@
 				font-size: 19px;
 			}
 		}
-		
+
 		.portal-inner {
 			padding: .7em 1em;
-			
+
 			h4 {
 				padding: .4em 0;
 			}
-			
-			
+
+
 			table {
 				margin: 0;
 				caption {
@@ -87,9 +87,9 @@
 							font-size: 17px;
 						}
 					}
-					
+
 				}
-				
+
 				&.medical-list {
 					td {
 						&:first-child {
@@ -97,24 +97,24 @@
 						}
 					}
 				}
-				
+
 				&.tele-list {
 					th {
 						width: 50%;
 					}
 				}
 			}
-			
+
 			.view-all {
 				margin: 30px 0 .7em 0;
 			}
-			
+
 			.list-bullet {
 				li {
 					font-size: 18px;
 				}
 			}
-			
+
 			.action-list {
 				li {
 					border-top: 1px solid $grey-2;
@@ -131,7 +131,7 @@
 				}
 
 			}
-			
+
 			.requested-evidence {
 				border-top: 1px solid $grey-3;
 				padding-top: 1.6em;
@@ -147,11 +147,11 @@
 					}
 				}
 			}
-			
+
 		}
-		
+
 	}
-	
+
 }
 
 
