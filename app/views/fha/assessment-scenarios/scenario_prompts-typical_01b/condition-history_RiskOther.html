@@ -1,0 +1,87 @@
+{% extends path+"/scenario_prompts-typical_01b/_layout-case-simple-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<p class="caption-large" class="mb0">Condition history</p>
+
+<h1 class="heading-large mt10">Mental health risk</h1>
+
+<h2 class="heading-medium mt10">Alcohol and drug use</h2>
+
+<form action="condition-history_home" method="post">
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+
+<div class="form-group">
+	<label class="form-label" for="conditionRiskAlcoholAmount">How much do they drink or use in an average day and when?</label>
+	<textarea class="form-control form-control-1-1" name="conditionRiskAlcoholAmount" id="conditionRiskAlcoholAmount" rows="3">{{ conditionRiskAlcoholAmount }}</textarea>
+</div>
+
+<div class="form-group">
+	<label class="form-label" for="conditionRiskAlcoholSymptoms">Do they have any withdrawal symptoms?</label>
+	<textarea class="form-control form-control-1-1" name="conditionRiskAlcoholSymptoms" id="conditionRiskAlcoholSymptoms" rows="3">{{ conditionRiskAlcoholSymptoms }}</textarea>
+</div>
+
+<div class="form-group">
+	<fieldset>
+		<legend class="mb10">Have they ever been in rehab or admitted to hospital for drinking or drug use?</legend>
+			<div class="multiple-choice" data-target="selfHarmYes">
+				<input id="continenceYes" name="selfHarmQuestion" type="radio" value="yes">
+				<label for="continenceYes">Yes</label>
+			</div>
+			<div class="panel js-hidden" id="selfHarmYes">
+				<div class="form-group">
+				<label class="form-label" for="conditionRiskAlcoholAdmissions">When and how long for?</label>
+				<textarea class="form-control form-control-1-1" name="conditionRiskAlcoholAdmissions" id="conditionRiskAlcoholAdmissions" rows="3">{{ conditionRiskAlcoholAdmissions }}</textarea>
+				</div>
+			</div>
+			<div class="multiple-choice">
+				<input id="continenceNo" name="selfHarmQuestion" type="radio" value="no">
+				<label for="continenceNo">No</label>
+			</div>
+		</fieldset>
+</div>
+
+
+<h2 class="heading-medium mt10">Behaviour</h2>
+
+<div class="form-group">
+	<fieldset>
+		<legend class="mb10">Have they had any problems with their behaviour?</legend>
+			<div class="multiple-choice" data-target="selfHarmBehaviourYes">
+				<input id="continenceYes" name="selfHarmBehaviourQuestion" type="radio" value="yes">
+				<label for="continenceYes">Yes</label>
+			</div>
+			<div class="panel js-hidden" id="selfHarmBehaviourYes">
+				<div class="form-group">
+				<label class="form-label" for="conditionRiskBehaviourDetails">What happened and when?</label>
+				<textarea class="form-control form-control-1-1" name="conditionRiskBehaviourDetails" id="conditionRiskBehaviourDetails" rows="3">{{ conditionRiskBehaviourDetails }}</textarea>
+				</div>
+			</div>
+			<div class="multiple-choice">
+				<input id="continenceNo" name="selfHarmBehaviourQuestion" type="radio" value="no">
+				<label for="continenceNo">No</label>
+			</div>
+		</fieldset>
+</div>
+
+<p><input type="submit" class="button" value="Save" id="submitButton"></p>
+      </form>
+
+  </div><!-- column -->
+
+<div class="column-one-third">
+
+</div>
+<!-- right hand column -->
+
+</div><!-- row -->
+
+{% endblock %}

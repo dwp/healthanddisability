@@ -1,10 +1,14 @@
-{% extends path+"/scenario_prompts_02a/_layout-case-simple-full-width.html" %}
+{% extends path+"/scenario_prompts-typical_01a/_layout-case-simple-full-width.html" %}
 
 {% block citizen_content %}
 
 {{ data.nuggets | log }}
 
-
+<style type="text/css">
+.task-list-item:first-child{
+border-top: 1px solid #bfc1c3;
+}
+</style>
 
   <p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
 
@@ -17,7 +21,7 @@
 <table class="task-list">
  	<tbody>
 		{% if data['reportedcondition01']%}
-		<tr>
+		<tr style="border-top: 1px solid #bfc1c3;">
 			<td><a href="condition-history_condition01">{{ reportedcondition01 }}</a></td>
 			<td>{% if data['condition01Time']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
 		</tr>
@@ -92,8 +96,10 @@
 </table> #}
 
 
-		<p><a href="condition-history_create-list" class="button secondary">Add or remove condition</a></p>
-		
+		<p><a href="condition-history_create-list" class="button secondary mb20">Add or remove condition</a></p>
+		<div class="notice mb30"><i class="icon icon-important"><span class="visually-hidden">Warning</span></i>
+    <strong class="bold-small">By continuing, you are confirming that you have recorded all conditions mentioned in the questionnaire, medical evidence and your discussion with the claimant.</strong>
+	</div>
 		{% if data['endFTFtrigger'] %}
 		<p class="mt30"><a href="miniReview" class="button">Save and continue</a></p>
 		{% else %}
