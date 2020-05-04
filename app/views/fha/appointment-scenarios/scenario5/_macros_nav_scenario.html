@@ -3,15 +3,15 @@
     <ul>
 
       {% set navs = [
-        {url:"not-testing",label:"Timeline"},
+        {url:"timeline",label:"Timeline"},
         {url:"not-testing",label:"Details"},
-        {url:"appointment-fme",label:"Appointment"},
+        {url:"appointment-tab",label:"Appointment"},
         {url:"not-testing",label:"Evidence"}
-      
-        ] %} 
-   
+
+        ] %}
+
       {% for item in navs %}
-        <li {% if item.url == selected %} class="active"{% endif %}><a href="/fha/appointment-scenarios/scenario/{{ item.url }}/">{{ item.label }}</a></li>
+        <li {% if item.url == selected %} class="active"{% endif %}><a href="/fha/appointment-scenarios/scenario5/{{ item.url }}">{{ item.label }}</a></li>
       {% endfor %}
     </ul>
   </div>
