@@ -4,6 +4,19 @@
 
 {{ data.nuggets | log }}
 
+<style type="text/css">
+.task-list-item:first-child{
+border-top: 1px solid #bfc1c3;
+}
+table th, table td{border-bottom:none !important;}
+.column-01{width:25%; vertical-align:top;}
+.column-02{width:60%;}
+.column-03{width:15%; text-align:right; padding-right:1.5em;}
+tr.row{border-bottom:1px solid #bfc1c3;}
+table.section{margin-bottom:40px;}
+.mental-health th, .mental-health td{padding-top:0;}
+.notice strong{margin-right:25px;}
+</style>
 
 
   <p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
@@ -11,98 +24,130 @@
 <p class="caption-large mb0">Condition history</p>
 <h1 class="heading-large mt10">Review conditions</h1>
 
-<div class="grid-row">
-  <div class="column-two-thirds">
-
-<table class="task-list">
- 	<tbody>
+<table class="section">
+	<tbody>
 		{% if data['reportedcondition01']%}
-		<tr style="border-top: 1px solid #bfc1c3;">
-			<td><a href="condition-history_condition01">{{ reportedcondition01 }}</a></td>
-			<td>{% if data['condition01Freetext']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition01 }}</th>
+			<td class="column-02">
+				{% if data['condition01Freetext']%}
+				<p style="margin-top:0 !important; margin-bottom: auto;">{{ condition01Freetext }}</p>
+				{% else %}
+				<p style="margin-top:0 !important; margin-bottom: auto;">Not reviewed</p>
+				{% endif %}
+			</td>
+			<td class="column-03">
+			<a href="condition-history_condition01">{% if data['condition01Freetext']%}Change{% else %}Review{% endif %}</a>
+			</td>
 		</tr>
 		{% else %}{% endif %}
+
 		{% if data['reportedcondition02']%}
-		<tr>
-			<td><a href="condition-history_condition02">{{ reportedcondition02 }}</a></td>
-			<td>{% if data['condition02Freetext']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition02 }}</th>
+			<td class="column-02">
+				{% if data['condition02Freetext']%}
+				<p style="margin-top:0 !important; margin-bottom: auto;">{{ condition02Freetext }}</p>
+				{% else %}
+				<p style="margin-top:0 !important; margin-bottom: auto;">Not reviewed</p>
+				{% endif %}
+			</td>
+			<td class="column-03">
+			<a href="condition-history_condition02">{% if data['condition02Freetext']%}Change{% else %}Review{% endif %}</a>
+			</td>
 		</tr>
 		{% else %}{% endif %}
+
 		{% if data['reportedcondition03']%}
-		<tr>
-			<td><a href="condition-history_condition03">{{ reportedcondition03 }}</a></td>
-			<td>{% if data['condition03Freetext']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition03 }}</th>
+			<td class="column-02">
+				{% if data['condition03Freetext']%}
+				<p style="margin-top:0 !important; margin-bottom: auto;">{{ condition03Freetext }}</p>
+				{% else %}
+				<p style="margin-top:0 !important; margin-bottom: auto;">Not reviewed</p>
+				{% endif %}
+			</td>
+			<td class="column-03">
+			<a href="condition-history_condition03">{% if data['condition03Freetext']%}Change{% else %}Review{% endif %}</a>
+			</td>
 		</tr>
 		{% else %}{% endif %}
+
 		{% if data['reportedcondition04']%}
-		<tr>
-			<td><a href="condition-history_condition04">{{ reportedcondition04 }}</a></td>
-			<td>{% if data['condition04Freetext']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition04 }}</th>
+			<td class="column-02">
+				{% if data['condition04Freetext']%}
+				<p style="margin-top:0 !important; margin-bottom: auto;">{{ condition04Freetext }}</p>
+				{% else %}
+				<p style="margin-top:0 !important; margin-bottom: auto;">Not reviewed</p>
+				{% endif %}
+			</td>
+			<td class="column-03">
+			<a href="condition-history_condition04">{% if data['condition04Freetext']%}Change{% else %}Review{% endif %}</a>
+			</td>
 		</tr>
 		{% else %}{% endif %}
+
 		{% if data['reportedcondition05']%}
-		<tr>
-			<td><a href="condition-history_condition05">{{ reportedcondition05 }}</a></td>
-			<td>{% if data['condition05Freetext']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition05 }}</th>
+			<td class="column-02">
+				{% if data['condition05Freetext']%}
+				<p style="margin-top:0 !important; margin-bottom: auto;">{{ condition05Freetext }}</p>
+				{% else %}
+				<p style="margin-top:0 !important; margin-bottom: auto;">Not reviewed</p>
+				{% endif %}
+			</td>
+			<td class="column-03">
+			<a href="condition-history_condition05">{% if data['condition05Freetext']%}Change{% else %}Review{% endif %}</a>
+			</td>
 		</tr>
 		{% else %}{% endif %}
+
 		{% if data['reportedcondition06']%}
-		<tr>
-			<td><a href="condition-history_condition06">{{ reportedcondition06 }}</a></td>
-			<td>{% if data['condition06Freetext']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition06 }}</th>
+			<td class="column-02">
+				{% if data['condition06Freetext']%}
+				<p style="margin-top:0 !important; margin-bottom: auto;">{{ condition06Freetext }}</p>
+				{% else %}
+				<p style="margin-top:0 !important; margin-bottom: auto;">Not reviewed</p>
+				{% endif %}
+			</td>
+			<td class="column-03">
+			<a href="condition-history_condition06">{% if data['condition06Freetext']%}Change{% else %}Review{% endif %}</a>
+			</td>
 		</tr>
 		{% else %}{% endif %}
+
 		{% if data['reportedcondition07']%}
-		<tr>
-			<td><a href="condition-history_condition07">{{ reportedcondition07 }}</a></td>
-			<td>{% if data['condition07Freetext']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition07 }}</th>
+			<td class="column-02">
+				{% if data['condition07Freetext']%}
+				<p style="margin-top:0 !important; margin-bottom: auto;">{{ condition07Freetext }}</p>
+				{% else %}
+				<p style="margin-top:0 !important; margin-bottom: auto;">Not reviewed</p>
+				{% endif %}
+			</td>
+			<td class="column-03">
+			<a href="condition-history_condition07">{% if data['condition07Freetext']%}Change{% else %}Review{% endif %}</a>
+			</td>
 		</tr>
 		{% else %}{% endif %}
-		{# <tr>
-			<td><a href="condition-history_Risk">Mental health risk factors (optional)</a></td>
-			<td>{% if data['condition07Time']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
-		</tr> #}
 	</tbody>
 </table>
-
-
-{# <table class="task-list">
- 	<tbody>
-		<tr>
-			<td><a href="condition-history_Anxiety">Anxiety & depression</a></td>
-			<td>{% if data['conditionAnxietyTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
-		</tr>
-		<tr>
-			<td><a href="condition-history_Alcohol">Alcohol misuse</a></td>
-			<td>{% if data['conditionAlcoholTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
-		</tr>
-		<tr>
-			<td><a href="condition-history_Urinary">Urinary incontinence</a></td>
-			<td>{% if data['conditionUrinaryTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
-		</tr>
-		<tr>
-			<td><a href="condition-history_Bowel">Bowel incontinence</a></td>
-			<td>{% if data['conditionBowelTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
-		</tr>
-		<tr>
-			<td><a href="condition-history_Risk">Mental health risk</a></td>
-			<td>{% if data['conditionSelfHarmWhen']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
-		</tr>
-	</tbody>
-</table> #}
-
 
 		<p><a href="condition-history_create-list" class="button secondary mb20">Add or remove condition</a></p>
 		<div class="notice mb30"><i class="icon icon-important"><span class="visually-hidden">Warning</span></i>
     <strong class="bold-small">By continuing, you are confirming that you have recorded all conditions mentioned in the questionnaire, medical evidence and your discussion with the claimant.</strong>
-    </div>
+	</div>
 		{% if data['endFTFtrigger'] %}
 		<p class="mt30"><a href="miniReview" class="button">Save and continue</a></p>
 		{% else %}
 		<p class="mt30"><a href="wca-index" class="button">Save and return to main menu</a></p>
 {% endif %}
-
-  </div>
-</div>
 
 {% endblock %}
