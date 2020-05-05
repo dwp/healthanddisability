@@ -8,6 +8,10 @@
 <style type="text/css">
 .list-row .remove-list-item-vertical{
 top:35px !important;}
+.form-control{
+float:left !important;}
+.remove-condition
+{display:inline-block; width:25%; float:left; text-align:right;}
 </style>
 
 <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
@@ -92,20 +96,25 @@ top:35px !important;}
                   <div class="form-group">
                   <label class="form-label form-label-large" for="reportedcondition01">Name of medical condition</label>
                   <textarea class="form-control form-control-3-4 mb0" name="reportedcondition" id="reportedcondition01" rows="1">{{ reportedcondition01 }}</textarea>
+                  <a href="removeCondition" class="remove-condition">Remove</a>
                   </div>
+
 		            {% else %}{% endif %}
 
               	{% if data['reportedcondition02']%}
                   <div class="form-group">
                   <label class="form-label form-label-large" for="reportedcondition02">Name of medical condition</label>
                   <textarea class="form-control form-control-3-4 mb0" name="reportedcondition" id="reportedcondition02" rows="1">{{ reportedcondition02 }}</textarea>
+                  <a href="removeCondition" class="remove-condition">Remove</a>
                   </div>
+                  
 		            {% else %}{% endif %}
 
               	{% if data['reportedcondition03']%}
                   <div class="form-group">
                   <label class="form-label form-label-large" for="reportedcondition03">Name of medical condition</label>
                   <textarea class="form-control form-control-3-4 mb0" name="reportedcondition" id="reportedcondition03" rows="1">{{ reportedcondition03 }}</textarea>
+                  <a href="removeCondition" class="remove-condition">Remove</a>
                   </div>
 		            {% else %}{% endif %}
 
@@ -113,6 +122,7 @@ top:35px !important;}
                   <div class="form-group">
                   <label class="form-label form-label-large" for="reportedcondition04">Name of medical condition</label>
                   <textarea class="form-control form-control-3-4 mb0" name="reportedcondition" id="reportedcondition04" rows="1">{{ reportedcondition04 }}</textarea>
+                  <a href="removeCondition" class="remove-condition">Remove</a>
                   </div>
 		            {% else %}{% endif %}
 
@@ -120,6 +130,7 @@ top:35px !important;}
                   <div class="form-group">
                   <label class="form-label form-label-large" for="reportedcondition05">Name of medical condition</label>
                   <textarea class="form-control form-control-3-4 mb0" name="reportedcondition" id="reportedcondition05" rows="1">{{ reportedcondition05 }}</textarea>
+                  <a href="removeCondition" class="remove-condition">Remove</a>
                   </div>
 		            {% else %}{% endif %}
 
@@ -127,6 +138,7 @@ top:35px !important;}
                   <div class="form-group">
                   <label class="form-label form-label-large" for="reportedcondition06">Name of medical condition</label>
                   <textarea class="form-control form-control-3-4 mb0" name="reportedcondition" id="reportedcondition06" rows="1">{{ reportedcondition06 }}</textarea>
+                  <a href="removeCondition" class="remove-condition">Remove</a>
                   </div>
 		            {% else %}{% endif %}
 
@@ -134,6 +146,7 @@ top:35px !important;}
                   <div class="form-group">
                   <label class="form-label form-label-large" for="reportedcondition07">Name of medical condition</label>
                   <textarea class="form-control form-control-3-4 mb0" name="reportedcondition" id="reportedcondition07" rows="1">{{ reportedcondition07 }}</textarea>
+                  <a href="removeCondition" class="remove-condition">Remove</a>
                   </div>
 		            {% else %}{% endif %}
 

@@ -8,93 +8,159 @@
 .task-list-item:first-child{
 border-top: 1px solid #bfc1c3;
 }
+table th, table td{border-bottom:none !important;}
+.column-01{width:25%; vertical-align:top;}
+.column-02{width:60%;}
+.column-03{width:15%; text-align:right; padding-right:1.5em;}
+tr.row{border-bottom:1px solid #bfc1c3;}
+table.section{margin-bottom:40px;}
+.mental-health th, .mental-health td{padding-top:0;}
+.notice strong{margin-right:25px;}
 </style>
+
 
   <p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
 
 <p class="caption-large mb0">Condition history</p>
 <h1 class="heading-large mt10">Review conditions</h1>
 
-<div class="grid-row">
-  <div class="column-two-thirds">
-
-<table class="task-list">
- 	<tbody>
+<table class="section">
+	<tbody>
 		{% if data['reportedcondition01']%}
-		<tr style="border-top: 1px solid #bfc1c3;">
-			<td><a href="condition-history_condition01">{{ reportedcondition01 }}</a></td>
-			<td>{% if data['condition01Time']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition01 }}</th>
+			<td class="column-02">
+				{% if data['condition01Time']%}
+				{% if data['condition01Time']%}<p style="margin-top:0 !important; margin-bottom:.5em;">Onset and progression:<br>{{ condition01Time }}</p>{% endif %}
+				{% if data['condition01Symptoms']%}<p style="margin-bottom:.5em;">Symptoms:<br>{{ condition01Symptoms }}</p>{% endif %}
+				{% if data['condition01Investigations']%}<p style="margin-bottom:.5em;">Investigations and medical input:<br>{{ condition01Investigations }}</p>{% endif %}
+				{% if data['condition01Impact']%}<p style="margin-bottom: auto;">Impact on function:<br>{{ condition01Impact }}</p>{% endif %}
+				{% else %}
+				<p style="margin-top:0 !important; margin-bottom: auto;">Not reviewed</p>
+				{% endif %}
+			</td>
+			<td class="column-03">
+			<a href="condition-history_condition01">{% if data['condition01Time']%}Change{% else %}Review{% endif %}</a>
+			</td>
 		</tr>
 		{% else %}{% endif %}
+
 		{% if data['reportedcondition02']%}
-		<tr>
-			<td><a href="condition-history_condition02">{{ reportedcondition02 }}</a></td>
-			<td>{% if data['condition02Time']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition02 }}</th>
+			<td class="column-02">
+				{% if data['condition02Time']%}
+				{% if data['condition02Time']%}<p style="margin-top:0 !important; margin-bottom:.5em;">Onset and progression:<br>{{ condition02Time }}</p>{% endif %}
+				{% if data['condition02Symptoms']%}<p style="margin-bottom:.5em;">Symptoms:<br>{{ condition02Symptoms }}</p>{% endif %}
+				{% if data['condition02Investigations']%}<p style="margin-bottom:.5em;">Investigations and medical input:<br>{{ condition02Investigations }}</p>{% endif %}
+				{% if data['condition02Impact']%}<p style="margin-bottom: auto;">Impact on function:<br>{{ condition02Impact }}</p>{% endif %}
+				{% else %}
+				<p style="margin-top:0 !important; margin-bottom: auto;">Not reviewed</p>
+				{% endif %}
+			</td>
+			<td class="column-03">
+			<a href="condition-history_condition02">{% if data['condition02Time']%}Change{% else %}Review{% endif %}</a>
+			</td>
 		</tr>
 		{% else %}{% endif %}
+
 		{% if data['reportedcondition03']%}
-		<tr>
-			<td><a href="condition-history_condition03">{{ reportedcondition03 }}</a></td>
-			<td>{% if data['condition03Time']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition03 }}</th>
+			<td class="column-02">
+				{% if data['condition03Time']%}
+				{% if data['condition03Time']%}<p style="margin-top:0 !important; margin-bottom:.5em;">Onset and progression:<br>{{ condition03Time }}</p>{% endif %}
+				{% if data['condition03Symptoms']%}<p style="margin-bottom:.5em;">Symptoms:<br>{{ condition03Symptoms }}</p>{% endif %}
+				{% if data['condition03Investigations']%}<p style="margin-bottom:.5em;">Investigations and medical input:<br>{{ condition03Investigations }}</p>{% endif %}
+				{% if data['condition03Impact']%}<p style="margin-bottom: auto;">Impact on function:<br>{{ condition03Impact }}</p>{% endif %}
+				{% else %}
+				<p style="margin-top:0 !important; margin-bottom: auto;">Not reviewed</p>
+				{% endif %}
+			</td>
+			<td class="column-03">
+			<a href="condition-history_condition03">{% if data['condition03Time']%}Change{% else %}Review{% endif %}</a>
+			</td>
 		</tr>
 		{% else %}{% endif %}
+
 		{% if data['reportedcondition04']%}
-		<tr>
-			<td><a href="condition-history_condition04">{{ reportedcondition04 }}</a></td>
-			<td>{% if data['condition04Time']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition04 }}</th>
+			<td class="column-02">
+				{% if data['condition04Time']%}
+				{% if data['condition04Time']%}<p style="margin-top:0 !important; margin-bottom:.5em;">Onset and progression:<br>{{ condition04Time }}</p>{% endif %}
+				{% if data['condition04Symptoms']%}<p style="margin-bottom:.5em;">Symptoms:<br>{{ condition04Symptoms }}</p>{% endif %}
+				{% if data['condition04Investigations']%}<p style="margin-bottom:.5em;">Investigations and medical input:<br>{{ condition04Investigations }}</p>{% endif %}
+				{% if data['condition04Impact']%}<p style="margin-bottom: auto;">Impact on function:<br>{{ condition04Impact }}</p>{% endif %}
+				{% else %}
+				<p style="margin-top:0 !important; margin-bottom: auto;">Not reviewed</p>
+				{% endif %}
+			</td>
+			<td class="column-03">
+			<a href="condition-history_condition04">{% if data['condition04Time']%}Change{% else %}Review{% endif %}</a>
+			</td>
 		</tr>
 		{% else %}{% endif %}
+
 		{% if data['reportedcondition05']%}
-		<tr>
-			<td><a href="condition-history_condition05">{{ reportedcondition05 }}</a></td>
-			<td>{% if data['condition05Time']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition05 }}</th>
+			<td class="column-02">
+				{% if data['condition05Time']%}
+				{% if data['condition05Time']%}<p style="margin-top:0 !important; margin-bottom:.5em;">Onset and progression:<br>{{ condition05Time }}</p>{% endif %}
+				{% if data['condition05Symptoms']%}<p style="margin-bottom:.5em;">Symptoms:<br>{{ condition05Symptoms }}</p>{% endif %}
+				{% if data['condition05Investigations']%}<p style="margin-bottom:.5em;">Investigations and medical input:<br>{{ condition05Investigations }}</p>{% endif %}
+				{% if data['condition05Impact']%}<p style="margin-bottom: auto;">Impact on function:<br>{{ condition05Impact }}</p>{% endif %}
+				{% else %}
+				<p style="margin-top:0 !important; margin-bottom: auto;">Not reviewed</p>
+				{% endif %}
+			</td>
+			<td class="column-03">
+			<a href="condition-history_condition05">{% if data['condition05Time']%}Change{% else %}Review{% endif %}</a>
+			</td>
 		</tr>
 		{% else %}{% endif %}
+
 		{% if data['reportedcondition06']%}
-		<tr>
-			<td><a href="condition-history_condition06">{{ reportedcondition06 }}</a></td>
-			<td>{% if data['condition06Time']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition06 }}</th>
+			<td class="column-02">
+				{% if data['condition06Time']%}
+				{% if data['condition06Time']%}<p style="margin-top:0 !important; margin-bottom:.5em;">Onset and progression:<br>{{ condition06Time }}</p>{% endif %}
+				{% if data['condition06Symptoms']%}<p style="margin-bottom:.5em;">Symptoms:<br>{{ condition06Symptoms }}</p>{% endif %}
+				{% if data['condition06Investigations']%}<p style="margin-bottom:.5em;">Investigations and medical input:<br>{{ condition06Investigations }}</p>{% endif %}
+				{% if data['condition06Impact']%}<p style="margin-bottom: auto;">Impact on function:<br>{{ condition06Impact }}</p>{% endif %}
+				{% else %}
+				<p style="margin-top:0 !important; margin-bottom: auto;">Not reviewed</p>
+				{% endif %}
+			</td>
+			<td class="column-03">
+			<a href="condition-history_condition06">{% if data['condition06Time']%}Change{% else %}Review{% endif %}</a>
+			</td>
 		</tr>
 		{% else %}{% endif %}
+
 		{% if data['reportedcondition07']%}
-		<tr>
-			<td><a href="condition-history_condition07">{{ reportedcondition07 }}</a></td>
-			<td>{% if data['condition07Time']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition07 }}</th>
+			<td class="column-02">
+				{% if data['condition07Time']%}
+				{% if data['condition07Time']%}<p style="margin-top:0 !important; margin-bottom:.5em;">Onset and progression:<br>{{ condition07Time }}</p>{% endif %}
+				{% if data['condition07Symptoms']%}<p style="margin-bottom:.5em;">Symptoms:<br>{{ condition07Symptoms }}</p>{% endif %}
+				{% if data['condition07Investigations']%}<p style="margin-bottom:.5em;">Investigations and medical input:<br>{{ condition07Investigations }}</p>{% endif %}
+				{% if data['condition07Impact']%}<p style="margin-bottom: auto;">Impact on function:<br>{{ condition07Impact }}</p>{% endif %}
+				{% else %}
+				<p style="margin-top:0 !important; margin-bottom: auto;">Not reviewed</p>
+				{% endif %}
+			</td>
+			<td class="column-03">
+			<a href="condition-history_condition07">{% if data['condition07Time']%}Change{% else %}Review{% endif %}</a>
+			</td>
 		</tr>
 		{% else %}{% endif %}
-		{# <tr>
-			<td><a href="condition-history_Risk">Mental health risk factors (optional)</a></td>
-			<td>{% if data['condition07Time']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
-		</tr> #}
+
 	</tbody>
 </table>
-
-
-{# <table class="task-list">
- 	<tbody>
-		<tr>
-			<td><a href="condition-history_Anxiety">Anxiety & depression</a></td>
-			<td>{% if data['conditionAnxietyTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
-		</tr>
-		<tr>
-			<td><a href="condition-history_Alcohol">Alcohol misuse</a></td>
-			<td>{% if data['conditionAlcoholTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
-		</tr>
-		<tr>
-			<td><a href="condition-history_Urinary">Urinary incontinence</a></td>
-			<td>{% if data['conditionUrinaryTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
-		</tr>
-		<tr>
-			<td><a href="condition-history_Bowel">Bowel incontinence</a></td>
-			<td>{% if data['conditionBowelTime']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
-		</tr>
-		<tr>
-			<td><a href="condition-history_Risk">Mental health risk</a></td>
-			<td>{% if data['conditionSelfHarmWhen']%}<span class="task-completed">Reviewed</span>{% endif %}</td>
-		</tr>
-	</tbody>
-</table> #}
-
 
 		<p><a href="condition-history_create-list" class="button secondary mb20">Add or remove condition</a></p>
 		<div class="notice mb30"><i class="icon icon-important"><span class="visually-hidden">Warning</span></i>
@@ -105,8 +171,5 @@ border-top: 1px solid #bfc1c3;
 		{% else %}
 		<p class="mt30"><a href="wca-index" class="button">Save and return to main menu</a></p>
 {% endif %}
-
-  </div>
-</div>
 
 {% endblock %}

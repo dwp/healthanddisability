@@ -1,0 +1,42 @@
+{% extends path+"/scenario_prompts-typical_01b/_layout-case-simple-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+<p class="caption-large" class="mb0">Condition history</p>
+
+<form action="condition-history_create-list" method="post">
+
+<div class="form-group">
+  <fieldset class="inline">
+
+    <legend>
+      <h1 class="heading-large mt10">
+        Remove {{ reportedcondition01 }} from list?
+      </h1>
+      <p>Removing {{ reportedcondition01 }} will also delete any evidence you have recorded against this condition.</p>
+    </legend>
+
+    <div class="multiple-choice">
+      <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+      <label for="radio-inline-1">Yes</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+      <label for="radio-inline-2">No</label>
+    </div>
+
+  </fieldset>
+</div>
+
+<p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+</form>
+
+
+
+{% endblock %}
