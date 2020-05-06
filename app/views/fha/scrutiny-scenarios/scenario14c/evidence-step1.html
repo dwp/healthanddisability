@@ -1,0 +1,109 @@
+{% extends path+"/_layout-case-simple14c.html" %}
+
+
+{% block actioncolumn %}
+
+ <!-- <p class="returnRef"><a href="/{{path }}/scenario11/referrals-fme" class="link-back">Return to case list</a></p> -->
+ <div class="caseStatus">
+	 <h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+
+
+</div>
+{% endblock %}
+
+{% block citizen_detail %}
+Harvey Chamberlain
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+
+
+
+
+
+
+    <div class="column-full">
+
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+
+
+
+
+
+
+    	<h1 class="heading-large">Request evidence</h1>
+
+
+		<div class="evidence-requests mt30">
+
+
+			<form action="/{{path }}/scenario11/evidence-step3" method="POST" class="form">
+
+
+			<fieldset>
+
+							  <legend class="heading-medium mb10">
+
+								If medical evidence is not returned, how would you like to progress this case?
+
+							  </legend>
+
+
+
+
+										<div class="multiple-choice">
+											<input id="pbachoice" type="radio" name="evidencePath" value="ev-pba">
+											<label for="pbachoice">Further review required</label>
+										</div>
+
+
+										<div class="multiple-choice">
+											<input id="ftfchoice" type="radio" name="evidencePath" value="ev-ftf">
+											<label for="ftfchoice">Call for an assessment</label>
+										</div>
+
+							</fieldset>
+
+
+
+							<p class="mt30"><input type="submit" class="button" value="Save and continue"></p>
+				</form>
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
