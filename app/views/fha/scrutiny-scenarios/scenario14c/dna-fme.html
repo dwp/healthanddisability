@@ -1,0 +1,61 @@
+{% extends path+"/_layout-caselist.html" %}
+ 
+
+{% block caselist_content %}
+
+            <h2 class="heading-medium mt0"><span class="heading-xlarge">12</span><br/>Ready for review</h2>
+            
+            
+            
+            
+            <hr />
+
+
+<div class="filter-mimic">
+
+
+          <h3 class="heading-small mt0">Filter by:</h3>
+
+		  <div class="filter-choice">
+                <a href="/{{path }}/scenario2/referrals-fme">All <span>(12)</span></a>
+              </div>
+          <div class="filter-choice">
+                <a href="/{{path }}/scenario2/new-fme">Ready for review <span>(10)</span></a>
+              </div>
+          <div class="filter-choice">
+              <a href="/{{path }}/scenario2/dna-fme" class="selected">DNA rereferals <span>(1)</span></a>
+            </div>
+           <div class="filter-choice">
+              <a href="/{{path }}/scenario2/ocp-fme">New evidence recorded <span>(1)</span></a>
+            </div> 
+
+     </div>
+
+              <table class="referrals-layout">
+
+                <thead>
+                  <tr>
+                    <th>Details</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                
+
+                                <tr>
+                  <td><a href="#"><span class="visually-hidden">Name</span>Douglas Smith</a><span class="text-secondary block"><span class="visually-hidden">Nino</span>YY 41 54 60 Z</span></td>
+                  <td>DNA rereferral</td>
+                  
+                </tr>
+                             
+
+                </tbody>
+
+              </table>
+          
+
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,150 @@
+{% extends path+"/_layout-case-simple14c.html" %}
+
+
+{% block actioncolumn %}
+
+ <!-- <p class="returnRef"><a href="/{{path }}/scenario6/referrals-fme" class="link-back">Return to case list</a></p> -->
+
+ <div class="caseStatus">
+
+
+
+
+{% if data['pbachoice']=='no'%}
+
+	 <h2 class="main-status"><span>Current case status</span>Appointment booked</h2>
+
+
+	 {% elif data['pbachoice']=='yes'%}
+
+	 <h2 class="main-status"><span>Current case status</span>Paper based review</h2>
+	 <!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/not-testing" class="button">Start assessment</a></h3>-->
+
+
+	 {% else %}
+
+
+
+{% if data['evidencePath']=='ev-ftf'%}
+
+	<h2 class="main-status"><span>Current case status</span>Ready to book</h2>
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+
+	{% endif %}
+
+
+	{% elif data['evidencePath']=='ev-pba'%}
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+		<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+		<!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal" class="button">Make recommendation</a></h3> -->
+		{% else %}
+		<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
+	{% endif %}
+
+
+	{% else %}
+
+	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+	<!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal" class="button">Make recommendation</a></h3>-->
+
+
+
+{% endif %}
+
+
+{% endif %}
+
+
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Harvey Chamberlain
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+
+
+
+
+
+
+    <div class="column-full">
+
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+
+    	<form action="/{{path }}/scenario11/withdraw-case3" method="POST" class="form">
+
+    	<h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Withdraw referral</h1>
+
+
+
+
+
+		<div class="evidence-requests mt30">
+
+
+			<h2 class="heading-small mb5 mt0">Reason:</h2>
+			<div class="Infocapture">
+			{% if data['withdrawReason']=='ClaimantDied'%}
+				<p>Claimant has died</p>
+				{% elif data['withdrawReason']=='ClaimantWork'%}
+				<p>Claimant has returned to work</p>
+				{% elif data['withdrawReason']=='UCB'%}
+				<p>Unacceptable claimant behaviour</p>
+				<h3 class="heading-small">Details:</h3>
+				<p>{{ucbDetailsText}}</p>
+				{% elif data['withdrawReason']=='other'%}
+				<p>{{otherTitle}}</p>
+				<h3 class="heading-small">Details:</h3>
+				<p>{{otherDetailsText}}</p>
+			{% endif %}
+			</div>
+
+
+
+				<p class="mt30"><input type="submit" class="button" value="Confirm withdrawal"></p>
+
+		</div>
+
+    	</form>
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

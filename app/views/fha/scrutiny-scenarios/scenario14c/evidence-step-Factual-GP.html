@@ -1,0 +1,322 @@
+{% extends path+"/_layout-case-simple14c.html" %}
+
+
+{% block actioncolumn %}
+
+ <!--<p class="returnRef"><a href="/{{path }}/scenario11/referrals-fme" class="link-back">Return to case list</a></p>-->
+ <div class="caseStatus">
+	 <h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+
+
+</div>
+{% endblock %}
+
+{% block citizen_detail %}
+Harvey Chamberlain
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+
+
+
+
+
+
+    <div class="column-full">
+
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+
+
+
+
+
+
+    	<h1 class="heading-large"><span class="heading-secondary">Factual report request</span>GP view</h1>
+
+
+		<div class="evidence-requests mt30">
+
+
+
+			<form action="/{{path }}/scenario11/evidence-step-print" method="POST" class="form">
+
+
+			{% if frr.request.info1 or checked('frrDetail', 'frr-Continence')%}
+
+
+						<fieldset class="inline">
+
+
+
+
+							  <legend class="heading-medium mb10">
+
+										Does your patient have bladder or bowel incontinence?
+
+							  </legend>
+
+
+									<div class="multiple-choice" data-target="yesContinence">
+											<input id="gpName" type="radio" name="personChoice" value="name-gp">
+											<label for="gpName">Yes</label>
+										</div>
+
+										<div class="multiple-choice">
+											<input id="cName" type="radio" name="personChoice" value="name-consultant">
+											<label for="cName">No</label>
+										</div>
+
+							</fieldset>
+							<div class="panel js-hidden mt5" id="yesContinence">
+
+											<div class="form-group">
+
+												<fieldset>
+
+													<legend class="heading-small mb10">What is the frequency of episodes:</legend>
+
+													<div class="multiple-choice">
+														<input id="weekly" type="checkbox" name="activeContinence" value="weekly">
+														<label for="weekly">At least once a week</label>
+												    </div>
+
+												    <div class="multiple-choice">
+														<input id="monthly" type="checkbox" name="activeContinence" value="monthly">
+														<label for="monthly">At least once a month</label>
+												    </div>
+
+												    <div class="multiple-choice">
+														<input id="Unknown" type="checkbox" name="activeContinence" value="Unknown">
+														<label for="Unknown">Less frequently / Unknown</label>
+												    </div>
+
+												</fieldset>
+
+											</div>
+
+											<div class="form-group">
+												<label for="diagnosisContintence" class="form-label-bold">Diagnosis:</label>
+												<textarea id="diagnosisContintence" name="continenceDiagnosis" class="form-control form-control-3-4" rows="5"></textarea>
+											</div>
+
+
+											<div class="form-group">
+
+												<fieldset>
+
+													<legend class="heading-small mb10">Does the patient use incontinence pads?</legend>
+
+													<div class="multiple-choice" data-target="padsOpen">
+														<input id="padsYes" type="radio" name="padsInfo" value="padsYes">
+														<label for="padsYes">Yes</label>
+												    </div>
+
+
+												    <div class="panel js-hidden mt5" id="padsOpen">
+
+														<div class="form-group">
+
+															<fieldset>
+
+																<legend class="heading-small mb10">Are the pads effective at controlling the leakage?</legend>
+
+																<div class="multiple-choice">
+																	<input id="padsYesopen" type="radio" name="activeContinenceExtra" value="padsYesopen">
+																	<label for="padsYesopen">Yes</label>
+															    </div>
+
+															    <div class="multiple-choice">
+																	<input id="padsNoopen" type="radio" name="activeContinenceExtra" value="padsNoopen">
+																	<label for="padsNoopen">No</label>
+															    </div>
+
+															</fieldset>
+
+														</div>
+												    </div>
+
+
+
+
+												    <div class="multiple-choice">
+														<input id="padsNo" type="radio" name="padsInfo" value="padsNo">
+														<label for="padsNo">No</label>
+												    </div>
+
+												    <div class="multiple-choice">
+														<input id="UnknownPads" type="radio" name="padsInfo" value="UnknownPads">
+														<label for="UnknownPads">Not known</label>
+												    </div>
+
+												</fieldset>
+
+											</div>
+
+
+
+
+								</div>
+								<!-- / panel -->
+
+
+						<hr>
+
+			{% endif %}
+
+
+			{% if frr.request.info2 or checked('frrDetail', 'frr-Consciousness')%}
+
+
+			<h2 class="heading-medium mt0">Consciousness</h2>
+
+			<h3 class="heading-small">Information requested:</h3>
+
+						<ul class="list-bullet">
+							<li>Details of consciousness in waking hours</li>
+							<li>Frequency of epsiodes</li>
+							<li>Diagnosis</li>
+						</ul>
+
+
+						<p class="mt20"><a href="#" class="secondary-invert">Add another question</a></p>
+
+						<hr>
+
+			{% endif %}
+
+			{% if frr.request.info3 or checked('frrDetail', 'frr-MentalHealth')%}
+
+
+			<h2 class="heading-medium mt0">Mental health</h2>
+
+			<h3 class="heading-small">Information requested:</h3>
+
+						<ul class="list-bullet">
+							<li>Details of consciousness in waking hours</li>
+							<li>Frequency of epsiodes</li>
+							<li>Diagnosis</li>
+						</ul>
+
+
+						<p class="mt20"><a href="#" class="secondary-invert">Add another question</a></p>
+
+						<hr>
+
+			{% endif %}
+
+			{% if frr.request.info4 or checked('frrDetail', 'frr-Cancer')%}
+
+
+			<h2 class="heading-medium mt0">Cancer</h2>
+
+			<h3 class="heading-small">Information requested:</h3>
+
+						<ul class="list-bullet">
+							<li>Diagnosis &ndash; historical or current</li>
+							<li>Date of diagnosis</li>
+							<li>Type of cancer</li>
+							<li>Type of treatment</li>
+							<li>Dates of treatment</li>
+							<li>Treatment recovery</li>
+							<li>Side effects of treatment</li>
+						</ul>
+
+
+						<p class="mt20"><a href="#" class="secondary-invert">Add another question</a></p>
+
+						<hr>
+
+			{% endif %}
+
+			{% if frr.request.info5 or checked('frrDetail', 'frr-Surgery')%}
+
+
+			<h2 class="heading-medium mt0">Surgery</h2>
+
+			<h3 class="heading-small">Information requested:</h3>
+
+						<ul class="list-bullet">
+							<li>Surgery details &ndash; historical or future</li>
+							<li>Type of surgery</li>
+							<li>Date of surgery</li>
+							<li>Hospital admission</li>
+						</ul>
+
+
+						<p class="mt20"><a href="#" class="secondary-invert">Add another question</a></p>
+
+						<hr>
+
+			{% endif %}
+
+			{% if frr.request.info6 or checked('frrDetail', 'frr-Vision')%}
+
+
+			<h2 class="heading-medium mt0">Vision</h2>
+
+			<h3 class="heading-small">Information requested:</h3>
+
+						<ul class="list-bullet">
+							<li>Does patient have vision problems</li>
+							<li>Diagnosis</li>
+							<li>Can patient read braille</li>
+						</ul>
+
+
+						<p class="mt20"><a href="#" class="secondary-invert">Add another question</a></p>
+
+						<hr>
+
+			{% endif %}
+
+
+
+
+
+
+				<p class="mt30"><input type="submit" class="button" value="Save and continue"></p>
+
+
+
+
+
+				</form>
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

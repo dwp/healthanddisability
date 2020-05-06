@@ -1,0 +1,135 @@
+{% extends path+"/_layout-case-simple14c.html" %}
+
+
+{% block actioncolumn %}
+
+  <p class="returnRef"><a href="#" class="link-back">Return to case list</a></p>
+
+ <div class="caseStatus">
+
+
+
+   	<h2 class="main-status"><span>Current case status</span>New referral</h2>
+   	<h3 class="primary-action"><span>Suggested case action</span><a href="#" class="button">Issue UC50</a></h3>
+
+
+
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Harvey Chamberlain
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+
+<div class="container">
+  <div class="grid-row">
+    <div class="column-full">
+
+    {# macro #}
+  {{ nav.scenario_tabs("details-fme",1,path1, customer._id) }}
+
+   <h1 class="heading-large">
+  	Medical conditions</h1>
+
+<br>
+
+      <div class="portal-display">
+
+
+
+      	 <div class="grid-row">
+
+    		  	<div class="column-two-thirds">
+
+
+
+      <div class="currentPrimary">
+
+
+
+        <div class="pCon">
+          <h2 class="heading-small">
+            Current medical conditions
+          </h2>
+
+          <table>
+
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Since</th>
+                <th>Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Other peripheral nerve injury
+                  <!-- <span class="source">Source: Claimant</span> -->
+                </td>
+                <td>12 January 2020</td>
+                <td>GP</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </div>
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+				<p class="view-all"><a href="/{{path }}/scenario11/not-testing" class="button-secondary">Add or edit medical conditions</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  	 </div>
+
+
+
+
+  </div>
+  </div>
+  </div>
+  </div>
+
+<!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

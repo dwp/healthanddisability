@@ -1,0 +1,167 @@
+{% extends path+"/_layout-case-simple14c.html" %}
+
+
+{% block actioncolumn %}
+
+<p class="returnRef"><a href="javascript: history.go(-1)" class="link-back">Return to case list</a></p>
+
+ <div class="caseStatus">
+
+	<p class="main-status"><span>Current case status</span>Ready for assessment</p>
+
+	<p class="primary-action"><span>Suggested case action</span><a href="#" class="button">Start assessment review</a></p>
+
+ </div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Kenneth Robertson
+{% endblock %}
+
+{% block citizen_content %}
+
+
+{% if data['evidencePath']=='ev-ftf'%}
+
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+
+
+		{% if data['pbachoice']%}
+
+
+	{% else %}
+	<div class="panel panel-info panel-instruction fme-warning"><h2 class="heading-small">New evidence recorded</h2>
+	   <ul class="numeric" data-id="">
+	       <li>
+	         <span class="circle circle-step circle-white">1</span>
+	         <h2 class="govuk-heading-m">Roberto's case should be reviewed before making a recommendation</h2>
+	       </li>
+
+	       <li>
+	         <span class="circle circle-step circle-white">2</span>
+	         <h2 class="govuk-heading-m"><a href="/{{path }}/scenario2/recordFMEdecision">Make recommendation</a></h2>
+	       </li>
+	     </ul>
+	</div>
+	{% endif %}
+
+
+
+
+	{% endif %}
+
+
+	{% endif %}
+
+
+
+
+<div class="container">
+  <div class="grid-row">
+
+    <div class="column-full">
+
+    {# macro #}
+  {{ nav.scenario_tabs("details-fme",1,path1, customer._id) }}
+
+
+
+<div class="back-navigation"><a href="javascript: history.go(-1)" class="link-back">Back</a></div>
+
+
+  <h1 class="heading-large">
+  	Medical conditions</h1>
+
+
+  <div class="portal-display">
+
+
+
+  	 <div class="grid-row">
+
+		  	<div class="column-full">
+
+
+					<table class="medical-list">
+						<caption class="visually-hidden">Medical conditions list</caption>
+
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Since</th>
+								<th>Source</th>
+							</tr>
+						</thead>
+
+
+						<tbody>
+
+
+						<tr>
+							<td>Glucose 6 phosphate dehydrogenase (G6PD) deficiency</td>
+							<td>12 June 1999</td>
+							<td>Claimant</td>
+						</tr>
+
+						<tr>
+							<td>Glucose 6 phosphate dehydrogenase (G6PD) deficiency</td>
+							<td>12 June 1999</td>
+							<td>Claimant</td>
+						</tr>
+
+						<tr>
+							<td>Glucose 6 phosphate dehydrogenase (G6PD) deficiency</td>
+							<td>12 June 1999</td>
+							<td>Claimant</td>
+						</tr>
+
+						<tr>
+							<td>Glucose 6 phosphate dehydrogenase (G6PD) deficiency</td>
+							<td>12 June 1999</td>
+							<td>Claimant</td>
+						</tr>
+
+						<tr>
+							<td>Glucose 6 phosphate dehydrogenase (G6PD) deficiency</td>
+							<td>12 June 1999</td>
+							<td>Claimant</td>
+						</tr>
+
+						<tr>
+							<td>Glucose 6 phosphate dehydrogenase (G6PD) deficiency</td>
+							<td>12 June 1999</td>
+							<td>Claimant</td>
+						</tr>
+
+
+
+						</tbody>
+					</table>
+
+					<p class="view-all"><a href="/{{path }}/scenario4/not-testing" class="secondary-invert">Add or edit a medical condition</a></p>
+
+
+
+
+		  	</div>
+
+
+
+
+  </div>
+
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

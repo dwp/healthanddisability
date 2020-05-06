@@ -1,0 +1,188 @@
+{% extends path+"/_layout-case-simple14c.html" %}
+
+
+{% block actioncolumn %}
+
+
+ <div class="caseStatus">
+
+	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+
+
+ </div>
+
+<!--<div class="secondary-nav-actions">
+
+	<ul>
+		<li><a href="#">Withdraw case</a></li>
+		<li><a href="#">Close case</a></li>
+		<li><a href="#">Delete case</a></li>
+	</ul>
+
+ </div> -->
+
+{% endblock %}
+
+{% block citizen_detail %}
+Harvey Chamberlain
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+
+
+
+
+
+
+    <div class="column-full">
+
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+
+
+
+    	<h1 class="heading-large">Record evidence</h1>
+
+
+
+
+
+		<div class="evidence-requests mt30">
+
+
+			<form action="/{{path }}/scenario11/evidence-portal" method="POST" class="form">
+
+
+					<div class="form-group">
+						<fieldset>
+
+							  <legend class="heading-medium mb5">Choose the evidence you want to record:</legend>
+
+
+										<div class="multiple-choice">
+											<input id="other" type="checkbox" name="sourceTele" value="other">
+											<label for="other">Sick note</label>
+										</div>
+
+										<div class="multiple-choice">
+											<input id="otherev2" type="checkbox" name="sourceTele" value="otherev2">
+											<label for="otherev2">Prescription</label>
+										</div>
+
+										<div class="multiple-choice">
+											<input id="otherev3" type="checkbox" name="sourceTele" value="otherev3">
+											<label for="otherev3">Incident report</label>
+										</div>
+
+										<div class="multiple-choice">
+											<input id="otherev4" type="checkbox" name="sourceTele" value="otherev4">
+											<label for="otherev4">Medication</label>
+										</div>
+
+							</fieldset>
+						</div>
+
+
+						<div class="form-group">
+						<fieldset>
+
+							  <legend class="heading-medium mb10">What date was the evidence received? </legend>
+
+
+									<div class="multiple-choice">
+											<input id="gpName" type="radio" name="personChoice" value="name-gp">
+											<label for="gpName">Today</label>
+										</div>
+
+
+
+										<div class="multiple-choice">
+											<input id="cName" type="radio" name="personChoice" value="name-consultant">
+											<label for="cName">Yesterday</label>
+										</div>
+
+										<div class="multiple-choice" data-target="otherEv">
+											<input id="otherName" type="radio" name="personChoice" value="other-name">
+											<label for="otherName">Other</label>
+										</div>
+
+
+										<div class="panel js-hidden" id="otherEv">
+
+											<fieldset>
+							                <legend class="heading-small mb5">Date received</legend>
+							                <span class="form-hint">For example, 31 3 1980</span>
+								                <div class="form-date">
+
+									                <div class="form-group form-group-month">
+										                <label class="form-label" for="field-5">
+										                Day
+										                </label>
+										                <input class="form-control" id="field-5" name="newillnessday" type="number" pattern="[0-9]*" min="0" max="12">
+									                </div>
+									                <div class="form-group form-group-month">
+										                <label class="form-label" for="field-6">
+										                Month
+										                </label>
+										                <input class="form-control" id="field-6" name="newillnessmonth" type="number" pattern="[0-9]*" min="0" max="12">
+									                </div>
+									                <div class="form-group form-group-year">
+										                <label class="form-label" for="field-7">
+										                Year
+										                </label>
+										                <input class="form-control" id="field-7" name="newillnessyear" type="number" pattern="[0-9]*" min="0" max="2018">
+									                </div>
+								                </div>
+							            </fieldset>
+
+										</div>
+
+
+							</fieldset>
+						</div>
+
+
+				<p class="mt30"><input type="submit" class="button" value="Save and continue"></p>
+
+
+
+
+				</form>
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
