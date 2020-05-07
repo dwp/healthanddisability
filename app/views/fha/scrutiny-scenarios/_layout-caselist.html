@@ -1,60 +1,45 @@
-{% extends path+"/_layout.html" %} 
+{% extends path+"/_layoutv2.html" %} 
+
+{% block mainNav %}
+<nav class="navigation-secondary">
+      <ul>
+
+        <li>
+          <a href="dashboard">Case list</a>
+        </li>
+
+        <li>
+          <a href="/{{path }}/scenario/not-testing.html" class="">Manage centres</a>
+        </li>
+
+        <li>
+          <a href="/{{path }}/scenario/not-testing.html" class="">Capacity management</a>
+        </li>
+
+        <li>
+          <a href="/{{path }}/scenario/not-testing.html" class="">Customer search</a>
+        </li>
 
 
+      </ul>
+    </nav>
+
+{% endblock %}
 
 {% block assess_content %}
 <main id="content" role="main" class="main-content">
     <div class="container">
-       
+
         <div class="grid-row">
-             
+
             <div class="column-one-quarter">
 
-                
-                <div class="search-customer">
-        <label class="form-label-bold visually-hidden" for="search">Customer search</label>
-            <span class="form-hint">Search by NI number</span>
-        <input class="form-control form-control-2-3" id="search" type="text" name="search">
-        <button class="gem-c-search__submit">Search</button>
-    </div>
-    
-                
-<nav class="details-nav v2 mb30">
-    <ul>
-        <li>
-                <a href="appointments">
-                Assessment reports (21)</a>
-        
-        </li>
-      
-           <li class="active_detail">
-                <a href="referrals">
-                Decisions to make (21)</a>
-        
-            <ul>
-            
-                <li>
-                    <a href="new-referrals">Did not attend (6)</a>
-                </li>
-            
-                <li>
-                    <a href="uc50-posted">Questionnaire not returned (7)</a>
-                </li>
-            
-                <li>
-                    <a href="uc50-posted" class="active_child">Cases withdrawn (4)</a>
-                </li>
+                {% block horizontal_secondary_nav %}
 
-            
-            </ul>
-        
-        </li>
 
-      
-    </ul>
-</nav>
-                
-                 
+
+
+                {% endblock %}
             </div>
             <div class="column-three-quarters">
                 {% block caselist_content %}

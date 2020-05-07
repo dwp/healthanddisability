@@ -42,8 +42,11 @@
                   </ul>
                 </div> -->
 
-                <h1 class="heading-xlarge"><span>Customer details</span>{% block citizen_detail %}{% endblock %}</h1>
-                <p><span class="visually-hidden">National insurance number</span>AA 12 34 56 B</p>
+                <h1 class="heading-xlarge">{% block citizen_detail %}{% endblock %}</h1>
+                <!-- <p><span class="visually-hidden">National insurance number</span>AA 12 34 56 B</p> -->
+                 <strong class="govuk-tag govuk-phase-banner__content__tag">
+                  PIP
+                </strong>
 
               </div><!-- column -->
 
@@ -51,16 +54,16 @@
 
 
               <div class="column-half head-customer-extended">
-
+                <div class="header-right-col mt20">
+                     <h2>National Insurance Number</h2>
+                   <p>ZZ 41 54 00 Y</p>
+                </div>
                 <div class="header-left-col mt20">
                  <h2>Date of birth</h2>
                  <p>{{customer.dateOfBirth |formatDate('D MMMM YYYY') }}</p>
                 </div>
 
-              <div class="header-right-col mt20">
-                   <h2>Benefit</h2>
-                 <p>Universal credit</p>
-              </div>
+
 
               <!-- / column half -->
 
