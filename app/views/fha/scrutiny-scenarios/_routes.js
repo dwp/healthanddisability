@@ -591,6 +591,11 @@ router.post('/assessment/:customerId/evidence/observedBehaviour', function (req,
   next()
 })
 
+
+
+
+
+
 router.post('/assessment/:customerId/evidence/conditionHistoryNew', function (req, res, next) {
   if (req.body.delete == 'true') {
     req.session.data.conditionComments = req.session.data.conditionComments.filter(item => item.id != req.body.id)

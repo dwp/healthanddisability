@@ -52,19 +52,13 @@ Harvey Chamberlain
 		<div class="evidence-requests mt30">
 
 
-
-			<form action="/{{path }}/scenario11/evidence-step-Factual" method="POST" class="form">
-
-
+			<form action="/{{path }}/scenario14c/evidence-step-print" method="POST" class="form">
 
 			<fieldset>
 
 							  <legend class="heading-medium mb10">
-
 										Choose the evidence you want to request:
-
 							  </legend>
-
 
 									<div class="multiple-choice" data-target="reason1">
 											<input id="gpReport" type="radio" name="evidenceChoice" value="ev-gp">
@@ -76,7 +70,6 @@ Harvey Chamberlain
 											<fieldset>
 
 												<legend class="heading-small mb10">Reason for requesting GP report:</legend>
-
 
 												<div class="multiple-choice">
 													<input id="requestReason1" type="radio" name="requestReason" value="insuff">
@@ -112,7 +105,7 @@ Harvey Chamberlain
                         <label class="form-label">What information do you require?</label>
                         <textarea id="requestReason2b" class="form-control form-control-3-4" rows="5" name="evRequestReason"></textarea>
 <br>
-                      
+
                         </fieldset>
 
 											<fieldset>
@@ -121,9 +114,17 @@ Harvey Chamberlain
 
 
 												<div class="multiple-choice">
-													<input id="requestReason2" type="radio" name="requestReason2" value="insuff">
+													<input id="requestReason2" type="checkbox" name="requestReason2" value="insuff">
 													<label for="requestReason2">GP: Gregory Cooper</label>
 												</div>
+                        <div class="multiple-choice">
+													<input id="requestReason2" type="checkbox" name="requestReason2" value="insuff">
+													<label for="requestReason2">Community nurse</label>
+												</div>
+                        <div class="multiple-choice">
+                          <input id="requestReason2" type="checkbox" name="requestReason2" value="insuff">
+                          <label for="requestReason2">Consultant</label>
+                        </div>
                         </fieldset>
                       <br>
                         <fieldset>
