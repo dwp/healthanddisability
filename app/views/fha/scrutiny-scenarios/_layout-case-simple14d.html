@@ -1,0 +1,111 @@
+{% extends path+"/_layout.html" %}
+
+{% import path+"/scenario14c/_macros_nav_scenario14d.html" as nav %}
+
+
+
+{% block assess_content %}
+
+
+  <main id="content" role="main" class="main-content-inner">
+
+    <div class="container">
+      <div class="grid-row main-row">
+
+      <div class="column-one-quarter left-area">
+
+      	<div class="left-panel">
+
+
+          {% block actioncolumn %}{% endblock %}
+
+
+
+
+      	</div>
+
+      </div>
+
+
+        <div class="column-three-quarters main-area">
+
+          <div class="staff__heading">
+
+            <div class="grid-row">
+              <div class="column-half head-customer-details">
+                <!--<div class="badges">
+                  <ul>
+                    <li class="badge">UC</li>
+                    {% if customer.name.first == 'Lowery' %}
+                    <li class="badge support-item">Unacceptable customer behaviour</li>
+                    {% endif %}
+                  </ul>
+                </div> -->
+
+                <h1 class="heading-xlarge">{% block citizen_detail %}{% endblock %}</h1>
+                <!-- <p><span class="visually-hidden">National insurance number</span>AA 12 34 56 B</p> -->
+                 <strong class="govuk-tag govuk-phase-banner__content__tag">
+                  PIP
+                </strong>
+
+              </div><!-- column -->
+
+
+
+
+              <div class="column-half head-customer-extended">
+                <div class="header-right-col mt20">
+                     <h2>National Insurance Number</h2>
+                   <p>ZZ 41 54 00 Y</p>
+                </div>
+                <div class="header-left-col mt20">
+                 <h2>Date of birth</h2>
+                 <p>{{customer.dateOfBirth |formatDate('D MMMM YYYY') }}</p>
+                </div>
+
+
+
+              <!-- / column half -->
+
+
+
+            </div><!-- / grid row -->
+
+              </div>
+        </div>
+
+          <div nunj-block="citizen_content">
+            {% block citizen_content %}{% endblock %}
+
+
+        </div><!-- column -->
+
+
+      </div><!-- row -->
+    </div><!-- container -->
+
+  </main>
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super }}
+
+<script type="text/javascript">
+  $( document ).ready(function() {
+         $( ".panel-switch" ).click(function() {
+             $( ".inner-panel" ).toggleClass( "panel-open" );
+         });
+     });
+
+ </script>
+
+
+
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+
+{% endblock %}
