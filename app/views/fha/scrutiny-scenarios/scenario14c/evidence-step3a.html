@@ -50,57 +50,41 @@ Harvey Chamberlain
 		<div class="evidence-requests mt30">
 
 
-			<form action="/{{path }}/scenario11/timeline-review" method="POST" class="form">
+			<form action="/{{path }}/scenario14c/dashboard-request-medical-evidence" method="POST" class="form">
 
 
 					<div class="form-group">
 						<fieldset>
 
-							  <legend class="heading-medium mb5">Why does Roberto need a face to face assessment?</legend>
+							  <legend class="heading-small">Why does Harvey need a face to face assessment?</legend>
 
 
 										<div class="multiple-choice" data-target="justify-details">
-											<input id="justify1" type="radio" name="justifyF2Fa" value="f2f-reason1">
+											<input id="justify1" type="checkbox" name="justifyF2Fa" value="f2f-reason1">
 											<label for="justify1">The evidence we have available is not enough to determine the level of disability</label>
 										</div>
 
 
 										<div class="multiple-choice" data-target="justify-details">
-											<input id="justify2" type="radio" name="justifyF2Fa" value="f2f-reason2">
+											<input id="justify2" type="checkbox" name="justifyF2Fa" value="f2f-reason2">
 											<label for="justify2">An assessment is needed to determine the level of function</label>
 										</div>
+<br>
 
-
-
-										<div class="panel js-hidden" id="justify-details">
-
-											<fieldset class="inline">
+	<div class="form-group">
+<br>
+											<fieldset>
 
 												<legend class="heading-small mb10">Do you want to add further information?</legend>
 
-
-												<div class="multiple-choice" data-target="furtherWithin">
-													<input id="furtherYes" type="radio" name="further" value="further-yes">
-													<label for="furtherYes">Yes</label>
-												</div>
-
-												<div class="multiple-choice">
-													<input id="furtherNo" type="radio" name="further" value="further-no">
-													<label for="furtherNo">No</label>
-												</div>
-
-
-												<div class="panel js-hidden" id="furtherWithin">
-													<label for="furtherReason" class="form-label">Supporting information:</label>
 													<textarea id="furtherReason" name="supportInfo" class="form-control form-control-3-4" rows="5"></textarea>
 												</div>
 
 
-											</fieldset>
 
 										</div>
 
-							</fieldset>
+
 						</div>
 
 
@@ -109,7 +93,7 @@ Harvey Chamberlain
 						<div class="form-group">
 						<fieldset>
 
-							  <legend class="heading-medium mb5">Type of appointment needed:</legend>
+							  <legend class="heading-small">Type of appointment needed:</legend>
 
 
 										<div class="multiple-choice">
@@ -144,7 +128,7 @@ Harvey Chamberlain
 						<div class="form-group">
 						<fieldset>
 
-							  <legend class="heading-medium mb5">What evidence did you consider?</legend>
+							  <legend class="heading-small">What evidence did you consider?</legend>
 
 							  			<div class="multiple-choice">
 											<input id="justify1" type="checkbox" name="justifyF2F" value="f2f-reason1">
@@ -185,14 +169,11 @@ Harvey Chamberlain
 										{% endif %}
 
 
-										<div class="multiple-choice">
-											<input id="justify3" type="checkbox" name="justifyF2F" value="f2f-reason3">
-											<label for="justify3">Med 3</label>
-										</div>
+
 
 										<div class="multiple-choice">
 											<input id="justify2" type="checkbox" name="justifyF2F" value="f2f-reason2">
-											<label for="justify2">UC50</label>
+											<label for="justify2">PIP2</label>
 										</div>
 
 							</fieldset>
