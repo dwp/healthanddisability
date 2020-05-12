@@ -1,4 +1,4 @@
-{% extends path+"/_layout-case-simple14c.html" %}
+{% extends path+"/_layout-case-simple11.html" %}
 
 
 {% block actioncolumn %}
@@ -39,42 +39,98 @@ Harvey Chamberlain
 
 
 
-
-    <h1 class="heading-large">Make your recommendation</h1>
-
-
-
-
-       <div class="form-group">
- 						<fieldset>
-
- 									<div class="multiple-choice">
- 											<input id="gpName" type="radio" name="personChoice" value="name-gp">
- 											<label for="gpName">Request evidence</label>
-                      <span class="form-hint mt5">Further evidence is required to make an accurate recommendation</span>
- 										</div>
-
- 										<div class="multiple-choice">
- 											<input id="cName" type="radio" name="personChoice" value="name-consultant">
- 											<label for="cName">Call for an assessment</label>
-                      <span class="form-hint mt5">A relevant appointment needs to be scheduled</span>
- 										</div>
-
-                    <div class="multiple-choice">
- 											<input id="cName" type="radio" name="personChoice" value="name-consultant">
- 											<label for="cName">Outcome</label>
-                      <span class="form-hint mt5">There is enough evidence to record an outcome</span>
- 										</div>
-
- 							</fieldset>
- 						</div>
-
-
-			      <p><a href="/{{path }}/scenario14c/evidence-step2" class="button">Continue</a></p>
+    <h1 class="heading-large">Make recommendation</h1>
 
 
 
 
+  <div class="portal-display">
+
+
+
+  	 <div class="grid-row">
+
+		  	<div class="column-third">
+
+
+
+			<div class="portal-card">
+				<div class="portal-head">
+					<h3>Request evidence</h3>
+				</div>
+
+				<div class="portal-inner">
+
+				<p>Further evidence is required to make an accurate recommendation</p>
+
+			      <p><a href="/{{path }}/scenario14c/evidence-step2" class="secondary-invert">Choose evidence</a></p>
+
+
+				</div>
+
+			</div>
+			<!-- / portal card -->
+
+
+
+
+		  	</div>
+
+
+		  	<div class="column-third">
+		  		<!---------------------------------- Card ---------------------------------->
+
+			<div class="portal-card">
+				<div class="portal-head">
+					<h3>Call for an assessment</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+
+
+				<p>A relevant appointment needs to be scheduled</p>
+
+            <p> <a href="/{{path }}/scenario11/evidence-step3" class="secondary-invert">Add assessment details</a></p>
+
+				</div>
+				<!-- / inner card -->
+			<!-- / portal card -->
+		  	</div>
+
+  	 </div>
+
+
+  	 <div class="column-third">
+
+  	 	<div class="portal-card">
+				<div class="portal-head">
+					<h3>Outcome</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+
+				<p>There is enough evidence to record an outcome</p>
+
+
+            <p> <a href="/{{path }}/scenario11/not-testing" class="secondary-invert">Record outcome</a></p>
+
+				</div>
+				<!-- / inner card -->
+			<!-- / portal card -->
+		  	</div>
+
+  	 </div>
+
+
+
+
+  </div>
+
+
+
+    </div><!-- column -->
 
 
   </div><!-- row -->

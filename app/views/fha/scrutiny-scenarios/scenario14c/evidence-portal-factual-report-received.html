@@ -1,4 +1,4 @@
-{% extends path+"/_layout-case-simple14c.html" %}
+{% extends path+"/_layout-case-simple14.html" %}
 
 
 {% block actioncolumn %}
@@ -7,71 +7,18 @@
 
  <div class="caseStatus">
 
+   	<h2 class="main-status"><span>Current referral status</span>Ready for second review</h2>
+   	<h3 class="primary-action"><span>Suggested case action</span><a href="#" class="button">Make recommendation</a></h3>
 
+</div>
 
+{% endblock %}
 
-      {% if data['pbachoice']=='no'%}
+{% block citizen_detail %}
+Harvey Chamberlain
+{% endblock %}
 
-      	 <h2 class="main-status"><span>Current case status</span>Appointment booked</h2>
-
-
-      	 {% elif data['pbachoice']=='yes'%}
-
-      	 <h2 class="main-status"><span>Current case status</span>Paper based review</h2>
-      	 <!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/not-testing" class="button">Start assessment</a></h3>-->
-
-
-      	 {% else %}
-
-
-
-      {% if data['evidencePath']=='ev-ftf'%}
-
-      	{% if data['evidenceRecorded']=='record-yes'%}
-
-      	<h2 class="main-status"><span>Current case status</span>Second review</h2>
-      		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario14c/rec-portal-second" class="button">Make recommendation</a></h3>
-      		{% else %}
-
-      	<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
-      	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario14c/record-evidence" class="button">Record GP report</a></h3>
-      	{% endif %}
-
-
-      	{% elif data['evidencePath']=='ev-pba'%}
-
-      	{% if data['evidenceRecorded']=='record-yes'%}
-      		<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
-      		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario14c/rec-portal" class="button">Make recommendation</a></h3>
-      		{% else %}
-      		<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
-      	{% endif %}
-
-
-      	{% else %}
-
-      	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
-      	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario14c/rec-portal" class="button">Make recommendation</a></h3>
-
-
-
-      {% endif %}
-
-
-      {% endif %}
-
-
-      </div>
-
-      {% endblock %}
-
-      {% block citizen_detail %}
-      Jurgen Covault
-      {% endblock %}
-
-      {% block citizen_content %}
-
-
+{% block citizen_content %}
 
 
 
@@ -79,10 +26,6 @@
 
 
   <div class="grid-row">
-
-
-
-
 
 
     <div class="column-full">
@@ -123,10 +66,6 @@
 				<div class="portal-inner">
 
 
-
-
-
-
 				<h4>Last recorded evidence</h4>
 
 					<table class="evidence-list">
@@ -137,15 +76,6 @@
 								<th>Evidence type</th>
 								<th>Date recorded</th>
 							</tr>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -203,6 +133,25 @@
 						<li><a href="/{{path }}/scenario11/recordTelephone" class="secondary-invert">Record a telephone conversation</a></li>
 						<li><a href="/{{path }}/scenario11/recordOther" class="secondary-invert">Record other evidence</a></li>
 					</ul>
+
+<br>
+<br>
+<tbody>
+
+<tr>
+  <td><a href="#" class="link">GP - Factual report </a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+    COMPLETED
+  </strong><p>Requested on 2 May 2020</p></td>
+  <td></td>
+</tr>
+  </tbody>
+
+
+
+          <a href="/{{path }}/scenario11/referralJustify">Hospital consultant - Factual report</a>
+          <p>Requested on 2 May 2020</p>
+<a href="/{{path }}/scenario11/recordOther" class="secondary-invert">Record Factual report</a>
 
 				</div>
 				<!-- / inner card -->
