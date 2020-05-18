@@ -1,0 +1,18 @@
+{% macro case_tabs(selected,num,path, id) %}
+  <div class="section-tabs js-tabs clearfix mb20">
+    <ul>
+
+      {% set navs = [
+        {url:"timeline",label:"Timeline"},
+        {url:"not-testing",label:"Details"},
+        {url:"appointment-tab",label:"Appointment"},
+        {url:"not-testing",label:"Evidence"}
+
+        ] %}
+
+      {% for item in navs %}
+        <li {% if item.url == selected %} class="active"{% endif %}><a href="/fha/appointment-scenarios/baseline-referred-f2f/{{ item.url }}">{{ item.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endmacro %}

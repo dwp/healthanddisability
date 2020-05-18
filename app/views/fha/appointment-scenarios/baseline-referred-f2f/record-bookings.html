@@ -1,0 +1,99 @@
+{% extends path+"/_layout-case-simple-baseline-f2f.html" %}
+
+
+{% block actioncolumn %}
+<div class="caseStatus">
+	<h2 class="main-status"><span>Current case status</span>Booked appointment</h2>
+</div>
+{% endblock %}
+
+{% block citizen_detail %}
+{{customer.name}}
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+
+
+
+
+
+
+       <div class="column-full">
+
+
+    	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+		 <form class="form" action="record-bookings" method="post">
+
+		 <input type="hidden" name='nino' value='{{customer.nino}}' />
+
+      <h1 class="heading-large">
+	  {% if customer.requirement.taxi and customer.requirement.interpreter %}
+	  Record bookings
+	  {% else %}
+	  Record booking
+	  {% endif %}
+	  </h1>
+
+
+{% if customer.requirement.taxi and customer.requirement.interpreter %}
+
+<div class="form-group">
+  <fieldset>
+
+    <legend>
+      <h3 class="heading-medium">Which requirements have been booked?</h3>
+    </legend>
+
+    <div class="multiple-choice" data-target='taxiPanel'>
+      <input id="Taxi" name="booked" type="checkbox" value="taxi" {{checked('booked', 'taxi') }}>
+      <label for="Taxi">Taxi</label>
+    </div>
+	<div id="taxiPanel"class="panel js-hidden">
+	<div class="form-group">
+  <label class="form-label" for="taxiReference">Reference number</label>
+  <input class="form-control" id="taxiReference" type="text" name="taxiReference" value="{{taxiReference}}" >
+	</div>
+	</div>
+    <div class="multiple-choice" data-target='interpreterPanel'>
+      <input id="Interpreter" name="booked" type="checkbox" value="interpreter" {{checked('booked', 'interpreter') }}>
+      <label for="Interpreter">Interpreter</label>
+    </div>
+	<div id="interpreterPanel" class="panel js-hidden">
+	<div class="form-group">
+  <label class="form-label" for="interpreterReference">Reference number</label>
+  <input class="form-control" id="interpreterReference" type="text" name="interpreterReference" value="{{interpreterReference}}">
+	</div>
+	</div>
+
+  </fieldset>
+</div>
+
+{% else %}
+
+ <h4 class="heading-medium mt0 mb0">{% if customer.requirement.taxi %}Taxi{% else %}Interpreter{% endif %}</h4>
+<div class="form-group">
+  <label class="form-label" for="reference">Reference number</label>
+  <input class="form-control" id="reference" type="text" name="reference" value="{{reference}}">
+	</div>
+{% endif %}
+					<p><button class="button">Confirm booking</button></p>
+
+        </div>
+
+  </div><!-- row -->
+</div><!-- container -->
+</form>
+{% endblock %}
+
+{# {% block page_script %}
+
+{% endblock %} #}

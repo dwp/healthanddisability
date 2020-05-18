@@ -1,0 +1,143 @@
+{% extends path+"/_layout-case-new-detail-bar.html" %}
+
+{% block actioncolumn %}
+
+<!-- <p class="returnRef"><a href="/{{path }}/scenario11/referrals-fme" class="link-back">Return to case list</a></p> -->
+ <div class="caseStatus">
+	 <h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+
+
+</div>
+{% endblock %}
+
+{% block citizen_detail %}
+Harvey Chamberlain
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+
+
+
+
+
+
+    <div class="column-full">
+
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+  <div class="grid-row">
+
+    <div class="column-full">
+
+
+
+      <h2 class="heading-large">Check details and print the report requests </h2>
+<br>
+      <div class="notice">
+        <i class="icon icon-important">
+          <span class="visually-hidden">Warning</span>
+        </i>
+        <strong class="bold-small">
+      <!-- You need to print a {% if data['evidenceChoice']=='ev-gp'%}GP report request{% else %}factual report request{% endif %} and post it to the relevant person -->
+
+          To complete the evidence request process:<br>you need to print off a GP report request and send it to the relevant person</strong>
+      </div>
+</div>
+
+</div>
+
+      <div class="grid-row">
+
+        <div class="column-two-thirds">
+		<!-- <div class="evidence-requests mt30"> -->
+      <h2 class="heading-medium">Factual report</h2>
+      <legend class="heading-small mb10">What information are you requesting</legend>
+<label>Evidence of specific medical condition</label>
+      <legend class="heading-small mb10">Reason for request</legend>
+<label>Insufficient evidence to support claimant's statements</label>
+<legend class="heading-small mb10">You are requesting this evidence from</legend>
+<label>GP: Gregory Cooper</label><br>
+<label>Hospital consultant: HCP</label>
+
+<br>
+<br>
+
+
+<table>
+    <caption class="visually-hidden">Contact information</caption>
+
+
+
+    <tbody>
+
+
+    <tr>
+      <td><a href="/fha/scrutiny-scenarios/scenario14c/evidence-step-print1" class="link">Print GP report request</a></td>
+      <td><i>Please print</i></td>
+    </tr>
+    <tr>
+      <td><a href="#" class="link">Print Hospital consultant report request</a></td>
+      <td><i>Please print</i></td>
+    </tr>
+
+
+    </tbody>
+  </table>
+
+
+
+
+
+
+
+
+
+
+
+<br>
+
+
+				<p class="mt30"><a href="#" class="button">Save and continue</a></p>
+
+
+
+
+
+
+
+
+
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

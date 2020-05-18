@@ -1,0 +1,37 @@
+// Stuff that we are ashamed off
+// For example any overrides to the GOVUK default styles should be placed in here
+// This should give us a cleaner upgrade path
+i.fa-exclamation-circle{
+  color: $mellow-red;
+}
+
+// mark the passed indicator on the office performance page as red
+.search_string .passed, tr .passed {
+    color: $red;
+}
+
+input#initial  {
+  width: 10%;
+}
+
+#content {
+  max-width: 100%;
+  margin: 0;
+}
+
+.main-content {
+  padding:0 em(40);
+}
+
+.form-group-area{
+  width: 40%;
+}
+
+.form-group-local{
+  width: 25%;
+}
+
+// Make the new radio and checkboxes grey when disabled
+.block-label.disabled {
+  color: $grey-1;
+}

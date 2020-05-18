@@ -1,0 +1,216 @@
+{% extends path+"/_layout-case-new-detail-bar.html" %}
+
+
+{% block actioncolumn %}
+
+
+
+ <div class="caseStatus">
+
+
+
+
+{% if data['pbachoice']=='no'%}
+
+	 <h2 class="main-status"><span>Current case status</span>Appointment booked</h2>
+
+
+	 {% elif data['pbachoice']=='yes'%}
+
+	 <h2 class="main-status"><span>Current case status</span>Paper based review</h2>
+	 <!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/not-testing" class="button">Start assessment</a></h3>-->
+
+
+	 {% else %}
+
+
+
+{% if data['evidencePath']=='ev-ftf'%}
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+
+	<h2 class="main-status"><span>Current case status</span>Second review</h2>
+		<!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal-second" class="button">Make recommendation</a></h3>-->
+		{% else %}
+
+	<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
+	<!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/record-evidence" class="button">Record GP report</a></h3>-->
+	{% endif %}
+
+
+	{% elif data['evidencePath']=='ev-pba'%}
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+		<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+		<!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal" class="button">Make recommendation</a></h3>-->
+		{% else %}
+		<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
+	{% endif %}
+
+
+	{% else %}
+
+	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+	<!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal" class="button">Make recommendation</a></h3>-->
+
+
+
+{% endif %}
+
+
+{% endif %}
+
+
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Harvey Chamberlain
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+
+
+
+
+
+
+    <div class="column-full">
+
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+
+
+    	<h1 class="heading-large">{% if data['appointmentReferral2']%}<span class="heading-secondary">Second review</span>{% endif %}Appointment referral justification</h1>
+
+
+
+
+
+		<div class="evidence-requests mt30">
+
+
+						 <div>
+							<h2 class="heading-medium mb10">Reason Harvey needs a face to face assessment:</h2>
+
+
+							{% if data['justifyF2Fa']=='f2f-reason1'%}
+							<p>The evidence we have available is not enough to determine the level of disability</p>
+							{% elif data['justifyF2Fa']=='f2f-reason2'%}
+							<p>An assessment is needed to determine the level of function</p>
+							{% endif %}
+
+
+							{% if data['further']=='further-yes'%}
+							<h3 class="heading-small mb5">Further information:</h3>
+
+
+							<p>{{supportInfo}}</p>
+
+
+
+
+							{% else %}
+							{% endif %}
+
+						</div>
+
+						<hr>
+
+						<div>
+							<h2 class="heading-medium mt0 mb10">Type of assessment required:</h2>
+
+									{% if data['types']=='face'%}
+									<p>Face to face</p>
+									{% elif data['types']=='home'%}
+									<p>Home visit</p>
+									{% elif data['types']=='video'%}
+									<p>Video call</p>
+									{% endif %}
+
+								{% if data['types']=='home'%}
+								<h3 class="heading-small mb5">Justification:</h3>
+								<p>{{typeReasonJustify}}</p>
+								{% else %}
+								{% endif %}
+						</div>
+
+						<hr>
+
+						<div>
+							<h2 class="heading-medium mt0 mb10">Skill required:</h2>
+
+									{% if data['skills']=='nonNeuro'%}
+									<p>Non neuro</p>
+									{% elif data['skills']=='Neuro'%}
+									<p>Neuro</p>
+									{% elif data['skills']=='complexNeuro'%}
+									<p>Complex neuro</p>
+									{% endif %}
+
+									{% if data['skills']=='complexNeuro'%}
+									<h3 class="heading-small mb5">Justification:</h3>
+									<p>{{skillReasonJustify}}</p>
+									{% else %}
+								{% endif %}
+						</div>
+
+						<hr>
+
+						<div>
+							<h2 class="heading-medium mt0 mb10">Evidence that was considered:</h2>
+
+				  			<ul class="list-bullet">
+				  				<li>GP report</li>
+				  				<li>Factual report</li>
+				  				<li>Med 3</li>
+				  				<li>UC50</li>
+				  			</ul>
+						</div>
+
+
+
+
+
+
+
+
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

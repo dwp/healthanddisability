@@ -1,0 +1,213 @@
+{% extends path+"/_layout-case-new-detail-bar.html" %}
+
+
+{% block actioncolumn %}
+
+  <p class="returnRef"><a href="/{{path }}/scenario11/referrals-fme" class="link-back">Return to case list</a></p>
+  <hr>
+ <div class="case-status">
+<p class="mt10 mb0 bold-small">
+
+    Appointment booked
+
+
+
+</p>
+
+
+<hr>
+<ul class="secondary-actions">
+
+  <li><a href="/{{path }}/scenario11/recordFME" class="">Record evidence</a></li>
+
+
+  </ul>
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Harvey Chamberlain
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+
+
+
+
+
+
+    <div class="column-full">
+
+
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+    <h1 class="heading-large">Record evidence</h1>
+
+
+
+
+
+    		<form class="form" action="/{{path }}/scenario11/timeline-fme" method="post">
+			<div class="form-group">
+					<fieldset>
+
+						<legend class="form-label-bold mb10">
+							Select the evidence you would like to record
+						</legend>
+
+
+						<div class="visually-hidden">
+						<div class="multiple-choice">
+							<input id="gpreport" name="recordEvidence" type="checkbox" value="gpvisited" checked>
+							<label for="gpreport" class="form-label-bold">GP report </label>
+						</div>
+				</div>
+
+
+
+
+					<div class="multiple-choice">
+						<input id="Gp" name="recordevidencegp" type="checkbox" value="gp">
+						<label for="Gp" class="form-label">GP report <span class="text-secondary"> (overdue - requested on 4th June 2019)</span></label>
+					</div>
+
+
+
+
+						<div class="multiple-choice" data-target="evidence">
+							<input id="nationalities-other" name="evidenceType" type="checkbox" value="evidence">
+							<label for="nationalities-other" class="form-label">Record new evidence</label>
+						</div>
+						<div class="panel js-hidden" id="evidence">
+								<div class="form-group">
+										<label for="type" class="form-label">
+											Evidence type
+										</label>
+										<input type="text" id="type" name="newevidencename"class="form-control form-control-2-4">
+									</div>
+
+									<div>
+										<label for="source" class="form-label">
+											Source
+										</label>
+										<input type="text" id="source" name="newevidencesource" class="form-control form-control-2-4">
+									</div>
+
+									<div class="visually-hidden">
+										<input type="text" id="source" name="newevidencenamevisited" class="form-control form-control-1-3" value="{{ data['newevidencename'] }}">
+										<input type="text" id="source" name="newevidencesourcevisited" class="form-control form-control-1-3" value="{{ data['newevidencesource'] }}">
+								</div>
+
+						</div>
+						<div class="multiple-choice" data-target="telephone">
+								<input id="nationalities-other" name="telephonecontactreport" type="checkbox" value="evidence">
+								<label for="nationalities-other" class="form-label">Telephone conversation</label>
+							</div>
+							<div class="panel js-hidden" id="telephone">
+
+											 <div class="form-group">
+													<fieldset>
+
+															<legend class="bold">
+
+																	Source of information
+
+															</legend>
+
+															<div class="multiple-choice" data-target="client">
+																	<input id="example-contact-by-email" type="radio" name="hcp-type" value="client">
+																	<label for="example-contact-by-email">Client: Bobby Henderson</label>
+																</div>
+																<div class="panel js-hidden" id="client">
+																	  <fieldset class="inline">
+
+																				<legend>
+																					<h2 class="form-label-bold">
+																					Does Bobby agree to answer questions?
+																					</h2>
+																				</legend>
+
+																				<div class="multiple-choice">
+																					<input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+																					<label for="radio-inline-1">Yes</label>
+																				</div>
+																				<div class="multiple-choice">
+																					<input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+																					<label for="radio-inline-2">No</label>
+																				</div>
+
+																			</fieldset>
+																		</div>
+
+
+
+															<div class="multiple-choice">
+																<input id="example-contact-by-email" type="radio" name="hcp-type" value="gp">
+																<label for="example-contact-by-email">GP</label>
+															</div>
+															{% if  customer.otherHcp.hasOtherHcp %}
+															<div class="multiple-choice" >
+																	<input id="example-contact-by-email" type="radio" name="hcp-type" value="consultant">
+																	<label for="example-contact-by-email">Consultant: Dr. {{customer.otherHcp.name.fullName}}</label>
+																</div>
+													         {% endif %}
+
+
+
+
+														</fieldset>
+
+											 </div>
+											 <div class="form-group">
+													<label for="telephoneReport" class="bold">
+													Information gathered
+													</label>
+													<textarea class="form-control form-control-3-4" name="telephoneReportGathered" id="telephoneReport" rows="15"></textarea>
+													 </div>
+							</div>
+
+					</fieldset>
+				</div>
+
+
+
+
+
+
+
+    <p><button class="button">Save and continue</button></p>
+
+				</form>
+
+
+
+
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

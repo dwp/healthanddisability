@@ -13,7 +13,7 @@
 
 {% block inside_header %}
   <div class="header-logo" style="position:relative;top:3px">
-    
+
     <a href="/{{path}}/" id="logo" class="content dwplogo">Health Assessment </a>
   </div>
 {% endblock %}
@@ -26,7 +26,7 @@
       {% elif checked('Choose-centre','Fiveways') %}
       <li><a href="/{{path}}/choose-centre.html">Change centre</a> : Birmingham Fiveways</li>
       {% else %}
-  
+
       {% endif%}
      <!-- <li>Heather Harrison</li>
       <li><a href=""> Sign out</a></li> -->
@@ -55,10 +55,10 @@
 
 
 {% block content %}
-  
+
 {% block mainNav %}
 {% endblock %}
-  
+
   {# {{ horizontal_nav('',path) }} #}
   <div nunj-block="assess_content">
   {% block assess_content %}{% endblock %}

@@ -1,0 +1,127 @@
+{% extends path+"/_layout-case-baseline-review.html" %}
+
+
+{% block actioncolumn %}
+
+  <div class="caseStatus">
+
+
+
+
+
+	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+<!--	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario11/rec-portal" class="button">Make recommendation</a></h3> -->
+
+
+
+
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Harvey Chamberlain
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+
+
+
+
+
+
+       <div class="column-full">
+
+
+
+
+
+    	 <p class="no-kdBar"> <a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+<h1 class="heading-large mb0">Appointment referral justification</h1>
+
+
+	  <div class="grid-row">
+	  <div class="column-three-quarters">
+
+	<h2 class="heading-medium mb0">Evidence considered</h2>
+
+	<table>
+	{% if data['pbachoice']=='no'%}
+<tr>
+	<td>UC 50</td>
+</tr>
+<tr>
+	<td>MED 3</td>
+</tr>
+<tr>
+	<td>GP Report</td>
+</tr>
+
+{% else %}
+  <tr>
+	<td>UC 50</td>
+</tr>
+<tr>
+	<td>MED 3</td>
+</tr>
+{% endif %}
+
+
+	</table>
+
+<h2 class="heading-medium">Reason</h2>
+<p>{{customer.name.first}} needs a face to face examination because the evidence we already have is not enough to determine the level of disability</p>
+
+<h3 class="heading-small">Further details</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt nec mi volutpat egestas. Aliquam malesuada erat magna, sed commodo risus commodo eu.</p>
+
+
+<h2 class="heading-medium">Appointment</h2>
+<p>Complex neuro</p>
+<h3 class="heading-small">Justification</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt nec mi volutpat egestas. Aliquam malesuada erat magna, sed commodo risus commodo eu.</p>
+	  </div>
+	  </div>
+
+
+				</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

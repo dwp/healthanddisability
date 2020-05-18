@@ -1,0 +1,119 @@
+{% extends path+"/_layout-case-new-detail-bar.html" %}
+
+
+
+   {% block citizen_detail %}
+   Jurgen Covault
+   {% endblock %}
+
+   {% block citizen_content %}
+
+
+
+
+
+
+
+<div class="container">
+  <div class="grid-row">
+    <div class="column-three-quarters">
+
+      <p class="returnRef"><a href="#" class="link-back">Return to case list</a></p>
+
+<br>
+
+    {# macro #}
+  {{ nav.scenario_tabs("appointment-fme",1,path1, customer._id) }}
+
+
+ <h1 class="heading-large">
+  	Appointment</h1>
+
+
+  <div class="portal-display">
+
+
+
+  	 <div class="grid-row">
+
+		  	<div class="column-third">
+		  		<!---------------------------------- Card ---------------------------------->
+
+			<div class="portal-card">
+				<div class="portal-head">
+					<h3>Preferences</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+
+
+				<!-- <h4>Unavailable on</h4>
+				<ul class="list-bullet">
+               	 <li>Monday <span>afternoons</span></li>
+			   	 <li>Tuesdays</li>
+                </ul> -->
+
+            <p class="view-all"> <a href="#" class="secondary-invert">Add preferences</a></p>
+
+				</div>
+				<!-- / inner card -->
+			<!-- / portal card -->
+		  	</div>
+
+		  	<!--<hr>
+
+		  	<div class="portal-card">
+				<div class="portal-head">
+					<h3>Preferences</h3>
+				</div>
+
+
+				<div class="portal-inner">
+
+
+            <p> <a href="/{{path }}/scenario11/not-testing" class="secondary-invert">Add preferences</a></p>
+
+				</div>
+
+		  	</div>
+		  	<!-- / portal card -->
+
+  	 </div>
+
+
+
+
+
+  </div>
+
+</div><!-- container -->
+</div>
+  <div class="column-one-quarter">
+    <br>
+        <aside class="app-related-items" role="complementary">
+
+          <nav role="navigation" aria-labelledby="subsection-title">
+            <div class="caseStatus">
+
+
+              <h3 class="primary-action"><span>Suggested case action</span><a href="#" class="button">Issue UC50</a></h3>
+
+           </div>
+          </nav>
+        </aside>
+</div>
+</div>
+</div>
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

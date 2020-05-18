@@ -1,0 +1,117 @@
+{% extends path+"/_layout-case-baseline.html" %}
+
+
+{% block actioncolumn %}
+
+  <p class="returnRef"><a href="/{{path }}/scenario11/referrals-fme" class="link-back">Return to case list</a></p>
+  <hr>
+ <div class="case-status">
+<p class="mt10 mb0 bold-small">
+
+    Ready for review
+
+
+
+</p>
+
+
+<hr>
+<!--<ul class="secondary-actions">
+
+  <li><a href="/{{path }}/scenario1/recordFME" class="">Record evidence</a></li>
+
+
+  </ul>-->
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Harvey Chamberlain
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+
+
+
+
+
+
+    <div class="column-full">
+
+
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+    <h1 class="heading-large">Make recommendation</h1>
+
+
+
+    <form class="form" action="/{{path }}/scenario11/timeline-review" method="post">
+    	 <div class="form-group mt10">
+							<fieldset class="make-rec">
+
+									<legend class="visually-hidden">
+
+										What do you want to do?
+
+									</legend>
+
+
+
+									<div class="multiple-choice">
+										<input id="rec-pba" type="radio" name="rec-choice" value="PBA">
+										<label for="rec-pba">I have enough evidence to recommend a paper based review</label>
+
+									</div>
+
+
+									<div class="multiple-choice">
+											<input id="rec-appoint" type="radio" name="rec-choice" value="APP">
+											<label for="rec-appoint">I would like to call Bobby in for a face to face assessment</label>
+										</div>
+
+										<div class="multiple-choice">
+											<input id="rec-evidence" type="radio" name="rec-choice" value="EVIDENCE">
+											<label for="rec-evidence">I would like to call Bobby in for a face to face assessment pending the request of new evidence</label>
+										</div>
+
+
+
+								</fieldset>
+
+						</div>
+
+
+
+
+    <p><button class="button">Save and continue</button></p>
+    </form>
+
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

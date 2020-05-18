@@ -1,0 +1,157 @@
+{% extends path+"/_layout-case-baseline.html" %}
+
+
+{% block actioncolumn %}
+
+  <p class="returnRef"><a href="/{{path }}/scenario11/referrals-fme" class="link-back">Return to case list</a></p>
+
+ <div class="caseStatus">
+
+
+
+
+{% if data['pbachoice']=='no'%}
+
+	 <h2 class="main-status"><span>Current case status</span>Appointment booked</h2>
+
+
+	 {% elif data['pbachoice']=='yes'%}
+
+	 <h2 class="main-status"><span>Current case status</span>Paper based review</h2>
+	 <!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/not-testing" class="button">Start assessment</a></h3>-->
+
+
+	 {% else %}
+
+
+
+{% if data['evidencePath']=='ev-ftf'%}
+
+	<h2 class="main-status"><span>Current case status</span>Ready to book</h2>
+
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+
+	{% endif %}
+
+
+	{% elif data['evidencePath']=='ev-pba'%}
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+		<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+		<!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal" class="button">Make recommendation</a></h3> -->
+		{% else %}
+		<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
+	{% endif %}
+
+
+	{% else %}
+
+	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+	<!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/rec-portal" class="button">Make recommendation</a></h3>-->
+
+
+
+{% endif %}
+
+
+{% endif %}
+
+
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Harvey Chamberlain
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+
+
+
+
+
+
+    <div class="column-full">
+
+
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+    <div class="grid-row">
+
+    <div class="column-three-quarters">
+
+
+
+    <h1 class="heading-large">New evidence recorded</h1>
+
+
+
+    <form class="form" action="/{{path }}/scenario6/pbr" method="post">
+    	 <div class="form-group mt10">
+							<fieldset>
+
+									<legend class="heading-medium mb10">
+
+										Does the new evidence change the current case status?
+
+									</legend>
+
+
+
+									<div class="multiple-choice">
+										<input id="yes" type="radio" name="pbachoice" value="yes">
+										<label for="yes">Yes, we now have enough evidence to recommend a paper based review</label>
+
+									</div>
+
+
+
+									<div class="multiple-choice">
+											<input id="no" type="radio" name="pbachoice" value="no">
+											<label for="no">No, call Roberto for a face to face assessment</label>
+										</div>
+
+								</fieldset>
+
+						</div>
+
+
+
+
+    <p><button class="button">Save and continue</button></p>
+    </form>
+
+    </div>
+
+    </div>
+
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
