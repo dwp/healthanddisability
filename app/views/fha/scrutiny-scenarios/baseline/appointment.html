@@ -1,0 +1,246 @@
+{% extends path+"/_layout-case-baseline.html" %}
+
+
+{% block actioncolumn %}
+
+<p class="returnRef"><a href="javascript: history.go(-1)" class="link-back">Return to case list</a></p>
+
+ <div class="caseStatus">
+
+	<p class="main-status"><span>Current case status</span>Ready to book</p>
+
+	<!--<p class="primary-action"><span>Suggested case action</span><a href="#" class="button">Book appointment</a></p>-->
+
+ </div>
+
+<!--<div class="secondary-nav-actions">
+
+	<ul>
+		<li><a href="#">Withdraw case</a></li>
+		<li><a href="#">Close case</a></li>
+		<li><a href="#">Delete case</a></li>
+	</ul>
+
+ </div> -->
+
+{% endblock %}
+
+{% block citizen_detail %}
+Kenneth Robertson
+{% endblock %}
+
+{% block citizen_content %}
+
+
+{% if data['evidencePath']=='ev-ftf'%}
+
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+
+
+		{% if data['pbachoice']%}
+
+
+	{% else %}
+	<div class="panel panel-info panel-instruction fme-warning"><h2 class="heading-small">New evidence recorded</h2>
+	   <ul class="numeric" data-id="">
+	       <li>
+	         <span class="circle circle-step circle-white">1</span>
+	         <h2 class="govuk-heading-m">Roberto's case should be reviewed before making a recommendation</h2>
+	       </li>
+
+	       <li>
+	         <span class="circle circle-step circle-white">2</span>
+	         <h2 class="govuk-heading-m"><a href="/{{path }}/scenario2/recordFMEdecision">Make recommendation</a></h2>
+	       </li>
+	     </ul>
+	</div>
+	{% endif %}
+
+
+
+
+	{% endif %}
+
+
+	{% endif %}
+
+
+
+
+<div class="container">
+  <div class="grid-row">
+
+    <div class="column-full">
+
+    {# macro #}
+  {{ nav.scenario_tabs("appointment",1,path1, customer._id) }}
+
+
+
+
+  <h1 class="heading-large">
+  	Appointment</h1>
+
+
+  <div class="portal-display">
+
+
+
+  	 <div class="grid-row">
+
+		  	<div class="column-third">
+
+		  	<div class="portal-card">
+				<div class="portal-head">
+					<h3>Next available</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+
+				<h4>Standard appointment</h4>
+			      <ul class="list-bullet">
+			          <li>Thursday 29th August 2019</li>
+			          <li>10:30am</li>
+			          <li>Tresco House</li>
+			      </ul>
+
+
+			      <p class="view-all"><a href="/{{path }}/scenario2/not-testing" class="button">Book this appointment</a></p>
+				  <p><a href="/{{path }}/scenario2/not-testing" class="secondary-invert">Choose another date</a></p>
+
+
+				</div>
+				<!-- / inner card -->
+			</div>
+			<!-- / portal card -->
+
+
+			<!--<hr>
+
+			<div class="portal-card">
+				<div class="portal-head">
+					<h3>Booked</h3>
+				</div>
+
+				<div class="portal-inner">
+
+				<h4>Standard appointment</h4>
+			      <ul class="list-bullet">
+			          <li>{{ 'Do MMMM YYYY' | baseDateAdd(8) }}</li>
+			          <li>10:30am</li>
+			          <li>Tresco House</li>
+			      </ul>
+
+
+			      <p class="view-all"><a href="/{{path }}/scenario2/not-testing" class="secondary-invert">Update appointment</a></p>
+				  <p><a href="/{{path }}/scenario2/not-testing" class="secondary-invert">Record change of circumstances</a></p>
+
+
+				</div>
+
+			</div>
+			<!-- / portal card -->
+
+
+
+
+		  	</div>
+
+
+		  	<div class="column-third">
+		  		<!---------------------------------- Card ---------------------------------->
+
+			<div class="portal-card">
+				<div class="portal-head">
+					<h3>Preferences</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+
+
+				<h4>Unavailable on</h4>
+				<ul class="list-bullet">
+               	 <li>Monday <span>afternoons</span></li>
+			   	 <li>Tuesdays</li>
+                </ul>
+
+            <p class="view-all"> <a href="/{{path }}/scenario2/not-testing" class="secondary-invert">Edit preferences</a></p>
+
+				</div>
+				<!-- / inner card -->
+			<!-- / portal card -->
+		  	</div>
+
+		  	<!--<hr>
+
+		  	<div class="portal-card">
+				<div class="portal-head">
+					<h3>Preferences</h3>
+				</div>
+
+
+				<div class="portal-inner">
+
+
+            <p> <a href="/{{path }}/scenario2/not-testing" class="secondary-invert">Add preferences</a></p>
+
+				</div>
+
+		  	</div>
+		  	<!-- / portal card -->
+
+  	 </div>
+
+
+  	 <div class="column-third">
+
+  	 	<div class="portal-card">
+				<div class="portal-head">
+					<h3>History</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+
+				<h4>Recent appointment events</h4>
+
+
+					<ul class="action-list appointment-history-list">
+						<li>
+							<h5>Referred for appointment</h5>
+
+						</li>
+					</ul>
+
+
+
+            <p> <a href="/{{path }}/scenario2/not-testing" class="secondary-invert">View all history</a></p>
+
+				</div>
+				<!-- / inner card -->
+			<!-- / portal card -->
+		  	</div>
+
+  	 </div>
+
+
+
+
+  </div>
+
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

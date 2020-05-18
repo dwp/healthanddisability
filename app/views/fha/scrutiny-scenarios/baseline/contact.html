@@ -1,0 +1,248 @@
+{% extends path+"/_layout-case-baseline.html" %}
+
+{% block actioncolumn %}
+
+  <p class="returnRef"><a href="#" class="link-back">Return to case list</a></p>
+
+ <div class="caseStatus">
+
+
+
+   <h2 class="main-status"><span>Current case status</span>New referral</h2>
+   <h3 class="primary-action"><span>Suggested case action</span><a href="#" class="button">Issue UC50</a></h3>
+
+</div>
+
+   {% endblock %}
+
+   {% block citizen_detail %}
+   Jurgen Covault
+   {% endblock %}
+
+   {% block citizen_content %}
+
+
+
+
+<div class="container">
+  <div class="grid-row">
+    <div class="column-full">
+
+    {# macro #}
+  {{ nav.scenario_tabs("contact",1,path1, customer._id) }}
+
+   <h1 class="heading-large">
+  	Contact</h1>
+
+
+  	 <div class="grid-row">
+
+		  	<div class="column-two-thirds">
+
+
+<h2 class="heading-medium">
+					Harvey's details</h2>
+
+
+
+				<table>
+						<caption class="visually-hidden">Contact information</caption>
+
+						<tbody>
+						<tr>
+							<th>Contact number</th>
+							<td>0151 000 0000</td>
+						</tr>
+
+						<tr>
+							<th>Email address</th>
+							<td>harvey@chamberlain.com</td>
+						</tr>
+
+						<tr>
+							<th>Preferred contact</th>
+							<td>Email</td>
+						</tr>
+
+						<tr>
+							<th>Address</th>
+							<td class="address-stack">
+								<span>860 Liverpool Lane</span>
+								<span>Bolton</span>
+								<span>Lancashire</span>
+								<span>TXX ZZZ</span>
+							</td>
+						</tr>
+
+						<tr>
+							<th>Is address used for correspondence?</th>
+							<td>Yes</td>
+						</tr>
+            <tr>
+              <th>Has Harvey given consent to request further medical information?</th>
+              <td>Yes</td>
+            </tr>
+
+
+
+						</tbody>
+					</table>
+
+
+
+
+
+				<p class="view-all"><a href="#" class="secondary-invert">Edit Harvey's details</a></p>
+
+
+<br>
+
+      <h2 class="heading-medium">
+      					General Practitioner</h2>
+
+
+
+
+   <table>
+       <caption class="visually-hidden">Contact information</caption>
+
+
+
+       <tbody>
+
+
+       <tr>
+         <th>Name</th>
+         <td>Doctor who</td>
+       </tr>
+
+       <tr>
+         <th>Name of surgery</th>
+         <td>ojiio</td>
+       </tr>
+
+       <tr>
+         <th>Address</th>
+         <td class="address-stack">
+           <span>60 Market street</span>
+           <span>Adlington</span>
+           <span>Chorley</span>
+           <span>PR7 4HF</span>
+         </td>
+       </tr>
+
+       <tr>
+         <th>Surgery telephone number</th>
+         <td>012345 67890 1234</td>
+       </tr>
+
+
+
+       </tbody>
+     </table>
+
+
+
+
+
+   <p class="view-all"><a href="#" class="secondary-invert">Edit GP details</a></p>
+
+<br>
+   <h2 class="heading-medium">
+             Healthcare professionals</h2>
+
+             <h2 class="heading-medium">
+                       Hospital consultant</h2>
+ <!-- / title -->
+
+ <div class="portal-inner">
+
+
+   <table>
+
+       <tbody>
+
+
+       <tr>
+         <th>HCP Name</th>
+         <td>Mrs Smith</td>
+       </tr>
+
+       <tr>
+         <th>HCP telephone number</th>
+         <td>01234 567 8901</td>
+       </tr>
+
+       <tr>
+         <th>HCP address</th>
+         <td class="address-stack">
+           <span>Preston street</span>
+           <span>Preston</span>
+           <span>PR1 23AB</span>
+         </td>
+       </tr>
+
+
+
+
+
+       </tbody>
+     </table>
+
+
+     <p class="view-all"><a href="#" class="secondary-invert">Edit Healthcare professionals</a></p>
+
+
+
+		  	</div>
+
+
+
+
+		  	<div class="column-third">
+		  		<!---------------------------------- Card ---------------------------------->
+
+			<!-- <div class="portal-card">
+				<div class="portal-head">
+					<h3>Other details</h3>
+				</div>
+				<!-- / title -->
+
+				<!-- <div class="portal-inner">
+
+
+				<ul class="action-list">
+						<li><a href="/{{path }}/scenario11/not-testing" class="secondary-invert">View GP details</a></li>
+						<li><a href="/{{path }}/scenario11/not-testing" class="secondary-invert">Add a medical contact</a></li>
+					</ul>
+
+				</div>
+				<!-- / inner card -->
+			<!-- / portal card -->
+		  	<!-- </div> -->
+
+
+
+  	 </div>
+
+
+
+
+  </div>
+
+</div><!-- container -->
+</div>
+</div>
+</div>
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

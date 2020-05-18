@@ -1,0 +1,67 @@
+{% extends path+"/_layout1-alt.html" %}
+
+{% import path+"/baseline-new-detail-bar/_macros_nav_baseline.html" as nav %}
+
+
+
+{% block assess_content %}
+
+<section class="key-details-bar" role="contentinfo" aria-label="Key details">
+  <dl class="key-details-bar__key-details">
+    <div class="key-details-bar__top-block">
+      <dt class="visually-hidden">Name:</dt>
+      <dd class="key-details-bar__name">{% block citizen_detail %}{% endblock %}</dd>
+
+      <dt class="visually-hidden">National Insurance number:</dt>
+      <dd class="key-details-bar__nino">QQ 12 34 56 X</dd>
+
+      <dt class="visually-hidden">Claim status:</dt>
+      <dd class="key-details-bar__status">Ready for review</dd>
+    </div>
+
+    <div class="key-details-bar__bottom-block">
+      <dt>Case type:</dt>
+      <dd>PIP</dd>
+
+      <dt>Date of birth:</dt>
+      <dd>4 June 1972</dd>
+
+
+
+
+    </div>
+  </dl>
+</section>
+
+
+<div class="main-area">
+<div nunj-block="citizen_content">
+  {% block citizen_content %}{% endblock %}
+
+</div>
+
+
+
+{% endblock %}
+
+{% block page_scripts %}
+{{ super }}
+
+<script type="text/javascript">
+  $( document ).ready(function() {
+         $( ".panel-switch" ).click(function() {
+             $( ".inner-panel" ).toggleClass( "panel-open" );
+         });
+     });
+
+ </script>
+
+
+
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+
+{% endblock %}

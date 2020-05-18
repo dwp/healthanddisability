@@ -1,0 +1,21 @@
+.checkbox-filter{
+  .checkbox-container {
+    position: relative;
+    padding: 5px;
+    background-color: $white;
+    height: 100px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border:2px solid $grey-1;
+    width: 70%;
+    
+    label {
+      display: -moz-inline-stack;
+      display: inline-block;
+      clear: both;
+      white-space: nowrap;
+      overflow: hidden;
+      float: left;
+    }
+  }
+}

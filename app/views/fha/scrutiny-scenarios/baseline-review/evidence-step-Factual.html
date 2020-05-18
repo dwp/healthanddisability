@@ -1,0 +1,224 @@
+{% extends path+"/_layout-case-baseline-review.html" %}
+
+
+{% block actioncolumn %}
+
+ <!--<p class="returnRef"><a href="/{{path }}/scenario11/referrals-fme" class="link-back">Return to case list</a></p>-->
+ <div class="caseStatus">
+	 <h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+
+
+</div>
+{% endblock %}
+
+{% block citizen_detail %}
+Harvey Chamberlain
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+
+
+
+
+
+
+    <div class="column-full">
+
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+
+
+
+
+
+
+    	<h1 class="heading-large"><span class="heading-secondary">Step 1 of 2</span>Factual report request</h1>
+
+
+		<div class="evidence-requests mt30">
+
+
+
+			<form action="/{{path }}/scenario11/evidence-step-Factual-alt" method="POST" class="form">
+
+			<fieldset>
+				<legend class="visually-hidden">Factual report request form</legend>
+
+
+			<div class="form-group">
+						<fieldset>
+
+							  <legend class="heading-medium mb10">
+
+										Choose who you want to request this from:
+
+							  </legend>
+
+
+									<div class="multiple-choice">
+											<input id="gpName" type="radio" name="personChoice" value="name-gp">
+											<label for="gpName">GP - Name of GP</label>
+										</div>
+
+
+
+										<div class="multiple-choice">
+											<input id="cName" type="radio" name="personChoice" value="name-consultant">
+											<label for="cName">Consultant - Name of consultant</label>
+										</div>
+
+									<!--	<div class="multiple-choice" data-target="other">
+											<input id="otherName" type="radio" name="personChoice" value="other-name">
+											<label for="otherName">Other</label>
+										</div>
+
+
+										<div class="panel js-hidden" id="other">
+
+											<fieldset>
+
+												<legend class="visually-hidden">Details of medical professional</legend>
+
+												<div class="form-group">
+												<label for="otherNameField" class="form-label-bold">Full name</label>
+												<input type="text" id="otherNameField" class="form-control form-control-2-4">
+											</div>
+											<div>
+												<label for="otherNameField2" class="form-label-bold">Who are they?</label>
+												<input type="text" id="otherNameField2" class="form-control form-control-2-4">
+											</div>
+
+											</fieldset>
+
+										</div> -->
+
+
+							</fieldset>
+						</div>
+
+
+						<div class="form-group">
+						<fieldset>
+
+							  <legend class="heading-medium mb10">
+
+										Choose what you want more detail about:
+
+							  </legend>
+
+
+									<div class="multiple-choice">
+											<input id="Continence" type="checkbox" name="frrDetail" value="frr-Continence" {% if frr.request.info1 or checked('frrDetail', 'frr-Continence') %} checked {%endif%}>
+											<label for="Continence">Continence</label>
+										</div>
+
+
+
+										<div class="multiple-choice">
+											<input id="Consciousness" type="checkbox" name="frrDetail" value="frr-Consciousness" {% if frr.request.info2 or checked('frrDetail', 'frr-Consciousness') %} checked {%endif%}>
+											<label for="Consciousness">Consciousness</label>
+										</div>
+
+										<!--<div class="multiple-choice">
+											<input id="Suicidal" type="checkbox" name="frrDetail" value="frr-Suicidal">
+											<label for="Suicidal">Suicidal ideation</label>
+										</div>-->
+
+										<div class="multiple-choice" data-target="mentalHealthDetail">
+											<input id="Mental" type="checkbox" name="frrDetail" value="frr-MentalHealth" {% if frr.request.info3 or checked('frrDetail', 'frr-MentalHealth') %} checked {%endif%}>
+											<label for="Mental">Mental health</label>
+										</div>
+
+
+										<div class="panel js-hidden" id="mentalHealthDetail">
+
+											<fieldset>
+
+												<legend class="heading-small">Type of mental health:</legend>
+
+												<div class="multiple-choice">
+											<input id="Mental1" type="checkbox" name="mentalDetail" value="frr-MentalDetail1" {% if frr.request.health1 or checked('frrDetail', 'frr-MentalDetail1') %} checked {%endif%}>
+											<label for="Mental1">Learning disability</label>
+										</div>
+
+										<div class="multiple-choice">
+											<input id="Mental2" type="checkbox" name="mentalDetail" value="frr-MentalDetail2" {% if frr.request.health2 or checked('frrDetail', 'frr-MentalDetail2') %} checked {%endif%}>
+											<label for="Mental2">Psychosis</label>
+										</div>
+
+										<div class="multiple-choice">
+											<input id="Mental3" type="checkbox" name="mentalDetail" value="frr-MentalDetail3" {% if frr.request.health3 or checked('frrDetail', 'frr-MentalDetail3') %} checked {%endif%}>
+											<label for="Mental3">Suicidal ideation</label>
+										</div>
+
+											</fieldset>
+
+										</div>
+
+										<div class="multiple-choice">
+											<input id="Cancer" type="checkbox" name="frrDetail" value="frr-Cancer" {% if frr.request.info4 or checked('frrDetail', 'frr-Cancer') %} checked {%endif%}>
+											<label for="Cancer">Cancer</label>
+										</div>
+
+										<div class="multiple-choice">
+											<input id="Surgery" type="checkbox" name="frrDetail" value="frr-Surgery" {% if frr.request.info5 or checked('frrDetail', 'frr-Surgery') %} checked {%endif%}>
+											<label for="Surgery">Surgery</label>
+										</div>
+
+										<div class="multiple-choice">
+											<input id="Vision" type="checkbox" name="frrDetail" value="frr-Vision" {% if frr.request.info6 or checked('frrDetail', 'frr-Vision') %} checked {%endif%}>
+											<label for="Vision">Vision</label>
+										</div>
+
+
+
+							</fieldset>
+						</div>
+
+
+
+
+
+				<p class="mt30"><input type="submit" class="button" value="Save and continue"></p>
+
+			</fieldset>
+
+				</form>
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

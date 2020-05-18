@@ -1,0 +1,225 @@
+{% extends path+"/_layout-case-baseline-review.html" %}
+
+
+{% block actioncolumn %}
+
+ <!--<p class="returnRef"><a href="/{{path }}/scenario11/referrals-fme" class="link-back">Return to case list</a></p>-->
+ <div class="caseStatus">
+	 <h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+
+
+</div>
+{% endblock %}
+
+{% block citizen_detail %}
+Harvey Chamberlain
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+
+
+
+
+
+
+    <div class="column-full">
+
+    <p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+
+
+
+
+
+
+    	<h1 class="heading-large"><span class="heading-secondary">Step 2 of 2</span>Factual report request</h1>
+
+
+		<div class="evidence-requests mt30">
+
+
+
+			<form action="/{{path }}/scenario11/evidence-step-print" method="POST" class="form">
+
+
+			{% if frr.request.info1 or checked('frrDetail', 'frr-Continence')%}
+
+
+
+			<h2 class="heading-medium mb10">Continence</h2>
+
+
+			<h3 class="heading-small">Information requested:</h3>
+
+						<ul class="list-bullet">
+							<li>Does the patient have incontinence</li>
+							<li>Frequency of incontinence</li>
+							<li>Diagnosis</li>
+							<li>Details about continence aids/pads</li>
+							<li><a href="/{{path }}/scenario11/evidence-step-Factual-GP">View what the GP would see</a></li>
+						</ul>
+
+
+						<p class="mt20"><a href="#" class="secondary-invert">Add another question</a></p>
+
+
+						<hr>
+
+			{% endif %}
+
+
+			{% if frr.request.info2 or checked('frrDetail', 'frr-Consciousness')%}
+
+
+			<h2 class="heading-medium mt0">Consciousness</h2>
+
+			<h3 class="heading-small">Information requested:</h3>
+
+						<ul class="list-bullet">
+							<li>Details of consciousness in waking hours</li>
+							<li>Frequency of epsiodes</li>
+							<li>Diagnosis</li>
+						</ul>
+
+
+						<p class="mt20"><a href="#" class="secondary-invert">Add another question</a></p>
+
+						<hr>
+
+			{% endif %}
+
+			{% if frr.request.info3 or checked('frrDetail', 'frr-MentalHealth')%}
+
+
+			<h2 class="heading-medium mt0">Mental health</h2>
+
+			<h3 class="heading-small">Information requested:</h3>
+
+						<ul class="list-bullet">
+							<li>Details of consciousness in waking hours</li>
+							<li>Frequency of epsiodes</li>
+							<li>Diagnosis</li>
+						</ul>
+
+
+						<p class="mt20"><a href="#" class="secondary-invert">Add another question</a></p>
+
+						<hr>
+
+			{% endif %}
+
+			{% if frr.request.info4 or checked('frrDetail', 'frr-Cancer')%}
+
+
+			<h2 class="heading-medium mt0">Cancer</h2>
+
+			<h3 class="heading-small">Information requested:</h3>
+
+						<ul class="list-bullet">
+							<li>Diagnosis &ndash; historical or current</li>
+							<li>Date of diagnosis</li>
+							<li>Type of cancer</li>
+							<li>Type of treatment</li>
+							<li>Dates of treatment</li>
+							<li>Treatment recovery</li>
+							<li>Side effects of treatment</li>
+						</ul>
+
+
+						<p class="mt20"><a href="#" class="secondary-invert">Add another question</a></p>
+
+						<hr>
+
+			{% endif %}
+
+			{% if frr.request.info5 or checked('frrDetail', 'frr-Surgery')%}
+
+
+			<h2 class="heading-medium mt0">Surgery</h2>
+
+			<h3 class="heading-small">Information requested:</h3>
+
+						<ul class="list-bullet">
+							<li>Surgery details &ndash; historical or future</li>
+							<li>Type of surgery</li>
+							<li>Date of surgery</li>
+							<li>Hospital admission</li>
+						</ul>
+
+
+						<p class="mt20"><a href="#" class="secondary-invert">Add another question</a></p>
+
+						<hr>
+
+			{% endif %}
+
+			{% if frr.request.info6 or checked('frrDetail', 'frr-Vision')%}
+
+
+			<h2 class="heading-medium mt0">Vision</h2>
+
+			<h3 class="heading-small">Information requested:</h3>
+
+						<ul class="list-bullet">
+							<li>Does patient have vision problems</li>
+							<li>Diagnosis</li>
+							<li>Can patient read braille</li>
+						</ul>
+
+
+						<p class="mt20"><a href="#" class="secondary-invert">Add another question</a></p>
+
+						<hr>
+
+			{% endif %}
+
+
+
+
+
+
+				<p class="mt30"><input type="submit" class="button" value="Save and continue"></p>
+
+
+
+
+
+				</form>
+		</div>
+
+
+
+    </div><!-- column-full -->
+  </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

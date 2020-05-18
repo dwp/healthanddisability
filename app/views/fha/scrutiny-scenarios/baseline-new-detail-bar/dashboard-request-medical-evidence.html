@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+  {% extends path+"/_layoutv2.html" %} {% block assess_content %}
+
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-full">
+
+        <nav class="navigation-secondary">
+          <ul>
+            <li>
+              <a href="#" class="active" aria-current="section">Dashboard</a>
+            </li>
+            <li>
+              <a href="#">Manage centres</a>
+            </li>
+            <li>
+              <a href="#">Capacity management</a>
+            </li>
+            <li>
+              <a href="#">Verify caller ID</a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+
+
+  <main class="main-content"
+        id="content"
+        role="main">
+    <div class="container">
+      <div class="grid-row">
+        <div class="column-one-quarter">
+          <div class="search-customer">
+            <form action="/{{path}}/search-results"
+                  method="post">
+              <label class="form-label-bold visually-hidden"
+                    for="search">Customer search</label> <span class="form-hint">Enter an NI number</span> <input class="form-control form-control-2-3"
+                    id="search"
+                    name="search"
+                    type="text"> <button class="gem-c-search__submit">Search</button>
+            </form>
+          </div>
+
+
+
+
+
+        </div>
+        <div class="column-three-quarters">
+          <div class="grid-row">
+            <div class="column-full">
+              <a class="button mt25"
+                   href="#">Create referral</a>
+              <hr>
+              <h1 class="heading-xlarge mt0 mb20">
+                <!-- <span class="heading-secondary">Tresco assessment centre</span> -->
+                150 cases</h1>
+            </div>
+          </div>
+          <div class="grid-row">
+            <div class="card-container">
+              <div class="card">
+                <a href="/{{path%20}}/scenario/not-testing.html">
+                <h2 class="heading-xlarge">5 <span class="heading-small">Referrals</span></h2></a>
+                <ul class="inner">
+                  <li>
+                    <a href="/{{path%20}}/scenario/not-testing.html">New referrals (4)</a>
+                  </li>
+                  <li>
+                    <a href="/{{path%20}}/scenario/not-testing.html">Referrals in progress (0)</a>
+                  </li>
+                  <li>
+                    <a href="/{{path}}/scenario2/caselist.html">Incomplete referrals(0)</a>
+                  </li>
+                  <li>
+                    <a href="/{{path}}/scenario2/caselist.html">Good cause referrals(1)</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="card">
+                <a href="/{{path%20}}/scenario/not-testing.html">
+                <h2 class="heading-xlarge">5 <span class="heading-small">Reviews</span></h2></a>
+                <ul class="inner">
+                  <li>
+                    <a href="/{{path}}/scenario14c/ready-for-review.html">Ready for review (2)</a>
+                  </li>
+                  <!-- <li>
+                    <a href="/{{path%20}}/scenario/not-testing.html">Ready for second review(0)</a>
+                  </li> -->
+                  <li>
+                    <a href="/{{path}}/scenario14c/requested-medical-evidence.html">Request medical evidence(1)</a>
+                  </li>
+                  <li>
+                    <a href="/{{path%20}}/scenario/not-testing.html">Paper based assessment(2)</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="card">
+                <a href="/{{path%20}}/scenario/not-testing.html">
+                <h2 class="heading-xlarge">121 <span class="heading-small">Appointments</span></h2></a>
+                <ul class="inner">
+                  <li>
+                    <a href="/{{path%20}}/scenario/not-testing.html">Ready to book (14)</a>
+                  </li>
+                  <li>
+                    <a href="/fha/appointment-scenarios/scenario4/bookedv5">Booked appointments(94)</a>
+                  </li>
+                  <li>
+                    <a href="/{{path%20}}/scenario/not-testing.html">Did not attend (13)</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="card">
+                <a href="/{{path%20}}/scenario/not-testing.html">
+                <h2 class="heading-xlarge">6 <span class="heading-small">Todays appointments</span></h2></a>
+                <ul class="inner">
+                  <li>
+                    <a href="/{{path%20}}/scenario/not-testing.html">Confirm arrival (0)</a>
+                  </li>
+                  <li>
+                    <a href="/{{path%20}}/scenario/not-testing.html">Ready for assessment(4)</a>
+                  </li>
+                  <li>
+                    <a href="/{{path%20}}/scenario/not-testing.html">Assessment stopped(2)</a>
+                  </li>
+                  <li>
+                    <a href="/{{path%20}}/scenario/not-testing.html">Assessment completed(0)</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="card">
+                <a href="/{{path%20}}/scenario/not-testing.html">
+                <h2 class="heading-xlarge">3 <span class="heading-small">Post assessment</span></h2></a>
+                <ul class="inner">
+                  <li>
+                    <a href="/{{path%20}}/scenario/not-testing.html">Assessments completed(2)</a>
+                  </li>
+                  <li>
+                    <a href="/{{path%20}}/scenario/not-testing.html">Outcome available(1)</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="card">
+                <a href="/{{path%20}}/scenario/not-testing.html">
+                <h2 class="heading-xlarge">6 <span class="heading-small">DWP actions to take</span></h2></a>
+                <ul class="inner">
+                  <li>
+                    <a href="/{{path%20}}/scenario/not-testing.html">Good cause actions(5)</a>
+                  </li>
+                  <li>
+                    <a href="/{{path%20}}/scenario/not-testing.html">Withdrawn(5)</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div><!-- column -->
+      </div><!-- row -->
+    </div><!-- container -->
+  </main>   </main>{% endblock %}
+</body>
+</html>

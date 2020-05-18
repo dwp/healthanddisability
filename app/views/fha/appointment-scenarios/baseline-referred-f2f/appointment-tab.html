@@ -1,0 +1,166 @@
+{% extends path+"/_layout-case-simple-baseline-f2f.html" %}
+
+
+{% block actioncolumn %}
+
+ <p class="returnRef"><a href="booked" class="link-back">Return to case list</a></p>
+<div class="caseStatus">
+  <h2 class="main-status"><span>Current referral status</span>Referral for face to face assessment</h2>
+
+ </div>
+ {% endblock %}
+
+
+
+
+ {% block citizen_detail %}
+ Stevie Barnes
+ {% endblock %}
+
+ {% block citizen_content %}
+
+<style>
+.ref{
+					  padding:10px;
+
+					  margin-bottom:10px;
+					  display:block;
+					  font-size:17px;
+					  border:1px solid #bfc1c3;
+					  border-left:3px solid #bfc1c3;
+					  border-right:0;
+					  border-top:0;
+					  border-bottom:0;
+	}
+
+	.panel{
+		padding:7px 7px 2px 7px;
+		font-size:17px;
+	}
+	</style>
+
+<div class="container">
+
+
+  <div class="grid-row">
+
+
+
+
+
+    <div class="column-full">
+
+
+    {# macro #}
+  {{ nav.case_tabs("appointment-tab",1,path1, customer._id) }}
+
+
+  <h1 class="heading-large">
+  	Appointment</h1>
+
+
+
+<div class="portal-display">
+
+
+
+  	 <div class="grid-row">
+
+		  	<div class="column-third">
+
+
+			<div class="portal-card">
+				<div class="portal-head">
+					<h3>Next available</h3>
+				</div>
+
+				<div class="portal-inner">
+				<h4>Non-neuro appointment</h4>
+			      <ul class="list-bullet">
+			          <li>{{ 'Do MMMM YYYY' | baseDateAdd(8) }}</li>
+			          <li>10:30am</li>
+			          <li>Tresco House</li>
+			      </ul>
+
+			      <ul class="action-list">
+            <li><a href="/{{path }}/scenario5/rearrange-cancel-appointment" class="button">Book this appointment</a></li>
+            </ul>
+
+
+				</div>
+
+			</div>
+			<!-- / portal card -->
+
+
+
+
+		  	</div>
+
+
+		  	<div class="column-third">
+		  		<!---------------------------------- Card ---------------------------------->
+
+			<div class="portal-card">
+				<div class="portal-head">
+					<h3>Preferences</h3>
+				</div>
+				<!-- / title -->
+
+				<div class="portal-inner">
+<br>
+
+				      <ul class="action-list">
+            <li> <a href="preferences" class="secondary-invert">Add or edit preferences</a></li>
+			  {% if customer.requirement.interpreter == 'interpreter' or  customer.requirement.taxi == 'taxi'  %}
+            <li> <a href="record-bookings?nino={{customer.nino}}" class="secondary-invert">Record bookings</a></li>
+            {% endif %}
+            </ul>
+
+				</div>
+				<!-- / inner card -->
+			<!-- / portal card -->
+		  	</div>
+
+		  	<!--<hr>
+
+		  	<div class="portal-card">
+				<div class="portal-head">
+					<h3>Preferences</h3>
+				</div>
+
+
+				<div class="portal-inner">
+
+
+            <p> <a href="/{{path }}/scenario2/not-testing" class="secondary-invert">Add preferences</a></p>
+
+				</div>
+
+		  	</div>
+		  	<!-- / portal card -->
+
+  	 </div>
+
+
+		  	</div>
+
+  	 </div>
+
+
+
+
+
+    </div>
+
+    </div><!-- column -->
+
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+
+{% endblock %} #}

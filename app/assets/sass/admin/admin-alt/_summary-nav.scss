@@ -1,0 +1,53 @@
+.summary-nav-wrapper {
+  margin-bottom: 20px;
+
+  ul {
+    display: block;
+    border-bottom: 1px solid $border-colour;
+
+    li {
+      background: $white;
+      display: inline-block;
+      cursor: pointer;
+      border: 1px solid $panel-colour;
+      background-color: $panel-colour;
+      color: $govuk-blue;
+      font-size: 19px;
+      line-height: 24px;
+      
+      &.selected {
+        color: $black;
+        border: 1px solid $border-colour;
+        background-color: $white;
+        border-bottom: none;
+        position: relative;
+        bottom: -1px;
+        padding: 1px 15px 6px 12px;
+
+        a{
+          padding:10px 0;
+        }
+      }
+
+      a, span {
+        display: inline-block;
+        padding: 10px 15px;
+        text-decoration: none;
+        font-weight: bold;
+
+        &:visited{
+          color: $govuk-blue;
+        }
+      }
+      
+
+      &.disabled {
+        cursor: none;
+        opacity: 0.5;
+        span {
+          color: $grey-1;
+        }
+      }
+    }
+  }
+}

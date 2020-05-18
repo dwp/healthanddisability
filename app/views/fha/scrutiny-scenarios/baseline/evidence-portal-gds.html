@@ -1,0 +1,234 @@
+{% extends path+"/_layout-case-baseline.html" %}
+
+
+{% block actioncolumn %}
+
+  <p class="returnRef"><a href="/{{path }}/scenario14c/referrals-fme" class="link-back">Return to case list</a></p>
+
+ <div class="caseStatus">
+
+
+
+
+{% if data['pbachoice']=='no'%}
+
+	 <h2 class="main-status"><span>Current case status</span>Appointment booked</h2>
+
+
+	 {% elif data['pbachoice']=='yes'%}
+
+	 <h2 class="main-status"><span>Current case status</span>Paper based review</h2>
+	 <!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/not-testing" class="button">Start assessment</a></h3>-->
+
+
+	 {% else %}
+
+
+
+{% if data['evidencePath']=='ev-ftf'%}
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+
+	<h2 class="main-status"><span>Current case status</span>Second review</h2>
+		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario14c/rec-portal-second" class="button">Make recommendation</a></h3>
+		{% else %}
+
+	<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
+	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario14c/record-evidence" class="button">Record GP report</a></h3>
+	{% endif %}
+
+
+	{% elif data['evidencePath']=='ev-pba'%}
+
+	{% if data['evidenceRecorded']=='record-yes'%}
+		<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario14c/rec-portal" class="button">Make recommendation</a></h3>
+		{% else %}
+		<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
+	{% endif %}
+
+
+	{% else %}
+
+	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
+	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario14c/rec-portal" class="button">Make recommendation</a></h3>
+
+
+
+{% endif %}
+
+
+{% endif %}
+
+
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Jurgen Covault
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+
+    <div class="column-full">
+
+<!-- tabs -->
+    {# macro #}
+  {{ nav.scenario_tabs("evidence-portal",1,path1, customer._id) }}
+</div>
+</div>
+</div>
+  <div class="grid-row">
+
+     <div class="column-two-thirds">
+
+<!-- header -->
+<h1 class="heading-large mt10">Evidence</h1>
+
+
+<br>
+
+
+				<div class="portal-inner">
+
+<!-- table last recorded-->
+          <div class="pCon">
+            <h3 class="heading-small">
+              Last recorded evidence
+            </h3>
+					<table class="evidence-list">
+						<thead>
+							<tr>
+								<th>Evidence type</th>
+								<th>Date recorded</th>
+							</tr>
+						<tbody>
+
+								  		<tr>
+											<td><a href="/{{path }}/scenario14c/referralJustify">Appointment referral justification</a></td>
+											<td>3 August 2019</td>
+										</tr>
+
+							</tbody>
+					</table>
+
+					<p class="view-all"><a href="/{{path }}/scenario14c/evidence-full" class="button-secondary">View all recorded evidence</a></p>
+
+
+				</div>
+        <br>
+<!-- table previous decision -->
+<div class="pCon">
+  <h3 class="heading-small">
+    Previous decision
+  </h3>
+<table class="evidence-list">
+  <thead>
+    <tr>
+      <th>Last review date</th>
+      <th>Last decision details</th>
+      <th>Last decision dete</th>
+    </tr>
+  <tbody>
+
+            <tr>
+            <td>1 April 2019</td>
+            <td><a href="#">Claim referred</a></td>
+            <td>3 April 2019</td>
+          </tr>
+
+    </tbody>
+</table>
+
+<p class="view-all"><a href="/{{path }}/scenario14c/evidence-full" class="button-secondary">View previous decision</a></p>
+
+
+</div>
+		</div>
+    </div>
+
+
+
+<div class="column-third">
+    <aside class="app-related-items">
+      <h3 class="heading-small">
+      Record new evidence
+      </h3>
+
+    <ul>
+        <li><p class="mt20"> <a href="#">Record a telephone conversation</a></p>
+        </li>
+        <li><p class="mt20"> <a href="#">Record other evidence</a></p>
+        </li>
+
+      </ul>
+</aside>
+  </div>
+
+
+
+
+
+           </div>
+
+
+
+
+
+		<!---------------------------------- Card ---------------------------------->
+		<!-- <div class="column-third">
+
+					<h3>Record new evidence</h3>
+				</div> -->
+				<!-- / title -->
+
+				<!-- <div class="portal-inner"> -->
+
+					<!-- <ul class="action-list">
+
+							{% if data['evidenceChoice']=='ev-gp'%}
+								<li><a href="/{{path }}/scenario11/record-evidence" class="secondary-invert">Record GP report</a></li>
+								{% else %}
+							{% endif %}
+							{% if data['evidenceChoice']=='ev-fr'%}
+								<li><a href="/{{path }}/scenario11/record-evidence" class="secondary-invert">Record Factual report</a></li>
+								{% else %}
+							{% endif %}
+						<li><a href="/{{path }}/scenario11/recordTelephone" class="secondary-invert">Record a telephone conversation</a></li>
+						<li><a href="/{{path }}/scenario11/recordOther" class="secondary-invert">Record other evidence</a></li>
+					</ul> -->
+
+
+			</div>
+
+
+
+
+		</div>
+
+
+
+
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

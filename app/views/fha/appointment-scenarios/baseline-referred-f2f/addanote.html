@@ -1,0 +1,92 @@
+{% extends path+"/_layout-case-simple-baseline-f2f.html" %}
+
+{% block actioncolumn %}
+
+<div class="caseStatus">
+	<h2 class="main-status"><span>Current case status</span>Booked appointment</h2>
+</div>
+
+{% endblock %}
+
+{% block citizen_detail %}
+Bobby Henderson
+{% endblock %}
+
+{% block citizen_content %}
+
+
+
+
+<div class="container">
+
+
+  <div class="grid-row">
+
+
+
+
+
+
+       <div class="column-full">
+
+
+    	<p class="no-kdBar"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+
+
+        <form class="form" method="post" action="/{{path}}/scenario3/appointment-tab">
+      <h1 class="heading-large">Add a note</h1>
+
+
+
+                                    <div class="form-group">
+                                            <label class="form-label-bold visually-hidden">Add a note</label>
+                                            <textarea name="reason" class="form-control " style="height: 150px; width:100%; max-width:650px;">{{reason}}</textarea>
+                                    </div>
+							   <div class="form-group">
+                                                <fieldset class="inline">
+
+                                                  <legend>
+                                                    <h2 class="heading-small mb10">
+                                                      Is this update because of inbound contact?
+                                                    </h2>
+                                                  </legend>
+
+                                                  <div class="multiple-choice">
+                                                    <input id="radio-inline-1" type="radio" name="contact" value="yes">
+                                                    <label for="radio-inline-1">Yes</label>
+                                                  </div>
+                                                  <div class="multiple-choice">
+                                                    <input id="radio-inline-2" type="radio" name="contact" value="no">
+                                                    <label for="radio-inline-2">No</label>
+                                                  </div>
+
+                                                </fieldset>
+                                              </div>
+
+
+
+
+								</fieldset>
+
+
+            <p class="mt30"><button class="button">Save and continue</button></p>
+        </div>
+				</form>
+
+   </div>
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}
