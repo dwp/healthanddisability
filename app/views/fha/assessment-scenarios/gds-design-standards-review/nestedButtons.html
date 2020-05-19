@@ -1,0 +1,43 @@
+{% extends path+"/gds-design-standards-review/_layout-case_assessment-in-progress-plus-links.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<form action="condition-history_create-list" method="post">
+
+<div class="form-group">
+  <fieldset>
+
+    <legend>
+      <h1 class="heading-large mt10">Physical assessment</h1>
+      <p>Has Joe given their consent for this physical assessment?</p>
+    </legend>
+
+    <div class="multiple-choice">
+      <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+      <label for="radio-inline-1">Yes</label>
+    </div>
+    <div class="multiple-choice" data-target="justify-radio-no">
+      <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+      <label for="radio-inline-2">No</label>
+    </div>
+ 		<div class="panel js-hidden" id="justify-radio-no">
+			<div class="form-group">
+				<label class="form-label" for="justify">Why doesn't Joe consent?</label>
+				<textarea class="form-control form-control-1-1" id="justify" rows="4"></textarea>
+			</div>
+		</div>
+
+  </fieldset>
+</div>
+
+<p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+</form>
+
+
+
+{% endblock %}

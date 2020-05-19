@@ -1,0 +1,77 @@
+{% extends path+"/gds-design-standards-review/_layout-case_assessment-complete-plus-links.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+<form action="doubleNesting_02" method="post">
+
+<div class="form-group">
+  <fieldset>
+
+    <legend>
+    <p class="caption-large" class="mb0">Step 2 of 2</p>
+      <h1 class="heading-large mt10">Standing, sitting and transferring from seat to seat</h1>
+      <p>Choose the descriptor that's most appropriate to Joe.</p>
+    </legend>
+
+    <div class="multiple-choice" data-target="justify-radio-inline-1">
+      <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+      <label for="radio-inline-1">Cannot transfer from one seat to another right next to it without someone’s help</label>
+    </div>
+		<div class="panel js-hidden" id="justify-radio-inline-1">
+			<div class="form-group">
+				<label class="form-label" for="justify">Write your justification</label>
+				<textarea class="form-control form-control-1-1" id="justify" rows="4"></textarea>
+			</div>
+		</div>
+
+    <div class="multiple-choice" data-target="justify-radio-inline-2">
+      <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+      <label for="radio-inline-2">Cannot stand, sit or alternate between the two for more than 30 minutes</label>
+    </div>
+		<div class="panel js-hidden" id="justify-radio-inline-2">
+			<div class="form-group">
+				<label class="form-label" for="justify">Write your justification</label>
+				<textarea class="form-control form-control-1-1" id="justify" rows="4"></textarea>
+			</div>
+		</div>
+
+    <div class="multiple-choice" data-target="justify-radio-inline-3">
+      <input id="radio-inline-3" type="radio" name="radio-inline-group" value="No">
+      <label for="radio-inline-3">Cannot stand, sit or alternate between the two for more than an hour</label>
+    </div>
+		<div class="panel js-hidden" id="justify-radio-inline-3">
+			<div class="form-group">
+				<label class="form-label" for="justify">Write your justification</label>
+				<textarea class="form-control form-control-1-1" id="justify" rows="4"></textarea>
+			</div>
+		</div>
+
+    <div class="multiple-choice" data-target="justify-radio-inline-4">
+      <input id="radio-inline-4" type="radio" name="radio-inline-group" value="No">
+      <label for="radio-inline-4">None of the above</label>
+    </div>
+ 		<div class="panel js-hidden" id="justify-radio-inline-4">
+			<div class="form-group">
+				<label class="form-label" for="justify">Write your justification</label>
+				<textarea class="form-control form-control-1-1" id="justify" rows="4"></textarea>
+			</div>
+		</div>
+
+  </fieldset>
+</div>
+
+<p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+</form>
+
+</div>
+</div>
+
+{% endblock %}
