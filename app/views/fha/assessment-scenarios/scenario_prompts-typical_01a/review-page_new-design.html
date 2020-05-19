@@ -1,0 +1,289 @@
+{% extends path+"/scenario_prompts-typical_01a/_layout-case-simple-full-width.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<style>table th, table td{
+border-bottom:none !important;}
+
+.column-01{width:25%; vertical-align:top;}
+.column-02{width:60%;}
+.column-03{width:15%; text-align:right; padding-right:1.5em;}
+tr.row{border-bottom:1px solid #bfc1c3;}
+table.section{margin-bottom:60px;}
+.mental-health th, .mental-health td{padding-top:0;}
+</style>
+
+<p class="no-kdBar"></p>
+
+  
+<h1 class="heading-large">Review evidence before making your recommendation</h1>
+ 
+
+<div class="full-report">
+
+
+	{# <h2 class="heading-medium mt0">Additional attendees</h2> 
+	
+	<div class="inner-focus">
+		<p>John Smith</p>
+	</div>
+	<p class="edit-report"><a href="#" class="button-secondary">Edit additional attendees</a></p>
+
+<hr> #}
+
+	{# <h4 class="heading-small">Condition history</h4>  #}
+
+
+<h4 class="heading-medium">Condition history</h4>
+<table class="section">
+	<tbody>
+		{% if data['reportedcondition01']%}
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition01 }}</th>
+			<td class="column-02">
+				<p style="margin-bottom:.5em;">Onset and progression:<br>{{ condition01Time }}</p>
+				<p style="margin-bottom:.5em;">Symptoms:<br>{{ condition01Symptoms }}</p>
+				<p style="margin-bottom:.5em;">Investigations and medical input:<br>{{ condition01Investigations }}</p>
+				<p style="margin-bottom: auto;">Impact on function:<br>{{ condition01Impact }}</p>
+			</td>
+			<td class="column-03"><a href="condition-history_condition01">Change</a></td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition02']%}
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition02 }}</th>
+			<td class="column-02">
+				<p style="margin-bottom:.5em;">Onset and progression:<br>{{ condition02Time }}</p>
+				<p style="margin-bottom:.5em;">Symptoms:<br>{{ condition02Symptoms }}</p>
+				<p style="margin-bottom:.5em;">Investigations and medical input:<br>{{ condition02Investigations }}</p>
+				<p style="margin-bottom: auto;">Impact on function:<br>{{ condition02Impact }}</p>
+			</td>
+			<td class="column-03"><a href="condition-history_condition02">Change</a></td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition03']%}
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition03 }}</th>
+			<td class="column-02">
+				<p style="margin-bottom:.5em;">Onset and progression:<br>{{ condition03Time }}</p>
+				<p style="margin-bottom:.5em;">Symptoms:<br>{{ condition03Symptoms }}</p>
+				<p style="margin-bottom:.5em;">Investigations and medical input:<br>{{ condition03Investigations }}</p>
+				<p style="margin-bottom: auto;">Impact on function:<br>{{ condition03Impact }}</p>
+			</td>
+			<td class="column-03"><a href="condition-history_condition03">Change</a></td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition04']%}
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition04 }}</th>
+			<td class="column-02">
+				<p style="margin-bottom:.5em;">Onset and progression:<br>{{ condition04Time }}</p>
+				<p style="margin-bottom:.5em;">Symptoms:<br>{{ condition04Symptoms }}</p>
+				<p style="margin-bottom:.5em;">Investigations and medical input:<br>{{ condition04Investigations }}</p>
+				<p style="margin-bottom: auto;">Impact on function:<br>{{ condition04Impact }}</p>
+			</td>
+			<td class="column-03"><a href="condition-history_condition04">Change</a></td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition05']%}
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition05 }}</th>
+			<td class="column-02">
+				<p style="margin-bottom:.5em;">Onset and progression:<br>{{ condition05Time }}</p>
+				<p style="margin-bottom:.5em;">Symptoms:<br>{{ condition05Symptoms }}</p>
+				<p style="margin-bottom:.5em;">Investigations and medical input:<br>{{ condition05Investigations }}</p>
+				<p style="margin-bottom: auto;">Impact on function:<br>{{ condition05Impact }}</p>
+			</td>
+			<td class="column-03"><a href="condition-history_condition05">Change</a></td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition06']%}
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition06 }}</th>
+			<td class="column-02">
+				<p style="margin-bottom:.5em;">Onset and progression:<br>{{ condition06Time }}</p>
+				<p style="margin-bottom:.5em;">Symptoms:<br>{{ condition06Symptoms }}</p>
+				<p style="margin-bottom:.5em;">Investigations and medical input:<br>{{ condition06Investigations }}</p>
+				<p style="margin-bottom: auto;">Impact on function:<br>{{ condition06Impact }}</p>
+			</td>
+			<td class="column-03"><a href="condition-history_condition06">Change</a></td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition07']%}
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition07 }}</th>
+			<td class="column-02">
+				<p style="margin-bottom:.5em;">Onset and progression:<br>{{ condition07Time }}</p>
+				<p style="margin-bottom:.5em;">Symptoms:<br>{{ condition07Symptoms }}</p>
+				<p style="margin-bottom:.5em;">Investigations and medical input:<br>{{ condition07Investigations }}</p>
+				<p style="margin-bottom: auto;">Impact on function:<br>{{ condition07Impact }}</p>
+			</td>
+			<td class="column-03"><a href="condition-history_condition07">Change</a></td>
+		</tr>
+		{% else %}{% endif %}
+	</tbody>
+</table>
+
+
+<h4 class="heading-medium">Other details</h4>
+
+<table class="section">
+	<tbody>
+		<tr class="row">
+			<th class="column-01">Medication and side effects</th>
+			<td class="column-02">{{ medicationSideEffects }}</td>
+			<td class="column-03"><a href="medicationSideEffects">Change</a></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Social and work history</th>
+			<td class="column-02">{% for item in socialWorkComments | sortBy("time",false) %}<p style="margin-top:0px; margin-bottom:0;">{{ item.comment }}</p>{% endfor %}</td>
+			<td class="column-03"><a href="socialWork">Change</a></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Typical day</th>
+			<td class="column-02">{% for item in typicalDayComments | sortBy("time",false) %}<p style="margin-top:0px; margin-bottom:0;">{{ item.comment }}</p>{% endfor %}</td>
+			<td class="column-03"><a href="typicalDay">Change</a></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Additional attendees</th>
+			<td class="column-02">Joe Bloggs</td>
+			<td class="column-03"><a href="#">Change</a></td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+
+<!-- Physical assessments: Start -->
+<h4 class="heading-medium">Physical assessments</h4>
+
+<table>
+	<tbody>
+		<tr class="row">
+			<th class="column-01">General health</th>
+			<td class="column-02">Height (m): 1.3<br>Weight (Kg): 94<br>BMI: 25%</td>
+			<td class="column-03"><a href="#">Change</a></td>
+		</tr>
+	</tbody>
+</table>
+
+<h4 class="heading-small">Lower back and legs</h4>
+<table>
+	<tbody>
+		<tr class="row">
+			<th class="column-01">Lower back</th>
+			<td class="column-02">Forward flexion: Unrestricted<br>Squat and rise: Full</td>
+			<td class="column-03"><a href="#">Change</a></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Left leg</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"><a href="#">Change</a></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Right leg</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"><a href="#">Change</a></td>
+		</tr>
+	</tbody>
+</table>
+
+<h4 class="heading-small">Vision, speech and hearing</h4>
+
+<table class="section mental-health">
+	<tbody>
+		<tr>
+			<th class="column-01">Vision</th>
+			<td class="column-02">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+			<td class="column-03"><a href="#">Change</a></td>
+		</tr>
+		<tr>
+			<th class="column-01">Speech</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Hearing</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- Physical assessments: End -->
+
+
+
+
+<!-- Mental Health: Start -->
+<h4 class="heading-medium">Mental health assessment</h4>
+
+<table class="section mental-health">
+	<tbody>
+		<tr>
+			<th class="column-01">Appearance</th>
+			<td class="column-02">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+			<td class="column-03"><a href="#">Change</a></td>
+		</tr>
+		<tr>
+			<th class="column-01">Behaviour</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr>
+			<th class="column-01">Speech</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr>
+			<th class="column-01">Mood</th>
+			<td class="column-02">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr>
+			<th class="column-01">Cognition</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr>
+			<th class="column-01">Insight</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr>
+			<th class="column-01">Thoughts</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr>
+			<th class="column-01">Perceptions</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr>
+			<th class="column-01">Addictions</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Cognitive</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+	</tbody>
+</table>
+<!-- Mental Health: End -->
+
+<p><a href="#" class="button">Make your recommendation</a></p>
+
+  
+   </div>
+ <!-- / wrapper -->
+  
+
+
+
+{% endblock %}

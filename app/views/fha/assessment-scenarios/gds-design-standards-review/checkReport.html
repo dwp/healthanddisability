@@ -1,0 +1,633 @@
+{% extends path+"/gds-design-standards-review/_layout-1-column_assessment-complete_key-details.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<style>table th, table td{
+border-bottom:none !important;}
+
+.column-01{width:30%; vertical-align:top;}
+.column-02{width:55%;}
+.column-03{width:15%; text-align:right; padding-right:1.7em; vertical-align:top;}
+.column-wide-01{width:85%; vertical-align:top;}
+.column-wide-02{width:15%; text-align:right; padding-right:1.7em;}
+.medical-opinion-column-01{width:22%; vertical-align:top;}
+.medical-opinion-column-02{width:53%;}
+.medical-opinion-column-03{width:13%; text-align:right;}
+.medical-opinion-column-04{width:12%; text-align:right; padding-right:1.7em; vertical-align:top;}
+tr.row{border-bottom:1px solid #bfc1c3;}
+table.section{margin-bottom:60px;}
+.mental-health th, .mental-health td{padding-top:0;}
+tr.header-row th{padding: 0.63158em 1.05263em 0 0 !important;}
+</style>
+
+{# <p class="no-kdBar"></p> #}
+
+  
+<h1 class="heading-large">Check report before submitting for approval</h1>
+ 
+
+<div class="full-report">
+
+<h4 class="heading-medium">Assessment details</h4>
+
+<table class="section">
+	<tbody>
+		<tr class="row">
+			<th class="column-01">Name</th>
+			<td class="column-02">Joe Bloggs</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">National Insurance number</th>
+			<td class="column-02">AA 12 34 56 B</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Date of birth</th>
+			<td class="column-02">31 December 1999</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Date of assessment</th>
+			<td class="column-02">15 May 2020</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Assessment centre</th>
+			<td class="column-02">Tresco House</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Assessor</th>
+			<td class="column-02">John Smith</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Face-to-face start time</th>
+			<td class="column-02">2:27pm</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Face-to-face end time</th>
+			<td class="column-02">3:11pm</td>
+			<td class="column-03"></td>
+		</tr>
+	</tbody>
+</table>
+
+
+	{# <h2 class="heading-medium mt0">Additional attendees</h2> 
+	
+	<div class="inner-focus">
+		<p>John Smith</p>
+	</div>
+	<p class="edit-report"><a href="#" class="button-secondary">Edit additional attendees</a></p>
+
+<hr> #}
+
+	{# <h4 class="heading-small">Condition history</h4>  #}
+
+
+{# <h4 class="heading-medium">Condition history</h4>
+<table class="section">
+	<tbody>
+		<tr class="row">
+			<th class="column-01">Example condition 01</th>
+			<td class="column-02">
+				<p style="margin-top: 0px; margin-bottom:.5em;">Onset and progression:<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non dictum ipsum.</p>
+				<p style="margin-bottom:.5em;">Symptoms:<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non dictum ipsum.</p>
+				<p style="margin-bottom:.5em;">Investigations and medical input:<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non dictum ipsum.</p>
+				<p style="margin-bottom: auto;">Impact on function:<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non dictum ipsum.</p>
+			</td>
+			<td class="column-03"><a href="condition-history_condition01">Change</a></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Example condition 02</th>
+			<td class="column-02">
+				<p style="margin-top: 0px; margin-bottom:.5em;">Onset and progression:<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non dictum ipsum.</p>
+				<p style="margin-bottom:.5em;">Symptoms:<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non dictum ipsum.</p>
+				<p style="margin-bottom:.5em;">Investigations and medical input:<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non dictum ipsum.</p>
+				<p style="margin-bottom: auto;">Impact on function:<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non dictum ipsum.</p>
+			</td>
+			<td class="column-03"><a href="condition-history_condition01">Change</a></td>
+		</tr>
+		{% if data['reportedcondition01']%}
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition01 }}</th>
+			<td class="column-02">
+				<p style="margin-bottom:.5em;">Onset and progression:<br>{{ condition01Time }}</p>
+				<p style="margin-bottom:.5em;">Symptoms:<br>{{ condition01Symptoms }}</p>
+				<p style="margin-bottom:.5em;">Investigations and medical input:<br>{{ condition01Investigations }}</p>
+				<p style="margin-bottom: auto;">Impact on function:<br>{{ condition01Impact }}</p>
+			</td>
+			<td class="column-03"><a href="condition-history_condition01">Change</a></td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition02']%}
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition02 }}</th>
+			<td class="column-02">
+				<p style="margin-bottom:.5em;">Onset and progression:<br>{{ condition02Time }}</p>
+				<p style="margin-bottom:.5em;">Symptoms:<br>{{ condition02Symptoms }}</p>
+				<p style="margin-bottom:.5em;">Investigations and medical input:<br>{{ condition02Investigations }}</p>
+				<p style="margin-bottom: auto;">Impact on function:<br>{{ condition02Impact }}</p>
+			</td>
+			<td class="column-03"><a href="condition-history_condition02">Change</a></td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition03']%}
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition03 }}</th>
+			<td class="column-02">
+				<p style="margin-bottom:.5em;">Onset and progression:<br>{{ condition03Time }}</p>
+				<p style="margin-bottom:.5em;">Symptoms:<br>{{ condition03Symptoms }}</p>
+				<p style="margin-bottom:.5em;">Investigations and medical input:<br>{{ condition03Investigations }}</p>
+				<p style="margin-bottom: auto;">Impact on function:<br>{{ condition03Impact }}</p>
+			</td>
+			<td class="column-03"><a href="condition-history_condition03">Change</a></td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition04']%}
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition04 }}</th>
+			<td class="column-02">
+				<p style="margin-bottom:.5em;">Onset and progression:<br>{{ condition04Time }}</p>
+				<p style="margin-bottom:.5em;">Symptoms:<br>{{ condition04Symptoms }}</p>
+				<p style="margin-bottom:.5em;">Investigations and medical input:<br>{{ condition04Investigations }}</p>
+				<p style="margin-bottom: auto;">Impact on function:<br>{{ condition04Impact }}</p>
+			</td>
+			<td class="column-03"><a href="condition-history_condition04">Change</a></td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition05']%}
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition05 }}</th>
+			<td class="column-02">
+				<p style="margin-bottom:.5em;">Onset and progression:<br>{{ condition05Time }}</p>
+				<p style="margin-bottom:.5em;">Symptoms:<br>{{ condition05Symptoms }}</p>
+				<p style="margin-bottom:.5em;">Investigations and medical input:<br>{{ condition05Investigations }}</p>
+				<p style="margin-bottom: auto;">Impact on function:<br>{{ condition05Impact }}</p>
+			</td>
+			<td class="column-03"><a href="condition-history_condition05">Change</a></td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition06']%}
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition06 }}</th>
+			<td class="column-02">
+				<p style="margin-bottom:.5em;">Onset and progression:<br>{{ condition06Time }}</p>
+				<p style="margin-bottom:.5em;">Symptoms:<br>{{ condition06Symptoms }}</p>
+				<p style="margin-bottom:.5em;">Investigations and medical input:<br>{{ condition06Investigations }}</p>
+				<p style="margin-bottom: auto;">Impact on function:<br>{{ condition06Impact }}</p>
+			</td>
+			<td class="column-03"><a href="condition-history_condition06">Change</a></td>
+		</tr>
+		{% else %}{% endif %}
+		{% if data['reportedcondition07']%}
+		<tr class="row">
+			<th class="column-01">{{ reportedcondition07 }}</th>
+			<td class="column-02">
+				<p style="margin-bottom:.5em;">Onset and progression:<br>{{ condition07Time }}</p>
+				<p style="margin-bottom:.5em;">Symptoms:<br>{{ condition07Symptoms }}</p>
+				<p style="margin-bottom:.5em;">Investigations and medical input:<br>{{ condition07Investigations }}</p>
+				<p style="margin-bottom: auto;">Impact on function:<br>{{ condition07Impact }}</p>
+			</td>
+			<td class="column-03"><a href="condition-history_condition07">Change</a></td>
+		</tr>
+		{% else %}{% endif %}
+	</tbody>
+</table>
+
+
+<h4 class="heading-medium">Other details</h4> #}
+<h4 class="heading-medium">Claimant evidence</h4>
+
+<table class="section">
+	<tbody>
+		<tr class="row">
+			<th class="column-01">Additional attendees</th>
+			<td class="column-02"></td>
+			<td class="column-03"><a href="#">Review</a></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Condition history</th>
+			<td class="column-02">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non dictum ipsum. Donec in ultrices metus. Morbi fringilla odio nec fermentum sodales. Mauris vitae magna sed odio aliquam laoreet id sit amet tortor. </td>
+			<td class="column-03"><a href="medicationSideEffects">Change</a></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Medication and side effects</th>
+			<td class="column-02">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non dictum ipsum. Donec in ultrices metus. Morbi fringilla odio nec fermentum sodales. Mauris vitae magna sed odio aliquam laoreet id sit amet tortor. </td>
+			<td class="column-03"><a href="medicationSideEffects">Change</a></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Social and work history</th>
+			<td class="column-02">
+			<p style="margin-top:0px; margin-bottom:0;">Social & work comment 1</p><p style="margin-top:0px; margin-bottom:0;">Social & work comment 2</p><p style="margin-top:0px; margin-bottom:0;">Social & work comment 3</p>
+			{# {% for item in socialWorkComments | sortBy("time",false) %}<p style="margin-top:0px; margin-bottom:0;">{{ item.comment }}</p>{% endfor %} #}</td>
+			<td class="column-03"><a href="socialWork">Change</a></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Typical day</th>
+			<td class="column-02">
+			<p style="margin-top:0px; margin-bottom:0;">Typical day comment 1</p><p style="margin-top:0px; margin-bottom:0;">Typical day comment 2</p><p style="margin-top:0px; margin-bottom:0;">Typical day comment 3</p>
+			{# {{ item.comment }}</p>{% for item in typicalDayComments | sortBy("time",false) %}<p style="margin-top:0px; margin-bottom:0;">{{ item.comment }}</p>{% endfor %}</td> #}
+			<td class="column-03"><a href="typicalDay">Change</a></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Informal observations</th>
+			<td class="column-02"></td>
+			<td class="column-03"><a href="#">Review</a></td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+
+<!-- Physical assessments: Start -->
+<h4 class="heading-medium">Physical assessments</h4>
+<p>The details and scope of the physical examination were explained to Joe, including advice not to perform any movements causing pain or discomfort. Joe gave consent for the process to proceed.</p>
+
+<table>
+	<tbody>
+		<tr class="row">
+			<th class="column-01">General health</th>
+			<td class="column-02">Height (m): 1.3<br>Weight (Kg): 94<br>BMI: 25%</td>
+			<td class="column-03"><a href="#">Change</a></td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="section">
+	<tbody>
+		<tr class="header-row">
+			<th class="column-01">Lower back and legs</th>
+			<td class="column-02">&nbsp;</td>
+			<td class="column-03"><a href="#">Change</a></td>
+		</tr>
+		<tr>
+			<th class="column-01">Lower back</th>
+			<td class="column-02">Forward flexion: Unrestricted<br>Squat and rise: Full</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr>
+			<th class="column-01">Left leg</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Right leg</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Neck and arms</th>
+			<td class="column-02"></td>
+			<td class="column-03"><a href="#">Review</a></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Cardiovascular and respiratory</th>
+			<td class="column-02"></td>
+			<td class="column-03"><a href="#">Review</a></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Vision, speech and hearing</th>
+			<td class="column-02"></td>
+			<td class="column-03"><a href="#">Review</a></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Central nervous system</th>
+			<td class="column-02"></td>
+			<td class="column-03"><a href="#">Review</a></td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- Physical assessments: End -->
+
+
+
+
+<!-- Mental Health: Start -->
+<h4 class="heading-medium">Mental health assessment</h4>
+
+<table class="section mental-health">
+	<tbody>
+		<tr>
+			<th class="column-01">Appearance</th>
+			<td class="column-02">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+			<td class="column-03"><a href="#">Change</a></td>
+		</tr>
+		<tr>
+			<th class="column-01">Behaviour</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr>
+			<th class="column-01">Speech</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr>
+			<th class="column-01">Mood</th>
+			<td class="column-02">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr>
+			<th class="column-01">Cognition general</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr>
+			<th class="column-01">Insight</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr>
+			<th class="column-01">Thoughts</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr>
+			<th class="column-01">Perceptions</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr>
+			<th class="column-01">Addictions</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr>
+			<th class="column-01">Cognitive tests</th>
+			<td class="column-02">Not assessed</td>
+			<td class="column-03"></td>
+		</tr>
+	</tbody>
+</table>
+<!-- Mental Health: End -->
+
+
+
+<!-- Medical Opinion: Start -->
+<h4 class="heading-medium">Medical opinion</h4>
+<p>I have considered the possible ESA activity outcomes and my advice is that the following apply:</p>
+<!-- Medical Opinion: End -->
+
+<table class="section">
+	<tbody>
+		<tr class="header-row">
+			<th class="column-01" colspan="2">Moving around and using steps (mobilising)</th>
+			<td class="column-03">6 points</td>
+		</tr>
+		<tr>
+			<th class="column-01">Relevant statements</th>
+			<td class="column-02">Typical day comment 1<br>Typical day comment 2</td>
+			<td class="column-03"><a href="#">Change</a></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Outcome</th>
+			<td class="column-02">Joe can move around (mobilise): No more than 200 metres<br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis efficitur tortor eu eros viverra, et commodo orci viverra.</td>
+			<td class="column-03"><a href="#">Change</a></td>
+		</tr>
+
+		<tr class="header-row">
+			<th class="column-01" colspan="2">Using your hands (manual dexterity)</th>
+			<td class="column-03">9 points</td>
+		</tr>
+		<tr>
+			<th class="column-01">Relevant statements</th>
+			<td class="column-02">Typical day comment 1<br>Typical day comment 2</td>
+			<td class="column-03"><a href="#">Change</a></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Outcome</th>
+			<td class="column-02">Joe cannot use either a keyboard or a mouse.</td>
+			<td class="column-03"><a href="#">Change</a></td>
+		</tr>
+
+		<tr class="header-row">
+			<th class="column-01" colspan="2">Learning to do new tasks</th>
+			<td class="column-03">6 points</td>
+		</tr>
+		<tr>
+			<th class="column-01">Relevant statements</th>
+			<td class="column-02">Typical day comment 1<br>Typical day comment 2</td>
+			<td class="column-03"><a href="#">Change</a></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Outcome</th>
+			<td class="column-02">Joe can learn how to do a moderately complicated task, such as using a washing machine, but nothing more complicated that that.</td>
+			<td class="column-03"><a href="#">Change</a></td>
+		</tr>
+
+		<tr class="header-row">
+			<th class="column-01" colspan="2">Eating and drinking</th>
+			<td class="column-03">Not met</td>
+		</tr>
+		<tr>
+			<th class="column-01">Relevant statements</th>
+			<td class="column-02">Typical day comment 1<br>Typical day comment 2</td>
+			<td class="column-03"><a href="#">Change</a></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Outcome</th>
+			<td class="column-02">Joe can usually manage getting food and drink to their mouth.<br>Joe can usually manage to chew or swallow food and drink.</td>
+			<td class="column-03"><a href="#">Change</a></td>
+		</tr>
+		<tr class="header-row">
+			<th class="column-01">Total points</th>
+			<td class="column-02"></td>
+			<td class="column-03">21 points</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="section">
+	<tbody>
+		<tr class="header-row">
+			<th class="column-01" colspan="2">Joe did not identify any problems in the following areas:</th>
+			<td class="column-03"><a href="#">Add area</a></td>
+		</tr>
+		<tr>
+			<td class="column-01" colspan="3">
+			Standing, sitting and transferring from seat to seat<br>
+Reaching<br>
+Picking up and moving things<br>
+Speaking, writing and typing (making self understood)<br>
+Hearing and reading (understanding communication)<br>
+Getting around safely (navigation)<br>
+Controlling your bowels and bladder and using a collecting device (continence)<br>
+Staying conscious when awake<br>
+Awareness of hazards and danger<br>
+Planning, starting and finishing everyday tasks<br>
+Coping with changes<br>
+Going out (getting about)<br>
+Coping with social situations<br>
+Behaving appropriately around other people</td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+{# <h4 class="heading-medium">Assessment scoring</h4>
+
+<table>
+	<tbody>
+		<tr class="row">
+			<th class="column-wide-01">Activity</th>
+			<th class="column-wide-02">Score</th>
+		</tr>
+		<tr class="row">
+			<td class="column-wide-01">Moving around and using steps (mobilising)</td>
+			<th class="column-wide-02">15</th>
+		</tr>
+		<tr class="row">
+			<td class="column-wide-01">Using your hands (manual dexterity)</td>
+			<th class="column-wide-02">15</th>
+		</tr>
+		<tr class="row">
+			<td class="column-wide-01">Learning to do new tasks</td>
+			<th class="column-wide-02">6</th>
+		</tr>
+		<tr class="row">
+			<td class="column-wide-01">Eating and drinking</td>
+			<th class="column-wide-02">Not met</th>
+		</tr>
+	</tbody>
+</table> #}
+
+<h4 class="heading-medium">Exceptional circumstances</h4>
+<table class="section">
+	<tbody>
+		<tr class="row">
+			<td class="column-01" colspan="2">Evidence to support the opinion that the claimant does not meet any of the criteria to be treated as having limited capability for work and limited capability for work-related activity.</td>
+			<td class="column-03"><a href="#">Change</a></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Terminally ill</th>
+			<td class="column-02">There are no conditions reported that are likely to result in death within 6 months.</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Serious risk pregnancy</th>
+			<td class="column-02">There is no evidence to suggest that the client is undergoing a 'serious risk' pregnancy.</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Substantial risk to mental or physical health</th>
+			<td class="column-02">The evidence does not suggest that there would be a substantial risk to the mental or physical health of the claimant (or another person) if the claimant was found capable of work or work-related activity.</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Chemotherapy or radiotherapy</th>
+			<td class="column-02">From the available evidence, the claimant is not receiving, likely to receive in the next 6 months, or recovering from treatment for cancer by way of chemotherapy or radiotherapy.</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr class="row">
+			<td class="column-01" colspan="2">There are no exceptional circumstances why Tomas should be treated as limited capability for work.</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Regular treatment</th>
+			<td class="column-02">No conditions reported or evidence available.</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Hospital inpatient</th>
+			<td class="column-02">No conditions reported or evidence available.</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Cannot work by law (infectious disease)</th>
+			<td class="column-02">No conditions reported or evidence available.</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Substantial risk to mental or physical health</th>
+			<td class="column-02">The evidence does not suggest that there would be a substantial risk to the mental or physical health of the claimant if found not to have limited capability for work.</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Life threatening disease (uncontrollable and uncontrolled)</th>
+			<td class="column-02">No conditions reported or evidence available.</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Pregnancy around dates of confinement</th>
+			<td class="column-02">The evidence does not suggest there is limited capability for work around dates of expected week of confinement.</td>
+			<td class="column-03"></td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+
+
+<h4 class="heading-medium">Recommended review period</h4>
+
+<table class="section">
+	<tbody>
+		<tr>
+			<td class="column-wide-01">I advise that Joe's case needs reviewing in 18 months.<br><br>The reasons for this are:<br>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet molestie arcu.</td>
+			<td class="column-wide-02"><a href="#">Change</a></td>
+		</tr>
+	</tbody>
+</table>
+
+<h4 class="heading-medium">Personal summary statement</h4>
+
+<table class="section">
+	<tbody>
+		<tr>
+			<td class="column-wide-01">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet molestie arcu. Nam dapibus risus leo, vel condimentum lorem dictum sed. Donec rhoncus id leo vel cursus. Proin nibh sem, lobortis at faucibus eget, pretium non elit. Sed feugiat lectus ut felis hendrerit pulvinar. Ut in odio lacinia felis consectetur condimentum et ut erat. Donec auctor mi in eros sodales, at malesuada erat ultrices. Nulla facilisi. Vestibulum nec interdum nulla.</td>
+			<td class="column-wide-02"><a href="#">Change</a></td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+<h4 class="heading-medium">Declaration</h4>
+<p>This form has been completed by a healthcare professional approved by the Secretary of State for Work and Pensions.</p>
+<p>I have completed this form in accordance with the current guidance to ESA examining healthcare professionals as issued by the Department for Work and Pensions.</p>
+<p>I can confirm that there is no harmful information in the report.</p>
+
+<table class="section">
+	<tbody>
+		<tr class="row">
+			<th class="column-01">Healthcare Professional’s name</th>
+			<td class="column-02">Joe Bloggs</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Healthcare Professional's title</th>
+			<td class="column-02">Registered medical practitioner</td>
+			<td class="column-03"></td>
+		</tr>
+		<tr class="row">
+			<th class="column-01">Date</th>
+			<td class="column-02">15 May 2020</td>
+			<td class="column-03"></td>
+		</tr>
+	</tbody>
+</table>
+
+
+<p><a href="#" class="button">Submit for pre-approval</a></p>
+
+<p><a href="#" class="button secondary mt20">Print report</a></p>
+  
+   </div>
+ <!-- / wrapper -->
+  
+
+
+
+{% endblock %}

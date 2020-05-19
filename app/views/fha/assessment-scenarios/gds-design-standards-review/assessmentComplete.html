@@ -1,0 +1,43 @@
+{% extends path+"/gds-design-standards-review/_layout-1-column_assessment-complete_key-details.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+<style type="text/css">
+.govuk-panel--confirmation{
+    color: #fff;
+    background: #00703c;
+    padding:35px;
+    text-align:center;
+    margin-bottom:30px;}
+.heading-xlarge{
+margin-top:0px;
+margin-bottom:30px;}
+.heading-large{
+margin-top:0px;
+margin-bottom:0px;}
+</style>
+
+<p class="mb20">
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+
+<div class="govuk-panel govuk-panel--confirmation">
+  <h1 class="heading-xlarge">
+    Assessment complete
+  </h1>
+  <div class="heading-large">
+    Assessment submitted<br><strong>2:43pm, 20 January 2020</strong>
+  </div>
+</div>
+
+<a href="#">Return to dashboard</a>
+
+</div>
+</div>
+
+{% endblock %}
