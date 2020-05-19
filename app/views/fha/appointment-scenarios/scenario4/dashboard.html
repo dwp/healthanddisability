@@ -55,40 +55,38 @@
 <h2 class="heading-medium">Assessment centre</h2>
 <form action="/fha/appointment-scenarios/scenario4/dashboard/decision-post" method="post">
 
-          <details class="govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                  Change assessment centre
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-                          <div class="check-group check-top">
-                      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-                       <div class="govuk-radios__item govuk-radios--small">
-                            <input id="all-assess" name="filter-assess" type="radio" value="all-assess" class="facet" {{ checked('filter-assess', 'all-assess') }} checked> <label for="all-assess">All  <span>&#40;253&#41;</span></label>
-                            </div>
-                        <div class="govuk-radios__item govuk-radios--small">
-                            <input id="tresco" name="filter-assess" type="radio" value="tresco" class="facet" class="facet" {{ checked('filter-assess', 'tresco') }} > <label for="tresco">Tresco <span>&#40;150&#41;</span></label>
-                            </div>
-                          <div class="govuk-radios__item govuk-radios--small">
-                            <input id="fiveways" name="filter-assess" type="radio" value="fiveways" class="facet" class="facet" {{ checked('filter-assess', 'fiveways') }} > <label for="fiveways">Fiveways <span>&#40;47&#41;</span></label>
-                            </div>
-                          <div class="govuk-radios__item govuk-radios--small">
-                            <input id="wolves" name="filter-assess" type="radio" value="wolves" class="facet" class="facet" {{ checked('filter-assess', 'wolves') }} > <label for="wolves">Wolverhampton <span>&#40;54&#41;</span></label>
-                            </div>
-                      </div>
-
-                      </fieldset>
+  <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Change assessment centre
+      </span>
+    </summary>
+<br>
+              <div class="form-group">
+              <fieldset>
+                <div class="multiple-choice">
+                    <input id="all-assess" name="filter-assess" type="checkbox" value="all-assess" class="facet" {{ checked('filter-assess', 'all-assess') }} checked> <label for="all-assess">All <span>&#40;253&#41;</span></label>
+                    </div>
+                 <div class="multiple-choice">
+                    <input class="govuk-checkboxes__input" id="tresco" name="filter-assess" type="checkbox" value="tresco" class="facet" class="facet" {{ checked('filter-assess', 'tresco') }} > <label for="tresco">Tresco <span>&#40;150&#41;</span></label>
+                    </div>
+                   <div class="multiple-choice">
+                    <input class="govuk-checkboxes__input" id="fiveways" name="filter-assess" type="checkbox" value="fiveways" class="facet" class="facet" {{ checked('filter-assess', 'fiveways') }} > <label for="fiveways">Fiveways <span>&#40;47&#41;</span></label>
+                    </div>
+                   <div class="multiple-choice">
+                    <input class="govuk-checkboxes__input" id="wolves" name="filter-assess" type="checkbox" value="wolves" class="facet" class="facet" {{ checked('filter-assess', 'wolves') }} > <label for="wolves">Wolverhampton <span>&#40;54&#41;</span></label>
                     </div>
 
 
-          </details>
-          <br>
+              </fieldset>
 
+</div>
+<br>
+<button class="button button-secondary" data-module="govuk-button">
+Apply
+</button>
+  </details>
 
-                    <button class="button button-secondary" data-module="govuk-button">
-                      Apply
-                    </button>
                       </form>
         </div>
         <div class="column-three-quarters">

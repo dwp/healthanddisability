@@ -2,8 +2,8 @@
 
 
 {% block actioncolumn %}
-   
- <!-- <p class="returnRef"><a href="/fha/v8/referrals-fme">Return to case list</a></p> 
+
+ <!-- <p class="returnRef"><a href="/fha/v8/referrals-fme">Return to case list</a></p>
   <hr>-->
  <div class="case-status">
 
@@ -28,28 +28,43 @@
 
 
   <div class="grid-row">
-  
-  
- 
-  
-  	
+
+
+
+
+
 
        <div class="column-full">
-    
-    
+
+
     	<p><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
-		
-		
-	
-				
+
+
+
+
 			<h1 class="heading-large"><span class="heading-secondary">Scenarios</span>Appointment</h1>
 
-          
+
 			  <hr>
-			  
-			  
+
+
 			  <div class="grid-row">
 			  <div class="column-three-quarters">
+
+          <div class="scenario">
+         <h2 class="heading-medium">Assessment centre filters </h2>
+         <h3 class="heading-small">Scenario</h3>
+         <ul class="list-bullet">
+            <li>Filter by: <b>Assessment centre</b></li>
+          <li>Screens: <b>Dashboard and case list</b></li>
+          <li>ref: scenario4/dashboard-tresco-fiveways</li>
+          </ul>
+
+
+               <p><a href="/{{path }}//scenario4/dashboard-tresco-fiveways" class="secondary-invert">Start scenario</a></p>
+       </div>
+
+       <hr>
 
 			  		  <div class="scenario">
 						 <h2 class="heading-medium">Record a booking of a taxi or interpreter </h2>
@@ -65,9 +80,9 @@
 							<li>Filter by: <b>Requirements</b></li>
 							<li>Sub filter: <b>Interpreter</b></li>
 						 </ul>
-			             <p><a href="/{{path }}//scenario3/booked" class="secondary-invert">Start scenario</a></p> 
+			             <p><a href="/{{path }}//scenario3/booked" class="secondary-invert">Start scenario</a></p>
 					 </div>
-					 
+
 					 <hr>
 
 
@@ -80,7 +95,7 @@
 							<li>Todays apppointments</li>
 						 </ul>
 
-			             <p><a href="/{{path }}/scenario4/appointments" class="secondary-invert">Start scenario</a></p> 
+			             <p><a href="/{{path }}/scenario4/appointments" class="secondary-invert">Start scenario</a></p>
 					 </div>
 
 					 <hr>
@@ -88,7 +103,7 @@
 					   		  <div class="scenario">
 						 <h2 class="heading-medium">Caselist with card design </h2>
 
-			             <p><a href="/{{path }}/scenario3/booked-card-row" class="secondary-invert">Start scenario</a></p> 
+			             <p><a href="/{{path }}/scenario3/booked-card-row" class="secondary-invert">Start scenario</a></p>
 					 </div>
 
 					 <hr>
@@ -96,80 +111,80 @@
 			    		  <div class="scenario">
 						 <h2 class="heading-medium">Filter case list - with Assessment centre filter </h2>
 
-			             <p><a href="/{{path }}/scenario4/bookedv4" class="secondary-invert">Start scenario</a></p> 
+			             <p><a href="/{{path }}/scenario4/bookedv4" class="secondary-invert">Start scenario</a></p>
 					 </div>
-					 
+
 					 <hr>
 
 			  		  <div class="scenario">
 						 <h2 class="heading-medium">Filter case list - Booked v2 </h2>
-						 
+
 						 <ul class="list-bullet">
 						 	<li>Filter by: <b>Specific date</b></li>
 							<li>Filter by: <b>Requirements, UCB, Previous DNA, Referall types</b></li>
 							<li>Sub filter: <b>Requirements: Taxi, Interpreter, Audio, Gender, Assesible room </b></li>
 							<li>Sub filter: <b>All: Complex neuro, Neuro, Non neuro</b></li>
 						 </ul>
-			             <p><a href="/{{path }}/scenario4/bookedv2" class="secondary-invert">Start scenario</a></p> 
+			             <p><a href="/{{path }}/scenario4/bookedv2" class="secondary-invert">Start scenario</a></p>
 					 </div>
-					 
+
 					 <hr>
 
 
 			  		  <div class="scenario">
 						 <h2 class="heading-medium">Filter case list - Booked </h2>
-						 
+
 						 <ul class="list-bullet">
 						 	<li>Filter by: <b>Specific date</b></li>
 							<li>Refine: <b>Requirements, UCB, Referall types</b></li>
 						 </ul>
-			             <p><a href="/{{path }}/scenario4/booked" class="secondary-invert">Start scenario</a></p> 
+			             <p><a href="/{{path }}/scenario4/booked" class="secondary-invert">Start scenario</a></p>
 					 </div>
 
 
-					 
+
 					 <hr>
-			  
+
 					  <div class="scenario">
 						 <h2 class="heading-medium">Did not attend - DM</h2>
-						 
+
 						 <ul class="list-bullet">
 						 	<li>Active profile: <b>Stevie Barnes</b></li>
 							<li>UC caseworker actions case</li>
 						 </ul>
-			             <p><a href="/{{path }}/scenario1/dashboard" class="secondary-invert">Start scenario</a></p> 
+			             <p><a href="/{{path }}/scenario1/dashboard" class="secondary-invert">Start scenario</a></p>
 					 </div>
-					 
+
 					 <hr>
 
-			  
+
 			  		<div class="scenario">
 						 <h2 class="heading-medium">DNA re-referral</h2>
 			             <ul class="list-bullet">
 			             	<li>Active profile: <b>Stevie Barnes</b></li>
 			             	<li>Scenario to cover Admin have the file in hand and determine case route</li>
 			             </ul>
-			             <p><a href="/{{path }}/scenario2/dashboard" class="secondary-invert">Start scenario</a></p> 
+			             <p><a href="/{{path }}/scenario2/dashboard" class="secondary-invert">Start scenario</a></p>
 					 </div>
-					 
+
 					 <hr>
 
-					  
+
 			  		<!--<div class="scenario">
 						 <h2 class="heading-medium">Send home</h2>
 			             <ul class="list-bullet">
 			             	<li>Active profile: <b>Andy Smicer</b></li>
 			             	<li>Scenario to cover an Admin person having tosend a claiment home and record the reason and any new preferrences required</li>
 			             </ul>
-			             <p><a href="/{{path }}/scenario3/sendhome" class="button secondary-invert">Start scenario</a></p> 
+			             <p><a href="/{{path }}/scenario3/sendhome" class="button secondary-invert">Start scenario</a></p>
 					 </div>
-					 
+
 					 <hr>-->
-		             
-         
+
+
 			  </div>
 			  </div>
-				
+
 	</div>
 
 
