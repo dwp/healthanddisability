@@ -1,0 +1,36 @@
+{% extends path+"/gds-design-standards-review/_layout-case_assessment-complete-no-links.html" %}
+
+{% block citizen_content %}
+
+{{ data.nuggets | log }}
+
+
+<p class="no-kdBar mb20"><a href="javascript: history.go(-1)" class="link-back">Back</a></p>
+
+<form action="condition-history_create-list" method="post">
+
+<div class="form-group">
+  <fieldset>
+
+    <legend>
+      <h1 class="heading-large mt10">Are you ready to sign off the completed assessment?</h1>
+    </legend>
+
+    <div class="multiple-choice">
+      <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+      <label for="radio-inline-1">Yes</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+      <label for="radio-inline-2">No</label>
+    </div>
+
+  </fieldset>
+</div>
+
+<p><input type="submit" class="button" value="Save and continue" id="submitButton"></p>
+</form>
+
+
+
+{% endblock %}
