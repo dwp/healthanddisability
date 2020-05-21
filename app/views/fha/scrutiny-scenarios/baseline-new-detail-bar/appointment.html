@@ -1,93 +1,67 @@
 {% extends path+"/_layout-case-new-detail-bar.html" %}
 
 
-{% block actioncolumn %}
 
-<p class="returnRef"><a href="javascript: history.go(-1)" class="link-back">Return to case list</a></p>
+   {% block citizen_detail %}
+   Jurgen Covault
+   {% endblock %}
 
- <div class="caseStatus">
-
-	<p class="main-status"><span>Current case status</span>Ready to book</p>
-
-	<!--<p class="primary-action"><span>Suggested case action</span><a href="#" class="button">Book appointment</a></p>-->
-
- </div>
-
-<!--<div class="secondary-nav-actions">
-
-	<ul>
-		<li><a href="#">Withdraw case</a></li>
-		<li><a href="#">Close case</a></li>
-		<li><a href="#">Delete case</a></li>
-	</ul>
-
- </div> -->
-
-{% endblock %}
-
-{% block citizen_detail %}
-Kenneth Robertson
-{% endblock %}
-
-{% block citizen_content %}
-
-
-{% if data['evidencePath']=='ev-ftf'%}
-
-
-	{% if data['evidenceRecorded']=='record-yes'%}
-
-
-		{% if data['pbachoice']%}
-
-
-	{% else %}
-	<div class="panel panel-info panel-instruction fme-warning"><h2 class="heading-small">New evidence recorded</h2>
-	   <ul class="numeric" data-id="">
-	       <li>
-	         <span class="circle circle-step circle-white">1</span>
-	         <h2 class="govuk-heading-m">Roberto's case should be reviewed before making a recommendation</h2>
-	       </li>
-
-	       <li>
-	         <span class="circle circle-step circle-white">2</span>
-	         <h2 class="govuk-heading-m"><a href="/{{path }}/scenario2/recordFMEdecision">Make recommendation</a></h2>
-	       </li>
-	     </ul>
-	</div>
-	{% endif %}
+   {% block citizen_content %}
 
 
 
 
-	{% endif %}
+   <div class="container">
+     <div class="grid-row">
+       <div class="column-three-quarters">
+         <p class="returnRef"><a href="#" class="link-back">Return to case list</a></p>
+   <br>
+   </div>
+   <div class="column-one-quarter">
+
+         <aside class="app-related-items" role="complementary">
+
+           <nav role="navigation" aria-labelledby="subsection-title">
 
 
-	{% endif %}
 
+               <h3 class="heading-small">Suggested case action</h3><a href="#" class="button">Issue UC50</a>
 
+           </nav>
+         </aside>
+   </div>
+   </div>
 
-
-<div class="container">
-  <div class="grid-row">
-
-    <div class="column-full">
+   <div class="grid-row">
+     <div class="column-full">
 
     {# macro #}
   {{ nav.scenario_tabs("appointment",1,path1, customer._id) }}
 
 
 
+</div>
+</div>
 
-  <h1 class="heading-large">
-  	Appointment</h1>
+<div class="grid-row">
+
+  <div class="column-full">
 
 
-  <div class="portal-display">
+
+
+<h1 class="heading-large mt10">Appointment</h1>
 
 
 
-  	 <div class="grid-row">
+<!-------- Portal --------->
+
+<div class="portal-display">
+
+
+
+<!------ ROW START ------>
+<div class="grid-row">
 
 		  	<div class="column-third">
 
@@ -229,6 +203,9 @@ Kenneth Robertson
 
 
 
+  </div>
+  </div>
+  </div>
   </div>
 
 </div><!-- container -->

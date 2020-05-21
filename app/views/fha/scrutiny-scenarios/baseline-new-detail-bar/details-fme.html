@@ -10,18 +10,42 @@ Jurgen Covault
 
 
 
-
 <div class="container">
   <div class="grid-row">
-  <div class="column-three-quarters">
-    <p class="returnRef"><a href="#" class="link-back">Return to case list</a></p>
+    <div class="column-three-quarters">
+      <p class="returnRef"><a href="#" class="link-back">Return to case list</a></p>
 <br>
+</div>
+<div class="column-one-quarter">
+
+      <aside class="app-related-items" role="complementary">
+
+        <nav role="navigation" aria-labelledby="subsection-title">
+
+
+
+            <h3 class="heading-small">Suggested case action</h3><a href="#" class="button">Issue UC50</a>
+
+        </nav>
+      </aside>
+</div>
+</div>
+
+<div class="grid-row">
+<div class="column-full">
+
     {# macro #}
   {{ nav.scenario_tabs("details-fme",1,path1, customer._id) }}
 
-   <h1 class="heading-large">
-  	Medical</h1>
-<br>
+
+     <h1 class="heading-large">
+    	Medical</h1>
+
+</div>
+</div>
+
+
+
 
   <div class="portal-display">
 
@@ -117,20 +141,6 @@ Jurgen Covault
 
   </div>
 
-  <div class="column-one-quarter">
-    <br>
-        <aside class="app-related-items" role="complementary">
-
-          <nav role="navigation" aria-labelledby="subsection-title">
-            <div class="caseStatus">
-
-
-              <h3 class="primary-action"><span>Suggested case action</span><a href="#" class="button">Issue UC50</a></h3>
-
-           </div>
-          </nav>
-        </aside>
-  </div>
 
   		  	</div>
 
