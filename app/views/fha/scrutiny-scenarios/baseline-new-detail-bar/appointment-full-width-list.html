@@ -1,0 +1,151 @@
+{% extends path+"/_layout-case-new-detail-bar-list.html" %}
+
+
+
+   {% block citizen_detail %}
+   Jurgen Covault
+   {% endblock %}
+
+   {% block citizen_content %}
+
+
+
+
+   <div class="container">
+     <div class="grid-row">
+       <div class="column-two-thirds">
+
+         <p class="returnRef"><a href="#" class="link-back">Return to case list</a></p>
+</div>
+         <div class="column-one-third">
+         <class="numeric"><h3 class="heading-small">Suggested case action &nbsp &nbsp <a href="#" class="button">Issue UC50</a></h3>
+
+
+
+         <br>
+
+
+
+   </div>
+
+    {# macro #}
+  {{ nav.scenario_tabs("appointment-full-width-list",1,path1, customer._id) }}
+
+
+
+</div>
+</div>
+
+<div class="grid-row">
+
+  <div class="column-full">
+
+
+
+
+<h1 class="heading-large mt10">Appointment</h1>
+
+
+
+
+
+
+<!------ ROW START ------>
+<div class="grid-row">
+
+		  	<div class="column-third">
+
+					<h4 class="heading-small">Next available</h4>
+
+
+				<h4>Standard appointment</h4>
+			      <ul class="list-bullet">
+			          <li>Thursday 29th August 2019</li>
+			          <li>10:30am</li>
+			          <li>Tresco House</li>
+			      </ul>
+
+
+
+
+		  	</div>
+
+
+		  	<div class="column-third">
+
+          <p class="view-all"><a href="/{{path }}/scenario2/not-testing" class="button">Book this appointment</a></p>
+        <p><a href="/{{path }}/scenario2/not-testing" class="button-secondary">Choose another date</a></p>
+
+				</div>
+        </div>
+
+        <div class="grid-row">
+        <hr class="column-two-thirds"></hr>
+        <div class="column-third">
+          </div>
+          </div>
+<div class="grid-row">
+        	<div class="column-third">
+        					<h4 class="heading-small">Preferences</h4>
+
+
+
+        				<h4>Unavailable on</h4>
+        				<ul class="list-bullet">
+                       	 <li>Monday <span>afternoons</span></li>
+        			   	 <li>Tuesdays</li>
+                        </ul>
+</div>
+	<div class="column-third">
+                    <p class="view-all"> <a href="/{{path }}/scenario2/not-testing">Edit preferences</a></p>
+</div>
+
+</div>
+<div class="grid-row">
+<hr class="column-two-thirds"></hr>
+<div class="column-third">
+  </div>
+  </div>
+<div class="grid-row">
+  	 <div class="column-third">
+
+					<h4 class="heading-small">History</h4>
+
+
+
+				<h4>Recent appointment events</h4>
+
+
+					<ul class="list-bullet">
+						<li>Referred for appointment</li>
+					</ul>
+
+</div>
+<div class="column-third">
+
+            <p> <a href="/{{path }}/scenario2/not-testing">View all history</a></p>
+
+		  	</div>
+
+  	 </div>
+
+
+
+
+  </div>
+  </div>
+  </div>
+
+</div><!-- container -->
+
+{% endblock %}
+
+{# {% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
+{% endblock %} #}

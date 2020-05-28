@@ -1,45 +1,48 @@
-{% extends path+"/_layout-case-new-detail-bar-lhc.html" %}
-
-{% block actioncolumn %}
-
-  <p class="returnRef"><a href="#" class="link-back">Return to case list</a></p>
+{% extends path+"/_layout-case-new-detail-bar-list.html" %}
 
 
 
-
- <div class="caseStatus">
-
-
-   <h3 class="primary-action"><span>Suggested case action</span><a href="#" class="button">Issue UC50</a></h3>
-
-</div>
-
-
+   {% block citizen_detail %}
+   Jurgen Covault
    {% endblock %}
 
-{% block citizen_detail %}
-Jurgen Covault
-{% endblock %}
-
-{% block citizen_content %}
+   {% block citizen_content %}
 
 
 
-<div class="container">
+
+   <div class="container">
+     <div class="grid-row">
+       <div class="column-two-thirds">
+
+         <p class="returnRef"><a href="#" class="link-back">Return to case list</a></p>
+</div>
+         <div class="column-one-third">
+         <class="numeric"><h3 class="heading-small">Suggested case action &nbsp &nbsp <a href="#" class="button">Issue UC50</a></h3>
 
 
-<div class="grid-row">
-<div class="column-full">
+
+         <br>
+
+
+
+   </div>
 
     {# macro #}
-  {{ nav.scenario_tabs("details-fme",1,path1, customer._id) }}
-
-
-     <h1 class="heading-large">
-    	Medical</h1>
-
+  {{ nav.scenario_tabs("details-fme-full-width-list",1,path1, customer._id) }}
 </div>
 </div>
+
+<div class="grid-row">
+
+  <div class="column-two-thirds">
+
+
+    <h1 class="heading-large mt10">Medical</h1>
+
+
+
+
 
 
 

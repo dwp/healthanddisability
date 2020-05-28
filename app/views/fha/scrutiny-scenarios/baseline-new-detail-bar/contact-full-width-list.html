@@ -1,21 +1,5 @@
-{% extends path+"/_layout-case-new-detail-bar-lhc.html" %}
+{% extends path+"/_layout-case-new-detail-bar-list.html" %}
 
-{% block actioncolumn %}
-
-  <p class="returnRef"><a href="#" class="link-back">Return to case list</a></p>
-
-
-
-
- <div class="caseStatus">
-
-
-   <h3 class="primary-action"><span>Suggested case action</span><a href="#" class="button">Issue UC50</a></h3>
-
-</div>
-
-
-   {% endblock %}
 
 
    {% block citizen_detail %}
@@ -27,22 +11,35 @@
 
 
 
-
-
-
    <div class="container">
+     <div class="grid-row">
+       <div class="column-two-thirds">
+
+         <p class="returnRef"><a href="#" class="link-back">Return to case list</a></p>
+</div>
+         <div class="column-one-third">
+         <class="numeric"><h3 class="heading-small">Suggested case action &nbsp &nbsp <a href="#" class="button">Issue UC50</a></h3>
 
 
-   <div class="grid-row">
-     <div class="column-full">
+
+         <br>
+
+
+
+   </div>
 
        {# macro #}
-     {{ nav.scenario_tabs("contact",1,path1, customer._id) }}
+     {{ nav.scenario_tabs("contact-full-width-list",1,path1, customer._id) }}
+   </div>
+   </div>
 
-      <h1 class="heading-large">
-     	Contact</h1>
-   </div>
-   </div>
+   <div class="grid-row">
+
+     <div class="column-two-thirds">
+
+
+       <h1 class="heading-large mt10">Contact</h1>
+
 
   	 <div class="grid-row">
 
