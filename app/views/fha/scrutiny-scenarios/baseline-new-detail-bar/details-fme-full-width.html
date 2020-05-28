@@ -1,21 +1,6 @@
-{% extends path+"/_layout-case-new-detail-bar-lhc.html" %}
-
-{% block actioncolumn %}
-
-  <p class="returnRef"><a href="#" class="link-back">Return to case list</a></p>
+{% extends path+"/_layout-case-new-detail-bar.html" %}
 
 
-
-
- <div class="caseStatus">
-
-
-   <h3 class="primary-action"><span>Suggested case action</span><a href="#" class="button">Issue UC50</a></h3>
-
-</div>
-
-
-   {% endblock %}
 
 {% block citizen_detail %}
 Jurgen Covault
@@ -26,13 +11,31 @@ Jurgen Covault
 
 
 <div class="container">
+  <div class="grid-row">
+    <div class="column-three-quarters">
+      <p class="returnRef"><a href="#" class="link-back">Return to case list</a></p>
+<br>
+</div>
+<div class="column-one-quarter">
 
+      <aside class="app-related-items" role="complementary">
+
+        <nav role="navigation" aria-labelledby="subsection-title">
+
+
+
+            <h3 class="heading-small">Suggested case action</h3><a href="#" class="button">Issue UC50</a>
+
+        </nav>
+      </aside>
+</div>
+</div>
 
 <div class="grid-row">
 <div class="column-full">
 
     {# macro #}
-  {{ nav.scenario_tabs("details-fme",1,path1, customer._id) }}
+  {{ nav.scenario_tabs("details-fme-full-width",1,path1, customer._id) }}
 
 
      <h1 class="heading-large">

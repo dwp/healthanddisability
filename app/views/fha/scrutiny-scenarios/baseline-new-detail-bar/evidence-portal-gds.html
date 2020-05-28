@@ -1,87 +1,41 @@
 {% extends path+"/_layout-case-new-detail-bar.html" %}
 
 
-{% block actioncolumn %}
-
-  <p class="returnRef"><a href="/{{path }}/scenario14c/referrals-fme" class="link-back">Return to case list</a></p>
-
- <div class="caseStatus">
 
 
+      {% block citizen_detail %}
+      Jurgen Covault
+      {% endblock %}
 
-
-{% if data['pbachoice']=='no'%}
-
-	 <h2 class="main-status"><span>Current case status</span>Appointment booked</h2>
-
-
-	 {% elif data['pbachoice']=='yes'%}
-
-	 <h2 class="main-status"><span>Current case status</span>Paper based review</h2>
-	 <!--<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario6/not-testing" class="button">Start assessment</a></h3>-->
-
-
-	 {% else %}
-
-
-
-{% if data['evidencePath']=='ev-ftf'%}
-
-	{% if data['evidenceRecorded']=='record-yes'%}
-
-	<h2 class="main-status"><span>Current case status</span>Second review</h2>
-		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario14c/rec-portal-second" class="button">Make recommendation</a></h3>
-		{% else %}
-
-	<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
-	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario14c/record-evidence" class="button">Record GP report</a></h3>
-	{% endif %}
-
-
-	{% elif data['evidencePath']=='ev-pba'%}
-
-	{% if data['evidenceRecorded']=='record-yes'%}
-		<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
-		<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario14c/rec-portal" class="button">Make recommendation</a></h3>
-		{% else %}
-		<h2 class="main-status"><span>Current case status</span>Medical evidence requested</h2>
-	{% endif %}
-
-
-	{% else %}
-
-	<h2 class="main-status"><span>Current case status</span>Ready for review</h2>
-	<h3 class="primary-action"><span>Suggested case action</span><a href="/{{path }}/scenario14c/rec-portal" class="button">Make recommendation</a></h3>
-
-
-
-{% endif %}
-
-
-{% endif %}
-
-
-</div>
-
-{% endblock %}
-
-{% block citizen_detail %}
-Jurgen Covault
-{% endblock %}
-
-{% block citizen_content %}
+      {% block citizen_content %}
 
 
 
 
+      <div class="container">
+        <div class="grid-row">
+          <div class="column-three-quarters">
+            <p class="returnRef"><a href="#" class="link-back">Return to case list</a></p>
+      <br>
+      </div>
+      <div class="column-one-quarter">
+
+            <aside class="app-related-items" role="complementary">
+
+              <nav role="navigation" aria-labelledby="subsection-title">
 
 
-<div class="container">
 
+                  <h3 class="heading-small">Suggested case action</h3><a href="#" class="button">Issue UC50</a>
 
-  <div class="grid-row">
+              </nav>
+            </aside>
+      </div>
+      </div>
 
-    <div class="column-full">
+            <div class="grid-row">
+              <div class="column-full">
+
 
 <!-- tabs -->
     {# macro #}
