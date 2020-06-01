@@ -138,7 +138,7 @@ table.section{margin-bottom:60px;}
 		</tr>
 		<tr class="row">
 			<th class="column-01">Social and work history</th>
-			<td class="column-02">{% for item in socialWorkComments | sortBy("time",false) %}<p style="margin-top:0px; margin-bottom:0;">{{ item.comment }}</p>{% endfor %}</td>
+			<td class="column-02">{% for item in socialWorkComments | sortBy("time",false) %}<p style="margin-top:0px; margin-bottom:0;">{{ item.comment }}{{ item.text }}</p>{% endfor %}</td>
 			<td class="column-03"><a href="socialWork">Change</a></td>
 		</tr>
 		<tr class="row">

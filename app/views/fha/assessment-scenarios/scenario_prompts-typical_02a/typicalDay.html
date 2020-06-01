@@ -32,11 +32,16 @@
     width:95%;}
 
     .chat-layout .chat-window{
-    padding: 0 30px 0 15px;}
+    padding: 0 30px 0 15px;
+    min-height:400px;}
 
     .chat-layout .tag-box{
-    margin-top:15px;
-    height:60px;}
+    margin-top:8px;
+    height:inherit;}
+
+    .chat-layout .tag-text{
+    padding: .4em .6em;
+    }
 
     .chat-layout .chat-capture{
     padding: 20px 35px 20px 15px;}
@@ -143,7 +148,7 @@
           <form action="" method="post">
             <input type="hidden" name="id" value="{{item.id}}">
             <input type="hidden" name="delete" value="true">
-            <button class="remove-link" >Edit</button>
+            {# <button class="remove-link" >Edit</button> #}
           </form>
        </div>
        
@@ -169,7 +174,7 @@
 <form action="wca-index" method="post" class="form">
 {% endif %}
 
-      <input type="submit" class="button" value="Save progress" id="submitButton">
+      <input type="submit" class="button" value="Save and continue" id="submitButton">
       
 
       
@@ -191,5 +196,27 @@
 <!-- right hand column -->
 
 </div><!-- row -->
+
+{% endblock %}
+
+{% block page_scripts %}
+
+<script type="text/javascript">
+
+$(document).on('ready',function()
+{
+
+  $("#nugget").keydown(function (event) {
+    if ((event.keyCode == 13))
+    {
+      $('#submitButton').trigger('click');
+    }
+  });
+
+$('#nugget').focus();
+
+});
+
+</script>
 
 {% endblock %}
